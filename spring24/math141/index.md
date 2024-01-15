@@ -40,7 +40,7 @@ Week | Topic                      | Notes | Homework
 11 | L'Hospital's rule & Newton's method                   | [Week 11](notes.html#week-11-notes) | 
 12 | Antiderivatives & area under curves                   | [Week 12](notes.html#week-12-notes) | 
 13 | Definite integrals, **Midterm 3**                     | [Week 13](notes.html#week-13-notes) | 
-14 | Fundamental theorem of calculus, u-substitution       | [Week 14](notes.html#week-14-notes) |
+14 | Substitution                                          | [Week 14](notes.html#week-14-notes) |
 
 ### Attendance Policy
 

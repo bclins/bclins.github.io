@@ -42,7 +42,7 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 * Math 141 - [Calculus I](spring24/math141/index.html) 
 * Math 342 - [Numerical Analysis](spring24/math342/index.html) 
-* Coms 480 - [Advanced Topics in Computer Science](spring24/coms480/index.html)
+* Coms 480 - [Advanced Topics in Computer Science](spring24/cs480/index.html)
 
 ### Teaching Materials
 

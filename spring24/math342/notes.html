@@ -8,17 +8,12 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
   </style>
-  <link rel="stylesheet" href="../mockupA.css" />
+  <link rel="stylesheet" href="../mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -28,9 +23,6 @@
     --link-color: #069; 
   }
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -38,15 +30,7 @@
 </header>
 <h2 id="math-342---spring-2024">Math 342 - Spring 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
-1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
-3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
-5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
-7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
-9</a>, <a href="#week-10-notes">Week 10</a>, <a
-href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
-<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
-14</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -60,42 +44,25 @@ href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Wed, Jan 17</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
 <td style="text-align: left;">Floating point arithmetic</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Jan 19</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
 <td style="text-align: left;">Significant digits, relative error</td>
 </tr>
 </tbody>
 </table>
 <h4 id="wed-jan-17">Wed, Jan 17</h4>
-<p>We talked about how computers store <a
-href="https://en.wikipedia.org/wiki/Floating_point">floating point
-numbers</a>. Most modern programming languages store floating point
-numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE
-754 standard</a>.</p>
-<p><img src="floating_point_layout.svg" style="width: 700px" /> <img
-src="floating_point_math.svg" style="width: 700px" /></p>
-<p>To understand floating point numbers, we also reviewed <a
-href="https://en.wikipedia.org/wiki/Binary_numeral_system">binary
-numbers</a>, <a
-href="https://en.wikipedia.org/wiki/Scientific_notation">scientific
-notation</a>, and <a
-href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic
-scales</a>.</p>
+<p>We talked about how computers store <a href="https://en.wikipedia.org/wiki/Floating_point">floating point numbers</a>. Most modern programming languages store floating point numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754 standard</a>.</p>
+<p><img src="floating_point_layout.svg" style="width: 700px" /> <img src="floating_point_math.svg" style="width: 700px" /></p>
+<p>To understand floating point numbers, we also reviewed <a href="https://en.wikipedia.org/wiki/Binary_numeral_system">binary numbers</a>, <a href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation</a>, and <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scales</a>.</p>
 <p>We did the following exercises in class:</p>
 <ol type="1">
-<li><p>Convert (10110)<sub>2</sub> to decimal. (<a
-href="https://youtu.be/a2FpnU9Mm3E"
-class="uri">https://youtu.be/a2FpnU9Mm3E</a>)</p></li>
-<li><p>Convert 35 to binary. (<a href="https://youtu.be/gGiEu7QTi68"
-class="uri">https://youtu.be/gGiEu7QTi68</a>)</p></li>
-<li><p>What number has mantissa (1011)<sub>2</sub> and exponent
-(110)<sub>2</sub>?</p></li>
+<li><p>Convert (10110)<sub>2</sub> to decimal. (<a href="https://youtu.be/a2FpnU9Mm3E" class="uri">https://youtu.be/a2FpnU9Mm3E</a>)</p></li>
+<li><p>Convert 35 to binary. (<a href="https://youtu.be/gGiEu7QTi68" class="uri">https://youtu.be/gGiEu7QTi68</a>)</p></li>
+<li><p>What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>?</p></li>
 </ol>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
@@ -138,20 +105,17 @@ class="uri">https://youtu.be/gGiEu7QTi68</a>)</p></li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 29</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_bisection_method">2.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_bisection_method">2.1</a></td>
 <td style="text-align: left;">Bisection method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 31</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:newtons_method">2.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:newtons_method">2.3</a></td>
 <td style="text-align: left;">Newton’s method</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 2</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
 <td style="text-align: left;">Rates of convergence</td>
 </tr>
 </tbody>
@@ -169,20 +133,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 5</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
 <td style="text-align: left;">Rates of convergence - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 7</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
 <td style="text-align: left;">Secant method</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 9</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
 <td style="text-align: left;">Fixed point iteration</td>
 </tr>
 </tbody>
@@ -256,21 +217,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 26</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:the_lagrange_form">3.1</a></td>
-<td style="text-align: left;">Polynomial interpolation, Lagrange
-form</td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:the_lagrange_form">3.1</a></td>
+<td style="text-align: left;">Polynomial interpolation, Lagrange form</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 28</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
 <td style="text-align: left;">Newton’s divided differences</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 1</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
 <td style="text-align: left;">Divided differences - con’d</td>
 </tr>
 </tbody>
@@ -288,20 +245,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 4</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
 <td style="text-align: left;">Interpolation error</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 6</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
 <td style="text-align: left;">Interpolation error - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 8</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:chebyshev_polynomials">3.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:chebyshev_polynomials">3.4</a></td>
 <td style="text-align: left;">Chebyshev polynomials</td>
 </tr>
 </tbody>
@@ -319,20 +273,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 18</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
 <td style="text-align: left;">Newton-Cotes formulas</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 20</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
 <td style="text-align: left;">Newton-Cotes formulas - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 22</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
 <td style="text-align: left;">Gaussian quadrature</td>
 </tr>
 </tbody>
@@ -350,20 +301,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 25</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
 <td style="text-align: left;">Gaussian quadrature - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 27</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:improper_and_multidimensional_integrals">5.6</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:improper_and_multidimensional_integrals">5.6</a></td>
 <td style="text-align: left;">Monte carlo integration</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 29</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_differentiation:basics_of_numerical_differentiation">4.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_differentiation:basics_of_numerical_differentiation">4.1</a></td>
 <td style="text-align: left;">Numerical differentiation</td>
 </tr>
 </tbody>
@@ -399,11 +347,6 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -415,10 +358,7 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 8</td>
 <td style="text-align: center;"> </td>
-<td style="text-align: left;"><a
-href="https://en.wikipedia.org/wiki/Orthogonal_functions">Orthogonal
-functions</a>, <a
-href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</a></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Orthogonal_functions">Orthogonal functions</a>, <a href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 10</td>
@@ -445,20 +385,17 @@ href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 15</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
 <td style="text-align: left;">Euler’s method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 17</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Existence &amp; uniqueness of
-solutions</td>
+<td style="text-align: left;">Existence &amp; uniqueness of solutions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 19</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
 <td style="text-align: left;">Euler’s method error</td>
 </tr>
 </tbody>
@@ -476,20 +413,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 22</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
 <td style="text-align: left;">Runge-Kutta methods</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 24</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
 <td style="text-align: left;">Runge-Kutta methods - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 26</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:systems_of_odes">6.5</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:systems_of_odes">6.5</a></td>
 <td style="text-align: left;">Systems of ODEs</td>
 </tr>
 <tr class="even">
