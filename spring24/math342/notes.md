@@ -35,6 +35,14 @@ We talked about how computers store [floating point numbers](https://en.wikipedi
 ![](floating_point_layout.svg){ style="width: 700px" }
 ![](floating_point_math.svg){style="width: 700px"}
 
+In the IEEE 754 standard, a 64-bit floating point number has the form 
+$$x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}$$
+where 
+
+* $s$ is the 1-bit sign,
+* $a_1 a_2 \ldots a_{52}$ is the 52-bit mantissa, and
+* $e$ is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $e=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $e=2047$ is reserved for infinity and NaN ("not a number"). 
+
 To understand floating point numbers, we also reviewed [binary numbers](https://en.wikipedia.org/wiki/Binary_numeral_system), [scientific notation](https://en.wikipedia.org/wiki/Scientific_notation), and [logarithmic scales](https://en.wikipedia.org/wiki/Logarithmic_scale ).
 
 We did the following exercises in class:
@@ -43,7 +51,19 @@ We did the following exercises in class:
 
 2. Convert 35 to binary. (<https://youtu.be/gGiEu7QTi68>)
 
-3. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
+3. What are the largest and smallest 64-bit floating point numbers that can be stored?  
+
+4. In Python, compute `2.0**1024` and `2**1024`.  Why do you get different results?
+
+5. In Python, compare `2.0**1024` with `2.0**(-1024)` and `2.0**(-1070)`. What do you notice? 
+
+<!--
+6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
+-->
+
+#### Fri, Jan 19
+
+
 
 - - -
 

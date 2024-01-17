@@ -8,23 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
   </style>
   <link rel="stylesheet" href="../mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -32,15 +24,7 @@
 </header>
 <h2 id="math-141---spring-2024">Math 141 - Spring 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
-1</a> , <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
-3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
-5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
-7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
-9</a>, <a href="#week-10-notes">Week 10</a>, <a
-href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
-<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
-14</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> , <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -54,83 +38,45 @@ href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Wed, Jan 17</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions">1.1</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/1-1-review-of-functions">1.1</a></td>
 <td style="text-align: left;">Review of functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Thu, Jan 18</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/1-2-basic-classes-of-functions">1.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/1-2-basic-classes-of-functions">1.2</a></td>
 <td style="text-align: left;">Basic classes of functions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Jan 19</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/1-2-basic-classes-of-functions">1.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/1-2-basic-classes-of-functions">1.2</a></td>
 <td style="text-align: left;">Basic classes of functions - con’d</td>
 </tr>
 </tbody>
 </table>
 <h4 id="wed-jan-17">Wed, Jan 17</h4>
-<p>Today we reviewed functions and function notation. We talked about
-how
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
-looks like
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-multiplied by
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
-but it really means something completely different! We also talked about
-the following important functions (and their graphs) that you should
-have memorized:</p>
+<p>Today we reviewed functions and function notation. We talked about how <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math> looks like <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> multiplied by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>, but it really means something completely different! We also talked about the following important functions (and their graphs) that you should have memorized:</p>
 <ol type="1">
-<li><p><strong>Linear functions</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f(x) = mx+b</annotation></semantics></math>.</p></li>
-<li><p><strong>The square function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x) = x^2</annotation></semantics></math>.</p></li>
-<li><p><strong>The cube function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">f(x) = x^3</annotation></semantics></math>.</p></li>
-<li><p><strong>The reciprocal function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{1}{x}</annotation></semantics></math>.</p></li>
-<li><p><strong>The positive square-root function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mi>x</mi></msqrt><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = \sqrt{x} = x^{1/2}</annotation></semantics></math>.</p></li>
-<li><p><strong>The cube-root function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = \sqrt[3]{x} = x^{1/3}</annotation></semantics></math>.</p></li>
-<li><p><strong>The 1-dimensional distance function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">f(x) = |x-a|</annotation></semantics></math>.</p></li>
+<li><p><strong>Linear functions</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f(x) = mx+b</annotation></semantics></math>.</p></li>
+<li><p><strong>The square function</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x) = x^2</annotation></semantics></math>.</p></li>
+<li><p><strong>The positive square-root function</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msqrt><mi>x</mi></msqrt><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = \sqrt{x} = x^{1/2}</annotation></semantics></math>.</p></li>
+<li><p><strong>The reciprocal function</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{1}{x}</annotation></semantics></math>.</p></li>
+<li><p><strong>The 1-dimensional distance function</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">f(x) = |x-a|</annotation></semantics></math>.</p></li>
 </ol>
-<p>Then we talked about how to use <a
-href="https://www.desmos.com/calculator">Desmos</a> to enter and work
-with functions. We also reviewed the definitions of
-<strong>domain</strong>, <strong>range</strong>, and <strong>function
-composition</strong>. We did the following examples in class.</p>
+<p>We reviewed the definitions of <strong>domain</strong>, <strong>range</strong>, and <strong>function composition</strong>. We did the following examples in class.</p>
 <ol type="1">
-<li><p>Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>4</mn><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{4}{x+2}</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">g(x) = \dfrac{1}{x}</annotation></semantics></math>.
-Find the domain of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(g(x))</annotation></semantics></math>.
-(<a href="https://youtu.be/PNzHrPebKOw"
-class="uri">https://youtu.be/PNzHrPebKOw</a>)</p></li>
-<li><p>A rectangular piece of cardboard is 10 inches by 8 inches. If we
-cut squares of length
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-out of the four corners, then we can fold the sides up to make a box.
-Find a formula for the volume of the box as a function of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-and determine the domain. (<a href="https://youtu.be/UvTYc5Wqu8w"
-class="uri">https://youtu.be/UvTYc5Wqu8w</a>)</p></li>
-<li><p>Two poles are connected by a wire that also connects to the
-ground between the poles. Find a formula for the length of the wire as a
-function of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-and determine the domain.</p></li>
+<li><p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>4</mn><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{4}{x+2}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">g(x) = \dfrac{1}{x}</annotation></semantics></math>. Find the domain of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(g(x))</annotation></semantics></math>. (<a href="https://youtu.be/PNzHrPebKOw" class="uri">https://youtu.be/PNzHrPebKOw</a>)</p></li>
+<li><p>Two poles are connected by a wire that also connects to the ground between the poles. Find a formula for the length of the wire as a function of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and determine the domain.</p></li>
 </ol>
 <center>
-<img
-src="https://openstax.org/apps/archive/20231109.173216/resources/b552f9631ff58624c44af7691ed7dae547f26758" />
+<img src="https://openstax.org/apps/archive/20231109.173216/resources/b552f9631ff58624c44af7691ed7dae547f26758" />
 </center>
+<p>We didn’t have time for this exercise, but it is also a good example of how to construct a function.</p>
+<ol start="3" type="1">
+<li>A rectangular piece of cardboard is 10 inches by 8 inches. If we cut squares of length <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> out of the four corners, then we can fold the sides up to make a box. Find a formula for the volume of the box as a function of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and determine the domain. (<a href="https://youtu.be/UvTYc5Wqu8w" class="uri">https://youtu.be/UvTYc5Wqu8w</a>)</li>
+</ol>
+<!--
+4. The function $f(x) = \sqrt{R^2 - x^2}$ has a graph that is a semicircle.  What is the domain & range of this function?
+-->
 <!--
 #### Thu, Jan 18
 
@@ -155,14 +101,12 @@ Review polynomial functions.
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 22</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/1-3-trigonometric-functions">1.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/1-3-trigonometric-functions">1.3</a></td>
 <td style="text-align: left;">Trigonometric functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 24</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/1-3-trigonometric-functions">1.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/1-3-trigonometric-functions">1.3</a></td>
 <td style="text-align: left;">Trigonometric functions</td>
 </tr>
 <tr class="odd">
@@ -172,8 +116,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/1-3-trigonometric-funct
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Jan 26</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/2-1-a-preview-of-calculus">2.1</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/2-1-a-preview-of-calculus">2.1</a></td>
 <td style="text-align: left;">A preview of calculus</td>
 </tr>
 </tbody>
@@ -191,14 +134,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/2-1-a-preview-of-calcul
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 29</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/2-2-the-limit-of-a-function">2.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/2-2-the-limit-of-a-function">2.2</a></td>
 <td style="text-align: left;">Limit of a function</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 31</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws">2.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws">2.3</a></td>
 <td style="text-align: left;">Limit laws</td>
 </tr>
 <tr class="odd">
@@ -208,8 +149,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/2-3-the-limit-laws">2.3
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Feb 2</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/2-4-continuity">2.4</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/2-4-continuity">2.4</a></td>
 <td style="text-align: left;">Continuity</td>
 </tr>
 </tbody>
@@ -227,14 +167,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/2-4-continuity">2.4</a>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 5</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-1-defining-the-derivative">3.1</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-1-defining-the-derivative">3.1</a></td>
 <td style="text-align: left;">Defining derivatives</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 7</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function">3.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function">3.2</a></td>
 <td style="text-align: left;">The derivative function</td>
 </tr>
 <tr class="odd">
@@ -244,8 +182,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Feb 9</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules">3.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules">3.3</a></td>
 <td style="text-align: left;">Differentiation rules</td>
 </tr>
 </tbody>
@@ -263,14 +200,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rul
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 12</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules">3.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-3-differentiation-rules">3.3</a></td>
 <td style="text-align: left;">The product and quotient rules</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 14</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-4-derivatives-as-rates-of-change">3.4</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-4-derivatives-as-rates-of-change">3.4</a></td>
 <td style="text-align: left;">Derivatives as rates of change</td>
 </tr>
 <tr class="odd">
@@ -298,15 +233,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-4-derivatives-as-rate
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 19</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-5-derivatives-of-trigonometric-functions">3.5</a></td>
-<td style="text-align: left;">Derivatives of trigonometric
-functions</td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-5-derivatives-of-trigonometric-functions">3.5</a></td>
+<td style="text-align: left;">Derivatives of trigonometric functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 21</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6</a></td>
 <td style="text-align: left;">The chain rule</td>
 </tr>
 <tr class="odd">
@@ -316,8 +248,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Feb 23</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6</a></td>
 <td style="text-align: left;">The chain rule - con’d</td>
 </tr>
 </tbody>
@@ -335,14 +266,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-6-the-chain-rule">3.6
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 26</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation">3.8</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation">3.8</a></td>
 <td style="text-align: left;">Implicit differentiation</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 28</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation">3.8</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differentiation">3.8</a></td>
 <td style="text-align: left;">Implicit differentiation - con’d</td>
 </tr>
 <tr class="odd">
@@ -352,8 +281,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/3-8-implicit-differenti
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Mar 1</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates">4.1</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates">4.1</a></td>
 <td style="text-align: left;">Related rates</td>
 </tr>
 </tbody>
@@ -371,14 +299,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-1-related-rates">4.1<
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 4</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-2-linear-approximations-and-differentials">4.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-2-linear-approximations-and-differentials">4.2</a></td>
 <td style="text-align: left;">Linear approximations</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 6</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-2-linear-approximations-and-differentials">4.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-2-linear-approximations-and-differentials">4.2</a></td>
 <td style="text-align: left;">Differentials</td>
 </tr>
 <tr class="odd">
@@ -388,8 +314,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-2-linear-approximatio
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Mar 8</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">4.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">4.3</a></td>
 <td style="text-align: left;">Maxima &amp; minima</td>
 </tr>
 </tbody>
@@ -407,8 +332,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 18</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">4.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">4.3</a></td>
 <td style="text-align: left;">Maxima &amp; minima - con’d</td>
 </tr>
 <tr class="even">
@@ -423,8 +347,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-3-maxima-and-minima">
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Mar 22</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem">4.4</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem">4.4</a></td>
 <td style="text-align: left;">The mean value theorem</td>
 </tr>
 </tbody>
@@ -442,14 +365,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 25</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the-shape-of-a-graph">4.5</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the-shape-of-a-graph">4.5</a></td>
 <td style="text-align: left;">Derivatives and the shape of a graph</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 27</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the-shape-of-a-graph">4.5</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the-shape-of-a-graph">4.5</a></td>
 <td style="text-align: left;">Concavity</td>
 </tr>
 <tr class="odd">
@@ -459,8 +380,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-5-derivatives-and-the
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Mar 29</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-6-limits-at-infinity-and-asymptotes">4.6</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-6-limits-at-infinity-and-asymptotes">4.6</a></td>
 <td style="text-align: left;">Applied optimization</td>
 </tr>
 </tbody>
@@ -478,14 +398,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-6-limits-at-infinity-
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 1</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-7-applied-optimization-problems">4.7</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-7-applied-optimization-problems">4.7</a></td>
 <td style="text-align: left;">Limits at infinity and asymptotes</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 3</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule">4.8</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule">4.8</a></td>
 <td style="text-align: left;">L’Hospital’s rule</td>
 </tr>
 <tr class="odd">
@@ -495,8 +413,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-8-lhopitals-rule">4.8
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Apr 5</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-9-newtons-method">4.9</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-9-newtons-method">4.9</a></td>
 <td style="text-align: left;">Newton’s method</td>
 </tr>
 </tbody>
@@ -514,14 +431,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-9-newtons-method">4.9
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 8</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives">4.10</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives">4.10</a></td>
 <td style="text-align: left;">Antiderivatives - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 10</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives">4.10</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives">4.10</a></td>
 <td style="text-align: left;">Antiderivatives - con’d</td>
 </tr>
 <tr class="odd">
@@ -531,8 +446,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/4-10-antiderivatives">4
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Apr 12</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas">5.1</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas">5.1</a></td>
 <td style="text-align: left;">Approximating area</td>
 </tr>
 </tbody>
@@ -550,14 +464,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/5-1-approximating-areas
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 15</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral">5.2</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-2-the-definite-integral">5.2</a></td>
 <td style="text-align: left;">The definite integral</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 17</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-3-the-fundamental-theorem-of-calculus">5.3</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-3-the-fundamental-theorem-of-calculus">5.3</a></td>
 <td style="text-align: left;">Evaluating definite integrals</td>
 </tr>
 <tr class="odd">
@@ -585,14 +497,12 @@ href="https://openstax.org/books/calculus-volume-1/pages/5-3-the-fundamental-the
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 22</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-4-integration-formulas-and-the-net-change-theorem">5.4</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-4-integration-formulas-and-the-net-change-theorem">5.4</a></td>
 <td style="text-align: left;">Integration formulas</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 24</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-5-substitution">5.5</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-5-substitution">5.5</a></td>
 <td style="text-align: left;">Substitution</td>
 </tr>
 <tr class="odd">
@@ -602,8 +512,7 @@ href="https://openstax.org/books/calculus-volume-1/pages/5-5-substitution">5.5</
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Apr 26</td>
-<td style="text-align: center;"><a
-href="https://openstax.org/books/calculus-volume-1/pages/5-5-substitution">5.5</a></td>
+<td style="text-align: center;"><a href="https://openstax.org/books/calculus-volume-1/pages/5-5-substitution">5.5</a></td>
 <td style="text-align: left;">Substitution - con’d</td>
 </tr>
 <tr class="odd">

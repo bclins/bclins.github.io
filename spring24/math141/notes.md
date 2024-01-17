@@ -31,27 +31,29 @@ Today we reviewed functions and function notation.  We talked about how $f(x)$ l
 
 2. **The square function** $f(x) = x^2$. 
 
-3. **The cube function** $f(x) = x^3$.
+3. **The positive square-root function** $f(x) = \sqrt{x} = x^{1/2}$. 
 
 4. **The reciprocal function** $f(x) = \dfrac{1}{x}$.
 
-5. **The positive square-root function** $f(x) = \sqrt{x} = x^{1/2}$. 
+5. **The 1-dimensional distance function** $f(x) = |x-a|$. 
 
-6. **The cube-root function** $f(x) = \sqrt[3]{x} = x^{1/3}$. 
-
-7. **The 1-dimensional distance function** $f(x) = |x-a|$. 
-
-Then we talked about how to use [Desmos](https://www.desmos.com/calculator) to enter and work with functions. We also reviewed the definitions of **domain**, **range**, and **function composition**. We did the following examples in class. 
+We reviewed the definitions of **domain**, **range**, and **function composition**. We did the following examples in class. 
 
 1. Let $f(x) = \dfrac{4}{x+2}$ and $g(x) = \dfrac{1}{x}$. Find the domain of $f(g(x))$. (<https://youtu.be/PNzHrPebKOw>)
 
-2. A rectangular piece of cardboard is 10 inches by 8 inches.  If we cut squares of length $x$ out of the four corners, then we can fold the sides up to make a box.  Find a formula for the volume of the box as a function of $x$ and determine the domain. (<https://youtu.be/UvTYc5Wqu8w>)
-
-3. Two poles are connected by a wire that also connects to the ground between the poles. Find a formula for the length of the wire as a function of $x$ and determine the domain. 
+2. Two poles are connected by a wire that also connects to the ground between the poles. Find a formula for the length of the wire as a function of $x$ and determine the domain. 
 
 <center>
 ![](https://openstax.org/apps/archive/20231109.173216/resources/b552f9631ff58624c44af7691ed7dae547f26758)
 </center>
+
+We didn't have time for this exercise, but it is also a good example of how to construct a function. 
+
+3. A rectangular piece of cardboard is 10 inches by 8 inches.  If we cut squares of length $x$ out of the four corners, then we can fold the sides up to make a box.  Find a formula for the volume of the box as a function of $x$ and determine the domain. (<https://youtu.be/UvTYc5Wqu8w>)
+
+<!--
+4. The function $f(x) = \sqrt{R^2 - x^2}$ has a graph that is a semicircle.  What is the domain & range of this function?
+-->
 
 <!--
 #### Thu, Jan 18

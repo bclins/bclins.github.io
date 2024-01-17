@@ -8,15 +8,10 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
   </style>
   <link rel="stylesheet" href="../mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -28,26 +23,14 @@
     --link-color: #A32; 
   }
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Advanced Topics in CS Notes</h1>
 </header>
-<h2 id="computer-science-480---spring-2024">Computer Science 480 -
-Spring 2024</h2>
+<h2 id="computer-science-480---spring-2024">Computer Science 480 - Spring 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
-1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
-3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
-5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
-7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
-9</a>, <a href="#week-10-notes">Week 10</a>, <a
-href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
-<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
-14</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -69,15 +52,24 @@ href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
 </tbody>
 </table>
 <h4 id="wed-jan-17">Wed, Jan 17</h4>
-<p>Today we introduced some simple examples of Markov chains. We also
-reviewed matrix multiplication. We also defined <strong>probability
-vectors</strong> and the <strong>dot product</strong> (which is also
-known as the <strong>inner product</strong>). We talked about the
-geometric meaning of the dot product of two vectors. We did the
-following examples in class.</p>
+<!--
+Today we introduced some simple examples of Markov chains.  We also reviewed matrix multiplication.  We also defined **probability vectors** and the **dot product** (which is also known as the **inner product**).  We talked about the geometric meaning of the dot product of two vectors. We did the following examples in class. 
+-->
+<p>Today we reviewed vectors and matrices. Recall that a <strong>vector</strong> is all three of the following things:</p>
 <ol type="1">
-<li>Multiply
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 0 &amp; -1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \\ 1 &amp; -1 \end{pmatrix}</annotation></semantics></math>.</li>
+<li>A list of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> numbers.</li>
+<li>A point in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-dimensional space.</li>
+<li>An arrow indicating a length and a direction.</li>
+</ol>
+<p>We denote the set of all real number vectors with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> entries by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>. Recall that the <strong>length</strong> of a vector (also known as the <strong>norm</strong>) is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><msubsup><mi>v</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>v</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>…</mi><mo>+</mo><msubsup><mi>v</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\|v\| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2 }.</annotation></semantics></math></p>
+<p>We also talked about how to multiply vectors by constants (<strong>scalar multiplication</strong>) and how to calculate the <strong>dot product</strong> (see this <a href="https://youtu.be/WNuIhXo39_k">Kahn academy video</a> for example). We stated (without proof) the fact that for any two vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v, w \in \mathbb{R}^n</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo>cos</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex"> v \cdot w = \|v\| \, \|w\| \, \cos \theta</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> is the angle between the vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>. We finished our review of vectors by saying that two vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">v, w</annotation></semantics></math> are <strong>orthogonal</strong> when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v \cdot w = 0</annotation></semantics></math>. Then the <strong>orthogonal complement</strong> of a single vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v \in \mathbb{R}^n</annotation></semantics></math> is the set <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>v</mi><mo>⊥</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><mspace width="0.167em"></mspace><mo>:</mo><mspace width="0.167em"></mspace><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">v^\perp = \{w \in \mathbb{R}^n \, : \, v \cdot w = 0 \}.</annotation></semantics></math> If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is a nonzero vector, then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>v</mi><mo>⊥</mo></msup><annotation encoding="application/x-tex">v^\perp</annotation></semantics></math> is an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n-1)</annotation></semantics></math>-dimensional hyperspace inside of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<p>After reviewing vectors we reviewed matrices and how to <a href="https://youtu.be/OMA2Mwo0aZg">multiply matrices</a>. We did the following example in class:</p>
+<ol type="1">
+<li>Multiply <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 0 &amp; -1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \\ 1 &amp; -1 \end{pmatrix}</annotation></semantics></math>.</li>
+</ol>
+<p>We finished by talking briefly about this problem from <a href="https://math.dartmouth.edu/~prob/prob/prob.pdf">Introduction to Probability by Grinstead &amp; Snell</a>:</p>
+<ol start="2" type="1">
+<li>The Land of Oz is blessed by many things, but not by good weather. They never have two nice days in a row. If they have a nice day, they are just as likely to have snow as rain the next day. If they have snow or rain, they have an even chance of having the same the next day. If there is change from snow or rain, only half of the time is this a change to a nice day.</li>
 </ol>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
