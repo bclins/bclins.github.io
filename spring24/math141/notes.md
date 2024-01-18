@@ -67,7 +67,32 @@ Review polynomial functions.
 
 -->
 
+#### Thu, Jan 18
 
+Today we started with the wire between two poles example from yesterday.  Then we focused on linear functions. We reviewed **slope-intercept form** and did the following examples in class.
+
+1. Find the formula to convert Celsius temperatures to Fahrenheit.
+
+2. Find a formula for the line through $(4,9)$ and $(6,1)$. (<https://youtu.be/LtpXvUCrgrM>)
+
+
+As of 2023-24, the US Income Tax brackets for individuals earning up to \$95,375 are:
+
+<center>
+
+| Taxable Income | Rate |
+| :---: | :---: |
+| \$0 to \$11,000 | 10% |
+| \$11,000 to \$44,725 | 12% |
+| \$44,725 to \$99,375 | 22% |
+
+</center>
+
+3. Express income tax owed as a function of income for individuals earning up to \$44,725.  
+
+Here is another good example that we didn't do in class:
+
+4. Find the slope and intercepts of $3x+5y = 15$. (<https://youtu.be/SOwh-Wk7Cq0>)
 
 - - -
 
