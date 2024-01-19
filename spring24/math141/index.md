@@ -28,7 +28,7 @@ Math 141 will cover functions, limits and continuity, derivatives & applications
 Week | Topic                      | Notes | Homework   
 :---:|:---------------------------|:-----:|:--------:
 1  | Functions                                             | [Week 01](notes.html#week-1-notes)  | [HW1](HW1.pdf)
-2  | Trigonometry                                          | [Week 02](notes.html#week-2-notes)  | 
+2  | Trigonometry                                          | [Week 02](notes.html#week-2-notes)  | [HW2](HW2.pdf)
 3  | Limits                                                | [Week 03](notes.html#week-3-notes)  | 
 4  | Derivatives                                           | [Week 04](notes.html#week-4-notes)  | 
 5  | Differentiation rules, **Midterm 1**                  | [Week 05](notes.html#week-5-notes)  | 

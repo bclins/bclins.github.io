@@ -94,6 +94,24 @@ Here is another good example that we didn't do in class:
 
 4. Find the slope and intercepts of $3x+5y = 15$. (<https://youtu.be/SOwh-Wk7Cq0>)
 
+#### Fri, Jan 19
+
+Today we talked about **polynomial functions and equations**.  We briefly reviewed how to factor polynomials and we solved the following problems. 
+
+1. Suppose $f(x) = x^2$ and $g(x) = 5x-6$.  Find the $x$-values where these two functions intersect. <!-- Also what does the function $f(x)-g(x)$ represent?-->
+
+<!--2. Where does the line $y = 3x+2$ intersect the parabola $y = -4x^2 + 6$? (<https://youtu.be/JkMTthGWHUs>)-->
+
+2. Solve $x + \dfrac{8}{x} = 6$. (<https://youtu.be/1fR_9ke5-n8?t=112>)
+
+<!--4. Solve $\dfrac{x}{x+5} - \dfrac{5}{x-5} = \dfrac{14}{(x+5)(x-5)}$. (<https://youtu.be/1fR_9ke5-n8?t=519>)-->
+
+3. Solve $\dfrac{x^2}{4} = \dfrac{2x}{x-6}$.  
+
+In the last example, you should get to $x(x^2 - 6x - 8) = 0$.  Unfortunately there aren't integer factors of $-8$ that add up to $-6$.  So you need to use the **quadratic formula** 
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+to find all of the solutions.  You do not need to memorize the quadratic formula (it will be on the formula sheet on exams and you can look it up when you are doing your homework if needed). 
+
 - - -
 
 ### Week 2 Notes

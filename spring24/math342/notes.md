@@ -14,6 +14,7 @@ header-includes: |
 ---
 
 \newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
 
 ## Math 342 - Spring 2024
 
@@ -63,6 +64,48 @@ We did the following exercises in class:
 
 #### Fri, Jan 19
 
+Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). Then we defined absolute and relative error:
+
+<div class="Theorem">
+Let $x^*$ be an approximation of $x \in \R$.  
+
+* The **absolute error** is $|x^* - x|$. 
+* The **relative error** is $\dfrac{|x^*-x|}{|x|}$. 
+</div>
+
+The base-10 logarithm of the relative error is approximately the number of significant digits, so you can think of significant digits as a measure of relative error.  Keep in mind these rules:
+
+1. When you add/subtract numbers, the last common digit that is significant for both numbers is the last significant digit of the answer. 
+2. When you multiply/divide two numbers, the result has significant digits equal to the minimum number of significant digits of the two inputs. 
+
+Intuitively, addition & subtraction "play nice" with absolute error while multiplication and division "play nice" with relative error.  This can lead to problems:
+
+1. **Catastrophic cancellation.** When you subtract two numbers of roughly the same size, the relative error can get much worse.  For example, both 53.76 and 53.74 have 4 significant digits, but 
+$$53.76 - 53.74 = 0.02$$ 
+only has 1 significant digit.  
+
+2. **Useless precision.** If you add two numbers with very different magnitudes, then having a very low relative error in the smaller one will not be useful.  
+
+We finished by looking at how you can sometimes re-write algorithms on a computer to avoid overflow/underflow issues.  Stirling's formula is an approximation for $n!$ which has a relative error that gets smaller as $n$ increases.  
+
+We used the `math` library in Python to test **Stirling's formula**, which is the following approximation 
+$$n! \approx \sqrt{2 \pi n} \frac{n^n}{e^n}.$$
+
+```python
+import math
+n = 100
+print(float(math.factorial(n)))
+f = lambda n: math.sqrt(2*math.pi*n)*n**n/math.exp(n)
+print(f(n))
+```
+
+Our formula worked well until $n=143$, then we got an overflow error.  The problem was that $n^n$ got too big to convert to a floating point number.  But you can prevent the overflow error by adjusting the formula slightly to. 
+
+```python
+n = 143
+f = lambda n: math.sqrt(2*math.pi*n)*(n/math.exp(1))**n
+print(f(n))
+```
 
 
 - - -
