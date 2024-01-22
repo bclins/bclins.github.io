@@ -17,7 +17,7 @@ header-includes: |
 
 ### Announcements
 
-* There are no announcements yet.
+* [Formula sheet](formulaSheet.pdf)
 
 ### Course Description
 
