@@ -44,7 +44,7 @@ We reviewed the definitions of **domain**, **range**, and **function composition
 2. Two poles are connected by a wire that also connects to the ground between the poles. Find a formula for the length of the wire as a function of $x$ and determine the domain. 
 
 <center>
-![](https://openstax.org/apps/archive/20231109.173216/resources/b552f9631ff58624c44af7691ed7dae547f26758)
+<img src="https://openstax.org/apps/archive/20231109.173216/resources/b552f9631ff58624c44af7691ed7dae547f26758" width=300></img>
 </center>
 
 We didn't have time for this exercise, but it is also a good example of how to construct a function. 
@@ -122,6 +122,73 @@ Mon, Jan 22 | [1.3][1.3] | Trigonometric functions
 Wed, Jan 24 | [1.3][1.3] | Trigonometric functions
 Thu, Jan 25 | | Review
 Fri, Jan 26 | [2.1][2.1] | A preview of calculus
+
+#### Mon, Jan 22
+
+Today we did a review of some basic trigonometry. We talked about the things you should memorize which include:
+
+* $\pi$ radians is 180 degrees.
+* The definitions of sine, cosine, and tangent ([SOH-CAH-TOA](https://mathworld.wolfram.com/SOHCAHTOA.html)).  
+* The graphs of $\sin(x)$ and $\cos(x)$. 
+
+We did the following exercises. 
+
+1. Convert $\tfrac{-\pi}{3}$ radians to degrees. (<https://youtu.be/z0-1gBy1ykE>)
+
+2. Convert $150^\circ$ to radians. (<https://youtu.be/O3jvUZ8wvZs>)
+
+3. Find the values of $\cos \theta, \sin \theta, \tan \theta, \sec \theta, \csc \theta,$ and $\cot \theta$ for the angle $\theta$ shown below.  
+
+<center>
+<svg width=250 height=200>
+<path d="M 25 175 H 225 V 25 Z" stroke="black" fill="transparent" stroke-width="2"/>
+<path d="M 210 175 V 160 H 225" stroke="black" fill="transparent" stroke-width="1"/>
+<g font-size="24">
+<text x="60" y="170">θ</text>
+<text x="233" y="110">3</text>
+<text x="125" y="200">4</text>
+</g>
+</svg>
+</center>
+
+3. Find $\sin(\tfrac{4\pi}{3})$. Hint: use the [formula sheet](formulaSheet.pdf).
+
+4. Find $\cot(-\tfrac{2\pi}{3})$ (<https://youtu.be/KaS3P1a7GE8>)
+
+5. Find $\sec(3 \pi)$
+
+6. Find all solutions to $\cos x = 0$. 
+
+7. Solve $2 \cos x + 1 = 0$. (<https://youtu.be/j7c2I_fwamc>)
+
+8. A 1000 meter long driveway in the mountains has a $10^\circ$ grade.  How much elevation do you gain when you drive up the driveway?  
+
+
+<!--
+#### Wed, Jan 24
+
+Today we looked at some more trigonometry examples.  We did the following:
+
+1. The radius of the Earth is about 4000 miles.  Farmville has a Latitude of 37.3$^\circ$.  How far is Farmville from the the equator?  
+
+
+2. A lighthouse is 25 meters above sea level.  A boat measures the angle of elevation of the light to be $\theta$.  How far is the boat away from the base of the lighthouse as a function of $\theta$? 
+
+3. Prove the **Law of Sines** (for any triangle, the following formula is true): (<https://youtu.be/APNkWrD-U1k>)
+
+$$ \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$$
+
+<center>
+![](https://www.mathsisfun.com/algebra/images/triangle-sides-angles.svg)
+</center>
+
+
+3. Simplify $\tan^2 x - \sec^2 x$ as much as possible. (<https://youtu.be/0QuB4HOI3J8>)
+
+4. Find all solutions of $\dfrac{\sin^2 x}{1-\cos x} - 1 = 0$ in the interval $[0,2\pi)$. 
+
+5. Find all solutions of $2\sin \theta = \tan \theta$ on $[0,2\pi)$. 
+-->
 
 - - -
 

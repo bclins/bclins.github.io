@@ -67,7 +67,7 @@ We did the following exercises in class:
 Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). Then we defined absolute and relative error:
 
 <div class="Theorem">
-Let $x^*$ be an approximation of $x \in \R$.  
+Let $x^*$ be an approximation of $x \in \R$.  <!-- ^* -->
 
 * The **absolute error** is $|x^* - x|$. 
 * The **relative error** is $\dfrac{|x^*-x|}{|x|}$. 
@@ -107,7 +107,6 @@ f = lambda n: math.sqrt(2*math.pi*n)*(n/math.exp(1))**n
 print(f(n))
 ```
 
-
 - - -
 
 ### Week 2 Notes
@@ -117,6 +116,21 @@ Day  | Section  | Topic
 Mon, Jan 22 |            | Taylor's theorem
 Wed, Jan 24 |            | Taylor's theorem - con'd
 Fri, Jan 26 |            | The Babylonian algorithm
+
+#### Mon, Jan 22
+
+Today we reviewed Taylor series.  We recalled the following important Maclaurin series (which are Taylor series with center $c = 0$):
+
+* $\ds e^x = \sum_{n=0}^\infty \dfrac{x^n}{n!}$
+* $\ds \sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n+1}}{(2n+1)!}$
+* $\ds \cos(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n}}{(2n)!}$
+* $\ds \dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n$
+* $\ds \ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}$
+
+The we did the following workshop in class. 
+
+* Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
+
 
 - - -
 

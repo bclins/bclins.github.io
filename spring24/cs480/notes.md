@@ -110,6 +110,13 @@ Mon, Jan 22 | Transient and recurring states
 Wed, Jan 24 | Random walks 
 Fri, Jan 26 | Birth-death cycles
 
+#### Mon, Jan 22
+
+Today we did the following workshop about Markov chains. 
+
+* Workshop: [Markov chains](Workshops/MarkovChains.pdf) 
+
+ 
 - - -
 
 ### Week 3 Notes
