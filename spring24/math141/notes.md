@@ -164,7 +164,6 @@ We did the following exercises.
 8. A 1000 meter long driveway in the mountains has a $10^\circ$ grade.  How much elevation do you gain when you drive up the driveway?  
 
 
-<!--
 #### Wed, Jan 24
 
 Today we looked at some more trigonometry examples.  We did the following:
@@ -182,13 +181,14 @@ $$ \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$$
 ![](https://www.mathsisfun.com/algebra/images/triangle-sides-angles.svg)
 </center>
 
+4. Simplify $\sec \theta \sin \theta \cos \theta$. (<https://youtu.be/-s44LcIPaPU>)
 
-3. Simplify $\tan^2 x - \sec^2 x$ as much as possible. (<https://youtu.be/0QuB4HOI3J8>)
+5. Simplify $\tan^2 x - \sec^2 x$ as much as possible. (<https://youtu.be/0QuB4HOI3J8>)
 
-4. Find all solutions of $\dfrac{\sin^2 x}{1-\cos x} - 1 = 0$ in the interval $[0,2\pi)$. 
+6. Find all solutions of $\dfrac{\sin^2 x}{1-\cos x} - 1 = 0$ in the interval $[0,2\pi)$. 
 
-5. Find all solutions of $2\sin \theta = \tan \theta$ on $[0,2\pi)$. 
--->
+7. Find all solutions of $2\sin \theta = \tan \theta$ on $[0,2\pi)$. (<https://youtu.be/vVR91JqJEMQ>)
+
 
 - - -
 

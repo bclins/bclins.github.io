@@ -105,11 +105,11 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, 
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Wed, Jan 17</td>
-<td style="text-align: left;">Markov chains &amp; matrices</td>
+<td style="text-align: left;">Vectors and matrices</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Jan 19</td>
-<td style="text-align: left;">Examples of Markov chains</td>
+<td style="text-align: left;">Markov chains</td>
 </tr>
 </tbody>
 </table>
@@ -170,15 +170,15 @@ print(np.linalg.matrix_power(Q,7))
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 22</td>
-<td style="text-align: left;">Transient and recurring states</td>
+<td style="text-align: left;">Examples of Markov chains</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 24</td>
-<td style="text-align: left;">Random walks</td>
+<td style="text-align: left;">Stationary distributions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Jan 26</td>
-<td style="text-align: left;">Birth-death cycles</td>
+<td style="text-align: left;">Random text generation</td>
 </tr>
 </tbody>
 </table>
@@ -187,6 +187,39 @@ print(np.linalg.matrix_power(Q,7))
 <ul>
 <li>Workshop: <a href="Workshops/MarkovChains.pdf">Markov chains</a></li>
 </ul>
+<h4 id="wed-jan-24">Wed, Jan 24</h4>
+<p>Today we talked about some of the features we’ve seen in Markov chains. Recall that you can think of a Markov chain as a weighted directed graph where the total weight of all the edges leaving a vertex must add up to 1 (the weights correspond to probabilities).</p>
+<p>In all of the examples we’ve considered so far, we have looked for the final long run probabilities for the states after many transitions.</p>
+<p><strong>Definition.</strong> A probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> is a <strong>stationary distribution</strong> for a Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> if <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>Q</mi><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">wQ = w.</annotation></semantics></math></p>
+<p>In all of the examples we’ve looked at, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math> exists and is a stationary distribution for any initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>. But this doesn’t always happen for Markov chains.</p>
+<ol type="1">
+<li>Find a simple Markov chain and an initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math> does not converge.</li>
+</ol>
+<p>To better understand the long-run behavior of Markov chains, we need to review strongly connected components of a directed graph (digraph for short).</p>
+<p><strong>Definition.</strong> A digraph is <strong>strongly connected</strong> if you can find a path from any start vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> to any other end vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>. A <strong>strongly connected component</strong> of a graph is a set of vertices such that (i) you can travel from any one vertex in the set to any other, and (ii) you cannot returns to the set if you leave it. Strongly connected components are also known as <strong>classes</strong> and they partition the vertices of a directed graph. A class is <strong>final</strong> if there are no edges that leave the class.</p>
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scc-1.svg" width = 300></img>
+</center>
+<p>In the digraph above, there is one final class <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f,g\}</annotation></semantics></math> and two other non-final classes.</p>
+<div class="Theorem">
+<p><strong>Theorem (Perron-Frobenius).</strong> A Markov chain always has a stationary distribution. The stationary distribution is unique if and only if the Markov chain has only one final class.</p>
+</div>
+<p>We did not prove this theorem, but we did apply it to the following question.</p>
+<ol start="2" type="1">
+<li><p>Which of the Markov chains that we’ve considered (the Land of Oz, the Tardy Professor, the Gambler’s Ruin problem, and the Coupon Collector’s problem) has a unique stationary distribution? For the one(s) that don’t have a unique stationary distribution, describe two different stationary distributions.</p></li>
+<li><p>Does the Markov chain that doesn’t converge from Q1 today have a unique stationary distribution? How can you tell? Can you find it?</p></li>
+</ol>
+<p>Another important is question is to have criteria for when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} vQ^k</annotation></semantics></math> converges.</p>
+<p><strong>Definition.</strong> A Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> is <strong>regular</strong> if there is a power <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mi>k</mi></msup><annotation encoding="application/x-tex">Q^k</annotation></semantics></math> has all positive entries.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> A regular Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> always has a unique stationary distribution <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> and for any initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k = w.</annotation></semantics></math></p>
+</div>
+<p>We finished class by talking about how the Google PageRank algorithm uses the stationary distribution of a simple regular Markov chain to rank websites. The algorithm starts by imagining a random web surfer who clicks on links completely randomly to visit new website. You can imagine the internet as a giant directed graph and this websurfer can be modeled with an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> state Markov chain where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> is the number of websites on the internet. Unfortunately the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> transition matrix might not be regular, so the PageRank algorithm creates a new regular Markov chain by using the following algorithm:</p>
+<ul>
+<li>85% of the time, the random websurfer picks a new website by randomly clicking a link.</li>
+<li>15% of the time, the random websurfer picks any one of the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> websites on the internet (all equally likely).</li>
+</ul>
+<p>The 85/15 percent split was chosen because the resulting regular Markov chain converges relatively quickly (it still takes days for the computation to update), but it still settles on a stationary distribution where more popular websites are visited more than less popular websites.</p>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>

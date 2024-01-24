@@ -131,6 +131,49 @@ The we did the following workshop in class.
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
 
+#### Wed, Jan 24
+
+Today we reviewed some theorems that we will need throughout the course.  The first is probably the most important theorem in numerical analysis since it lets us estimate error when using Taylor series approximations.  
+
+<div class="Theorem">
+**Taylor's Theorem.** Let $f$ be a function that has $(n+1)$ derivatives in the interval between $x$ and $c$.  Then there exists a $z$ strictly inside the interval from $x$ to $c$ such that 
+$$f(x) - P_n(x) = \frac{f^{(n+1)}(z)}{(n+1)!} (x-c)^{n+1}$$
+where $P_n$ is the $n$th degree Taylor polynomial for $f$ centered at $c$. 
+</div>
+
+A special case of Taylor's theorem is when $n = 0$. Then you get the Mean Value Theorem (MVT):
+
+<div class="Theorem">
+**Mean Value Theorem.** Let $f$ be a function that is differentiable in the interval between $a$ and $b$.  Then there exists a $c$ strictly inside the interval from $a$ to $b$ such that 
+$$f'(c) = \frac{f(b) - f(a)}{b-a}.$$
+</div>
+
+The proof of both the Mean Value Theorem and Taylor's Theorem comes from looking at an even simpler theorem called Rolle's theorem. 
+
+<div class="Theorem">
+**Rolle's Theorem.** Let $f$ be a function that is differentiable in the interval between $a$ and $b$ and suppose that $f(a) = f(b)$.  Then there exists a $c$ strictly inside the interval from $a$ to $b$ such that $f'(c) = 0.$
+</div>
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/RTCalc.svg" width = 300></img>
+</center>
+
+We briefly sketched an intuitive proof of Rolle's theorem using the [Extreme Value Theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem) from calculus, but the details of that proof are not really that important.  
+
+We did the following exercises in class. 
+
+1. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $\sin(4\pi)$. 
+
+2. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $e^6$.  
+
+We finished with a proof that the number $e$ is irrational. First we temporarily assumed that $e$ is a reduced fraction $\tfrac{m}{n}$.  Then we calculated the worst remainder for the $n$th degree Maclaurin polynomial for $e^x$ at $x = 1$. We did the following exercises that lead to a contradiction:
+
+3. Show that $n!(e - P_n(1))$ must be an integer. 
+
+4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
+
+
+
 
 - - -
 

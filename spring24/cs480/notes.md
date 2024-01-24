@@ -26,8 +26,8 @@ Jump to: [Syllabus](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes
 
 Day    | Topic
 :---:|:---------
-Wed, Jan 17 | Markov chains & matrices
-Fri, Jan 19 | Examples of Markov chains
+Wed, Jan 17 | Vectors and matrices
+Fri, Jan 19 | Markov chains
 
 #### Wed, Jan 17
 
@@ -106,9 +106,9 @@ print(np.linalg.matrix_power(Q,7))
  
 Day    | Topic
 :---:|:---------
-Mon, Jan 22 | Transient and recurring states
-Wed, Jan 24 | Random walks 
-Fri, Jan 26 | Birth-death cycles
+Mon, Jan 22 | Examples of Markov chains
+Wed, Jan 24 | Stationary distributions
+Fri, Jan 26 | Random text generation
 
 #### Mon, Jan 22
 
@@ -116,7 +116,56 @@ Today we did the following workshop about Markov chains.
 
 * Workshop: [Markov chains](Workshops/MarkovChains.pdf) 
 
- 
+#### Wed, Jan 24
+
+Today we talked about some of the features we've seen in Markov chains. Recall that you can think of a Markov chain as a weighted directed graph where the total weight of all the edges leaving a vertex must add up to 1 (the weights correspond to probabilities).  
+
+In all of the examples we've considered so far, we have looked for the final long run probabilities for the states after many transitions.  
+
+**Definition.** A probability vector $w$ is a **stationary distribution** for a Markov chain with transition matrix $Q$ if 
+$$wQ = w.$$
+
+In all of the examples we've looked at, 
+$$\lim_{k \rightarrow \infty} v Q^k$$ 
+exists and is a stationary distribution for any initial probability vector $v$. But this doesn't always happen for Markov chains. 
+
+1. Find a simple Markov chain and an initial probability vector $v$ such that $\lim_{k \rightarrow \infty} v Q^k$ does not converge.  
+
+To better understand the long-run behavior of Markov chains, we need to review strongly connected components of a directed graph (digraph for short).  
+
+**Definition.** A digraph is **strongly connected** if you can find a path from any start vertex $i$ to any other end vertex $j$. A **strongly connected component** of a graph is a set of vertices such that (i) you can travel from any one vertex in the set to any other, and (ii) you cannot returns to the set if you leave it. Strongly connected components are also known as **classes** and they partition the vertices of a directed graph. A class is **final** if there are no edges that leave the class. 
+
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scc-1.svg" width = 300></img>
+</center>
+In the digraph above, there is one final class $\{f,g\}$ and two other non-final classes.
+
+<div class="Theorem">
+**Theorem (Perron-Frobenius).** A Markov chain always has a stationary distribution. The stationary distribution is unique if and only if the Markov chain has only one final class. 
+</div>
+
+We did not prove this theorem, but we did apply it to the following question.
+
+2. Which of the Markov chains that we've considered (the Land of Oz, the Tardy Professor, the Gambler's Ruin problem, and the Coupon Collector's problem) has a unique stationary distribution?  For the one(s) that don't have a unique stationary distribution, describe two different stationary distributions. 
+
+3. Does the Markov chain that doesn't converge from Q1 today have a unique stationary distribution?  How can you tell?  Can you find it? 
+
+Another important is question is to have criteria for when $\lim_{k \rightarrow \infty} vQ^k$ converges. 
+
+**Definition.** A Markov chain with transition matrix $Q$ is **regular** if there is a power $k$ such that $Q^k$ has all positive entries.  
+
+<div class="Theorem">
+**Theorem.** A regular Markov chain with transition matrix $Q$ always has a unique stationary distribution $w$ and for any initial probability vector $v$, 
+$$\lim_{k \rightarrow \infty} v Q^k = w.$$
+</div>
+
+We finished class by talking about how the Google PageRank algorithm uses the stationary distribution of a simple regular Markov chain to rank websites.  The algorithm starts by imagining a random web surfer who clicks on links completely randomly to visit new website.  You can imagine the internet as a giant directed graph and this websurfer can be modeled with an $N$ state Markov chain where $N$ is the number of websites on the internet.  Unfortunately the $N$-by-$N$ transition matrix might not be regular, so the PageRank algorithm creates a new regular Markov chain by using the following algorithm:
+
+* 85% of the time, the random websurfer picks a new website by randomly clicking a link. 
+* 15% of the time, the random websurfer picks any one of the $N$ websites on the internet (all equally likely). 
+
+The 85/15 percent split was chosen because the resulting regular Markov chain converges relatively quickly (it still takes days for the computation to update), but it still settles on a stationary distribution where more popular websites are visited more than less popular websites.  
+
 - - -
 
 ### Week 3 Notes
