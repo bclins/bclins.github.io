@@ -190,13 +190,43 @@ $$ \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$$
 7. Find all solutions of $2\sin \theta = \tan \theta$ on $[0,2\pi)$. (<https://youtu.be/vVR91JqJEMQ>)
 
 
+#### Thu, Jan 25
+
+Today we went over [homework 2](HW2.pdf).  We also did the following additional exercise in class.
+
+1. Solve $\sin^2 \theta = \frac{3}{4}$.  
+
+#### Fri, Jan 26
+
+Today we started talking about limits.  We began with this example:
+
+<center>
+<a href="https://www.desmos.com/calculator/wmiwqa3ibb"><img src="polygons.png" width=300></img></a>
+</center>
+
+1. What is the area of a regular $n$-gon inscribed in the unit circle?  
+
+2. What happens to the area as the number of sides gets bigger and bigger?  
+
+A **sequence** is a special kind of function which has domain equal to the natural numbers $\mathbb{N} = \{1,2,3,\ldots\}$. A **neighborhood** of a number $L$ is an interval $(a,b)$ that contains $L$. An interval $(a,b)$ **eventually contains** a sequence $s(n)$ if there is a number $N$ after which $a \le s(n) \le b$ for all $n \ge N$. If every neighborhood of $L$ eventually contains $s(n)$, then we say that $s(n)$ **converges** to $L$ and $L$ is the **limit** of $s(n)$. This can be written as:
+$$\lim_{n \rightarrow \infty} s(n) = L.$$
+
+
+<!--
+This is an example of a limit.  Limits are what makes calculus different than algebra. To understand limits, it helps to have some terminology. A number $b$ is an **upper bound** for a function $f(x)$ if $f(x) \le b$ for all $x$ in the domain. Likewise, a number $a$ is a **lower bound** for $f(x)$ if $f(x) \ge a$ for all $x$ in the domain.  A function $f(x)$ is **bounded** if it has both an upper and a lower bound.
+
+A **sequence** is a special kind of function which has domain equal to the natural numbers $\mathbb{N} = \{1,2,3,\ldots\}$. A number  $L$ is a **limit point** of a sequence $s(n)$ if the distance $|s(n) - L|$ does not have a positive lower bound (<mark> When you remove any values in the sequence that are equal to $L$</mark>). If a sequence is bounded and it has only one limit point $L$, then we call $L$ the **limit of the sequence** and we write 
+$$\lim_{n \rightarrow \infty} s(n) = L.$$
+-->
+
+
 - - -
 
 ### Week 3 Notes
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Jan 29 | [2.2][2.2] | Limit of a function
+M on, Jan 29 | [2.2][2.2] | Limit of a function
 Wed, Jan 31 | [2.3][2.3] | Limit laws
 Thu, Feb 1 | | Review
 Fri, Feb 2 | [2.4][2.4] | Continuity

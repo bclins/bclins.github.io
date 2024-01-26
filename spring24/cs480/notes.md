@@ -166,6 +166,15 @@ We finished class by talking about how the Google PageRank algorithm uses the st
 
 The 85/15 percent split was chosen because the resulting regular Markov chain converges relatively quickly (it still takes days for the computation to update), but it still settles on a stationary distribution where more popular websites are visited more than less popular websites.  
 
+
+#### Fri, Jan 26
+
+Today we wrote a program to randomly generate text based on a source text using a Markov chain.  
+
+* **Workshop**: [Random Text Generator](Workshops/RandomTextGenerator.pdf)
+
+Here are some [example source texts](sourceTexts.html) you can use.  You can also search online for other good examples if you want. 
+
 - - -
 
 ### Week 3 Notes
