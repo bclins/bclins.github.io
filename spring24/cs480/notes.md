@@ -173,7 +173,11 @@ Today we wrote a program to randomly generate text based on a source text using 
 
 * **Workshop**: [Random Text Generator](Workshops/RandomTextGenerator.pdf)
 
-Here are some [example source texts](sourceTexts.html) you can use.  You can also search online for other good examples if you want. 
+Here are some [example source texts](sourceTexts.html) you can use.  You can also search online for other good examples if you want. When you are finished, you should have a program that can generate random nonsense like this:
+
+> In the beginning when God created the great sea monsters and every winged bird of every kind on earth that bear fruit with the seed in it." And it was good. And there was morning, the second day. And God saw that it was good. Then God said, "Let there be lights in the dome and separated the waters that were gathered together he called Night. And there was evening and there was morning, the fourth day. And God saw that the light Day, and the waters bring forth living creatures of every kind, and everything that has the breath of life, I have given you every plant yielding seed of every kind, and trees of every kind bearing fruit with the seed in it. 
+
+
 
 - - -
 
