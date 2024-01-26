@@ -208,16 +208,21 @@ Today we started talking about limits.  We began with this example:
 
 2. What happens to the area as the number of sides gets bigger and bigger?  
 
-A **sequence** is a special kind of function which has domain equal to the natural numbers $\mathbb{N} = \{1,2,3,\ldots\}$. A **neighborhood** of a number $L$ is an interval $(a,b)$ that contains $L$. An interval $(a,b)$ **eventually contains** a sequence $s(n)$ if there is a number $N$ after which $a \le s(n) \le b$ for all $n \ge N$. If every neighborhood of $L$ eventually contains $s(n)$, then we say that $s(n)$ **converges** to $L$ and $L$ is the **limit** of $s(n)$. This can be written as:
+A **sequence** is a special kind of function which has domain equal to the natural numbers $\mathbb{N} = \{1,2,3,\ldots\}$. We say that an interval $(a,b)$ **eventually contains** a sequence $s(n)$ if there is a number $N$ such that $a < s(n) < b$ for all $n \ge N$. If every interval $(a,b)$ that contains $L$ eventually contains $s(n)$, then we say that $s(n)$ **converges** to the **limit** $L$. This can be written as:
 $$\lim_{n \rightarrow \infty} s(n) = L.$$
 
+We finished by looking at another example of a limit.  Galileo was the first person to observe that the distance traveled by an object that is dropped from a great height is roughly $d = 4.9t^2$ meters (when $t$ is the time in seconds after the object was dropped).  The average velocity of a falling object is 
+$$v_{\text{average}} = \frac{d(t_2) - d(t_1)}{t_2 - t_1}.$$
 
-<!--
-This is an example of a limit.  Limits are what makes calculus different than algebra. To understand limits, it helps to have some terminology. A number $b$ is an **upper bound** for a function $f(x)$ if $f(x) \le b$ for all $x$ in the domain. Likewise, a number $a$ is a **lower bound** for $f(x)$ if $f(x) \ge a$ for all $x$ in the domain.  A function $f(x)$ is **bounded** if it has both an upper and a lower bound.
+3. Use Desmos to find the average velocity over the following time intervals: 
+    a. $[2,3]$ 
+    b. $[2,2.1]$
+    c. $[2,2.01]$
+    d. $[2,2.001]$
 
-A **sequence** is a special kind of function which has domain equal to the natural numbers $\mathbb{N} = \{1,2,3,\ldots\}$. A number  $L$ is a **limit point** of a sequence $s(n)$ if the distance $|s(n) - L|$ does not have a positive lower bound (<mark> When you remove any values in the sequence that are equal to $L$</mark>). If a sequence is bounded and it has only one limit point $L$, then we call $L$ the **limit of the sequence** and we write 
-$$\lim_{n \rightarrow \infty} s(n) = L.$$
--->
+4. Use the previous answers to estimate the velocity at the instant when the object has been falling for 2 seconds. 
+
+These two examples, the area of a circle and the instantaneous velocity of a falling object, are both limits. Next week, we'll look at how to work systematically with limits. 
 
 
 - - -

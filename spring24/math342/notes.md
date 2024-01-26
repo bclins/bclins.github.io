@@ -173,7 +173,13 @@ We finished with a proof that the number $e$ is irrational. First we temporarily
 4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
 
 
+#### Fri, Jan 26
 
+Today we did a workshop about the Babylonian algorithm which is an ancient method for finding square roots.  
+
+* **Workshop**: [The Babylonian algorithm](Workshops/Babylonian.pdf) 
+
+As part of this workshop we also covered how to define variables and functions in Python and also how to use for-loops and while-loops.  
 
 - - -
 

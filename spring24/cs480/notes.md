@@ -171,7 +171,7 @@ The 85/15 percent split was chosen because the resulting regular Markov chain co
 
 Today we wrote a program to randomly generate text based on a source text using a Markov chain.  
 
-* **Workshop**: [Random Text Generator](Workshops/RandomTextGenerator.pdf)
+* **Workshop**: [Random text generator](Workshops/RandomTextGenerator.pdf)
 
 Here are some [example source texts](sourceTexts.html) you can use.  You can also search online for other good examples if you want. When you are finished, you should have a program that can generate random nonsense like this:
 
