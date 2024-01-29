@@ -191,6 +191,14 @@ Mon, Jan 29 | [2.1][2.1] | Bisection method
 Wed, Jan 31 | [2.3][2.3] | Newton's method
 Fri, Feb 2 | [2.4][2.4] | Rates of convergence
 
+#### Mon, Jan 29
+
+We talked about how to find the roots of a function.  Recall that a **root** (AKA a **zero**) of a function $f(x)$ is an $x$-value where the function hits the $x$-axis.  We introduced an algorithm called the **Bisection method** for finding roots of a continuous function. We did the following workshop.
+
+* **Workshop**: [Bisection method](Workshops/Bisection.pdf)
+
+One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2.  
+
 - - -
 
 ### Week 4 Notes

@@ -189,6 +189,24 @@ Mon, Jan 29 | Least squares regression
 Wed, Jan 31 | Least squares regression - con'd
 Fri, Feb 2 | Logistic regression
 
+#### Mon, Jan 29
+
+Today we started talking about linear regression.  We started with the simplest case where you want to predict a response variable ($y$) using a single explanatory variable ($x$).  Based on the observed $x$ and $y$ values, you want to find the best fit trend-line.  We judge how good a trend-line fits the data by calculating the sum of squared deviations between the predicted $y$-values (denoted $\hat{y}_i$) and the actual $y$-values ($y_i$) at each $x_i$.  
+$$\text{Sum of squared error} = \sum_{i = 1}^n (\hat{y}_i - y_i)^2.$$
+We'll see later that minimizing the sum of squared error has some nice properties.  We looked at the following examples.  
+
+1. [Beers and BAC](http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv)
+2. [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) 
+3. [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
+
+The least squares solution of the equation 
+$$y = X \beta + \epsilon$$ 
+is given by the **normal equations**
+$$X^T X \hat{\beta} = X^T y   ~~~~ \text{  or  } ~~~~ \hat{\beta} = (X^T X)^{-1} X^T y.$$
+We finished with an example of how you can use the same normal equations to find nonlinear regression formulas.  
+
+4. [Lightning deaths](http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx)
+
 - - -
 
 ### Week 4 Notes

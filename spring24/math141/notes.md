@@ -236,6 +236,10 @@ Wed, Jan 31 | [2.3][2.3] | Limit laws
 Thu, Feb 1 | | Review
 Fri, Feb 2 | [2.4][2.4] | Continuity
 
+#### Mon, Jan 29
+
+1. [Limit example](https://youtu.be/mols6pMKrto)
+
 - - -
 
 ### Week 4 Notes

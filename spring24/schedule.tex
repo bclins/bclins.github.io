@@ -90,6 +90,13 @@
 }
 
 
+\def\time{14.0};
+\def\class{Ind. Study};
+\def\room{Pauley 301};
+\foreach \day in {4} {
+	\filldraw[fill=gray!50] (3*\day-3,16.5-\time) rectangle (3*\day,17.5-\time);
+	\draw (3*\day-1.5,17-\time) node {$\begin{array}{c} \text{\class} \\ \text{\room} \end{array}$};
+}
 
 
 % Monday & Wednesday Office Hours
@@ -105,11 +112,12 @@
 
 % Thursday Office Hours
 \def\time{12.5};
+\def\duration{1.5}
 \def\class{Office Hours};
 \def\room{Pauley 301};
 \foreach \day in {4} {
-	\filldraw[fill=blue!50!green!30!white] (3*\day-3,16.5-\time) rectangle (3*\day,17.5-\time);
-	\draw (3*\day-1.5,17-\time) node {$\begin{array}{c} \text{\class} \\ \text{\room} \end{array}$};
+	\filldraw[fill=blue!50!green!30!white] (3*\day-3,17.5-\duration-\time) rectangle (3*\day,17.5-\time);
+	\draw (3*\day-1.5,17.5-\duration/2-\time) node {$\begin{array}{c} \text{\class} \\ \text{\room} \end{array}$};
 }
 
 
