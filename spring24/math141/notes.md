@@ -238,7 +238,37 @@ Fri, Feb 2 | [2.4][2.4] | Continuity
 
 #### Mon, Jan 29
 
-1. [Limit example](https://youtu.be/mols6pMKrto)
+Today we defined limits for functions.  We say that the **limit** of $f(x)$ as $x$ approaches $a$ is $L$ and write
+$$\lim_{x \rightarrow a} f(x) = L$$ 
+if every sequence $x(n)$ that converges to $a$ (but never equals $a$) has $\lim_{n \rightarrow \infty} f(x(n)) = L$.
+
+We looked at two examples on Desmos where a function is not defined but its limit is:
+
+1. $\lim_{x \rightarrow 1} \dfrac{x^3 - 1}{x-1}$.
+
+2. $\lim_{x \rightarrow 0} \dfrac{\sqrt{x^2 + 9} - 3}{x^2}$.
+
+Both of these are examples of hole discontinuities.  We also saw three other common types of discontinuities:
+
+3. (Pole discontinuity) $f(x) = \dfrac{1}{x}$ at $x = 0$. 
+
+4. (Jump discontinuity) $\operatorname{sign}(x) = \begin{cases} \dfrac{|x|}{x} & \text{ if } x \ne 0 \\ 0 & \text{ if } x = 0 \end{cases}$. 
+
+5. (Oscillation discontinuity) $f(x) = \sin(1/x)$ at $x=0$. 
+
+In all three of these cases, the limit at the point of interest does not exist.  But there are also one-sided limits which do exist. For example, the one sided limit as $x$ approaches $0$ from above is in example 3 is:
+$$\lim_{x \rightarrow 0^+} \dfrac{1}{x} = +\infty$$
+and the one-sided limit as $x$ approaches $0$ from below in number 4 is:
+$$\lim_{x \rightarrow 0^-} \operatorname{sign}(x) = -1.$$
+You mostly just need an intuitive understanding that a limit is the $y$-value that the graph is heading towards, not the actual $y$-value at the point. 
+
+We did the following two examples of finding limits graphically:
+
+6. [Two limit examples from Kahn Academy.](https://youtu.be/mols6pMKrto)
+
+We finished by talking about another example of a limit:
+
+$$\lim_{n \rightarrow \infty} (1+r)^n = e^r.$$
 
 - - -
 

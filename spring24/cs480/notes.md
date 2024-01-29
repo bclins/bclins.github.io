@@ -193,19 +193,56 @@ Fri, Feb 2 | Logistic regression
 
 Today we started talking about linear regression.  We started with the simplest case where you want to predict a response variable ($y$) using a single explanatory variable ($x$).  Based on the observed $x$ and $y$ values, you want to find the best fit trend-line.  We judge how good a trend-line fits the data by calculating the sum of squared deviations between the predicted $y$-values (denoted $\hat{y}_i$) and the actual $y$-values ($y_i$) at each $x_i$.  
 $$\text{Sum of squared error} = \sum_{i = 1}^n (\hat{y}_i - y_i)^2.$$
-We'll see later that minimizing the sum of squared error has some nice properties.  We looked at the following examples.  
+We'll see later that minimizing the sum of squared error has some nice properties.  We looked at the following example. <!--_-->  
 
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv("http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv")
+print(df)
+x = np.array(df.Beers)
+y = np.array(df.BAC)
+plt.xlabel("Beers")
+plt.ylabel("BAC")
+plt.plot(x,y,"o")
+```
+
+<center>
+<img src="beersBAC.png" width = 400></img>
+</center>
+
+The least squares regression line will have a formula 
+$$\hat{y} = b_0 + b_1 x$$
+where $b_0$ is the $y$-intercept and $b_1$ is the slope.  You can find these two numbers by using the **normal equation**
+
+<!--
 1. [Beers and BAC](http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv)
 2. [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) 
 3. [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
+-->
 
-The least squares solution of the equation 
-$$y = X \beta + \epsilon$$ 
-is given by the **normal equations**
-$$X^T X \hat{\beta} = X^T y   ~~~~ \text{  or  } ~~~~ \hat{\beta} = (X^T X)^{-1} X^T y.$$
-We finished with an example of how you can use the same normal equations to find nonlinear regression formulas.  
+$$X^T X \beta = X^T y$$
+where $\beta = \begin{pmatrix} b_0 \\ b_1 \end{pmatrix}$ is a column vector with the intercept and slope that we want to find, $y = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\y_n\end{pmatrix}$ is the column vector with the $y$-values from the data, and 
+$$X = \begin{pmatrix} 
+1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n 
+\end{pmatrix}$$
+is an $n$-by-2 matrix will all 1's in its first column and the $x$-values from the data in its second column. The notation $X^T$ means that **transpose** of the matrix $X$, which is the matrix you get if you switch all columns of $X$ to rows:
+$$X^T = \begin{pmatrix} 
+1 & 1 & \ldots & 1 \\
+x_1 & x_2 & \ldots & x_n  
+\end{pmatrix}.$$
+One way to solve the normal equations is to multiply both sides by the inverse of the matrix $(X^T X)$:  
+$$\beta = (X^T X)^{-1} X^T y.$$
+The **inverse** of a matrix $M$ is denoted $M^{-1}$.  You can only find the inverse of square matrices (same number of rows & columns). Even then, not every square matrix has an inverse, but this formula almost always works for least squares regression.  I only gave a vague explanation in class of why the normal equations work.  But we did use Python to compute the normal equations for the example above: 
 
-4. [Lightning deaths](http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx)
+```python
+X = np.matrix([[1.0 for i in range(len(x))],list(x)]).T
+beta = (X.T*X).I*X.T * np.matrix(y).T
+print(beta)
+```
+
+Notice that if `A` is a numpy matrix, then `A.T` is its transpose, and `A.I` is its inverse (if one exists). 
 
 - - -
 

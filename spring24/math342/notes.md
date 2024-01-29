@@ -197,7 +197,11 @@ We talked about how to find the roots of a function.  Recall that a **root** (AK
 
 * **Workshop**: [Bisection method](Workshops/Bisection.pdf)
 
-One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2.  
+One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2, so that
+$$\text{Absolute error} \le \frac{(b-a)}{2^n}.$$
+We saw that it takes about 10 iterations to increase the accuracy by 3 decimal places (because $2^{10} \approx 10^3$). 
+
+We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
 
 - - -
 
