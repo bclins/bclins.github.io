@@ -203,6 +203,41 @@ We saw that it takes about 10 iterations to increase the accuracy by 3 decimal p
 
 We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
 
+#### Wed, Jan 31
+
+Today we covered Newton's method.  This is probably the most important method for finding roots of differentiable functions.  The formula is 
+$$ x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}.$$
+This formula comes from the idea which is to start with a guess $x_0$ for a root and then repeatedly improve your guess by following the tangent line at $x_n$ until it hits the $x$-axis.  
+
+1. Use Newton's method to find roots of $\tan x - 1$ and $\ln x - 1$. 
+
+2. How can you use Newton's method to find $\ln(2)$? 
+
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. Suppose that there are constants $L,M >0$ such that $f'(x) \ge L$ and $f''(x) \le M$ for all $x \in [a,b]$. Then 
+$$|x_{n+1} - r| \le \frac{M}{2L} |x_n-r|^2$$
+when $x_n \in [a,b]$.
+</div>
+
+*Proof.* Start with the first degree Taylor polynomial (centered at $x_n$) for $f(r)$ including the remainder term and the Newton's method iteration formula:
+
+$$f(r) = f(x_n) + f'(x_n)(r-x_n) + \frac{1}{2} f''(z)(r-x_n)^2 = 0,$$
+and
+$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \Rightarrow f'(x_n)(x_{n+1} - x_n) + f(x_n)=0.$$
+
+Subtract these two formulas to get a formula that relates $(r-x_{n+1})$ with $(r-x_n)$.
+
+$$f'(x_n)(r-x_{n+1}) + \frac{1}{2} f''(z)(r-x_n)^2 = 0.$$
+
+Use this to get an upper bound on $|r-x_{n+1}|$. □
+
+
+<div class="Theorem">
+**Corollary.** The error in the $n$-th iterate of Newton's method satisfies
+$$|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.$$
+</div>
+
+
 - - -
 
 ### Week 4 Notes

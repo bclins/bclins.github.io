@@ -231,7 +231,7 @@ These two examples, the area of a circle and the instantaneous velocity of a fal
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-M on, Jan 29 | [2.2][2.2] | Limit of a function
+Mon, Jan 29 | [2.2][2.2] | Limit of a function
 Wed, Jan 31 | [2.3][2.3] | Limit laws
 Thu, Feb 1 | | Review
 Fri, Feb 2 | [2.4][2.4] | Continuity
@@ -269,6 +269,22 @@ We did the following two examples of finding limits graphically:
 We finished by talking about another example of a limit:
 
 $$\lim_{n \rightarrow \infty} (1+r)^n = e^r.$$
+
+#### Wed, Jan 31
+
+Today we talked about using algebra to find limits. We did the following examples. 
+
+1. $\lim_{x \rightarrow -3} \dfrac{x^2 + 3x}{x^2 - x - 12}$. (<https://youtu.be/xSlfO2xZDAQ>)
+
+2. $\lim_{x \rightarrow 2} \dfrac{2x^2 - 3x + 1}{x^3 + 4}$. 
+
+3. $\lim_{x \rightarrow -4} \dfrac{\frac{1}{4} + \frac{1}{x}}{4+x}$. (<https://youtu.be/AVOietFdB0c>)
+
+4. Find $\lim_{x \rightarrow 5^-} \dfrac{3}{x-5} ~~ \text{ and } ~~ \lim_{x \rightarrow 5^+} \dfrac{3}{x-5}$. (<https://youtu.be/bV0RTtywt4g>)
+
+At this point, defined continuous functions.  A function $f(x)$ is **continuous** at $x = a$ if $\lim_{x \rightarrow a} f(x) = f(a)$.  Intuitively, a function is continuous if you can draw it without lifting your pencil. Most simple functions (including all linear functions and $\sin(x)$ and $\cos(x)$) are continuous at every real number. It turns out that every function constructed from other continuous functions using the operations of addition, subtraction, multiplication, division, powers, and function composition are always continuous at every point in their domains.  The only functions you need to worry about are piecewise functions. 
+
+5. Find $\lim_{x \rightarrow 4} f(x)$ where $f(x) = \begin{cases} \dfrac{x+2}{x-1} & \text{ for } x \le 4 \\ \sqrt{x} & \text{ for } x > 4.\end{cases}$ (<https://youtu.be/2xdh0yKopB8>)
 
 - - -
 

@@ -239,10 +239,33 @@ The **inverse** of a matrix $M$ is denoted $M^{-1}$.  You can only find the inve
 ```python
 X = np.matrix([[1.0 for i in range(len(x))],list(x)]).T
 beta = (X.T*X).I*X.T * np.matrix(y).T
-print(beta)
+print(beta) # [[-0.0127006 ], [ 0.01796376]]
 ```
 
 Notice that if `A` is a numpy matrix, then `A.T` is its transpose, and `A.I` is its inverse (if one exists). 
+The entries of $\beta$ are the intercept followed by the slope, so the least squares regression line for predicting blood alcohol content from the number of beers someone drinks is:
+$$\hat{y} = -0.01270 + 0.01796 x.$$
+
+In addition, we can tell from the slope that each extra beer someone drinks tends to increase their BAC by 0.018 points.
+
+#### Wed, Jan 31
+
+Today we continued looking at least squares regression.  We covered these additional facts about the least squares regression line 
+$$\hat{y} = b_0 + b_1 x$$
+when there is only one explanatory variable ($x$). 
+
+* The slope is $b_1 = R \dfrac{s_y}{s_x}$ and
+* The line always passes through the point $(\bar{x}, \bar{y})$, which lets you find the $y$-intercept.
+
+Here $\bar{x}$ and $\bar{y}$ denote the average $x$ and $y$-values respectively, $s_x$ and $s_y$ are the standard deviations of the $x$ and $y$-values, and $R$ is the correlation coefficient.  We defined these quantities using the norm (length) and dot products.
+
+$$s_x = \frac{\|x - \bar{x}\mathbf{1} \| }{\sqrt{n-1}},  ~~~~~ s_y = \frac{ \|y - \bar{y}\mathbf{1} \| }{\sqrt{n-1}}, ~~~~~ R = \frac{x - \bar{x}\mathbf{1}}{\|x - \bar{x}\mathbf{1} \|} \cdot \frac{y - \bar{y}\mathbf{1}}{\|y - \bar{y}\mathbf{1} \|}$$
+
+We used a spreadsheet to investigate these examples. 
+
+1. [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) 
+2. [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
+3. [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx)
 
 - - -
 
