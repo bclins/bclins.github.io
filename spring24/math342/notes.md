@@ -209,9 +209,9 @@ Today we covered Newton's method.  This is probably the most important method fo
 $$ x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}.$$
 This formula comes from the idea which is to start with a guess $x_0$ for a root and then repeatedly improve your guess by following the tangent line at $x_n$ until it hits the $x$-axis.  
 
-1. Use Newton's method to find roots of $\tan x - 1$ and $\ln x - 1$. 
+1. Use Newton's method to find roots of $\tan x - 1$. 
 
-2. How can you use Newton's method to find $\ln(2)$? 
+2. How can you use Newton's method to find $e$? Hint: use $f(x) = \ln x -1$.  
 
 <div class="Theorem">
 **Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. Suppose that there are constants $L,M >0$ such that $f'(x) \ge L$ and $f''(x) \le M$ for all $x \in [a,b]$. Then 
@@ -237,6 +237,7 @@ Use this to get an upper bound on $|r-x_{n+1}|$. □
 $$|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.$$
 </div>
 
+This corollary explains why, if you start with a good guess in Newton's method, the number of correct decimal places tends to double with each iteration!
 
 - - -
 

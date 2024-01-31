@@ -284,7 +284,7 @@ Today we talked about using algebra to find limits. We did the following example
 
 At this point, defined continuous functions.  A function $f(x)$ is **continuous** at $x = a$ if $\lim_{x \rightarrow a} f(x) = f(a)$.  Intuitively, a function is continuous if you can draw it without lifting your pencil. Most simple functions (including all linear functions and $\sin(x)$ and $\cos(x)$) are continuous at every real number. It turns out that every function constructed from other continuous functions using the operations of addition, subtraction, multiplication, division, powers, and function composition are always continuous at every point in their domains.  The only functions you need to worry about are piecewise functions. 
 
-5. Find $\lim_{x \rightarrow 4} f(x)$ where $f(x) = \begin{cases} \dfrac{x+2}{x-1} & \text{ for } x \le 4 \\ \sqrt{x} & \text{ for } x > 4.\end{cases}$ (<https://youtu.be/2xdh0yKopB8>)
+5. $\lim_{x \rightarrow 4} f(x)$ where $f(x) = \begin{cases} \frac{x+2}{x-1} & \text{ for } x \le 4 \\ \sqrt{x} & \text{ for } x > 4.\end{cases}$ (<https://youtu.be/2xdh0yKopB8>)
 
 - - -
 

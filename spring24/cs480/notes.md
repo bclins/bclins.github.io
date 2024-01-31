@@ -267,6 +267,38 @@ We used a spreadsheet to investigate these examples.
 2. [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
 3. [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx)
 
+In the USA, there has been a striking decline in the number of people killed by lightning every year. The trend is strong, but it isn't really a linear trend.  So we used the normal equations to find a best fit quadratic polynomial
+$$\hat{y} = b_0 + b_1 x + b_2 x^2.$$
+Here is how to do this with numpy. 
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_excel("http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx")
+x = np.array(df.year)
+y = np.array(df.deaths)
+
+# You can use a list comprehension to enter the matrix X.
+X = np.matrix([[xi**k for k in range(3)] for xi in list(x)])
+beta = (X.T*X).I*X.T * np.matrix(y).T
+print(beta) # [[5.61778330e+04], [-5.42074197e+01], [ 1.30717749e-02]]
+
+years = np.array(range(1960,2021))
+plt.xlabel("Year")
+plt.ylabel("Fatalities")
+plt.plot(x,y,"o") + plt.plot(years,56177.8 - 54.207*years + 0.01307*years**2,linestyle="-")
+```
+
+<center>
+<img src = "lightning.png" width=400></img>
+</center>
+
+<!--
+An even better approximation might look for a power law relationship $\hat{y} = C x^\alpha$.  We'll consider that next time. 
+-->
+
 - - -
 
 ### Week 4 Notes
