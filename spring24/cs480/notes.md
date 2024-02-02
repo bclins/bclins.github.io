@@ -312,6 +312,7 @@ Here is the Python code to download the two datasets:
 ```python
 import numpy as np
 import pandas as pd
+
 df = pd.read_excel("https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx")
 genders = list(df.Gender)
 ages = list(df.Age)
@@ -321,11 +322,8 @@ df2 = pd.read_excel("http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lig
 years = np.array(df2.year)
 deaths = np.array(df2.deaths)
 logDeaths = np.log(deaths) # notice that functions work elementwise on np.arrays.
+
 ```
-
-* Half-marathon data: <https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx>
-
-* Lightning fatalities data: <>
 
 
 - - -
