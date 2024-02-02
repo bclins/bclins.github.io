@@ -325,6 +325,27 @@ x_1 &amp; x_2 &amp; \ldots &amp; x_n
 <!--
 An even better approximation might look for a power law relationship $\hat{y} = C x^\alpha$.  We'll consider that next time. 
 -->
+<h4 id="fri-feb-2">Fri, Feb 2</h4>
+<p>Today we did this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/Regression.pdf">Least squares regression</a></li>
+</ul>
+<p>Here is the Python code to download the two datasets:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>genders <span class="op">=</span> <span class="bu">list</span>(df.Gender)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>ages <span class="op">=</span> <span class="bu">list</span>(df.Age)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>minutes <span class="op">=</span> <span class="bu">list</span>(df.Minutes)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>df2 <span class="op">=</span> pd.read_excel(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx&quot;</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>years <span class="op">=</span> np.array(df2.year)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>deaths <span class="op">=</span> np.array(df2.deaths)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>logDeaths <span class="op">=</span> np.log(deaths) <span class="co"># notice that functions work elementwise on np.arrays.</span></span></code></pre></div>
+<ul>
+<li><p>Half-marathon data: <a href="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx" class="uri">https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx</a></p></li>
+<li><p>Lightning fatalities data: &lt;&gt;</p></li>
+</ul>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>

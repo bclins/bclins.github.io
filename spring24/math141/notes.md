@@ -286,6 +286,16 @@ At this point, defined continuous functions.  A function $f(x)$ is **continuous*
 
 5. $\lim_{x \rightarrow 4} f(x)$ where $f(x) = \begin{cases} \frac{x+2}{x-1} & \text{ for } x \le 4 \\ \sqrt{x} & \text{ for } x > 4.\end{cases}$ (<https://youtu.be/2xdh0yKopB8>)
 
+#### Fri, Feb 2
+
+Today we went over homework 3.  We also reviewed these examples.  
+
+1. Find $\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
+
+2. One year I had a job that reimbursed me 50 cents per mile driven, as long as I drove less than 100 miles.  For trips of 100 miles or longer, it switched to only reimbursing 30 cents per mile.  So the reimbursement $R$ was a piecewise function of the mileage $x$:
+$$R(x) = \begin{cases} 0.50 x & \text{ if } x < 100 \\ 0.30 x & \text{ otherwise.} \end{cases}$$
+What is wrong with this reimbursement function?  Hint, what is $R(99)$ vs. $R(100)$? 
+
 - - -
 
 ### Week 4 Notes

@@ -299,6 +299,35 @@ plt.plot(x,y,"o") + plt.plot(years,56177.8 - 54.207*years + 0.01307*years**2,lin
 An even better approximation might look for a power law relationship $\hat{y} = C x^\alpha$.  We'll consider that next time. 
 -->
 
+#### Fri, Feb 2
+
+Today we did this workshop. 
+
+* **Workshop:** [Least squares regression](Workshops/Regression.pdf)
+
+Here is the Python code to download the two datasets:
+
+
+
+```python
+import numpy as np
+import pandas as pd
+df = pd.read_excel("https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx")
+genders = list(df.Gender)
+ages = list(df.Age)
+minutes = list(df.Minutes)
+
+df2 = pd.read_excel("http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx")
+years = np.array(df2.year)
+deaths = np.array(df2.deaths)
+logDeaths = np.log(deaths) # notice that functions work elementwise on np.arrays.
+```
+
+* Half-marathon data: <https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx>
+
+* Lightning fatalities data: <>
+
+
 - - -
 
 ### Week 4 Notes
