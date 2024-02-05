@@ -332,9 +332,27 @@ logDeaths = np.log(deaths) # notice that functions work elementwise on np.arrays
  
 Day    | Topic
 :---:|:---------
-Mon, Feb 5 | Loss functions & gradient descent
-Wed, Feb 7 | Linear classification
-Fri, Feb 9 | Linear classification - con'd 
+Mon, Feb 5 | Linear classifiers
+Wed, Feb 7 | Loss functions & gradient descent
+Fri, Feb 9 | Logistic regression
+
+#### Mon, Feb 5
+
+Last time we saw came up with a model to predict a runner's race time based on their age and gender.  Our model had the form
+$$\hat{y} = b_0 + b_1 x_1 + b_2 x_2$$
+where $\hat{y}$ is the predicted race time in minutes, $x_1$ is the runner's age, and $x_2$ is an indicator variable which is 0 for men and 1 for women.  An **indicator variable** is a numerical variable that is 1 if a Boolean condition is true and 0 otherwise.  We can re-write our model using a dot product as:
+$$\hat{y} = [b_0, b_1, b_2] \cdot [1, x_1, x_2].$$ <!-- The weight vector was [84.24795527  0.97029783 21.00086375] -->
+In this formula, the vector $[b_0, b_1, b_2]$ is called the **weight vector** and $[1, x_1, x_2]$ is called the **feature vector**. Each runner has a different feature vector, but you use the same weight vector for every runner to make a prediction about their race time.   
+
+If we use age and race time to predict gender using least squares, then we get this formula:
+$$\text{predicted gender} = 0.0694 - 0.0112 \, \text{age} + 0.00705 \, \text{race_time}.$$
+We could use the number $\tfrac{1}{2}$ as a dividing line to separate runners who we would predict are female vs. runners we would predict are male.  This is a simple example of a linear classifier.  A **linear classifier** is a rule that uses a weight vector $w$ and a feature vector $x$ and a threshold $\theta$ to decide how to classify data.  You make a prediction based on whether the dot product $w \cdot x$ is greater than or less than the decision threshold $\theta$.  If we treated men as $-1$ instead of $0$, then we could use the threshold $\theta = 0$, which is a more common choice for linear classification. 
+
+<center>
+<img src="runners.png" width = 400></img>
+</center>
+
+We were able to draw a picture of the line the separates individuals we would predict are women from individuals we would predict are men in the scatter plot for runners.  If we had more than two variables, then we wouldn't be able to draw a picture. And instead of a dividing line, we would get a dividing hyperplane to separate our predictions. But we could still use the same idea. 
 
 - - -
 

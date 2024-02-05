@@ -241,9 +241,17 @@ This corollary explains why, if you start with a good guess in Newton's method, 
 
 #### Fri, Feb 2
 
-Today we did this workshop.
+Today we looked at some examples of what can go wrong with Newton's method. We did these examples:
+
+1. What happens if you use Newton's method with $x_0 = 0$ on $f(x) = x^3 - 2x + 2$?
+
+2. Why doesn't Newton's method work for $f(x) = x^{1/3}$?
+
+We also did this workshop.
 
 * **Workshop:** [Newton's method](Workshops/NewtonsMethod.pdf)
+
+
 
 - - -
 
@@ -251,9 +259,55 @@ Today we did this workshop.
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Feb 5 | [2.4][2.4] | Rates of convergence - con'd
-Wed, Feb 7 | [2.5][2.5] | Secant method
-Fri, Feb 9 | [2.2][2.2] | Fixed point iteration
+Mon, Feb 5 | [2.5][2.5] | Secant method
+Wed, Feb 7 | [2.2][2.2] | Fixed point iteration
+Fri, Feb 9 | [2.4][2.4] | More about rates of convergence
+
+
+#### Mon, Feb 5
+
+We talked about the secant method which is a variation of Newton's method that uses secant lines instead of tangent lines.  The advantage of the secant method is that it doesn't require calculating a derivative.  The disadvantage is that it is a little slower to converge than Newton's method, but it is still much faster than the bisection method.  Here is the formula:
+
+$$x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.$$
+
+We wrote the following program in class. 
+
+```python
+def Secant(f, a, b, precision = 10**(-8)):
+    while abs(b-a) > precision:
+        a, b = b, b - f(b)*(b-a)/(f(b)-f(a))
+    return b
+```
+
+Sometimes a function $f$ might be very time consuming for a computer to compute, so you could improve this function by reducing the number of times you have to call $f$. If speed is a concern, then this would be a better version of the function. 
+
+```python
+def Secant(f, a, b, precision = 10**(-8)):
+    fa = f(a)
+    fb = f(b)
+    while abs(b-a) > precision:
+        a, b = b, b - fb*(b-a)/(fb-fa) # update x-values
+        fa, fb = fb, f(b) # update y-values using the new x-value
+    return b
+```
+
+Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once in the second version of the program.  
+
+1. Solve the equation $10^x = 2$ using the secant method.  
+
+We finished by talking about the convergence rate of the secant method. 
+
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that for $x_n$, $x_{n-1}$ sufficiently close to $r$, the next iterate of the secant method has
+$$|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.$$
+</div>
+
+Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
+
+2. Use this formula to estimate $|x_3-r|$ in terms of $|x_1-r|$ and $|x_0 - r|$. Assume that the same constant $C$ applies for all $x_{n+1}$. 
+3. Do the same for $|x_4 - r|$. 
+4. Keep going until you find a pattern. 
+
 
 - - -
 

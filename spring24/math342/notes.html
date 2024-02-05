@@ -543,7 +543,17 @@ iterate of Newton’s method satisfies
 Newton’s method, the number of correct decimal places tends to double
 with each iteration!</p>
 <h4 id="fri-feb-2">Fri, Feb 2</h4>
-<p>Today we did this workshop.</p>
+<p>Today we looked at some examples of what can go wrong with Newton’s
+method. We did these examples:</p>
+<ol type="1">
+<li><p>What happens if you use Newton’s method with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_0 = 0</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">f(x) = x^3 - 2x + 2</annotation></semantics></math>?</p></li>
+<li><p>Why doesn’t Newton’s method work for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = x^{1/3}</annotation></semantics></math>?</p></li>
+</ol>
+<p>We also did this workshop.</p>
 <ul>
 <li><strong>Workshop:</strong> <a
 href="Workshops/NewtonsMethod.pdf">Newton’s method</a></li>
@@ -562,23 +572,104 @@ href="Workshops/NewtonsMethod.pdf">Newton’s method</a></li>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 5</td>
 <td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
-<td style="text-align: left;">Rates of convergence - con’d</td>
+href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
+<td style="text-align: left;">Secant method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 7</td>
 <td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
-<td style="text-align: left;">Secant method</td>
+href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
+<td style="text-align: left;">Fixed point iteration</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 9</td>
 <td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
-<td style="text-align: left;">Fixed point iteration</td>
+href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
+<td style="text-align: left;">More about rates of convergence</td>
 </tr>
 </tbody>
 </table>
+<h4 id="mon-feb-5">Mon, Feb 5</h4>
+<p>We talked about the secant method which is a variation of Newton’s
+method that uses secant lines instead of tangent lines. The advantage of
+the secant method is that it doesn’t require calculating a derivative.
+The disadvantage is that it is a little slower to converge than Newton’s
+method, but it is still much faster than the bisection method. Here is
+the formula:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.</annotation></semantics></math></p>
+<p>We wrote the following program in class.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> f(b)<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(f(b)<span class="op">-</span>f(a))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b</span></code></pre></div>
+<p>Sometimes a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+might be very time consuming for a computer to compute, so you could
+improve this function by reducing the number of times you have to call
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+If speed is a concern, then this would be a better version of the
+function.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    fa <span class="op">=</span> f(a)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    fb <span class="op">=</span> f(b)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> fb<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(fb<span class="op">-</span>fa) <span class="co"># update x-values</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        fa, fb <span class="op">=</span> fb, f(b) <span class="co"># update y-values using the new x-value</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b</span></code></pre></div>
+<p>Notice how we call the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+three times in each iteration of the while-loop in the first program,
+but by storing the result in the variables <code>fa</code> and
+<code>fb</code>, we only have to call
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+once in the second version of the program.</p>
+<ol type="1">
+<li>Solve the equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mi>x</mi></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">10^x = 2</annotation></semantics></math>
+using the secant method.</li>
+</ol>
+<p>We finished by talking about the convergence rate of the secant
+method.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f \in C^2[a,b]</annotation></semantics></math>
+and suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+has a root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r \in (a,b)</annotation></semantics></math>.
+There is a constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C &gt; 0</annotation></semantics></math>
+such that for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n-1}</annotation></semantics></math>
+sufficiently close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+the next iterate of the secant method has
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.</annotation></semantics></math></p>
+</div>
+<p>Note, the constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+might be larger than the constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{M}{2L}</annotation></semantics></math>
+from Newton’s method, but it is usually not much
+larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. --></p>
+<ol start="2" type="1">
+<li>Use this formula to estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_3-r|</annotation></semantics></math>
+in terms of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_1-r|</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_0 - r|</annotation></semantics></math>.
+Assume that the same constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+applies for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n+1}</annotation></semantics></math>.</li>
+<li>Do the same for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>4</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_4 - r|</annotation></semantics></math>.</li>
+<li>Keep going until you find a pattern.</li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>

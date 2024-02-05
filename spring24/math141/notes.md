@@ -288,13 +288,8 @@ At this point, defined continuous functions.  A function $f(x)$ is **continuous*
 
 #### Fri, Feb 2
 
-Today we went over homework 3.  We also reviewed these examples.  
+Today we went over homework 3.   
 
-1. Find $\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
-
-2. One year I had a job that reimbursed me 50 cents per mile driven, as long as I drove less than 100 miles.  For trips of 100 miles or longer, it switched to only reimbursing 30 cents per mile.  So the reimbursement $R$ was a piecewise function of the mileage $x$:
-$$R(x) = \begin{cases} 0.50 x & \text{ if } x < 100 \\ 0.30 x & \text{ otherwise.} \end{cases}$$
-What is wrong with this reimbursement function?  Hint, what is $R(99)$ vs. $R(100)$? 
 
 - - -
 
@@ -306,6 +301,54 @@ Mon, Feb 5 | [3.1][3.1] | Defining derivatives
 Wed, Feb 7 | [3.2][3.2] | The derivative function
 Thu, Feb 8 | | Review
 Fri, Feb 9 | [3.3][3.3] | Differentiation rules
+
+#### Mon, Feb 5
+
+We started by talking about continuity. 
+
+1. One year I had a job that reimbursed me 50 cents per mile driven, as long as I drove less than 100 miles.  For trips of 100 miles or longer, it switched to only reimbursing 30 cents per mile.  So the reimbursement $R$ was a piecewise function of the mileage $x$:
+$$R(x) = \begin{cases} 0.50 x & \text{ if } x < 100 \\ 0.30 x & \text{ otherwise.} \end{cases}$$
+What is wrong with this reimbursement function?  Hint, what is $R(99)$ vs. $R(100)$? 
+
+We also talked about the **intermediate value property** of continuous functions. If $f(x)$ is continuous on an interval $[a,b]$, and $y$ is between $f(a)$ and $f(b)$, then there is a point $c$ between $a$ and $b$ such that $f(c) = y$. 
+
+2. Give an example of an interval $[a,b]$ and a function $f(x)$ that does not have the intermediate value property. 
+
+Then we introduced the **derivative** $f'(a)$ for a function $f(x)$ at a point $x = a$.  The derivative is the slope of the tangent line of the function $f(x)$ at the point $(a,f(a))$.  The actual **definition of the derivative** is
+$$f'(a) = \lim_{x \rightarrow a} \frac{f(x) - f(a)}{x-a}.$$
+
+We calculated some examples.  
+
+3. Find the derivative of $f(x) = x$ at any point $a$. 
+
+4. Find the derivative of $f(x) = x^2$ at $a = 3$. 
+
+5. Find the derivative of $f(x) = \sqrt{x}$ at $a = 4$. To do this last problem, you need to find
+$\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
+
+<!--
+#### Wed, Feb 7
+
+Today we observed that the derivative of $f(x)$ is a function $f'(a)$ that depends on the point $a$ where you found the slope of the tangent line.  Another way to write the definition of derivative is:
+$$f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$
+We also have two different notations for the derivative function.  We've already seen $f'(x)$.  We also use the symbol $\dfrac{d}{dx}$ as a command that literally means "take the derivative of" whatever function comes next. So $f'(x)$ means the same thing as $\dfrac{d}{dx} \, f(x)$. Another notation that we use frequently is to write $\dfrac{dy}{dx}$ to represent the derivative of a function $y = f(x)$.  So if we have a function $y = f(x)$, then all of these are the same:
+$$f'(x) = \dfrac{d}{dx} \, f(x) = \dfrac{dy}{dx}.$$ 
+
+
+We used the definition formula above to find
+
+1. $\dfrac{d}{dx} \, x^2$. 
+
+2. $\dfrac{d}{dx} \, \dfrac{1}{x}$.
+
+We also looked at how the graph of a derivative $f'(x)$ is related to, but different from, the graph of the original function $f(x)$. 
+
+3. Try to graph the derivative of the function shown in this gif:
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent_function_animation.gif"></img>
+</center>
+-->
 
 - - -
 
