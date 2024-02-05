@@ -354,6 +354,16 @@ We could use the number $\tfrac{1}{2}$ as a dividing line to separate runners wh
 
 We were able to draw a picture of the line the separates individuals we would predict are women from individuals we would predict are men in the scatter plot for runners.  If we had more than two variables, then we wouldn't be able to draw a picture. And instead of a dividing line, we would get a dividing hyperplane to separate our predictions. But we could still use the same idea. 
 
+Using least squares regression to find our weight vector probably isn't the best choice since the goal of least squared error isn't really what we want.  What we really want is the smallest zero-one error.  **Zero-one error** is the error you get if you add a one for every prediction that is incorrect and a zero for every correct prediction.  Both least squares error and zero-one error are examples of **loss functions** which measure how accurate our predictions are.  
+
+We finished by outlining where we are going in the next few classes.  We are going to look at how to minimize different loss functions over the space of all possible weight vectors (called the **weight space**).  We talked about how precise formulas for the optimal weight vector don't always exist, but we can use a general technique called **gradient descent** that works for many different loss functions. 
+
+
+<!--
+#### Wed, Feb 7
+-->
+
+
 - - -
 
 ### Week 5 Notes

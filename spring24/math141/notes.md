@@ -323,7 +323,9 @@ We calculated some examples.
 
 4. Find the derivative of $f(x) = x^2$ at $a = 3$. 
 
-5. Find the derivative of $f(x) = \sqrt{x}$ at $a = 4$. To do this last problem, you need to find
+5. What is the derivative of $f(x) = |x-2|$ at $a = 2$? Why doesn't it exist?  
+
+6. Find the derivative of $f(x) = \sqrt{x}$ at $a = 4$. To do this last problem, you need to find
 $\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
 
 <!--

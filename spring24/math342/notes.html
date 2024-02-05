@@ -8,20 +8,13 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -56,7 +49,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
+    code span.bu { } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -69,7 +62,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.im { } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -92,9 +85,6 @@
     --link-color: #069; 
   }
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -102,15 +92,7 @@
 </header>
 <h2 id="math-342---spring-2024">Math 342 - Spring 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
-1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
-3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
-5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
-7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
-9</a>, <a href="#week-10-notes">Week 10</a>, <a
-href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
-<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
-14</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -124,137 +106,67 @@ href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Wed, Jan 17</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
 <td style="text-align: left;">Floating point arithmetic</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Jan 19</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic">1.2</a></td>
 <td style="text-align: left;">Significant digits, relative error</td>
 </tr>
 </tbody>
 </table>
 <h4 id="wed-jan-17">Wed, Jan 17</h4>
-<p>We talked about how computers store <a
-href="https://en.wikipedia.org/wiki/Floating_point">floating point
-numbers</a>. Most modern programming languages store floating point
-numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE
-754 standard</a>.</p>
-<p><img src="floating_point_layout.svg" style="width: 700px" /> <img
-src="floating_point_math.svg" style="width: 700px" /></p>
-<p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
-where</p>
+<p>We talked about how computers store <a href="https://en.wikipedia.org/wiki/Floating_point">floating point numbers</a>. Most modern programming languages store floating point numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754 standard</a>.</p>
+<p><img src="floating_point_layout.svg" style="width: 700px" /> <img src="floating_point_math.svg" style="width: 700px" /></p>
+<p>In the IEEE 754 standard, a 64-bit floating point number has the form <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>s</mi></msup><mo>*</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math> where</p>
 <ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
-is the 1-bit sign,</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub></mrow><annotation encoding="application/x-tex">a_1 a_2 \ldots a_{52}</annotation></semantics></math>
-is the 52-bit mantissa, and</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
-is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are
-used for regular floating point numbers,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e=0</annotation></semantics></math>
-is reserved for zero and <a
-href="https://en.wikipedia.org/wiki/Subnormal_number">subnormal
-numbers</a>, and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>2047</mn></mrow><annotation encoding="application/x-tex">e=2047</annotation></semantics></math>
-is reserved for infinity and NaN (“not a number”).</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math> is the 1-bit sign,</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub></mrow><annotation encoding="application/x-tex">a_1 a_2 \ldots a_{52}</annotation></semantics></math> is the 52-bit mantissa, and</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e=0</annotation></semantics></math> is reserved for zero and <a href="https://en.wikipedia.org/wiki/Subnormal_number">subnormal numbers</a>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>2047</mn></mrow><annotation encoding="application/x-tex">e=2047</annotation></semantics></math> is reserved for infinity and NaN (“not a number”).</li>
 </ul>
-<p>To understand floating point numbers, we also reviewed <a
-href="https://en.wikipedia.org/wiki/Binary_numeral_system">binary
-numbers</a>, <a
-href="https://en.wikipedia.org/wiki/Scientific_notation">scientific
-notation</a>, and <a
-href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic
-scales</a>.</p>
+<p>To understand floating point numbers, we also reviewed <a href="https://en.wikipedia.org/wiki/Binary_numeral_system">binary numbers</a>, <a href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation</a>, and <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scales</a>.</p>
 <p>We did the following exercises in class:</p>
 <ol type="1">
-<li><p>Convert (10110)<sub>2</sub> to decimal. (<a
-href="https://youtu.be/a2FpnU9Mm3E"
-class="uri">https://youtu.be/a2FpnU9Mm3E</a>)</p></li>
-<li><p>Convert 35 to binary. (<a href="https://youtu.be/gGiEu7QTi68"
-class="uri">https://youtu.be/gGiEu7QTi68</a>)</p></li>
-<li><p>What are the largest and smallest 64-bit floating point numbers
-that can be stored?</p></li>
-<li><p>In Python, compute <code>2.0**1024</code> and
-<code>2**1024</code>. Why do you get different results?</p></li>
-<li><p>In Python, compare <code>2.0**1024</code> with
-<code>2.0**(-1024)</code> and <code>2.0**(-1070)</code>. What do you
-notice?</p></li>
+<li><p>Convert (10110)<sub>2</sub> to decimal. (<a href="https://youtu.be/a2FpnU9Mm3E" class="uri">https://youtu.be/a2FpnU9Mm3E</a>)</p></li>
+<li><p>Convert 35 to binary. (<a href="https://youtu.be/gGiEu7QTi68" class="uri">https://youtu.be/gGiEu7QTi68</a>)</p></li>
+<li><p>What are the largest and smallest 64-bit floating point numbers that can be stored?</p></li>
+<li><p>In Python, compute <code>2.0**1024</code> and <code>2**1024</code>. Why do you get different results?</p></li>
+<li><p>In Python, compare <code>2.0**1024</code> with <code>2.0**(-1024)</code> and <code>2.0**(-1070)</code>. What do you notice?</p></li>
 </ol>
 <!--
 6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
 -->
 <h4 id="fri-jan-19">Fri, Jan 19</h4>
-<p>Today we talked about significant digits. Here is a <a
-href="https://youtu.be/l2yuDvwYq5g">quick video on how these work</a>.
-Then we defined absolute and relative error:</p>
+<p>Today we talked about significant digits. Here is a <a href="https://youtu.be/l2yuDvwYq5g">quick video on how these work</a>. Then we defined absolute and relative error:</p>
 <div class="Theorem">
-<p>Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>
-be an approximation of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math>.
-<!-- ^* --></p>
+<p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math> be an approximation of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math>. <!-- ^* --></p>
 <ul>
-<li>The <strong>absolute error</strong> is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x^* - x|</annotation></semantics></math>.</li>
-<li>The <strong>relative error</strong> is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{|x^*-x|}{|x|}</annotation></semantics></math>.</li>
+<li>The <strong>absolute error</strong> is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x^* - x|</annotation></semantics></math>.</li>
+<li>The <strong>relative error</strong> is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow><mrow><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo stretchy="false" form="prefix">|</mo></mrow></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{|x^*-x|}{|x|}</annotation></semantics></math>.</li>
 </ul>
 </div>
-<p>The base-10 logarithm of the relative error is approximately the
-number of significant digits, so you can think of significant digits as
-a measure of relative error. Keep in mind these rules:</p>
+<p>The base-10 logarithm of the relative error is approximately the number of significant digits, so you can think of significant digits as a measure of relative error. Keep in mind these rules:</p>
 <ol type="1">
-<li>When you add/subtract numbers, the last common digit that is
-significant for both numbers is the last significant digit of the
-answer.</li>
-<li>When you multiply/divide two numbers, the result has significant
-digits equal to the minimum number of significant digits of the two
-inputs.</li>
+<li>When you add/subtract numbers, the last common digit that is significant for both numbers is the last significant digit of the answer.</li>
+<li>When you multiply/divide two numbers, the result has significant digits equal to the minimum number of significant digits of the two inputs.</li>
 </ol>
-<p>Intuitively, addition &amp; subtraction “play nice” with absolute
-error while multiplication and division “play nice” with relative error.
-This can lead to problems:</p>
+<p>Intuitively, addition &amp; subtraction “play nice” with absolute error while multiplication and division “play nice” with relative error. This can lead to problems:</p>
 <ol type="1">
-<li><p><strong>Catastrophic cancellation.</strong> When you subtract two
-numbers of roughly the same size, the relative error can get much worse.
-For example, both 53.76 and 53.74 have 4 significant digits, but
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53.76</mn><mo>−</mo><mn>53.74</mn><mo>=</mo><mn>0.02</mn></mrow><annotation encoding="application/x-tex">53.76 - 53.74 = 0.02</annotation></semantics></math>
-only has 1 significant digit.</p></li>
-<li><p><strong>Useless precision.</strong> If you add two numbers with
-very different magnitudes, then having a very low relative error in the
-smaller one will not be useful.</p></li>
+<li><p><strong>Catastrophic cancellation.</strong> When you subtract two numbers of roughly the same size, the relative error can get much worse. For example, both 53.76 and 53.74 have 4 significant digits, but <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>53.76</mn><mo>−</mo><mn>53.74</mn><mo>=</mo><mn>0.02</mn></mrow><annotation encoding="application/x-tex">53.76 - 53.74 = 0.02</annotation></semantics></math> only has 1 significant digit.</p></li>
+<li><p><strong>Useless precision.</strong> If you add two numbers with very different magnitudes, then having a very low relative error in the smaller one will not be useful.</p></li>
 </ol>
-<p>We finished by looking at how you can sometimes re-write algorithms
-on a computer to avoid overflow/underflow issues. Stirling’s formula is
-an approximation for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math>
-which has a relative error that gets smaller as
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-increases.</p>
-<p>We used the <code>math</code> library in Python to test
-<strong>Stirling’s formula</strong>, which is the following
-approximation
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mo>≈</mo><msqrt><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow></msqrt><mfrac><msup><mi>n</mi><mi>n</mi></msup><msup><mi>e</mi><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">n! \approx \sqrt{2 \pi n} \frac{n^n}{e^n}.</annotation></semantics></math></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">float</span>(math.factorial(n)))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> n: math.sqrt(<span class="dv">2</span><span class="op">*</span>math.pi<span class="op">*</span>n)<span class="op">*</span>n<span class="op">**</span>n<span class="op">/</span>math.exp(n)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(n))</span></code></pre></div>
-<p>Our formula worked well until
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>143</mn></mrow><annotation encoding="application/x-tex">n=143</annotation></semantics></math>,
-then we got an overflow error. The problem was that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>n</mi><mi>n</mi></msup><annotation encoding="application/x-tex">n^n</annotation></semantics></math>
-got too big to convert to a floating point number. But you can prevent
-the overflow error by adjusting the formula slightly to.</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">143</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="kw">lambda</span> n: math.sqrt(<span class="dv">2</span><span class="op">*</span>math.pi<span class="op">*</span>n)<span class="op">*</span>(n<span class="op">/</span>math.exp(<span class="dv">1</span>))<span class="op">**</span>n</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f(n))</span></code></pre></div>
+<p>We finished by looking at how you can sometimes re-write algorithms on a computer to avoid overflow/underflow issues. Stirling’s formula is an approximation for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math> which has a relative error that gets smaller as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> increases.</p>
+<p>We used the <code>math</code> library in Python to test <strong>Stirling’s formula</strong>, which is the following approximation <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mo>≈</mo><msqrt><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow></msqrt><mfrac><msup><mi>n</mi><mi>n</mi></msup><msup><mi>e</mi><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">n! \approx \sqrt{2 \pi n} \frac{n^n}{e^n}.</annotation></semantics></math></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="bu">print</span>(<span class="bu">float</span>(math.factorial(n)))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> n: math.sqrt(<span class="dv">2</span><span class="op">*</span>math.pi<span class="op">*</span>n)<span class="op">*</span>n<span class="op">**</span>n<span class="op">/</span>math.exp(n)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="bu">print</span>(f(n))</span></code></pre></div>
+<p>Our formula worked well until <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>143</mn></mrow><annotation encoding="application/x-tex">n=143</annotation></semantics></math>, then we got an overflow error. The problem was that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>n</mi><mi>n</mi></msup><annotation encoding="application/x-tex">n^n</annotation></semantics></math> got too big to convert to a floating point number. But you can prevent the overflow error by adjusting the formula slightly to.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">143</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> n: math.sqrt(<span class="dv">2</span><span class="op">*</span>math.pi<span class="op">*</span>n)<span class="op">*</span>(n<span class="op">/</span>math.exp(<span class="dv">1</span>))<span class="op">**</span>n</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="bu">print</span>(f(n))</span></code></pre></div>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
@@ -284,137 +196,51 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 </tbody>
 </table>
 <h4 id="mon-jan-22">Mon, Jan 22</h4>
-<p>Today we reviewed Taylor series. We recalled the following important
-Maclaurin series (which are Taylor series with center
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c = 0</annotation></semantics></math>):</p>
+<p>Today we reviewed Taylor series. We recalled the following important Maclaurin series (which are Taylor series with center <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c = 0</annotation></semantics></math>):</p>
 <ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><msup><mi>x</mi><mi>n</mi></msup><mrow><mi>n</mi><mi>!</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle e^x = \sum_{n=0}^\infty \dfrac{x^n}{n!}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle\sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n+1}}{(2n+1)!}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle\cos(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n}}{(2n)!}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mfrac><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\displaystyle\dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\displaystyle\ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mi>n</mi></msup><mrow><mi>n</mi><mi>!</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle e^x = \sum_{n=0}^\infty \dfrac{x^n}{n!}</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>!</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n+1}}{(2n+1)!}</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mi>!</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\cos(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n}}{(2n)!}</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\displaystyle\dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup><mspace width="0.167em"></mspace><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}</annotation></semantics></math></li>
 </ul>
 <p>The we did the following workshop in class.</p>
 <ul>
-<li>Workshop: <a href="Workshops/TaylorSeries.pdf">Taylor
-series</a></li>
+<li>Workshop: <a href="Workshops/TaylorSeries.pdf">Taylor series</a></li>
 </ul>
 <h4 id="wed-jan-24">Wed, Jan 24</h4>
-<p>Today we reviewed some theorems that we will need throughout the
-course. The first is probably the most important theorem in numerical
-analysis since it lets us estimate error when using Taylor series
-approximations.</p>
+<p>Today we reviewed some theorems that we will need throughout the course. The first is probably the most important theorem in numerical analysis since it lets us estimate error when using Taylor series approximations.</p>
 <div class="Theorem">
-<p><strong>Taylor’s Theorem.</strong> Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-be a function that has
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n+1)</annotation></semantics></math>
-derivatives in the interval between
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.
-Then there exists a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
-strictly inside the interval from
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
-such that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) - P_n(x) = \frac{f^{(n+1)}(z)}{(n+1)!} (x-c)^{n+1}</annotation></semantics></math>
-where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>n</mi></msub><annotation encoding="application/x-tex">P_n</annotation></semantics></math>
-is the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>th
-degree Taylor polynomial for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-centered at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.</p>
+<p><strong>Taylor’s Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> be a function that has <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n+1)</annotation></semantics></math> derivatives in the interval between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>. Then there exists a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> strictly inside the interval from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>P</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>!</mi></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>c</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) - P_n(x) = \frac{f^{(n+1)}(z)}{(n+1)!} (x-c)^{n+1}</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mi>n</mi></msub><annotation encoding="application/x-tex">P_n</annotation></semantics></math> is the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>th degree Taylor polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> centered at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.</p>
 </div>
-<p>A special case of Taylor’s theorem is when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n = 0</annotation></semantics></math>.
-Then you get the Mean Value Theorem (MVT):</p>
+<p>A special case of Taylor’s theorem is when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n = 0</annotation></semantics></math>. Then you get the Mean Value Theorem (MVT):</p>
 <div class="Theorem">
-<p><strong>Mean Value Theorem.</strong> Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-be a function that is differentiable in the interval between
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.
-Then there exists a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
-strictly inside the interval from
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
-such that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(c) = \frac{f(b) - f(a)}{b-a}.</annotation></semantics></math></p>
+<p><strong>Mean Value Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> be a function that is differentiable in the interval between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>. Then there exists a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> strictly inside the interval from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(c) = \frac{f(b) - f(a)}{b-a}.</annotation></semantics></math></p>
 </div>
-<p>The proof of both the Mean Value Theorem and Taylor’s Theorem comes
-from looking at an even simpler theorem called Rolle’s theorem.</p>
+<p>The proof of both the Mean Value Theorem and Taylor’s Theorem comes from looking at an even simpler theorem called Rolle’s theorem.</p>
 <div class="Theorem">
-<p><strong>Rolle’s Theorem.</strong> Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-be a function that is differentiable in the interval between
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
-and suppose that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(a) = f(b)</annotation></semantics></math>.
-Then there exists a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>
-strictly inside the interval from
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
-to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
-such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(c) = 0.</annotation></semantics></math></p>
+<p><strong>Rolle’s Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> be a function that is differentiable in the interval between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> and suppose that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(a) = f(b)</annotation></semantics></math>. Then there exists a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> strictly inside the interval from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(c) = 0.</annotation></semantics></math></p>
 </div>
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/RTCalc.svg" width = 300></img>
 </center>
-<p>We briefly sketched an intuitive proof of Rolle’s theorem using the
-<a href="https://en.wikipedia.org/wiki/Extreme_value_theorem">Extreme
-Value Theorem</a> from calculus, but the details of that proof are not
-really that important.</p>
+<p>We briefly sketched an intuitive proof of Rolle’s theorem using the <a href="https://en.wikipedia.org/wiki/Extreme_value_theorem">Extreme Value Theorem</a> from calculus, but the details of that proof are not really that important.</p>
 <p>We did the following exercises in class.</p>
 <ol type="1">
-<li><p>Use Taylor’s theorem to estimate the error in using the 20th
-degree Maclaurin series to estimate
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sin(4\pi)</annotation></semantics></math>.</p></li>
-<li><p>Use Taylor’s theorem to estimate the error in using the 20th
-degree Maclaurin series to estimate
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mn>6</mn></msup><annotation encoding="application/x-tex">e^6</annotation></semantics></math>.</p></li>
+<li><p>Use Taylor’s theorem to estimate the error in using the 20th degree Maclaurin series to estimate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>π</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sin(4\pi)</annotation></semantics></math>.</p></li>
+<li><p>Use Taylor’s theorem to estimate the error in using the 20th degree Maclaurin series to estimate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mn>6</mn></msup><annotation encoding="application/x-tex">e^6</annotation></semantics></math>.</p></li>
 </ol>
-<p>We finished with a proof that the number
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
-is irrational. First we temporarily assumed that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
-is a reduced fraction
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="false"><mi>m</mi><mi>n</mi></mfrac><annotation encoding="application/x-tex">\tfrac{m}{n}</annotation></semantics></math>.
-Then we calculated the worst remainder for the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>th
-degree Maclaurin polynomial for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mi>x</mi></msup><annotation encoding="application/x-tex">e^x</annotation></semantics></math>
-at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x = 1</annotation></semantics></math>.
-We did the following exercises that lead to a contradiction:</p>
+<p>We finished with a proof that the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> is irrational. First we temporarily assumed that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> is a reduced fraction <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="false"><mfrac><mi>m</mi><mi>n</mi></mfrac></mstyle><annotation encoding="application/x-tex">\tfrac{m}{n}</annotation></semantics></math>. Then we calculated the worst remainder for the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>th degree Maclaurin polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mi>x</mi></msup><annotation encoding="application/x-tex">e^x</annotation></semantics></math> at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x = 1</annotation></semantics></math>. We did the following exercises that lead to a contradiction:</p>
 <ol start="3" type="1">
-<li><p>Show that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>e</mi><mo>−</mo><msub><mi>P</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">n!(e - P_n(1))</annotation></semantics></math>
-must be an integer.</p></li>
-<li><p>Use Taylor’s theorem to show that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><msub><mi>R</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">n! R_n(1)</annotation></semantics></math>
-must be strictly between 0 and 1.</p></li>
+<li><p>Show that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo>−</mo><msub><mi>P</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">n!(e - P_n(1))</annotation></semantics></math> must be an integer.</p></li>
+<li><p>Use Taylor’s theorem to show that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><msub><mi>R</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">n! R_n(1)</annotation></semantics></math> must be strictly between 0 and 1.</p></li>
 </ol>
 <h4 id="fri-jan-26">Fri, Jan 26</h4>
-<p>Today we did a workshop about the Babylonian algorithm which is an
-ancient method for finding square roots.</p>
+<p>Today we did a workshop about the Babylonian algorithm which is an ancient method for finding square roots.</p>
 <ul>
-<li><strong>Workshop</strong>: <a href="Workshops/Babylonian.pdf">The
-Babylonian algorithm</a></li>
+<li><strong>Workshop</strong>: <a href="Workshops/Babylonian.pdf">The Babylonian algorithm</a></li>
 </ul>
-<p>As part of this workshop we also covered how to define variables and
-functions in Python and also how to use for-loops and while-loops.</p>
+<p>As part of this workshop we also covered how to define variables and functions in Python and also how to use for-loops and while-loops.</p>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
@@ -428,135 +254,55 @@ functions in Python and also how to use for-loops and while-loops.</p>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 29</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_bisection_method">2.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_bisection_method">2.1</a></td>
 <td style="text-align: left;">Bisection method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 31</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:newtons_method">2.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:newtons_method">2.3</a></td>
 <td style="text-align: left;">Newton’s method</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 2</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
 <td style="text-align: left;">Rates of convergence</td>
 </tr>
 </tbody>
 </table>
 <h4 id="mon-jan-29">Mon, Jan 29</h4>
-<p>We talked about how to find the roots of a function. Recall that a
-<strong>root</strong> (AKA a <strong>zero</strong>) of a function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
-is an
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-value
-where the function hits the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.
-We introduced an algorithm called the <strong>Bisection method</strong>
-for finding roots of a continuous function. We did the following
-workshop.</p>
+<p>We talked about how to find the roots of a function. Recall that a <strong>root</strong> (AKA a <strong>zero</strong>) of a function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math> is an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-value where the function hits the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis. We introduced an algorithm called the <strong>Bisection method</strong> for finding roots of a continuous function. We did the following workshop.</p>
 <ul>
-<li><strong>Workshop</strong>: <a
-href="Workshops/Bisection.pdf">Bisection method</a></li>
+<li><strong>Workshop</strong>: <a href="Workshops/Bisection.pdf">Bisection method</a></li>
 </ul>
-<p>One feature of the Bisection method is that we can easily find the
-worst case absolute error in our approximation of a root. That is
-because every time we repeat the algorithm and cut the interval in half,
-the error reduces by a factor of 2, so that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute error</mtext><mo>≤</mo><mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mn>2</mn><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Absolute error} \le \frac{(b-a)}{2^n}.</annotation></semantics></math>
-We saw that it takes about 10 iterations to increase the accuracy by 3
-decimal places (because
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>≈</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^{10} \approx 10^3</annotation></semantics></math>).</p>
-<p>We finished by comparing the bisection method for finding roots with
-the Babylonian algorithm for finding square roots. Why are square roots
-called roots? Because every square root is a root of a square function.
-For example,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5}</annotation></semantics></math>
-is a root of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2 - 5 = 0</annotation></semantics></math>.</p>
+<p>One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2, so that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute error</mtext><mo>≤</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><msup><mn>2</mn><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Absolute error} \le \frac{(b-a)}{2^n}.</annotation></semantics></math> We saw that it takes about 10 iterations to increase the accuracy by 3 decimal places (because <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>≈</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^{10} \approx 10^3</annotation></semantics></math>).</p>
+<p>We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots. Why are square roots called roots? Because every square root is a root of a square function. For example, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5}</annotation></semantics></math> is a root of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2 - 5 = 0</annotation></semantics></math>.</p>
 <h4 id="wed-jan-31">Wed, Jan 31</h4>
-<p>Today we covered Newton’s method. This is probably the most important
-method for finding roots of differentiable functions. The formula is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac displaystyle="true"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex"> x_{n+1} = x_n - \dfrac{f(x_n)}{f&#39;(x_n)}.</annotation></semantics></math>
-This formula comes from the idea which is to start with a guess
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math>
-for a root and then repeatedly improve your guess by following the
-tangent line at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
-until it hits the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.</p>
+<p>Today we covered Newton’s method. This is probably the most important method for finding roots of differentiable functions. The formula is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mstyle><mi>.</mi></mrow><annotation encoding="application/x-tex"> x_{n+1} = x_n - \dfrac{f(x_n)}{f&#39;(x_n)}.</annotation></semantics></math> This formula comes from the idea which is to start with a guess <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math> for a root and then repeatedly improve your guess by following the tangent line at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math> until it hits the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.</p>
 <ol type="1">
-<li><p>Use Newton’s method to find roots of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tan</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\tan x - 1</annotation></semantics></math>.</p></li>
-<li><p>How can you use Newton’s method to find
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>?
-Hint: use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>ln</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = \ln x -1</annotation></semantics></math>.</p></li>
+<li><p>Use Newton’s method to find roots of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tan</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\tan x - 1</annotation></semantics></math>.</p></li>
+<li><p>How can you use Newton’s method to find <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>? Hint: use <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>ln</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = \ln x -1</annotation></semantics></math>.</p></li>
 </ol>
 <div class="Theorem">
-<p><strong>Theorem.</strong> Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f \in C^2[a,b]</annotation></semantics></math>
-and suppose that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-has a root
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r \in (a,b)</annotation></semantics></math>.
-Suppose that there are constants
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>,</mo><mi>M</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L,M &gt;0</annotation></semantics></math>
-such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">|f&#39;(x)| \ge L</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|f&#39;&#39;(x)| \le M</annotation></semantics></math>
-for all
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x \in [a,b]</annotation></semantics></math>.
-Then
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mfrac><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|x_{n+1} - r| \le \frac{M}{2L} |x_n-r|^2</annotation></semantics></math>
-when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x_n \in [a,b]</annotation></semantics></math>.</p>
+<p><strong>Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f \in C^2[a,b]</annotation></semantics></math> and suppose that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> has a root <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">r \in (a,b)</annotation></semantics></math>. Suppose that there are constants <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>,</mo><mi>M</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L,M &gt;0</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≥</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">|f&#39;(x)| \ge L</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mi>″</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|f&#39;&#39;(x)| \le M</annotation></semantics></math> for all <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">x \in [a,b]</annotation></semantics></math>. Then <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mfrac><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|x_{n+1} - r| \le \frac{M}{2L} |x_n-r|^2</annotation></semantics></math> when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>n</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">x_n \in [a,b]</annotation></semantics></math>.</p>
 </div>
-<p><em>Proof.</em> Start with the first degree Taylor polynomial
-(centered at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>)
-for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(r)</annotation></semantics></math>
-including the remainder term and the Newton’s method iteration
-formula:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">f(r) = f(x_n) + f&#39;(x_n)(r-x_n) + \frac{1}{2} f&#39;&#39;(z)(r-x_n)^2 = 0,</annotation></semantics></math>
-and
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>⇒</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n)}{f&#39;(x_n)} \Rightarrow f&#39;(x_n)(x_{n+1} - x_n) + f(x_n)=0.</annotation></semantics></math></p>
-<p>Subtract these two formulas to get a formula that relates
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(r-x_{n+1})</annotation></semantics></math>
-with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(r-x_n)</annotation></semantics></math>.</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(x_n)(r-x_{n+1}) + \frac{1}{2} f&#39;&#39;(z)(r-x_n)^2 = 0.</annotation></semantics></math></p>
-<p>Use this to get an upper bound on
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|r-x_{n+1}|</annotation></semantics></math>.
-□</p>
+<p><em>Proof.</em> Start with the first degree Taylor polynomial (centered at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>) for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(r)</annotation></semantics></math> including the remainder term and the Newton’s method iteration formula:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>f</mi><mi>″</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">f(r) = f(x_n) + f&#39;(x_n)(r-x_n) + \frac{1}{2} f&#39;&#39;(z)(r-x_n)^2 = 0,</annotation></semantics></math> and <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo>⇒</mo><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n)}{f&#39;(x_n)} \Rightarrow f&#39;(x_n)(x_{n+1} - x_n) + f(x_n)=0.</annotation></semantics></math></p>
+<p>Subtract these two formulas to get a formula that relates <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(r-x_{n+1})</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(r-x_n)</annotation></semantics></math>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>f</mi><mi>″</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(x_n)(r-x_{n+1}) + \frac{1}{2} f&#39;&#39;(z)(r-x_n)^2 = 0.</annotation></semantics></math></p>
+<p>Use this to get an upper bound on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>r</mi><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|r-x_{n+1}|</annotation></semantics></math>. □</p>
 <div class="Theorem">
-<p><strong>Corollary.</strong> The error in the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th
-iterate of Newton’s method satisfies
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><msup><mn>2</mn><mi>n</mi></msup></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.</annotation></semantics></math></p>
+<p><strong>Corollary.</strong> The error in the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th iterate of Newton’s method satisfies <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><msup><mo stretchy="false" form="prefix">|</mo><msup><mn>2</mn><mi>n</mi></msup></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.</annotation></semantics></math></p>
 </div>
-<p>This corollary explains why, if you start with a good guess in
-Newton’s method, the number of correct decimal places tends to double
-with each iteration!</p>
+<p>This corollary explains why, if you start with a good guess in Newton’s method, the number of correct decimal places tends to double with each iteration!</p>
 <h4 id="fri-feb-2">Fri, Feb 2</h4>
-<p>Today we looked at some examples of what can go wrong with Newton’s
-method. We did these examples:</p>
+<p>Today we looked at some examples of what can go wrong with Newton’s method. We did these examples:</p>
 <ol type="1">
-<li><p>What happens if you use Newton’s method with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_0 = 0</annotation></semantics></math>
-on
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">f(x) = x^3 - 2x + 2</annotation></semantics></math>?</p></li>
-<li><p>Why doesn’t Newton’s method work for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = x^{1/3}</annotation></semantics></math>?</p></li>
+<li><p>What happens if you use Newton’s method with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_0 = 0</annotation></semantics></math> on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">f(x) = x^3 - 2x + 2</annotation></semantics></math>?</p></li>
+<li><p>Why doesn’t Newton’s method work for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = x^{1/3}</annotation></semantics></math>?</p></li>
 </ol>
 <p>We also did this workshop.</p>
 <ul>
-<li><strong>Workshop:</strong> <a
-href="Workshops/NewtonsMethod.pdf">Newton’s method</a></li>
+<li><strong>Workshop:</strong> <a href="Workshops/NewtonsMethod.pdf">Newton’s method</a></li>
 </ul>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
@@ -571,105 +317,96 @@ href="Workshops/NewtonsMethod.pdf">Newton’s method</a></li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 5</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method">2.5</a></td>
 <td style="text-align: left;">Secant method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 7</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration">2.2</a></td>
 <td style="text-align: left;">Fixed point iteration</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 9</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence">2.4</a></td>
 <td style="text-align: left;">More about rates of convergence</td>
 </tr>
 </tbody>
 </table>
 <h4 id="mon-feb-5">Mon, Feb 5</h4>
-<p>We talked about the secant method which is a variation of Newton’s
-method that uses secant lines instead of tangent lines. The advantage of
-the secant method is that it doesn’t require calculating a derivative.
-The disadvantage is that it is a little slower to converge than Newton’s
-method, but it is still much faster than the bisection method. Here is
-the formula:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.</annotation></semantics></math></p>
+<p>We talked about the secant method which is a variation of Newton’s method that uses secant lines instead of tangent lines. The advantage of the secant method is that it doesn’t require calculating a derivative. The disadvantage is that it is a little slower to converge than Newton’s method, but it is still much faster than the bisection method. Here is the formula:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.</annotation></semantics></math></p>
 <p>We wrote the following program in class.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> f(b)<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(f(b)<span class="op">-</span>f(a))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b</span></code></pre></div>
-<p>Sometimes a function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-might be very time consuming for a computer to compute, so you could
-improve this function by reducing the number of times you have to call
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
-If speed is a concern, then this would be a better version of the
-function.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    fa <span class="op">=</span> f(a)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    fb <span class="op">=</span> f(b)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> fb<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(fb<span class="op">-</span>fa) <span class="co"># update x-values</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        fa, fb <span class="op">=</span> fb, f(b) <span class="co"># update y-values using the new x-value</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> b</span></code></pre></div>
-<p>Notice how we call the function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-three times in each iteration of the while-loop in the first program,
-but by storing the result in the variables <code>fa</code> and
-<code>fb</code>, we only have to call
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-once in the second version of the program.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> f(b)<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(f(b)<span class="op">-</span>f(a))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="cf">return</span> b</span></code></pre></div>
+<p>Sometimes a function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> might be very time consuming for a computer to compute, so you could improve this function by reducing the number of times you have to call <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>. If speed is a concern, then this would be a better version of the function.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">def</span> Secant(f, a, b, precision <span class="op">=</span> <span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">8</span>)):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    fa <span class="op">=</span> f(a)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    fb <span class="op">=</span> f(b)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="cf">while</span> <span class="bu">abs</span>(b<span class="op">-</span>a) <span class="op">&gt;</span> precision:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        a, b <span class="op">=</span> b, b <span class="op">-</span> fb<span class="op">*</span>(b<span class="op">-</span>a)<span class="op">/</span>(fb<span class="op">-</span>fa) <span class="co"># update x-values</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        fa, fb <span class="op">=</span> fb, f(b) <span class="co"># update y-values using the new x-value</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="cf">return</span> b</span></code></pre></div>
+<p>Notice how we call the function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> three times in each iteration of the while-loop in the first program, but by storing the result in the variables <code>fa</code> and <code>fb</code>, we only have to call <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> once per iteration in the second version of the program.</p>
 <ol type="1">
-<li>Solve the equation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>10</mn><mi>x</mi></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">10^x = 2</annotation></semantics></math>
-using the secant method.</li>
+<li>Solve the equation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>x</mi></msup><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">2^x = 10</annotation></semantics></math> using the secant method. What would make good initial guesses <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>?</li>
 </ol>
-<p>We finished by talking about the convergence rate of the secant
-method.</p>
+<p>We finished by talking about the convergence rate of the secant method.</p>
 <div class="Theorem">
-<p><strong>Theorem.</strong> Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f \in C^2[a,b]</annotation></semantics></math>
-and suppose that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-has a root
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r \in (a,b)</annotation></semantics></math>.
-There is a constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C &gt; 0</annotation></semantics></math>
-such that for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n-1}</annotation></semantics></math>
-sufficiently close to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
-the next iterate of the secant method has
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.</annotation></semantics></math></p>
+<p><strong>Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f \in C^2[a,b]</annotation></semantics></math> and suppose that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> has a root <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">r \in (a,b)</annotation></semantics></math>. There is a constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C &gt; 0</annotation></semantics></math> such that for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n-1}</annotation></semantics></math> sufficiently close to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> (say <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">|x_0 - r| &lt; 1/C</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mn>1</mn><mi>/</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">|x_1 - r| &lt; 1/C</annotation></semantics></math>), the next iterate of the secant method has <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mo>≤</mo><mi>C</mi><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.</annotation></semantics></math> In particular, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x_n - r|</annotation></semantics></math> will converge to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>.</p>
 </div>
-<p>Note, the constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
-might be larger than the constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{M}{2L}</annotation></semantics></math>
-from Newton’s method, but it is usually not much
-larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. --></p>
+<p>Note, the constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> might be larger than the constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mi>M</mi><mrow><mn>2</mn><mi>L</mi></mrow></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{M}{2L}</annotation></semantics></math> from Newton’s method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. --></p>
 <ol start="2" type="1">
-<li>Use this formula to estimate
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_3-r|</annotation></semantics></math>
-in terms of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_1-r|</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_0 - r|</annotation></semantics></math>.
-Assume that the same constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
-applies for all
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n+1}</annotation></semantics></math>.</li>
-<li>Do the same for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>4</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|x_4 - r|</annotation></semantics></math>.</li>
+<li>Use this formula to estimate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x_3-r|</annotation></semantics></math> in terms of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x_1-r|</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>0</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x_0 - r|</annotation></semantics></math>. Assume that the same constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> applies for all <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">x_{n+1}</annotation></semantics></math>.</li>
+<li>Do the same for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>x</mi><mn>4</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|x_4 - r|</annotation></semantics></math>.</li>
 <li>Keep going until you find a pattern.</li>
 </ol>
+<p>We saw that the pattern is that the exponents of each factor is a Fibonacci number. We talked briefly about <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence#Relation_to_the_golden_ratio">Binet’s formula</a> for Fibonacci numbers and the golden ratio <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow><mn>2</mn></mfrac><mo>≈</mo><mn>1.618</mn></mrow><annotation encoding="application/x-tex">\varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618</annotation></semantics></math>. The lead to the following nice rule of thumb: The number of correct decimal places in the secant method increases by a factor of about 1.6 (the golden ratio) every step.</p>
+<!--
+#### Wed, Feb 7
+
+Newton's method is a special case of a method known as fixed point iteration.  A \textbf{fixed point} of a function $f(x)$ is a number $p$ such that $f(p) = p$.  Not every function has a fixed point, but we do have the following existence result:
+
+<div class="Theorem">
+**Theorem.** Let $f \in C^0[a,b]$.  If $f(x) \in [a,b]$ for every $x \in [a,b]$, then $f$ must have a fixed point in $[a,b]$.  
+</div>
+
+1. Show that $\cos x$ has a fixed point in $[0,\tfrac{\pi}{2}]$. 
+
+2. Explain why $f(x) = e^x$ has no fixed points. 
+
+A fixed point $p$ is **attracting** if for all $x_0$ sufficiently close to $p$, the recursive sequence defined by 
+$$x_{n+1} = f(x_n)$$
+converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converges to $p$. 
+
+3. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
+
+4. Show that $g(x) = 1 - 2x -x^5$ has a fixed point, but it is not attracting. 
+
+<div class="Theorem">
+**Theorem** If $f$ has a fixed point $p$ and 
+
+1. $|f'(p)| < 1$, then $p$ is attracting, 
+2. $|f'(p)| > 1$, then $p$ is repelling,
+3. $|f'(p)| = 1$, then no info. 
+</div>
+
+You can sometimes use fixed point iteration to solve equations.  For example, here are two different ways to solve the equation $x^3 + 3x + 6 = 0$ using fixed point iteration. 
+
+1. Re-write the equation as $\dfrac{-6}{x^2+3} = x$.
+
+2. Replace $f(x) = 0$ with the equation $x + cf(x) = x$ where $c$ is a small constant. The constant $c = -\tfrac{1}{10}$ works well for the function above. 
+
+When a sequence $x_n$ converges to a root $r$, we say that it has **a linear order of convergence** if there is a constant $0 < C < 1$ such that 
+$$|x_{n+1} - r| \le C |x_n - r| \text{ for all } n.$$
+We say that the sequence has a **quadratic order of convergence** if there is a constant $C > 0$ such that 
+$$|x_{n+1} - r| \le C |x_n - r|^2 \text{ for all } n.$$
+More generally, a sequence **converges with order $\alpha$** if there is are constants $C > 0$ and $\alpha > 1$ such that 
+$$|x_{n+1} - r| \le C |x_n - r|^\alpha \text{ for all } n.$$
+
+In general, a sequence that converges with order $\alpha > 1$ will have the number of correct decimal places grow by a factor of about $\alpha$ each step.  Newton's method is order 2, Secant method is order $\varphi \approx 1.618$, and the Bisection method is only linear order. 
+-->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
@@ -739,21 +476,17 @@ applies for all
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 26</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:the_lagrange_form">3.1</a></td>
-<td style="text-align: left;">Polynomial interpolation, Lagrange
-form</td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:the_lagrange_form">3.1</a></td>
+<td style="text-align: left;">Polynomial interpolation, Lagrange form</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 28</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
 <td style="text-align: left;">Newton’s divided differences</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 1</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences">3.2</a></td>
 <td style="text-align: left;">Divided differences - con’d</td>
 </tr>
 </tbody>
@@ -771,20 +504,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 4</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
 <td style="text-align: left;">Interpolation error</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 6</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation">3.3</a></td>
 <td style="text-align: left;">Interpolation error - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 8</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:chebyshev_polynomials">3.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:chebyshev_polynomials">3.4</a></td>
 <td style="text-align: left;">Chebyshev polynomials</td>
 </tr>
 </tbody>
@@ -802,20 +532,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:interpo
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 18</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
 <td style="text-align: left;">Newton-Cotes formulas</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 20</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas">5.1</a></td>
 <td style="text-align: left;">Newton-Cotes formulas - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 22</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
 <td style="text-align: left;">Gaussian quadrature</td>
 </tr>
 </tbody>
@@ -833,20 +560,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 25</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature">5.4</a></td>
 <td style="text-align: left;">Gaussian quadrature - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 27</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:improper_and_multidimensional_integrals">5.6</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:improper_and_multidimensional_integrals">5.6</a></td>
 <td style="text-align: left;">Monte carlo integration</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 29</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_differentiation:basics_of_numerical_differentiation">4.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_differentiation:basics_of_numerical_differentiation">4.1</a></td>
 <td style="text-align: left;">Numerical differentiation</td>
 </tr>
 </tbody>
@@ -882,11 +606,6 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -898,10 +617,7 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 8</td>
 <td style="text-align: center;"> </td>
-<td style="text-align: left;"><a
-href="https://en.wikipedia.org/wiki/Orthogonal_functions">Orthogonal
-functions</a>, <a
-href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</a></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Orthogonal_functions">Orthogonal functions</a>, <a href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 10</td>
@@ -928,20 +644,17 @@ href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gram-Schmidt</
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 15</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
 <td style="text-align: left;">Euler’s method</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 17</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Existence &amp; uniqueness of
-solutions</td>
+<td style="text-align: left;">Existence &amp; uniqueness of solutions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 19</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method">6.1</a></td>
 <td style="text-align: left;">Euler’s method error</td>
 </tr>
 </tbody>
@@ -959,20 +672,17 @@ href="https://www.brianheinold.net/numerical/numerical_book.html#section:numeric
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 22</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
 <td style="text-align: left;">Runge-Kutta methods</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 24</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods">6.4</a></td>
 <td style="text-align: left;">Runge-Kutta methods - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 26</td>
-<td style="text-align: center;"><a
-href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:systems_of_odes">6.5</a></td>
+<td style="text-align: center;"><a href="https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:systems_of_odes">6.5</a></td>
 <td style="text-align: left;">Systems of ODEs</td>
 </tr>
 <tr class="even">

@@ -291,15 +291,16 @@ def Secant(f, a, b, precision = 10**(-8)):
     return b
 ```
 
-Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once in the second version of the program.  
+Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once per iteration in the second version of the program.  
 
-1. Solve the equation $10^x = 2$ using the secant method.  
+1. Solve the equation $2^x = 10$ using the secant method.  What would make good initial guesses $x_0$ and $x_1$? 
 
 We finished by talking about the convergence rate of the secant method. 
 
 <div class="Theorem">
-**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that for $x_n$, $x_{n-1}$ sufficiently close to $r$, the next iterate of the secant method has
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that for $x_n$, $x_{n-1}$ sufficiently close to $r$ (say $|x_0 - r| < 1/C$ and $|x_1 - r| < 1/C$), the next iterate of the secant method has
 $$|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.$$
+In particular, $|x_n - r|$ will converge to $r$. 
 </div>
 
 Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
@@ -307,6 +308,53 @@ Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Ne
 2. Use this formula to estimate $|x_3-r|$ in terms of $|x_1-r|$ and $|x_0 - r|$. Assume that the same constant $C$ applies for all $x_{n+1}$. 
 3. Do the same for $|x_4 - r|$. 
 4. Keep going until you find a pattern. 
+
+We saw that the pattern is that the exponents of each factor is a Fibonacci number.  We talked briefly about [Binet's formula](https://en.wikipedia.org/wiki/Fibonacci_sequence#Relation_to_the_golden_ratio) for Fibonacci numbers and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618$. The lead to the following nice rule of thumb: The number of correct decimal places in the secant method increases by a factor of about 1.6 (the golden ratio) every step. 
+
+<!--
+#### Wed, Feb 7
+
+Newton's method is a special case of a method known as fixed point iteration.  A \textbf{fixed point} of a function $f(x)$ is a number $p$ such that $f(p) = p$.  Not every function has a fixed point, but we do have the following existence result:
+
+<div class="Theorem">
+**Theorem.** Let $f \in C^0[a,b]$.  If $f(x) \in [a,b]$ for every $x \in [a,b]$, then $f$ must have a fixed point in $[a,b]$.  
+</div>
+
+1. Show that $\cos x$ has a fixed point in $[0,\tfrac{\pi}{2}]$. 
+
+2. Explain why $f(x) = e^x$ has no fixed points. 
+
+A fixed point $p$ is **attracting** if for all $x_0$ sufficiently close to $p$, the recursive sequence defined by 
+$$x_{n+1} = f(x_n)$$
+converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converges to $p$. 
+
+3. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
+
+4. Show that $g(x) = 1 - 2x -x^5$ has a fixed point, but it is not attracting. 
+
+<div class="Theorem">
+**Theorem** If $f$ has a fixed point $p$ and 
+
+1. $|f'(p)| < 1$, then $p$ is attracting, 
+2. $|f'(p)| > 1$, then $p$ is repelling,
+3. $|f'(p)| = 1$, then no info. 
+</div>
+
+You can sometimes use fixed point iteration to solve equations.  For example, here are two different ways to solve the equation $x^3 + 3x + 6 = 0$ using fixed point iteration. 
+
+1. Re-write the equation as $\dfrac{-6}{x^2+3} = x$.
+
+2. Replace $f(x) = 0$ with the equation $x + cf(x) = x$ where $c$ is a small constant. The constant $c = -\tfrac{1}{10}$ works well for the function above. 
+
+When a sequence $x_n$ converges to a root $r$, we say that it has **a linear order of convergence** if there is a constant $0 < C < 1$ such that 
+$$|x_{n+1} - r| \le C |x_n - r| \text{ for all } n.$$
+We say that the sequence has a **quadratic order of convergence** if there is a constant $C > 0$ such that 
+$$|x_{n+1} - r| \le C |x_n - r|^2 \text{ for all } n.$$
+More generally, a sequence **converges with order $\alpha$** if there is are constants $C > 0$ and $\alpha > 1$ such that 
+$$|x_{n+1} - r| \le C |x_n - r|^\alpha \text{ for all } n.$$
+
+In general, a sequence that converges with order $\alpha > 1$ will have the number of correct decimal places grow by a factor of about $\alpha$ each step.  Newton's method is order 2, Secant method is order $\varphi \approx 1.618$, and the Bisection method is only linear order. 
+-->
 
 
 - - -
