@@ -359,9 +359,34 @@ Using least squares regression to find our weight vector probably isn't the best
 We finished by outlining where we are going in the next few classes.  We are going to look at how to minimize different loss functions over the space of all possible weight vectors (called the **weight space**).  We talked about how precise formulas for the optimal weight vector don't always exist, but we can use a general technique called **gradient descent** that works for many different loss functions. 
 
 
-<!--
 #### Wed, Feb 7
--->
+
+We talked about gradient descent today.  For a multivariable function $f: \R^n \rightarrow \R$, the **gradient** of $f$ at a point $x = (x_1, \ldots, x_n)$ is the vector 
+$$\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right).$$
+We calculated the gradient for these examples. Here is a video that [explains partial derivatives](https://youtu.be/AXqhWeUEtQU). 
+
+1. $f(x,y) = x^2 + y^2$ (<https://youtu.be/_-02ze7tf08>)
+
+2. $f(x,y) = x^4 + y^4 + (x-1)^2 + y$ 
+
+The important thing to understand about $\nabla f$ is that it always points in the direction of steepest increase. This idea leads inspires **gradient descent** which is a simple algorithm to find the minimum of a multivariable function.  
+
+<div class="Theorem">
+**Gradient Descent Algorithm**
+
+1. Start with an initial guess for the minimum $x$ and a fixed (small) step size $\eta$. 
+2. Find the gradient of $f$ at $x$: $\nabla f(x)$.
+3. Replace $x$ by $x- \eta \, \nabla f(x)$. 
+4. Repeat steps 2 & 3 until your gradient vector is very close to 0. 
+</div>
+
+What will happen if you use gradient descent on a function like this one which has more than one local min?
+
+3. $f(x) = x^4 + y^4 - 3xy$
+
+We wrote a program in class to perform gradient descent and we used it on the two functions above.  Then we used it on the following sum of squared error loss function. 
+
+4. $L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$
 
 
 - - -

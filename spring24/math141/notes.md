@@ -328,12 +328,11 @@ We calculated some examples.
 6. Find the derivative of $f(x) = \sqrt{x}$ at $a = 4$. To do this last problem, you need to find
 $\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
 
-<!--
 #### Wed, Feb 7
 
 Today we observed that the derivative of $f(x)$ is a function $f'(a)$ that depends on the point $a$ where you found the slope of the tangent line.  Another way to write the definition of derivative is:
 $$f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$
-We also have two different notations for the derivative function.  We've already seen $f'(x)$.  We also use the symbol $\dfrac{d}{dx}$ as a command that literally means "take the derivative of" whatever function comes next. So $f'(x)$ means the same thing as $\dfrac{d}{dx} \, f(x)$. Another notation that we use frequently is to write $\dfrac{dy}{dx}$ to represent the derivative of a function $y = f(x)$.  So if we have a function $y = f(x)$, then all of these are the same:
+We also have two different notations for the derivative function.  We've already seen $f'(x)$.  We also use the symbol $\dfrac{d}{dx}$ as a command that literally means "take the derivative of" whatever function comes next. So $f'(x)$ means the same thing as $\dfrac{d}{dx} \, f(x).$ Another notation that we use frequently is to write $\dfrac{dy}{dx}$ to represent the derivative of a function $y = f(x)$.  So if we have a function $y = f(x)$, then all of these are the same:
 $$f'(x) = \dfrac{d}{dx} \, f(x) = \dfrac{dy}{dx}.$$ 
 
 
@@ -350,7 +349,6 @@ We also looked at how the graph of a derivative $f'(x)$ is related to, but diffe
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent_function_animation.gif"></img>
 </center>
--->
 
 - - -
 

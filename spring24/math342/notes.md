@@ -311,7 +311,6 @@ Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Ne
 
 We saw that the pattern is that the exponents of each factor is a Fibonacci number.  We talked briefly about [Binet's formula](https://en.wikipedia.org/wiki/Fibonacci_sequence#Relation_to_the_golden_ratio) for Fibonacci numbers and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618$. The lead to the following nice rule of thumb: The number of correct decimal places in the secant method increases by a factor of about 1.6 (the golden ratio) every step. 
 
-<!--
 #### Wed, Feb 7
 
 Newton's method is a special case of a method known as fixed point iteration.  A \textbf{fixed point} of a function $f(x)$ is a number $p$ such that $f(p) = p$.  Not every function has a fixed point, but we do have the following existence result:
@@ -326,7 +325,11 @@ Newton's method is a special case of a method known as fixed point iteration.  A
 
 A fixed point $p$ is **attracting** if for all $x_0$ sufficiently close to $p$, the recursive sequence defined by 
 $$x_{n+1} = f(x_n)$$
-converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converges to $p$. 
+converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converges to $p$. You can draw a picture of these fixed point iterates by drawing a [cobweb diagram](https://en.wikipedia.org/wiki/Cobweb_plot). 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/CobwebConstruction.gif" width=300></img>
+</center>
 
 3. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
 
@@ -354,7 +357,6 @@ More generally, a sequence **converges with order $\alpha$** if there is are con
 $$|x_{n+1} - r| \le C |x_n - r|^\alpha \text{ for all } n.$$
 
 In general, a sequence that converges with order $\alpha > 1$ will have the number of correct decimal places grow by a factor of about $\alpha$ each step.  Newton's method is order 2, Secant method is order $\varphi \approx 1.618$, and the Bisection method is only linear order. 
--->
 
 
 - - -
