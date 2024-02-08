@@ -380,13 +380,31 @@ The important thing to understand about $\nabla f$ is that it always points in t
 4. Repeat steps 2 & 3 until your gradient vector is very close to 0. 
 </div>
 
-What will happen if you use gradient descent on a function like this one which has more than one local min?
+Here is the code I wrote in class to implement this algorithm for example 2 above. 
 
-3. $f(x) = x^4 + y^4 - 3xy$
+```python
+import numpy as np
 
-We wrote a program in class to perform gradient descent and we used it on the two functions above.  Then we used it on the following sum of squared error loss function. 
+# Step 1 initialize initial guess x and step size eta.
+x = np.array([0,0])
+eta = 0.1
+for i in range(20):
+    # step 2 calculate gradient
+    gradient = np.array([4*x[0]**3+2*x[0]-2, 4*x[1]**3+1])
+    # step 3 use the gradient to update x
+    x = x - eta*gradient
+    print(x, gradient)
+```
 
-4. $L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$
+You have to be careful when you pick the step size $\eta$ (eta).  If it is too big, the algorithm will not converge. If it is too small, the algorithm will be very slow.  
+
+3. Try the code above with different values of $\eta$. What happens if $\eta = 0.5$?  What about $\eta = 0.01$?
+
+4. What will happen if you use gradient descent on a function like this one which has more than one local min?
+$$f(x) = x^4 + y^4 - 3xy$$
+
+5. Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector $w$ with the minimum loss. 
+$$L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$$
 
 
 - - -

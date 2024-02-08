@@ -350,6 +350,44 @@ We also looked at how the graph of a derivative $f'(x)$ is related to, but diffe
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tangent_function_animation.gif"></img>
 </center>
 
+4. Sketch a rough graph of the derivative of the function below.
+
+<center>
+<svg width="300" height="210" viewBox="-5 -5 10 7">
+<g transform="scale(1,-1)">
+<!-- x & y axes -->
+  <g stroke="black" stroke-width="0.025">
+   <line x1="-5" y1="0" x2="5" y2="0"/>
+   <line x1="0" y1="-2" x2="0" y2="5"/>
+  </g>
+  <!-- Axes labels -->
+   <g font-size="0.5" font-style="italic">
+   <text x="4.4" y="-0.6" transform="scale(1,-1)">x</text>
+   <text x="-0.6" y="-4.4" transform="scale(1,-1)">y</text>
+   </g>
+  <!-- Axes arrow tips -->
+   <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+   <polygon points="0,5 0.15,4.5 -0.15,4.5"/>
+  <!-- Function label -->
+   <g font-size="0.5" font-style="italic" fill="blue">
+   <text x="2.5" y="-3.5" transform="scale(1,-1)">y = g(x)</text>
+   </g>
+  <!-- Graph of function -->
+  <!-- Python one-liner: xs = [i/10 for i in range(-24,25) ]; "  ".join([f"{x:.3f}, {4-x**2:.3f}" for x in xs]) --> 
+    <polyline points="-2.400, -1.760  -2.300, -1.290  -2.200, -0.840  -2.100, -0.410  -2.000, 0.000  -1.900, 0.390  -1.800, 0.760  -1.700, 1.110  -1.600, 1.440  -1.500, 1.750  -1.400, 2.040  -1.300, 2.310  -1.200, 2.560  -1.100, 2.790  -1.000, 3.000  -0.900, 3.190  -0.800, 3.360  -0.700, 3.510  -0.600, 3.640  -0.500, 3.750  -0.400, 3.840  -0.300, 3.910  -0.200, 3.960  -0.100, 3.990  0.000, 4.000  0.100, 3.990  0.200, 3.960  0.300, 3.910  0.400, 3.840  0.500, 3.750  0.600, 3.640  0.700, 3.510  0.800, 3.360  0.900, 3.190  1.000, 3.000  1.100, 2.790  1.200, 2.560  1.300, 2.310  1.400, 2.040  1.500, 1.750  1.600, 1.440  1.700, 1.110  1.800, 0.760  1.900, 0.390  2.000, 0.000  2.100, -0.410  2.200, -0.840  2.300, -1.290  2.400, -1.760" fill="none" stroke="blue" stroke-width="0.05" /></svg>
+  </g>
+</svg>
+</center>
+
+We finished by talking about the two meanings of the derivative.
+
+1. The derivative is the slope of the tangent line.
+2. The derivative is the instantaneous rate of change. 
+
+We looked at this example. 
+
+5. A rock falls from a 100 foot cliff with height $h(t) = 100 - 16t^2$ where $t$ is measured in seconds.  What is the meaning of the derivative $h'(t)$ in this context, and what are its units? 
+
 - - -
 
 ### Week 5 Notes
