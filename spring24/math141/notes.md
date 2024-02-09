@@ -388,9 +388,33 @@ We looked at this example.
 
 5. A rock falls from a 100 foot cliff with height $h(t) = 100 - 16t^2$ where $t$ is measured in seconds.  What is the meaning of the derivative $h'(t)$ in this context, and what are its units? 
 
+#### Fri, Feb 9
+
+Today we introduced the following derivative rules. 
+
+1. **Linear Function Rule.** $\dfrac{d}{dx} [m x + b] = m$.
+2. **Addition Rule.** $\ds  \dfrac{d}{dx} \left[f(x) + g(x) \right] = f'(x) + g'(x)$.
+3. **Constant Multiple Rule.** $\dfrac{d}{dx} \left[ c f(x) \right] = c f'(x)$.
+4. **Power Rule.** $\dfrac{d}{dx} x^n = n x^{n-1}$.
+
+We used these rules to solve the following problems. 
+
+1. Find $f'(x)$ when $f(x) = x^3 - 5x^2 + 7x - 4$. (<https://youtu.be/8Sv6CNuNwqo>)
+
+2. Find points on the curve $y = 2x^3 + 3x^2 - 12 x + 1$ where the tangent is horizontal. (<https://youtu.be/KxqKelxk3FA>)
+
+3. Find the derivatives of $\dfrac{1}{x^2}$, $\sqrt[3]{x^2}$, and $x \sqrt{x}$. Use the [exponent rules](https://people.hsc.edu/faculty-staff/blins/classes/fall22/math105/AlgebraAxioms.pdf#page=3) before you use the power rule.
+
+We also talked about higher derivatives. The second derivative of a function $y = f(x)$ is:
+$$y'' = \dfrac{d}{dx} \left( \dfrac{d}{dx} \, y \right) = \dfrac{d^2}{dx^2} \, y = \dfrac{d^2 y}{dx^2} = f''(x).$$
+
+We can also take 3rd, 4th, etc. derivatives and they have similar notation.
+
+4. Find the second derivative $y''$ when $y = \dfrac{6}{x^2}$.  (<https://youtu.be/WC5VYKI807Q>)
+
 - - -
 
-### Week 5 Notes
+### Week 5 Notes 
  
 Day  | Section  | Topic
 :---:|:---:|:---------

@@ -362,6 +362,36 @@ In general, a sequence that converges with order $\alpha > 1$ will have the numb
 **Theorem.** If $f$ is differentiable at a fixed point $p$ and $0 < |f'(p)| < 1$, then for any point $x_0$ sufficiently close to $p$, the fixed point iterates $x_n$ defined by $x_{n+1} = f(x_n)$ converge to $p$ with linear order.  If $f'(p) = 0$, then the iterates converge to $p$ with order $\alpha$ where $f^{(\alpha)}(p)$ is the first nonzero derivative of $f$ at $p$. 
 </div>
 
+#### Fri, Feb 9
+
+We started with this question:
+
+1. Why is Newton's method a special case of fixed point iteration?  When we apply Newton's method to find a root of $f(x)$, what function $N(x)$ are we iterating?  What is the derivative of $N$ at the root $r$? 
+
+Then we did this workshop in class. 
+
+* **Workshop:** [Fixed point iteration](Workshops/FixedPoints.pdf)
+
+In one step of the workshop, we used the **triangle inequality** which says that for any two numbers $a$ and $b$, 
+$$|a+b| \le |a| + |b|.$$
+
+<!--
+We've already seen that Newton's method has quadratic order of convergence.  Newton's method is the first in a family of root finding techniques called **Householder methods.** If $f \in C^{k+1}[a,b]$ has a root $r \in (a,b)$, then for $x_0$ close to $r$, we define a sequence
+$$x_{n+1} = x_n + k \dfrac{(1/f)^{(k-1)} (x_n)}{(1/f)^{(k)} (x_n)}$$
+When $x_0$ is close enough to $r$, the Householder iterates $x_n$ converge to $r$ with order $k+1$.
+
+2. Show that Householder iteration with $k = 1$ is Newton's method.  
+
+We finished with a cool fact about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
+
+<center>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Julia_set_for_the_rational_function.png" width=300></img>
+<figcaption>Basins of attraction for the roots of $x^3-1$.</figcaption>
+</figure>
+</center>
+-->
+
 
 - - -
 

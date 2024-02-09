@@ -334,7 +334,7 @@ Day    | Topic
 :---:|:---------
 Mon, Feb 5 | Linear classifiers
 Wed, Feb 7 | Loss functions & gradient descent
-Fri, Feb 9 | Logistic regression
+Fri, Feb 9 | Stochastic gradient descent
 
 #### Mon, Feb 5
 
@@ -406,6 +406,16 @@ $$f(x) = x^4 + y^4 - 3xy$$
 5. Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector $w$ with the minimum loss. 
 $$L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$$
 
+#### Fri, Feb 9
+
+Today we did this workshop in class:
+
+* **Workshop:** [Gradient descent](Workshops/GradientDescent.pdf)
+
+As part of the workshop, we introduced the stochastic gradient descent algorithm which tends to be an effective way to get gradient descent to converge more quickly. 
+
+
+
 
 - - -
 
@@ -413,9 +423,25 @@ $$L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$$
  
 Day    | Topic
 :---:|:---------
-Mon, Feb 12 |
-Wed, Feb 14 |
-Fri, Feb 16 |
+Mon, Feb 12 | Logistic regression 
+Wed, Feb 14 | Hinge loss
+Fri, Feb 16 | Nonlinear classification
+
+
+<!--
+Today we talked about an alternative loss function that is popular for linear classifiers called hinge loss.  Suppose that we have observations that fall into two categories which we classify as $+1$ or $-1$.  For each individual observed we have a feature vector $x$ and a category $y$ which is either $+1$ or $-1$.  Our goal is to find the best weight vector $w$ so for any observed feature vector $x$, the sign of $w \cdot x$ does the best possible job of predicting the corresponding value of $y$.  We call the number $w \cdot x$ the **score** of the prediction.  If we multiply the score times the correct value of $y$, then we will get a positive number if the prediction is correct and a negative number if our prediction is wrong.  We call this number the **margin** and 
+$$\text{margin} =  y \, (w \cdot x).$$
+
+The hinge loss function is a function of the margin that is
+$$L_\text{hinge} (w) = \begin{cases}
+1 - \text{margin} & \text{ if } \text{margin } < 1 \\
+0 & \text{ if } \text{margin } \ge 1 
+\end{cases}$$
+
+1. Show that for each pair $x$ and $y$, the gradient of the hinge loss is 
+$$\nabla L_\text{hinge} (w) = \begin{cases} -y x & \text{ if } \text{ margin} < 1\\ 0 & \text{ otherwise}. \end{cases}$$
+-->
+
 
 - - -
 

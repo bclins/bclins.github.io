@@ -363,7 +363,7 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 9</td>
-<td style="text-align: left;">Logistic regression</td>
+<td style="text-align: left;">Stochastic gradient descent</td>
 </tr>
 </tbody>
 </table>
@@ -410,6 +410,12 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 <li><p>What will happen if you use gradient descent on a function like this one which has more than one local min? <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x) = x^4 + y^4 - 3xy</annotation></semantics></math></p></li>
 <li><p>Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> with the minimum loss. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2</annotation></semantics></math></p></li>
 </ol>
+<h4 id="fri-feb-9">Fri, Feb 9</h4>
+<p>Today we did this workshop in class:</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/GradientDescent.pdf">Gradient descent</a></li>
+</ul>
+<p>As part of the workshop, we introduced the stochastic gradient descent algorithm which tends to be an effective way to get gradient descent to converge more quickly.</p>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
@@ -422,18 +428,31 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 12</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Logistic regression</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 14</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Hinge loss</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 16</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Nonlinear classification</td>
 </tr>
 </tbody>
 </table>
+<!--
+Today we talked about an alternative loss function that is popular for linear classifiers called hinge loss.  Suppose that we have observations that fall into two categories which we classify as $+1$ or $-1$.  For each individual observed we have a feature vector $x$ and a category $y$ which is either $+1$ or $-1$.  Our goal is to find the best weight vector $w$ so for any observed feature vector $x$, the sign of $w \cdot x$ does the best possible job of predicting the corresponding value of $y$.  We call the number $w \cdot x$ the **score** of the prediction.  If we multiply the score times the correct value of $y$, then we will get a positive number if the prediction is correct and a negative number if our prediction is wrong.  We call this number the **margin** and 
+$$\text{margin} =  y \, (w \cdot x).$$
+
+The hinge loss function is a function of the margin that is
+$$L_\text{hinge} (w) = \begin{cases}
+1 - \text{margin} & \text{ if } \text{margin } < 1 \\
+0 & \text{ if } \text{margin } \ge 1 
+\end{cases}$$
+
+1. Show that for each pair $x$ and $y$, the gradient of the hinge loss is 
+$$\nabla L_\text{hinge} (w) = \begin{cases} -y x & \text{ if } \text{ margin} < 1\\ 0 & \text{ otherwise}. \end{cases}$$
+-->
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
