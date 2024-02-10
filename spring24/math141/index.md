@@ -17,7 +17,8 @@ header-includes: |
 
 ### Announcements
 
-* [Formula sheet](formulaSheet.pdf)
+* Midterm 1 will be on **Friday, Feb. 16**
+* Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](formulaSheet.pdf)
 
 ### Course Description
 
@@ -31,7 +32,7 @@ Week | Topic                      | Notes | Homework
 2  | Trigonometry                                          | [Week 02](notes.html#week-2-notes)  | [HW2](HW2.pdf)
 3  | Limits                                                | [Week 03](notes.html#week-3-notes)  | [HW3](HW3.pdf)
 4  | Derivatives                                           | [Week 04](notes.html#week-4-notes)  | [HW4](HW4.pdf)
-5  | Differentiation rules, **Midterm 1**                  | [Week 05](notes.html#week-5-notes)  | 
+5  | Differentiation rules, **Midterm 1**                  | [Week 05](notes.html#week-5-notes)  | [HW5](HW5.pdf)
 6  | Derivatives of trig functions & chain rule            | [Week 06](notes.html#week-6-notes)  | 
 7  | Implicit differentiation & related rates              | [Week 07](notes.html#week-7-notes)  | 
 8  | Linear approximations & extreme values                | [Week 08](notes.html#week-8-notes)  | 
