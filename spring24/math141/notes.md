@@ -423,6 +423,38 @@ Wed, Feb 14 | [3.4][3.4] | Derivatives as rates of change
 Thu, Feb 15 | | Review
 Fri, Feb 16 | | **Midterm 1**
 
+#### Mon, Feb 12
+
+In class today, we covered these four derivative rules:
+
+* **Derivatives of Sine & Cosine.** 
+$$\dfrac{d}{dx} \, \sin x = \cos x ~~~\text{ and }~~~ \dfrac{d}{dx} \, \cos x = -\sin x$$
+* **Product Rule.** 
+$$\dfrac{d}{dx} \, f(x) g(x) = f'(x) g(x) + g'(x) f(x)$$ 
+* **Quotient Rule.** 
+$$\dfrac{d}{dx} \, \frac{f(x)}{g(x)} = \dfrac{g(x) f'(x)  - f(x) g'(x)}{[g(x)]^2} = \frac{\text{Lo}\, \text{DHi} - \text{Hi}\, \text{DLo}}{\text{LoLo}}$$  
+
+We did the following examples. 
+
+1. $\dfrac{d}{dx} \, x^2 \sin x$ (<https://youtu.be/79ngr0Bur38>)
+
+2. Let $f(x)$ and $h(x)$ have values in the following table. Find the derivative of $f(x) h(x)$ at $x=3$. (<https://youtu.be/SQUSh1LNjIo>)
+
+<center>
+<table class="bordered">
+<tr><td>$x$</td><td>$f(x)$</td><td>$h(x)$</td><td>$f'(x)$</td><td>$h'(x)$</td></tr>
+<tr><td>$3$</td><td>$6$</td><td>$0$</td><td>$6$</td><td>$4$</td></tr>
+</table>
+</center>
+
+3. $\dfrac{d}{dx} \, x^2 ( x^3 + 4)$ (<https://youtu.be/uPCjqfT0Ixg>)
+
+4. $\dfrac{d}{dx} \, \dfrac{5x - 3}{x^2+1}$
+
+5. $\dfrac{d}{dx} \, \dfrac{\cos x}{x^2}$ (<https://youtu.be/7TXDubwGOSk>)
+
+We also gave a proof of the product rule similar to the one in [this video](https://youtu.be/L5ErlC0COxI). 
+
 - - -
 
 ### Week 6 Notes

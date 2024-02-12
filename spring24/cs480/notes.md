@@ -361,7 +361,7 @@ We finished by outlining where we are going in the next few classes.  We are goi
 
 #### Wed, Feb 7
 
-We talked about gradient descent today.  For a multivariable function $f: \R^n \rightarrow \R$, the **gradient** of $f$ at a point $x = (x_1, \ldots, x_n)$ is the vector 
+We talked about gradient descent today.  For a multivariable function $f: \R^n \rightarrow \R$, the **gradient** of $f$ at a point $\mathbf{x} = (x_1, \ldots, x_n)$ is the vector 
 $$\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right).$$
 We calculated the gradient for these examples. Here is a video that [explains partial derivatives](https://youtu.be/AXqhWeUEtQU). 
 
@@ -372,11 +372,11 @@ We calculated the gradient for these examples. Here is a video that [explains pa
 The important thing to understand about $\nabla f$ is that it always points in the direction of steepest increase. This idea leads inspires **gradient descent** which is a simple algorithm to find the minimum of a multivariable function.  
 
 <div class="Theorem">
-**Gradient Descent Algorithm**
+**Gradient Descent Algorithm.** To find the minimum of $f:\R^n \rightarrow \R$,
 
-1. Start with an initial guess for the minimum $x$ and a fixed (small) step size $\eta$. 
-2. Find the gradient of $f$ at $x$: $\nabla f(x)$.
-3. Replace $x$ by $x- \eta \, \nabla f(x)$. 
+1. Start with an initial guess for the minimum $\mathbf{x}$ and a fixed (small) step size $\eta$. 
+2. Find the gradient of $f$ at $\mathbf{x}$, $\nabla f(\mathbf{x})$.
+3. Replace $\mathbf{x}$ by $\mathbf{x}- \eta \, \nabla f(\mathbf{x})$. 
 4. Repeat steps 2 & 3 until your gradient vector is very close to 0. 
 </div>
 
@@ -403,8 +403,8 @@ You have to be careful when you pick the step size $\eta$ (eta).  If it is too b
 4. What will happen if you use gradient descent on a function like this one which has more than one local min?
 $$f(x) = x^4 + y^4 - 3xy$$
 
-5. Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector $w$ with the minimum loss. 
-$$L(w) = (w \cdot [1, 0] - 1)^2 + (w \cdot [1,1] - 1)^2 + (w \cdot [1,2] -4)^2$$
+5. Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector $\mathbf{w}$ with the minimum loss. 
+$$L(\mathbf{w}) = (\mathbf{w} \cdot [1, 0] - 1)^2 + (\mathbf{w} \cdot [1,1] - 1)^2 + (\mathbf{w} \cdot [1,2] -4)^2$$
 
 #### Fri, Feb 9
 
@@ -413,6 +413,17 @@ Today we did this workshop in class:
 * **Workshop:** [Gradient descent](Workshops/GradientDescent.pdf)
 
 As part of the workshop, we introduced the stochastic gradient descent algorithm which tends to be an effective way to get gradient descent to converge more quickly. 
+
+
+<div class="Theorem">
+**Stochastic Gradient Descent Algorithm.** Let $L(\mathbf{w}) = \sum_{i = 1}^n L_i(\mathbf{w})$ be a sum of simpler loss functions $L_i(\mathbf{w})$. To minimize the total loss $L(\mathbf{w})$,
+
+1. Start with an initial guess for the minimum $\mathbf{w}$ and a fixed (small) step size $\eta$. 
+2. Randomly choose $i \in \{1, \ldots, n\}$.
+3. Find the gradient of $L_i$ at $\mathbf{w}$, $\nabla L_i(\mathbf{w})$.
+4. Replace $\mathbf{w}$ by $\mathbf{w}- \eta \, \nabla L_i(\mathbf{w})$. 
+5. Repeat steps 2 - 4 until your gradient vectors are very close to 0. 
+</div>
 
 
 
@@ -427,23 +438,67 @@ Mon, Feb 12 | Logistic regression
 Wed, Feb 14 | Hinge loss
 Fri, Feb 16 | Nonlinear classification
 
+#### Mon, Feb 12
 
-<!--
-Today we talked about an alternative loss function that is popular for linear classifiers called hinge loss.  Suppose that we have observations that fall into two categories which we classify as $+1$ or $-1$.  For each individual observed we have a feature vector $x$ and a category $y$ which is either $+1$ or $-1$.  Our goal is to find the best weight vector $w$ so for any observed feature vector $x$, the sign of $w \cdot x$ does the best possible job of predicting the corresponding value of $y$.  We call the number $w \cdot x$ the **score** of the prediction.  If we multiply the score times the correct value of $y$, then we will get a positive number if the prediction is correct and a negative number if our prediction is wrong.  We call this number the **margin** and 
-$$\text{margin} =  y \, (w \cdot x).$$
+In the workshop last time, we had to calculate the gradient of a function of the form $\mathbf{w} \mapsto (\mathbf{w} \cdot \mathbf{x} - y)^2$.  This is a composition of the one variable function $f(u) = (u - y)^2$ with the dot product $\mathbf{x} \cdot \mathbf{w}$.  In general, we have the following nice lemma which is one special case of the chain rule.
+
+<div class="Theorem"> 
+**Lemma.** If $f: \R \rightarrow \R$ is differentiable, and $L(\mathbf{w}) = f(\mathbf{x} \cdot \mathbf{w})$, then 
+$$\nabla L(\mathbf{w}) = f'(\mathbf{x} \cdot \mathbf{w}) \mathbf{x}.$$
+</div>
+
+Today we looked at linear classification and talked about some of the different loss functions that we could use.  We used the lemma above to help find the gradients for gradient descent. First we introduced the following terminology. 
+
+Suppose that we want to train a linear classifier.  For each individual observed we have a feature vector $X_i$ and a category $y_i$ which is either $+1$ or $-1$.  Our goal is to find the best weight vector $\mathbf{w}$ so for any observed feature vector $X_i$, the sign of $X_i \cdot \mathbf{w}$ does the best possible job of predicting the corresponding value of $y_i$.  We call the number $X_i \cdot \mathbf{w}$ the **score** of the prediction.  If we multiply the score times the correct value of $y_i$, then we will get a positive number if the prediction is correct and a negative number if our prediction is wrong.  We call this number the **margin** and 
+$$\text{margin}_i =  y_i \, (X_i \cdot \mathbf{w}).$$ 
 
 The hinge loss function is a function of the margin that is
-$$L_\text{hinge} (w) = \begin{cases}
+$$L_\text{hinge} (\mathbf{w}) = \begin{cases}
 1 - \text{margin} & \text{ if } \text{margin } < 1 \\
 0 & \text{ if } \text{margin } \ge 1 
 \end{cases}$$
 
-1. Show that for each pair $x$ and $y$, the gradient of the hinge loss is 
-$$\nabla L_\text{hinge} (w) = \begin{cases} -y x & \text{ if } \text{ margin} < 1\\ 0 & \text{ otherwise}. \end{cases}$$
+1. Show that for each pair $X_i$ and $y_i$, the gradient of the hinge loss is 
+$$\nabla L_\text{hinge} (\mathbf{w}) = \begin{cases} -y_i X_i & \text{ if } \text{ margin} < 1\\ 0 & \text{ otherwise}. \end{cases}$$
+
+2. Express the zero-one loss function as a function of the margin.  Why won't gradient descent work with zero-one loss?
+
+3. We also looked at the absolute error loss function:
+$$L(w) = |\text{margin} - 1|$$ 
+and we calculated the gradient of that when $y$ is $+1$ and $-1$.  
+
+With both hinge loss and absolute error loss, the gradient vectors don't get small when we get close to the minimum, so we have to adjust the gradient descent algorithm slightly to use a step size that gets smaller after each step.  
+
+
+<div class="Theorem">
+**Gradient Descent Algorithm (with Variable Step Size).** To find the minimum of $f:\R^n \rightarrow \R$,
+
+1. Start with an initial guess for the minimum $\mathbf{x}$, a (small) step size $\eta$, and $k = 1$. 
+2. Find the gradient of $f$ at $\mathbf{x}$, $\nabla f(\mathbf{x})$.
+3. Replace $\mathbf{x}$ by $\mathbf{x}- \tfrac{\eta}{\sqrt{k}} \, \nabla f(\mathbf{x})$. 
+4. Increment $k$.
+5. Repeat steps 2 - 4 until your function $f$ stops getting smaller. 
+</div>
+
+
+<!--
+Today we talked about using sum of absolute error instead of sum of squared error to do regression.  Although sum of squares regression is more common, there are some advantages to using sum of absolute error instead. 
+
+1. Absolute error regression isn't affected as much by outliers. 
+2. In problems where the data is sparse with lots of variables, absolute error regression is more likely come up with simpler models where some unimportant variables have coefficients equal to zero.  
+
+We can use gradient descent to minimize the total absolute error in our predictions.  
+
+1. What is the gradient of $L_{\mathbf{x},y}(\mathbf{w}) = |\mathbf{x} \cdot \mathbf{w} - y|$ when $\mathbf{x}$ is a feature vector, $\mathbf{w}$ is the weight vector, and $y$ is the correct output? 
+
 -->
 
 
-- - -
+<!--
+-->
+
+
+- - - 
 
 ### Week 6 Notes
  
