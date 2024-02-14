@@ -434,8 +434,8 @@ As part of the workshop, we introduced the stochastic gradient descent algorithm
  
 Day    | Topic
 :---:|:---------
-Mon, Feb 12 | Logistic regression 
-Wed, Feb 14 | Hinge loss
+Mon, Feb 12 | Hinge Loss
+Wed, Feb 14 | Logistic regression 
 Fri, Feb 16 | Nonlinear classification
 
 #### Mon, Feb 12
@@ -494,8 +494,36 @@ We can use gradient descent to minimize the total absolute error in our predicti
 -->
 
 
-<!--
--->
+#### Wed, Feb 14
+
+Today we talked about logistic regression which is one of the most common ways to find a linear classifier.  In a logistic regression model the score $\mathbf{w} \cdot \mathbf{x}$ is interpreted as the log-odds of a success.  
+
+Recall that the probability of any event is a number $p$ between 0 and 1.  Sometimes in probability we talk about the odds of an event happening instead of the probability.  The **odds** of an event is given by the formula 
+$$\text{Odds} = \frac{p}{1-p}.$$
+For example, if an event has probability $p = 2/3$, then the odds are $2$ (we usually say 2 to 1 odds).  You can also easily convert from odds back to probability by computing 
+$$p = \frac{\text{odds}}{\text{odds} + 1}.$$
+Unlike probabilities, odds can be bigger than 1.  In logistic regression, we are looking for a model of the form
+$$\log (\text{odds}) = w_0  + w_1 x_1 + \ldots + w_n x_n = \mathbf{w} \cdot \mathbf{x}.$$
+We evaluate the model based on the probability that the observed results would happen if the model was true.  For each $y_i$, the predicted probability of $y_i$ being 1 is
+$$p_i = \frac{e^{\mathbf{w} \cdot X_i} }{e^{\mathbf{w} \cdot X_i} + 1}$$
+and if $y_i$ is $-1$, then the predicted probability for that event is 
+$$ 1- p_i = \frac{1 }{e^{\mathbf{w} \cdot X_i} + 1}$$
+Instead of multiplying these probabilities together, we add the logarithms to get the log-likelihood function:
+$$\operatorname{LLF} = \sum_{i:\, y_i =1} \log( p_i) + \sum_{i: \, y_i = -1} \log (1 - p_i)$$
+We can convert this into a loss function by making it negative. Each individual term in the loss function can be expressed as:
+$$L_i(\mathbf{w}) = -(1+y_i) \log (p_i) - (1 - y_{i}) \log (1-p_i)$$
+The simplest case turns out to be when $y_i = -1$, because then the loss function is 
+$$L_i(\mathbf{w}) = \log(1+e^{\mathbf{w} \cdot X_i})$$
+which has gradient
+$$\nabla L_i(\mathbf{w}) = \frac{e^{\mathbf{w} \cdot X_i}}{1+e^{\mathbf{w} \cdot X_i}} X_i = p_i X_i$$
+
+We looked at this example:
+
+* **Example:** [Predictors of success in calculus](https://people.hsc.edu/faculty-staff/blins/predictors.html)
+
+
+
+
 
 
 - - - 

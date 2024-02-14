@@ -455,6 +455,30 @@ We did the following examples.
 
 We also gave a proof of the product rule similar to the one in [this video](https://youtu.be/L5ErlC0COxI). 
 
+#### Wed, Feb 14
+
+Today we focused on examples of derivatives and what they mean. 
+
+1. A rock falls from a 400 foot cliff with height $h(t) = 400 - 16t^2$ where $t$ is measured in seconds.  What is the velocity of the rock when it hits the ground (i.e., when $h(t) = 0$)? (<https://youtu.be/OIo5lfyc8A0>)
+
+2. What is the acceleration of the rock?
+
+3. ([Exercise 3.4.164][3.4]) A small town in Ohio commissioned an actuarial firm to conduct a study that modeled the rate of change of the town’s population. The study found that the town’s population (measured in thousands of people) can be modeled by the function $P(t) = -\tfrac{1}{3}t^3 + 64t + 3000$ where $t$ is measured in years. 
+
+    a. What is $P'(t)$ and what are its units?
+
+    b. What is $P''(t)$ and what are its units?  What does the second derivative tell us about the population.
+
+4. A company sells widgets.  The amount of widgets they can sell depends on the price $p$ in dollars. Suppose that quantity sold is $Q(p) = 100 - 4p$. 
+
+    a. What is the total revenue $R(p)$? 
+
+    b. What does the derivative $R'(p)$ mean?  
+
+5. Let $y = \dfrac{x^2 - 1}{x^2 + x + 1}$.  Find the tangent line at the point $(1,0)$. (<https://youtu.be/8p7QGLzOynI>)
+
+6. Let $f(x) = 5-x^2$.  Find the tangent line to $f(x)$ when $x= 2$.  Where does that tangent line intersect they $x$-axis?
+
 - - -
 
 ### Week 6 Notes
