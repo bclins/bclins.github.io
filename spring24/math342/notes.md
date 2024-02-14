@@ -466,6 +466,22 @@ In practice, inverse matrices are rarely used to solve systems of linear equatio
 1. Most matrices aren't invertible.
 2. Finding the inverse is at least as hard computationally as row reduction, so you might as well just use row reduction.  
 
+#### Wed, Feb 14
+
+Today we talked about LU decomposition.  We defined the LU decomposition as follows.  The **LU decomposition** of a matrix $A \in \R^{m \times n}$ is a pair of matrices $L \in \R^{m \times m}$ and $U \in \R^{m \times n}$ such that $A = LU$ and $U$ is in echelon form and $L$ is a lower triangular matrix with 1's on the main diagonal, 0's above the main diagonal, and entries $L_{ij}$ in row $i$, column $j$ that are equal to the multiple of row $i$ that you *subtracted* from row $j$ as you row reduced $A$ to $U$. 
+
+1. Compute the LU decomposition of $A = \begin{pmatrix} 1 & 1 & 1 & 1 \\ 2 & 2 & 5 & 3 \\ -1 & -1 & 14 & 4 \end{pmatrix}$. 
+
+2. Use the LU decomposition to solve $Ax = \begin{pmatrix} 2 \\ 6 \\ 8 \end{pmatrix}$. 
+
+We also did this workshop. 
+
+* **Workshop:** [LU decomposition](/home/brian/Dropbox/HSC/Workshops/NumericalAnalysis/LUdecomposition.pdf)
+
+We finished with one more example. 
+
+3. For what real numbers $a$ and $b$ does the matrix $\begin{pmatrix} 1 & 0 & 1 \\ a & a & a \\ b & b & a \end{pmatrix}$ have an LU decomposition? (<https://youtu.be/-eA2D_rIcNA>)
+
 - - -
 
 ### Week 6 Notes

@@ -459,7 +459,7 @@ We also gave a proof of the product rule similar to the one in [this video](http
 
 Today we focused on examples of derivatives and what they mean. 
 
-1. A rock falls from a 400 foot cliff with height $h(t) = 400 - 16t^2$ where $t$ is measured in seconds.  What is the velocity of the rock when it hits the ground (i.e., when $h(t) = 0$)? (<https://youtu.be/OIo5lfyc8A0>)
+1. A rock falls from a 100 foot cliff with height $h(t) = 100 - 16t^2$ where $t$ is measured in seconds.  What is the velocity of the rock when it hits the ground (i.e., when $h(t) = 0$)? (<https://youtu.be/OIo5lfyc8A0>)
 
 2. What is the acceleration of the rock?
 

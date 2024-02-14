@@ -499,11 +499,26 @@ We can use gradient descent to minimize the total absolute error in our predicti
 Today we talked about logistic regression which is one of the most common ways to find a linear classifier.  In a logistic regression model the score $\mathbf{w} \cdot \mathbf{x}$ is interpreted as the log-odds of a success.  
 
 Recall that the probability of any event is a number $p$ between 0 and 1.  Sometimes in probability we talk about the odds of an event happening instead of the probability.  The **odds** of an event is given by the formula 
-$$\text{Odds} = \frac{p}{1-p}.$$
+$$\text{odds} = \frac{p}{1-p}.$$
 For example, if an event has probability $p = 2/3$, then the odds are $2$ (we usually say 2 to 1 odds).  You can also easily convert from odds back to probability by computing 
 $$p = \frac{\text{odds}}{\text{odds} + 1}.$$
 Unlike probabilities, odds can be bigger than 1.  In logistic regression, we are looking for a model of the form
 $$\log (\text{odds}) = w_0  + w_1 x_1 + \ldots + w_n x_n = \mathbf{w} \cdot \mathbf{x}.$$
+For example, we came up with a very simple logistic regression model to predict whether someone is male or female based on their height:
+$$\log(\text{odds}_\text{male}) = 0.5 (\text{height}) - 33,$$
+where height is measured in inches.
+We based this model on guessing the odds that someone is male or female at a couple different heights, and then guessing a simple linear trend for the log-odd. 
+
+1. Find the log-odds, the odds, and the probability that this model would give for someone who is 67 inches tall to be male. 
+
+2. If we randomly selected 3 people, with heights 64, 69, and 72 inches respectively, what is the probability (according to the model) that the 64 inch tall person is female and the other two are male?  We call this number the **likelihood** of that event. 
+
+We guessed the slope $0.5$ and y-intercept $-33$ in our model.  Those probably aren't the best possible coefficients.  In logistic regression, we want the model that results in the highest likelihood of the actual data happening.  We showed in class that the best coefficients $\mathbf{w}$ happen when we minimize the **logistic loss function** which is the same as the negative logarithm of the likelihood function.
+
+$$L(w) = \sum_{i : y_i \text{ is a success} } -\log (p_i) + \sum_{i : y_i \text{ is a failure}} - \log(1-p_i)$$
+
+where $p_i = \dfrac{e^{\mathbf{w} X_i}}{e^{\mathbf{w} X_i} + 1}$ is the probability of a ``success" predicted by the model. 
+<!--
 We evaluate the model based on the probability that the observed results would happen if the model was true.  For each $y_i$, the predicted probability of $y_i$ being 1 is
 $$p_i = \frac{e^{\mathbf{w} \cdot X_i} }{e^{\mathbf{w} \cdot X_i} + 1}$$
 and if $y_i$ is $-1$, then the predicted probability for that event is 
@@ -516,6 +531,10 @@ The simplest case turns out to be when $y_i = -1$, because then the loss functio
 $$L_i(\mathbf{w}) = \log(1+e^{\mathbf{w} \cdot X_i})$$
 which has gradient
 $$\nabla L_i(\mathbf{w}) = \frac{e^{\mathbf{w} \cdot X_i}}{1+e^{\mathbf{w} \cdot X_i}} X_i = p_i X_i$$
+-->
+We also noted that the gradient of the terms in the logistic loss function are
+$$\nabla L_i (\mathbf{w}) = \begin{cases} -(1-p_i) X_i & \text{ if } y_i \text{ is a success} \\ p_i X_i & \text{ if } y_i \text{ is a failure}. \end{cases}$$
+So you can use gradient descent to find the best coefficients in a logistic regression model.
 
 We looked at this example:
 
