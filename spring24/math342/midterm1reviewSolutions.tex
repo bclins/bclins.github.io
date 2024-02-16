@@ -82,14 +82,14 @@ The LU-decomposition without partial pivoting is:
 $$L = \begin{pmatrix} 1 & 0 & 0 \\ 5 & 1 & 0 \\ 1 & -3 & 1\end{pmatrix} ~~~~ U = \begin{pmatrix} 1 & 2 & 4 \\ 0 & -3 & 1 \\ 0 & 0 & 0 \end{pmatrix}.$$
 \end{solution}
 
-\part What is the rank of $A$?
+\part What is the rank of $A$? Is $A$ invertible?
 \begin{solution}
-The echelon form $U$ has 2 pivots, so the rank is 2. 
+The echelon form $U$ has 2 pivots, so the rank is 2. $A$ is not invertible because its rank is not 3. 
 \end{solution}
 
-\part Is $A$ invertible?  How can you tell?
+\part Compute $\|A\|_\infty$.
 \begin{solution}
-No, $A$ is not invertible because it is only rank 2 not rank 3. 
+The induced infinity norm of $A$ is the maximum $1$-norm of its rows. So $\|A\|_\infty = 33$. 
 \end{solution}
 
 \part Use the LU-decomposition to solve $Ax = \begin{pmatrix} 2 \\ 11 \\ -1 \end{pmatrix}$. 

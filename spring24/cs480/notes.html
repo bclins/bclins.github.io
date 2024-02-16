@@ -8,13 +8,20 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
     div.sourceCode { margin: 1em 0; }
     pre.sourceCode { margin: 0; }
@@ -49,7 +56,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -62,7 +69,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -85,14 +92,26 @@
     --link-color: #A32; 
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Advanced Topics in CS Notes</h1>
 </header>
-<h2 id="computer-science-480---spring-2024">Computer Science 480 - Spring 2024</h2>
+<h2 id="computer-science-480---spring-2024">Computer Science 480 -
+Spring 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
+1</a>, <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
+3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
+5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
+7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
+9</a>, <a href="#week-10-notes">Week 10</a>, <a
+href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
+<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
+14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -117,41 +136,128 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a>, 
 <!--
 Today we introduced some simple examples of Markov chains.  We also reviewed matrix multiplication.  We also defined **probability vectors** and the **dot product** (which is also known as the **inner product**).  We talked about the geometric meaning of the dot product of two vectors. We did the following examples in class. 
 -->
-<p>Today we reviewed vectors and matrices. Recall that a <strong>vector</strong> is all three of the following things:</p>
+<p>Today we reviewed vectors and matrices. Recall that a
+<strong>vector</strong> is all three of the following things:</p>
 <ol type="1">
-<li>A list of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> numbers.</li>
-<li>A point in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-dimensional space.</li>
+<li>A list of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+numbers.</li>
+<li>A point in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-dimensional
+space.</li>
 <li>An arrow indicating a length and a direction.</li>
 </ol>
-<p>We denote the set of all real number vectors with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> entries by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>. Recall that the <strong>length</strong> of a vector (also known as the <strong>norm</strong>) is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><msubsup><mi>v</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>v</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>…</mi><mo>+</mo><msubsup><mi>v</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\|v\| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2 }.</annotation></semantics></math></p>
-<p>We also talked about how to multiply vectors by constants (<strong>scalar multiplication</strong>) and how to calculate the <strong>dot product</strong> (see this <a href="https://youtu.be/WNuIhXo39_k">Kahn academy video</a> for example). We stated (without proof) the fact that for any two vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v, w \in \mathbb{R}^n</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo>cos</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex"> v \cdot w = \|v\| \, \|w\| \, \cos \theta</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> is the angle between the vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>. We finished our review of vectors by saying that two vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">v, w</annotation></semantics></math> are <strong>orthogonal</strong> when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v \cdot w = 0</annotation></semantics></math>. Then the <strong>orthogonal complement</strong> of a single vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v \in \mathbb{R}^n</annotation></semantics></math> is the set <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>v</mi><mo>⊥</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><mspace width="0.167em"></mspace><mo>:</mo><mspace width="0.167em"></mspace><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">v^\perp = \{w \in \mathbb{R}^n \, : \, v \cdot w = 0 \}.</annotation></semantics></math> If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is a nonzero vector, then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>v</mi><mo>⊥</mo></msup><annotation encoding="application/x-tex">v^\perp</annotation></semantics></math> is an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n-1)</annotation></semantics></math>-dimensional hyperspace inside of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
-<p>After reviewing vectors we reviewed matrices and how to <a href="https://youtu.be/OMA2Mwo0aZg">multiply matrices</a>. We did the following example in class:</p>
+<p>We denote the set of all real number vectors with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+entries by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.
+Recall that the <strong>length</strong> of a vector (also known as the
+<strong>norm</strong>) is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><msqrt><mrow><msubsup><mi>v</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>v</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>…</mi><mo>+</mo><msubsup><mi>v</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\|v\| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2 }.</annotation></semantics></math></p>
+<p>We also talked about how to multiply vectors by constants
+(<strong>scalar multiplication</strong>) and how to calculate the
+<strong>dot product</strong> (see this <a
+href="https://youtu.be/WNuIhXo39_k">Kahn academy video</a> for example).
+We stated (without proof) the fact that for any two vectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v, w \in \mathbb{R}^n</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>w</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo>cos</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex"> v \cdot w = \|v\| \, \|w\| \, \cos \theta</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+is the angle between the vectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
+We finished our review of vectors by saying that two vectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">v, w</annotation></semantics></math>
+are <strong>orthogonal</strong> when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v \cdot w = 0</annotation></semantics></math>.
+Then the <strong>orthogonal complement</strong> of a single vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">v \in \mathbb{R}^n</annotation></semantics></math>
+is the set
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>v</mi><mo>⊥</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mspace width="0.167em"></mspace><mo>:</mo><mspace width="0.167em"></mspace><mi>v</mi><mo>⋅</mo><mi>w</mi><mo>=</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">v^\perp = \{w \in \mathbb{R}^n \, : \, v \cdot w = 0 \}.</annotation></semantics></math>
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is a nonzero vector, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>v</mi><mo>⊥</mo></msup><annotation encoding="application/x-tex">v^\perp</annotation></semantics></math>
+is an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n-1)</annotation></semantics></math>-dimensional
+hyperspace inside of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>.</p>
+<p>After reviewing vectors we reviewed matrices and how to <a
+href="https://youtu.be/OMA2Mwo0aZg">multiply matrices</a>. We did the
+following example in class:</p>
 <ol type="1">
-<li>Multiply <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>2</mn></mtd><mtd columnalign="center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 0 &amp; -1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \\ 1 &amp; -1 \end{pmatrix}</annotation></semantics></math>.</li>
+<li>Multiply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 0 &amp; -1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \\ 1 &amp; -1 \end{pmatrix}</annotation></semantics></math>.</li>
 </ol>
-<p>We finished by talking briefly about this problem from <a href="https://math.dartmouth.edu/~prob/prob/prob.pdf">Introduction to Probability by Grinstead &amp; Snell</a>:</p>
+<p>We finished by talking briefly about this problem from <a
+href="https://math.dartmouth.edu/~prob/prob/prob.pdf">Introduction to
+Probability by Grinstead &amp; Snell</a>:</p>
 <ol start="2" type="1">
-<li>The Land of Oz is blessed by many things, but not by good weather. They never have two nice days in a row. If they have a nice day, they are just as likely to have snow as rain the next day. If they have snow or rain, they have an even chance of having the same the next day. If there is change from snow or rain, only half of the time is this a change to a nice day.</li>
+<li>The Land of Oz is blessed by many things, but not by good weather.
+They never have two nice days in a row. If they have a nice day, they
+are just as likely to have snow as rain the next day. If they have snow
+or rain, they have an even chance of having the same the next day. If
+there is change from snow or rain, only half of the time is this a
+change to a nice day.</li>
 </ol>
 <center>
 <img src="Oz.png"></img>
 </center>
 <h4 id="fri-jan-19">Fri, Jan 19</h4>
-<p>Today we looked in more detail at the Land of Oz Markov chain from last time. We started by defining the following terminology.</p>
-<p>A <strong>Markov chain</strong> is a model with stages where the next state is randomly determined based only on the current state. A Markov with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> states can be described by a <strong>transition matrix</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> which has entries <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">Q_{ij}</annotation></semantics></math> equal to the probability that the next state will be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> if the current state is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>. In the Land of Oz example, if the states Nice, Rain, Snow correspond to the row/column numbers 0, 1, 2, respectively, then the transition matrix is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>0.5</mn></mtd><mtd columnalign="center"><mn>0.5</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0.25</mn></mtd><mtd columnalign="center"><mn>0.5</mn></mtd><mtd columnalign="center"><mn>0.25</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0.25</mn></mtd><mtd columnalign="center"><mn>0.25</mn></mtd><mtd columnalign="center"><mn>0.5</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q = \begin{pmatrix} 0 &amp; 0.5 &amp; 0.5 \\ 0.25 &amp; 0.5 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.5 \end{pmatrix}</annotation></semantics></math></p>
-<p>A <strong>probability vector</strong> is a vector with nonnegative entries that add up to 1. You can use probability vectors to model your knowledge about the current state in a Markov chain. For example, if it were raining today in the Land of Oz, then you could use the probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">v = (0, 1, 0)</annotation></semantics></math> to indicated that we are 100% sure that we are in the middle state (raining). If you multiply <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">vQ</annotation></semantics></math>, then you get the probability row vector representing the probabilities for the states the next day. Here is how to use matrices in the Python using the <code>numpy</code> library.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>Q <span class="op">=</span> np.matrix(<span class="st">&quot;0 0.5 0.5; 0.25 0.5 0.25; 0.25 0.25 0.5&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>v <span class="op">=</span> np.matrix(<span class="st">&quot;0 1 0&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="bu">print</span>(v <span class="op">*</span> Q)</span></code></pre></div>
+<p>Today we looked in more detail at the Land of Oz Markov chain from
+last time. We started by defining the following terminology.</p>
+<p>A <strong>Markov chain</strong> is a model with stages where the next
+state is randomly determined based only on the current state. A Markov
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+states can be described by a <strong>transition matrix</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+which has entries
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">Q_{ij}</annotation></semantics></math>
+equal to the probability that the next state will be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+if the current state is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+In the Land of Oz example, if the states Nice, Rain, Snow correspond to
+the row/column numbers 0, 1, 2, respectively, then the transition matrix
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0.25</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.25</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0.25</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.25</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0.5</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q = \begin{pmatrix} 0 &amp; 0.5 &amp; 0.5 \\ 0.25 &amp; 0.5 &amp; 0.25 \\ 0.25 &amp; 0.25 &amp; 0.5 \end{pmatrix}</annotation></semantics></math></p>
+<p>A <strong>probability vector</strong> is a vector with nonnegative
+entries that add up to 1. You can use probability vectors to model your
+knowledge about the current state in a Markov chain. For example, if it
+were raining today in the Land of Oz, then you could use the probability
+vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v = (0, 1, 0)</annotation></semantics></math>
+to indicated that we are 100% sure that we are in the middle state
+(raining). If you multiply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">vQ</annotation></semantics></math>,
+then you get the probability row vector representing the probabilities
+for the states the next day. Here is how to use matrices in the Python
+using the <code>numpy</code> library.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> np.matrix(<span class="st">&quot;0 0.5 0.5; 0.25 0.5 0.25; 0.25 0.25 0.5&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.matrix(<span class="st">&quot;0 1 0&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v <span class="op">*</span> Q)</span></code></pre></div>
 <ol type="1">
-<li><p>Suppose that today is a nice day. What is the probability vector that describes how the weather might be the day after tomorrow?</p></li>
-<li><p>What will the weather be like after 1 week if today is nice? What about if today is rainy or snowy? How much difference does the weather today make after 1 week? You can answer this last problem by computing <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>7</mn></msup><annotation encoding="application/x-tex">Q^7</annotation></semantics></math>.</p></li>
+<li><p>Suppose that today is a nice day. What is the probability vector
+that describes how the weather might be the day after tomorrow?</p></li>
+<li><p>What will the weather be like after 1 week if today is nice? What
+about if today is rainy or snowy? How much difference does the weather
+today make after 1 week? You can answer this last problem by computing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>7</mn></msup><annotation encoding="application/x-tex">Q^7</annotation></semantics></math>.</p></li>
 </ol>
-<p>We finished with this additional example which is <a href="https://math.dartmouth.edu/~doyle/docs/finite/fm2/scan/5.pdf#page=64">problem 5.7.12 in Introduction to Finite Mathematics</a> by Kemeny, Snell, Thompson.</p>
+<p>We finished with this additional example which is <a
+href="https://math.dartmouth.edu/~doyle/docs/finite/fm2/scan/5.pdf#page=64">problem
+5.7.12 in Introduction to Finite Mathematics</a> by Kemeny, Snell,
+Thompson.</p>
 <ol start="3" type="1">
-<li>A professor tries not to be late too often. On days when he is late, he is 90% sure to arrive on time the next day. When he is on time, there is a 30% chance he will be late the next day. How often is this professor late in the long run?</li>
+<li>A professor tries not to be late too often. On days when he is late,
+he is 90% sure to arrive on time the next day. When he is on time, there
+is a 30% chance he will be late the next day. How often is this
+professor late in the long run?</li>
 </ol>
 <!-- To calculate repeated matrix multiplications, it helps to use the [numpy matrix power function](https://numpy.org/doc/stable/reference/generated/numpy.linalg.matrix_power.html). For example, continuing the code above, we can compute 
 ```python 
@@ -185,49 +291,141 @@ print(np.linalg.matrix_power(Q,7))
 <h4 id="mon-jan-22">Mon, Jan 22</h4>
 <p>Today we did the following workshop about Markov chains.</p>
 <ul>
-<li>Workshop: <a href="Workshops/MarkovChains.pdf">Markov chains</a></li>
+<li>Workshop: <a href="Workshops/MarkovChains.pdf">Markov
+chains</a></li>
 </ul>
 <h4 id="wed-jan-24">Wed, Jan 24</h4>
-<p>Today we talked about some of the features we’ve seen in Markov chains. Recall that you can think of a Markov chain as a weighted directed graph where the total weight of all the edges leaving a vertex must add up to 1 (the weights correspond to probabilities).</p>
-<p>In all of the examples we’ve considered so far, we have looked for the final long run probabilities for the states after many transitions.</p>
-<p><strong>Definition.</strong> A probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> is a <strong>stationary distribution</strong> for a Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> if <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>Q</mi><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">wQ = w.</annotation></semantics></math></p>
-<p>In all of the examples we’ve looked at, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math> exists and is a stationary distribution for any initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>. But this doesn’t always happen for Markov chains.</p>
+<p>Today we talked about some of the features we’ve seen in Markov
+chains. Recall that you can think of a Markov chain as a weighted
+directed graph where the total weight of all the edges leaving a vertex
+must add up to 1 (the weights correspond to probabilities).</p>
+<p>In all of the examples we’ve considered so far, we have looked for
+the final long run probabilities for the states after many
+transitions.</p>
+<p><strong>Definition.</strong> A probability vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is a <strong>stationary distribution</strong> for a Markov chain with
+transition matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+if
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>Q</mi><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">wQ = w.</annotation></semantics></math></p>
+<p>In all of the examples we’ve looked at,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math>
+exists and is a stationary distribution for any initial probability
+vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>.
+But this doesn’t always happen for Markov chains.</p>
 <ol type="1">
-<li>Find a simple Markov chain and an initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math> does not converge.</li>
+<li>Find a simple Markov chain and an initial probability vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k</annotation></semantics></math>
+does not converge.</li>
 </ol>
-<p>To better understand the long-run behavior of Markov chains, we need to review strongly connected components of a directed graph (digraph for short).</p>
-<p><strong>Definition.</strong> A digraph is <strong>strongly connected</strong> if you can find a path from any start vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> to any other end vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>. A <strong>strongly connected component</strong> of a graph is a set of vertices such that (i) you can travel from any one vertex in the set to any other, and (ii) you cannot returns to the set if you leave it. Strongly connected components are also known as <strong>classes</strong> and they partition the vertices of a directed graph. A class is <strong>final</strong> if there are no edges that leave the class.</p>
+<p>To better understand the long-run behavior of Markov chains, we need
+to review strongly connected components of a directed graph (digraph for
+short).</p>
+<p><strong>Definition.</strong> A digraph is <strong>strongly
+connected</strong> if you can find a path from any start vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+to any other end vertex
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.
+A <strong>strongly connected component</strong> of a graph is a set of
+vertices such that (i) you can travel from any one vertex in the set to
+any other, and (ii) you cannot returns to the set if you leave it.
+Strongly connected components are also known as <strong>classes</strong>
+and they partition the vertices of a directed graph. A class is
+<strong>final</strong> if there are no edges that leave the class.</p>
 <center>
 <img src = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scc-1.svg" width = 300></img>
 </center>
-<p>In the digraph above, there is one final class <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f,g\}</annotation></semantics></math> and two other non-final classes.</p>
+<p>In the digraph above, there is one final class
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f,g\}</annotation></semantics></math>
+and two other non-final classes.</p>
 <div class="Theorem">
-<p><strong>Theorem (Perron-Frobenius).</strong> A Markov chain always has a stationary distribution. The stationary distribution is unique if and only if the Markov chain has only one final class.</p>
+<p><strong>Theorem (Perron-Frobenius).</strong> A Markov chain always
+has a stationary distribution. The stationary distribution is unique if
+and only if the Markov chain has only one final class.</p>
 </div>
-<p>We did not prove this theorem, but we did apply it to the following question.</p>
+<p>We did not prove this theorem, but we did apply it to the following
+question.</p>
 <ol start="2" type="1">
-<li><p>Which of the Markov chains that we’ve considered (the Land of Oz, the Tardy Professor, the Gambler’s Ruin problem, and the Coupon Collector’s problem) has a unique stationary distribution? For the one(s) that don’t have a unique stationary distribution, describe two different stationary distributions.</p></li>
-<li><p>Does the Markov chain that doesn’t converge from Q1 today have a unique stationary distribution? How can you tell? Can you find it?</p></li>
+<li><p>Which of the Markov chains that we’ve considered (the Land of Oz,
+the Tardy Professor, the Gambler’s Ruin problem, and the Coupon
+Collector’s problem) has a unique stationary distribution? For the
+one(s) that don’t have a unique stationary distribution, describe two
+different stationary distributions.</p></li>
+<li><p>Does the Markov chain that doesn’t converge from Q1 today have a
+unique stationary distribution? How can you tell? Can you find
+it?</p></li>
 </ol>
-<p>Another important is question is to have criteria for when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} vQ^k</annotation></semantics></math> converges.</p>
-<p><strong>Definition.</strong> A Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> is <strong>regular</strong> if there is a power <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mi>k</mi></msup><annotation encoding="application/x-tex">Q^k</annotation></semantics></math> has all positive entries.</p>
+<p>Another important is question is to have criteria for when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></msub><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} vQ^k</annotation></semantics></math>
+converges.</p>
+<p><strong>Definition.</strong> A Markov chain with transition matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+is <strong>regular</strong> if there is a power
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mi>k</mi></msup><annotation encoding="application/x-tex">Q^k</annotation></semantics></math>
+has all positive entries.</p>
 <div class="Theorem">
-<p><strong>Theorem.</strong> A regular Markov chain with transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> always has a unique stationary distribution <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> and for any initial probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k = w.</annotation></semantics></math></p>
+<p><strong>Theorem.</strong> A regular Markov chain with transition
+matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+always has a unique stationary distribution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+and for any initial probability vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>k</mi><mo>→</mo><mi>∞</mi></mrow></munder><mi>v</mi><msup><mi>Q</mi><mi>k</mi></msup><mo>=</mo><mi>w</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lim_{k \rightarrow \infty} v Q^k = w.</annotation></semantics></math></p>
 </div>
-<p>We finished class by talking about how the Google PageRank algorithm uses the stationary distribution of a simple regular Markov chain to rank websites. The algorithm starts by imagining a random web surfer who clicks on links completely randomly to visit new website. You can imagine the internet as a giant directed graph and this websurfer can be modeled with an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> state Markov chain where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> is the number of websites on the internet. Unfortunately the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> transition matrix might not be regular, so the PageRank algorithm creates a new regular Markov chain by using the following algorithm:</p>
+<p>We finished class by talking about how the Google PageRank algorithm
+uses the stationary distribution of a simple regular Markov chain to
+rank websites. The algorithm starts by imagining a random web surfer who
+clicks on links completely randomly to visit new website. You can
+imagine the internet as a giant directed graph and this websurfer can be
+modeled with an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+state Markov chain where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is the number of websites on the internet. Unfortunately the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+transition matrix might not be regular, so the PageRank algorithm
+creates a new regular Markov chain by using the following algorithm:</p>
 <ul>
-<li>85% of the time, the random websurfer picks a new website by randomly clicking a link.</li>
-<li>15% of the time, the random websurfer picks any one of the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> websites on the internet (all equally likely).</li>
+<li>85% of the time, the random websurfer picks a new website by
+randomly clicking a link.</li>
+<li>15% of the time, the random websurfer picks any one of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+websites on the internet (all equally likely).</li>
 </ul>
-<p>The 85/15 percent split was chosen because the resulting regular Markov chain converges relatively quickly (it still takes days for the computation to update), but it still settles on a stationary distribution where more popular websites are visited more than less popular websites.</p>
+<p>The 85/15 percent split was chosen because the resulting regular
+Markov chain converges relatively quickly (it still takes days for the
+computation to update), but it still settles on a stationary
+distribution where more popular websites are visited more than less
+popular websites.</p>
 <h4 id="fri-jan-26">Fri, Jan 26</h4>
-<p>Today we wrote a program to randomly generate text based on a source text using a Markov chain.</p>
+<p>Today we wrote a program to randomly generate text based on a source
+text using a Markov chain.</p>
 <ul>
-<li><strong>Workshop</strong>: <a href="Workshops/RandomTextGenerator.pdf">Random text generator</a></li>
+<li><strong>Workshop</strong>: <a
+href="Workshops/RandomTextGenerator.pdf">Random text generator</a></li>
 </ul>
-<p>Here are some <a href="sourceTexts.html">example source texts</a> you can use. You can also search online for other good examples if you want. When you are finished, you should have a program that can generate random nonsense like this:</p>
+<p>Here are some <a href="sourceTexts.html">example source texts</a> you
+can use. You can also search online for other good examples if you want.
+When you are finished, you should have a program that can generate
+random nonsense like this:</p>
 <blockquote>
-<p>In the beginning when God created the great sea monsters and every winged bird of every kind on earth that bear fruit with the seed in it." And it was good. And there was morning, the second day. And God saw that it was good. Then God said, "Let there be lights in the dome and separated the waters that were gathered together he called Night. And there was evening and there was morning, the fourth day. And God saw that the light Day, and the waters bring forth living creatures of every kind, and everything that has the breath of life, I have given you every plant yielding seed of every kind, and trees of every kind bearing fruit with the seed in it.</p>
+<p>In the beginning when God created the great sea monsters and every
+winged bird of every kind on earth that bear fruit with the seed in it.”
+And it was good. And there was morning, the second day. And God saw that
+it was good. Then God said, “Let there be lights in the dome and
+separated the waters that were gathered together he called Night. And
+there was evening and there was morning, the fourth day. And God saw
+that the light Day, and the waters bring forth living creatures of every
+kind, and everything that has the breath of life, I have given you every
+plant yielding seed of every kind, and trees of every kind bearing fruit
+with the seed in it.</p>
 </blockquote>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
@@ -254,71 +452,182 @@ print(np.linalg.matrix_power(Q,7))
 </tbody>
 </table>
 <h4 id="mon-jan-29">Mon, Jan 29</h4>
-<p>Today we started talking about linear regression. We started with the simplest case where you want to predict a response variable (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>) using a single explanatory variable (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>). Based on the observed <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> values, you want to find the best fit trend-line. We judge how good a trend-line fits the data by calculating the sum of squared deviations between the predicted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values (denoted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><annotation encoding="application/x-tex">\hat{y}_i</annotation></semantics></math>) and the actual <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>) at each <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>.<br />
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Sum of squared error</mtext><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Sum of squared error} = \sum_{i = 1}^n (\hat{y}_i - y_i)^2.</annotation></semantics></math> We’ll see later that minimizing the sum of squared error has some nice properties. We looked at the following example. <!--_--></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="bu">print</span>(df)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>x <span class="op">=</span> np.array(df.Beers)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>y <span class="op">=</span> np.array(df.BAC)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>plt.xlabel(<span class="st">&quot;Beers&quot;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>plt.ylabel(<span class="st">&quot;BAC&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>plt.plot(x,y,<span class="st">&quot;o&quot;</span>)</span></code></pre></div>
+<p>Today we started talking about linear regression. We started with the
+simplest case where you want to predict a response variable
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>)
+using a single explanatory variable
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>).
+Based on the observed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+values, you want to find the best fit trend-line. We judge how good a
+trend-line fits the data by calculating the sum of squared deviations
+between the predicted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+(denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><annotation encoding="application/x-tex">\hat{y}_i</annotation></semantics></math>)
+and the actual
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>)
+at each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>.<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Sum of squared error</mtext><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Sum of squared error} = \sum_{i = 1}^n (\hat{y}_i - y_i)^2.</annotation></semantics></math>
+We’ll see later that minimizing the sum of squared error has some nice
+properties. We looked at the following example. <!--_--></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv&quot;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(df.Beers)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(df.BAC)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Beers&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;BAC&quot;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y,<span class="st">&quot;o&quot;</span>)</span></code></pre></div>
 <center>
 <img src="beersBAC.png" width = 400></img>
 </center>
-<p>The least squares regression line will have a formula <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>0</mn></msub><annotation encoding="application/x-tex">b_0</annotation></semantics></math> is the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-intercept and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>1</mn></msub><annotation encoding="application/x-tex">b_1</annotation></semantics></math> is the slope. You can find these two numbers by using the <strong>normal equation</strong></p>
+<p>The least squares regression line will have a formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>0</mn></msub><annotation encoding="application/x-tex">b_0</annotation></semantics></math>
+is the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-intercept
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mn>1</mn></msub><annotation encoding="application/x-tex">b_1</annotation></semantics></math>
+is the slope. You can find these two numbers by using the <strong>normal
+equation</strong></p>
 <!--
 1. [Beers and BAC](http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/bac.csv)
 2. [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) 
 3. [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
 -->
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><mi>β</mi><mo>=</mo><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">X^T X \beta = X^T y</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><msub><mi>b</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center"><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta = \begin{pmatrix} b_0 \\ b_1 \end{pmatrix}</annotation></semantics></math> is a column vector with the intercept and slope that we want to find, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center"><msub><mi>y</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\y_n\end{pmatrix}</annotation></semantics></math> is the column vector with the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values from the data, and <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="center"><mi>⋮</mi></mtd><mtd columnalign="center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><msub><mi>x</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X = \begin{pmatrix} 
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><mi>β</mi><mo>=</mo><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">X^T X \beta = X^T y</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>b</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta = \begin{pmatrix} b_0 \\ b_1 \end{pmatrix}</annotation></semantics></math>
+is a column vector with the intercept and slope that we want to find,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\y_n\end{pmatrix}</annotation></semantics></math>
+is the column vector with the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+from the data, and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X = \begin{pmatrix} 
 1 &amp; x_1 \\ 1 &amp; x_2 \\ \vdots &amp; \vdots \\ 1 &amp; x_n 
-\end{pmatrix}</annotation></semantics></math> is an <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-2 matrix will all 1’s in its first column and the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values from the data in its second column. The notation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>X</mi><mi>T</mi></msup><annotation encoding="application/x-tex">X^T</annotation></semantics></math> means that <strong>transpose</strong> of the matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>, which is the matrix you get if you switch all columns of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> to rows: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>T</mi></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd><mtd columnalign="center"><mi>…</mi></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center"><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center"><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center"><mi>…</mi></mtd><mtd columnalign="center"><msub><mi>x</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">X^T = \begin{pmatrix} 
+\end{pmatrix}</annotation></semantics></math> is an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-2
+matrix will all 1’s in its first column and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values
+from the data in its second column. The notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>X</mi><mi>T</mi></msup><annotation encoding="application/x-tex">X^T</annotation></semantics></math>
+means that <strong>transpose</strong> of the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+which is the matrix you get if you switch all columns of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+to rows:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>T</mi></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">X^T = \begin{pmatrix} 
 1 &amp; 1 &amp; \ldots &amp; 1 \\
 x_1 &amp; x_2 &amp; \ldots &amp; x_n  
-\end{pmatrix}.</annotation></semantics></math> One way to solve the normal equations is to multiply both sides by the inverse of the matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X^T X)</annotation></semantics></math>:<br />
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\beta = (X^T X)^{-1} X^T y.</annotation></semantics></math> The <strong>inverse</strong> of a matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math> is denoted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>. You can only find the inverse of square matrices (same number of rows &amp; columns). Even then, not every square matrix has an inverse, but this formula almost always works for least squares regression. I only gave a vague explanation in class of why the normal equations work. But we did use Python to compute the normal equations for the example above:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>X <span class="op">=</span> np.matrix([[<span class="fl">1.0</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x))],<span class="bu">list</span>(x)]).T</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>beta <span class="op">=</span> (X.T<span class="op">*</span>X).I<span class="op">*</span>X.T <span class="op">*</span> np.matrix(y).T</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="bu">print</span>(beta) <span class="co"># [[-0.0127006 ], [ 0.01796376]]</span></span></code></pre></div>
-<p>Notice that if <code>A</code> is a numpy matrix, then <code>A.T</code> is its transpose, and <code>A.I</code> is its inverse (if one exists). The entries of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> are the intercept followed by the slope, so the least squares regression line for predicting blood alcohol content from the number of beers someone drinks is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mo>−</mo><mn>0.01270</mn><mo>+</mo><mn>0.01796</mn><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = -0.01270 + 0.01796 x.</annotation></semantics></math></p>
-<p>In addition, we can tell from the slope that each extra beer someone drinks tends to increase their BAC by 0.018 points.</p>
+\end{pmatrix}.</annotation></semantics></math> One way to solve the
+normal equations is to multiply both sides by the inverse of the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X^T X)</annotation></semantics></math>:<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>X</mi><mi>T</mi></msup><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>X</mi><mi>T</mi></msup><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\beta = (X^T X)^{-1} X^T y.</annotation></semantics></math>
+The <strong>inverse</strong> of a matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+is denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">M^{-1}</annotation></semantics></math>.
+You can only find the inverse of square matrices (same number of rows
+&amp; columns). Even then, not every square matrix has an inverse, but
+this formula almost always works for least squares regression. I only
+gave a vague explanation in class of why the normal equations work. But
+we did use Python to compute the normal equations for the example
+above:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.matrix([[<span class="fl">1.0</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(x))],<span class="bu">list</span>(x)]).T</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (X.T<span class="op">*</span>X).I<span class="op">*</span>X.T <span class="op">*</span> np.matrix(y).T</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(beta) <span class="co"># [[-0.0127006 ], [ 0.01796376]]</span></span></code></pre></div>
+<p>Notice that if <code>A</code> is a numpy matrix, then
+<code>A.T</code> is its transpose, and <code>A.I</code> is its inverse
+(if one exists). The entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math>
+are the intercept followed by the slope, so the least squares regression
+line for predicting blood alcohol content from the number of beers
+someone drinks is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mo>−</mo><mn>0.01270</mn><mo>+</mo><mn>0.01796</mn><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = -0.01270 + 0.01796 x.</annotation></semantics></math></p>
+<p>In addition, we can tell from the slope that each extra beer someone
+drinks tends to increase their BAC by 0.018 points.</p>
 <h4 id="wed-jan-31">Wed, Jan 31</h4>
-<p>Today we continued looking at least squares regression. We covered these additional facts about the least squares regression line <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x</annotation></semantics></math> when there is only one explanatory variable (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>).</p>
+<p>Today we continued looking at least squares regression. We covered
+these additional facts about the least squares regression line
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x</annotation></semantics></math>
+when there is only one explanatory variable
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>).</p>
 <ul>
-<li>The slope is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>R</mi><mstyle displaystyle="true"><mfrac><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">b_1 = R \dfrac{s_y}{s_x}</annotation></semantics></math> and</li>
-<li>The line always passes through the point <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar{x}, \bar{y})</annotation></semantics></math>, which lets you find the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-intercept.</li>
+<li>The slope is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>R</mi><mfrac displaystyle="true"><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">b_1 = R \dfrac{s_y}{s_x}</annotation></semantics></math>
+and</li>
+<li>The line always passes through the point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar{x}, \bar{y})</annotation></semantics></math>,
+which lets you find the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-intercept.</li>
 </ul>
-<p>Here <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>y</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{y}</annotation></semantics></math> denote the average <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values respectively, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>x</mi></msub><annotation encoding="application/x-tex">s_x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>y</mi></msub><annotation encoding="application/x-tex">s_y</annotation></semantics></math> are the standard deviations of the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> is the correlation coefficient. We defined these quantities using the norm (length) and dot products.</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle><mo stretchy="false" form="postfix">∥</mo></mrow><msqrt><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mfrac><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>s</mi><mi>y</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle><mo stretchy="false" form="postfix">∥</mo></mrow><msqrt><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mfrac><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>R</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>⋅</mo><mfrac><mrow><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mstyle mathvariant="bold"><mn>1</mn></mstyle><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">s_x = \frac{\|x - \bar{x}\mathbf{1} \| }{\sqrt{n-1}},  ~~~~~ s_y = \frac{ \|y - \bar{y}\mathbf{1} \| }{\sqrt{n-1}}, ~~~~~ R = \frac{x - \bar{x}\mathbf{1}}{\|x - \bar{x}\mathbf{1} \|} \cdot \frac{y - \bar{y}\mathbf{1}}{\|y - \bar{y}\mathbf{1} \|}</annotation></semantics></math></p>
+<p>Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>y</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{y}</annotation></semantics></math>
+denote the average
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+respectively,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>x</mi></msub><annotation encoding="application/x-tex">s_x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>y</mi></msub><annotation encoding="application/x-tex">s_y</annotation></semantics></math>
+are the standard deviations of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+is the correlation coefficient. We defined these quantities using the
+norm (length) and dot products.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn><mo stretchy="false" form="postfix">∥</mo></mrow><msqrt><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mfrac><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>s</mi><mi>y</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn><mo stretchy="false" form="postfix">∥</mo></mrow><msqrt><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mfrac><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>R</mi><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>⋅</mo><mfrac><mrow><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mn>𝟏</mn><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">s_x = \frac{\|x - \bar{x}\mathbf{1} \| }{\sqrt{n-1}},  ~~~~~ s_y = \frac{ \|y - \bar{y}\mathbf{1} \| }{\sqrt{n-1}}, ~~~~~ R = \frac{x - \bar{x}\mathbf{1}}{\|x - \bar{x}\mathbf{1} \|} \cdot \frac{y - \bar{y}\mathbf{1}}{\|y - \bar{y}\mathbf{1} \|}</annotation></semantics></math></p>
 <p>We used a spreadsheet to investigate these examples.</p>
 <ol type="1">
-<li><a href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">Marriage ages</a></li>
-<li><a href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx">Midterm exam grades</a></li>
-<li><a href="http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx">Lightning fatalities</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">Marriage
+ages</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx">Midterm
+exam grades</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/statsexamples/Lightning.xlsx">Lightning
+fatalities</a></li>
 </ol>
-<p>In the USA, there has been a striking decline in the number of people killed by lightning every year. The trend is strong, but it isn’t really a linear trend. So we used the normal equations to find a best fit quadratic polynomial <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x + b_2 x^2.</annotation></semantics></math> Here is how to do this with numpy.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx&quot;</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>x <span class="op">=</span> np.array(df.year)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>y <span class="op">=</span> np.array(df.deaths)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="co"># You can use a list comprehension to enter the matrix X.</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>X <span class="op">=</span> np.matrix([[xi<span class="op">**</span>k <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)] <span class="cf">for</span> xi <span class="kw">in</span> <span class="bu">list</span>(x)])</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>beta <span class="op">=</span> (X.T<span class="op">*</span>X).I<span class="op">*</span>X.T <span class="op">*</span> np.matrix(y).T</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="bu">print</span>(beta) <span class="co"># [[5.61778330e+04], [-5.42074197e+01], [ 1.30717749e-02]]</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>years <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="dv">1960</span>,<span class="dv">2021</span>))</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>plt.xlabel(<span class="st">&quot;Year&quot;</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>plt.ylabel(<span class="st">&quot;Fatalities&quot;</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>plt.plot(x,y,<span class="st">&quot;o&quot;</span>) <span class="op">+</span> plt.plot(years,<span class="fl">56177.8</span> <span class="op">-</span> <span class="fl">54.207</span><span class="op">*</span>years <span class="op">+</span> <span class="fl">0.01307</span><span class="op">*</span>years<span class="op">**</span><span class="dv">2</span>,linestyle<span class="op">=</span><span class="st">&quot;-&quot;</span>)</span></code></pre></div>
+<p>In the USA, there has been a striking decline in the number of people
+killed by lightning every year. The trend is strong, but it isn’t really
+a linear trend. So we used the normal equations to find a best fit
+quadratic polynomial
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x + b_2 x^2.</annotation></semantics></math>
+Here is how to do this with numpy.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(df.year)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array(df.deaths)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># You can use a list comprehension to enter the matrix X.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.matrix([[xi<span class="op">**</span>k <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>)] <span class="cf">for</span> xi <span class="kw">in</span> <span class="bu">list</span>(x)])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> (X.T<span class="op">*</span>X).I<span class="op">*</span>X.T <span class="op">*</span> np.matrix(y).T</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(beta) <span class="co"># [[5.61778330e+04], [-5.42074197e+01], [ 1.30717749e-02]]</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="dv">1960</span>,<span class="dv">2021</span>))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Year&quot;</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Fatalities&quot;</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y,<span class="st">&quot;o&quot;</span>) <span class="op">+</span> plt.plot(years,<span class="fl">56177.8</span> <span class="op">-</span> <span class="fl">54.207</span><span class="op">*</span>years <span class="op">+</span> <span class="fl">0.01307</span><span class="op">*</span>years<span class="op">**</span><span class="dv">2</span>,linestyle<span class="op">=</span><span class="st">&quot;-&quot;</span>)</span></code></pre></div>
 <center>
 <img src = "lightning.png" width=400></img>
 </center>
@@ -328,21 +637,23 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 <h4 id="fri-feb-2">Fri, Feb 2</h4>
 <p>Today we did this workshop.</p>
 <ul>
-<li><strong>Workshop:</strong> <a href="Workshops/Regression.pdf">Least squares regression</a></li>
+<li><strong>Workshop:</strong> <a href="Workshops/Regression.pdf">Least
+squares regression</a></li>
 </ul>
 <p>Here is the Python code to download the two datasets:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx&quot;</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>genders <span class="op">=</span> <span class="bu">list</span>(df.Gender)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>ages <span class="op">=</span> <span class="bu">list</span>(df.Age)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>minutes <span class="op">=</span> <span class="bu">list</span>(df.Minutes)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>df2 <span class="op">=</span> pd.read_excel(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx&quot;</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>years <span class="op">=</span> np.array(df2.year)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>deaths <span class="op">=</span> np.array(df2.deaths)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>logDeaths <span class="op">=</span> np.log(deaths) <span class="co"># notice that functions work elementwise on np.arrays.</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx&quot;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>genders <span class="op">=</span> <span class="bu">list</span>(df.Gender)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> <span class="bu">list</span>(df.Age)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>minutes <span class="op">=</span> <span class="bu">list</span>(df.Minutes)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_excel(<span class="st">&quot;http://people.hsc.edu/faculty-staff/blins/StatsExamples/Lightning.xlsx&quot;</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> np.array(df2.year)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>deaths <span class="op">=</span> np.array(df2.deaths)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>logDeaths <span class="op">=</span> np.log(deaths) <span class="co"># notice that functions work elementwise on np.arrays.</span></span></code></pre></div>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
@@ -368,62 +679,190 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 </tbody>
 </table>
 <h4 id="mon-feb-5">Mon, Feb 5</h4>
-<p>Last time we saw came up with a model to predict a runner’s race time based on their age and gender. Our model had the form <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x_1 + b_2 x_2</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>y</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{y}</annotation></semantics></math> is the predicted race time in minutes, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math> is the runner’s age, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math> is an indicator variable which is 0 for men and 1 for women. An <strong>indicator variable</strong> is a numerical variable that is 1 if a Boolean condition is true and 0 otherwise. We can re-write our model using a dot product as: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">[</mo><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = [b_0, b_1, b_2] \cdot [1, x_1, x_2].</annotation></semantics></math> <!-- The weight vector was [84.24795527  0.97029783 21.00086375] --> In this formula, the vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[b_0, b_1, b_2]</annotation></semantics></math> is called the <strong>weight vector</strong> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1, x_1, x_2]</annotation></semantics></math> is called the <strong>feature vector</strong>. Each runner has a different feature vector, but you use the same weight vector for every runner to make a prediction about their race time.</p>
-<p>If we use age and race time to predict gender using least squares, then we get this formula: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">predicted gender</mtext><mo>=</mo><mn>0.0694</mn><mo>−</mo><mn>0.0112</mn><mspace width="0.167em"></mspace><mtext mathvariant="normal">age</mtext><mo>+</mo><mn>0.00705</mn><mspace width="0.167em"></mspace><mtext mathvariant="normal">race_time</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{predicted gender} = 0.0694 - 0.0112 \, \text{age} + 0.00705 \, \text{race_time}.</annotation></semantics></math> We could use the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><annotation encoding="application/x-tex">\tfrac{1}{2}</annotation></semantics></math> as a dividing line to separate runners who we would predict are female vs. runners we would predict are male. This is a simple example of a linear classifier. A <strong>linear classifier</strong> is a rule that uses a weight vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> and a feature vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and a threshold <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> to decide how to classify data. You make a prediction based on whether the dot product <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>⋅</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">w \cdot x</annotation></semantics></math> is greater than or less than the decision threshold <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>. If we treated men as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math> instead of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>, then we could use the threshold <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta = 0</annotation></semantics></math>, which is a more common choice for linear classification.</p>
+<p>Last time we saw came up with a model to predict a runner’s race time
+based on their age and gender. Our model had the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x_1 + b_2 x_2</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>y</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{y}</annotation></semantics></math>
+is the predicted race time in minutes,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>
+is the runner’s age, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math>
+is an indicator variable which is 0 for men and 1 for women. An
+<strong>indicator variable</strong> is a numerical variable that is 1 if
+a Boolean condition is true and 0 otherwise. We can re-write our model
+using a dot product as:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} = [b_0, b_1, b_2] \cdot [1, x_1, x_2].</annotation></semantics></math>
+<!-- The weight vector was [84.24795527  0.97029783 21.00086375] --> In
+this formula, the vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><msub><mi>b</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[b_0, b_1, b_2]</annotation></semantics></math>
+is called the <strong>weight vector</strong> and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1, x_1, x_2]</annotation></semantics></math>
+is called the <strong>feature vector</strong>. Each runner has a
+different feature vector, but you use the same weight vector for every
+runner to make a prediction about their race time.</p>
+<p>If we use age and race time to predict gender using least squares,
+then we get this formula:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">predicted gender</mtext><mo>=</mo><mn>0.0694</mn><mo>−</mo><mn>0.0112</mn><mspace width="0.167em"></mspace><mtext mathvariant="normal">age</mtext><mo>+</mo><mn>0.00705</mn><mspace width="0.167em"></mspace><mtext mathvariant="normal">race_time</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{predicted gender} = 0.0694 - 0.0112 \, \text{age} + 0.00705 \, \text{race_time}.</annotation></semantics></math>
+We could use the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><annotation encoding="application/x-tex">\tfrac{1}{2}</annotation></semantics></math>
+as a dividing line to separate runners who we would predict are female
+vs. runners we would predict are male. This is a simple example of a
+linear classifier. A <strong>linear classifier</strong> is a rule that
+uses a weight vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+and a feature vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and a threshold
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+to decide how to classify data. You make a prediction based on whether
+the dot product
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>⋅</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">w \cdot x</annotation></semantics></math>
+is greater than or less than the decision threshold
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.
+If we treated men as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+instead of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+then we could use the threshold
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta = 0</annotation></semantics></math>,
+which is a more common choice for linear classification.</p>
 <center>
 <img src="runners.png" width = 400></img>
 </center>
-<p>We were able to draw a picture of the line the separates individuals we would predict are women from individuals we would predict are men in the scatter plot for runners. If we had more than two variables, then we wouldn’t be able to draw a picture. And instead of a dividing line, we would get a dividing hyperplane to separate our predictions. But we could still use the same idea.</p>
-<p>Using least squares regression to find our weight vector probably isn’t the best choice since the goal of least squared error isn’t really what we want. What we really want is the smallest zero-one error. <strong>Zero-one error</strong> is the error you get if you add a one for every prediction that is incorrect and a zero for every correct prediction. Both least squares error and zero-one error are examples of <strong>loss functions</strong> which measure how accurate our predictions are.</p>
-<p>We finished by outlining where we are going in the next few classes. We are going to look at how to minimize different loss functions over the space of all possible weight vectors (called the <strong>weight space</strong>). We talked about how precise formulas for the optimal weight vector don’t always exist, but we can use a general technique called <strong>gradient descent</strong> that works for many different loss functions.</p>
+<p>We were able to draw a picture of the line the separates individuals
+we would predict are women from individuals we would predict are men in
+the scatter plot for runners. If we had more than two variables, then we
+wouldn’t be able to draw a picture. And instead of a dividing line, we
+would get a dividing hyperplane to separate our predictions. But we
+could still use the same idea.</p>
+<p>Using least squares regression to find our weight vector probably
+isn’t the best choice since the goal of least squared error isn’t really
+what we want. What we really want is the smallest zero-one error.
+<strong>Zero-one error</strong> is the error you get if you add a one
+for every prediction that is incorrect and a zero for every correct
+prediction. Both least squares error and zero-one error are examples of
+<strong>loss functions</strong> which measure how accurate our
+predictions are.</p>
+<p>We finished by outlining where we are going in the next few classes.
+We are going to look at how to minimize different loss functions over
+the space of all possible weight vectors (called the <strong>weight
+space</strong>). We talked about how precise formulas for the optimal
+weight vector don’t always exist, but we can use a general technique
+called <strong>gradient descent</strong> that works for many different
+loss functions.</p>
 <h4 id="wed-feb-7">Wed, Feb 7</h4>
-<p>We talked about gradient descent today. For a multivariable function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><mo>→</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle></mrow><annotation encoding="application/x-tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>, the <strong>gradient</strong> of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> at a point <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{x} = (x_1, \ldots, x_n)</annotation></semantics></math> is the vector <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac><mo>,</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>2</mn></msub></mrow></mfrac><mo>,</mo><mi>…</mi><mo>,</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right).</annotation></semantics></math> We calculated the gradient for these examples. Here is a video that <a href="https://youtu.be/AXqhWeUEtQU">explains partial derivatives</a>.</p>
+<p>We talked about gradient descent today. For a multivariable function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>,
+the <strong>gradient</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at a point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x} = (x_1, \ldots, x_n)</annotation></semantics></math>
+is the vector
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac><mo>,</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>2</mn></msub></mrow></mfrac><mo>,</mo><mi>…</mi><mo>,</mo><mfrac><mrow><mi>∂</mi><mi>f</mi></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right).</annotation></semantics></math>
+We calculated the gradient for these examples. Here is a video that <a
+href="https://youtu.be/AXqhWeUEtQU">explains partial
+derivatives</a>.</p>
 <ol type="1">
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x,y) = x^2 + y^2</annotation></semantics></math> (<a href="https://youtu.be/_-02ze7tf08" class="uri">https://youtu.be/_-02ze7tf08</a>)</p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x,y) = x^4 + y^4 + (x-1)^2 + y</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x,y) = x^2 + y^2</annotation></semantics></math>
+(<a href="https://youtu.be/_-02ze7tf08"
+class="uri">https://youtu.be/_-02ze7tf08</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x,y) = x^4 + y^4 + (x-1)^2 + y</annotation></semantics></math></p></li>
 </ol>
-<p>The important thing to understand about <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\nabla f</annotation></semantics></math> is that it always points in the direction of steepest increase. This idea leads inspires <strong>gradient descent</strong> which is a simple algorithm to find the minimum of a multivariable function.</p>
+<p>The important thing to understand about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\nabla f</annotation></semantics></math>
+is that it always points in the direction of steepest increase. This
+idea leads inspires <strong>gradient descent</strong> which is a simple
+algorithm to find the minimum of a multivariable function.</p>
 <div class="Theorem">
-<p><strong>Gradient Descent Algorithm.</strong> To find the minimum of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><mo>→</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>,</p>
+<p><strong>Gradient Descent Algorithm.</strong> To find the minimum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>,</p>
 <ol type="1">
-<li>Start with an initial guess for the minimum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math> and a fixed (small) step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.</li>
-<li>Find the gradient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla f(\mathbf{x})</annotation></semantics></math>.</li>
-<li>Replace <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math> by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>−</mo><mi>η</mi><mspace width="0.167em"></mspace><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{x}- \eta \, \nabla f(\mathbf{x})</annotation></semantics></math>.</li>
-<li>Repeat steps 2 &amp; 3 until your gradient vector is very close to 0.</li>
+<li>Start with an initial guess for the minimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+and a fixed (small) step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.</li>
+<li>Find the gradient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\nabla f(\mathbf{x})</annotation></semantics></math>.</li>
+<li>Replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>−</mo><mi>η</mi><mspace width="0.167em"></mspace><mi>∇</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}- \eta \, \nabla f(\mathbf{x})</annotation></semantics></math>.</li>
+<li>Repeat steps 2 &amp; 3 until your gradient vector is very close to
+0.</li>
 </ol>
 </div>
-<p>Here is the code I wrote in class to implement this algorithm for example 2 above.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co"># Step 1 initialize initial guess x and step size eta.</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">0</span>])</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>eta <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co"># step 2 calculate gradient</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    gradient <span class="op">=</span> np.array([<span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span><span class="op">+</span><span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">3</span><span class="op">+</span><span class="dv">1</span>])</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="co"># step 3 use the gradient to update x</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    x <span class="op">=</span> x <span class="op">-</span> eta<span class="op">*</span>gradient</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="bu">print</span>(x, gradient)</span></code></pre></div>
-<p>You have to be careful when you pick the step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math> (eta). If it is too big, the algorithm will not converge. If it is too small, the algorithm will be very slow.</p>
+<p>Here is the code I wrote in class to implement this algorithm for
+example 2 above.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1 initialize initial guess x and step size eta.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">0</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>eta <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># step 2 calculate gradient</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    gradient <span class="op">=</span> np.array([<span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span><span class="op">+</span><span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">2</span>, <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">3</span><span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># step 3 use the gradient to update x</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> eta<span class="op">*</span>gradient</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x, gradient)</span></code></pre></div>
+<p>You have to be careful when you pick the step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>
+(eta). If it is too big, the algorithm will not converge. If it is too
+small, the algorithm will be very slow.</p>
 <ol start="3" type="1">
-<li><p>Try the code above with different values of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>. What happens if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\eta = 0.5</annotation></semantics></math>? What about <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\eta = 0.01</annotation></semantics></math>?</p></li>
-<li><p>What will happen if you use gradient descent on a function like this one which has more than one local min? <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x) = x^4 + y^4 - 3xy</annotation></semantics></math></p></li>
-<li><p>Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math> with the minimum loss. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo><mo>−</mo><mn>4</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = (\mathbf{w} \cdot [1, 0] - 1)^2 + (\mathbf{w} \cdot [1,1] - 1)^2 + (\mathbf{w} \cdot [1,2] -4)^2</annotation></semantics></math></p></li>
+<li><p>Try the code above with different values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.
+What happens if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\eta = 0.5</annotation></semantics></math>?
+What about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mn>0.01</mn></mrow><annotation encoding="application/x-tex">\eta = 0.01</annotation></semantics></math>?</p></li>
+<li><p>What will happen if you use gradient descent on a function like
+this one which has more than one local min?
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">f(x) = x^4 + y^4 - 3xy</annotation></semantics></math></p></li>
+<li><p>Find the gradient of the following sum of squared error loss
+function. Then use gradient descent to find the vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+with the minimum loss.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = (\mathbf{w} \cdot [1, 0] - 1)^2 + (\mathbf{w} \cdot [1,1] - 1)^2 + (\mathbf{w} \cdot [1,2] -4)^2</annotation></semantics></math></p></li>
 </ol>
 <h4 id="fri-feb-9">Fri, Feb 9</h4>
 <p>Today we did this workshop in class:</p>
 <ul>
-<li><strong>Workshop:</strong> <a href="Workshops/GradientDescent.pdf">Gradient descent</a></li>
+<li><strong>Workshop:</strong> <a
+href="Workshops/GradientDescent.pdf">Gradient descent</a></li>
 </ul>
-<p>As part of the workshop, we introduced the stochastic gradient descent algorithm which tends to be an effective way to get gradient descent to converge more quickly.</p>
+<p>As part of the workshop, we introduced the stochastic gradient
+descent algorithm which tends to be an effective way to get gradient
+descent to converge more quickly.</p>
 <div class="Theorem">
-<p><strong>Stochastic Gradient Descent Algorithm.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = \sum_{i = 1}^n L_i(\mathbf{w})</annotation></semantics></math> be a sum of simpler loss functions <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L_i(\mathbf{w})</annotation></semantics></math>. To minimize the total loss <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\mathbf{w})</annotation></semantics></math>,</p>
+<p><strong>Stochastic Gradient Descent Algorithm.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>L</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = \sum_{i = 1}^n L_i(\mathbf{w})</annotation></semantics></math>
+be a sum of simpler loss functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L_i(\mathbf{w})</annotation></semantics></math>.
+To minimize the total loss
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(\mathbf{w})</annotation></semantics></math>,</p>
 <ol type="1">
-<li>Start with an initial guess for the minimum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math> and a fixed (small) step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.</li>
-<li>Randomly choose <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">i \in \{1, \ldots, n\}</annotation></semantics></math>.</li>
-<li>Find the gradient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>i</mi></msub><annotation encoding="application/x-tex">L_i</annotation></semantics></math> at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla L_i(\mathbf{w})</annotation></semantics></math>.</li>
-<li>Replace <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math> by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>−</mo><mi>η</mi><mspace width="0.167em"></mspace><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{w}- \eta \, \nabla L_i(\mathbf{w})</annotation></semantics></math>.</li>
-<li>Repeat steps 2 - 4 until your gradient vectors are very close to 0.</li>
+<li>Start with an initial guess for the minimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+and a fixed (small) step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>.</li>
+<li>Randomly choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">i \in \{1, \ldots, n\}</annotation></semantics></math>.</li>
+<li>Find the gradient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>i</mi></msub><annotation encoding="application/x-tex">L_i</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\nabla L_i(\mathbf{w})</annotation></semantics></math>.</li>
+<li>Replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐰</mi><mo>−</mo><mi>η</mi><mspace width="0.167em"></mspace><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{w}- \eta \, \nabla L_i(\mathbf{w})</annotation></semantics></math>.</li>
+<li>Repeat steps 2 - 4 until your gradient vectors are very close to
+0.</li>
 </ol>
 </div>
 <hr />
@@ -451,30 +890,105 @@ An even better approximation might look for a power law relationship $\hat{y} = 
 </tbody>
 </table>
 <h4 id="mon-feb-12">Mon, Feb 12</h4>
-<p>In the workshop last time, we had to calculate the gradient of a function of the form <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>↦</mo><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>−</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathbf{w} \mapsto (\mathbf{w} \cdot \mathbf{x} - y)^2</annotation></semantics></math>. This is a composition of the one variable function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(u) = (u - y)^2</annotation></semantics></math> with the dot product <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle></mrow><annotation encoding="application/x-tex">\mathbf{x} \cdot \mathbf{w}</annotation></semantics></math>. In general, we have the following nice lemma which is one special case of the chain rule.</p>
+<p>In the workshop last time, we had to calculate the gradient of a
+function of the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐰</mi><mo>↦</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo>⋅</mo><mi>𝐱</mi><mo>−</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathbf{w} \mapsto (\mathbf{w} \cdot \mathbf{x} - y)^2</annotation></semantics></math>.
+This is a composition of the one variable function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>−</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(u) = (u - y)^2</annotation></semantics></math>
+with the dot product
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>⋅</mo><mi>𝐰</mi></mrow><annotation encoding="application/x-tex">\mathbf{x} \cdot \mathbf{w}</annotation></semantics></math>.
+In general, we have the following nice lemma which is one special case
+of the chain rule.</p>
 <div class="Theorem">
-<p><strong>Lemma.</strong> If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mo>→</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle></mrow><annotation encoding="application/x-tex">f: \mathbb{R}\rightarrow \mathbb{R}</annotation></semantics></math> is differentiable, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = f(\mathbf{x} \cdot \mathbf{w})</annotation></semantics></math>, then <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mi>′</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mi>.</mi></mrow><annotation encoding="application/x-tex">\nabla L(\mathbf{w}) = f&#39;(\mathbf{x} \cdot \mathbf{w}) \mathbf{x}.</annotation></semantics></math></p>
+<p><strong>Lemma.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℝ</mi><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f: \mathbb{R}\rightarrow \mathbb{R}</annotation></semantics></math>
+is differentiable, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo>⋅</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(\mathbf{w}) = f(\mathbf{x} \cdot \mathbf{w})</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo>⋅</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>𝐱</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\nabla L(\mathbf{w}) = f&#39;(\mathbf{x} \cdot \mathbf{w}) \mathbf{x}.</annotation></semantics></math></p>
 </div>
-<p>Today we looked at linear classification and talked about some of the different loss functions that we could use. We used the lemma above to help find the gradients for gradient descent. First we introduced the following terminology.</p>
-<p>Suppose that we want to train a linear classifier. For each individual observed we have a feature vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math> and a category <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math> which is either <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math> or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>. Our goal is to find the best weight vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math> so for any observed feature vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>, the sign of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle></mrow><annotation encoding="application/x-tex">X_i \cdot \mathbf{w}</annotation></semantics></math> does the best possible job of predicting the corresponding value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>. We call the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle></mrow><annotation encoding="application/x-tex">X_i \cdot \mathbf{w}</annotation></semantics></math> the <strong>score</strong> of the prediction. If we multiply the score times the correct value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>, then we will get a positive number if the prediction is correct and a negative number if our prediction is wrong. We call this number the <strong>margin</strong> and <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext mathvariant="normal">margin</mtext><mi>i</mi></msub><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{margin}_i =  y_i \, (X_i \cdot \mathbf{w}).</annotation></semantics></math></p>
-<p>The hinge loss function is a function of the margin that is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mtext mathvariant="normal">hinge</mtext></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mn>1</mn><mo>−</mo><mtext mathvariant="normal">margin</mtext></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mtext mathvariant="normal">margin </mtext><mspace width="0.333em"></mspace></mrow><mo>&lt;</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mtext mathvariant="normal">margin </mtext><mspace width="0.333em"></mspace></mrow><mo>≥</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">L_\text{hinge} (\mathbf{w}) = \begin{cases}
+<p>Today we looked at linear classification and talked about some of the
+different loss functions that we could use. We used the lemma above to
+help find the gradients for gradient descent. First we introduced the
+following terminology.</p>
+<p>Suppose that we want to train a linear classifier. For each
+individual observed we have a feature vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>
+and a category
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>
+which is either
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.
+Our goal is to find the best weight vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+so for any observed feature vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>,
+the sign of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mi>𝐰</mi></mrow><annotation encoding="application/x-tex">X_i \cdot \mathbf{w}</annotation></semantics></math>
+does the best possible job of predicting the corresponding value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>.
+We call the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mi>𝐰</mi></mrow><annotation encoding="application/x-tex">X_i \cdot \mathbf{w}</annotation></semantics></math>
+the <strong>score</strong> of the prediction. If we multiply the score
+times the correct value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>,
+then we will get a positive number if the prediction is correct and a
+negative number if our prediction is wrong. We call this number the
+<strong>margin</strong> and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mtext mathvariant="normal">margin</mtext><mi>i</mi></msub><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>⋅</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{margin}_i =  y_i \, (X_i \cdot \mathbf{w}).</annotation></semantics></math></p>
+<p>The hinge loss function is a function of the margin that is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mtext mathvariant="normal">hinge</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn><mo>−</mo><mtext mathvariant="normal">margin</mtext></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mtext mathvariant="normal">margin </mtext><mspace width="0.333em"></mspace></mrow><mo>&lt;</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mtext mathvariant="normal">margin </mtext><mspace width="0.333em"></mspace></mrow><mo>≥</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">L_\text{hinge} (\mathbf{w}) = \begin{cases}
 1 - \text{margin} &amp; \text{ if } \text{margin } &lt; 1 \\
 0 &amp; \text{ if } \text{margin } \ge 1 
 \end{cases}</annotation></semantics></math></p>
 <ol type="1">
-<li><p>Show that for each pair <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>, the gradient of the hinge loss is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mtext mathvariant="normal">hinge</mtext></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> margin</mtext></mrow><mo>&lt;</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\nabla L_\text{hinge} (\mathbf{w}) = \begin{cases} -y_i X_i &amp; \text{ if } \text{ margin} &lt; 1\\ 0 &amp; \text{ otherwise}. \end{cases}</annotation></semantics></math></p></li>
-<li><p>Express the zero-one loss function as a function of the margin. Why won’t gradient descent work with zero-one loss?</p></li>
-<li><p>We also looked at the absolute error loss function: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mtext mathvariant="normal">margin</mtext><mo>−</mo><mn>1</mn><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">L(w) = |\text{margin} - 1|</annotation></semantics></math> and we calculated the gradient of that when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.</p></li>
+<li><p>Show that for each pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>i</mi></msub><annotation encoding="application/x-tex">X_i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>,
+the gradient of the hinge loss is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mtext mathvariant="normal">hinge</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> margin</mtext></mrow><mo>&lt;</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\nabla L_\text{hinge} (\mathbf{w}) = \begin{cases} -y_i X_i &amp; \text{ if } \text{ margin} &lt; 1\\ 0 &amp; \text{ otherwise}. \end{cases}</annotation></semantics></math></p></li>
+<li><p>Express the zero-one loss function as a function of the margin.
+Why won’t gradient descent work with zero-one loss?</p></li>
+<li><p>We also looked at the absolute error loss function:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">margin</mtext><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">L(w) = |\text{margin} - 1|</annotation></semantics></math>
+and we calculated the gradient of that when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.</p></li>
 </ol>
-<p>With both hinge loss and absolute error loss, the gradient vectors don’t get small when we get close to the minimum, so we have to adjust the gradient descent algorithm slightly to use a step size that gets smaller after each step.</p>
+<p>With both hinge loss and absolute error loss, the gradient vectors
+don’t get small when we get close to the minimum, so we have to adjust
+the gradient descent algorithm slightly to use a step size that gets
+smaller after each step.</p>
 <div class="Theorem">
-<p><strong>Gradient Descent Algorithm (with Variable Step Size).</strong> To find the minimum of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><mi>n</mi></msup><mo>→</mo><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>,</p>
+<p><strong>Gradient Descent Algorithm (with Variable Step
+Size).</strong> To find the minimum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}^n \rightarrow \mathbb{R}</annotation></semantics></math>,</p>
 <ol type="1">
-<li>Start with an initial guess for the minimum <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>, a (small) step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math>.</li>
-<li>Find the gradient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\nabla f(\mathbf{x})</annotation></semantics></math>.</li>
-<li>Replace <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math> by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo>−</mo><mstyle displaystyle="false"><mfrac><mi>η</mi><msqrt><mi>k</mi></msqrt></mfrac></mstyle><mspace width="0.167em"></mspace><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbf{x}- \tfrac{\eta}{\sqrt{k}} \, \nabla f(\mathbf{x})</annotation></semantics></math>.</li>
-<li>Increment <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
-<li>Repeat steps 2 - 4 until your function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> stops getting smaller.</li>
+<li>Start with an initial guess for the minimum
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>,
+a (small) step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math>.</li>
+<li>Find the gradient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\nabla f(\mathbf{x})</annotation></semantics></math>.</li>
+<li>Replace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>−</mo><mfrac displaystyle="false"><mi>η</mi><msqrt><mi>k</mi></msqrt></mfrac><mspace width="0.167em"></mspace><mi>∇</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}- \tfrac{\eta}{\sqrt{k}} \, \nabla f(\mathbf{x})</annotation></semantics></math>.</li>
+<li>Increment
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
+<li>Repeat steps 2 - 4 until your function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+stops getting smaller.</li>
 </ol>
 </div>
 <!--
@@ -489,15 +1003,57 @@ We can use gradient descent to minimize the total absolute error in our predicti
 
 -->
 <h4 id="wed-feb-14">Wed, Feb 14</h4>
-<p>Today we talked about logistic regression which is one of the most common ways to find a linear classifier. In a logistic regression model the score <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle></mrow><annotation encoding="application/x-tex">\mathbf{w} \cdot \mathbf{x}</annotation></semantics></math> is interpreted as the log-odds of a success.</p>
-<p>Recall that the probability of any event is a number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> between 0 and 1. Sometimes in probability we talk about the odds of an event happening instead of the probability. The <strong>odds</strong> of an event is given by the formula <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">odds</mtext><mo>=</mo><mfrac><mi>p</mi><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{odds} = \frac{p}{1-p}.</annotation></semantics></math> For example, if an event has probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">p = 2/3</annotation></semantics></math>, then the odds are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math> (we usually say 2 to 1 odds). You can also easily convert from odds back to probability by computing <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mtext mathvariant="normal">odds</mtext><mrow><mtext mathvariant="normal">odds</mtext><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">p = \frac{\text{odds}}{\text{odds} + 1}.</annotation></semantics></math> Unlike probabilities, odds can be bigger than 1. In logistic regression, we are looking for a model of the form <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">odds</mtext><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>w</mi><mn>0</mn></msub><mo>+</mo><msub><mi>w</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo>⋅</mo><mstyle mathvariant="bold"><mi>𝐱</mi></mstyle><mi>.</mi></mrow><annotation encoding="application/x-tex">\log (\text{odds}) = w_0  + w_1 x_1 + \ldots + w_n x_n = \mathbf{w} \cdot \mathbf{x}.</annotation></semantics></math> For example, we came up with a very simple logistic regression model to predict whether someone is male or female based on their height: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mo stretchy="false" form="prefix">(</mo><msub><mtext mathvariant="normal">odds</mtext><mtext mathvariant="normal">male</mtext></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0.5</mn><mo stretchy="false" form="prefix">(</mo><mtext mathvariant="normal">height</mtext><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>33</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">\log(\text{odds}_\text{male}) = 0.5 (\text{height}) - 33,</annotation></semantics></math> where height is measured in inches. We based this model on guessing the odds that someone is male or female at a couple different heights, and then guessing a simple linear trend for the log-odd.</p>
+<p>Today we talked about logistic regression which is one of the most
+common ways to find a linear classifier. In a logistic regression model
+the score
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐰</mi><mo>⋅</mo><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{w} \cdot \mathbf{x}</annotation></semantics></math>
+is interpreted as the log-odds of a success.</p>
+<p>Recall that the probability of any event is a number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+between 0 and 1. Sometimes in probability we talk about the odds of an
+event happening instead of the probability. The <strong>odds</strong> of
+an event is given by the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">odds</mtext><mo>=</mo><mfrac><mi>p</mi><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{odds} = \frac{p}{1-p}.</annotation></semantics></math>
+For example, if an event has probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">p = 2/3</annotation></semantics></math>,
+then the odds are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+(we usually say 2 to 1 odds). You can also easily convert from odds back
+to probability by computing
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mtext mathvariant="normal">odds</mtext><mrow><mtext mathvariant="normal">odds</mtext><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">p = \frac{\text{odds}}{\text{odds} + 1}.</annotation></semantics></math>
+Unlike probabilities, odds can be bigger than 1. In logistic regression,
+we are looking for a model of the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">odds</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>w</mi><mn>0</mn></msub><mo>+</mo><msub><mi>w</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>w</mi><mi>n</mi></msub><msub><mi>x</mi><mi>n</mi></msub><mo>=</mo><mi>𝐰</mi><mo>⋅</mo><mi>𝐱</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\log (\text{odds}) = w_0  + w_1 x_1 + \ldots + w_n x_n = \mathbf{w} \cdot \mathbf{x}.</annotation></semantics></math>
+For example, we came up with a very simple logistic regression model to
+predict whether someone is male or female based on their height:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mtext mathvariant="normal">odds</mtext><mtext mathvariant="normal">male</mtext></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0.5</mn><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">height</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>33</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">\log(\text{odds}_\text{male}) = 0.5 (\text{height}) - 33,</annotation></semantics></math>
+where height is measured in inches. We based this model on guessing the
+odds that someone is male or female at a couple different heights, and
+then guessing a simple linear trend for the log-odd.</p>
 <ol type="1">
-<li><p>Find the log-odds, the odds, and the probability that this model would give for someone who is 67 inches tall to be male.</p></li>
-<li><p>If we randomly selected 3 people, with heights 64, 69, and 72 inches respectively, what is the probability (according to the model) that the 64 inch tall person is female and the other two are male? We call this number the <strong>likelihood</strong> of that event.</p></li>
+<li><p>Find the log-odds, the odds, and the probability that this model
+would give for someone who is 67 inches tall to be male.</p></li>
+<li><p>If we randomly selected 3 people, with heights 64, 69, and 72
+inches respectively, what is the probability (according to the model)
+that the 64 inch tall person is female and the other two are male? We
+call this number the <strong>likelihood</strong> of that event.</p></li>
 </ol>
-<p>We guessed the slope <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.5</mn><annotation encoding="application/x-tex">0.5</annotation></semantics></math> and y-intercept <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>33</mn></mrow><annotation encoding="application/x-tex">-33</annotation></semantics></math> in our model. Those probably aren’t the best possible coefficients. In logistic regression, we want the model that results in the highest likelihood of the actual data happening. We showed in class that the best coefficients <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math> happen when we minimize the <strong>logistic loss function</strong> which is the same as the negative logarithm of the likelihood function.</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>w</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>:</mo><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a success</mtext></mrow></mrow></munder><mo>−</mo><mo>log</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>:</mo><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a failure</mtext></mrow></mrow></munder><mo>−</mo><mo>log</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L(w) = \sum_{i : y_i \text{ is a success} } -\log (p_i) + \sum_{i : y_i \text{ is a failure}} - \log(1-p_i)</annotation></semantics></math></p>
-<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>e</mi><mrow><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><mrow><msup><mi>e</mi><mrow><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">p_i = \dfrac{e^{\mathbf{w} X_i}}{e^{\mathbf{w} X_i} + 1}</annotation></semantics></math> is the probability of a “success” predicted by the model. <!--
+<p>We guessed the slope
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.5</mn><annotation encoding="application/x-tex">0.5</annotation></semantics></math>
+and y-intercept
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>33</mn></mrow><annotation encoding="application/x-tex">-33</annotation></semantics></math>
+in our model. Those probably aren’t the best possible coefficients. In
+logistic regression, we want the model that results in the highest
+likelihood of the actual data happening. We showed in class that the
+best coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+happen when we minimize the <strong>logistic loss function</strong>
+which is the same as the negative logarithm of the likelihood
+function.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>:</mo><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a success</mtext></mrow></mrow></munder><mo>−</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>:</mo><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a failure</mtext></mrow></mrow></munder><mo>−</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(w) = \sum_{i : y_i \text{ is a success} } -\log (p_i) + \sum_{i : y_i \text{ is a failure}} - \log(1-p_i)</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>=</mo><mfrac displaystyle="true"><msup><mi>e</mi><mrow><mi>𝐰</mi><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><mrow><msup><mi>e</mi><mrow><mi>𝐰</mi><msub><mi>X</mi><mi>i</mi></msub></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">p_i = \dfrac{e^{\mathbf{w} X_i}}{e^{\mathbf{w} X_i} + 1}</annotation></semantics></math>
+is the probability of a “success” predicted by the model. <!--
 We evaluate the model based on the probability that the observed results would happen if the model was true.  For each $y_i$, the predicted probability of $y_i$ being 1 is
 $$p_i = \frac{e^{\mathbf{w} \cdot X_i} }{e^{\mathbf{w} \cdot X_i} + 1}$$
 and if $y_i$ is $-1$, then the predicted probability for that event is 
@@ -510,10 +1066,47 @@ The simplest case turns out to be when $y_i = -1$, because then the loss functio
 $$L_i(\mathbf{w}) = \log(1+e^{\mathbf{w} \cdot X_i})$$
 which has gradient
 $$\nabla L_i(\mathbf{w}) = \frac{e^{\mathbf{w} \cdot X_i}}{1+e^{\mathbf{w} \cdot X_i}} X_i = p_i X_i$$
---> We also noted that the gradient of the terms in the logistic loss function are <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mstyle mathvariant="bold"><mi>𝐰</mi></mstyle><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a success</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>p</mi><mi>i</mi></msub><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a failure</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\nabla L_i (\mathbf{w}) = \begin{cases} -(1-p_i) X_i &amp; \text{ if } y_i \text{ is a success} \\ p_i X_i &amp; \text{ if } y_i \text{ is a failure}. \end{cases}</annotation></semantics></math> So you can use (stochastic) gradient descent to find the best coefficients in a logistic regression model.</p>
+--> We also noted that the gradient of the terms in the logistic loss
+function are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><msub><mi>L</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a success</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>p</mi><mi>i</mi></msub><msub><mi>X</mi><mi>i</mi></msub></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>y</mi><mi>i</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a failure</mtext></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\nabla L_i (\mathbf{w}) = \begin{cases} -(1-p_i) X_i &amp; \text{ if } y_i \text{ is a success} \\ p_i X_i &amp; \text{ if } y_i \text{ is a failure}. \end{cases}</annotation></semantics></math>
+So you can use (stochastic) gradient descent to find the best
+coefficients in a logistic regression model.</p>
 <p>We looked at this example:</p>
 <ul>
-<li><strong>Example:</strong> <a href="https://people.hsc.edu/faculty-staff/blins/predictors.html">Predictors of success in calculus</a></li>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/predictors.html">Predictors
+of success in calculus</a></li>
+</ul>
+<h4 id="fri-feb-16">Fri, Feb 16</h4>
+<p>Today we talked about using linear classifiers to do nonlinear
+classification. The idea is that you can classify points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\mathbf{x} \in \mathbb{R}^n</annotation></semantics></math>
+based on a <strong>feature extractor function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi(\mathbf{x})</annotation></semantics></math>
+instead of on the raw values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>.
+We used the example of finding the best circle to separate points inside
+from points outside. You can do this by using the feature extractor
+function
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi(\mathbf{x}) = (1, x_1, x_2, x_1^2 + x_2^2)</annotation></semantics></math>
+and then finding the best parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>
+for the linear classifier
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sign</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐰</mi><mo>⋅</mo><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{sign}(\mathbf{w} \cdot \phi(\mathbf{x})).</annotation></semantics></math>
+Even though the classifier is a nonlinear function of the data
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+it is still a linear function of the parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐰</mi><annotation encoding="application/x-tex">\mathbf{w}</annotation></semantics></math>,
+so you can still use the same gradient descent techniques we’ve already
+discussed.</p>
+<p>We also talked about the dangers of complex models with lots of
+parameters and complicated feature extractors. These models tend to
+<strong>overfit</strong> the data, which means they predict the test
+data very well, but then fail on real world data.</p>
+<p>We finished by starting this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/LinearClassifiers.pdf">Linear classifiers</a></li>
 </ul>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>

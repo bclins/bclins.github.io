@@ -14,6 +14,7 @@ header-includes: |
 ---
 
 \newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
 
 ## Computer Science 480 - Spring 2024
@@ -541,7 +542,19 @@ We looked at this example:
 * **Example:** [Predictors of success in calculus](https://people.hsc.edu/faculty-staff/blins/predictors.html)
 
 
+#### Fri, Feb 16
 
+Today we talked about using linear classifiers to do nonlinear classification.  The idea is that you can classify points $\mathbf{x} \in \R^n$ based on a **feature extractor function** $\phi(\mathbf{x})$ instead of on the raw values of $\mathbf{x}$.  We used the example of finding the best circle to separate points inside from points outside.  You can do this by using the feature extractor function 
+$$\phi(\mathbf{x}) = (1, x_1, x_2, x_1^2 + x_2^2)$$
+and then finding the best parameters $\mathbf{w}$ for the linear classifier
+$$\on{sign}(\mathbf{w} \cdot \phi(\mathbf{x})).$$
+Even though the classifier is a nonlinear function of the data $\mathbf{x}$ it is still a linear function of the parameters $\mathbf{w}$, so you can still use the same gradient descent techniques we've already discussed. 
+
+We also talked about the dangers of complex models with lots of parameters and complicated feature extractors.  These models tend to **overfit** the data, which means they predict the test data very well, but then fail on real world data.  
+
+We finished by starting this workshop. 
+
+* **Workshop:** [Linear classifiers](Workshops/LinearClassifiers.pdf)
 
 
 

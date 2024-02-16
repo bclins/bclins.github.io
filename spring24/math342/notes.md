@@ -553,6 +553,12 @@ $$\|x\|_\infty = \max \{ |x_1|, |x_2|, \ldots, |x_n| \}.$$
 These are all special cases of **$p$-norms** which have the form
 $$\|x\|_p = \sqrt[p]{|x_1|^p + |x_2|^p + \ldots + |x_n|^p}.$$
 
+We used Desmos to graph the set of vectors in $\R^2$ with $p$-norm equal to one, then we could see how those norms change as $p$ varies between 1 and $\infty$. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/ridobsezmp?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
 ### Norms of Matrices
 
 The set of all matrices in $\R^{m \times n}$ is a vector space. So it makes sense to talk about the norm of a matrix.  There are many ways to define norms for matrices, but the most important for us are **operator norms** (also known as **induced norms**).  For a matrix $A \in \R^{m \times n}$, the **induced $p$-norm** is 
@@ -564,20 +570,8 @@ Two important special cases are
 
 ### Condition Number
 
-For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A$ is $\kappa(A) = \|A\| \, \|A^{-1}\|$ (using any induced norm, although $\ell_2$ is the most common).  
+For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A$ is $\kappa(A) = \|A\| \, \|A^{-1}\|$ (using any induced norm).  
 
-<div class="Theorem">
-**Theorem.** If $A \in \R^{n \times n}$ is invertible, then the relative error in the solution of the system $A x = b$ is bounded by
-$$\frac{\|x-x'\|}{\|x\|} \le \kappa(A) \frac{\|b-b'\|}{\|b\|}.$$
-</div>
-
-*Proof.* Using the properties of the induced norm, 
-$$\|b\| = \|A x \| \le \|A\| \, \|x\| \text{ and } \|x-x'\| = \|A^{-1}(b-b')\| \le \|A^{-1}\| \, \|b-b'\|,$$
-so putting both together gives 
-$$\|b\| \|x-x'\| \le \|A\| \, \|A^{-1}\| \, \|x\| \, \|b-b'\|.$$  
-This leads directly to the inequality above when you separate the factors with $x$ from those with $b$. □
-
-From this equation, we get the following:
 
 **Rule of thumb.** If the entries of $A$ and $b$ are both accurate to $n$-significant digits and the condition number of $A$ is $\kappa(A) = 10^k$, then the solution of the linear system $Ax = b$ will be accurate to $n-k$ significant digits. 
 
@@ -591,6 +585,21 @@ Day  | Section  | Topic
 Mon, Feb 19 | | Condition numbers
 Wed, Feb 21 | | Review
 Fri, Feb 23 | | **Midterm 1** 
+
+<!--
+<div class="Theorem">
+**Theorem.** If $A \in \R^{n \times n}$ is invertible, then the relative error in the solution of the system $A x = b$ is bounded by
+$$\frac{\|x-x'\|}{\|x\|} \le \kappa(A) \frac{\|b-b'\|}{\|b\|}.$$
+</div>
+
+*Proof.* Using the properties of the induced norm, 
+$$\|b\| = \|A x \| \le \|A\| \, \|x\| \text{ and } \|x-x'\| = \|A^{-1}(b-b')\| \le \|A^{-1}\| \, \|b-b'\|,$$
+so putting both together gives 
+$$\|b\| \|x-x'\| \le \|A\| \, \|A^{-1}\| \, \|x\| \, \|b-b'\|.$$  
+This leads directly to the inequality above when you separate the factors with $x$ from those with $b$. □
+
+This explains that rule of thumb from last time. 
+-->
 
 - - -
 
