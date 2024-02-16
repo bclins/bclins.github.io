@@ -22,7 +22,8 @@ header-includes: |
 
 ### Announcements
 
-* No announcements
+* Midterm 1 will be on **Friday, Feb 23.**
+* [Midterm 1 review problems](midterm1review.pdf) (and [solutions](midterm1reviewSolutions.pdf))
 
 ### Course Description 
 

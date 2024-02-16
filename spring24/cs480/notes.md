@@ -517,7 +517,7 @@ We guessed the slope $0.5$ and y-intercept $-33$ in our model.  Those probably a
 
 $$L(w) = \sum_{i : y_i \text{ is a success} } -\log (p_i) + \sum_{i : y_i \text{ is a failure}} - \log(1-p_i)$$
 
-where $p_i = \dfrac{e^{\mathbf{w} X_i}}{e^{\mathbf{w} X_i} + 1}$ is the probability of a ``success" predicted by the model. 
+where $p_i = \dfrac{e^{\mathbf{w} X_i}}{e^{\mathbf{w} X_i} + 1}$ is the probability of a "success" predicted by the model. 
 <!--
 We evaluate the model based on the probability that the observed results would happen if the model was true.  For each $y_i$, the predicted probability of $y_i$ being 1 is
 $$p_i = \frac{e^{\mathbf{w} \cdot X_i} }{e^{\mathbf{w} \cdot X_i} + 1}$$
@@ -534,7 +534,7 @@ $$\nabla L_i(\mathbf{w}) = \frac{e^{\mathbf{w} \cdot X_i}}{1+e^{\mathbf{w} \cdot
 -->
 We also noted that the gradient of the terms in the logistic loss function are
 $$\nabla L_i (\mathbf{w}) = \begin{cases} -(1-p_i) X_i & \text{ if } y_i \text{ is a success} \\ p_i X_i & \text{ if } y_i \text{ is a failure}. \end{cases}$$
-So you can use gradient descent to find the best coefficients in a logistic regression model.
+So you can use (stochastic) gradient descent to find the best coefficients in a logistic regression model.
 
 We looked at this example:
 
