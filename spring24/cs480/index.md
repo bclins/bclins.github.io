@@ -22,7 +22,7 @@ header-includes: |
 
 ### Announcements
 
-* There are no announcements yet. 
+* Midterm 1 will be on Wednesday, Feb 21.  It will cover [these things](notes.html#mon-feb-19).
 
 ### Course Description
 
