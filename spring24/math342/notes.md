@@ -30,7 +30,7 @@ Day  | Section  | Topic
 Wed, Jan 17 | [1.2][1.2] | Floating point arithmetic
 Fri, Jan 19 | [1.2][1.2] | Significant digits, relative error
 
-#### Wed, Jan 17
+### Wed, Jan 17
 
 We talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
 
@@ -63,7 +63,7 @@ We did the following exercises in class:
 6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
 -->
 
-#### Fri, Jan 19
+### Fri, Jan 19
 
 Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). Then we defined absolute and relative error:
 
@@ -118,7 +118,7 @@ Mon, Jan 22 |            | Taylor's theorem
 Wed, Jan 24 |            | Taylor's theorem - con'd
 Fri, Jan 26 |            | The Babylonian algorithm
 
-#### Mon, Jan 22
+### Mon, Jan 22
 
 Today we reviewed Taylor series.  We recalled the following important Maclaurin series (which are Taylor series with center $c = 0$):
 
@@ -132,7 +132,7 @@ The we did the following workshop in class.
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
 
-#### Wed, Jan 24
+### Wed, Jan 24
 
 Today we reviewed some theorems that we will need throughout the course.  The first is probably the most important theorem in numerical analysis since it lets us estimate error when using Taylor series approximations.  
 
@@ -174,7 +174,7 @@ We finished with a proof that the number $e$ is irrational. First we temporarily
 4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
 
 
-#### Fri, Jan 26
+### Fri, Jan 26
 
 Today we did a workshop about the Babylonian algorithm which is an ancient method for finding square roots.  
 
@@ -192,7 +192,7 @@ Mon, Jan 29 | [2.1][2.1] | Bisection method
 Wed, Jan 31 | [2.3][2.3] | Newton's method
 Fri, Feb 2 | [2.4][2.4] | Rates of convergence
 
-#### Mon, Jan 29
+### Mon, Jan 29
 
 We talked about how to find the roots of a function.  Recall that a **root** (AKA a **zero**) of a function $f(x)$ is an $x$-value where the function hits the $x$-axis.  We introduced an algorithm called the **Bisection method** for finding roots of a continuous function. We did the following workshop.
 
@@ -204,7 +204,7 @@ We saw that it takes about 10 iterations to increase the accuracy by 3 decimal p
 
 We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
 
-#### Wed, Jan 31
+### Wed, Jan 31
 
 Today we covered Newton's method.  This is probably the most important method for finding roots of differentiable functions.  The formula is 
 $$ x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}.$$
@@ -240,7 +240,7 @@ $$|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.$$
 
 This corollary explains why, if you start with a good guess in Newton's method, the number of correct decimal places tends to double with each iteration!
 
-#### Fri, Feb 2
+### Fri, Feb 2
 
 Today we looked at some examples of what can go wrong with Newton's method. We did these examples:
 
@@ -265,7 +265,7 @@ Wed, Feb 7 | [2.2][2.2] | Fixed point iteration
 Fri, Feb 9 | [2.4][2.4] | More about rates of convergence
 
 
-#### Mon, Feb 5
+### Mon, Feb 5
 
 We talked about the secant method which is a variation of Newton's method that uses secant lines instead of tangent lines.  The advantage of the secant method is that it doesn't require calculating a derivative.  The disadvantage is that it is a little slower to converge than Newton's method, but it is still much faster than the bisection method.  Here is the formula:
 
@@ -312,7 +312,7 @@ Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Ne
 
 We saw that the pattern is that the exponents of each factor is a Fibonacci number.  We talked briefly about [Binet's formula](https://en.wikipedia.org/wiki/Fibonacci_sequence#Relation_to_the_golden_ratio) for Fibonacci numbers and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618$. The lead to the following nice rule of thumb: The number of correct decimal places in the secant method increases by a factor of about 1.6 (the golden ratio) every step. 
 
-#### Wed, Feb 7
+### Wed, Feb 7
 
 Newton's method is a special case of a method known as fixed point iteration.  A \textbf{fixed point} of a function $f(x)$ is a number $p$ such that $f(p) = p$.  Not every function has a fixed point, but we do have the following existence result:
 
@@ -363,7 +363,7 @@ In general, a sequence that converges with order $\alpha > 1$ will have the numb
 **Theorem.** If $f$ is differentiable at a fixed point $p$ and $0 < |f'(p)| < 1$, then for any point $x_0$ sufficiently close to $p$, the fixed point iterates $x_n$ defined by $x_{n+1} = f(x_n)$ converge to $p$ with linear order.  If $f'(p) = 0$, then the iterates converge to $p$ with order $\alpha$ where $f^{(\alpha)}(p)$ is the first nonzero derivative of $f$ at $p$. 
 </div>
 
-#### Fri, Feb 9
+### Fri, Feb 9
 
 We started with this question:
 
@@ -404,7 +404,7 @@ Mon, Feb 12 | | Systems of linear equations
 Wed, Feb 14 | | LU decomposition
 Fri, Feb 16 | | Matrix norms
 
-#### Mon, Feb 12
+### Mon, Feb 12
 
 Today we talked about systems of linear equations and linear algebra. Before we got to that, we looked at one more cool thing about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
 
@@ -466,7 +466,7 @@ In practice, inverse matrices are rarely used to solve systems of linear equatio
 1. Most matrices aren't invertible.
 2. Finding the inverse is at least as hard computationally as row reduction, so you might as well just use row reduction.  
 
-#### Wed, Feb 14
+### Wed, Feb 14
 
 Today we talked about LU decomposition.  We defined the LU decomposition as follows.  The **LU decomposition** of a matrix $A \in \R^{m \times n}$ is a pair of matrices $L \in \R^{m \times m}$ and $U \in \R^{m \times n}$ such that $A = LU$ and $U$ is in echelon form and $L$ is a lower triangular matrix with 1's on the main diagonal, 0's above the main diagonal, and entries $L_{ij}$ in row $i$, column $j$ that are equal to the multiple of row $i$ that you *subtracted* from row $j$ as you row reduced $A$ to $U$. 
 
@@ -482,7 +482,7 @@ We finished with one more example.
 
 3. For what real numbers $a$ and $b$ does the matrix $\begin{pmatrix} 1 & 0 & 1 \\ a & a & a \\ b & b & a \end{pmatrix}$ have an LU decomposition? (<https://youtu.be/-eA2D_rIcNA>)
 
-#### Fri, Feb 16
+### Fri, Feb 16
 
 
 Today we talked about what it means for a linear system to be **ill-conditioned**.  This is when a small change in the vector $b$ can produce a large change in the solution vector $x$ for a linear system $Ax=b$.  
@@ -586,7 +586,8 @@ Mon, Feb 19 | | Condition numbers
 Wed, Feb 21 | | Review
 Fri, Feb 23 | | **Midterm 1** 
 
-<!--
+### Mon, Feb 19
+
 <div class="Theorem">
 **Theorem.** If $A \in \R^{n \times n}$ is invertible, then the relative error in the solution of the system $A x = b$ is bounded by
 $$\frac{\|x-x'\|}{\|x\|} \le \kappa(A) \frac{\|b-b'\|}{\|b\|}.$$
@@ -598,8 +599,32 @@ so putting both together gives
 $$\|b\| \|x-x'\| \le \|A\| \, \|A^{-1}\| \, \|x\| \, \|b-b'\|.$$  
 This leads directly to the inequality above when you separate the factors with $x$ from those with $b$. □
 
-This explains that rule of thumb from last time. 
+This explains why the number of significant digits in the solution to $A x = b$ may have up to $k$ fewer significant digits than the entries of $A$ and $b$ when the condition number $\kappa(A) = 10^k$. 
+
+1. Let $A = \begin{pmatrix} 1.000 & 1.001 \\ 1.000 & 1.000 \end{pmatrix}$ and $b = \begin{pmatrix} 2.000 \\ 2.001 \end{pmatrix}$.  How many significant digits does the solution to $Ax = b$ have? 
+
+Last time we saw an example of a matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which is not ill-conditioned by itself.  However, both $L$ and $U$ in its LU-decomposition were ill-conditioned. It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, always choose the one with the largest absolute value.  
+
+You keep track of the row swaps as you use the method of partial pivoting, always apply the same row swaps to a copy of the identity matrix. At the end, you will have a **permutation matrix** $P$ and the **LU-decomposition with partial pivoting** is
+$$PA = LU.$$
+The fixes two problems:
+
+* When there are zero entries where pivots should be, you can't do a regular LU-decomposition.
+* When you do an LU-decomposition, the matrices L and U might be ill-conditioned, even if $A$ isn't. The method of partial pivots avoids that problem. 
+
+One nice thing to know about permutation matrices is that they are always invertible and $P^{-1} = P^T$ where $P^T$ is the **transpose** of $P$ obtained by converting every row of $P$ to a column of $P^T$.  
+
+Find the LU-decomposition with partial pivoting for these matrices
+
+2. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$
+
+3. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ <!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
+
+<!--
+Didn't have time for this one:
+4. Show that when you row reduce $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting LU matrices are not ill-posed.  
 -->
+
 
 - - -
 

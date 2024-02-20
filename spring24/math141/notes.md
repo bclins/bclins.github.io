@@ -23,7 +23,7 @@ Wed, Jan 17 | [1.1][1.1] | Review of functions
 Thu, Jan 18 | [1.2][1.2] | Basic classes of functions 
 Fri, Jan 19 | [1.2][1.2] | Basic classes of functions - con'd
 
-#### Wed, Jan 17
+### Wed, Jan 17
 
 Today we reviewed functions and function notation.  We talked about how $f(x)$ looks like $f$ multiplied by $x$, but it really means something completely different! We also talked about the following important functions (and their graphs) that you should have memorized:
 
@@ -56,18 +56,18 @@ We didn't have time for this exercise, but it is also a good example of how to c
 -->
 
 <!--
-#### Thu, Jan 18
+### Thu, Jan 18
 
 Review linear functions and introduce piecewise function w/ the income tax example.
 
-#### Fri, Jan 19
+### Fri, Jan 19
 
 Review polynomial functions.
 
 
 -->
 
-#### Thu, Jan 18
+### Thu, Jan 18
 
 Today we started with the wire between two poles example from yesterday.  Then we focused on linear functions. We reviewed **slope-intercept form** and did the following examples in class.
 
@@ -94,7 +94,7 @@ Here is another good example that we didn't do in class:
 
 4. Find the slope and intercepts of $3x+5y = 15$. (<https://youtu.be/SOwh-Wk7Cq0>)
 
-#### Fri, Jan 19
+### Fri, Jan 19
 
 Today we talked about **polynomial functions and equations**.  We briefly reviewed how to factor polynomials and we solved the following problems. 
 
@@ -123,7 +123,7 @@ Wed, Jan 24 | [1.3][1.3] | Trigonometric functions
 Thu, Jan 25 | | Review
 Fri, Jan 26 | [2.1][2.1] | A preview of calculus
 
-#### Mon, Jan 22
+### Mon, Jan 22
 
 Today we did a review of some basic trigonometry. We talked about the things you should memorize which include:
 
@@ -164,7 +164,7 @@ We did the following exercises.
 8. A 1000 meter long driveway in the mountains has a $10^\circ$ grade.  How much elevation do you gain when you drive up the driveway?  
 
 
-#### Wed, Jan 24
+### Wed, Jan 24
 
 Today we looked at some more trigonometry examples.  We did the following:
 
@@ -190,13 +190,13 @@ $$ \frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$$
 7. Find all solutions of $2\sin \theta = \tan \theta$ on $[0,2\pi)$. (<https://youtu.be/vVR91JqJEMQ>)
 
 
-#### Thu, Jan 25
+### Thu, Jan 25
 
 Today we went over [homework 2](HW2.pdf).  We also did the following additional exercise in class.
 
 1. Solve $\sin^2 \theta = \frac{3}{4}$.  
 
-#### Fri, Jan 26
+### Fri, Jan 26
 
 Today we started talking about limits.  We began with this example:
 
@@ -236,7 +236,7 @@ Wed, Jan 31 | [2.3][2.3] | Limit laws
 Thu, Feb 1 | | Review
 Fri, Feb 2 | [2.4][2.4] | Continuity
 
-#### Mon, Jan 29
+### Mon, Jan 29
 
 Today we defined limits for functions.  We say that the **limit** of $f(x)$ as $x$ approaches $a$ is $L$ and write
 $$\lim_{x \rightarrow a} f(x) = L$$ 
@@ -270,7 +270,7 @@ We finished by talking about another example of a limit:
 
 $$\lim_{n \rightarrow \infty} (1+r)^n = e^r.$$
 
-#### Wed, Jan 31
+### Wed, Jan 31
 
 Today we talked about using algebra to find limits. We did the following examples. 
 
@@ -286,7 +286,7 @@ At this point, defined continuous functions.  A function $f(x)$ is **continuous*
 
 5. $\lim_{x \rightarrow 4} f(x)$ where $f(x) = \begin{cases} \frac{x+2}{x-1} & \text{ for } x \le 4 \\ \sqrt{x} & \text{ for } x > 4.\end{cases}$ (<https://youtu.be/2xdh0yKopB8>)
 
-#### Fri, Feb 2
+### Fri, Feb 2
 
 Today we went over homework 3.   
 
@@ -302,7 +302,7 @@ Wed, Feb 7 | [3.2][3.2] | The derivative function
 Thu, Feb 8 | | Review
 Fri, Feb 9 | [3.3][3.3] | Differentiation rules
 
-#### Mon, Feb 5
+### Mon, Feb 5
 
 We started by talking about continuity. 
 
@@ -328,7 +328,7 @@ We calculated some examples.
 6. Find the derivative of $f(x) = \sqrt{x}$ at $a = 4$. To do this last problem, you need to find
 $\lim_{x \rightarrow 4} \dfrac{\sqrt{x} - 2}{x- 4}$. (<https://youtu.be/8LJC56j9gHA>)
 
-#### Wed, Feb 7
+### Wed, Feb 7
 
 Today we observed that the derivative of $f(x)$ is a function $f'(a)$ that depends on the point $a$ where you found the slope of the tangent line.  Another way to write the definition of derivative is:
 $$f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}.$$
@@ -388,7 +388,7 @@ We looked at this example.
 
 5. A rock falls from a 100 foot cliff with height $h(t) = 100 - 16t^2$ where $t$ is measured in seconds.  What is the meaning of the derivative $h'(t)$ in this context, and what are its units? 
 
-#### Fri, Feb 9
+### Fri, Feb 9
 
 Today we introduced the following derivative rules. 
 
@@ -423,7 +423,7 @@ Wed, Feb 14 | [3.4][3.4] | Derivatives as rates of change
 Thu, Feb 15 | | Review
 Fri, Feb 16 | | **Midterm 1**
 
-#### Mon, Feb 12
+### Mon, Feb 12
 
 In class today, we covered these four derivative rules:
 
@@ -455,7 +455,7 @@ We did the following examples.
 
 We also gave a proof of the product rule similar to the one in [this video](https://youtu.be/L5ErlC0COxI). 
 
-#### Wed, Feb 14
+### Wed, Feb 14
 
 Today we focused on examples of derivatives and what they mean. 
 
@@ -489,6 +489,40 @@ Mon, Feb 19 | [3.5][3.5] | Derivatives of trigonometric functions
 Wed, Feb 21 | [3.6][3.6] | The chain rule
 Thu, Feb 22 | | Review
 Fri, Feb 23 | [3.6][3.6] | The chain rule - con'd
+
+### Mon, Feb 19
+
+Today we covered the derivatives of trigonometric functions in more detail.  We started with this limit problem.
+
+1. Find the limit $\lim_{h \rightarrow 0} \dfrac{1 - \cos h}{\sin h}$. Hint: First multiply the top & bottom by $1 + \cos h$. 
+
+Then we applied that limit to prove the two **fundamental limits of trigonometry**
+
+$$\lim_{h \rightarrow 0} \frac{\sin h}{h} = 1 \text{ and } \lim_{h \rightarrow 0} \frac{\cos h - 1}{h} = 0.$$
+
+Then we used the angle addition formula for $\sin(x+h)$ to prove that $\dfrac{d}{dx} \sin x = \cos x$.  Then we solved the following problems. 
+
+2. Find the derivatives of $\tan x$ and $\sec x$. 
+
+3. Find the derivative of $y = 2x \cos x - 2 \sin x$. (<https://youtu.be/tXc8A3VpNOI>)
+
+4. Find the derivative of $y = x \sin x$. 
+
+We finished by looking at the graph of $y = \sin (2 x)$.  This is a wave that oscillates twice as fast as the regular $\sin x$. So intuitively, its tangent lines should be twice as steep.  It turns out that they are because of the **chain rule** which is a rule for taking the derivative of functions when they are composed together.   
+
+<!--
+### Wed, Feb 21
+
+Today we introduced the **chain rule**.  We started with a simple example
+
+1. Find the derivative of $\sin 2x$. 
+
+4. Use Leibniz notation to find the derivative of $y = \sqrt{5x+1}$. (<https://youtu.be/Ur_kdKXnZPo>)
+
+### Fri, Feb 23
+
+1. Find the derivative of $f(x) = \cos^2 8x$. (<https://youtu.be/TlE8bXB53Zw>)
+-->
 
 - - -
 

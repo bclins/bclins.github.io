@@ -30,7 +30,7 @@ Day    | Topic
 Wed, Jan 17 | Vectors and matrices
 Fri, Jan 19 | Markov chains
 
-#### Wed, Jan 17
+### Wed, Jan 17
 
 <!--
 Today we introduced some simple examples of Markov chains.  We also reviewed matrix multiplication.  We also defined **probability vectors** and the **dot product** (which is also known as the **inner product**).  We talked about the geometric meaning of the dot product of two vectors. We did the following examples in class. 
@@ -67,7 +67,7 @@ change to a nice day.
 <img src="Oz.png"></img> 
 </center>
 
-#### Fri, Jan 19
+### Fri, Jan 19
 
 Today we looked in more detail at the Land of Oz Markov chain from last time. We started by defining the following terminology.
 
@@ -111,13 +111,13 @@ Mon, Jan 22 | Examples of Markov chains
 Wed, Jan 24 | Stationary distributions
 Fri, Jan 26 | Random text generation
 
-#### Mon, Jan 22
+### Mon, Jan 22
 
 Today we did the following workshop about Markov chains. 
 
 * Workshop: [Markov chains](Workshops/MarkovChains.pdf) 
 
-#### Wed, Jan 24
+### Wed, Jan 24
 
 Today we talked about some of the features we've seen in Markov chains. Recall that you can think of a Markov chain as a weighted directed graph where the total weight of all the edges leaving a vertex must add up to 1 (the weights correspond to probabilities).  
 
@@ -168,7 +168,7 @@ We finished class by talking about how the Google PageRank algorithm uses the st
 The 85/15 percent split was chosen because the resulting regular Markov chain converges relatively quickly (it still takes days for the computation to update), but it still settles on a stationary distribution where more popular websites are visited more than less popular websites.  
 
 
-#### Fri, Jan 26
+### Fri, Jan 26
 
 Today we wrote a program to randomly generate text based on a source text using a Markov chain.  
 
@@ -190,7 +190,7 @@ Mon, Jan 29 | Least squares regression
 Wed, Jan 31 | Least squares regression - con'd
 Fri, Feb 2 | Logistic regression
 
-#### Mon, Jan 29
+### Mon, Jan 29
 
 Today we started talking about linear regression.  We started with the simplest case where you want to predict a response variable ($y$) using a single explanatory variable ($x$).  Based on the observed $x$ and $y$ values, you want to find the best fit trend-line.  We judge how good a trend-line fits the data by calculating the sum of squared deviations between the predicted $y$-values (denoted $\hat{y}_i$) and the actual $y$-values ($y_i$) at each $x_i$.  
 $$\text{Sum of squared error} = \sum_{i = 1}^n (\hat{y}_i - y_i)^2.$$
@@ -249,7 +249,7 @@ $$\hat{y} = -0.01270 + 0.01796 x.$$
 
 In addition, we can tell from the slope that each extra beer someone drinks tends to increase their BAC by 0.018 points.
 
-#### Wed, Jan 31
+### Wed, Jan 31
 
 Today we continued looking at least squares regression.  We covered these additional facts about the least squares regression line 
 $$\hat{y} = b_0 + b_1 x$$
@@ -300,7 +300,7 @@ plt.plot(x,y,"o") + plt.plot(years,56177.8 - 54.207*years + 0.01307*years**2,lin
 An even better approximation might look for a power law relationship $\hat{y} = C x^\alpha$.  We'll consider that next time. 
 -->
 
-#### Fri, Feb 2
+### Fri, Feb 2
 
 Today we did this workshop. 
 
@@ -337,7 +337,7 @@ Mon, Feb 5 | Linear classifiers
 Wed, Feb 7 | Loss functions & gradient descent
 Fri, Feb 9 | Stochastic gradient descent
 
-#### Mon, Feb 5
+### Mon, Feb 5
 
 Last time we saw came up with a model to predict a runner's race time based on their age and gender.  Our model had the form
 $$\hat{y} = b_0 + b_1 x_1 + b_2 x_2$$
@@ -360,7 +360,7 @@ Using least squares regression to find our weight vector probably isn't the best
 We finished by outlining where we are going in the next few classes.  We are going to look at how to minimize different loss functions over the space of all possible weight vectors (called the **weight space**).  We talked about how precise formulas for the optimal weight vector don't always exist, but we can use a general technique called **gradient descent** that works for many different loss functions. 
 
 
-#### Wed, Feb 7
+### Wed, Feb 7
 
 We talked about gradient descent today.  For a multivariable function $f: \R^n \rightarrow \R$, the **gradient** of $f$ at a point $\mathbf{x} = (x_1, \ldots, x_n)$ is the vector 
 $$\nabla f = \left( \frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n} \right).$$
@@ -407,7 +407,7 @@ $$f(x) = x^4 + y^4 - 3xy$$
 5. Find the gradient of the following sum of squared error loss function. Then use gradient descent to find the vector $\mathbf{w}$ with the minimum loss. 
 $$L(\mathbf{w}) = (\mathbf{w} \cdot [1, 0] - 1)^2 + (\mathbf{w} \cdot [1,1] - 1)^2 + (\mathbf{w} \cdot [1,2] -4)^2$$
 
-#### Fri, Feb 9
+### Fri, Feb 9
 
 Today we did this workshop in class:
 
@@ -439,7 +439,7 @@ Mon, Feb 12 | Hinge Loss
 Wed, Feb 14 | Logistic regression 
 Fri, Feb 16 | Nonlinear classification
 
-#### Mon, Feb 12
+### Mon, Feb 12
 
 In the workshop last time, we had to calculate the gradient of a function of the form $\mathbf{w} \mapsto (\mathbf{w} \cdot \mathbf{x} - y)^2$.  This is a composition of the one variable function $f(u) = (u - y)^2$ with the dot product $\mathbf{x} \cdot \mathbf{w}$.  In general, we have the following nice lemma which is one special case of the chain rule.
 
@@ -495,7 +495,7 @@ We can use gradient descent to minimize the total absolute error in our predicti
 -->
 
 
-#### Wed, Feb 14
+### Wed, Feb 14
 
 Today we talked about logistic regression which is one of the most common ways to find a linear classifier.  In a logistic regression model the score $\mathbf{w} \cdot \mathbf{x}$ is interpreted as the log-odds of a success.  
 
@@ -542,7 +542,7 @@ We looked at this example:
 * **Example:** [Predictors of success in calculus](https://people.hsc.edu/faculty-staff/blins/predictors.html)
 
 
-#### Fri, Feb 16
+### Fri, Feb 16
 
 Today we talked about using linear classifiers to do nonlinear classification.  The idea is that you can classify points $\mathbf{x} \in \R^n$ based on a **feature extractor function** $\phi(\mathbf{x})$ instead of on the raw values of $\mathbf{x}$.  We used the example of finding the best circle to separate points inside from points outside.  You can do this by using the feature extractor function 
 $$\phi(\mathbf{x}) = (1, x_1, x_2, x_1^2 + x_2^2)$$
@@ -567,6 +567,51 @@ Day    | Topic
 Mon, Feb 19 | Review
 Wed, Feb 21 | **Midterm 1**
 Fri, Feb 23 | 
+
+### Mon, Feb 19
+
+Went over what you should know going in to the midterm on Wednesday.  Make sure you know all of the terms in **bold** and how to do any of the indicated calculations by hand. 
+
+#### Markov chains
+  
+* How to represent **Markov chains** with graphs and **transition matrices**.
+* How to multiply transition matrices, find powers of matrices. How to interpret **probability vectors** and update them using the transition matrix.
+* Know what a **stationary distribution** is for a Markov chain. 
+* Know how to find the **classes** of a Markov chain graph. 
+* Know the **Perron-Frobenius theorem** and the definition of a **final class**.
+* Know the difference between **absorbing** and **transient** states.
+* Know what a **regular** Markov chain is. 
+
+#### Regression 
+
+* Be able to use a regression model 
+$$\hat{y} = b_0 + b_1 x_1 + \ldots + b_n x_n$$
+to make predictions $\hat{y}$ about a variable $y$ based on the values of $\mathbf{x}$.  
+* Understand different **loss functions**.  
+* Know how to find the **least squares error** $\|\hat{y} - y\|^2$. 
+* Be aware of the **normal equations** for finding the least squares error solution of $X \beta = y$. 
+
+#### Linear Classification 
+
+* Understand linear classification models of the form $\hat{y} = \on{sign}(\mathbf{w} \cdot \mathbf{x})$. 
+* Be comfortable using a **feature extractor function** $\phi$ to do simple nonlinear classification tasks using a model of the form 
+$$\hat{y} = \on{sign}(\mathbf{w} \cdot \phi(\mathbf{x})).$$
+
+#### Gradient Descent
+
+* Know the definition of the **gradient** $\nabla f$ of a function $f$. 
+* Be able to calculate gradients of simple (polynomial) functions.
+* Be able to calculate the gradient of functions of the form $L(\mathbf{w}) = f(\mathbf{w} \cdot \mathbf{x})$. 
+* Understand the **gradient descent algorithm.**
+* Understand the hyperparameters $\eta$ (step size) and $n$ (number of iterations) in the gradient descent algorithm. 
+* Know the following loss functions: **squared error**, **absolute error**, **hinge loss**, and **zero-one loss**.
+
+#### Logistic Regression
+
+* Be able to interpret models of the form 
+$$\log(\text{odds}) = \mathbf{w} \cdot \mathbf{x}.$$
+* Be able to convert from log-odds to odds and from odds to probability and vice versa. 
+
 
 - - -
 
