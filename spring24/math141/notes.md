@@ -510,19 +510,22 @@ Then we used the angle addition formula for $\sin(x+h)$ to prove that $\dfrac{d}
 
 We finished by looking at the graph of $y = \sin (2 x)$.  This is a wave that oscillates twice as fast as the regular $\sin x$. So intuitively, its tangent lines should be twice as steep.  It turns out that they are because of the **chain rule** which is a rule for taking the derivative of functions when they are composed together.   
 
-<!--
 ### Wed, Feb 21
 
-Today we introduced the **chain rule**.  We started with a simple example
+Today covered the **chain rule** in more detail.  
 
-1. Find the derivative of $\sin 2x$. 
+1. $\dfrac{d}{dx} \sqrt{1-x^2}$. 
 
-4. Use Leibniz notation to find the derivative of $y = \sqrt{5x+1}$. (<https://youtu.be/Ur_kdKXnZPo>)
+2. Compare these two derivatives $\dfrac{d}{dx} \sin^2 x$ versus $\dfrac{d}{dx} \sin(x^2)$.
 
-### Fri, Feb 23
+3. *We didn't do this one in class, but it is a good exercise:* Use Leibniz notation to find the derivative of $y = \sqrt{5x+1}$. (<https://youtu.be/Ur_kdKXnZPo>)
 
-1. Find the derivative of $f(x) = \cos^2 8x$. (<https://youtu.be/TlE8bXB53Zw>)
--->
+4. Find the derivative of $f(x) = \cos^2 8x$. (<https://youtu.be/TlE8bXB53Zw>)
+
+5. Find $\dfrac{d}{dx} \sqrt{\tan 5x}$. (<https://youtu.be/S62sK5XoRQo>)
+
+6. Find the equation for the tangent line to the function $y = \sqrt{25-x^2}$ at the point $(3,4)$. 
+
 
 - - -
 
