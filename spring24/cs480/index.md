@@ -36,20 +36,20 @@ The schedule below is tentative, and may be subject to change. Changes will be a
 
 Week | Topic                      | Notes 
 :---:|:---------------------------|:-----:
-1  | Matrices & Markov chains               | [Week 01](notes.html#week-1-notes) 
-2  | Markov chains - con'd                  | [Week 02](notes.html#week-2-notes) 
-3  | Linear regression & loss functions     | [Week 03](notes.html#week-3-notes) 
-4  | Linear classification                  | [Week 04](notes.html#week-4-notes) 
-5  | Nonlinear classification               | [Week 05](notes.html#week-5-notes) 
-6  | Neural networks, **Midterm 1**         | [Week 06](notes.html#week-6-notes) 
-7  | Clustering algorithms                  | [Week 07](notes.html#week-7-notes) 
-8  | Representation & agents                | [Week 08](notes.html#week-8-notes)  
-9  | Search algorithms                      | [Week 09](notes.html#week-9-notes) 
-10 | Markov decision processes              | [Week 10](notes.html#week-10-notes)
-11 | Markov decision processes - con'd      | [Week 11](notes.html#week-11-notes)
-12 | Reinforcement learning, **Midterm 2**  | [Week 12](notes.html#week-12-notes)
-13 | Games                                  | [Week 13](notes.html#week-13-notes)
-14 | Logic                                  | [Week 14](notes.html#week-14-notes)
+1  | Matrices & Markov chains                 | [Week 01](notes.html#week-1-notes) 
+2  | Markov chains - con'd                    | [Week 02](notes.html#week-2-notes) 
+3  | Linear regression & loss functions       | [Week 03](notes.html#week-3-notes) 
+4  | Linear classification                    | [Week 04](notes.html#week-4-notes) 
+5  | Nonlinear classification                 | [Week 05](notes.html#week-5-notes) 
+6  | Regularization, **Midterm 1**            | [Week 06](notes.html#week-6-notes) 
+7  | Neural networks,                         | [Week 07](notes.html#week-7-notes) 
+8  | Neural networks - con'd                  | [Week 08](notes.html#week-8-notes)  
+9  | Clustering algorithms                    | [Week 09](notes.html#week-9-notes) 
+10 | Representation & agents                  | [Week 10](notes.html#week-10-notes)
+11 | Search algorithms                        | [Week 11](notes.html#week-11-notes)
+12 | Markov decision processes, **Midterm 2** | [Week 12](notes.html#week-12-notes)
+13 | Markov decision processes - con'd        | [Week 13](notes.html#week-13-notes)
+14 | Reinforcement learning,                  | [Week 14](notes.html#week-14-notes)
 
 
 ### Attendance Policy

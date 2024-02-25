@@ -34,7 +34,7 @@ Week | Topic                      | Notes | Homework
 4  | Derivatives                                           | [Week 04](notes.html#week-4-notes)  | [HW4](HW4.pdf)
 5  | Differentiation rules, **Midterm 1**                  | [Week 05](notes.html#week-5-notes)  | [HW5](HW5.pdf)
 6  | Derivatives of trig functions & chain rule            | [Week 06](notes.html#week-6-notes)  | [HW6](HW6.pdf)
-7  | Implicit differentiation & related rates              | [Week 07](notes.html#week-7-notes)  | 
+7  | Implicit differentiation & related rates              | [Week 07](notes.html#week-7-notes)  | [HW7](HW7.pdf)
 8  | Linear approximations & extreme values                | [Week 08](notes.html#week-8-notes)  | 
 9  | Mean value theorem, **Midterm 2**                     | [Week 09](notes.html#week-9-notes)  | 
 10 | Optimization                                          | [Week 10](notes.html#week-10-notes) | 

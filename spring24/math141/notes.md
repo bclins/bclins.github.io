@@ -8,6 +8,7 @@ header-includes: |
 ---
 
 \newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
 
 ## Math 141 - Spring 2024
 
@@ -526,6 +527,27 @@ Today covered the **chain rule** in more detail.
 
 6. Find the equation for the tangent line to the function $y = \sqrt{25-x^2}$ at the point $(3,4)$. 
 
+### Fri, Feb 23
+
+Today we talked about the chain rule some more.  We did the following examples. 
+
+1. Find the derivative of $y = \left( \dfrac{x-1}{2x+1} \right)^7$. (<https://youtu.be/ed5pQoqHXeU>)
+
+2. Suppose that the crime rate $C(p)$ in a city is a function of the population $p$. The population $p=p(t)$ is a function of time $t$ in years.  Suppose that the city's population is currently 300,000 at $t=0$. If $p'(0) = 5,000$ people per year and $C'(300,000) = 0.4$ crimes per person, then estimate the rate of change in crime this year. 
+
+3. Let $\on{sind}$ be the sine function for angles measured in degrees.  So for example, $\on{sind}(90^\circ) = 1$.  What is the derivative of $\on{sind} x$? Hint: $\on{sind} x = \sin( \tfrac{\pi}{180} x)$. 
+
+4. Find $\dfrac{d^2}{dx^2} \tan (x^2)$. 
+
+<!-- For next time, a better example than #4 would be this:
+
+4. Find $\dfrac{d^2}{dx^2} \sec^2(\pi x)$. (<https://youtu.be/8ZKLD78paIU>)
+
+Another good problem we didn't have time for would be to show how to use the product rule + chain rule to avoid quotient rule. For example:
+
+5. $\dfrac{d}{dx} \dfrac{x}{\sqrt{x+2}}$
+
+-->
 
 - - -
 

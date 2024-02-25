@@ -566,7 +566,7 @@ Day    | Topic
 :---:|:---------
 Mon, Feb 19 | Review
 Wed, Feb 21 | **Midterm 1**
-Fri, Feb 23 | 
+Fri, Feb 23 | Regularization
 
 ### Mon, Feb 19
 
@@ -613,14 +613,33 @@ $$\log(\text{odds}) = \mathbf{w} \cdot \mathbf{x}.$$
 * Be able to convert from log-odds to odds and from odds to probability and vice versa. 
 
 
+### Fri, Feb 23
+
+Today we looked at data from a large set of e-mails to determine which features indicate that the e-mail might be spam.  We also implemented a technique called **regularization** where our goal is not just to minimize a loss function, but to minimize
+$$\text{Loss} + \text{Complexity}$$
+where the second term is a **complexity function** that gets larger as the weight vector $\mathbf{w}$ gets more complicated.  A simple, but commonly used, complexity function is the 1-norm (AKA $L_1$-norm) of the weight vector
+$$\|\mathbf{w}\|_1 = |\mathbf{w}_1| + |\mathbf{w}_2| + \ldots + |\mathbf{w}_n|.$$
+In class we used gradient descent to minimize 
+$$L(\mathbf{w}) + \lambda \|\mathbf{w}\|$$
+where $L(\mathbf{w})$ is a loss function and $\lambda$ is a **regularization constant** which is another hyperparameter we can adjust to tune our model.  Larger values of $\lambda$ tend to penalize large coefficients in the weight vector and also frequently lead to many less important variables getting a coefficient of zero.  So regularization helps use find simpler models that are less likely to overfit the data. 
+
+We did the following two examples in class:
+
+* **Example:** [Linear classifier for spam emails](https://colab.research.google.com/drive/1mYcrmibkeViIwbr_XMJxqvGEdnmoB7rb?usp=sharing)
+
+* **Example 2:** [Linear regression to predict baby birthweight](https://colab.research.google.com/drive/18QF84AOyVu09Tc8nfWv4V-y0zd1GIHv0?usp=sharing)
+
+<!--_-->
+
+
 - - -
 
 ### Week 7 Notes
  
 Day    | Topic
 :---:|:---------
-Mon, Feb 26 |
-Wed, Feb 28 |
+Mon, Feb 26 | Neural networks
+Wed, Feb 28 | Backpropagation
 Fri, Mar 1 | 
 
 - - -

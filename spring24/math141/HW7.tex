@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{color,soul}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 141 - Homework 7 \hfill Name: \underline{\hspace*{2in}}}
+
+\textit{Find the derivative of each function.}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x) = \sqrt{\dfrac{x - 1}{x+1}}$
+\item $y = x \sin \dfrac{1}{x}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $y = \sqrt{1+\sqrt{1+x}}$
+\item $\sin(\sin(\sin x))$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Suppose that the average price of a house in one region is currently $h(t) = \$400,000$ and going up at a rate of \$20,000 per year.   
+\begin{enumerate}
+
+\item From the description above, what is $\dfrac{dh}{dt}$ and what are its units?
+\vfill
+
+\item An economist estimates that the population of homeless people will increase by about 0.1 for every dollar higher average home prices get. In other words, $\dfrac{dP}{dh} = 0.1$. Use this to estimate the current rate of change in the homeless population per year.  
+\vfill
+
+\end{enumerate}
+%\item Air is being pumped into a spherical balloon and both the volume $V(t)$ and $r(t)$ can be thought of as functions of time.  If the radius is increasing 
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\noindent
+\textit{Use implicit differentiation to find $\dfrac{dy}{dx}$ for each of the following equations.}
+\noindent
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $y^2 - x^2 = 9$
+\item $x^2 y = y - 5$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\noindent
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $x y - \sin(xy) = 1$
+\item $\sqrt{xy} = 1 + y^2$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\newpage
+\noindent
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\tan(y) = x$
+\item $\dfrac{1}{y} = x + \dfrac{1}{x}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\noindent
+\textit{Use implicit differentiation to find the equation of the tangent line to the curve at the indicated point.  Then draw and label a graph showing both the curve and the tangent line.  Hint: You can use Desmos to help.}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item (Ellipse) $x^2 + 2xy + 3y^2 = 6$ at $(1,1)$    
+\vfill
+
+\item (Tschirnhausen Cubic) $y^2 = x^3 + 3x^2$ at $(1,2)$.
+\vfill
+
+\item Find all points on the ellipse $x^2 - xy + y^2 = 3$ where the tangent line is horizontal. 
+\vfill
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\end{document}
