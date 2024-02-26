@@ -57,12 +57,21 @@ td {
 details {
     background-color:#ddd; 
 }
-.sourceCode pre {
+
+
+div.sourceCode {
+  padding: 5px;
+  background-color: #eeffcc;
+  border-radius: 3px;
+  border: 1px solid rgb(170, 204, 153);
+}
+
+/* .sourceCode pre {
   padding: 0.5em;
   border: 1px solid #ccc;
   border-radius: 2px;
   background-color: #f8f8f8;
-}
+} */
 
 
 .even {
@@ -142,4 +151,5 @@ a:hover {
   background-color: #eee;
   padding: 5px 10px 5px 10px;
   margin-bottom: 16px;
+  border: 1px solid #333;
 }

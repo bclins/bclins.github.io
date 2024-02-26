@@ -22,7 +22,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on Wednesday, Feb 21.  It will cover [these things](notes.html#mon-feb-19).
+* No announcements currently.
+<!--Midterm 1 will be on Wednesday, Feb 21.  It will cover [these things](notes.html#mon-feb-19).-->
 
 ### Course Description
 
@@ -49,7 +50,7 @@ Week | Topic                      | Notes
 11 | Search algorithms                        | [Week 11](notes.html#week-11-notes)
 12 | Markov decision processes, **Midterm 2** | [Week 12](notes.html#week-12-notes)
 13 | Markov decision processes - con'd        | [Week 13](notes.html#week-13-notes)
-14 | Reinforcement learning,                  | [Week 14](notes.html#week-14-notes)
+14 | Reinforcement learning                   | [Week 14](notes.html#week-14-notes)
 
 
 ### Attendance Policy

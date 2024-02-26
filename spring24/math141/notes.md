@@ -560,6 +560,27 @@ Wed, Feb 28 | [3.8][3.8] | Implicit differentiation - con'd
 Thu, Feb 29 | | Review
 Fri, Mar 1 | [4.1] | Related rates
 
+### Mon, Feb 26
+
+To we introduced **implicit equations** and **implicit differentiation**. Implicit equations involving $x$ and $y$ are sometimes called implicit functions, but they aren't really functions because one $x$ value can correspond to multiple $y$ values.  But if we act like $y$ is a function of $x$ and use the chain rule each time we see a $y$ in the equation, we can still find the derivative $y'$ which is still the slope of the tangent line. We started with this example.
+
+1. Find the slope of the tangent line at the point $(3,4)$ on the circle defined by $x^2 + y^2 = 25$.  
+
+1. Find $y'$ for any point on the parabola $y^2 = x$. 
+
+1. The folium of Descartes is a curve defined by the implicit formula 
+$$x^3 + y^3 = 6xy.$$
+    a. Find the slope of the tangent line to the folium of Descartes at $(3,3)$. 
+    b. Where is the slope of the tangent line horizontal? (<https://youtu.be/mtYbKR2DMuI>)
+
+1. Consider the closed curve defined by the equation 
+$$x^2 + 2x +y^4 + 4y = 5.$$
+Find the coordinates of the two points on the curve where the tangent line is vertical. (<https://youtu.be/-jcVn0yCJ6E>)
+
+1. Find the second derivative $\dfrac{d^2 y}{dx^2}$ when $y^2 - x^2 = 4$. (<https://youtu.be/oPijG5Bfemg>)
+
+
+
 - - -
 
 ### Week 8 Notes

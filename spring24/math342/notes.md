@@ -645,10 +645,57 @@ Today we reviewed for the midterm exam. We reviewed the things you need to memor
 ### Week 7 Notes
  
 Day  | Section  | Topic
-:---:|:---:|:---------
-Mon, Feb 26 | [3.1][3.1] | Polynomial interpolation, Lagrange form 
-Wed, Feb 28 | [3.2][3.2] | Newton's divided differences
-Fri, Mar 1 | [3.2][3.2] | Divided differences - con'd
+:---:|:---:|:----------------
+Mon, Feb 26 | [3.1][3.1] | Polynomial interpolation, Vandermonde matrices
+Wed, Feb 28 | [3.1][3.1] | Polynomial bases, Lagrange & Newton polynomials
+Fri, Mar 1 | [3.2][3.2] | Newton's divided differences
+
+### Mon, Feb 26
+
+Today we started talking about polynomial interpolation. We introduced *[Vandermonde matrices](https://en.wikipedia.org/wiki/Vandermonde_matrix)* and used them to find an interpolating polynomial which passes through these four points: $(-1,-4)$, $(0,3)$, $(1,0)$, and $(5,8)$. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/jad4nrxwt1?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+For any set of fixed $x$-values, $x_0, x_1, \ldots, x_n$, the **Vandermonde matrix** for those values is the matrix $V \in \R^{(n+1) \times (n+1)}$ such that the entry $V_{ij}$ in row $i$ and column $j$ is $x_i^j.$
+In other words, $V$ looks like 
+$$V = \begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
+\end{pmatrix}$$
+Notice that when working with Vandermonde matrices, we always start counting the rows and columns with $i,j = 0$. 
+
+Using the Vandermonde matrix $V$, we can find an $n$-th degree polynomial 
+$$p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n$$
+that passes through the points $(x_0,y_0), (x_1,y_1), \ldots (x_n,y_n)$ by solving the system $Va = y$ where $a = (a_0, a_1, \ldots, a_n)$ is the vector of coefficients and $y = (y_0, y_1, \ldots y_n)$ is the vector with $y$-values corresponding to each $x_i$. That is, we want to solve the following system of linear equations:
+$$\begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
+\end{pmatrix} \begin{pmatrix} a_0 \\ a_1 \\ \vdots \\ a_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.$$
+
+
+In Python with the Numpy library, you can enter a Vandermonde matrix using a list comprehension inside another list comprehension. For example, the Vandermonde matrix for $x$-values $-1, 0, 1, 5$ can be entered as follows. 
+
+```python
+import numpy as np
+V = np.array([[x**k for k in range(4)] for x in [-1,0,1,5]])
+```
+
+Then the function `np.linalg.solve(V,y)` will solve the system $V a = y$. For example, after entering $V$, we would solve the first example as follows. 
+
+```python
+y = np.array([-4, 3, 0 8])
+a = np.linalg.solve(V,y)
+print(a) # prints [ 3.  1. -5.  1.]
+```
+
+Therefore the solution is 
+$$p(x) = 3 + x - 5x^2 + x^3$$
+
+After that example, we did the following examples in class. 
+
+1. Find an interpolating polynomial for these points: $(0,0)$, $(1,4)$, $(-1,0)$, and $(2,15).$ 
+
+2. Find a 4th degree polynomial that passes through $(0,1)$, $(1,5)$, $(2, 31)$, $(3, 121)$, $(4, 341).$
+
+
 
 - - -
 

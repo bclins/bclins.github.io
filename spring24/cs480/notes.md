@@ -642,6 +642,45 @@ Mon, Feb 26 | Neural networks
 Wed, Feb 28 | Backpropagation
 Fri, Mar 1 | 
 
+### Mon, Feb 26
+
+Today we introduced **neural networks**. These are often depicted using graphs like this. 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/800px-Colored_neural_network.svg.png" width=300></img>
+</center> 
+
+The image above shows a very simple neural network with just one hidden layer.  It reads an input vector $\mathbf{x}$ with three entries, and then find values for 4 nodes in the hidden layer, which are then used to find the values of the 2 nodes in the output layer.  
+
+The simplest types of neural networks are **feed forward networks** which are used to convert input vectors to output vectors using weights that are determined by training.  More complicated neural networks (**recurrent neural networks**) can recycle their outputs back to input. We won't worry about those for now.  
+
+All neural networks used in machine learning focus on a very simple type of function to go from one layer to the next.  Each step from layer $k-1$ to layer $k$ is a function $F_k$ which combines an **affine linear transformation** $W_k \mathbf{v}_{k-1} + \mathbf{b}_k$ where $W_k$ is a matrix and $\mathbf{b}_k$ is a vector with a nonlinear **activation function** $\sigma$: 
+$$\mathbf{v}_{k} = F_k(\mathbf{v}_{k-1}) = \sigma(A_k \mathbf{v}_{k-1} + \mathbf{b}_k).$$  
+Common choices for the activation function $\sigma$ are 
+
+* **Rectified linear unit.** $\on{ReLU}(x) = \max(0, x)$
+* **Sigmoid (hyperbolic tangent).** $\tanh(x) = \dfrac{e^x-1}{e^x + 1}$. 
+
+
+<center>
+<figure>
+<img src="HiddenLayers.png"></img>
+<figcaption style="text-align:left">**Figure.** An example showing how a simple neural network with two hidden layers might be structured.</figcaption>
+</figure>
+</center>
+
+Notice that row $i$ of the matrix $W_k$ is a weight vector corresponding to all of the arrows that enter node $i$ in the $k$-th layer of the neural network.  The vector $\mathbf{b}_k$ is called a **bias vector** and it contains the constant terms in the computation.  
+
+It is important to have a nonlinear activation function as part of each step between layers, otherwise we would just be composing (affine) linear maps, which would just result in a single (affine) linear map at the end.  
+
+We can still use (stochastic) gradient descent to find all of the weights for the model, but there will be a lot more weights in a large neural network!  Each entry of each of the matrices $W_k$ and $\mathbf{b}_k$ for each step is one of the weights.  
+
+Once we got these definitions out of the way, we took a look at this really cool website to get a feeling for how neural networks work and what they can do. 
+
+* **Example.** <https://playground.tensorflow.org/>
+
+
+
 - - -
 
 ### Week 8 Notes
