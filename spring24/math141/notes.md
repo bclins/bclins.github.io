@@ -566,18 +566,28 @@ To we introduced **implicit equations** and **implicit differentiation**. Implic
 
 1. Find the slope of the tangent line at the point $(3,4)$ on the circle defined by $x^2 + y^2 = 25$.  
 
-1. Find $y'$ for any point on the parabola $y^2 = x$. 
+2. Find $y'$ for any point on the parabola $y^2 = x$. 
+
+3. Find $\dfrac{dy}{dx}$ when $\sin(x+y) = -y^3$. 
+
+4. Consider the closed curve defined by the equation 
+$$x^2 + 2x +y^4 + 4y = 5.$$
+Find the coordinates of the two points on the curve where the tangent line is vertical. (<https://youtu.be/-jcVn0yCJ6E>)
+
+We didn't get to this last example, except to mention its name, but I'll mentioned it now, and hopefully get to it next time. 
 
 1. The folium of Descartes is a curve defined by the implicit formula 
 $$x^3 + y^3 = 6xy.$$
     a. Find the slope of the tangent line to the folium of Descartes at $(3,3)$. 
     b. Where is the slope of the tangent line horizontal? (<https://youtu.be/mtYbKR2DMuI>)
 
-1. Consider the closed curve defined by the equation 
-$$x^2 + 2x +y^4 + 4y = 5.$$
-Find the coordinates of the two points on the curve where the tangent line is vertical. (<https://youtu.be/-jcVn0yCJ6E>)
+
+
+<!--
+### Wed, Feb 28
 
 1. Find the second derivative $\dfrac{d^2 y}{dx^2}$ when $y^2 - x^2 = 4$. (<https://youtu.be/oPijG5Bfemg>)
+-->
 
 
 

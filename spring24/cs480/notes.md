@@ -654,8 +654,8 @@ The image above shows a very simple neural network with just one hidden layer.  
 
 The simplest types of neural networks are **feed forward networks** which are used to convert input vectors to output vectors using weights that are determined by training.  More complicated neural networks (**recurrent neural networks**) can recycle their outputs back to input. We won't worry about those for now.  
 
-All neural networks used in machine learning focus on a very simple type of function to go from one layer to the next.  Each step from layer $k-1$ to layer $k$ is a function $F_k$ which combines an **affine linear transformation** $W_k \mathbf{v}_{k-1} + \mathbf{b}_k$ where $W_k$ is a matrix and $\mathbf{b}_k$ is a vector with a nonlinear **activation function** $\sigma$: 
-$$\mathbf{v}_{k} = F_k(\mathbf{v}_{k-1}) = \sigma(A_k \mathbf{v}_{k-1} + \mathbf{b}_k).$$  
+All neural networks used in machine learning focus on a very simple type of function to go from one layer to the next.  Each step from layer $k-1$ to layer $k$ is a function $F_k$ which combines an **affine linear transformation** $W^{(k)} \mathbf{v}^{(k-1)} + \mathbf{b}^{(k)}$ where $W^{(k)}$ is a matrix and $\mathbf{b}^{(k)}$ is a vector with a nonlinear **activation function** $\sigma$: 
+$$\mathbf{v}^{(k)} = F_k(\mathbf{v}^{(k-1)}) = \sigma(W^{(k)} \mathbf{v}^{(k-1)} + \mathbf{b}^{(k)}).$$  
 Common choices for the activation function $\sigma$ are 
 
 * **Rectified linear unit.** $\on{ReLU}(x) = \max(0, x)$
@@ -669,16 +669,23 @@ Common choices for the activation function $\sigma$ are
 </figure>
 </center>
 
-Notice that row $i$ of the matrix $W_k$ is a weight vector corresponding to all of the arrows that enter node $i$ in the $k$-th layer of the neural network.  The vector $\mathbf{b}_k$ is called a **bias vector** and it contains the constant terms in the computation.  
+Notice that row $i$ of the matrix $W^{(k)}$ is a weight vector corresponding to all of the arrows that enter node $i$ in the $k$-th layer of the neural network.  The vector $\mathbf{b}^{(k)}$ is called a **bias vector** and it contains the constant terms in the computation.  
 
 It is important to have a nonlinear activation function as part of each step between layers, otherwise we would just be composing (affine) linear maps, which would just result in a single (affine) linear map at the end.  
 
-We can still use (stochastic) gradient descent to find all of the weights for the model, but there will be a lot more weights in a large neural network!  Each entry of each of the matrices $W_k$ and $\mathbf{b}_k$ for each step is one of the weights.  
+We can still use (stochastic) gradient descent, but there are some caveats. 
+
+1. A neural network tends to have many more parameters than a simple linear classifier.  Each entry of the matrices $W^{(k)}$ and the vectors $\mathbf{b}^{(k)}$ is a parameter that needs to be considered as we minimize the loss function.  
+
+2. Because the loss functions tend to be very complicated, they might have more than one local minimum. A single run of gradient descent might get stuck in the wrong local minimum.  
+
+3. It's very hard to know which settings (steps size, etc.) to choose to get gradient descent to work well. 
 
 Once we got these definitions out of the way, we took a look at this really cool website to get a feeling for how neural networks work and what they can do. 
 
 * **Example.** <https://playground.tensorflow.org/>
 
+We played with creating some simple neural networks for different classification problems, and saw that more complicated problems required multiple layers.  We also talked briefly about epochs, but we'll talk about that in more detail later. 
 
 
 - - -

@@ -652,12 +652,16 @@ Fri, Mar 1 | [3.2][3.2] | Newton's divided differences
 
 ### Mon, Feb 26
 
-Today we started talking about polynomial interpolation. We introduced *[Vandermonde matrices](https://en.wikipedia.org/wiki/Vandermonde_matrix)* and used them to find an interpolating polynomial which passes through these four points: $(-1,-4)$, $(0,3)$, $(1,0)$, and $(5,8)$. 
+Today we started talking about **polynomial interpolation**. An **interpolating polynomial** is a polynomial that passes through a set of points in the coordinate plane.  We started with an example using these four points: $(-1,-4)$, $(0,3)$, $(1,0)$, and $(5,8)$. 
 
 <center>
+<figure style="display:table">
 <iframe src="https://www.desmos.com/calculator/jad4nrxwt1?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<figcaption style="text-align:left"><a href="https://www.desmos.com/calculator/jad4nrxwt1">Desmos link</a></figcaption>
+</figure>
 </center>
 
+In order to find the interpolating polynomial, we introduced *[Vandermonde matrices](https://en.wikipedia.org/wiki/Vandermonde_matrix)*.
 For any set of fixed $x$-values, $x_0, x_1, \ldots, x_n$, the **Vandermonde matrix** for those values is the matrix $V \in \R^{(n+1) \times (n+1)}$ such that the entry $V_{ij}$ in row $i$ and column $j$ is $x_i^j.$
 In other words, $V$ looks like 
 $$V = \begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
