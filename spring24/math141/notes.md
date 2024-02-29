@@ -583,11 +583,28 @@ $$x^3 + y^3 = 6xy.$$
 
 
 
-<!--
 ### Wed, Feb 28
 
-1. Find the second derivative $\dfrac{d^2 y}{dx^2}$ when $y^2 - x^2 = 4$. (<https://youtu.be/oPijG5Bfemg>)
--->
+We started with some more examples of implicit differentiation. 
+
+1. The folium of Descartes is a curve defined by the implicit formula 
+$$x^3 + y^3 = 6xy.$$
+    a. Find the slope of the tangent line to the folium of Descartes at $(3,3)$. 
+    b. Where is the slope of the tangent line horizontal? (<https://youtu.be/mtYbKR2DMuI>)
+
+2. Find the second derivative $\dfrac{d^2 y}{dx^2}$ when $y^2 - x^2 = 4$. (<https://youtu.be/oPijG5Bfemg>)
+
+Then we introduced an application of implicit differentiation called **related rates** with the following example. First note that an object moving on the xy-plane has two components of velocity:
+
+* **Horizontal velocity** $\dfrac{dx}{dt}$,
+* **Verical velocity** $\dfrac{dy}{dt}$. 
+
+If we know one of these velocities, we can use implicit differentiation to find the other. 
+
+3. Suppose that a car is driving around a circular race track with a 1 kilometer radius.  The equation of the race track is
+$$x^2 + y^2  = 1.$$
+If the car has horizontal velocity $\dfrac{dx}{dt} = -50 \text{ km/hr}$, when its position is $\left( \tfrac{\sqrt{3}}{2}, \tfrac{1}{2} \right)$, then what is its vertical velocity at that instant? 
+
 
 
 

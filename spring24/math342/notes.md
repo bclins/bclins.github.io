@@ -699,6 +699,39 @@ After that example, we did the following examples in class.
 
 2. Find a 4th degree polynomial that passes through $(0,1)$, $(1,5)$, $(2, 31)$, $(3, 121)$, $(4, 341).$
 
+### Wed, Feb 28
+
+Last time, when we talked about polynomial interpolation, we wrote our interpolating polynomials as linear combinations of the **standard monomial basis** $\{1, x, x^2, \ldots, x^n\}$ for the space of all $n$-th degree polynomials.  There are other bases we could choose.  Today we introduce two alternative bases: the Lagrange polynomials and the Newton polynomials.  Both require a set of $n+1$ distinct $x$-values called nodes, $x_0, \ldots, x_n$. For any given set of nodes, the **Lagrange polynomials** are
+$$L_k(x) = \frac{\prod_{i = 0, i \ne k}^n (x - x_i)}{\prod_{i = 0, i \ne k}^n (x_k - x_i)}, k = 0, \ldots, n.$$
+The defining feature of the Lagrange polynomials is that 
+$$L_k(x_i) = \begin{cases} 1 & \text{ if } i = k \\ 0 & \text{ otherwise.} \end{cases}$$
+From this we saw that the interpolating polynomial passing through $(x_0,y_0), (x_1, y_1), \ldots, (x_n, y_n)$ is
+$$y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).$$
+
+1. Find the Lagrange polynomials for the nodes $x_0 = -1, x_1 = 0, x_2 = 1, x_3 = 5$.
+
+2. Use those Lagrange polynomials to find the interpolating polynomial that passes through $(-1,-4), (0,3), (1,0), (5,8)$. 
+
+3. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
+
+We finished by describing the **Newton polynomials** which are 
+
+$$N_k(x) = \begin{cases} 1 & \text{ if } k = 0 \\ \prod_{i = 0}^{k-1} (x- x_i) & \text{ if } k = 1, \ldots, n. \end{cases}$$
+
+You can express an interpolating polynomial as a linear combination of Newton polynomials by solving the linear system 
+
+$$\begin{pmatrix} 
+N_0(x_0) & N_1(x_0) & N_2(x_0) & \ldots & N_n(x_0) \\
+N_0(x_1) & N_1(x_1) & N_2(x_1) & \ldots & N_n(x_1) \\
+N_0(x_2) & N_1(x_2) & N_2(x_2) & \ldots & N_n(x_2) \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+N_0(x_n) & N_1(x_n) & N_2(x_n) & \ldots & N_n(x_n) \\
+\end{pmatrix} \begin{pmatrix} c_0 \\ c_1 \\ \vdots \\ c_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}$$
+to find coefficients such that the interpolating polynomial 
+$$c_0 N_0(x) + c_1 N_1(x) + \ldots + c_n N_n(x)$$
+passes through each point $(x_i, y_i)$. 
+
+4. Solve the linear system above to find the interpolating polynomial through $(-1,-4), (0,3), (1,0), (5,8)$ expressed in terms of the Newton basis.
 
 
 - - -

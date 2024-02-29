@@ -640,7 +640,7 @@ Day    | Topic
 :---:|:---------
 Mon, Feb 26 | Neural networks
 Wed, Feb 28 | Backpropagation
-Fri, Mar 1 | 
+Fri, Mar 1 | Backpropagation - con'd
 
 ### Mon, Feb 26
 
@@ -659,8 +659,10 @@ $$\mathbf{v}^{(k)} = F_k(\mathbf{v}^{(k-1)}) = \sigma(W^{(k)} \mathbf{v}^{(k-1)}
 Common choices for the activation function $\sigma$ are 
 
 * **Rectified linear unit.** $\on{ReLU}(x) = \max(0, x)$
-* **Sigmoid (hyperbolic tangent).** $\tanh(x) = \dfrac{e^x-1}{e^x + 1}$. 
+* **Hyperbolic tangent.** $\tanh(x) = \dfrac{e^x - e^{-x}}{e^x + e^{-x}} = \dfrac{e^{2x}-1}{e^{2x} + 1}$ 
+* **Sigmoid function.** $\sigma(x) = \dfrac{1}{1+e^{-x}} = \dfrac{e^x}{e^x + 1}.$
 
+*Note: In class I wrote the formula for $\tanh(x/2)$ instead of $\tanh x$ when I defined the hyperbolic tangent on the board, which was a mistake.  I also said that the hyperbolic tangent function is a sigmoid function, which is true, but there are other sigmoid functions.  The one I've added above is the one many textbooks refer to as "the" sigmoid function.*
 
 <center>
 <figure>
@@ -687,6 +689,62 @@ Once we got these definitions out of the way, we took a look at this really cool
 
 We played with creating some simple neural networks for different classification problems, and saw that more complicated problems required multiple layers.  We also talked briefly about epochs, but we'll talk about that in more detail later. 
 
+### Wed, Feb 28
+
+Today we introduced **backpropagation** which is an algorithm for finding the gradients of functions efficiently. It is one of the main ideas that makes working with neural networks feasible.  
+
+We started by describing how any formula built from simple building blocks like addition, multiplication, max, powers, etc. can be re-written using a computation graph. 
+
+<div class="Theorem">
+**Definition.** A **computation graph** is a directed acyclic graph whose root node represents the final mathematical expression and every other node represents intermediate subexpressions.
+</div>
+
+We can label each node in a computation graph with the subexpression in the computation and possibly a variable name to represent that subexpression. A directed edge from a node $u$ to a node $v$ can be labeled with the partial derivative $\dfrac{\partial v}{\partial u}$. Once we have a computation graph, the backpropagation algorithm works as follows. 
+
+<div class="Theorem">
+#### Backpropagation algorithm.
+
+1. Forward pass: Starting from the values of the nodes in the graph with node inbound edges, compute each subexpression in the graph. 
+
+2. Backward pass: Once you finish computing the final expression (the root), work backwards from the root to find the partial derivatives $\dfrac{\partial \, \text{root}}{\partial \, \text{subexpression}}$ for every subexpression in the graph.  
+</div>
+
+We did these examples in class:
+
+1. Draw the computation graph for this function $f(x,y,z) = 2z (x+y)$. 
+<details>
+<summary>Solution</summary>
+<center>
+<img src = "computationGraph1b.png" width = 500></img>
+</center>
+<p>There is more than one way to create a computation graph for an expression, but you want to break the computation into many steps small so that it is easier to find the partial derivatives for each edge. 
+</details>
+
+2. Use the computation graph and the backpropagation algorithm to find $\nabla f$ at the point $(x,y,z) = (1,2,3)$. 
+<details>
+<summary>Solution</summary>
+Below we added the forward pass computations in blue and the backward pass computations in green.  Notice that each partial derivative in green is the product of the (red) partial derivative on the edge above it with the (green) partial derivative for the node above it in the graph (because of the chain rule).
+<center>
+<img src = "computationGraph1c.png" width = 500></img>
+</center>
+<p>Therefore the gradient is $\nabla f = (6,6,6)$.
+</details>
+
+3. Use backpropagation to find the gradient $\nabla L(\mathbf{w})$ for the function $L(\mathbf{w}) = (\mathbf{w} \cdot [1,3])^2$ at the point $\mathbf{w} = [0,4]$.  
+<details>
+<summary>Solution</summary>
+As in the previous solution we added the forward pass computations in blue and the backward pass computations in green.  
+<center>
+<img src = "computationGraph2a.png" width = 500></img>
+</center>
+<p>The gradient is $\frac{\partial L}{\partial \mathbf{w}} = [22,66]$. 
+</details>
+
+One of the things we talked about in the last example is that $\frac{\partial L}{\partial \mathbf{w}}$ is another notation for the gradient $\nabla L(\mathbf{w})$. They both represent the same thing.  
+
+If you want more examples (along with more explanation of the process) these slides from the Stanford CS221 course are worth looking over:
+
+* **Example** [Stanford AI Lecture Notes on Backpropagation](https://stanford-cs221.github.io/spring2023/modules/module.html#include=machine-learning%2Flearning3.js&slideId=lecture-machine-learning&level=0)
 
 - - -
 
