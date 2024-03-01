@@ -733,6 +733,14 @@ passes through each point $(x_i, y_i)$.
 
 4. Solve the linear system above to find the interpolating polynomial through $(-1,-4), (0,3), (1,0), (5,8)$ expressed in terms of the Newton basis.
 
+### Fri, Mar 1
+
+Today we talked about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  
+
+We did this workshop in class:
+
+* **Workshop:** [Divided differences](Workshops/DividedDifferences.pdf)
+
 
 - - -
 

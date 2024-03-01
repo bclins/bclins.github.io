@@ -605,8 +605,19 @@ If we know one of these velocities, we can use implicit differentiation to find 
 $$x^2 + y^2  = 1.$$
 If the car has horizontal velocity $\dfrac{dx}{dt} = -50 \text{ km/hr}$, when its position is $\left( \tfrac{\sqrt{3}}{2}, \tfrac{1}{2} \right)$, then what is its vertical velocity at that instant? 
 
+### Fri, Mar 1
 
+Today we talked about related rates. We did these examples. 
 
+1. A pebble dropped into a pond makes circular ripples.  The radius of the ripples increases at a rate of 1 cm/sec.  Find how fast the area is increasing when the radius is 3 cm.  (<https://youtu.be/kQF9pOqmS0U>)
+
+2. A 10 foot long ladder leans against a wall.  Suppose the bottom of the ladder is sliding away from the wall at a rate of 2 ft/sec when the base of the ladder is 6 ft. away from the wall.  How fast is the top of the ladder sliding down at that instant? (<https://youtu.be/p_QyOi2MbFQ>)
+
+3. A camera is rotating to track a rocket launched vertically from a platform that is 3,000 ft from the camera.   If the rocket's velocity is 1,000 ft/sec, how fast is the camera angle changing (in radians/sec) when the rocket is 4,000 feet up?  
+
+Here is one more example that we didn't have time for in class:
+
+4. A 6 foot tall man is walking away from a 15 foot tall streetlight at 5 feet/sec.  How fast is the man's shadow growing when he is 40 feet from the base of the light? (<https://youtu.be/xe6MAJB7CPI>)
 
 - - -
 

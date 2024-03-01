@@ -730,7 +730,7 @@ Below we added the forward pass computations in blue and the backward pass compu
 <p>Therefore the gradient is $\nabla f = (6,6,6)$.
 </details>
 
-3. Use backpropagation to find the gradient $\nabla L(\mathbf{w})$ for the function $L(\mathbf{w}) = (\mathbf{w} \cdot [1,3])^2$ at the point $\mathbf{w} = [0,4]$.  
+3. Use backpropagation to find the gradient $\nabla L(\mathbf{w})$ for the function $L(\mathbf{w}) = (\mathbf{w} \cdot [1,3] - 1)^2$ at the point $\mathbf{w} = [0,4]$.  
 <details>
 <summary>Solution</summary>
 As in the previous solution we added the forward pass computations in blue and the backward pass computations in green.  
@@ -745,6 +745,12 @@ One of the things we talked about in the last example is that $\frac{\partial L}
 If you want more examples (along with more explanation of the process) these slides from the Stanford CS221 course are worth looking over:
 
 * **Example** [Stanford AI Lecture Notes on Backpropagation](https://stanford-cs221.github.io/spring2023/modules/module.html#include=machine-learning%2Flearning3.js&slideId=lecture-machine-learning&level=0)
+
+### Fri, Mar 1
+
+Today we did this workshop in class.  
+
+* **Workshop:** [Backpropagation](Workshops/Backpropagation.pdf)
 
 - - -
 
