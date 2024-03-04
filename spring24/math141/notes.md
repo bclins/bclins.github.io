@@ -630,6 +630,23 @@ Wed, Mar 6 | [4.2][4.2] | Differentials
 Thu, Mar 7 | | Review
 Fri, Mar 8 | [4.3][4.3] | Maxima & minima
 
+### Mon, Mar 4
+
+We've already talked about tangent lines, but a tangent line at a point $(a, f(a))$ on the graph of a function $y = f(x)$ is the best **linear approximation** function for $f(x)$ near $x = a$ (also known as the **linearization**. It is important enough that I have included this formula 
+$$f(x) \approx f(a) + f'(a) (x - a)$$
+on the [formula sheet](formulaSheet.pdf). Sometimes we use $L(x) = f(a) + f'(a) (x-a)$ to denote this linear approximation function. 
+
+1. Find a linear approximation for the function $f(x) = \sqrt{x}$ near $a = 4$, then use it to estimate $\sqrt{4.36}$. (<https://youtu.be/u7dhn-hBHzQ>)
+
+2. Find the linearization of $f(x) = \sqrt[4]{x}$ at $x = 625$. Use this to estimate $\sqrt[4]{610}$. (<https://youtu.be/oYSyaM9wB9U>)
+
+3. Find the linearization of $f(x) = \cos x$ at $a = \tfrac{\pi}{2}$. (<https://youtu.be/l8PFsYI3bzw>)
+
+4. Suppose I drive 360 miles, and then need to fill up my car with gas.  If it takes 10.5 gallons, I'd like to estimate how many miles per gallon my car got on that last tank of gas.  So I have to calculate $\dfrac{360}{10.5}$, but that is too hard to do without a calculator.  Instead, I can use a linearization of the function $f(x) = \dfrac{360}{x}$ at the point $a = 10$ to try to get a good estimate.  
+<!--
+L(x) = 36 - 3.6 (x - 10). So L(10.5) = 36 - 1.8 = 34.2 mpg (actual answer is about 34.2857)
+-->
+
 - - -
 
 ### Week 9 Notes

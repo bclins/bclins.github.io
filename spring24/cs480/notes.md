@@ -758,9 +758,20 @@ Today we did this workshop in class.
  
 Day    | Topic
 :---:|:---------
-Mon, Mar 4 |
+Mon, Mar 4 | Tensorflow introduction
 Wed, Mar 6 |
 Fri, Mar 8 |
+
+### Mon, March 4 
+
+Today we introduced Tensorflow to create a neural network that can identify handwritten digits. The example we created in class is based on this [TensorFlow 2 quickstart for beginners](https://www.tensorflow.org/tutorials/quickstart/beginner).   
+
+We started by downloading an example dataset (the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database)) that is included with TensorFlow.  Then we trained a simple neural network with one hidden layer to classify numbers.  We played around with it and found that it works pretty well on the training and test data, but doesn't always work well on other handwritten examples.  
+
+* **Example:** [Drawing tool](drawingTool.html)
+
+In order to explain the model, we also introduced the [softmax function](https://en.wikipedia.org/wiki/Softmax_function).  
+
 
 - - -
 

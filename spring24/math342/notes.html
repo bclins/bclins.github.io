@@ -717,8 +717,189 @@ N_0(x_n) &amp; N_1(x_n) &amp; N_2(x_n) &amp; \ldots &amp; N_n(x_n) \\
 <li>Solve the linear system above to find the interpolating polynomial through <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1,-4), (0,3), (1,0), (5,8)</annotation></semantics></math> expressed in terms of the Newton basis.</li>
 </ol>
 <h3 id="fri-mar-1">Fri, Mar 1</h3>
-<p>Today we talked about the <a href="https://en.wikipedia.org/wiki/Divided_differences">method of divided differences</a>, which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.</p>
-<p>We did this workshop in class:</p>
+<p>Today we talked about the <a href="https://en.wikipedia.org/wiki/Divided_differences">method of divided differences</a>, which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis. We did these examples.</p>
+<ol type="1">
+<li><p>Make a divided differences table for the points <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-1,-4), (0,3), (1,0), (5,8)</annotation></semantics></math>, and use it to find the interpolating polynomial (in Newton form).</p></li>
+<li><p>Use the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">-\pi</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>π</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-\pi/2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> to make an interpolating polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>cos</mo><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x) = \cos x.</annotation></semantics></math></p>
+<details>
+<p><summary>Solution</summary> The table of divided differences is:</p>
+<table class="bordered">
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math></p>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></p>
+</td>
+<td>
+<p>DD1</p>
+</td>
+<td>
+<p>DD2</p>
+</td>
+<td>
+<p>DD3</p>
+</td>
+<td>
+<p>DD4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">-\pi</annotation></semantics></math></p>
+</td>
+<td style="color:blue">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>2</mn><mi>π</mi></mfrac><annotation encoding="application/x-tex">\frac{2}{\pi}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\pi}{2}</annotation></semantics></math></p>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>2</mn><mi>π</mi></mfrac><annotation encoding="application/x-tex">\frac{2}{\pi}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{8}{3\pi^3}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></p>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>4</mn><msup><mi>π</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">-\frac{4}{\pi^2}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>4</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\frac{8}{3\pi^4}</annotation></semantics></math></p>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>2</mn><mi>π</mi></mfrac></mrow><annotation encoding="application/x-tex">-\frac{2}{\pi}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\frac{8}{3\pi^3}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mi>π</mi><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{\pi}{2}</annotation></semantics></math></p>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mfrac><mn>2</mn><mi>π</mi></mfrac></mrow><annotation encoding="application/x-tex">-\frac{2}{\pi}</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math></p>
+</td>
+<td>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></p>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table></li>
+</ol>
+So the Newton form of the interpolating polynomial is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn><mo>+</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac><mi>x</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>4</mn></msup></mrow></mfrac><mi>x</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mstyle displaystyle="false"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mstyle displaystyle="false"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).</annotation></semantics></math> Notice that the coefficients are just the numbers (in blue) at the top of each column in the divided differences table.
+</details>
+<p>Here are some videos with additional examples:</p>
+<ul>
+<li><a href="https://youtu.be/hcsBjizQ9X8" class="uri">https://youtu.be/hcsBjizQ9X8</a></li>
+<li><a href="https://youtu.be/gBEW7cfPvgQ" class="uri">https://youtu.be/gBEW7cfPvgQ</a></li>
+</ul>
+<p>After those examples, we did this workshop in class:</p>
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/DividedDifferences.pdf">Divided differences</a></li>
 </ul>
@@ -750,6 +931,35 @@ N_0(x_n) &amp; N_1(x_n) &amp; N_2(x_n) &amp; \ldots &amp; N_n(x_n) \\
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-4">Mon, Mar 4</h3>
+<p>Often the interpolating polynomial <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>n</mi></msub><annotation encoding="application/x-tex">p_n</annotation></semantics></math> is constructed for a function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math> so that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p_n(x_k) = f(x_k)</annotation></semantics></math> for each node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots x_n</annotation></semantics></math>. Then we call <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>n</mi></msub><annotation encoding="application/x-tex">p_n</annotation></semantics></math> an <strong>interpolating polynomial</strong> for the function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>. Using interpolating polynomials is one way to approximate a function. For example we did this last time with the function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>cos</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">f(x) = \cos x</annotation></semantics></math>.</p>
+<ol type="1">
+<li>Find the 2nd degree interpolating polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mn>10</mn><mi>x</mi></msup></mrow><annotation encoding="application/x-tex">f(x)=10^x</annotation></semantics></math> with nodes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">x_0=0, x_1=1, x_2 = 2.</annotation></semantics></math> <a href="https://www.desmos.com/calculator/lkogr6jfin">Desmos graph</a></li>
+</ol>
+<p>Here are some important results about these approximations.</p>
+<div class="Theorem">
+<p><strong>Mean Value Theorem for Divided Differences.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math> be distinct nodes in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math> and let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mi>n</mi></msup><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f \in C^{n}[a,b]</annotation></semantics></math>. Then there exists a number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math> between the values of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>n</mi><mi>!</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">f[x_0, \ldots, x_n] = \frac{ f^{(n)}(\xi) }{n!}.</annotation></semantics></math></p>
+</div>
+<p><em>Proof.</em> The function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>−</mo><msub><mi>p</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">f-p_n</annotation></semantics></math> has <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math> roots, so its derivative must have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> roots, and so on, until the n-th derivative has at least one root. Call that root <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>. Then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msubsup><mi>p</mi><mi>n</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f^{(n)}(\xi) = p_n^{(n)}(\xi)</annotation></semantics></math>. However, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>n</mi></msub><annotation encoding="application/x-tex">p_n</annotation></semantics></math> is a linear combination of Newton basis polynomials and only the last Newton basis polynomial is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th degree. Its coefficient in the interpolating polynomial is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f[x_0, \ldots, x_n]</annotation></semantics></math> so when you take <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> derivatives of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>n</mi></msub><annotation encoding="application/x-tex">p_n</annotation></semantics></math>, you get <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">n! f[x_0, \ldots, x_n]</annotation></semantics></math> which completes the proof. □</p>
+<div class="Theorem">
+<p><strong>Interpolation Error Theorem.</strong> Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math> be distinct nodes in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math> and let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">f \in C^{n+1}[a,b]</annotation></semantics></math>. For each <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">x \in [a,b]</annotation></semantics></math>, there exists a number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math> between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>p</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>!</mi></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>⋯</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x)-p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n).</annotation></semantics></math></p>
+</div>
+<p><em>Proof.</em> Add <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> to the list of nodes and construct the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math>-th degree interpolating polynomial <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">p_{n+1}</annotation></semantics></math>. Then using the Newton form for both interpolating polynomials, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>p</mi><mi>n</mi></msub><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">[</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><mi>x</mi><mo stretchy="false" form="postfix">]</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>⋯</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">p_{n+1} - p_n = f[x_0,\ldots,x_n,x](x-x_0)\cdots (x-x_n).</annotation></semantics></math> So by the MVT for Divided Differences, there exists <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math> between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>p</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>p</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>p</mi><mi>n</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>!</mi></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>⋯</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi><mspace width="0.222em"></mspace><mi>□</mi></mrow><annotation encoding="application/x-tex">f(x)-p_n(x) = p_{n+1}(x)-p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n). ~ □</annotation></semantics></math></p>
+<ol type="1">
+<li>Compute the worst case error in a 5th degree interpolating polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\cos x</annotation></semantics></math> on the interval <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>π</mi><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,\pi/2]</annotation></semantics></math> using equally spaced nodes. <a href="https://www.desmos.com/calculator/seoowhpguz">Desmos graph</a>.</li>
+</ol>
+<!--Here is a formula for the interpolating polynomial:
+```
+-0.00577253503915272*x^5+0.0512935898926335*x^4-0.00770640202076377*x^3-0.497119474987496*x^2-0.000390860325582945*x+1.0
+```-->
+<ol start="2" type="1">
+<li>Compute the worst case error in a 6th degree interpolating polynomial for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\ln x</annotation></semantics></math> on the interval <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[1,2]</annotation></semantics></math> using equally spaced nodes. <a href="https://www.desmos.com/calculator/0qa5gdcxbh">Desmos graph</a>.</li>
+</ol>
+<!--This time the interpolating polynomial is:
+```
+-0.0167468291975794*x^6 + 0.180673388721857*x^5 - 0.839016234021756*x^4 + 2.19776151906717*x^3 - 3.61144877219886*x^2 + 4.1825815630134*x - 2.0938046353989
+``` -->
+<p>Note: The worst-case error in interpolating polynomials doesn’t always decrease, as the example in <a href="http://people.hsc.edu/faculty-staff/blins/books/NumericalAnalysisWithPython.pdf#section.3.2">Section 3.2</a> of the book shows.</p>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
