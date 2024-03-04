@@ -770,7 +770,9 @@ We started by downloading an example dataset (the [MNIST dataset](https://en.wik
 
 * **Example:** [Drawing tool](drawingTool.html)
 
-In order to explain the model, we also introduced the [softmax function](https://en.wikipedia.org/wiki/Softmax_function).  
+In order to explain the model, we also introduced the [softmax function](https://en.wikipedia.org/wiki/Softmax_function).  The code for two neural networks we trained is here:
+
+* **Example:** [TensorFlow basic example](https://colab.research.google.com/drive/1eaUCB1VikT1IHVayYrtbai7Cl9RaGJe8?usp=sharing)
 
 
 - - -

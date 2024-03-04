@@ -735,7 +735,15 @@ passes through each point $(x_i, y_i)$.
 
 ### Fri, Mar 1
 
-Today we talked about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  We did these examples. 
+Today we talked about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  
+
+For a function $f$ and a set of $n+1$ distinct $x$-values, $x_0, \ldots, x_n$, the **divided differences** are defined recursively by the following formula 
+
+$$f[x_j, \ldots, x_k] = \begin{cases}
+\dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j} & \text{ if } k > j, \\ 
+f(x_j) & \text{ if }k = j.\end{cases}$$
+
+We did these examples. 
 
 1. Make a divided differences table for the points $(-1,-4), (0,3), (1,0), (5,8)$, and use it to find the interpolating polynomial (in Newton form). 
 
@@ -755,7 +763,6 @@ The table of divided differences is:
 <tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
 <tr><td>$\pi$</td><td>$-1$</td><td></td><td></td><td></td><td></td></tr>
 </table>
-
 So the Newton form of the interpolating polynomial is 
 $$-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).$$
 Notice that the coefficients are just the numbers (in blue) at the top of each column in the divided differences table. 
@@ -783,7 +790,7 @@ Fri, Mar 8 | [3.4][3.4] | Chebyshev polynomials
 
 ### Mon, Mar 4
 
-Often the interpolating polynomial $p_n$ is constructed for a function $f$ so that $p_n(x_k) = f(x_k)$ for each node $x_0, \ldots x_n$.  Then we call $p_n$ an **interpolating polynomial** for the function $f$. Using interpolating polynomials is one way to approximate a function.  For example we did this last time with the function $f(x) = \cos x$. 
+Often the interpolating polynomial $P_n$ is constructed for a function $f$ so that $P_n(x_k) = f(x_k)$ for each node $x_0, \ldots, x_n$.  Then we call $P_n$ an **interpolating polynomial** for the function $f$. Using interpolating polynomials is one way to approximate a function.  For example, we did this last time with the function $f(x) = \cos x$. 
 
 1. Find the 2nd degree interpolating polynomial for $f(x)=10^x$ with nodes $x_0=0, x_1=1, x_2 = 2.$ [Desmos graph](https://www.desmos.com/calculator/lkogr6jfin)
 
@@ -794,35 +801,21 @@ Here are some important results about these approximations.
 $$f[x_0, \ldots, x_n] = \frac{ f^{(n)}(\xi) }{n!}.$$
 </div>
 
-*Proof.* The function $f-p_n$ has $n+1$ roots, so its derivative must have $n$ roots, and so on, until the n-th derivative has at least one root. Call that root $\xi$.  Then $f^{(n)}(\xi) = p_n^{(n)}(\xi)$.  However, $p_n$ is a linear combination of Newton basis polynomials and only the last Newton basis polynomial is $n$-th degree.  Its coefficient in the interpolating polynomial is $f[x_0, \ldots, x_n]$ so when you take $n$ derivatives of $p_n$, you get $n! f[x_0, \ldots, x_n]$ which completes the proof. □
+*Proof.* Let $P_n(x)$ be the $n$-th degree interpolating polyomial for $f$ at $x_0,\ldots, x_n$. The function $f-P_n$ has $n+1$ roots, so its derivative must have $n$ roots, and so on, until the n-th derivative has at least one root. Call that root $\xi$.  Then $f^{(n)}(\xi) = P_n^{(n)}(\xi)$.  However, $P_n$ is a linear combination of Newton basis polynomials and only the last Newton basis polynomial is $n$-th degree.  Its coefficient in the interpolating polynomial is $f[x_0, \ldots, x_n]$ so when you take $n$ derivatives of $P_n$, you get $n! f[x_0, \ldots, x_n]$ which completes the proof. □
 
 <div class="Theorem">
-**Interpolation Error Theorem.** Let $x_0, \ldots, x_n$ be distinct nodes in $[a,b]$ and let $f \in C^{n+1}[a,b]$.  For each $x \in [a,b]$, there exists a number $\xi$ between $x_0, \ldots, x_n$, and $x$ such that 
-$$f(x)-p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n).$$
+**Interpolation Error Theorem.** Let $x_0, \ldots, x_n$ be distinct nodes in $[a,b]$ and let $f \in C^{n+1}[a,b]$. If $P_n(x)$ is the $n$-th degree interpolating polynomial for those nodes, then for each $x \in [a,b]$, there exists a number $\xi$ between $x_0, \ldots, x_n$, and $x$ such that 
+$$f(x)-P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n).$$
 </div>
 
-*Proof.* Add $x$ to the list of nodes and construct the $n+1$-th degree interpolating polynomial $p_{n+1}$.  Then using the Newton form for both interpolating polynomials,
-$$p_{n+1} - p_n = f[x_0,\ldots,x_n,x](x-x_0)\cdots (x-x_n).$$
+*Proof.* Add $x$ to the list of nodes and construct the $(n+1)$-th degree interpolating polynomial $P_{n+1}$.  Then using the Newton form for both interpolating polynomials,
+$$P_{n+1}(x) - P_n(x) = f[x_0,\ldots,x_n,x](x-x_0)\cdots (x-x_n).$$
 So by the MVT for Divided Differences, there exists $\xi$ between $x$ and $x_0, \ldots, x_n$ such that 
-$$f(x)-p_n(x) = p_{n+1}(x)-p_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n). ~ □$$
+$$f(x)-P_n(x) = P_{n+1}(x)-P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n). ~ □$$
 
+We finished with the following example. 
 
-1. Compute the worst case error in a 5th degree interpolating polynomial for $\cos x$ on the interval $[0,\pi/2]$ using equally spaced nodes. [Desmos graph](https://www.desmos.com/calculator/seoowhpguz).
-
-<!--Here is a formula for the interpolating polynomial:
-```
--0.00577253503915272*x^5+0.0512935898926335*x^4-0.00770640202076377*x^3-0.497119474987496*x^2-0.000390860325582945*x+1.0
-```-->
-
-2. Compute the worst case error in a 6th degree interpolating polynomial for $\ln x$ on the interval $[1,2]$ using equally spaced nodes. [Desmos graph](https://www.desmos.com/calculator/0qa5gdcxbh). 
-
-<!--This time the interpolating polynomial is:
-```
--0.0167468291975794*x^6 + 0.180673388721857*x^5 - 0.839016234021756*x^4 + 2.19776151906717*x^3 - 3.61144877219886*x^2 + 4.1825815630134*x - 2.0938046353989
-``` -->
-
-Note: The worst-case error in interpolating polynomials doesn't always decrease, as the example in [Section 3.2](http://people.hsc.edu/faculty-staff/blins/books/NumericalAnalysisWithPython.pdf#section.3.2) of the book shows. 
-
+2. Estimate the error in using $P_2(x) = 1 + 9 x + \tfrac{81}{2}x(x-1)$ to approximate $f(x) = 10^x$ at $x = 0.5.$  
 
 - - -
 
