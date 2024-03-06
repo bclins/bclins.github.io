@@ -665,19 +665,23 @@ Intuitively, $dx$ and $\Delta x$ are two different notations for the exact same 
 
 2. Find the differential of $y = \sin(5x^2)$. (<https://youtu.be/CGDeNaR0LYk>)
 
-3. If we measure the Earth's radius accurately to $3959 \pm 0.1$ miles, and the compute the surface area using the formula $S = 4\pi r^2$, how much error $dA$ might there be in our calculated answer?  (<https://youtu.be/CGDeNaR0LYk?t=185>)
-
-The answer to the last exercise seems big ($dS = 8\pi 3959 (0.1) = 9950$ square miles). But relative to the surface area of the Earth, it actually isn't that big.  So when working with differentials to estimate measurement error, we often calculate the **relative error** which is 
-$$\text{Relative error} = \frac{\Delta y}{y} \approx \frac{dy}{y}.$$
-
-4. Find the approximate relative error in our calculation of the Earth's surface area. 
-
-5. The period of a pendulum is $T = \dfrac{2\pi}{\sqrt{g}} \sqrt{L}$ when the angle is small. If the length $L$ is increases by 2\%, estimate how much what would affect the period. 
-
-6. Ignoring air resistance, then range of a canonball launched with angle of elevation $\theta$ in a large flat field is $R = \dfrac{v_0^2}{g} \sin(2\theta)$.  
+3. Ignoring air resistance, then range of a canonball launched with angle of elevation $\theta$ in a large flat field is $R = \dfrac{v_0^2}{g} \sin(2\theta)$.  
 
     a. How far will the canonball go if $v_0 = 147$ m/s and $\theta = \pi/12$? 
     b. How much farther would it go if we increase $\theta$ by $0.1$ radians?  
+
+4. The (average) radius of the Earth is approximately $r= 3959$ miles.  The radius is actually a little bit lower than that.  There is error in the number $r$ which can be represented by saying that $dr = 0.2$. If we use the radius to compute the surface area using the formula $S = 4\pi r^2$, how much error $dA$ might there be in our calculated answer?  (<https://youtu.be/CGDeNaR0LYk?t=185>)
+
+The answer to the last exercise seems big ($dS = 8\pi (3959) (0.2) = 19,900$ square miles). But relative to the surface area of the Earth, it actually isn't that big.  So when working with differentials to estimate measurement error, we often calculate the **relative error** which is 
+$$\text{Relative error} = \frac{\Delta y}{y} \approx \frac{dy}{y}.$$
+
+5. Find the approximate relative error in our calculation of the Earth's surface area. 
+
+<!--
+THIS NEXT ONE IS REALLY TOO HARD FOR MOST STUDENTS... 
+5. The period of a pendulum is $T = \dfrac{2\pi}{\sqrt{g}} \sqrt{L}$ when the angle is small. If the length $L$ is increases by 2\%, estimate how much what would affect the period. 
+-->
+
 
 
 

@@ -776,6 +776,14 @@ In order to explain the model, we also introduced the [softmax function](https:/
 
 ### Wed, March 6
 
+Today I gave everyone time in class to create their own neural network to classify images of German street signs into one of three categories:
+
+* Category 0 - Stop signs
+* Category 1 - Left turn signs
+* Category 2 - Speed limit signs
+
+The images are stored as 32-by-32 numpy arrays of integers between 0 (black) and 255 (white).  You can download the images using the following commands in Python:
+
 ```python
 import pickle
 import urllib.request
@@ -787,6 +795,46 @@ images, labels = pickle.load(urllib.request.urlopen("https://bclins.github.io/sp
 categories = ["stop sign","turn sign","speed limit sign"]
 train_images, test_images, train_labels, test_labels = train_test_split(images,labels)
 ```
+
+Here pickle is a library that lets you store Python data in a file that other people can access.  The URLlib lets you get the pickle data from my website.  The last function `train_test_split()` from the Scikit-learn library lets us randomly separate some of the data to use for training and some to keep for testing our neural network after it is trained.  
+
+To see what the images look like, use a command like this:
+
+```python
+i=0
+print(images[i])
+plt.imshow(images[i])
+plt.gray()
+plt.show()
+```
+
+<center>
+<img src="speedlimit.png"></img>
+</center>
+
+Notice that this is a (German) speed limit sign, and has label `labels[i]` equal to 2, which is the correct label for a speed limit sign. 
+
+1. Use the code above to load the data. Then use TensorFlow to create and train a neural network model that classifies images of traffic signs. You can crib off the [TensorFlow neural network I created in class on Monday](https://colab.research.google.com/drive/1eaUCB1VikT1IHVayYrtbai7Cl9RaGJe8?usp=sharing) to get started (see the notes below). How accurate is your neural network on the training data?  What about the test data?
+
+Here are a couple of issues that will come up as you do this.  
+
+* You need to divide each image array by 255 (just like what we did on Monday) so that each entry is between 0 and 1. But because the data is a list of numpy arrays, you can't just divide the whole list by 255 (unlike on Monday where the data was a single giant numpy array).  So you'll have to convert the variables `train_images` and `test_images` to numpy arrays: 
+  ```python
+  import numpy as np
+  train_images = np.array(train_images)
+  test_images = np.array(test_images)
+  ```
+  Then it will be easy to scale everything by dividing by 255. 
+
+* When you get to the command to train the TensorFlow model, it expects both the image data and the labels data to be numpy arrays not regular python lists.  So you'll have to convert `train_labels` and `test_labels` as well. 
+
+* When you define the model, make sure to use the correct image size (32-by-32) for the inputs (not the 28-by-28 image size from Monday).  Also, since we are only classifying three categories of signs, your final output layer only needs 3 nodes. 
+
+* There are only 840 images in the data set, so each epoch should run pretty fast.  You might want to do more than 5 epochs, but don't do too many.  Once the accuracy levels off, there is no point in running more epochs. Too many epochs increases the risk of overfitting the data. 
+
+In class, a lot of people got neural networks that were 100% accurate. That raises the following question:
+
+2. Which image does the neural network have the most trouble classifying? In other words, which image has the lowest maximum probability in its probability model? 
 
 - - -
 
