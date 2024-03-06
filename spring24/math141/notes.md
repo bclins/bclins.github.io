@@ -619,6 +619,7 @@ Here is one more example that we didn't have time for in class:
 
 4. A 6 foot tall man is walking away from a 15 foot tall streetlight at 5 feet/sec.  How fast is the man's shadow growing when he is 40 feet from the base of the light? (<https://youtu.be/xe6MAJB7CPI>)
 
+
 - - -
 
 ### Week 8 Notes
@@ -646,6 +647,40 @@ on the [formula sheet](formulaSheet.pdf). Sometimes we use $L(x) = f(a) + f'(a) 
 <!--
 L(x) = 36 - 3.6 (x - 10). So L(10.5) = 36 - 1.8 = 34.2 mpg (actual answer is about 34.2857)
 -->
+
+
+### Wed, Mar 6
+
+Today we introduced **differential notation**.  For a function $y = f(x)$ and two $x$-values $x_0$ and $x_1$, we can talk about the change in x and the change in y:
+
+$$\Delta x = x_1 - x_0 \text{    and    } \Delta y = f(x_1) - f(x_0).$$
+
+If we use the tangent line $L(x)$ at $x= x_0$ instead of the function $f(x)$ to find the change in $y$, then we get what are called **differentials**:
+
+$$d x = x_1 - x_0 \text{    and    } dy = f'(x_0) dx.$$
+
+Intuitively, $dx$ and $\Delta x$ are two different notations for the exact same thing. But $dy$ and $\Delta y$ are not the same.  The differential $dy$ is the change in $y$ using the tangent line while $\Delta y$ is the change in $y$ using the function $f(x)$.  
+
+1. Find the differential of $y = x^4 + 6$ at $x=-1$ when $dx = 0.1$ (<https://youtu.be/4qqNe_hfoz8>)
+
+2. Find the differential of $y = \sin(5x^2)$. (<https://youtu.be/CGDeNaR0LYk>)
+
+3. If we measure the Earth's radius accurately to $3959 \pm 0.1$ miles, and the compute the surface area using the formula $S = 4\pi r^2$, how much error $dA$ might there be in our calculated answer?  (<https://youtu.be/CGDeNaR0LYk?t=185>)
+
+The answer to the last exercise seems big ($dS = 8\pi 3959 (0.1) = 9950$ square miles). But relative to the surface area of the Earth, it actually isn't that big.  So when working with differentials to estimate measurement error, we often calculate the **relative error** which is 
+$$\text{Relative error} = \frac{\Delta y}{y} \approx \frac{dy}{y}.$$
+
+4. Find the approximate relative error in our calculation of the Earth's surface area. 
+
+5. The period of a pendulum is $T = \dfrac{2\pi}{\sqrt{g}} \sqrt{L}$ when the angle is small. If the length $L$ is increases by 2\%, estimate how much what would affect the period. 
+
+6. Ignoring air resistance, then range of a canonball launched with angle of elevation $\theta$ in a large flat field is $R = \dfrac{v_0^2}{g} \sin(2\theta)$.  
+
+    a. How far will the canonball go if $v_0 = 147$ m/s and $\theta = \pi/12$? 
+    b. How much farther would it go if we increase $\theta$ by $0.1$ radians?  
+
+
+
 
 - - -
 

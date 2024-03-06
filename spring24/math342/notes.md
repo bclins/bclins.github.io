@@ -817,6 +817,18 @@ We finished with the following example.
 
 2. Estimate the error in using $P_2(x) = 1 + 9 x + \tfrac{81}{2}x(x-1)$ to approximate $f(x) = 10^x$ at $x = 0.5.$  
 
+### Wed, Mar 6 
+
+
+Today we looked at some interpolation examples in more detail.  We used Python to implement the Vandermonde matrix and the divided difference methods for finding interpolating polynomials. We looked at the following two examples which both raise important issues. 
+
+1. $f(x) = \dfrac{1}{1+x^2}$ on [-5,5]. This function is known as Runge's function (also known as the Witch of Agnesi).  It is an example where the error gets worse as the number of nodes increases (if you use equally spaced nodes).
+
+2. $\sin x$ on $[0, 10\pi]$.  This example illustrates what goes wrong when you use the Vandermonde matrix approach.  As the number of nodes grows past 20, the Vandermonde matrix is ill-conditioned, so it gives an incorrect interpolating polynomial. 
+
+Note: Because large Vandermonde matrices tend to be ill-conditioned, using the method of divided differences with the Newton basis for interpolation is usually preferred.  
+
+
 - - -
 
 ### Week 9 Notes

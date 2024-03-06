@@ -759,7 +759,7 @@ Today we did this workshop in class.
 Day    | Topic
 :---:|:---------
 Mon, Mar 4 | Tensorflow introduction
-Wed, Mar 6 |
+Wed, Mar 6 | Classifying traffic signs
 Fri, Mar 8 |
 
 ### Mon, March 4 
@@ -774,6 +774,19 @@ In order to explain the model, we also introduced the [softmax function](https:/
 
 * **Example:** [TensorFlow basic example](https://colab.research.google.com/drive/1eaUCB1VikT1IHVayYrtbai7Cl9RaGJe8?usp=sharing)
 
+### Wed, March 6
+
+```python
+import pickle
+import urllib.request
+import tensorflow as tf
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+
+images, labels = pickle.load(urllib.request.urlopen("https://bclins.github.io/spring24/cs480/trafficSigns.pkl"))
+categories = ["stop sign","turn sign","speed limit sign"]
+train_images, test_images, train_labels, test_labels = train_test_split(images,labels)
+```
 
 - - -
 
