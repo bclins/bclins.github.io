@@ -836,6 +836,25 @@ In class, a lot of people got neural networks that were 100% accurate. That rais
 
 2. Which image does the neural network have the most trouble classifying? In other words, which image has the lowest maximum probability in its probability model? 
 
+
+### Fri, Mar 8 
+
+Today we talked briefly about the idea of a **convolutional neural network** without going into too many details.  The idea is to add convolution layers to the model before the regular neural network layers.  
+
+Here is a nice video explanation of how image convolution works with a kernel matrix. 
+
+* **Video:** [3Blue1Brown - But what is a convolution?](https://youtu.be/KuXjwB4LzSA?t=514)
+
+Here is the wikipedia entry about image convolution kernels with several examples.
+
+* **Examples:** [Wikipedia - Kernel (image processing)](https://en.wikipedia.org/wiki/Kernel_(image_processing))
+
+After talking briefly about image convolution, we did this workshop in class:
+
+* **Workshop:** [Image convolution](Workshops/ImageConvolution.pdf)
+
+
+
 - - -
 
 ### Week 9 Notes

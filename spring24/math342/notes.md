@@ -837,6 +837,12 @@ $$T_{n+1}(x) = \cos ((n+1) \arccos x).$$
 The roots of the $(n+1)$th degree Chebyshev polynomials are:
 $$x_k = \cos\left( \frac{(2k+1) \pi}{2(n+1)} \right), ~ k = 0, \ldots, n.$$
 
+### Fri, Mar 8
+
+Today we wrapped up our discussion of polynomial interpolation with this workshop.
+
+* **Workshop:** [Polynomial interpolation](Workshops/interpolation.pdf)
+
 - - -
 
 ### Week 9 Notes

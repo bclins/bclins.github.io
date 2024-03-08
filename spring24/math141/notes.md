@@ -633,6 +633,9 @@ Fri, Mar 8 | [4.3][4.3] | Maxima & minima
 
 ### Mon, Mar 4
 
+<!--
+I got some interesting mistakes from students who didn't understand the formula L(x) = f(a)+f'(a)(x-a).  Especially the part with f'(a) not being multiplication, but then f'(a) (x-a) is multiplication.  Maybe it would be better to explicitly add a multiplication sign in that part of the formula?  
+-->
 We've already talked about tangent lines, but a tangent line at a point $(a, f(a))$ on the graph of a function $y = f(x)$ is the best **linear approximation** function for $f(x)$ near $x = a$ (also known as the **linearization**. It is important enough that I have included this formula 
 $$f(x) \approx f(a) + f'(a) (x - a)$$
 on the [formula sheet](formulaSheet.pdf). Sometimes we use $L(x) = f(a) + f'(a) (x-a)$ to denote this linear approximation function. 
@@ -682,8 +685,19 @@ THIS NEXT ONE IS REALLY TOO HARD FOR MOST STUDENTS...
 5. The period of a pendulum is $T = \dfrac{2\pi}{\sqrt{g}} \sqrt{L}$ when the angle is small. If the length $L$ is increases by 2\%, estimate how much what would affect the period. 
 -->
 
+### Fri, Mar 8
 
+Today we talked about how to find the **absolute maximum** and **minimum** (also known as the **global maximum/minimum**) of a function on a closed interval $[a,b]$. For a continuous function $f(x)$ on an interval, there is always an absolute max (and min) and it will always occur at either an endpoint of the interval or at a **critical point** which is a point $c$ where $f'(c) = 0$ or $f'(c)$ does not exist. 
 
+1. Find the absolute maximum and minimum of $f(x) = x^4 - 2x^3$ on the interval $[-2,2]$. (<https://youtu.be/ADvCJh9seIY>)
+
+2. Find the absolute maximum and minimum of $f(x) = \sin x + \cos x$ on the interval $[0,\tfrac{\pi}{3}]$. (<https://youtu.be/cV1tpeY5mE4>)
+
+3. Find the absolute maximum and minimum of $y = 2x - 3x^{2/3}$ on $[-1,3]$.
+
+Here is one more example that we did not have time for in class. 
+
+4. Find the absolute maximum and minimum of $f(x) = 2x^3 - 6x - 1$ on $[-3,2]$. (<https://www.youtube.com/watch?v=ADvCJh9seIY&t=358s>)
 
 
 - - -
