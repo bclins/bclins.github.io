@@ -853,6 +853,47 @@ Mon, Mar 18 | [5.1][5.1] | Newton-Cotes formulas
 Wed, Mar 20 | [5.1][5.1] | Newton-Cotes formulas - con'd
 Fri, Mar 22 | [5.4][5.4] | Gaussian quadrature
 
+### Mon, Mar 18
+
+Today we introduced numerical integration.  We reviewed the **Riemann sum definition** of the definite integral
+$$\int_a^b f(x) \, dx = \lim_{n \rightarrow \infty} \sum_{k = 1}^\infty f(x_k) \Delta x$$
+where $n$ is the number of rectangles, $\Delta x = (b-a)/n$, and $x_k = a + k \Delta x$ is the right endpoint of each rectangle. Then we talked about the following methods for approximating integrals:
+
+* Riemann sums - Approximate using rectangles
+* Trapezoid rule - Approximate using trapezoids
+* Simpson's method - Approximate using parabolas
+
+We derived the formulas for the **composite trapezoid rule** 
+
+$$ \int_a^b f(x) \, dx = \frac{h}{2} (f(x_0) + 2 f(x_1) + 2 f(x_2) + \ldots + 2 f(x_{n-1}) + f(x_n)),$$
+
+and the **composite Simpson's rule** 
+
+$$\int_a^b f(x)\,dx \approx \frac{h}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + 4 f(x_3) + 2 f(x_4) + \ldots + 4f(x_{n-1}) + f(x_n)),$$
+
+where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an example of a Python function that computes the composite Simpson's rule:
+
+```python
+def simpson(f, a, b, n):
+  h = (b-a)/n
+  total = f(a)+f(b)
+  total += sum([4*f(a+k*h) for k in range(1,n,2)])
+  total += sum([2*f(a+k*h) for k in range(2,n,2)])
+  return h*total/3
+```
+
+We did the following exercises in class. 
+
+1. Write a Python function to apply the trapezoid rule to a function. 
+
+2. Approximate the area under $f(x) = \sin x$ from $x = 0$ to $x = \pi$ using both Simpson's method and the trapezoid rule with $n = 100$ rectangles.  Compare the results with the exact answer obtained by integrating. 
+
+3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. 
+
+4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
+
+
+
 - - -
 
 ### Week 10 Notes

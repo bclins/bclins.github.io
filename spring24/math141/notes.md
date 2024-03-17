@@ -711,6 +711,25 @@ Wed, Mar 20 | | Review
 Thu, Mar 21 | | **Midterm 2**
 Fri, Mar 22 | [4.4][4.4] | The mean value theorem
 
+### Mon, Mar 18
+
+1. Find the absolute maximum and minimum of $f(x) = 2x^3 - 6x - 1$ on $[-3,2]$. (<https://www.youtube.com/watch?v=ADvCJh9seIY&t=358s>)
+
+
+<div class="Theorem">
+**Extreme Value Theorem**. If $f$ is a continuous function on a closed, bounded interval $[a,b]$, then $f$ must have an absolute maximum and an absolute minimum value in that interval.
+</div>
+
+2. Give an example of a discontinous function with no absolute max or min on the interval $[1,3]$. 
+
+3. Given an example of a continous function with no absolute max or min on the interval $(1,3)$. 
+
+4. Find the absolute maximum and minimum of $f(x) = \sin x + \sin^2 x$ on $[0, 2\pi]$. 
+
+5. Find the critical x-values of $g(\theta) = 4 \theta - \tan \theta$. (<https://youtu.be/XJwpmKyaG3A>)
+
+6. Find the absolute max and min for $g(\theta)$. 
+
 - - -
 
 ### Week 10 Notes

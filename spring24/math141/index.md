@@ -17,7 +17,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on **Friday, Feb. 16**
+* Midterm 2 will be on **Thursday, March 21**
+* Midterm 2 materials: [review problems](midterm2review.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](formulaSheet.pdf)
 
 ### Course Description

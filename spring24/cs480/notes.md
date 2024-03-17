@@ -760,7 +760,7 @@ Day    | Topic
 :---:|:---------
 Mon, Mar 4 | Tensorflow introduction
 Wed, Mar 6 | Classifying traffic signs
-Fri, Mar 8 |
+Fri, Mar 8 | Image convolution
 
 ### Mon, March 4 
 
@@ -839,7 +839,7 @@ In class, a lot of people got neural networks that were 100% accurate. That rais
 
 ### Fri, Mar 8 
 
-Today we talked briefly about the idea of a **convolutional neural network** without going into too many details.  The idea is to add convolution layers to the model before the regular neural network layers.  
+Today we talked briefly about the idea of a **convolutional neural network** and **image convolution** without going into too many details.  The idea is to add convolution layers to the model before the regular neural network layers.  
 
 Here is a nice video explanation of how image convolution works with a kernel matrix. 
 
@@ -861,9 +861,44 @@ After talking briefly about image convolution, we did this workshop in class:
  
 Day    | Topic
 :---:|:---------
-Mon, Mar 18 |
-Wed, Mar 20 |
+Mon, Mar 18 | Unsupervised learning: k-means 
+Wed, Mar 20 | k-means clustering - con'd 
 Fri, Mar 22 |
+
+### Mon, Mar 18
+
+Today we introduced the **$k$-means clustering algorithm** which is a popular form of **unsupervised learning**.  Unlike linear classifiers, regression, and neural networks which all need training data to learn from, unsupervised learning algorithms do not require any training information.  
+
+The goal of the $k$-means clustering algorithm is to take a large collection of vectors $x_1, \ldots, x_n$ and partition them into $k$ different sets (called **clusters**) $C_1, C_2, \ldots, C_k$ so that the sum of the squared distances from each vector to the average of its cluster is minimized.  We can summarize this goal by saying that we want to minimize the following **objective function**:
+
+$$\sum_{i = 1}^k \sum_{x_j \in C_i} \|x_j - z_i\|^2$$
+
+where 
+$$z_i = \dfrac{1}{|C_i|} \sum_{x_j \in C_i} x_j$$ 
+is the average of the vectors in the cluster $C_i$ (sometimes called the **centroid**).  Notice that the objective function is a function of the clusters $C_1, \ldots, C_k$, not the vectors. If we choose good clusters, then points in the clusters will be close together and the objective function will be small.  If we choose bad clusters, then the points in a cluster will be spread out far from their average.  Because clusters are discrete rather than continuous variables, we can't use gradient descent to find the minimum, so we need an alternative.  The $k$-mean algorithm is a way to find clusters that minimize the objective function.  It is not guaranteed to find the absolute minimum, but it tends to work well in practice.  
+
+<div class="Theorem">
+#### $k$-Means Algorithm
+Given a list of $n$ vectors $x_1, x_2, \ldots, x_n$, and an initial list of $k$ representative vectors $z_1, \ldots, z_k$ repeat the following steps several times:
+
+1. **Update the partitition.** Loop through the vectors $x_j$. For each $x_j$ find the $z_i$ that is closest to $x_j$ and put $x_j$ into cluster $C_i$.
+
+2. **Update the averages.** Replace each $z_i$ with the average of cluster $C_i$. 
+</div>
+
+There are a couple of edge cases and other issues in the algorithm to consider. 
+
+1. To pick the initial representative vectors $z_1, \ldots, z_k$, one simple option is to just pick a random sample of size $k$ from the vectors $x_1, \ldots, x_n$.  Other more complicated methods are available, but this simple option often works well. 
+
+1. If at any step a cluster is empty, then you can remove that cluster and its corresponding $z_i$ in the next round of the algorithm. It is okay to end up with fewer than $k$ clusters at the end. 
+
+1. If you get a tie when you calculate the minimum distances from $x_j$ to different $z_i$, just use the lower $i$ as a tie breaker.  
+
+1. If there is a step in the algorithm where the cluster assignments don't change, then you are done because from that point on you will always get the same clusters $C_i$ and averages $z_i$.  
+
+1. The $k$-means algorithm might only converge to a local minimum, so you might want to try different randomly chosen starting vectors $z_i$ to run the algorithm multiple times and get closer to the absolute minimum.
+
+1. How do you know how many clusters $k$ to look for?  The answer is that people usually try several different $k$ and look to see what works best. 
 
 - - -
 
