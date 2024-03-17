@@ -37,7 +37,7 @@ Week | Topic                      | Notes | Homework
 6  | Derivatives of trig functions & chain rule            | [Week 06](notes.html#week-6-notes)  | [HW6](HW6.pdf)
 7  | Implicit differentiation & related rates              | [Week 07](notes.html#week-7-notes)  | [HW7](HW7.pdf)
 8  | Linear approximations & extreme values                | [Week 08](notes.html#week-8-notes)  | [HW8](HW8.pdf)
-9  | Mean value theorem, **Midterm 2**                     | [Week 09](notes.html#week-9-notes)  | 
+9  | Mean value theorem, **Midterm 2**                     | [Week 09](notes.html#week-9-notes)  | [HW9](HW9.pdf)
 10 | Optimization                                          | [Week 10](notes.html#week-10-notes) | 
 11 | L'Hospital's rule & Newton's method                   | [Week 11](notes.html#week-11-notes) | 
 12 | Antiderivatives & area under curves                   | [Week 12](notes.html#week-12-notes) | 
