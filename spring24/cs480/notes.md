@@ -900,6 +900,12 @@ There are a couple of edge cases and other issues in the algorithm to consider.
 
 1. How do you know how many clusters $k$ to look for?  The answer is that people usually try several different $k$ and look to see what works best. 
 
+We finished by looking at some examples of $k$-means clustering.  
+
+1. We used it to group points in the 2-dimensional plane into clusters. 
+
+2. We also used it to cluster images of handwritten numerals.  
+
 - - -
 
 ### Week 10 Notes

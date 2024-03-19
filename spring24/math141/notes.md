@@ -707,9 +707,9 @@ Here is one more example that we did not have time for in class.
 Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Mar 18 | [4.3][4.3] | Maxima & minima - con'd
-Wed, Mar 20 | | Review
-Thu, Mar 21 | | **Midterm 2**
-Fri, Mar 22 | [4.4][4.4] | The mean value theorem
+Wed, Mar 20 | [4.4][4.4] | The mean value theorem
+Thu, Mar 21 | | Review
+Fri, Mar 22 | | **Midterm 2**
 
 ### Mon, Mar 18
 
@@ -728,7 +728,7 @@ Fri, Mar 22 | [4.4][4.4] | The mean value theorem
 
 5. Find the critical x-values of $g(\theta) = 4 \theta - \tan \theta$. (<https://youtu.be/XJwpmKyaG3A>)
 
-6. Find the absolute max and min for $g(\theta)$. 
+6. Find the absolute max and min for $g(\theta)$ on $[0,1.5]$ (okay to use a calculator). 
 
 - - -
 

@@ -869,7 +869,7 @@ $$ \int_a^b f(x) \, dx = \frac{h}{2} (f(x_0) + 2 f(x_1) + 2 f(x_2) + \ldots + 2 
 
 and the **composite Simpson's rule** 
 
-$$\int_a^b f(x)\,dx \approx \frac{h}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + 4 f(x_3) + 2 f(x_4) + \ldots + 4f(x_{n-1}) + f(x_n)),$$
+$$\int_a^b f(x)\,dx \approx \frac{h}{6}(f(x_0) + 4f(x_{0.5}) + 2f(x_1) + 4 f(x_{1.5}) + 2 f(x_2) + \ldots + 4f(x_{n-0.5}) + f(x_n)),$$
 
 where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an example of a Python function that computes the composite Simpson's rule:
 
@@ -877,11 +877,16 @@ where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an exam
 def simpson(f, a, b, n):
   h = (b-a)/n
   total = f(a)+f(b)
-  total += sum([4*f(a+k*h) for k in range(1,n,2)])
-  total += sum([2*f(a+k*h) for k in range(2,n,2)])
-  return h*total/3
+  total += sum([4*f(a+0.5+k*h) for k in range(n)])
+  total += sum([2*f(a+k*h) for k in range(1,n)])
+  return h*total/6
 ```
 
+We looked at this example in class:
+
+1. Estimate the area under $y = \sin x$ from $x=0$ to $\pi$ using a Riemann sum and Simpson's method. How much more accurate is Simpson's method when $n=100?$
+
+<!--
 We did the following exercises in class. 
 
 1. Write a Python function to apply the trapezoid rule to a function. 
@@ -891,7 +896,7 @@ We did the following exercises in class.
 3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. 
 
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
-
+-->
 
 
 - - -
