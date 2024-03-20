@@ -732,7 +732,11 @@ Fri, Mar 22 | | **Midterm 2**
 
 ### Wed, Mar 20
 
-Today we proved some theorems.  We started with this theorem: 
+We started with this warm-up problem.
+
+1. Find $y'$ if $\sec(xy) = y$. 
+
+Then we proved some theorems.  We started with this theorem: 
 
 <div class="Theorem">
 **Rolle's theorem.** If $f$ is a continuous function on an interval $[a,b]$, and $f$ is differentiable on $(a,b)$, and $f(a) = f(b)$, then there must be a point $c$ such that $a < c < b$ and $f'(c) = 0$. 

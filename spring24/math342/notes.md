@@ -904,6 +904,19 @@ Today we did the following workshop about numerical integration.
 
 * **Workshop:** [Numerical integration](Workshops/Integration.pdf)
 
+Here are some tips for the workshop. 
+
+1. You might want to review the [Taylor series workshop](Workshops/TaylorSeries.pdf) we did all the way back on January 22. 
+
+2. Because the function $f(x) = \dfrac{\sin x}{x}$ is undefined at $x=0$, you will get an error if you ask Python to evaluate the function there (for example, in problem 4).  To avoid that problem, you can use this code to define $f(x)$:
+
+```python
+from math import *
+
+f = lambda x: sin(x)/x if x != 0 else 1
+```
+
+3. You'll have to write your own code to compute the trapezoid rule.  But you can look at the code from class Monday to see how I coded Simpson's method which is similar.  
 
 - - -
 

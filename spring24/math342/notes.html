@@ -1037,6 +1037,17 @@ We did the following exercises in class.
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/Integration.pdf">Numerical integration</a></li>
 </ul>
+<p>Here are some tips for the workshop.</p>
+<ol type="1">
+<li><p>You might want to review the <a href="Workshops/TaylorSeries.pdf">Taylor series workshop</a> we did all the way back on January 22.</p></li>
+<li><p>Because the function <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo>sin</mo><mi>x</mi></mrow><mi>x</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{\sin x}{x}</annotation></semantics></math> is undefined at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>, you will get an error if you ask Python to evaluate the function there (for example, in problem 4). To avoid that problem, you can use this code to define <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>:</p></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: sin(x)<span class="op">/</span>x <span class="cf">if</span> x <span class="op">!=</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">1</span></span></code></pre></div>
+<ol start="3" type="1">
+<li>You’ll have to write your own code to compute the trapezoid rule. But you can look at the code from class Monday to see how I coded Simpson’s method which is similar.</li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
