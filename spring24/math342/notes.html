@@ -1014,9 +1014,9 @@ f(x_j) &amp; \text{ if }k = j.\end{cases}</annotation></semantics></math></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">def</span> simpson(f, a, b, n):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>  h <span class="op">=</span> (b<span class="op">-</span>a)<span class="op">/</span>n</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>  total <span class="op">=</span> f(a)<span class="op">+</span>f(b)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>  total <span class="op">+=</span> <span class="bu">sum</span>([<span class="dv">4</span><span class="op">*</span>f(a<span class="op">+</span><span class="fl">0.5</span><span class="op">+</span>k<span class="op">*</span>h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>  total <span class="op">+=</span> <span class="bu">sum</span>([<span class="dv">4</span><span class="op">*</span>f(a<span class="op">+</span>(k<span class="op">+</span><span class="fl">0.5</span>)<span class="op">*</span>h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>  total <span class="op">+=</span> <span class="bu">sum</span>([<span class="dv">2</span><span class="op">*</span>f(a<span class="op">+</span>k<span class="op">*</span>h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n)])</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>  <span class="cf">return</span> h<span class="op">*</span>total<span class="op">/</span><span class="dv">6</span></span></code></pre></div>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>  <span class="cf">return</span> total<span class="op">*</span>h<span class="op">/</span><span class="dv">6</span></span></code></pre></div>
 <p>We looked at this example in class:</p>
 <ol type="1">
 <li>Estimate the area under <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mo>sin</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">y = \sin x</annotation></semantics></math> from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> using a Riemann sum and Simpson’s method. How much more accurate is Simpson’s method when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn><mi>?</mi></mrow><annotation encoding="application/x-tex">n=100?</annotation></semantics></math></li>
@@ -1032,6 +1032,11 @@ We did the following exercises in class.
 
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
 -->
+<h3 id="wed-mar-20">Wed, Mar 20</h3>
+<p>Today we did the following workshop about numerical integration.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/Integration.pdf">Numerical integration</a></li>
+</ul>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>

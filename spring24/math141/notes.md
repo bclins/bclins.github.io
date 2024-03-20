@@ -730,6 +730,44 @@ Fri, Mar 22 | | **Midterm 2**
 
 6. Find the absolute max and min for $g(\theta)$ on $[0,1.5]$ (okay to use a calculator). 
 
+### Wed, Mar 20
+
+Today we proved some theorems.  We started with this theorem: 
+
+<div class="Theorem">
+**Rolle's theorem.** If $f$ is a continuous function on an interval $[a,b]$, and $f$ is differentiable on $(a,b)$, and $f(a) = f(b)$, then there must be a point $c$ such that $a < c < b$ and $f'(c) = 0$. 
+</div>
+
+To prove Rolle's theorem, we answered these questions:
+
+1. How do we know that $f$ has an absolute max and an absolute min on $[a,b]$?  
+
+2. What would happen if the absolute max and absolute min both happen at the endpoints?  What would that mean about $f$?
+
+3. What would happen if either the absolute max or absolute min occurs inside $(a,b)$?  What would that mean about the point $c$ in $(a,b)$ where the absolute max or min occurs?
+
+After proving Rolle's theorem, we introduced the mean value theorem (MVT for short).
+
+<div class="Theorem">
+**Mean value theorem.** If $f$ is a continuous function on an interval $[a,b]$, and $f$ is differentiable on $(a,b)$, then there must be a point $c$ such that $a < c < b$ and 
+$$f'(c) = \frac{f(b)-f(a)}{b-a}.$$
+</div>
+
+Intuitively this makes sense.  It says that the average rate of change over an interval is equal to the instantaneous rate of change at at least one point inside the interval.  We talked about the example of drive 100 miles in just 1 hour on a highway.  How can you tell that your car's speedometer actually hit 100 mph exactly? 
+
+4. To prove the mean value theorem, let $L(x)$ be the linear function passing through the points $(a, f(a))$ and $(b, f(b))$. 
+    a. What is the slope of $L(x)$?
+    b. What does Rolle's theorem say about the function $f(x) - L(x)$ on $[a,b]$?
+
+We finished by talking about some applications of the MVT.  
+
+5. If $f'(x) = 0$ for every $x$ in $[a,b]$, what does the mean value theorem say about $f(b)$ and $f(a)$?
+
+6. If $f'(x) > 0$ for every $x$ in $[a,b]$, what does the mean value theorem say about $f(b)$ and $f(a)$ when $b > a$?
+
+
+
+
 - - -
 
 ### Week 10 Notes

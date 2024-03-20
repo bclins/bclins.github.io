@@ -877,9 +877,9 @@ where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an exam
 def simpson(f, a, b, n):
   h = (b-a)/n
   total = f(a)+f(b)
-  total += sum([4*f(a+0.5+k*h) for k in range(n)])
+  total += sum([4*f(a+(k+0.5)*h) for k in range(n)])
   total += sum([2*f(a+k*h) for k in range(1,n)])
-  return h*total/6
+  return total*h/6
 ```
 
 We looked at this example in class:
@@ -897,6 +897,12 @@ We did the following exercises in class.
 
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
 -->
+
+### Wed, Mar 20
+
+Today we did the following workshop about numerical integration.
+
+* **Workshop:** [Numerical integration](Workshops/Integration.pdf)
 
 
 - - -
