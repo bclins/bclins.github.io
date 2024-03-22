@@ -935,6 +935,33 @@ for cluster in clusters:
 plt.show()
 ```
 
+### Fri, Mar 22
+
+Today we talked about some disadvantages of k-means clustering.  We looked at the last two examples from Wednesday's workshop and we observed that they look the same when you graph them.  The only difference is the scale.  The x-values in the first example are much more spread out than than the x-values in the second.  Because of that, your clusters end up very different.  When the x-values are much larger than the y-values, differences in the y-values get drowned out by the differences in the x-values, so you end up basing your clusters only on the x-values (see the left image below).  
+
+<center>
+<figure>
+<table>
+<tr><td><img src="Clusters2.png" width=300></img></td><td><img src="Clusters1.png" width=300></img></td></tr>
+</table>
+<!--<figcaption>When the x-values are much more spread out than the y-values (left), the clusters ignore the y-values.  Standardizing the data so they have similar measures of spread fixes the problem (right).</figcaption>-->
+</figure>
+</center>
+
+Standardizing the x-values and the y-values so they have similar spreads fixes the problem (right image above). 
+
+We talked about how to standardize data by computing z-values.  
+$$z = \frac{x - \bar{x}}{s}$$
+where $\bar{x}$ is the average of the data and $s$ is the **standard deviation**. I briefly described how to find the standard deviation in Excel and numpy.  
+
+
+We talked about some applications of k-means clustering including 
+
+* [Color quantization](https://en.wikipedia.org/wiki/Color_quantization)
+
+* [Document clustering](https://en.wikipedia.org/wiki/Document_clustering)
+
+
 - - -
 
 ### Week 10 Notes
