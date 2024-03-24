@@ -954,8 +954,19 @@ We talked about how to standardize data by computing z-values.
 $$z = \frac{x - \bar{x}}{s}$$
 where $\bar{x}$ is the average of the data and $s$ is the **standard deviation**. I briefly described how to find the standard deviation in Excel and numpy.  
 
+Another problem that arises in k-means clustering is the curse of dimensionality.  The **curse of dimensionality** refers to several problems that arise when dealing with high dimensional data including:
 
-We talked about some applications of k-means clustering including 
+* Some problems get exponentially more complicated as the dimension increases.
+* You need a lot more data to explore high dimensional spaces.
+* Randomly points in a bounded set in high dimension tend to all be similar distances apart. For example, random points in the unit hypercube tend to all be in the corners and not in the middle!   
+
+We looked at this Google Colab example. 
+
+* **Example**: [The Curse of Dimensionality](https://colab.research.google.com/drive/1uibgpwo_0NcA91FK4n2ndCsRYoEBYtSE?usp=sharing)
+
+One way to deal with the curse of dimensionality is to use dimension reduction techniques, which we will talk about next week. 
+
+We finished by briefly mentioning some applications of k-means clustering including 
 
 * [Color quantization](https://en.wikipedia.org/wiki/Color_quantization)
 

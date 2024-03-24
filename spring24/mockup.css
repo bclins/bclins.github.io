@@ -123,6 +123,16 @@ div.sourceCode {
     border: 1px solid black;
     border-collapse: collapse;
 
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
     & td {
         text-align: center;
         border: 1px solid black;

@@ -851,7 +851,7 @@ Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Mar 18 | [5.1][5.1] | Newton-Cotes formulas
 Wed, Mar 20 | [5.1][5.1] | Newton-Cotes formulas - con'd
-Fri, Mar 22 | [5.4][5.4] | Gaussian quadrature
+Fri, Mar 22 |            | Error in Newton-Cotes formulas
 
 ### Mon, Mar 18
 
@@ -918,15 +918,458 @@ f = lambda x: sin(x)/x if x != 0 else 1
 
 3. You'll have to write your own code to compute the trapezoid rule.  But you can look at the code from class Monday to see how I coded Simpson's method which is similar.  
 
+### Fri, Mar 22
+
+Today we talked about the error in Newton-Cotes integration methods.  An integration method has **degree of precision** $n$ if it is perfectly accurate for all polynomials up to degree $n$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
+
+<div class="Theorem">
+**Theorem.** Simpson's method has degree of precision 3.
+</div>
+
+We proved this theorem in class by observing that if $f(x)$ is a third degree polynomial and $P_2(x)$ is a second degree interpolating polynomial for $f$ at the nodes $a$, $b$, and $m = \frac{a+b}{2},$ then 
+$$f(x) = P_2(x) + c_3 (x-a)(x-m)(x-b)$$
+where $c_3$ is the third divided difference $f[a,m,b]$. Then we used u-substitution to show that
+$$\int_a^b (x-a)(x-m)(x-b) \, dx = 0.$$  
+Since Simpson's method is just the integral of $P_2(x)$ and the extra term integrates to zero, it follows that Simpson's method is exact for 3rd degree polynomials. 
+
+For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  Here are the error formulas:
+
+* **Composite Trapezoid Rule Error.** 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
+
+* **Composite Simpson's Rule Error.** 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880 n^4}.$$
+
+We didn't prove the Simpson's rule error formula in class, but we did prove the error formula for the trapezoid rule and the proof for Simpson's rule is similar.  We finished by applying these rules to the following questions:
+
+1. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+2. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+3. If you double $n$, how much does the error tend to decrease in the trapezoid rule?  What about in the Simpon's rule?
+
+
 - - -
 
 ### Week 10 Notes
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Mar 25 | [5.4][5.4] | Gaussian quadrature - con'd
+Mon, Mar 25 | [5.4][5.4] | Gaussian quadrature 
 Wed, Mar 27 | [5.6][5.6] | Monte carlo integration
 Fri, Mar 29 | [4.1][4.1] | Numerical differentiation
+
+### Mon, Mar 25
+
+Today we introduced a different numerical integration technique called **Gaussian quadrature**.  This technique is a little more complicated than Simpson's method, but it can potentially be much more accurate and faster to compute.  The idea is that instead of using equally spaced nodes like in the composite Newton-Cotes formulas, you can use a specially chosen set of nodes that allows you to get a degree of precision of $2n - 1$ with only $n$ nodes.   
+
+The simplest version of Gaussian quadrature only works on the interval $[-1,1]$.  To apply it to any other interval, you would have to use a change of variables.  The formula for Gaussian quadrature is 
+
+$$\int_{-1}^1 f(x) \, dx \approx w_1 f(x_1) + w_2 f(x_2) + \ldots + w_n f(x_n)$$
+
+where $x_1, \ldots, x_n$ are the roots of the nth-degree [Legendre polynomial](https://en.wikipedia.org/wiki/Legendre_polynomials) and $w_1, \ldots, w_n$ are special weights that are usually pre-computed.  
+
+Here is a table with the values of $x_i$ and $w_i$ for $n$ up to 5 from [Wikipedia](https://en.wikipedia.org/wiki/Gaussian_quadrature): 
+
+<center>
+<table class="bordered">
+<tbody>
+<tr>
+<th>$n$</th><th colspan="2">Nodes $x_i$</th>
+<th colspan="2">Weights $w_i$</th></tr>
+<tr>
+<td>1
+</td>
+<td colspan="2">0
+</td>
+<td colspan="2">2
+</td></tr>
+<tr>
+<td>2
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\frac {1}{\sqrt {3}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <msqrt>
+              <mn>3</mn>
+            </msqrt>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\frac {1}{\sqrt {3}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/98062a4f23e6f56cd92702f7849018e2dde845f3" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.838ex; width:5.743ex; height:6.176ex;" alt="{\displaystyle \pm {\frac {1}{\sqrt {3}}}}"></span></td>
+<td>±0.57735...
+</td>
+<td colspan="2">1
+</td></tr>
+<tr>
+<td rowspan="2">3
+</td>
+<td colspan="2">0
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {8}{9}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>8</mn>
+            <mn>9</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {8}{9}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/077f760707913acc98f665943876806c38394b6e" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:1.999ex; height:5.176ex;" alt="{\displaystyle {\frac {8}{9}}}"></span></td>
+<td>0.888889...
+</td></tr>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\sqrt {\frac {3}{5}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mfrac>
+              <mn>3</mn>
+              <mn>5</mn>
+            </mfrac>
+          </msqrt>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\sqrt {\frac {3}{5}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/615a8e124dfa7ee3b272d86f7e194b574d06754a" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -2.338ex; width:6.13ex; height:6.176ex;" alt="{\displaystyle \pm {\sqrt {\frac {3}{5}}}}"></span></td>
+<td>±0.774597...
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {5}{9}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>5</mn>
+            <mn>9</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {5}{9}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0f4d341710c17d75538409bcbc0cfd5abb9db8bf" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:1.999ex; height:5.176ex;" alt="{\displaystyle {\frac {5}{9}}}"></span></td>
+<td>0.555556...
+</td></tr>
+<tr>
+<td rowspan="2">4
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\sqrt {{\frac {3}{7}}-{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>3</mn>
+                <mn>7</mn>
+              </mfrac>
+            </mrow>
+            <mo>−<!-- − --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>2</mn>
+                <mn>7</mn>
+              </mfrac>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <msqrt>
+                <mfrac>
+                  <mn>6</mn>
+                  <mn>5</mn>
+                </mfrac>
+              </msqrt>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\sqrt {{\frac {3}{7}}-{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/13231657ecc4aba099b0e66a66f9db891d93b40b" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -3.005ex; width:15.292ex; height:7.509ex;" alt="{\displaystyle \pm {\sqrt {{\frac {3}{7}}-{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}"></span></td>
+<td>±0.339981...
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {18+{\sqrt {30}}}{36}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mn>18</mn>
+              <mo>+</mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msqrt>
+                  <mn>30</mn>
+                </msqrt>
+              </mrow>
+            </mrow>
+            <mn>36</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {18+{\sqrt {30}}}{36}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d9a0fbc52a2dd72bcffbe49cc48c2ec3b0d7d1d2" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:10.262ex; height:5.843ex;" alt="{\displaystyle {\frac {18+{\sqrt {30}}}{36}}}"></span></td>
+<td>0.652145...
+</td></tr>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\sqrt {{\frac {3}{7}}+{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>3</mn>
+                <mn>7</mn>
+              </mfrac>
+            </mrow>
+            <mo>+</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>2</mn>
+                <mn>7</mn>
+              </mfrac>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <msqrt>
+                <mfrac>
+                  <mn>6</mn>
+                  <mn>5</mn>
+                </mfrac>
+              </msqrt>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\sqrt {{\frac {3}{7}}+{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d49566a5fc8fbf7eaa3efb4225da3371c8ad6a79" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -3.005ex; width:15.292ex; height:7.509ex;" alt="{\displaystyle \pm {\sqrt {{\frac {3}{7}}+{\frac {2}{7}}{\sqrt {\frac {6}{5}}}}}}"></span></td>
+<td>±0.861136...
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {18-{\sqrt {30}}}{36}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mn>18</mn>
+              <mo>−<!-- − --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msqrt>
+                  <mn>30</mn>
+                </msqrt>
+              </mrow>
+            </mrow>
+            <mn>36</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {18-{\sqrt {30}}}{36}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a18fc09a884ed52e7990bb71c0d784ef6c76216b" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:10.262ex; height:5.843ex;" alt="{\displaystyle {\frac {18-{\sqrt {30}}}{36}}}"></span></td>
+<td>0.347855...
+</td></tr>
+<tr>
+<td rowspan="3">5
+</td>
+<td colspan="2">0
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {128}{225}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>128</mn>
+            <mn>225</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {128}{225}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d35844be1cbae1c2716a62b5f184f96afb803adb" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:4.323ex; height:5.176ex;" alt="{\displaystyle {\frac {128}{225}}}"></span></td>
+<td>0.568889...
+</td></tr>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\frac {1}{3}}{\sqrt {5-2{\sqrt {\frac {10}{7}}}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>3</mn>
+          </mfrac>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mn>5</mn>
+            <mo>−<!-- − --></mo>
+            <mn>2</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <msqrt>
+                <mfrac>
+                  <mn>10</mn>
+                  <mn>7</mn>
+                </mfrac>
+              </msqrt>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\frac {1}{3}}{\sqrt {5-2{\sqrt {\frac {10}{7}}}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/048eac1bcb9eba0121420e034a7d743826cae30f" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -3.005ex; width:16.781ex; height:7.509ex;" alt="{\displaystyle \pm {\frac {1}{3}}{\sqrt {5-2{\sqrt {\frac {10}{7}}}}}}"></span></td>
+<td>±0.538469...
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {322+13{\sqrt {70}}}{900}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mn>322</mn>
+              <mo>+</mo>
+              <mn>13</mn>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msqrt>
+                  <mn>70</mn>
+                </msqrt>
+              </mrow>
+            </mrow>
+            <mn>900</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {322+13{\sqrt {70}}}{900}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/671a6db88339ff234df32a7d9277eff7a6257e36" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:13.75ex; height:5.843ex;" alt="{\displaystyle {\frac {322+13{\sqrt {70}}}{900}}}"></span></td>
+<td>0.478629...
+</td></tr>
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \pm {\frac {1}{3}}{\sqrt {5+2{\sqrt {\frac {10}{7}}}}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>±<!-- ± --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>3</mn>
+          </mfrac>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msqrt>
+            <mn>5</mn>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mrow class="MJX-TeXAtom-ORD">
+              <msqrt>
+                <mfrac>
+                  <mn>10</mn>
+                  <mn>7</mn>
+                </mfrac>
+              </msqrt>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \pm {\frac {1}{3}}{\sqrt {5+2{\sqrt {\frac {10}{7}}}}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2d7bce8d3bcb47d91e1585243cb74b2e415d3417" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -3.005ex; width:16.781ex; height:7.509ex;" alt="{\displaystyle \pm {\frac {1}{3}}{\sqrt {5+2{\sqrt {\frac {10}{7}}}}}}"></span></td>
+<td>±0.90618...
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {322-13{\sqrt {70}}}{900}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mn>322</mn>
+              <mo>−<!-- − --></mo>
+              <mn>13</mn>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msqrt>
+                  <mn>70</mn>
+                </msqrt>
+              </mrow>
+            </mrow>
+            <mn>900</mn>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {322-13{\sqrt {70}}}{900}}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9ffa316d93226567b92cc50b0f4d792a3df6ed1c" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.838ex; width:13.75ex; height:5.843ex;" alt="{\displaystyle {\frac {322-13{\sqrt {70}}}{900}}}"></span></td>
+<td>0.236927...
+</td></tr></tbody></table>
+</center>
+
+<!--
+We can find the weights by observing that Gaussian quadrature should be exact for $k$ up to $2n-1$. Therefore 
+$$\int_{-1}^1 x^k \, dx = w_1 x_1^k + \ldots w_n x_n^k$$
+for every $k = 0, \ldots, 2n-1$. 
+
+Therefore, if $V$ is the $n$-by-$2n-1$ Vandermonde matrix
+$$V = \begin{pmatrix}
+1 & x_1 & x_1^2 & \ldots & x_1^{2n-1} \\
+1 & x_2 & x_2^2 & \ldots & x_2^{2n-1} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_n & x_n^2 & \ldots & x_n^{2n-1} \end{pmatrix},$$
+then $$V^T w = y$$ where the entries $y_k = \int_{-1}^1 x^k \,dx$. 
+-->
+
+We did the following exercises in class. 
+
+1. Use Gaussian quadrature with $n = 3$ to estimate $\int_{-1}^1 e^x \, dx$. 
+
+1. Use Gaussian quadrature with $n = 3$ to estimate 
+$$\int_{-1}^1 \frac{1}{\sqrt{2\pi}}e^{-x^2/2} \, dx.$$
+
+1. Use the u-substitution $u = x/2$ to convert the integral 
+$$\int_{-2}^2 \frac{1}{\sqrt{2\pi}}e^{-x^2/2} \, dx$$
+into one where you can apply Gaussian quadrature. 
+
+1. What u-substitution could you apply to $\int_0^\pi \sin x \, dx$ so that you could apply Gaussian quadrature?
+
+1. Show that if $u = \dfrac{x-m}{r}$ where $r = \dfrac{b-a}{2}$ and $m = \dfrac{a+b}{2}$, then 
+$$\int_a^b f(x) \,dx = \int_{-1}^1 rf( m + u r ) \, du.$$
 
 - - -
 
