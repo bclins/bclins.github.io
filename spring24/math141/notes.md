@@ -795,11 +795,23 @@ Today we talked about using the first derivative to find the intervals of increa
 
 4. $y = (x^2 - 4)^{2/3}$
 
-<!--
-5. $g(x) = x + 2 \sin x$ on $[0,2\pi]$ (<https://youtu.be/BLn2B0azut8?t=79>)
+### Wed, Mar 27
 
-6. $f(x) = \dfrac{x^4 + 1}{x^2}$
+We started with this example where we found intervals of increase and decrease as well as local max & mins. 
+
+1. $g(x) = x + 2 \sin x$ on $[0,2\pi]$ (<https://youtu.be/BLn2B0azut8?t=79>)
+
+<!--
+2. $f(x) = \dfrac{x^4 + 1}{x^2}$
 -->
+
+Then introduced the notion of concavity. A function $f(x)$ is **concave down** at $x = a$ if $f(x)$ is below the tangent line $L(x)$ for all $x$ near $a$.  The function is **concave up** if $f(x)$ is greater than $L(x)$ for all $x$ close to $a$.  It turns out that a function $f$ is concave up exactly when the second derivative $f''(x)$ is positive and concave down when $f''(x)$ is negative. A point where the concavity changes from positive to negative or vice versa is called an **inflection point**.  
+
+We used the second derivative to find the intervals of concavity (intervals where the function is concave up or concave down) for these functions, and we also found the inflection points. 
+
+2. $f(x) = 2x^3 + 6x^2 - 5x + 1$ (<https://youtu.be/AeMWC8TTMZU>)
+
+3. $y = \dfrac{x}{x^2 + 1}$ (<https://youtu.be/EggCllDCuw8>)
 
 - - -
 

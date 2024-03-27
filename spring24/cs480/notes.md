@@ -985,7 +985,7 @@ Fri, Mar 29 |
 
 ### Mon, Mar 25
 
-Today we talked about dimension reduction using **principal component analysis**.  Principal component analysis is an idea from linear algebra that allows us to data vectors $x_1, \ldots, x_n \in \R^d$ where the dimension $d$ is very large and replaced them with vectors in a much lower dimensional space that still capture most of the information that was contained in the original vectors.  Principal component analysis is one of the most commonly used methods for **dimension reduction**.  
+Today we talked about dimension reduction using **principal component analysis**.  Principal component analysis is an idea from linear algebra that allows us to take data vectors $x_1, \ldots, x_n \in \R^d$ where the dimension $d$ is very large and replaced them with vectors in a much lower dimensional space that still capture most of the information that was contained in the original vectors.  Principal component analysis is one of the most commonly used methods for **dimension reduction**.  
 
 Let $X$ be an $n$-by-$d$ data matrix with rows $x_1, \ldots, x_n$ that are each $d$-dimensional.  Let $\bar{x}$ be the row vector with entries equal to the average of each column of $X$. Then the **covariance matrix** for $X$ is
 $$Q = \frac{1}{n-1} (X-\bar{x})^T (X-\bar{x})$$
@@ -1017,7 +1017,27 @@ We finished class by doing a principal component analysis of 28 images of faces 
 
 * **Example:** [Principal component analysis of faces](https://colab.research.google.com/drive/1_CKDdLQY7egvofW1RPWTLHQygEhSgjRX?usp=sharing)
 
+### Wed, Mar 27
 
+Today we talked some more about principal component analysis.  We started with a simple data matrix with 2 dimensional rows.  
+
+```python
+X = np.array([[-1.176,-0.381],[4.299,5.560],[-1.270,-0.504],[1.110,0.872],[0.993,-2.293],[1.072,-2.637],[-0.706,0.130],[-0.769,0.933],[1.994,1.891],[-0.519,-0.583],[-2.484,-3.332],[0.242,0.079],[2.637,6.201],[-2.355,-3.816],[2.235,5.870],[0.835,2.000],[0.102,-1.634],[-0.404,-1.923],[0.751,4.235],[-1.180,-2.588],[-0.527,2.032],[2.563,2.954],[-1.812,0.269],[-1.063,-2.531],[-0.452,3.400],[1.005,0.904],[1.989,1.574],[-1.513,-1.100],[-1.587,-0.461],[0.019,-0.514],[1.394,2.163],[-1.424,0.307],[0.665,-0.568],[1.026,3.185],[-1.818,-0.114],[-3.490,-3.137],[-2.007,-0.326],[-0.130,0.283],[-0.010,-0.191],[-1.199,-1.026],[-1.886,-3.086],[-0.607,-0.866],[-1.525,-2.866],[-1.128,-1.697],[0.240,-2.340],[-2.117,-2.566],[-2.671,-3.556],[3.018,3.430],[-0.965,-1.628],[0.943,-0.191],[0.451,1.524],[2.159,1.307],[-1.651,-2.146],[0.476,-1.478],[1.849,3.421],[2.680,2.693],[2.079,3.357],[0.545,2.885],[-0.111,-2.637],[-0.938,-1.413],[-2.806,-5.201],[-1.805,-5.043],[-2.149,-1.782],[0.486,1.523],[2.796,3.460],[0.814,0.354],[-1.004,-3.153],[2.803,3.223],[1.253,1.898],[0.512,0.986],[-1.541,1.040],[-1.611,0.366],[-0.376,-0.378],[2.057,0.716],[-1.308,-2.566],[0.774,2.805],[-0.154,0.801],[0.932,0.937],[0.447,2.937],[1.623,3.251],[-0.522,-0.423],[-0.022,0.747],[-0.419,-2.039],[0.978,1.541],[1.116,1.625],[-0.135,2.210],[-0.111,-2.899],[-1.254,-0.457],[0.078,-0.065],[-0.214,-1.166],[-2.644,-2.199],[1.780,3.323],[1.521,2.152],[-0.276,-0.841],[-2.044,-3.149],[1.273,3.503],[-0.702,-1.164],[0.575,1.964],[0.465,1.100],[1.454,1.448]])
+```
+
+We computed the covariance matrix for $X$ and found its eigenvectors.  You can see the data and the two eigenvectors here:
+
+* **Example:** <https://www.desmos.com/calculator/8eatvepc4i>
+
+The red eigenvector points in the direction of maximum variability.  The other eigenvector is perpendicular to the red one.  The eigenvectors in principal component analysis are always mutually orthogonal (perpendicular to each other).  
+
+Here is another example in 3-dimensions:
+
+```python
+np.array([[0.539,-2.63,0.306],[0.248,-4.35,-0.841],[-1.89,3.34,-1.08],[1.28,-3.35,2.06],[0.52,-2.26,0.0225],[-1.59,-1.36,-1.37],[-0.476,1.98,0.624],[0.36,-1.04,-0.451],[-0.803,-1.79,-1.14],[0.152,-0.489,1.27],[-0.781,2.79,0.648],[-0.436,-0.203,-0.211],[-0.988,-0.888,-1.64],[0.363,-1.42,0.238],[-1.02,6.26,0.07],[1.47,-1.02,0.501],[0.608,-5.83,0.195],[1.07,1.51,1.54],[0.684,-0.659,0.831],[-1.31,0.964,-1.09],[0.127,0.855,-0.568],[1.94,-3.46,0.942],[0.319,-6.04,0.489],[-0.624,-1.19,-1.68],[0.317,0.415,2.18],[0.901,-2.64,0.241],[-0.816,-0.55,-1.13],[-0.372,1.24,0.143],[-0.409,6.93,1.3],[1.64,-7.51,0.545],[-0.833,3.05,0.776],[-0.451,0.0903,-0.00596],[-0.29,-0.529,-2.08],[-1.19,-0.957,-0.451],[-0.573,0.468,-0.416],[-1.32,1.0,-1.17],[0.213,-1.3,0.184],[1.9,-0.14,1.73],[-0.917,2.94,0.343],[1.44,-4.42,1.08],[0.315,2.86,0.894],[-0.0783,-0.0105,-0.857],[1.01,-1.97,1.24],[0.213,-0.708,0.198],[-1.84,2.11,-1.52],[-0.334,0.247,-0.595],[0.251,0.332,0.219],[-0.00107,0.589,-0.0736],[-0.825,-3.06,-1.29],[-1.46,2.57,0.355],[0.513,-1.9,-1.27],[0.977,-1.1,-0.0922],[-0.303,-3.36,-1.0],[0.233,2.39,1.45],[-2.11,-0.0848,-1.83],[-0.524,2.54,0.0703],[-0.457,-1.7,0.445],[0.295,-0.419,0.544],[-2.22,2.88,-2.25],[0.288,-0.0653,0.415],[-0.766,4.33,0.612],[-0.92,1.23,-0.399],[-0.0367,2.67,1.83],[-1.12,-1.58,-2.9],[0.78,0.755,0.408],[-1.68,7.15,-1.11],[-1.85,4.37,-0.954],[0.659,-1.21,-0.563],[0.378,-3.37,-0.126],[0.507,-0.321,-0.00401],[-0.226,-0.644,-0.629],[-0.712,2.01,-1.34],[-1.15,-2.24,-1.62],[0.778,1.95,0.365],[-0.227,-0.0463,-0.116],[0.155,0.0193,0.222],[0.317,0.685,-0.648],[-1.14,0.106,-1.49],[-0.582,-0.625,-1.36],[-1.3,1.36,0.0372],[-1.03,-0.818,-0.353],[-0.375,1.96,0.0616],[-0.408,3.1,0.983],[0.655,0.214,1.26],[-0.2,-0.418,-1.22],[0.137,0.836,0.523],[-2.18,8.95,0.156],[-0.449,-2.32,-2.0],[-0.398,-1.78,-0.755],[0.886,-0.523,2.47],[0.56,-4.45,0.234],[1.26,0.946,2.63],[0.807,-1.8,-0.74],[-0.341,3.25,-0.207],[1.96,-3.78,0.472],[-0.386,-0.14,-0.602],[-0.767,4.67,-1.14],[0.685,0.0478,1.29],[-1.14,-0.0269,-2.7],[0.494,-1.73,-0.111]])
+```
+
+* **Example:** <https://www.desmos.com/3d/4e6e49f03d>
 
 - - -
 

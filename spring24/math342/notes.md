@@ -1371,6 +1371,32 @@ into one where you can apply Gaussian quadrature.
 1. Show that if $u = \dfrac{x-m}{r}$ where $r = \dfrac{b-a}{2}$ and $m = \dfrac{a+b}{2}$, then 
 $$\int_a^b f(x) \,dx = \int_{-1}^1 rf( m + u r ) \, du.$$
 
+### Wed, Mar 27 
+
+Today we talked about **Monte Carlo integration**, which is when you randomly generate inputs to try to find the value of an integral.  Monte Carlo integration is slow to converge and it can give very bad results if you use a poorly chosen [pseudo-random number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator).  But it is one of the most effective methods for calculating multivariable integrals. 
+
+For a function $f:\R^d \rightarrow \R$, the basic idea is to calculate the average value of a function in a region $\Omega$ by randomly generating points $x_1, \ldots, x_n$ in $\Omega$.  
+$$\text{Average value} \approx \frac{1}{n} \sum_{i = 1}^n f(x_i).$$
+If the dimension $d = 2$, then the double integral over the region $\Omega$ is approximately
+$$\iint_\Omega f(x) \, dA  \approx \on{Area}(\Omega) \cdot \left( \frac{1}{n} \sum_{i = 1}^n f(x_i) \right),$$
+and if $d = 3$, then the triple integral over $\Omega$ would be
+$$\iiint_\Omega f(x) \, dV  \approx \on{Volume}(\Omega) \cdot \left( \frac{1}{n} \sum_{i = 1}^n f(x_i) \right).$$
+Integrals in higher dimensions are similar, just using higher dimensional analogues of volume (called the **measure** of $\Omega$).  
+
+We did this example:
+
+1. Use Monte Carlo integration to estimate the double integral
+$$\int_0^1 \int_0^2 \sin(x y^2) \, dx dy.$$
+
+The method above assumes that we choose our points uniformly in $\Omega$.  But we can actually use any probability distribution with support equal to $\Omega$ to approximate an integral. This is called **importance sampling**. If we have a method to compute random vectors in $\Omega$ with a probability distribution that has density function $p(x)$, then the importance sample formula is:
+$$\iint_\Omega f(x) \, dA \approx \frac{1}{n} \sum_{i = 1}^n \frac{ f(x_i) }{ p(x_i) }.$$
+If we randomly generate the coordinates of $x$ using a probability distribution like the normal distribution that has unbounded support, then we can calculate improper integrals like this example:
+
+2. Use importance sample where the entries of each sample input vector are chosen with a normal distribution to estimate:
+$$\int_{-\infty}^\infty \dfrac{\sin^2 x}{x^2} \, dx.$$
+
+
+
 - - -
 
 ### Week 11 Notes
