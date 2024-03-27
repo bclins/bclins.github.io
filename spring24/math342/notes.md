@@ -1388,12 +1388,18 @@ We did this example:
 1. Use Monte Carlo integration to estimate the double integral
 $$\int_0^1 \int_0^2 \sin(x y^2) \, dx dy.$$
 
+1. Use Monte Carlo integration to estimate the double integral
+$$\iint_\Omega \sin(xy) + 1 \, dx dy$$
+where $\Omega = \{ (x,y) : x^2 + y^2 \le 1 \}$. 
+
 The method above assumes that we choose our points uniformly in $\Omega$.  But we can actually use any probability distribution with support equal to $\Omega$ to approximate an integral. This is called **importance sampling**. If we have a method to compute random vectors in $\Omega$ with a probability distribution that has density function $p(x)$, then the importance sample formula is:
 $$\iint_\Omega f(x) \, dA \approx \frac{1}{n} \sum_{i = 1}^n \frac{ f(x_i) }{ p(x_i) }.$$
 If we randomly generate the coordinates of $x$ using a probability distribution like the normal distribution that has unbounded support, then we can calculate improper integrals like this example:
 
 2. Use importance sample where the entries of each sample input vector are chosen with a normal distribution to estimate:
 $$\int_{-\infty}^\infty \dfrac{\sin^2 x}{x^2} \, dx.$$
+
+The actual value of this integral should be $\pi$.  In theory, Monte Carlo integration will give the correct answer on average.  But in practice using the normal distribution doesn't work well for this integral because it under-samples the tails.  A better probability distribution would be something like the Cauchy distribution or the Pareto distribution which we used in class.  It can be tricky to pick a good distribution to use.  
 
 
 

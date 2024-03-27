@@ -980,8 +980,8 @@ We finished by briefly mentioning some applications of k-means clustering includ
 Day    | Topic
 :---:|:---------
 Mon, Mar 25 | Principal component analysis
-Wed, Mar 27 |
-Fri, Mar 29 |
+Wed, Mar 27 | k-Nearest neighbors algorithm
+Fri, Mar 29 | Dimension reduction
 
 ### Mon, Mar 25
 
@@ -1038,6 +1038,28 @@ np.array([[0.539,-2.63,0.306],[0.248,-4.35,-0.841],[-1.89,3.34,-1.08],[1.28,-3.3
 ```
 
 * **Example:** <https://www.desmos.com/3d/4e6e49f03d>
+
+You should understand the following key ideas about principal component analysis.
+
+1. The dominant principal component (the one with the largest eigenvalue) points in the direction of greatest variability in the data. 
+
+2. The principal components are all perpendicular (orthogonal) to each other. 
+
+3. You can use the principal components as an alternative coordinate system where it is easier to see which coordinates are the most important. 
+
+We finished today by introducing the **k-nearest neighbors algorithm**.  This is a supervised learning algorithm used to predict how to label a new data point based on the labels for a collection of training data.  
+
+<div class="Theorem">
+**k-Nearest Neighbors Algorithm.** Given $k$ and an set of labeled vectors $x_1, \ldots, x_n$, apply the following steps to predict how to classify a new point $x$
+
+1. Find the nearest $k$ elements of $\{x_1, \ldots, x_n\}$ to $x$.
+
+2. If the majority of those $k$ elements have the same label, the that is the predicted label for $x$. 
+</div>
+
+There are lots of variants of this algorithm to decide what to do if there is not a clear majority.  One option is to do a weighted k-nearest neighbors algorithm where the vote to decided the majority of the $k$ neighbors is weighted so that the votes of points that a closer to $x$ count for more.  
+
+The main disadvantage of the k-nearest neighbors algorithm is that it does not work well in higher dimensions because of the curse of dimensionality.  
 
 - - -
 
