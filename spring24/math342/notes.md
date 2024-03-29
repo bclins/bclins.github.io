@@ -1401,7 +1401,13 @@ $$\int_{-\infty}^\infty \dfrac{\sin^2 x}{x^2} \, dx.$$
 
 The actual value of this integral should be $\pi$.  In theory, Monte Carlo integration will give the correct answer on average.  But in practice using the normal distribution doesn't work well for this integral because it under-samples the tails.  A better probability distribution would be something like the Cauchy distribution or the Pareto distribution which we used in class.  It can be tricky to pick a good distribution to use.  
 
+### Fri, Mar 29
 
+Today we talked about **numerical differentiation** and why it is **numerically unstable** which means that we can't use a single numerical technique to get better and better approximations. 
+
+Recall that computers represent floating point numbers in binary in the following form:
+$$\pm 1.\underbrace{b_1 \, b_2 \, b_3 \,  \cdots  \, b_{52}}_{\text{Binary mantissa}} \times 2^{\text{Exponent}}.$$ <!--_-->
+When a computer computes a function, it will almost always have to round the result since there is no where to put the information after the last binary decimal point. So it will have a relative error of about $2^{-53} \approx 1.11 \times 10^{-16}$. This number is called the **machine epsilon** (and denoted $\epsilon$).  It is the reason that numerical differentiation techniques are numerically unstable.  
 
 - - -
 

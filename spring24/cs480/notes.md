@@ -993,7 +993,9 @@ You can use the command `np.cov(X.T)` to compute the covariance matrix for $X$. 
 
 By the [spectral theorem](https://en.wikipedia.org/wiki/Spectral_theorem) from linear algebra, there is a diagonal matrix $D$ (with decreasing diagonal entries) and a matrix with orthogonal columns $W$ (both $d$-by-$d$) such that 
 $$Q = W D W^T.$$
-The columns of $W$ are the **principle components** of $X$. You can transform the data matrix $X$ into a new data matrix $T$ with uncorrelated variables (orthogonal columns) by calculating $T = X W$.  You can also create a reduced data matrix by computing $T_k = X W_k$ where $W_k$ is the submatrix of $W$ containing only the first $k$ columns (the first $k$ principal components).  You can also reduce the dimension of a single row vector $x \in \R^d$ by computing $x W_k$ which will be in $\R^k$.  
+The columns of $W$ are the **principle components** of $X$. You can transform the data matrix $X$ into a new data matrix $T$ with uncorrelated variables (orthogonal columns) by calculating $T = X W$.  You can also create a reduced data matrix by computing 
+$$T_k = X W_k$$
+where $W_k$ is the submatrix of $W$ containing only the first $k$ columns (the first $k$ principal components).  You can also reduce the dimension of a single row vector $x \in \R^d$ by computing $x W_k$ which will be in $\R^k$.  
 
 Here is numpy code to find the matrices $W$ and $D$. Note that numpy puts the diagonal entries (which are called the **eigenvalues** of $Q$) in increasing rather than decreasing order.  Therefore we need to choose the *last* k columns of $W$ if we want $W_k$. 
 
@@ -1007,7 +1009,9 @@ Wk = W[:,-k:] # use the last k columns of W
 Tk = X @ Wk
 ```
 
-In order to recover (approximately) the original data matrix, you can compute $X \approx W_k T_k^T$.  If $k = d$, then this will completely recover the data matrix $X$, otherwise you'll get a matrix that is the same shape as $X$, but the data in it will be compressed.  
+In order to recover (approximately) the original data matrix, you can compute 
+$$X \approx T_k W_k^T = X W_k W_k^T.$$  
+If $k = d$, then this will completely recover the data matrix $X$, otherwise you'll get a matrix that is the same shape as $X$, but the data in it will be compressed.  
 
 We finished class by doing a principal component analysis of 28 images of faces from the [Yale face database B](http://cvc.cs.yale.edu/cvc/projects/yalefacesB/yalefacesB.html).
 
@@ -1060,6 +1064,28 @@ We finished today by introducing the **k-nearest neighbors algorithm**.  This is
 There are lots of variants of this algorithm to decide what to do if there is not a clear majority.  One option is to do a weighted k-nearest neighbors algorithm where the vote to decided the majority of the $k$ neighbors is weighted so that the votes of points that a closer to $x$ count for more.  
 
 The main disadvantage of the k-nearest neighbors algorithm is that it does not work well in higher dimensions because of the curse of dimensionality.  
+
+### Fri, Mar 29
+
+Today we did a workshop combining dimension reduction (with principal component analysis) and the k-nearest neighbors algorithm.  To get started, we used this code to load the data and do the principal component analysis. 
+
+```python
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the data
+mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+# Find the principal components
+X = np.array([image.flatten() for image in x_train])
+Q = np.cov(X.T)
+d, W = np.linalg.eigh(Q)
+```
+
+
 
 - - -
 

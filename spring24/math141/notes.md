@@ -813,6 +813,19 @@ We used the second derivative to find the intervals of concavity (intervals wher
 
 3. $y = \dfrac{x}{x^2 + 1}$ (<https://youtu.be/EggCllDCuw8>)
 
+### Fri, Mar 29
+
+Today we applied the techniques we've learned to solve optimization word problems.  
+
+1. A rectangular piece of cardboard is 20 inches by 30 inches.  If we cut a square from each corner of the cardboard and fold up the sides to make a box, how big should the squares be in order to maximize the volume?  (<https://youtu.be/MC0tq6fNRwU> and <https://youtu.be/cRboY08YG8g>) <!-- Disadvantage: The derivative does not factor cleanly, so you have to use quadratic formula. -->
+
+2. A cone is made from a circular piece of paper (with radius $R$) by cutting out a slice and bringing the two sides of the slice together. Find the height of the cone that maximizes the volume. (<https://youtu.be/ZNoJThDRBcw>)
+
+3. A cylindrical can must hold 1 liter (1000 cubic centimeters) of oil.  What dimensions (height and radius) minimize the surface area of the can? (<https://youtu.be/e0Fgyca6WCw>)
+
+4. Find the point on the parabola $x = \tfrac{1}{2}y^2$ that is closest to the point $(1,4)$. (<https://youtu.be/ZZYf4hzluKw>)
+
+
 - - -
 
 ### Week 11 Notes
