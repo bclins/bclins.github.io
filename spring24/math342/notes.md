@@ -1409,6 +1409,39 @@ Recall that computers represent floating point numbers in binary in the followin
 $$\pm 1.\underbrace{b_1 \, b_2 \, b_3 \,  \cdots  \, b_{52}}_{\text{Binary mantissa}} \times 2^{\text{Exponent}}.$$ <!--_-->
 When a computer computes a function, it will almost always have to round the result since there is no where to put the information after the last binary decimal point. So it will have a relative error of about $2^{-53} \approx 1.11 \times 10^{-16}$. This number is called the **machine epsilon** (and denoted $\epsilon$).  It is the reason that numerical differentiation techniques are numerically unstable.  
 
+When you compute the difference quotient 
+$$\frac{f(x+h) - f(x)}{h}$$
+to approximate $f'(x)$, the error should be 
+$$ \left| \frac{f(x+h) - f(x)}{h} - f'(x)\right| = \left| \frac{f''(\xi)}{2} h \right|,$$
+for some $\xi$ between $x$ and $x+h$ by the Taylor remainder theorem.  But that error formula assumes that $f(x+h)$ and $f(x)$ are being calculated precisely.  In fact, they are going to have rounding errors and so will only be accurate to approximately $\epsilon f(x)$ where $\epsilon$ is machine epsilon.  Adding that factor, you get a combined error of roughly
+$$ \left| \frac{\epsilon  f(x)}{h} \right| + \left| \frac{f''(\xi) h}{2} \right|.$$
+That explains why the error initially decreases, but then starts to increase as $h$ get's smaller.  We graphed the logarithm of the relative error in using the difference quotient to approximate the derivative of $f(x) = 10^x$ as a function of $k$ when $h = 10^{-k}$.  To graph it, we introduced the pyplot library in Python:
+
+```python
+import matplotlib.pyplot as plt
+from math import *
+
+f = lambda x: 10**x
+rel_error = lambda h: abs((f(0+h)-f(0))/h - log(10))/log(10)
+
+xs = [k/10 for k in range(180)]
+ys = [log(rel_error(10**(-x)))/log(10) for x in xs]
+
+plt.plot(xs,log_rel_errors)
+```
+
+<center>
+<img src="derivativeError.png" width=500></img>
+<figcaption>Shows the base-10 logarithm of the relative error on y-axis and the exponent $k$ for $h = 10^{-k}$ on the x-axis.</figcaption>
+</center>
+
+We finished by getting started on this workshop:
+
+* **Workshop:** [Numerical differentiation](Workshops/NumericalDifferentiation.pdf)
+
+
+
+
 - - -
 
 ### Week 11 Notes

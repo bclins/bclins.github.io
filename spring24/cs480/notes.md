@@ -1067,7 +1067,11 @@ The main disadvantage of the k-nearest neighbors algorithm is that it does not w
 
 ### Fri, Mar 29
 
-Today we did a workshop combining dimension reduction (with principal component analysis) and the k-nearest neighbors algorithm.  To get started, we used this code to load the data and do the principal component analysis. 
+Today we did a workshop combining dimension reduction (with principal component analysis) and the k-nearest neighbors algorithm. 
+
+* **Workshop:** [Dimension reduction](Workshops/DimensionReduction.pdf)
+
+To get started, we used this code to load the data and do the principal component analysis. 
 
 ```python
 import tensorflow as tf
@@ -1084,6 +1088,7 @@ X = np.array([image.flatten() for image in x_train])
 Q = np.cov(X.T)
 d, W = np.linalg.eigh(Q)
 ```
+
 
 
 

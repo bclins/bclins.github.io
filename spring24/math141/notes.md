@@ -815,13 +815,20 @@ We used the second derivative to find the intervals of concavity (intervals wher
 
 ### Fri, Mar 29
 
-Today we applied the techniques we've learned to solve optimization word problems.  
+Today we applied the techniques we've learned to solve optimization word problems. We did these examples.   
+
+1. A farmer wants to fence off a rectangular plot of land along the side of a long straight river.  He has a total of 2400 feet of fence.  How large of and area can he fence off?  (<https://youtu.be/gt4Qtp0Wxtk>)
+
+1. A cylindrical can must hold 1 liter (1000 cubic centimeters) of oil.  What dimensions (height and radius) minimize the surface area of the can? (<https://youtu.be/e0Fgyca6WCw>) <mark>Note: I made a mistake when I solved this in class and forgot a square at one point. Sorry about that!</mark>
+
+We also talked about using the first derivatives and the intervals of increase/decrease to double check that a critical point is a max or a min (the **first derivative test**) and how to check whether a critical point is a max or min by checking the second derivative at that point (the **second derivative test**).  
+
+Here are some other examples that we didn't have time for today. 
 
 1. A rectangular piece of cardboard is 20 inches by 30 inches.  If we cut a square from each corner of the cardboard and fold up the sides to make a box, how big should the squares be in order to maximize the volume?  (<https://youtu.be/MC0tq6fNRwU> and <https://youtu.be/cRboY08YG8g>) <!-- Disadvantage: The derivative does not factor cleanly, so you have to use quadratic formula. -->
 
 2. A cone is made from a circular piece of paper (with radius $R$) by cutting out a slice and bringing the two sides of the slice together. Find the height of the cone that maximizes the volume. (<https://youtu.be/ZNoJThDRBcw>)
 
-3. A cylindrical can must hold 1 liter (1000 cubic centimeters) of oil.  What dimensions (height and radius) minimize the surface area of the can? (<https://youtu.be/e0Fgyca6WCw>)
 
 4. Find the point on the parabola $x = \tfrac{1}{2}y^2$ that is closest to the point $(1,4)$. (<https://youtu.be/ZZYf4hzluKw>)
 
