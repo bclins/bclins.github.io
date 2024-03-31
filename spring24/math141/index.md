@@ -38,7 +38,7 @@ Week | Topic                      | Notes | Homework
 8  | Linear approximations & extreme values                | [Week 08](notes.html#week-8-notes)  | [HW8](HW8.pdf)
 9  | Mean value theorem, **Midterm 2**                     | [Week 09](notes.html#week-9-notes)  | [HW9](HW9.pdf)
 10 | Optimization                                          | [Week 10](notes.html#week-10-notes) | [HW10](HW10.pdf)
-11 | L'Hospital's rule & Newton's method                   | [Week 11](notes.html#week-11-notes) | 
+11 | L'Hospital's rule & Newton's method                   | [Week 11](notes.html#week-11-notes) | [HW11](HW11.pdf)
 12 | Antiderivatives & area under curves                   | [Week 12](notes.html#week-12-notes) | 
 13 | Definite integrals, **Midterm 3**                     | [Week 13](notes.html#week-13-notes) | 
 14 | Substitution                                          | [Week 14](notes.html#week-14-notes) |
