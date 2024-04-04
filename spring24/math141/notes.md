@@ -781,7 +781,7 @@ Day  | Section  | Topic
 Mon, Mar 25 | [4.5][4.5] | Derivatives and the shape of a graph
 Wed, Mar 27 | [4.5][4.5] | Concavity
 Thu, Mar 28 | | Review
-Fri, Mar 29 | [4.6][4.6] | Applied optimization
+Fri, Mar 29 | [4.7][4.7] | Applied optimization
 
 ### Mon, Mar 25
 
@@ -839,10 +839,32 @@ Here are some other examples that we didn't have time for today.
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 1 | [4.7][4.7] | Limits at infinity and asymptotes
-Wed, Apr 3 | [4.8][4.8] | L'Hospital's rule
+Mon, Apr 1 |            | *class canceled*
+Wed, Apr 3 | [4.6][4.6] | Limits at infinity and asymptotes
 Thu, Apr 4 | | Review
-Fri, Apr 5 | [4.9][4.9] | Newton's method
+Fri, Apr 5 | [4.8][4.8] | L'Hospital's rule
+
+### Wed, Apr 3
+
+We started with this optimization example which we did not get to last time.
+
+1. Find the point on the parabola $x = \tfrac{1}{2}y^2$ that is closest to the point $(1,4)$. (<https://youtu.be/ZZYf4hzluKw>)
+
+Then we introduced limits as $x$ approaches infinity. The key idea when taking the limit of a polynomial expression as $x \rightarrow \pm \infty$ is to factor out the highest power of $x$. We used that idea on all of these examples:
+
+1. $\lim_{x \rightarrow -\infty} x^4 + 100 x^3$
+
+1. $\lim_{x \rightarrow \infty} \dfrac{10x^3 + x^2 - 5}{8 - 4x - 4x^3}$ (<https://youtu.be/-UQBxnNZ8-Q>)
+
+1. Find $\lim_{x \rightarrow \infty} f(x)$ and $\lim_{x \rightarrow -\infty} f(x)$ when $f(x) =  \dfrac{-2x + 1}{\sqrt{9x^2 - 16}}$ (<https://youtu.be/qNhV2S2whyw>)
+
+Here are a few more examples we didn't have time for in class. 
+
+1. $\lim_{x \rightarrow \infty} \dfrac{2x+3}{x^2+4}$ (<https://youtu.be/eB829NO82ew>)
+
+1. $\lim_{x \rightarrow \infty} \dfrac{5x - 7}{3x+4}$ (<https://youtu.be/eB829NO82ew>) 
+
+
 
 - - -
 

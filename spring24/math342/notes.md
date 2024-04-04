@@ -1448,9 +1448,30 @@ We finished by getting started on this workshop:
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 1 | | Discrete least squares regression
-Wed, Apr 3 | | Discrete least squares - con'd
-Fri, Apr 5 | | Continuous least squares
+Mon, Apr 1 | | *class canceled*
+Wed, Apr 3 | | Discrete least squares regression
+Fri, Apr 5 | | Discrete least squares - con'd
+
+### Wed, Apr 3
+
+Today we introduced **least squares regression**.  We took a linear algebra approach to understanding least squares regression.  Given an $n$-by-$k$ matrix $X$ and a vector $y \in \R^n$, we can try to find solutions to the system of equations
+$$ X b = y.$$ 
+But a solution only exists if $y$ is in the **column space** of $X$ (also known as the **range** of $X$).  If $y$ is not in the column space, then there is no solution, but you can always find a point $b \in \R^k$ such that $\hat{y} = X b$ is as close as possible to $y$.  In other words, you can find $\hat{y}$ that minimizes
+$$\|\hat{y} - y\|$$
+where the norm is the $\ell_2$-norm:
+$$\|v\| = \sqrt{v_1^2 + v_2^2 + \ldots + v_k^2}.$$
+That's why we say we are finding the smallest **sum of squared error**.  
+It is a geometry fact that $\|\hat{y} - y\|$ is minimized exactly when $\hat{y} - y$ is orthogonal to the column space of $X$.  And that happens exactly when 
+$$X^T (\hat{y}-y) = 0.$$
+Substituting $\hat{y} = Xb$ and rearranging terms, we get the **normal equations**.
+$$X^T X b = X^T y.$$
+You can solve the normal equations using row reduction to find the coefficients of the vector $b$ that generate the $\hat{y}$ closest to $y$.  
+
+We applied this technique to the examples in this workshop.
+
+* **Workshop:** [Least squared regression introduction](Workshops/RegressionIntro.pdf)
+
+
 
 - - -
 

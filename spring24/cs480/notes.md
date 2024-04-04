@@ -1091,16 +1091,64 @@ d, W = np.linalg.eigh(Q)
 
 
 
-
 - - -
 
 ### Week 11 Notes
  
 Day    | Topic
 :---:|:---------
-Mon, Apr 1 |
-Wed, Apr 3 |
-Fri, Apr 5 |
+Mon, Apr 1 | *no class*
+Wed, Apr 3 | Introduction to Markov Decision Processes
+Fri, Apr 5 | Markov chains with rewards
+
+### Wed, Apr 3
+
+Today we introduced **Markov decision processes** (MDPs).  MDPs are the theoretical foundation of a third type of machine learning called **reinforcement learning** which is different from the other two types we've studied before (supervised and unsupervised learning).  
+
+A Markov descision process has four parts:
+
+1. **States.** A finite number of states.
+2. **Rewards.** Each state has a bonus (or penalty) $R$ that you earn at the start of the round if you are in that state. 
+3. **Actions.** In each state, there is a set of actions you can choose.
+4. **Transition probabilities.** Depending on the state you are currently in and the action you choose, there is a probability distribution that determines what your next state will be. 
+
+We looked at the following very simple example of an MDP where there are three states (which you can think of as safe, risky, and dead). The safe state has a reward of 1 point per round, while the risky state earns 2 points per round. The dead state is absorbing, once you get there, you don't get any more actions and your reward is zero from that point on. In the other two states, you can choose either the red or the blue action.  The blue action corresponds to trying to play it safe, while the red action corresponds to preferring the risky state.  The transition probabilities corresponding to the red and blue actions are shown in the graph below.  
+
+<center>
+<img src="MarkovDescisionProcess.png" width=293></img>
+</center>
+
+We started with this question:
+
+1. What if you start in the risky state and always pick the red action?  
+
+If you always pick the same action, then the MDP is just a Markov chain with rewards.  And always picking the red action results in a very simple Markov chain, so we were able to calculate the theoretical average reward.  Depending on how long we are able to stay in the risky state before falling into the dead state, we have the following table of possible outcomes with their corresponding probabilities.
+
+<center>
+<table class="bordered">
+<tr><td>Outcome (Total Reward) </td><td>$~~~~2~~~~$</td><td>$4$</td><td>$6$</td><td>$8$</td><td>$~~~~\ldots~~~~$</td></tr>
+<tr><td>Probability</td><td>$~~~~0.1~~~~$</td><td>$(0.1)(0.9)$</td><td>$(0.1)(0.9^2)$</td><td>$(0.1)(0.9^3)$</td><td>$~~~~\ldots~~~~$</td></tr>
+</table>
+</center>
+
+When an outcome like the total reward is determined randomly by a probability distribution, the **expected value** (also known as the **theoretical average**) is the weighted average of the possible outcomes with the probabilities as the weights.  The possible outcomes are $2n + 2$ where $n$ is the number of times you return to the risky state (before falling in the hole and ending up dead).  The probabilities of those outcomes are $(0.1)(0.9^n)$. So the expected reward is an infinite sum which we denoted with the letter $S$: 
+
+$$\text{Expected value} = S = \sum_{n = 0}^\infty (2n+2) (0.1) (0.9^n).$$
+
+You could use a computer and add up the first few thousand terms of this series to approximate the sum, but we used algebra to work out the following recursive formula for the sum:
+$$S = 2 + 0.9 S.$$
+This recursive formula makes intuitive sense if you think about it, since the expected reward after the current round is the 2 points we earn for the current round plus a 10% chance of getting nothing (if we die) or a 90% chance of starting over again at the risky state with an average future reward of $S$.  
+
+2. Solve the equation $S = 2 + 0.9 S$ for $S$.  
+<details>
+<summary>Solution.</summary>
+$$S = 20.$$
+</details>
+
+Next time we will tackle the more complicated question of what happens if you always pick the blue action.  It turns out we will be able to find a similar recursive formula to get the answer.  
+
+
+
 
 - - -
 
