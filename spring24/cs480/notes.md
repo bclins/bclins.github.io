@@ -1098,7 +1098,7 @@ d, W = np.linalg.eigh(Q)
 Day    | Topic
 :---:|:---------
 Mon, Apr 1 | *no class*
-Wed, Apr 3 | Introduction to Markov Decision Processes
+Wed, Apr 3 | Introduction to Markov decision processes
 Fri, Apr 5 | Markov chains with rewards
 
 ### Wed, Apr 3
@@ -1156,9 +1156,9 @@ Next time we will tackle the more complicated question of what happens if you al
  
 Day    | Topic
 :---:|:--------------
-Mon, Apr 8 | 
-Wed, Apr 10 |
-Fri, Apr 12 |
+Mon, Apr 8 | Markov chains with rewards - con'd 
+Wed, Apr 10 | Review
+Fri, Apr 12 | **Midterm 2**
 
 - - -
 
@@ -1166,7 +1166,7 @@ Fri, Apr 12 |
  
 Day    | Topic
 :---:|:---------
-Mon, Apr 15 |
+Mon, Apr 15 | Markov decision processes
 Wed, Apr 17 |
 Fri, Apr 19 |
 

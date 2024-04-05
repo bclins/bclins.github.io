@@ -16,6 +16,7 @@ header-includes: |
 \newcommand{\ds}{\displaystyle}
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\inner}[1]{\langle {#1} \rangle}
 
 ## Math 342 - Spring 2024
 
@@ -1463,6 +1464,15 @@ $$\|v\| = \sqrt{v_1^2 + v_2^2 + \ldots + v_k^2}.$$
 That's why we say we are finding the smallest **sum of squared error**.  
 It is a geometry fact that $\|\hat{y} - y\|$ is minimized exactly when $\hat{y} - y$ is orthogonal to the column space of $X$.  And that happens exactly when 
 $$X^T (\hat{y}-y) = 0.$$
+This is because of the fundamental theorem of linear algebra:
+
+<div class="Theorem">
+**The Fundamental Theorem of Linear Algebra.** Let $A$ be any $m$-by-$n$ matrix.  Then
+
+1. The column space of $A$ is the orthogonal complement of the null space of $A^T$ in $\R^m$.
+1. The row space of $A$ is the orthogonal complement of the null space of $A$ in $\R^n$.
+</div>
+
 Substituting $\hat{y} = Xb$ and rearranging terms, we get the **normal equations**.
 $$X^T X b = X^T y.$$
 You can solve the normal equations using row reduction to find the coefficients of the vector $b$ that generate the $\hat{y}$ closest to $y$.  
@@ -1471,6 +1481,54 @@ We applied this technique to the examples in this workshop.
 
 * **Workshop:** [Least squared regression introduction](Workshops/RegressionIntro.pdf)
 
+### Fri, Apr 5
+
+Today we talked some more about least squares regression.  We started with this warm-up problem. 
+
+1. Let $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix}$.  Find the null space $\on{null}(A^T)$.  
+
+Then we defined the **orthogonal complement** of a subspace $V \subset \R^n$ to be the set of vectors in $\R^n$ that are orthogonal to every element in $V$, i.e.,
+$$V^\perp = \{w \in \R^n : w^T v = 0 \text{ for all } v \in \R^n\}.$$ 
+
+2. Use [Desmos-3d](https://www.desmos.com/3d) to graph $\on{null}(A^T)$ and $\on{null(A^T)}^\perp$ for the matrix $A$ above. 
+
+3. Find the least squares solution to $Ax = \begin{pmatrix} 4 \\ -2 \\ 4 \end{pmatrix}$. 
+
+Then we talked about how you can use least squares regression to find the best coefficients for any model, even nonlinear models, as long as the model is a linear function of the coefficients.  For example, if you wanted to model daily high temperatures in Farmville, VA as a function of the day of the year (from 1 to 365), you could use a function like this:
+
+$$\hat{y} = b_0 + b_1 + b_2 \cos\left( \dfrac{2\pi x}{365} \right) + b_3 \sin \left( \dfrac{2\pi x}{365} \right).$$
+
+Here is the code we used to analyze this example. 
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from math import *
+df = pd.read_excel("http://people.hsc.edu/faculty-staff/blins/StatsExamples/FarmvilleHighTemps2019.xlsx")
+xs = np.array(df.day)
+ys = np.array(df.high)
+plt.plot(xs,ys,"o")
+plt.show()
+
+X = np.array([[1, x, cos(2*pi*x/365), sin(2*pi*x/365) ] for x in xs])
+bs = np.linalg.solve(X.T @ X, X.T @ ys)
+print(bs)
+
+model = lambda t: bs[0]+bs[1]*t + bs[2]*cos(2*pi*t/365) + bs[3]*sin(2*pi*t/365)
+plt.plot(xs,ys,"o")
+plt.plot(xs, [model(x) for x in xs])
+plt.show()
+```
+
+You can get other models by applying a log-transform to a model.  For example, an exponential model 
+$$\hat{y} = C e^{b x}$$
+can be turned into a linear model after we take the (natural) logarithm of both sides:
+$$\log(\hat{y}) = \log C + b x.$$
+
+We applied this idea in the following workshop.
+
+* **Workshop:** [Least squares regression 2](Workshops/Regression2.pdf)
 
 
 - - -
@@ -1479,9 +1537,107 @@ We applied this technique to the examples in this workshop.
  
 Day  | Section  | Topic
 :---:|:---:|:--------------
-Mon, Apr 8 | &nbsp; | [Orthogonal functions](https://en.wikipedia.org/wiki/Orthogonal_functions), [Gram-Schmidt](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process) 
-Wed, Apr 10 | | Review
-Fri, Apr 12 | | **Midterm 2**
+Mon, Apr 8 | &nbsp; | Continuous least squares
+Wed, Apr 10 | | [Orthogonal functions](https://en.wikipedia.org/wiki/Orthogonal_functions), [Gram-Schmidt](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process) 
+Fri, Apr 12 | | Fourier series
+
+<!--
+### Mon, Apr 8
+
+Today we introduced the idea of **continuous least squares regression**. Unlike the discrete case where we only want the smallest sum of squared residuals at a finite number of points, here the goal is to find a polynomial $p(x)$ that minimizes the integral of the squared differences:
+$$\int_a^b (p(x)-f(x))^2 \, dx$$
+
+Before we derived the normal equations for continuous least squares regression, we started with a brief introduction to functional analysis (which is like linear algebra when the vectors are functions). 
+
+<div class="Theorem">
+**Definition.** An **inner-product space** is a vector space $V$ with an **inner-product** $\langle x,y \rangle$ which is a real-valued function such that for all $x,y, z \in V$ and $c \in \R$
+
+1. $\inner{x,y} = \inner{y,x}$,
+2. $\inner{x,x} \ge 0$ and $\inner{x,x} = 0$ if and only if $x = 0$,
+3. $\inner{cx,y} = c \inner{x,y}$,
+4. $\inner{x+y,z} = \inner{x,z} + \inner{y,z}$.
+
+The norm of a vector in an inner-product space is $\|x\| = \inner{x,x}^{1/2}$.
+</div>
+
+Examples of inner-product spaces include
+
+* $\R^n$ with the dot product. 
+* $L^2[a,b]$ which is the space of all functions $f:[a,b] \rightarrow \R$ such that $\int_a^b (f(x))^2 \, dx$ exists (and is finite). The inner-product on $L^2[a,b]$ is
+$$\inner{f,g} = \int_a^b f(x) g(x) \, dx.$$
+
+
+<div class="Theorem">
+**Definition.** Let $V, W$ be inner-product spaces. If $T:V \rightarrow W$ is a linear transformation, then the **adjoint** of $T$ is a linear transformation $T^*: W \rightarrow V$ defined by $\inner{y,Tx} = \inner{T^*y,x}$ for every $x \in V$ and $y \in W$.
+</div>
+
+
+<div class="Theorem">
+**Definition.** Let $V$ be an inner-product space. Two vectors $v, w \in V$ are **orthogonal** if $\inner{v,w} = 0$. If $W$ is a subspace of $V$, then **orthogonal complement** $W^\perp$ is the subspace containing all vectors in $V$ that are orthogonal to every element of $W$. That is,
+$$W^{\perp} = \{ v \in V : \inner{v,w} = 0 \text{ for all } w \in W \}.$$
+</div>
+
+The following theorem says that the orthogonal complement of the range of a linear transformation is always the null space of the adjoint. 
+
+<div class="Theorem">
+**Theorem.** Let $V, W$ be inner-product spaces. If $T:V \rightarrow W$ is a linear transformation, then 
+$$\on{range}(T)^\perp = \on{null}(T^*).$$ 
+</div>
+
+We want to find the best fit polynomial of degree n. 
+$$p(x) = b_0 + b_1 x + \ldots + b_n x^n.$$  
+This polynomial will be in $L^2[a,b]$ and it is a linear function of the coefficients $b \in \R^{n+1}$.  So there is a linear transformation $X: \R^{n+1} \rightarrow L^2[a,b]$ such that $p(x) = Xb$. We want to find the $p(x)$ closest to $f(x)$ in $L^2[a,b]$.  In other words, we want to minimize
+$$\|p(x)-f(x)\|.$$ 
+That happens when $p(x) - f(x)$ is orthogonal to the range of $X$ which happens when
+$$X^*(p(x) - f(x)) = 0.$$
+By replacing $p(x)$ with $Xb$, we get the **normal equation** for continuous least squares regression:
+$$X^*X b = X^* f.$$
+
+
+Since $X: \R^{n+1} \rightarrow L^2[a,b]$ and $X^*: L^2[a,b] \rightarrow \R^{n+1}$, the composition $X^*X$ is a linear transformation from $\R^{n+1}$ to $\R^{n+1}$. So it is an $(n+1)$-by-$(n+1)$ matrix and its $(i,j)$-entry is 
+$$\inner{e_i,X^*Xe_j} = \inner{Xe_i, X e_j} = \int_a^b x^{i+j} \, dx$$
+where $e_0, \ldots, e_n$ are the standard basis vectors for $\R^{n+1}$. The entries of $X^*f$ are
+$$\inner{e_i, X^*f} = \inner{Xe_i, f} = \int_a^b x^i f(x) \, dx.$$
+
+To summarize, the normal equation to find the coefficients $b$ of the continuous least squares polynomial is
+
+<div class="Theorem">
+**Theorem (Continuous Least Squares).** For $f \in L^2[a,b]$, the coefficients of the continuous least squares polynomial approximation $p(x) = b_0 + b_1 x + \ldots + b_n x^n$can be found by solving the normal equation
+$$X^*X b = X^* f$$
+where $X^*X$ is an $(n+1)$-by-$(n+1)$ matrix with entries
+$$(X^*X)_{ij} = \int_a^b x^{i+j} \, dx,$$
+and $X^*f$ is a vector in $\R^{n+1}$ with entries
+$$(X^*f)_i = \int_a^b x^i f(x) \, dx.$$
+</div>
+
+1. Use continuous least squares regression to find the best fit 2nd degree polynomial approximation of $f(x) = e^x$ on $[0,2]$.  
+
+We used this Python code to solve the problem and graph the solution:
+
+```python
+import numpy as np
+from scipy.integrate import quad
+import matplotlib.pyplot as plt
+
+n=2
+f = np.exp
+left, right = 0, 2
+XstarX = np.array([[quad(lambda x: x**(i+j),left,right)[0] for j in range(n+1)] for i in range(n+1)])
+Xstarf = np.array([quad(lambda x: x**i*f(x),left,right)[0] for i in range(n+1)])
+
+b = np.linalg.solve(XstarX,Xstarf)
+p = lambda x: sum([b[i]*x**i for i in range(n+1)])
+print(b)
+
+xvals = np.linspace(left,right,1000)
+plt.plot(xvals,f(xvals))
+plt.plot(xvals,p(xvals))
+plt.show()
+```
+
+* **Example:** [SageCell output for the code above](https://sagecell.sagemath.org/?z=eJx1kMGOwiAQhu9N-g5zhEqausdNfA-TxsNUoY4BygK67dsvFLPG1T0BM_98H0DGTT6CvRq3AAawrq6UnwyEI7mlJRvl6DFKoBL8uuKpru4Hg9HpKWoaWrfkXSY4HeuqruzuI5Fgl4itnBNVSxUFeBrPMVU7Aam_DxH9voTQe1xY32cD02iGE8L8CXPTMNpcuFjn13HedwdQk4cLkAWPdpTMbra8FOlPkd816knzaqFGsfmt5g2xroaC02RRj22Y9E2y8hxRdCnlUubhCFfD-qGnQ5Nt_5GdT3_OhtUx31CHX09weJTscT-x7bouT-jY5s9na1yosvLXjnvuhPP0zfgP5bKlXg==&lang=python&interacts=eJyLjgUAARUAuQ==){target=_blank}
+
+--> 
 
 - - -
 
@@ -1489,9 +1645,9 @@ Fri, Apr 12 | | **Midterm 2**
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 15 | [6.1][6.1] | Euler's method
-Wed, Apr 17 | | Existence & uniqueness of solutions
-Fri, Apr 19 | [6.1][6.1] | Euler's method error
+Mon, Apr 15 | | Review
+Wed, Apr 17 | | **Midterm 2**
+Fri, Apr 19 | [6.1][6.1] | Euler's method
 
 - - -
 
@@ -1499,9 +1655,9 @@ Fri, Apr 19 | [6.1][6.1] | Euler's method error
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 22 | [6.4][6.4] | Runge-Kutta methods
-Wed, Apr 24 | [6.4][6.4] | Runge-Kutta methods - con'd
-Fri, Apr 26 | [6.5][6.5] | Systems of ODEs
+Mon, Apr 22 | [6.1][6.1] | Euler's method error
+Wed, Apr 24 |            | Existence & uniqueness of solutions
+Fri, Apr 26 | [6.4][6.4] | Runge-Kutta methods
 Mon, Apr 29 | | Review
 
 
