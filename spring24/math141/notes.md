@@ -871,16 +871,17 @@ Today we introduced **L'Hospital's rule** which is a fast way to calculate limit
 
 1. $\displaystyle \lim_{x \rightarrow 0} \dfrac{\sin x}{x}$. (<https://youtu.be/PdSzruR5OeE>)
 
-2. $\lim_{x \rightarrow 0} \dfrac{(1+x)^n - 1}{x}$.
+2. $\lim_{x \rightarrow \infty} \dfrac{x^2+x}{2x^2}$. 
 
-3. $\lim_{x \rightarrow \infty} \dfrac{x^2+x}{2x^2}$. 
+3. $\lim_{x \rightarrow 0} \dfrac{(1+x)^n - 1}{x}$.
 
 4. $\displaystyle \lim_{x \rightarrow 5^+} \dfrac{x}{x-5}$. (You can't use L'Hospital's rule here!  Why not?)
 
-5. ${\displaystyle \lim_{x \rightarrow \pi^+}} \dfrac{\sin x}{1-\cos x}$. (Watch out, this one isn't L'Hospital's rule either!)
+<!--5. ${\displaystyle \lim_{x \rightarrow \pi^+}} \dfrac{\sin x}{1-\cos x}$. (Watch out, this one isn't L'Hospital's rule either!)-->
 
-6. $\displaystyle \lim_{x \rightarrow \infty} \dfrac{3x^{8}-4x^{7}+3x^{4}-5x}{2x^{7}+5x^{5}-3x+12}$ (Hint: The key to this one is to factor out the highest power of $x$ in the numerator & denominator). 
+5. $\displaystyle \lim_{x \rightarrow \infty} \dfrac{3x^{8}-4x^{7}+3x^{4}}{2x^{7}+5x^{5}-3x}$ (Hint: The key to this one is to factor out the highest power of $x$ in the numerator & denominator). 
 
+6. $\lim_{x \rightarrow \pi} \dfrac{\cos x + 1}{x - \pi}$.
 
 
 - - -

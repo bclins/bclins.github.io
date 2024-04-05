@@ -1490,13 +1490,13 @@ Today we talked some more about least squares regression.  We started with this 
 Then we defined the **orthogonal complement** of a subspace $V \subset \R^n$ to be the set of vectors in $\R^n$ that are orthogonal to every element in $V$, i.e.,
 $$V^\perp = \{w \in \R^n : w^T v = 0 \text{ for all } v \in \R^n\}.$$ 
 
-2. Use [Desmos-3d](https://www.desmos.com/3d) to graph $\on{null}(A^T)$ and $\on{null(A^T)}^\perp$ for the matrix $A$ above. 
+2. Use [Desmos-3d](https://www.desmos.com/3d) to graph $\on{null}(A^T)$ and $\on{null}(A^T)^{\perp}$ for the matrix $A$ above. 
 
 3. Find the least squares solution to $Ax = \begin{pmatrix} 4 \\ -2 \\ 4 \end{pmatrix}$. 
 
 Then we talked about how you can use least squares regression to find the best coefficients for any model, even nonlinear models, as long as the model is a linear function of the coefficients.  For example, if you wanted to model daily high temperatures in Farmville, VA as a function of the day of the year (from 1 to 365), you could use a function like this:
 
-$$\hat{y} = b_0 + b_1 + b_2 \cos\left( \dfrac{2\pi x}{365} \right) + b_3 \sin \left( \dfrac{2\pi x}{365} \right).$$
+$$\hat{y} = b_0 + b_1 x + b_2 \cos\left( \dfrac{2\pi x}{365} \right) + b_3 \sin \left( \dfrac{2\pi x}{365} \right).$$
 
 Here is the code we used to analyze this example. 
 
@@ -1521,15 +1521,11 @@ plt.plot(xs, [model(x) for x in xs])
 plt.show()
 ```
 
-You can get other models by applying a log-transform to a model.  For example, an exponential model 
-$$\hat{y} = C e^{b x}$$
+We didn't have time to do an example of this in class, but here is another nice idea. 
+For models that aren't linear functions of the parameters, you can often change them into a linear model by applying a log-transform.  For example, an exponential model 
+$$\hat{y} = C e^{r x}$$
 can be turned into a linear model after we take the (natural) logarithm of both sides:
-$$\log(\hat{y}) = \log C + b x.$$
-
-We applied this idea in the following workshop.
-
-* **Workshop:** [Least squares regression 2](Workshops/Regression2.pdf)
-
+$$\log(\hat{y}) = \log C + r x.$$
 
 - - -
 

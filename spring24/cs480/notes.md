@@ -1147,8 +1147,53 @@ $$S = 20.$$
 
 Next time we will tackle the more complicated question of what happens if you always pick the blue action.  It turns out we will be able to find a similar recursive formula to get the answer.  
 
+### Fri, Apr 5
 
+Today we continued the example we started on Wednesday.  This time we asked what is your theoretical average total reward if you start in any state and always choose the blue action.  Notice that if you always choose the blue action, then the transition matrix is 
+$$Q = \begin{pmatrix} 0.9 & 0.1 & 0 \\ 0.9 & 0 & 0.1 \\ 0 & 0 & 1 \end{pmatrix}.$$
 
+* Let $v_1$ be the expect value of the total reward if we start in the safe state.  
+* Let $v_2$ be the expected total reward starting in the risky state. 
+* Let $v_3$ be the expected total reward for the dead state (obviously $v_3 = 0$). 
+
+These three numbers are the entries the expected value vector, which we'll just denote by $v$.  We can set up a recursive formula for the value vector $v$ much like we did for the expected value $S$ last time.  It is a little more complicated, since it is a system of equations:
+
+\begin{align*}
+v_1 &= 1 + 0.9 v_1 + 0.1 v_2 \\
+v_2 &= 2 + 0.9 v_1 + 0.1 v_3 \\
+v_3 &= 0.                    \\
+\end{align*}
+
+This makes sense because the expected value for state 1 (the safe state) is 1 (for the reward you earn this round) plus a 90% chance that you will end back in state 1 and get $v_1$ again plus a 10% chance that you will start the next round in state 2 (the risky state) where you have an expected value of $v_2$.  
+
+We can re-write this system of equations using the transition matrix $Q$ and a reward vector $R = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$. Then the recursive formula is:
+
+$$ v = R + Qv.$$
+
+You can solve this equation for $v$ using linear algebra (row reduction), but there is a better way.  The key idea is that $R + Qv$ is a function of $v$ which we can call $F(v)$. We are looking for a fixed point of $F$.  We can use a technique called **fixed point iteration** or **value iteration.** 
+
+<div class="Theorem">
+**Value Iteration Algorithm.** Input a transition matrix $Q$, a reward vector $R$, and an accuracy level $a$.
+
+1. Let $v$ be the all zero vector. 
+2. Compute $F(v)$.  
+3. If the distance from $v$ to $F(v)$ is less than $a$, then return $F(v)$.
+4. Otherwise replace $v$ by $F(v)$ and repeat steps 2 through 4. 
+</div>
+
+The following theorem tells us when this algorithm will converge for a Markov chain with rewards.
+
+<div class="Theorem">
+**Theorem.** If we have a Markov chain with transition matrix $Q$ and reward vector $R$ such that $R_i = 0$ in every state $i$ that is in a final class of the Markov chain, then the value iteration algorithm will converge to the value vector $v$.  
+</div>
+
+We implemented the value iteration algorithm in Python and used it to find the value vector for the blue action in the MDP from last time.  Then we also did the following example.  
+
+2. For the Markov chain below, how long on average does it take to get from state 1 to state 6?  
+
+<center>
+<img src="MarkovChain.png" width = 400></img>
+</center>
 
 - - -
 
