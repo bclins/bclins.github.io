@@ -1205,6 +1205,12 @@ Mon, Apr 8 | Markov chains with rewards - con'd
 Wed, Apr 10 | Review
 Fri, Apr 12 | **Midterm 2**
 
+### Mon, Apr 8
+
+Today we did this workshop in class:
+
+* **Workshop:** [Markov chains with rewards](Workshops/MarkovChainsRewards.pdf)
+
 - - -
 
 ### Week 13 Notes

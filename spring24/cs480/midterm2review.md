@@ -32,7 +32,7 @@ You should understand the basic idea of how image convolution with a kernel work
 
 $$\begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 1 & 1 & 1 & 1 & 1 \\ 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \end{pmatrix},$$
 
-then you should be able to compute the convolution with a simple kernel $K = \tfrac{1}{9} \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$.  In this example, just compute the convolution for pixels in rows 2 through 4 and columns 2 through 4 (so don't worry about the pixels on the outer edge of the image. 
+then you should be able to compute the convolution with a simple kernel $K = \tfrac{1}{9} \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$.  For the pixels on the edge of the original image matrix, you can assume that the pixels just off the edge are all zeros, so for example the top left pixel is 0 and so are all of its neighbors (above, below, left, and right). 
 
 I might also ask you to predict what a convolution matrix does, for example $K = \begin{pmatrix} -1 & -1 & -1 \\ -1 & 8 & -1 \\ -1 & -1 & -1 \end{pmatrix}$ will calculate how different the center pixel is from its immediate neighbors, so it will tend to detect the edges of an image.  
 
@@ -42,7 +42,18 @@ I could ask you to do one step of the k-means clustering algorithm with some sim
 
 ### Principal Component Analysis 
 
-I won't ask you to calculate the principal components of a large matrix, but you should understand what principal components are and why PCA is useful.  
+I won't ask you to calculate the principal components of a large matrix, but you should understand what principal components are and why PCA is useful.  You should also know what the **covariance matrix** is: for a data matrix $X$ with each row representing one data point, the covariance matrix is
+$$Q = \dfrac{1}{n-1} (X - \bar{x})^T (X-\bar{x})$$
+where $\bar{x}$ is a matrix with every entry in column $j$ equal to the average of the entries in column $j$ of $X$.  
+
+Then the principal components are the orthogonal columns of a matrix $W$ such that 
+$$Q = W D W^T$$
+where $D$ is a diagonal matrix.  If $W_k$ is the matrix with the $k$ most important columns of $W$, then you can compress the data in the original data matrix $X$ by computing
+$$X_k = X W_k.$$
+Then to recover the original data (approximately), 
+$$X \approx X_k W_k^T.$$
+You do not need to memorize any of these formulas, but you should be able to calculate simple examples.  For example, you could be asked to calculate the covariance matrix for something like this data matrix:
+$$X = \begin{pmatrix} 1 & 5 \\ 0 & 3 \\ -1 & 4 \end{pmatrix}.$$
 
 
 ### k-Nearest Neighbors Algorithm
