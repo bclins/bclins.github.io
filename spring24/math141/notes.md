@@ -890,10 +890,25 @@ Today we introduced **L'Hospital's rule** which is a fast way to calculate limit
  
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 8 | [4.10][4.10] | Antiderivatives - con'd
+Mon, Apr 8 | [4.10][4.10] | Antiderivatives
 Wed, Apr 10 | [4.10][4.10] | Antiderivatives - con'd
 Thu, Apr 11 | | Review
 Fri, Apr 12 | [5.1][5.1] | Approximating area
+
+### Mon, Apr 8
+
+Today we introduced antiderivatives also known as indefinite integrals.  To find the antiderivative of a function $f(x)$, you just need to find a function $F(x)$ that has $f(x)$ as its derivative.  We did several examples. 
+
+1. $\int 2x \, dx$ (<https://youtu.be/MMv-027KEqU>)
+
+2. $\int 9x^{11} + 4x^6 - 9x^2 - 3 \, dx$ (<https://youtu.be/RMtjkFUjem4>)
+
+3. $\int \sqrt{x} \, dx.$
+
+4. $\int - \dfrac{7}{x^3} \, dx$ (<https://youtu.be/1ZtwjxzbU68?t=54>)
+
+5. Find the antiderivative of $f(\theta) = 2 \sin \theta - \sec^2 \theta$. (<https://youtu.be/EpH4rN93ftc>)
+
 
 - - -
 

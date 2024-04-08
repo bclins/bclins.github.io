@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{color,soul}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 141 - Homework 12 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\textit{Calculate the following limits. You can use L'Hospital's rule if it is appropriate.}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\ds \lim_{x \rightarrow 4} \frac{x^2 - 16}{x-4}$
+\item $\ds \lim_{x \rightarrow a} \frac{x-a}{x^n - a^n}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\noindent
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \lim_{x \rightarrow 4} \frac{x^2 - 16}{x+4}$
+\item $\ds \lim_{x \rightarrow \pi} \frac{\cos(x/2)}{x-\pi}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\noindent
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \lim_{x \rightarrow \infty} \frac{x^2}{5x + \sqrt{x}}$
+\item $\ds \lim_{h \rightarrow \infty} \frac{6x^5 - 3x^4 + 7x}{5x^5 + 16x^3 - 9 x^2}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\noindent
+\textit{Calculate the antiderivates of the following functions.}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $f(x) = 4x^3 + 3x^2$
+\item $f(x) = \sec^2 x + \cos x$
+\item $f(x) = 10x^4 - 5$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $f(x) = \sqrt{x} + 1$
+\item $f(x) = \dfrac{1}{x^2}$
+\item $f(x) = \dfrac{5}{\sqrt{x}}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\newpage
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $f(x) = 0$
+\item $f(x) = \dfrac{x^5 + x^3}{x^2}$
+\item $f(x) = x^{-1/3} + x^{1/3}$.
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Find a function $f(x)$ such that $f'(x) = 4x$ and $f(1) = 5$. 
+\vfill
+\item Solve the initial value problem $\dfrac{dy}{dx} = \cos x + \sin x$ with $y(0) = 3$. 
+\vfill
+
+\item Find the horizontal asymptotes of $f(x) = \dfrac{4x}{\sqrt{x^2 + 3}}$ by calculating the limits as $x$ approaches $+\infty$ and $-\infty$, then sketch a graph of the function.  Hint: This function is always increasing because its derivative $f'(x) = 12(x^2 + 3)^{-3/2}$ is always positive.  
+\vfill
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{document}

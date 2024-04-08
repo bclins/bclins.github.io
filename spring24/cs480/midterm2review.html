@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Midterm 2 Review</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../mockup.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <style>
+  :root {
+    --header-color: #622; 
+    --link-color: #A32; 
+  }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Midterm 2 Review</h1>
+</header>
+<p>Midterm 2 will be this Friday, April 12. The exam will focus on these
+topics.</p>
+<h3 id="neural-networks">Neural Networks</h3>
+<p>Make sure you understand the basics of how layers of a neural network
+are defined by combining an affine linear function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>↦</mo><mi>W</mi><mi>v</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">v \mapsto Wv + b</annotation></semantics></math>
+(where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+is a weight matrix and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+is a bias vector) and an activation function like
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ReLU</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{ReLU}(x) = \max(x, 0)</annotation></semantics></math>
+or the sigmoid function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sigma(x) = \dfrac{1}{1+e^{-x}}</annotation></semantics></math>.
+You should know how to draw a computation graph and how to do the
+backpropagation algorithm, and understand what backpropagation is used
+for. There will be questions on the example similar to the questions on
+this workshop:</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/Backpropagation.pdf">Backpropagation</a></li>
+</ul>
+<h3 id="image-convolution">Image Convolution</h3>
+<p>You should understand the basic idea of how image convolution with a
+kernel works. If I give you an image matrix like</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix},</annotation></semantics></math></p>
+<p>then you should be able to compute the convolution with a simple
+kernel
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>9</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K = \tfrac{1}{9} \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{pmatrix}</annotation></semantics></math>.
+In this example, just compute the convolution for pixels in rows 2
+through 4 and columns 2 through 4 (so don’t worry about the pixels on
+the outer edge of the image.</p>
+<p>I might also ask you to predict what a convolution matrix does, for
+example
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K = \begin{pmatrix} -1 &amp; -1 &amp; -1 \\ -1 &amp; 8 &amp; -1 \\ -1 &amp; -1 &amp; -1 \end{pmatrix}</annotation></semantics></math>
+will calculate how different the center pixel is from its immediate
+neighbors, so it will tend to detect the edges of an image.</p>
+<h3 id="k-means-clustering">K-Means Clustering</h3>
+<p>I could ask you to do one step of the k-means clustering algorithm
+with some simple data. For example, if I had 5 points in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>
+and I wanted to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k = 2</annotation></semantics></math>
+clusters. Suppose that the five points are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(-1,-1), (-1,2), (2,-3), (3,1), (4,-1)</annotation></semantics></math>
+and I start with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(3,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(4,-1)</annotation></semantics></math>
+as my representative points. What are the clusters and representative
+points after 1 iteration of the k-means algorithm?</p>
+<h3 id="principal-component-analysis">Principal Component Analysis</h3>
+<p>I won’t ask you to calculate the principal components of a large
+matrix, but you should understand what principal components are and why
+PCA is useful.</p>
+<h3 id="k-nearest-neighbors-algorithm">k-Nearest Neighbors
+Algorithm</h3>
+<p>You should know this algorithm. I might ask you to apply this
+algorithm with pencil and paper on a simple example. For example, using
+the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mo>ℓ</mo><mn>1</mn></msub><annotation encoding="application/x-tex">\ell_1</annotation></semantics></math>-norm
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>v</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>v</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>v</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">\|v\|_1 = |v_1| + |v_2| + \ldots + |v_n|</annotation></semantics></math>)
+to measure distance, what are the 3 closest neighbors of the point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>5</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,5)</annotation></semantics></math>
+in the set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{ (-1,-1), (-1,2), (2,-3), (3,1), (4,-1) \}</annotation></semantics></math>?</p>
+<h3 id="markov-chains-with-rewards">Markov chains with rewards</h3>
+<p>Given a Markov chain with transition matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+and reward vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
+you should know that the expected value vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+is the solution of the recursive formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>Q</mi><mi>v</mi></mrow><annotation encoding="application/x-tex"> v = R + Qv</annotation></semantics></math>
+and that you can use the value iteration algorithm to find the solution.
+You should also understand that expected value is the theoretical
+average of the total reward for each possible starting state.</p>
+<h3 id="other">Other</h3>
+<p>Make sure you know and can explain the following terminology &amp;
+concepts.</p>
+<ul>
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+<li>Dimension reduction</li>
+<li>Classification</li>
+<li>Curse of dimension</li>
+</ul>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</body>
+</html>

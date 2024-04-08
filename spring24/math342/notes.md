@@ -1537,7 +1537,6 @@ Mon, Apr 8 | &nbsp; | Continuous least squares
 Wed, Apr 10 | | [Orthogonal functions](https://en.wikipedia.org/wiki/Orthogonal_functions), [Gram-Schmidt](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process) 
 Fri, Apr 12 | | Fourier series
 
-<!--
 ### Mon, Apr 8
 
 Today we introduced the idea of **continuous least squares regression**. Unlike the discrete case where we only want the smallest sum of squared residuals at a finite number of points, here the goal is to find a polynomial $p(x)$ that minimizes the integral of the squared differences:
@@ -1577,7 +1576,7 @@ The following theorem says that the orthogonal complement of the range of a line
 
 <div class="Theorem">
 **Theorem.** Let $V, W$ be inner-product spaces. If $T:V \rightarrow W$ is a linear transformation, then 
-$$\on{range}(T)^\perp = \on{null}(T^*).$$ 
+$$\on{range}(T)^\perp = \on{null}(T^*).$$  <!--*-->
 </div>
 
 We want to find the best fit polynomial of degree n. 
@@ -1633,7 +1632,6 @@ plt.show()
 
 * **Example:** [SageCell output for the code above](https://sagecell.sagemath.org/?z=eJx1kMGOwiAQhu9N-g5zhEqausdNfA-TxsNUoY4BygK67dsvFLPG1T0BM_98H0DGTT6CvRq3AAawrq6UnwyEI7mlJRvl6DFKoBL8uuKpru4Hg9HpKWoaWrfkXSY4HeuqruzuI5Fgl4itnBNVSxUFeBrPMVU7Aam_DxH9voTQe1xY32cD02iGE8L8CXPTMNpcuFjn13HedwdQk4cLkAWPdpTMbra8FOlPkd816knzaqFGsfmt5g2xroaC02RRj22Y9E2y8hxRdCnlUubhCFfD-qGnQ5Nt_5GdT3_OhtUx31CHX09weJTscT-x7bouT-jY5s9na1yosvLXjnvuhPP0zfgP5bKlXg==&lang=python&interacts=eJyLjgUAARUAuQ==){target=_blank}
 
---> 
 
 - - -
 
