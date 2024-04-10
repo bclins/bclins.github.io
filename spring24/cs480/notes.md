@@ -1211,6 +1211,22 @@ Today we did this workshop in class:
 
 * **Workshop:** [Markov chains with rewards](Workshops/MarkovChainsRewards.pdf)
 
+Be sure to also look at the [study guide](midterm2review.html) for the midterm on Friday. 
+
+### Wed, Apr 10
+
+Today we did an in class review for Friday's midterm.  We looked at some of the questions from the study guide.  We also talked about neural networks and did the following examples. 
+
+1. Draw a computation graph for the function $f(x,y,z) = 5xy + 4xz + 3yz$. 
+
+2. Use the backpropagation algorithm to find the gradient of $f(x,y,z)$ at $(-1,1,2)$.  
+
+3. Suppose a neural network inputs 40-by-40 pixel grayscale images, has two hidden layers with 100 nodes each, and has an output layer with 10 nodes.  How many real number parameters does this neural network have?  
+
+4. Why does each layer of a neural network combine an affine linear map $v \mapsto Wv + b$ with a nonlinear activation function?  
+
+
+
 - - -
 
 ### Week 13 Notes

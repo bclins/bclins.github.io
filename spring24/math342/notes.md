@@ -1624,13 +1624,55 @@ b = np.linalg.solve(XstarX,Xstarf)
 p = lambda x: sum([b[i]*x**i for i in range(n+1)])
 print(b)
 
-xvals = np.linspace(left,right,1000)
+xvals = np.linspace(left,right,1000) #generates 1000 equally spaced points b/w left & right
 plt.plot(xvals,f(xvals))
 plt.plot(xvals,p(xvals))
 plt.show()
 ```
 
 * **Example:** [SageCell output for the code above](https://sagecell.sagemath.org/?z=eJx1kMGOwiAQhu9N-g5zhEqausdNfA-TxsNUoY4BygK67dsvFLPG1T0BM_98H0DGTT6CvRq3AAawrq6UnwyEI7mlJRvl6DFKoBL8uuKpru4Hg9HpKWoaWrfkXSY4HeuqruzuI5Fgl4itnBNVSxUFeBrPMVU7Aam_DxH9voTQe1xY32cD02iGE8L8CXPTMNpcuFjn13HedwdQk4cLkAWPdpTMbra8FOlPkd816knzaqFGsfmt5g2xroaC02RRj22Y9E2y8hxRdCnlUubhCFfD-qGnQ5Nt_5GdT3_OhtUx31CHX09weJTscT-x7bouT-jY5s9na1yosvLXjnvuhPP0zfgP5bKlXg==&lang=python&interacts=eJyLjgUAARUAuQ==){target=_blank}
+
+<!--_-->
+
+### Wed, Apr 10
+
+Last time we derived the normal equations for continuous least squares.  We came up with the following result using the standard basis $\phi_i(x) = x^i$, but it would work for any linearly independent family of functions $\phi_0(x), \phi_1(x), \ldots, \phi_n(x)$ in $L^2[a,b]$. 
+
+<div class="Theorem">
+**Theorem (Continuous Least Squares).**
+For $f \in L^2[a,b]$, the coefficients of the continuous least squares polynomial approximation $p(x) = b_0 \phi_0(x) + b_1 \phi_1(x) + \ldots + b_n \phi_n(x)$ can be found by solving the normal equation
+$$X^*X b = X^* f$$
+where $X^*X$ is an $(n+1)$-by-$(n+1)$ matrix with entries
+$$(X^*X)_{ij} = \inner{\phi_i,\phi_j} = \int_a^b \phi_i(x) \phi_j(x) \, dx,$$
+and $X^*f$ is a vector in $\R^{n+1}$ with entries
+$$(X^*f)_i = \inner{\phi_i,f} = \int_a^b \phi_i(x) f(x) \, dx.$$
+</div> <!--_-->
+
+The functions $\phi_i$ can be any basis of polynomials (i.e., the standard basis, the Lagrange basis, the Newton basis, etc.)  But the nicest basis for this formula would be if the polynomials were all orthogonal to each other. In linear algebra there is an algorithm to take a set of vectors that aren't all orthogonal, and create a new set of vectors with the same span that are all orthogonal to each other.  
+
+<div class="Theorem"> 
+**Gram-Schmidt Algorithm.** Given a set of linearly independent vectors $v_1, \ldots, v_n$ in an inner product space $V$, this will find a set of pairwise orthogonal vectors $w_1, \ldots, w_n$ that have the same span as the original vectors.  
+
+1. Let $w_1 = v_1$. 
+
+2. For each $k = 2,\ldots,n$, let 
+$$w_{k+1} = v_{k+1} - \sum_{i = 1}^k \frac{\inner{w_i, v_{k+1}}}{\inner{w_i,w_i}} w_i.$$
+</div>
+
+1. Apply the Gram-Schmidt algorithm to the functions $1$, $x$, and $x^2$, on $L^2[-1,1]$.  These are the first three Legendre polynomials.  The [Legendre polynomials](https://en.wikipedia.org/wiki/Legendre_polynomials) are the orthogonal basis of polynomials obtained by applying the Gram-Schmidt algorithm to the standard basis polynomials (in the inner product space $L^2[-1,1]).$ 
+
+If we have an orthogonal basis of functions $\phi_1(x), \ldots, \phi_n(x)$, such as the Legendre polynomials, then the matrix $X^*X$ from the normal equation has zero entries except on the main diagonal:
+$$X^* X = \begin{bmatrix} \|\phi_0\|^2 &  &  &  \\  & \|\phi_1\|^2 &  &  \\  &  & \ddots &  \\  &  &  & \|\phi_n\|^2 \end{bmatrix}.$$
+
+Therefore the solution of the normal equations is just 
+$$b_i = \frac{\int_{a}^b \phi_i(x) f(x) \, dx}{\|\phi_i\|^2} \text{ for each } 0 \le i \le n.$$
+
+We used Desmos to compute the 2nd degree continuous least squares regression polynomial on the interval $[-1,1]$ using the Legendre basis polynomials for the following functions.
+
+1. $f(x) = \cos(\pi x)$.
+
+2. $f(x) = e^x$.
+
 
 
 - - -

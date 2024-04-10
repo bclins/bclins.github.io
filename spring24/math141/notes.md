@@ -897,17 +897,74 @@ Fri, Apr 12 | [5.1][5.1] | Approximating area
 
 ### Mon, Apr 8
 
-Today we introduced antiderivatives also known as indefinite integrals.  To find the antiderivative of a function $f(x)$, you just need to find a function $F(x)$ that has $f(x)$ as its derivative.  We did several examples. 
+Today we introduced antiderivatives also known as indefinite integrals.  To find the antiderivative of a function $f(x)$, you just need to find a function $F(x)$ that has $f(x)$ as its derivative.  We started with this example:
 
 1. $\int 2x \, dx$ (<https://youtu.be/MMv-027KEqU>)
 
-2. $\int 9x^{11} + 4x^6 - 9x^2 - 3 \, dx$ (<https://youtu.be/RMtjkFUjem4>)
+We introduced these rules for integrals:
+
+<div class="Theorem">
+#### Integration Rules
+
+1. **Power Rule for Integrals.** $\int x^n \, dx = \tfrac{1}{n+1} x^{n+1}$. 
+
+2. **Addition Rule.** $\int f(x) + g(x)  \, dx = \int f(x) \, dx + \int g(x) \, dx$.
+
+3. **Constant Multiple Rule.** $\int cf(x)  \, dx = c \int f(x) \, dx$. 
+
+**Important:** Notice that there is no quotient, product, or chain rule!
+</div>
+
+We applied those rules to these examples:
+
+2. $\int x^5 \, dx$
 
 3. $\int \sqrt{x} \, dx.$
 
-4. $\int - \dfrac{7}{x^3} \, dx$ (<https://youtu.be/1ZtwjxzbU68?t=54>)
+4. $\int 9x^{11} + 4x^6 - 9x^2 - 3 \, dx$ (<https://youtu.be/RMtjkFUjem4>)
 
-5. Find the antiderivative of $f(\theta) = 2 \sin \theta - \sec^2 \theta$. (<https://youtu.be/EpH4rN93ftc>)
+5. $\int - \dfrac{7}{x^3} \, dx$ (<https://youtu.be/1ZtwjxzbU68?t=54>)
+
+6. $\int \dfrac{\sqrt{x} - 5x}{x^3} \, dx$
+
+We also looked at antiderivatives of trig functions 
+
+7. $\int \cos x \, dx$
+
+8. $\int \sec x \tan x \, dx$
+
+9. Find the antiderivative of $f(\theta) = 2 \sin \theta - \sec^2 \theta$. (<https://youtu.be/EpH4rN93ftc>)
+
+We finished by discussing how you can use antiderivatives to find the velocity and position of a falling object if you know its acceleration by integrating:
+
+10. Find the velocity $v(t)$ of a falling object by integrating $\int -9.8 \, dt$.
+
+11. Find the position $s(t)$ by integrating $\int -9.8 t + v_0 \, dt$. 
+
+### Wed, Apr 10
+
+Today we looked at more examples of antiderivatives.  We started with a theorem. 
+
+<div class="Theorem">
+**Theorem.** If $F(x)$ and $G(x)$ are both antiderivatives of a function $f(x)$, then there is a constant $C$ such that $G(x) = F(x) + C$.  
+</div>
+
+We proved this theorem by observing that the function $\on{gap}(x) = G(x) - F(x)$ has derivative equal to zero everywhere.  Therefore there cannot be two different points $a, b$ such that $\on{gap}(a)$ is different than $\on{gap}(b)$, otherwise, the MVT would imply that $\on{gap}'$ would be non-zero somewhere on the interval from $[a,b]$.  Therefore the function $\on{gap}(x)$ is constant. 
+
+After proving this theorem, we talked about **initial value problems**.  This is when you are given the derivative of a function and the value of the function at one point and are able to use integration to find the exact value of the function. We did the following examples. 
+
+1. Solve $\dfrac{dy}{dx} = 6x - 3$ with initial condition $y(0) = 4$. (<https://youtu.be/kwGukY_2qWQ>)
+
+2. Solve $\dfrac{dy}{dx} = -4 \cos(x-3)$ with initial condition $y(3) = -5$. (<https://youtu.be/gw3jd921Zzc>)
+
+3. Solve $\dfrac{ds}{dt} = \cos t + \sin t$ given that $s(\pi) = 1$. (<https://youtu.be/tXR__A_jkxE>)
+
+4. Find $f(x)$ if $f'(x) = x^2$ and the graph of $f(x)$ passes through $(3,14)$. 
+
+5. Suppose that $f''(x) = 20x^3 + 12x^2 + 4$, $f(0) = 8$ and $f(1) = 5$.  (<https://youtu.be/ETixs3tYAXE>)
+
+6. The acceleration of gravity is $-32$ feet per second squared.  If a rock is thrown upwards from a platform located 20 feet above the ground with initial velocity 30 feet per second, find formulas for the height and velocity of the rock as functions of time.  
+
 
 
 - - -
