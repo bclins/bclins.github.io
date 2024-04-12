@@ -967,12 +967,39 @@ After proving this theorem, we talked about **initial value problems**.  This is
 
 ### Fri, Apr 12
 
-Today we introduced **Riemann sums** as a way to find the area under a curve.  
+Today we introduced **Riemann sums** as a way to approximate the area under a curve. 
+We started with the curve $y = 2x-x^2$ as an example.  
 
-1. $\sum_{n = 1}^5 n^2$. (<https://youtu.be/xavgv1m9feE>)
+<center>
+<iframe src="https://www.desmos.com/calculator/7g8ywsfeqx?embed" width="600" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
 
-2. $\sum_{n = 1}^{100} 4n+5$. (<https://youtu.be/xavgv1m9feE?t=298>)
+The formula for finding a Riemann sum approximation (using right endpoints) is
 
+<div class="Theorem">
+**Riemann Sum.** For any continuous function $f$ on an interval $[a,b]$, the area under $f$ is approximately
+$$\text{Area} \approx \sum_{n = 1}^N f(x_n) \Delta x$$
+where $N$ is the number of rectangles, 
+$$\Delta = \tfrac{b-a}{N}, \text{ and } x_n = a + n \Delta x.$$
+</div>
+
+1. Use Desmos to approximate the area under $f(x) = 2x - x^2$ on the interval $[0,2]$ with $N = 100$ rectangles. (<https://www.desmos.com/calculator/fvgrzhl5sl>)
+
+We also reviewed **summation notation**.  If you aren't familiar, here is a good explanation:
+
+2. $\sum_{n=1}^3 2n+3$. (<https://youtu.be/lQZY4pD8X6I>)
+
+We did the following in class:
+
+3. $\sum_{i = 1}^5 i$.
+
+4. $\sum_{i = 1}^{100} i$. (We derived the formula $\sum_{i = 1}^N i = \tfrac{1}{2}N(N+1).)$
+
+5. $\sum_{n = 1}^{100} 4n+5$. (<https://youtu.be/xavgv1m9feE?t=298>)
+
+Here is another example we didn't do:
+
+6. $\sum_{n = 1}^5 n^2$. (<https://youtu.be/xavgv1m9feE>)
 
 
 - - -

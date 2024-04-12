@@ -16,6 +16,7 @@ header-includes: |
 \newcommand{\ds}{\displaystyle}
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\inner}[1]{\langle {#1} \rangle}
 
 ## Math 342 - Spring 2024
@@ -1675,9 +1676,24 @@ We used Desmos to compute the 2nd degree continuous least squares regression pol
 
 ### Fri, Apr 12
 
-Today we talked about **Fourier series**.  We did this workshop. 
+Today we talked about **Fourier series**. The Legendre polynomials on the interval $[-1,1]$ aren't the only example of an orthogonal set of functions.  Probably the most important example of an orthogonal set of functions is the set 
+$$\{\sin(x), \sin(2x), \sin(3x), \ldots \} \cup \{1,\cos(x), \cos(2x), \cos(3x),\ldots \}$$
+on the interval $[-\pi,\pi]$.  Any function in $L^2[-\pi,\pi]$ can be approximated by using continuous least squares with these trig functions. Since there are an infinite number of functions in this orthogonal set, we usually stop the approximation when we reach a high enough frequency $\sin(nx)$ and $\cos(nx)$.  
+
+We started by using the trig product formulas
+\begin{align*}
+\cos(\alpha) \cos(\beta) &= \tfrac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha - \beta)] \\
+\cos(\alpha) \sin(\beta) &= \tfrac{1}{2}[\sin(\alpha+\beta)+\sin(\beta - \alpha)] \\
+\sin(\alpha) \cos(\beta) &= \tfrac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha - \beta)] \\
+\sin(\alpha) \sin(\beta) &= \tfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha + \beta)] 
+\end{align*}
+to find the norms of $\|\cos(nx)\|$ and $\|sin(nx)\|$ for any $n \in \N$. We also proved that $\cos(mx)$ is orthogonal to $\cos(nx)$ when $m \ne n$. 
+
+Then we did this workshop. 
 
 * **Workshop:** [Fourier series](Workshops/FourierSeries.pdf)
+
+
 
 - - -
 

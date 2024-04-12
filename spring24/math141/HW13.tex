@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 141 - Homework 13 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\textit{Compute the following sums.}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\ds \sum_{n = 4}^7 (2n + 1)$
+\item $\ds \sum_{i = 1}^{80} (3i - 7)$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \sum_{k = -3}^{3} k^2$
+\item $\ds \sum_{n=1}^{50} (an+b)$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Suppose that $\ds \int_2^5 f(x) \, dx = 4$ and $\ds \int_2^3 f(x) \, dx = -1$.  What is $\ds \int_3^5 f(x) \, dx$?
+\vfill
+\item Suppose that $\ds \int_2^5 f(x) \, dx = 4$ and $\ds \int_2^5 g(x) \, dx = -2$.  What is $\ds \int_2^5 4f(x) + g(x) \, dx$?
+\vfill
+
+\item Estimate the area under the curve $f(x) = \dfrac{2}{1+x^2}$ from $x = -1$ to $x = +1$ using a Riemann sum with $N=100$ rectangles. (Use Desmos: \url{https://www.desmos.com/calculator})
+\vfill
+
+%\item Estimate the area under the curve $\ds f(x) = \cos \left( \dfrac{x^2}{2} \right)$ from $x = -\sqrt{\pi}$ to $x = \sqrt{\pi}$ with $50$ rectangles.
+%\vfill
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{document}
