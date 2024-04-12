@@ -1,0 +1,176 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{colortbl}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{tikz,pgfplots}
+\usepgfplotslibrary{statistics}
+\usepackage{color,comment,soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\inner}[1]{\langle {#1} \rangle}
+
+
+\begin{document}
+\graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
+
+\subsection*{Numerical Analysis - Math 342 \hfill Midterm 2 Review}
+
+\textit{The following problems are similar to ones you might see on the midterm exam.}
+
+\begin{questions}
+
+\question Use the method of divided differences to find the Newton basis interpolating polynomial for the points $(0,0)$, $(1,1)$, and $(4,2)$.   
+
+\begin{solution}
+The table of divided differences is 
+
+\begin{tabular}{c|ccc}
+x & y & DD1 & DD2 \\ \hline
+0 & 0 & ~  & ~ \\
+~ & ~ & 1  & ~ \\
+1 & 1 & ~  & $-\tfrac{1}{6}$ \\
+~ & ~ & $\tfrac{1}{3}$  & ~ \\
+4 & 2 & ~  & ~ \\
+\end{tabular}
+
+\noindent
+So the interpolating polynomial is $p_2(x) = x - \tfrac{1}{6}x(x-1)$ in the Newton basis.
+\end{solution}
+\vfill
+
+\question What is the interpolating polynomial above written in terms of the Lagrange basis polynomials? 
+\begin{solution}
+The Lagrange basis polynomials are
+$$L_0(x) = \tfrac{1}{4}(x-1)(x-4) ~~~~ L_1(x) = -\tfrac{1}{3} x(x-4) ~~~~ L_2(x) = \tfrac{1}{12} x(x-1)$$
+so the interpolating polynomial is $p_2(x) = -\tfrac{1}{3} x(x-4) + \tfrac{1}{6}x(x-1)$ in the Lagrange basis.
+\end{solution}
+\vfill
+
+\question Write down the Vandermonde matrix system for these same points $(0,0)$, $(1,1)$, $(4,2)$ to find the coefficients of the interpolating polynomial in the standard basis. You don't need to solve the Vandermonde matrix system.
+\begin{solution}
+$$\begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 1 \\ 1 & 4 & 16\end{bmatrix} \begin{bmatrix} c_0 \\ c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \\ 2 \end{bmatrix}.$$
+\end{solution}
+\vfill
+
+\newpage
+
+
+\question The second degree interpolating polynomial for the function $f(x) = 1/x$ on the interval $[1,3]$ with three equally spaced nodes ($x_0 = 1$, $x_1=2$, $x_2 =3$) is 
+$$p_2(x) = \tfrac{1}{6}x^2 - x + \tfrac{11}{6}.$$
+The error formula for interpolating polynomials with equally spaced nodes is 
+$$|f(x)-p_n(x)| \le \frac{h^{n+1}}{4(n+1)} \max_{\xi \in [a,b]} |f^{(n+1)}(\xi)|$$ 
+where $h = \tfrac{b-a}{n}$.  Use this formula to find an upper bound on the error in using the polynomial $p_2$ to approximate $f(x) = 1/x$ on the interval $[1,3]$.  
+\begin{solution}
+In this example $n = 2$ and $h = 1$.  The third derivative of $f$ is $f^{(3)}(x) = -6 x^{-4}$. The largest possible absolute value for this function would occur at the left endpoint when $x = 1$, so the error is bounded by:
+$$ \frac{h^{n+1}}{4(n+1)} \max_{\xi \in [a,b]} |f^{(n+1)}(\xi)| \le \frac{1}{12} 6(1^{-4}) = \frac{1}{2}.$$ 
+\end{solution}
+\vfill
+
+
+
+\question The formula for Simpson's method (not composite) on an interval is 
+$$\int_a^b f(x) \, dx = \frac{h}{3} \left(f(a) + 4 f(m) + f(b) \right) - \frac{h^5}{90} f^{(4)}(\xi)$$
+where $h = \frac{b-a}{2}$ and $m = \frac{a+b}{2}$ and $\xi$ is some value between $a$ and $b$. Use this rule to approximate area under the function $y = e^x$ on the interval $[0,2]$ and estimate the error in the approximation.
+
+\begin{solution}
+In this example, $a=0$, $b=2$, $m=1$ and $h=1$.  So the approximate area is $\frac{1}{3}(1+4e+e^2) = 6.421$.  The error in this approximation is $- \frac{h^5}{90} f^{(4)}(\xi) = -\frac{1}{90}e^\xi$.  Since $e^\xi$ is at most $e^2$ on the interval, the absolute value of the error is at most $\frac{e^2}{90} = 0.0821$.  
+\end{solution}
+\vfill
+
+\newpage
+
+\question To estimate the area under a curve using Gaussian quadrature you need to convert the function to an equivalent integral on the interval $[-1,1]$.  Then you can use Gaussian quadrature with any number of nodes.  The formula for Gaussian quadrature with $n=3$ nodes is
+$$\int_{-1}^1 f(x) \, dx \approx \tfrac{5}{9}f\left(-\sqrt{\tfrac{3}{5}}\right) + \tfrac{8}{9} f(0) + \tfrac{5}{9} f\left(\sqrt{\tfrac{3}{5}}\right).$$
+Find an integral on $[-1,1]$ that is equal to $\int_0^2 e^x \,dx$ and then use Gaussian quadrature to estimate the value of the integral.  
+
+\begin{solution}
+Since both $[0,2]$ and $[-1,1]$ have the same length, you just need to translate the function to the left by one.  You can do this by replacing the function $f(x) = e^x$ with a function $g(x) = e^{x+1}$.  Then 
+$$\int_0^2 f(x) \, dx = \int_{-1}^1 g(x) \, dx.$$
+Using the function $g$ in the formula for Gaussian quadrature I got an approximate area of 
+\begin{align*}
+\tfrac{5}{9}g\left(-\sqrt{\tfrac{3}{5}}\right) + \tfrac{8}{9} g(0) + \tfrac{5}{9} g\left(\sqrt{\tfrac{3}{5}}\right) &= \tfrac{5}{9}e^{1 - \sqrt{3/5}}+\tfrac{8}{9} e + \tfrac{5}{9} e^{1+\sqrt{3/5}} = 6.389.
+\end{align*}
+
+\end{solution}
+\vfill
+
+
+%\question To approximate the improper integral $\ds \int_1^\infty \frac{\sin^2(x)}{x^2} \, dx$, we could use  $\ds \int_1^N \frac{\sin^2(x)}{x^2} \, dx$ for some large $N$. Find a value of $N$ that is large enough so that the absolute error in the approximation is less than $10^{-12}$. Make sure to show why your $N$ works.  
+%\begin{solution}
+%The error in the approximation is the remaining part of the integral that isn't included in the approximation:
+%$$\int_N^\infty \frac{\sin^2(x)}{x^2} \, dx$$
+%It is too hard to directly calculate this. Instead, we'll use the fact that $\sin^2(x)$ is always less than or equal to 1 (and nonnegative).  Then we can estimate
+%$$\int_N^\infty \frac{\sin^2(x)}{x^2} \, dx \le \int_N^\infty \frac{1}{x^2} \, dx = \left[ \frac{x^{-1}}{-1} \right]^\infty_N = \frac{1}{N}$$
+%So we just need $N$ to be at least $10^{12}$ in order for this expression to be smaller than $10^{-12}$. 
+%\end{solution}
+%\vfill
+
+\question Use the centered difference quotient 
+$$\dfrac{f(x+h) - f(x-h)}{2h}$$
+to approximate the derivative of $\tan x$ at $x = \pi/3$ with $h = 10^{-5}$.  What is the relative error in your approximation?  
+\begin{solution}
+The approximation is 
+$$\frac{\tan(\tfrac{\pi}{3} + 10^{-5}) - \tan(\tfrac{\pi}{3} - 10^{-5})}{2 \cdot 10^{-5}} = 4.0000000013584724.$$
+The exact value of the derivative is
+$$\sec^2(\pi/3) = 4.$$
+So the relative error is 
+$$\frac{|4.0000000013584724 - 4|}{4} = 3.396 \times 10^{-10}.$$
+\end{solution}
+\vfill
+
+
+
+\newpage
+\question The normal equation to find the coefficients of a (discrete) least square regression model is 
+$$X^T X b = X^T y.$$
+Suppose you want the best fit linear function $\hat{y} = b_0 + b_1 x$ to approximate the points $(-2,3)$, $(0, 2)$, $(2,0)$.  
+\begin{parts}
+\part What is the matrix $X$ and the vector $y$ in the normal equation above?
+
+\begin{solution}
+$$X = \begin{bmatrix} 1 & -2 \\ 1 & 0 \\ 1 & 2 \end{bmatrix} ~~~ \text{ and } ~~~ y = \begin{bmatrix} 3 \\ 2\\ 0 \end{bmatrix}.$$
+\end{solution}
+\vfill
+
+\part Compute $X^TX$ and $X^T y$.  
+\begin{solution}
+$$X^TX = \begin{bmatrix} 3 &  0 \\ 0 & 8  \end{bmatrix} ~~~ \text{ and } ~~~ X^Ty = \begin{bmatrix} 5 \\ -6 \end{bmatrix}.$$
+\end{solution}
+\vfill
+
+\part Solve the normal equations to find the slope and y-intercept of the regression line $\hat{y} = b_0 + b_1 x$.  
+
+\begin{solution}
+The slope is $b_1 = -3/4$ and the y-intercept is $b_0 = 5/3$.  
+\end{solution}
+\vfill
+
+\end{parts}
+
+\newpage
+\question The Legendre polynomials are a family of orthogonal functions on the interval $[-1,1]$.  The first three Legendre polynomials are 
+$$P_0(x) = 1 ~~~~ P_1(x) = x ~~~~ P_2(x) = \tfrac{1}{2}(3x^2 - 1).$$
+Using the Legendre functions as a basis, find the best fit (continuous least squares) 2nd degree polynomial approximation of the function $\cos x$ on the interval $[-1,1]$. You can use the following integrals to help
+$$\int_{-1}^1 P_0(x) \cos x \,dx = 1.683 ~~~~ \int_{-1}^1 P_1(x) \cos x \,dx = 0$$
+and
+$$\int_{-1}^1 P_2(x) \cos x \,dx = -0.124 ~~~~ \int_{-1}^1 P_2(x)^2 \, \, dx = 0.4.$$ 
+\begin{solution}
+The least squares solution is 
+$$\frac{\inner{P_0,\cos x}}{\inner{P_0,P_0}} P_0(x) + \frac{\inner{P_1,\cos x}}{\inner{P_1,P_1}} P_1(x) +\frac{\inner{P_2,\cos x}}{\inner{P_2,P_2}} P_2(x)$$
+Four of those inner-products were given as integrals above.  The only two left to calculate are:
+$$\inner{P_0,P_0} = \int_{-1}^1 1 \,dx = 2$$
+and
+$$\inner{P_1,P_1} = \int_{-1}^1 x^2 \,dx = \frac{2}{3}$$
+So the final answer is 
+$$\frac{1.683}{2} P_0(x) - \frac{0.124}{0.4} P_2(x) = 0.8415 - 0.31 \left(\tfrac{1}{2}(3x^2-1)\right).$$
+\end{solution}
+\vfill
+
+
+
+\end{questions}
+
+\end{document}

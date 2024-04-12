@@ -965,6 +965,14 @@ After proving this theorem, we talked about **initial value problems**.  This is
 
 6. The acceleration of gravity is $-32$ feet per second squared.  If a rock is thrown upwards from a platform located 20 feet above the ground with initial velocity 30 feet per second, find formulas for the height and velocity of the rock as functions of time.  
 
+### Fri, Apr 12
+
+Today we introduced **Riemann sums** as a way to find the area under a curve.  
+
+1. $\sum_{n = 1}^5 n^2$. (<https://youtu.be/xavgv1m9feE>)
+
+2. $\sum_{n = 1}^{100} 4n+5$. (<https://youtu.be/xavgv1m9feE?t=298>)
+
 
 
 - - -

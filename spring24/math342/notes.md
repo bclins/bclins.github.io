@@ -1673,7 +1673,11 @@ We used Desmos to compute the 2nd degree continuous least squares regression pol
 
 2. $f(x) = e^x$.
 
+### Fri, Apr 12
 
+Today we talked about **Fourier series**.  We did this workshop. 
+
+* **Workshop:** [Fourier series](Workshops/FourierSeries.pdf)
 
 - - -
 

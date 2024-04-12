@@ -23,6 +23,7 @@ header-includes: |
 ### Announcements
 
 * Midterm 2 will be on **Wednesday, April 17.**
+* [Midterm 2 review problems](midterm2review.pdf) (and [solutions](midterm2reviewSolutions.pdf))
 * [Midterm 1 review problems](midterm1review.pdf) (and [solutions](midterm1reviewSolutions.pdf))
 
 ### Course Description 
