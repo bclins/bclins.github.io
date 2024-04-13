@@ -983,7 +983,7 @@ where $N$ is the number of rectangles,
 $$\Delta = \tfrac{b-a}{N}, \text{ and } x_n = a + n \Delta x.$$
 </div>
 
-1. Use Desmos to approximate the area under $f(x) = 2x - x^2$ on the interval $[0,2]$ with $N = 100$ rectangles. (<https://www.desmos.com/calculator/fvgrzhl5sl>)
+1. Use Desmos to approximate the area under $f(x) = 2x - x^2$ on the interval $[0,2]$ with $N = 100$ rectangles. (<https://www.desmos.com/calculator/j5is4fibzg>)
 
 We also reviewed **summation notation**.  If you aren't familiar, here is a good explanation:
 
