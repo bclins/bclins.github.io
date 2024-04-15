@@ -1234,8 +1234,8 @@ Today we did an in class review for Friday's midterm.  We looked at some of the 
 Day    | Topic
 :---:|:---------
 Mon, Apr 15 | Markov decision processes
-Wed, Apr 17 | Q-learning algorithm
-Fri, Apr 19 |
+Wed, Apr 17 | Policy iteration algorithm
+Fri, Apr 19 | Q-learning algorithm
 
 ### Mon, Apr 15
 
@@ -1249,7 +1249,7 @@ Today we looked at this example of a Markov decision process.
 </table>
 </center>
 
-The states are the squares in the grid (except the gray square which cannot be entered).  Each square has a reward of zero, except the green square which has a +1 reward and the red square which has a -1 reward. The green and red squares are also absorbing... once you reach them, the game ends (and you are stuck there forever.  
+The states are the squares in the grid (except the gray square which cannot be entered).  Each square has a reward of zero, except the green square which has a +1 reward and the red square which has a -1 reward. The green and red squares are also absorbing... once you reach them, the game ends (and you are stuck there forever).  
 
 The agent can move up, down, left, or right from any square, but must stay on the grid. If they try to move into an invalid square, then the stay at their current position. Furthermore, the agent isn't in complete control of how they move.  When they try to move in one direction, there is a 80% chance they will move one step in that direction, but also a 20% chance of moving perpendicular to the desired direction (equally likely to go left or right). 
 
@@ -1268,7 +1268,7 @@ $$v = R + \lambda Qv.$$
 
 For Markov decision processes, where the agent can choose different actions at each state, the value iteration formula is a little more complicated.  In general, if the set of actions available to the agent is $\mathcal{A}$, and for every $i \in \mathcal{A}$, there is a transition matrix $Q_i$ corresponding to that action, then the value iteration formula (which is known as the **Bellman equation** in this context) is 
 $$v = R + \lambda \max_{i \in \mathcal{A}} (Q_i v),$$ 
-where the maximum is taken entrywise over the different vectors $Q_1 v$, $Q_2 v$, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn't always easy).  
+where the maximum is taken entrywise over the different vectors $Q_1 v$, $Q_2 v$, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn't always easy or efficient!).  
 
 We wrote a Python program to find the value for each state of the MDP above with a discount factor of $\lambda = 0.9$.  We got these results.  
 
@@ -1280,6 +1280,12 @@ We wrote a Python program to find the value for each state of the MDP above with
 </table>
 </center>
 
+* **Example:** [Markov Decision Processes 2](https://colab.research.google.com/drive/1r2nTzHykpe0LwegaddwfXazj53kAW5jb?usp=sharing)
+
+
+<!--
+### Wed, Apr 17 
+
 With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
 
 For example, in state 9, it is obviously not a good idea to try to move right.  But would it be better to go up or left?  If we try to go up, then there is a 80% chance we will succeed and a 10% chance each that we will move left or right.  So the expected value of the our value in the next round is:
@@ -1288,8 +1294,9 @@ If we try to go left, then there is an 80% chance we succeed, a 10% chance we mo
 $$0.8(4.31) + 0.1(5.72) +0.1(4.75) = 4.49.$$
 
 We can speed up the process for finding the best policy by calculating a matrix with columns equal to $Q_i v$ for each action $i$, and then finding the argument $i$ that maximizes the value in each row.  That will be our best policy for each state. We implemented this in Python with the following example:
+-->
 
-* **Example:** [Markov Decision Processes 2](https://colab.research.google.com/drive/1r2nTzHykpe0LwegaddwfXazj53kAW5jb?usp=sharing)
+
 
 - - -
 

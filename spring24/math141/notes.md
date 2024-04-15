@@ -1013,6 +1013,45 @@ Wed, Apr 17 | [5.3][5.3] | Evaluating definite integrals
 Thu, Apr 18 | | Review
 Fri, Apr 19 | | **Midterm 3**
 
+### Mon, Apr 15
+
+Today we introduced the **definite integral** which is defined as the limit of the Riemann sum as the number of rectangles $N$ approaches infinity:
+$$\int_a^b f(x) \, dx = \lim_{N \rightarrow \infty} \sum_{n = 1}^N f(x_n) \Delta x.$$
+A function is **integrable** on an interval $[a,b]$ if this limit exists. 
+
+We approximated the following definite integrals using Desmos to calculate the Riemann sum:
+
+1. $\int_0^\pi \sin x \, dx$ (<https://youtu.be/JgGXnBaI8-E>)
+
+2. $\int_2^5 \dfrac{1}{x} \, dx$
+
+Because the definite integral is the area of the curve, sometimes you can find the answer without calculus if you recognize the shape:
+
+3. $\int_2^5 x \, dx$
+
+4. $\int_{-1}^1 \sqrt{1-x^2} \, dx$
+
+Another important concept is that area beneath the x-axis counts as negative area.  We did this example by looking at the shapes and finding the positive and negative area. 
+
+5. $\int_0^3 1 - x \, dx$. 
+
+Definite integrals have these important properties:
+
+1. **Constant multiple rule.** For any integrable function $f$ and constant $c$,
+$$\int_a^b c f(x) \, dx = c \int_a^b f(x) \, dx.$$
+
+2. **Addition rule.** For any integrable functions $f$ and $g$,
+$$\int_a^b f(x) + g(x) \, dx =\int_a^b f(x) \, dx  + \int_a^b g(x) \, dx.$$
+
+3. **Additive interval rule.** For any real numbers $a, b, c$, 
+$$\int_a^b f(x) \, dx =\int_a^c f(x) \, dx  + \int_c^b f(x) \, dx.$$
+
+We did the following additional examples.
+
+6. Suppose that $\int_3^6 g(x) \, dx = -8$ and $\int_3^9 g(x) \, dx = 5$. Find $\int_6^9 g(x) \, dx$. (<https://youtu.be/QcHz3h81U-s?t=305>)
+
+7. Suppose that $\int_{-1}^3 f(x) \,dx = -2$ and $\int_{-1}^3 g(x) = 5$, then find $\int_{-1}^3 3f(x) - 2g(x) \, dx.$ (<https://youtu.be/TqMxlzZiKg4>)
+
 - - -
 
 ### Week 14 Notes

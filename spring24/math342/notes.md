@@ -1705,6 +1705,46 @@ Mon, Apr 15 | | Review
 Wed, Apr 17 | | **Midterm 2**
 Fri, Apr 19 | [6.1][6.1] | Euler's method
 
+### Mon, Apr 15
+
+Today we reviewed for midterm 2.  Instead of going over the [review problems](midterm2review.pdf), we talked about the formulas you should have memorized (most other formulas will be given with the problem, although you will have to know how to use them).  Here was the list we came up with:
+
+1. Vandermonde matrices & the standard basis for polynomials
+
+2. Lagrange basis
+
+3. Divided differences and the Newton basis
+
+4. The difference quotient
+
+5. Inner-product and norm for $L^2[a,b]$. 
+
+
+7. Degree of precision for integration methods
+    - Trapezoid rule has degree of precision 1.
+    - Simpson's method has degree of precision 3.
+    - Gaussian quadrature with $n$ nodes has degree of precision $2n-1$.
+
+
+We did the following exercises.
+
+1. Use divided differences to find the interpolating polynomial for the points $(-2,1), (0,1), (1,-2),$ and $(2,1)$. 
+
+2. Use the Langrange basis to find the same interpolating polynomial. 
+
+3. What Vandermonde matrix would you use, and in what linear system, to find the coefficients of the interpolating polynomial in the standard basis.
+
+4. What would you get if you used Gaussian quadrature with $N=10$ nodes to calculate $\int_{-1}^1 5x^4 - 6x^2 + 3 \, dx$?  
+
+We also mentioned a few other important concepts that you might want to review like:
+
+* Runge's phenomenon - Where interpolating polynomials don't always get more accurate as you use more an more nodes. 
+
+* Machine epsilon ($\epsilon \approx 10^{-16}$ for double precision floats which are standard in most programming languages including Python and Javascript) - This is the most accurate the computer can be when it rounds calculations using floating point numbers.
+
+* Numerical instability - Some formulas (like the formulas for approximating derivatives) do not get more accurate as you increase the precision past a certain threshold.  
+
+
 - - -
 
 ### Week 14 Notes
