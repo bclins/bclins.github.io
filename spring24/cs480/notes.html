@@ -1195,7 +1195,7 @@ v_3 &amp;= 0.                    \\
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 17</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Q-learning algorithm</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 19</td>
@@ -1203,6 +1203,158 @@ v_3 &amp;= 0.                    \\
 </tr>
 </tbody>
 </table>
+<h3 id="mon-apr-15">Mon, Apr 15</h3>
+<p>Today we looked at this example of a Markov decision process.</p>
+<center>
+<table class="bordered">
+<tr>
+<td width="72" height="72">
+ 
+</td>
+<td width="72">
+ 
+</td>
+<td width="72">
+ 
+</td>
+<td width="72" style="background-color: darkgreen">
+ 
+</td>
+</tr>
+<tr>
+<td height="72">
+ 
+</td>
+<td style="background-color: gray">
+ 
+</td>
+<td>
+ 
+</td>
+<td style="background-color:red">
+ 
+</td>
+</tr>
+<tr>
+<td height="72">
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+</table>
+</center>
+<p>The states are the squares in the grid (except the gray square which cannot be entered). Each square has a reward of zero, except the green square which has a +1 reward and the red square which has a -1 reward. The green and red squares are also absorbing… once you reach them, the game ends (and you are stuck there forever.</p>
+<p>The agent can move up, down, left, or right from any square, but must stay on the grid. If they try to move into an invalid square, then the stay at their current position. Furthermore, the agent isn’t in complete control of how they move. When they try to move in one direction, there is a 80% chance they will move one step in that direction, but also a 20% chance of moving perpendicular to the desired direction (equally likely to go left or right).</p>
+<p>Let’s label the states with the numbers 0 through 10:</p>
+<center>
+<table class="bordered">
+<tr>
+<td width="72" height="72">
+0
+</td>
+<td width="72">
+1
+</td>
+<td width="72">
+2
+</td>
+<td width="72" style="background-color: darkgreen">
+3
+</td>
+</tr>
+<tr>
+<td height="72">
+4
+</td>
+<td style="background-color: gray">
+ 
+</td>
+<td>
+5
+</td>
+<td style="background-color:red">
+6
+</td>
+</tr>
+<tr>
+<td height="72">
+7
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+10
+</td>
+</tr>
+</table>
+</center>
+<p>Before calculating the value for each state, we need to deal with one problem. Since the only states where we get any nonzero reward are absorbing states that you get stuck in forever, the value in the green state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math> and the value in the red state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>. The way we deal with nonzero rewards when they are in states that are in final classes of a Markov chain or Markov decision process is to use <strong>discounting</strong>. The idea is to discount the value of future rewards in the value iteration equation by multiplying them by a <strong>discount factor</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>λ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; \lambda &lt; 1</annotation></semantics></math>. The smaller <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> is, the more we will focus on immediate rewards, and the less we will care about the future. For Markov chains with rewards, the value iteration formula with discounting is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>λ</mi><mi>Q</mi><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">v = R + \lambda Qv.</annotation></semantics></math></p>
+<p>For Markov decision processes, where the agent can choose different actions at each state, the value iteration formula is a little more complicated. In general, if the set of actions available to the agent is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>, and for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow><annotation encoding="application/x-tex">i \in \mathcal{A}</annotation></semantics></math>, there is a transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>i</mi></msub><annotation encoding="application/x-tex">Q_i</annotation></semantics></math> corresponding to that action, then the value iteration formula (which is known as the <strong>Bellman equation</strong> in this context) is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>λ</mi><munder><mo>max</mo><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>Q</mi><mi>i</mi></msub><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">v = R + \lambda \max_{i \in \mathcal{A}} (Q_i v),</annotation></semantics></math> where the maximum is taken entrywise over the different vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>1</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_1 v</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>2</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_2 v</annotation></semantics></math>, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn’t always easy).</p>
+<p>We wrote a Python program to find the value for each state of the MDP above with a discount factor of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\lambda = 0.9</annotation></semantics></math>. We got these results.</p>
+<center>
+<table class="bordered">
+<tr>
+<td width="72" height="72">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>6.45</mn><annotation encoding="application/x-tex">6.45</annotation></semantics></math>
+</td>
+<td width="72">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>7.44</mn><annotation encoding="application/x-tex">7.44</annotation></semantics></math>
+</td>
+<td width="72">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>8.48</mn><annotation encoding="application/x-tex">8.48</annotation></semantics></math>
+</td>
+<td width="72" style="background-color: darkgreen">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>10</mn><annotation encoding="application/x-tex">10</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td height="72">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5.66</mn><annotation encoding="application/x-tex">5.66</annotation></semantics></math>
+</td>
+<td style="background-color: gray">
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>5.72</mn><annotation encoding="application/x-tex">5.72</annotation></semantics></math>
+</td>
+<td style="background-color:red">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">-10</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td height="72">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4.91</mn><annotation encoding="application/x-tex">4.91</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4.31</mn><annotation encoding="application/x-tex">4.31</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4.75</mn><annotation encoding="application/x-tex">4.75</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2.77</mn><annotation encoding="application/x-tex">2.77</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>With these values in hand, we can find the best policy for our agent. A <strong>policy</strong> is just list of actions for each state. To find the best action for each state, calculate the expected value of the next round value for each possible action. The action with the highest expected value is the one to pick.</p>
+<p>For example, in state 9, it is obviously not a good idea to try to move right. But would it be better to go up or left? If we try to go up, then there is a 80% chance we will succeed and a 10% chance each that we will move left or right. So the expected value of the our value in the next round is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.8</mn><mo stretchy="false" form="prefix">(</mo><mn>5.72</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>0.1</mn><mo stretchy="false" form="prefix">(</mo><mn>4.31</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>0.1</mn><mo stretchy="false" form="prefix">(</mo><mn>2.77</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>5.28</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">0.8(5.72) + 0.1(4.31) + 0.1(2.77) = 5.28.</annotation></semantics></math> If we try to go left, then there is an 80% chance we succeed, a 10% chance we move up, and a 10% chance we stay where we are (because we can’t move down). So the expected value is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.8</mn><mo stretchy="false" form="prefix">(</mo><mn>4.31</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>0.1</mn><mo stretchy="false" form="prefix">(</mo><mn>5.72</mn><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>0.1</mn><mo stretchy="false" form="prefix">(</mo><mn>4.75</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>4.49</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">0.8(4.31) + 0.1(5.72) +0.1(4.75) = 4.49.</annotation></semantics></math></p>
+<p>We can speed up the process for finding the best policy by calculating a matrix with columns equal to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>i</mi></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_i v</annotation></semantics></math> for each action <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>, and then finding the argument <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> that maximizes the value in each row. That will be our best policy for each state. We implemented this in Python with the following example:</p>
+<ul>
+<li><strong>Example:</strong> <a href="https://colab.research.google.com/drive/1r2nTzHykpe0LwegaddwfXazj53kAW5jb?usp=sharing">Markov Decision Processes 2</a></li>
+</ul>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
