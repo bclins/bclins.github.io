@@ -15,6 +15,7 @@ header-includes: |
 
 \newcommand{\ds}{\displaystyle}
 \newcommand{\on}{\operatorname}
+\newcommand{\argmax}{\on{argmax}}
 \newcommand{\R}{\mathbb{R}}
 
 ## Computer Science 480 - Spring 2024
@@ -1234,8 +1235,8 @@ Today we did an in class review for Friday's midterm.  We looked at some of the 
 Day    | Topic
 :---:|:---------
 Mon, Apr 15 | Markov decision processes
-Wed, Apr 17 | Policy iteration algorithm
-Fri, Apr 19 | Q-learning algorithm
+Wed, Apr 17 | Optimal policies
+Fri, Apr 19 | Policy iteration algorithm
 
 ### Mon, Apr 15
 
@@ -1283,10 +1284,37 @@ We wrote a Python program to find the value for each state of the MDP above with
 * **Example:** [Markov Decision Processes 2](https://colab.research.google.com/drive/1r2nTzHykpe0LwegaddwfXazj53kAW5jb?usp=sharing)
 
 
-<!--
 ### Wed, Apr 17 
 
-With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
+Today we talked about finding optimal policies for an MDP. A **policy** $\pi$ for a Markov decision process is a function that inputs states $i$ and outputs actions:
+$$\pi: S \rightarrow \mathcal{A}$$
+where $S$ is the set of states and $\mathcal{A}$ is the set of actions.  
+
+Before we described how to find the optimal policy, we took a look at the Bellman equation again.
+
+<div class="Theorem">
+#### Bellman Equation
+ 
+The entries of the value vector are given by the following recursive formula
+
+$$v_i = R_i + \lambda \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)$$
+
+where $i$ is the state, $v$ is the value vector, $\lambda$ is the discount factor, $\mathcal{A}$ is the set of possible actions, and $q_i(a)$ is row $i$ of the transition matrix if you choose action $a$.  
+</div>
+
+Once you know all of the entries $v_i$ of the value vector $v$, you can use them to choose the best action in each state.  We looked at the example from Monday and figured out the best action in state 9 based on the values of the neighboring states.  From that example, we derived the following formula for the optimal policy.
+
+<div class="Theorem">
+#### Optimal Policy Formula
+
+Given the value vector $v$, the optimal action at each state $i$ is given by the function
+$$\pi(i) = \argmax_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right).$$
+</div>
+
+We programmed this function in Python for the example from last time.  We also observed how the value vector $v$ and the optimal policy $\pi$ can chance if you increase or decrease the discount factor.  For example, when you increase the discount factor, it makes the agent more concerned with future rewards and less concerned about the present.  So the agent tends to pick actions that are more cautious. 
+
+
+<!--With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
 
 For example, in state 9, it is obviously not a good idea to try to move right.  But would it be better to go up or left?  If we try to go up, then there is a 80% chance we will succeed and a 10% chance each that we will move left or right.  So the expected value of the our value in the next round is:
 $$0.8(5.72) + 0.1(4.31) + 0.1(2.77) = 5.28.$$
@@ -1304,7 +1332,7 @@ We can speed up the process for finding the best policy by calculating a matrix 
  
 Day    | Topic
 :---:|:---------
-Mon, Apr 22 | 
+Mon, Apr 22 | Q-learning algorithm
 Wed, Apr 24 | 
 Fri, Apr 26 | 
 Mon, Apr 29 | 

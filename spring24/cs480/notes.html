@@ -1195,11 +1195,11 @@ v_3 &amp;= 0.                    \\
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 17</td>
-<td style="text-align: left;">Policy iteration algorithm</td>
+<td style="text-align: left;">Optimal policies</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 19</td>
-<td style="text-align: left;">Q-learning algorithm</td>
+<td style="text-align: left;">Policy iteration algorithm</td>
 </tr>
 </tbody>
 </table>
@@ -1352,10 +1352,22 @@ v_3 &amp;= 0.                    \\
 <ul>
 <li><strong>Example:</strong> <a href="https://colab.research.google.com/drive/1r2nTzHykpe0LwegaddwfXazj53kAW5jb?usp=sharing">Markov Decision Processes 2</a></li>
 </ul>
-<!--
-### Wed, Apr 17 
-
-With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
+<h3 id="wed-apr-17">Wed, Apr 17</h3>
+<p>Today we talked about finding optimal policies for an MDP. A <strong>policy</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> for a Markov decision process is a function that inputs states <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> and outputs actions: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>:</mo><mi>S</mi><mo>→</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow><annotation encoding="application/x-tex">\pi: S \rightarrow \mathcal{A}</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math> is the set of states and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math> is the set of actions.</p>
+<p>Before we described how to find the optimal policy, we took a look at the Bellman equation again.</p>
+<section id="bellman-equation" class="Theorem">
+<h4>Bellman Equation</h4>
+<p>The entries of the value vector are given by the following recursive formula</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>=</mo><msub><mi>R</mi><mi>i</mi></msub><mo>+</mo><mi>λ</mi><munder><mo>max</mo><mrow><mi>a</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_i = R_i + \lambda \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)</annotation></semantics></math></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> is the state, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is the value vector, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> is the discount factor, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math> is the set of possible actions, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q_i(a)</annotation></semantics></math> is row <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> of the transition matrix if you choose action <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p>
+</section>
+<p>Once you know all of the entries <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>i</mi></msub><annotation encoding="application/x-tex">v_i</annotation></semantics></math> of the value vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>, you can use them to choose the best action in each state. We looked at the example from Monday and figured out the best action in state 9 based on the values of the neighboring states. From that example, we derived the following formula for the optimal policy.</p>
+<section id="optimal-policy-formula" class="Theorem">
+<h4>Optimal Policy Formula</h4>
+<p>Given the value vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>, the optimal action at each state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> is given by the function <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>argmax</mo><mrow><mi>a</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\pi(i) = \operatorname{argmax}_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right).</annotation></semantics></math></p>
+</section>
+<p>We programmed this function in Python for the example from last time. We also observed how the value vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> and the optimal policy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> can chance if you increase or decrease the discount factor. For example, when you increase the discount factor, it makes the agent more concerned with future rewards and less concerned about the present. So the agent tends to pick actions that are more cautious.</p>
+<!--With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
 
 For example, in state 9, it is obviously not a good idea to try to move right.  But would it be better to go up or left?  If we try to go up, then there is a 80% chance we will succeed and a 10% chance each that we will move left or right.  So the expected value of the our value in the next round is:
 $$0.8(5.72) + 0.1(4.31) + 0.1(2.77) = 5.28.$$
@@ -1376,7 +1388,7 @@ We can speed up the process for finding the best policy by calculating a matrix 
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 22</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Q-learning algorithm</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 24</td>

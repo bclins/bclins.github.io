@@ -1002,6 +1002,8 @@ Here is another example we didn't do:
 6. $\sum_{n = 1}^5 n^2$. (<https://youtu.be/xavgv1m9feE>)
 
 
+
+
 - - -
 
 ### Week 13 Notes
@@ -1037,6 +1039,10 @@ Another important concept is that area beneath the x-axis counts as negative are
 
 Definite integrals have these important properties:
 
+<div class="Theorem">
+
+#### Properties of Definite Integrals
+
 1. **Constant multiple rule.** For any integrable function $f$ and constant $c$,
 $$\int_a^b c f(x) \, dx = c \int_a^b f(x) \, dx.$$
 
@@ -1046,11 +1052,48 @@ $$\int_a^b f(x) + g(x) \, dx =\int_a^b f(x) \, dx  + \int_a^b g(x) \, dx.$$
 3. **Additive interval rule.** For any real numbers $a, b, c$, 
 $$\int_a^b f(x) \, dx =\int_a^c f(x) \, dx  + \int_c^b f(x) \, dx.$$
 
+</div>
+
 We did the following additional examples.
 
 6. Suppose that $\int_3^6 g(x) \, dx = -8$ and $\int_3^9 g(x) \, dx = 5$. Find $\int_6^9 g(x) \, dx$. (<https://youtu.be/QcHz3h81U-s?t=305>)
 
 7. Suppose that $\int_{-1}^3 f(x) \,dx = -2$ and $\int_{-1}^3 g(x) = 5$, then find $\int_{-1}^3 3f(x) - 2g(x) \, dx.$ (<https://youtu.be/TqMxlzZiKg4>)
+
+### Wed, Apr 17
+
+Today we talked about 
+
+<div class="Theorem">
+**The Fundamental Theorem of Calculus.** If $f(x)$ is a function with antiderivative $F(x)$ on an interval $[a,b]$, then 
+$$\int_a^b f(x) \, dx = F(b) - F(a).$$
+</div>
+
+We explained why this theorem makes sense by changing the letter $b$ to a letter $t$ to emphasize that the formula above is a function of the upper bound in the integral. And we showed that the derivative of the area function $A(t)$ is $f(t)$, so it makes sense that you can use the antiderivative of $f(x)$ to get the area.  
+
+We did these examples in class using the Fundamental Theorem of Calculus to evaluate the definite integrals.
+
+1. $\int_0^\pi \sin x \, dx$ 
+
+2. $\int_1^4 2x^2 - x \, dx$ (<https://youtu.be/xo9jxrVGnnY>)
+
+3. $\int_0^{\pi/4} \sec^2 t \, dt$ (<https://youtu.be/-Hm7w1BqVhA>)
+
+4. $\int_1^4 3 \sqrt{x} \, dx$
+
+Just like with derivatives, it is important to understand the meaning of the definite integral.  
+
+<div class="Theorem">
+#### Meanings of a Definite Integral
+
+1. **Geometric.** If $y = f(x)$ is a graph, then $\int_a^b f(x) \, dx$ is the area under the curve from $x=a$ until $x=b$.  
+2. **Physical.** If $f(x)$ is a rate of change, then $\int_a^b f(x) \,dx$ is the total accumulated change (net change) from $x = a$ until $x=b$. 
+</div>
+
+5. If a particle has velocity $v(t) = 5 - t$, then what is its net change in position from time $t=0$ until time $t=10$? (<https://youtu.be/Sy_7PkoTCtA>)
+
+6. Water flows out of a tank at a rate $r(t) = 200 - 4t$ liters per minute. Find the amount of water flows out of the tank in the first 10 minutes? (<https://youtu.be/66L46J4rxIA>)
+
 
 - - -
 
