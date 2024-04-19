@@ -1744,6 +1744,58 @@ We also mentioned a few other important concepts that you might want to review l
 
 * Numerical instability - Some formulas (like the formulas for approximating derivatives) do not get more accurate as you increase the precision past a certain threshold.  
 
+### Fri, Apr 19
+
+We talked more about the **Initial Value Problem** (abbreviated IVP) for **first order differential equations** (abbreviated ODEs).  
+
+* **Example:** [Slope field grapher](https://people.hsc.edu/faculty-staff/blins/classes/fall23/math142/SlopeFields.html)
+
+
+We started with this example:
+
+1. Find the solution of the differential equation $\dfrac{dy}{dt} = -\dfrac{t}{y}$ with initial condition $y(-3) = 4$.  
+
+Then we introduced the following theorem (without proof):
+
+<div class="Theorem">
+**Theorem (Existence & Uniqueness of Solutions).**
+If $f(t,y)$ is continuous and the partial derivatives $|\frac{\partial f}{\partial y}|$ are bounded for all $t \in [a,b]$, then the initial value problem 
+$$\frac{dy}{dt} = f(t,y) ~~~~ y = y_0$$
+has a unique solution $y(t)$ defined on the interval $[a,b]$.  
+</div>
+
+We looked at these examples:
+
+2. The differential equation $\dfrac{dy}{dt} = \dfrac{-t}{y}$ has solutions that follow circular arcs centered at the origin.  The IVP $y(-1) = 0$ has two solutions $y = \sqrt{1-t^2}$ and $y = -\sqrt{1-t^2}$.  Why doesn't that contradict the theorem above? Which condition of the theorem fails for this IVP?  
+
+3. The explosion equation is the ODE
+$$\frac{dy}{dt} = k y^2.$$
+The solution is $y(t) = \frac{1}{C-kt}$.  If $k = 1$, then a solution to the IVP with $y(0) = 1$ is $y(t) = \dfrac{1}{1-t}$.  But that solution is not defined when $t=1$ (it has a vertical asymptote).  Why is that consistent with the theorem above?
+
+4. Show that $y = 2e^{5x}$ is the unique solution of the IVP $y' = 5y$ with $y(0) = 2$.  How do you know that this is the only solution?
+
+Unfortunately most differential equations cannot be solved analytically (the way we did for the examples above). So next week, we will talk about methods to find approximate solutions. 
+
+<!--
+Instead, we need to use approximate solutions.  The simplest method for finding an approximate solution is Euler's method. 
+
+<div class="Theorem">
+#### Euler's Method Algorithm
+
+To find an approximate solution to the initial value problem
+
+0. Choose a number of steps $n$ and compute $h = \dfrac{b-a}{n}$. 
+1. Initialize $t = a$ and $y = y_0$.
+2. For $i$ from 1 to $n$ do:
+    a. Update $y$ by adding $f(t,y) \cdot h$.
+    b. Update $t$ by adding $h$.
+
+</div>
+
+We coded this algorithm in Python and used it to approximate the solution to the differential equation
+
+1. $\ds \dfrac{dy}{dt} = y - t^2 + 1$ on $[0,2]$ with initial condition $y(0) = 0.5$. 
+-->
 
 - - -
 

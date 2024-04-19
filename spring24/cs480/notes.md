@@ -1314,15 +1314,48 @@ $$\pi(i) = \argmax_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right).$$
 We programmed this function in Python for the example from last time.  We also observed how the value vector $v$ and the optimal policy $\pi$ can chance if you increase or decrease the discount factor.  For example, when you increase the discount factor, it makes the agent more concerned with future rewards and less concerned about the present.  So the agent tends to pick actions that are more cautious. 
 
 
-<!--With these values in hand, we can find the best policy for our agent.  A **policy** is just list of actions for each state.  To find the best action for each state, calculate the expected value of the next round value for each possible action.  The action with the highest expected value is the one to pick.  
+### Fri, Apr 19
 
-For example, in state 9, it is obviously not a good idea to try to move right.  But would it be better to go up or left?  If we try to go up, then there is a 80% chance we will succeed and a 10% chance each that we will move left or right.  So the expected value of the our value in the next round is:
-$$0.8(5.72) + 0.1(4.31) + 0.1(2.77) = 5.28.$$
-If we try to go left, then there is an 80% chance we succeed, a 10% chance we move up, and a 10% chance we stay where we are (because we can't move down). So the expected value is:
-$$0.8(4.31) + 0.1(5.72) +0.1(4.75) = 4.49.$$
+Today we started by talking about an alternative to the value iteration algorithm called policy iteration.  With policy iteration, you can (in theory) get both the exact value vector and the optimal policy for a Markov decision process in a finite number of steps.  Here is the algorithm:
 
-We can speed up the process for finding the best policy by calculating a matrix with columns equal to $Q_i v$ for each action $i$, and then finding the argument $i$ that maximizes the value in each row.  That will be our best policy for each state. We implemented this in Python with the following example:
--->
+<div class="Theorem">
+#### Policy Iteration Algorithm
+
+1. Choose a random policy $\pi$.
+2. Using $\pi$, find the transition matrix $Q_\pi$ if the agent follows policy $\pi$.
+3. Calculate the solution to $v = R + \lambda Q_\pi v$. 
+4. Use the solution $v$ to find a new policy $\pi$ that is optimal for $v$.  
+5. Repeat steps 2-4 until the policy stops changing.  
+</div>
+
+Since there are at most $|\mathcal{A}|^{|S|}$ possible policies, this algorithm is guarantee to find the correct solution after a finite number of steps.  Unfortunately, step 3 is usually solved using value iteration, so the policy iteration algorithm usually isn't any faster than value iteration.  
+
+
+After we talked about policy iteration, we talked about some of the practical issues with implementing MDPs in Python.  One recommendation is to implement an MDP using a Python class:
+
+```python 
+class MDP:
+    def __init__(self, states, actions, rewards, transitionFunction, discount):
+        self.states = states 
+        self.actions = actions 
+        self.rewards = rewards 
+        self.transitionFunction = transitionFunction 
+        self.discount = discount 
+```
+
+We didn't go into details, but we did talk about one issue with large MDPs.  If there are a lot of states, then the transition probability function $P(i,j,a)$ which is the probability of moving from state $i$ to state $j$ if you take action $a$ is zero for most combinations of the input.  Therefore, when you calculate the Bellman equation, most of the entries of the vector $q_i(a)$ are zeros.  This is an example of a **sparse** vector (i.e., it has a lot of zero entries).  It would save computer time if we didn't keep track of all of those zeros. 
+
+Therefore, when we create a MDP object, we might want to express our transition function differently.  We could create a function $T(i,a)$ which computes for any state $i$ and action $a$ a list that contains tuples `(j, p)` where $j$ is a possible future state and $p$ is the probability to reach that state.  For example in the grid world example we did last time, 
+```python
+# Example
+T(9,"up") # should output [(5, 0.8), (8, 0.1), (10, 0.1)]
+
+# Bellman equation
+new_v[i] = R[i] + discount * max(np.dot([t[1] for t in T(i,a)], [v[t[0]] for t in T(i,a)]) for a in actions)
+
+```
+
+
 
 
 
