@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 141 - Homework 14 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\textit{Evaluate the following definite integrals.}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\ds \int_{-1}^2 (2x - x^2) \, dx$
+\item $\ds \int_0^\pi 2 \cos x - 1 \, dx$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \int_0^2 (t-1)(t+2) \, dt$
+\item $\ds \int_0^{\pi/4} \sec \theta \tan \theta + \sec^2 \theta \, d \theta$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Find the area under the curve $y = \dfrac{1}{x^2}$ from $x = 1$ to $x = 10$. 
+\vfill
+
+\item Suppose that the voltage of a battery is decreasing at a rate of $\dfrac{-5}{(t+1)^2}$ volts per year.  How much will the voltage of the battery decrease in 3 years?  
+\vfill
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+%\item Estimate the area under the curve $\ds f(x) = \cos \left( \dfrac{x^2}{2} \right)$ from $x = -\sqrt{\pi}$ to $x = \sqrt{\pi}$ with $50$ rectangles.
+%\vfill
+
+\newpage
+
+
+\noindent
+\textit{Use u-substitution to find the following integrals.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \int (x-3)^6 \, dx$
+\item $\ds \int \dfrac{2x}{\sqrt{x^2 + 1}} \, dt$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\ds \int \dfrac{1}{(4x+1)^{1/3}} \, dt$
+\item $\ds \int_0^{\pi/6} 3\cos 2x \, dx$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Find the average value of the function $f(x) = 2\sin x$ on the interval from $0$ to $\pi$. 
+\vfill
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\end{document}

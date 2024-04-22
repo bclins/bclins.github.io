@@ -1345,7 +1345,7 @@ class MDP:
 
 We didn't go into details, but we did talk about one issue with large MDPs.  If there are a lot of states, then the transition probability function $P(i,j,a)$ which is the probability of moving from state $i$ to state $j$ if you take action $a$ is zero for most combinations of the input.  Therefore, when you calculate the Bellman equation, most of the entries of the vector $q_i(a)$ are zeros.  This is an example of a **sparse** vector (i.e., it has a lot of zero entries).  It would save computer time if we didn't keep track of all of those zeros. 
 
-Therefore, when we create a MDP object, we might want to express our transition function differently.  We could create a function $T(i,a)$ which computes for any state $i$ and action $a$ a list that contains tuples `(j, p)` where $j$ is a possible future state and $p$ is the probability to reach that state.  For example in the grid world example we did last time, 
+Therefore, when we create a MDP object, we might want to express our transition function differently.  We could create a function $T(i,a)$ which computes for any state $i$ and action $a$ a list that contains tuples `(j, p)` where $j$ is a possible future state and $p$ is the probability to reach that state.  For example in the grid world we could use code like this: 
 ```python
 # Example
 T(9,"up") # should output [(5, 0.8), (8, 0.1), (10, 0.1)]
@@ -1365,10 +1365,58 @@ new_v[i] = R[i] + discount * max(np.dot([t[1] for t in T(i,a)], [v[t[0]] for t i
  
 Day    | Topic
 :---:|:---------
-Mon, Apr 22 | Q-learning algorithm
-Wed, Apr 24 | 
-Fri, Apr 26 | 
-Mon, Apr 29 | 
+Mon, Apr 22 | Markov decision process examples
+Wed, Apr 24 | Q-learning algorithm
+Fri, Apr 26 | Q-learning continued
+Mon, Apr 29 | Review
+
+### Mon, Apr 22
+
+Today we did the following workshop.
+
+* **Workshop:** [Markov decision processes workshop](Workshops/MDP.pdf)
+
+I recommend using the following MDP class to solve each of the problems. Notice that the last problem requires you to add discount factors to the MDP class, since I did not include that in the original code. 
+
+```python
+import numpy as np
+
+class MDP:
+    def __init__(self,states,actions,rewardFunction,transitionFunction):
+        self.states = states
+        self.actions = actions
+        self.reward = rewardFunction
+        self.transitionFunction = transitionFunction
+        self.value = self.findValue() 
+        self.optimalPolicy = self.findOptimalPolicy()
+
+    def transition(self, s, a):
+        return self.transitionFunction(self.states, s,a)
+
+    def qvalue(self, s, a, v):
+        outcomes = self.transition(s, a)
+        probabilities = [pair[1] for pair in outcomes]
+        nextStates = [pair[0] for pair in outcomes]
+        nextValues = [v[s] for s in nextStates]
+        return np.dot(probabilities,nextValues)
+
+    def bellman(self, v):
+        return {s:max(self.reward(s) + self.qvalue(s, a, v) for a in self.actions) for s in self.states}
+
+    def findValue(self):
+        # Uses the value iteration algorithm
+        v = {s: 0 for s in self.states} 
+        new_v = self.bellman(v)
+        while sum((new_v[s]-v[s])**2 for s in self.states) > 10**(-6):
+            v = new_v
+            new_v = self.bellman(v)
+        return new_v
+
+    def findOptimalPolicy(self):
+        return {s:np.argmax([self.qvalue(s, a, self.value) for a in self.actions]) for s in self.states}
+
+
+```
 
 
 

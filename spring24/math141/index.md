@@ -43,7 +43,7 @@ Week | Topic                      | Notes | Homework
 11 | L'Hospital's rule & Newton's method                   | [Week 11](notes.html#week-11-notes) | [HW11](HW11.pdf)
 12 | Antiderivatives & area under curves                   | [Week 12](notes.html#week-12-notes) | [HW12](HW12.pdf)
 13 | Definite integrals, **Midterm 3**                     | [Week 13](notes.html#week-13-notes) | [HW13](HW13.pdf)
-14 | Substitution                                          | [Week 14](notes.html#week-14-notes) |
+14 | Substitution                                          | [Week 14](notes.html#week-14-notes) | [HW14](HW14.pdf)
 
 ### Attendance Policy
 

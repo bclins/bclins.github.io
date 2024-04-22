@@ -1107,6 +1107,45 @@ Thu, Apr 25 | | Review
 Fri, Apr 26 | [5.5][5.5] | Substitution - con'd 
 Mon, Apr 29 | | Recap & review
 
+### Mon, Apr 22
+
+Today we looked at more examples of definite integrals and we also defined:
+
+<div class="Theorem">
+**Definition.** The **average value** of a function $f(x)$ on an interval $[a,b]$ is 
+$$\dfrac{1}{b-a} \int_a^b f(x) \, dx.$$
+</div>
+
+1. Find the average value of $f(x) = x^2 + 1$ on the interval $[0,3]$. (<https://youtu.be/0rzL08BHr5c>)
+
+We also talked about an alternative version of the Fundamental Theorem of Calculus
+
+<div class="Theorem">
+**Derivative Version of the Fundamental Theorem of Calculus.** For any integrable function $f(x)$, 
+$$f(t) = \dfrac{d}{dt} \int_a^t f(x) \, dx.$$
+</div> 
+
+This theorem is just a corollary of the other version of the Fundamental Theorem of Calculus.  After all, if $F(x)$ is the antiderivative of $f$, then we just need to differentiate 
+$$\dfrac{d}{dt} F(t) - F(a)$$
+Since $F(a)$ is just a constant, we get $f(t)$ back when we take the derivative of $F(t)$. 
+
+The important thing to understand is that derivatives and integrals are opposites, so they cancel each other out:
+
+We did a few extra problems to see some of the ideas that come up working with definite integrals. 
+
+2. $\int_{-1}^2 |4x-3| \, dx$ (<https://youtu.be/S5zFfQODQOo>)
+
+3. What does $\displaystyle \int_{4}^1 2 \, dx$ mean?  Why is it negative? Hint: what should $\int_{0}^4 f(x) \, dx + \int_4^1 f(x) \, dx$ be?
+
+3. $\dfrac{d}{dx} \int_x^3 \sqrt{|\cos t|} \, dt$ (<https://youtu.be/TqGCNNlx6pU>)
+
+
+
+
+
+
+
+
 
 
 - - - 

@@ -1578,26 +1578,6 @@ This polynomial will be in <math display="inline" xmlns="http://www.w3.org/1998/
 <li><p>Show that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><msup><mi>e</mi><mrow><mn>5</mn><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y = 2e^{5x}</annotation></semantics></math> is the unique solution of the IVP <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>=</mo><mn>5</mn><mi>y</mi></mrow><annotation encoding="application/x-tex">y&#39; = 5y</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y(0) = 2</annotation></semantics></math>. How do you know that this is the only solution?</p></li>
 </ol>
 <p>Unfortunately most differential equations cannot be solved analytically (the way we did for the examples above). So next week, we will talk about methods to find approximate solutions.</p>
-<!--
-Instead, we need to use approximate solutions.  The simplest method for finding an approximate solution is Euler's method. 
-
-<div class="Theorem">
-#### Euler's Method Algorithm
-
-To find an approximate solution to the initial value problem
-
-0. Choose a number of steps $n$ and compute $h = \dfrac{b-a}{n}$. 
-1. Initialize $t = a$ and $y = y_0$.
-2. For $i$ from 1 to $n$ do:
-    a. Update $y$ by adding $f(t,y) \cdot h$.
-    b. Update $t$ by adding $h$.
-
-</div>
-
-We coded this algorithm in Python and used it to approximate the solution to the differential equation
-
-1. $\ds \dfrac{dy}{dt} = y - t^2 + 1$ on $[0,2]$ with initial condition $y(0) = 0.5$. 
--->
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
@@ -1631,6 +1611,93 @@ We coded this algorithm in Python and used it to approximate the solution to the
 </tr>
 </tbody>
 </table>
+<h3 id="mon-apr-22">Mon, Apr 22</h3>
+<p>The simplest method for finding an approximate solution to a differential equation is Euler’s method.</p>
+<section id="eulers-method-algorithm" class="Theorem">
+<h4>Euler’s Method Algorithm</h4>
+<p>To find an approximate solution to the initial value problem <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0</annotation></semantics></math> on the interval <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math>,</p>
+<ol type="1">
+<li>Choose a step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> and initialize <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">t = a</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">y = y_0</annotation></semantics></math>.</li>
+<li>While <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">t \le b</annotation></semantics></math> do
+<ol type="a">
+<li>Update <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> by adding <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">f(t,y) \cdot h</annotation></semantics></math>.</li>
+<li>Update <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> by adding <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.</li>
+</ol></li>
+</ol>
+</section>
+<p>We started by doing this example by hand:</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mi>y</mi><mo>−</mo><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\displaystyle\dfrac{dy}{dt} = y - t^2 + 1</annotation></semantics></math> on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,3]</annotation></semantics></math> with initial condition <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y(-1) = 0</annotation></semantics></math> and step size <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h = 1</annotation></semantics></math>.</li>
+</ol>
+<p>Then we implemented the algorithm in Python to get a more accurate solution.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="kw">def</span> EulersMethod(f,a,b,h,y0):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>    <span class="co"># Returns two lists, one of t-values and the other of y-values. </span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>    t, y <span class="op">=</span> a, y0</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a>    ts, ys <span class="op">=</span> [], []</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a>    <span class="cf">while</span> t <span class="op">&lt;=</span> b:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a>      ts.append(t)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a>      ys.append(y)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true"></a>      y <span class="op">+=</span> f(t,y)<span class="op">*</span>h</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true"></a>      t <span class="op">+=</span> h</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true"></a>    <span class="cf">return</span> ts, ys</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> t,y: y<span class="op">-</span>t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true"></a>ts, ys <span class="op">=</span> EulersMethod(f,<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true"></a>plt.plot(ts,ys)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true"></a>ts, ys <span class="op">=</span> EulersMethod(f,<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="fl">0.001</span>,<span class="dv">0</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true"></a>plt.plot(ts,ys)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true"></a>plt.show()</span></code></pre></div>
+<ol start="2" type="1">
+<li>Suppose we have a growing population, but with a seasonal limit on the population size. The model for the population <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>α</mi><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mi>β</mi><mo>+</mo><mi>γ</mi><mo>cos</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>t</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>y</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{dy}{dt} = \alpha y (\beta + \gamma \cos(2 \pi t) - y).</annotation></semantics></math> Explain why the initial value problem has a unique solution with any initial condition.</li>
+</ol>
+<p>To analyze the population example we used this Python code:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>alpha, beta, gamma <span class="op">=</span> <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">2</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> t,y: alpha<span class="op">*</span>y<span class="op">*</span>(beta<span class="op">+</span>gamma<span class="op">*</span>np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>t)<span class="op">-</span>y)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>ts, ys <span class="op">=</span> EulersMethod(f,<span class="dv">0</span>,<span class="dv">10</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>plt.plot(ts,ys)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>ts, ys <span class="op">=</span> EulersMethod(f,<span class="dv">0</span>,<span class="dv">10</span>,<span class="fl">0.001</span>,<span class="fl">0.1</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>plt.plot(ts,ys)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>plt.show()</span></code></pre></div>
+<ol start="3" type="1">
+<li>We finished by using Euler’s method to estimate the number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> by approximating the solution of the IVP <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle><mo>=</mo><mi>y</mi><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>y</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = y, ~~~ y(0) = 1</annotation></semantics></math> on the interval <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>.</li>
+</ol>
+<!-- 
+
+1. Suppose $y \in C^2[a,b]$ and $t_i, t_{i+1} \in [a,b]$ with $t_{i+1}-t_i = h$.  Use the first degree Taylor polynomial centered at $t_i$ to estimate $y(t_{i+1})$ based on $y(t_i)$ and $y'(t_i)$.  What is the remainder term for this expression?
+
+Once we figured that out, we looked at how the iterates $w_i$ generated by Euler's method are different from the actual $y$ values of the true solution.  At each step, we have the correct y-value $y(t_i)$ and the Euler's method approximation.  The gap between the two is the error $E_i$.  If we know $E_i$, we can estimate how much worse the error after the next step will be.  
+
+The next step error $E_{i+1}$ is the gap between $y(t_{i+1})$ and $w_{i+1}$, where 
+$$y(t_{i+1}) = y(t_i) + y'(t_i) h + \tfrac{1}{2}y''(\xi) h^2$$
+and 
+$$w_{i+1} = w_{i} + f(t_i,w_i)h + \delta_i$$
+where $\delta_i$ is a term that represents any rounding error in computing $w_{i+1}$.  We will assume that all of the rounding error at each step is bounded by a single constant $\delta$ (that is usually very small).  
+
+Estimating the gap, we get 
+\begin{align*}E_{i+1} = |y_{i+1} - w_{i+1}| &\le E_i + Lh E_i + \tfrac{1}{2} M h^2 + \delta.\\
+&\le  E_i r + d \end{align*}
+where $r = 1+Lh$ and $c = \tfrac{1}{2} M h^2 + \delta$.
+Now there is a nice simple pattern for how the error grows.  Initially $E_0 = 0$.  Then 
+$$E_1 \le d$$
+$$E_2 \le rc + c$$
+$$E_3 \le r^2c + rc + c$$
+$$\vdots$$
+$$E_n \le r^{n-1} c + \ldots + rc + c.$$
+This is a geometric sum, so there is a formula:
+\begin{align*}E_n \le \left( \frac{r^n - 1}{r-1} \right) c &= \frac{[(1+L\frac{b-a}{n})^n - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right). \\
+&\le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right). 
+\end{align*}
+
+The main take-away from this long calculation is that there is a limit to how accurate you can make Euler's method.  By making $h$ smaller, the error gets smaller at first, but eventually the accumulated round-off error from taking so many steps gets large.  It turns out that the minimum worst case error occurs when 
+$$h = \sqrt{\frac{2\delta}{M}}.$$
+
+2. What $h$ minimizes the worst case error in Euler's method when $\delta = 10^{-12}$ and $M = 200$? 
+-->
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
