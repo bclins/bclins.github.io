@@ -1374,7 +1374,7 @@ Mon, Apr 29 | Review
 
 Today we did the following workshop.
 
-* **Workshop:** [Markov decision processes workshop](Workshops/MDP.pdf)
+* **Workshop:** [Markov decision processes workshop](Workshops/MDPs.pdf)
 
 I recommend using the following MDP class to solve each of the problems. Notice that the last problem requires you to add discount factors to the MDP class, since I did not include that in the original code. 
 
@@ -1415,34 +1415,25 @@ class MDP:
     def findOptimalPolicy(self):
         return {s:np.argmax([self.qvalue(s, a, self.value) for a in self.actions]) for s in self.states}
 
-
 ```
+
+When you are doing the workshop, make sure to pay close attention to the types of the inputs and outputs for each function:
+
+* `states` is a Python list of states (in most examples, each individual state will by a Python tuple).  
+* `actions` is a Python list of actions (the individual actions could be strings like "up" or numbers or anything).
+* `rewardFunction` is a function that inputs states and outputs the number for the reward. 
+* `transitionFunction` needs three arguments: 
+    1. the list of states (`states`), 
+    2. a state `s`, and 
+    3. an action `a`. 
+
+    It returns a list of tuples of the form: `[(s1, p1), (s2, p2), ...]` where the first entry of each tuple is a possible next state and the second entry is the probability of getting to that state. 
+
+
 
 
 
 - - - 
-
-[1.2]: <https://www.brianheinold.net/numerical/numerical_book.html#section:introductory_material:floatingpoint_arithmetic>
-[2.1]: <https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_bisection_method>
-[2.2]: <https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:fixed_point_iteration>
-[2.3]: <https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:newtons_method>
-[2.4]: <https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:rates_of_convergence>
-[2.5]: <https://www.brianheinold.net/numerical/numerical_book.html#section:solving_equations_numerically:the_secant_method>
-[3.1]: <https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:the_lagrange_form> 
-[3.2]: <https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:newtons_divided_differences>
-[3.3]: <https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:problems_with_interpolation>
-[3.4]: <https://www.brianheinold.net/numerical/numerical_book.html#section:interpolation:chebyshev_polynomials>
-[4.1]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_differentiation:basics_of_numerical_differentiation>
-[5.1]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:newtoncotes_formulas>
-[5.2]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:the_iterative_trapezoid_rule>
-[5.4]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:gaussian_quadrature>
-[5.6]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_integration:improper_and_multidimensional_integrals>
-[6.1]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:eulers_method>
-[6.4]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:rungekutta_methods>
-[6.5]: <https://www.brianheinold.net/numerical/numerical_book.html#section:numerical_methods_for_differential_equations:systems_of_odes>
-
-
-
 
 <br>
 <br>

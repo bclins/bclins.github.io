@@ -1118,27 +1118,21 @@ $$\dfrac{1}{b-a} \int_a^b f(x) \, dx.$$
 
 1. Find the average value of $f(x) = x^2 + 1$ on the interval $[0,3]$. (<https://youtu.be/0rzL08BHr5c>)
 
-We also talked about an alternative version of the Fundamental Theorem of Calculus
-
-<div class="Theorem">
-**Derivative Version of the Fundamental Theorem of Calculus.** For any integrable function $f(x)$, 
-$$f(t) = \dfrac{d}{dt} \int_a^t f(x) \, dx.$$
-</div> 
-
-This theorem is just a corollary of the other version of the Fundamental Theorem of Calculus.  After all, if $F(x)$ is the antiderivative of $f$, then we just need to differentiate 
-$$\dfrac{d}{dt} F(t) - F(a)$$
-Since $F(a)$ is just a constant, we get $f(t)$ back when we take the derivative of $F(t)$. 
-
-The important thing to understand is that derivatives and integrals are opposites, so they cancel each other out:
-
 We did a few extra problems to see some of the ideas that come up working with definite integrals. 
 
 2. $\int_{-1}^2 |4x-3| \, dx$ (<https://youtu.be/S5zFfQODQOo>)
 
+<!--
 3. What does $\displaystyle \int_{4}^1 2 \, dx$ mean?  Why is it negative? Hint: what should $\int_{0}^4 f(x) \, dx + \int_4^1 f(x) \, dx$ be?
+-->
 
-3. $\dfrac{d}{dx} \int_x^3 \sqrt{|\cos t|} \, dt$ (<https://youtu.be/TqGCNNlx6pU>)
+3. $\dfrac{d}{dx} \int_x^3 \sqrt{|\cos t|} \, dt$ (<https://youtu.be/TqGCNNlx6pU>) Hint: The key for this problem is to skip the work of finding the antiderivative of $\sqrt{|\cos t|}$.  Just use the notation $F(t)$ to represent the antiderivatve temporarily.  
 
+We finished by introducing an integration technique called **u-substitution** which lets you undo a chain rule. 
+
+4. $\int 2x \sin (x^2) \, dx$ (<https://youtu.be/VPX3dcdWdRM>)
+
+<!-- 4. $\int x^2 \cos(x^3) \, dx$ (<https://youtu.be/kf2sskrphL0>) -->
 
 
 
