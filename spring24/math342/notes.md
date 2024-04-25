@@ -1869,7 +1869,63 @@ plt.show()
 $$\dfrac{dy}{dt} = y, ~~~ y(0) = 1$$
 on the interval $[0,1]$. 
 
+### Wed, Apr 24
 
+We started with this question:
+
+1. If you take one step of Euler's method starting at a point $(t,y)$ with a differential equation
+$$\dfrac{dy}{dt} = f(t,y)$$
+use the Taylor series remainder formula to estimate the difference between the Euler's method approximation 
+$$y(t) + \underbrace{f(t,y)}_{y'(t)} \cdot h$$
+and the actual value of $y(t+h)$. 
+
+Here is an image from [section 6.1 of the book][6.1] that shows this error. 
+<center>
+<img src="https://www.brianheinold.net/numerical/images/numerical_notes_diffeq5.png"></img>
+</center>
+
+Over many steps, the error from using Euler's method tends to grow.  It is possible to prove the following upper bound for the error in Euler's method over the whole interval $[a,b]$:
+
+$$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
+where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
+
+To get a method with less error, would could try to incorporate the 2nd derivative of $y(t)$ into each step.  Note that 
+$$\dfrac{d^2}{dt^2} y(t) = \dfrac{d}{dt} f(t,y) = f_t(t,y) + f_y(t,y) f(t,y)$$
+by the chain rule for multivariable functions.  In practice it isn't always easy to compute the partial derivatives of $f$, so the 
+Runge-Kutta method looks for relatively simple formulas involving $f(t,y)$ that approximate this expression above without calculating the partial derivatives.  The **2nd order Runge-Kutta method** known as the **midpoint method** has this formula
+
+$$y(t_{i+1}) \approx y(t_i) + f(t_i + \tfrac{1}{2}h ,y(t_i) + \tfrac{1}{2}h f(t_i,y_i)) h.$$
+
+<div class="Theorem">
+**Second Order Runge-Kutta Algorithm.** To approximate a solution to the IVP
+$$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
+on the interval $[a,b]$,
+
+1. Choose a step size $h$ and initialize $t=a$ and $y = y_0$. 
+2. While $t < b$ do
+    a. $y = y + f(t+h/2, y + h/2 \cdot f(t,y))h$
+    b. $t = t+h$
+</div>
+
+We implemented the algorithm for this Runge-Kutta method in Python and used it to approximate the solution of this IVP:
+
+<!--2. $\dfrac{dy}{dt} = t e^{3t} - 2y$ on $[0,1]$ with initial condition $y(0)=0$.  -->
+2. $\dfrac{dy}{dt} = y-t^2 +1$ on $[-1,3]$ with initial condition $y(-1)=0$.
+
+We also compared our result with the Euler's method approximate solutions for $h = 1, 0.1,$ and $0.01$. We saw that the midpoint method was much more accurate. My version of the code for this algorithm is below.
+
+```python
+def MidpointMethod(f,a,b,h,y0):
+    # Return two lists, one of y-values and the other of t-values
+    t, y = a, y0
+    ts, ys = [a], [y0]
+    while t < b:
+      y += f(t+h/2,y+h/2*f(t,y))*h
+      t += h
+      ts.append(t)
+      ys.append(y)
+    return ts, ys
+```
 
 
 <!--

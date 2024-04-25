@@ -1132,11 +1132,30 @@ We finished by introducing an integration technique called **u-substitution** wh
 
 4. $\int 2x \sin (x^2) \, dx$ (<https://youtu.be/VPX3dcdWdRM>)
 
-<!-- 4. $\int x^2 \cos(x^3) \, dx$ (<https://youtu.be/kf2sskrphL0>) -->
 
+### Wed, Apr 24
 
+Today we went into more depth about the u-substitution method.  We did the following examples. 
 
+1. $\int x^2 \cos(x^3) \, dx$ (<https://youtu.be/kf2sskrphL0>) 
 
+2. $\int \sin(2x) \, dx$
+
+3. $\int (5x)^2 \, dx$ (Hint: you don't have to use substitution for this one, but substitution will work too.)
+
+There is a shortcut for the last two integrals since the derivative of the inside is just a constant.  When the derivative of the inside is just a constant, you can use the **reverse chain rule**: *integrate the outside function, leave the inside alone, then divide by the derivative of the inside.*  Be careful, that does not work if the derivative of the inside is not a constant!  We applied the reverse chain rule to 
+
+4. $\ds \int \cos (2x) \, dx$
+
+We finished with a couple more complicated u-substitution examples. 
+
+5. $\ds \int \dfrac{x^3}{(2+x^4)^2} \, dx$ (<https://youtu.be/sdYdnpYn-1o?t=459>)
+
+6. $\ds \int \cos (3x) \sin^2 (3x) \, dx$ (<https://youtu.be/0zv_4Y9odAQ>)
+
+We didn't do this last one, but it is also a good u-substitution example:
+
+7. $\ds \int (2x+1)\sqrt{x^2+x} \, dx$ (<https://youtu.be/r5XXDSOh5Nk>)
 
 
 

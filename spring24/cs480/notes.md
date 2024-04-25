@@ -1264,14 +1264,14 @@ Let's label the states with the numbers 0 through 10:
 </table>
 </center>
 
-Before calculating the value for each state, we need to deal with one problem.  Since the only states where we get any nonzero reward are absorbing states that you get stuck in forever, the value in the green state would be $+\infty$ and the value in the red state would be $-\infty$. The way we deal with nonzero rewards when they are in states that are in final classes of a Markov chain or Markov decision process is to use **discounting**.  The idea is to discount the value of future rewards in the value iteration equation by multiplying them by a **discount factor** $0 < \lambda < 1$.  The smaller $\lambda$ is, the more we will focus on immediate rewards, and the less we will care about the future.  For Markov chains with rewards, the value iteration formula with discounting is 
-$$v = R + \lambda Qv.$$
+Before calculating the value for each state, we need to deal with one problem.  Since the only states where we get any nonzero reward are absorbing states that you get stuck in forever, the value in the green state would be $+\infty$ and the value in the red state would be $-\infty$. The way we deal with nonzero rewards when they are in states that are in final classes of a Markov chain or Markov decision process is to use **discounting**.  The idea is to discount the value of future rewards in the value iteration equation by multiplying them by a **discount factor** $0 < \gamma < 1$.  The smaller $\gamma$ is, the more we will focus on immediate rewards, and the less we will care about the future.  For Markov chains with rewards, the value iteration formula with discounting is 
+$$v = R + \gamma Qv.$$
 
 For Markov decision processes, where the agent can choose different actions at each state, the value iteration formula is a little more complicated.  In general, if the set of actions available to the agent is $\mathcal{A}$, and for every $i \in \mathcal{A}$, there is a transition matrix $Q_i$ corresponding to that action, then the value iteration formula (which is known as the **Bellman equation** in this context) is 
-$$v = R + \lambda \max_{i \in \mathcal{A}} (Q_i v),$$ 
+$$v = R + \gamma \max_{i \in \mathcal{A}} (Q_i v),$$ 
 where the maximum is taken entrywise over the different vectors $Q_1 v$, $Q_2 v$, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn't always easy or efficient!).  
 
-We wrote a Python program to find the value for each state of the MDP above with a discount factor of $\lambda = 0.9$.  We got these results.  
+We wrote a Python program to find the value for each state of the MDP above with a discount factor of $\gamma = 0.9$.  We got these results.  
 
 <center> 
 <table class="bordered">
@@ -1297,9 +1297,9 @@ Before we described how to find the optimal policy, we took a look at the Bellma
  
 The entries of the value vector are given by the following recursive formula
 
-$$v_i = R_i + \lambda \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)$$
+$$v_i = R_i + \gamma \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)$$
 
-where $i$ is the state, $v$ is the value vector, $\lambda$ is the discount factor, $\mathcal{A}$ is the set of possible actions, and $q_i(a)$ is row $i$ of the transition matrix if you choose action $a$.  
+where $i$ is the state, $v$ is the value vector, $\gamma$ is the discount factor, $\mathcal{A}$ is the set of possible actions, and $q_i(a)$ is row $i$ of the transition matrix if you choose action $a$.  
 </div>
 
 Once you know all of the entries $v_i$ of the value vector $v$, you can use them to choose the best action in each state.  We looked at the example from Monday and figured out the best action in state 9 based on the values of the neighboring states.  From that example, we derived the following formula for the optimal policy.
@@ -1323,7 +1323,7 @@ Today we started by talking about an alternative to the value iteration algorith
 
 1. Choose a random policy $\pi$.
 2. Using $\pi$, find the transition matrix $Q_\pi$ if the agent follows policy $\pi$.
-3. Calculate the solution to $v = R + \lambda Q_\pi v$. 
+3. Calculate the solution to $v = R + \gamma Q_\pi v$. 
 4. Use the solution $v$ to find a new policy $\pi$ that is optimal for $v$.  
 5. Repeat steps 2-4 until the policy stops changing.  
 </div>
@@ -1429,9 +1429,42 @@ When you are doing the workshop, make sure to pay close attention to the types o
 
     It returns a list of tuples of the form: `[(s1, p1), (s2, p2), ...]` where the first entry of each tuple is a possible next state and the second entry is the probability of getting to that state. 
 
+### Wed, Apr 24
 
+Today we introduced **Q-learning** which is one of the main algorithms used for reinforcement learning.  The idea is similar to a Markov decision process, but there are two important differences:
 
+1. The AI does not know what the rewards are for each state.
+2. The AI does not know what the transition function is.  
 
+Instead, our AI will have to learn the environment as it goes.  At first it will choose actions at random and just see what happens.  As it goes, it will store information about the expected values of state-action pairs in a table called a **Q-table** 
+
+<center>
+<table class="bordered">
+<tr><td>&nbsp;</td><td>action0</td><td>action1</td><td>action2</td><td>$~~~~\ldots~~~~$</td></tr>
+<tr><td>state0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>state1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>state2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>$\vdots$</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</center>
+
+Initially, we set all of the entries of the Q-table to zero.  Then, any time our agent starts in state $s$, chooses action $a$, and ends up in state $s'$, we will update entry $Q(s,a)$ in the Q-table using the **q-learning update formula:**
+
+$$Q(s,a) = Q(s,a) + \alpha (R(s) + \gamma \max_{a' \in \mathcal{A}} (Q(s',a')) - Q(s,a))$$
+where $\alpha$ is a **learning rate** between 0 and 1, and $\gamma$ is the discount factor (same as for an MDP).  Note, if $s$ is one of the final absorbing states, then there is no state $s'$ that comes next, so you can leave off the $\gamma \max_{a' \in \mathcal{A}} (Q(s',a'))$ term in the formula. 
+
+The Q-learning algorithm combines this formula for updating the Q-table with a second rule about how our agent moves around the environment.  We could just let our agent choose actions at random.  Or we could ask it to try to find the best policy given its current Q-table. Instead we do a mix of both options.  This is called an **epsilon-greedy algorithm** where we choose a constant $\epsilon$ between 0 and 1, then in each state,
+
+1. With probability $\epsilon$, the agent chooses an action at random, 
+2. Otherwise the agent chooses an action which has the highest current value on the Q-table for the given state. 
+
+By mixing random actions with optimal actions, the AI can still perform reasonably well even as it learns the environment.  When our agent reaches an end state, instead of staying there forever, we will reset the agent back to the start state.  This is called an episode.  Typically in Q-learning we simulate many episodes, to let the AI develop an accurate Q-table. 
+
+Notice that the agent never really learns what the transition function or the rewards are.  It just learns the values in the Q-table.  So it never really has a complete model of the game (Q-learning is called a **model-free** algorithm for this reason).  But that is okay because our AI can figure out what to do from the Q-table, and the Q-table will converge to the correct table of values in the long run. 
+
+We finished by playing with the following code in class to see how a simple Q-learning example works. 
+
+* **Example:** [Q-learning](https://colab.research.google.com/drive/1klnugeoducR6eBKabieOmSt7XuIZwqmK?usp=sharing)
 
 - - - 
 

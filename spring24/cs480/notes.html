@@ -1300,9 +1300,9 @@ v_3 &amp;= 0.                    \\
 </tr>
 </table>
 </center>
-<p>Before calculating the value for each state, we need to deal with one problem. Since the only states where we get any nonzero reward are absorbing states that you get stuck in forever, the value in the green state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math> and the value in the red state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>. The way we deal with nonzero rewards when they are in states that are in final classes of a Markov chain or Markov decision process is to use <strong>discounting</strong>. The idea is to discount the value of future rewards in the value iteration equation by multiplying them by a <strong>discount factor</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>λ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; \lambda &lt; 1</annotation></semantics></math>. The smaller <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> is, the more we will focus on immediate rewards, and the less we will care about the future. For Markov chains with rewards, the value iteration formula with discounting is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>λ</mi><mi>Q</mi><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">v = R + \lambda Qv.</annotation></semantics></math></p>
-<p>For Markov decision processes, where the agent can choose different actions at each state, the value iteration formula is a little more complicated. In general, if the set of actions available to the agent is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>, and for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow><annotation encoding="application/x-tex">i \in \mathcal{A}</annotation></semantics></math>, there is a transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>i</mi></msub><annotation encoding="application/x-tex">Q_i</annotation></semantics></math> corresponding to that action, then the value iteration formula (which is known as the <strong>Bellman equation</strong> in this context) is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>λ</mi><munder><mo>max</mo><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>Q</mi><mi>i</mi></msub><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">v = R + \lambda \max_{i \in \mathcal{A}} (Q_i v),</annotation></semantics></math> where the maximum is taken entrywise over the different vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>1</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_1 v</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>2</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_2 v</annotation></semantics></math>, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn’t always easy or efficient!).</p>
-<p>We wrote a Python program to find the value for each state of the MDP above with a discount factor of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\lambda = 0.9</annotation></semantics></math>. We got these results.</p>
+<p>Before calculating the value for each state, we need to deal with one problem. Since the only states where we get any nonzero reward are absorbing states that you get stuck in forever, the value in the green state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">+\infty</annotation></semantics></math> and the value in the red state would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>. The way we deal with nonzero rewards when they are in states that are in final classes of a Markov chain or Markov decision process is to use <strong>discounting</strong>. The idea is to discount the value of future rewards in the value iteration equation by multiplying them by a <strong>discount factor</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>γ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; \gamma &lt; 1</annotation></semantics></math>. The smaller <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math> is, the more we will focus on immediate rewards, and the less we will care about the future. For Markov chains with rewards, the value iteration formula with discounting is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>γ</mi><mi>Q</mi><mi>v</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">v = R + \gamma Qv.</annotation></semantics></math></p>
+<p>For Markov decision processes, where the agent can choose different actions at each state, the value iteration formula is a little more complicated. In general, if the set of actions available to the agent is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>, and for every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow><annotation encoding="application/x-tex">i \in \mathcal{A}</annotation></semantics></math>, there is a transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>i</mi></msub><annotation encoding="application/x-tex">Q_i</annotation></semantics></math> corresponding to that action, then the value iteration formula (which is known as the <strong>Bellman equation</strong> in this context) is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>γ</mi><munder><mo>max</mo><mrow><mi>i</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mo stretchy="false" form="prefix">(</mo><msub><mi>Q</mi><mi>i</mi></msub><mi>v</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">v = R + \gamma \max_{i \in \mathcal{A}} (Q_i v),</annotation></semantics></math> where the maximum is taken entrywise over the different vectors <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>1</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_1 v</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mn>2</mn></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">Q_2 v</annotation></semantics></math>, etc.. Note that this is not the standard way to write the Bellman equations, but it is equivalent to those other notations, and it is particularly convenient if you can construct the full transition matrix for each action (which isn’t always easy or efficient!).</p>
+<p>We wrote a Python program to find the value for each state of the MDP above with a discount factor of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>0.9</mn></mrow><annotation encoding="application/x-tex">\gamma = 0.9</annotation></semantics></math>. We got these results.</p>
 <center>
 <table class="bordered">
 <tr>
@@ -1358,8 +1358,8 @@ v_3 &amp;= 0.                    \\
 <section id="bellman-equation" class="Theorem">
 <h4>Bellman Equation</h4>
 <p>The entries of the value vector are given by the following recursive formula</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>=</mo><msub><mi>R</mi><mi>i</mi></msub><mo>+</mo><mi>λ</mi><munder><mo>max</mo><mrow><mi>a</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_i = R_i + \lambda \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)</annotation></semantics></math></p>
-<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> is the state, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is the value vector, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math> is the discount factor, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math> is the set of possible actions, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q_i(a)</annotation></semantics></math> is row <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> of the transition matrix if you choose action <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>=</mo><msub><mi>R</mi><mi>i</mi></msub><mo>+</mo><mi>γ</mi><munder><mo>max</mo><mrow><mi>a</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v_i = R_i + \gamma \max_{a \in \mathcal{A}} \left( q_i(a) \cdot v \right)</annotation></semantics></math></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> is the state, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is the value vector, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math> is the discount factor, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="script"><mi>𝒜</mi></mstyle><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math> is the set of possible actions, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">q_i(a)</annotation></semantics></math> is row <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> of the transition matrix if you choose action <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p>
 </section>
 <p>Once you know all of the entries <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>i</mi></msub><annotation encoding="application/x-tex">v_i</annotation></semantics></math> of the value vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>, you can use them to choose the best action in each state. We looked at the example from Monday and figured out the best action in state 9 based on the values of the neighboring states. From that example, we derived the following formula for the optimal policy.</p>
 <section id="optimal-policy-formula" class="Theorem">
@@ -1374,7 +1374,7 @@ v_3 &amp;= 0.                    \\
 <ol type="1">
 <li>Choose a random policy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>.</li>
 <li>Using <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>, find the transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>π</mi></msub><annotation encoding="application/x-tex">Q_\pi</annotation></semantics></math> if the agent follows policy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>.</li>
-<li>Calculate the solution to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>λ</mi><msub><mi>Q</mi><mi>π</mi></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">v = R + \lambda Q_\pi v</annotation></semantics></math>.</li>
+<li>Calculate the solution to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>R</mi><mo>+</mo><mi>γ</mi><msub><mi>Q</mi><mi>π</mi></msub><mi>v</mi></mrow><annotation encoding="application/x-tex">v = R + \gamma Q_\pi v</annotation></semantics></math>.</li>
 <li>Use the solution <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> to find a new policy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math> that is optimal for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>.<br />
 </li>
 <li>Repeat steps 2-4 until the policy stops changing.<br />
@@ -1479,6 +1479,115 @@ v_3 &amp;= 0.                    \\
 <li>an action <code>a</code>.</li>
 </ol>
 It returns a list of tuples of the form: <code>[(s1, p1), (s2, p2), ...]</code> where the first entry of each tuple is a possible next state and the second entry is the probability of getting to that state.</li>
+</ul>
+<h3 id="wed-apr-24">Wed, Apr 24</h3>
+<p>Today we introduced <strong>Q-learning</strong> which is one of the main algorithms used for reinforcement learning. The idea is similar to a Markov decision process, but there are two important differences:</p>
+<ol type="1">
+<li>The AI does not know what the rewards are for each state.</li>
+<li>The AI does not know what the transition function is.</li>
+</ol>
+<p>Instead, our AI will have to learn the environment as it goes. At first it will choose actions at random and just see what happens. As it goes, it will store information about the expected values of state-action pairs in a table called a <strong>Q-table</strong></p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+ 
+</td>
+<td>
+action0
+</td>
+<td>
+action1
+</td>
+<td>
+action2
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>…</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace></mrow><annotation encoding="application/x-tex">~~~~\ldots~~~~</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+state0
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+state1
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+state2
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+<td>
+ 
+</td>
+</tr>
+</table>
+</center>
+<p>Initially, we set all of the entries of the Q-table to zero. Then, any time our agent starts in state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>, chooses action <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>, and ends up in state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">s&#39;</annotation></semantics></math>, we will update entry <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q(s,a)</annotation></semantics></math> in the Q-table using the <strong>q-learning update formula:</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>α</mi><mo stretchy="false" form="prefix">(</mo><mi>R</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><munder><mo>max</mo><mrow><mi>a</mi><mi>′</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></munder><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo>,</mo><mi>a</mi><mi>′</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">Q(s,a) = Q(s,a) + \alpha (R(s) + \gamma \max_{a&#39; \in \mathcal{A}} (Q(s&#39;,a&#39;)) - Q(s,a))</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> is a <strong>learning rate</strong> between 0 and 1, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math> is the discount factor (same as for an MDP). Note, if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math> is one of the final absorbing states, then there is no state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">s&#39;</annotation></semantics></math> that comes next, so you can leave off the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><msub><mo>max</mo><mrow><mi>a</mi><mi>′</mi><mo>∈</mo><mstyle mathvariant="script"><mi>𝒜</mi></mstyle></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mi>′</mi><mo>,</mo><mi>a</mi><mi>′</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma \max_{a&#39; \in \mathcal{A}} (Q(s&#39;,a&#39;))</annotation></semantics></math> term in the formula.</p>
+<p>The Q-learning algorithm combines this formula for updating the Q-table with a second rule about how our agent moves around the environment. We could just let our agent choose actions at random. Or we could ask it to try to find the best policy given its current Q-table. Instead we do a mix of both options. This is called an <strong>epsilon-greedy algorithm</strong> where we choose a constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math> between 0 and 1, then in each state,</p>
+<ol type="1">
+<li>With probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>, the agent chooses an action at random,</li>
+<li>Otherwise the agent chooses an action which has the highest current value on the Q-table for the given state.</li>
+</ol>
+<p>By mixing random actions with optimal actions, the AI can still perform reasonably well even as it learns the environment. When our agent reaches an end state, instead of staying there forever, we will reset the agent back to the start state. This is called an episode. Typically in Q-learning we simulate many episodes, to let the AI develop an accurate Q-table.</p>
+<p>Notice that the agent never really learns what the transition function or the rewards are. It just learns the values in the Q-table. So it never really has a complete model of the game (Q-learning is called a <strong>model-free</strong> algorithm for this reason). But that is okay because our AI can figure out what to do from the Q-table, and the Q-table will converge to the correct table of values in the long run.</p>
+<p>We finished by playing with the following code in class to see how a simple Q-learning example works.</p>
+<ul>
+<li><strong>Example:</strong> <a href="https://colab.research.google.com/drive/1klnugeoducR6eBKabieOmSt7XuIZwqmK?usp=sharing">Q-learning</a></li>
 </ul>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
