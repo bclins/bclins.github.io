@@ -1927,6 +1927,12 @@ def MidpointMethod(f,a,b,h,y0):
     return ts, ys
 ```
 
+### Fri, Apr 26
+
+Today we introduced the **4th order Runge-Kutta (RK4)** method and we did this workshop:
+
+* **Workshop:** [Runge-Kutta method](Workshops/RungeKutta.pdf)
+
 
 <!--
 1. Suppose $y \in C^2[a,b]$ and $t_i, t_{i+1} \in [a,b]$ with $t_{i+1}-t_i = h$.  Use the first degree Taylor polynomial centered at $t_i$ to estimate $y(t_{i+1})$ based on $y(t_i)$ and $y'(t_i)$.  What is the remainder term for this expression?

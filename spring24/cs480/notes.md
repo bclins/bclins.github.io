@@ -1471,6 +1471,37 @@ We finished by playing with the following code in class to see how a simple Q-le
 
 * **Example:** [Q-learning](https://colab.research.google.com/drive/1klnugeoducR6eBKabieOmSt7XuIZwqmK?usp=sharing)
 
+### Fri, Apr 26
+
+Today we talked some more about the Q-learning algorithm:
+
+<div class="Theorem">
+**Q-learning algorithm.** 
+
+0. Initialize the Q-table.
+1. Initialize the agent in the start state.
+2. In each state $s$, the agent chooses an action $a$ using an $\epsilon$-greedy algorithm. 
+3. After choosing an action, the agent transitions to a new state $s'$ (randomly determined by the MDP). 
+4. Update the Q-table using the formula:
+$$Q(s,a) += \alpha \left[ R(s) + \left(\gamma \max_{a'} Q(s', a')\right) - Q(s,a) \right].$$
+5. Repeat steps 2-4 until $s$ is a final state. That completes one episode.
+6. Repeat steps 0-5 to simulate many episodes. 
+</div>
+
+Some important differences between $Q$-learning and MPDs to keep in mind:
+
+* The agent does not know the transition function or the rewards.  
+* When we program a Q-learning model, we actually need to simulate the agent moving around the environment.  So we need to randomly determine the next state $s'$ based on the current state $s$ and action $a$.  This is different than when we solved MDPs, because we never randomly generated states then. 
+* Some MDPs do not have final states.  Then you can still use the Q-learning algorithm without step 5.  You'll just stay in episode 1 forever.  In order for a Q-learning algorithm with only one episode to converge, you will need to set the discount factor $\gamma$ to be a number strictly less than 1. 
+
+The parameters $\epsilon$ and $\alpha$ are hyperparamters. They don't change what the underlying MDP is, but they do affect the rate at which the AI learns.  It can be hard to predict in advance what values of the hyperparameters to choose.  Sometimes a little trial and error is a good idea. 
+
+After reviewing the Q-learning algorithm, we updated the grid world example with randomness and we saw how to program the Q-learning algorithm and how it differs from solving an MDP.  
+
+* **Example:** [Q-learning 2](https://colab.research.google.com/drive/16GiwmGvHGqQ4OesTme-Jswhkirh7aLSE?usp=sharing)
+
+We also talked about how to implement an AI that can play blackjack with Q-learning.  We discuss good choices for the states, actions, rewards, and transition function. 
+
 - - - 
 
 <br>

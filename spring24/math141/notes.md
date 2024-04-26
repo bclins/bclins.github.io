@@ -1157,6 +1157,16 @@ We didn't do this last one, but it is also a good u-substitution example:
 
 7. $\ds \int (2x+1)\sqrt{x^2+x} \, dx$ (<https://youtu.be/r5XXDSOh5Nk>)
 
+### Fri, Apr 26
+
+Today we talked about some of the material that we haven't seen in a while.  We reviewed continuity and limits.  We looked at these examples:
+
+1. Find the values of $f(x) = \dfrac{3x-\pi}{2 \cos x - 1}$ where the function is discontinuous on the interval $[-\pi, \pi)$.  For each discontinuity, determine if it is a hole, a jump, or a pole discontinuity. 
+
+2. Use the graph below to find the indicated limits. 
+<center>
+<img src="piecewise.png" width=500></img>
+</center>
 
 
 

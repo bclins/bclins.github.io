@@ -17,6 +17,7 @@ header-includes: |
 
 ### Announcements
 
+* The final exam will be on **Wed, May 1** at 2pm in Pauley 100
 * Final exam materials: [practice final exam](oldFinal.pdf), [solutions](oldFinalSolutions.pdf)
 * Midterm 3 materials: [review problems](midterm3review.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf)
