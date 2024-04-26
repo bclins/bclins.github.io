@@ -1359,6 +1359,7 @@ new_v[i] = R[i] + discount * max(np.dot([t[1] for t in T(i,a)], [v[t[0]] for t i
 
 
 
+
 - - -
 
 ### Week 14 Notes
@@ -1429,6 +1430,10 @@ When you are doing the workshop, make sure to pay close attention to the types o
 
     It returns a list of tuples of the form: `[(s1, p1), (s2, p2), ...]` where the first entry of each tuple is a possible next state and the second entry is the probability of getting to that state. 
 
+Another thing to notice in the class is the `qvalue` method.  A **q-value** is the expected future value if we are in state $s$ and select action $a$.  Previously we didn't use a name for this quantity, but it is
+$$Q(s,a) = q_s(a) \cdot v$$
+where $v$ is the value vector, and $q_s(a)$ is the probability vector for the possible transitions if we are in state $s$ and choose action $a$.  It is convenient in the class to make this a separate function.  
+
 ### Wed, Apr 24
 
 Today we introduced **Q-learning** which is one of the main algorithms used for reinforcement learning.  The idea is similar to a Markov decision process, but there are two important differences:
@@ -1450,7 +1455,7 @@ Instead, our AI will have to learn the environment as it goes.  At first it will
 
 Initially, we set all of the entries of the Q-table to zero.  Then, any time our agent starts in state $s$, chooses action $a$, and ends up in state $s'$, we will update entry $Q(s,a)$ in the Q-table using the **q-learning update formula:**
 
-$$Q(s,a) = Q(s,a) + \alpha (R(s) + \gamma \max_{a' \in \mathcal{A}} (Q(s',a')) - Q(s,a))$$
+$$Q(s,a) = Q(s,a) + \alpha \left(R(s) + \gamma \max_{a' \in \mathcal{A}} (Q(s',a')) - Q(s,a)\right)$$
 where $\alpha$ is a **learning rate** between 0 and 1, and $\gamma$ is the discount factor (same as for an MDP).  Note, if $s$ is one of the final absorbing states, then there is no state $s'$ that comes next, so you can leave off the $\gamma \max_{a' \in \mathcal{A}} (Q(s',a'))$ term in the formula. 
 
 The Q-learning algorithm combines this formula for updating the Q-table with a second rule about how our agent moves around the environment.  We could just let our agent choose actions at random.  Or we could ask it to try to find the best policy given its current Q-table. Instead we do a mix of both options.  This is called an **epsilon-greedy algorithm** where we choose a constant $\epsilon$ between 0 and 1, then in each state,

@@ -17,6 +17,7 @@ header-includes: |
 
 ### Announcements
 
+* Final exam materials: [practice final exam](oldFinal.pdf), [solutions](oldFinalSolutions.pdf)
 * Midterm 3 materials: [review problems](midterm3review.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](formulaSheet.pdf)
