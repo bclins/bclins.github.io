@@ -1402,7 +1402,7 @@ class MDP:
         return np.dot(probabilities,nextValues)
 
     def bellman(self, v):
-        return {s:max(self.reward(s) + self.qvalue(s, a, v) for a in self.actions) for s in self.states}
+        return {s:self.reward(s) + max(self.qvalue(s, a, v) for a in self.actions) for s in self.states}
 
     def findValue(self):
         # Uses the value iteration algorithm

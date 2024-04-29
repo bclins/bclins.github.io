@@ -1453,7 +1453,7 @@ v_3 &amp;= 0.                    \\
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true"></a>        <span class="cf">return</span> np.dot(probabilities,nextValues)</span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true"></a></span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true"></a>    <span class="kw">def</span> bellman(<span class="va">self</span>, v):</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true"></a>        <span class="cf">return</span> {s:<span class="bu">max</span>(<span class="va">self</span>.reward(s) <span class="op">+</span> <span class="va">self</span>.qvalue(s, a, v) <span class="cf">for</span> a <span class="kw">in</span> <span class="va">self</span>.actions) <span class="cf">for</span> s <span class="kw">in</span> <span class="va">self</span>.states}</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true"></a>        <span class="cf">return</span> {s:<span class="va">self</span>.reward(s) <span class="op">+</span> <span class="bu">max</span>(<span class="va">self</span>.qvalue(s, a, v) <span class="cf">for</span> a <span class="kw">in</span> <span class="va">self</span>.actions) <span class="cf">for</span> s <span class="kw">in</span> <span class="va">self</span>.states}</span>
 <span id="cb18-24"><a href="#cb18-24" aria-hidden="true"></a></span>
 <span id="cb18-25"><a href="#cb18-25" aria-hidden="true"></a>    <span class="kw">def</span> findValue(<span class="va">self</span>):</span>
 <span id="cb18-26"><a href="#cb18-26" aria-hidden="true"></a>        <span class="co"># Uses the value iteration algorithm</span></span>
