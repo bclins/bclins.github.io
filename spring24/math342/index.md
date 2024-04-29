@@ -22,7 +22,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on **Wednesday, April 17.**
+* The Final Exam is due **on Friday at noon**. 
 * [Midterm 2 review problems](midterm2review.pdf) (and [solutions](midterm2reviewSolutions.pdf))
 * [Midterm 1 review problems](midterm1review.pdf) (and [solutions](midterm1reviewSolutions.pdf))
 

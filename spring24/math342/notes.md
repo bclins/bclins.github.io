@@ -13,6 +13,19 @@ header-includes: |
   </style>
 ---
 
+<!--
+Note to self: 
+
+This was the second time I taught this class.  I followed the same general outline as the first time.  It worked okay, but I think that the course still has some problems.  I did spend more time on Taylor series and the Taylor remainder formula and I do not regret that.  Still, here are some things I would change. 
+
+1. I need to spend more time on some basic concepts like:
+    a. Triangle inequality (this crushed them on the Fixed Point Iteration workshop)
+    b. Combining separate error terms (worst case total error -> triangle inequality again!)
+    c. Orthogonality and Gram-Schmidt. There is no point covering Fourier series or Legendre polynomials if students don't understand how to find the components of a vector in a basis and why orthogonal bases are nice.  
+
+2. I would cut out Gaussian quadrature.  It is a cool trick... but it takes too long to explain. A better use of time would be to introduce adaptive quadrature methods.  
+-->
+
 \newcommand{\ds}{\displaystyle}
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}

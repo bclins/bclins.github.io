@@ -22,7 +22,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on Friday, Apr 12. 
+* The Final Project is due on **Thursday at noon.**
 * Midterm 2 [review materials](midterm2review.html). 
 <!--Midterm 1 will be on Wednesday, Feb 21.  It will cover [these things](notes.html#mon-feb-19).-->
 
