@@ -55,8 +55,7 @@ Math & Society will cover applications of mathematics to society including expon
 
 ### Attendance Policy
 
-In order to master a subject like calculus, regular attendance is crucial. However, if you have a fever or are not feeling well, then please do not come to class that day. As long as you let me know the reason for your absence, I will do my best to help you stay caught up and make up any material that you missed. The key is to communicate with me when you aren't able to attend class.  
-
+Regular attendance is crucial. There are only 20 classes during May Term.  You are responsible for any material you miss.  Any workshops you miss will be posted online, and will be due at the beginning of the next class.   
 
 ### Classroom Policy
 
