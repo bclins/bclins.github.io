@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brian Lins" />
+  <title>Fairness Criteria</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Fairness Criteria</h1>
+  <p class="author">
+Brian Lins
+  </p>
+  <p class="institute">
+Hampden-Sydney College
+  </p>
+  <p class="date">Tuesday, May 21, 2024</p>
+</div>
+<div class="slide section level1">
+
+<style>
+.bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
+    & td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+}
+</style>
+<!--
+NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
+pandoc -s -t slidy day1slides.md -o day1slides.html
+-->
+</div>
+<div id="what-makes-a-voting-method-fair" class="slide section level1">
+<h1>What Makes a Voting Method Fair?</h1>
+<p>So far, we have seen some features that an ideal voting system would
+have:</p>
+<ul>
+<li><p><strong>Monotonicity Criterion</strong> - A voter should never
+cause their preferred candidate to lose by ranking them highly.</p></li>
+<li><p><strong>Condorcet Criterion</strong> - If a candidate would beat
+all other candidates in one-on-one elections, then that candidate should
+win.</p></li>
+<li><p><strong>No Spoilers Criterion</strong> - The outcome of the
+election should not change based on whether or not a candidate who won’t
+win runs.</p></li>
+</ul>
+</div>
+<div id="condorcet-methods" class="slide section level1">
+<h1>Condorcet Methods</h1>
+<p>There are lots of different Condorcet voting methods. The basic idea
+is to check if there is a Condorcet candidate. If there is one, they win
+the election. If not, then use any other method to pick the winner.</p>
+</div>
+<div id="arrows-impossibility-theorem" class="slide section level1">
+<h1>Arrow’s Impossibility Theorem</h1>
+<p>Unfortunately, even though we can find methods that satisfy some of
+the fairness criteria, it is impossible to satisfy them all. This is a
+consequence of a famous theorem that was proved by the economist Kenneth
+Arrow in 1951</p>
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Kenneth_Arrow%2C_Stanford_University.jpg" width=300></img>
+</center>
+</div>
+<div id="what-is-impossible" class="slide section level1">
+<h1>What is Impossible?</h1>
+<p>Here is one version of Arrow’s theorem (there are other more
+complicated versions that say a lot more).</p>
+<p><strong>Theorem.</strong> No voting method can satisfy both the
+Condorcet criterion and the no spoilers criterion when there are 3 or
+more candidates.</p>
+</div>
+<div id="why-is-it-impossible" class="slide section level1">
+<h1>Why is it Impossible?</h1>
+<p>Consider an election with three front runner candidates (assume any
+other candidates are ranked lower by all of the voters and so don’t
+matter) and just 9 voters.</p>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th>
+</th>
+<th colspan="3">
+Number of Voters
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+4
+</th>
+<th>
+3
+</th>
+<th>
+2
+</th>
+</tr>
+</thead>
+</tbody>
+<tr>
+<td>
+Candidate A
+</td>
+<td>
+1st
+</td>
+<td>
+3rd
+</td>
+<td>
+2nd
+</td>
+</tr>
+<tr>
+<td>
+Candidate B
+</td>
+<td>
+2nd
+</td>
+<td>
+1st
+</td>
+<td>
+3rd
+</td>
+</tr>
+<tr>
+<td>
+Candidate C
+</td>
+<td>
+3rd
+</td>
+<td>
+2nd
+</td>
+<td>
+1st
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><strong>Exercise.</strong> Show that there is no Condorcet candidate.
+Why not?</p>
+<p><strong>Exercise.</strong> Why is it impossible for a Condorcet
+method to pick a winner of this election without one of the losers being
+a spoiler candidate?</p>
+</div>
+<div id="important-to-understand" class="slide section level1">
+<h1>Important to Understand</h1>
+<p>Just because every voting method sometimes either has spoiler
+candidates or fails to elect a Condorcet candidate doesn’t mean that all
+voting methods are bad. Usually, most methods work pretty well most of
+the time. But none are 100% perfect.</p>
+</div>
+<div id="the-story-so-far" class="slide section level1">
+<h1>The Story So Far</h1>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th>
+</th>
+<th colspan="4">
+Voting Method
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+Plurality
+</th>
+<th>
+IRV
+</th>
+<th>
+Borda
+</th>
+<th>
+Condorcet*
+</th>
+</tr>
+</thead>
+</tbody>
+<tr>
+<td>
+Condorcet Criterion
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:green">✔</span>
+</td>
+</tr>
+<tr>
+<td>
+Monotonicity Criterion
+</td>
+<td>
+<span style="color:green">✔ </span>
+</td>
+<td>
+<span style="color:red">✘ </span>
+</td>
+<td>
+<span style="color:green">✔ </span>
+</td>
+<td>
+<span style="color:green">✔</span>*
+</td>
+</tr>
+<tr>
+<td>
+No Spoiler Criterion
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>*There are actually several Condorcet methods, not all satisfy the
+Monotonicity criterion.</p>
+</div>
+<div id="approval-voting" class="slide section level1">
+<h1>Approval Voting</h1>
+<p>It would be nice to have a method that doesn’t have spoiler
+candidates. Several voting methods have that property including one very
+simple method.</p>
+<center>
+<img src="https://assets.nationbuilder.com/unifiedprimary/pages/593/attachments/original/1686072669/Approval_Ballot__Standard__Blue__2_Columns__04_17_23.png?1686072669" width = 400></img>
+</center>
+</div>
+<div id="the-story-with-approval-voting" class="slide section level1">
+<h1>The Story with Approval Voting</h1>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th>
+</th>
+<th colspan="5">
+Voting Method
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+Plurality
+</th>
+<th>
+IRV
+</th>
+<th>
+Borda
+</th>
+<th>
+Condorcet
+</th>
+<th>
+Approval
+</th>
+</tr>
+</thead>
+</tbody>
+<tr>
+<td>
+Condorcet Criterion
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:green">✔</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+</tr>
+<tr>
+<td>
+Monotonicity Criterion
+</td>
+<td>
+<span style="color:green">✔ </span>
+</td>
+<td>
+<span style="color:red">✘ </span>
+</td>
+<td>
+<span style="color:green">✔ </span>
+</td>
+<td>
+<span style="color:green">✔</span>
+</td>
+<td>
+<span style="color:green">✔</span>
+</td>
+</tr>
+<tr>
+<td>
+No Spoiler Criterion
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:red">✘</span>
+</td>
+<td>
+<span style="color:green">✔</span>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+</body>
+</html>

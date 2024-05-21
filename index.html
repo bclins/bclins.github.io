@@ -8,14 +8,22 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="front.css" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><br />
+  <meta http-equiv="Pragma" content="no-cache" /><br />
   <meta http-equiv="Expires" content="0" />
 </head>
 <body>
@@ -23,7 +31,8 @@
 <h1 class="title">Brian Lins</h1>
 </header>
 <!--- - --->
-<div style="background-color:#ccc; border-top: 0px solid black; border-bottom: 0px solid black; border-radius: 12px">
+<div
+style="background-color:#ccc; border-top: 0px solid black; border-bottom: 0px solid black; border-radius: 12px">
 <table>
 <tr>
 <td>
@@ -31,11 +40,15 @@
 </td>
 <td>
 <p>Professor of Mathematics<br />
-<a href="http://www.hsc.edu/academics/mathematics-and-computer-science">Math &amp; CS Department</a><br />
+<a
+href="http://www.hsc.edu/academics/mathematics-and-computer-science">Math
+&amp; CS Department</a><br />
 <a href="https://www.hsc.edu">Hampden-Sydney College</a></p>
 <p>Office: Pauley 301<br />
-E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a></p>
-<p><a href="about.html">About</a> | <a href="research.html">Research</a> | <a href="index.html">Teaching</a></p>
+E-mail:
+<a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a></p>
+<p><a href="about.html">About</a> | <a href="research.html">Research</a>
+| <a href="index.html">Teaching</a></p>
 </td>
 </tr>
 </table>
@@ -43,15 +56,23 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 <!--- - --->
 <h3 id="weekly-schedule">Weekly Schedule</h3>
 <p><a href="spring24/schedule.pdf"><img src="spring24/schedule.png" width="448"/></a></p>
+<h3 id="mayterm-2024-class">MayTerm 2024 Class</h3>
+<ul>
+<li>Math 111 - <a href="spring24/math111/index.html">Math &amp;
+Society</a></li>
+</ul>
 <h3 id="spring-2024-classes">Spring 2024 Classes</h3>
 <ul>
 <li>Math 141 - <a href="spring24/math141/index.html">Calculus I</a></li>
-<li>Math 342 - <a href="spring24/math342/index.html">Numerical Analysis</a></li>
-<li>Coms 480 - <a href="spring24/cs480/index.html">Advanced Topics in Computer Science</a></li>
+<li>Math 342 - <a href="spring24/math342/index.html">Numerical
+Analysis</a></li>
+<li>Coms 480 - <a href="spring24/cs480/index.html">Advanced Topics in
+Computer Science</a></li>
 </ul>
 <h3 id="teaching-materials">Teaching Materials</h3>
 <ul>
-<li><a href="http://people.hsc.edu/faculty-staff/blins/classes/">Old Course Materials</a></li>
+<li><a href="http://people.hsc.edu/faculty-staff/blins/classes/">Old
+Course Materials</a></li>
 </ul>
 <p><br> <br> <br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
