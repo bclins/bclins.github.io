@@ -1,36 +1,179 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Brian Lins" />
-  <title>Fairness Criteria</title>
-  <style type="text/css">
+  <title>Weighted Voting</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
-  <link rel="stylesheet" type="text/css" media="screen, projection, print"
-    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
-  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
-    charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div class="slide titlepage">
-  <h1 class="title">Fairness Criteria</h1>
-  <p class="author">
-Brian Lins
-  </p>
-  <p class="date">Wednesday, May 22, 2024</p>
-</div>
-<div class="slide section level1">
-
+<header id="title-block-header">
+<h1 class="title">Weighted Voting</h1>
+<p class="author">Brian Lins</p>
+<p class="date">Thursday, May 23, 2024</p>
+</header>
 <style>
 .bordered {
     border: 1px solid black;
@@ -66,32 +209,49 @@ Brian Lins
 NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
 pandoc -s -t slidy day1slides.md -o day1slides.html
 -->
-</div>
-<div id="problems-with-borda-count" class="slide section level1">
-<h1>Problems with Borda Count</h1>
-<p>Jean Charles Borda proposed the Borda count method in 1770. It has the advantage that spoiler candidates are much less likely to be a problem. But Nicholas de Condorcet was very critical of the Borda count method.</p>
-<center>
-<figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Jean_Charles_Borda.jpg" width=300></img> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Anonymous_-_Portrait_de_Marie_Jean_Antoine_Nicolas_de_Caritat%2C_marquis_de_Condorcet_%281743-1794%29%2C_philosophe%2C_math%C3%A9maticien_et_homme_politique._-_P1668_-_Mus%C3%A9e_Carnavalet.jpg/440px-thumbnail.jpg" width=300></img>
-<figcaption>
-Jean Charles Borda (left) and Nicholas de Condorcet (right)
-</figcaption>
-</figure>
-</center>
-</div>
-<div id="condorcets-criterion" class="slide section level1">
-<h1>Condorcet’s Criterion</h1>
+<h1 id="weighted-voting-systems">Weighted Voting Systems</h1>
+<p>Up to now we have assume that all voters have the same number of
+votes. But that is not always true.</p>
+<ul>
+<li><p>Corporate shareholders might have more votes if they own more
+shares.</p></li>
+<li><p>Senior committee members might get more votes than junior
+members.</p></li>
+<li><p>Big states get more votes in the Electoral College than small
+states.</p></li>
+</ul>
+<h1 id="example">Example</h1>
+<p>Suppose there are 4 investors in one company. The first owns 10
+shares, the second has 5, the third 3, and the last has 2 shares. They
+agree that any decision requires a two-thirds majority to pass.</p>
+<div class="incremental">
+<h3 id="question.">Question.</h3>
+<p>How many votes are needed to pass a motion?</p>
+<h3 id="question-2">Question 2</h3>
+<p>Is there a voter who can prevent a motion from passing all by
+themselves?</p>
+<h1 id="notation-terminology">Notation &amp; Terminology</h1>
+<p>We can represent the last situation by writting</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>14</mn><mo>;</mo><mn>10</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[14; 10, 5, 3, 2]</annotation></semantics></math></p>
+<p>The first number is the <strong>vote threshold</strong> needed to
+pass, and the other four numbers are the number of votes each voter
+controls.</p>
+<h1 id="condorcets-criterion">Condorcet’s Criterion</h1>
 <center>
 <figure>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Anonymous_-_Portrait_de_Marie_Jean_Antoine_Nicolas_de_Caritat%2C_marquis_de_Condorcet_%281743-1794%29%2C_philosophe%2C_math%C3%A9maticien_et_homme_politique._-_P1668_-_Mus%C3%A9e_Carnavalet.jpg/440px-thumbnail.jpg" width=300></img>
 </figure>
 </center>
-<p>According to Condorcet, if a candidate would beat all the others in head-to-head match-ups, then they should win the election.</p>
-<p>A candidate that would beat every other candidate in a one-on-one run-off is called a <strong>Condorcet candidate</strong>. Not every election has a Condorcet candidate, but when there is it seems reasonable that they should win.</p>
-</div>
-<div id="borda-count-fails-the-condorcet-criterion" class="slide section level1">
-<h1>Borda Count Fails the Condorcet Criterion</h1>
-<p>In fact, Borda count doesn’t even always elect the majority candidate! Suppose 25 kids vote on the best ice cream flavor.</p>
+<p>According to Condorcet, if a candidate would beat all the others in
+head-to-head match-ups, then they should win the election.</p>
+<p>A candidate that would beat every other candidate in a one-on-one
+run-off is called a <strong>Condorcet candidate</strong>. Not every
+election has a Condorcet candidate, but when there is it seems
+reasonable that they should win.</p>
+<h1 id="borda-count-fails-the-condorcet-criterion">Borda Count Fails the
+Condorcet Criterion</h1>
+<p>In fact, Borda count doesn’t even always elect the majority
+candidate! Suppose 25 kids vote on the best ice cream flavor.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -176,17 +336,19 @@ Strawberry
 </center>
 <p><strong>Exercise.</strong> Is there a Condorcet candidate? Why?</p>
 <p><strong>Exercise.</strong> What flavor does Borda count pick?</p>
-</div>
-<div id="condorcet-methods" class="slide section level1">
-<h1>Condorcet Methods</h1>
-<p>It is easy to make a voting method that passes the Condorcet criteria. Just check for a Condorcet candidate by checking every pairwise comparison.</p>
+<h1 id="condorcet-methods">Condorcet Methods</h1>
+<p>It is easy to make a voting method that passes the Condorcet
+criteria. Just check for a Condorcet candidate by checking every
+pairwise comparison.</p>
 <center>
 <img src="condorcet.png" width=900></img>
 </center>
-</div>
-<div id="checking-for-a-condorcet-candidate" class="slide section level1">
-<h1>Checking for a Condorcet Candidate</h1>
-<p>With 5 candidates, there are 10 possible pairwise match-ups. That could take a long time to check. Save time by only checking match-ups until every candidate has lost one (or you find a Condorcet candidate).</p>
+<h1 id="checking-for-a-condorcet-candidate">Checking for a Condorcet
+Candidate</h1>
+<p>With 5 candidates, there are 10 possible pairwise match-ups. That
+could take a long time to check. Save time by only checking match-ups
+until every candidate has lost one (or you find a Condorcet
+candidate).</p>
 <center>
 <table class="bordered">
 <thead>
@@ -321,9 +483,7 @@ Indian
 </tbody>
 </table>
 </center>
-</div>
-<div id="mexican-vs.-italian" class="slide section level1">
-<h1>Mexican vs. Italian</h1>
+<h1 id="mexican-vs.-italian">Mexican vs. Italian</h1>
 <center>
 <table class="bordered">
 <thead>
@@ -459,9 +619,7 @@ Indian
 </table>
 </center>
 <p>Mexican wins.</p>
-</div>
-<div id="mexican-vs.-thai" class="slide section level1">
-<h1>Mexican vs. Thai</h1>
+<h1 id="mexican-vs.-thai">Mexican vs. Thai</h1>
 <center>
 <table class="bordered">
 <thead>
@@ -597,9 +755,7 @@ Indian
 </table>
 </center>
 <p>Mexican wins.</p>
-</div>
-<div id="mexican-vs.-chinese" class="slide section level1">
-<h1>Mexican vs. Chinese</h1>
+<h1 id="mexican-vs.-chinese">Mexican vs. Chinese</h1>
 <center>
 <table class="bordered">
 <thead>
@@ -735,9 +891,7 @@ Indian
 </table>
 </center>
 <p>Chinese wins.</p>
-</div>
-<div id="chinese-vs.-indian" class="slide section level1">
-<h1>Chinese vs. Indian</h1>
+<h1 id="chinese-vs.-indian">Chinese vs. Indian</h1>
 <center>
 <table class="bordered">
 <thead>
@@ -873,10 +1027,9 @@ Indian
 </table>
 </center>
 <p>Chinese wins.</p>
-</div>
-<div id="chinese-vs.-italian" class="slide section level1">
-<h1>Chinese vs. Italian</h1>
-<p>So far, only Chinese hasn’t lost, but that changes if you compare it with Italian.</p>
+<h1 id="chinese-vs.-italian">Chinese vs. Italian</h1>
+<p>So far, only Chinese hasn’t lost, but that changes if you compare it
+with Italian.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1011,39 +1164,47 @@ Indian
 </tbody>
 </table>
 </center>
-<p>So there is no Condorcet candidate, since every restaurant loses at least one match-up.</p>
-</div>
-<div id="what-makes-a-voting-method-fair" class="slide section level1">
-<h1>What Makes a Voting Method Fair?</h1>
-<p>So far, we have seen some features that an ideal voting system would have:</p>
+<p>So there is no Condorcet candidate, since every restaurant loses at
+least one match-up.</p>
+<h1 id="what-makes-a-voting-method-fair">What Makes a Voting Method
+Fair?</h1>
+<p>So far, we have seen some features that an ideal voting system would
+have:</p>
 <ul>
-<li><p><strong>Condorcet Criterion</strong> - A Condorcet candidate should win, if there is one.</p></li>
-<li><p><strong>Monotonicity Criterion</strong> - Ranking a candidate highly should never cause a candidate to lose.</p></li>
-<li><p><strong>No Spoilers Criterion</strong> - A third party candidate who won’t win shouldn’t change the outcome.</p></li>
+<li><p><strong>Condorcet Criterion</strong> - A Condorcet candidate
+should win, if there is one.</p></li>
+<li><p><strong>Monotonicity Criterion</strong> - Ranking a candidate
+highly should never cause a candidate to lose.</p></li>
+<li><p><strong>No Spoilers Criterion</strong> - A third party candidate
+who won’t win shouldn’t change the outcome.</p></li>
 </ul>
-</div>
-<div id="arrows-impossibility-theorem" class="slide section level1">
-<h1>Arrow’s Impossibility Theorem</h1>
-<p>Unfortunately, even though we can find methods that satisfy some of the fairness criteria, it is impossible to satisfy them all. This is a consequence of a famous theorem that was proved by the economist Kenneth Arrow in 1951</p>
+<h1 id="arrows-impossibility-theorem">Arrow’s Impossibility Theorem</h1>
+<p>Unfortunately, even though we can find methods that satisfy some of
+the fairness criteria, it is impossible to satisfy them all. This is a
+consequence of a famous theorem that was proved by the economist Kenneth
+Arrow in 1951</p>
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Kenneth_Arrow%2C_Stanford_University.jpg" width=300></img>
 </center>
-</div>
-<div id="what-is-impossible" class="slide section level1">
-<h1>What is Impossible?</h1>
-<p>Here is one version of Arrow’s theorem (there are other more complicated versions that say more).</p>
+<h1 id="what-is-impossible">What is Impossible?</h1>
+<p>Here is one version of Arrow’s theorem (there are other more
+complicated versions that say more).</p>
 <div class="Theorem">
-<p><strong>Arrow’s Impossibility Theorem.</strong> No voting method can satisfy both the Condorcet criterion and the no spoilers criterion when there are 3 or more candidates.</p>
+<p><strong>Arrow’s Impossibility Theorem.</strong> No voting method can
+satisfy both the Condorcet criterion and the no spoilers criterion when
+there are 3 or more candidates.</p>
 </div>
 <p><br></p>
-<div id="important" class="incremental">
+<section id="important" class="incremental">
 <h4>Important:</h4>
-<p>Every voting method either (i) sometimes has spoiler candidates or (ii) sometimes fails to elect a Condorcet candidate. But usually those bad things don’t happen.</p>
-</div>
-</div>
-<div id="why-is-it-impossible" class="slide section level1">
-<h1>Why is it Impossible?</h1>
-<p>Consider an election with three front runner candidates (assume any other candidates are ranked lower by all of the voters and so don’t matter) and just 9 voters.</p>
+<p>Every voting method either (i) sometimes has spoiler candidates or
+(ii) sometimes fails to elect a Condorcet candidate. But usually those
+bad things don’t happen.</p>
+</section>
+<h1 id="why-is-it-impossible">Why is it Impossible?</h1>
+<p>Consider an election with three front runner candidates (assume any
+other candidates are ranked lower by all of the voters and so don’t
+matter) and just 9 voters.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1114,26 +1275,17 @@ Candidate C
 </tbody>
 </table>
 </center>
-<p><strong>Exercise.</strong> Show that there is no Condorcet candidate. Why not?</p>
-</div>
-<div id="a-cycle-of-preferences" class="slide section level1">
-<h1>A Cycle of Preferences</h1>
-<p>In the last example <span class="math inline"><em>A</em></span> beats <span class="math inline"><em>B</em></span> and <span class="math inline"><em>B</em></span> beats <span class="math inline"><em>C</em></span>, but <span class="math inline"><em>C</em></span> beats <span class="math inline"><em>A</em></span>.</p>
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Three-part_cycle_diagram.png" width=500></img>
-</center>
-<p><strong>Exercise.</strong> Why is it impossible for a Condorcet method to pick a winner of this election without one of the losers being a spoiler candidate?</p>
-</div>
-<div id="important-to-understand" class="slide section level1">
-<h1>Important to Understand</h1>
-<ul>
-<li><p>Every voting method sometimes has spoiler candidates or sometimes fails to elect a Condorcet candidate.</p></li>
-<li><p>That doesn’t mean that all voting methods are bad or always have problems.</p></li>
-<li><p>Most methods work pretty well most of the time.</p></li>
-</ul>
-</div>
-<div id="the-story-so-far" class="slide section level1">
-<h1>The Story So Far</h1>
+<p><strong>Exercise.</strong> Show that there is no Condorcet candidate.
+Why not?</p>
+<p><strong>Exercise.</strong> Why is it impossible for a Condorcet
+method to pick a winner of this election without one of the losers being
+a spoiler candidate?</p>
+<h1 id="important-to-understand">Important to Understand</h1>
+<p>Just because every voting method sometimes either has spoiler
+candidates or fails to elect a Condorcet candidate doesn’t mean that all
+voting methods are bad. Usually, most methods work pretty well most of
+the time. But none are 100% perfect.</p>
+<h1 id="the-story-so-far">The Story So Far</h1>
 <center>
 <table class="bordered">
 <thead>
@@ -1218,18 +1370,18 @@ Condorcet methods*
 </tbody>
 </table>
 </center>
-<p>*There are actually several Condorcet methods, not all satisfy the Monotonicity criterion. <!--*--></p>
-</div>
-<div id="approval-voting" class="slide section level1">
-<h1>Approval Voting</h1>
-<p>It would be nice to have a method that doesn’t have spoiler candidates. Several voting methods have that property including one very simple method.</p>
+<p>*There are actually several Condorcet methods, not all satisfy the
+Monotonicity criterion. <!--*--></p>
+<h1 id="approval-voting">Approval Voting</h1>
+<p>It would be nice to have a method that doesn’t have spoiler
+candidates. Several voting methods have that property including one very
+simple method.</p>
 <center>
 <img src="https://assets.nationbuilder.com/unifiedprimary/pages/593/attachments/original/1686072669/Approval_Ballot__Standard__Blue__2_Columns__04_17_23.png?1686072669" width = 400></img>
 </center>
-</div>
-<div id="approval-voting-example" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>The preference table below does not have enough information to figure out the approval voting winner. Why not?</p>
+<h1 id="approval-voting-example">Approval Voting Example</h1>
+<p>The preference table below does not have enough information to figure
+out the approval voting winner. Why not?</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1312,10 +1464,10 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-1" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>Suppose that the first 13 voters split into two groups. Ten of them are okay with chocolate and vanilla, but 3 only like chocolate. Then that column could split into:</p>
+<h1 id="approval-voting-example-1">Approval Voting Example</h1>
+<p>Suppose that the first 13 voters split into two groups. Ten of them
+are okay with chocolate and vanilla, but 3 only like chocolate. Then
+that column could split into:</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1398,10 +1550,10 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-2" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>Suppose that the first 13 voters split into two groups. Ten of them are okay with chocolate and vanilla, but 3 only like chocolate. Then that column could split into:</p>
+<h1 id="approval-voting-example-2">Approval Voting Example</h1>
+<p>Suppose that the first 13 voters split into two groups. Ten of them
+are okay with chocolate and vanilla, but 3 only like chocolate. Then
+that column could split into:</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1493,10 +1645,10 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-3" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>The next group of voters might split evenly into two groups, one that approves their top two flavors, and one that only wants their top choice.</p>
+<h1 id="approval-voting-example-3">Approval Voting Example</h1>
+<p>The next group of voters might split evenly into two groups, one that
+approves their top two flavors, and one that only wants their top
+choice.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1588,10 +1740,10 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-4" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>The next group of voters might split evenly into two groups, one that approves their top two flavors, and one that only wants their top choice.</p>
+<h1 id="approval-voting-example-4">Approval Voting Example</h1>
+<p>The next group of voters might split evenly into two groups, one that
+approves their top two flavors, and one that only wants their top
+choice.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1692,10 +1844,9 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-5" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>The next 5 voters all like every flavor about equally; and the one guy at the end only approves of vanilla.</p>
+<h1 id="approval-voting-example-5">Approval Voting Example</h1>
+<p>The next 5 voters all like every flavor about equally; and the one
+guy at the end doesn’t approve of anything.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1796,10 +1947,9 @@ Strawberry
 </tbody>
 </table>
 </center>
-</div>
-<div id="approval-voting-example-6" class="slide section level1">
-<h1>Approval Voting Example</h1>
-<p>The next 5 voters all like every flavor about equally; and the one guy at the end only approves of vanilla.</p>
+<h1 id="approval-voting-example-6">Approval Voting Example</h1>
+<p>The next 5 voters all like every flavor about equally; and the one
+guy at the end doesn’t approve of anything.</p>
 <center>
 <table class="bordered">
 <thead>
@@ -1872,7 +2022,6 @@ Vanilla
 ✔
 </td>
 <td>
-✔
 </td>
 </tr>
 <tr>
@@ -1898,13 +2047,12 @@ Strawberry
 </tbody>
 </table>
 </center>
-<div id="exercise." class="incremental">
+<section id="exercise." class="incremental">
 <h4>Exercise.</h4>
 <p>Which flavor wins this election using approval voting?</p>
-</div>
-</div>
-<div id="the-story-with-approval-voting" class="slide section level1">
-<h1>The Story with Approval Voting</h1>
+</section>
+<h1 id="the-story-with-approval-voting">The Story with Approval
+Voting</h1>
 <!--
 <center>
 <table class="bordered">
@@ -2026,6 +2174,5 @@ Approval voting
 * [STARvoting.org](https://www.starvoting.org/) - is another advocacy group that pushes for adoption of STAR voting which is a method that combines some of the features of Borda count, approval voting, and IRV. 
 -->
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
-</div>
 </body>
 </html>

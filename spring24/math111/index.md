@@ -10,7 +10,7 @@ header-includes: |
 ## Math 111 - Summer 2024
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
-* **Office Hours:** See my [weekly schedule](https://bclins.github.io), and by appointment
+* **Office Hours:** 12:30pm - 1:30pm Monday through Thursday, and by appointment
 * **Office Location:** Pauley 301
 
 ### Announcements
@@ -64,7 +64,7 @@ Tobacco products (including chewing tobacco and e-cigarettes) are not allowed in
 
 ### Office Hours
 
-My office hours are shown on my [weekly schedule](https://bclins.github.io).  I am also available by appointment. If you can't stop by during my regular office hours, just ask me after class or by e-mail, and I'll be happy to make an appointment that works for both of us.  
+My official office hours will be from 12:30 - 1:30pm on Mondays through Thursdays.  I am also available by appointment. If you can't stop by during my regular office hours, just ask me after class or by e-mail, and I'll be happy to make an appointment that works for both of us.  
 
 ### Grading Policy
 

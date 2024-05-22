@@ -1,8 +1,8 @@
 ---
-title: Fairness Criteria
+title: Weighted Voting 
 author: Brian Lins
 institute: Hampden-Sydney College 
-date: Wednesday, May 22, 2024
+date: Thursday, May 23, 2024
 ---
 
 \newcommand{\ds}{\displaystyle}
@@ -46,16 +46,39 @@ NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
 pandoc -s -t slidy day1slides.md -o day1slides.html
 -->
 
-# Problems with Borda Count
+# Weighted Voting Systems
 
-Jean Charles Borda proposed the Borda count method in 1770.  It has the advantage that spoiler candidates are much less likely to be a problem. But Nicholas de Condorcet was very critical of the Borda count method.  
+Up to now we have assume that all voters have the same number of votes.  But that is not always true.
 
-<center>
-<figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Jean_Charles_Borda.jpg" width=300></img> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Anonymous_-_Portrait_de_Marie_Jean_Antoine_Nicolas_de_Caritat%2C_marquis_de_Condorcet_%281743-1794%29%2C_philosophe%2C_math%C3%A9maticien_et_homme_politique._-_P1668_-_Mus%C3%A9e_Carnavalet.jpg/440px-thumbnail.jpg" width=300></img>
-<figcaption>Jean Charles Borda (left) and Nicholas de Condorcet (right)</figcaption> 
-</figure>
-</center>
+* Corporate shareholders might have more votes if they own more shares. 
+
+* Senior committee members might get more votes than junior members.
+
+* Big states get more votes in the Electoral College than small states.  
+
+
+# Example
+
+Suppose there are 4 investors in one company.  The first owns 10 shares, the second has 5, the third 3, and the last has 2 shares.  They agree that any decision requires a two-thirds majority to pass.  
+
+<div class="incremental">
+### Question.
+
+How many votes are needed to pass a motion?  
+
+### Question 2
+
+Is there a voter who can prevent a motion from passing all by themselves?
+
+# Notation & Terminology 
+
+We can represent the last situation by writting
+
+$$[14; 10, 5, 3, 2]$$
+
+The first number is the **vote threshold** needed to pass, and the other four numbers are the number of votes each voter controls.  
+
+
 
 
 # Condorcet's Criterion
@@ -282,29 +305,11 @@ Consider an election with three front runner candidates (assume any other candid
 
 **Exercise.** Show that there is no Condorcet candidate.  Why not? 
 
-
-# A Cycle of Preferences
-
-In the last example $A$ beats $B$ and $B$ beats $C$, but $C$ beats $A$.  
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Three-part_cycle_diagram.png" width=500></img>
-</center>
-
-
 **Exercise.** Why is it impossible for a Condorcet method to pick a winner of this election without one of the losers being a spoiler candidate?  
-
 
 # Important to Understand
 
-
-* Every voting method sometimes has spoiler candidates or sometimes fails to elect a Condorcet candidate. 
-
-* That doesn't mean that all voting methods are bad or always have problems.  
-
-* Most methods work pretty well most of the time.  
-
-
+Just because every voting method sometimes either has spoiler candidates or fails to elect a Condorcet candidate doesn't mean that all voting methods are bad.  Usually, most methods work pretty well most of the time.  But none are 100% perfect.  
 
 
 # The Story So Far
@@ -429,7 +434,7 @@ The next group of voters might split evenly into two groups, one that approves t
 
 # Approval Voting Example
 
-The next 5 voters all like every flavor about equally; and the one guy at the end only approves of vanilla.  
+The next 5 voters all like every flavor about equally; and the one guy at the end doesn't approve of anything.  
 
 <center>
 <table class="bordered">
@@ -447,7 +452,7 @@ The next 5 voters all like every flavor about equally; and the one guy at the en
 
 # Approval Voting Example
 
-The next 5 voters all like every flavor about equally; and the one guy at the end only approves of vanilla.  
+The next 5 voters all like every flavor about equally; and the one guy at the end doesn't approve of anything.  
 
 <center>
 <table class="bordered">
@@ -457,7 +462,7 @@ The next 5 voters all like every flavor about equally; and the one guy at the en
 </thead>
 </tbody>
 <tr><td>Chocolate    </td><td>✔</td><td>✔</td><td></td><td></td>  <td>✔</td><td></td></tr>
-<tr><td>Vanilla      </td><td>✔</td><td> </td><td>✔</td><td> </td><td>✔</td><td>✔</td></tr>
+<tr><td>Vanilla      </td><td>✔</td><td> </td><td>✔</td><td> </td><td>✔</td><td></td></tr>
 <tr><td>Strawberry   </td><td> </td><td> </td><td>✔</td><td>✔</td><td>✔</td><td></td></tr>
 </tbody>
 </table>

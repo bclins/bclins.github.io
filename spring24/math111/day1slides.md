@@ -80,9 +80,37 @@ A popular method to pick the winner of an election using ranked ballots is insta
 
 <center>
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/IRV_counting_flowchart.svg" width=500></img>
+<img src="IRV.png" width=600></img>
+<figcaption>Source: fairvote.org</figcaption>
 </figure>
 </center>
+
+# An Example
+
+A club wants to get their dinner catered by a local restaurant, so they vote on which restaurant to pick.
+
+<center>
+<table class="bordered">
+<thead>
+<tr><th></th><th colspan="5">Number of Voters</th></tr>
+<tr><th></th><th> 33 </th><th> 30 </th><th> 25 </th><th> 20</th> <th> 18 </th></tr>
+</thead>
+</tbody>
+<tr><td>Italian</td><td>&nbsp; &nbsp; 2nd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 5th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 1st &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 2nd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 3rd &nbsp; &nbsp;</td></tr>
+<tr><td>Mexican</td><td>&nbsp; &nbsp; 1st &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 4th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 5th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 4th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 1st &nbsp; &nbsp;</td></tr>
+<tr><td>Thai</td><td>&nbsp; &nbsp; 3rd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 1st &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 4th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 5th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 2nd &nbsp; &nbsp;</td></tr>
+<tr><td>Chinese</td><td>&nbsp; &nbsp; 4th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 2nd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 3rd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 1st &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 4th &nbsp; &nbsp;</td></tr>
+<tr><td>Indian</td><td>&nbsp; &nbsp; 5th &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 3rd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 2nd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 3rd &nbsp; &nbsp;</td><td>&nbsp; &nbsp; 5th &nbsp; &nbsp;</td></tr>
+</tbody>
+</table>
+</center>
+
+A row represents one candidate, and each column shows the rankings of a group of voters.  All of the voters in one column have the same preference ranking.  
+
+**Exercise.** How many voters voted in this election? How many votes would it take to get a majority?
+
+**Exercise.** Which restaurant wins the election using instant run-off voting?  
+
 
 # Alaska's 2022 Congressional Election
 
@@ -207,6 +235,9 @@ It is easy to figure out the total number of points each candidate gets from the
 So candidate B wins with the most points.  
 -->
 
+<!--
+We didn't get this far today 
+
 # Problems with Borda Count
 
 Jean Charles Borda proposed this method in 1770.  It has the advantage that spoiler candidates are much less likely to be a problem. But Nicholas de Condorcet was very critical of the Borda count method.  
@@ -237,7 +268,7 @@ In fact, Borda count doesn't even always elect the majority candidate!  Suppose 
 **Exercise.** Is there a Condorcet candidate? Why?
 
 **Exercise.** What flavor does Borda count pick?
-
+-->
 
 <br>
 <br>
