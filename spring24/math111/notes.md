@@ -43,15 +43,16 @@ We also did these two workshops in class.
 
 * **Workshop:** [Borda Count](Workshops/BordaCount.pdf)
 
-<!-- 
 
 ### Day 2 Notes
 
 Today we talked about fairness criteria that voting methods should have.  
 
-* **Slides:** [Fair Voting Methods](day2slides.html)
+* **Slides:** [Fairness Criteria](day2slides.html)
 
--->
+We also did this workshop in class.
+
+* **Workshop:** [Fairness Criteria](Workshops/FairnessCriteria.pdf)
 
 <br>
 <br>
