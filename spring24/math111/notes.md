@@ -54,6 +54,72 @@ We also did this workshop in class.
 
 * **Workshop:** [Fairness Criteria](Workshops/FairnessCriteria.pdf)
 
+In addition to the slides & workshop, we also talked about (and proved) the [Median Voter Theorem](https://en.wikipedia.org/wiki/Median_voter_theorem).  We finished by talking about recent advocacy to promote ranked choice voting (another name for IRV) and STAR voting (which will not be on the test).  
+
+* **Video:** [STAR Voting](https://youtu.be/3-mOeUXAkV0)
+
+It is something to pay attention to in the future, because there will always be a push for better voting methods than plurality voting.  
+
+### Day 3 Notes
+
+Today we talked about **weighted voting systems**.  We did this workshop:
+
+* **Workshop:** [Banzhaf power](Workshops/BanzhafPower.pdf)
+
+Before the workshop, we started with this example. Suppose a school is run by a committee with the principal who has 3 votes, the vice principal who has 2 votes, and three teachers who each have 1 votes.  A motion requires 5 votes to pass.  
+
+We can use the shorthand notation [5: 3, 2, 1, 1, 1] to represent this weighted voting system.  The first number is the vote **threshold** needed to pass a motion, and the other numbers are the **weights** which are the number of votes controlled by each voter.  Often the voters in a weighted voting system are called **players**.  
+
+A **winning coalition** is a subset of the players who have enough votes to pass a motion.  A player is **critical** in a winning coalition if the coalition would not have enough votes without that player. 
+
+1. List the winning coalitions in the weighted voting system above.  
+
+2. Circle the critical players in each winning coalition.
+
+The **Banzhaf power index** is a way to measure how much power each player in a weighted voting system has.  
+
+<div class="Theorem">
+#### Banzhaf Power Index 
+
+To find the Banzhaf power for each player,
+
+1. List the winning coalitions and circle the critical players in each coalition.
+2. The power for each player is the fraction:
+$$\frac{\text{Number of times the player is circled}}{\text{Total number of circles}}.$$
+</div>
+
+3. Calculate the Banzhaf power indices for the principal, vice principal, and each teacher in the example above. 
+
+[John Banzhaf]() was a lawyer in the 1960s who discovered the power index when he was investigating a case involving Nassua County, NY.  The districts in Nassau county had a weighted voting system where the weights were:
+
+* Hempstead 1 had 9 votes
+* Hempstead 2 had 9 votes
+* North Hempstead had 7 votes
+* Oyster Bay had 3 votes
+* Glen Cove had 1 vote
+* Long Beach had 1 vote
+
+To reach the threshold of 16 votes to pass a motion, it required at least two of the bigger districts.  But it never mattered what the three smaller districts did.  So the three smaller districts had no power in the elections.  
+
+A player with no power is called a **dummy**.  A player with enough power to pass a motion all by themselves is called a **dictator**.  Sometimes a player can block any motion by themselves.  Then we say they have **veto power.**
+
+4. Can you come up with a weighted voting system $[t : p_1, p_2, p_3, p_4]$ where all four players have veto power?
+
+Banzhaf power can illustrate some surprising things about weighted voting systems.  For example, the weights might be very different from the real amount of power each player has.
+
+5. Suppose a country has a parliament with 200 seats.  The seats are divided between three parties that always vote together as blocs.  The red party has 99 seats, the blue party has 98 seats, and the green party has 3 seats.  Surprisingly when you calculate the Banzhaf power, the green party has the same amount of power as the red and blue parties even though it has much fewer seats. 
+
+Sometimes you can calculate the Banzhaf power indices without having any numbers for the weights and threshold.  We did the following example. 
+
+6. At one college, promotion decisions are made by a committee of four faculty and the dean.  The four faculty each vote, and if there is a tie, then the dean is the tie breaker.  Calculate the Banzhaf power for each faculty member and for the dean.  
+
+If you want to play with more weighted voting examples, Professor Koether made a [Banzhaf power calculator](https://people.hsc.edu/faculty-staff/robbk/Math111/Power/) which you can try.   
+
+
+### Day 4 Notes
+
+* **Slides:** [Longitude presentation](https://people.hsc.edu/faculty-staff/blins/classes/fall10/math111/LongitudePresentation.pdf)
+
 <br>
 <br>
 <br>
