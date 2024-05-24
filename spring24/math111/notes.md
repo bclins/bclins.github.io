@@ -118,7 +118,24 @@ If you want to play with more weighted voting examples, Professor Koether made a
 
 ### Day 4 Notes
 
+Today we talked about **the spherical Earth theory**.  Actually, we talked about solving **proportion equations**, but most of the examples we did were related to the fact that the Earth is a sphere.  We also talked about the evidence the ancient Greeks used to deduce that the Earth is a sphere.
+
+* **Workshop:** [Eratosthenes measures the Earth](Workshops/EratosthenesEarth.pdf)
+
+After that, we talked about using the same ideas to find Latitude & Longitude.
+
 * **Slides:** [Longitude presentation](https://people.hsc.edu/faculty-staff/blins/classes/fall10/math111/LongitudePresentation.pdf)
+
+We finished by talking about a useful technique to solve word problems involving unit conversions called **factor-label method**, also known as **dimensional analysis**. Here is a [video explaining the technique](https://youtu.be/d_WfCwJW0Og) (I didn't make the video, but it is a pretty good explanation.
+
+We did this example in class:
+
+1. The international space station ISS orbits the Earth every 90 minutes.  The orbit of the space station is 250 miles above the Earth's surface.  How fast does the ISS move in miles per hour?  
+
+Then we finished with this workshop:
+
+* **Workshops:** [Factors & Units](Workshops/FactorsUnits.pdf)
+
 
 <br>
 <br>
