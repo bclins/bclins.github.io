@@ -15,7 +15,7 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet.
+* Midterm 1 materials: [review problems](midterm1review.pdf), [review solutions](midterm1reviewSolutions.pdf)
  
 ### Course Description
 

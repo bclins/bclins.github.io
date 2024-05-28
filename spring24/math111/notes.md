@@ -136,6 +136,15 @@ Then we finished with this workshop:
 
 * **Workshops:** [Factors & Units](Workshops/FactorsUnits.pdf)
 
+### Day 5 Notes
+
+Today we talked about **orders of magnitude** and **logarithmic scales**.  We began by reviewing **scientific notation** and the **metric system**.  We did this workshop.
+
+* **Workshop:** [Orders of Magnitude](Workshops/OrdersOfMagnitude.pdf)
+
+After that, we talked about logarithmic scales which are number lines where the numbers are spaced so that each step represents multiplication/division by a fixed amount.  We did this workshop
+
+* **Workshop:** [Logarithmic Scales](Workshops/LogScale.pdf)
 
 <br>
 <br>
