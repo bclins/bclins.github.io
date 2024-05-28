@@ -146,6 +146,18 @@ After that, we talked about logarithmic scales which are number lines where the 
 
 * **Workshop:** [Logarithmic Scales](Workshops/LogScale.pdf)
 
+We also looked at examples where log-scales are used to present data. Sometimes these examples can be misleading. But sometimes a log-scale is the best way to represent the data. 
+
+* **Example:** 
+<center>
+<img src="covidLogScale.png" width=720></img>
+</center> 
+
+* **Example:** 
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Moore%27s_Law_Transistor_Count_1970-2020.png" width=520></img>
+</center>
+
 <br>
 <br>
 <br>
