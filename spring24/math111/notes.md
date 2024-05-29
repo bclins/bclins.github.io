@@ -200,11 +200,16 @@ Percent changes are confusing because you can't add and subtract percent changes
 
 We did these two workshops.
 
-* **Workshop:** [Growth factors](Workshops/)
+* **Workshop:** [Relative growth](Workshops/RelativeGrowth.pdf)
 
-After the break we talked about arithmetic and geometric sequences.  An **arithmetic sequence** is a list of numbers that change by adding or subtracting a constant step size. A **geometric sequence** is a list of numbers that change by multiplying or dividing a constant factor, called the **common ratio**. 
+After the break we talked about arithmetic and geometric sequences.  An **arithmetic sequence** is a list of numbers that change by adding or subtracting a constant step size. A **geometric sequence** is a list of numbers that change by multiplying or dividing a constant factor, called the **common ratio**.  **Linear growth (or decrease)** is when an arithmetic sequence is growing (or decreasing).  **Exponential growth (or decay)** is when a geometric sequence is growing or decreasing.  
 
-* **Workshop:** [Exponential growth](Workshops/)
+* **Workshop:** [Exponential growth](Workshops/ExponentialGrowth)
+
+We finished by watching this video about exponential growth and the rule of 70.
+
+* **Video:** [The Most IMPORTANT Video You'll Ever See](https://youtu.be/F-QA2rkpBSY)
+
 
 
 <br>
