@@ -138,11 +138,11 @@ Then we finished with this workshop:
 
 ### Day 5 Notes
 
-Today we talked about **orders of magnitude** and **logarithmic scales**.  We began by reviewing **scientific notation** and the **metric system**.  We did this workshop.
+Today we talked about orders of magnitude. For any number, its **order of magnitude** is the exponent of the nearest power of 10.  For example, 783 is closest to 1,000 which is $10^3$, so the order of magnitude of 783 is 3.  We also briefly reviewed **scientific notation** and the **metric system**.  We did this workshop.
 
 * **Workshop:** [Orders of Magnitude](Workshops/OrdersOfMagnitude.pdf)
 
-After that, we talked about logarithmic scales which are number lines where the numbers are spaced so that each step represents multiplication/division by a fixed amount.  We did this workshop
+After that, we talked about **logarithmic scales** which are number lines where the numbers are spaced so that each step represents multiplication/division instead of addition/subtraction.  We did this workshop
 
 * **Workshop:** [Logarithmic Scales](Workshops/LogScale.pdf)
 
@@ -157,6 +157,55 @@ We also looked at examples where log-scales are used to present data. Sometimes 
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Moore%27s_Law_Transistor_Count_1970-2020.png" width=520></img>
 </center>
+
+Using log-scales to present data has advantages:
+
+1. It spreads out small numbers so you can see them.
+
+2. It lets you use one graph to represent numbers that are spread over many orders of magnitude.  
+
+The disadvantages are:
+
+1. It bunches up the big numbers, so it can make big differences seem small.
+
+2. They are more confusing because not everyone is familiar with log-scales.  
+
+### Day 6 Notes
+
+We started by talking briefly about how the halfway point between two numbers on a logarithmic scale is not what you would expect.  For example, the halfway point between 1 and 100 is 10, not 50.  On a logarithmic scale, the halfway point between any two numbers $x$ and $y$ is the **geometric mean** which is:
+$$\sqrt{xy}.$$  
+The regular average where you add two numbers and then divide by 2 is called the **arithmetic mean**.  
+
+1. Find the geometric mean of 3 and 12.  Compare it with the arithmetic mean.  Which is bigger?
+
+**Fact.** The arithmetic mean of two different positive numbers is always bigger than the geometric mean. 
+
+After we talked about arithmetic & geometric means, we introduced growth factors.  When any quantity increases (or decreases), the **growth factor** is defined to be
+$$\text{Growth factor} = \frac{\text{ new amount }}{\text{ old amount }}.$$
+
+2. Find the growth factor for the US population which increased from 282 million in 2000 to 330 million in 2020.
+
+Growth factors will be smaller than one if the quantity is decreasing.
+
+3. In the aughts (2000-2009) there were 3962 murders in Virginia.  In the teens (2010-2019) there were 3859 murders.  Find the growth factor.  
+
+When we work with growth factors that are close to one, we usually talk about percent change. 
+$$\text{Growth factor} = 100\% + \text{Percent Change}.$$
+
+4. Find the percent change for the last two growth factors.  
+
+Percent changes are confusing because you can't add and subtract percent changes.   But you can multiply growth factors.   
+
+5. Suppose the population of a town grows by 10% one year, 20% the next year, and 30% the third year.  How much has the population grown?  
+
+We did these two workshops.
+
+* **Workshop:** [Growth factors](Workshops/)
+
+After the break we talked about arithmetic and geometric sequences.  An **arithmetic sequence** is a list of numbers that change by adding or subtracting a constant step size. A **geometric sequence** is a list of numbers that change by multiplying or dividing a constant factor, called the **common ratio**. 
+
+* **Workshop:** [Exponential growth](Workshops/)
+
 
 <br>
 <br>
