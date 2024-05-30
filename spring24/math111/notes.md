@@ -204,13 +204,34 @@ We did these two workshops.
 
 After the break we talked about arithmetic and geometric sequences.  An **arithmetic sequence** is a list of numbers that change by adding or subtracting a constant step size. A **geometric sequence** is a list of numbers that change by multiplying or dividing a constant factor, called the **common ratio**.  **Linear growth (or decrease)** is when an arithmetic sequence is growing (or decreasing).  **Exponential growth (or decay)** is when a geometric sequence is growing or decreasing.  
 
-* **Workshop:** [Exponential growth](Workshops/ExponentialGrowth)
+* **Workshop:** [Exponential growth](Workshops/ExponentialGrowth.pdf)
 
 We finished by watching this video about exponential growth and the rule of 70.
 
 * **Video:** [The Most IMPORTANT Video You'll Ever See](https://youtu.be/F-QA2rkpBSY)
 
+### Day 7 Notes
 
+We started with a workshop.
+
+* **Workshop:** [Compound interest](Workshops/CompoundInterest.pdf)
+
+Then we talked about **logarithms**.  We talked about how (base-10) logarithms are pretty much the same thing as orders of magnitude.  They tell you the exact location of a number on a logarithmic scale where each order of magnitude is one step.  
+
+Logarithms were discovered/invented by John Napier in the early 1600's to help make arithmetic easier. Here is some of the history. 
+
+* 1614 John Napier published the book *A Description of the Wonderful Rule of Logarithms*.  
+
+* 1617 Henry Briggs published the first base-10 logarithm tables.  
+
+* 1624 Edmund Wingate published *The Use of Rules of Proportion*.  A **rule of proportion** is a wooden ruler with numbers marked on a logarithmic scale.  Wingate got the idea from Edmund Gunter and these rulers were sometimes called [Gunter sticks](https://www.nzeldes.com/HOC/images/Gunter02.jpg).
+
+* Early 1630's William Oughtred put two wooden rules of proportion together the make the first [slide rule](https://www.npr.org/sections/ed/2014/10/22/356937347/the-slide-rule-a-computing-device-that-put-a-man-on-the-moon).
+
+The reason that logarithms caught on so quickly is that they really did make people's lives a lot easier.  
+
+1. Suppose you had to calculate the area of a circle using the formula $\pi r^2$.  If you measure the radius to be 25.3 centimeters, then you would have to calculate
+$$(3.14)(25.3)(25.3)$$
 
 <br>
 <br>
