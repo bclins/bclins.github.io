@@ -230,8 +230,19 @@ Logarithms were discovered/invented by John Napier in the early 1600's to help m
 
 The reason that logarithms caught on so quickly is that they really did make people's lives a lot easier.  
 
-1. Suppose you had to calculate the area of a circle using the formula $\pi r^2$.  If you measure the radius to be 25.3 centimeters, then you would have to calculate
-$$(3.14)(25.3)(25.3)$$
+1. Suppose you had to calculate the area of a circle using the formula $\pi r^2$.  If you measure the radius to be 12.3 centimeters, then you would have to calculate
+$$(3.14)(12.3)(12.3)$$
+That's pretty hard without a calculator.  With a table of logarithms, you can look up the logarithms of each number and then add them together which is much easier! 
+
+### Day 9 Notes
+
+Today we talked about the **apportionment problem**. 
+
+* **Slides:** [The Apportionment Problem](day9slides.html)
+
+We also did this workshop
+
+* **Workshop:** [Hamilton's method](Workshops/Hamilton.pdf)
 
 <br>
 <br>

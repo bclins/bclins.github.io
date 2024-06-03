@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brian Lins" />
+  <title>The Apportionment Problem</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">The Apportionment Problem</h1>
+  <p class="author">
+Brian Lins
+  </p>
+  <p class="institute">
+Hampden-Sydney College
+  </p>
+  <p class="date">Monday, June 3, 2024</p>
+</div>
+<div class="slide section level1">
+
+<style>
+.bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
+    & td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+}
+
+.Theorem {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #333;
+}
+</style>
+<!--
+NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
+pandoc -s -t slidy day1slides.md -o day1slides.html
+-->
+</div>
+<div id="the-apportionment-problem" class="slide section level1">
+<h1>The Apportionment Problem</h1>
+<p>Here is what the Constitution says about how the seats of the House
+of Representatives are to be apportioned to the states:</p>
+<blockquote>
+<p>The House of Representatives shall be composed of Members chosen
+every second Year by the People of the several States, and the Electors
+in each State shall have the Qualifications requisite for Electors of
+the most numerous Branch of the State Legislature.</p>
+<p>No Person shall be a Representative who shall not have attained to
+the Age of twenty five Years, and been seven Years a Citizen of the
+United States, and who shall not, when elected, be an Inhabitant of that
+State in which he shall be chosen.</p>
+<p>Representatives and direct Taxes shall be apportioned among the
+several States which may be included within this Union, according to
+their respective Numbers, which shall be determined by adding to the
+whole Number of free Persons, including those bound to Service for a
+Term of Years, and excluding Indians not taxed, three fifths of all
+other Persons.</p>
+</blockquote>
+</div>
+<div id="what-does-it-mean" class="slide section level1">
+<h1>What Does It Mean?</h1>
+<p>The wording here is vague. What does it mean that <em>Representatives
+shall be apportioned among the several States… according to their
+respective Numbers</em>?</p>
+<p>From the beginning, it was understood that this means the number of
+representatives should be proportional to the population of the state.
+If a state is twice as big, it should have twice as many
+representatives.</p>
+</div>
+<div id="proportional-representation-is-tricky"
+class="slide section level1">
+<h1>Proportional Representation is Tricky</h1>
+<p>The problem is, there are only 435 seats in the House of
+Representatives. Those cannot be divided perfectly proportional to the
+populations of every state.</p>
+</div>
+<div id="the-first-apportionment" class="slide section level1">
+<h1>The First Apportionment</h1>
+<p>The 1st Census of the United States took place in 1790. The results
+were as follows:</p>
+<center>
+<img src="1790census.png"></img>
+</center>
+<p>The House was aiming for 30,000 people per representative with 112
+total representatives. The Senate was aiming for 33,000 people per
+representative with only 105 total representatives.</p>
+</div>
+<div id="the-math" class="slide section level1">
+<h1>The Math</h1>
+<ul>
+<li><p>The number of seats a state should get in the House of
+Representatives is called its <strong>quota</strong>.</p></li>
+<li><p>The (ideal) number of people in each congressional district is
+called the <strong>divisor</strong>.</p></li>
+</ul>
+<p>The formula to calculate the quota for each state is very simple.</p>
+<p><span class="math display">Quota = Population/Divisor</span></p>
+</div>
+<div id="jeffersons-method" class="slide section level1">
+<h1>Jefferson’s Method</h1>
+<p>The method advocated by Thomas Jefferson involved these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the quotas for each state.</p></li>
+<li><p>Round all the quotas down. If that is the right total number of
+seats, you are done, otherwise do step 3.</p></li>
+<li><p>Adjust the divisor and repeat steps 1 &amp; 2 until you get the
+right total number of seats in the House of Representatives.</p></li>
+</ol>
+</div>
+<div id="the-debate" class="slide section level1">
+<h1>The Debate</h1>
+<p>There was a lot of debate about whether the House or Senate
+apportionment bill was better.</p>
+<p>Several states argued that in the House bill, Virginia got too many
+seats. Here’s why. In the House bill, there were supposed to be 112
+seats in Congress. Since the population of the US was 3,615,920, the
+size of a congressional district should be</p>
+<p><span class="math display"><em>d</em> = 3, 615, 920 people/112
+representatives = 32, 285 people per representative.</span></p>
+<p>This is called the <strong>standard divisor</strong> which you always
+get by dividing the who population by the number of seats.</p>
+</div>
+<div id="virginias-quota-violation" class="slide section level1">
+<h1>Virginia’s Quota Violation</h1>
+<p>Using the standard divisor, Virginia has a <strong>standard
+quota</strong> of <span
+class="math display">Quota = Population/Divisor = 630, 560/32, 285 = 19.531.</span></p>
+<p>But since the method used to calculate the quota did not use the
+standard quota, Virginia ended up with 21 seats.</p>
+<p>Virginia would get more seats than its standard quota rounded up.
+When a state gets more seats than its standard quota rounded up or less
+than its standard quota rounded down, that is called a <strong>quota
+violation</strong>.</p>
+</div>
+<div id="hamiltons-method" class="slide section level1">
+<h1>Hamilton’s Method</h1>
+<p>Alexander Hamilton thought it was unfair for Virginia to get more
+seats than it deserved. He persuaded Congress to pass a bill using a
+different method which is now called <strong>Hamilton’s
+method</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the standard quotas using the standard
+divisor.</p></li>
+<li><p>Every state gets at least their standard quota rounded
+down.</p></li>
+<li><p>If there are seats left over, give one to each of the states with
+the highest decimal part in their quotas until they are used
+up.</p></li>
+</ol>
+</div>
+<div id="the-apportionment-act-of-1792" class="slide section level1">
+<h1>The Apportionment Act of 1792</h1>
+<p>Using Hamilton’s method, Congress agreed on 120 representatives so
+the standard divisor would be <span
+class="math display">3, 615, 920/120 = 30, 132.67 people per
+representative.</span></p>
+<center>
+<img src="HamiltonsMethod.png"></img>
+</center>
+</div>
+<div id="the-first-veto" class="slide section level1">
+<h1>The First Veto</h1>
+<p>Thomas Jefferson argued that it would be more fair to adjust the
+divisor (typically by making it a little smaller) so that the quotas can
+all be rounded down. He was worried that states would argue about who
+would get the extra seats. George Washington agreed with Thomas
+Jefferson and so he vetoed the Apportionment Act.</p>
+<p>Instead, the original Senate bill for a House of Representatives with
+105 seats apportioned using Jefferson’s method was settled on.</p>
+<p>Jefferson’s method was used from 1790 through 1832.</p>
+</div>
+<div id="washingtons-explanation" class="slide section level1">
+<h1>Washington’s Explanation</h1>
+<blockquote>
+<p>Gentlemen of the House of Representatives:</p>
+</blockquote>
+<blockquote>
+<p>I have maturely considered the act passed by the two Houses entitled
+“An act for an apportionment of Representatives among the several States
+according to the first enumeration,” and I return it to your House,
+wherein it originated, with the following objections:</p>
+</blockquote>
+<blockquote>
+<p>First. The Constitution has prescribed that Representatives shall be
+apportioned among the several States according to their respective
+numbers, and there is no one proportion or divisor which, applied to the
+respective numbers of the States, will yield the number and allotment of
+Representatives proposed by the bill.</p>
+</blockquote>
+<blockquote>
+<p>Second. The Constitution has also provided that the number of
+Representatives shall not exceed I for every 30,000, which restriction
+is by the context and by fair and obvious construction to be applied to
+the separate and respective numbers of the States; and the bill has
+allotted to eight of the States more than I for every 30,000.</p>
+</blockquote>
+<blockquote>
+<p>GO WASHINGTON.</p>
+</blockquote>
+</div>
+<div id="websters-method" class="slide section level1">
+<h1>Webster’s Method</h1>
+<p>In 1842, Congress used <strong>Webster’s method</strong> to apportion
+the seats of Congress. Webster’s method and a competing method proposed
+by John Quincy Adams (called <strong>Adam’s Method</strong>) are very
+similar to Jefferson’s method. The only difference is in how you round
+the quotas:</p>
+<ul>
+<li><p>In Jefferson’s method, you always round quotas down (but never
+less than one).</p></li>
+<li><p>In Adam’s method, you always round quotas up.</p></li>
+<li><p>In Webster’s method, you round the normal way.</p></li>
+</ul>
+</div>
+<div id="hamiltons-method-returns" class="slide section level1">
+<h1>Hamilton’s Method Returns</h1>
+<p>In 1852 Congress passed a law making Hamilton’s method the “Official”
+method for apportionment. But weird things can happen with Hamilton’s
+method. This was first discovered in 1882.</p>
+<p>Congress was trying to pick how big the House of Representative
+should be.</p>
+<ul>
+<li><p>With 299 seats, Alabama got 8 seats.</p></li>
+<li><p>With 300 seats, Alabama only got 7 seats.</p></li>
+</ul>
+<p>Adding a seat would cause Alabama to lose a seat.</p>
+<p>Congress decided to avoid the issue in 1882 by choosing 325 seats
+(where both Hamilton’s method and Webster’s methods gave the same
+apportionments).</p>
+</div>
+<div id="alabama-paradox" class="slide section level1">
+<h1>Alabama Paradox</h1>
+<p>It is really weird that adding more seats to Congress can cause a
+state to lose a seat! This is called the <strong>Alabama
+paradox.</strong></p>
+<p>The same paradox happened again in 1901. That year the Census Bureau
+presented Congress with tables showing what the apportionment would be
+if the size of the House of Representatives was any number between 350
+and 400. For most options Maine got 4 seats, but if the House had 357,
+382, 386, or 389 seats, then Maine would only get 3 seats. Something
+similar happened where Colorado would get either 3 seats or 2 depending
+on the size of Congress. Coincidentally, the proposed size of the House
+of Representatives was going to be 357 which would have negatively
+affected both Maine and Colorado.</p>
+<p>After a huge debate, Congress chose to use Webster’s method.</p>
+<!--
+# The Fourteenth Amendment
+
+After the civil war, the Fourteenth Amendment got rid of the three fifths compromise.  Then here is what it said about apportionment:
+
+> 14th Amendment, Section 2. Representatives shall be apportioned among the several States according to their respective numbers, counting the whole number of persons in each State, excluding Indians not taxed. But when the right to vote at any election for the choice of electors for President and Vice President of the United States, Representatives in Congress, the Executive and Judicial officers of a State, or the members of the Legislature thereof, is denied to any of the male inhabitants of such State, being twenty-one years of age, and citizens of the United States, or in any way abridged, except for participation in rebellion, or other crime, the basis of representation therein shall be reduced in the proportion which the number of such male citizens shall bear to the whole number of male citizens twenty-one years of age in such State. 
+-->
+</div>
+<div id="other-paradoxes" class="slide section level1">
+<h1>Other Paradoxes</h1>
+<p>There are other weird things that can happen with Hamilton’s
+method.</p>
+<ul>
+<li><p><strong>Population Paradox.</strong> If the populations of the
+states change, then a state that grows might lose a seat to a state that
+doesn’t grow (or even shrinks)!</p></li>
+<li><p><strong>New States Paradox.</strong> When new states get added to
+the country, even if you increase the number of representatives by
+enough to cover the new states, the apportionment of representatives to
+the old states might change.</p></li>
+</ul>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+</body>
+</html>

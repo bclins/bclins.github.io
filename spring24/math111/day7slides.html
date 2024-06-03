@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brian Lins" />
+  <title>Logarithms</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Logarithms</h1>
+  <p class="author">
+Brian Lins
+  </p>
+  <p class="date">Thursday, May 30, 2024</p>
+</div>
+<div class="slide section level1">
+
+<style>
+.bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
+    & td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+}
+
+.Theorem {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #333;
+}
+</style>
+<!--
+NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
+pandoc -s -t slidy day1slides.md -o day1slides.html
+-->
+</div>
+<div id="what-are-logarithms" class="slide section level1">
+<h1>What Are Logarithms?</h1>
+<p><strong>Short Answer:</strong> The base-10 logarithm function just tells you the order of magnitude of a number.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><span class="math inline">log (100) = 2</span></li>
+<li><span class="math inline">log (1, 000) = 3</span></li>
+<li><span class="math inline">log (10, 000) = 4</span>, etc.</li>
+</ul>
+</div>
+<div id="what-are-logarithms-1" class="slide section level1">
+<h1>What Are Logarithms?</h1>
+<p><strong>Longer Answer:</strong> The logarithm function tells you the exact position of where a number belongs on a logarithmic scale.</p>
+<h2 id="examples-1">Examples</h2>
+<ul>
+<li><span class="math inline">log (1) = 0</span> means that 1 is at position 0 on a log-scale.</li>
+<li><span class="math inline">log (10) = 1</span> means that 10 is one step up on a log-scale.</li>
+<li><span class="math inline">log (2) = 0.301</span> means that 2 is 30.1% of the way from 1 to 10.</li>
+</ul>
+</div>
+<div id="history-of-logarithms" class="slide section level1">
+<h1>History of Logarithms</h1>
+<p>Logarithms were discovered/invented by John Napier in the early 1600’s.</p>
+<center>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/John_Napier.jpg" width=280></img>
+</figure>
+</center>
+<p>He published a booked called <em>Mirifici logarithmorum canonis descriptio</em> in 1614. The title literally means “A Description of the Wonderful Rule of Logarithms”.</p>
+</div>
+<div id="why-are-logarithms-useful" class="slide section level1">
+<h1>Why Are Logarithms Useful?</h1>
+<p>Logarithms convert multiplication &amp; division problems into addition &amp; subtraction problems.</p>
+<ul>
+<li><span class="math inline">log (<em>a</em><em>b</em>) = log (<em>a</em>) + log (<em>b</em>)</span></li>
+<li><span class="math inline">log (<em>a</em>/<em>b</em>) = log (<em>a</em>) − log (<em>b</em>)</span></li>
+</ul>
+</div>
+<div id="addition-is-much-easier-then-multiplication" class="slide section level1">
+<h1>Addition is Much Easier then Multiplication</h1>
+<p>Compare these two problems: <span class="math inline">1234 + 5678</span> versus <span class="math inline">1234 × 5678</span>.</p>
+</div>
+<div id="using-a-table-of-logarithms" class="slide section level1">
+<h1>Using a Table of Logarithms</h1>
+<center>
+<figure>
+<img src="http://physicsacademy.weebly.com/uploads/4/3/2/3/4323604/9440368.jpg" width=800></img>
+</figure>
+</center>
+</div>
+<div id="more-history-of-logarithms" class="slide section level1">
+<h1>More History of Logarithms</h1>
+<ul>
+<li><p>1614 Napier published <em>A Description of the Wonderful Rule of Logarithms</em>.</p></li>
+<li><p>1617 Henry Briggs published the first base-10 logarithm tables.</p></li>
+<li><p>1624 Edmund Wingate published <em>The Use of the Rule of Proportion.</em> He apparently got the idea for the rule of proportion from Edmund Gunter.</p></li>
+<li><p>In the early 1630’s, William Oughtred put two wooden rules of proportion together to make the first slide rule.</p></li>
+</ul>
+</div>
+<div id="rule-of-proportion" class="slide section level1">
+<h1>Rule of Proportion</h1>
+<p>A rule of proportion is just a wooden ruler with markings on a logarithmic scale.</p>
+<center>
+<figure>
+<img src="https://www.nzeldes.com/HOC/images/Gunter02.jpg" width=960></img>
+</figure>
+</center>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+</body>
+</html>
