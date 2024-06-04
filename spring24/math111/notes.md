@@ -244,6 +244,38 @@ We also did this workshop
 
 * **Workshop:** [Hamilton's method](Workshops/Hamilton.pdf)
 
+We also did an example where a Mom has 50 pieces of candy to give out to her 5 kids based on the number of minutes they spent doing chores.  
+
+<center>
+<table class="bordered">
+<tr><td>Alvin</td><td>Betty</td><td>Calvin</td><td>Daisy</td><td>Edwin</td><td>Total</td></tr>
+<tr><td>150</td><td>78</td><td>173</td><td>204</td><td>295</td><td>900</td></tr>
+</table>
+</center>
+
+1. What is the standard divisor? What are its units?
+
+2. What is the standard quota for each kid?
+
+3. What is the apportionment using Hamilton's method. 
+
+We finished by using a spreadsheet to find the apportionment of candy above using Jefferson's method. We also used Jefferson's method to find the final apportionment of Congress after George Washington vetoed the Apportionment Act of 1792.   
+
+### Day 10 Notes
+
+Today we talked about advantages and disadvantages of the various apportionment methods.  We also introduce the **Huntington-Hill Method** which is the one that the United States has used since 1941.  
+
+* **Slides:** [The Apportionment Problem 2](day10slides.html)
+
+We did two workshops, the first involved using spreadsheets to implement divisor methods. You need to download the data file to do problem 2. 
+
+* **Workshop:** [Jefferson & Adams Methods](Workshops/JeffersonAdams.pdf)
+* **Data:** [2020census.xlsx](2020census.xlsx)
+
+The other was a quick example of using a logarithmic scale to implement the Huntington-Hill method. 
+
+* **Workshop:** [Divisor Methods & Logarithmic Scales](Workshops/HuntingtonHill.pdf)
+
 <br>
 <br>
 <br>

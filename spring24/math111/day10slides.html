@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Brian Lins" />
+  <title>The Apportionment Problem 2</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">The Apportionment Problem 2</h1>
+  <p class="author">
+Brian Lins
+  </p>
+  <p class="date">Tuesday, June 4, 2024</p>
+</div>
+<div class="slide section level1">
+
+<style>
+.bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
+    & td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+}
+
+.Theorem {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #333;
+}
+</style>
+<!--
+NOTE: USE THE FOLLOWING COMMAND TO COMPILE THESE SLIDES:
+pandoc -s -t slidy day1slides.md -o day1slides.html
+-->
+</div>
+<div id="from-last-time" class="slide section level1">
+<h1>From Last Time</h1>
+<p>We introduced the apportionment problem, which is about how to give states representatives in Congress proportion to their populations.</p>
+<ul>
+<li><strong>Hamilton’s Method</strong> give every state their standard quota, rounded down. Then give out extra seats to the states with the highest decimal part until all seats are apportioned.</li>
+</ul>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>No state ever gets more than its standard quota rounded up.</li>
+<li>No state ever gets less than its standard quota rounded down. (No <strong>quota violations</strong>)</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>Paradoxes! (Alabama, New States, &amp; Population Paradoxes)</li>
+</ul>
+</div>
+<div id="divisor-method" class="slide section level1">
+<h1>Divisor Method</h1>
+<p>The main alternative to Hamilton’s method are <strong>divisor methods</strong> where you adjust the divisor used to calculate the quotas until they assign the right number of seats.</p>
+<ul>
+<li><strong>Jefferson’s method</strong> round all quotas down.</li>
+<li><strong>Adam’s method</strong> round all quotas down.</li>
+<li><strong>Webster’s method</strong> round all quotas to nearest whole number.</li>
+</ul>
+</div>
+<div id="quota-violations" class="slide section level1">
+<h1>Quota Violations</h1>
+<p>Divisor methods have different problems than Hamilton’s method.</p>
+<ul>
+<li>The <strong>upper quota</strong> is the standard quota rounded up.</li>
+<li>The <strong>lower quota</strong> is the standard quota rounded down.</li>
+</ul>
+<p>A <strong>quota violation</strong> is when a state gets more than their upper quota or less than their lower quota.</p>
+</div>
+<div id="jeffersons-method" class="slide section level1">
+<h1>Jefferson’s Method</h1>
+<p>With Jefferson’s method, states will always get at least their lower quota, but upper quota violations are possible, especially for big states. That’s because changing the divisor always affects big states more.</p>
+<p>Jefferson’s method is <strong>biased in favor of big states</strong>.</p>
+</div>
+<div id="adams-method" class="slide section level1">
+<h1>Adam’s Method</h1>
+<p>In Adam’s method, states will never get more than their upper quota, but lower quota violations are possible.</p>
+<p>Adam’s method is <strong>biased in favor of small states</strong>.</p>
+</div>
+<div id="websters-method" class="slide section level1">
+<h1>Webster’s Method</h1>
+<p>Webster’s method is not biased in favor of big or small states, but it can have quota violations in both directions!</p>
+</div>
+<div id="an-impossibility-theorem" class="slide section level1">
+<h1>An Impossibility Theorem</h1>
+<p>In 1983, two mathematicians, Michel Balinski and Peyton Young, proved that every apportionment method will either have paradoxes (like Hamilton’s method), or will have quota violations (like Adam’s/Jefferson’s/Webster’s methods).</p>
+</div>
+<div id="what-method-do-we-use-now" class="slide section level1">
+<h1>What Method Do We Use Now?</h1>
+<p>Ever since 1941 the United States has used the <strong>Huntington-Hill Method</strong> to apportion the seats in the House of Representatives. Joseph Hill was a statistician who worked for the US Census Bureau. In 1911 he argued that the best method would minimize the relative errors in the seats awards relative to each states’ standard quota.</p>
+<p>Hill’s idea is to initially apportion the seats of Congress using any method, but then check to see how close each state is to its ideal apportionment by calculating the ratio <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mtext mathvariant="normal">Seats Received</mtext><mtext mathvariant="normal">Seats Deserved</mtext></mfrac><mo>=</mo><mfrac><msub><mi>R</mi><mi>i</mi></msub><msub><mi>Q</mi><mi>i</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\frac{\text{Seats Received}}{\text{Seats Deserved}} = \frac{R_i}{Q_i}</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>R</mi><mi>i</mi></msub><annotation encoding="application/x-tex">R_i</annotation></semantics></math> is the number of seats each state receives in the initial apportionment and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Q</mi><mi>i</mi></msub><annotation encoding="application/x-tex">Q_i</annotation></semantics></math> is the standard quota for each state. If you can switch seats from state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> to state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> and in doing so, decrease <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>R</mi><mi>i</mi></msub><msub><mi>Q</mi><mi>i</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>R</mi><mi>j</mi></msub><msub><mi>Q</mi><mi>j</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\left| \log \left(\frac{R_i}{Q_i}\right)\right| + \left| \log \left(\frac{R_j}{Q_j}\right)\right|,</annotation></semantics></math> then you should do so.</p>
+</div>
+<div id="huntington-hill-method" class="slide section level1">
+<h1>Huntington-Hill Method</h1>
+<p>Edward Vermilye Huntington was a statistician who worked at Harvard. He improved on Hill’s idea and simplified the implementation of the method.</p>
+<p>He observed that Hill’s approach is a divisor method, but with a different way to round numbers. If a quota is between two consecutive integers <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math>, then you round up if the quota is bigger than the geometric mean <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><mi>n</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{n(n+1)}</annotation></semantics></math>, otherwise you round down.</p>
+<p>Because the geometric mean is exactly half-way between two numbers on a log-scale, you can think of Huntington-Hill as the method that rounds to the nearest whole number on a log-scale.</p>
+<center>
+<img src="LogApportionment.png" width=1100></img>
+</center>
+</div>
+<div id="united-states-department-of-commerce-v.-montana" class="slide section level1">
+<h1>United States Department of Commerce v. Montana</h1>
+<p>After the 1990 census, Montana dropped from 2 to 1 Congressional district. They sued the Federal Government saying this was unconstitutional, since at that time the 1 district would be the largest Congressional district representing 804,000 people even though the standard divisor (ideal district size) was only 572,000.</p>
+<p>Montana argued that what matters is the absolute difference between the district size and the ideal size:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute Difference</mtext><mo>=</mo><mn>804</mn><mo>,</mo><mn>000</mn><mo>−</mo><mn>572</mn><mo>,</mo><mn>000</mn><mo>=</mo><mn>232</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">\text{Absolute Difference} = 804{,}000 - 572{,}000 = 232{,}000</annotation></semantics></math></p>
+<p>Huntington-Hill method tries to minimize relative differences which is what you get when you divide.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Relative Difference</mtext><mo>=</mo><mfrac><mrow><mn>804</mn><mo>,</mo><mn>000</mn></mrow><mrow><mn>572</mn><mo>,</mo><mn>000</mn></mrow></mfrac><mo>=</mo><mn>1.406</mn></mrow><annotation encoding="application/x-tex">\text{Relative Difference} = \frac{804{,}000}{572{,}000} = 1.406</annotation></semantics></math></p>
+<p>which is 40.6% larger than it should be. The Supreme Court ruled unanimously against Montana, saying that there was nothing in the Constitution that prevents apportionment using the Huntington-Hill method.</p>
+</div>
+<div id="what-if-montana-got-its-way" class="slide section level1">
+<h1>What if Montana Got its Way?</h1>
+<p>If Montana’s suit had been successful, then Washington state would have lost one of its 9 seats in the House of Representatives. That would have caused Washington’s state to be further away from having the right number of seats, and Montana would also still be far away from having the right number of seats, because its two districts would both be small than the standard divisor by a factor of:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>572</mn><mo>,</mo><mn>000</mn></mrow><mrow><mn>402</mn><mo>,</mo><mn>000</mn></mrow></mfrac><mo>=</mo><mn>1.423</mn></mrow><annotation encoding="application/x-tex">\frac{572{,}000}{402{,}000} = 1.423</annotation></semantics></math></p>
+<p>which is even farther away (as a relative difference) than the actual result.</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</div>
+</body>
+</html>
