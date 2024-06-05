@@ -276,6 +276,57 @@ The other was a quick example of using a logarithmic scale to implement the Hunt
 
 * **Workshop:** [Divisor Methods & Logarithmic Scales](Workshops/HuntingtonHill.pdf)
 
+### Day 11 Notes
+
+Today we introduced **graph theory**.  We started by verifying **Euler's formula** which says that any graph on a piece of paper with $V$ vertices, $E$ edges, and $F$ faces or regions (including the one exterior face which is not enclosed by edges), the following formula is *always* true:
+$$ V + F - E = 2.$$
+
+A **graph** is a set of points called **vertices** and a set of lines connecting two vertices called **edges** (the edges don't have to be straight).  A graph that you can draw on a piece of paper so that no edges cross (except at vertices) is called a **planar graph**.  
+
+According to legend, the subject of graph theory was discovered/invented in 1735 when Leonhard Euler heard about the Seven Bridges of Königsberg puzzle.  At the time, Königsberg was a city in Prussia with seven bridges.  The puzzle asks whether it is possible to walk around the city crossing every bridge exactly once.  Assume that you can only cross the river by walking across on of the bridges.
+
+<center>
+<img src="Konigsberg.jpg"></img>
+</center>
+
+Euler solved the problem by abstracting away the irrelevant details and focusing on the underlying graph structure. A graph has an **Euler path** if there is a path that starts and ends at different vertices and crossed every edge exactly once. A graph has an **Euler circuit** if there is a path that starts and ends in the same place and crosses every edge exactly once. 
+
+<center>
+<img src="konigsbergGraph.png"></img>
+</center>
+
+Euler figured out that the only thing that matters (as long as the graph is connected) is the degrees of the vertices in the graph.  The **degree** of a vertex is the number of edges that touch it. 
+
+<div class="Theorem">
+**Theorem.** A connected graph has an Euler path if and only if it has exactly two vertices with an odd degree.  A connected graph has an Euler circuit if and only if all of the degrees are even.
+</div>
+
+We didn't prove this theorem, but we did give an intuitive explanation for why it is true.  Cole also had an interesting idea that maybe you have to have an even number of edges to have an Euler path, but we ended up finding some counter examples for that conjecture.  
+
+We also proved this handy theorem:
+
+<div class="Theorem">
+**The Handshake Theorem.** In any graph, the sum of the degrees of all the vertices is twice the number of edges.
+</div>
+
+Then we did this workshop. 
+
+* **Workshop:** [Euler paths](Workshops/EulerPaths.pdf)
+
+We also talked about Fluery's algorithm, which is a way to find an Euler path (or circuit) in a graph.  
+
+<div class="Theorem">
+**Fluery's algorithm.** For a graph that has an Euler circuit (or path):
+
+1. Pick a start vertex (must have odd degree if you are looking for a path).
+
+2. Move along the graph from vertex to vertex, removing the edges you cross as you go.  When you have a choice, never pick an edge that would make it impossible to reach some un-visited edges.  
+
+3. Continue until you are done.
+</div>
+
+It is not obvious, but this algorithm always works as long as a graph is connected and has only even degree vertices (or just two odd degree vertices). 
+
 <br>
 <br>
 <br>

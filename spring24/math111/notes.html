@@ -391,6 +391,40 @@ Total
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/HuntingtonHill.pdf">Divisor Methods &amp; Logarithmic Scales</a></li>
 </ul>
+<h3 id="day-11-notes">Day 11 Notes</h3>
+<p>Today we introduced <strong>graph theory</strong>. We started by verifying <strong>Euler’s formula</strong> which says that any graph on a piece of paper with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math> vertices, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math> edges, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math> faces or regions (including the one exterior face which is not enclosed by edges), the following formula is <em>always</em> true: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>+</mo><mi>F</mi><mo>−</mo><mi>E</mi><mo>=</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex"> V + F - E = 2.</annotation></semantics></math></p>
+<p>A <strong>graph</strong> is a set of points called <strong>vertices</strong> and a set of lines connecting two vertices called <strong>edges</strong> (the edges don’t have to be straight). A graph that you can draw on a piece of paper so that no edges cross (except at vertices) is called a <strong>planar graph</strong>.</p>
+<p>According to legend, the subject of graph theory was discovered/invented in 1735 when Leonhard Euler heard about the Seven Bridges of Königsberg puzzle. At the time, Königsberg was a city in Prussia with seven bridges. The puzzle asks whether it is possible to walk around the city crossing every bridge exactly once. Assume that you can only cross the river by walking across on of the bridges.</p>
+<center>
+<img src="Konigsberg.jpg"></img>
+</center>
+<p>Euler solved the problem by abstracting away the irrelevant details and focusing on the underlying graph structure. A graph has an <strong>Euler path</strong> if there is a path that starts and ends at different vertices and crossed every edge exactly once. A graph has an <strong>Euler circuit</strong> if there is a path that starts and ends in the same place and crosses every edge exactly once.</p>
+<center>
+<img src="konigsbergGraph.png"></img>
+</center>
+<p>Euler figured out that the only thing that matters (as long as the graph is connected) is the degrees of the vertices in the graph. The <strong>degree</strong> of a vertex is the number of edges that touch it.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> A connected graph has an Euler path if and only if it has exactly two vertices with an odd degree. A connected graph has an Euler circuit if and only if all of the degrees are even.</p>
+</div>
+<p>We didn’t prove this theorem, but we did give an intuitive explanation for why it is true. Cole also had an interesting idea that maybe you have to have an even number of edges to have an Euler path, but we ended up finding some counter examples for that conjecture.</p>
+<p>We also proved this handy theorem:</p>
+<div class="Theorem">
+<p><strong>The Handshake Theorem.</strong> In any graph, the sum of the degrees of all the vertices is twice the number of edges.</p>
+</div>
+<p>Then we did this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/EulerPaths.pdf">Euler paths</a></li>
+</ul>
+<p>We also talked about Fluery’s algorithm, which is a way to find an Euler path (or circuit) in a graph.</p>
+<div class="Theorem">
+<p><strong>Fluery’s algorithm.</strong> For a graph that has an Euler circuit (or path):</p>
+<ol type="1">
+<li><p>Pick a start vertex (must have odd degree if you are looking for a path).</p></li>
+<li><p>Move along the graph from vertex to vertex, removing the edges you cross as you go. When you have a choice, never pick an edge that would make it impossible to reach some un-visited edges.</p></li>
+<li><p>Continue until you are done.</p></li>
+</ol>
+</div>
+<p>It is not obvious, but this algorithm always works as long as a graph is connected and has only even degree vertices (or just two odd degree vertices).</p>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>
