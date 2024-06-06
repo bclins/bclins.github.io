@@ -39,7 +39,7 @@ Math & Society will cover applications of mathematics to society including expon
 <tr style="background-color: silver"><td>&nbsp; Mon, Jun 3  &nbsp; </td><td> &nbsp; The apportionment problem for Congress &nbsp; </td><td> &nbsp; [Day 9](notes.html#day-9-notes) &nbsp; </td></tr>  
 <tr style="background-color: silver"><td>&nbsp; Tue, Jun 4  &nbsp; </td><td> &nbsp; Apportionment: history and paradoxes    </td><td> &nbsp; [Day 10](notes.html#day-10-notes) &nbsp; </td></tr>  
 <tr style="background-color: silver"><td>&nbsp; Wed, Jun 5  &nbsp; </td><td> &nbsp; Intro to graph theory: Euler paths & circuits              </td><td> &nbsp; [Day 11](notes.html#day-11-notes) &nbsp; </td></tr>  
-<tr style="background-color: silver"><td>&nbsp; Thu, Jun 6  &nbsp; </td><td> &nbsp; Euler's formula               </td><td> &nbsp; [Day 12](notes.html#day-12-notes) &nbsp; </td></tr>  
+<tr style="background-color: silver"><td>&nbsp; Thu, Jun 6  &nbsp; </td><td> &nbsp; Trees & minimal spanning trees               </td><td> &nbsp; [Day 12](notes.html#day-12-notes) &nbsp; </td></tr>  
 <tr style="background-color: silver"><td>&nbsp; Fri, Jun 7  &nbsp; </td><td> &nbsp; Markov chains                 </td><td> &nbsp; [Day 13](notes.html#day-13-notes) &nbsp; </td></tr>  
 <tr style="                        "><td>&nbsp; Mon, Jun 10 &nbsp; </td><td> &nbsp; Markov chains 2               </td><td> &nbsp; [Day 14](notes.html#day-14-notes) &nbsp; </td></tr>  
 <tr style="                        "><td>&nbsp; Tue, Jun 11 &nbsp; </td><td> &nbsp; Probability models            </td><td> &nbsp; [Day 15](notes.html#day-15-notes) &nbsp; </td></tr>  

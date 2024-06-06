@@ -327,6 +327,63 @@ We also talked about Fluery's algorithm, which is a way to find an Euler path (o
 
 It is not obvious, but this algorithm always works as long as a graph is connected and has only even degree vertices (or just two odd degree vertices). 
 
+### Day 12 Notes
+
+Today we talked about trees.  A **tree** is a graph that is connected and has no cycles. A **path** is a sequence of adjacent edges with no repeats. A **cycle** is a path of length more than 1 that never repeats an edges and starts and ends at the same vertex.  We proved these theorems about trees, the most important of which is this first one (which includes several of the other theorems). 
+
+
+<div class="Theorem">
+**Tree Classification Theorem.** For connected graphs, the following properties are equivalent. If a connected graph has one of these properties, then it has all of them.
+
+1. The graph is a tree. 
+2. For any two points, there is only one (simple) path connecting them.  
+3. $V = E+1$.
+</div> 
+
+The first part of the proof is to show that properties 1 and 2 are equivalent. We called this Tree Theorem 1. Here is why it is true. If there were two paths, then eventually they would split and then rejoin.  The edges between where the paths split and rejoin would form a cycle, which is impossible.  Conversely if there were a cycle, then there would be more than one path connecting any two vertices in the cycle (one going clockwise, the other counterclockwise). 
+
+To prove that property 3 is equivalent to the other two properties in the Tree Classification Theorem takes a little more work.  We needed some helper theorems.  The first theorem is about **leaves** which are vertices with degree one in a tree. 
+
+<div class="Theorem"> 
+**Theorem.** Every tree with more than 1 vertex must have some leaves.  
+</div>
+
+To prove this theorem, start from any vertex and make a path.  Keep extending the path as long as you can, until you can't go any farther.  There are only two reasons you can't go farther. Either you are at a dead end (which means you have found a degree one vertex), or you have already visited all the edges that touch the current vertex.  But then the path has hit the vertex at least twice, and contains a cycle, which is impossible in a tree.  
+
+
+<div class="Theorem">
+**Theorem.** For any tree, the number of vertices $V$ is always one more than the number of edges $E$.  In other words, 
+$$V = E + 1.$$
+</div>
+
+The key to proving this theorem is to use a technique called **pruning**.  Since every tree must have some leaves (i.e., degree 1 vertices), you can remove a degree 1 vertex and the edge that touches it from the tree.  After you do this, you will still have no cycles, and your graph will still be connected because any other two vertices will have a path connecting them.  Therefore the pruned graph is still a tree, and so it still has more leaves you can prune.  Each time you prune a vertex, you reduce the number of edges and vertices both by one, until you get down to a single vertex and no edges.  At each step $V-E$ is the same, and at the end, $V-E= 1$, so $V-E = 1$ in the original tree. 
+
+The last helper theorem we needed was about spanning trees.  A **spanning tree** is a subgraph of a graph that is a tree and includes all of the vertices and some of the edges from the original graph.  
+
+<div class="Theorem">
+**Theorem.** Every connected graph has a spanning tree. 
+</div>
+
+This is true because if you start with a connected graph that has one or more cycles and remove one of the edges from a cycle, the new graph you get is still connected.  So you can repeat the process until there are no more cycles left.  When you are done, you have a connected subgraph with no cycles, i.e., a spanning tree. 
+
+With this last result, we were able to prove the final part of the Tree Classification Theorem: If a connected graph has exactly $V = E+1$ vertices, then it must be a tree.  This is because a connected graph must have a spanning tree.  The spanning tree has $V = E+1$ vertices.  If the original graph also has $V = E+1$ vertices.  Since both the original graph and the spanning tree have the same number of vertices, we conclude that they have the same number of edges, which means that the spanning tree is the original graph.  So the original graph is a tree. 
+
+After developing all of this theory about trees, we introduced minimal spanning trees.  In a connected graph where some edges are more expensive to include than others, the **minimal spanning tree** is the spanning tree that would be the least expensive to build.  There is a simple algorithm to find the minimum spanning tree. 
+
+<div class="Theorem">
+**Kruskal's Algorithm.** To find the minimal spanning tree in a connected graph, follow these steps. 
+
+1. Add the cheapest edge.
+
+2. Add the second cheapest edge (it doesn't have to be next to the first edge).
+
+3. Keep adding the cheapest edge available, as long as it doesn't make a cycle.  Stop when you have a tree.  
+</div>
+
+We finished with this workshop.
+
+* **Workshop:** [Trees](Workshops/Trees.pdf)
+
 <br>
 <br>
 <br>
