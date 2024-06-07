@@ -384,6 +384,57 @@ We finished with this workshop.
 
 * **Workshop:** [Trees](Workshops/Trees.pdf)
 
+### Day 13 Notes
+
+Today we introduced Markov chains.  We started with this example, which is from the book *Introduction to Finite Mathematics* by Kemeny, Snell, & Thompson.  
+
+> The Land of Oz is blessed by many things, but not by good weather. They never have two nice days in a row. If they have a nice day, they are just as likely to have snow as rain the next day. If they have snow or rain, they have an even chance of having the same the next day. If there is change from snow or rain, only half of the time is this a change to a nice day.
+
+A **Markov chain** is a mathematical model with states and transition probabilities which only depend on the state you are currently in.   The example above has three states: nice weather, rain, and snow.  A Markov chain can be represented using a weighted directed graph. A **directed graph** is a graph where the edges have a direction (indicated by an arrow).  A **weighted graph** is one where each edge has a number.  In a Markov chain graph, the weights on the edges are the probabilities that you take that edge. Here is the graph for the weather in the Land of Oz. 
+
+<center>
+<img src="https://bclins.github.io/spring24/cs480/Oz.png"></img> 
+</center>
+
+Here is another example of a Markov chain.  
+
+> A professor tries not to be late too often.  On days when he is late, he is 90% sure to arrive on time the next day.  When he is on time, there is a 30% chance he will be late the next day.  How often is this professor late in the long run?
+
+1. Draw and label a graph to represent this Markov chain.  
+
+2. If the professor is on time today, what is the probability that he will be on time the day after tomorrow?  
+
+There is another approach to Markov chains that makes it much easier to answer questions like the last one.  For a Markov chain, the **transition matrix** is a rectangular array of numbers where the rows represent the possible current state, the columns represent the possible states in the next round.  The number in row $i$ column $j$ of the matrix is the probability that you will end up in state $j$ if you started in state $i$.  For example, the transition matrix for the professor is:
+
+<center>
+<table class="bordered">
+<tr><td></td><td>Late</td><td>On-Time</td></tr>
+<tr><td>Late</td><td>0.1</td><td>0.9</td></tr>
+<tr><td>On-Time</td><td>0.3</td><td>0.7</td></tr>
+</table>
+</center>
+
+We usually don't bother writing the names of the states (as long as we can remember the order).  Then we just write the transition matrix this way:
+$$\begin{pmatrix} 0.1 & 0.9 \\
+0.3 & 0.7 \end{pmatrix}$$
+
+3. Find the transition matrix for the weather in the Land of Oz. 
+ 
+You can model what we know about the current state using a **probability vector** which is a matrix with only one row and a probability for each possible state.  The entries in a probability vector must add up to one.  For example, here are two different probability vectors:
+$$\begin{pmatrix} 0 & 1 \end{pmatrix}  ~~~~~~~~ \begin{pmatrix} 0.4 & 0.6 \end{pmatrix}$$
+The first would represent being 100% sure that the professor is on-time.  The second shows a 40% chance that the professor is late and a 60% chance that he is on-time.
+
+**Fact.** If $Q$ is the transition matrix for a Markov chain and $v$ is a probability vector indicated what we know about the current state, then $vQ$ is the probability vector for the next state.  
+
+In order to calculate $v$ times $Q$, you need to know how to **multiply matrices**.  Here are some videos that explain how to multiply matrices: (<https://youtu.be/kT4Mp9EdVqs> and <https://youtu.be/OMA2Mwo0aZg>). 
+
+You can also raise a matrix to a power.  For example, $Q^2$, just means $Q$ times $Q$, and $Q^3$ is $Q \cdot Q \cdot Q$.  For transition matrices, $Q^2$ represents how the Markov chain will change in 2 rounds and $Q^3$ represents how the Markov chain will change in 3 rounds.  Higher powers just represent more transitions.  
+
+We used the [Desmos Matrix Calculator](https://www.desmos.com/matrix) to calculate $Q^{10}$ for the late professor Markov chain, and we found that no matter whether the professor was late or on-time the first day, there is a roughly 25% chance he will be late 10 days later. We finished with this workshop. 
+
+* **Workshop:** [Markov chains](Workshops/MarkovChains.pdf)
+
+
 <br>
 <br>
 <br>

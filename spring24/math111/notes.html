@@ -466,6 +466,73 @@ Total
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/Trees.pdf">Trees</a></li>
 </ul>
+<h3 id="day-13-notes">Day 13 Notes</h3>
+<p>Today we introduced Markov chains. We started with this example, which is from the book <em>Introduction to Finite Mathematics</em> by Kemeny, Snell, &amp; Thompson.</p>
+<blockquote>
+<p>The Land of Oz is blessed by many things, but not by good weather. They never have two nice days in a row. If they have a nice day, they are just as likely to have snow as rain the next day. If they have snow or rain, they have an even chance of having the same the next day. If there is change from snow or rain, only half of the time is this a change to a nice day.</p>
+</blockquote>
+<p>A <strong>Markov chain</strong> is a mathematical model with states and transition probabilities which only depend on the state you are currently in. The example above has three states: nice weather, rain, and snow. A Markov chain can be represented using a weighted directed graph. A <strong>directed graph</strong> is a graph where the edges have a direction (indicated by an arrow). A <strong>weighted graph</strong> is one where each edge has a number. In a Markov chain graph, the weights on the edges are the probabilities that you take that edge. Here is the graph for the weather in the Land of Oz.</p>
+<center>
+<img src="https://bclins.github.io/spring24/cs480/Oz.png"></img>
+</center>
+<p>Here is another example of a Markov chain.</p>
+<blockquote>
+<p>A professor tries not to be late too often. On days when he is late, he is 90% sure to arrive on time the next day. When he is on time, there is a 30% chance he will be late the next day. How often is this professor late in the long run?</p>
+</blockquote>
+<ol type="1">
+<li><p>Draw and label a graph to represent this Markov chain.</p></li>
+<li><p>If the professor is on time today, what is the probability that he will be on time the day after tomorrow?</p></li>
+</ol>
+<p>There is another approach to Markov chains that makes it much easier to answer questions like the last one. For a Markov chain, the <strong>transition matrix</strong> is a rectangular array of numbers where the rows represent the possible current state, the columns represent the possible states in the next round. The number in row <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> column <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> of the matrix is the probability that you will end up in state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> if you started in state <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>. For example, the transition matrix for the professor is:</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+Late
+</td>
+<td>
+On-Time
+</td>
+</tr>
+<tr>
+<td>
+Late
+</td>
+<td>
+0.1
+</td>
+<td>
+0.9
+</td>
+</tr>
+<tr>
+<td>
+On-Time
+</td>
+<td>
+0.3
+</td>
+<td>
+0.7
+</td>
+</tr>
+</table>
+</center>
+<p>We usually don’t bother writing the names of the states (as long as we can remember the order). Then we just write the transition matrix this way: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>0.1</mn></mtd><mtd columnalign="center"><mn>0.9</mn></mtd></mtr><mtr><mtd columnalign="center"><mn>0.3</mn></mtd><mtd columnalign="center"><mn>0.7</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 0.1 &amp; 0.9 \\
+0.3 &amp; 0.7 \end{pmatrix}</annotation></semantics></math></p>
+<ol start="3" type="1">
+<li>Find the transition matrix for the weather in the Land of Oz.</li>
+</ol>
+<p>You can model what we know about the current state using a <strong>probability vector</strong> which is a matrix with only one row and a probability for each possible state. The entries in a probability vector must add up to one. For example, here are two different probability vectors: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>0</mn></mtd><mtd columnalign="center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center"><mn>0.4</mn></mtd><mtd columnalign="center"><mn>0.6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 0 &amp; 1 \end{pmatrix}  ~~~~~~~~ \begin{pmatrix} 0.4 &amp; 0.6 \end{pmatrix}</annotation></semantics></math> The first would represent being 100% sure that the professor is on-time. The second shows a 40% chance that the professor is late and a 60% chance that he is on-time.</p>
+<p><strong>Fact.</strong> If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> is the transition matrix for a Markov chain and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is a probability vector indicated what we know about the current state, then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">vQ</annotation></semantics></math> is the probability vector for the next state.</p>
+<p>In order to calculate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>, you need to know how to <strong>multiply matrices</strong>. Here are some videos that explain how to multiply matrices: (<a href="https://youtu.be/kT4Mp9EdVqs" class="uri">https://youtu.be/kT4Mp9EdVqs</a> and <a href="https://youtu.be/OMA2Mwo0aZg" class="uri">https://youtu.be/OMA2Mwo0aZg</a>).</p>
+<p>You can also raise a matrix to a power. For example, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>2</mn></msup><annotation encoding="application/x-tex">Q^2</annotation></semantics></math>, just means <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> times <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>3</mn></msup><annotation encoding="application/x-tex">Q^3</annotation></semantics></math> is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>⋅</mo><mi>Q</mi><mo>⋅</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q \cdot Q \cdot Q</annotation></semantics></math>. For transition matrices, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>2</mn></msup><annotation encoding="application/x-tex">Q^2</annotation></semantics></math> represents how the Markov chain will change in 2 rounds and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>3</mn></msup><annotation encoding="application/x-tex">Q^3</annotation></semantics></math> represents how the Markov chain will change in 3 rounds. Higher powers just represent more transitions.</p>
+<p>We used the <a href="https://www.desmos.com/matrix">Desmos Matrix Calculator</a> to calculate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mn>10</mn></msup><annotation encoding="application/x-tex">Q^{10}</annotation></semantics></math> for the late professor Markov chain, and we found that no matter whether the professor was late or on-time the first day, there is a roughly 25% chance he will be late 10 days later. We finished with this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/MarkovChains.pdf">Markov chains</a></li>
+</ul>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>
