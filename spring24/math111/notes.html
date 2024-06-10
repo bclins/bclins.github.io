@@ -533,6 +533,29 @@ On-Time
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/MarkovChains.pdf">Markov chains</a></li>
 </ul>
+<h3 id="day-14-notes">Day 14 Notes</h3>
+<p>Today we continued talking about Markov chains. We started by looking at the transitions matrices for both the tardy professor example and the weather in the Land of Oz example from last time. In both cases, when you raise the matrices to larger and larger powers, the results get closer and closer to a single matrix. When that happens, we say that the matrices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mi>k</mi></msup><annotation encoding="application/x-tex">Q^k</annotation></semantics></math> <strong>converge</strong>.</p>
+<!--**Fact.** If a Markov chain has transition matrix $Q$, and $Q^k$ converges to a matrix as $k$ gets large, then the rows -->
+<p>What often tends to happen is that after a large number of transitions, we get a probability vector that doesn’t change. A probability vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> such that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>Q</mi><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">vQ = v</annotation></semantics></math> is called a <strong>stationary distribution</strong>. It turns out that all Markov chains have a stationary distribution. If the powers of the transition matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Q</mi><mi>k</mi></msup><annotation encoding="application/x-tex">Q^k</annotation></semantics></math> converge, then each row of the matrix that they converge to is a stationary distribution for the Markov chain.</p>
+<p>You can tell a lot about a Markov chain by looking at the strongly connected components of its graph.</p>
+<p><strong>Definition.</strong> A directed graph is <strong>strongly connected</strong> if you can find a path from any start vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> to any other end vertex <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>. A <strong>strongly connected component</strong> of a graph is a set of vertices such that (i) you can travel from any one vertex in the set to any other, and (ii) you cannot returns to the set if you leave it. Strongly connected components are also known as <strong>classes</strong>. Every vertex of the graph will always be contained in exactly one class. A class is <strong>final</strong> if there are no edges that leave the class.</p>
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scc-1.svg" width = 300></img>
+</center>
+<p>In the directed graph above, there is one final class <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>,</mo><mi>g</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f,g\}</annotation></semantics></math> and two other non-final classes. States in a Markov chain that are not in a final class are called <strong>transitory</strong>. A state that you can enter but never leave is called <strong>absorbing</strong>. We looked at this example of a Markov chain with an absorbing state.</p>
+<ol type="1">
+<li><p>Suppose McDonald’s is having a Teenage Mutant Ninja Turtles special where each happy meal comes with a toy figure of one of the four ninja turtles (each equally likely). Suppose that a kid buys a happy meal every day to try to collect all four turtles.</p>
+<ol type="a">
+<li><p>Draw the graph for this Markov chain. Hint: The states can just be the number of different turtles the kid has collected so far.</p></li>
+<li><p>What is the transition matrix for this Markov chain?</p></li>
+<li><p>What is the probability of getting all four turtles if you buy 7 happy meals?</p></li>
+<li><p>How many happy meals would it take for there to be at least a 90% probability of having all four turtles?</p></li>
+</ol></li>
+</ol>
+<p>We finished with a second workshop about Markov chains.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/MarkovChains2.pdf">Markov chains 2</a></li>
+</ul>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>

@@ -434,6 +434,41 @@ We used the [Desmos Matrix Calculator](https://www.desmos.com/matrix) to calcula
 
 * **Workshop:** [Markov chains](Workshops/MarkovChains.pdf)
 
+### Day 14 Notes
+
+Today we continued talking about Markov chains.  We started by looking at the transitions matrices for both the tardy professor example and the weather in the Land of Oz example from last time.  In both cases, when you raise the matrices to larger and larger powers, the results get closer and closer to a single matrix.  When that happens, we say that the matrices $Q^k$ **converge**.  
+
+<!--**Fact.** If a Markov chain has transition matrix $Q$, and $Q^k$ converges to a matrix as $k$ gets large, then the rows -->
+
+What often tends to happen is that after a large number of transitions, we get a probability vector that doesn't change.  A probability vector $v$ such that 
+$$vQ = v$$
+is called a **stationary distribution**.  It turns out that all Markov chains have a stationary distribution.  If the powers of the transition matrix $Q^k$ converge, then each row of the matrix that they converge to is a stationary distribution for the Markov chain.  
+
+You can tell a lot about a Markov chain by looking at the strongly connected components of its graph.  
+
+
+
+**Definition.** A directed graph is **strongly connected** if you can find a path from any start vertex $i$ to any other end vertex $j$. A **strongly connected component** of a graph is a set of vertices such that (i) you can travel from any one vertex in the set to any other, and (ii) you cannot returns to the set if you leave it. Strongly connected components are also known as **classes**. Every vertex of the graph will always be contained in exactly one class. A class is **final** if there are no edges that leave the class. 
+
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/e/e1/Scc-1.svg" width = 300></img>
+</center>
+In the directed graph above, there is one final class $\{f,g\}$ and two other non-final classes.  States in a Markov chain that are not in a final class are called **transitory**.  A state that you can enter but never leave is called **absorbing**.  We looked at this example of a Markov chain with an absorbing state.  
+
+1. Suppose McDonald's is having a Teenage Mutant Ninja Turtles special where each happy meal comes with a toy figure of one of the four ninja turtles (each equally likely).  Suppose that a kid buys a happy meal every day to try to collect all four turtles.  
+
+    a. Draw the graph for this Markov chain.  Hint: The states can just be the number of different turtles the kid has collected so far.
+
+    b. What is the transition matrix for this Markov chain?
+
+    c. What is the probability of getting all four turtles if you buy 7 happy meals?
+
+    d. How many happy meals would it take for there to be at least a 90% probability of having all four turtles?  
+
+We finished with a second workshop about Markov chains.
+
+* **Workshop:** [Markov chains 2](Workshops/MarkovChains2.pdf)
+
 
 <br>
 <br>
