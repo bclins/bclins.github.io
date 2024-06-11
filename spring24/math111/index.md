@@ -15,6 +15,8 @@ header-includes: |
 
 ### Announcements
 
+* Midterm 2 will be on Friday, June 14.
+* Midterm 2 materials: [review problems](midterm2review.pdf), [review solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [review solutions](midterm1reviewSolutions.pdf)
  
 ### Course Description
