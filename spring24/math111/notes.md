@@ -469,6 +469,124 @@ We finished with a second workshop about Markov chains.
 
 * **Workshop:** [Markov chains 2](Workshops/MarkovChains2.pdf)
 
+### Day 15 Notes
+
+Today we talked about probability theory.  We started by defining probability models.
+
+A **probability model** has two parts:
+
+1. A set of possible outcomes called the **sample space**, and 
+
+2. A **probability function** which assigns a probability to each outcome in the sample space. 
+
+We talked about how everyone has a mental model of how flipping a coin works and how rolling a six-sided die works.  Those are both examples of probability models.  A probability model is **equiprobable** if every outcome is equally likely.  Both the fair coin and six-sided dice models are equiprobable.  A simple probability model that is not equiprobable would be if you flipped two fair coins and counted the number of heads. 
+
+We drew a **probability histogram** for this model, which is just a bar chart that shows the probability for each outcome.  This is also called a **probability distribution**.  
+
+* **Workshop:** [Probability distributions](Workshops/ProbabilityDistributions.pdf)
+
+After the first distribution we talked about the basic rules of probability.  First, we defined an **event** which is any subset of the sample space.  We often use capital letters like A or E to represent events. We use the shorthand $P(E)$ to mean: *the probability that event E happens.*  In an equiprobable space there is a simple formula for the probability of an event:
+$$P(E) = \frac{\text{ Number of elements in }E}{\text{ Number of elements in the sample space }}.
+
+The other rules we talked about are these:
+
+1. **Complementary Events** For any event $E$, 
+$$P(E \text{ does not happen}) = 1 - P(E).$$
+
+2. **Addition Rule** For any two events $A$ and $B$, 
+$$P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).$$
+
+3. **Multiplication Rule for Independent Events** If $A$ and $B$ are independent events, then 
+$$P(A \text{ and } B) = P(A) \cdot P(B).$$
+
+Two events are **independent** if the probability that $A$ happens does not change if $B$ happens.  Here is an example:
+
+1. If you shuffle a deck of 52 playing cards and draw the first one off the top, the probability that it is an ace is $\tfrac{4}{52}$.  If you don't put it back, then the probability that the second card is an ace depends on whether the first one was.  If the first was an ace, then there are only 3 aces left, so the probability would be $\tfrac{3}{51}$. But if the first was not an ace, then there are still 4 aces left, so the probability would be $\tfrac{4}{51}$.  
+
+We also did this example:
+
+2. 35% of voters in the US identify as independents and 23% of voters call themselves swing voters.  11% of voters are both.  
+
+    a. What is the probability that a voter is independent or a swing voter?
+
+    b. What is the probability that a voter is neither indpendent nor a swing voter?
+
+    c. How can you tell that being an indpendent voter is not indepdent of being a swing voter? 
+
+We finished with this workshop:
+
+* **Workshop:** [Basic probability rules](Workshops/BasicProbabilityRules.pdf)
+
+### Day 16 Notes
+
+Today we talked about weighted averages and expected value.  We started by reviewing how to calculate a weighted average.  A **weighted average** is the dot-product of a list of numbers with a list of weights.  The weights should be fractions or decimals that add up to one.  
+
+1. Suppose that the final grade in one class is based on the following components:  
+<center>
+<table class="bordered">
+<tr><td>Project</td><td>Midterms</td><td>Quizzes</td><td>Final</td></tr>
+<tr><td>5%</td><td>45%</td><td>20%</td><td>30%</td></tr>
+</table>
+</center>
+Calculate the final average for a student who got 100 on the project, 73 on the midterms, 89 on the quizzes, and 81 on the final.  
+
+2. 11 nursing students just graduated.  Four of the students graduated in 3 years, four took 4 years, two finished in 5 years, and one student took 6 years to graduate.  Express the average number of years it took the students as a weighted average.  
+
+After we reviewed weighted averages, we talked about how there are two different kinds of averages that are important in probability theory. 
+
+* **Sample mean** - This is the regular average when you look at the outcomes of a repeated random experiment.  
+
+* **Theoretical mean** (also known as the **expected value**) this is the weighted average of the possible outcomes, using the probabilities as the weights.  
+
+3. What is the expected value when I roll a fair six-sided die?  What would the sample mean be if I roll the die ten times and get the following results:
+
+<center>
+1, 4, 5, 3, 4, 3, 6, 2, 1, 3?
+</center>
+
+One confusing thing is that you don't expect to get the "expected value" if you only roll a die once.  To understand what we mean when we call the theoretical mean the expected value, you need to know the Law of Large Numbers:
+
+<div class="Theorem">
+**The Law of Large Numbers.** If you repeat a random experiment, the sample means tends to get closer to the theoretical mean as the number of trials increases.  
+</div>
+
+
+4. A roulette wheel has 36 numbers slots, half red & half black.  It also have two green slots 0 & 00.  If you bet $1 on black, you have an 18/38 chance of winning $2.  The rest of the time, you lose and get $0 back.  Find the expected value of money you will win.  Is it worth $1 to play a game of roulette?  What will tend to happen in the long run?  
+
+* **Workshop:** [Weighted averages & expected value](Workshops/ExpectedValue.pdf)
+
+After the workshop, we introduced weighted tree diagrams, which are a tool to help keep the addition and multiplication rules in probability straight.  We started with this example:
+
+5. Suppose you draw two cards from a deck of 52 playing cards.  What is the probability that exactly one is an ace?  
+
+<center>
+<img src="weightedTreeDiagram.png"></img>
+</center>
+
+<div class="Theorem">
+**Weighted Tree Diagrams.**
+
+1. Draw edges leading to outcomes. 
+2. Label each edge with its probability. 
+3. Multiply probabilities along a path.
+4. Add probabilities from separate branches. 
+</div>
+
+Notice that the multiplication rule we talked about last time requires events to be independent.  A more general multiplication rule that does not assume events are indpendent is the following:
+
+* **General Multiplication Rule** For any two events A and B, 
+$$P(A \text{ and } B) = P(A) \cdot P(B \, | \, A),$$
+where $P(B \, | \, A)$ is shorthand that means "the probability of B given that A happened".  
+
+We finished with this exercise:
+
+6. A group of deep sea divers come to you with an investment opportunity.  The think they have found a ship wreck with a valuable treasure.  They tell you that:
+    * There is a 60% chance they know where the wreck is.
+    * There is a 70% chance that the wreck contains treasure.
+    * There is a 70% that they can recover the treasure if it is there. 
+
+    a. Draw and label a tree diagram for this situation.  
+    b. Is it worth investing $200,000 if you will get $1,000,000 if the divers recover the treasure?  What is the expected value of your investment?  
 
 <br>
 <br>

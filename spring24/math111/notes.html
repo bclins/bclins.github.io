@@ -556,6 +556,137 @@ On-Time
 <ul>
 <li><strong>Workshop:</strong> <a href="Workshops/MarkovChains2.pdf">Markov chains 2</a></li>
 </ul>
+<h3 id="day-15-notes">Day 15 Notes</h3>
+<p>Today we talked about probability theory. We started by defining probability models.</p>
+<p>A <strong>probability model</strong> has two parts:</p>
+<ol type="1">
+<li><p>A set of possible outcomes called the <strong>sample space</strong>, and</p></li>
+<li><p>A <strong>probability function</strong> which assigns a probability to each outcome in the sample space.</p></li>
+</ol>
+<p>We talked about how everyone has a mental model of how flipping a coin works and how rolling a six-sided die works. Those are both examples of probability models. A probability model is <strong>equiprobable</strong> if every outcome is equally likely. Both the fair coin and six-sided dice models are equiprobable. A simple probability model that is not equiprobable would be if you flipped two fair coins and counted the number of heads.</p>
+<p>We drew a <strong>probability histogram</strong> for this model, which is just a bar chart that shows the probability for each outcome. This is also called a <strong>probability distribution</strong>.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/ProbabilityDistributions.pdf">Probability distributions</a></li>
+</ul>
+<p>After the first distribution we talked about the basic rules of probability. First, we defined an <strong>event</strong> which is any subset of the sample space. We often use capital letters like A or E to represent events. We use the shorthand <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(E)</annotation></semantics></math> to mean: <em>the probability that event E happens.</em> In an equiprobable space there is a simple formula for the probability of an event: $$P(E) = .</p>
+<p>The other rules we talked about are these:</p>
+<ol type="1">
+<li><p><strong>Complementary Events</strong> For any event <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> does not happen</mtext></mrow><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">P(E \text{ does not happen}) = 1 - P(E).</annotation></semantics></math></p></li>
+<li><p><strong>Addition Rule</strong> For any two events <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> or </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).</annotation></semantics></math></p></li>
+<li><p><strong>Multiplication Rule for Independent Events</strong> If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> are independent events, then <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">P(A \text{ and } B) = P(A) \cdot P(B).</annotation></semantics></math></p></li>
+</ol>
+<p>Two events are <strong>independent</strong> if the probability that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> happens does not change if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math> happens. Here is an example:</p>
+<ol type="1">
+<li>If you shuffle a deck of 52 playing cards and draw the first one off the top, the probability that it is an ace is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="false"><mfrac><mn>4</mn><mn>52</mn></mfrac></mstyle><annotation encoding="application/x-tex">\tfrac{4}{52}</annotation></semantics></math>. If you don’t put it back, then the probability that the second card is an ace depends on whether the first one was. If the first was an ace, then there are only 3 aces left, so the probability would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="false"><mfrac><mn>3</mn><mn>51</mn></mfrac></mstyle><annotation encoding="application/x-tex">\tfrac{3}{51}</annotation></semantics></math>. But if the first was not an ace, then there are still 4 aces left, so the probability would be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="false"><mfrac><mn>4</mn><mn>51</mn></mfrac></mstyle><annotation encoding="application/x-tex">\tfrac{4}{51}</annotation></semantics></math>.</li>
+</ol>
+<p>We also did this example:</p>
+<ol start="2" type="1">
+<li><p>35% of voters in the US identify as independents and 23% of voters call themselves swing voters. 11% of voters are both.</p>
+<ol type="a">
+<li><p>What is the probability that a voter is independent or a swing voter?</p></li>
+<li><p>What is the probability that a voter is neither indpendent nor a swing voter?</p></li>
+<li><p>How can you tell that being an indpendent voter is not indepdent of being a swing voter?</p></li>
+</ol></li>
+</ol>
+<p>We finished with this workshop:</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/BasicProbabilityRules.pdf">Basic probability rules</a></li>
+</ul>
+<h3 id="day-16-notes">Day 16 Notes</h3>
+<p>Today we talked about weighted averages and expected value. We started by reviewing how to calculate a weighted average. A <strong>weighted average</strong> is the dot-product of a list of numbers with a list of weights. The weights should be fractions or decimals that add up to one.</p>
+<ol type="1">
+<li><p>Suppose that the final grade in one class is based on the following components:<br />
+</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+<p>Project</p>
+</td>
+<td>
+<p>Midterms</p>
+</td>
+<td>
+<p>Quizzes</p>
+</td>
+<td>
+<p>Final</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>5%</p>
+</td>
+<td>
+<p>45%</p>
+</td>
+<td>
+<p>20%</p>
+</td>
+<td>
+<p>30%</p>
+</td>
+</tr>
+</table>
+</center>
+<p>Calculate the final average for a student who got 100 on the project, 73 on the midterms, 89 on the quizzes, and 81 on the final.</p></li>
+<li><p>11 nursing students just graduated. Four of the students graduated in 3 years, four took 4 years, two finished in 5 years, and one student took 6 years to graduate. Express the average number of years it took the students as a weighted average.</p></li>
+</ol>
+<p>After we reviewed weighted averages, we talked about how there are two different kinds of averages that are important in probability theory.</p>
+<ul>
+<li><p><strong>Sample mean</strong> - This is the regular average when you look at the outcomes of a repeated random experiment.</p></li>
+<li><p><strong>Theoretical mean</strong> (also known as the <strong>expected value</strong>) this is the weighted average of the possible outcomes, using the probabilities as the weights.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>What is the expected value when I roll a fair six-sided die? What would the sample mean be if I roll the die ten times and get the following results:</li>
+</ol>
+<center>
+1, 4, 5, 3, 4, 3, 6, 2, 1, 3?
+</center>
+<p>One confusing thing is that you don’t expect to get the “expected value” if you only roll a die once. To understand what we mean when we call the theoretical mean the expected value, you need to know the Law of Large Numbers:</p>
+<div class="Theorem">
+<p><strong>The Law of Large Numbers.</strong> If you repeat a random experiment, the sample means tends to get closer to the theoretical mean as the number of trials increases.</p>
+</div>
+<ol start="4" type="1">
+<li>A roulette wheel has 36 numbers slots, half red &amp; half black. It also have two green slots 0 &amp; 00. If you bet $1 on black, you have an 18/38 chance of winning $2. The rest of the time, you lose and get $0 back. Find the expected value of money you will win. Is it worth $1 to play a game of roulette? What will tend to happen in the long run?</li>
+</ol>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/ExpectedValue.pdf">Weighted averages &amp; expected value</a></li>
+</ul>
+<p>After the workshop, we introduced weighted tree diagrams, which are a tool to help keep the addition and multiplication rules in probability straight. We started with this example:</p>
+<ol start="5" type="1">
+<li>Suppose you draw two cards from a deck of 52 playing cards. What is the probability that exactly one is an ace?</li>
+</ol>
+<center>
+<img src="weightedTreeDiagram.png"></img>
+</center>
+<div class="Theorem">
+<p><strong>Weighted Tree Diagrams.</strong></p>
+<ol type="1">
+<li>Draw edges leading to outcomes.</li>
+<li>Label each edge with its probability.</li>
+<li>Multiply probabilities along a path.</li>
+<li>Add probabilities from separate branches.</li>
+</ol>
+</div>
+<p>Notice that the multiplication rule we talked about last time requires events to be independent. A more general multiplication rule that does not assume events are indpendent is the following:</p>
+<ul>
+<li><strong>General Multiplication Rule</strong> For any two events A and B, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">P(A \text{ and } B) = P(A) \cdot P(B \, | \, A),</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(B \, | \, A)</annotation></semantics></math> is shorthand that means “the probability of B given that A happened”.</li>
+</ul>
+<p>We finished with this exercise:</p>
+<ol start="6" type="1">
+<li>A group of deep sea divers come to you with an investment opportunity. The think they have found a ship wreck with a valuable treasure. They tell you that:
+<ul>
+<li>There is a 60% chance they know where the wreck is.</li>
+<li>There is a 70% chance that the wreck contains treasure.</li>
+<li>There is a 70% that they can recover the treasure if it is there.</li>
+</ul>
+<ol type="a">
+<li>Draw and label a tree diagram for this situation.<br />
+</li>
+<li>Is it worth investing $200,000 if you will get $1,000,000 if the divers recover the treasure? What is the expected value of your investment?</li>
+</ol></li>
+</ol>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>
