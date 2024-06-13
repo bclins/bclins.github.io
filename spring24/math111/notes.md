@@ -588,6 +588,46 @@ We finished with this exercise:
     a. Draw and label a tree diagram for this situation.  
     b. Is it worth investing $200,000 if you will get $1,000,000 if the divers recover the treasure?  What is the expected value of your investment?  
 
+### Day 17 Notes
+
+Today we talked about conditional probabilities $P(A \, | \, B)$.  
+
+**Conditional Probability Formula.** For any two events A and B, the **conditional probability** of A given B is 
+$$P(A \, | \, B) = \frac{P( A \text{ and } B)}{P(B)}.$$
+
+This comes directly from the multiplication rule we talked about last time.  We started with the following example.  
+
+1. In 1721 there was a smallpox outbreak in Boston.  We have records of people who caught smallpox during the outbreak.  At the time, some people had been inoculated (see <https://en.wikipedia.org/wiki/Inoculation#Introduction_in_Europe_and_North_America>).  
+
+<center>
+<table class="bordered">
+<tr><td></td><td>Inoculated</td><td>Not Inoculated</td><td>Total</td></tr>
+<tr><td>Lived</td><td>238</td><td>5136</td><td> 5374</td></tr>
+<tr><td>Died</td><td>6</td><td>844</td><td>850</td></tr>
+<tr><td>Total</td><td>244</td><td>5980</td><td>6224</td></tr>
+</table>
+</center> 
+
+The probability that someone died if they were inoculated was only $\tfrac{6}{244} = 2.5\%$.  The probability of dying for un-inoculated people was much higher, $\tfrac{844}{5980}=14.1\%$. Both of these are conditional probabilities of the form $P(A \, | \, B)$.  What is the A and B for each?
+
+Conditional probabilities can be surprisingly counter-intuitive.  
+
+2. A study found that 0.8% of women in their 40s have breast cancer.  For women with breast cancer, mammograms are 90% accurate, and for women without mammograms are 93% accurate.  We can express this with a tree diagram. 
+<center>
+<img src="weightedTreeDiagram2.png"></img>
+</center>
+
+    a. What percent of women test positive for breast cancer?
+
+    b. What is the probability that a woman actually has breast cancer given that they test positive?
+
+* **Workshop:** [Conditional probability](Workshops/ConditionalProbability.pdf)
+
+After the workshop we briefly went over some questions about the [midterm 2 review problems](midterm2review.pdf).
+
+
+
+
 <br>
 <br>
 <br>
