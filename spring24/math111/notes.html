@@ -769,6 +769,67 @@ Total
 <li><strong>Workshop:</strong> <a href="Workshops/ConditionalProbability.pdf">Conditional probability</a></li>
 </ul>
 <p>After the workshop we briefly went over some questions about the <a href="midterm2review.pdf">midterm 2 review problems</a>.</p>
+<h3 id="day-19-notes">Day 19 Notes</h3>
+<p>Today we introduced the normal distribution. Lots of things in nature have a probability distribution that is shaped like a bell. Here are some examples.</p>
+<ul>
+<li><a href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/cdcHeights.html">Men’s heights in the USA</a></li>
+<li><a href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.html">Farmville annual rainfall totals</a></li>
+</ul>
+<p>Another important example is when you flip a coin (fair or unfair) many times and count the number of heads. The total number of heads has a distribution called the <strong>binomial distribution</strong> that has a shape that looks more and more like a bell curve as the number of flips gets larger and larger.</p>
+<ul>
+<li><a href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">Binomial distribution</a></li>
+</ul>
+<p>In fact, one of the most important mathematical facts is that any time you add independent random numerical outcomes that come from a fixed probability distribution, the results tend to have a normal distribution as the number of observations increases. The <strong>normal distribution</strong> is a probability model that has a complicated formula, but it also has the following simple features.</p>
+<ol type="1">
+<li>It is symmetric, and the theoretical average outcome <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> is in the middle.</li>
+<li>Has two <strong>inflection points</strong> which are the steepest parts of the graph. They are located exactly one <strong>standard deviation</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math> above and below the mean <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.<br />
+</li>
+<li>A normal distribution is completely described by the two numbers <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.</li>
+</ol>
+<p>The normal distribution always has the same probability of getting results within a fixed number of standard deviations from the mean.</p>
+<center>
+<img src="NormalDistributionEmpiricalRule2.png" width = 600></img>
+</center>
+<!--
+Today we talked about **Markov chains with rewards**.  These are Markov chain where you get a reward (or a penalty) when you are in some states.  We can use a vector R to represent the rewards for each states.  
+
+A state in a Markov chain is **transient** if it is not in one of the final classes.  If a state is in a final class, then we say it is **recurrent**.  
+
+Here is an example:
+
+1. John is on a game show where he must try to stay on a wobbling platform and not fall into the water below for as long as possible.  Each second he stays out of the water, he earns a point.  Each second he is on the platform, there is a 10% chance he falls off.  If he falls, there is a 50% chance he will be able to grab the edge of the platform and hang on, otherwise he falls into the water.  If he is hanging onto the edge, then there is a 20% chance each second that he will fall into the water. Draw a graph for this Markov chain. 
+
+John gets a reward of 1 for every second he is not in the water.  We'd like to know how long John can stay out of the water on average. The transition matrix for this Markov chain is 
+$$\begin{pmatrix} 0.90 & 0.05 & 0.05 \\ 0 & 0.80 & 0.20 \\ 0 & 0 & 1 \end{pmatrix}.$$
+
+* Let $v_1$ be the expect value of the total future reward if we start on the platform.  
+* Let $v_2$ be the expected total future reward if John is hanging onto the edge. 
+* Let $v_3$ be zero, which represents the future reward when you are in the water.  
+
+We can use an idea called recurrence to figure out what the numbers $v_1$ and $v_2$ are.  The expected reward starting in state 1 (on the platform) is 1 for this round, plus the expected value of the reward the next round which is a weighted average of $v_1$, $v_2$, and $v_3$. Likewise, the expected reward starting in state 2 is 1 plus the expected reward the next round which is 80% of $v_2$ plus 20% of $v_3$.  
+
+\begin{align*}
+v_1 &= 1 + 0.9 v_1 + 0.05 v_2 + 0.05 v_3\\
+v_2 &= 1 + 0.8v_2 + 0.2 v_3 \\
+v_3 &= v_3                    \\
+\end{align*}
+
+This can be rewritten as 
+
+$$v \mapsto R + Q v$$
+
+As long as the reward vector $R$ is zero in every entry corresponding to a recurrent state, there is only one vector $v$ that satisfies this equation with zero entries for all of the recurrent states.  This vector is called the **value vector** and its entries are the expected total future reward if you start in any of the states of the Markov chain. To find $v$, there is an algorithm:
+
+<div class="Theorem">
+**Value Iteration Algorithm.** For a Markov chain with transition matrix $Q$ and reward vector $R$:
+
+1. Let $v$ be the all zero vector. 
+2. Replace $v$ by $R+Qv$.  
+3. Repeat step 2 several times until the entries in $v$ stop changing.
+
+As long as the reward vector $R$ is zero in every entry corresponding to a recurrent state, this algorithm will eventually converge to the value vector $v$. 
+</div>
+-->
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>
