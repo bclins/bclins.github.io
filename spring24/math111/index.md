@@ -48,7 +48,7 @@ Math & Society will cover applications of mathematics to society including expon
 <tr style="                        "><td>&nbsp; Wed, Jun 12 &nbsp; </td><td> &nbsp; Expected value                </td><td> &nbsp; [Day 16](notes.html#day-16-notes) &nbsp; </td></tr>  
 <tr style="                        "><td>&nbsp; Thu, Jun 13 &nbsp; </td><td> &nbsp; Conditional probability          </td><td> &nbsp; [Day 17](notes.html#day-17-notes) &nbsp; </td></tr>  
 <tr style="                        "><td>&nbsp; Fri, Jun 14 &nbsp; </td><td> &nbsp; **Midterm 2**                 </td><td> &nbsp; [Day 18](notes.html#day-18-notes) &nbsp; </td></tr>  
-<tr style="background-color: silver"><td>&nbsp; Mon, Jun 17 &nbsp; </td><td> &nbsp; Markov chains with rewards    </td><td> &nbsp; [Day 19](notes.html#day-19-notes) &nbsp; </td></tr>  
+<tr style="background-color: silver"><td>&nbsp; Mon, Jun 17 &nbsp; </td><td> &nbsp; Normal distributions    </td><td> &nbsp; [Day 19](notes.html#day-19-notes) &nbsp; </td></tr>  
 <tr style="background-color: silver"><td>&nbsp; Tue, Jun 18 &nbsp; </td><td> &nbsp; Central limit theorem         </td><td> &nbsp; [Day 20](notes.html#day-20-notes) &nbsp; </td></tr>  
 </tbody>
 </table>

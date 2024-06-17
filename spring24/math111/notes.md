@@ -638,15 +638,47 @@ Another important example is when you flip a coin (fair or unfair) many times an
 
 In fact, one of the most important mathematical facts is that any time you add independent random numerical outcomes that come from a fixed probability distribution, the results tend to have a normal distribution as the number of observations increases. The **normal distribution** is a probability model that has a complicated formula, but it also has the following simple features. 
 
-1. It is symmetric, and the theoretical average outcome $\mu$ is in the middle.
-2. Has two **inflection points** which are the steepest parts of the graph. They are located exactly one **standard deviation** $\sigma$ above and below the mean $\mu$.  
-3. A normal distribution is completely described by the two numbers $\mu$ and $\sigma$.  
+1. **Shape.** - A normal distribution is shaped like a bell. It is mirror image symmetric around its middle. 
+2. **Center.** - The middle is the theoretical average $\mu$.
+2. **Spread.** - Every normal distribution has two **inflection points** which are the steepest parts of the graph. They are located exactly one **standard deviation** $\sigma$ above and below the mean $\mu$.  
 
-The normal distribution always has the same probability of getting results within a fixed number of standard deviations from the mean.  
+
+**Fact.** A normal distribution is completely described by the two numbers $\mu$ and $\sigma$.  The reason that normal distributions are so common in math & nature is the following theorem. 
+
+<div class="Theorem">
+**The Central Limit Theorem.** The sum of a large number $N$ of independent observations from a probability distribution tends to have a normal distribution.  The distribution of the sum gets more normal as $N$ increases.  
+</div>
+
+
+We also talked about the **68-95-99.7 Rule**:
 
 <center>
 <img src="NormalDistributionEmpiricalRule2.png" width = 600></img>
 </center>
+
+When working with normal distributions, it is common to refer to data in terms of how many standard deviations it is above or below the mean.  This is called **standardized data** or **z-values**.  The formula to calculate a z-value is:
+$$z = \frac{\text{data} - \text{mean}}{\text{standard deviation}}.$$
+
+We used z-values to answer the following question.  
+
+1. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10.  The average high temperature in Honolulu, HI in January is 80°F with $\sigma =$ 8°F.  In which city would it be more unusual to have a high temperature of 57°F in January?  
+
+* **Workshop:** [Normal distribution](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist.pdf)
+
+After we did the workshop, we talked about roulette again.  If you bet on black, then you win with probability 18/38, but if you bet on a number like 7, then you only win 1/38 times.  But since the payoff is bigger if you bet on a number, you still get the same theoretical average payoff ($0.947 for every dollar bet).  But even though both bets have the same $\mu$, they actually have very different probability distributions if you play 100 games.  
+
+2. How many games would you expect to win if you play 100 games and bet on black every time? 
+
+3. Is the probability histogram for the total number of wins approximately normal in this case? 
+
+4. How many games would you expect to win if you play 100 games and bet on 7 every time? 
+
+5. Is the probability histogram for the total number of wins approximately normal in this case? 
+
+It turns out that you are much more likely to beat the house if you bet 100 times on 7 than if you bet 100 times on black. We finished by talking about risk (which is measured by the standard deviation) can be weighed against the expected value of the reward to judge whether investments are worthwhile. 
+
+
+
 
 <!--
 Today we talked about **Markov chains with rewards**.  These are Markov chain where you get a reward (or a penalty) when you are in some states.  We can use a vector R to represent the rewards for each states.  
