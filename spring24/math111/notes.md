@@ -721,6 +721,32 @@ As long as the reward vector $R$ is zero in every entry corresponding to a recur
 </div>
 -->     
 
+### Day 20 Notes
+
+Today we talked about **binary outcome models** which are probability models where each trial has only two possible outcomes, and we assume that the trials are independent and the probability of a success is the same every try.  In a binary outcome model with $N$ trials and a probability $p$ of a success on each, the total number of successes has:
+
+1. Theoretical average $\mu = pN$, and 
+
+2. Standard deviation $\sigma = \sqrt{p (1-p) N}$. 
+
+If $N$ is large enough, then the distribution of successes will be approximately normal.  A nice rule of thumb for when $N$ is large enough is the following: if there are at least 10 possible outcomes above and below the theoretical outcome $\mu$, then the distribution of the number of successes will be approximately normal.  We looked at a couple of examples.  
+
+1. In roulette, if you play 100 games and bet on black, you have a probability of winning of $18/38$ each round.  What is the theoretical average and standard deviation for the number of games won?  Is it appropriate to use a normal distribution to model this situation?
+
+2. In roulette, if you play 100 games and bet on 7, then you have a probability of winning of $1/38$ each round.  What is the theoretical average and standard deviation for the number of games won?  Is it appropriate to use a normal distribution to model this situation?
+
+3. In the 1920s, the number's racket was an illegal lottery run by the mob in big cities.  Anyone could buy a numbers ticket for $1.  You could pick any three digit number, including 000.  At the end of the day, there was a drawing and anyone who picked the winning number would win $600.  
+
+    a. Suppose someone bought 300 tickets per year, every year, for a whole decade.  How many times would they win on average?  Would the number of times they won be approximately normal?  Why not?  
+
+    b. It is estimate that some organized criminals sold as many as 150,000 tickets per week.  How many of those tickets would be winners, on average?  What is the standard deviation? Is a normal approximation appropriate here?
+
+
+4. You can test someone to see if they are psychic using [Zener cards](https://en.wikipedia.org/wiki/Zener_cards). If someone is just guessing, they should only get about 20% of their guesses right. Assuming that someone is just guessing (doesn't really have psychic powers) is called the **null hypothesis**.  It would take some very strong evidence to convince me that the null hypothesis is wrong and someone really has psychic powers.   Out of 25 trials, how many would you expect to be correct if they are just guessing?  What is the standard deviation for the number of correct guesses? 
+
+* **Workshop:** [Making inferences using probability](Workshops/FairCoin.pdf)
+
+
 
 
 <br>

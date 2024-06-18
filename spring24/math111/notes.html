@@ -849,6 +849,26 @@ As long as the reward vector $R$ is zero in every entry corresponding to a recur
 As long as the reward vector $R$ is zero in every entry corresponding to a recurrent state, this algorithm will eventually converge to the value vector $v$. 
 </div>
 -->
+<h3 id="day-20-notes">Day 20 Notes</h3>
+<p>Today we talked about <strong>binary outcome models</strong> which are probability models where each trial has only two possible outcomes, and we assume that the trials are independent and the probability of a success is the same every try. In a binary outcome model with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> trials and a probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> of a success on each, the total number of successes has:</p>
+<ol type="1">
+<li><p>Theoretical average <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mi>p</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\mu = pN</annotation></semantics></math>, and</p></li>
+<li><p>Standard deviation <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mi>N</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sigma = \sqrt{p (1-p) N}</annotation></semantics></math>.</p></li>
+</ol>
+<p>If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> is large enough, then the distribution of successes will be approximately normal. A nice rule of thumb for when <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> is large enough is the following: if there are at least 10 possible outcomes above and below the theoretical outcome <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>, then the distribution of the number of successes will be approximately normal. We looked at a couple of examples.</p>
+<ol type="1">
+<li><p>In roulette, if you play 100 games and bet on black, you have a probability of winning of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>18</mn><mi>/</mi><mn>38</mn></mrow><annotation encoding="application/x-tex">18/38</annotation></semantics></math> each round. What is the theoretical average and standard deviation for the number of games won? Is it appropriate to use a normal distribution to model this situation?</p></li>
+<li><p>In roulette, if you play 100 games and bet on 7, then you have a probability of winning of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>38</mn></mrow><annotation encoding="application/x-tex">1/38</annotation></semantics></math> each round. What is the theoretical average and standard deviation for the number of games won? Is it appropriate to use a normal distribution to model this situation?</p></li>
+<li><p>In the 1920s, the number’s racket was an illegal lottery run by the mob in big cities. Anyone could buy a numbers ticket for $1. You could pick any three digit number, including 000. At the end of the day, there was a drawing and anyone who picked the winning number would win $600.</p>
+<ol type="a">
+<li><p>Suppose someone bought 300 tickets per year, every year, for a whole decade. How many times would they win on average? Would the number of times they won be approximately normal? Why not?</p></li>
+<li><p>It is estimate that some organized criminals sold as many as 150,000 tickets per week. How many of those tickets would be winners, on average? What is the standard deviation? Is a normal approximation appropriate here?</p></li>
+</ol></li>
+<li><p>You can test someone to see if they are psychic using <a href="https://en.wikipedia.org/wiki/Zener_cards">Zener cards</a>. If someone is just guessing, they should only get about 20% of their guesses right. Assuming that someone is just guessing (doesn’t really have psychic powers) is called the <strong>null hypothesis</strong>. It would take some very strong evidence to convince me that the null hypothesis is wrong and someone really has psychic powers. Out of 25 trials, how many would you expect to be correct if they are just guessing? What is the standard deviation for the number of correct guesses?</p></li>
+</ol>
+<ul>
+<li><strong>Workshop:</strong> <a href="Workshops/FairCoin.pdf">Making inferences using probability</a></li>
+</ul>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>
