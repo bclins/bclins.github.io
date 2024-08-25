@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Complex Analysis</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://bclins.github.io/spring24/mockup.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <style>
+  :root {
+    --header-color: #333; 
+    --link-color: #831;
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Complex Analysis</h1>
+</header>
+<h2 id="math-444---fall-2024">Math 444 - Fall 2024</h2>
+<ul>
+<li><strong>Instructor:</strong> <a
+href="https://bclins.github.io">Brian Lins</a></li>
+<li><strong>Office Hours:</strong> See my <a
+href="https://bclins.github.io/index.html#weekly-schedule">weekly
+schedule</a>, and by appointment</li>
+<li><strong>Office Location:</strong> Pauley 301</li>
+<li><strong>Free Textbook:</strong> <a
+href="https://matthbeck.github.io/complex.html">A First Course in
+Complex Analysis</a>, by Beck, Marchesi, Pixton, &amp; Sabalka.</li>
+<li><strong>Recommended Reference:</strong> <a
+href="https://www.amazon.com/Complex-Variables-Second-Dover-Mathematics/dp/0486406792">Complex
+Variables</a> 2nd edition, by Stephen D. Fisher</li>
+</ul>
+<h3 id="announcements">Announcements</h3>
+<ul>
+<li>There are no announcements yet</li>
+</ul>
+<h3 id="course-description">Course Description</h3>
+<p>Math 444 is an introduction to analysis (calculus) with complex
+variables. We will cover the arithmetic and geometry of complex numbers,
+followed by complex differentiability and the analysis of holomorphic
+functions. We will finish the course looking at applications of Cauchy’s
+theorem. Along the way, we will incorporate material on Taylor and
+Laurent series, and harmonic functions, as time permits.</p>
+<h3 id="tentative-schedule">Tentative Schedule</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 56%" />
+<col style="width: 14%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Week</th>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: center;">Notes</th>
+<th style="text-align: center;">Homework</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Complex numbers</td>
+<td style="text-align: center;"><a href="notes.html#week-1-notes">Week
+01</a></td>
+<td style="text-align: center;"><a href="HW1.pdf">HW1</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Topology of <strong>C</strong></td>
+<td style="text-align: center;"><a href="notes.html#week-2-notes">Week
+02</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Complex limits &amp; continuity</td>
+<td style="text-align: center;"><a href="notes.html#week-3-notes">Week
+03</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Complex exponentials and logarithms</td>
+<td style="text-align: center;"><a href="notes.html#week-4-notes">Week
+04</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Complex differentiability</td>
+<td style="text-align: center;"><a href="notes.html#week-5-notes">Week
+05</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Complex logarithms, <strong>Midterm
+1</strong></td>
+<td style="text-align: center;"><a href="notes.html#week-6-notes">Week
+06</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Complex integration</td>
+<td style="text-align: center;"><a href="notes.html#week-7-notes">Week
+07</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">The Cauchy integral formula</td>
+<td style="text-align: center;"><a href="notes.html#week-8-notes">Week
+08</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Entire functions</td>
+<td style="text-align: center;"><a href="notes.html#week-9-notes">Week
+09</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Singularities and residues</td>
+<td style="text-align: center;"><a href="notes.html#week-10-notes">Week
+10</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Applications of the residue theorem</td>
+<td style="text-align: center;"><a href="notes.html#week-11-notes">Week
+11</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Möbius transforms, <strong>Midterm
+2</strong></td>
+<td style="text-align: center;"><a href="notes.html#week-12-notes">Week
+12</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Discrete applications of residue</td>
+<td style="text-align: center;"><a href="notes.html#week-13-notes">Week
+13</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Harmonic functions</td>
+<td style="text-align: center;"><a href="notes.html#week-14-notes">Week
+14</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">The heat equation</td>
+<td style="text-align: center;"><a href="notes.html#week-15-notes">Week
+15</a></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>The schedule above is tentative, and may be subject to change.
+Changes will be announced in class, and you are responsible for knowing
+about any changes even if you miss the class when they are
+announced.</p>
+<h3 id="attendance-policy">Attendance Policy</h3>
+<p>Attendance in this class is expected, and you are responsible for any
+material that you miss. However, if you have a fever or are not feeling
+well, then please do not come to class that day. As long as you let me
+know the reason for your absence, I will do my best to help you stay
+caught up and make up any material that you missed. The key is to
+communicate with me when you aren’t able to attend class.</p>
+<h3 id="grading-policy">Grading Policy</h3>
+<p>The term grade will be based on the following.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component    </th>
+<th style="text-align: center;">Proportion    </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Homework</td>
+<td style="text-align: center;">30%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Midterm 1</td>
+<td style="text-align: center;">20%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Midterm 2</td>
+<td style="text-align: center;">20%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Final Exam</td>
+<td style="text-align: center;">30%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exams">Exams</h3>
+<p>There will be two in-class midterm exams and a cumulative final. You
+will be allowed to use your notes and old homework sets during the
+exams.</p>
+<h3 id="homework">Homework</h3>
+<p>There will be homework problems assigned every week. These will be
+collected on Fridays. I don’t accept late homework, but I will drop the
+lowest homework grade. If you know in advance that you won’t be able to
+make class when a homework assignment is due, please make arrangements
+to turn in the homework before class.</p>
+<h3 id="office-hours">Office Hours</h3>
+<p>My office hours are shown on my <a
+href="https://bclins.github.io/index.html#weekly-schedule">weekly
+schedule</a>. I am also available by appointment. If you can’t stop by
+during my regular office hours, just ask me after class or by e-mail,
+and I’ll be happy to make an appointment that works for both of us.</p>
+<h3 id="special-accommodations">Special Accommodations</h3>
+<p>In compliance with the Hampden-Sydney College policy and equal access
+laws, I am available to discuss appropriate academic accommodations that
+may be recommended for students with disabilities. Requests for academic
+accommodations are to be made at the beginning of the semester (except
+for unusual circumstances) so that appropriate arrangements can be made.
+Students are required to contact the Office of Academic Success in order
+to verify their eligibility for appropriate accommodations.</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</body>
+</html>

@@ -35,17 +35,13 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 ### Weekly Schedule
 
-<a href="spring24/schedule.pdf"><img src="spring24/schedule.png" width="448"/></a>
+<a href="fall24/schedule.pdf"><img src="fall24/schedule.png" width="448"/></a>
 
-### MayTerm 2024 Class
+### Fall 2024 Classes
 
-* Math 111 - [Math & Society](spring24/math111/index.html)
-
-### Spring 2024 Classes
-
-* Math 141 - [Calculus I](spring24/math141/index.html) 
-* Math 342 - [Numerical Analysis](spring24/math342/index.html) 
-* Coms 480 - [Advanced Topics in Computer Science](spring24/cs480/index.html)
+* Math 121 - [Statistics](fall24/math121/index.html) 
+* Math 444 - [Complex Analysis](fall24/math444/index.html) 
+* CS 261 - [Computer Science I](fall24/cs261/index.html)
 
 
 ### Teaching Materials

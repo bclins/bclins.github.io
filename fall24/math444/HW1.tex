@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{color,soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\on}{\operatorname}
+\newcommand{\Log}{\on{Log}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 1 \hfill Name: \underline{\hspace*{2in}}}
+\textit{Simplify each of the following expressions as much as you can. Show your work. No calculators.} 
+\begin{multicols}{3}
+\begin{enumerate}
+\item $i^{14}$
+\item $(5i)(-2i)(3i)$ 
+\item $(3+i)^2$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\im \left(\dfrac{12}{5 - i}\right)$
+\item $(3-2i)(4+i)$
+\item $\dfrac{1-i}{1+i}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $ \left|\dfrac{1}{5 + 12i}\right|$
+\item $\overline{(3+4i)(1-i)}$
+\item $\overline{e^{i\frac{\pi}{3}}}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\noindent
+\textit{Convert the following from rectangular to polar form.}
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\tfrac{1}{2} + \tfrac{\sqrt{3}}{2}i$
+\item $i-1$
+\item $\dfrac{i}{1+i}$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\noindent
+\textit{Convert the following from polar to rectangular form.}
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $e^{5\pi i/3}$
+\item $e^{-\pi i /4}$
+\item $(\sqrt{3}\, e^{7\pi i /12}) (\sqrt{12}\, e^{29 \pi i/ 12})$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\noindent
+\textit{Convert to polar or rectangular form to evaluate the following.}
+\begin{multicols}{4}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\sqrt{2i}$
+\item $i^i$
+\item $\re \left( 2e^{\pi i/6}\right)$
+\item $(i-1)^6$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\setcounter{enumi}{\theenumCount}
+%%\item $|1 - e^{i \frac{\pi}{4}}|$
+%\setcounter{enumCount}{\theenumi}
+%\end{enumerate}
+%\end{multicols}
+%\vfill
+
+
+\newpage
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item We are going to find the roots of the polynomial equation $z^2 + 2z + (1-i) = 0$ two ways.
+\begin{enumerate}
+\item Re-write the equation as $z^2 + 2z + 1 = i$ and factor the left hand side (which is a perfect square). Then take the square root of both sides. Remember that all non-zero complex numbers have two square-roots!
+\vfill
+
+\item Now use the quadratic formula $\ds z = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.  Do you get the same answer as before? 
+\vfill
+\end{enumerate}
+
+\item An \textbf{$n$-th root of unity} is a number $z$ such that $z^n = 1$.  Prove that the $n$-th roots of unity are the set $\{e^{2\pi i \frac{k}{n}} : k \in \Z\}$. 
+\vfill
+
+\item Find all of the 4th roots of unity. How many are there? Express them in rectangular form.  
+\vfill
+
+\item If $z \in \C$ is a root of a polynomial $p$ with real number coefficients, then $\overline{z}$ is also a root of that polynomial because $p(\overline{z}) = \overline{p(z)}$. Find an example to show that this is not true for all polynomials with complex number coefficients.
+\vfill
+
+\item Prove that for every $z \in \C$, $|z|^2 = z \overline{z}$.  
+\vfill
+
+
+\item Prove that $|z| = 1$ if and only if $\overline{z} = \dfrac{1}{z}$. % Hint: Use the fact that $|z|^2 = z \cdot \overline{z}$ for every $z \in \C$. 
+\vfill
+
+%\item Suppose that $w = r e^{i \omega}$. Find a formula for all $n$ roots of $z^n - w = 0$.  
+%\vfill 
+
+%\item Let $z = 1 + \frac{i}{100}$. Find formulas for the real and imaginary parts of $z^n$ (for any integer $n$) that don't involve any complex numbers. 
+
+
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\end{document}
