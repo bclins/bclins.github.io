@@ -36,6 +36,12 @@ Mon, Aug 26 | [1.2][1.2]     | Data tables, variables, and individuals
 Wed, Aug 28 | [2.1.3][2.1.3] | Histograms & skew
 Fri, Aug 30 | [2.1.5][2.1.5] | Boxplots
 
+### Mon, Aug 26
+
+Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
+
+* **Example:** [Accident Fatalities by State](http://people.hsc.edu/faculty-staff/blins/StatsExamples/accident_fatalities_states.xlsx) ([source: CDC](https://www.cdc.gov/nchs/pressroom/sosmap/accident_mortality/accident.htm))
+
 
 - - -
 

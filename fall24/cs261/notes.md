@@ -39,7 +39,23 @@ We learned how to use the **Python Shell** and how to write Python **scripts**. 
 * **Operators** (like `+`, `-`, `*`, `/`)
 * **Types** (like `int`, `float`, and `str`)
 * **Variables**
-* Built in **functions**, including `print()`, `round()`, and `input()`. 
+
+We talked about how operators follow an **order of operations**, and if operators have the same level of precedence, then they are computed left to right.  We also talked about how some operators don't work for all types.  For example, the `+` operator concatenates strings, but the `*` operator is not defined for strings. 
+
+We finished by writing a script to calculate the volume of a sphere.
+
+```python
+# A script to calculate the volume of a sphere.
+
+PI = 3.14159 
+
+radius = 4
+
+volume = 4 / 3 * PI * radius ** 3
+
+print("The volume of the sphere is:", radius)
+
+```
 
 <!-- Day 2: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 
