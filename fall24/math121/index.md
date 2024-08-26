@@ -34,6 +34,7 @@ header-includes: |
 
 ### Course Description 
 
+Math 121 will cover the topics listed in the schedule below.
 
 
 ### Tentative Schedule

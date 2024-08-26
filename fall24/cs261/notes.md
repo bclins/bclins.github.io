@@ -34,7 +34,14 @@ Fri, Aug 30 | [TP02][TP02] | The import statement
 
 Today we introduced Python and the [Thonny IDE](https://thonny.org/) (Integrated Development Environment). 
 
-We learned how to use the **Python Shell** and **operators** like +, -, *, /. 
+We learned how to use the **Python Shell** and how to write Python **scripts**.  We also covered the following:
+
+* **Operators** (like `+`, `-`, `*`, `/`)
+* **Types** (like `int`, `float`, and `str`)
+* **Variables**
+* Built in **functions**, including `print()`, `round()`, and `input()`. 
+
+<!-- Day 2: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 
 
 - - -
@@ -82,8 +89,8 @@ Fri, Sep 20  |  |
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Sep 23  |  | Review
-Wed, Sep 25  |  | **Midterm 1**
+Mon, Sep 23  |  |
+Wed, Sep 25  |  |
 Fri, Sep 27  |  |
 
 
@@ -96,7 +103,7 @@ Fri, Sep 27  |  |
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 30 |  |
-Wed, Oct 2  |  |
+Wed, Oct 2  |  | **Midterm 1**
 Fri, Oct 4  |  |
 
 - - - 
@@ -144,8 +151,8 @@ Fri, Oct 25  |  |
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 28  |  | Review
-Wed, Oct 30  |  | **Midterm 2**
+Mon, Oct 28  |  | 
+Wed, Oct 30  |  | 
 Fri, Nov 1   |  |
 
 
@@ -182,7 +189,7 @@ Fri, Nov 15 |  |
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 18  |  |
-Wed, Nov 20  |  |
+Wed, Nov 20  |  | **Midterm 2**
 Fri, Nov 22  |  |
 
 
@@ -208,8 +215,8 @@ Fri, Nov 29  |  | Thanksgiving break, no class
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Dec 2  |  | Review
-Wed, Dec 4  |  | **Midterm 3**
+Mon, Dec 2  |  | 
+Wed, Dec 4  |  | 
 Fri, Dec 6  |  |
 Mon, Dec 9  |  | 
 

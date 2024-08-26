@@ -39,17 +39,17 @@ Week | Topic                      | Notes | Projects
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  |
 3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  |
 4  | Recursion                            | [Week 04](notes.html#week-4-notes)  |
-5  | More on functions, **Midterm 1**     | [Week 05](notes.html#week-5-notes)  |
-6  | Iteration                            | [Week 06](notes.html#week-6-notes)  |
+5  | More on functions                    | [Week 05](notes.html#week-5-notes)  |
+6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  |
 7  | Strings                              | [Week 07](notes.html#week-7-notes)  |
 8  | Lists                                | [Week 08](notes.html#week-8-notes)  |
 9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  |
-10 | Tuples, **Midterm 2**                | [Week 10](notes.html#week-10-notes) | 
+10 | Tuples,                              | [Week 10](notes.html#week-10-notes) | 
 11 | File                                 | [Week 11](notes.html#week-11-notes) | 
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
-13 | Classes and functions                | [Week 13](notes.html#week-13-notes) | 
+13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 
 14 | Classes and methods                  | [Week 14](notes.html#week-14-notes) | 
-15 | Inheritance, **Midterm 3**           | [Week 15](notes.html#week-15-notes) | 
+15 | Inheritance                          | [Week 15](notes.html#week-15-notes) | 
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
 
@@ -63,8 +63,8 @@ The term grade will be based on the following factors.
 
 | Component &nbsp; &nbsp;  | Proportion  &nbsp; &nbsp;|
 | :--- | :---: |
-| Midterms  | 45% |
-| Projects  | 30% |
+| Midterms  | 30% |
+| Projects  | 45% |
 | Final Exam | 25% |  
 
 I use the following grading scale for projects and exams. 
@@ -106,7 +106,7 @@ All projects will be posted at least 4 days before they are due.
 
 ### Exams
 
-There will be three in-class midterm exams and a cumulative final. These exams will be announced in advance, and you will know exactly what concepts will be covered on each exam.  
+There will be two in-class midterm exams and a cumulative final. These exams will be announced in advance, and you will know exactly what concepts will be covered on each exam.  
 
 
 ### Office Hours
