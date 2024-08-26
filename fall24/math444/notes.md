@@ -13,6 +13,9 @@ header-includes: |
   </style>
 ---
 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
 ## Math 444 - Fall 2024
 
 
@@ -32,7 +35,21 @@ Fri, Aug 30 | [1.3][1.3] | Geometry of complex numbers
 
 ### Mon, Aug 26
 
+Today we introduced the complex numbers $\mathbb{C}$ which are a **field**.  We defined the **real** and **imaginary** parts of a complex number and also the **absolute value** and **argument** of a complex number.  We did the following examples.
 
+1. Find the real and imaginary parts of $\dfrac{1}{3+4i}$ by rationalizing the denominator. 
+
+2. Factor the polynomial $z^2 + 3i - 2$.
+
+3. The polynomial $z^2 + 1$ is irreducible over $\R$, but not over $\C$.  Show this by factoring it over $\C$. 
+
+Later in the course we will use complex analysis to prove one of most important theorems in algebra:
+
+<div class="Theorem">
+**The Fundamental Theorem of Algebra.** Every polynomial $p(z)$ with coefficients in $\C$ factors into a product of linear expressions of the form $(az + b)$ where $a, b \in \C$. 
+</div>
+
+We finished with a discussion of the **polar form** $z = r (\cos \theta + i \sin \theta)$ of a complex number. 
 
 
 - - -
