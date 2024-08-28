@@ -28,6 +28,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Aug 26 | [TP01][TP01], [C2] | Introduction to Python & Thonny
 Wed, Aug 28 | [TP02][TP02] | Variables & statements
+Thu, Aug 29 | [TP02][TP02] | Variables & statements
 Fri, Aug 30 | [TP02][TP02] | The import statement
 
 ### Mon, Aug 26 
@@ -39,6 +40,7 @@ We learned how to use the **Python Shell** and how to write Python **scripts**. 
 * **Operators** (like `+`, `-`, `*`, `/`)
 * **Types** (like `int`, `float`, and `str`)
 * **Variables**
+* **Comments** 
 
 We talked about how operators follow an **order of operations**, and if operators have the same level of precedence, then they are computed left to right.  We also talked about how some operators don't work for all types.  For example, the `+` operator concatenates strings, but the `*` operator is not defined for strings. 
 
@@ -53,11 +55,39 @@ radius = 4
 
 volume = 4 / 3 * PI * radius ** 3
 
-print("The volume of the sphere is:", radius)
+print("The volume of the sphere is:", volume)
 
 ```
 
-<!-- Day 2: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
+### Wed, Aug 28 
+
+We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
+
+* A variable name cannot start with a number.
+* The only punctuation symbol a variable name can contain is the underscore character (`_`). 
+
+It is recommended to only use lower case letters only in most variable names (except when you want to indicate that the variable is constant and won't ever change, in which case `ALL_CAPS` is recommended). If a variable name has multiple words, then separate the words with an underscore character, like: `surface_area`. 
+
+We also introduced some new functions including `round()`, `input()`, and the type conversion functions `int()`, `float()`, and `str()`. 
+
+
+1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere with that radius rounded to 2 decimal places. 
+
+We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command 
+`dir(math)` to list all of functions in the `math` module.  
+
+2. How could you tell if the sine and cosine function expect the input in degrees or radians?  Test your idea in the shell and see what the default is. 
+
+3. What happens if you type `math.sin` without an input?
+
+4. What happens if you enter `help(math.sin)`?
+
+5. What does the `degrees()` function do? 
+
+
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
+<!-- Soon: Talk about binary and modular arithmetic --> 
+
 
 
 - - -
@@ -70,6 +100,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 2  | | Labor Day, no class
 Wed, Sep 4  | [TP03][TP03] | Functions
+Thu, Sep 5  |              | 
 Fri, Sep 6  | [TP03][TP03] | For-loops
 
 - - - 
@@ -83,6 +114,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 9  |  |
 Wed, Sep 11 |  |
+Thu, Sep 12 |  |
 Fri, Sep 13 |  |
 
 - - -
@@ -95,6 +127,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 16  |  |
 Wed, Sep 18  |  |
+Thu, Sep 19  |  |
 Fri, Sep 20  |  |
 
 - - - 
@@ -107,6 +140,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 23  |  |
 Wed, Sep 25  |  |
+Thu, Sep 26  |  |
 Fri, Sep 27  |  |
 
 
@@ -119,7 +153,8 @@ Fri, Sep 27  |  |
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 30 |  |
-Wed, Oct 2  |  | **Midterm 1**
+Wed, Oct 2  |  | Review
+Thu, Oct 3  |  | **Midterm 1**
 Fri, Oct 4  |  |
 
 - - - 
@@ -132,6 +167,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Oct 7   |  |
 Wed, Oct 9   |  | 
+Thu, Oct 10  |  | 
 Fri, Oct 11  |  | 
 
 - - - 
@@ -144,6 +180,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Oct 14  |            | Fall break, no class
 Wed, Oct 16  |  |
+Thu, Oct 17  |  |
 Fri, Oct 18  |  |
 
 
@@ -157,6 +194,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 21  |  |
 Wed, Oct 23  |  |
+Thu, Oct 24  |  |
 Fri, Oct 25  |  |
 
 - - - 
@@ -169,6 +207,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 28  |  | 
 Wed, Oct 30  |  | 
+Thu, Oct 31  |  | 
 Fri, Nov 1   |  |
 
 
@@ -182,6 +221,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 4  |            | 
 Wed, Nov 6  |            | 
+Thu, Nov 7  |            | 
 Fri, Nov 8  |  |
 
 - - - 
@@ -194,6 +234,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 11 |  |
 Wed, Nov 13 |  |
+Thu, Nov 14 |  |
 Fri, Nov 15 |  |
 
 - - - 
@@ -205,7 +246,8 @@ Fri, Nov 15 |  |
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 18  |  |
-Wed, Nov 20  |  | **Midterm 2**
+Wed, Nov 20  |  | Review
+Thu, Nov 21  |  | **Midterm 2**
 Fri, Nov 22  |  |
 
 
@@ -233,6 +275,7 @@ Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Dec 2  |  | 
 Wed, Dec 4  |  | 
+Thu, Dec 5  |  | 
 Fri, Dec 6  |  |
 Mon, Dec 9  |  | 
 

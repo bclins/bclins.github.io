@@ -15,6 +15,9 @@ header-includes: |
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\on}{\operatorname}
+\newcommand{\Arg}{\on{Arg}}
 
 ## Math 444 - Fall 2024
 
@@ -50,6 +53,33 @@ Later in the course we will use complex analysis to prove one of most important 
 </div>
 
 We finished with a discussion of the **polar form** $z = r (\cos \theta + i \sin \theta)$ of a complex number. 
+
+### Wed, Aug 28
+
+Following [Beck et. al.](https://people.hsc.edu/faculty-staff/blins/books/complex.pdf), we will define 
+$$e^{i \theta} := \cos \theta + i \sin \theta.$$
+Later, when we define the complex exponential function, we will revisit this definition. For now, we will do some calculations that suggest the definition is a good one.
+
+1. Use the [angle addition formulas](https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities) to show that 
+$$(e^{i \alpha}) (e^{i \beta}) = e^{i (\alpha + \beta)}.$$
+
+2. Simplify $\frac{1}{e^{i \theta}}$. 
+
+3. Calculate $\dfrac{d}{d \theta} e^{i \theta}$.  Hint: Use the definition of $e^{i \theta}$ and treat $i$ like any other constant. 
+
+4. What is $(e^{i \theta})^n$?  
+
+5. What is $\sqrt{i}$? 
+
+We also defined the **complex conjugate** of $z = a+ib$ to be $\bar{z} = a - ib$. 
+
+6. What is $\bar{e^{i \theta}}$? 
+
+We finished by discussing the **n-th roots of unity** which are the complex numbers $z$ such that $z^n = 1$.  They are given by the formula 
+$$e^{2 \pi i k/ n} \text{ where } k \in \{0, 1, \ldots, n-1\}.$$
+A root of unity $z$ is **primitive** if $z^n = 1$, but $z$ is not an m-th root of unity for any $m \in \N$ less than $n$.  
+
+We finished with a discussion of square and cube roots of complex numbers and how they relate to roots of unity. 
 
 
 - - -

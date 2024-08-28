@@ -42,7 +42,39 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 * **Example:** [Class Data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx)
 
+1. We looked at a case of a nurse who was accused of killing patients at the hospital where she worked for 18 months.  One piece of evidence against her was that 40 patients died during the shifts when she worked, but only 34 died during shifts when she wasn't working.  If this evidence came from a date table, what would be the most natural individuals (rows) & variables (columns) for that table?
+
+
 * **Example:** [Accident Fatalities by State](http://people.hsc.edu/faculty-staff/blins/StatsExamples/accident_fatalities_states.xlsx) ([source: CDC](https://www.cdc.gov/nchs/pressroom/sosmap/accident_mortality/accident.htm))
+
+2. In the data table in the example above, who or what are the individuals? What are the variables and which are quantitative and which are categorical?
+
+3. If we want to compare states to see which are safer, why is it better to compare the rates instead of the total fatalities?  
+
+4. What is wrong with this student's answer to the previous question?
+
+> *Rates are better because they are more precise and easier to understand.*
+
+I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
+
+### Wed, Aug 28 
+
+We used the class data we collected last time to introduce **histograms** and **stemplots**. We also talked about how to tell if data is **skewed left** or **skewed right**. Weirdly, Excel does not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) that I made. 
+
+* **Example:** [US Household Income (2010)](https://upload.wikimedia.org/wikipedia/commons/0/0d/Distribution_of_Annual_Household_Income_in_the_United_States_2010.png)
+
+1. Which is greater, the mean or the median household income?
+
+2. Can you think of a distribution that is skewed left?  
+
+3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
+
+We also did an in-class workshop.
+
+* **Workshop:** [Histograms & stemplots](Workshops/Histograms.pdf)
+
+After that we talked about the difference between the **mean** and **median**. We talked about how to find the median in a long list of numbers (assuming they are sorted). We finished by introducing the **five-number summary**. 
+
 
 
 - - -
@@ -89,7 +121,7 @@ Fri, Sep 20  | [1.3][1.3] | Sampling: populations and samples
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Sep 23  | [1.3][1.3] | Bias versus random error
 Wed, Sep 25  |            | Review
 Fri, Sep 27  |            | **Midterm 1**
@@ -103,7 +135,7 @@ Fri, Sep 27  |            | **Midterm 1**
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Sep 30 | [1.4][1.4] | Randomized controlled experiments
 Wed, Oct 2  | [3.1][3.1] | Defining probability
 Fri, Oct 4  | [3.1][3.1] | Multiplication and addition rules
@@ -114,7 +146,7 @@ Fri, Oct 4  | [3.1][3.1] | Multiplication and addition rules
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Oct 7   | [3.4][3.4] | Weighted averages & expected value
 Wed, Oct 9   | [7.1][7.1] | Law of large numbers & central limit theorem
 Fri, Oct 11  | [7.1][7.1] | Sampling distributions

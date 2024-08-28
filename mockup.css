@@ -1,0 +1,176 @@
+:root {
+  --header-color:	#046; /* better green: #264; gray: #333; brown: #522200; green: #163; red: #622; /* original blue: #046; */  
+  --link-color: #069; /* better green: #486; gray: #555; brown: #8b4513; green: #195; red: #A32; /* original blue: #069; */
+}
+
+@font-face {
+  font-family: "Latin Modern Math";
+  src: url("latinmodern-math.otf"); 
+}
+
+html {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+math {
+  font-family: "Latin Modern Math";
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+blockquote {
+  margin: 1em 0 1em 1.7em;
+  padding-left: 1em;
+  border-left: 2px solid #e6e6e6;
+  color: #606060;
+}
+
+body {
+  max-width:700px; 
+  background-color: #fefefe;
+  line-height: 1.3;
+  margin-left: auto;
+  margin-right: auto; 
+  font-family: sans-serif;
+  text-align: justify;
+}
+h1 {
+  color: var(--header-color); 
+}
+h2 {
+  color: var(--header-color);
+}
+h3 {
+  color: var(--header-color);
+}
+table {
+    margin-left: 20px;
+    border: 0;
+}
+thead {
+    background-color: dimgray;
+}
+th {
+    color: white;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+td {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+/*details {
+    background-color:#ddd; 
+}*/
+
+summary {
+  color:var(--link-color); 
+}
+
+
+div.sourceCode {
+  padding: 5px;
+  background-color: #eeffcc;
+  border-radius: 3px;
+  border: 1px solid rgb(170, 204, 153);
+}
+
+/* .sourceCode pre {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: #f8f8f8;
+} */
+
+
+.even {
+    background-color: white;
+}
+.odd {
+    background-color: silver;
+}
+
+.formula {
+    text-align: center;
+    font-weight: 100;
+    font-style: normal;
+    padding: 10px;
+}
+
+.nav {
+    width: 100%; 
+    float: left;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.nav li {
+    float: left; }
+.nav li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--link-color);
+    background-color: #eee;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc; 
+    border-left: 1px solid #ccc;}
+
+.nav li a:hover {
+    color: #000;
+    background-color: #ff3; }
+
+.bordered {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+
+    & th {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: lightgray;
+        color: black;
+    }
+
+    & td {
+        text-align: center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.schedule table {
+    font-size: 95%;
+    width: 640px;
+}
+.schedule th {
+    color: white;
+    text-align: center;
+}
+
+
+.Theorem {
+  border-radius: 10px;
+  background-color: #eee;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #333;
+}

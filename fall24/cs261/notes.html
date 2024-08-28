@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -138,6 +138,12 @@ href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
 <td style="text-align: left;">Variables &amp; statements</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Aug 29</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
+<td style="text-align: left;">Variables &amp; statements</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Aug 30</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
@@ -158,6 +164,7 @@ following:</p>
 <li><strong>Types</strong> (like <code>int</code>, <code>float</code>,
 and <code>str</code>)</li>
 <li><strong>Variables</strong></li>
+<li><strong>Comments</strong></li>
 </ul>
 <p>We talked about how operators follow an <strong>order of
 operations</strong>, and if operators have the same level of precedence,
@@ -176,8 +183,48 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>volume <span class="op">=</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">3</span> <span class="op">*</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">3</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The volume of the sphere is:&quot;</span>, radius)</span></code></pre></div>
-<!-- Day 2: Talk about machine code, vs. assembly vs. C++ vs. python  -->
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The volume of the sphere is:&quot;</span>, volume)</span></code></pre></div>
+<h3 id="wed-aug-28">Wed, Aug 28</h3>
+<p>We talked about which variable names are allowed. Some words cannot
+be used as a variable names because they are special Python
+<strong>keywords</strong>. There are currently 35 keywords in Python
+3.10 (which is the version we are using), and we’ll cover most of them
+in this course. Other rules for naming variables include:</p>
+<ul>
+<li>A variable name cannot start with a number.</li>
+<li>The only punctuation symbol a variable name can contain is the
+underscore character (<code>_</code>).</li>
+</ul>
+<p>It is recommended to only use lower case letters in most variable
+names (except when you want to indicate that the variable is constant
+and won’t ever change, in which case <code>ALL_CAPS</code> is
+recommended). If a variable name has multiple words, then separate the
+words with an underscore character, like: <code>surface_area</code>.</p>
+<p>We also introduced some new functions including <code>round()</code>,
+<code>input()</code>, and the type conversion functions
+<code>int()</code>, <code>float()</code>, and <code>str()</code>.</p>
+<ol type="1">
+<li>Write a script that prompts the user to input a radius. Then
+calculate and print both the surface area and volume of a sphere with
+that radius rounded to 2 decimal places.</li>
+</ol>
+<p>We finished by talking about how to <strong>import</strong> functions
+from <strong>modules</strong>. We imported the <code>math</code> module
+which contains functions familiar math functions like
+<code>sin()</code>, <code>cos()</code>, and <code>sqrt()</code>. You can
+use the command <code>dir(math)</code> to list all of functions in the
+<code>math</code> module.</p>
+<ol start="2" type="1">
+<li><p>How could you tell if the sine and cosine function expect the
+input in degrees or radians? Test your idea in the shell and see what
+the default is.</p></li>
+<li><p>What happens if you type <code>math.sin</code> without an
+input?</p></li>
+<li><p>What happens if you enter <code>help(math.sin)</code>?</p></li>
+<li><p>What does the <code>degrees()</code> function do?</p></li>
+</ol>
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
+<!-- Soon: Talk about binary and modular arithmetic -->
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <h4 id="tentative-schedule-1">Tentative Schedule</h4>
@@ -202,6 +249,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;">Functions</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Sep 5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 6</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
@@ -232,6 +284,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Sep 12</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 13</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -261,6 +318,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Sep 19</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 20</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -290,6 +352,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Sep 26</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 27</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -316,9 +383,14 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 2</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 1</strong></td>
+<td style="text-align: left;">Review</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Oct 3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 1</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 4</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -348,6 +420,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Oct 10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 11</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -377,6 +454,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Oct 17</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 18</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -406,6 +488,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Oct 24</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 25</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -435,6 +522,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Oct 31</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 1</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -464,6 +556,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Nov 7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 8</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -493,6 +590,11 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Nov 14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 15</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -519,9 +621,14 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 20</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 2</strong></td>
+<td style="text-align: left;">Review</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">Thu, Nov 21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 2</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 22</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -580,11 +687,16 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Fri, Dec 6</td>
+<td style="text-align: center;">Thu, Dec 5</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">Fri, Dec 6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Dec 9</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
