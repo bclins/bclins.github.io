@@ -8,12 +8,20 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
-  <link rel="stylesheet" href="https://bclins.github.io/spring24/mockup.css" />
+  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -30,7 +38,15 @@
 </header>
 <h2 id="math-444---fall-2024">Math 444 - Fall 2024</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> , <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>, <a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>, <a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week 14</a>, <a href="#week-15-notes">Week 15</a>
+Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
+1</a> , <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
+3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
+5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
+7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
+9</a>, <a href="#week-10-notes">Week 10</a>, <a
+href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
+<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
+14</a>, <a href="#week-15-notes">Week 15</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <h4 id="tentative-schedule">Tentative Schedule</h4>
@@ -45,48 +61,116 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Aug 26</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.1">1.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.1">1.1</a></td>
 <td style="text-align: left;">Definitions and algebraic properties</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Aug 28</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.2">1.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.2">1.2</a></td>
 <td style="text-align: left;">From algebra to geometry and back</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Aug 30</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.3">1.3</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.3">1.3</a></td>
 <td style="text-align: left;">Geometry of complex numbers</td>
 </tr>
 </tbody>
 </table>
 <h3 id="mon-aug-26">Mon, Aug 26</h3>
-<p>Today we introduced the complex numbers <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="double-struck"><mi>ℂ</mi></mstyle><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math> which are a <strong>field</strong>. We defined the <strong>real</strong> and <strong>imaginary</strong> parts of a complex number and also the <strong>absolute value</strong> and <strong>argument</strong> of a complex number. We did the following examples.</p>
+<p>Today we introduced the complex numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>
+which are a <a
+href="https://en.wikipedia.org/wiki/Field_(mathematics)#Definition">field</a>.
+We defined the <strong>real</strong> and <strong>imaginary</strong>
+parts of a complex number and also the <strong>absolute value</strong>
+and <strong>argument</strong> of a complex number. We did the following
+examples.</p>
 <ol type="1">
-<li><p>Find the real and imaginary parts of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>3</mn><mo>+</mo><mn>4</mn><mi>i</mi></mrow></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{3+4i}</annotation></semantics></math> by rationalizing the denominator.</p></li>
-<li><p>Factor the polynomial <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>i</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">z^2 + 3i - 2</annotation></semantics></math>.</p></li>
-<li><p>The polynomial <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z^2 + 1</annotation></semantics></math> is irreducible over <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="double-struck"><mi>ℝ</mi></mstyle><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math>, but not over <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="double-struck"><mi>ℂ</mi></mstyle><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>. Show this by factoring it over <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="double-struck"><mi>ℂ</mi></mstyle><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.</p></li>
+<li><p>Find the real and imaginary parts of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mrow><mn>3</mn><mo>+</mo><mn>4</mn><mi>i</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{1}{3+4i}</annotation></semantics></math>
+by rationalizing the denominator.</p></li>
+<li><p>Factor the polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>i</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">z^2 + 3i - 2</annotation></semantics></math>.</p></li>
+<li><p>The polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z^2 + 1</annotation></semantics></math>
+is irreducible over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℝ</mi><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math>,
+but not over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.
+Show this by factoring it over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.</p></li>
 </ol>
-<p>Later in the course we will use complex analysis to prove one of most important theorems in algebra:</p>
+<p>Later in the course we will use complex analysis to prove one of most
+important theorems in algebra:</p>
 <div class="Theorem">
-<p><strong>The Fundamental Theorem of Algebra.</strong> Every polynomial <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math> with coefficients in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle mathvariant="double-struck"><mi>ℂ</mi></mstyle><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math> factors into a product of linear expressions of the form <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mi>z</mi><mo>+</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(az + b)</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mstyle mathvariant="double-struck"><mi>ℂ</mi></mstyle></mrow><annotation encoding="application/x-tex">a, b \in \mathbb{C}</annotation></semantics></math>.</p>
+<p><strong>The Fundamental Theorem of Algebra.</strong> Every polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math>
+with coefficients in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>
+factors into a product of linear expressions of the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mi>z</mi><mo>+</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(az + b)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">a, b \in \mathbb{C}</annotation></semantics></math>.</p>
 </div>
-<p>We finished with a discussion of the <strong>polar form</strong> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mo>cos</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>θ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">z = r (\cos \theta + i \sin \theta)</annotation></semantics></math> of a complex number.</p>
+<p>We finished with a discussion of the <strong>polar form</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>cos</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z = r (\cos \theta + i \sin \theta)</annotation></semantics></math>
+of a complex number.</p>
 <h3 id="wed-aug-28">Wed, Aug 28</h3>
-<p>Following <a href="https://people.hsc.edu/faculty-staff/blins/books/complex.pdf">Beck et. al.</a>, we will define <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>:=</mo><mo>cos</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>θ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{i \theta} := \cos \theta + i \sin \theta.</annotation></semantics></math> Later, when we define the complex exponential function, we will revisit this definition. For now, we will do some calculations that suggest the definition is a good one.</p>
+<p>Following <a
+href="https://people.hsc.edu/faculty-staff/blins/books/complex.pdf">Beck
+et. al.</a>, we will define
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>:=</mo><mo>cos</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>θ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{i \theta} := \cos \theta + i \sin \theta.</annotation></semantics></math>
+Later, when we define the complex exponential function, we will revisit
+this definition. For now, we will do some calculations that suggest the
+definition is a good one.</p>
 <ol type="1">
-<li><p>Use the <a href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities">angle addition formulas</a> to show that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>β</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mo stretchy="false" form="prefix">(</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">(e^{i \alpha}) (e^{i \beta}) = e^{i (\alpha + \beta)}.</annotation></semantics></math></p></li>
-<li><p>Simplify <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mfrac><annotation encoding="application/x-tex">\frac{1}{e^{i \theta}}</annotation></semantics></math>.</p></li>
-<li><p>Calculate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mi>θ</mi></mrow></mfrac></mstyle><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{d}{d \theta} e^{i \theta}</annotation></semantics></math>. Hint: Use the definition of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><annotation encoding="application/x-tex">e^{i \theta}</annotation></semantics></math> and treat <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> like any other constant.</p></li>
-<li><p>What is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><msup><mo stretchy="false" form="postfix">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">(e^{i \theta})^n</annotation></semantics></math>?</p></li>
-<li><p>What is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>i</mi></msqrt><annotation encoding="application/x-tex">\sqrt{i}</annotation></semantics></math>?</p></li>
+<li><p>Use the <a
+href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities">angle
+addition formulas</a> to show that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>β</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">(e^{i \alpha}) (e^{i \beta}) = e^{i (\alpha + \beta)}.</annotation></semantics></math></p></li>
+<li><p>Simplify
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>1</mn><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mfrac><annotation encoding="application/x-tex">\frac{1}{e^{i \theta}}</annotation></semantics></math>.</p></li>
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>θ</mi></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{d}{d \theta} e^{i \theta}</annotation></semantics></math>.
+Hint: Use the definition of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><annotation encoding="application/x-tex">e^{i \theta}</annotation></semantics></math>
+and treat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+like any other constant.</p></li>
+<li><p>What is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><annotation encoding="application/x-tex">(e^{i \theta})^n</annotation></semantics></math>?</p></li>
+<li><p>What is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>i</mi></msqrt><annotation encoding="application/x-tex">\sqrt{i}</annotation></semantics></math>?</p></li>
+<li><p>Explain why
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>θ</mi></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mi>i</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{d}{d \theta} e^{i \theta} = i e^{i \theta}</annotation></semantics></math>
+makes sense in the context of the velocity of a point moving
+counterclockwise along the unit circle.</p></li>
 </ol>
-<p>We also defined the <strong>complex conjugate</strong> of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">z = a+ib</annotation></semantics></math> to be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\bar{z} = a - ib</annotation></semantics></math>.</p>
-<ol start="6" type="1">
-<li>What is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{e^{i \theta}}</annotation></semantics></math>?</li>
+<p>After introducing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><annotation encoding="application/x-tex">e^{i\theta}</annotation></semantics></math>,
+we discussed the <strong>n-th roots of unity</strong> which are the
+complex numbers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mi>n</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z^n = 1</annotation></semantics></math>.
+They are given by the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>k</mi><mi>/</mi><mi>n</mi></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> where </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{2 \pi i k/ n} \text{ where } k \in \{0, 1, \ldots, n-1\}.</annotation></semantics></math>
+<!--A root of unity $z$ is **primitive** if $z^n = 1$, but $z$ is not an m-th root of unity for any $m \in \N$ less than $n$.  --></p>
+<ol start="7" type="1">
+<li><p>Find the 3rd roots of 8.</p></li>
+<li><p>Find the 3rd roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msqrt><mn>2</mn></msqrt><mn>2</mn></mfrac><mo>+</mo><mi>i</mi><mfrac><msqrt><mn>2</mn></msqrt><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\left(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right)</annotation></semantics></math>.</p></li>
 </ol>
-<p>We finished by discussing the <strong>n-th roots of unity</strong> which are the complex numbers <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mi>n</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z^n = 1</annotation></semantics></math>. They are given by the formula <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>k</mi><mi>/</mi><mi>n</mi></mrow></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> where </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{2 \pi i k/ n} \text{ where } k \in \{0, 1, \ldots, n-1\}.</annotation></semantics></math> A root of unity <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> is <strong>primitive</strong> if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mi>n</mi></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z^n = 1</annotation></semantics></math>, but <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math> is not an m-th root of unity for any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∈</mo><mstyle mathvariant="double-struck"><mi>ℕ</mi></mstyle></mrow><annotation encoding="application/x-tex">m \in \mathbb{N}</annotation></semantics></math> less than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</p>
-<p>We finished with a discussion of square and cube roots of complex numbers and how they relate to roots of unity.</p>
+<p>We finished with a discussion of square and cube roots of complex
+numbers and how they relate to roots of unity. We also defined the
+<strong>complex conjugate</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">z = a+ib</annotation></semantics></math>
+to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\bar{z} = a - ib</annotation></semantics></math>.</p>
+<!--6. What is $\bar{e^{i \theta}}$? -->
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <h4 id="tentative-schedule-1">Tentative Schedule</h4>
@@ -106,12 +190,14 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 4</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.3">1.3</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.3">1.3</a></td>
 <td style="text-align: left;">Geometry of complex numbers - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 6</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.4">1.4</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.4">1.4</a></td>
 <td style="text-align: left;">Elementary topology of the plane</td>
 </tr>
 </tbody>
@@ -130,17 +216,20 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Sep 9</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.1">7.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.1">7.1</a></td>
 <td style="text-align: left;">Sequences and completeness</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 11</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.2">7.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.2">7.2</a></td>
 <td style="text-align: left;">Series</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 13</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.1">2.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.1">2.1</a></td>
 <td style="text-align: left;">Limits and continuity</td>
 </tr>
 </tbody>
@@ -159,17 +248,21 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Sep 16</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.4">3.4</a></td>
-<td style="text-align: left;">Exponential and trigonometric functions</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.4">3.4</a></td>
+<td style="text-align: left;">Exponential and trigonometric
+functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 18</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.5">3.5</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.5">3.5</a></td>
 <td style="text-align: left;">Logarithms and complex exponentials</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 20</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.2">2.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.2">2.2</a></td>
 <td style="text-align: left;">Differentiability and holomorphicity</td>
 </tr>
 </tbody>
@@ -188,17 +281,20 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Sep 23</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.3">2.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.3">2.2</a></td>
 <td style="text-align: left;">The Cauchy-Riemann equations</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 25</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.1">3.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.1">3.1</a></td>
 <td style="text-align: left;">Möbius transforms</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 27</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.1">3.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.1">3.1</a></td>
 <td style="text-align: left;">Möbius transforms - con’d</td>
 </tr>
 </tbody>
@@ -227,7 +323,8 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 4</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.3">7.3</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.3">7.3</a></td>
 <td style="text-align: left;">Power Series</td>
 </tr>
 </tbody>
@@ -246,17 +343,20 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 7</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.4">7.4</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.7.4">7.4</a></td>
 <td style="text-align: left;">Regions of convergence</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 9</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.1">4.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.1">4.1</a></td>
 <td style="text-align: left;">Complex integrals</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 11</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.3">4.3</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.3">4.3</a></td>
 <td style="text-align: left;">Cauchy’s theorem</td>
 </tr>
 </tbody>
@@ -265,6 +365,11 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -280,13 +385,16 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 16</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.4">4.4</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.4.4">4.4</a></td>
 <td style="text-align: left;">Cauchy’s integral formula</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 18</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.1">5.1</a></td>
-<td style="text-align: left;">Holomorphic implies infinitely differentiable</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.1">5.1</a></td>
+<td style="text-align: left;">Holomorphic implies infinitely
+differentiable</td>
 </tr>
 </tbody>
 </table>
@@ -304,17 +412,22 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 21</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.1">8.1</a></td>
-<td style="text-align: left;">Power series and holomorphic functions</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.1">8.1</a></td>
+<td style="text-align: left;">Power series and holomorphic
+functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 23</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.3">5.3</a></td>
-<td style="text-align: left;">Entire functions &amp; Liouville’s theorem</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.3">5.3</a></td>
+<td style="text-align: left;">Entire functions &amp; Liouville’s
+theorem</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 25</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.1">9.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.1">9.1</a></td>
 <td style="text-align: left;">Classification of singularities</td>
 </tr>
 </tbody>
@@ -323,6 +436,11 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -333,18 +451,22 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 28</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.3">8.3</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.3">8.3</a></td>
 <td style="text-align: left;">Laurent series</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 30</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.2">9.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.2">9.2</a></td>
 <td style="text-align: left;">Residues</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 1</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.3">9.3</a></td>
-<td style="text-align: left;">The argument principle and Rouche’s theorem</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.3">9.3</a></td>
+<td style="text-align: left;">The argument principle and Rouche’s
+theorem</td>
 </tr>
 </tbody>
 </table>
@@ -362,12 +484,14 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 4</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.2">8.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.2">8.2</a></td>
 <td style="text-align: left;">Zeroes of analytic functions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 6</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.2">8.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.2">8.2</a></td>
 <td style="text-align: left;">The maximum modulus principle</td>
 </tr>
 <tr class="odd">
@@ -420,17 +544,20 @@ Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week 1</a> ,
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 18</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.1">10.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.1">10.1</a></td>
 <td style="text-align: left;">Applications of the residue theorem</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 20</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.2">10.2</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.2">10.2</a></td>
 <td style="text-align: left;">Binomial coefficients</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 22</td>
-<td style="text-align: center;"><a href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6.1</a></td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6.1</a></td>
 <td style="text-align: left;">Harmonic functions</td>
 </tr>
 </tbody>

@@ -1,6 +1,6 @@
 ---
 title: Computer Science Notes
-css: https://bclins.github.io/spring24/mockup.css
+css: https://bclins.github.io/mockup.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -63,15 +63,15 @@ print("The volume of the sphere is:", volume)
 
 We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
 
+* Variable names can only contain numbers, letters, and the underscore character `_`.
 * A variable name cannot start with a number.
-* The only punctuation symbol a variable name can contain is the underscore character (`_`). 
 
 It is recommended to only use lower case letters only in most variable names (except when you want to indicate that the variable is constant and won't ever change, in which case `ALL_CAPS` is recommended). If a variable name has multiple words, then separate the words with an underscore character, like: `surface_area`. 
 
-We also introduced some new functions including `round()`, `input()`, and the type conversion functions `int()`, `float()`, and `str()`. 
+We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.  <!--Forgot: round() -->
 
 
-1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere with that radius rounded to 2 decimal places. 
+1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere. <!-- Forgot to include: with that radius rounded to 2 decimal places. -->
 
 We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command 
 `dir(math)` to list all of functions in the `math` module.  
@@ -83,6 +83,10 @@ We finished by talking about how to **import** functions from **modules**.  We i
 4. What happens if you enter `help(math.sin)`?
 
 5. What does the `degrees()` function do? 
+
+6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
+
 
 
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 

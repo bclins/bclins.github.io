@@ -1,6 +1,6 @@
 ---
 title: Complex Analysis Notes
-css: https://bclins.github.io/spring24/mockup.css
+css: https://bclins.github.io/mockup.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -38,7 +38,7 @@ Fri, Aug 30 | [1.3][1.3] | Geometry of complex numbers
 
 ### Mon, Aug 26
 
-Today we introduced the complex numbers $\mathbb{C}$ which are a **field**.  We defined the **real** and **imaginary** parts of a complex number and also the **absolute value** and **argument** of a complex number.  We did the following examples.
+Today we introduced the complex numbers $\mathbb{C}$ which are a [field](https://en.wikipedia.org/wiki/Field_(mathematics)#Definition).  We defined the **real** and **imaginary** parts of a complex number and also the **absolute value** and **argument** of a complex number.  We did the following examples.
 
 1. Find the real and imaginary parts of $\dfrac{1}{3+4i}$ by rationalizing the denominator. 
 
@@ -71,15 +71,20 @@ $$(e^{i \alpha}) (e^{i \beta}) = e^{i (\alpha + \beta)}.$$
 
 5. What is $\sqrt{i}$? 
 
-We also defined the **complex conjugate** of $z = a+ib$ to be $\bar{z} = a - ib$. 
+6. Explain why $\dfrac{d}{d \theta} e^{i \theta} = i e^{i \theta}$ makes sense in the context of the velocity of a point moving counterclockwise along the unit circle. 
 
-6. What is $\bar{e^{i \theta}}$? 
-
-We finished by discussing the **n-th roots of unity** which are the complex numbers $z$ such that $z^n = 1$.  They are given by the formula 
+After introducing $e^{i\theta}$, we discussed the **n-th roots of unity** which are the complex numbers $z$ such that $z^n = 1$.  They are given by the formula 
 $$e^{2 \pi i k/ n} \text{ where } k \in \{0, 1, \ldots, n-1\}.$$
-A root of unity $z$ is **primitive** if $z^n = 1$, but $z$ is not an m-th root of unity for any $m \in \N$ less than $n$.  
+<!--A root of unity $z$ is **primitive** if $z^n = 1$, but $z$ is not an m-th root of unity for any $m \in \N$ less than $n$.  -->
+
+7. Find the 3rd roots of 8.
+
+8. Find the 3rd roots of $\left(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2} \right)$. 
 
 We finished with a discussion of square and cube roots of complex numbers and how they relate to roots of unity. 
+We also defined the **complex conjugate** of $z = a+ib$ to be $\bar{z} = a - ib$. 
+
+<!--6. What is $\bar{e^{i \theta}}$? -->
 
 
 - - -

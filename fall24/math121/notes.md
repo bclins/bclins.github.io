@@ -1,6 +1,6 @@
 ---
 title: Statistics Notes
-css: https://bclins.github.io/spring24/mockup.css
+css: https://bclins.github.io/mockup.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -53,13 +53,17 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 4. What is wrong with this student's answer to the previous question?
 
-> *Rates are better because they are more precise and easier to understand.*
+> Rates are better because they are more precise and easier to understand.
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
 ### Wed, Aug 28 
 
-We used the class data we collected last time to introduce **histograms** and **stemplots**. We also talked about how to tell if data is **skewed left** or **skewed right**. Weirdly, Excel does not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) that I made. 
+We talked about how to summarize quantitative data. We started by reviewing the **mean** and **median**. We saw how to find the average in Excel, and we talked about how to find the position of the median in a long list of numbers (assuming they are sorted). 
+
+Then we used the class data we collected last time to introduce **histograms** and **stem-and-leaf plots** (also known as **stemplots**). We also talked about how to tell if data is **skewed left** or **skewed right**. One important concept is that the median is not affected by skew, but the average is pulled in the direction of the skew, so the average will be bigger than the median when the data is skewed right. 
+
+Until recently, Excel did not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html). 
 
 * **Example:** [US Household Income (2010)](https://upload.wikimedia.org/wikipedia/commons/0/0d/Distribution_of_Annual_Household_Income_in_the_United_States_2010.png)
 
@@ -69,11 +73,10 @@ We used the class data we collected last time to introduce **histograms** and **
 
 3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
 
-We also did an in-class workshop.
+We finished with this in-class workshop.
 
 * **Workshop:** [Histograms & stemplots](Workshops/Histograms.pdf)
 
-After that we talked about the difference between the **mean** and **median**. We talked about how to find the median in a long list of numbers (assuming they are sorted). We finished by introducing the **five-number summary**. 
 
 
 

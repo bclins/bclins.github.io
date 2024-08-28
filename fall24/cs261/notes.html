@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -85,7 +85,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://bclins.github.io/spring24/mockup.css" />
+  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -191,22 +191,23 @@ be used as a variable names because they are special Python
 3.10 (which is the version we are using), and we’ll cover most of them
 in this course. Other rules for naming variables include:</p>
 <ul>
+<li>Variable names can only contain numbers, letters, and the underscore
+character <code>_</code>.</li>
 <li>A variable name cannot start with a number.</li>
-<li>The only punctuation symbol a variable name can contain is the
-underscore character (<code>_</code>).</li>
 </ul>
-<p>It is recommended to only use lower case letters in most variable
-names (except when you want to indicate that the variable is constant
-and won’t ever change, in which case <code>ALL_CAPS</code> is
+<p>It is recommended to only use lower case letters only in most
+variable names (except when you want to indicate that the variable is
+constant and won’t ever change, in which case <code>ALL_CAPS</code> is
 recommended). If a variable name has multiple words, then separate the
 words with an underscore character, like: <code>surface_area</code>.</p>
-<p>We also introduced some new functions including <code>round()</code>,
-<code>input()</code>, and the type conversion functions
-<code>int()</code>, <code>float()</code>, and <code>str()</code>.</p>
+<p>We also introduced some new functions including <code>input()</code>,
+and the type conversion functions <code>int()</code>,
+<code>float()</code>, and <code>str()</code>.
+<!--Forgot: round() --></p>
 <ol type="1">
 <li>Write a script that prompts the user to input a radius. Then
-calculate and print both the surface area and volume of a sphere with
-that radius rounded to 2 decimal places.</li>
+calculate and print both the surface area and volume of a sphere.
+<!-- Forgot to include: with that radius rounded to 2 decimal places. --></li>
 </ol>
 <p>We finished by talking about how to <strong>import</strong> functions
 from <strong>modules</strong>. We imported the <code>math</code> module
@@ -222,6 +223,10 @@ the default is.</p></li>
 input?</p></li>
 <li><p>What happens if you enter <code>help(math.sin)</code>?</p></li>
 <li><p>What does the <code>degrees()</code> function do?</p></li>
+<li><p>Write a program to calculate the roots of a quadratic polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
+using the quadratic formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->

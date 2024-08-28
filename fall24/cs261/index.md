@@ -1,6 +1,6 @@
 ---
 title: Computer Science I
-css: https://bclins.github.io/spring24/mockup.css
+css: https://bclins.github.io/mockup.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
