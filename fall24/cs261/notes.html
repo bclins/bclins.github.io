@@ -135,19 +135,19 @@ href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter
 <td style="text-align: center;">Wed, Aug 28</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
-<td style="text-align: left;">Variables &amp; statements</td>
+<td style="text-align: left;">Variables &amp; functions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Aug 29</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
-<td style="text-align: left;">Variables &amp; statements</td>
+<td style="text-align: left;">Statements versus expressions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Aug 30</td>
 <td style="text-align: center;"><a
-href="https://allendowney.github.io/ThinkPython/chap02.html">TP02</a></td>
-<td style="text-align: left;">The import statement</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6">C2.6</a></td>
+<td style="text-align: left;">Binary &amp; floating-point numbers</td>
 </tr>
 </tbody>
 </table>
@@ -228,6 +228,74 @@ input?</p></li>
 using the quadratic formula
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
+<h3 id="thu-aug-29">Thu, Aug 29</h3>
+<p>Today we talked about some of the errors that came up in the
+quadratic formula programs from yesterday. There are three categories of
+errors in Python.</p>
+<h4 id="types-of-errors">Types of Errors</h4>
+<ul>
+<li><strong>Syntax errors</strong> are errors in the structure of the
+program that the computer can detect before running the code. Examples
+include mismatched parentheses, or incomplete lines of code.</li>
+<li><strong>Runtime errors</strong> are errors that occur while the
+program is running. This category include <strong>type errors</strong>
+where the computer tries to use a function or operator with a variable
+or expression of the wrong type.</li>
+<li><strong>Semantic errors</strong> happen when the program runs
+without an error message, but the output is incorrect.</li>
+</ul>
+<p>Keep in mind that syntax refers to the structure and grammar of a
+program, while semantics refers to its meaning. Computers are very picky
+about syntax, but they are completely oblivious to semantics.</p>
+<h4 id="statements-versus-expressions">Statements versus
+Expressions</h4>
+<p>The first error we looked at was this incorrect line of code:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> math.sqrt(b <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span> <span class="op">*</span> a <span class="op">*</span> c)) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> a))</span></code></pre></div>
+<p>To explain this error, we talked about the difference between
+statements and expressions in Python.</p>
+<ul>
+<li>A <strong>statement</strong> is a piece of code that does
+something.<br />
+</li>
+<li>An <strong>expression</strong> is a piece of code that has a
+value.</li>
+</ul>
+<p>Every expression is a statement, but not vice versa. In Python, every
+valid line of code is a statement.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example statements</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> a</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Example expressions</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fl">5.0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>(<span class="op">-</span>b <span class="op">+</span> math.sqrt(b <span class="op">**</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span> <span class="op">*</span> a <span class="op">*</span> c)) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> a)</span></code></pre></div>
+<p>Notice that statements can include expressions. A special kind of
+statement is an <strong>assignment statement</strong> where you assign a
+value to a variable. Every assignment statement has the form:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>variable_name <span class="op">=</span> <span class="co"># some expression</span></span></code></pre></div>
+<p>The reason the line of code
+<code>(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))</code> is
+not correct is that you can’t wrap an assignment statement in
+parentheses.</p>
+<h4 id="function-return-values">Function Return Values</h4>
+<p>Some functions return values and some functions don’t. For example,
+<code>math.sqrt(4)</code> returns the value <code>2.0</code>, so it can
+be used as an expression. But the function <code>print("Hello")</code>
+does not return a value. The <code>input()</code> function returns a
+string with whatever input the user types. So you can use an assignment
+statement like</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a value for the coefficient a. &quot;</span>)</span></code></pre></div>
+<p>to prompt the user to input a number for <code>a</code>. Be careful,
+the value that you get will be a string. You have convert it to a number
+using the <code>int()</code> or <code>float()</code> functions before
+you can use it in a formula.</p>
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
 <hr />

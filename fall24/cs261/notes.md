@@ -27,9 +27,9 @@ Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-note
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Aug 26 | [TP01][TP01], [C2] | Introduction to Python & Thonny
-Wed, Aug 28 | [TP02][TP02] | Variables & statements
-Thu, Aug 29 | [TP02][TP02] | Variables & statements
-Fri, Aug 30 | [TP02][TP02] | The import statement
+Wed, Aug 28 | [TP02][TP02] | Variables & functions
+Thu, Aug 29 | [TP02][TP02] | Statements versus expressions
+Fri, Aug 30 | [C2.6][C2.6] | Binary & floating-point numbers
 
 ### Mon, Aug 26 
 
@@ -87,10 +87,68 @@ We finished by talking about how to **import** functions from **modules**.  We i
 6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 
+### Thu, Aug 29
 
+Today we talked about some of the errors that came up in the quadratic formula programs from yesterday.  There are three categories of errors in Python.
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+
+#### Statements versus Expressions
+
+The first error we looked at was this incorrect line of code:
+
+```python
+(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))
+```
+
+To explain this error, we talked about the difference between statements and expressions in Python.  
+
+* A **statement** is a piece of code that does something.  
+* An **expression** is a piece of code that has a value.  
+
+Every expression is a statement, but not vice versa.  In Python, every valid line of code is a statement.
+
+```python
+# Example statements
+import math
+a = 5.0
+b = 3 + a
+print("Hello")
+
+# Example expressions
+1+1
+5.0
+(-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+```
+
+Notice that statements can include expressions.  A special kind of statement is an **assignment statement** where you assign a value to a variable.  Every assignment statement has the form:
+
+```python
+variable_name = # some expression
+``` 
+
+The reason the line of code `(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))` is not correct is that you can't wrap an assignment statement in parentheses. 
+
+
+#### Function Return Values
+
+Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  The `input()` function returns a string with whatever input the user types.  So you can use an assignment statement like 
+
+```python
+a = input("Enter a value for the coefficient a. ")
+```
+
+to prompt the user to input a number for `a`.  Be careful, the value that you get will be a string.  You have convert it to a number using the `int()` or `float()` functions before you can use it in a formula. 
 
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
+
 
 
 
@@ -323,6 +381,8 @@ Mon, Dec 9  |  |
 [C15]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.15>
 [C16]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.16>
 [C17]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.17>
+
+[C2.6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6>
 
 <br>
 <br>
