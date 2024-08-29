@@ -25,7 +25,7 @@ header-includes: |
 
 ### Announcements
 
-* There are no announcements yet
+* For extra help, check out [Harvard's CS50 with Python](https://www.youtube.com/watch?v=OvKCESUCWII&list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V) on YouTube. 
 
 ### Course Description 
 
@@ -35,7 +35,7 @@ This is an introductory course on computer science and algorithmic problem solvi
 
 Week | Topic                      | Notes | Projects
 :---:|:---------------------------|:-----:|:--------:
-1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  |
+1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  | [Project 1](project1.pdf)
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  |
 3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  |
 4  | Recursion                            | [Week 04](notes.html#week-4-notes)  |

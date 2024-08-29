@@ -46,7 +46,7 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 ### Teaching Materials
 
-* [Old Course Materials](http://people.hsc.edu/faculty-staff/blins/classes/)
+* [Old Course Materials](old.html)
 
 <br>
 <br>
