@@ -146,6 +146,21 @@ a = input("Enter a value for the coefficient a. ")
 
 to prompt the user to input a number for `a`.  Be careful, the value that you get will be a string.  You have convert it to a number using the `int()` or `float()` functions before you can use it in a formula. 
 
+### Fri, Aug 30
+
+We talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
+
+![](https://bclins.github.io/spring24/math342/floating_point_layout.svg){ style="width: 700px" }
+![](https://bclins.github.io/spring24/math342/floating_point_math.svg){style="width: 700px"}
+
+In the IEEE 754 standard, a 64-bit floating point number has the form 
+$$x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}$$
+where 
+
+* $s$ is the 1-bit sign,
+* $a_1 a_2 \ldots a_{52}$ is the 52-bit mantissa, and
+* $e$ is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $e=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $e=2047$ is reserved for infinity and NaN ("not a number"). 
+
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
 

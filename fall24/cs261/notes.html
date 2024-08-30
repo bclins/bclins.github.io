@@ -296,6 +296,35 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a hr
 the value that you get will be a string. You have convert it to a number
 using the <code>int()</code> or <code>float()</code> functions before
 you can use it in a formula.</p>
+<h3 id="fri-aug-30">Fri, Aug 30</h3>
+<p>We talked about how computers store <a
+href="https://en.wikipedia.org/wiki/Floating_point">floating point
+numbers</a>. Most modern programming languages store floating point
+numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE
+754 standard</a>.</p>
+<p><img
+src="https://bclins.github.io/spring24/math342/floating_point_layout.svg"
+style="width: 700px" /> <img
+src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
+style="width: 700px" /></p>
+<p>In the IEEE 754 standard, a 64-bit floating point number has the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+where</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+is the 1-bit sign,</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub></mrow><annotation encoding="application/x-tex">a_1 a_2 \ldots a_{52}</annotation></semantics></math>
+is the 52-bit mantissa, and</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are
+used for regular floating point numbers,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e=0</annotation></semantics></math>
+is reserved for zero and <a
+href="https://en.wikipedia.org/wiki/Subnormal_number">subnormal
+numbers</a>, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>2047</mn></mrow><annotation encoding="application/x-tex">e=2047</annotation></semantics></math>
+is reserved for infinity and NaN (“not a number”).</li>
+</ul>
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
 <hr />
