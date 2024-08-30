@@ -18,6 +18,8 @@ header-includes: |
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\on}{\operatorname}
 \newcommand{\Arg}{\on{Arg}}
+\newcommand{\re}{\on{Re}}
+\newcommand{\im}{\on{Im}}
 
 ## Math 444 - Fall 2024
 
@@ -86,6 +88,28 @@ We also defined the **complex conjugate** of $z = a+ib$ to be $\bar{z} = a - ib$
 
 <!--6. What is $\bar{e^{i \theta}}$? -->
 
+### Fri, Aug 30
+
+We reviewed some of the useful formulas involving complex conjugates including the following:
+
+* $|z|^2 = z \cdot \bar{z}$
+
+* $\bar{z + w} = \bar{z} + \bar{w}$ and $\bar{ z \cdot w} = \bar{z} \cdot \bar{w}$
+
+* $\re(z) = \frac{z+ \bar{z}}{2}$ and $\im(z) = \frac{z - \bar{z}}{2i}$
+
+We also introduced and proved the **triangle inequality** for complex numbers
+$$| z + w | \le |z| + |w|.$$
+
+1. Use the triangle inequality to prove the **reverse triangle inequality** 
+$$ | z - w | \ge |z| - |w|.$$
+
+2. If $|z - w| \le \epsilon$, prove that 
+$$\left| \frac{1}{z} - \frac{1}{w} \right| \le \frac{\epsilon}{|z| \, |w|}.$$
+
+A **convex combination** of $z, w \in \C$ is any point 
+$$ t z + (1-t) w, ~ 0 \le t \le 1.$$
+The set of all convex combinations of $z$ and $w$ is a line segment connecting $z$ to $w$, and the formula for the convex combinations is a parametric formula for the line segment.  If you allow any $t \in \R$, then you get an **affine combination** of $z$ and $w$.  The set of all affine combinations of $z$ and $w$ is line passing through $z$ and $w$.  
 
 - - -
 

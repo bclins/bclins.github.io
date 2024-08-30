@@ -36,7 +36,7 @@ Math 444 is an introduction to analysis (calculus) with complex variables. We wi
 Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:--------:
 1  | Complex numbers                                | [Week 01](notes.html#week-1-notes)  | [HW1](HW1.pdf)
-2  | Topology of **C**                              | [Week 02](notes.html#week-2-notes)  |
+2  | Topology of **C**                              | [Week 02](notes.html#week-2-notes)  | [HW2](HW2.pdf)
 3  | Complex limits & continuity                    | [Week 03](notes.html#week-3-notes)  |
 4  | Complex exponentials and logarithms            | [Week 04](notes.html#week-4-notes)  |
 5  | Complex differentiability                      | [Week 05](notes.html#week-5-notes)  |

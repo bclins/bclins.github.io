@@ -77,7 +77,11 @@ We finished with this in-class workshop.
 
 * **Workshop:** [Histograms & stemplots](Workshops/Histograms.pdf)
 
+### Fri, Aug 30
 
+We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. We did this workshop.
+
+* **Workshop:** [Boxplots](Workshops/Spread2.pdf)
 
 
 - - -

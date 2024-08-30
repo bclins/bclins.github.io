@@ -148,7 +148,29 @@ to prompt the user to input a number for `a`.  Be careful, the value that you ge
 
 ### Fri, Aug 30
 
-We talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
+Today we talked about binary numbers and how Python stores integers and floating point numbers under the hood.  We started by talking about how to convert base-2 numbers to base-10.  We did the following examples. 
+
+1. Convert $(110)_2$ to base-10.
+
+1. Convert $(1111)_2$ to base-10.
+
+1. Convert $(10101)_2$ to base-10.
+
+1. Convert $(10.11)_2$ to base-10.
+
+After that we talked about how to convert base-10 integers to base-2.  That is a little bit harder, so we introduced the **algorithm** below which can be described using a **flow chart**:
+
+<center>
+<img src="decimal2binary.png" width = 500></img>
+</center>
+
+5. Use the algorithm above to convert 35 to base-2. 
+
+6. Use the algorithm above to convert 13 to base-2. 
+
+After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  Unlike a lot of progamming languages, Python allows arbitrarily large integers.  This avoids **integer overflow** errors, but it can be slower for large integers.  
+
+We also talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages (including Python) store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
 
 ![](https://bclins.github.io/spring24/math342/floating_point_layout.svg){ style="width: 700px" }
 ![](https://bclins.github.io/spring24/math342/floating_point_math.svg){style="width: 700px"}
@@ -160,6 +182,12 @@ where
 * $s$ is the 1-bit sign,
 * $a_1 a_2 \ldots a_{52}$ is the 52-bit mantissa, and
 * $e$ is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $e=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $e=2047$ is reserved for infinity and NaN ("not a number"). 
+
+7. Compare the output you get when you type `2**1024` versus `2.0**1024` in the Python shell. 
+
+8. Compare the output for `2.0**(-1024)` versus `2**(-1070)`.  Notice that you lose precision with small floating point numbers, but you don't get an error the way you do with large floats. 
+
+9. Why do you get an incorrect answer when you enter `0.1+0.1+0.1`?
 
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 

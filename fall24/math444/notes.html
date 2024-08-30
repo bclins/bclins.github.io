@@ -171,6 +171,57 @@ numbers and how they relate to roots of unity. We also defined the
 to be
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\bar{z} = a - ib</annotation></semantics></math>.</p>
 <!--6. What is $\bar{e^{i \theta}}$? -->
+<h3 id="fri-aug-30">Fri, Aug 30</h3>
+<p>We reviewed some of the useful formulas involving complex conjugates
+including the following:</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>=</mo><mi>z</mi><mo>⋅</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">|z|^2 = z \cdot \bar{z}</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>z</mi><mo>+</mo><mi>w</mi></mrow><mo accent="true">‾</mo></mover><mo>=</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo>+</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\bar{z + w} = \bar{z} + \bar{w}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>z</mi><mo>⋅</mo><mi>w</mi></mrow><mo accent="true">‾</mo></mover><mo>=</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo>⋅</mo><mover><mi>w</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\bar{ z \cdot w} = \bar{z} \cdot \bar{w}</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Re</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>z</mi><mo>+</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\operatorname{Re}(z) = \frac{z+ \bar{z}}{2}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Im</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>z</mi><mo>−</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover></mrow><mrow><mn>2</mn><mi>i</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\operatorname{Im}(z) = \frac{z - \bar{z}}{2i}</annotation></semantics></math></p></li>
+</ul>
+<p>We also introduced and proved the <strong>triangle
+inequality</strong> for complex numbers
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>+</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">| z + w | \le |z| + |w|.</annotation></semantics></math></p>
+<ol type="1">
+<li><p>Use the triangle inequality to prove the <strong>reverse triangle
+inequality</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex"> | z - w | \ge |z| - |w|.</annotation></semantics></math></p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">|z - w| \le \epsilon</annotation></semantics></math>,
+prove that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mfrac><mn>1</mn><mi>z</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>w</mi></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mfrac><mi>ϵ</mi><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\left| \frac{1}{z} - \frac{1}{w} \right| \le \frac{\epsilon}{|z| \, |w|}.</annotation></semantics></math></p></li>
+</ol>
+<p>A <strong>convex combination</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>,</mo><mi>w</mi><mo>∈</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">z, w \in \mathbb{C}</annotation></semantics></math>
+is any point
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>z</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>w</mi><mo>,</mo><mspace width="0.222em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex"> t z + (1-t) w, ~ 0 \le t \le 1.</annotation></semantics></math>
+The set of all convex combinations of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is a line segment connecting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+and the formula for the convex combinations is a parametric formula for
+the line segment. If you allow any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">t \in \mathbb{R}</annotation></semantics></math>,
+then you get an <strong>affine combination</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
+The set of all affine combinations of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is line passing through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <h4 id="tentative-schedule-1">Tentative Schedule</h4>

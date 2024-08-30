@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 2 \hfill Name: \underline{\hspace*{2in}}}
+\begin{enumerate}
+\item Describe the set $\{z\in \C : | z - 1 - i| = 2\}$ in words (using familiar concepts like circles, lines, distance, etc.), then use the axis provided to draw a picture of the set.
+\begin{flushright}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{flushright}
+
+\item Circle the topological properties that apply to the set above, and cross out the ones that don't.
+\begin{center}
+A. Open \hspace*{0.4in} B. Closed \hspace*{0.4in} C. Bounded \hspace*{0.4in} D. Connected
+\end{center}
+\vspace*{0.15in}
+
+\item Describe the set $\{z \in \C : | z - 2i | = |z| \}$ in words (using familiar concepts like circles, lines, distance, etc.), then use the axes provided to draw a picture of the set.  \\
+\begin{flushright}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{flushright}
+
+
+\item Circle the topological properties that apply to the set above, and cross out the ones that don't.
+\begin{center}
+A. Open \hspace*{0.4in} B. Closed \hspace*{0.4in} C. Bounded \hspace*{0.4in} D. Connected
+\end{center}
+\vspace*{0.15in}
+
+
+\item Describe the set $\{z\in \C : \im \left( e^{i \pi/4} z \right) > 0 \}$ in words (using familiar concepts like circles, lines, distance, etc.), then use the axes provided to draw a picture of the set.  \\
+\begin{flushright}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{flushright}
+
+
+\item Circle the topological properties that apply to the set above, and cross out the ones that don't.
+\begin{center}
+A. Open \hspace*{0.4in} B. Closed \hspace*{0.4in} C. Bounded \hspace*{0.4in} D. Connected
+\end{center}
+\vspace*{0.15in}
+
+\newpage
+\item Describe the set $\{z \in \C : z^5 = 1 \}$ in words (using familiar concepts like circles, lines, distance, etc.), then use the axes provided to draw a picture of the set.  \\
+\begin{flushright}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{flushright}
+
+
+\item Circle the topological properties that apply to the set above, and cross out the ones that don't.
+\begin{center}
+A. Open \hspace*{0.4in} B. Closed \hspace*{0.4in} C. Bounded \hspace*{0.4in} D. Connected
+\end{center}
+\vspace*{0.25in}
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+%\noindent 
+%\textit{Give a parametrization for each of the following curves.  }
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Give a parametrization of the line segment from $i$ to $1$.  
+\vfill
+
+\item Give a parametrization of the circle around $z = 2$ with radius 5, oriented clockwise. 
+\vfill
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+
+\noindent
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Let $G$ be the union of the following two sets, $A= \{ z \in \C :  |z| < 2 \}$ and $B=\{z \in \C : \im(z) \le 0 \}$. 
+
+\begin{enumerate}
+
+\begin{minipage}{0.45\textwidth}
+\item Sketch $G$ using the axes below. 
+
+\begin{tikzpicture}
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\item What is the boundary of $G$? \\ \\ \\
+
+\item What is the interior of $G$?  \\ \\
+
+\end{minipage}
+\end{enumerate}
+
+\newpage
+
+\item Let $z, w, a, b$ be complex numbers.  Use the triangle inequality to prove that 
+$$| (z+w) - (a+b) | \le | z-a | + | w - b |.$$
+\vfill
+\vfill
+
+\item Use the triangle inequality to prove that if $|w- z| < \delta$, then $|w+z| < \delta + 2|z|$.
+\vfill
+\vfill
+
+\item If $|w - z| < \delta$, show that $|w^2 - z^2 | < \delta (\delta + 2|z|)$. Hint: The difference of squares formula works for complex numbers: $w^2-z^2 = (w-z)(w+z)$.
+\vfill
+\vfill
+
+
+%\item For any $\epsilon > 0$, show that the set $H = \{ z \in \C : |z^2 - 1| < \epsilon \}$ is open. Hint: Use the triangle inequality to show that $|w^2 - 1| \le |z^2-1| + |w^2 - z^2|$.  Then show that if $z \in H$, then any $w$ that is close enough to $z$ will also be in $H$. Can you say exactly how close is `close enough'?
+%\vfill
+%\vfill
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\end{document}

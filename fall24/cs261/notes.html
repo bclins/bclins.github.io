@@ -297,11 +297,48 @@ the value that you get will be a string. You have convert it to a number
 using the <code>int()</code> or <code>float()</code> functions before
 you can use it in a formula.</p>
 <h3 id="fri-aug-30">Fri, Aug 30</h3>
-<p>We talked about how computers store <a
+<p>Today we talked about binary numbers and how Python stores integers
+and floating point numbers under the hood. We started by talking about
+how to convert base-2 numbers to base-10. We did the following
+examples.</p>
+<ol type="1">
+<li><p>Convert
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>110</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
+to base-10.</p></li>
+<li><p>Convert
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1111</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(1111)_2</annotation></semantics></math>
+to base-10.</p></li>
+<li><p>Convert
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10101</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
+to base-10.</p></li>
+<li><p>Convert
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10.11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
+to base-10.</p></li>
+</ol>
+<p>After that we talked about how to convert base-10 integers to base-2.
+That is a little bit harder, so we introduced the
+<strong>algorithm</strong> below which can be described using a
+<strong>flow chart</strong>:</p>
+<center>
+<img src="decimal2binary.png" width = 500></img>
+</center>
+<ol start="5" type="1">
+<li><p>Use the algorithm above to convert 35 to base-2.</p></li>
+<li><p>Use the algorithm above to convert 13 to base-2.</p></li>
+</ol>
+<p>After we introduced binary numbers, we talked about
+<strong>bits</strong> and how many integers can be stored using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+bits. One example is that the maximum number of rupees (money) you could
+have in the original Zelda game was 255 because the data was stored
+using 8 bits. Unlike a lot of progamming languages, Python allows
+arbitrarily large integers. This avoids <strong>integer
+overflow</strong> errors, but it can be slower for large integers.</p>
+<p>We also talked about how computers store <a
 href="https://en.wikipedia.org/wiki/Floating_point">floating point
-numbers</a>. Most modern programming languages store floating point
-numbers using the <a href="https://en.wikipedia.org/wiki/IEEE_754">IEEE
-754 standard</a>.</p>
+numbers</a>. Most modern programming languages (including Python) store
+floating point numbers using the <a
+href="https://en.wikipedia.org/wiki/IEEE_754">IEEE 754 standard</a>.</p>
 <p><img
 src="https://bclins.github.io/spring24/math342/floating_point_layout.svg"
 style="width: 700px" /> <img
@@ -325,6 +362,16 @@ numbers</a>, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mn>2047</mn></mrow><annotation encoding="application/x-tex">e=2047</annotation></semantics></math>
 is reserved for infinity and NaN (“not a number”).</li>
 </ul>
+<ol start="7" type="1">
+<li><p>Compare the output you get when you type <code>2**1024</code>
+versus <code>2.0**1024</code> in the Python shell.</p></li>
+<li><p>Compare the output for <code>2.0**(-1024)</code> versus
+<code>2**(-1070)</code>. Notice that you lose precision with small
+floating point numbers, but you don’t get an error the way you do with
+large floats.</p></li>
+<li><p>Why do you get an incorrect answer when you enter
+<code>0.1+0.1+0.1</code>?</p></li>
+</ol>
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
 <hr />
