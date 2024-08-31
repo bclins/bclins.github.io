@@ -3,14 +3,9 @@
   --link-color: #069; /* better green: #486; gray: #555; brown: #8b4513; green: #195; red: #A32; /* original blue: #069; */
 }
 
-@font-face {
+/* @font-face {
   font-family: "Latin Modern Math";
   src: url("latinmodern-math.otf"); 
-}
-
-html {
-    margin-left: 3%;
-    margin-right: 3%;
 }
 
 math {
@@ -18,6 +13,13 @@ math {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+*/
+
+html {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
 
 blockquote {
   margin: 1em 0 1em 1.7em;

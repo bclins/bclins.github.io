@@ -44,7 +44,7 @@ Today we introduced the complex numbers $\mathbb{C}$ which are a [field](https:/
 
 1. Find the real and imaginary parts of $\dfrac{1}{3+4i}$ by rationalizing the denominator. 
 
-2. Factor the polynomial $z^2 + 3i - 2$.
+2. Factor the polynomial $z^2 + 3iz - 2$.
 
 3. The polynomial $z^2 + 1$ is irreducible over $\R$, but not over $\C$.  Show this by factoring it over $\C$. 
 
