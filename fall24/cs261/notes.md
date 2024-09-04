@@ -133,7 +133,7 @@ Notice that statements can include expressions.  A special kind of statement is 
 variable_name = # some expression
 ``` 
 
-The reason the line of code `(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))` is not correct is that you can't wrap an assignment statement in parentheses. 
+You can always wrap an expression in parentheses, and it will still be an expression with the same value.  But, the reason the line of code `(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))` is not correct is that an assignment statement is not an expression, and cannot be wrapped in parentheses.  
 
 
 #### Function Return Values
@@ -207,6 +207,58 @@ Mon, Sep 2  | | Labor Day, no class
 Wed, Sep 4  | [TP03][TP03] | Functions
 Thu, Sep 5  |              | 
 Fri, Sep 6  | [TP03][TP03] | For-loops
+
+### Wed, Sep 4 
+
+To create your own functions in Python, use the `def` keyword to define them:
+
+```python
+def hello():
+    print("Hello!")
+```
+
+Every function is a **function object**.  So `function` is a type just like `int`, `float`, and `str`.  When you refer to a function object in Python, there is a difference between the **name** of the function (which is `hello` in the previous example) and the way you **call** the function to get it to run by typing `hello()`. Here is another function example. 
+
+```python
+def print_twice(string): # The first line is called the **header**
+    print(string) # All of the other lines are called the **body of the function**
+    print(string) # Notice that all of the lines of the body must be indented
+```
+
+This function has a **parameter** which is the variable called `string` in the parentheses. We you call this function, you need to include an **argument** which is a value for the parameter.  
+
+```python
+>>> print_twice("Hello")
+Hello
+Hello
+>>> print_twice(5)
+5
+5
+```
+
+In this example, "Hello" and 5 are arguments.  The variable called `string` in the function is a parameter. Weirdly, when we pass the argument 5 to the function, then the parameter called `string` stores the value 5 which is an integer not a string!  But that is okay, because Python knows how to print integers.   
+
+Functions can have as many parameters as needed. Try to make your own functions to do the following. 
+
+1. Define a function called `sum_of_squares` that adds up the squares of two numbers. 
+
+2. Define a function called `sphere_volume` that calculates the volume of a sphere.  
+
+When you create a function, you should *always* include a docstring that briefly explains what the functions does.  A **docstring** is a comment that is written using triple quotes instead of the hash symbol. Here is an example.
+
+```python
+def circle_area(radius):
+    """Returns the area of a circle."""
+    PI = 3.14159
+    return PI * radius ** 2
+```
+
+The advantage of a docstring over a regular comment is that it can take up multiple lines. Python style guides recommend using docstrings even for one line descriptions of functions, since you might need to add more explanation later. 
+
+This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
+
+
+
 
 - - - 
 

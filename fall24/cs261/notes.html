@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -279,10 +279,11 @@ statement is an <strong>assignment statement</strong> where you assign a
 value to a variable. Every assignment statement has the form:</p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>variable_name <span class="op">=</span> <span class="co"># some expression</span></span></code></pre></div>
-<p>The reason the line of code
+<p>You can always wrap an expression in parentheses, and it will still
+be an expression with the same value. But, the reason the line of code
 <code>(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))</code> is
-not correct is that you can’t wrap an assignment statement in
-parentheses.</p>
+not correct is that an assignment statement is not an expression, and
+cannot be wrapped in parentheses.</p>
 <h4 id="function-return-values">Function Return Values</h4>
 <p>Some functions return values and some functions don’t. For example,
 <code>math.sqrt(4)</code> returns the value <code>2.0</code>, so it can
@@ -345,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -410,6 +411,67 @@ href="https://allendowney.github.io/ThinkPython/chap03.html">TP03</a></td>
 </tr>
 </tbody>
 </table>
+<h3 id="wed-sep-4">Wed, Sep 4</h3>
+<p>To create your own functions in Python, use the <code>def</code>
+keyword to define them:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<p>Every function is a <strong>function object</strong>. So
+<code>function</code> is a type just like <code>int</code>,
+<code>float</code>, and <code>str</code>. When you refer to a function
+object in Python, there is a difference between the
+<strong>name</strong> of the function (which is <code>hello</code> in
+the previous example) and the way you <strong>call</strong> the function
+to get it to run by typing <code>hello()</code>. Here is another
+function example.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_twice(string): <span class="co"># The first line is called the **header**</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(string) <span class="co"># All of the other lines are called the **body of the function**</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(string) <span class="co"># Notice that all of the lines of the body must be indented</span></span></code></pre></div>
+<p>This function has a <strong>parameter</strong> which is the variable
+called <code>string</code> in the parentheses. We you call this
+function, you need to include an <strong>argument</strong> which is a
+value for the parameter.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print_twice(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Hello</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Hello</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print_twice(<span class="dv">5</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code></pre></div>
+<p>In this example, “Hello” and 5 are arguments. The variable called
+<code>string</code> in the function is a parameter. Weirdly, when we
+pass the argument 5 to the function, then the parameter called
+<code>string</code> stores the value 5 which is an integer not a string!
+But that is okay, because Python knows how to print integers.</p>
+<p>Functions can have as many parameters as needed. Try to make your own
+functions to do the following.</p>
+<ol type="1">
+<li><p>Define a function called <code>sum_of_squares</code> that adds up
+the squares of two numbers.</p></li>
+<li><p>Define a function called <code>sphere_volume</code> that
+calculates the volume of a sphere.</p></li>
+</ol>
+<p>When you create a function, you should <em>always</em> include a
+docstring that briefly explains what the functions does. A
+<strong>docstring</strong> is a comment that is written using triple
+quotes instead of the hash symbol. Here is an example.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the area of a circle.&quot;&quot;&quot;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    PI <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre></div>
+<p>The advantage of a docstring over a regular comment is that it can
+take up multiple lines. Python style guides recommend using docstrings
+even for one line descriptions of functions, since you might need to add
+more explanation later.</p>
+<p>This last example includes a local variable called <code>PI</code>.
+Any variable created in a function body is <strong>local</strong>, which
+means it can only be used inside the function. You won’t have access to
+local variables outside the function. Variables defined in a program
+that aren’t parameters or defined in the body of a function are
+<strong>global</strong> an can be accessed anywhere in a program.</p>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <h4 id="tentative-schedule-2">Tentative Schedule</h4>

@@ -189,7 +189,9 @@ inequality</strong> for complex numbers
 <ol type="1">
 <li><p>Use the triangle inequality to prove the <strong>reverse triangle
 inequality</strong>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex"> | z - w | \ge |z| - |w|.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex"> | z - w | \ge |z| - |w|</annotation></semantics></math>
+by introducing a substitution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>z</mi><mo>−</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">u = z - w</annotation></semantics></math>.</p></li>
 <li><p>If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">|z - w| \le \epsilon</annotation></semantics></math>,
 prove that
@@ -242,17 +244,94 @@ and
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 4</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.3">1.3</a></td>
-<td style="text-align: left;">Geometry of complex numbers - con’d</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.4">1.4</a></td>
+<td style="text-align: left;">Elementary topology of the plane</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 6</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.1.4">1.4</a></td>
-<td style="text-align: left;">Elementary topology of the plane</td>
+<td style="text-align: left;">Elementary topology of the plane -
+con’d</td>
 </tr>
 </tbody>
 </table>
+<h3 id="wed-sep-4">Wed, Sep 4</h3>
+<p>We defined <strong>interior</strong> and <strong>boundary</strong>
+points for a subset of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.
+We also defined <strong>open</strong> and <strong>closed</strong> sets,
+and proved the following theorem.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> A set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">A \subseteq \mathbb{C}</annotation></semantics></math>
+is closed if and only if its complement is open.</p>
+</div>
+<ol type="1">
+<li><p>If a set is both open and closed, then it can’t have any boundary
+points, since it includes its boundary (because it is closed) but every
+point is an interior point (because it is open). Are there any sets with
+no boundary points?</p></li>
+<li><p>Prove the following theorem.</p></li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem.</strong> The union of any collection of open sets is
+open and the intersection of a finite collection of open sets is
+open.</p>
+</div>
+<ol start="3" type="1">
+<li>Find an example to show that the intersection of an infinite
+collection of open sets isn’t always open.</li>
+</ol>
+<p>We also defined <strong>bounded</strong> sets. We finished by talking
+about <strong>paths</strong> (also known as <strong>curves</strong>). We
+defined the <strong>derivative of a path</strong>, and discussed how to
+define a <strong>smooth</strong> path so that it matches our intuition
+for a path with no sharp turns.</p>
+<ol start="4" type="1">
+<li>Why isn’t the path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mi>i</mi><msup><mi>t</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\gamma(t) = t^2 + i t^3</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">t \in [-1,1]</annotation></semantics></math>
+smooth?</li>
+</ol>
+<p>We also defined <strong>path connected</strong> sets.</p>
+<ol start="5" type="1">
+<li>For any set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">A \subseteq \mathbb{C}</annotation></semantics></math>,
+explain why the relationship
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>
+defined by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∼</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">w \sim z</annotation></semantics></math>
+when there is a path from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is an equivalence relation.</li>
+</ol>
+<p>A path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">\gamma: [a,b] \rightarrow \mathbb{C}</annotation></semantics></math>
+is <strong>simple</strong> if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(t_1) \ne \gamma(t_2)</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><msub><mi>t</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>t</mi><mn>2</mn></msub><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \le t_1 &lt; t_2 \le b</annotation></semantics></math>.
+It is <strong>closed</strong> if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(a) = \gamma(b)</annotation></semantics></math>.
+Intuitively, a path is simple if it cannot cross itself, except possibly
+at the endpoints. The following theorem seems obvious, but it is
+actually famously tricky to prove (see <a
+href="https://en.wikipedia.org/wiki/Jordan_curve_theorem"
+class="uri">https://en.wikipedia.org/wiki/Jordan_curve_theorem</a>).</p>
+<div class="Theorem">
+<p><strong>The Jordan Curve Theorem.</strong> The complement of the
+range of a simple closed curve in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>
+consists of two disjoint open path connected sets, one of which (the
+<strong>inside</strong>) is bounded and the other (the
+<strong>outside</strong>) is not bounded.</p>
+</div>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <h4 id="tentative-schedule-2">Tentative Schedule</h4>

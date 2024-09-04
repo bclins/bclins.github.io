@@ -102,7 +102,8 @@ We also introduced and proved the **triangle inequality** for complex numbers
 $$| z + w | \le |z| + |w|.$$
 
 1. Use the triangle inequality to prove the **reverse triangle inequality** 
-$$ | z - w | \ge |z| - |w|.$$
+$$ | z - w | \ge |z| - |w|$$
+by introducing a substitution $u = z - w$.
 
 2. If $|z - w| \le \epsilon$, prove that 
 $$\left| \frac{1}{z} - \frac{1}{w} \right| \le \frac{\epsilon}{|z| \, |w|}.$$
@@ -120,8 +121,43 @@ The set of all convex combinations of $z$ and $w$ is a line segment connecting $
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 2  |  | Labor Day, no class
-Wed, Sep 4  | [1.3][1.3] | Geometry of complex numbers - con'd 
-Fri, Sep 6  | [1.4][1.4] | Elementary topology of the plane
+Wed, Sep 4  | [1.4][1.4] | Elementary topology of the plane
+Fri, Sep 6  | [1.4][1.4] | Elementary topology of the plane - con'd
+
+### Wed, Sep 4
+
+We defined **interior** and **boundary** points for a subset of $\C$.  We also defined **open** and **closed** sets, and proved the following theorem. 
+
+<div class="Theorem">
+**Theorem.** A set $A \subseteq \C$ is closed if and only if its complement is open. 
+</div>
+
+1. If a set is both open and closed, then it can't have any boundary points, since it includes its boundary (because it is closed) but every point is an interior point (because it is open).  Are there any sets with no boundary points? 
+
+2. Prove the following theorem.
+
+<div class="Theorem">
+**Theorem.** The union of any collection of open sets is open and the intersection of a finite collection of open sets is open.  
+</div>
+
+3. Find an example to show that the intersection of an infinite collection of open sets isn't always open.
+
+We also defined **bounded** sets.  We finished by talking about **paths** (also known as **curves**).  We defined the **derivative of a path**, and discussed how to define a **smooth** path so that it matches our intuition for a path with no sharp turns.  
+
+4. Why isn't the path $\gamma(t) = t^2 + i t^3$ for $t \in [-1,1]$ smooth?  
+
+We also defined **path connected** sets.  
+
+5. For any set $A \subseteq \C$, explain why the relationship $\sim$ defined by $w \sim z$ when there is a path from $w$ to $z$ in $A$ is an equivalence relation.
+
+A path $\gamma: [a,b] \rightarrow \C$ is **simple** if $\gamma(t_1) \ne \gamma(t_2)$ for all $a \le t_1 < t_2 \le b$.  It is **closed** if $\gamma(a) = \gamma(b)$. Intuitively, a path is simple if it cannot cross itself, except possibly at the endpoints.  The following theorem seems obvious, but it is actually famously tricky to prove (see <https://en.wikipedia.org/wiki/Jordan_curve_theorem>).   
+
+<div class="Theorem">
+**The Jordan Curve Theorem.** The complement of the range of a simple closed curve in $\C$ consists of two disjoint open path connected sets, one of which (the **inside**) is bounded and the other (the **outside**) is not bounded.  
+</div>
+
+
+
 
 - - - 
 
