@@ -126,7 +126,14 @@ Fri, Sep 6  | [1.4][1.4] | Elementary topology of the plane - con'd
 
 ### Wed, Sep 4
 
-We defined **interior** and **boundary** points for a subset of $\C$.  We also defined **open** and **closed** sets, and proved the following theorem. 
+We defined **interior** and **boundary** points for a subset of $\C$.  We proved the following trichotomy: if $A \subseteq \C$ and $x \in \C$, then exactly one of the following holds.
+
+* $x$ is an interior point of $A$.
+* $x$ is a boundary point of $A$.
+* $x$ is an interior point of $A^c$ (the complement of $A$). 
+
+
+We also defined **open** and **closed** sets, and proved the following theorem. 
 
 <div class="Theorem">
 **Theorem.** A set $A \subseteq \C$ is closed if and only if its complement is open. 

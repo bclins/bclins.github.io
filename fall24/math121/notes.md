@@ -79,7 +79,7 @@ We finished with this in-class workshop.
 
 ### Fri, Aug 30
 
-We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. We did this workshop.
+We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
 
 * **Workshop:** [Boxplots](Workshops/Spread2.pdf)
 
@@ -95,6 +95,18 @@ Day  | Section  | Topic
 Mon, Sep 2  |                | Labor Day, no class
 Wed, Sep 4  | [2.1.4][2.1.4] | Standard deviation
 Fri, Sep 6  | [4.1][4.1]     | Normal distribution
+
+### Wed, Sep 4
+
+Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  Instead, we just use software to find standard deviation for us.  We looked at how to find standard deviation in Excel using the `=stdev()` function. 
+
+We finished by looking at some examples of histograms that have a shape that looks roughly like a bell.  This is a very common pattern in nature that is called the **normal distribution.** 
+
+* **Example:** [Heights of men in the USA](http://people.hsc.edu/faculty-staff/blins/StatsExamples/cdcHeights.html)
+* **Example:** [Annual rainfall in Farmville, VA](http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.html)
+
+
+
 
 - - - 
 
