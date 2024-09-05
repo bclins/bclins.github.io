@@ -126,12 +126,15 @@ Fri, Sep 6  | [1.4][1.4] | Elementary topology of the plane - con'd
 
 ### Wed, Sep 4
 
-We defined **interior** and **boundary** points for a subset of $\C$.  We proved the following trichotomy: if $A \subseteq \C$ and $x \in \C$, then exactly one of the following holds.
+Let $B_R(z) = \{w \in \C : |z-w| < R\}$ denote the open disk of radius $R$ around $z$.  We used $B_R(z)$ to define **interior** and **boundary** points for a subset of $\C$.  We proved the following trichotomy result
 
-* $x$ is an interior point of $A$.
-* $x$ is a boundary point of $A$.
-* $x$ is an interior point of $A^c$ (the complement of $A$). 
+<div class="Theorem"> 
+**Theorem.** If $A \subseteq \C$ and $x \in \C$, then exactly one of the following holds.
 
+1. $x$ is an interior point of $A$.
+2. $x$ is a boundary point of $A$.
+3. $x$ is an interior point of $A^c$ (the complement of $A$). 
+</div>
 
 We also defined **open** and **closed** sets, and proved the following theorem. 
 
@@ -141,6 +144,7 @@ We also defined **open** and **closed** sets, and proved the following theorem.
 
 1. If a set is both open and closed, then it can't have any boundary points, since it includes its boundary (because it is closed) but every point is an interior point (because it is open).  Are there any sets with no boundary points? 
 
+<!--
 2. Prove the following theorem.
 
 <div class="Theorem">
@@ -148,22 +152,27 @@ We also defined **open** and **closed** sets, and proved the following theorem.
 </div>
 
 3. Find an example to show that the intersection of an infinite collection of open sets isn't always open.
+-->
 
-We also defined **bounded** sets.  We finished by talking about **paths** (also known as **curves**).  We defined the **derivative of a path**, and discussed how to define a **smooth** path so that it matches our intuition for a path with no sharp turns.  
+We also defined **bounded** sets.  We finished by talking about **paths** which are continuous functions $\gamma: [a,b] \rightarrow \C$. The range of a path is a subset of $\C$ called a **curve** (note that not all books follow this terminology).  We defined the **derivative of a path**, and discussed how to define a **smooth** path so that it matches our intuition for a curve with no sharp turns.  
 
-4. Why isn't the path $\gamma(t) = t^2 + i t^3$ for $t \in [-1,1]$ smooth?  
+2. Why isn't the path $\gamma(t) = t^2 + i t^3$ for $t \in [-1,1]$ smooth?  
 
+A path $\gamma: [a,b] \rightarrow \C$ is **simple** if $\gamma(t_1) \ne \gamma(t_2)$ for all $t_1 \ne t_2$, except possibly at the endpoints $t_1 = a$ and $t_2 = b$. Intuitively, a path is simple if it cannot cross itself, except possibly at the endpoints. A path is **closed** if $\gamma(a) = \gamma(b)$.   
+
+<!--
 We also defined **path connected** sets.  
 
 5. For any set $A \subseteq \C$, explain why the relationship $\sim$ defined by $w \sim z$ when there is a path from $w$ to $z$ in $A$ is an equivalence relation.
 
-A path $\gamma: [a,b] \rightarrow \C$ is **simple** if $\gamma(t_1) \ne \gamma(t_2)$ for all $a \le t_1 < t_2 \le b$.  It is **closed** if $\gamma(a) = \gamma(b)$. Intuitively, a path is simple if it cannot cross itself, except possibly at the endpoints.  The following theorem seems obvious, but it is actually famously tricky to prove (see <https://en.wikipedia.org/wiki/Jordan_curve_theorem>).   
+The following theorem seems obvious, but it is actually famously tricky to prove (see <https://en.wikipedia.org/wiki/Jordan_curve_theorem>).   
+
 
 <div class="Theorem">
 **The Jordan Curve Theorem.** The complement of the range of a simple closed curve in $\C$ consists of two disjoint open path connected sets, one of which (the **inside**) is bounded and the other (the **outside**) is not bounded.  
 </div>
 
-
+-->
 
 
 - - - 

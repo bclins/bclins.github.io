@@ -100,10 +100,30 @@ Fri, Sep 6  | [4.1][4.1]     | Normal distribution
 
 Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  Instead, we just use software to find standard deviation for us.  We looked at how to find standard deviation in Excel using the `=stdev()` function. 
 
-We finished by looking at some examples of histograms that have a shape that looks roughly like a bell.  This is a very common pattern in nature that is called the **normal distribution.** 
+We finished by looking at some examples of histograms that have a shape that looks roughly like a bell.  This is a very common pattern in nature that is called the normal distribution.
 
 * **Example:** [Heights of men in the USA](http://people.hsc.edu/faculty-staff/blins/StatsExamples/cdcHeights.html)
 * **Example:** [Annual rainfall in Farmville, VA](http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.html)
+
+The **normal distribution** is a mathematical model for data with a histogram that is shaped like a bell.  The model has the following features:
+
+1. It is symmetric (left & right tails are same size)
+2. The mean ($\mu$) is the same as the median. 
+3. It has two inflection points (the two steepest points on the curve)
+4. The distance from the mean to either inflection point is the standard deviation ($\sigma$).  
+5. The two numbers $\mu$ and $\sigma$ completely describe the model.
+
+The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
+
+### Fri, Sep 6
+
+We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 
+
+1. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10. The average high temperature in Honolulu, HI in January is 80°F with σ = 8°F. In which city would it be more unusual to have a high temperature of 57°F in January?
+
+* **Workshop:** [Normal distributions](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist.pdf)
+
+
 
 
 

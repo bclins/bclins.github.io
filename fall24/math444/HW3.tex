@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 3 \hfill Name: \underline{\hspace*{2in}}}
+
+\begin{enumerate}
+%\item Show that $\re(z) = \dfrac{z+\overline{z}}{2}$ and $\im(z) = \dfrac{z-\overline{z}}{2i}$ for all $z \in \C$. Notice that the imaginary part of a complex number is actually a real number.
+%\vfill
+
+\item Let $a_n$ and $b_n$ be sequences in $\C$.  If $a_n$ converges to zero and $b_n$ is bounded, prove that the sequence $a_n \cdot b_n$ converges to zero.  
+\vfill
+
+\item If $a_n$ converges to $a \in \C$ and $b_n$ converges to $b \in \C$, then prove that $a_n \cdot b_n$ converges to $a \cdot b$. Hint: $a_n \cdot b_n - a \cdot b = (a_n - a) \cdot b_n + a \cdot (b_n - b)$. 
+\vfill
+
+
+%\item Suppose $f$ and $g$ are complex-valued functions that are both continuous in a neighborhood of $a \in \C$.  Prove that $f+g$ is continuous at $a$ by proving that for any sequence $z_n$ which converges to $a$, the sequence $f(z_n)+g(z_n)$ converges to $f(a)+g(a)$. 
+%\vfill
+
+
+\item Let $A \subseteq \C$.  We can define a relation $\sim$ on $A$ where $z \sim w$ if there is a (continuous) path $\gamma:[a,b] \rightarrow A$ such that $\gamma(a) = z$ and $\gamma(b) = w$. Prove that $\sim$ is an equivalence relation on $A$.  Recall that to prove that a relation is an equivalence relation, you need to show that it is
+\begin{enumerate}
+\item Reflexive: $z \sim z$ for all $z \in A$.
+\item Symmetric: If $z \sim w$, then $w \sim z$.
+\item Transitive: If $u \sim v$ and $v \sim w$, then $u \sim w$. 
+\end{enumerate}
+\vfill
+
+%\item Sketch a graph of the two parametric curves $\gamma_1(s) = s+4i$ and $\gamma_2(t) = 3+it$ with $s, t \in \R$. Where do the curves intersect?
+%\vfill
+
+
+\newpage
+\item Let $f(z) = z^2$.  Sketch a graph of the curve $f(2+ti)$ for $t \in \R$. Be sure to include any points where the curve intersects the real or imaginary axes in your graph. Hint: Simplify $f(2+ti)$ before you try to graph it. 
+\vfill
+
+%\item Suppose that $\mathcal{A}$ is a collection of open sets in $\C$.  Prove that the union $\bigcup_{A \in \mathcal{A}} A$ is an open set.  
+
+
+\item Suppose that $A_1, \ldots, A_n$ are open sets in $\C$.  Prove that the intersection $\bigcap_{1 \le k \le n} A_k$ is an open set.  
+\vfill
+
+\item Give an example of an infinite collection of open sets $A_1, A_2, \ldots$ in $\C$ such that $\bigcap_{k \ge 1} A_k$ is not an open set. 
+\vfill 
+
+\item \hl{Series!}
+\vfill
+ 
+\end{enumerate}
+
+\end{document}

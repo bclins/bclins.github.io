@@ -205,8 +205,8 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 2  | | Labor Day, no class
 Wed, Sep 4  | [TP03][TP03] | Functions
-Thu, Sep 5  |              | 
-Fri, Sep 6  | [TP03][TP03] | For-loops
+Thu, Sep 5  | [TP03][TP03] | For-loops
+Fri, Sep 6  | [TP04][TP04] | Turtle graphics
 
 ### Wed, Sep 4 
 
@@ -257,6 +257,15 @@ The advantage of a docstring over a regular comment is that it can take up multi
 
 This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
 
+We finished with a function that calls another function in its body:
+
+```python
+def cylinder_volume(radius, height):
+    """Returns the volume of a cylinder."""
+    return circle_area(radius) * height
+```
+
+
 
 
 
@@ -269,9 +278,9 @@ This last example includes a local variable called `PI`.  Any variable created i
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Sep 9  |  |
-Wed, Sep 11 |  |
-Thu, Sep 12 |  |
+Mon, Sep 9  | [TP05][TP05] | Integer division and modulus
+Wed, Sep 11 | [TP05][TP05] | Boolean expressions
+Thu, Sep 12 | [TP05][TP05] | Conditional statements
 Fri, Sep 13 |  |
 
 - - -
