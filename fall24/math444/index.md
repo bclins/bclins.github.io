@@ -37,7 +37,7 @@ Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:--------:
 1  | Complex numbers                                | [Week 01](notes.html#week-1-notes)  | [HW1](HW1.pdf)
 2  | Topology of **C**                              | [Week 02](notes.html#week-2-notes)  | [HW2](HW2.pdf)
-3  | Complex limits & continuity                    | [Week 03](notes.html#week-3-notes)  |
+3  | Complex limits & continuity                    | [Week 03](notes.html#week-3-notes)  | [HW3](HW3.pdf)
 4  | Complex exponentials and logarithms            | [Week 04](notes.html#week-4-notes)  |
 5  | Complex differentiability                      | [Week 05](notes.html#week-5-notes)  |
 6  | Complex logarithms, **Midterm 1**              | [Week 06](notes.html#week-6-notes)  |

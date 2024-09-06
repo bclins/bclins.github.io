@@ -265,11 +265,98 @@ def cylinder_volume(radius, height):
     return circle_area(radius) * height
 ```
 
+### Thu, Sep 5
 
+Today we introduced **for-loops**. We started with two example functions to demonstrate how they work. 
 
+```python
+def box(n):
+    """Prints an n-by-n square made of * symbols."""
+    for i in range(n):
+        print("*" * i)
 
+def print_numbers(n):
+    """Print the first n positive numbers."""
+    for i in range(1,n+1):
+        print(i)
+```
+
+Notice that the `range` function can accept up to three arguments (`start`, `stop`, and `step).  We talked about how Python is **zero-indexed**. For the `range` function, this means that be default it starts counting at zero, so it always stops before the value of the `stop` parameter. We did these exercises. 
+
+1. Write a function to print the first n perfect squares (i.e., 1, 4, 9, 16, etc.)
+
+2. Write a function to print a triangle with n rows like this:
+
+        *
+        **
+        ***
+        ****
+
+3. Write a function to print an upside down triangle with n rows:
+
+        ****
+        ***
+        **
+        *
+
+4. Write a function to print a hollow n-by-n square, like this example when n is 4:
+
+        ****
+        *  *
+        *  *
+        ****
+
+We finished by talking about **accumulator variables** in loops.  I showed this example.
+
+```python
+def sum_of_squares(n):
+    """Returns the sum of the first n perfect squares."""
+    total = 0 # total is an accumulator variable
+    for i in range(1,n+1):
+        total += i ** 2
+    return total
+```
+
+5. Write a function that uses a for-loop with an accumulator variable to multiply the numbers 1, 2, ..., n. In other words, write a function to compute the factorial of n. 
+
+### Fri, Sep 6
+
+Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.  We started by creating a turtle object we called `fred` and then using `fred` to draw a square. We ended up creating several functions using `fred` to draw different kinds of shapes. 
+
+```python
+import turtle
+
+fred = turtle.Turtle()
+
+def polygon(side_length, n):
+    """Draw a polygon with n sides."""
+    for i in range(n):
+        fred.forward(side_length)
+        fred.left(360 / n)
+
+def circle(radius):
+    """Draw a circle."""
+    side_length = 2 * 3.14159 * radius / 50
+    polygon(side_length, 50)
+```
+
+We finished with some excercises using these funtions. 
+
+1. Draw a picture like this one. 
+
+<center>
+<img src="hawaiian.png" width=500></img>
+</center>
+
+2. Write a function to draw a bullseye with n rings, like this:
+
+<center>
+<img src="bullseye.png" width=300></img>
+</center>
 
 - - - 
+
+
 
 
 ### Week 3 Notes

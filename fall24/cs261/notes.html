@@ -479,6 +479,93 @@ body:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cylinder_volume(radius, height):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the volume of a cylinder.&quot;&quot;&quot;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle_area(radius) <span class="op">*</span> height</span></code></pre></div>
+<h3 id="thu-sep-5">Thu, Sep 5</h3>
+<p>Today we introduced <strong>for-loops</strong>. We started with two
+example functions to demonstrate how they work.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box(n):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Prints an n-by-n square made of * symbols.&quot;&quot;&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;*&quot;</span> <span class="op">*</span> i)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_numbers(n):</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Print the first n positive numbers.&quot;&quot;&quot;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div>
+<p>Notice that the <code>range</code> function can accept up to three
+arguments (<code>start</code>, <code>stop</code>, and
+<code>step).  We talked about how Python is **zero-indexed**. For the</code>range<code>function, this means that be default it starts counting at zero, so it always stops before the value of the</code>stop`
+parameter. We did these exercises.</p>
+<ol type="1">
+<li><p>Write a function to print the first n perfect squares (i.e., 1,
+4, 9, 16, etc.)</p></li>
+<li><p>Write a function to print a triangle with n rows like this:</p>
+<pre><code> *
+ **
+ ***
+ ****</code></pre></li>
+<li><p>Write a function to print an upside down triangle with n
+rows:</p>
+<pre><code> ****
+ ***
+ **
+ *</code></pre></li>
+<li><p>Write a function to print a hollow n-by-n square, like this
+example when n is 4:</p>
+<pre><code> ****
+ *  *
+ *  *
+ ****</code></pre></li>
+</ol>
+<p>We finished by talking about <strong>accumulator variables</strong>
+in loops. I showed this example.</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the sum of the first n perfect squares.&quot;&quot;&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span> <span class="co"># total is an accumulator variable</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> i <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre></div>
+<ol start="5" type="1">
+<li>Write a function that uses a for-loop with an accumulator variable
+to multiply the numbers 1, 2, …, n. In other words, write a function to
+compute the factorial of n. </li>
+</ol>
+<h3 id="fri-sep-6">Fri, Sep 6</h3>
+<p>Today we played with <a
+href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics</a>
+using the <code>turtle</code> module in Python. We started by creating a
+turtle object we called <code>fred</code> and then using
+<code>fred</code> to draw a square. We ended up creating several
+functions using <code>fred</code> to draw different kinds of shapes.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> turtle</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>fred <span class="op">=</span> turtle.Turtle()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polygon(side_length, n):</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Draw a polygon with n sides.&quot;&quot;&quot;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        fred.forward(side_length)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        fred.left(<span class="dv">360</span> <span class="op">/</span> n)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle(radius):</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Draw a circle.&quot;&quot;&quot;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    side_length <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> <span class="fl">3.14159</span> <span class="op">*</span> radius <span class="op">/</span> <span class="dv">50</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    polygon(side_length, <span class="dv">50</span>)</span></code></pre></div>
+<p>We finished with some excercises using these funtions.</p>
+<ol type="1">
+<li>Draw a picture like this one.</li>
+</ol>
+<center>
+<img src="hawaiian.png" width=500></img>
+</center>
+<ol start="2" type="1">
+<li>Write a function to draw a bullseye with n rings, like this:</li>
+</ol>
+<center>
+<img src="bullseye.png" width=300></img>
+</center>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <h4 id="tentative-schedule-2">Tentative Schedule</h4>
