@@ -160,19 +160,37 @@ We also defined **bounded** sets.  We finished by talking about **paths** which 
 
 A path $\gamma: [a,b] \rightarrow \C$ is **simple** if $\gamma(t_1) \ne \gamma(t_2)$ for all $t_1 \ne t_2$, except possibly at the endpoints $t_1 = a$ and $t_2 = b$. Intuitively, a path is simple if it cannot cross itself, except possibly at the endpoints. A path is **closed** if $\gamma(a) = \gamma(b)$.   
 
-<!--
-We also defined **path connected** sets.  
+### Fri, Sep 6
 
-5. For any set $A \subseteq \C$, explain why the relationship $\sim$ defined by $w \sim z$ when there is a path from $w$ to $z$ in $A$ is an equivalence relation.
-
-The following theorem seems obvious, but it is actually famously tricky to prove (see <https://en.wikipedia.org/wiki/Jordan_curve_theorem>).   
-
+A set $A \subseteq \C$ is **path connected** if for any $w, z \in A$, there is a (continuous) path $\gamma: [a,b] \rightarrow A$ such that $\gamma(a) = w$ and $\gamma(b) = z$.  The following theorem seems obvious, but it is actually famously tricky to prove (see <https://en.wikipedia.org/wiki/Jordan_curve_theorem>).   
 
 <div class="Theorem">
 **The Jordan Curve Theorem.** The complement of the range of a simple closed curve in $\C$ consists of two disjoint open path connected sets, one of which (the **inside**) is bounded and the other (the **outside**) is not bounded.  
 </div>
 
--->
+A **sequence** is a function $s: \N \rightarrow \C$.  We use the notation $s_n$ to mean the same thing as $s(n)$ for sequences.  A sequence $s_n$ **converges** to $L \in \C$ if for every $\epsilon > 0$, there is an $N > 0$ such that $|s_n - L | < \epsilon$ for every $n \ge N$.  Intuitively, this means that for every open disk around $L$, there can only be a finite number of $n$ such that $s_n$ is not in the disk. When a sequence converges, the number it converges to is called its **limit**.  
+
+If we don't know the limit of a sequence, we can still use **Cauchy's criterion** to show that it must converge. A **Cauchy sequence** is a sequence $s_n$ such that for every $\epsilon > 0$, there exists $N > 0$ such that $|s_n - s_m | < \epsilon$ whenever $m, n \ge N$.  
+
+<div class="Theorem">
+**Theorem (Cauchy's Criterion).** If $s_n$ is a Cauchy sequence, then it converges to some limit in $\C$.  
+</div>
+
+We talked about how the Cauchy criterion applies to sequences of real numbers and the complex numbers, in fact the property that Cauchy sequences converge in a set is known as **completeness** and it is one of the defining properties of the real numbers.  
+
+We used completeness to prove the following theorem about real number sequence:
+
+<div class="Theorem">
+**Theorem (Monontone convergence).** If $s_n$ is a sequence of real numbers that is monotone (non-decreasing) and bounded, then it converges.
+</div>
+
+We ran out of time, but a related application of completeness is the following result.
+
+<div class="Theorem">
+**Theorem.** If $A \subset \C$ and $A^c$ are both nonempty sets, then $A$ has at least one boundary point. 
+</div>
+
+
 
 
 - - - 
@@ -187,6 +205,33 @@ Day  | Section  | Topic
 Mon, Sep 9  | [7.1][7.1] | Sequences and completeness
 Wed, Sep 11 | [7.2][7.2] | Series
 Fri, Sep 13 | [2.1][2.1] | Limits and continuity
+
+### Mon, Sep 9
+
+
+We didn't have time for a proof of the last theorem from Friday.  We'll give a proof here.  One approach is to prove the following lemma.  
+
+1. Any line segment that connects a point in $A$ to a point in $A^c$ contains a line segment that is half as long and also connects a point in $A$ to a point in $A^c$. 
+
+2. The endpoints of the line segments above form two Cauchy sequences that both converge to the same limit point.  Explain why that limit point is a boundary point of $A$. 
+
+A series $\sum_{k = 0}^\infty a_k$ **converges** if its sequence of partial sums $S_n = \sum_{k = 0}^n a_k$ converges.  It **converges absolutely** if $\sum_{k = 0}^\infty |a_k|$ converges. 
+
+<div class="Theorem">
+**Theorem.** If a series converges absolutely, then it converges.  
+</div>
+
+1. Prove this theorem by showing that the partial sums of an absolutely converging series are a Cauchy sequence.  
+
+    a. What is the difference of two partial sums $S_n - S_m$? 
+
+    b. Why is $|S_n - S_m|$ small for all $m, n$ large?
+
+
+
+
+
+
 
 - - -
 

@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyvrb}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 2 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project2.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol.  For example, I would save my program as} \verb|blins_project1.py|. \textit{When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, September 13. }
+
+\subsection*{Diamonds}
+
+For this project, you will write a function that can print a diamond made out of characters on the screen.  Your function should accept two arguments, one that determines the size of the diamond.  The other determines which character the diamond is made from.  When you are finished, your function should be able to print diamonds that look like these (and more):
+\begin{center}
+\begin{BVerbatim}
+                                 !  
+                    7           !!!
+         o         777         !!!!!
+*       ooo       77777       !!!!!!!
+         o         777         !!!!!
+                    7           !!!
+                                 ! 
+\end{BVerbatim}
+\end{center}
+
+\noindent 
+Notice that a diamond has 1 character in the first row, 3 in the second, and so on, until it reaches the largest row.  The total number of rows in a diamond is always odd since there is one largest row in the middle. 
+
+\subsection*{Counting Characters}
+
+In addition to printing diamonds, your function should also print the number of characters (other than spaces) that are in the diamond.  For example, the four example diamonds above contain 1, 5, 13, and 25 characters respectively.  So the final output of your function on the last example should look something like this: \\
+
+\noindent
+\begin{BVerbatim}
+     !  
+    !!!
+   !!!!!
+  !!!!!!!
+   !!!!!
+    !!!
+     ! 
+
+  This diamond contains 25 characters. 
+
+\end{BVerbatim}
+
+
+
+\end{document}

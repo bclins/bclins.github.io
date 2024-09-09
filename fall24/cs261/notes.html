@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -582,7 +582,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a h
 <td style="text-align: center;">Mon, Sep 9</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap05.html">TP05</a></td>
-<td style="text-align: left;">Integer division and modulus</td>
+<td style="text-align: left;">Conditional statements</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 11</td>
@@ -594,7 +594,7 @@ href="https://allendowney.github.io/ThinkPython/chap05.html">TP05</a></td>
 <td style="text-align: center;">Thu, Sep 12</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap05.html">TP05</a></td>
-<td style="text-align: left;">Conditional statements</td>
+<td style="text-align: left;">Integer division and modulus</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Sep 13</td>
@@ -603,6 +603,58 @@ href="https://allendowney.github.io/ThinkPython/chap05.html">TP05</a></td>
 </tr>
 </tbody>
 </table>
+<h3 id="mon-sep-9">Mon, Sep 9</h3>
+<p>Today we talked about how to implement <strong>conditional</strong>
+statements using the keywords <strong>if</strong>,
+<strong>then</strong>, and <strong>else</strong> in Python. We started
+with some simple examples.</p>
+<ol type="1">
+<li><p>Body mass index is a quantity used to determine if people are a
+healthy weight or overweight. The formula for someone’s body mass index
+is</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>BMI <span class="op">=</span> (weight <span class="op">/</span> height<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> <span class="dv">703</span></span></code></pre></div></li>
+</ol>
+<p>Anyone with a BMI of 25 or more is considered overweight. Write a
+program to calculate someone’s BMI and then use an if-then statement to
+determine if they are overweight.</p>
+<ol start="2" type="1">
+<li><p>If someone’s BMI is less than 18.5, they are considered
+underweight. Write a function called
+<code>weight_category(height, weight)</code> that returns one of three
+possible strings: healthy, underweight, or overweight, depending on the
+corresponding BMI.</p></li>
+<li><p>Adapt the program to add a fourth category: obese which is anyone
+with a BMI greater than or equal to 30.</p></li>
+</ol>
+<p>In order to use an if-statement, we need a special kind of expression
+that is either true or false. These are called <strong>boolean
+expressions</strong>. Python has a special type called <code>bool</code>
+that has only two possible values, <code>True</code> or
+<code>False</code>.</p>
+<ol start="4" type="1">
+<li>Write a function that checks if someone typed in the correct
+password (<code>banana7</code>). Your function should return a boolean
+value.</li>
+</ol>
+<p>So far we have introduced the following boolean operators
+(<code>==</code>, <code>&lt;</code>, <code>&gt;</code>,
+<code>&lt;=</code>, and <code>&gt;=</code>). Another important boolean
+operator is <code>!=</code> which is <code>True</code> when two
+expressions are not equal and <code>False</code> if they are equal.</p>
+<p>Another really handy operator is the keyword <code>in</code> which
+can test whether one string is inside another.</p>
+<ol start="5" type="1">
+<li><p>Which of the following strings are inside
+<code>"The quick brown fox"</code>?</p>
+<ol type="a">
+<li><code>"quick"</code></li>
+<li><code>"Fox"</code></li>
+<li><code>"Tqbf"</code></li>
+<li><code>"brown fox"</code></li>
+<li><code>"he qu"</code></li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <h4 id="tentative-schedule-3">Tentative Schedule</h4>

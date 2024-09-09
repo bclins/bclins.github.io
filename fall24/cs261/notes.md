@@ -365,10 +365,42 @@ We finished with some excercises using these funtions.
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Sep 9  | [TP05][TP05] | Integer division and modulus
+Mon, Sep 9  | [TP05][TP05] | Conditional statements
 Wed, Sep 11 | [TP05][TP05] | Boolean expressions
-Thu, Sep 12 | [TP05][TP05] | Conditional statements
+Thu, Sep 12 | [TP05][TP05] | Integer division and modulus
 Fri, Sep 13 |  |
+
+### Mon, Sep 9
+
+Today we talked about how to implement **conditional** statements using the keywords **if**, **then**, and **else** in Python.  We started with some simple examples.  
+
+1. Body mass index is a quantity used to determine if people are a healthy weight or overweight.  The formula for someone's body mass index is
+
+    ```python
+    BMI = (weight / height**2) * 703
+    ```
+
+Anyone with a BMI of 25 or more is considered overweight.  Write a program to calculate someone's BMI and then use an if-then statement to determine if they are overweight.     
+
+2. If someone's BMI is less than 18.5, they are considered underweight.  Write a function called `weight_category(height, weight)` that returns one of three possible strings: healthy, underweight, or overweight, depending on the corresponding BMI. 
+
+3. Adapt the program to add a fourth category: obese which is anyone with a BMI greater than or equal to 30. 
+
+In order to use an if-statement, we need a special kind of expression that is either true or false.  These are called **boolean expressions**.  Python has a special type called `bool` that has only two possible values, `True` or `False`.  
+
+4. Write a function that checks if someone typed in the correct password (`banana7`).  Your function should return a boolean value. 
+
+So far we have introduced the following boolean operators (`==`, `<`, `>`, `<=`, and `>=`). Another important boolean operator is `!=` which is `True` when two expressions are not equal and `False` if they are equal. 
+
+Another really handy operator is the keyword `in` which can test whether one string is inside another.  
+
+5. Which of the following strings are inside `"The quick brown fox"`?  
+
+    a. `"quick"`
+    b. `"Fox"`
+    c. `"Tqbf"`
+    d. `"brown fox"`
+    e. `"he qu"`
 
 - - -
 
