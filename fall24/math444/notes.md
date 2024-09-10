@@ -208,14 +208,40 @@ Fri, Sep 13 | [2.1][2.1] | Limits and continuity
 
 ### Mon, Sep 9
 
+The complex numbers are a **metric space** because they have a distance function $d(z,w) = |z-w|$ that satisfies the following properties for all $x, y, z \in C$:
 
-We didn't have time for a proof of the last theorem from Friday.  We'll give a proof here.  One approach is to prove the following lemma.  
+1. **Definiteness** $d(x,x) = 0$
+2. **Positivity** $d(x,y) > 0$ if $x \ne y$
+3. **Symmetry** $d(x,y) = d(y,x)$
+4. **Triangle Inequality** $d(x,z) \le d(x,y) + d(y,z)$
+
+It helps when working with absolute values in $\C$ to remember that $|z-w|$ is the distance between $z$ and $w$. We didn't have time for a proof of the last theorem from Friday, so we worked through a proof using the fact that $\C$ is a complete metric space today. Recall that **complete** means that all Cauchy sequences converge. We proved the theorem by proving the following claims:   
 
 1. Any line segment that connects a point in $A$ to a point in $A^c$ contains a line segment that is half as long and also connects a point in $A$ to a point in $A^c$. 
 
-2. The endpoints of the line segments above form two Cauchy sequences that both converge to the same limit point.  Explain why that limit point is a boundary point of $A$. 
+2. The midpoints of the line segments above form a Cauchy sequence.
 
-A series $\sum_{k = 0}^\infty a_k$ **converges** if its sequence of partial sums $S_n = \sum_{k = 0}^n a_k$ converges.  It **converges absolutely** if $\sum_{k = 0}^\infty |a_k|$ converges. 
+3. The limit of the midpoints is a boundary point of $A$. 
+
+This proof definitely doesn't work without assuming completeness.  For example, if $A = \{x \in \mathbb{Q} : x < \pi \}$, then $A$ has no boundary points in $\mathbb{Q}$.  After discussing that example, we talked about infinite series. 
+
+A series of complex numbers $\sum_{k = 0}^\infty a_k$ **converges** if its sequence of partial sums $S_n = \sum_{k = 0}^n a_k$ converges.  It helps to know some example infinite series, so we talked about these three:
+
+* **Zeno's series** $\tfrac{1}{2} + \tfrac{1}{4} + \tfrac{1}{8} + \ldots$. 
+
+* **Grandi's series** $1 - 1 + 1 - 1 + 1 - 1 + \ldots$.
+
+* **Harmonic series** $1 + \tfrac{1}{2} + \tfrac{1}{3} + \tfrac{1}{4} + \ldots$. 
+
+Then we reviewed **geometric series** which are series of the form $\sum_{k = 0}^\infty a r^k$ where $a$ is the first term and $r$ is the common ratio.  We proved:
+
+<div class="Theorem">
+**Theorem.** A geometric series $\sum_{k = 0}^\infty a r^k$ converges if and only if $|r| < 1$, and in that case
+$$\sum_{k = 0}^\infty a r^k = \frac{a}{1-r}.$$
+</div>
+
+<!--
+It **converges absolutely** if $\sum_{k = 0}^\infty |a_k|$ converges. 
 
 <div class="Theorem">
 **Theorem.** If a series converges absolutely, then it converges.  
@@ -228,7 +254,7 @@ A series $\sum_{k = 0}^\infty a_k$ **converges** if its sequence of partial sums
     b. Why is $|S_n - S_m|$ small for all $m, n$ large?
 
 
-
+-->
 
 
 

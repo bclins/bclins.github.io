@@ -141,6 +141,20 @@ Mon, Sep 9  | [4.1.5][4.1.5] | 68-95-99.7 rule
 Wed, Sep 11 | [4.1.4][4.1.4] | Normal distribution computations
 Fri, Sep 13 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
+### Mon, Sep 9
+
+We reviewed some of the exercise from the workshop last Friday.  Then we introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 
+
+1. SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
+
+2. What percent of years will Farmville get between 40 and 50 inches of rain?
+
+3. How much rain would Farmville get in a top 10% year?  
+
+4. Estimate the percent of men who are between 6 feet and 6'5" tall.  
+
+5. How tall are men in the 75-th percentile? 
+
 - - -
 
 ### Week 4 Notes
