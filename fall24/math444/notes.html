@@ -562,6 +562,13 @@ It **converges absolutely** if $\sum_{k = 0}^\infty |a_k|$ converges.
 
 
 -->
+<h3 id="wed-sep-11">Wed, Sep 11</h3>
+<p>Class was canceled since I was out with COVID.</p>
+<h3 id="fri-sep-13">Fri, Sep 13</h3>
+<ul>
+<li><strong>Workshop</strong>: <a href="InfiniteSeries.pdf">Infinite
+Series</a></li>
+</ul>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <h4 id="tentative-schedule-3">Tentative Schedule</h4>
@@ -595,6 +602,38 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.2.2">2
 </tr>
 </tbody>
 </table>
+<h3 id="mon-sep-16">Mon, Sep 16</h3>
+<p>Today we reviewed the questions from the <a
+href="InfiniteSeries.pdf">infinite series workshop</a>. Then we talked
+about functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℂ</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f: \mathbb{C}\rightarrow \mathbb{C}</annotation></semantics></math>.
+We defined <strong>limits</strong> of functions several ways, and we did
+the following examples.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><mi>i</mi></mrow></msub><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\lim_{z \rightarrow i} z^2</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mover><mi>z</mi><mo accent="true">‾</mo></mover><mi>z</mi></mfrac></mrow><annotation encoding="application/x-tex">\lim_{z \rightarrow 0} \frac{\bar{z}}{z}</annotation></semantics></math>.</p></li>
+<li><p><a
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.11">Exercise
+2.6</a></p></li>
+<li><p>Use the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>−</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\epsilon-\delta</annotation></semantics></math>
+definition of limits to prove that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><msub><mi>z</mi><mn>0</mn></msub></mrow></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>a</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{z \rightarrow z_0} f(z) = a \ne 0</annotation></semantics></math>
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><msub><mi>z</mi><mn>0</mn></msub></mrow></msub><mfrac><mn>1</mn><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>a</mi></mfrac></mrow><annotation encoding="application/x-tex">\lim_{z \rightarrow z_0} \frac{1}{f(z)} = \frac{1}{a}</annotation></semantics></math>.</p>
+<details>
+<p>Consider
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mfrac><mn>1</mn><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>a</mi></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\left| \frac{1}{f(z)} - \frac{1}{a} \right| = \frac{|a - f(z)|} {|a f(z)|}</annotation></semantics></math>
+We can use the fact that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">f(z) \rightarrow a</annotation></semantics></math>
+to make the top as small as we want. We just need to make sure that the
+bottom doesn’t get close to zero at the same time. The trick is to use
+the triangle inequality to show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">|f(z)| &gt; |a| - \epsilon</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">|a - f(z)| &lt; \epsilon</annotation></semantics></math>,</p>
+</details></li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <h4 id="tentative-schedule-4">Tentative Schedule</h4>

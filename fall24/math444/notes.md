@@ -256,6 +256,14 @@ It **converges absolutely** if $\sum_{k = 0}^\infty |a_k|$ converges.
 
 -->
 
+### Wed, Sep 11
+
+Class was canceled since I was out with COVID. 
+
+### Fri, Sep 13
+
+* **Workshop**: [Infinite Series](InfiniteSeries.pdf)
+
 
 
 
@@ -270,6 +278,22 @@ Day  | Section  | Topic
 Mon, Sep 16  | [3.4][3.4] | Exponential and trigonometric functions 
 Wed, Sep 18  | [3.5][3.5] | Logarithms and complex exponentials
 Fri, Sep 20  | [2.2][2.2]	| Differentiability and holomorphicity
+
+### Mon, Sep 16
+
+Today we reviewed the questions from the [infinite series workshop](InfiniteSeries.pdf).  Then we talked about functions $f: \C \rightarrow \C$.  We defined **limits** of functions several ways, and we did the following examples. 
+
+1. $\lim_{z \rightarrow i} z^2$.
+
+2. $\lim_{z \rightarrow 0} \frac{\bar{z}}{z}$. 
+
+3. [Exercise 2.6](http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.11)
+
+4. Use the $\epsilon-\delta$ definition of limits to prove that if $\lim_{z \rightarrow z_0} f(z) = a \ne 0$ then $\lim_{z \rightarrow z_0} \frac{1}{f(z)} = \frac{1}{a}$.
+    <details>Consider 
+$$\left| \frac{1}{f(z)} - \frac{1}{a} \right| = \frac{|a - f(z)|} {|a f(z)|}$$
+We can use the fact that $f(z) \rightarrow a$ to make the top as small as we want.  We just need to make sure that the bottom doesn't get close to zero at the same time.  The trick is to use the triangle inequality to show that $|f(z)| > |a| - \epsilon$ when $|a - f(z)| < \epsilon$, 
+    </details>
 
 
 - - - 

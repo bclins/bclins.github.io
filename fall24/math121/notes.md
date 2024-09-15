@@ -155,6 +155,14 @@ We reviewed some of the exercise from the workshop last Friday.  Then we introdu
 
 5. How tall are men in the 75-th percentile? 
 
+### Wed, Sep 11
+
+There was no class since I was out with COVID.  Instead, there was this workshop to complete on your own.  
+
+**Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
+
+
+
 - - -
 
 ### Week 4 Notes
@@ -166,6 +174,16 @@ Day  | Section  | Topic
 Mon, Sep 16  | [8.2][8.2] | Least squares regression introduction
 Wed, Sep 18  | [8.2][8.2] | Least squares regression practice
 Fri, Sep 20  | [1.3][1.3] | Sampling: populations and samples
+
+
+### Mon, Sep 16
+
+We introduced scatterplots and correlation coefficients with these examples:
+
+* [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf).
+* Height vs. Weight
+* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
+* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
 
 - - - 
 

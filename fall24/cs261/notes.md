@@ -367,7 +367,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 9  | [TP05][TP05] | Conditional statements
 Wed, Sep 11 | [TP05][TP05] | Boolean expressions
-Thu, Sep 12 | [TP05][TP05] | Integer division and modulus
+Thu, Sep 12 |  | 
 Fri, Sep 13 |  |
 
 ### Mon, Sep 9
@@ -402,6 +402,18 @@ Another really handy operator is the keyword `in` which can test whether one str
     d. `"brown fox"`
     e. `"he qu"`
 
+### Wed, Sep 11
+
+There was no class since I was out with COVID.  I recommended watching part of one of the Harvard CS50 with Python online lectures for more about conditionals and boolean expressions. 
+
+* **Video**: [Harvard CS50 Python - Lecture 1](https://youtu.be/_b6NgY_pMdw?list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V&t=1110)
+
+### Thu, Sep 12
+
+I sent out some tips and questions to think about when working on project 2:
+
+* [Project 2 Tips](project2tips.pdf)
+
 - - -
 
 ### Week 4 Notes
@@ -409,11 +421,26 @@ Another really handy operator is the keyword `in` which can test whether one str
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
-Mon, Sep 16  |  |
-Wed, Sep 18  |  |
+:-----:|:---:|:-----------------------
+Mon, Sep 16  | [TP05][TP05] | Integer division and modulus
+Wed, Sep 18  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 19  |  |
 Fri, Sep 20  |  |
+
+### Mon, Sep 16
+
+Today we talked about integer division, remainders, and modular arithmetic.  We did these exercises:
+
+1. Today is Monday, Sep 16.  What day of the week will Oct 16th be (without looking at a calendar)? What about Nov 16?  
+
+2. Write a program to convert any number of minutes into hours and minutes.  For example, 100 minutes is 1 hour and 40 minutes.   
+
+3. Improve the program to convert seconds into days, hours, minutes, and seconds.  We used this example to introduce f-strings to help print the answer.  
+
+4. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
+
+5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+
 
 - - - 
 
@@ -422,7 +449,7 @@ Fri, Sep 20  |  |
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Sep 23  |  |
 Wed, Sep 25  |  |
 Thu, Sep 26  |  |
@@ -436,7 +463,7 @@ Fri, Sep 27  |  |
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Sep 30 |  |
 Wed, Oct 2  |  | Review
 Thu, Oct 3  |  | **Midterm 1**
@@ -449,7 +476,7 @@ Fri, Oct 4  |  |
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Oct 7   |  |
 Wed, Oct 9   |  | 
 Thu, Oct 10  |  | 
@@ -462,7 +489,7 @@ Fri, Oct 11  |  |
 #### Tentative Schedule
 
 Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
+:-----:|:---:|:-----------------------
 Mon, Oct 14  |            | Fall break, no class
 Wed, Oct 16  |  |
 Thu, Oct 17  |  |
