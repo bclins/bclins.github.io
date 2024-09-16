@@ -429,18 +429,26 @@ Fri, Sep 20  |  |
 
 ### Mon, Sep 16
 
-Today we talked about integer division, remainders, and modular arithmetic.  We did these exercises:
+Today we talked about the **integer division** operator `//` and the **remainder** or **modulo** operator `%` in Python. We used them to do these exercises:
 
 1. Today is Monday, Sep 16.  What day of the week will Oct 16th be (without looking at a calendar)? What about Nov 16?  
 
-2. Write a program to convert any number of minutes into hours and minutes.  For example, 100 minutes is 1 hour and 40 minutes.   
+2. Write a program to convert any number of minutes into hours and minutes.  For example, 100 minutes is 1 hour and 40 minutes. We used this example to introduce [f-strings](https://peps.python.org/pep-0498/) to help print the answer.  
 
-3. Improve the program to convert seconds into days, hours, minutes, and seconds.  We used this example to introduce f-strings to help print the answer.  
+```python 
+def time_conversion(minutes): 
+    hours = minutes // 60
+    minutes = minutes % 60
+    print(f"There are {hours} hours and {minutes} minutes.")
+```
+
+3. Improve the program to convert minutes into days, hours, and minutes.  For example, 1590 minutes should be 1 day, 2 hours, and 30 minutes. 
 
 4. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
 
+<!--
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
-
+-->
 
 - - - 
 

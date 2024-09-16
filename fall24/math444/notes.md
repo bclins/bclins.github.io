@@ -283,17 +283,17 @@ Fri, Sep 20  | [2.2][2.2]	| Differentiability and holomorphicity
 
 Today we reviewed the questions from the [infinite series workshop](InfiniteSeries.pdf).  Then we talked about functions $f: \C \rightarrow \C$.  We defined **limits** of functions several ways, and we did the following examples. 
 
-1. $\lim_{z \rightarrow i} z^2$.
+1. $\lim_{z \rightarrow 0} \frac{\bar{z}}{z}$. 
 
-2. $\lim_{z \rightarrow 0} \frac{\bar{z}}{z}$. 
+2. [Exercise 2.6](http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.11)
 
-3. [Exercise 2.6](http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.11)
-
-4. Use the $\epsilon-\delta$ definition of limits to prove that if $\lim_{z \rightarrow z_0} f(z) = a \ne 0$ then $\lim_{z \rightarrow z_0} \frac{1}{f(z)} = \frac{1}{a}$.
+3. Use the $\epsilon-\delta$ definition of limits to prove that if $\lim_{z \rightarrow z_0} f(z) = L \ne 0$ then $\lim_{z \rightarrow z_0} \frac{1}{f(z)} = \frac{1}{L}$.
     <details>Consider 
-$$\left| \frac{1}{f(z)} - \frac{1}{a} \right| = \frac{|a - f(z)|} {|a f(z)|}$$
-We can use the fact that $f(z) \rightarrow a$ to make the top as small as we want.  We just need to make sure that the bottom doesn't get close to zero at the same time.  The trick is to use the triangle inequality to show that $|f(z)| > |a| - \epsilon$ when $|a - f(z)| < \epsilon$, 
+$$\left| \frac{1}{f(z)} - \frac{1}{L} \right| = \frac{|L - f(z)|} {|L f(z)|}$$
+We can use the fact that $f(z) \rightarrow L$ to make the top as small as we want.  We just need to make sure that the bottom doesn't get close to zero at the same time.  The trick is to use the triangle inequality to show that $|f(z)| > |L| - \epsilon$ when $|L - f(z)| < \epsilon$, 
     </details>
+
+4. Use the sequential definition of limits to prove the product rule for limits, i.e., $\lim_{z \rightarrow z_0} f(z) g(z) = (\lim_{z \rightarrow z_0} f(z)) (\lim_{z \rightarrow z_0} g(z) )$. 
 
 
 - - - 

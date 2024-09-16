@@ -1,0 +1,41 @@
+\documentclass[11pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{tikz}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+
+
+\begin{document}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 4 \hfill Name: \underline{\hspace*{2in}}}
+
+\noindent
+\textit{Let $D$ be an open subset of $\C$. The derivative of a function $f: D \rightarrow \C$ at a point $z \in D$ is defined to be}
+$$f'(z) = \lim_{h \rightarrow 0} \frac{f(z+h) - f(z)}{h}.$$
+}
+
+\begin{questions}
+
+\question Use the definition of derivative to show that the function $f(z) = \im(z)$ is not differentiable anywhere. \vfill
+
+\question Use the definition of derivative to find the derivative of $f(z) = \dfrac{1}{z}$.  
+\vfill 
+
+\question Find the sum of the following geometric series and determine the values of $z \in \C$ for which it converges. 
+$$\sum_{k = 0}^\infty \frac{1}{(z-i)^k}.$$
+\vfill
+
+\question Suppose that $\lim_{z \rightarrow z_0} f(z) = a$ and $\lim_{z \rightarrow z_0} g(z) = b$. Use the $\epsilon$-$\delta$ definition to prove that 
+$$\lim_{z \rightarrow z_0} f(z)+g(z) = \left( \lim_{z \rightarrow z_0} f(z) \right) \left( \lim_{z \rightarrow z_0} g(z) \right) = ab.$$
+\vfill
+\end{questions}
+\end{document}

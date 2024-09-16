@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -711,22 +711,35 @@ href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-
 </tbody>
 </table>
 <h3 id="mon-sep-16">Mon, Sep 16</h3>
-<p>Today we talked about integer division, remainders, and modular
-arithmetic. We did these exercises:</p>
+<p>Today we talked about the <strong>integer division</strong> operator
+<code>//</code> and the <strong>remainder</strong> or
+<strong>modulo</strong> operator <code>%</code> in Python. We used them
+to do these exercises:</p>
 <ol type="1">
 <li><p>Today is Monday, Sep 16. What day of the week will Oct 16th be
 (without looking at a calendar)? What about Nov 16?</p></li>
 <li><p>Write a program to convert any number of minutes into hours and
-minutes. For example, 100 minutes is 1 hour and 40 minutes.</p></li>
-<li><p>Improve the program to convert seconds into days, hours, minutes,
-and seconds. We used this example to introduce f-strings to help print
-the answer.</p></li>
+minutes. For example, 100 minutes is 1 hour and 40 minutes. We used this
+example to introduce <a
+href="https://peps.python.org/pep-0498/">f-strings</a> to help print the
+answer.</p></li>
+</ol>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_conversion(minutes): </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    hours <span class="op">=</span> minutes <span class="op">//</span> <span class="dv">60</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    minutes <span class="op">=</span> minutes <span class="op">%</span> <span class="dv">60</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;There are </span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss"> hours and </span><span class="sc">{</span>minutes<span class="sc">}</span><span class="ss"> minutes.&quot;</span>)</span></code></pre></div>
+<ol start="3" type="1">
+<li><p>Improve the program to convert minutes into days, hours, and
+minutes. For example, 1590 minutes should be 1 day, 2 hours, and 30
+minutes.</p></li>
 <li><p>Write a program to make change using the fewest coins possible
 for any amount of money less than $1.00. For example, 63¢ could be 2
 quarters, 1 dime, and 3 pennies.</p></li>
-<li><p>Write a program to do <a
-href="https://en.wikipedia.org/wiki/Fizz_buzz">fizz buzz</a>.</p></li>
 </ol>
+<!--
+5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+-->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <h4 id="tentative-schedule-4">Tentative Schedule</h4>
