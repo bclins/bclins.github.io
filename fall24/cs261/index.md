@@ -37,7 +37,7 @@ Week | Topic                      | Notes | Projects
 :---:|:---------------------------|:-----:|:--------:
 1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  | [Project 1](project1.pdf)
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 2](project2.pdf)
-3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  |
+3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  | [Project 3](project3.pdf)
 4  | Recursion                            | [Week 04](notes.html#week-4-notes)  |
 5  | More on functions                    | [Week 05](notes.html#week-5-notes)  |
 6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  |
