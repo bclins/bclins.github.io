@@ -193,10 +193,26 @@ We finished by talking about **explanatory** and **response** variables and how 
 
 ### Wed, Sep 18
 
-We talked about **least squares regression**.  We looked at these examples:
+We talked about **least squares regression**.  The least squares regression line has these features:
+
+1. **Slope** $m = R \frac{s_y}{s_x}$
+2. **Point** $(\bar{x}, \bar{y})$
+3. **y-Intercept** $b = \bar{y} - m \bar{x}$
+
+You won't have to calculate the correlation $R$ or the standard deviations $s_y$ and $s_x$, but you might have to use them to find the formula for a regression line. 
+
+We looked at these examples:
 
 * [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
+* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
 * [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
+
+Keep in mind that regression lines have two important applications. 
+
+1. **Make predictions** about average y-values at different x-values.
+2. The slope is the **rate of change**. 
+
+
 
 - - - 
 

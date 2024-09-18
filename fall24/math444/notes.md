@@ -304,25 +304,28 @@ $$f'(z) = \lim_{h \rightarrow 0} \frac{f(z+h) - f(z)}{h}.$$
 
 1. Find the derivative of $f(z) = z^2$. 
 
-2. Show that the function $f(z) = \bar{z}$ is not differentiable. 
-
 What does it mean for a function to be differentiable?  For functions $f: \R^n \rightarrow \R^m$, we say that $f$ is differentiable at a vector $x \in \R^n$ if there is a matrix $J$ (called the **Jacobian**) such that 
-$$f(x + \Delta x) = f(x) + J \Delta x + \text{small error}.$$
-We call 
-$f(x) + J \Delta x$ the **linearization** of $f$ at $x$.  In order for the derivative to exist, the gap between $f(x+\Delta x)$ and its linearization must get really small as the length $\|\Delta x\| \rightarrow 0$:
-$$\lim_{\Delta x \rightarrow 0} \frac{ f(x+\Delta x) - (f(x) + J \Delta x) }{ \|\Delta x\| } = 0.$$
+$$f(x + \Delta x) \approx f(x) + J \Delta x$$
+more specifically, 
+$$\lim_{\Delta x \rightarrow 0} \frac{f(x + \Delta x) - (f(x) + J \Delta x)}{\|\Delta \|} = 0.$$
+The expression $f(x) + J \Delta x$ is an **affine linear approximation** of $f$ near $x$.  
 
-3. Find the linearization of $f(x) = x^2$ at $x = 1$. 
+
+3. Show that multiplication by $a + ib$ is a linear transformation on $\C$ that corresponds to multiplying vectors in $\R^2$ by the matrix 
+$$\begin{pmatrix} a & -b \\ b & a \end{pmatrix}.$$
+Note that the multiplication by a complex number can rotate and/or scale, but it cannot reflect or skew.  
+
 
 A complex function $f: \C \rightarrow \C$ can be thought of as a real function $f: \R^2 \rightarrow \R^2$, and $f'(z)$ corresponds to the Jacobian matrix 
 $$J = \begin{pmatrix} \partial \re f / \partial x & \partial \re f/ \partial y \\ 
                       \partial \im f / \partial x & \partial \im f/ \partial y \end{pmatrix}$$
 
-4. Show that $(a + ib) (x + i y)$ corresponds to $\begin{pmatrix} a & -b \\ b & a \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$ under the linear correspondence $1 \mapsto \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $i \mapsto \begin{pmatrix} 0 \\ 1\end{pmatrix}$ between $\C$ and $\R^2$
 
-5. Observe that if $z = x+iy$, then $z^2 = x^2 - y^2 + 2 x y i$.  Find the Jacobian of the function 
+4. Observe that if $z = x+iy$, then $z^2 = x^2 - y^2 + 2 x y i$.  Find the Jacobian of the function 
 $$f(x,y) = \begin{pmatrix} x^2 - y^2 \\ 2xy \end{pmatrix}$$
 and show that it corresponds to the complex number $2z$.
+
+5. Show that the function $f(z) = \bar{z}$ is not complex differentiable.  Explain why that makes sense, even though the corresponding map on $\R^2$, $f(x,y) = \begin{pmatrix} x \\ -y \end{pmatrix}$, does have a Jacobian matrix.  
 
 - - - 
 

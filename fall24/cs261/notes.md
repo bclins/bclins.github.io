@@ -480,8 +480,9 @@ Today we introduced **while-loops**.  A while-loop is an alternative to a for-lo
     </details>
 
 
-4. Write a program that prompts the user to enter an even integer.  If the user doesn't enter an even integer, have the program prompt the user again until they enter a valid input. 
+4. Write a function called `get_valid_input()` that prompts the user to enter an positive even integer.  If the user doesn't enter a positive even integer, have the program prompt the user again until they enter a valid input. 
 
+<!--
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
 
 1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
@@ -501,7 +502,7 @@ Here is the algorithm:
     <b>end</b>
     The GCD is a
 </pre>
-
+-->
 
 - - - 
 
