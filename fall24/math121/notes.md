@@ -191,7 +191,12 @@ Important concept: correlation does not change if you change the units or apply 
 
 We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
 
-<!-- * [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx) -->
+### Wed, Sep 18
+
+We talked about **least squares regression**.  We looked at these examples:
+
+* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
+* [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
 
 - - - 
 
