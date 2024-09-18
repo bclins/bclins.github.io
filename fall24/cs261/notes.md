@@ -423,9 +423,9 @@ I sent out some tips and questions to think about when working on project 2:
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 16  | [TP05][TP05] | Integer division and modulus
-Wed, Sep 18  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
+Wed, Sep 18  | [C11][C11] | While loops
 Thu, Sep 19  |  |
-Fri, Sep 20  |  |
+Fri, Sep 20  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 
 ### Mon, Sep 16
 
@@ -449,6 +449,59 @@ def time_conversion(minutes):
 <!--
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
 -->
+
+### Wed, Sep 18 
+
+Today we introduced **while-loops**.  A while-loop is an alternative to a for-loop that is often useful when you don't know how many steps you need to repeat.  We did the following examples.  
+
+1. Use a while loop to find and print all [Fibonacci numbers]() less than $n$.  
+
+2. Write a while loop to repeat a string until the total length is more than $n$. 
+
+3. Change the following function so that it uses a while-loop instead of a for-loop:
+
+    ```python
+    def countdown(n):
+        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
+        for i in range(n, 0, -1):
+            print(i)
+        print("Go!")
+    ```
+
+    <details>
+    ```python
+    def countdown(n):
+        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
+        while n > 0:
+            print(n)
+            n -= 1
+        print("Go!")
+    ```
+    </details>
+
+
+4. Write a program that prompts the user to enter an even integer.  If the user doesn't enter an even integer, have the program prompt the user again until they enter a valid input. 
+
+After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
+
+1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
+
+2. If `a > b > 0`, then `b > a % b`. 
+
+Here is the algorithm:
+
+<pre>
+    <b>Euclid's GCD Algorithm</b>
+    <b>Input:</b> Positive integers a and b
+    <b>Output:</b> Returns the GCD of a and b
+    <b>while</b> b is not 0 <b>do</b>
+        Find the remainder of a divided by b
+        Let a equal b
+        Let b equal the remainder 
+    <b>end</b>
+    The GCD is a
+</pre>
+
 
 - - - 
 

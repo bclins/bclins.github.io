@@ -204,7 +204,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 9  | [7.1][7.1] | Sequences and completeness
 Wed, Sep 11 | [7.2][7.2] | Series
-Fri, Sep 13 | [2.1][2.1] | Limits and continuity
+Fri, Sep 13 |  |
 
 ### Mon, Sep 9
 
@@ -275,9 +275,9 @@ Class was canceled since I was out with COVID.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 16  | [3.4][3.4] | Exponential and trigonometric functions 
-Wed, Sep 18  | [3.5][3.5] | Logarithms and complex exponentials
-Fri, Sep 20  | [2.2][2.2]	| Differentiability and holomorphicity
+Mon, Sep 16  | [2.1][2.1] | Limits and continuity
+Wed, Sep 18  | [2.2][2.2]	| Differentiability and holomorphicity
+Fri, Sep 20  | [2.2][2.3]	| The Cauchy-Riemann equations
 
 ### Mon, Sep 16
 
@@ -296,6 +296,34 @@ We can use the fact that $f(z) \rightarrow L$ to make the top as small as we wan
 4. Use the sequential definition of limits to prove the product rule for limits, i.e., $\lim_{z \rightarrow z_0} f(z) g(z) = (\lim_{z \rightarrow z_0} f(z)) (\lim_{z \rightarrow z_0} g(z) )$. 
 
 
+### Wed, Sep 18 
+
+We introduced the **complex derivative** for functions $f: D \rightarrow \C$:
+
+$$f'(z) = \lim_{h \rightarrow 0} \frac{f(z+h) - f(z)}{h}.$$
+
+1. Find the derivative of $f(z) = z^2$. 
+
+2. Show that the function $f(z) = \bar{z}$ is not differentiable. 
+
+What does it mean for a function to be differentiable?  For functions $f: \R^n \rightarrow \R^m$, we say that $f$ is differentiable at a vector $x \in \R^n$ if there is a matrix $J$ (called the **Jacobian**) such that 
+$$f(x + \Delta x) = f(x) + J \Delta x + \text{small error}.$$
+We call 
+$f(x) + J \Delta x$ the **linearization** of $f$ at $x$.  In order for the derivative to exist, the gap between $f(x+\Delta x)$ and its linearization must get really small as the length $\|\Delta x\| \rightarrow 0$:
+$$\lim_{\Delta x \rightarrow 0} \frac{ f(x+\Delta x) - (f(x) + J \Delta x) }{ \|\Delta x\| } = 0.$$
+
+3. Find the linearization of $f(x) = x^2$ at $x = 1$. 
+
+A complex function $f: \C \rightarrow \C$ can be thought of as a real function $f: \R^2 \rightarrow \R^2$, and $f'(z)$ corresponds to the Jacobian matrix 
+$$J = \begin{pmatrix} \partial \re f / \partial x & \partial \re f/ \partial y \\ 
+                      \partial \im f / \partial x & \partial \im f/ \partial y \end{pmatrix}$$
+
+4. Show that $(a + ib) (x + i y)$ corresponds to $\begin{pmatrix} a & -b \\ b & a \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}$ under the linear correspondence $1 \mapsto \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $i \mapsto \begin{pmatrix} 0 \\ 1\end{pmatrix}$ between $\C$ and $\R^2$
+
+5. Observe that if $z = x+iy$, then $z^2 = x^2 - y^2 + 2 x y i$.  Find the Jacobian of the function 
+$$f(x,y) = \begin{pmatrix} x^2 - y^2 \\ 2xy \end{pmatrix}$$
+and show that it corresponds to the complex number $2z$.
+
 - - - 
 
 ### Week 5 Notes
@@ -304,9 +332,9 @@ We can use the fact that $f(z) \rightarrow L$ to make the top as small as we wan
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 23  | [2.2][2.3]	| The Cauchy-Riemann equations
-Wed, Sep 25  | [3.1][3.1] | Möbius transforms
-Fri, Sep 27  | [3.1][3.1] | Möbius transforms - con'd
+Mon, Sep 23  | [3.4][3.4] | Exponential and trigonometric functions 
+Wed, Sep 25  | [3.5][3.5] | Logarithms and complex exponentials
+Fri, Sep 27  | [3.1][3.1] | Möbius transforms 
 
 - - - 
  
