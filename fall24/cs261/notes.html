@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -696,18 +696,19 @@ href="https://allendowney.github.io/ThinkPython/chap05.html">TP05</a></td>
 <td style="text-align: center;">Wed, Sep 18</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.11">C11</a></td>
-<td style="text-align: left;">While loops</td>
+<td style="text-align: left;">While-loops</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Sep 19</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.11">C11</a></td>
+<td style="text-align: left;">While-loops con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Sep 20</td>
 <td style="text-align: center;"><a
-href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
-<td style="text-align: left;">Sequence types</td>
+href="https://allendowney.github.io/ThinkPython/chap05.html#recursion">TP05</a></td>
+<td style="text-align: left;">Recursion</td>
 </tr>
 </tbody>
 </table>
@@ -825,22 +826,47 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a h
 <code>==</code> or <code>!=</code> on floating point numbers. We also
 introduced the idea of <strong>default parameters</strong>.</p>
 <h3 id="fri-sep-20">Fri, Sep 20</h3>
-<p>Today we did some more practice with while loops.</p>
+<p>Today we did some more practice with while-loops.</p>
 <ol type="1">
 <li><p>Write a function that uses a while-loop to print all of the
-perfect squares less than n. </p></li>
+numbers from 1 to 100.</p></li>
 <li><p>Write a while-loop to play a number guessing game. Use the
 <code>random.randint(1,10)</code> function by importing the
 <code>random</code> library to generate a random integer from 1 to 10.
 Then have the user guess the number until they get it right.</p></li>
-<li><p>Add a prize to the number guessing game, where you get $5 if you
-get it right the first time, and the $1 less each additional try. When
-they finish, you should print how much money the won.</p></li>
+</ol>
+<!-- 3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. -->
+<p>After that, we talked about <strong>recursive functions</strong>
+which are functions that call themselves. You can use recursive
+functions to repeat code in much the same way as loops. We did the
+following examples.</p>
+<ol start="3" type="1">
+<li><p>Write a recursive version of the <code>countdown(n)</code>
+function.</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countdown(n):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Prints the numbers from n down to 1, then prints &#39;Go!&#39;&quot;&quot;&quot;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    n <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        countdown(n)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Go!&quot;</span>)</span></code></pre></div></li>
+<li><p>Re-write the number guessing game using a recursive function
+instead of a while-loop.</p></li>
+<li><p><strong>Challenge.</strong> Write a recursive function to print
+the Fibonacci numbers less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</p></li>
 </ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <h4 id="tentative-schedule-4">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -851,8 +877,9 @@ they finish, you should print how much money the won.</p></li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Sep 23</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
+<td style="text-align: left;">Sequence types</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 25</td>

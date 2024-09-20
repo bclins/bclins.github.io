@@ -423,9 +423,10 @@ I sent out some tips and questions to think about when working on project 2:
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 16  | [TP05][TP05] | Integer division and modulus
-Wed, Sep 18  | [C11][C11] | While loops
-Thu, Sep 19  |  |
-Fri, Sep 20  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
+Wed, Sep 18  | [C11][C11] | While-loops
+Thu, Sep 19  | [C11][C11] | While-loops con'd
+Fri, Sep 20  | [TP05](https://allendowney.github.io/ThinkPython/chap05.html#recursion) | Recursion
+
 
 ### Mon, Sep 16
 
@@ -536,16 +537,32 @@ When we wrote this example, we talked about why you should not use `==` or `!=` 
 
 ### Fri, Sep 20 
 
-Today we did some more practice with while loops.  
+Today we did some more practice with while-loops.  
 
-1. Write a function that uses a while-loop to print all of the perfect squares less than n. 
+1. Write a function that uses a while-loop to print all of the numbers from 1 to 100.  
 
 2. Write a while-loop to play a number guessing game.  Use the `random.randint(1,10)` function by importing the `random` library to generate a random integer from 1 to 10.  Then have the user guess the number until they get it right.  
 
-3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. 
+<!-- 3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. -->
 
+After that, we talked about **recursive functions** which are functions that call themselves.  You can use recursive functions to repeat code in much the same way as loops.  We did the following examples.  
 
+3. Write a recursive version of the `countdown(n)` function.  
 
+    ```python
+    def countdown(n):
+        """Prints the numbers from n down to 1, then prints 'Go!'"""
+        print(n)
+        n -= 1
+        if n > 0:
+            countdown(n)
+        else:
+            print("Go!")
+    ```
+
+4. Re-write the number guessing game using a recursive function instead of a while-loop.
+
+5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. 
 
 - - - 
 
@@ -555,7 +572,7 @@ Today we did some more practice with while loops.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 23  |  |
+Mon, Sep 23  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Wed, Sep 25  |  |
 Thu, Sep 26  |  |
 Fri, Sep 27  |  |

@@ -214,7 +214,7 @@ Keep in mind that regression lines have two important applications.
 
 ### Fri, Sep 20
 
-After the quiz, we did a workshop about least squares regression.
+After the quiz, we talked about the **coefficient of determination** $R^2$ which represents the percent of the variability in the $y$-values that follow the tend, the remaining $1-R^2$ is the percent of the varibility that is above and below the trend line.  
 
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
