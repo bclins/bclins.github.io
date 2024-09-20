@@ -504,6 +504,49 @@ Here is the algorithm:
 </pre>
 -->
 
+### Thu, Sep 19
+
+Today we talked about while-loops again.  We started with this example, which improves on the `get_valid_input()` function from yesterday and also introduces the idea of a `while True` loop.  
+
+```python 
+def get_valid_input():
+    while True:
+        n = int(input("Enter a positive even number: "))
+        if n > 0 and n % 2 == 0:
+            return n
+        else: 
+            print("That isn't a positive even number.  Try again.")
+            
+user_input = get_valid_input()
+print("You entered", user_input)
+```
+
+After that we implemented the [Babylonian algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
+
+```python
+def sqrt(a, accuracy = 10 ** (-12)):
+    """Uses the Babylonian algorithm to find the square root of a"""
+    x = a
+    while abs(x**2 - a) > accuracy:
+        x = (x + a/x) / 2
+    return x
+```
+
+When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
+
+### Fri, Sep 20 
+
+Today we did some more practice with while loops.  
+
+1. Write a function that uses a while-loop to print all of the perfect squares less than n. 
+
+2. Write a while-loop to play a number guessing game.  Use the `random.randint(1,10)` function by importing the `random` library to generate a random integer from 1 to 10.  Then have the user guess the number until they get it right.  
+
+3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. 
+
+
+
+
 - - - 
 
 ### Week 5 Notes

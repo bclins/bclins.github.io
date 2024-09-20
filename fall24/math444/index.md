@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* There are no announcements yet
+* [Complex Grapher](https://mabotkin.github.io/complex/) by Alex Wang.
+* [Another Complex Grapher](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/ComplexGrapher.html) by me.
 
 ### Course Description 
 
@@ -39,7 +40,7 @@ Week | Topic                      | Notes | Homework
 2  | Topology of **C**                              | [Week 02](notes.html#week-2-notes)  | [HW2](HW2.pdf)
 3  | Complex limits & continuity                    | [Week 03](notes.html#week-3-notes)  | [HW3](HW3.pdf)
 4  | Complex exponentials and logarithms            | [Week 04](notes.html#week-4-notes)  | [HW4](HW4.pdf)
-5  | Complex differentiability                      | [Week 05](notes.html#week-5-notes)  |
+5  | Complex differentiability                      | [Week 05](notes.html#week-5-notes)  | [HW5](HW5.pdf)
 6  | Complex logarithms, **Midterm 1**              | [Week 06](notes.html#week-6-notes)  |
 7  | Complex integration                            | [Week 07](notes.html#week-7-notes)  |
 8  | The Cauchy integral formula                    | [Week 08](notes.html#week-8-notes)  |

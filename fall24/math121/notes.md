@@ -212,7 +212,11 @@ Keep in mind that regression lines have two important applications.
 1. **Make predictions** about average y-values at different x-values.
 2. The slope is the **rate of change**. 
 
+### Fri, Sep 20
 
+After the quiz, we did a workshop about least squares regression.
+
+* **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
 - - - 
 

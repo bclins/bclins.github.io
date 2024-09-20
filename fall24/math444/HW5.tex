@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 5 \hfill Name: \underline{\hspace*{2in}}}
+\noindent
+\textit{Let $z = x+iy$ where $x, y \in \R$.  For each of the following functions, use the Cauchy-Riemann equations to determine the set of all $z \in \C$ where the function is differentiable. At the points where the function is differentiable, what is the derivative?}
+
+\begin{enumerate}
+\item $f(z) = z^2 - (\overline{z})^2$. 
+\vfill
+
+\item $f(z) = x^2 + i y^2$.
+\vfill 
+
+
+\item $f(z) = e^{-x} (\cos y - i \sin y)$.
+\vfill
+
+\item $f(z) = z \im{z}$.
+\vfill
+
+\item Find the derivative of the function $f(z) = \frac{az+b}{cz+d}$ where $a,b,c,d \in \C$ are constants and $ad  - bc \ne 0$. When is $T'(z) = 0$? Hint: Use the quotient rule. 
+\vfill
+
+
+\newpage
+\item Suppose that $f(z) = e^z$. Let $\gamma_1(t) = t + i/t$ and $\gamma_2(t) = t + ti$, where $t > 0$. Consider the paths $f(\gamma_1(t))$ and $f(\gamma_2(t))$.  
+Use the Chain Rule formula: 
+$$\frac{d}{dt} f(\gamma(t)) = f'(\gamma(t)) \cdot \gamma'(t)$$
+to find the tangent vectors $\dfrac{d}{dt} \, f(\gamma_1(t))$ and $\dfrac{d}{dt} \, f(\gamma_2(t))$ when $t=1$.  Are the tangent vectors orthogonal? Why or why not?
+\vfill
+
+\item If $f$ is holomorphic in an open path connected set $G \subseteq \C$ and $f$ is always real-valued, then prove that $f'(z) = 0$ everywhere on $G$.  Hint: Use the Cauchy-Riemann equations. 
+\vfill
+\vfill
+
+\item If $f(z)$ and $\overline{f(z)}$ are both holomorphic on an open path connected set $G \subseteq \C$, show that $f(z)$ is constant in $G$. 
+\vfill
+\vfill
+
+\end{enumerate}
+
+\end{document}
