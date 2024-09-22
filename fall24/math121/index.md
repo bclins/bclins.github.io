@@ -30,7 +30,8 @@ header-includes: |
 
 ### Announcements
 
-* There are no announcements yet
+* Midterm 1 will be **Friday, Sep 27**.
+* Midterm 1 [review problems](midterm1review.html).
 
 ### Course Description 
 

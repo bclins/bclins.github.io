@@ -562,7 +562,7 @@ After that, we talked about **recursive functions** which are functions that cal
 
 4. Re-write the number guessing game using a recursive function instead of a while-loop.
 
-5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. 
+5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. <!-- Note to self... it is much easier to write a recursive function to generate the first n Fibonacci numbers... -->
 
 - - - 
 
@@ -572,10 +572,24 @@ After that, we talked about **recursive functions** which are functions that cal
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 23  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
-Wed, Sep 25  |  |
+Mon, Sep 23  | [TP06](https://allendowney.github.io/ThinkPython/chap06.html#recursion-with-return-values) | Recursion with return values
+Wed, Sep 25  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 26  |  |
 Fri, Sep 27  |  |
+
+### Mon, Sep 23
+
+We looked at some more examples of recursive functions. 
+
+1. Write a function to recursively find the n-th Fibonacci number. 
+
+2. Write a `factorial(n)` function. 
+
+3. Make a flow chart for the algorithm to find the prime factors of a positive integer. 
+
+4. Implement the algorithm above using a recursive function. The function should print each prime factor as they are found.  
+
+We also talked **input validation** and we introduced the `isinstance(obj, type)` function.  
 
 
 - - - 

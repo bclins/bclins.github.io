@@ -38,13 +38,13 @@ Week | Topic                      | Notes | Projects
 1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  | [Project 1](project1.pdf)
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 2](project2.pdf)
 3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  | [Project 3](project3.pdf)
-4  | Recursion                            | [Week 04](notes.html#week-4-notes)  |
+4  | Recursion                            | [Week 04](notes.html#week-4-notes)  | [Project 4](project4.pdf)
 5  | More on functions                    | [Week 05](notes.html#week-5-notes)  |
 6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  |
 7  | Strings                              | [Week 07](notes.html#week-7-notes)  |
 8  | Lists                                | [Week 08](notes.html#week-8-notes)  |
 9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  |
-10 | Tuples,                              | [Week 10](notes.html#week-10-notes) | 
+10 | Tuples                               | [Week 10](notes.html#week-10-notes) | 
 11 | File                                 | [Week 11](notes.html#week-11-notes) | 
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
 13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 

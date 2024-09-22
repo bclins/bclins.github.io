@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 4 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project4.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, September 27. }
+
+\subsection*{Roots of Quadratic Polynomials}
+
+A quadratic polynomial is a mathematical expression
+$$a x^2 + b x + c$$
+where the coefficients $a, b,$ and $c$ are numbers.  The roots of the polynomial are 
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+In this project you will do the following. 
+\begin{enumerate}
+\item Write a function \verb|is_perfect_square(n)| to determine whether a positive integer $n$ is a perfect square.  Your function should return a boolean value (\verb|True| or \verb|False|). 
+
+\item Write a function called \verb|integer_sqrt(n)| that returns the integer square root of $n$, if $n$ is a perfect square.  Make sure your function returns an \verb|int| not a \verb|float|. 
+
+\item Write a function called \verb|has_rational_roots(a,b,c)| that returns \verb|True| if $ax^2 + bx +c$ has rational number roots, and \verb|False| otherwise.  Hint: You can tell if the roots are rational or not by checking if the expression $b^2 - 4ac$ is a perfect square. 
+
+\item Write a function called \verb|analyze_quadratic(a,b,c)|.  This function should print the following information about the polynomial. 
+
+\begin{enumerate}
+\item It should print a sentence about whether or not the polynomial has rational roots.
+
+\item If the roots are rational, it should print them as fractions.  You can import the \verb|fractions| module and use the function 
+\begin{center}
+\verb|str(fractions.Fraction(top, bottom))| 
+\end{center}
+to convert a fraction with numerator (\verb|top|) and denominator (\verb|bottom|) to a string. 
+
+\item If the roots are irrational, it should print floating point approximations for the roots. 
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

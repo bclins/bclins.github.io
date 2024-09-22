@@ -35,7 +35,7 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 ### Weekly Schedule
 
-<a href="fall24/schedule2.pdf"><img src="fall24/schedule.png" width="448"/></a>
+<a href="fall24/schedule2.pdf"><img src="fall24/schedule2.png" width="475"/></a>
 
 ### Fall 2024 Classes
 
