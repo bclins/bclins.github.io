@@ -230,6 +230,13 @@ Mon, Sep 23  | [1.3][1.3] | Bias versus random error
 Wed, Sep 25  |            | Review
 Fri, Sep 27  |            | **Midterm 1**
 
+### Mon, Sep 23
+
+We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 
+
+* [Gallup polling & sample bias](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf)
+
+
 - - - 
  
 

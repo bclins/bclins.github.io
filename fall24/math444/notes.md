@@ -18,6 +18,8 @@ header-includes: |
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\on}{\operatorname}
 \newcommand{\Arg}{\on{Arg}}
+\newcommand{\arg}{\on{arg}}
+\newcommand{\Log}{\on{Log}}
 \newcommand{\re}{\on{Re}}
 \newcommand{\im}{\on{Im}}
 
@@ -370,6 +372,36 @@ Day  | Section  | Topic
 Mon, Sep 23  | [3.4][3.4] | Exponential and trigonometric functions 
 Wed, Sep 25  | [3.5][3.5] | Logarithms and complex exponentials
 Fri, Sep 27  | [3.1][3.1] | Möbius transforms 
+
+### Mon, Sep 23
+
+We started by reviewing the properties of the exponential function. Then we introduced the complex natural logarithm which is the inverse of $e^z$.  There is one problem with defining the inverse: $e^z$ is an $\infty$-to-1 function, every $w \in \C \backslash \{0\}$ has infinitely many pre-images.  So we have two options:
+
+1. $\log z$ denotes the multivalued inverse of $e^z$.  It has the form
+$$\log z = \ln |z| + i \arg z$$
+where $\arg z$ is the multivalued argument function.  
+
+2. $\Log z$ is the **principal branch** of $\log z$.  It is a single valued function of the form
+$$\Log z = \ln |z| + i \Arg z$$
+where $\Arg z$ is the single valued principal branch of the argument function that takes values in $(-\pi, \pi]$. 
+
+We used the chain rule to show that 
+$$\frac{d}{dz} \Log z = \frac{1}{z}$$
+at every point where $\Log z$ is continuous.  This is also true for any other branch of $\log z$ with a different **branch cut**. 
+
+Things to watch out for:
+
+1. Give an example where $\Log(z + w) \neq \Log z + \Log w$ and explain why it can happen. 
+
+2. How does the multivalued logarithm handle your example?  What is $\log(z + w) = \log z + \log w$?
+
+3. How should we define $z^w$ when $z, w \in \C$ and $z \ne 0$?  For example, what does $i^{1/3}$ mean?  Two possible solutions:
+
+    a. We could use the polar form of $z = Re^{i \theta}$ and let $z^w = R e^{i\theta w}$ where $\theta = \Arg z (the principal branch).  
+
+    b. We could use the principal branch of $\Log z$ and let $z^w = e^{w \Log z}$.
+
+    These are actually the same... but be careful... if you don't use the principal branch, you'll get a different answer in most cases (except integer powers).  
 
 - - - 
  
