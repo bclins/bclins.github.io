@@ -375,7 +375,7 @@ Fri, Sep 27  | [3.1][3.1] | Möbius transforms
 
 ### Mon, Sep 23
 
-We started by reviewing the properties of the exponential function. Then we introduced the complex natural logarithm which is the inverse of $e^z$.  There is one problem with defining the inverse: $e^z$ is an $\infty$-to-1 function, every $w \in \C \backslash \{0\}$ has infinitely many pre-images.  So we have two options:
+We started by reviewing the properties of the exponential function including its algebraic properties, domain, range and that it is periodic with period $2\pi i$. Then we introduced the complex natural logarithm which is the inverse of $e^z$.  There is one problem with defining the inverse: $e^z$ is an $\infty$-to-1 function, every $w \in \C \backslash \{0\}$ has infinitely many pre-images.  So we have two options:
 
 1. $\log z$ denotes the multivalued inverse of $e^z$.  It has the form
 $$\log z = \ln |z| + i \arg z$$
@@ -385,6 +385,13 @@ where $\arg z$ is the multivalued argument function.
 $$\Log z = \ln |z| + i \Arg z$$
 where $\Arg z$ is the single valued principal branch of the argument function that takes values in $(-\pi, \pi]$. 
 
+We did the following exercises. 
+
+1. Calculate $\log(1+i)$.
+
+2. If $z = x+iy$ where $x > 0$, then $\Arg z = \arctan(y/x)$.  Calculate the Cauchy-Riemann equations for $\Log z$ to verify that $\Log z$ is complex differentiable when $x > 0$ (in fact it is complex differentiable everywhere except at its branch cut $(-\infty, 0]$).  What is the derivative of $\Log z$?   
+
+<!--
 We used the chain rule to show that 
 $$\frac{d}{dz} \Log z = \frac{1}{z}$$
 at every point where $\Log z$ is continuous.  This is also true for any other branch of $\log z$ with a different **branch cut**. 
@@ -402,6 +409,7 @@ Things to watch out for:
     b. We could use the principal branch of $\Log z$ and let $z^w = e^{w \Log z}$.
 
     These are actually the same... but be careful... if you don't use the principal branch, you'll get a different answer in most cases (except integer powers).  
+-->
 
 - - - 
  

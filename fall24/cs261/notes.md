@@ -583,13 +583,27 @@ We looked at some more examples of recursive functions.
 
 1. Write a function to recursively find the n-th Fibonacci number. 
 
-2. Write a `factorial(n)` function. 
+2. Write a function to recursively print all Fibonacci numbers less than $m$.  
 
+3. Write a `factorial(n)` function. 
+
+<!--
 3. Make a flow chart for the algorithm to find the prime factors of a positive integer. 
 
 4. Implement the algorithm above using a recursive function. The function should print each prime factor as they are found.  
+-->
 
-We also talked **input validation** and we introduced the `isinstance(obj, type)` function.  
+We also talked about **input validation** and we introduced the `isinstance(obj, type)` function. 
+
+```python
+# We used this conditional in class
+if not isinstance(n, int):
+    print("n is not an integer.")
+
+# Here is an alternative that also works
+if type(n) != int:
+    print("n is not an integer.")
+```
 
 
 - - - 

@@ -905,14 +905,26 @@ href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-
 <ol type="1">
 <li><p>Write a function to recursively find the n-th Fibonacci
 number.</p></li>
+<li><p>Write a function to recursively print all Fibonacci numbers less
+than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.</p></li>
 <li><p>Write a <code>factorial(n)</code> function.</p></li>
-<li><p>Make a flow chart for the algorithm to find the prime factors of
-a positive integer.</p></li>
-<li><p>Implement the algorithm above using a recursive function. The
-function should print each prime factor as they are found.</p></li>
 </ol>
-<p>We also talked <strong>input validation</strong> and we introduced
-the <code>isinstance(obj, type)</code> function.</p>
+<!--
+3. Make a flow chart for the algorithm to find the prime factors of a positive integer. 
+
+4. Implement the algorithm above using a recursive function. The function should print each prime factor as they are found.  
+-->
+<p>We also talked about <strong>input validation</strong> and we
+introduced the <code>isinstance(obj, type)</code> function.</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We used this conditional in class</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(n, <span class="bu">int</span>):</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;n is not an integer.&quot;</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is an alternative that also works</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">type</span>(n) <span class="op">!=</span> <span class="bu">int</span>:</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;n is not an integer.&quot;</span>)</span></code></pre></div>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <h4 id="tentative-schedule-5">Tentative Schedule</h4>
