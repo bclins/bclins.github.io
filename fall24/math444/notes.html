@@ -892,39 +892,17 @@ with
 We calculated the following examples.</p>
 <ol start="2" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>i</mi><mrow><mn>1</mn><mi>/</mi><mn>3</mn></mrow></msup><annotation encoding="application/x-tex">i^{1/3}</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>i</mi><mi>i</mi></msup><annotation encoding="application/x-tex">i^i</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mo>−</mo><mi>i</mi></mrow></msup><annotation encoding="application/x-tex">(1+i)^{2-i}</annotation></semantics></math></p></li>
+<li><p>Find all other values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mo>−</mo><mi>i</mi></mrow></msup><annotation encoding="application/x-tex">(1+i)^{2-i}</annotation></semantics></math>
+in addition to the principal value.</p></li>
 <li><p>Find all solutions of the equation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mi>π</mi></msup><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">z^{\pi} = 5</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mn>1</mn><mi>/</mi><mi>z</mi></mrow></msup><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">e^{1/z} = i</annotation></semantics></math>.</p></li>
 </ol>
-<p>We finished by discussing to special kinds of transformations: affine
-transformations
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>↦</mo><mi>α</mi><mi>z</mi><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">z \mapsto \alpha z + \beta</annotation></semantics></math>
-and the inversion transformation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>↦</mo><mfrac displaystyle="false"><mn>1</mn><mi>z</mi></mfrac></mrow><annotation encoding="application/x-tex">z \mapsto \tfrac{1}{z}</annotation></semantics></math>.
-Both are holomorphic on their domains. Note that an affine
-transformation is a rotation &amp; scaling followed by a translation.
-Inversion is a little harder to understand, but it helps to know the
-following theorem:</p>
-<div class="Theorem">
-<p><strong>Theorem.</strong> Let
+<p>We finished by talking about the reciprocal map
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mi>z</mi></mfrac></mrow><annotation encoding="application/x-tex">f(z) = \tfrac{1}{z}</annotation></semantics></math>.
-Then
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-transforms lines and circles to lines in circles. Any line or circle
-that intersects the origin will be transformed to a straight line
-through the origin (with a hole at the origin). Any line or circle that
-does not intersect the origin will be transformed to a circle that does
-not intersect the origin.</p>
-</div>
-<p>The key to the proof is the fact that the solution of the algebraic
-equation (with real coefficients)
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a(x^2 + y^2) + b_1 x + b_2 y + c = 0</annotation></semantics></math>
-is a circle (possibly degenerate to a point or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>)
-if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a \ne 0</annotation></semantics></math>,
-and it is a line if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a = 0</annotation></semantics></math>.</p>
+We looked at how it appears to transform lines &amp; circles into lines
+and circles. We’ll look at why next time.</p>
 <!--
 We used the chain rule to show that 
 $$\frac{d}{dz} \Log z = \frac{1}{z}$$
@@ -943,6 +921,19 @@ Things to watch out for:
     b. We could use the principal branch of $\Log z$ and let $z^w = e^{w \Log z}$.
 
     These are actually the same... but be careful... if you don't use the principal branch, you'll get a different answer in most cases (except integer powers).  
+-->
+<!--
+### Fri, Sep 27
+
+discussing to special kinds of transformations: affine transformations $z \mapsto \alpha z + \beta$ and the inversion transformation $z \mapsto \tfrac{1}{z}$.  Both are holomorphic on their domains.  Note that an affine transformation is a rotation & scaling followed by a translation.  Inversion is a little harder to understand, but it helps to know the following theorem:
+
+<div class="Theorem">
+**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  Any line or circle that intersects the origin will be transformed to a straight line through the origin (with a hole at the origin).  Any line or circle that does not intersect the origin will be transformed to a circle that does not intersect the origin.  
+</div>
+
+The key to the proof is the fact that the solution of the algebraic equation (with real coefficients)
+$$a(x^2 + y^2) + b_1 x + b_2 y + c = 0$$
+is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and it is a line if $a = 0$.  
 -->
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>

@@ -1,0 +1,170 @@
+\documentclass[12pt,answers]{exam}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{pxfonts}
+\usepackage{soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+
+
+\begin{document}
+\pagestyle{empty}
+\graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
+
+\subsection*{Practice Midterm 1 - CS 261}
+\textit{Here are questions similar to what will be on the midterm exam.  You won't be able to use any outside material during the midterm exam (no notes, computers, etc.) so see how much you can answer without looking things up.}
+
+\begin{questions}
+
+\question The following code is supposed to print the perfect squares 1, 4, 9, 16, $\ldots$ up to 100.  Circle the mistake in the code and explain why it doesn't do what it is supposed to. 
+\lstset{language=Python}
+\lstset{columns=fixed}
+\begin{lstlisting}
+n = 1
+while n <= 10:
+    square = n ** 2
+    n + 1
+    print(square)
+\end{lstlisting}
+\begin{solution}
+The mistake is in the line \verb|n + 1|.  It never changes the value of \verb|n|, so the loop goes on forever.
+\end{solution}
+ 
+
+\question 100 minutes is 1 hour and 40 minutes. How many hours and minutes are in 291 minutes?  You don't need to calculate the answer.  Just complete the following Python assignment statements with expressions that would calculate the answer.
+\lstset{language=Python}
+\begin{lstlisting}
+hours = 
+minutes = 
+\end{lstlisting}
+\begin{solution}
+\begin{lstlisting}
+hours = 291 // 60
+minutes = 291 % 60
+\end{lstlisting}
+
+\end{solution}
+
+\question For each of the following Python expressions, write down the output when the expression is evaluated using a Python interpreter. Write \textbf{error} if you think the expression will raise an error.
+
+\begin{parts}
+\part \verb|15 % 3|
+\begin{solution}
+\verb|0|
+\end{solution}
+\bigskip
+
+\part \verb|5 + 3 * 4 == 100|
+\begin{solution}
+False
+\end{solution}
+\bigskip
+
+\part \verb|"HSC" + "2024"|
+\begin{solution}
+\verb|"HSC2024"|
+\end{solution}
+\bigskip
+
+\part \verb|100+"1"|
+\begin{solution}
+\textbf{error}
+\end{solution}
+\bigskip
+
+\part \verb|6 / 2|
+\begin{solution}
+\verb|3.0|
+\end{solution}
+\bigskip
+\end{parts}
+
+\question Suppose that we type the following assignments and expressions in a Python
+shell in the given order. 
+
+\begin{verbatim}
+    >>> a = 10
+    >>> b = 20
+    >>> c = a + b
+\end{verbatim}
+
+\begin{parts}
+\part What will Python output if we enter the following (after those first three statements)?
+
+\begin{verbatim}
+>>> a + 5
+\end{verbatim}
+\bigskip
+
+\part What will Python output if we enter this statement (after the one from part (a))?
+\begin{verbatim}
+>>> a + b
+\end{verbatim}
+
+\bigskip
+
+\part What will Python output when we enter these two statements next?
+\begin{verbatim}
+>>> b = b + 1
+>>> c
+\end{verbatim}
+\bigskip
+
+\part What about if we enter this last?
+\begin{verbatim}
+>>> a + b
+\end{verbatim}
+
+\end{parts} 
+
+\newpage
+\question Consider the following function.  What will it return if you call \verb|mystery(5)|?
+
+\begin{lstlisting}
+def mystery(n):
+    a = n 
+    a + 5
+    if a > 10:
+        return a
+    elif a == 10:
+        return 100
+    else:
+        return n
+\end{lstlisting}
+
+\question Write a function called \verb|average3| that inputs any three numbers and returns their average.  
+\vfill
+
+\question Consider the simple function below.
+
+\begin{lstlisting}
+def twice(n):
+    print(2 * n)
+\end{lstlisting}
+
+Why do we get \verb|False| if we enter the following into the shell? Explain why we get the output below. 
+
+\begin{verbatim}
+    >>> twice(5) == 10
+    10
+    False
+\end{verbatim}
+\vfill
+
+\question Describe in words what the following function will do when you call it.
+
+\begin{lstlisting}
+def loop_function():
+    for i in range(100):
+        if i % 3 == 0:
+            print(i)
+\end{lstlisting}
+
+\question \hl{Need more about types: Identify the type (str, int, float, or bool) for the following expressions.}
+\end{questions}
+
+\end{document} 

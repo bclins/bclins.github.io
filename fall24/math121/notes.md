@@ -255,7 +255,11 @@ We looked at this case study:
 
 ### Wed, Sep 25
 
+We started with this workshop (just the front page).  
+
 * **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
+
+Then we talked about the [review problems for the midterm](midterm1review.html) on Friday.  
 
 - - - 
  

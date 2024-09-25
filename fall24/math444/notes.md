@@ -402,19 +402,13 @@ We introduced **principle values of a complex power** $z^\alpha = e^{\alpha \Log
 
 2. $i^{1/3}$
 
-3. $i^i$  
+3. $(1+i)^{2-i}$  
 
-4. Find all solutions of the equation $z^{\pi} = 5$.  
+4. Find all other values of $(1+i)^{2-i}$ in addition to the principal value.  
 
-We finished by discussing to special kinds of transformations: affine transformations $z \mapsto \alpha z + \beta$ and the inversion transformation $z \mapsto \tfrac{1}{z}$.  Both are holomorphic on their domains.  Note that an affine transformation is a rotation & scaling followed by a translation.  Inversion is a little harder to understand, but it helps to know the following theorem:
+5. Find all solutions of the equation $e^{1/z} = i$.  
 
-<div class="Theorem">
-**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  Any line or circle that intersects the origin will be transformed to a straight line through the origin (with a hole at the origin).  Any line or circle that does not intersect the origin will be transformed to a circle that does not intersect the origin.  
-</div>
-
-The key to the proof is the fact that the solution of the algebraic equation (with real coefficients)
-$$a(x^2 + y^2) + b_1 x + b_2 y + c = 0$$
-is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and it is a line if $a = 0$.  
+We finished by talking about the reciprocal map $f(z) = \tfrac{1}{z}$.  We looked at how it appears to transform lines & circles into lines and circles.  We'll look at why next time. 
 
 
 <!--
@@ -436,6 +430,21 @@ Things to watch out for:
 
     These are actually the same... but be careful... if you don't use the principal branch, you'll get a different answer in most cases (except integer powers).  
 -->
+
+<!--
+### Fri, Sep 27
+
+discussing to special kinds of transformations: affine transformations $z \mapsto \alpha z + \beta$ and the inversion transformation $z \mapsto \tfrac{1}{z}$.  Both are holomorphic on their domains.  Note that an affine transformation is a rotation & scaling followed by a translation.  Inversion is a little harder to understand, but it helps to know the following theorem:
+
+<div class="Theorem">
+**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  Any line or circle that intersects the origin will be transformed to a straight line through the origin (with a hole at the origin).  Any line or circle that does not intersect the origin will be transformed to a circle that does not intersect the origin.  
+</div>
+
+The key to the proof is the fact that the solution of the algebraic equation (with real coefficients)
+$$a(x^2 + y^2) + b_1 x + b_2 y + c = 0$$
+is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and it is a line if $a = 0$.  
+-->
+
 
 - - - 
  

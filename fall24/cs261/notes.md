@@ -609,13 +609,15 @@ if type(n) != int:
 
 Today we did more practice with loops and recursion.  We reviewed how to find the prime factorization of any integer greater than 1.  We spent the class on these exercises.
 
-1. Write a program to print the prime factors of any integer greater than 1. 
+1. What are the prime factors of 836? 
+
+2. Write a program to print the prime factors of any integer greater than 1. 
 
 After that, we talked about **lists** in Python.  Lists are a type the can store more than one value.  We introduced how to define a list using square brackets (including an empty list) and how to create a new list by adding two lists together.  We finished with these exercises.
 
-2. Re-write your prime factors program so that it returns a list of prime factors instead of printing them. 
+3. Re-write your prime factors program so that it returns a list of prime factors instead of printing them. 
 
-3. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
+4. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
 
 <!-- Save this for later:
 We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
