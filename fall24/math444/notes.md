@@ -391,6 +391,32 @@ We did the following exercises.
 
 2. If $z = x+iy$ where $x > 0$, then $\Arg z = \arctan(y/x)$.  Calculate the Cauchy-Riemann equations for $\Log z$ to verify that $\Log z$ is complex differentiable when $x > 0$ (in fact it is complex differentiable everywhere except at its branch cut $(-\infty, 0]$).  What is the derivative of $\Log z$?   
 
+
+### Wed, Sep 25
+
+We looked at the Cauchy-Riemann equations for $\Log z = \tfrac{1}{2} \ln(x^2 + y^2) + i \arctan \left( \tfrac{y}{x} \right)$ again. We also did the following.  
+
+1. Give an example where $\Log(z+w) \ne \Log z + \Log w$.  
+
+We introduced **principle values of a complex power** $z^\alpha = e^{\alpha \Log z}$ for any $\alpha, z \in \C$, with $z \ne 0$. We calculated the following examples. 
+
+2. $i^{1/3}$
+
+3. $i^i$  
+
+4. Find all solutions of the equation $z^{\pi} = 5$.  
+
+We finished by discussing to special kinds of transformations: affine transformations $z \mapsto \alpha z + \beta$ and the inversion transformation $z \mapsto \tfrac{1}{z}$.  Both are holomorphic on their domains.  Note that an affine transformation is a rotation & scaling followed by a translation.  Inversion is a little harder to understand, but it helps to know the following theorem:
+
+<div class="Theorem">
+**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  Any line or circle that intersects the origin will be transformed to a straight line through the origin (with a hole at the origin).  Any line or circle that does not intersect the origin will be transformed to a circle that does not intersect the origin.  
+</div>
+
+The key to the proof is the fact that the solution of the algebraic equation (with real coefficients)
+$$a(x^2 + y^2) + b_1 x + b_2 y + c = 0$$
+is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and it is a line if $a = 0$.  
+
+
 <!--
 We used the chain rule to show that 
 $$\frac{d}{dz} \Log z = \frac{1}{z}$$

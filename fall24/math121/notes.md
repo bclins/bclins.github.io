@@ -253,6 +253,10 @@ We looked at this case study:
 
 3. The only sure way to avoid bias is a **simple random sample**.
 
+### Wed, Sep 25
+
+* **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
+
 - - - 
  
 
