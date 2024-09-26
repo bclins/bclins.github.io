@@ -17,7 +17,6 @@ Know all the terminology: Populations, Samples, Individuals, Variables, Statisti
 ### Sampling
 Make sure you know the difference between random error and bias. What is the best way to avoid bias?  What is the best way to minimize random error? 
 
-* [Exercise 1.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.1.25)
 * [Exercise 1.26](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.1.26)
 * [Exercise 1.39](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.1.39)
 

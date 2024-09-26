@@ -574,7 +574,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 23  | [TP06](https://allendowney.github.io/ThinkPython/chap06.html#recursion-with-return-values) | Recursion with return values
 Wed, Sep 25  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
-Thu, Sep 26  |  |
+Thu, Sep 26  | [C10.1][C10.1] | Lists
 Fri, Sep 27  |  |
 
 ### Mon, Sep 23
@@ -625,6 +625,27 @@ We also talked about how to loop through all of the values in a list.  The same 
 3. Write a program that generates a list of all prime numbers less than n.  
 -->
 
+### Thu, Sep 26
+
+We started with this exercise from yesterday:
+
+1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
+
+Then we talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
+
+2. Write a function that prints every other character in a string. 
+
+3. Write a function called `even_elements()` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
+
+If you don't care about the indices, then there is an even easier way to loop through every element of the sequence.  You can use the following syntax:
+
+```python
+example_list = [2,4,6,7,11,14,20]
+for n in example_list:
+    print(n)
+```
+
+4. Write a function `any_divisors(n, divs)` that accepts an integer `n` and a list of nonzero integers `divs`, and returns true if any of the elements of `divs` are a divisor of `n`. 
 
 
 - - - 
@@ -637,8 +658,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 30 |  |
 Wed, Oct 2  |  | Review
-Thu, Oct 3  |  | **Midterm 1**
-Fri, Oct 4  |  |
+Thu, Oct 3  |  |
+Fri, Oct 4  |  | **Midterm 1**
 
 - - - 
 
@@ -804,6 +825,7 @@ Mon, Dec 9  |  |
 [C17]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.17>
 
 [C2.6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6>
+[C10.1]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.1>
 
 <br>
 <br>

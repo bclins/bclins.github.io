@@ -1,4 +1,4 @@
-\documentclass[12pt,answers]{exam}
+\documentclass[12pt]{exam}
 \usepackage{amsmath,amssymb}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{tikz}
@@ -31,11 +31,11 @@ while n <= 10:
     print(square)
 \end{lstlisting}
 \begin{solution}
-The mistake is in the line \verb|n + 1|.  It never changes the value of \verb|n|, so the loop goes on forever.
+The mistake is in the line \lstinline{n + 1}.  It never changes the value of \lstinline{n}, so the loop goes on forever.
 \end{solution}
  
 
-\question 100 minutes is 1 hour and 40 minutes. How many hours and minutes are in 291 minutes?  You don't need to calculate the answer.  Just complete the following Python assignment statements with expressions that would calculate the answer.
+\question 100 minutes is 1 hour and 40 minutes. How many hours and minutes are in 291 minutes?  You don't need to calculate the answer.  Just complete the following variable assignments with expressions that would calculate the answer.
 \lstset{language=Python}
 \begin{lstlisting}
 hours = 
@@ -52,33 +52,33 @@ minutes = 291 % 60
 \question For each of the following Python expressions, write down the output when the expression is evaluated using a Python interpreter. Write \textbf{error} if you think the expression will raise an error.
 
 \begin{parts}
-\part \verb|15 % 3|
+\part \lstinline{15 % 3}
 \begin{solution}
-\verb|0|
+\lstinline{0}
 \end{solution}
 \bigskip
 
-\part \verb|5 + 3 * 4 == 100|
+\part \lstinline{5 + 3 * 4 == 100}
 \begin{solution}
 False
 \end{solution}
 \bigskip
 
-\part \verb|"HSC" + "2024"|
+\part \lstinline{"HSC" + "2024"}
 \begin{solution}
-\verb|"HSC2024"|
+\lstinline{"HSC2024"}
 \end{solution}
 \bigskip
 
-\part \verb|100+"1"|
+\part \lstinline{100+"1"}
 \begin{solution}
 \textbf{error}
 \end{solution}
 \bigskip
 
-\part \verb|6 / 2|
+\part \lstinline{6 / 2}
 \begin{solution}
-\verb|3.0|
+\lstinline{3.0}
 \end{solution}
 \bigskip
 \end{parts}
@@ -98,12 +98,18 @@ shell in the given order.
 \begin{verbatim}
 >>> a + 5
 \end{verbatim}
+\begin{solution}
+15
+\end{solution}
 \bigskip
 
 \part What will Python output if we enter this statement (after the one from part (a))?
 \begin{verbatim}
 >>> a + b
 \end{verbatim}
+\begin{solution}
+30
+\end{solution}
 
 \bigskip
 
@@ -112,17 +118,23 @@ shell in the given order.
 >>> b = b + 1
 >>> c
 \end{verbatim}
+\begin{solution}
+30
+\end{solution}
 \bigskip
 
 \part What about if we enter this last?
 \begin{verbatim}
 >>> a + b
 \end{verbatim}
+\begin{solution}
+31
+\end{solution}
 
 \end{parts} 
 
 \newpage
-\question Consider the following function.  What will it return if you call \verb|mystery(5)|?
+\question Consider the following function.  What will it return if you call \lstinline{mystery(5)}?
 
 \begin{lstlisting}
 def mystery(n):
@@ -135,8 +147,17 @@ def mystery(n):
     else:
         return n
 \end{lstlisting}
+\begin{solution}
+5
+\end{solution}
 
-\question Write a function called \verb|average3| that inputs any three numbers and returns their average.  
+\question Write a function called \lstinline{average3} that inputs any three numbers and returns their average.  
+\begin{solution}
+\begin{lstlisting}
+def average3(a,b,c):
+    return (a + b + c) / 3
+\end{lstlisting}
+\end{solution}
 \vfill
 
 \question Consider the simple function below.
@@ -146,13 +167,17 @@ def twice(n):
     print(2 * n)
 \end{lstlisting}
 
-Why do we get \verb|False| if we enter the following into the shell? Explain why we get the output below. 
+Why do we get \lstinline{False} if we enter the following into the shell? Explain why we get the output below. 
 
 \begin{verbatim}
     >>> twice(5) == 10
     10
     False
 \end{verbatim}
+
+\begin{solution}
+The function prints 10, but \lstinline{twice(5)} is not equal to 10 because the function is returning nothing.  
+\end{solution}
 \vfill
 
 \question Describe in words what the following function will do when you call it.
@@ -164,7 +189,88 @@ def loop_function():
             print(i)
 \end{lstlisting}
 
-\question \hl{Need more about types: Identify the type (str, int, float, or bool) for the following expressions.}
+\begin{solution}
+This function will print the integers that are multiples of 3, starting at 0, until 99. 
+\end{solution}
+
+\question Identify the type of the value (str, int, float, bool, or list) for each of the following expressions.
+\begin{parts}
+\part \lstinline{"hello" * 5}
+\begin{solution}
+\lstinline{str}
+\end{solution}
+\bigskip
+
+\part \lstinline{ 7 // 2}
+\begin{solution}
+\lstinline{int}
+\end{solution}
+\bigskip
+
+\part \lstinline{"hello" == 5}
+\begin{solution}
+\lstinline{bool}
+\end{solution}
+\bigskip
+
+\part \lstinline{("He" in "Hello") or ("Yes" in "No")}
+\begin{solution}
+\lstinline{bool}
+\end{solution}
+\bigskip
+
+\part \lstinline{3 + 4 / 7}
+\begin{solution}
+\lstinline{float}
+\end{solution}
+\bigskip
+
+\end{parts}
+
+\question Determine the values of the variables $x$, $y$, and $z$ after the following lines of code are run. 
+
+
+\begin{lstlisting}
+x = 5
+y = x
+z = 2 * y / 2
+x += 4
+y = (y - 1) * 2
+x = (x == z + 4)
+\end{lstlisting}
+
+\begin{solution}
+$y$ is 8, $z$ is 5.0, and $x$ is \lstinline{True}. 
+\end{solution}
+
+\question Consider the following recursive function: 
+
+
+\begin{lstlisting}
+def recurse(n, s):
+    if n == 0:
+        return s
+    else: 
+        return recurse(n - 1, s + n)
+\end{lstlisting}
+\begin{parts}
+\part What will \lstinline{recurse(3, 0)} return?
+\begin{solution}
+6
+\end{solution}
+\bigskip
+
+\part What will happen if you call \lstinline{recurse(-1, 0)}?
+\begin{solution}
+It will enter an infinite recursion because \lstinline{n} is never 0. 
+\end{solution}
+\bigskip
+\end{parts}
+
+
+
 \end{questions}
+
+
 
 \end{document} 

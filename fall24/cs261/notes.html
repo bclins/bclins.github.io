@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -890,8 +890,9 @@ href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Sep 26</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.1">C10.1</a></td>
+<td style="text-align: left;">Lists</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Sep 27</td>
@@ -952,6 +953,42 @@ We also talked about how to loop through all of the values in a list.  The same 
 
 3. Write a program that generates a list of all prime numbers less than n.  
 -->
+<h3 id="thu-sep-26">Thu, Sep 26</h3>
+<p>We started with this exercise from yesterday:</p>
+<ol type="1">
+<li>Write a function that prompts a user to enter a list of integers.
+After each integer the user enters, ask them if they are done or not.
+Have them enter an upper or lowercase letter Y if the answer is yes.
+Once the user is done, the function should return the list.</li>
+</ol>
+<p>Then we talked about some of the similarities between lists and
+strings. They are both <strong>sequence types</strong>. So they both
+have a length which you can find using the <code>len</code> function.
+You can access individual elements in any sequence type by using their
+<strong>index</strong> which is their position in the sequence. The
+first element has index 0 and the last has index equal to the length
+minus one.</p>
+<ol start="2" type="1">
+<li><p>Write a function that prints every other character in a
+string.</p></li>
+<li><p>Write a function called <code>even_elements()</code> that (i)
+counts the number of even integers in a list and (ii) finds the index of
+the first even integer. Have the function print a sentence with both
+results.</p></li>
+</ol>
+<p>If you don’t care about the indices, then there is an even easier way
+to loop through every element of the sequence. You can use the following
+syntax:</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="dv">14</span>,<span class="dv">20</span>]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> example_list:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span></code></pre></div>
+<ol start="4" type="1">
+<li>Write a function <code>any_divisors(n, divs)</code> that accepts an
+integer <code>n</code> and a list of nonzero integers <code>divs</code>,
+and returns true if any of the elements of <code>divs</code> are a
+divisor of <code>n</code>.</li>
+</ol>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <h4 id="tentative-schedule-5">Tentative Schedule</h4>
@@ -977,12 +1014,12 @@ We also talked about how to loop through all of the values in a list.  The same 
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 3</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 1</strong></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Oct 4</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Midterm 1</strong></td>
 </tr>
 </tbody>
 </table>
