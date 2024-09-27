@@ -954,40 +954,59 @@ We also talked about how to loop through all of the values in a list.  The same 
 3. Write a program that generates a list of all prime numbers less than n.  
 -->
 <h3 id="thu-sep-26">Thu, Sep 26</h3>
-<p>We started with this exercise from yesterday:</p>
-<ol type="1">
-<li>Write a function that prompts a user to enter a list of integers.
-After each integer the user enters, ask them if they are done or not.
-Have them enter an upper or lowercase letter Y if the answer is yes.
-Once the user is done, the function should return the list.</li>
-</ol>
-<p>Then we talked about some of the similarities between lists and
-strings. They are both <strong>sequence types</strong>. So they both
-have a length which you can find using the <code>len</code> function.
-You can access individual elements in any sequence type by using their
+<!--
+We started with this exercise from yesterday:
+
+1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
+-->
+<p>We talked about some of the similarities between lists and strings.
+They are both <strong>sequence types</strong>. So they both have a
+length which you can find using the <code>len</code> function. You can
+access individual elements in any sequence type by using their
 <strong>index</strong> which is their position in the sequence. The
 first element has index 0 and the last has index equal to the length
 minus one.</p>
-<ol start="2" type="1">
+<ol type="1">
 <li><p>Write a function that prints every other character in a
 string.</p></li>
-<li><p>Write a function called <code>even_elements()</code> that (i)
-counts the number of even integers in a list and (ii) finds the index of
-the first even integer. Have the function print a sentence with both
-results.</p></li>
+<li><p>Write a function called <code>is_integer_string(s)</code> that
+returns true if <code>s</code> is a string with only the digits 0
+through 9 as characters.</p></li>
+<li><p>Write a function called <code>even_elements(numbers)</code> that
+(i) counts the number of even integers in a list and (ii) finds the
+index of the first even integer. Have the function print a sentence with
+both results.</p></li>
 </ol>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> even_elements(numbers):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># You&#39;ll need two accumulator variables for this function. </span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># One to count the even elements, and</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># another to save the index of the first even element when you find it.</span></span></code></pre></div>
+<h3 id="fri-sep-27">Fri, Sep 27</h3>
 <p>If you don’t care about the indices, then there is an even easier way
 to loop through every element of the sequence. You can use the following
 syntax:</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="dv">14</span>,<span class="dv">20</span>]</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> example_list:</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span></code></pre></div>
-<ol start="4" type="1">
-<li>Write a function <code>any_divisors(n, divs)</code> that accepts an
-integer <code>n</code> and a list of nonzero integers <code>divs</code>,
-and returns true if any of the elements of <code>divs</code> are a
-divisor of <code>n</code>.</li>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="dv">14</span>,<span class="dv">20</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> example_list:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(n)</span></code></pre></div>
+<p>Use this new style of for-loop to (re)write some of the functions we
+talked about last time.</p>
+<ol type="1">
+<li><p>Write an <code>even_elements(numbers)</code> function like the
+one from yesterday using this style of loop. It would be a good idea to
+use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+as the index of the first even number if there aren’t any.</p></li>
+<li><p>Re-write the <code>is_integer_string(s)</code> function using
+this style of list. To make this one more interesting, we first created
+a function called <code>is_digit_char(c)</code> that returns
+<code>True</code> if and only if <code>c</code> is a length 1 string
+that consists of one of the ten digits 0 though 9.</p></li>
+<li><p>Write a function <code>any_divisors(n, divs)</code> that accepts
+an integer <code>n</code> and a list of nonzero integers
+<code>divs</code>, and returns true if any of the elements of
+<code>divs</code> are a divisor of <code>n</code>.</p></li>
 </ol>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>

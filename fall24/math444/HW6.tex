@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\Log}{\operatorname{Log}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 6 \hfill Name: \underline{\hspace*{2in}}}
+\begin{enumerate}
+\item Let $g(z) = \dfrac{z - i}{2iz + 4}$. Find
+\begin{enumerate}
+\item $g(i)$ \\
+\item $g(0)$ \\
+\item $g(\infty)$ \\
+\item $g(2i)$ \\
+\end{enumerate}
+
+
+\item Show that the M\"obius transformation $f(z) = \dfrac{1+z}{1-z}$ maps the unit circle (minus the point $z=1$) onto the imaginary axis. Hint: if you transform any three points on a circle, that will determine which circle or line you get.
+\vfill
+
+
+
+\item Construct a M\"obius transform $f(z)$ that sends $-1$ to infinity, but 0 and 1 are fixed points (i.e., $f(0) = 0$ and $f(1) = 1$).  Hint: First find a M\"obius transform that sends $-1$ to infinity and $0$ to $0$, then rotate/scale until $1$ maps to $1$.  
+\vfill
+
+\item Draw a picture to show how the M\"obius transform above (in Problem 3) will transform this shape below (where $T$ is the point $-1$ and $O$ is the origin.  Which circles become lines, and which stay circles? 
+\begin{flushright}
+\begin{tikzpicture}
+\draw (0,0) node {\includegraphics[scale=0.5]{/home/brian/Dropbox/HSC/Spring21/Math444/Website/sangaku.png}};
+\end{tikzpicture}
+\end{flushright}
+%\item Any three distinct points $z_1, z_2, z_3$ uniquely determine either a line or a circle.  You can use M\"obius transformations to find a formula for that line or circle.  The equation
+%$$\chi(z) = \frac{(z-z_1)(z_2-z_3)}{(z-z_3)(z_2-z_1)}$$
+%is a M\"obius transform that sends $z_1$ to 0, $z_2$ to 1, and $z_3$ to $\infty$.  So it transforms the circle or line that contains $z_1$, $z_2$, and $z_3$ into the line $\R$.  If you calculate the inverse $\chi^{-1}$, then $\chi^{-1}(t)$ will parametrize the line or circle containing $z_1, z_2$, and $z_3$. 
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\newpage 
+\noindent
+The complex sine and cosine are defined by the formulas
+$$\cos z = \frac{e^{iz} + e^{-iz}}{2} \text{ and } \sin z = \frac{e^{iz} - e^{-iz}}{2i}.$$ 
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Show that these formulas agree with the usual sine and cosine when $z$ is a real number. 
+\vfill
+
+\item When $z$ is a real number, $\cos z$ and $\sin z$ are always bounded between $1$ and $-1$.  This isn't true for complex numbers.  Find a formula for $\sin(iy)$ for any real number $y$ and then show that  
+$$\ds \lim_{y \rightarrow \infty} \sin (i y) = \infty.$$
+\vfill
+
+\item Find all solutions of the equation $\sin z = 2$. Hint: Let $u = e^{iz}$.  Then $\sin z = \dfrac{u-u^{-1}}{2i} = 2$.  If you multiply both sides of this equation by $2iu$, then you get a quadratic polynomial, which has two solutions for $u$.  Each of those correspond to a set of solutions for $z$. % NOTE TO SELF: This one was pretty tough, but maybe worthwhile? Might be worth breaking into multiple steps though.  
+\vfill
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+
+\noindent
+\textit{Convert the following to rectangular form.}
+\begin{multicols}{3}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $e^{\sin (i)}$
+\item $\Log(1+\sqrt{3}i)$
+\item $\Log\left(\dfrac{1}{3+4i}\right)$
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\end{document}

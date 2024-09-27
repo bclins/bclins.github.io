@@ -431,19 +431,49 @@ Things to watch out for:
     These are actually the same... but be careful... if you don't use the principal branch, you'll get a different answer in most cases (except integer powers).  
 -->
 
-<!--
 ### Fri, Sep 27
 
+<!--
 discussing to special kinds of transformations: affine transformations $z \mapsto \alpha z + \beta$ and the inversion transformation $z \mapsto \tfrac{1}{z}$.  Both are holomorphic on their domains.  Note that an affine transformation is a rotation & scaling followed by a translation.  Inversion is a little harder to understand, but it helps to know the following theorem:
+--> 
+
+We started by proving this theorem about the reciprocal map.
 
 <div class="Theorem">
-**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  Any line or circle that intersects the origin will be transformed to a straight line through the origin (with a hole at the origin).  Any line or circle that does not intersect the origin will be transformed to a circle that does not intersect the origin.  
+**Theorem.** Let $f(z) = \tfrac{1}{z}$.  Then $f$ transforms lines and circles to lines in circles.  
 </div>
 
 The key to the proof is the fact that the solution of the algebraic equation (with real coefficients)
 $$a(x^2 + y^2) + b_1 x + b_2 y + c = 0$$
 is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and it is a line if $a = 0$.  
--->
+
+It helps to think of the reciprocal map $f(z) = \tfrac{1}{z}$ as a bijection (1-to-1 and onto map) from $\C \cup \{ \infty\} \rightarrow \C \cup \{ \infty \}$.  We define 
+$$\frac{1}{\infty} = 0 \text{ and } \frac{1}{0} = \infty.$$
+We call $\C \cup \{ \infty \}$ the **extended complex plane.**
+
+The reciprocal map is a special case of an important family of bijections on $\C \cup \{\infty\}$ called Möbius transforms.  A **Möbius transform** (also known as a **Linear Fractional Transform**) is a map 
+$$f(z) = \frac{a z + b}{c z + d}$$
+where $a, b, c, d \in \C$ satisfy $ad - bc \ne 0$. We proved the following facts.  
+
+1. A Möbius transform always has two fixed points in $\C \cup \{ \infty \}$.   
+
+2. For any invertible matrix $A = \begin{pmatrix} a_{11} a_{12} \\ a_{21} a_{22} \end{pmatrix}$, we can define an associated Möbius transform
+$$T_A(z) = \frac{a_{11} z + a_{12}}{a_{21} z + a_{22}}.$$ 
+Then if $A, B \in \C^{2 \times 2}$ are any two intertible matrices, 
+$$T_A \circ T_B = T_{AB}.$$
+
+In particular the inverse of a Möbius transform can be found by inverting its matrix:
+$$T_A^{-1} = T_{A^{-1}}.$$
+Notice also that if you multiply a matrix by a constant, the Möbius transform doesn't change, so 
+$$T_{cA} = T_A.$$
+That is convenient because the inverse of a 2-by-2 matrix is
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \frac{1}{ad - bc} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}.$$
+Therefore you can invert a Möbius transform 
+$$f(z) = \frac{a z + b}{c z + d}$$ 
+by swapping $a$ and $d$ and making $b$ and $c$ negative:
+$$f^{-1}(z) = \frac{d z - b}{-cz + a}.$$
+
+
 
 
 - - - 
@@ -456,9 +486,9 @@ is a circle (possibly degenerate to a point or $\varnothing$) if $a \ne 0$, and 
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Sep 30 |  | Review
-Wed, Oct 2  |  | **Midterm 1**
-Fri, Oct 4  | [7.3][7.3] | Power Series
+Mon, Sep 30 | [3.2][3.2] | Möbius transforms - con'd
+Wed, Oct 2  | | Review
+Fri, Oct 4  | | **Midterm 1**
 - - - 
 
 ### Week 7 Notes
@@ -467,7 +497,7 @@ Fri, Oct 4  | [7.3][7.3] | Power Series
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Oct 7   | [7.4][7.4] | Regions of convergence
+Mon, Oct 7   | [7.3][7.3] & [7.4][7.4] | Power series
 Wed, Oct 9   | [4.1][4.1] | Complex integrals
 Fri, Oct 11  | [4.3][4.3] | Cauchy's theorem
 
