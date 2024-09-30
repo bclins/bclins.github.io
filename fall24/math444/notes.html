@@ -967,7 +967,7 @@ We proved the following facts.</p>
 <li><p>A Möbius transform always has two fixed points in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℂ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>∞</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb{C}\cup \{ \infty \}</annotation></semantics></math>.</p></li>
 <li><p>For any invertible matrix
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>11</mn></msub><msub><mi>a</mi><mn>12</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>21</mn></msub><msub><mi>a</mi><mn>22</mn></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} a_{11} a_{12} \\ a_{21} a_{22} \end{pmatrix}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>11</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>12</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>21</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>22</mn></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix}</annotation></semantics></math>,
 we can define an associated Möbius transform
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>A</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>a</mi><mn>11</mn></msub><mi>z</mi><mo>+</mo><msub><mi>a</mi><mn>12</mn></msub></mrow><mrow><msub><mi>a</mi><mn>21</mn></msub><mi>z</mi><mo>+</mo><msub><mi>a</mi><mn>22</mn></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">T_A(z) = \frac{a_{11} z + a_{12}}{a_{21} z + a_{22}}.</annotation></semantics></math>
 Then if
@@ -1025,6 +1025,83 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.3.2">3
 </tr>
 </tbody>
 </table>
+<p>We started by proving that</p>
+<p><strong>Theorem.</strong> Any Möbius transformation maps lines &amp;
+circles to lines &amp; circles.</p>
+<p>To prove this, we showed that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c \ne 0</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>a</mi><mi>z</mi><mo>+</mo><mi>b</mi></mrow><mrow><mi>c</mi><mi>z</mi><mo>+</mo><mi>d</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">T(z) = \frac{az + b}{cz + d}</annotation></semantics></math>
+<!--can be expressed as a composition of four maps 
+$$T_4(z) = \tfrac{1}{c} z, ~~~~~ T_3(z) = (bc-da) z + a, ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = cz + d.$$-->
+can be expressed as a composition of three maps
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>b</mi><mi>c</mi><mo>−</mo><mi>d</mi><mi>a</mi></mrow><mi>c</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>z</mi><mo>+</mo><mfrac><mi>a</mi><mi>c</mi></mfrac><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><msub><mi>T</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mi>z</mi></mfrac><mo>,</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>T</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>z</mi><mo>+</mo><mi>d</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">T_3(z) = \left(\frac{bc-da}{c} \right) z + \frac{a}{c}, ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = cz + d.</annotation></semantics></math></p>
+<!--One way to see this is to factor out $\frac{a}{c}$ and let $\alpha = b/a$ and $\beta = d/c$ (assuming that $a\ne 0$).  Then 
+$$T(z) = \frac{a}{c}\left( \frac{z + \alpha}{z + \beta} \right) = \frac{a}{c} \left( 1 + \frac{\alpha - \beta}{z+ \beta} \right).$$
+Then $T$ is a composition of the maps 
+$$T_3(z) = \frac{a}{c} \left(1 + (\alpha - \beta) z \right), ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = z + \beta.$$-->
+<p><strong>Theorem 2.</strong> A Möbius transform is uniquely determined
+by where it maps any three points in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℂ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>∞</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbb{C}\cup \{ \infty \}.</annotation></semantics></math></p>
+<p><em>Proof.</em> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">z_1, z_2, z_3</annotation></semantics></math>
+are any three distinct points in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℂ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>∞</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbb{C}\cup \{\infty\}</annotation></semantics></math>,
+suppose that there are two Möbius transforms
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">S(z_i) = T(z_i)</annotation></semantics></math>
+for each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>T</mi></mrow><annotation encoding="application/x-tex">S^{-1} T</annotation></semantics></math>
+has three distinct fixed points which is impossible unless
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>S</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>T</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">S^{-1} = T^{-1}</annotation></semantics></math>
+which means that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+are the same.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<ol type="1">
+<li><p>Find a Möbius transform that sends
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>
+to 2,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.</p></li>
+<li><p>Find a general formula for a Möbius transform that sends
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>2</mn></msub><mo>,</mo><msub><mi>z</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">z_1, z_2, z_3</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mn>1</mn></msub><annotation encoding="application/x-tex">w_1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mn>2</mn></msub><annotation encoding="application/x-tex">w_2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>w</mi><mn>3</mn></msub><annotation encoding="application/x-tex">w_3</annotation></semantics></math>.
+Hint: It might help to start with a formula to send
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>1</mn></msub><annotation encoding="application/x-tex">z_1</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>2</mn></msub><annotation encoding="application/x-tex">z_2</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>3</mn></msub><annotation encoding="application/x-tex">z_3</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>.</p></li>
+<li><p>Find a Möbius transform that leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+fixed but maps 0 to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>.</p></li>
+</ol>
+<p><strong>Video:</strong> <a href="https://youtu.be/JX3VmDgiFnY">Möbius
+Transformations Revealed</a></p>
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <h4 id="tentative-schedule-6">Tentative Schedule</h4>

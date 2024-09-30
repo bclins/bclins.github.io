@@ -575,7 +575,7 @@ Day  | Section  | Topic
 Mon, Sep 23  | [TP06](https://allendowney.github.io/ThinkPython/chap06.html#recursion-with-return-values) | Recursion with return values
 Wed, Sep 25  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 26  | [C10.1][C10.1] | Lists
-Fri, Sep 27  |  |
+Fri, Sep 27  | [TP08][TP08] | Strings
 
 ### Mon, Sep 23
 
@@ -677,10 +677,71 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 30 |  |
+Mon, Sep 30 |  [TP09][TP09] | Lists
 Wed, Oct 2  |  | Review
 Thu, Oct 3  |  |
 Fri, Oct 4  |  | **Midterm 1**
+
+### Mon, Sep 30
+
+We started talking about **slices** of strings and lists. We also talked about **methods** and in particular the `.index()` method and the `.count()` method. Every sequence type has these two methods.  
+
+1. How would you slice the string `s = "The quick brown fox"` to get the word `"quick"`?
+
+2. Write a function that counts how often each vowel (a, e, i, o, u) occurs in a string and prints the results.  
+
+3. Write a function called `split_at(string, char)` that splits a string into a list with two strings.  The part before the first occurrence of `char` and the part after the first occurrence.  Then re-write this function to split the string at every occurrence of `char` and return a list of all sub-strings. 
+
+<!--
+Today we talked about things that all sequence types have in common and things that are different between lists in strings.  
+
+```python
+example_list = [1,'b',True]
+example_string = "Hi!"
+
+# You can access elements in a list or a string by using index notation:
+print(example_list[1])
+print(example_string[1])
+
+# You can change an element in a list but not in a string:
+example_list[1] = 'B' # now example_list is [1,'B',True]
+example_string[1] = 'I' # this is an error.  Strings a are immutable.  
+```
+
+A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
+
+```python
+# Strings are immutable
+s = "You can't touch this!"
+
+"""When you create the string "You can't touch this!", it is frozen in computer mememory.  
+You can reassign the variable s, but that doesn't change the string, it just makes s
+point to a different object in memory. 
+"""
+
+# Lists are mutable.  Changes made to a list will be remembered by the computer.  
+a = [1,2,3]
+
+"""Because of the way lists are stored in memory, two variables can point to the same list
+object.  If you make changes to one variable, that will affect the other variable too!  
+This only happens with mutable types, so watch out for it.  
+"""
+b = a
+b.append(4)
+print(a) # Weird!!!
+```
+
+Try these experiments to get a feeling for how this works.
+
+1. Let `a = [1,2,3]` and `b = a + [4]`.  Does that change `a`?  
+
+2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
+
+3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
+
+-->
+
+
 
 - - - 
 

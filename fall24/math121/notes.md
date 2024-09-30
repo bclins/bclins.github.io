@@ -274,6 +274,40 @@ Day  | Section  | Topic
 Mon, Sep 30 | [1.4][1.4] | Randomized controlled experiments
 Wed, Oct 2  | [3.1][3.1] | Defining probability
 Fri, Oct 4  | [3.1][3.1] | Multiplication and addition rules
+
+### Mon, Sep 30
+
+Recall that **correlation is not causation**. The only way to prove that one (explanatory) variable is the cause of a response is to use a **randomized controlled experiment**. We looked at these examples. 
+
+1. A study try to determine whether cellphones cause brain cancer.  The researchers interviewed 469 brain cancer patients about their cellphone use between 1994 and 1998.  They also interviewed 469 other hospital patients (without brain cancer) who had the same ages, genders, and races as the brain cancer patients.  
+
+    a. What was the explanatory variable?
+    b. What was the response variable?
+    c. Which variables were controlled?
+    d. Was this an **experiment** or an **observational study**?
+    e. Are there any possible **lurking variables**?
+
+2. In 1954, the polio vaccine trials were one of the largest randomized controlled experiments ever conducted.  [Here were the results](https://people.hsc.edu/faculty-staff/blins/StatsExamples/polioTrials.html). 
+
+    a. What was the explanatory variable?
+    b. What was the response variable?
+    c. Which variables were controlled?
+    d. Why don't we have to worry about lurking variables?  
+
+We talked about why the polio vaccine trials were **double blind** and what that means.      
+
+3. Do [magnetic bracelets](https://www.amazon.com/Bracelets-Adjustable-3000Gauss-Arthritis-Migraines/dp/B07QX2WYNS/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.S8qvWGHSHwQxRHG2yFf2gzEQVauNBaVky2_BHvgF4meM3f1vAL530i8oTdhNSTUc7Mk9pmXKIb6gSUWeQyil2KfiSsmqNf5SQ0zMkWv7o0oZU3uT21FKwIksTTCfs88gp8BLdzg6cY0V7bQ8SlHDqhi-SQ_1-uglO24g-WsO58e4ZqKvUFMJ3j0K2uRtmhTzd4MUWnwQyDq_wU8xDx789RUzuuU8yXZIh1WGygjZzbf7BDnEfdzRHkBnM5wzhbOm7gqhM3v8uY2JXvNRTP5E27YfvxroISSg6Alk4xM9jUY.5faFTIRYYwhnDzFp856CUR1u82Z7yQOvFbweRcKk9tg&dib_tag=se&hvadid=409961555257&hvdev=c&hvlocphy=1027155&hvnetw=g&hvqmt=e&hvrand=12006179576662034532&hvtargid=kwd-20439822&hydadcr=24657_11410751&keywords=magnetic+bracelets&qid=1727463369&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) work to help with arthritis pain?
+
+    a. What is the explanatory variable?
+    b. What is the response variable?
+    c. How hard would it be to design a randomized controlled experiment to answer the question above? 
+    
+We finished by talking about **anecdotal evidence**. 
+
+
+
+
+
 - - - 
 
 ### Week 7 Notes

@@ -457,7 +457,7 @@ where $a, b, c, d \in \C$ satisfy $ad - bc \ne 0$. We proved the following facts
 
 1. A Möbius transform always has two fixed points in $\C \cup \{ \infty \}$.   
 
-2. For any invertible matrix $A = \begin{pmatrix} a_{11} a_{12} \\ a_{21} a_{22} \end{pmatrix}$, we can define an associated Möbius transform
+2. For any invertible matrix $A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$, we can define an associated Möbius transform
 $$T_A(z) = \frac{a_{11} z + a_{12}}{a_{21} z + a_{22}}.$$ 
 Then if $A, B \in \C^{2 \times 2}$ are any two intertible matrices, 
 $$T_A \circ T_B = T_{AB}.$$
@@ -475,7 +475,6 @@ $$f^{-1}(z) = \frac{d z - b}{-cz + a}.$$
 
 
 
-
 - - - 
  
 
@@ -489,6 +488,40 @@ Day  | Section  | Topic
 Mon, Sep 30 | [3.2][3.2] | Möbius transforms - con'd
 Wed, Oct 2  | | Review
 Fri, Oct 4  | | **Midterm 1**
+
+We started by proving that
+
+**Theorem.** Any Möbius transformation maps lines & circles to lines & circles.  
+
+To prove this, we showed that if $c \ne 0$, then 
+$$T(z) = \frac{az + b}{cz + d}$$
+<!--can be expressed as a composition of four maps 
+$$T_4(z) = \tfrac{1}{c} z, ~~~~~ T_3(z) = (bc-da) z + a, ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = cz + d.$$-->
+can be expressed as a composition of three maps 
+$$T_3(z) = \left(\frac{bc-da}{c} \right) z + \frac{a}{c}, ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = cz + d.$$
+
+<!--One way to see this is to factor out $\frac{a}{c}$ and let $\alpha = b/a$ and $\beta = d/c$ (assuming that $a\ne 0$).  Then 
+$$T(z) = \frac{a}{c}\left( \frac{z + \alpha}{z + \beta} \right) = \frac{a}{c} \left( 1 + \frac{\alpha - \beta}{z+ \beta} \right).$$
+Then $T$ is a composition of the maps 
+$$T_3(z) = \frac{a}{c} \left(1 + (\alpha - \beta) z \right), ~~~~~ T_2(z) = \frac{1}{z}, \text{ and } T_1(z) = z + \beta.$$--> 
+ 
+**Theorem 2.** A Möbius transform is uniquely determined by where it maps any three points in $\C \cup \{ \infty \}.$  
+
+*Proof.* If $z_1, z_2, z_3$ are any three distinct points in $\C \cup \{\infty\}$, suppose that there are two Möbius transforms $T$ and $S$ such that $S(z_i) = T(z_i)$ for each $i$. Then $S^{-1} T$ has three distinct fixed points which is impossible unless $S^{-1} = T^{-1}$ which means that $S$ and $T$ are the same. $\square$ 
+
+1. Find a Möbius transform that sends $\infty$ to 2, $i$ to $\infty$, and $1$ to $1$.  
+
+2. Find a general formula for a Möbius transform that sends $z_1, z_2, z_3$ to $w_1$, $w_2$, $w_3$.  Hint: It might help to start with a formula to send $z_1$ to $0$, $z_2$ to $1$ and $z_3$ to $\infty$.  
+
+3. Find a Möbius transform that leaves $+1$ and $-1$ fixed but maps 0 to $\infty$.  
+
+**Video:** [Möbius Transformations Revealed](https://youtu.be/JX3VmDgiFnY)
+
+
+
+
+
+
 - - - 
 
 ### Week 7 Notes
