@@ -575,7 +575,7 @@ Day  | Section  | Topic
 Mon, Sep 23  | [TP06](https://allendowney.github.io/ThinkPython/chap06.html#recursion-with-return-values) | Recursion with return values
 Wed, Sep 25  | [docs](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 26  | [C10.1][C10.1] | Lists
-Fri, Sep 27  | [TP08][TP08] | Strings
+Fri, Sep 27  | [TP09][TP09] | Lists
 
 ### Mon, Sep 23
 
@@ -677,7 +677,7 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 30 |  [TP09][TP09] | Lists
+Mon, Sep 30 |  [TP08][TP08] | Strings
 Wed, Oct 2  |  | Review
 Thu, Oct 3  |  |
 Fri, Oct 4  |  | **Midterm 1**
@@ -688,9 +688,23 @@ We started talking about **slices** of strings and lists. We also talked about *
 
 1. How would you slice the string `s = "The quick brown fox"` to get the word `"quick"`?
 
-2. Write a function that counts how often each vowel (a, e, i, o, u) occurs in a string and prints the results.  
+2. Write a function that counts how often each vowel (a, e, i, o, u) occurs in a string and prints the results.  It helps to use the `.lower()` method for strings which returns a new string that is all lower case.  This let us talk about **method chaining** when you call methods like this: `x.method1().method2()`. 
 
-3. Write a function called `split_at(string, char)` that splits a string into a list with two strings.  The part before the first occurrence of `char` and the part after the first occurrence.  Then re-write this function to split the string at every occurrence of `char` and return a list of all sub-strings. 
+3. Write a function called `split_at(s, char)` that splits a string into a list with two strings.  The part before the first occurrence of `char` and the part after the first occurrence.  Then re-write this function to split the string at every occurrence of `char` and return a list of all sub-strings. 
+
+    ```python
+    def split_at(s, char):
+        """Returns a list of the substrings of s that are separated by char."""
+        output = []
+        while char in s:
+            location = s.index(char)
+            front = s[0:location]
+            output += [front]
+            s = s[location+1:] 
+        return output + [s] # Notice that the last substring in s 
+                            # will have to be added at the end.
+    ``` 
+
 
 <!--
 Today we talked about things that all sequence types have in common and things that are different between lists in strings.  

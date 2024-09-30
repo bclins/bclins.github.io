@@ -897,8 +897,8 @@ href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section
 <tr class="even">
 <td style="text-align: center;">Fri, Sep 27</td>
 <td style="text-align: center;"><a
-href="https://allendowney.github.io/ThinkPython/chap08.html">TP08</a></td>
-<td style="text-align: left;">Strings</td>
+href="https://allendowney.github.io/ThinkPython/chap09.html">TP09</a></td>
+<td style="text-align: left;">Lists</td>
 </tr>
 </tbody>
 </table>
@@ -1024,8 +1024,8 @@ an integer <code>n</code> and a list of nonzero integers
 <tr class="odd">
 <td style="text-align: center;">Mon, Sep 30</td>
 <td style="text-align: center;"><a
-href="https://allendowney.github.io/ThinkPython/chap09.html">TP09</a></td>
-<td style="text-align: left;">Lists</td>
+href="https://allendowney.github.io/ThinkPython/chap08.html">TP08</a></td>
+<td style="text-align: left;">Strings</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 2</td>
@@ -1054,12 +1054,27 @@ Every sequence type has these two methods.</p>
 <code>s = "The quick brown fox"</code> to get the word
 <code>"quick"</code>?</p></li>
 <li><p>Write a function that counts how often each vowel (a, e, i, o, u)
-occurs in a string and prints the results.</p></li>
-<li><p>Write a function called <code>split_at(string, char)</code> that
+occurs in a string and prints the results. It helps to use the
+<code>.lower()</code> method for strings which returns a new string that
+is all lower case. This let us talk about <strong>method
+chaining</strong> when you call methods like this:
+<code>x.method1().method2()</code>.</p></li>
+<li><p>Write a function called <code>split_at(s, char)</code> that
 splits a string into a list with two strings. The part before the first
 occurrence of <code>char</code> and the part after the first occurrence.
 Then re-write this function to split the string at every occurrence of
-<code>char</code> and return a list of all sub-strings.</p></li>
+<code>char</code> and return a list of all sub-strings.</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> split_at(s, char):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns a list of the substrings of s that are separated by char.&quot;&quot;&quot;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> []</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> char <span class="kw">in</span> s:</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        location <span class="op">=</span> s.index(char)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        front <span class="op">=</span> s[<span class="dv">0</span>:location]</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        output <span class="op">+=</span> [front]</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> s[location<span class="op">+</span><span class="dv">1</span>:] </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output <span class="op">+</span> [s] <span class="co"># Notice that the last substring in s </span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># will have to be added at the end.</span></span></code></pre></div></li>
 </ol>
 <!--
 Today we talked about things that all sequence types have in common and things that are different between lists in strings.  

@@ -513,7 +513,13 @@ $$T_3(z) = \frac{a}{c} \left(1 + (\alpha - \beta) z \right), ~~~~~ T_2(z) = \fra
 
 2. Find a general formula for a Möbius transform that sends $z_1, z_2, z_3$ to $w_1$, $w_2$, $w_3$.  Hint: It might help to start with a formula to send $z_1$ to $0$, $z_2$ to $1$ and $z_3$ to $\infty$.  
 
-3. Find a Möbius transform that leaves $+1$ and $-1$ fixed but maps 0 to $\infty$.  
+3. Find a Möbius transform that leaves $+1$ and $-1$ fixed but maps 0 to $\infty$.  Actually, this wasn't a great example because it turned out to be the reciprocal map!
+
+4. How does the Möbius transform from the previous example transform the circles in this figure where the blue circle is centered at $i$? 
+
+<center>
+<img src="mobiusExample.svg" width=300></img>
+</center>
 
 **Video:** [Möbius Transformations Revealed](https://youtu.be/JX3VmDgiFnY)
 

@@ -291,8 +291,10 @@ Recall that **correlation is not causation**. The only way to prove that one (ex
 
     a. What was the explanatory variable?
     b. What was the response variable?
+    c. This was an experiment because it had a **treatment variable**.  What was that?
     c. Which variables were controlled?
     d. Why don't we have to worry about lurking variables?  
+
 
 We talked about why the polio vaccine trials were **double blind** and what that means.      
 
