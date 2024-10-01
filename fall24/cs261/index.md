@@ -26,7 +26,7 @@ header-includes: |
 ### Announcements
 
 * Midterm 1 will by on **Friday, Oct. 4**
-* [Midterm 1 practice exam](practicemidterm1.pdf)
+* [Midterm 1 practice exam](practicemidterm1.pdf) and [solutions](practicemidterm1solutions.pdf)
 * For extra help, check out [Harvard's CS50 with Python](https://www.youtube.com/watch?v=OvKCESUCWII&list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V) on YouTube. 
 
 ### Course Description 
