@@ -705,6 +705,57 @@ We started talking about **slices** of strings and lists. We also talked about *
                             # will have to be added at the end.
     ``` 
 
+### Wed, Oct 2
+
+Today we talked about how to **trace** a program with paper and pencil including a **stack diagram** for recursive functions.  We started with the recursive function from [problem 11 on the practice midterm](practicemidterm1.pdf).  Then we did these other examples. 
+
+1. Make a table to trace the values of the variables in this loop. 
+
+    ```python
+    n = 1
+    for i in range(5):
+        a = n * i
+        n = n + a
+    ```
+
+2. Make a stack diagram to trace this recursive function.
+
+    ```python
+    def result(n):
+        if n == 1:
+            return 2
+        else:
+            return 2 * result(n - 1)
+    ```
+
+3. Make a stack diagram to trace this recursive function.
+
+    ```python
+    def f(k, n):
+        if k == n:
+            return k
+        elif k < n:
+            return f(k, n - k)
+        else:
+            return f(k - n, n)
+    ```
+
+We also talked about how to work with nested lists, including this example:
+
+```python
+students = [
+    ["Charlie", 8], 
+    ["Lucy", 9], 
+    ["Linus", 7], 
+    ["Sally": 6]
+]
+
+total = 0
+count = len(students)
+for i in range(count):
+    total += students[i][1]
+print("The average age of the students is ", total / count)
+```
 
 <!--
 Today we talked about things that all sequence types have in common and things that are different between lists in strings.  

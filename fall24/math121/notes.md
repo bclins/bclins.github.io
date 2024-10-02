@@ -307,7 +307,31 @@ We talked about why the polio vaccine trials were **double blind** and what that
 We finished by talking about **anecdotal evidence**. 
 
 
+### Wed, Oct 2
 
+Today we introduced **probability models** which always have two parts:
+
+1. A list of possible outcomes called a **sample space**.
+2. A **probability function** $P(E)$ that gives the probability for any subset $E$ of the sample space.  
+
+A subset of the sample space is called an **event**.  We already intuitively know lots of probability models, for example we described the following probability models:
+
+1. Flip a coin.
+
+2. Roll a six-sided die.
+
+3. If you roll a six-sided die, what is $P(\text{result is even})?$
+
+4. The proportion of people in the US with each of the four blood types is shown in the table below.
+
+    Type | O | A | B | AB
+    :---|:---:|:---:|:---:|:---:
+    Proportion | 0.45 | 0.40 | 0.11 | ?
+
+    What is $P(\text{Type AB})?$
+
+
+* **Workshop**: [Probability distributions](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
 
 - - - 

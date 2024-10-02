@@ -523,7 +523,37 @@ $$T_3(z) = \frac{a}{c} \left(1 + (\alpha - \beta) z \right), ~~~~~ T_2(z) = \fra
 
 **Video:** [Möbius Transformations Revealed](https://youtu.be/JX3VmDgiFnY)
 
+### Wed, Oct 2
 
+We reviewed for the exam by talking about these two problems.
+
+1. How does the Möbius transform $T(z) = \dfrac{z-i}{z-1}$ transform the three shapes shown below?
+
+<center>
+<svg width="350" height="240" viewBox="-2.5 -2 5 4">
+<!-- x & y axes -->
+<g transform="scale(1,-1)">
+<circle cx="1" cy="0" r="1" fill="transparent" stroke="blue" stroke-width="0.05"/>
+<circle cx="1" cy="0.5" r="0.5" fill="transparent" stroke="green" stroke-width="0.05"/>
+<line x1="-2.5" y1="1" x2="2.5" y2="1" stroke="red" stroke-width = "0.05"/>
+</g>
+<g stroke="black" stroke-width="0.025">
+ <line x1="-2.5" y1="0" x2="2.5" y2="0"/>
+ <line x1="0" y1="-2" x2="0" y2="2"/>
+</g>
+<!-- Labels -->
+ <g font-size="0.4" font-style="italic">
+ <text text-anchor="middle" x="1" y="0.5">1</text>
+ <text x="-0.35" y="-1.1">i</text>
+ </g>
+</svg>
+</center>
+
+2. Suppose $s_n$ is a sequence in $\C$ such that $|s_{n+1} - s_{m + 1}| \le 0.9 |s_n - s_m|$ for all $m, n \in \N$. 
+
+    a. Show that $s_n$ is bounded by finding an upper bound for $|s_n|$. 
+
+    b. Show that $s_n$ is a Cauchy sequence by finding an upper bound for $|s_n - s_m|$ when $n > m$. 
 
 
 
