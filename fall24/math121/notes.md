@@ -334,6 +334,19 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 * **Workshop**: [Probability distributions](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
 
+### Fri, Oct 4
+
+We talked about the **addition** and **multiplication rules** for **disjoint** and **independent** events.  
+
+1. If you shuffle a deck of 52 playing cards, and then draw one card, what is $P(\text{Ace})$?
+2. If you shuffle a deck of 52 playing cards, and then draw one card, what is $P(\text{Heart})$?
+3. Is the event that you get an Ace and the event that you get a Heart disjoint?  Are they independent?  
+4. What if you draw the top two cards from the deck.  Are the events $A = \text{First card is an ace}$ and $B = \text{Second card is an ace}$ independent? 
+
+
+* **Workshop**: [Basic probability rules](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BasicProbabilityRules2.pdf)
+
+
 - - - 
 
 ### Week 7 Notes
@@ -346,6 +359,21 @@ Mon, Oct 7   | [3.4][3.4] | Weighted averages & expected value
 Wed, Oct 9   | [7.1][7.1] | Law of large numbers & central limit theorem
 Fri, Oct 11  | [7.1][7.1] | Sampling distributions
 
+<!--
+### Mon, Oct 7
+
+Today we talked about **weighted averages**. To find a weighted average:
+
+1. Multiply each number by its weight.
+2. Add the results.
+
+We also talked about **random variables** and **expected value**. A random variable is a probability model where the outcome are numbers. The expected value $E(X)$ of a random variable $X$ is the weighted average of the outcomes using the probabilities as the weights. The expected value is also known as the theoretical average of a random variable.
+
+* **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
+
+We finished by talking about the Law of Large Numbers which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
+
+-->
 
 - - - 
 
