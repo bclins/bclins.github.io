@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 5 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project5.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, October 11. }
+
+\subsection*{Caesar Cipher}
+
+The Caesar cipher is one of the oldest and simplest methods for encrypting text. You pick a shift amount and then you shift every letter in the message by that amount.  For example, if the shift is 2, then a's become c's, b's become d's and so on, until y and z wrap around to become a and b, respectively.  A message like:
+$$\text{about to get hazy}$$
+would become:
+$$\text{cdqwv vq igv jcba}.$$
+For this project, you will write three functions related to the Caesar cipher.  You may also include any additional functions that are helpful to construct the three functions described below.  You should not import any libraries for this project. 
+
+\begin{enumerate}
+\item Write a function called \verb|caesar_shift(message, shift)| that applies a Caesar shift to any string.  You can assume that the message will not have any upper case letters, and you only need to shift letters, not any other symbols. 
+
+\item The Caesar cipher is not a good way to encrypt a message because it is very easy to decrypt.  In fact, you can often figure out the shift by finding the most common letter in the encrypted text.  Since \verb|"e"| is the most common letter in most English texts, there is a good chance that the shift is just the amount needed for \verb|"e"| to become the most common letter in your encrypted message.  Write a function called \verb|letter_frequency(message)| that returns a list.  The value of the output list at index $i$ should be the number of times the $i$-th letter of the alphabet occurs in the message.  So the first entry of the output is the number of a's, then b's, and so on. 
+
+
+\item In order to find the letter that occurs the most in the message, we need a way to search through the output of the letter frequency list and find the index with the largest entry.  Write a function called \verb|argmax(list)| that will search a list of numbers and return the \emph{index} of the largest entry in the list.  If multiple entries in the list are tied for the largest value, then return the index of the first one that is equal to the maximum.  
+\end{enumerate}
+
+\subsubsection*{Hints}
+
+\begin{enumerate}
+\item It would help to have functions to convert the letters (a, b, c, $\ldots$, z) to the numbers ($0, 1, 2, \ldots, 25$) and vice versa: 
+$$\verb|"a"| \rightarrow 0$$ 
+$$\verb|"b"| \rightarrow 1$$ 
+$$\verb|"c"| \rightarrow 2$$
+$$\vdots$$
+$$\verb|"z"| \rightarrow 25$$
+
+There are at least two ways to do this.  One option is to create a string with all of the letters of the alphabet in order and use the \verb|.index()| method.  Another option is to use the built in functions \verb|ord()| and \verb|chr()|.  The function \verb|ord()| converts any character to its integer ASCII value.  So \verb|ord("a")| returns 97, \verb|ord("b")| returns 98, and so on. The function \verb|chr()| does the reverse, it converts an integer to its corresponding ASCII character.  So \verb|chr(97)| is \verb|"a"|, \verb|chr(98)| is \verb|"b"|, etc. 
+
+\item Don't forget methods like \verb|.count()| when working with lists and strings.  
+
+\item For the \verb|argmax()| function, you'll need to loop over every value in the input list.  Make sure to use an accumulator variable to keep track of which index corresponds to the maximum value you have seen so far. 
+\end{enumerate}
+
+
+
+\end{document}

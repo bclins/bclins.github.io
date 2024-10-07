@@ -1133,41 +1133,6 @@ example_string = "Hi!"
 print(example_list[1])
 print(example_string[1])
 
-# You can change an element in a list but not in a string:
-example_list[1] = 'B' # now example_list is [1,'B',True]
-example_string[1] = 'I' # this is an error.  Strings a are immutable.  
-```
-
-A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
-
-```python
-# Strings are immutable
-s = "You can't touch this!"
-
-"""When you create the string "You can't touch this!", it is frozen in computer mememory.  
-You can reassign the variable s, but that doesn't change the string, it just makes s
-point to a different object in memory. 
-"""
-
-# Lists are mutable.  Changes made to a list will be remembered by the computer.  
-a = [1,2,3]
-
-"""Because of the way lists are stored in memory, two variables can point to the same list
-object.  If you make changes to one variable, that will affect the other variable too!  
-This only happens with mutable types, so watch out for it.  
-"""
-b = a
-b.append(4)
-print(a) # Weird!!!
-```
-
-Try these experiments to get a feeling for how this works.
-
-1. Let `a = [1,2,3]` and `b = a + [4]`.  Does that change `a`?  
-
-2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
-
-3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
 
 -->
 <hr />
@@ -1184,8 +1149,9 @@ Try these experiments to get a feeling for how this works.
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 7</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.3">C10.3</a></td>
+<td style="text-align: left;">Mutability and immutability</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 9</td>
@@ -1204,6 +1170,53 @@ Try these experiments to get a feeling for how this works.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-oct-7">Mon, Oct 7</h3>
+<p>Today we talked about a major difference between lists and strings.
+Lists are mutable but strings are immutable. A type in Python is
+<strong>immutable</strong> if you can change anything about the value
+without completely creating a new instance. A type is
+<strong>mutable</strong> if you can modify parts of it without
+completely replacing it. This is one of the trickier things to
+understand.</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can change an element in a list but not in a string:</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>example_list[<span class="dv">1</span>] <span class="op">=</span> <span class="st">&#39;B&#39;</span> <span class="co"># now example_list is [1,&#39;B&#39;,True]</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>example_string[<span class="dv">1</span>] <span class="op">=</span> <span class="st">&#39;I&#39;</span> <span class="co"># this is an error.  Strings a are immutable.  </span></span></code></pre></div>
+<p>There are several methods that work for mutable sequence types like
+lists, but not for immutable sequences like strings. These include the
+<code>.append()</code> method which adds an element to the end of a
+list, the <code>.pop()</code> method which removes and element from the
+end of a list (and returns its value), and the <code>.sort()</code>
+method which changes a list by putting its elements in sorted order.</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Strings are immutable</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;You can&#39;t touch this!&quot;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;When you create the string &quot;You can&#39;t touch this!&quot;, it is frozen in computer mememory.  </span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">You can reassign the variable s, but that doesn&#39;t change the string, it just makes s</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">point to a different object in memory. </span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Lists are mutable.  Changes made to a list will be remembered by the computer.  </span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;Because of the way lists are stored in memory, two variables can refer to the same list</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co">object.  If you make changes to one variable, that will affect the other variable too!  </span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co">This only happens with mutable types, so watch out for it.  </span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>b.append(<span class="dv">4</span>)</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a) <span class="co"># Weird!!!</span></span></code></pre></div>
+<p>Try these experiments to get a feeling for how this works.</p>
+<ol type="1">
+<li><p>Let <code>a = [1,2,3]</code> and <code>b = a + [4]</code>. Does
+that change <code>a</code>?</p></li>
+<li><p>What about <code>a = [1,2,3]</code> and <code>b = a</code>
+followed by <code>b += [4]</code>? Does that change
+<code>a</code>?</p></li>
+<li><p>Let <code>x = "test"</code> and <code>y = x</code> followed by
+<code>y += "s"</code>. Does that change <code>x</code>?</p></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>

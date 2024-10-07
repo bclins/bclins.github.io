@@ -41,8 +41,8 @@ Week | Topic                      | Notes | Projects
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 2](project2.pdf)
 3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  | [Project 3](project3.pdf)
 4  | Recursion                            | [Week 04](notes.html#week-4-notes)  | [Project 4](project4.pdf)
-5  | More on functions                    | [Week 05](notes.html#week-5-notes)  |
-6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  |
+5  | More on functions                    | [Week 05](notes.html#week-5-notes)  | 
+6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | [Project 5](project5.pdf)
 7  | Strings                              | [Week 07](notes.html#week-7-notes)  |
 8  | Lists                                | [Week 08](notes.html#week-8-notes)  |
 9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  |

@@ -768,12 +768,35 @@ example_string = "Hi!"
 print(example_list[1])
 print(example_string[1])
 
+
+-->
+
+
+
+- - - 
+
+### Week 7 Notes
+
+#### Tentative Schedule
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 7   | [C10.3][C10.3] |  Mutability and immutability
+Wed, Oct 9   |  | 
+Thu, Oct 10  |  | 
+Fri, Oct 11  |  | 
+
+### Mon, Oct 7
+
+Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
+
+```python
 # You can change an element in a list but not in a string:
 example_list[1] = 'B' # now example_list is [1,'B',True]
 example_string[1] = 'I' # this is an error.  Strings a are immutable.  
 ```
 
-A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
+There are several methods that work for mutable sequence types like lists, but not for immutable sequences like strings.  These include the `.append()` method which adds an element to the end of a list, the `.pop()` method which removes and element from the end of a list (and returns its value), and the `.sort()` method which changes a list by putting its elements in sorted order.  
 
 ```python
 # Strings are immutable
@@ -787,7 +810,7 @@ point to a different object in memory.
 # Lists are mutable.  Changes made to a list will be remembered by the computer.  
 a = [1,2,3]
 
-"""Because of the way lists are stored in memory, two variables can point to the same list
+"""Because of the way lists are stored in memory, two variables can refer to the same list
 object.  If you make changes to one variable, that will affect the other variable too!  
 This only happens with mutable types, so watch out for it.  
 """
@@ -803,23 +826,6 @@ Try these experiments to get a feeling for how this works.
 2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
 
 3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
-
--->
-
-
-
-- - - 
-
-### Week 7 Notes
-
-#### Tentative Schedule
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 7   |  |
-Wed, Oct 9   |  | 
-Thu, Oct 10  |  | 
-Fri, Oct 11  |  | 
 
 - - - 
 
@@ -973,6 +979,7 @@ Mon, Dec 9  |  |
 
 [C2.6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6>
 [C10.1]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.1>
+[C10.3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.3>
 
 <br>
 <br>
