@@ -359,7 +359,6 @@ Mon, Oct 7   | [3.4][3.4] | Weighted averages & expected value
 Wed, Oct 9   | [7.1][7.1] | Law of large numbers & central limit theorem
 Fri, Oct 11  | [7.1][7.1] | Sampling distributions
 
-<!--
 ### Mon, Oct 7
 
 Today we talked about **weighted averages**. To find a weighted average:
@@ -367,12 +366,22 @@ Today we talked about **weighted averages**. To find a weighted average:
 1. Multiply each number by its weight.
 2. Add the results.
 
-We also talked about **random variables** and **expected value**. A random variable is a probability model where the outcome are numbers. The expected value $E(X)$ of a random variable $X$ is the weighted average of the outcomes using the probabilities as the weights. The expected value is also known as the theoretical average of a random variable.
+We did an two examples. 
+
+1. Calculate the final grade of a student who gets an 80 quiz average, 72 midterm average, 95 project average, and an 89 on the final exam. 
+
+2. Eleven nursing students graduated from a nursing program.  Four students completed the program in 3 years, four took 4 years, two took 5 years, and one student took 6 years to graduate.  Express the average time to complete the program as a weighted average. 
+
+
+We also talked about **expected value** (also known as the **theoretical average**) which is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
 
 * **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
 
 We finished by talking about the Law of Large Numbers which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
 
+
+<!--
+Notation: A **random variable** is a probability model where the outcome are numbers. The **expected value** $E(X)$ of a random variable $X$ is the weighted average of the outcomes using the probabilities as the weights. 
 -->
 
 - - - 

@@ -827,6 +827,25 @@ Try these experiments to get a feeling for how this works.
 
 3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
 
+Note that adding two lists creates a new list, but the `+=` operator does not!
+We finished with a cautionary example about the need to avoid unintended side-effects when working with mutable types:
+
+```python
+def average(numbers): 
+    n = len(numbers)
+    total = 0
+    for i in range(n):
+        total += numbers.pop()
+    return total / n
+
+data = [4, 5, 6]
+
+mean = average(data)
+print("The average of", data, "is", mean)
+```
+
+Observe that the way we got the numbers to add to the total had the side effect of erasing the data which isn't what we wanted at all!  
+
 - - - 
 
 ### Week 8 Notes

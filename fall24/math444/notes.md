@@ -578,17 +578,44 @@ We introduced complex integrals, which are defined for any piecewise smooth path
 $$\int_\gamma f(z) \, dz = \int_a^b f(\gamma(t)) \, \gamma'(t) \, dt.$$
 We talked about why this definition makes sense and we did these examples. 
 
-1. $\int_\gamma (\overline{z})^2 \, dz$ on the path $\gamma(t) = t(1+i)$ with $t \in [0,1]$.
+1. $\int_\gamma z^2 \, dz$ on the upper half of the unit circle from $1$ to $-1$.  We started by using Python to numerically approximate the integral with a Riemann sum:
 
-2. $\int_\delta (\overline{z})^2 \, dz$ on the path $\delta(t) = t+it^2$ with $t \in [0,1]$. ([Link: Sympy code](https://sagecell.sagemath.org/?z=eJxNjc0KwjAQhO-BvMOChyZxKerdg0dvHnyB1vxYaZuSbKTJ05vqRYaFYb5hxwY_QczTkmGYFh8IFGcrQkYocN5I78comhUylEZyRv8pNRhMN57vIZnKOLOVPvz8Sq4jI4pU6sSZqyHtqXp13UpLGGYS9YwLW822MfVRFHRS6cFa4ZAkCsIDHqX8_v1pBxetIfsU4Jbp6ee6pQ10vX-b9gPiwTqa&lang=python&interacts=eJyLjgUAARUAuQ==))
+  ```python 
+  from cmath import *
 
-3. $\int_\gamma \frac{1}{z} \, dz$ where $\gamma$ is the unit circle $\gamma(t) = e^{it}$ with $t \in [0,2\pi]$. 
+  n = 1000
+  total = 0
+  for k in range(1000):
+      delta_z = exp(1j * pi * (k + 1) / n) - exp(1j * pi * k / n)
+      z = exp(1j * pi * k / n)
+      total += z ** 2 * delta_z
+      
+  print(total)
+  ```
+
+2. $\int_\gamma (\overline{z})^2 \, dz$ on the path $\gamma(t) = t(1+i)$ with $t \in [0,1]$.
+
+3. $\int_\delta (\overline{z})^2 \, dz$ on the path $\delta(t) = t+it^2$ with $t \in [0,1]$. ([Link: Sympy code](https://sagecell.sagemath.org/?z=eJxNjc0KwjAQhO-BvMOChyZxKerdg0dvHnyB1vxYaZuSbKTJ05vqRYaFYb5hxwY_QczTkmGYFh8IFGcrQkYocN5I78comhUylEZyRv8pNRhMN57vIZnKOLOVPvz8Sq4jI4pU6sSZqyHtqXp13UpLGGYS9YwLW822MfVRFHRS6cFa4ZAkCsIDHqX8_v1pBxetIfsU4Jbp6ee6pQ10vX-b9gPiwTqa&lang=python&interacts=eJyLjgUAARUAuQ==))
+
+  ```python
+  from sympy import *
+  x, y, z = symbols('x y z')
+  t = symbols('t',real=True)
+
+  f = conjugate(z)**2
+  g = t+t**2*I
+
+  print(integrate(f.subs(z,g)*diff(g,t),(t,0,1)))
+  ```
+
 
 4. Use the formula $\operatorname{length}(\gamma) = \int_a^b |\gamma'(t)| \, dt$ to find the length of the unit circle.  
 
+<!--
+3. $\int_\gamma \frac{1}{z} \, dz$ where $\gamma$ is the unit circle $\gamma(t) = e^{it}$ with $t \in [0,2\pi]$. 
+
 5. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 
-<!--
 #### Friday, Mar 3
 
 Today we proved **Cauchy's Theorem** using **Green's Theorem** (see [this video for a nice explanation of Green's theorem](https://youtu.be/JB99RbQAilI)).  
