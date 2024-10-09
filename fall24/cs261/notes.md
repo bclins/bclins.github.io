@@ -782,7 +782,7 @@ print(example_string[1])
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 7   | [C10.3][C10.3] |  Mutability and immutability
-Wed, Oct 9   |  | 
+Wed, Oct 9   | [TP07.2](https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list) | Reading files
 Thu, Oct 10  |  | 
 Fri, Oct 11  |  | 
 
@@ -845,6 +845,25 @@ print("The average of", data, "is", mean)
 ```
 
 Observe that the way we got the numbers to add to the total had the side effect of erasing the data which isn't what we wanted at all!  
+
+### Wed, Oct 9
+
+Today we talked about how to read the contents of a text file.  We talked about Python **file objects** which are what you get when you use the `open()` function to access the contents of text file.  File objects come with several useful methods for getting the contents of a file, including:
+
+* `.read()` which returns the contents of a text file as a string. 
+* `.readlines()` which returns a list containing each line of the file as a separate string.
+
+We did the following exercises using a word list contained in this text file: [words.txt](words.txt).  
+
+1. Write a function to count how many words begin with a given letter.  
+
+2. Write a function to return a list of all words that begin with a given letter. 
+
+3. Write a function to find the longest word in the word list.  
+
+We also looked at the text file [grades.txt](grades.txt) which contains comma separated values. You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
+
+4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
 
 - - - 
 

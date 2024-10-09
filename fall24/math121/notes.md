@@ -377,11 +377,35 @@ We also talked about **expected value** (also known as the **theoretical average
 
 * **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
 
-We finished by talking about the Law of Large Numbers which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
+We finished by talking about the **Law of Large Numbers** which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
 
+### Wed, Oct 9
+
+A **random variable** is a probability model where the outcome are numbers. We often use a capital letter like $X$ or $Y$ to represent a random variable.  We use the shorthand $E(X)$ to represent the expected value of a random variable.  Recall that the expected value (also known as the theoretical average) is the weighted average of the possible outcomes weighted by their probabilities.  
+
+A probability histogram shows the **probability distribution** of a random variable. Every probability distribution can be described in terms of the following three things:
+
+1. **Shape** - is it shaped like a bell, or skewed, or something even more complicated?
+2. **Center** - the theoretical average (i.e., the expected value)
+3. **Spread** - the theoretical standard deviation
+
+Examples of random variables:
+
+* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
+* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
+
+In the game roulette there is a while with 38 slots.  The slots numbered 1 through 36 are split equally between black and red slots.  The other two slots are 0 and 00 which are green.  When you spin the wheel, you can bet that the ball will land in a specific slot or a specific color.  If you bet $1, and the ball lands on the specific number you picked, then you win $36.  
+
+1. Find the expected value of your bet.  
+
+2. Draw a probability histogram for this situation. 
+
+3. Describe the shape of the distribution. 
+
+4. What does the law of large numbers predict will happen if you play many games of roulette?
 
 <!--
-Notation: A **random variable** is a probability model where the outcome are numbers. The **expected value** $E(X)$ of a random variable $X$ is the weighted average of the outcomes using the probabilities as the weights. 
+* [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
 -->
 
 - - - 
