@@ -679,11 +679,6 @@ probability rules</a></li>
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <h4 id="tentative-schedule-6">Tentative Schedule</h4>
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -702,9 +697,8 @@ value</td>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 9</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.1">7.1</a></td>
-<td style="text-align: left;">Law of large numbers &amp; central limit
-theorem</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.4">3.4</a></td>
+<td style="text-align: left;">Random variables</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 11</td>
@@ -762,20 +756,13 @@ things:</p>
 <ol type="1">
 <li><strong>Shape</strong> - is it shaped like a bell, or skewed, or
 something even more complicated?</li>
-<li><strong>Center</strong> - the theoretical average (i.e., the
-expected value)</li>
-<li><strong>Spread</strong> - the theoretical standard deviation</li>
+<li><strong>Center</strong> - the theoretical average
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+(i.e., the expected value)</li>
+<li><strong>Spread</strong> - the theoretical standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></li>
 </ol>
-<p>Examples of random variables:</p>
-<ul>
-<li><a
-href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html">Weights
-of adults</a></li>
-<li><a
-href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html">NFL
-kickoffs</a></li>
-</ul>
-<p>In the game roulette there is a while with 38 slots. The slots
+<p>In the game roulette there is a wheel with 38 slots. The slots
 numbered 1 through 36 are split equally between black and red slots. The
 other two slots are 0 and 00 which are green. When you spin the wheel,
 you can bet that the ball will land in a specific slot or a specific
@@ -788,9 +775,28 @@ picked, then you win $36.</p>
 <li><p>What does the law of large numbers predict will happen if you
 play many games of roulette?</p></li>
 </ol>
-<!--
+<p>We also looked at what happens if you bet $1 on a color like black.
+Then you win $2 if it lands on black. It turns out that the expected
+value is the same, but the distribution has a different shape (more
+skewed) and much larger spread
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>$</mi><mn>0.9986</mn></mrow><annotation encoding="application/x-tex">\sigma = \$0.9986</annotation></semantics></math>
+for betting on a number versus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>$</mi><mn>5.763</mn></mrow><annotation encoding="application/x-tex">\sigma = \$5.763</annotation></semantics></math>
+if you bet on black).</p>
+<p>We finished by talking about the trade-off between risk
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>)
+versus expected returns
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>)
+when investing. We also looked at what happens if you play a lot of
+games of roulette using <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">this
+app</a>. <!--
+Examples of sampling distributions.
+
+* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
+* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
 * [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
--->
+--></p>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>

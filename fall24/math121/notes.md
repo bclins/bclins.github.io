@@ -356,7 +356,7 @@ We talked about the **addition** and **multiplication rules** for **disjoint** a
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 7   | [3.4][3.4] | Weighted averages & expected value
-Wed, Oct 9   | [7.1][7.1] | Law of large numbers & central limit theorem
+Wed, Oct 9   | [3.4][3.4] | Random variables
 Fri, Oct 11  | [7.1][7.1] | Sampling distributions
 
 ### Mon, Oct 7
@@ -386,15 +386,11 @@ A **random variable** is a probability model where the outcome are numbers. We o
 A probability histogram shows the **probability distribution** of a random variable. Every probability distribution can be described in terms of the following three things:
 
 1. **Shape** - is it shaped like a bell, or skewed, or something even more complicated?
-2. **Center** - the theoretical average (i.e., the expected value)
-3. **Spread** - the theoretical standard deviation
+2. **Center** - the theoretical average $\mu$ (i.e., the expected value)
+3. **Spread** - the theoretical standard deviation $\sigma$
 
-Examples of random variables:
 
-* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
-* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
-
-In the game roulette there is a while with 38 slots.  The slots numbered 1 through 36 are split equally between black and red slots.  The other two slots are 0 and 00 which are green.  When you spin the wheel, you can bet that the ball will land in a specific slot or a specific color.  If you bet $1, and the ball lands on the specific number you picked, then you win $36.  
+In the game roulette there is a wheel with 38 slots.  The slots numbered 1 through 36 are split equally between black and red slots.  The other two slots are 0 and 00 which are green.  When you spin the wheel, you can bet that the ball will land in a specific slot or a specific color.  If you bet $1, and the ball lands on the specific number you picked, then you win $36.  
 
 1. Find the expected value of your bet.  
 
@@ -404,7 +400,14 @@ In the game roulette there is a while with 38 slots.  The slots numbered 1 throu
 
 4. What does the law of large numbers predict will happen if you play many games of roulette?
 
+We also looked at what happens if you bet \$1 on a color like black.  Then you win \$2 if it lands on black.  It turns out that the expected value is the same, but the distribution has a different shape (more skewed) and much larger spread ($\sigma = \$0.9986$ for betting on a number versus $\sigma = \$5.763$ if you bet on black). 
+
+We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. We also looked at what happens if you play a lot of games of roulette using [this app](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html).
 <!--
+Examples of sampling distributions.
+
+* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
+* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
 * [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
 -->
 

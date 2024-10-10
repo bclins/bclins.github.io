@@ -1309,24 +1309,96 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>length</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>γ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mo stretchy="true" form="prefix">|</mo><mi>γ</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\operatorname{length}(\gamma) = \int_a^b |\gamma&#39;(t)| \, dt</annotation></semantics></math>
 to find the length of the unit circle.</li>
 </ol>
+<h3 id="wed-oct-7">Wed, Oct 7</h3>
+<p>Today we introduced</p>
+<div class="Theorem">
+<p><strong>Cauchy’s Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic on a simply connected open set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is a simple, closed, piecewise, smooth curve in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C f(z) \, dz = 0.</annotation></semantics></math></p>
+</div>
+<p>We defined what <strong>simply connected</strong> means (intuitively
+it means that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+has no holes), and we reviewed simple closed curves. We also talked
+about why the specific parametrization of a curve does not matter for
+integrals (see <a
+href="https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#page=62">Proposition
+4.2</a>), but the orientation does, and the symbol
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∮</mo><annotation encoding="application/x-tex">\oint</annotation></semantics></math>
+indicates that the orientation of a simple closed curve is positive
+(counterclockwise). We calculated</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn></mrow></msub><mfrac><mn>1</mn><mi>z</mi></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z| = 1} \frac{1}{z} \, dz</annotation></semantics></math></li>
+</ol>
+<p>and saw that Cauchy’s theorem does not apply because the reciprocal
+function is not holomorphic at 0.</p>
+<p>Then we talked about how to prove Cauchy’s theorem using</p>
+<div class="Theorem">
+<p><strong>Green’s Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(x,y)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Q(x,y)</annotation></semantics></math>
+are real-valued functions with continuous partial derivatives in a
+simply connected domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+with a piecewise smooth boundary curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>P</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>+</mo><mi>Q</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>y</mi><mo>=</mo><msub><mo>∬</mo><mi>D</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>∂</mi><mi>Q</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>∂</mi><mi>P</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C P \, dx + Q \, dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right).</annotation></semantics></math></p>
+</div>
+<p>Here is a nice video explanation of the <a
+href="https://youtu.be/JB99RbQAilI">intuition behind Green’s
+theorem</a>. One problem with using Green’s theorem to prove Cauchy’s
+theorem is that it requires us to assume that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f&#39;(z)</annotation></semantics></math>
+is continuous (so that the partial derivatives are all continuous. It
+turns out that is true for all holomorphic functions, as we will see
+later. The <a
+href="https://www.amazon.com/Complex-Variables-Second-Dover-Mathematics/dp/0486406792">Complex
+Variables</a> book has a different proof of Cauchy’s theorem that
+doesn’t require this assumption.</p>
+<p>We finished by starting to talk about how useful Cauchy’s theorem is.
+One application of Cauchy’s theorem is that it implies that every
+holomorphic function has a holomorphic <strong>antiderivative</strong>.
+You can define the antidervative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(z)</annotation></semantics></math>
+of a holomorphic function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+on a simply connected open domain this way:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∫</mo><mi>γ</mi></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">F(z) = \int_\gamma f(z) \, dz</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+is any piecewise smooth path from a fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">z_0 \in D</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.
+We talked about why
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(z)</annotation></semantics></math>
+is well-defined.</p>
 <!--
 3. $\int_\gamma \frac{1}{z} \, dz$ where $\gamma$ is the unit circle $\gamma(t) = e^{it}$ with $t \in [0,2\pi]$. 
 
-5. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 
-#### Friday, Mar 3
+### Friday, Oct 11
 
-Today we proved **Cauchy's Theorem** using **Green's Theorem** (see [this video for a nice explanation of Green's theorem](https://youtu.be/JB99RbQAilI)).  
-
-**Cauchy's Theorem:** *If $f$ is holomorphic on a simply connected open set $D \subseteq \C$, and $C$ is a (piecewise smooth) simple closed path in $D$, then* 
-$$\oint_C f(z) \, dz = 0.$$
-
-As a corollary, we showed that when a function $f(z)$ is holomorphic on a simply connected open set $D$, then the integral on any two paths $\gamma_1$ and $\gamma_2$ that both start at a point $z_0$ and end at $z_1$ and stay inside $D$ must be the same:
+Last time we showed that when a function $f(z)$ is holomorphic on a simply connected open set $D$, then the integral on any two paths $\gamma_1$ and $\gamma_2$ that both start at a point $z_0$ and end at $z_1$ and stay inside $D$ must be the same:
 
 $$\int_{\gamma_1} f(z) \, dz = \int_{\gamma_2} f(z) \, dz.$$
 
-In other words, the value of the integral is **independent of the path**.
+In other words, the value of the integral is **independent of the path**.  Using this we can define 
+$$F(z) = \int_\gamma f(z) \, dz$$
+where $\gamma$ is any path in $D$ from $z_0$ to $z$.  
 
+1. Use the definition of derivative to prove that $F'(z) = f(z)$.  
+
+2. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 -->
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>

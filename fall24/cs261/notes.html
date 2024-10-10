@@ -1256,24 +1256,37 @@ of the file as a separate string.</li>
 <p>We did the following exercises using a word list contained in this
 text file: <a href="words.txt">words.txt</a>.</p>
 <ol type="1">
-<li><p>Write a function to count how many words begin with a given
-letter.</p></li>
-<li><p>Write a function to return a list of all words that begin with a
-given letter.</p></li>
-<li><p>Write a function to find the longest word in the word
-list.</p></li>
+<li>Write a function to find the longest word in the word list.<br />
+</li>
 </ol>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>word_list <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> longest_word(word_list):</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  biggest_so_far <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&gt;</span> <span class="bu">len</span>(biggest_so_far):</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>          biggest_so_far <span class="op">=</span> word</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> biggest_so_far</span></code></pre></div>
+<ol start="2" type="1">
+<li><p>Write a function
+<code>count_words(word_list, start_letter)</code> to count how many
+words begin with a given letter.</p></li>
+<li><p>Write a function <code>get_words(word_list, start_letter)</code>
+to return a list of all words that begin with a given letter.</p></li>
+</ol>
+<p>It turns out if you write the function <code>get_words</code> first,
+then you can use it to easily write the <code>count_words</code>
+function without repeating any code by combining <code>get_words</code>
+with the <code>len</code> function.</p>
 <p>We also looked at the text file <a href="grades.txt">grades.txt</a>
-which contains comma separated values. You can use the string method
-<code>.split(",")</code> to separate a string into a list of the
-substrings that were separated by commas.</p>
-<ol start="4" type="1">
-<li>Suppose that final grades for the students in the grades.txt file
-are a weighted average where homework counts 20%, the midterm exam
-counts 30% and the final exam counts 50%. How would you write a program
-to read the grades for each student and then calculate their average
-grade?</li>
-</ol>
+which contains comma separated values.</p>
+<!-- 
+You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
+
+4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
+-->
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>

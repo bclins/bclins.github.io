@@ -611,24 +611,52 @@ We talked about why this definition makes sense and we did these examples.
 
 4. Use the formula $\operatorname{length}(\gamma) = \int_a^b |\gamma'(t)| \, dt$ to find the length of the unit circle.  
 
+### Wed, Oct 7 
+
+Today we introduced 
+
+<div class="Theorem">
+**Cauchy's Theorem.** If $f$ is holomorphic on a simply connected open set $D$ and $C$ is a simple, closed, piecewise, smooth curve in $D$, then 
+$$\oint_C f(z) \, dz = 0.$$
+</div>
+
+We defined what **simply connected** means (intuitively it means that $D$ has no holes), and we reviewed simple closed curves. We also talked about why the specific parametrization of a curve does not matter for integrals (see [Proposition 4.2](https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#page=62)), but the orientation does, and the symbol $\oint$ indicates that the orientation of a simple closed curve is positive (counterclockwise). We calculated
+
+1. $\oint_{|z| = 1} \frac{1}{z} \, dz$
+
+and saw that Cauchy's theorem does not apply because the reciprocal function is not holomorphic at 0.  
+
+Then we talked about how to prove Cauchy's theorem using
+
+<div class="Theorem">
+**Green's Theorem.** If $P(x,y)$ and $Q(x,y)$ are real-valued functions with continuous partial derivatives in a simply connected domain $D$ with a piecewise smooth boundary curve $C$, then 
+$$\oint_C P \, dx + Q \, dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right).$$
+</div>
+
+Here is a nice video explanation of the [intuition behind Green's theorem](https://youtu.be/JB99RbQAilI). One problem with using Green's theorem to prove Cauchy's theorem is that it requires us to assume that $f'(z)$ is continuous (so that the partial derivatives are all continuous.  It turns out that is true for all holomorphic functions, as we will see later.  The [Complex Variables](https://www.amazon.com/Complex-Variables-Second-Dover-Mathematics/dp/0486406792) book has a different proof of Cauchy's theorem that doesn't require this assumption.  
+
+We finished by starting to talk about how useful Cauchy's theorem is. One application of Cauchy's theorem is that it implies that every holomorphic function has a holomorphic **antiderivative**.  You can define the antidervative $F(z)$ of a holomorphic function $f$ on a simply connected open domain this way:
+$$F(z) = \int_\gamma f(z) \, dz$$
+where $\gamma$ is any piecewise smooth path from a fixed $z_0 \in D$ to $z$.  We talked about why $F(z)$ is well-defined.  
+
+
 <!--
 3. $\int_\gamma \frac{1}{z} \, dz$ where $\gamma$ is the unit circle $\gamma(t) = e^{it}$ with $t \in [0,2\pi]$. 
 
-5. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 
-#### Friday, Mar 3
+### Friday, Oct 11
 
-Today we proved **Cauchy's Theorem** using **Green's Theorem** (see [this video for a nice explanation of Green's theorem](https://youtu.be/JB99RbQAilI)).  
-
-**Cauchy's Theorem:** *If $f$ is holomorphic on a simply connected open set $D \subseteq \C$, and $C$ is a (piecewise smooth) simple closed path in $D$, then* 
-$$\oint_C f(z) \, dz = 0.$$
-
-As a corollary, we showed that when a function $f(z)$ is holomorphic on a simply connected open set $D$, then the integral on any two paths $\gamma_1$ and $\gamma_2$ that both start at a point $z_0$ and end at $z_1$ and stay inside $D$ must be the same:
+Last time we showed that when a function $f(z)$ is holomorphic on a simply connected open set $D$, then the integral on any two paths $\gamma_1$ and $\gamma_2$ that both start at a point $z_0$ and end at $z_1$ and stay inside $D$ must be the same:
 
 $$\int_{\gamma_1} f(z) \, dz = \int_{\gamma_2} f(z) \, dz.$$
 
-In other words, the value of the integral is **independent of the path**.
+In other words, the value of the integral is **independent of the path**.  Using this we can define 
+$$F(z) = \int_\gamma f(z) \, dz$$
+where $\gamma$ is any path in $D$ from $z_0$ to $z$.  
 
+1. Use the definition of derivative to prove that $F'(z) = f(z)$.  
+
+2. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 -->
 
 - - - 

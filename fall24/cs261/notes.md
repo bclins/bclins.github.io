@@ -855,15 +855,33 @@ Today we talked about how to read the contents of a text file.  We talked about 
 
 We did the following exercises using a word list contained in this text file: [words.txt](words.txt).  
 
-1. Write a function to count how many words begin with a given letter.  
+1. Write a function to find the longest word in the word list.  
+  ```python
+  file = open("words.txt")
+  word_list = file.readlines()
 
-2. Write a function to return a list of all words that begin with a given letter. 
+  def longest_word(word_list):
+    biggest_so_far = ""
+    for word in word_list:
+        if len(word) > len(biggest_so_far):
+            biggest_so_far = word
+    return biggest_so_far
+  ```
 
-3. Write a function to find the longest word in the word list.  
+2. Write a function `count_words(word_list, start_letter)` to count how many words begin with a given letter.  
 
-We also looked at the text file [grades.txt](grades.txt) which contains comma separated values. You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
+3. Write a function `get_words(word_list, start_letter)` to return a list of all words that begin with a given letter. 
+
+It turns out if you write the function `get_words` first, then you can use it to easily write the `count_words` function without repeating any code by combining `get_words` with the `len` function. 
+
+We also looked at the text file [grades.txt](grades.txt) which contains comma separated values. 
+
+
+<!-- 
+You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
 
 4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
+-->
 
 - - - 
 
