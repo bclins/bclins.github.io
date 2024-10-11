@@ -424,12 +424,6 @@ Examples of sampling distributions.
 
 1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If a commuter plan is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than $4{,}000$ lbs?  
 
-2. Before state lotteries, mobsters used to run illegal lotteries called the numbers game in many cities.  It cost 1 dollar to buy a numbers game lottery ticket and players could pick any three digit number from 000 to 999.  If their number was picked, they would win \$600.  
-    a. What is the expected value of a numbers ticket?  
-    b. The standard deviation for a numbers ticket was $\sigma = \$18.96$.  If someone played the numbers game every day (350 days per year) for 40 years, that would be 14,000 games.  Describe the sampling distribution for this person's average winnings per game. Is it possible they win more than \$1 per game?   
-    c. The mobster Casper Holstein took as many as 150,000 bets per week.  How likely would it be for the mob to have a bad week where they lost money?  
-
-
 
 
 
@@ -444,6 +438,23 @@ Day  | Section  | Topic
 Mon, Oct 14  |            | Fall break, no class
 Wed, Oct 16  | [5.1][5.1] | Sampling distributions for proportions 
 Fri, Oct 18  | [5.2][5.2] | Confidence intervals for a proportion 
+
+
+<!--
+
+### Wed, Oct 16
+
+We started with this warm-up problem which is a review of the things we talked about last week. 
+
+1. Before state lotteries, mobsters used to run illegal lotteries called the numbers game in many cities.  It cost 1 dollar to buy a numbers game lottery ticket and players could pick any three digit number from 000 to 999.  If their number was picked, they would win \$600.  
+    a. What is the expected value of a numbers ticket?  
+    b. The standard deviation for a numbers ticket was $\sigma = \$18.96$.  If someone played the numbers game every day (350 days per year) for 40 years, that would be 14,000 games.  Describe the sampling distribution for this person's average winnings per game. Is it possible they win more than \$1 per game?   
+    c. The mobster Casper Holstein took as many as 150,000 bets per week.  How likely would it be for the mob to have a bad week where they lost money?  
+
+Then we talked about **sample proportions** which are denoted $\hat{p}$.  
+
+
+-->
 
 - - - 
 

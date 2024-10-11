@@ -45,7 +45,7 @@ Week | Topic                      | Notes | Homework
 5  | Complex differentiability                      | [Week 05](notes.html#week-5-notes)  | [HW5](HW5.pdf)
 6  | Complex logarithms, **Midterm 1**              | [Week 06](notes.html#week-6-notes)  | [HW6](HW6.pdf)
 7  | Complex integration                            | [Week 07](notes.html#week-7-notes)  | [HW7](HW7.pdf)
-8  | The Cauchy integral formula                    | [Week 08](notes.html#week-8-notes)  |
+8  | The Cauchy integral formula                    | [Week 08](notes.html#week-8-notes)  | [HW8](HW8.pdf)
 9  | Entire functions                               | [Week 09](notes.html#week-9-notes)  |
 10 | Singularities and residues                     | [Week 10](notes.html#week-10-notes) |
 11 | Applications of the residue theorem            | [Week 11](notes.html#week-11-notes) |

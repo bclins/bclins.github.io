@@ -879,6 +879,12 @@ We also looked at the text file [grades.txt](grades.txt) which contains comma se
 
 ### Thu, Oct 10
 
+<!-- NOTE TO SELF:
+
+This set of exercises was a little too advanced for most of the students.  They still need more time to get used to basic patterns of looping and accumulator variables.  See the activity we did on Friday, Oct 11 for a more appropriate lesson.  
+
+-->
+
 The grades for 26 students are stored in a text file [grades.txt](grades.txt). Suppose that the final grade in the class is 20% homework, 30% midterms, and 50% final exam.  We worked on a program to find the final grade for each student in the class.  
 
 We broke the program into three functions:
@@ -934,9 +940,9 @@ We've spent the last two weeks talking about sequence types, and we've seen a lo
 
 2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
 
-3. **Filtering** which is when we create a new sequence that only contains those elements that meet a certain criterion.
+3. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
 
-The main differences between these patterns are the type of the accumulator variable and whether or not there is a conditional statement before you modify the accumulator in the loop.  
+The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
  
 <center>
 
@@ -952,7 +958,9 @@ We did the following examples.
 
 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
 
-2. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
+2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
+
+3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
 ```python
 fullnames = [
     "Alice Adams",
@@ -982,11 +990,6 @@ fullnames = [
     "Yolanda Young",
     "Zachary Zimmerman"
 ]
-```
-
-3. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings.  
-```python
-data = [0.4, 0.7, 1.1, 0.01, 0.97]
 ```
 
 4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  

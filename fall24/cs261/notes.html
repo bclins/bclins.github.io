@@ -1285,6 +1285,11 @@ with the <code>len</code> function.</p>
 <p>We also looked at the text file <a href="grades.txt">grades.txt</a>
 which contains comma separated values.</p>
 <h3 id="thu-oct-10">Thu, Oct 10</h3>
+<!-- NOTE TO SELF:
+
+This set of exercises was a little too advanced for most of the students.  They still need more time to get used to basic patterns of looping and accumulator variables.  See the activity we did on Friday, Oct 11 for a more appropriate lesson.  
+
+-->
 <p>The grades for 26 students are stored in a text file <a
 href="grades.txt">grades.txt</a>. Suppose that the final grade in the
 class is 20% homework, 30% midterms, and 50% final exam. We worked on a
@@ -1347,12 +1352,11 @@ like a sum or maximum.</li>
 <li><p><strong>Mapping</strong> the sequence to create a new sequence
 where every element is replaced using some function.</p></li>
 <li><p><strong>Filtering</strong> which is when we create a new sequence
-that only contains those elements that meet a certain
-criterion.</p></li>
+that only contains elements that meet a certain criterion.</p></li>
 </ol>
 <p>The main differences between these patterns are the type of the
-accumulator variable and whether or not there is a conditional statement
-before you modify the accumulator in the loop.</p>
+accumulator variable and what function or expression you use to help
+perform the accumulation.</p>
 <center>
 <table>
 <colgroup>
@@ -1396,6 +1400,11 @@ with the accumulator variable</td>
 common reduce patterns. One that is not built in is the
 <code>prod</code> function which multiplies elements in a sequence of
 numbers. Write a <code>prod(numbers)</code> function.</p></li>
+<li><p>Write a function that converts floating point numbers to strings
+in percent form. For example <code>0.5</code> should become
+<code>"50%"</code>. Then map the following list of floats to a list of
+percentage strings.
+<code>data = [0.4, 0.7, 1.1, 0.01, 0.97]</code></p></li>
 <li><p>Write a function called <code>get_firstname</code> that returns
 the first name of any one full name. Then use that function to map this
 list to a list of first names.<br />
@@ -1430,15 +1439,6 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a h
 <span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Yolanda Young&quot;</span>,</span>
 <span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Zachary Zimmerman&quot;</span></span>
 <span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
-<ol start="3" type="1">
-<li>Write a function that converts floating point numbers to strings in
-percent form. For example <code>0.5</code> should become
-<code>"50%"</code>. Then map the following list of floats to a list of
-percentage strings.<br />
-</li>
-</ol>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="fl">0.4</span>, <span class="fl">0.7</span>, <span class="fl">1.1</span>, <span class="fl">0.01</span>, <span class="fl">0.97</span>]</span></code></pre></div>
 <ol start="4" type="1">
 <li>Filter the list of names above to get a new list
 <code>long_names</code> that are longer than 10 letters.</li>
