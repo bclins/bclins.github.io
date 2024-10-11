@@ -783,8 +783,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 7   | [C10.3][C10.3] |  Mutability and immutability
 Wed, Oct 9   | [TP07.2](https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list) | Reading files
-Thu, Oct 10  |  | 
-Fri, Oct 11  |  | 
+Thu, Oct 10  | [TP07.2](https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list) | Reading files
+Fri, Oct 11  |  | Common patterns in loops (map, filter, reduce)
 
 ### Mon, Oct 7
 
@@ -877,11 +877,140 @@ It turns out if you write the function `get_words` first, then you can use it to
 We also looked at the text file [grades.txt](grades.txt) which contains comma separated values. 
 
 
-<!-- 
-You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
+### Thu, Oct 10
 
+The grades for 26 students are stored in a text file [grades.txt](grades.txt). Suppose that the final grade in the class is 20% homework, 30% midterms, and 50% final exam.  We worked on a program to find the final grade for each student in the class.  
+
+We broke the program into three functions:
+
+1. A function `weighted_average(numbers, weights)` that can calculate the weighted average of any list of numbers using any list of weights. 
+
+2. A function `get_student_data(line)` that converts a line from the text file into a list with a students name followed by their three grades. You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
+
+3. A function `final_grades(lines)` that computes and prints the final grades for all of the students.  
+
+Here is a version of the final program. 
+
+```python
+file = open("grades.txt")
+lines = file.readlines()
+
+def weighted_average(numbers, weights):
+    total = 0
+    for i in range(len(numbers)):
+        total += numbers[i] * weights[i]
+    return total
+
+def get_student_data(line):
+    data = line.split(",")
+    for i in range(1, len(data)):
+        data[i] = int(data[i]) # Convert each grade from a str to an int.
+        """This is different than what we did in class. Here we are mutating the
+        entries of the data in place, but that is okay because we don't care about
+        the local data variable after the function returns."""
+    return data
+
+def print_final_grades(lines):
+    for line in lines[1:]:
+        data = get_student_data(line)
+        grades = data[1:]
+        final_grade = weighted_average(grades, [0.2, 0.3, 0.5])
+        print(f"{data[0]} got a final grade of {final_grade}")
+    
+print_final_grades(lines)
+```
+
+<!--
 4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
 -->
+
+### Fri, Oct 11
+
+We've spent the last two weeks talking about sequence types, and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
+
+1. **Reducing** the sequence to a single number or value like a sum or maximum.
+
+<!--2. **Searching** the sequence to find out if an element is present (and possibly return its index).-->
+
+2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
+
+3. **Filtering** which is when we create a new sequence that only contains those elements that meet a certain criterion.
+
+The main differences between these patterns are the type of the accumulator variable and whether or not there is a conditional statement before you modify the accumulator in the loop.  
+ 
+<center>
+
+| Pattern | Accumulator Variable | Helper Function/Expression |
+|:---:|:--------:|:-------------:|
+| Map | New list or sequence | How you want to transform each element | 
+| Filter | New list or sequence | Boolean function or expression to decide which elements to include |
+| Reduce | Usually a bool, int, or float | How you want to combine each element with the accumulator variable |
+
+</center>
+
+We did the following examples. 
+
+1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
+
+2. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
+```python
+fullnames = [
+    "Alice Adams",
+    "Bob Brown",
+    "Charlie Clark",
+    "Daisy Davis",
+    "Edward Evans",
+    "Fiona Foster",
+    "George Green",
+    "Hannah Hill",
+    "Isaac Ives",
+    "Jessica Johnson",
+    "Kevin King",
+    "Lily Lewis",
+    "Michael Miller",
+    "Nora Nelson",
+    "Oliver Owens",
+    "Patricia Parker",
+    "Quinn Quinn",
+    "Rachel Roberts",
+    "Samuel Smith",
+    "Tina Taylor",
+    "Ulysses Underwood",
+    "Vanessa Vincent",
+    "William Wilson",
+    "Xavier Xander",
+    "Yolanda Young",
+    "Zachary Zimmerman"
+]
+```
+
+3. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings.  
+```python
+data = [0.4, 0.7, 1.1, 0.01, 0.97]
+```
+
+4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  
+
+<!--
+1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
+
+```python
+  even_strings = [string for string in string_list if len(string) % 2 == 0]
+```
+
+2. Write a function that converts a list of full names to just a list of first names.  
+  ```python
+  first_names = [get_first_name(name) for name in name_list]
+  ```
+-->
+
+<!-- 
+
+3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
+
+Neither book covers list comprehensions... but I think they are actually easier than the sieve! -->
+
+
 
 - - - 
 

@@ -640,9 +640,6 @@ $$F(z) = \int_\gamma f(z) \, dz$$
 where $\gamma$ is any piecewise smooth path from a fixed $z_0 \in D$ to $z$.  We talked about why $F(z)$ is well-defined.  
 
 
-<!--
-3. $\int_\gamma \frac{1}{z} \, dz$ where $\gamma$ is the unit circle $\gamma(t) = e^{it}$ with $t \in [0,2\pi]$. 
-
 
 ### Friday, Oct 11
 
@@ -650,12 +647,39 @@ Last time we showed that when a function $f(z)$ is holomorphic on a simply conne
 
 $$\int_{\gamma_1} f(z) \, dz = \int_{\gamma_2} f(z) \, dz.$$
 
-In other words, the value of the integral is **independent of the path**.  Using this we can define 
+In other words, the value of the integral is **independent of the path**. Today we proved some important theorems to make working with complex integeral easier.  
+
+<div class="Theorem">
+**Evaluation Theorem.** If $f$ has a holomorphic antiderivative $F$ in a path connected open domain $D$, then for any piecewise smooth path $\gamma: [a,b] \rightarrow D$,
+$$\int_\gamma f(z) \, dz = F(\gamma(b)) - F(\gamma(a)).$$
+</div>
+
+This theorem follows immediately from the definition of a complex path integral and the chain rule, combined with the evaluation theorem from real variable calculus. An application of this theorem is the following.
+
+1. Calculate $\int_\gamma z^n \, dz$ for any piecewise smooth path $\gamma$ that begins at $z \in \C$ and ends at $w \in \C$. Note: this solution works as long as $n \ne -1$ with the caveat that the path shouldn't pass through 0 if $n$ is negative. Why won't this work if $n = -1$?  
+
+<div class="Theorem">
+**ML-Inequality.** If $f$ is a continuous complex-valued function on a path connected open domain $D$ and $\gamma$ is a piecewise smooth path in $D$, then 
+$$\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \on{range}(\gamma)} |f(z)| \cdot \on{length}(\gamma).$$
+</div> 
+
+This is like a triangle inequality for complex integrals.  In fact, you can use the triangle inequality to prove it.  
+
+<div class="Theorem">
+**Antiderivative Theorem.** If $f$ is holomorphic in a *simply connected* open domain $D$, then $f$ has a holomorphic antiderivative $F$ in $D$.  
+</div>
+
+Last time we used independence of path to define 
 $$F(z) = \int_\gamma f(z) \, dz$$
-where $\gamma$ is any path in $D$ from $z_0$ to $z$.  
+where $\gamma$ is any path in $D$ from $z_0$ to $z$. We just have to show that $F'(w) = f(w)$ for every $w \in D$ to prove that this function $F$ is the antiderivative needed for the antiderivative theorem. Two key ideas in the proof are the following:
 
-1. Use the definition of derivative to prove that $F'(z) = f(z)$.  
+1. Let $\delta$ be a parametrization of the line segment from $w$ to $w+h$ in $D$.  Show that $\int_\delta f(w) \, dz = h f(w)$.  
 
+2. Use the ML-inequality to estimate 
+$$\left| \frac{\int_\delta f(z) - f(w) \, dz}{h} \right|.$$
+
+
+<!--
 2. Use the formula $\left| \int_\gamma f(z) \, dz \right| \le \max_{z \in \gamma} |f(z)| \cdot \operatorname{length}(\gamma)$ to estimate an upper bound for $\left| \int_\gamma \frac{1}{z^4 + 16} \, dz \right|$ when $\gamma$ is the unit circle. 
 -->
 

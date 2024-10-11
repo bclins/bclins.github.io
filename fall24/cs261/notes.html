@@ -1166,13 +1166,15 @@ href="https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-lis
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 10</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list">TP07.2</a></td>
+<td style="text-align: left;">Reading files</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Oct 11</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Common patterns in loops (map, filter,
+reduce)</td>
 </tr>
 </tbody>
 </table>
@@ -1282,11 +1284,182 @@ function without repeating any code by combining <code>get_words</code>
 with the <code>len</code> function.</p>
 <p>We also looked at the text file <a href="grades.txt">grades.txt</a>
 which contains comma separated values.</p>
-<!-- 
-You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
-
+<h3 id="thu-oct-10">Thu, Oct 10</h3>
+<p>The grades for 26 students are stored in a text file <a
+href="grades.txt">grades.txt</a>. Suppose that the final grade in the
+class is 20% homework, 30% midterms, and 50% final exam. We worked on a
+program to find the final grade for each student in the class.</p>
+<p>We broke the program into three functions:</p>
+<ol type="1">
+<li><p>A function <code>weighted_average(numbers, weights)</code> that
+can calculate the weighted average of any list of numbers using any list
+of weights.</p></li>
+<li><p>A function <code>get_student_data(line)</code> that converts a
+line from the text file into a list with a students name followed by
+their three grades. You can use the string method
+<code>.split(",")</code> to separate a string into a list of the
+substrings that were separated by commas.</p></li>
+<li><p>A function <code>final_grades(lines)</code> that computes and
+prints the final grades for all of the students.</p></li>
+</ol>
+<p>Here is a version of the final program.</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;grades.txt&quot;</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> weighted_average(numbers, weights):</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numbers)):</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> numbers[i] <span class="op">*</span> weights[i]</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_student_data(line):</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> line.split(<span class="st">&quot;,&quot;</span>)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(data)):</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>        data[i] <span class="op">=</span> <span class="bu">int</span>(data[i]) <span class="co"># Convert each grade from a str to an int.</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;This is different than what we did in class. Here we are mutating the</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="co">        entries of the data in place, but that is okay because we don&#39;t care about</span></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="co">        the local data variable after the function returns.&quot;&quot;&quot;</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_final_grades(lines):</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> lines[<span class="dv">1</span>:]:</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> get_student_data(line)</span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>        grades <span class="op">=</span> data[<span class="dv">1</span>:]</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>        final_grade <span class="op">=</span> weighted_average(grades, [<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>])</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>data[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> got a final grade of </span><span class="sc">{</span>final_grade<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>print_final_grades(lines)</span></code></pre></div>
+<!--
 4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
 -->
+<h3 id="fri-oct-11">Fri, Oct 11</h3>
+<p>We’ve spent the last two weeks talking about sequence types, and
+we’ve seen a lot of examples where we needed to loop through the
+elements of the sequence with an accumulator variable to accomplish a
+goal. These goals often fall into one of three patterns:</p>
+<ol type="1">
+<li><strong>Reducing</strong> the sequence to a single number or value
+like a sum or maximum.</li>
+</ol>
+<!--2. **Searching** the sequence to find out if an element is present (and possibly return its index).-->
+<ol start="2" type="1">
+<li><p><strong>Mapping</strong> the sequence to create a new sequence
+where every element is replaced using some function.</p></li>
+<li><p><strong>Filtering</strong> which is when we create a new sequence
+that only contains those elements that meet a certain
+criterion.</p></li>
+</ol>
+<p>The main differences between these patterns are the type of the
+accumulator variable and whether or not there is a conditional statement
+before you modify the accumulator in the loop.</p>
+<center>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 33%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Pattern</th>
+<th style="text-align: center;">Accumulator Variable</th>
+<th style="text-align: center;">Helper Function/Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Map</td>
+<td style="text-align: center;">New list or sequence</td>
+<td style="text-align: center;">How you want to transform each
+element</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Filter</td>
+<td style="text-align: center;">New list or sequence</td>
+<td style="text-align: center;">Boolean function or expression to decide
+which elements to include</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Reduce</td>
+<td style="text-align: center;">Usually a bool, int, or float</td>
+<td style="text-align: center;">How you want to combine each element
+with the accumulator variable</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>We did the following examples.</p>
+<ol type="1">
+<li><p>In Python, there are built in functions <code>len</code>,
+<code>max</code>, <code>min</code>, and <code>sum</code> to perform many
+common reduce patterns. One that is not built in is the
+<code>prod</code> function which multiplies elements in a sequence of
+numbers. Write a <code>prod(numbers)</code> function.</p></li>
+<li><p>Write a function called <code>get_firstname</code> that returns
+the first name of any one full name. Then use that function to map this
+list to a list of first names.<br />
+</p></li>
+</ol>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fullnames <span class="op">=</span> [</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice Adams&quot;</span>,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob Brown&quot;</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie Clark&quot;</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy Davis&quot;</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward Evans&quot;</span>,</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Fiona Foster&quot;</span>,</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;George Green&quot;</span>,</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hannah Hill&quot;</span>,</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Isaac Ives&quot;</span>,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jessica Johnson&quot;</span>,</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Kevin King&quot;</span>,</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Lily Lewis&quot;</span>,</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Michael Miller&quot;</span>,</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Nora Nelson&quot;</span>,</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oliver Owens&quot;</span>,</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Patricia Parker&quot;</span>,</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Quinn Quinn&quot;</span>,</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Rachel Roberts&quot;</span>,</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Samuel Smith&quot;</span>,</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tina Taylor&quot;</span>,</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Ulysses Underwood&quot;</span>,</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Vanessa Vincent&quot;</span>,</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;William Wilson&quot;</span>,</span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Xavier Xander&quot;</span>,</span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Yolanda Young&quot;</span>,</span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Zachary Zimmerman&quot;</span></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<ol start="3" type="1">
+<li>Write a function that converts floating point numbers to strings in
+percent form. For example <code>0.5</code> should become
+<code>"50%"</code>. Then map the following list of floats to a list of
+percentage strings.<br />
+</li>
+</ol>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="fl">0.4</span>, <span class="fl">0.7</span>, <span class="fl">1.1</span>, <span class="fl">0.01</span>, <span class="fl">0.97</span>]</span></code></pre></div>
+<ol start="4" type="1">
+<li>Filter the list of names above to get a new list
+<code>long_names</code> that are longer than 10 letters.</li>
+</ol>
+<!--
+1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
+
+```python
+  even_strings = [string for string in string_list if len(string) % 2 == 0]
+```
+
+2. Write a function that converts a list of full names to just a list of first names.  
+  ```python
+  first_names = [get_first_name(name) for name in name_list]
+  ```
+-->
+<!-- 
+
+3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
+
+Neither book covers list comprehensions... but I think they are actually easier than the sieve! -->
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>

@@ -790,13 +790,77 @@ versus expected returns
 when investing. We also looked at what happens if you play a lot of
 games of roulette using <a
 href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">this
-app</a>. <!--
-Examples of sampling distributions.
-
-* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
-* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
-* [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
---></p>
+app</a>.</p>
+<h3 id="fri-oct-11">Fri, Oct 11</h3>
+<p>Suppose we are trying to study a large population with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+and standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.
+If we take a random sample, the sample mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is a random variable and its probability distribution is called the
+<strong>sampling distribution</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>.
+Assuming that the population is large and our sample is a simple random
+sample, the sampling distribution always has the following features:</p>
+<ol type="1">
+<li><strong>Shape</strong>: gets more normal as the sample size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets larger.</li>
+<li><strong>Center</strong>: the theoretical average of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is the true population mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</li>
+<li><strong>Spread</strong>: the theoretical standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+gets smaller as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets bigger. In fact:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></msub><mo>=</mo><mfrac><mi>σ</mi><msqrt><mi>N</mi></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.</annotation></semantics></math></li>
+</ol>
+<p>Examples of sampling distributions.</p>
+<ul>
+<li><a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html">Gettysburg
+Address words</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html">Weights
+of adults</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html">NFL
+kickoffs</a></li>
+</ul>
+<!-- 1. Every week in the Fall there are about 15 NFL games.  In each game, there are about 13 kickoffs, on average.  So we can estimate that there might be about 200 kickoffs in one week of NFL games.  Those 200 kickoffs would be a reasonably random sample of all NFL kickoffs.  Describe the sampling distribution of the average kickoff distance.  -->
+<ol type="1">
+<li><p>The average American weighs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">\mu = 170</annotation></semantics></math>
+lbs. with a standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">\sigma = 40</annotation></semantics></math>
+lbs. If a commuter plan is designed to seat 22 passengers, what is the
+probability that the combined weight of the passengers would be greater
+than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">4{,}000</annotation></semantics></math>
+lbs?</p></li>
+<li><p>Before state lotteries, mobsters used to run illegal lotteries
+called the numbers game in many cities. It cost 1 dollar to buy a
+numbers game lottery ticket and players could pick any three digit
+number from 000 to 999. If their number was picked, they would win
+$600.</p>
+<ol type="a">
+<li>What is the expected value of a numbers ticket?<br />
+</li>
+<li>The standard deviation for a numbers ticket was
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>$</mi><mn>18.96</mn></mrow><annotation encoding="application/x-tex">\sigma = \$18.96</annotation></semantics></math>.
+If someone played the numbers game every day (350 days per year) for 40
+years, that would be 14,000 games. Describe the sampling distribution
+for this person’s average winnings per game. Is it possible they win
+more than $1 per game?<br />
+</li>
+<li>The mobster Casper Holstein took as many as 150,000 bets per week.
+How likely would it be for the mob to have a bad week where they lost
+money?</li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>
