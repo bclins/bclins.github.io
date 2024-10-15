@@ -695,6 +695,63 @@ Mon, Oct 14  |  | Fall break, no class
 Wed, Oct 16  | [4.4][4.4] | Cauchy's integral formula
 Fri, Oct 18  | [5.1][5.1] | Holomorphic implies infinitely differentiable
 
+### Wed, Oct 16
+
+<div class="Theorem">
+**Cauchy Integral Formula.** Let $f$ be holomorphic in a simply connected open domain $D \subseteq \C$ that contains a simple, closed, piecewise smooth curve $C$ around a point $w$.  Then 
+$$f(w) = \frac{1}{2 \pi i} \, \oint_C \frac{f(z)}{z-w} \, dz.$$
+</div>
+
+That's kind of weird if you think about it.  This theorem says that the value of $f$ at a point inside a curve is completely determined by the values of $f$ on the curve.  The proof required two key insights:
+
+1. If $f$ is complex differentiable at $w$, then 
+$$f(z) = f(w) + f'(w) (z-w) + \epsilon(z),$$ 
+where the error term $\epsilon(z)$ satisfies $\lim_{z \rightarrow w} \frac{\epsilon(z)}{z-w} = 0$. 
+
+2. If $C_1$ and $C_2$ are two different positively oriented piecewise smooth closed paths in a region where $f$ is holomorphic, then 
+$$\int_{C_1} \frac{f(z)}{z-w} \, dz = \int_{C_2} \frac{f(z)}{z-w} \, dz.$$ 
+
+Use the Cauchy integral formula to evaluate the following integrals.
+
+1. $\int_C \frac{e^z}{z-1} \, dz$ where $C$ is the square with vertices at $10, 10i, -10, -10i$. (<https://youtu.be/NJap6Vm5mEk>)
+
+2. $\oint_{|z-i|=1} \frac{1}{z^2+1} \, dz$
+
+3. $\oint_{|z|=3} \frac{e^z}{z^2 - 2z} \, dz$
+
+
+<!--
+### Friday, Oct 18
+
+A function $f:D \rightarrow \C$ is **analytic** on an open domain $D \subseteq \C$ if it is infinitely (complex) differentiable and for every $w \in D$, there is a power series $\sum_{k = 0}^\infty a_k (z-w)^k$ that absolutely converges to $f(z)$ for every $z$ in an open disk around $w$.  
+
+<div class="Theorem">
+**Theorem (Holomorphic implies Analytic).** If $f$ is holomorphic in an open set containing a closed disk $B_R(w)$, then $f(z)$ has a power series $f(z) = \sum_{k = 0}^\infty a_k (z-w)^k$ which converges absolutely inside the disk $B_R(w)$. The coefficients of the power series are
+$$a_k = \frac{1}{2\pi i} \oint_{|z-w|=R} \frac{f(z)}{(z-w)^{k+1}} \, dz.$$
+</div>
+
+And immediate corollary is:
+
+<div class="Theorem">
+**Cauchy Integral Formula for Derivatives.** Let $f$ be holomorphic in a simply connected open domain $D \subseteq \C$ that contains a simple, closed, piecewise smooth curve $C$ around a point $w$.  Then for any $n \in \N$,
+$$f^{(n)}(w) = \frac{n!}{2 \pi i} \, \oint_C \frac{f(z)}{(z-w)^{n+1}} \, dz.$$
+</div>
+
+The key to proving the first theorem is to confirm that the following expression converges when $|u - w| < R$. 
+$$2\pi i f(u) =  \oint \frac{f(z)}{z - u} \, dz =  \oint  \frac{f(z)}{(z - w) - (u - w)} \, dz =  \oint  \frac{\frac{f(z)}{(z-w)}}{1 - \left( \frac{u - w}{z-w}\right)} \, dz$$
+$$= \oint \sum_{k = 0}^\infty \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz =\sum_{k = 0}^\infty  \oint \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz.$$
+
+We talked about how to use the Cauchy integral formulas to solve integral problems like these. 
+
+1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
+
+2. $\oint_{|z| = 1} \frac{z^2+1}{z(2z+1)} \, dz$. (<https://youtu.be/APoh2B5S2ok>)
+
+
+We finished by using a complex contour integral to find the real integral $\int_{-\infty}^{\infty} \frac{1}{x^4+1} \, dx$.
+
+-->
+
 - - - 
 
 ### Week 9 Notes

@@ -1024,10 +1024,41 @@ Neither book covers list comprehensions... but I think they are actually easier 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 14  |            | Fall break, no class
-Wed, Oct 16  |  |
+Wed, Oct 16  |  | List comprehensions
 Thu, Oct 17  |  |
 Fri, Oct 18  |  |
 
+### Wed, Oct 16
+
+Today we practiced some more examples of mapping, filtering, and reducing lists and other sequence types using loops.  
+
+1. Write a function `reverse(s)` that reverses a string.  For example, `"Hello!"` becomes `"!olleH"`.  
+
+2. Write a function `is_palindrome(s)` to check if a string is a palindrome (i.e., spelled the same foreward and backwards, like `"yay"`). Then use that function to find all of the palindromes in the file [words.txt](words.txt).  Hint, you will need to remove the `\n` newline character after you read the lines of the file.  You can do this with the `.strip()` method which removes any whitespace characters (spaces, tabs, newlines) from the beginning and end of strings. 
+
+We also talked about **list comprehensions** which are a way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
+
+<center>
+[*expression* **for** *variable* **in** *sequence*]
+</center>
+
+As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
+
+<center>
+[*expression* **for** *variable* **in** *sequence* **if** *boolean_expression*]
+</center>
+
+Here are some examples:
+
+```python
+# Generate a list of all perfect squares from 0 to 100
+perfect_squares = [n ** 2 for n in range(11)]
+
+# Generate a list of the odd perfect squares.
+odd_perfect_squares = [n ** 2 for n in range(11) if n % 2 == 1]
+
+```
+ 
 
 - - - 
 

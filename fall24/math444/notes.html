@@ -1531,6 +1531,90 @@ differentiable</td>
 </tr>
 </tbody>
 </table>
+<h3 id="wed-oct-16">Wed, Oct 16</h3>
+<div class="Theorem">
+<p><strong>Cauchy Integral Formula.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+be holomorphic in a simply connected open domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{C}</annotation></semantics></math>
+that contains a simple, closed, piecewise smooth curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+around a point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π</mi><mi>i</mi></mrow></mfrac><mspace width="0.167em"></mspace><msub><mo>∮</mo><mi>C</mi></msub><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">f(w) = \frac{1}{2 \pi i} \, \oint_C \frac{f(z)}{z-w} \, dz.</annotation></semantics></math></p>
+</div>
+<p>That’s kind of weird if you think about it. This theorem says that
+the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at a point inside a curve is completely determined by the values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+on the curve. The proof required two key insights:</p>
+<ol type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is complex differentiable at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>ϵ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">f(z) = f(w) + f&#39;(w) (z-w) + \epsilon(z),</annotation></semantics></math>
+where the error term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\epsilon(z)</annotation></semantics></math>
+satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><mi>w</mi></mrow></msub><mfrac><mrow><mi>ϵ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{z \rightarrow w} \frac{\epsilon(z)}{z-w} = 0</annotation></semantics></math>.</p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
+are two different positively oriented piecewise smooth closed paths in a
+region where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic, then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><msub><mi>C</mi><mn>1</mn></msub></msub><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><msub><mo>∫</mo><msub><mi>C</mi><mn>2</mn></msub></msub><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_{C_1} \frac{f(z)}{z-w} \, dz = \int_{C_2} \frac{f(z)}{z-w} \, dz.</annotation></semantics></math></p></li>
+</ol>
+<p>Use the Cauchy integral formula to evaluate the following
+integrals.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>C</mi></msub><mfrac><msup><mi>e</mi><mi>z</mi></msup><mrow><mi>z</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\int_C \frac{e^z}{z-1} \, dz</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is the square with vertices at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn><mo>,</mo><mn>10</mn><mi>i</mi><mo>,</mo><mo>−</mo><mn>10</mn><mo>,</mo><mo>−</mo><mn>10</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">10, 10i, -10, -10i</annotation></semantics></math>.
+(<a href="https://youtu.be/NJap6Vm5mEk"
+class="uri">https://youtu.be/NJap6Vm5mEk</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>i</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn></mrow></msub><mfrac><mn>1</mn><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z-i|=1} \frac{1}{z^2+1} \, dz</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>3</mn></mrow></msub><mfrac><msup><mi>e</mi><mi>z</mi></msup><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>z</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z|=3} \frac{e^z}{z^2 - 2z} \, dz</annotation></semantics></math></p></li>
+</ol>
+<!--
+### Friday, Oct 18
+
+A function $f:D \rightarrow \C$ is **analytic** on an open domain $D \subseteq \C$ if it is infinitely (complex) differentiable and for every $w \in D$, there is a power series $\sum_{k = 0}^\infty a_k (z-w)^k$ that absolutely converges to $f(z)$ for every $z$ in an open disk around $w$.  
+
+<div class="Theorem">
+**Theorem (Holomorphic implies Analytic).** If $f$ is holomorphic in an open set containing a closed disk $B_R(w)$, then $f(z)$ has a power series $f(z) = \sum_{k = 0}^\infty a_k (z-w)^k$ which converges absolutely inside the disk $B_R(w)$. The coefficients of the power series are
+$$a_k = \frac{1}{2\pi i} \oint_{|z-w|=R} \frac{f(z)}{(z-w)^{k+1}} \, dz.$$
+</div>
+
+And immediate corollary is:
+
+<div class="Theorem">
+**Cauchy Integral Formula for Derivatives.** Let $f$ be holomorphic in a simply connected open domain $D \subseteq \C$ that contains a simple, closed, piecewise smooth curve $C$ around a point $w$.  Then for any $n \in \N$,
+$$f^{(n)}(w) = \frac{n!}{2 \pi i} \, \oint_C \frac{f(z)}{(z-w)^{n+1}} \, dz.$$
+</div>
+
+The key to proving the first theorem is to confirm that the following expression converges when $|u - w| < R$. 
+$$2\pi i f(u) =  \oint \frac{f(z)}{z - u} \, dz =  \oint  \frac{f(z)}{(z - w) - (u - w)} \, dz =  \oint  \frac{\frac{f(z)}{(z-w)}}{1 - \left( \frac{u - w}{z-w}\right)} \, dz$$
+$$= \oint \sum_{k = 0}^\infty \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz =\sum_{k = 0}^\infty  \oint \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz.$$
+
+We talked about how to use the Cauchy integral formulas to solve integral problems like these. 
+
+1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
+
+2. $\oint_{|z| = 1} \frac{z^2+1}{z(2z+1)} \, dz$. (<https://youtu.be/APoh2B5S2ok>)
+
+
+We finished by using a complex contour integral to find the real integral $\int_{-\infty}^{\infty} \frac{1}{x^4+1} \, dx$.
+
+-->
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <h4 id="tentative-schedule-8">Tentative Schedule</h4>
