@@ -409,10 +409,14 @@ We finished by talking about the trade-off between risk ($\sigma$) versus expect
 
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
 
+<div class="Theorem">
+**Sampling Distribution of $\bar{x}$.**
+
 1. **Shape**: gets more normal as the sample size $N$ gets larger.
 2. **Center**: the theoretical average of $\bar{x}$ is the true population mean $\mu$. 
 3. **Spread**: the theoretical standard deviation of $\bar{x}$ gets smaller as $N$ gets bigger. In fact: 
 $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.$$
+</div>
 
 Examples of sampling distributions.
 
@@ -440,8 +444,6 @@ Wed, Oct 16  | [5.1][5.1] | Sampling distributions for proportions
 Fri, Oct 18  | [5.2][5.2] | Confidence intervals for a proportion 
 
 
-<!--
-
 ### Wed, Oct 16
 
 We started with this warm-up problem which is a review of the things we talked about last week. 
@@ -451,10 +453,28 @@ We started with this warm-up problem which is a review of the things we talked a
     b. The standard deviation for a numbers ticket was $\sigma = \$18.96$.  If someone played the numbers game every day (350 days per year) for 40 years, that would be 14,000 games.  Describe the sampling distribution for this person's average winnings per game. Is it possible they win more than \$1 per game?   
     c. The mobster Casper Holstein took as many as 150,000 bets per week.  How likely would it be for the mob to have a bad week where they lost money?  
 
-Then we talked about **sample proportions** which are denoted $\hat{p}$.  
+Then we talked about **sample proportions** which are denoted $\hat{p}$.  In a SRS from a large population, $\hat{p}$ is random with **sampling distribution** that has the following features. 
 
 
--->
+<div class="Theorem">
+**Sampling Distribution of $\hat{p}$.**
+
+1. **Shape**: gets more normal as the sample size $N$ gets larger.
+2. **Center**: the theoretical average of $\hat{p}$ is the true population proportion $p$.
+3. **Spread**: the theoretical standard deviation of $\hat{p}$ gets smaller as $N$ gets bigger. 
+$$\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.$$
+</div>
+
+We did the following exercises in class. 
+
+1. In our class, 13 out of 28 students were born in VA.  Is $\frac{13}{28}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
+
+2. Assuming that the true proportion of all HSC students that were born in VA is 50%, describe the sampling distribution for $\hat{p}_\text{VA}$ in a random sample of $N = 25$ students. 
+
+3. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
+
+4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+
 
 - - - 
 

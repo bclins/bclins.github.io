@@ -1024,8 +1024,8 @@ Neither book covers list comprehensions... but I think they are actually easier 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 14  |            | Fall break, no class
-Wed, Oct 16  |  | List comprehensions
-Thu, Oct 17  |  |
+Wed, Oct 16  |  | More map, filter, & reduce examples
+Thu, Oct 17  |  | List comprehensions
 Fri, Oct 18  |  |
 
 ### Wed, Oct 16
@@ -1034,9 +1034,12 @@ Today we practiced some more examples of mapping, filtering, and reducing lists 
 
 1. Write a function `reverse(s)` that reverses a string.  For example, `"Hello!"` becomes `"!olleH"`.  
 
-2. Write a function `is_palindrome(s)` to check if a string is a palindrome (i.e., spelled the same foreward and backwards, like `"yay"`). Then use that function to find all of the palindromes in the file [words.txt](words.txt).  Hint, you will need to remove the `\n` newline character after you read the lines of the file.  You can do this with the `.strip()` method which removes any whitespace characters (spaces, tabs, newlines) from the beginning and end of strings. 
+2. Write a function `is_palindrome(s)` to check if a string is a palindrome (i.e., spelled the same forward and backwards, like `"yay"`). Then use that function to find all of the palindromes in the file [words.txt](words.txt).  Hint, you will need to remove the `\n` newline character after you read the lines of the file.  You can do this with the `.strip()` method which removes any whitespace characters (spaces, tabs, newlines) from the beginning and end of strings. 
 
-We also talked about **list comprehensions** which are a way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
+<!--
+### Thu, Oct 17
+
+A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
 
 <center>
 [*expression* **for** *variable* **in** *sequence*]
@@ -1045,7 +1048,7 @@ We also talked about **list comprehensions** which are a way to create a new lis
 As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
 
 <center>
-[*expression* **for** *variable* **in** *sequence* **if** *boolean_expression*]
+[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
 </center>
 
 Here are some examples:
@@ -1058,7 +1061,24 @@ perfect_squares = [n ** 2 for n in range(11)]
 odd_perfect_squares = [n ** 2 for n in range(11) if n % 2 == 1]
 
 ```
- 
+
+Exercises:
+
+1. What is the value of the following Python expression? 
+
+```python
+[len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
+``` 
+
+2. Write a list comprehension to create a list of the first 20 positive odd numbers. 
+
+3. How could you use the `is_palindrome(s)` function we wrote yesterday to get a list of all palindromes in a long `word_list` using a list comprehension?  
+
+4. How could you use a `get_firstname(s)` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
+
+5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
+
+-->
 
 - - - 
 

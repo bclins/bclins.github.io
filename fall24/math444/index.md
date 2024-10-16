@@ -27,7 +27,7 @@ header-includes: |
 * Midterm 1 will be on **Friday, Oct 4**.
 * [Midterm 1 review problems](midterm1review.html)
 * [Complex Grapher](https://mabotkin.github.io/complex/) by Alex Wang.
-* [Another Complex Grapher](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/ComplexGrapher.html) by me.
+* [Another Complex Grapher](https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html) by me.
 
 ### Course Description 
 

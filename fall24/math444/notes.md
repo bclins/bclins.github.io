@@ -708,20 +708,37 @@ That's kind of weird if you think about it.  This theorem says that the value of
 $$f(z) = f(w) + f'(w) (z-w) + \epsilon(z),$$ 
 where the error term $\epsilon(z)$ satisfies $\lim_{z \rightarrow w} \frac{\epsilon(z)}{z-w} = 0$. 
 
-2. If $C_1$ and $C_2$ are two different positively oriented piecewise smooth closed paths in a region where $f$ is holomorphic, then 
-$$\int_{C_1} \frac{f(z)}{z-w} \, dz = \int_{C_2} \frac{f(z)}{z-w} \, dz.$$ 
+2. If $C_1$ and $C_2$ are two different simple, closed, piecewise smooth curves in a region where $f$ is holomorphic, then 
+$$\oint_{C_1} \frac{f(z)}{z-w} \, dz = \oint_{C_2} \frac{f(z)}{z-w} \, dz.$$ 
 
 Use the Cauchy integral formula to evaluate the following integrals.
 
-1. $\int_C \frac{e^z}{z-1} \, dz$ where $C$ is the square with vertices at $10, 10i, -10, -10i$. (<https://youtu.be/NJap6Vm5mEk>)
+1. $\oint_C \frac{e^z}{z-1} \, dz$ where $C$ is the square with vertices at $10, 10i, -10, -10i$. (<https://youtu.be/NJap6Vm5mEk>)
 
 2. $\oint_{|z-i|=1} \frac{1}{z^2+1} \, dz$
 
 3. $\oint_{|z|=3} \frac{e^z}{z^2 - 2z} \, dz$
 
+4. $\oint_{|z| = 1} \frac{z^2+1}{z(2z+1)} \, dz$. (<https://youtu.be/APoh2B5S2ok>)
+
+We finished by looking at the following application of the Cauchy integral formula:
+
+5. $\int_{-\infty}^\infty \frac{1}{x^4 + 1} \, dx$.  
+
+The key is to integrate over the boundary of the upper half of the disk of radius $R$ centered at the origin (where $R$ is very large).  Then use the ML-inequality to show that the integral over the circular part of the boundary goes to zero, leaving just the real integral we want. 
 
 <!--
 ### Friday, Oct 18
+
+Last time we ran into the problem of figuring out how to decompose functions like 
+
+$$g(z) = \frac{1}{z^4 + 1} \text{ into the form } \frac{f(z)}{z - w}.$$
+
+That isn't always easy to do.  Here is a shortcut that you can use.  If $g(z) = \frac{f(z)}{z-w}$ where $f$ is holomorphic in a neighborhood around $w$, then $f(z) = g(z) \cdot (z-w)$ for every $z \ne w$, and since holomorphic functions are continuous:
+$$f(w) = \lim_{z \rightarrow w} g(z) \cdot (z - w).$$
+The value of this limit is called the **residue** of $g(z)$ at $w$.  You can often use L'Hospital's rule to find the residue.  
+
+1. Find the residues of $\dfrac{1}{z^4+1}$ at $w_1 = e^{\pi i/ 4}$ and $w_2 = e^{3 \pi i /4}$. 
 
 A function $f:D \rightarrow \C$ is **analytic** on an open domain $D \subseteq \C$ if it is infinitely (complex) differentiable and for every $w \in D$, there is a power series $\sum_{k = 0}^\infty a_k (z-w)^k$ that absolutely converges to $f(z)$ for every $z$ in an open disk around $w$.  
 
@@ -741,15 +758,9 @@ The key to proving the first theorem is to confirm that the following expression
 $$2\pi i f(u) =  \oint \frac{f(z)}{z - u} \, dz =  \oint  \frac{f(z)}{(z - w) - (u - w)} \, dz =  \oint  \frac{\frac{f(z)}{(z-w)}}{1 - \left( \frac{u - w}{z-w}\right)} \, dz$$
 $$= \oint \sum_{k = 0}^\infty \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz =\sum_{k = 0}^\infty  \oint \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz.$$
 
-We talked about how to use the Cauchy integral formulas to solve integral problems like these. 
+Exercise:
 
-1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
-
-2. $\oint_{|z| = 1} \frac{z^2+1}{z(2z+1)} \, dz$. (<https://youtu.be/APoh2B5S2ok>)
-
-
-We finished by using a complex contour integral to find the real integral $\int_{-\infty}^{\infty} \frac{1}{x^4+1} \, dx$.
-
+2. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
 -->
 
 - - - 

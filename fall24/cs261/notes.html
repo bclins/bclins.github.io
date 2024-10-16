@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -997,7 +997,7 @@ talked about last time.</p>
 <li><p>Write an <code>even_elements(numbers)</code> function like the
 one from yesterday using this style of loop. It would be a good idea to
 use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
 as the index of the first even number if there aren’t any.</p></li>
 <li><p>Re-write the <code>is_integer_string(s)</code> function using
 this style of list. To make this one more interesting, we first created
@@ -1480,12 +1480,13 @@ Neither book covers list comprehensions... but I think they are actually easier 
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 16</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">List comprehensions</td>
+<td style="text-align: left;">More map, filter, &amp; reduce
+examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 17</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">List comprehensions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Oct 18</td>
@@ -1502,7 +1503,7 @@ reducing lists and other sequence types using loops.</p>
 For example, <code>"Hello!"</code> becomes
 <code>"!olleH"</code>.</p></li>
 <li><p>Write a function <code>is_palindrome(s)</code> to check if a
-string is a palindrome (i.e., spelled the same foreward and backwards,
+string is a palindrome (i.e., spelled the same forward and backwards,
 like <code>"yay"</code>). Then use that function to find all of the
 palindromes in the file <a href="words.txt">words.txt</a>. Hint, you
 will need to remove the <code>\n</code> newline character after you read
@@ -1510,27 +1511,49 @@ the lines of the file. You can do this with the <code>.strip()</code>
 method which removes any whitespace characters (spaces, tabs, newlines)
 from the beginning and end of strings.</p></li>
 </ol>
-<p>We also talked about <strong>list comprehensions</strong> which are a
-way to create a new list by applying a map and/or filter pattern to a
-sequence, all in one line. A list comprehension has the form:</p>
+<!--
+### Thu, Oct 17
+
+A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
+
 <center>
-[<em>expression</em> <strong>for</strong> <em>variable</em>
-<strong>in</strong> <em>sequence</em>]
+[*expression* **for** *variable* **in** *sequence*]
 </center>
-<p>As an option, you can also include a boolean condition that must be
-satisfied in order for the expressions to be included in the list.</p>
+
+As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
+
 <center>
-[<em>expression</em> <strong>for</strong> <em>variable</em>
-<strong>in</strong> <em>sequence</em> <strong>if</strong>
-<em>boolean_expression</em>]
+[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
 </center>
-<p>Here are some examples:</p>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of all perfect squares from 0 to 100</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">11</span>)]</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of the odd perfect squares.</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>odd_perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">11</span>) <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>]</span></code></pre></div>
+
+Here are some examples:
+
+```python
+# Generate a list of all perfect squares from 0 to 100
+perfect_squares = [n ** 2 for n in range(11)]
+
+# Generate a list of the odd perfect squares.
+odd_perfect_squares = [n ** 2 for n in range(11) if n % 2 == 1]
+
+```
+
+Exercises:
+
+1. What is the value of the following Python expression? 
+
+```python
+[len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
+``` 
+
+2. Write a list comprehension to create a list of the first 20 positive odd numbers. 
+
+3. How could you use the `is_palindrome(s)` function we wrote yesterday to get a list of all palindromes in a long `word_list` using a list comprehension?  
+
+4. How could you use a `get_firstname(s)` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
+
+5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
+
+-->
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <h4 id="tentative-schedule-8">Tentative Schedule</h4>
