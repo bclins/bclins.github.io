@@ -757,7 +757,7 @@ The key to proving the first theorem is to confirm that the following expression
 $$2\pi i f(u) =  \oint \frac{f(z)}{z - u} \, dz =  \oint  \frac{f(z)}{(z - w) - (u - w)} \, dz =  \oint  \frac{\frac{f(z)}{(z-w)}}{1 - \left( \frac{u - w}{z-w}\right)} \, dz$$
 $$= \oint \sum_{k = 0}^\infty \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz =\sum_{k = 0}^\infty  \oint \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz.$$
 
-Exercise:
+We ran out of time before we could do this exercise, but we'll start with it on Monday.
 
 2. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
 
@@ -772,6 +772,26 @@ Day  | Section  | Topic
 Mon, Oct 21  | [8.1][8.1] | Power series and holomorphic functions
 Wed, Oct 23  | [5.3][5.3] | Entire functions & Liouville's theorem
 Fri, Oct 25  | [9.1][9.1] | Classification of singularities
+
+<!-- 
+### Mon, Oct 21 
+
+We ran out of time last class before we could do this example. 
+
+1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
+
+Things to cover:
+
+Morera's thm
+Derivatives don't change radius of convergence
+Analytic implies Holomorphic
+Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
+
+-->
+
+ 
+
+
 - - - 
 
 ### Week 10 Notes

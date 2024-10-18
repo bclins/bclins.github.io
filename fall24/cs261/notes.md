@@ -1146,7 +1146,7 @@ Exercises.
 `{'test': 1, 'test': 2}`?
 </center>
 
-
+3. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
 
 
 

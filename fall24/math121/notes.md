@@ -483,6 +483,10 @@ Last time we saw that $\hat{p}$ is a random variable with a sampling distributio
 Then we talked about the following simple idea: there is a 95% chance that $\hat{p}$ is within 2 standard deviations of the true population proportion $p$. So if we want to estimate what the true $p$ is, we can use a **95% confidence interval**:
 $$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
 
+The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is 2 times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
+
+1. In our class 13 out of 28 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
+
 
 - - - 
 
@@ -495,6 +499,36 @@ Day  | Section  | Topic
 Mon, Oct 21  | [5.2][5.2] | Confidence intervals for a proportion - con'd
 Wed, Oct 23  |            | Review
 Fri, Oct 25  |            | **Midterm 2**
+
+<!--
+### Mon, Oct 21
+
+Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
+$$\hat{p} \pm z^* \sqrt{ \frac{\hat{p}(1-\hat{p})}{N}}.$$
+
+<center>
+Confidence Level | 90% | 95% | 99% | 99.9%
+:---|:---:|:---:|:---:|:---:
+Critical z-value | 1.645 | 1.96 | 2.576 | 3.291
+</center>
+
+Examples.
+
+1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
+
+2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
+
+Confidence intervals for proportions are based on some big assumptions.  
+
+1. **No Bias.** The data must be a simple random sample from the population to avoid bias.
+
+2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in your data in order to use this kind of confidence interval.
+
+We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
+
+3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+
+-->
 
 - - - 
 

@@ -973,6 +973,22 @@ So if we want to estimate what the true
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
 is, we can use a <strong>95% confidence interval</strong>:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><mn>2</mn><msqrt><mfrac><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.</annotation></semantics></math></p>
+<p>The confidence interval formula has two parts: a <strong>best guess
+estimate</strong> (or <strong>point estimate</strong>) before the
+plus/minus symbol, and a <strong>margin of error</strong> after the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+symbol. The formula for the margin of error is 2 times the
+<strong>standard error</strong> which is an approximation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+instead of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
+<ol type="1">
+<li>In our class 13 out of 28 students were born in VA. Use the 95%
+confidence interval formula to estimate the percent of all HSC students
+that were born in VA.</li>
+</ol>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <h4 id="tentative-schedule-8">Tentative Schedule</h4>
@@ -1009,6 +1025,35 @@ con’d</td>
 </tr>
 </tbody>
 </table>
+<!--
+### Mon, Oct 21
+
+Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
+$$\hat{p} \pm z^* \sqrt{ \frac{\hat{p}(1-\hat{p})}{N}}.$$
+
+<center>
+Confidence Level | 90% | 95% | 99% | 99.9%
+:---|:---:|:---:|:---:|:---:
+Critical z-value | 1.645 | 1.96 | 2.576 | 3.291
+</center>
+
+Examples.
+
+1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
+
+2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
+
+Confidence intervals for proportions are based on some big assumptions.  
+
+1. **No Bias.** The data must be a simple random sample from the population to avoid bias.
+
+2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in your data in order to use this kind of confidence interval.
+
+We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
+
+3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+
+-->
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>
