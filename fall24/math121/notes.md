@@ -430,7 +430,6 @@ Examples of sampling distributions.
 
 
 
-
 - - - 
 
 ### Week 8 Notes
@@ -474,6 +473,15 @@ We did the following exercises in class.
 3. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+
+### Fri, Oct 18 
+
+Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
+
+* [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
+
+Then we talked about the following simple idea: there is a 95% chance that $\hat{p}$ is within 2 standard deviations of the true population proportion $p$. So if we want to estimate what the true $p$ is, we can use a **95% confidence interval**:
+$$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
 
 
 - - - 
