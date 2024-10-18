@@ -1026,7 +1026,7 @@ Day  | Section  | Topic
 Mon, Oct 14  |            | Fall break, no class
 Wed, Oct 16  |  | More map, filter, & reduce examples
 Thu, Oct 17  |  | List comprehensions
-Fri, Oct 18  |  |
+Fri, Oct 18  | [TP10][TP10] | Dictionaries
 
 ### Wed, Oct 16
 
@@ -1036,7 +1036,6 @@ Today we practiced some more examples of mapping, filtering, and reducing lists 
 
 2. Write a function `is_palindrome(s)` to check if a string is a palindrome (i.e., spelled the same forward and backwards, like `"yay"`). Then use that function to find all of the palindromes in the file [words.txt](words.txt).  Hint, you will need to remove the `\n` newline character after you read the lines of the file.  You can do this with the `.strip()` method which removes any whitespace characters (spaces, tabs, newlines) from the beginning and end of strings. 
 
-<!--
 ### Thu, Oct 17
 
 A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
@@ -1054,23 +1053,23 @@ As an option, you can also include a boolean condition that must be satisfied in
 Here are some examples:
 
 ```python
-# Generate a list of all perfect squares from 0 to 100
-perfect_squares = [n ** 2 for n in range(11)]
+# Generate a list of the first 100 perfect squares.
+perfect_squares = [n ** 2 for n in range(100)]
 
-# Generate a list of the odd perfect squares.
-odd_perfect_squares = [n ** 2 for n in range(11) if n % 2 == 1]
+# Generate a list of odd perfect squares.
+odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
 
 ```
 
 Exercises:
 
-1. What is the value of the following Python expression? 
+1. Write a list comprehension to create a list of the first 20 positive odd numbers. 
+
+2. What is the value of the following Python expression? 
 
 ```python
 [len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
 ``` 
-
-2. Write a list comprehension to create a list of the first 20 positive odd numbers. 
 
 3. How could you use the `is_palindrome(s)` function we wrote yesterday to get a list of all palindromes in a long `word_list` using a list comprehension?  
 
@@ -1078,7 +1077,79 @@ Exercises:
 
 5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
 
+### Fri, Oct 18
+
+A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
+
+```python
+# Example dictionary:
+days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
+```
+
+In the dictionary above, the keys are the months (which are strings).  The values are the numbers of days (which are integers).  To access the value in a dictionary, you use the key like you would use an index for a list.   
+
+```python
+print("April has", days_by_month['Apr'], "days.")
+```
+
+Why are they called dictionaries?  The idea is that you can look things up, just like in a real dictionary.  In fact, you could use a Python dictionary to store words and their definitions:
+
+```python
+# Using a Python dictionary to store an English dictionary.
+word_to_definition = {
+    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites.",
+    "Abacus": "a device for making arithmetic calculations by moving beads.",  
+    "Abandon": "to leave completely and finally",
+}
+```
+
+Things to know about dictionaries. 
+
+1. **The keyword <u>in</u> checks keys not values.** You can use the keyword `in` to test if a key is in a dictionary, but not a value. 
+```python
+'Feb' in days_by_month # True
+30 in days_by_month # False
+```
+
+2. **You can loop through keys in a dictionary.** Use a loop of the form
+<center>
+**for** *key* **in** *dictionary*:
+</center>
+Use this to loop through the months in `days_by_month` and print out a sentence for each month saying how many days it has. 
+
+3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  Be careful with this!  The following example creates an empty dictionary, and then fills it with key/value pairs.  Try changing the value for `Feb` from 28 to 29 in `days_by_month`. 
+
+<!--
+```python
+alphabet = [chr(i + ord('a')) for i in range(26)]
+file = open("poem.txt")
+text = file.read()
+
+letter_frequency = {}
+for letter in alphabet:
+    letter_frequency[letter] = text.count(letter) 
+
+print(letter_frequency)
+```
 -->
+
+Exercises.
+
+1. Write a program to convert the data for each student in the file [grades.txt](grades.txt) into a dictionary like this:
+<center>
+`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
+</center>
+
+2. The keys in a dictionary must be unique.  What happens if you try to create a dictionary like this:
+<center>
+`{'test': 1, 'test': 2}`?
+</center>
+
+
+
+
+
 
 - - - 
 

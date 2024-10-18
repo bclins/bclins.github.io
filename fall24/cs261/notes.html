@@ -1490,8 +1490,9 @@ examples</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Oct 18</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap10.html">TP10</a></td>
+<td style="text-align: left;">Dictionaries</td>
 </tr>
 </tbody>
 </table>
@@ -1511,49 +1512,127 @@ the lines of the file. You can do this with the <code>.strip()</code>
 method which removes any whitespace characters (spaces, tabs, newlines)
 from the beginning and end of strings.</p></li>
 </ol>
+<h3 id="thu-oct-17">Thu, Oct 17</h3>
+<p>A <strong>list comprehension</strong> is a fast way to create a new
+list by applying a map and/or filter pattern to a sequence, all in one
+line. A list comprehension has the form:</p>
+<center>
+[<em>expression</em> <strong>for</strong> <em>variable</em>
+<strong>in</strong> <em>sequence</em>]
+</center>
+<p>As an option, you can also include a boolean condition that must be
+satisfied in order for the expressions to be included in the list.</p>
+<center>
+[<em>expression</em> <strong>for</strong> <em>variable</em>
+<strong>in</strong> <em>sequence</em> <strong>if</strong> <em>boolean
+expression</em>]
+</center>
+<p>Here are some examples:</p>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of the first 100 perfect squares.</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of odd perfect squares.</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>odd_perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>) <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>]</span></code></pre></div>
+<p>Exercises:</p>
+<ol type="1">
+<li><p>Write a list comprehension to create a list of the first 20
+positive odd numbers.</p></li>
+<li><p>What is the value of the following Python expression?</p></li>
+</ol>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(x) <span class="cf">for</span> x <span class="kw">in</span> [<span class="st">&#39;ab&#39;</span>, <span class="st">&#39;xyz&#39;</span>, <span class="dv">5</span>, <span class="op">-</span><span class="fl">1.0</span>, <span class="st">&#39;1.23&#39;</span>] <span class="cf">if</span> <span class="bu">type</span>(x) <span class="op">==</span> <span class="bu">str</span>]</span></code></pre></div>
+<ol start="3" type="1">
+<li><p>How could you use the <code>is_palindrome(s)</code> function we
+wrote yesterday to get a list of all palindromes in a long
+<code>word_list</code> using a list comprehension?</p></li>
+<li><p>How could you use a <code>get_firstname(s)</code> function that
+extracts just the first name from a fullname string to get a list of
+first names from a <code>fullname_list</code>?</p></li>
+<li><p>A partial sum of a list of numbers is a sum of the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+numbers in the list. Write a list comprehension to find all the partial
+sums of any list <code>numbers</code> from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math>
+until
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is the length of <code>numbers</code>.</p></li>
+</ol>
+<h3 id="fri-oct-18">Fri, Oct 18</h3>
+<p>A <strong>dictionary</strong> is a special type in Python that holds
+<strong>key</strong>/<strong>value</strong> pairs.</p>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example dictionary:</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>days_by_month <span class="op">=</span> {<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>, <span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;May&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>, </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>}</span></code></pre></div>
+<p>In the dictionary above, the keys are the months (which are strings).
+The values are the numbers of days (which are integers). To access the
+value in a dictionary, you use the key like you would use an index for a
+list.</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;April has&quot;</span>, days_by_month[<span class="st">&#39;Apr&#39;</span>], <span class="st">&quot;days.&quot;</span>)</span></code></pre></div>
+<p>Why are they called dictionaries? The idea is that you can look
+things up, just like in a real dictionary. In fact, you could use a
+Python dictionary to store words and their definitions:</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a Python dictionary to store an English dictionary.</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>word_to_definition <span class="op">=</span> {</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Aardvark&quot;</span>: <span class="st">&quot;a nocturnal burrowing mammal that eats ants and termites.&quot;</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Abacus&quot;</span>: <span class="st">&quot;a device for making arithmetic calculations by moving beads.&quot;</span>,  </span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Abandon&quot;</span>: <span class="st">&quot;to leave completely and finally&quot;</span>,</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Things to know about dictionaries.</p>
+<ol type="1">
+<li><strong>The keyword <u>in</u> checks keys not values.</strong> You
+can use the keyword <code>in</code> to test if a key is in a dictionary,
+but not a value.</li>
+</ol>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;Feb&#39;</span> <span class="kw">in</span> days_by_month <span class="co"># True</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="kw">in</span> days_by_month <span class="co"># False</span></span></code></pre></div>
+<ol start="2" type="1">
+<li><p><strong>You can loop through keys in a dictionary.</strong> Use a
+loop of the form</p>
+<center>
+<p><strong>for</strong> <em>key</em> <strong>in</strong>
+<em>dictionary</em>:</p>
+</center>
+<p>Use this to loop through the months in <code>days_by_month</code> and
+print out a sentence for each month saying how many days it
+has.</p></li>
+<li><p><strong>Dictionaries are mutable.</strong> You can add key/value
+pairs, change the values for keys, and remove key/value pairs without
+creating a completely new dictionary. Be careful with this! The
+following example creates an empty dictionary, and then fills it with
+key/value pairs. Try changing the value for <code>Feb</code> from 28 to
+29 in <code>days_by_month</code>.</p></li>
+</ol>
 <!--
-### Thu, Oct 17
-
-A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
-
-<center>
-[*expression* **for** *variable* **in** *sequence*]
-</center>
-
-As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
-
-<center>
-[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
-</center>
-
-Here are some examples:
-
 ```python
-# Generate a list of all perfect squares from 0 to 100
-perfect_squares = [n ** 2 for n in range(11)]
+alphabet = [chr(i + ord('a')) for i in range(26)]
+file = open("poem.txt")
+text = file.read()
 
-# Generate a list of the odd perfect squares.
-odd_perfect_squares = [n ** 2 for n in range(11) if n % 2 == 1]
+letter_frequency = {}
+for letter in alphabet:
+    letter_frequency[letter] = text.count(letter) 
 
+print(letter_frequency)
 ```
-
-Exercises:
-
-1. What is the value of the following Python expression? 
-
-```python
-[len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
-``` 
-
-2. Write a list comprehension to create a list of the first 20 positive odd numbers. 
-
-3. How could you use the `is_palindrome(s)` function we wrote yesterday to get a list of all palindromes in a long `word_list` using a list comprehension?  
-
-4. How could you use a `get_firstname(s)` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
-
-5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
-
 -->
+<p>Exercises.</p>
+<ol type="1">
+<li>Write a program to convert the data for each student in the file <a
+href="grades.txt">grades.txt</a> into a dictionary like this:
+<center>
+<code>{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}</code>
+</center></li>
+<li>The keys in a dictionary must be unique. What happens if you try to
+create a dictionary like this:
+<center>
+<code>{'test': 1, 'test': 2}</code>?
+</center></li>
+</ol>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <h4 id="tentative-schedule-8">Tentative Schedule</h4>

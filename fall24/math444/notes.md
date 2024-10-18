@@ -727,7 +727,6 @@ We finished by looking at the following application of the Cauchy integral formu
 
 The key is to integrate over the boundary of the upper half of the disk of radius $R$ centered at the origin (where $R$ is very large).  Then use the ML-inequality to show that the integral over the circular part of the boundary goes to zero, leaving just the real integral we want. 
 
-<!--
 ### Friday, Oct 18
 
 Last time we ran into the problem of figuring out how to decompose functions like 
@@ -761,7 +760,6 @@ $$= \oint \sum_{k = 0}^\infty \frac{f(z)}{(z-w)^{k+1}} (u-w)^k \, dz =\sum_{k = 
 Exercise:
 
 2. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
--->
 
 - - - 
 
