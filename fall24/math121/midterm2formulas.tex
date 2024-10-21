@@ -1,0 +1,47 @@
+\documentclass[12pt]{exam}
+\usepackage[top=1in,bottom=1in,left=0.75in,right=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+\pagestyle{empty}
+\subsection*{Formulas Sheet}
+\hrule 
+~
+
+\begin{description}
+%\item[Sample standard deviation] ~ \\
+%$s = \displaystyle \sqrt{\frac{\sum (x- \bar{x})^2}{N-1}}$
+\item[Standardized Normal Data] ~ \\
+$$z = \displaystyle \frac{x - \mu}{\sigma} \text{ or } \frac{\text{location} - \text{middle}}{\text{std. dev.}}$$ 
+\vfill
+
+\item[Addition and Multiplication Rules for Probability] ~ \\
+$$P(A \text{ or } B) = P(A)+P(B)-P(A \text{ and } B) \hspace*{0.5in} \begin{array}{c} P(A \text{ and } B) = P(A) \cdot P(B)^* \\[0.1in] (^*\textit{only if } A \textit{ and } B \textit{ are independent}) \end{array}$$
+
+\vfill
+
+
+\item[Standard Deviations for Sampling Distributions] ~ \\
+$$\displaystyle  \sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}} \hspace*{1.25in} \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}} $$
+
+\vfill
+
+
+
+\item[Confidence Interval for a Population Proportion]
+$$\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{N}}$$
+where the critical $z$-value comes from this table:
+\begin{center}
+\begin{tabular}{l|c|c|c|c}
+Confidence level & 90\% & 95\% & 99\% & 99.9\% \\ \hline
+$z^*$ & 1.645 & 1.96 & 2.576 & 3.291 \\
+\end{tabular}
+\end{center}
+
+\vfill
+\vfill
+
+\end{description}
+
+
+\end{document}

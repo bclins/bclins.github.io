@@ -773,13 +773,13 @@ Mon, Oct 21  | [8.1][8.1] | Power series and holomorphic functions
 Wed, Oct 23  | [5.3][5.3] | Entire functions & Liouville's theorem
 Fri, Oct 25  | [9.1][9.1] | Classification of singularities
 
-<!-- 
 ### Mon, Oct 21 
 
 We ran out of time last class before we could do this example. 
 
 1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
 
+<!--
 Things to cover:
 
 Morera's thm
@@ -788,7 +788,6 @@ Analytic implies Holomorphic
 Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
 
 -->
-
  
 
 

@@ -1651,13 +1651,14 @@ respectively.</li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 21</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap10.html">TP10</a></td>
+<td style="text-align: left;">Dictionaries</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 23</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Dictionary Comprehensions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 24</td>
@@ -1671,6 +1672,77 @@ respectively.</li>
 </tr>
 </tbody>
 </table>
+<h3 id="mon-oct-21">Mon, Oct 21</h3>
+<p>Last time we introduced dictionaries and we finished with this
+exercise:</p>
+<ol type="1">
+<li>Write functions <code>get_keys(d)</code> and
+<code>get_values(d)</code> that input any dictionary <code>d</code> and
+returns lists of the keys and values of <code>d</code>
+respectively.</li>
+</ol>
+<p>We ran out of time before we could discuss the functions, so we
+started today by talking about how to write those functions using list
+comprehensions.</p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>get_keys(d):</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [key <span class="cf">for</span> key <span class="kw">in</span> d]</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>get_values(d):</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [d[key] <span class="cf">for</span> key <span class="kw">in</span> d]</span></code></pre></div>
+<p>Instead of using a dictionary, you could store the information for a
+dictionary in a list of 2 element lists:</p>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>days_by_month_list <span class="op">=</span> [[<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>], [<span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;May&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>]], </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>                 [<span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>]]</span></code></pre></div>
+<ol start="2" type="1">
+<li>What are some reasons why this is less convenient than a
+dictionary?<br />
+
+<details>
+<ol type="a">
+<li>It is harder to access the values for each key.</li>
+<li>There is no guarantee that the keys aren’t repeated.<br />
+</li>
+<li>For large data sets, checking if an element is in a list is much
+slower than checking if a key is in a dictionary.<br />
+</li>
+</ol>
+</details></li>
+<li>A word is reversible, if it is still a valid word when you reverse
+its letters, e.g., “part” and “trap”. Compare the following two
+functions that both search through the list of words in <a
+href="words.txt">words.txt</a> to count how many words are also valid
+words when they’ve been reversed.</li>
+</ol>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>word_list <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>word_dict <span class="op">=</span> {word: <span class="dv">0</span> <span class="cf">for</span> word <span class="kw">in</span> word_list}</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse(s):</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> s:</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        output <span class="op">=</span> c <span class="op">+</span> output</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_reversible_words1(word_list):</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> reverse(word) <span class="kw">in</span> word_list:</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Method 1: There are&quot;</span>, count, <span class="st">&quot;reversible words&quot;</span>)</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_reversible_words2(word_dict):</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_dict:</span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> reverse(word) <span class="kw">in</span> word_dict:</span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Method 2: There are&quot;</span>, count, <span class="st">&quot;reversible words&quot;</span>)</span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>count_reversible_words2(word_dict)</span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>count_reversible_words1(word_list)</span></code></pre></div>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>

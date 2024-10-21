@@ -30,8 +30,9 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be **Friday, Sep 27**.
-* Midterm 1 [review problems](midterm1review.html).
+* Midterm 2 will be **Friday, Oct 25**.
+* Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf).
+* Midterm 1 materials: [review problems](midterm1review.html).
 
 ### Course Description 
 

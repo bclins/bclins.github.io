@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 7 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project7.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, October 25. }
+
+\subsection*{School Electives}
+
+One high school offers the following electives: Art, Band, Chorus, Creative Writing, Home Economics, Journalism, Orchestra, and Photography. They plan to offer a total of 50 sections of electives. Each of the 1{,}000 students at the high school is allowed to pick one elective.  The file 
+\begin{center}
+\verb|https://bclins.github.io/fall24/cs261/electives.txt|
+\end{center}
+contains the elective preferences for the students.  Each line represents the elective for one student.  
+
+\begin{enumerate}
+\item Use Python to open the file. 
+
+\item Write a function \verb|count_occurances(keys, text)| that counts how many times each string in a list called \verb|keys| occurs in the string \verb|text|.  It should return a dictionary with a key for each string in \verb|keys| and values equal to the number of times each key occurs.  Use this function to create a dictionary \verb|students_by_elective| that stores the number of students who want to take each elective.
+
+\item We will use Hamilton's method to determine how many sections of each elective the school should offer.  Alexander Hamilton proposed this method to apportion the seats of Congress based on the population of the various states.  But it also works to apportion sections of classes based on the number of students who want to take them.  If the school can offer 50 different sections of electives, then the average section will contain 20 students.  
+The number of sections that an elective should have is called its \textbf{quota} and it can be calculated using 
+$$\text{quota} = \frac{ \text{ number of students taking the elective }}{\text{ target class size }}.$$
+For example, if 96 students want to take chorus, then the quota for chorus would be:
+$$\frac{~96~}{20} = 4.8 \text{ sections.}$$
+Write a function called \verb|get_quotas| to find the quota for each elective.  The function should input the \verb|students_by_elective| dictionary and return a new dictionary \verb|quota_by_elective| where the keys are the electives and the values are the quotas (which should be floats).  
+
+\item According to Hamilton's method, every elective should have at least as many sections as its quota rounded down.  But since we can offer a total of 50 sections, there will be some extra sections left over. To decide which of the electives should get one of the extra sections, look at the fractional part of the quota after the decimal point.  The electives with the highest fractional part get an extra section.  Write a function called \verb|largest_fractional_part| that inputs the \verb|quota_by_elective| dictionary and returns the elective with the quota that has the largest fractional part.  
+
+\item Finish the project by printing out how many sections of each elective should be offered, according to Hamilton's method. 
+
+
+
+\end{enumerate}
+
+\subsubsection*{Hints}
+
+\begin{enumerate}
+\item To get the fractional part of a floating point number, use the modulo operator \verb|%|.  For example, \verb|5.25 % 1| returns \verb|0.25|.
+
+\item You can read the file by using either the \verb|.readlines()| or the \verb|.read()| method.  I recommend using \verb|.read()| since the \verb|count_occurences| function from part 2 expects its second argument to be a single string, not a list of strings.  
+
+\item Notice that when you round down the quotas for each elective, the total should add up to 49.  Therefore you only need to figure out the one elective that should get the extra section.  
+
+\end{enumerate}
+
+
+
+\end{document}

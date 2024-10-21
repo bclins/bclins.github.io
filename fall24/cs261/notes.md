@@ -1159,10 +1159,75 @@ Exercises.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 21  |  |
-Wed, Oct 23  |  |
+Mon, Oct 21  | [TP10][TP10] | Dictionaries 
+Wed, Oct 23  |  | Dictionary Comprehensions 
 Thu, Oct 24  |  |
 Fri, Oct 25  |  |
+
+### Mon, Oct 21
+
+Last time we introduced dictionaries and we finished with this exercise:
+
+1. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
+
+We ran out of time before we could discuss the functions, so we started today by talking about how to write those functions using list comprehensions.  
+
+```python
+get_keys(d):
+    return [key for key in d]
+
+get_values(d):
+    return [d[key] for key in d]
+```
+
+Instead of using a dictionary, you could store the information for a dictionary in a list of 2 element lists:
+
+```python
+days_by_month_list = [['Jan': 31], ['Feb': 28], ['Mar': 31], ['Apr': 30], ['May': 31], ['Jun': 30]], 
+                 ['Jul': 31], ['Aug': 31], ['Sep': 30], ['Oct': 31], ['Nov': 30], ['Dec': 31]]
+```
+
+
+2. What are some reasons why this is less convenient than a dictionary?  
+<details>
+    a. It is harder to access the values for each key.
+    b. There is no guarantee that the keys aren't repeated.  
+    c. For large data sets, checking if an element is in a list is much slower than checking if a key is in a dictionary.  
+</details>
+
+3. A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](words.txt) to count how many words are also valid words when they've been reversed.  
+
+```python
+file = open("words.txt")
+word_list = [line.strip() for line in file.readlines()]
+word_dict = {word: 0 for word in word_list}
+
+def reverse(s):
+    output = ""
+    for c in s:
+        output = c + output
+    return output
+
+def count_reversible_words1(word_list):
+    count = 0
+    for word in word_list:
+        if reverse(word) in word_list:
+            count += 1
+    print("Method 1: There are", count, "reversible words")
+
+
+def count_reversible_words2(word_dict):
+    count = 0
+    for word in word_dict:
+        if reverse(word) in word_dict:
+            count += 1
+    print("Method 2: There are", count, "reversible words")
+
+count_reversible_words2(word_dict)
+count_reversible_words1(word_list)
+```
+
+
 
 - - - 
 
