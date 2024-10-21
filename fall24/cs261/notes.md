@@ -1187,15 +1187,15 @@ days_by_month_list = [['Jan': 31], ['Feb': 28], ['Mar': 31], ['Apr': 30], ['May'
                  ['Jul': 31], ['Aug': 31], ['Sep': 30], ['Oct': 31], ['Nov': 30], ['Dec': 31]]
 ```
 
-
 2. What are some reasons why this is less convenient than a dictionary?  
-<details>
-    a. It is harder to access the values for each key.
-    b. There is no guarantee that the keys aren't repeated.  
-    c. For large data sets, checking if an element is in a list is much slower than checking if a key is in a dictionary.  
-</details>
 
-3. A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](words.txt) to count how many words are also valid words when they've been reversed.  
+We came up with the following answers to this question:
+a. It is harder to access the values for each key.
+b. There is no guarantee that the keys aren't repeated.  
+c. For large data sets, checking if an element is in a list is much slower than checking if a key is in a dictionary.   
+
+
+As an example of the last advantage, we looked at the following problem from the book.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](words.txt) to count how many words are also valid words when they've been reversed.  
 
 ```python
 file = open("words.txt")
@@ -1215,7 +1215,6 @@ def count_reversible_words1(word_list):
             count += 1
     print("Method 1: There are", count, "reversible words")
 
-
 def count_reversible_words2(word_dict):
     count = 0
     for word in word_dict:
@@ -1226,6 +1225,32 @@ def count_reversible_words2(word_dict):
 count_reversible_words2(word_dict)
 count_reversible_words1(word_list)
 ```
+
+The reason why it is easier to check if an element is a key in a dictionary than to check if it is an element of a dictionary has to do with the algorithms.  Checking if an element is in a list uses a **linear search** algorithm which checks every element of the list one at a time until it either finds a match or reaches the end.   This can be slow if the list is very long.  Checking if a key is present in a dictionary uses a completely different algorithm called a **hash table lookup**.  That has the following steps:
+
+* **Step 1.** Input a key.
+* **Step 2.** Use a hash function to calculate a hash value for the key.  The hash function is a fast function that calculates a number that points to a location in computer memory.  
+* **Step 3.** Check the computer memory at the hash value location.  This will tell you if the key is valid for the dictionary.  
+
+Both steps 2 and 3 in the algorithm are very fast, even if the dictionary is very long.  
+
+Notice that we defined `word_dict` in the program above using a **dictionary comprehension** which is an expression of the form
+
+<center>
+{ *expression***:** *expression* **for** *variable* **in** *sequence* }
+</center>
+
+Dictionary comprehensions work just like list comprehensions.  You can also add a boolean condition to restrict which key/value pairs are included if you want:
+
+<center>
+{ *expression***:** *expression* **for** *variable* **in** *sequence* **if** *boolean expression*}
+</center>
+
+We finished by doing the following exercise. 
+
+4. Write a function `combine_to_dict(key_list, value_list)` that returns a dictionary with keys from `key_list` and values from `value_list`.  
+
+
 
 
 

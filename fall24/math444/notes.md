@@ -779,12 +779,43 @@ We ran out of time last class before we could do this example.
 
 1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
 
-<!--
-Things to cover:
+Kade asked what happens if the function $f(z)$ in Cauchy's integral formula is not holomorphic everywhere in the domain, which was a great questions, so we looked at a variant of the previous problem where we replaced the function $e^{iz}$ with the function $1/z$.  
 
-Morera's thm
-Derivatives don't change radius of convergence
-Analytic implies Holomorphic
+2. $\oint_{|z| = 3} \frac{1/z}{(z+i)^2} \, dz$. 
+
+Then we talked about the following partial converse to Cauchy's theorem.
+
+<div class="Theorem">
+**Morera's Theorem.** Let $f : D \rightarrow \C$ be continuous on a simply connected open domain $D$ and suppose that 
+$$\oint_C f(z) \, dz = 0$$
+for every piecewise smooth simple closed curve $C$ in $D$. Then $f$ is holomorphic in $D$.
+</div>
+
+We outlined the proof by reviewing the proof of the antiderivative theorem.  Since integrals of $f$ are independent of path in $D$, we can define an antiderivative $F(w) = \int_{z_0}^w f(z) \, dz.$  The same proof as before shows that the antiderivative is holomorphic, but Cauchy's integral formula for derivatives implies that $f$ is also complex differentiable in $D$, so it is also holomorphic.
+
+After that, we reviewed several important facts about power series.  
+
+<div class="Theorem">
+**Taylor Series Radius of Convergence.** If $f$ is holomorphic in an open domain $D$, and $w \in D$, then the Taylor series for $f$ centered at $w$ 
+$$f(z) = \sum_{k = 0}^\infty \frac{f^{(k)}(w)}{k!} (z-w)^k$$
+converges absolutely for all $z$ inside an open disk around $w$ with **radius of convergence** equal to the distance from $w$ to the nearest singularity of $f$.  
+</div>
+
+Another fact which we stated but did not prove is 
+
+<div class="Theorem">
+**Theorem (Analytic implies Holomorphic).** If $f$ is analytic at $w$, then $f$ is holomorphic in an open disk around $w$.
+</div>
+
+You can use Morera's theorem to prove this.  But the proof also requires knowing that analytic functions are continuous in an open disk too.  The easiest way to prove that is to argue that the partial sums of the Taylor series converge uniformly to $f(z)$ in the disk, but we haven't talked about how continuity is preserved under uniform convergence.  
+
+We left the following exercise to try on your own. 
+
+4. Suppose that the power series $\sum_{k = 0}^\infty a_k z^k$ has radius of convergence $R$.  Prove that its derivative $\sum_{k = 0}^\infty k a_k z^{k-1}$ also has radius of convergence $R$.  
+
+<!--
+Other things to cover:
+
 Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
 
 -->

@@ -452,7 +452,7 @@ We started with this warm-up problem which is a review of the things we talked a
     b. The standard deviation for a numbers ticket was $\sigma = \$18.96$.  If someone played the numbers game every day (350 days per year) for 40 years, that would be 14,000 games.  Describe the sampling distribution for this person's average winnings per game. Is it possible they win more than \$1 per game?   
     c. The mobster Casper Holstein took as many as 150,000 bets per week.  How likely would it be for the mob to have a bad week where they lost money?  
 
-Then we talked about **sample proportions** which are denoted $\hat{p}$.  In a SRS from a large population, $\hat{p}$ is random with **sampling distribution** that has the following features. 
+Then we talked about **sample proportions** which are denoted $\hat{p}$. <!--NEXT TIME MAKE SURE TO EXPLAIN THAT P-P-HAT IS THE NUMBER OF "SUCCESSES" DIVIDED BY THE SAMPLE SIZE.-->   In a SRS from a large population, $\hat{p}$ is random with **sampling distribution** that has the following features. 
 
 
 <div class="Theorem">
@@ -500,7 +500,6 @@ Mon, Oct 21  | [5.2][5.2] | Confidence intervals for a proportion - con'd
 Wed, Oct 23  |            | Review
 Fri, Oct 25  |            | **Midterm 2**
 
-<!--
 ### Mon, Oct 21
 
 Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
@@ -516,7 +515,11 @@ Examples.
 
 1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
 
-2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
+2. What are we 90% sure is true about the confidence interval we found? Only one of the following is the correct answer. Which is it?
+    a. 90% of Americans are in the interval.
+    b. 90% of future samples will have results in the interval.
+    c. 90% sure that the population proportion is in the interval.
+    d. 90% sure that the sample proportion is in the interval. 
 
 Confidence intervals for proportions are based on some big assumptions.  
 
@@ -524,11 +527,20 @@ Confidence intervals for proportions are based on some big assumptions.
 
 2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in your data in order to use this kind of confidence interval.
 
+We finished with one more exercise.  
+
+3. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
+
+<!--
+We didn't have time for these last problems because we were reviewing probability models, probabilities vs. expected value, and sample proportions from last quiz. 
+
+2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
+
 We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
 
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
-
 -->
+
 
 - - - 
 

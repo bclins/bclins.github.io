@@ -1717,18 +1717,110 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.1">9
 </tr>
 </tbody>
 </table>
-<!-- 
-### Mon, Oct 21 
+<h3 id="mon-oct-21">Mon, Oct 21</h3>
+<p>We ran out of time last class before we could do this example.</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>3</mn></mrow></msub><mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>+</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz</annotation></semantics></math>.
+(<a
+href="https://youtu.be/WJOf4PfoHow?t=431">https://youtu.be/WJOf4PfoHow</a>)</li>
+</ol>
+<p>Kade asked what happens if the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+in Cauchy’s integral formula is not holomorphic everywhere in the
+domain, which was a great questions, so we looked at a variant of the
+previous problem where we replaced the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><annotation encoding="application/x-tex">e^{iz}</annotation></semantics></math>
+with the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">1/z</annotation></semantics></math>.</p>
+<ol start="2" type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>3</mn></mrow></msub><mfrac><mrow><mn>1</mn><mi>/</mi><mi>z</mi></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>+</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z| = 3} \frac{1/z}{(z+i)^2} \, dz</annotation></semantics></math>.</li>
+</ol>
+<p>Then we talked about the following partial converse to Cauchy’s
+theorem.</p>
+<div class="Theorem">
+<p><strong>Morera’s Theorem.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f : D \rightarrow \mathbb{C}</annotation></semantics></math>
+be continuous on a simply connected open domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+and suppose that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\oint_C f(z) \, dz = 0</annotation></semantics></math>
+for every piecewise smooth simple closed curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.</p>
+</div>
+<p>We outlined the proof by reviewing the proof of the antiderivative
+theorem. Since integrals of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+are independent of path in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+we can define an antiderivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><msub><mi>z</mi><mn>0</mn></msub><mi>w</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">F(w) = \int_{z_0}^w f(z) \, dz.</annotation></semantics></math>
+The same proof as before shows that the antiderivative is holomorphic,
+but Cauchy’s integral formula for derivatives implies that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is also complex differentiable in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+so it is also holomorphic.</p>
+<p>After that, we reviewed several important facts about power
+series.</p>
+<div class="Theorem">
+<p><strong>Taylor Series Radius of Convergence.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic in an open domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">w \in D</annotation></semantics></math>,
+then the Taylor series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+centered at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mo accent="false">∞</mo></munderover><mfrac><mrow><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>k</mi><mi>!</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">f(z) = \sum_{k = 0}^\infty \frac{f^{(k)}(w)}{k!} (z-w)^k</annotation></semantics></math>
+converges absolutely for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+inside an open disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+with <strong>radius of convergence</strong> equal to the distance from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+to the nearest singularity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+</div>
+<p>Another fact which we stated but did not prove is</p>
+<div class="Theorem">
+<p><strong>Theorem (Analytic implies Holomorphic).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is analytic at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic in an open disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
+</div>
+<p>You can use Morera’s theorem to prove this. But the proof also
+requires knowing that analytic functions are continuous in an open disk
+too. The easiest way to prove that is to argue that the partial sums of
+the Taylor series converge uniformly to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+in the disk, but we haven’t talked about how continuity is preserved
+under uniform convergence.</p>
+<p>We left the following exercise to try on your own.</p>
+<ol start="4" type="1">
+<li>Suppose that the power series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msub><mi>a</mi><mi>k</mi></msub><msup><mi>z</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k = 0}^\infty a_k z^k</annotation></semantics></math>
+has radius of convergence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+Prove that its derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><mi>k</mi><msub><mi>a</mi><mi>k</mi></msub><msup><mi>z</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_{k = 0}^\infty k a_k z^{k-1}</annotation></semantics></math>
+also has radius of convergence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.</li>
+</ol>
+<!--
+Other things to cover:
 
-We ran out of time last class before we could do this example. 
-
-1. $\oint_{|z| = 3} \frac{e^{iz}}{(z+i)^2} \, dz$. ([https://youtu.be/WJOf4PfoHow](https://youtu.be/WJOf4PfoHow?t=431))
-
-Things to cover:
-
-Morera's thm
-Derivatives don't change radius of convergence
-Analytic implies Holomorphic
 Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
 
 -->

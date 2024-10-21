@@ -1697,24 +1697,19 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a h
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>                 [<span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>]]</span></code></pre></div>
 <ol start="2" type="1">
 <li>What are some reasons why this is less convenient than a
-dictionary?<br />
-
-<details>
-<ol type="a">
-<li>It is harder to access the values for each key.</li>
-<li>There is no guarantee that the keys aren’t repeated.<br />
-</li>
-<li>For large data sets, checking if an element is in a list is much
-slower than checking if a key is in a dictionary.<br />
-</li>
+dictionary?</li>
 </ol>
-</details></li>
-<li>A word is reversible, if it is still a valid word when you reverse
-its letters, e.g., “part” and “trap”. Compare the following two
-functions that both search through the list of words in <a
+<p>We came up with the following answers to this question: a. It is
+harder to access the values for each key. b. There is no guarantee that
+the keys aren’t repeated.<br />
+c. For large data sets, checking if an element is in a list is much
+slower than checking if a key is in a dictionary.</p>
+<p>As an example of the last advantage, we looked at the following
+problem from the book. A word is reversible, if it is still a valid word
+when you reverse its letters, e.g., “part” and “trap”. Compare the
+following two functions that both search through the list of words in <a
 href="words.txt">words.txt</a> to count how many words are also valid
-words when they’ve been reversed.</li>
-</ol>
+words when they’ve been reversed.</p>
 <div class="sourceCode" id="cb46"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>word_list <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span>
@@ -1733,16 +1728,57 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a h
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Method 1: There are&quot;</span>, count, <span class="st">&quot;reversible words&quot;</span>)</span>
 <span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_reversible_words2(word_dict):</span>
-<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_dict:</span>
-<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> reverse(word) <span class="kw">in</span> word_dict:</span>
-<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Method 2: There are&quot;</span>, count, <span class="st">&quot;reversible words&quot;</span>)</span>
-<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>count_reversible_words2(word_dict)</span>
-<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>count_reversible_words1(word_list)</span></code></pre></div>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_reversible_words2(word_dict):</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_dict:</span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> reverse(word) <span class="kw">in</span> word_dict:</span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Method 2: There are&quot;</span>, count, <span class="st">&quot;reversible words&quot;</span>)</span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a>count_reversible_words2(word_dict)</span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a>count_reversible_words1(word_list)</span></code></pre></div>
+<p>The reason why it is easier to check if an element is a key in a
+dictionary than to check if it is an element of a dictionary has to do
+with the algorithms. Checking if an element is in a list uses a
+<strong>linear search</strong> algorithm which checks every element of
+the list one at a time until it either finds a match or reaches the end.
+This can be slow if the list is very long. Checking if a key is present
+in a dictionary uses a completely different algorithm called a
+<strong>hash table lookup</strong>. That has the following steps:</p>
+<ul>
+<li><strong>Step 1.</strong> Input a key.</li>
+<li><strong>Step 2.</strong> Use a hash function to calculate a hash
+value for the key. The hash function is a fast function that calculates
+a number that points to a location in computer memory.<br />
+</li>
+<li><strong>Step 3.</strong> Check the computer memory at the hash value
+location. This will tell you if the key is valid for the
+dictionary.</li>
+</ul>
+<p>Both steps 2 and 3 in the algorithm are very fast, even if the
+dictionary is very long.</p>
+<p>Notice that we defined <code>word_dict</code> in the program above
+using a <strong>dictionary comprehension</strong> which is an expression
+of the form</p>
+<center>
+{ <em>expression</em><strong>:</strong> <em>expression</em>
+<strong>for</strong> <em>variable</em> <strong>in</strong>
+<em>sequence</em> }
+</center>
+<p>Dictionary comprehensions work just like list comprehensions. You can
+also add a boolean condition to restrict which key/value pairs are
+included if you want:</p>
+<center>
+{ <em>expression</em><strong>:</strong> <em>expression</em>
+<strong>for</strong> <em>variable</em> <strong>in</strong>
+<em>sequence</em> <strong>if</strong> <em>boolean expression</em>}
+</center>
+<p>We finished by doing the following exercise.</p>
+<ol start="4" type="1">
+<li>Write a function <code>combine_to_dict(key_list, value_list)</code>
+that returns a dictionary with keys from <code>key_list</code> and
+values from <code>value_list</code>.</li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>

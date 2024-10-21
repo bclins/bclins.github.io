@@ -904,6 +904,7 @@ money?</li>
 <p>Then we talked about <strong>sample proportions</strong> which are
 denoted
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>.
+<!--NEXT TIME MAKE SURE TO EXPLAIN THAT P-P-HAT IS THE NUMBER OF "SUCCESSES" DIVIDED BY THE SAMPLE SIZE.-->
 In a SRS from a large population,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
 is random with <strong>sampling distribution</strong> that has the
@@ -1025,34 +1026,77 @@ con’d</td>
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Oct 21
-
-Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
-$$\hat{p} \pm z^* \sqrt{ \frac{\hat{p}(1-\hat{p})}{N}}.$$
-
+<h3 id="mon-oct-21">Mon, Oct 21</h3>
+<p>Today we talked about <strong>confidence intervals</strong> for a
+population proportion again. We talked about how you can change the
+<strong>confidence level</strong> by adjusting the <strong>critical
+z-value</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mo>*</mo></msup><annotation encoding="application/x-tex">z^*</annotation></semantics></math>.<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mfrac><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm z^* \sqrt{ \frac{\hat{p}(1-\hat{p})}{N}}.</annotation></semantics></math></p>
 <center>
-Confidence Level | 90% | 95% | 99% | 99.9%
-:---|:---:|:---:|:---:|:---:
-Critical z-value | 1.645 | 1.96 | 2.576 | 3.291
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Confidence Level</th>
+<th style="text-align: center;">90%</th>
+<th style="text-align: center;">95%</th>
+<th style="text-align: center;">99%</th>
+<th style="text-align: center;">99.9%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Critical z-value</td>
+<td style="text-align: center;">1.645</td>
+<td style="text-align: center;">1.96</td>
+<td style="text-align: center;">2.576</td>
+<td style="text-align: center;">3.291</td>
+</tr>
+</tbody>
+</table>
 </center>
-
-Examples.
-
-1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
+<p>Examples.</p>
+<ol type="1">
+<li><p>In 2004 the General Social Survey found 304 out 977 Americans
+always felt rushed. Find the margin of error for a 90% confidence
+interval with this data.</p></li>
+<li><p>What are we 90% sure is true about the confidence interval we
+found? Only one of the following is the correct answer. Which is it?</p>
+<ol type="a">
+<li>90% of Americans are in the interval.</li>
+<li>90% of future samples will have results in the interval.</li>
+<li>90% sure that the population proportion is in the interval.</li>
+<li>90% sure that the sample proportion is in the interval.</li>
+</ol></li>
+</ol>
+<p>Confidence intervals for proportions are based on some big
+assumptions.</p>
+<ol type="1">
+<li><p><strong>No Bias.</strong> The data must be a simple random sample
+from the population to avoid bias.</p></li>
+<li><p><strong>Normality.</strong> The sample size must be large enough
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+to be normally distributed. A rule of thumb (<strong>the success-failure
+condition</strong>) is that you should have at least 15 “successes” and
+15 “failures” in your data in order to use this kind of confidence
+interval.</p></li>
+</ol>
+<p>We finished with one more exercise.</p>
+<ol start="3" type="1">
+<li>A 2017 Gallop survey of 1,011 American adults found that 38% believe
+that God created man in his present form. Find the margin of error for a
+95% confidence interval to estimate the percent of all Americans who
+share this belief.</li>
+</ol>
+<!--
+We didn't have time for these last problems because we were reviewing probability models, probabilities vs. expected value, and sample proportions from last quiz. 
 
 2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
-
-Confidence intervals for proportions are based on some big assumptions.  
-
-1. **No Bias.** The data must be a simple random sample from the population to avoid bias.
-
-2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in your data in order to use this kind of confidence interval.
 
 We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
 
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
-
 -->
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
