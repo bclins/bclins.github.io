@@ -1160,7 +1160,7 @@ Exercises.
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 21  | [TP10][TP10] | Dictionaries 
-Wed, Oct 23  |  | Dictionary Comprehensions 
+Wed, Oct 23  | [C16][C16] | Dictionary Comprehensions 
 Thu, Oct 24  |  |
 Fri, Oct 25  |  |
 
@@ -1250,9 +1250,52 @@ We finished by doing the following exercise.
 
 4. Write a function `combine_to_dict(key_list, value_list)` that returns a dictionary with keys from `key_list` and values from `value_list`.  
 
+### Wed, Oct 23
+
+Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
+
+<center>
+<table class="bordered">
+<tr><th></th><th>Lists</th><th>Dictionaries</th></tr>
+<tr><th>Accessing Elements</th><td>`a[i]`</td><td>`d[key]`</td></tr>
+<tr><th>Adding New Elements</th><td>`a.append(new_element)`</td><td>`d[new_key] = new_value`</td></tr>
+<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr>
+<tr><th>Looping</th><td>`for elem in a:`</td><td>`for key in d:`</td></tr>
+<tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
+</table>
+</center>
 
 
+1. In [Project 5](project5.pdf), you had to write a function `letter_frequency(message)` that returns a list showing the frequencies of each letter in a message string.  It would be better for that function to return a dictionary with keys for each letter. See if you can re-write `letter_frequency(message)` to return a dictionary with a key for each letter and integer values that correspond to how many copies of each letter appear in the message.  Can you write the function in one line using a dictionary comprehension? 
 
+We also talked about using a dictionary as a **memo** in order to **memoize** a recursive function. We used this example. 
+
+```python
+# This simple recursive function is very slow when n gets big 
+def fib1(n):
+    """Returns the n-th Fibonacci number."""
+    if n < 2:
+        return n
+    else:
+        return fib1(n - 1) + fib1(n - 2)
+
+known = {0: 0, 1: 1} # this is a memo variable that stores known Fibonacci numbers
+def fib2(n):
+    """Returns the n-th Fibonacci number (memoized version)."""
+    if n in known:
+        return known[n]
+    else:
+        known[n] = fib2(n - 1) + fib2(n - 2)
+        return known[n]
+```
+
+This dramatically improves the performance of this algorithm.  Without memoization, calling `fib1(40)` took about 20 seconds on my computer.  But calling `fib2(40)` returns the answer almost instantaneously. 
+
+Some good exercises to get extra practice with dictionaries can be found here:
+
+* [Cafiero Dictionary Exercises](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
+
+Try Exercise 01 and 02 there. 
 
 - - - 
 

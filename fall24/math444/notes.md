@@ -807,6 +807,24 @@ Another fact which we stated but did not prove is
 **Theorem (Analytic implies Holomorphic).** If $f$ is analytic at $w$, then $f$ is holomorphic in an open disk around $w$.
 </div>
 
+<!-- NOTE TO SELF: THIS PROOF DID NOT GO WELL
+
+Options for the future:
+
+1. Introduce uniform convergence earlier and use the triangle inequality to prove that if $f_n$ is a sequence continuous functions (continuous at a point $w$) that unformly converge to $f$ on a closed disk, then $f$ is also continuous (at $w$). 
+
+2. Use Fisher's approach argue that any absolutely converging power series is holomorphic inside its radius of convergence by proving that its derivative is also an absolutely converging power series.  One annoying thing about Fisher is that he does not distinguish b/w holomorphic and analytic and uses the term analytic for both. Another annoying thing about Fisher's approach is that it is a little delicate to prove that the derivative of a power series really is the sum of the derivatives of its terms..., but that is an important result. 
+
+3. Sweep the issue under the rug (a lot of undergraduate level proofs do this). 
+
+Let's see if we can give a simpler proof.  Suppose $f(z) = \sum_{k = 0}^\infty a_k z^k$ converges absolutely inside a disk with positive radius $R$.  The derivative is the limit 
+$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k \frac{z^k - w^k}{z-w}$$
+because both series for $f(z)$ and $f(w)$ are absolutely converging so you can subtract them.  Then algebra tells us that
+$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k (z^{k-1} + z^{k-2} w + \ldots + z w^{k-2} + w^{k-1}) $$
+Hmmm... it's tricky because you still have to figure out a way to swap the limit and the summation.  Maybe do this instead: argue that (z+h)^k = z^k + k z^{k-1} h + o(|h|)... or probably best solution is to just sweep the issue under the rug and argue that you can swap limits and summations? 
+
+-->
+
 You can use Morera's theorem to prove this.  But the proof also requires knowing that analytic functions are continuous in an open disk too.  The easiest way to prove that is to argue that the partial sums of the Taylor series converge uniformly to $f(z)$ in the disk, but we haven't talked about how continuity is preserved under uniform convergence.  
 
 We left the following exercise to try on your own. 
@@ -819,7 +837,53 @@ Other things to cover:
 Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
 
 -->
- 
+
+### Wed, Oct 23
+
+The **winding number** of a (piecewise smooth) closed path $\gamma$ around a point $w \in \C$ is
+$$\frac{1}{2\pi i} \int_\gamma \frac{1}{z-w} \, dz$$
+(assuming that $\gamma$ does not intersect $w$). 
+
+<div class="Theorem">
+**Theorem (Polynomial Transformations of the Unit Circle).** If $p(z)$ is a polynomial with no roots on the unit circle, then the winding number of $p(e^{it}), 0 \le t \le 2 \pi$, around the origin is equal to the number of roots of $p$ inside the unit circle (counting multiplicity).
+</div>
+
+We use the (now updated) [complex grapher](https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html) to look at some examples. Then we proved this theorem by doing the following exercises in class:
+
+1. If $\gamma(t) = p(e^{it})$, show that 
+$$\int_\gamma \frac{1}{z} \, z = \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz.$$
+
+<!--2. If $f(z) = (z-w)^m g(z)$ where $g(z)$ is holomorphic and $g(w) \ne 0$ in a disk of radius $R$ around $w$, then $\frac{1}{2\pi i } \oint_{|z-w| = r} \frac{f'(z)}{f(z)} \, dz = m$ for any $0 < r< R$. -->
+
+2. For a polynomial 
+$$p(z) = (z-r_1)^{m_1} (z-r_2)^{m_2} \cdots (z-r_k)^{m_k},$$ 
+show that 
+$$\frac{p'(z)}{p(z)} = \frac{m_1}{z-r_1} + \frac{m_2}{z-r_2} + \ldots + \frac{m_k}{z-r_k}.$$
+Hint: Use mathematical induction on $k$. 
+
+
+<!--the winding number of $\gamma(t) = p(e^{it})$, $0 \le t \le 2 \pi$ around the origin will be 
+$$\frac{1}{2\pi i} \oint_\gamma \frac{1}{z} \, dz = \frac{1}{2\pi i} \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz = \sum_{|r_j|<1} m_j.$$-->
+
+We can use this theorem to derive one proof of the Fundamental Theorem of Algebra.
+
+<div class="Theorem">
+**Fundamental Theorem of Algebra.** Any non-constant polynomial with complex coefficients has a root in $\C$. 
+</div>
+
+Assume without loss of generality that $p$ is a monic (leading coefficient is one) degree $n$ polynomial. Note that $p$ has a root if and only if the polynomial $p(Rz)$ has a root for any $R > 0$ and that is true if and only if the polynomial $p(Rz)/R^n$ has a root.    
+
+3. Show that there exists $R$ large enough so that $|z^n - \frac{p(Rz)}{R^n}| < 1$ for all $z$ on the unit circle. 
+
+You can get a proof of the Fundamental Theorem of Algebra by combining this inequality with the following intuitive result.
+
+<div class="Theorem">
+**Dog on a Leash Theorem.** Suppose that $\gamma$ and $\delta$ are closed, piecewise smooth paths from $[a,b]$ to $\C$ such that $\gamma(t)$ is never zero and 
+$$|\gamma(t) - \delta(t)| < |\gamma(t)|$$
+for all $t \in [a,b]$, then the winding numbers of $\gamma$ and $\delta$ around 0 are the same.
+</div>
+
+
 
 
 - - - 

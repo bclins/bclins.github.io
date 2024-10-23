@@ -1800,6 +1800,23 @@ then
 is holomorphic in an open disk around
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
 </div>
+<!-- NOTE TO SELF: THIS PROOF DID NOT GO WELL
+
+Options for the future:
+
+1. Introduce uniform convergence earlier and use the triangle inequality to prove that if $f_n$ is a sequence continuous functions (continuous at a point $w$) that unformly converge to $f$ on a closed disk, then $f$ is also continuous (at $w$). 
+
+2. Use Fisher's approach argue that any absolutely converging power series is holomorphic inside its radius of convergence by proving that its derivative is also an absolutely converging power series.  One annoying thing about Fisher is that he does not distinguish b/w holomorphic and analytic and uses the term analytic for both. Another annoying thing about Fisher's approach is that it is a little delicate to prove that the derivative of a power series really is the sum of the derivatives of its terms..., but that is an important result. 
+
+3. Sweep the issue under the rug (a lot of undergraduate level proofs do this). 
+
+Let's see if we can give a simpler proof.  Suppose $f(z) = \sum_{k = 0}^\infty a_k z^k$ converges absolutely inside a disk with positive radius $R$.  The derivative is the limit 
+$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k \frac{z^k - w^k}{z-w}$$
+because both series for $f(z)$ and $f(w)$ are absolutely converging so you can subtract them.  Then algebra tells us that
+$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k (z^{k-1} + z^{k-2} w + \ldots + z w^{k-2} + w^{k-1}) $$
+Hmmm... it's tricky because you still have to figure out a way to swap the limit and the summation.  Maybe do this instead: argue that (z+h)^k = z^k + k z^{k-1} h + o(|h|)... or probably best solution is to just sweep the issue under the rug and argue that you can swap limits and summations? 
+
+-->
 <p>You can use Morera’s theorem to prove this. But the proof also
 requires knowing that analytic functions are continuous in an open disk
 too. The easiest way to prove that is to argue that the partial sums of
@@ -1824,6 +1841,102 @@ Other things to cover:
 Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
 
 -->
+<h3 id="wed-oct-23">Wed, Oct 23</h3>
+<p>The <strong>winding number</strong> of a (piecewise smooth) closed
+path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+around a point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">w \in \mathbb{C}</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π</mi><mi>i</mi></mrow></mfrac><msub><mo>∫</mo><mi>γ</mi></msub><mfrac><mn>1</mn><mrow><mi>z</mi><mo>−</mo><mi>w</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2\pi i} \int_\gamma \frac{1}{z-w} \, dz</annotation></semantics></math>
+(assuming that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+does not intersect
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>).</p>
+<div class="Theorem">
+<p><strong>Theorem (Polynomial Transformations of the Unit
+Circle).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math>
+is a polynomial with no roots on the unit circle, then the winding
+number of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">p(e^{it}), 0 \le t \le 2 \pi</annotation></semantics></math>,
+around the origin is equal to the number of roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+inside the unit circle (counting multiplicity).</p>
+</div>
+<p>We use the (now updated) <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html">complex
+grapher</a> to look at some examples. Then we proved this theorem by
+doing the following exercises in class:</p>
+<ol type="1">
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(t) = p(e^{it})</annotation></semantics></math>,
+show that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi>γ</mi></msub><mfrac><mn>1</mn><mi>z</mi></mfrac><mspace width="0.167em"></mspace><mi>z</mi><mo>=</mo><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>1</mn></mrow></msub><mfrac><mrow><mi>p</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_\gamma \frac{1}{z} \, z = \oint_{|z|=1} \frac{p&#39;(z)}{p(z)} \, dz.</annotation></semantics></math></li>
+</ol>
+<!--2. If $f(z) = (z-w)^m g(z)$ where $g(z)$ is holomorphic and $g(w) \ne 0$ in a disk of radius $R$ around $w$, then $\frac{1}{2\pi i } \oint_{|z-w| = r} \frac{f'(z)}{f(z)} \, dz = m$ for any $0 < r< R$. -->
+<ol start="2" type="1">
+<li>For a polynomial
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mn>1</mn></msub></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mn>2</mn></msub></msup><mi>⋯</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>m</mi><mi>k</mi></msub></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">p(z) = (z-r_1)^{m_1} (z-r_2)^{m_2} \cdots (z-r_k)^{m_k},</annotation></semantics></math>
+show that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>p</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><msub><mi>m</mi><mn>1</mn></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mfrac><msub><mi>m</mi><mn>2</mn></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>2</mn></msub></mrow></mfrac><mo>+</mo><mi>…</mi><mo>+</mo><mfrac><msub><mi>m</mi><mi>k</mi></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mi>k</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{p&#39;(z)}{p(z)} = \frac{m_1}{z-r_1} + \frac{m_2}{z-r_2} + \ldots + \frac{m_k}{z-r_k}.</annotation></semantics></math>
+Hint: Use mathematical induction on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
+</ol>
+<!--the winding number of $\gamma(t) = p(e^{it})$, $0 \le t \le 2 \pi$ around the origin will be 
+$$\frac{1}{2\pi i} \oint_\gamma \frac{1}{z} \, dz = \frac{1}{2\pi i} \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz = \sum_{|r_j|<1} m_j.$$-->
+<p>We can use this theorem to derive one proof of the Fundamental
+Theorem of Algebra.</p>
+<div class="Theorem">
+<p><strong>Fundamental Theorem of Algebra.</strong> Any non-constant
+polynomial with complex coefficients has a root in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.</p>
+</div>
+<p>Assume without loss of generality that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is a monic (leading coefficient is one) degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+polynomial. Note that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+has a root if and only if the polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(Rz)</annotation></semantics></math>
+has a root for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R &gt; 0</annotation></semantics></math>
+and that is true if and only if the polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msup><mi>R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p(Rz)/R^n</annotation></semantics></math>
+has a root.</p>
+<ol start="3" type="1">
+<li>Show that there exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+large enough so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>z</mi><mi>n</mi></msup><mo>−</mo><mfrac><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mi>R</mi><mi>n</mi></msup></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z^n - \frac{p(Rz)}{R^n}| &lt; 1</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+on the unit circle.</li>
+</ol>
+<p>You can get a proof of the Fundamental Theorem of Algebra by
+combining this inequality with the following intuitive result.</p>
+<div class="Theorem">
+<p><strong>Dog on a Leash Theorem.</strong> Suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+are closed, piecewise smooth paths from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(t)</annotation></semantics></math>
+is never zero and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">|\gamma(t) - \delta(t)| &lt; |\gamma(t)|</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">t \in [a,b]</annotation></semantics></math>,
+then the winding numbers of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+around 0 are the same.</p>
+</div>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>

@@ -1657,7 +1657,8 @@ href="https://allendowney.github.io/ThinkPython/chap10.html">TP10</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 23</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.16">C16</a></td>
 <td style="text-align: left;">Dictionary Comprehensions</td>
 </tr>
 <tr class="odd">
@@ -1779,6 +1780,123 @@ included if you want:</p>
 that returns a dictionary with keys from <code>key_list</code> and
 values from <code>value_list</code>.</li>
 </ol>
+<h3 id="wed-oct-23">Wed, Oct 23</h3>
+<p>Both lists and dictionaries are examples of <strong>iterable</strong>
+types in Python. An iterable is an object that you can loop through
+using a for-in loop. All sequential types are iterable, but dictionaries
+are also iterable even though they aren’t sequential. We made the
+following table to compare lists vs. dictionaries.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+</th>
+<th>
+Lists
+</th>
+<th>
+Dictionaries
+</th>
+</tr>
+<tr>
+<th>
+Accessing Elements
+</th>
+<td>
+<code>a[i]</code>
+</td>
+<td>
+<code>d[key]</code>
+</td>
+</tr>
+<tr>
+<th>
+Adding New Elements
+</th>
+<td>
+<code>a.append(new_element)</code>
+</td>
+<td>
+<code>d[new_key] = new_value</code>
+</td>
+</tr>
+<tr>
+<th>
+Removing Elements
+</th>
+<td>
+<code>a.remove(element)</code> or <code>a.pop(i)</code>
+</td>
+<td>
+<code>d.pop(key)</code>
+</td>
+</tr>
+<tr>
+<th>
+Looping
+</th>
+<td>
+<code>for elem in a:</code>
+</td>
+<td>
+<code>for key in d:</code>
+</td>
+</tr>
+<tr>
+<th>
+Comprehensions
+</th>
+<td>
+<code>[exp for var in iterable]</code>
+</td>
+<td>
+<code>{exp1: exp2 for var in iterable}</code>
+</td>
+</tr>
+</table>
+</center>
+<ol type="1">
+<li>In <a href="project5.pdf">Project 5</a>, you had to write a function
+<code>letter_frequency(message)</code> that returns a list showing the
+frequencies of each letter in a message string. It would be better for
+that function to return a dictionary with keys for each letter. See if
+you can re-write <code>letter_frequency(message)</code> to return a
+dictionary with a key for each letter and integer values that correspond
+to how many copies of each letter appear in the message. Can you write
+the function in one line using a dictionary comprehension?</li>
+</ol>
+<p>We also talked about using a dictionary as a <strong>memo</strong> in
+order to <strong>memoize</strong> a recursive function. We used this
+example.</p>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This simple recursive function is very slow when n gets big </span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib1(n):</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the n-th Fibonacci number.&quot;&quot;&quot;</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> n</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fib1(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fib1(n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>known <span class="op">=</span> {<span class="dv">0</span>: <span class="dv">0</span>, <span class="dv">1</span>: <span class="dv">1</span>} <span class="co"># this is a memo variable that stores known Fibonacci numbers</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib2(n):</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the n-th Fibonacci number (memoized version).&quot;&quot;&quot;</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="kw">in</span> known:</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> known[n]</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>        known[n] <span class="op">=</span> fib2(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fib2(n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> known[n]</span></code></pre></div>
+<p>This dramatically improves the performance of this algorithm. Without
+memoization, calling <code>fib1(40)</code> took about 20 seconds on my
+computer. But calling <code>fib2(40)</code> returns the answer almost
+instantaneously.</p>
+<p>Some good exercises to get extra practice with dictionaries can be
+found here:</p>
+<ul>
+<li><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7">Cafiero
+Dictionary Exercises</a></li>
+</ul>
+<p>Try Exercise 01 and 02 there.</p>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>
