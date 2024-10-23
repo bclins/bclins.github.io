@@ -541,6 +541,10 @@ We finished by talking about how to choose a sample size large enough to get a d
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 -->
 
+### Wed, Oct 23
+
+We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online too. 
+
 
 - - - 
 

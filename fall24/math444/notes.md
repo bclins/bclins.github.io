@@ -848,7 +848,7 @@ $$\frac{1}{2\pi i} \int_\gamma \frac{1}{z-w} \, dz$$
 **Theorem (Polynomial Transformations of the Unit Circle).** If $p(z)$ is a polynomial with no roots on the unit circle, then the winding number of $p(e^{it}), 0 \le t \le 2 \pi$, around the origin is equal to the number of roots of $p$ inside the unit circle (counting multiplicity).
 </div>
 
-We use the (now updated) [complex grapher](https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html) to look at some examples. Then we proved this theorem by doing the following exercises in class:
+We used the (now updated) [complex grapher](https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html) to look at some examples. Then we proved this theorem by doing the following exercises in class:
 
 1. If $\gamma(t) = p(e^{it})$, show that 
 $$\int_\gamma \frac{1}{z} \, z = \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz.$$
@@ -859,7 +859,7 @@ $$\int_\gamma \frac{1}{z} \, z = \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz.$$
 $$p(z) = (z-r_1)^{m_1} (z-r_2)^{m_2} \cdots (z-r_k)^{m_k},$$ 
 show that 
 $$\frac{p'(z)}{p(z)} = \frac{m_1}{z-r_1} + \frac{m_2}{z-r_2} + \ldots + \frac{m_k}{z-r_k}.$$
-Hint: Use mathematical induction on $k$. 
+Hint: Use mathematical induction on $k$ if you want to make this rigorous. 
 
 
 <!--the winding number of $\gamma(t) = p(e^{it})$, $0 \le t \le 2 \pi$ around the origin will be 
@@ -871,14 +871,14 @@ We can use this theorem to derive one proof of the Fundamental Theorem of Algebr
 **Fundamental Theorem of Algebra.** Any non-constant polynomial with complex coefficients has a root in $\C$. 
 </div>
 
-Assume without loss of generality that $p$ is a monic (leading coefficient is one) degree $n$ polynomial. Note that $p$ has a root if and only if the polynomial $p(Rz)$ has a root for any $R > 0$ and that is true if and only if the polynomial $p(Rz)/R^n$ has a root.    
+Assume without loss of generality that $p$ is a monic (leading coefficient is one) degree $n$ polynomial. Note that $p$ has a root if and only if the polynomial $p(Rz)/R^n$ has a root for any $R > 0$.     
 
 3. Show that there exists $R$ large enough so that $|z^n - \frac{p(Rz)}{R^n}| < 1$ for all $z$ on the unit circle. 
 
-You can get a proof of the Fundamental Theorem of Algebra by combining this inequality with the following intuitive result.
+You can get a proof of the Fundamental Theorem of Algebra by combining this inequality with the following intuitive result from topology.
 
 <div class="Theorem">
-**Dog on a Leash Theorem.** Suppose that $\gamma$ and $\delta$ are closed, piecewise smooth paths from $[a,b]$ to $\C$ such that $\gamma(t)$ is never zero and 
+**Dog on a Leash Theorem.** Suppose that $\gamma$ and $\delta$ are closed, piecewise smooth paths from $[a,b]$ to $\C$ such that 
 $$|\gamma(t) - \delta(t)| < |\gamma(t)|$$
 for all $t \in [a,b]$, then the winding numbers of $\gamma$ and $\delta$ around 0 are the same.
 </div>

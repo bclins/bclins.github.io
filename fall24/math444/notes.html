@@ -1864,7 +1864,7 @@ around the origin is equal to the number of roots of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
 inside the unit circle (counting multiplicity).</p>
 </div>
-<p>We use the (now updated) <a
+<p>We used the (now updated) <a
 href="https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html">complex
 grapher</a> to look at some examples. Then we proved this theorem by
 doing the following exercises in class:</p>
@@ -1881,7 +1881,8 @@ show that
 show that
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>p</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><msub><mi>m</mi><mn>1</mn></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mfrac><msub><mi>m</mi><mn>2</mn></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>2</mn></msub></mrow></mfrac><mo>+</mo><mi>…</mi><mo>+</mo><mfrac><msub><mi>m</mi><mi>k</mi></msub><mrow><mi>z</mi><mo>−</mo><msub><mi>r</mi><mi>k</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{p&#39;(z)}{p(z)} = \frac{m_1}{z-r_1} + \frac{m_2}{z-r_2} + \ldots + \frac{m_k}{z-r_k}.</annotation></semantics></math>
 Hint: Use mathematical induction on
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+if you want to make this rigorous.</li>
 </ol>
 <!--the winding number of $\gamma(t) = p(e^{it})$, $0 \le t \le 2 \pi$ around the origin will be 
 $$\frac{1}{2\pi i} \oint_\gamma \frac{1}{z} \, dz = \frac{1}{2\pi i} \oint_{|z|=1} \frac{p'(z)}{p(z)} \, dz = \sum_{|r_j|<1} m_j.$$-->
@@ -1899,12 +1900,9 @@ is a monic (leading coefficient is one) degree
 polynomial. Note that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
 has a root if and only if the polynomial
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(Rz)</annotation></semantics></math>
-has a root for any
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R &gt; 0</annotation></semantics></math>
-and that is true if and only if the polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msup><mi>R</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p(Rz)/R^n</annotation></semantics></math>
-has a root.</p>
+has a root for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R &gt; 0</annotation></semantics></math>.</p>
 <ol start="3" type="1">
 <li>Show that there exists
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
@@ -1915,7 +1913,8 @@ for all
 on the unit circle.</li>
 </ol>
 <p>You can get a proof of the Fundamental Theorem of Algebra by
-combining this inequality with the following intuitive result.</p>
+combining this inequality with the following intuitive result from
+topology.</p>
 <div class="Theorem">
 <p><strong>Dog on a Leash Theorem.</strong> Suppose that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
@@ -1926,8 +1925,6 @@ are closed, piecewise smooth paths from
 to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>
 such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(t)</annotation></semantics></math>
-is never zero and
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">|\gamma(t) - \delta(t)| &lt; |\gamma(t)|</annotation></semantics></math>
 for all
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">t \in [a,b]</annotation></semantics></math>,

@@ -1159,8 +1159,8 @@ Exercises.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 21  | [TP10][TP10] | Dictionaries 
-Wed, Oct 23  | [C16][C16] | Dictionary Comprehensions 
+Mon, Oct 21  | [TP10][TP10] | Dictionary Comprehensions 
+Wed, Oct 23  | [C16][C16] | Iterable types
 Thu, Oct 24  |  |
 Fri, Oct 25  |  |
 
@@ -1295,7 +1295,7 @@ Some good exercises to get extra practice with dictionaries can be found here:
 
 * [Cafiero Dictionary Exercises](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
 
-Try Exercise 01 and 02 there. 
+We did Exercise 01 and the first part of Exercise 02 together as a class. 
 
 - - - 
 
