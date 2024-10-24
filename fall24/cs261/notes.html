@@ -1663,13 +1663,15 @@ href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 24</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap11.html">TP11</a></td>
+<td style="text-align: left;">Tuples</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Oct 25</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap11.html">TP11</a></td>
+<td style="text-align: left;">Tuples</td>
 </tr>
 </tbody>
 </table>
@@ -1898,6 +1900,52 @@ Dictionary Exercises</a></li>
 </ul>
 <p>We did Exercise 01 and the first part of Exercise 02 together as a
 class.</p>
+<h3 id="thu-oct-24">Thu, Oct 24</h3>
+<p>Today we introduced <strong>tuples</strong>.</p>
+<ol type="1">
+<li>Try entering <code>x = 1, 2, 3</code> into the Python shell. What is
+<code>type(x)</code>?</li>
+</ol>
+<p>A tuple is a sequence type like a list, except tuples are immutable.
+You can add tuples, access values at an index, slice, and even multiply
+tuples by positive integers, just like lists. But you cannot add new
+elements (there’s no <code>.append()</code> method), remove elements (no
+<code>.remove()</code> or <code>.pop()</code> methods) or change the
+value of an element at an index.</p>
+<p>When entering a tuple, you can wrap the comma separated expressions
+in parentheses.</p>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>   <span class="co"># These two lines do the exact same thing!</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">4</span>)]</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>] <span class="co"># These do not, since the meaning changes without the parentheses.</span></span></code></pre></div>
+<p>We talked about the following applications of tuples.</p>
+<ol type="1">
+<li><p><strong>Tuple Assignment.</strong> You can assign a tuple of
+values (on right of the assignment operator <code>=</code>) to a tuple
+of variables (on the left side).</p>
+<ol type="a">
+<li>Try entering <code>a, b = 1, 2</code>. What are the values of
+<code>a</code> and <code>b</code>?</li>
+<li>What happens if you try <code>a, b, c = 1, 2</code>?</li>
+<li>What if you try <code>a, b = 1, 2, 3</code>?</li>
+</ol></li>
+<li><p><strong>Tuple Return Values.</strong> Some algorithms find more
+than one value and it would be nice if a function implementing an
+algorithm could return both. You can use a tuple as a return value to do
+this.</p></li>
+</ol>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division_algorithm(n, d):</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Divides positive integer n by d using repeated subtraction. </span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns the quotient q and the remainder r.</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    q, r <span class="op">=</span> <span class="dv">0</span>, n <span class="co"># initialize the quotient and remainder</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> r <span class="op">&gt;=</span> d:</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>        r <span class="op">-=</span> d</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>        q <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> q, r</span></code></pre></div>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>

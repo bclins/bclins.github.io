@@ -1161,8 +1161,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 21  | [TP10][TP10] | Dictionary Comprehensions 
 Wed, Oct 23  | [C16][C16] | Iterable types
-Thu, Oct 24  |  |
-Fri, Oct 25  |  |
+Thu, Oct 24  | [TP11][TP11] | Tuples
+Fri, Oct 25  | [TP11][TP11] | Tuples
 
 ### Mon, Oct 21
 
@@ -1296,6 +1296,51 @@ Some good exercises to get extra practice with dictionaries can be found here:
 * [Cafiero Dictionary Exercises](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
 
 We did Exercise 01 and the first part of Exercise 02 together as a class. 
+
+### Thu, Oct 24
+
+Today we introduced **tuples**.
+
+1. Try entering `x = 1, 2, 3` into the Python shell.  What is `type(x)`?
+
+A tuple is a sequence type like a list, except tuples are immutable.  You can add tuples, access values at an index, slice, and even multiply tuples by positive integers, just like lists.  But you cannot add new elements (there's no `.append()` method), remove elements (no `.remove()` or `.pop()` methods) or change the value of an element at an index. 
+
+When entering a tuple, you can wrap the comma separated expressions in parentheses.  
+
+```python
+x = (1, 2, 3)
+x = 1, 2, 3   # These two lines do the exact same thing!
+
+y = [(1, 2), (3, 4)]
+y = [1, 2, 3, 4] # These do not, since the meaning changes without the parentheses.
+```
+
+We talked about the following applications of tuples.
+
+1. **Tuple Assignment.**  You can assign a tuple of values (on right of the assignment operator `=`) to a tuple of variables (on the left side). 
+
+    a. Try entering `a, b = 1, 2`.  What are the values of `a` and `b`?
+    b. What happens if you try `a, b, c = 1, 2`?
+    c. What if you try `a, b = 1, 2, 3`?
+
+2. **Tuple Return Values.** Some algorithms find more than one value and it would be nice if a function implementing an algorithm could return both. You can use a tuple as a return value to do this.
+
+```python
+def division_algorithm(n, d):
+    """Divides positive integer n by d using repeated subtraction. 
+    Returns the quotient q and the remainder r.
+    """
+    q, r = 0, n # initialize the quotient and remainder
+    while r >= d:
+        r -= d
+        q += 1
+    return q, r
+```
+
+3. **Getting index/value or key/value pairs for looping**. Sometimes when you loop through a list, you want both the index and value for each element.  Likewise, it is sometimes useful to have both the key and value when looping through a dictionary.  
+
+
+
 
 - - - 
 
