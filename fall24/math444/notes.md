@@ -770,8 +770,9 @@ We ran out of time before we could do this exercise, but we'll start with it on 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 21  | [8.1][8.1] | Power series and holomorphic functions
-Wed, Oct 23  | [5.3][5.3] | Entire functions & Liouville's theorem
-Fri, Oct 25  | [9.1][9.1] | Classification of singularities
+Wed, Oct 23  | [5.3][5.3] | Winding number and the Fund. Thm. of Algebra
+Fri, Oct 25  | [5.3][5.3] | Entire functions & Liouville's theorem
+
 
 ### Mon, Oct 21 
 
@@ -884,6 +885,50 @@ for all $t \in [a,b]$, then the winding numbers of $\gamma$ and $\delta$ around 
 </div>
 
 
+### Fri, Oct 25
+
+We started by talking about [Homework 9](HW9.pdf).  We did the following example, which is similar to problem \#4:
+
+1. Find the Maclaurin series for the function
+$$\frac{1}{z^3 - 8}.$$
+
+A function $f: \C \rightarrow \C$ is **entire** if it is holomorphic everywhere in $\C$.  
+
+<div class="Theorem">
+**Liouville's Theorem.** Any bounded entire function is constant.
+</div>
+
+To prove Liouville's theorem, we need a quick observation and an idea.  The observation is that if $f'(z) = 0$ everywhere, then $f$ must be constant.  The idea is that we can use Cauchy's integral formula for derivatives to calculate $f'(z)$ if $f$ is bounded and entire:
+$$f'(z) = \frac{1}{2\pi i} \oint_{|\xi - z| = R} \frac{f(\xi)}{(\xi - z)^2} \, d\xi.$$
+What happens if the radius $R$ gets really really big? Use the max-times-length inequality to estimate $|f'(z)|$.  
+
+We finished by applying Liouville's theorem to re-prove the Fundamental Theorem of Algebra. Unlike the proof we gave last time, using Liouville's theorem to prove the FToA only guarantees one root. But that is enough if you use this result from algebra. 
+
+<div class="Theorem">
+**Division Algorithm for Polynomials**. If $p(z)$ and $d(z)$ are polynomials with complex coefficients and $\operatorname{degree}(d) > 0$, then there are unique polynomials $q(z)$ and $r(z)$ with $\operatorname{degree}(r) < \operatorname{degree}(d)$ such that 
+$$p(z) = q(z) d(z) + r(z).$$
+</div>
+
+A corollary of the division algorithm and the Fundamental Theorem of Algebra is:
+
+<div class="Theorem"> 
+**Theorem.** An n-th degree polynomial $p(z) = a_n z^n + \ldots + a_0$ with complex coefficients always factors into the form
+$$a_n(z-r_1) (z-r_2) \cdots (z-r_n)$$
+where reach $r_k$ is a root of $p(z)$ (repeats are allowed).  
+</div>
+
+We used these ideas to completely factor the polynomial:
+
+2. $p(z) = z^3 - 3z^2 + z - 3$.
+
+Another good example to factor completely would be:
+
+2. $p(z) = z^3 - 8$.
+
+
+
+
+
 
 
 - - - 
@@ -894,7 +939,7 @@ for all $t \in [a,b]$, then the winding numbers of $\gamma$ and $\delta$ around 
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 28  | [8.3][8.3] | Laurent series 
+Mon, Oct 28  | [9.1][9.1] | Classification of singularities
 Wed, Oct 30  | [9.2][9.2] | Residues       
 Fri, Nov 1   | [9.3][9.3] | The argument principle and Rouche's theorem
 

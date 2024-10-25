@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\on}{\operatorname}
+\newcommand{\Log}{\on{Log}}
+\newcommand{\Arg}{\on{Arg}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 10 \hfill Name: \underline{\hspace*{2in}}}
+\noindent
+
+\begin{enumerate}
+\item Suppose that $f$ is entire and there exists $M > 0$ such that $|f(z)| \ge M$ for all $z \in \C$.  Use Liouville's theorem to prove that $f$ is constant.  
+\vfill
+
+\item Suppose that $f$ is entire and $\re f$ is bounded. Prove that $f$ must be constant.  Hint: Consider the function $\exp(f(z))$.  
+\vfill
+
+
+\item One of the roots of the polynomial $p(z) = z^3 - 6z + 20i$ is $z = 2i$.  Factor $p(z)$ into a product of linear factors. Hint: Use polynomial long division to remove the factor $(z-2i)$ first.
+\vfill
+
+\newpage
+%\item Suppose that $f$ is entire and $|f(z)| \le |z|^p$ for all $z \in \C$ where $p$ is a fixed positive number less than 1.  Prove that $f(w) = 0$ for all $w \in \C$.  Hint: Use the Cauchy formula for derivatives to estimate $f'(w)$ by calculating 
+%$$f'(w) = \frac{1}{2\pi i} \oint_{C_R} \frac{f(z)}{(z-w)^2} \, dz$$
+%where $C_R$ is a circle of radius $R$ around $w$ and the radius $R$ is allowed to be arbitrarily large. 
+%\vfill
+
+
+\item Suppose that $f$ is entire and $|f(z)| \le a+b|z|^n$ for all $z \in \C$ where $n$ is a fixed positive integer and $a,b > 0$ are constants.  Prove that $f$ is a polynomial of degree at most $n$ by showing that the coefficients $a_k$ of its Maclaurin series are zero when $k > n$.  Use Cauchy's integral formula for the Maclaurin series coefficients:
+$$a_k = \frac{1}{2\pi i} \oint_{|z|=R} \frac{f(z)}{z^{k+1}} \, dz$$
+and notice that the radius $R$ can be arbitrarily large since $f$ is entire.
+\vfill
+
+\item Use mathematical induction to prove that $(z-1)(z^{n-1} + z^{n-2} + \ldots + z + 1) = z^n - 1$ for every positive integer $n$.
+\vfill
+
+\item Use the previous result to determine all of the roots of the polynomial $z^{n-1} + z^{n-2} + \ldots + z + 1$.  
+\vfill
+
+
+\end{enumerate}
+
+\end{document}

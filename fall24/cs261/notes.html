@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -997,7 +997,7 @@ talked about last time.</p>
 <li><p>Write an <code>even_elements(numbers)</code> function like the
 one from yesterday using this style of loop. It would be a good idea to
 use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
 as the index of the first even number if there aren’t any.</p></li>
 <li><p>Re-write the <code>is_integer_string(s)</code> function using
 this style of list. To make this one more interesting, we first created
@@ -1946,6 +1946,114 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a h
 <span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>        r <span class="op">-=</span> d</span>
 <span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>        q <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> q, r</span></code></pre></div>
+<ol start="3" type="1">
+<li><strong>Looping Through Index/Value Pairs in a List</strong>.
+Sometimes when you loop through a list, you want both the index and
+value for each element. There is a function called
+<code>enumerate()</code> to get these for any sequence type. We used it
+to re-write the <code>argmax</code> function that we have seen
+before.</li>
+</ol>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> argmax(number):</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Return the argument (i.e., index) of the largest element in a list of numbers.&quot;&quot;&quot;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    arg <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, x <span class="kw">in</span> <span class="bu">enumerate</span>(numbers):</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x <span class="op">&gt;</span> numbers[arg]:</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>            arg <span class="op">=</span> i</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> arg</span></code></pre></div>
+<ol start="4" type="1">
+<li><strong>Looping Through Key/Value Pairs in a Dictionary</strong>.
+You can do something similar to simultaneously loops through both the
+keys and values of dictionary using the <code>.items()</code>
+method.</li>
+</ol>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>days_by_month <span class="op">=</span> {<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>, <span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;May&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>, </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>}</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> month, days <span class="kw">in</span> days_by_month.items():</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(month, <span class="st">&quot;has&quot;</span>, days, <span class="st">&quot;days.&quot;</span>)</span></code></pre></div>
+<h3 id="fri-oct-25">Fri, Oct 25</h3>
+<p>Unlike lists, tuples are hashable, which means that they can be used
+as keys for dictionaries. This is useful, for example, if you have data
+on a grid. We used class today to implement a simple 2-player
+tic-tac-toe game. We used a dictionary to store the tic-tac-toe board
+data:</p>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>board <span class="op">=</span> {</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">0</span>,<span class="dv">0</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">0</span>,<span class="dv">1</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">0</span>,<span class="dv">2</span>): <span class="st">&quot; &quot;</span>,</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span>,<span class="dv">0</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">1</span>,<span class="dv">1</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">1</span>,<span class="dv">2</span>): <span class="st">&quot; &quot;</span>,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">2</span>,<span class="dv">0</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">2</span>,<span class="dv">1</span>): <span class="st">&quot; &quot;</span>, (<span class="dv">2</span>,<span class="dv">2</span>): <span class="st">&quot; &quot;</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<ol type="1">
+<li><p>Manually typing in the keys and values in the dictionary above is
+a bit tedious (and it would be very tedious if the board was bigger!).
+Write a double loop to fill an empty dictionary with the data
+above.</p></li>
+<li><p>Once we have the board data entered, we need a function
+<code>print_board()</code> that can print the current state of the
+board. It should produce output that looks like:</p></li>
+</ol>
+<center>
+<pre>
+   |   | X 
+---+---+---
+   | O |   
+---+---+---
+   |   |   
+</pre>
+</center>
+<ol start="3" type="1">
+<li><p>We need a way to prompt the users to pick a row and a column to
+make their moves. Write a function called
+<code>get_player_move(board, player)</code> that prompts the user with a
+sentence like:</p>
+<center>
+<p><code>X's turn. Enter the position where you want to place an X.</code></p>
+</center>
+<p>The two players are <code>"X"</code> and <code>"O"</code>. Once the
+player enters the result, the function should update <code>board</code>.
+Since dictionaries are mutable, you can update <code>board</code>
+without needing to return anything.</p></li>
+<li><p>We also talked about how it would be better if the users could
+enter position numbers on the board instead of typing coordinates:</p>
+<center>
+<pre>
+ 1 | 2 | 3 
+---+---+---
+ 4 | 5 | 6 
+---+---+---
+ 7 | 8 | 9 
+</pre>
+</center>
+<p>To do this we need a function <code>convert_input_to_pair(s)</code>
+that converts the player’s input string to an integer and then to a
+tuple showing the row &amp; column number.<br />
+</p></li>
+</ol>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_input_to_pair(s):</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the (row, column) tuple corresponding to a user&#39;s input.&quot;&quot;&quot;</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">int</span>(s) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">//</span> <span class="dv">3</span>, n <span class="op">%</span> <span class="dv">3</span></span></code></pre></div>
+<ol start="5" type="1">
+<li>Use a <code>while True:</code> infinite loop to let two human
+players play tic-tac-toe against each other.</li>
+</ol>
+<p>There are a lot of other features we might want our tic-tac-toe game
+to have:</p>
+<ol type="1">
+<li>We should detect invalid moves and warn players if they try to make
+one.</li>
+<li>We could detect when the game is over and announce the winner if
+someone wins.<br />
+</li>
+<li>We could also try to create a computer that the human player could
+play against.</li>
+</ol>
+<p>We didn’t have time to include those in our program in class today,
+but they are things we could add in the future.</p>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>

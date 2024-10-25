@@ -47,7 +47,7 @@ Week | Topic                      | Notes | Homework
 7  | Complex integration                            | [Week 07](notes.html#week-7-notes)  | [HW7](HW7.pdf)
 8  | The Cauchy integral formula                    | [Week 08](notes.html#week-8-notes)  | [HW8](HW8.pdf)
 9  | Entire functions                               | [Week 09](notes.html#week-9-notes)  | [HW9](HW9.pdf)
-10 | Singularities and residues                     | [Week 10](notes.html#week-10-notes) |
+10 | Singularities and residues                     | [Week 10](notes.html#week-10-notes) | [HW10](HW10.pdf)
 11 | Applications of the residue theorem            | [Week 11](notes.html#week-11-notes) |
 12 | Möbius transforms, **Midterm 2**               | [Week 12](notes.html#week-12-notes) |
 13 | Discrete applications of residue               | [Week 13](notes.html#week-13-notes) |

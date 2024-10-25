@@ -1687,6 +1687,11 @@ href="https://youtu.be/WJOf4PfoHow?t=431">https://youtu.be/WJOf4PfoHow</a>)</li>
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <h4 id="tentative-schedule-8">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -1706,14 +1711,15 @@ functions</td>
 <td style="text-align: center;">Wed, Oct 23</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.3">5.3</a></td>
-<td style="text-align: left;">Entire functions &amp; Liouville’s
-theorem</td>
+<td style="text-align: left;">Winding number and the Fund. Thm. of
+Algebra</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 25</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.1">9.1</a></td>
-<td style="text-align: left;">Classification of singularities</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.5.3">5.3</a></td>
+<td style="text-align: left;">Entire functions &amp; Liouville’s
+theorem</td>
 </tr>
 </tbody>
 </table>
@@ -1934,6 +1940,78 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
 around 0 are the same.</p>
 </div>
+<h3 id="fri-oct-25">Fri, Oct 25</h3>
+<p>We started by talking about <a href="HW9.pdf">Homework 9</a>. We did
+the following example, which is similar to problem #4:</p>
+<ol type="1">
+<li>Find the Maclaurin series for the function
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><msup><mi>z</mi><mn>3</mn></msup><mo>−</mo><mn>8</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{1}{z^3 - 8}.</annotation></semantics></math></li>
+</ol>
+<p>A function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℂ</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f: \mathbb{C}\rightarrow \mathbb{C}</annotation></semantics></math>
+is <strong>entire</strong> if it is holomorphic everywhere in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.</p>
+<div class="Theorem">
+<p><strong>Liouville’s Theorem.</strong> Any bounded entire function is
+constant.</p>
+</div>
+<p>To prove Liouville’s theorem, we need a quick observation and an
+idea. The observation is that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f&#39;(z) = 0</annotation></semantics></math>
+everywhere, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+must be constant. The idea is that we can use Cauchy’s integral formula
+for derivatives to calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f&#39;(z)</annotation></semantics></math>
+if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is bounded and entire:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π</mi><mi>i</mi></mrow></mfrac><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>ξ</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>R</mi></mrow></msub><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>ξ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">f&#39;(z) = \frac{1}{2\pi i} \oint_{|\xi - z| = R} \frac{f(\xi)}{(\xi - z)^2} \, d\xi.</annotation></semantics></math>
+What happens if the radius
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+gets really really big? Use the max-times-length inequality to estimate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|f&#39;(z)|</annotation></semantics></math>.</p>
+<p>We finished by applying Liouville’s theorem to re-prove the
+Fundamental Theorem of Algebra. Unlike the proof we gave last time,
+using Liouville’s theorem to prove the FToA only guarantees one root.
+But that is enough if you use this result from algebra.</p>
+<div class="Theorem">
+<p><strong>Division Algorithm for Polynomials</strong>. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">d(z)</annotation></semantics></math>
+are polynomials with complex coefficients and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>degree</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{degree}(d) &gt; 0</annotation></semantics></math>,
+then there are unique polynomials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">q(z)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r(z)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>degree</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mo>degree</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{degree}(r) &lt; \operatorname{degree}(d)</annotation></semantics></math>
+such that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>r</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">p(z) = q(z) d(z) + r(z).</annotation></semantics></math></p>
+</div>
+<p>A corollary of the division algorithm and the Fundamental Theorem of
+Algebra is:</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> An n-th degree polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><msup><mi>z</mi><mi>n</mi></msup><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p(z) = a_n z^n + \ldots + a_0</annotation></semantics></math>
+with complex coefficients always factors into the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>⋯</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>r</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a_n(z-r_1) (z-r_2) \cdots (z-r_n)</annotation></semantics></math>
+where reach
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>r</mi><mi>k</mi></msub><annotation encoding="application/x-tex">r_k</annotation></semantics></math>
+is a root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math>
+(repeats are allowed).</p>
+</div>
+<p>We used these ideas to completely factor the polynomial:</p>
+<ol start="2" type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>z</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mi>z</mi><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">p(z) = z^3 - 3z^2 + z - 3</annotation></semantics></math>.</li>
+</ol>
+<p>Another good example to factor completely would be:</p>
+<ol start="2" type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>z</mi><mn>3</mn></msup><mo>−</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">p(z) = z^3 - 8</annotation></semantics></math>.</li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>
@@ -1954,8 +2032,8 @@ around 0 are the same.</p>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 28</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.3">8.3</a></td>
-<td style="text-align: left;">Laurent series</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.9.1">9.1</a></td>
+<td style="text-align: left;">Classification of singularities</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 30</td>

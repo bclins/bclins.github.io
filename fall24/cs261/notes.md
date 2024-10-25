@@ -1337,7 +1337,88 @@ def division_algorithm(n, d):
     return q, r
 ```
 
-3. **Getting index/value or key/value pairs for looping**. Sometimes when you loop through a list, you want both the index and value for each element.  Likewise, it is sometimes useful to have both the key and value when looping through a dictionary.  
+3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
+
+```python
+def argmax(number):
+    """Return the argument (i.e., index) of the largest element in a list of numbers."""
+    arg = 0
+    for i, x in enumerate(numbers):
+        if x > numbers[arg]:
+            arg = i
+    return arg
+```
+
+4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
+
+```python
+days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
+
+for month, days in days_by_month.items():
+    print(month, "has", days, "days.")
+```
+
+### Fri, Oct 25
+
+Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
+
+```python
+board = {
+  (0,0): " ", (0,1): " ", (0,2): " ",
+  (1,0): " ", (1,1): " ", (1,2): " ",
+  (2,0): " ", (2,1): " ", (2,2): " "
+}
+```  
+
+1. Manually typing in the keys and values in the dictionary above is a bit tedious (and it would be very tedious if the board was bigger!). Write a double loop to fill an empty dictionary with the data above.  
+
+2. Once we have the board data entered, we need a function `print_board()` that can print the current state of the board.  It should produce output that looks like: 
+
+<center>
+<pre>
+   |   | X 
+---+---+---
+   | O |   
+---+---+---
+   |   |   
+</pre>
+</center>
+  
+
+3. We need a way to prompt the users to pick a row and a column to make their moves.  Write a function called `get_player_move(board, player)` that prompts the user with a sentence like:
+<center>
+`X's turn. Enter the position where you want to place an X.`
+</center>
+The two players are `"X"` and `"O"`. Once the player enters the result, the function should update `board`.  Since dictionaries are mutable, you can update `board` without needing to return anything. 
+
+4. We also talked about how it would be better if the users could enter position numbers on the board instead of typing coordinates:
+<center>
+<pre>
+ 1 | 2 | 3 
+---+---+---
+ 4 | 5 | 6 
+---+---+---
+ 7 | 8 | 9 
+</pre>
+</center>
+To do this we need a function `convert_input_to_pair(s)` that converts the player's input string to an integer and then to a tuple showing the row & column number.  
+```python
+def convert_input_to_pair(s):
+    """Returns the (row, column) tuple corresponding to a user's input.""" 
+    n = int(s) - 1
+    return n // 3, n % 3
+```
+
+5. Use a `while True:` infinite loop to let two human players play tic-tac-toe against each other. 
+
+There are a lot of other features we might want our tic-tac-toe game to have:
+
+1. We should detect invalid moves and warn players if they try to make one. 
+2. We could detect when the game is over and announce the winner if someone wins.  
+3. We could also try to create a computer that the human player could play against. 
+
+We didn't have time to include those in our program in class today, but they are things we could add in the future. 
 
 
 
