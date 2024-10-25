@@ -558,7 +558,9 @@ Mon, Oct 28  | [5.3][5.3] | Hypothesis testing for a proportion
 Wed, Oct 30  | [6.1][6.1] | Inference for a single proportion
 Fri, Nov 1   | [5.3.3][5.3.3] | Decision errors
 
-
+<!--
+Today I tried to convince you that I am psychic by telling you about this one time I got a very surprising score on a test of psychic powers. 
+--> 
 
 - - - 
 
