@@ -1431,11 +1431,21 @@ We didn't have time to include those in our program in class today, but they are
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 28  |  | 
+Mon, Oct 28  |  | Sets and set comprehensions
 Wed, Oct 30  |  | 
 Thu, Oct 31  |  | 
 Fri, Nov 1   |  |
 
+<!-- 
+### Mon, Oct 28
+
+The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
+
+1. **Option 1** Loop through the student preferences and create a new list `unique_electives` by only adding electives if they aren't already in the list.  
+
+2. 
+
+-->
 
 - - - 
 
