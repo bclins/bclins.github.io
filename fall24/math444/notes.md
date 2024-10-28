@@ -810,19 +810,10 @@ Another fact which we stated but did not prove is
 
 <!-- NOTE TO SELF: THIS PROOF DID NOT GO WELL
 
-Options for the future:
+You need to cover uniform convergence or at least review properties of power series in more detail first.  So cover sections 7.4 (and possibly 7.3) before you do this stuff next time.  This year I ended up tossing those in two weeks later, which isn't ideal. 
 
-1. Introduce uniform convergence earlier and use the triangle inequality to prove that if $f_n$ is a sequence continuous functions (continuous at a point $w$) that unformly converge to $f$ on a closed disk, then $f$ is also continuous (at $w$). 
 
-2. Use Fisher's approach argue that any absolutely converging power series is holomorphic inside its radius of convergence by proving that its derivative is also an absolutely converging power series.  One annoying thing about Fisher is that he does not distinguish b/w holomorphic and analytic and uses the term analytic for both. Another annoying thing about Fisher's approach is that it is a little delicate to prove that the derivative of a power series really is the sum of the derivatives of its terms..., but that is an important result. 
-
-3. Sweep the issue under the rug (a lot of undergraduate level proofs do this). 
-
-Let's see if we can give a simpler proof.  Suppose $f(z) = \sum_{k = 0}^\infty a_k z^k$ converges absolutely inside a disk with positive radius $R$.  The derivative is the limit 
-$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k \frac{z^k - w^k}{z-w}$$
-because both series for $f(z)$ and $f(w)$ are absolutely converging so you can subtract them.  Then algebra tells us that
-$$f'(w) = \lim_{z \rightarrow w} \sum_{k = 0}^\infty a_k (z^{k-1} + z^{k-2} w + \ldots + z w^{k-2} + w^{k-1}) $$
-Hmmm... it's tricky because you still have to figure out a way to swap the limit and the summation.  Maybe do this instead: argue that (z+h)^k = z^k + k z^{k-1} h + o(|h|)... or probably best solution is to just sweep the issue under the rug and argue that you can swap limits and summations? 
+I don't recommend Fisher's approach argue that any absolutely converging power series is holomorphic inside its radius of convergence by proving that its derivative is also an absolutely converging power series.  One annoying thing about Fisher is that he does not distinguish b/w holomorphic and analytic and uses the term analytic for both. Another annoying thing about Fisher's approach is that it is a little delicate to prove that the derivative of a power series really is the sum of the derivatives of its terms..., but that is an important result. 
 
 -->
 
@@ -832,12 +823,6 @@ We left the following exercise to try on your own.
 
 4. Suppose that the power series $\sum_{k = 0}^\infty a_k z^k$ has radius of convergence $R$.  Prove that its derivative $\sum_{k = 0}^\infty k a_k z^{k-1}$ also has radius of convergence $R$.  
 
-<!--
-Other things to cover:
-
-Two functions with same power series are the same. Two functions with different power series coefficients but same center must be different. 
-
--->
 
 ### Wed, Oct 23
 
@@ -939,12 +924,77 @@ Another good example to factor completely would be:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 28  | [9.1][9.1] | Classification of singularities
-Wed, Oct 30  | [9.2][9.2] | Residues       
-Fri, Nov 1   | [9.3][9.3] | The argument principle and Rouche's theorem
+Mon, Oct 28  | [7.4][7.4] | Radius of convergence
+Wed, Oct 30  | [7.3][7.3] | Uniform convergence
+Fri, Nov 1   | [8.2][8.2] | Zeroes of analytic functions 
+
+### Mon, Oct 28 
+
+1. Consider the following power series for 
+$$\Log(z) = (z-1) - \frac{(z-1)^2}{2} + \frac{(z-1)^3}{3} - \frac{(z-1)^4}{4} + \ldots.$$
+    a. Re-write this series in $\Sigma$-notation.
+    b. What are the coefficients $a_n$ of this power series?
+    c. What is the center and radius of convergence?  
+    d. How would you find a power series for $\Log(z)$ centered at $w = i$?
+
+2. Find power series for the following functions by using the Maclaurin series for $e^z$, $\sin z$, and $\cos z$:
+    a. $e^{-z^2/2}$
+    b. $\dfrac{\sin z}{z}$
+
+Why do power series have a radius of convergence?  
+
+<div class="Theorem">
+**Lemma**. Let $\sum_{n = 0}^\infty a_n (z-w)^n$ be a power series that converges for one $z_0 \in \C$.  Then it converges absolutely for all $z \in \C$ such that $|z - w| < |z_0 - w|$.  
+</div>
+
+Consider the sum of the absolute values of the terms in a power series:
+
+$$\sum_{n = 0}^\infty |a_n| \, |z-w|^n = |a_0| + |a_1| |z-w| + |a_2| |z-w|^2 + |a_3| |z-w|^3 + \ldots.$$
+
+If the sequence $|a_n|$ has a geometric pattern, then we have geometric series.  It converges if and only if the common ratio 
+$$\frac{|a_{n+1}|}{|a_n|} |z - w| < 1$$
+or equivalently if 
+$$|z - w| < \frac{|a_{n}|}{|a_{n+1}|}.$$
+
+If the coefficients $|a_n|$ are more complicated, then we have to take care.  But we can say this. 
+
+1. If the series diverges when $|z-w| = R$, then it must also diverge by the comparison test when $|z - w| > R$. 
+1. If the series converges when $|z-w| = r$, then it must also converge by the comparison test when $|z - w| < r$. 
+
+This observation leads to:
+
+<div class="Theorem">
+**Theorem.** Every power series $\sum_{k = 0}^\infty a_k (z- w)^k$ has a radius convergence $R \in [0, \infty]$.  If $|z-w| < R$, then the power series converges absolutely and if $|z-w| > R$, then the series diverges.  
+</div>
+
+Another result that you can derive from the above is:
+
+<div class="Theorem">
+**Ratio Test.** If $\lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|} = R$ exists, then $R$ is the radius of convergence of the power series $\sum_{n = 0}^\infty a_n (z - w)^n$. 
+</div>
+
+The key is to observe that for any $\epsilon > 0$, there is an $N$ such that
+$$ R - \epsilon < \frac{|a_{n+1}|}{|a_n|} < R + \epsilon $$
+Therefore, after the $N$-th term in the series, we can compare our series with geometric series:
+$$\sum_{n = N}^\infty (R-\epsilon)^{n - N} |a_N|  |z-w|^n < \sum_{n = N}^\infty |a_n| |z-w|^n < \sum_{n = N}^\infty (R+\epsilon)^{n-N} |a_N|  |z-w|^n.$$
+
+1. Use the ratio test to find the radius of convergence of the power series
+$$1 + z  + \frac{3}{4} z^2 + \frac{4}{8} z^3 + \frac{5}{16} z^4 + \ldots.$$
+
+<!-- 2. Use the ratio test to find the radius of convergence of the Maclaurin series for $e^z$. -->
+
+2. Why can't you use the ratio test as written to find the radius of convergence for the Maclaurin series for $\sin z$? 
 
 
+<!-- For next time prove the following: 
 
+1. If $\sum_{n = 0}^\infty a_n (z-w)^n$ has radius of convergence $R$, then the function it converges to inside $B_R(w)$ is continuous in the open disk $B_R(w)$. 
+
+2. If two power series are both centered at $w$ with radii of convergence $R_1 \le R_2$, then the sum of the two series is a power series with radius of convergence at least $R_1$ (Q? why could it be more, can you think of an example?). 
+
+3. The product of a power series that has radius of convergence $R$ with any non-zero polynomial is a power series with radius of convergence $R$. 
+
+-->
 
 - - - 
 
@@ -954,10 +1004,9 @@ Fri, Nov 1   | [9.3][9.3] | The argument principle and Rouche's theorem
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 4  | [8.2][8.2] | Zeroes of analytic functions
-Wed, Nov 6  | [8.2][8.2] | The maximum modulus principle
-Fri, Nov 8  |            | Conformal mappings
-
+Mon, Nov 4  | [8.2][8.2] | The maximum modulus principle   
+Wed, Nov 6  | [9.1][9.1] | Classification of singularities
+Fri, Nov 8  | [9.2][9.2] | Residues       
 
 
 
@@ -969,7 +1018,7 @@ Fri, Nov 8  |            | Conformal mappings
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 11 |            | Riemann mapping theorem
+Mon, Nov 11 | [9.3][9.3] | The argument principle and Rouche's theorem
 Wed, Nov 13 |  | Review
 Fri, Nov 15 |  | **Midterm 2**
 

@@ -2074,7 +2074,7 @@ but they are things we could add in the future.</p>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 30</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Sorting lists</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 31</td>
@@ -2088,16 +2088,60 @@ but they are things we could add in the future.</p>
 </tr>
 </tbody>
 </table>
-<!-- 
-### Mon, Oct 28
-
-The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
-
-1. **Option 1** Loop through the student preferences and create a new list `unique_electives` by only adding electives if they aren't already in the list.  
-
-2. 
-
--->
+<h3 id="mon-oct-28">Mon, Oct 28</h3>
+<p>The text file <a href="electives.txt">electives.txt</a> from <a
+href="project7.pdf">Project 7</a> contains the elective preferences for
+1,000 students. It would be nice to filter this list of words to just
+the names of each elective, without any repeats. How could we do
+that?</p>
+<ul>
+<li><strong>Option 1.</strong> Loop through the student preferences and
+create a new list by only adding electives if they aren’t already in the
+list.</li>
+</ul>
+<p>We implemented option1 in the following exercise:</p>
+<ol type="1">
+<li>Write a function called <code>unique()</code> that reads a list and
+outputs a list of its elements without any repeats.</li>
+</ol>
+<p>There are other options to create a list of all elements without
+repeats.</p>
+<ul>
+<li><p><strong>Option 2.</strong> Loop through the student preferences
+and create a dictionary with the electives as keys. Since keys are
+unique, it won’t do anything when you try to add a key that is already
+there so it should work. Actually, you already did this! Once you have a
+dictionary, just use the <code>list()</code> constructor function to
+convert it to a list. You’ll get a list of keys (the values won’t be
+included).</p></li>
+<li><p><strong>Option 3.</strong> A dictionary is not the only type to
+store values using a hash table to quickly look up elements. Another
+Python type is called a <strong>set</strong>. Sets are like
+dictionaries, except sets only have keys, no values. You can convert a
+list (or any other iterable type) to a set using the <code>set()</code>
+constructor function.</p></li>
+</ul>
+<p>We used option3 to re-write the <code>unique()</code> function.</p>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique(lst): <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">set</span>(lst)) </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that you can define a function all on one line if it is really simple!</span></span></code></pre></div>
+<p>You can also use curly braces to create a set like this:</p>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>example_set <span class="op">=</span> {<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="dv">1</span>, <span class="dv">2</span>}</span></code></pre></div>
+<p>You can tell that this is a set and not a dictionary because it does
+not colons to separate keys from values. Finally, you can also create
+<strong>set comprehensions</strong> in Python, just like list and
+dictionary comprehensions.</p>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>powers_of_2_mod_7 <span class="op">=</span> {<span class="dv">2</span> <span class="op">**</span> k <span class="op">%</span> <span class="dv">7</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)}</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(powers_of_2_mod_7)</span></code></pre></div>
+<ol type="1">
+<li>What is the difference between
+<center>
+<code>{2 ** k % 7 for k in range(100)}</code> and
+<code>[2 ** k % 7 for k in range(100)]</code>?
+</center></li>
+</ol>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <h4 id="tentative-schedule-10">Tentative Schedule</h4>

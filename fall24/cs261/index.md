@@ -45,7 +45,7 @@ Week | Topic                      | Notes | Projects
 6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | [Project 5](project5.pdf)
 7  | Strings                              | [Week 07](notes.html#week-7-notes)  | [Project 6](project6.pdf)
 8  | Lists                                | [Week 08](notes.html#week-8-notes)  | [Project 7](project7.pdf)
-9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  |
+9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  | [Project 8](project8.pdf)
 10 | Tuples                               | [Week 10](notes.html#week-10-notes) | 
 11 | File                                 | [Week 11](notes.html#week-11-notes) | 
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |

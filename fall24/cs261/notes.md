@@ -1432,20 +1432,51 @@ We didn't have time to include those in our program in class today, but they are
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 28  |  | Sets and set comprehensions
-Wed, Oct 30  |  | 
+Wed, Oct 30  |  | Sorting lists
 Thu, Oct 31  |  | 
 Fri, Nov 1   |  |
 
-<!-- 
 ### Mon, Oct 28
 
 The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
 
-1. **Option 1** Loop through the student preferences and create a new list `unique_electives` by only adding electives if they aren't already in the list.  
+* **Option 1.** Loop through the student preferences and create a new list by only adding electives if they aren't already in the list.  
 
-2. 
+We implemented option1 in the following exercise:
 
--->
+1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
+
+There are other options to create a list of all elements without repeats. 
+
+* **Option 2.** Loop through the student preferences and create a dictionary with the electives as keys.  Since keys are unique, it won't do anything when you try to add a key that is already there so it should work.  Actually, you already did this!  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
+
+* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
+
+We used option3 to re-write the `unique()` function. 
+
+```python
+def unique(lst): return list(set(lst)) 
+# Notice that you can define a function all on one line if it is really simple!
+```
+
+You can also use curly braces to create a set like this:
+
+```python
+example_set = {"a", "b", 1, 2}
+```
+
+You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
+
+```python
+powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
+print(powers_of_2_mod_7)
+```
+
+1. What is the difference between 
+<center>
+`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
+</center>
+
 
 - - - 
 
