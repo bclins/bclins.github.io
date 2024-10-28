@@ -2041,10 +2041,11 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.8.2">8
 of this power series?</li>
 <li>What is the center and radius of convergence?<br />
 </li>
-<li>How would you find a power series for
+<li>How would you find a Taylor series for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Log}(z)</annotation></semantics></math>
 centered at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">w = i</annotation></semantics></math>?</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>+</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">w = -1 + i</annotation></semantics></math>?
+What is the radius of convergence for that Taylor series?</li>
 </ol></li>
 <li>Find power series for the following functions by using the Maclaurin
 series for
@@ -2068,31 +2069,10 @@ Then it converges absolutely for all
 such that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>z</mi><mn>0</mn></msub><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">|z - w| &lt; |z_0 - w|</annotation></semantics></math>.</p>
 </div>
-<p>Consider the sum of the absolute values of the terms in a power
-series:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>n</mi></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>3</mn></msup><mo>+</mo><mi>…</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\sum_{n = 0}^\infty |a_n| \, |z-w|^n = |a_0| + |a_1| |z-w| + |a_2| |z-w|^2 + |a_3| |z-w|^3 + \ldots.</annotation></semantics></math></p>
-<p>If the sequence
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|a_n|</annotation></semantics></math>
-has a geometric pattern, then we have geometric series. It converges if
-and only if the common ratio
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow></mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\frac{|a_{n+1}|}{|a_n|} |z - w| &lt; 1</annotation></semantics></math>
-or equivalently if
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">|z - w| &lt; \frac{|a_{n}|}{|a_{n+1}|}.</annotation></semantics></math></p>
-<p>If the coefficients
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|a_n|</annotation></semantics></math>
-are more complicated, then we have to take care. But we can say
-this.</p>
-<ol type="1">
-<li>If the series diverges when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-w| = R</annotation></semantics></math>,
-then it must also diverge by the comparison test when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z - w| &gt; R</annotation></semantics></math>.</li>
-<li>If the series converges when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">|z-w| = r</annotation></semantics></math>,
-then it must also converge by the comparison test when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">|z - w| &lt; r</annotation></semantics></math>.</li>
-</ol>
-<p>This observation leads to:</p>
+<p>We proved this in class, and then we talked about why the least upper
+bound of the set</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">{</mo><mi>r</mi><mo>≥</mo><mn>0</mn><mspace width="0.222em"></mspace><mo>:</mo><mspace width="0.222em"></mspace><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mo accent="false">∞</mo></munderover><msub><mi>a</mi><mi>n</mi></msub><msup><mi>r</mi><mi>n</mi></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> converges</mtext></mrow><mo stretchy="true" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\left\{ r \ge 0 ~:~ \sum_{n = 0}^\infty a_n r^n \text{ converges} \right\}</annotation></semantics></math></p>
+<p>must be the radius of convergence.</p>
 <div class="Theorem">
 <p><strong>Theorem.</strong> Every power series
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msub><mi>a</mi><mi>k</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k = 0}^\infty a_k (z- w)^k</annotation></semantics></math>
@@ -2113,16 +2093,21 @@ exists, then
 is the radius of convergence of the power series
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msub><mi>a</mi><mi>n</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{n = 0}^\infty a_n (z - w)^n</annotation></semantics></math>.</p>
 </div>
-<p>The key is to observe that for any
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon &gt; 0</annotation></semantics></math>,
-there is an
+<p>We talked about the intuition of why this is true: because there is
+an
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
-such that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mi>ϵ</mi><mo>&lt;</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow></mfrac><mo>&lt;</mo><mi>R</mi><mo>+</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex"> R - \epsilon &lt; \frac{|a_{n+1}|}{|a_n|} &lt; R + \epsilon </annotation></semantics></math>
-Therefore, after the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>-th
-term in the series, we can compare our series with geometric series:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mi>N</mi></mrow><mo accent="false">∞</mo></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>−</mo><mi>ϵ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>N</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>n</mi></msup><mo>&lt;</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mi>N</mi></mrow><mo accent="false">∞</mo></munderover><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>n</mi></msup><mo>&lt;</mo><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mi>N</mi></mrow><mo accent="false">∞</mo></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>R</mi><mo>+</mo><mi>ϵ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>N</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>a</mi><mi>N</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>n</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\sum_{n = N}^\infty (R-\epsilon)^{n - N} |a_N|  |z-w|^n &lt; \sum_{n = N}^\infty |a_n| |z-w|^n &lt; \sum_{n = N}^\infty (R+\epsilon)^{n-N} |a_N|  |z-w|^n.</annotation></semantics></math></p>
+after which, our power series will be sandwiched between two geometric
+series, one with radius of convergence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>+</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">R+\epsilon</annotation></semantics></math>
+and the other with radius of convergence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>−</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">R-\epsilon</annotation></semantics></math>.</p>
+<!--
+The key is to observe that for any $\epsilon > 0$, there is an $N$ such that
+$$ R - \epsilon < \frac{|a_{n+1}|}{|a_n|} < R + \epsilon $$
+Therefore, after the $N$-th term in the series, we can compare our series with geometric series:
+$$\sum_{n = N}^\infty (R-\epsilon)^{n - N} |a_N|  |z-w|^n < \sum_{n = N}^\infty |a_n| |z-w|^n < \sum_{n = N}^\infty (R+\epsilon)^{n-N} |a_N|  |z-w|^n.$$
+-->
+<p>Here are some exercises we didn’t have time for in class.</p>
 <ol type="1">
 <li>Use the ratio test to find the radius of convergence of the power
 series

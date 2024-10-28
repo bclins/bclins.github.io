@@ -935,7 +935,7 @@ $$\Log(z) = (z-1) - \frac{(z-1)^2}{2} + \frac{(z-1)^3}{3} - \frac{(z-1)^4}{4} + 
     a. Re-write this series in $\Sigma$-notation.
     b. What are the coefficients $a_n$ of this power series?
     c. What is the center and radius of convergence?  
-    d. How would you find a power series for $\Log(z)$ centered at $w = i$?
+    d. How would you find a Taylor series for $\Log(z)$ centered at $w = -1 + i$? What is the radius of convergence for that Taylor series?
 
 2. Find power series for the following functions by using the Maclaurin series for $e^z$, $\sin z$, and $\cos z$:
     a. $e^{-z^2/2}$
@@ -947,21 +947,11 @@ Why do power series have a radius of convergence?
 **Lemma**. Let $\sum_{n = 0}^\infty a_n (z-w)^n$ be a power series that converges for one $z_0 \in \C$.  Then it converges absolutely for all $z \in \C$ such that $|z - w| < |z_0 - w|$.  
 </div>
 
-Consider the sum of the absolute values of the terms in a power series:
+We proved this in class, and then we talked about why the least upper bound of the set
 
-$$\sum_{n = 0}^\infty |a_n| \, |z-w|^n = |a_0| + |a_1| |z-w| + |a_2| |z-w|^2 + |a_3| |z-w|^3 + \ldots.$$
+$$\left\{ r \ge 0 ~:~ \sum_{n = 0}^\infty a_n r^n \text{ converges} \right\}$$
 
-If the sequence $|a_n|$ has a geometric pattern, then we have geometric series.  It converges if and only if the common ratio 
-$$\frac{|a_{n+1}|}{|a_n|} |z - w| < 1$$
-or equivalently if 
-$$|z - w| < \frac{|a_{n}|}{|a_{n+1}|}.$$
-
-If the coefficients $|a_n|$ are more complicated, then we have to take care.  But we can say this. 
-
-1. If the series diverges when $|z-w| = R$, then it must also diverge by the comparison test when $|z - w| > R$. 
-1. If the series converges when $|z-w| = r$, then it must also converge by the comparison test when $|z - w| < r$. 
-
-This observation leads to:
+must be the radius of convergence.  
 
 <div class="Theorem">
 **Theorem.** Every power series $\sum_{k = 0}^\infty a_k (z- w)^k$ has a radius convergence $R \in [0, \infty]$.  If $|z-w| < R$, then the power series converges absolutely and if $|z-w| > R$, then the series diverges.  
@@ -973,10 +963,16 @@ Another result that you can derive from the above is:
 **Ratio Test.** If $\lim_{n \rightarrow \infty} \frac{|a_n|}{|a_{n+1}|} = R$ exists, then $R$ is the radius of convergence of the power series $\sum_{n = 0}^\infty a_n (z - w)^n$. 
 </div>
 
+We talked about the intuition of why this is true: because there is an $N$ after which, our power series will be sandwiched between two geometric series, one with radius of convergence $R+\epsilon$ and the other with radius of convergence $R-\epsilon$.  
+
+<!--
 The key is to observe that for any $\epsilon > 0$, there is an $N$ such that
 $$ R - \epsilon < \frac{|a_{n+1}|}{|a_n|} < R + \epsilon $$
 Therefore, after the $N$-th term in the series, we can compare our series with geometric series:
 $$\sum_{n = N}^\infty (R-\epsilon)^{n - N} |a_N|  |z-w|^n < \sum_{n = N}^\infty |a_n| |z-w|^n < \sum_{n = N}^\infty (R+\epsilon)^{n-N} |a_N|  |z-w|^n.$$
+-->
+
+Here are some exercises we didn't have time for in class. 
 
 1. Use the ratio test to find the radius of convergence of the power series
 $$1 + z  + \frac{3}{4} z^2 + \frac{4}{8} z^3 + \frac{5}{16} z^4 + \ldots.$$

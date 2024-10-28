@@ -1446,18 +1446,20 @@ We implemented option1 in the following exercise:
 
 1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
 
-There are other options to create a list of all elements without repeats. 
+Unfortunately, the function we came up with was very slow to find the unique words in the file [words.txt](words.txt). There are other faster options to create a list of all elements without repeats. 
 
 * **Option 2.** Loop through the student preferences and create a dictionary with the electives as keys.  Since keys are unique, it won't do anything when you try to add a key that is already there so it should work.  Actually, you already did this!  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
 
 * **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
 
-We used option3 to re-write the `unique()` function. 
+<!--
+I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
 
 ```python
 def unique(lst): return list(set(lst)) 
 # Notice that you can define a function all on one line if it is really simple!
 ```
+-->
 
 You can also use curly braces to create a set like this:
 
@@ -1477,6 +1479,17 @@ print(powers_of_2_mod_7)
 `{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
 </center>
 
+
+<!--
+### Wed, Oct 30
+
+I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
+
+```python
+def unique(lst): return list(set(lst)) 
+# Notice that you can define a function all on one line if it is really simple!
+```
+-->
 
 - - - 
 
