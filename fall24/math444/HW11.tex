@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\on}{\operatorname}
+\newcommand{\Log}{\on{Log}}
+\newcommand{\Arg}{\on{Arg}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 11 \hfill Name: \underline{\hspace*{2in}}}
+\noindent
+Find Taylor series for the following functions with the given centers.
+\begin{enumerate}
+\item $f(x) = \dfrac{\sin(z^3)}{z^2}$ centered at $0$.
+\vfill
+
+\item $f(x) = \dfrac{1}{z+2i}$ centered at $0$.
+\vfill
+
+\item $f(x) = \Log(z+2i)$ centered at $0$. Hint integrate the last Taylor series!
+\vfill
+
+\item Use the Taylor series formula $f(z) = \sum_{n = 0}^\infty \frac{f^{(n)}(c)}{n!} (z-c)^n$ to find the Taylor series for $e^z$ centered at $c= \pi i$.  
+\vfill
+
+\item Use the ratio test to find the radius of convergence of the power series $\ds \sum_{n = 0}^\infty \frac{(z-i)^n}{(n+1) 3^n}$.  
+\vfill 
+
+\item Find a closed form expression (not an infinite sum) for the sum of this power series: 
+$$z^2 - 3z^4 + 5z^6 - 7z^8 + \ldots.$$
+Hint: if you factor out $z^2$, then the resulting sum has a nice integral. 
+\vfill
+\end{enumerate}
+
+\end{document}

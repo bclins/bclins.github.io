@@ -1025,7 +1025,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 14  |            | Fall break, no class
 Wed, Oct 16  |  | More map, filter, & reduce examples
-Thu, Oct 17  |  | List comprehensions
+Thu, Oct 17  | [TP18.5](https://allendowney.github.io/ThinkPython/chap18.html#list-comprehensions) | List comprehensions
 Fri, Oct 18  | [TP10][TP10] | Dictionaries
 
 ### Wed, Oct 16
@@ -1431,8 +1431,8 @@ We didn't have time to include those in our program in class today, but they are
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 28  |  | Sets and set comprehensions
-Wed, Oct 30  |  | Sorting lists
+Mon, Oct 28  | [TP18.1](https://allendowney.github.io/ThinkPython/chap18.html#sets) | Sets and set comprehensions
+Wed, Oct 30  |  | Sorting and searching
 Thu, Oct 31  |  | 
 Fri, Nov 1   |  |
 
@@ -1480,15 +1480,44 @@ print(powers_of_2_mod_7)
 </center>
 
 
-<!--
 ### Wed, Oct 30
 
-I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
+Last time we introduced the **set** type in Python. We can use sets to write a very simple version of the `unique()` function from last time!
 
 ```python
 def unique(lst): return list(set(lst)) 
 # Notice that you can define a function all on one line if it is really simple!
 ```
+
+Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  For lists however, order matters a lot, and some times it is helpful if the elements are sorted in increasing or decreasing order.  
+
+1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  
+
+Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any sequence type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
+
+2. Try to use the `.sort()` method to sort this list: `[4,5,2,3,1,0]`. 
+
+One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
+
+* **Linear Search**: Given a list and a target element, loop through the elements of the list until you find one that matches the target element. 
+* **Binary Search**: Given a sorted list and a target element, recursively check the middle element of the list.  There are three possibilities:
+    - If it is the target element, you are done.
+    - If the middle element is bigger than the target element, then recursively search the bottom half of the list. 
+    - If the middle element is smaller than the target element, then recursively search the top half of the list. 
+
+
+<!-- ### Thu, Oct 31
+
+Today we did several examples of nested loops. 
+
+1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
+
+```python
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+values = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
+```
+
 -->
 
 - - - 

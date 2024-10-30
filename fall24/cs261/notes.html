@@ -1464,6 +1464,11 @@ Neither book covers list comprehensions... but I think they are actually easier 
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <h4 id="tentative-schedule-7">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -1485,7 +1490,8 @@ examples</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 17</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap18.html#list-comprehensions">TP18.5</a></td>
 <td style="text-align: left;">List comprehensions</td>
 </tr>
 <tr class="even">
@@ -2058,6 +2064,11 @@ but they are things we could add in the future.</p>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <h4 id="tentative-schedule-9">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2068,13 +2079,14 @@ but they are things we could add in the future.</p>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 28</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap18.html#sets">TP18.1</a></td>
 <td style="text-align: left;">Sets and set comprehensions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 30</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Sorting lists</td>
+<td style="text-align: left;">Sorting and searching</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 31</td>
@@ -2148,15 +2160,70 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a h
 <code>[2 ** k % 7 for k in range(100)]</code>?
 </center></li>
 </ol>
-<!--
-### Wed, Oct 30
+<h3 id="wed-oct-30">Wed, Oct 30</h3>
+<p>Last time we introduced the <strong>set</strong> type in Python. We
+can use sets to write a very simple version of the <code>unique()</code>
+function from last time!</p>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique(lst): <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">set</span>(lst)) </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that you can define a function all on one line if it is really simple!</span></span></code></pre></div>
+<p>Recall that sets are not <strong>subscriptable</strong> which means
+you can’t access elements of a set <code>s</code> using
+<code>s[i]</code> or <code>s[key]</code> like you can for sequence types
+or dictionaries. That is because the order in which elements appear in a
+set does not matter. For lists however, order matters a lot, and some
+times it is helpful if the elements are sorted in increasing or
+decreasing order.</p>
+<ol type="1">
+<li>Try to write a function called <code>get_sorted_list()</code> that
+creates a new list that contains the same elements as an
+<code>input_list</code>, but in sorted order? Hint: As you add elements
+to the <code>output_list</code>, you’ll want to insert them in the
+correct position. One way to do this is to loop through the index values
+of the output until <code>output_list[i]</code> is greater than the
+element you want to insert. Then you can use
+<code>output_list.insert(i, element)</code> to insert the element at
+position <code>i</code>. That will automatically shift the other
+elements after <code>i</code> to the right.</li>
+</ol>
+<p>Python has built in functions for sorting lists. There are actually
+two. One is a function called <code>sorted()</code> that will sort any
+sequence type. The other is a <code>.sort()</code> method that sorts
+lists in place. That only works with lists because they are mutable.</p>
+<ol start="2" type="1">
+<li>Try to use the <code>.sort()</code> method to sort this list:
+<code>[4,5,2,3,1,0]</code>.</li>
+</ol>
+<p>One advantage of having a sorted list is that it is much faster to
+check whether an element is in a sorted list. We compared the following
+two <strong>search algorithms</strong>:</p>
+<ul>
+<li><strong>Linear Search</strong>: Given a list and a target element,
+loop through the elements of the list until you find one that matches
+the target element.</li>
+<li><strong>Binary Search</strong>: Given a sorted list and a target
+element, recursively check the middle element of the list. There are
+three possibilities:
+<ul>
+<li>If it is the target element, you are done.</li>
+<li>If the middle element is bigger than the target element, then
+recursively search the bottom half of the list.</li>
+<li>If the middle element is smaller than the target element, then
+recursively search the top half of the list.</li>
+</ul></li>
+</ul>
+<!-- ### Thu, Oct 31
 
-I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
+Today we did several examples of nested loops. 
+
+1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
 
 ```python
-def unique(lst): return list(set(lst)) 
-# Notice that you can define a function all on one line if it is really simple!
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+values = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
 ```
+
 -->
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>

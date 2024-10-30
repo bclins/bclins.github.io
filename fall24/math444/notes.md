@@ -889,6 +889,14 @@ What happens if the radius $R$ gets really really big? Use the max-times-length 
 
 We finished by applying Liouville's theorem to re-prove the Fundamental Theorem of Algebra. Unlike the proof we gave last time, using Liouville's theorem to prove the FToA only guarantees one root. But that is enough if you use this result from algebra. 
 
+<!--
+IMPORTANT FOR NEXT TIME: In order to use Liouville's theorem to prove the FTofA, you do HTS that a non-constant polynomial is that is never zero grows to infinite as $|z| \rightarrow \infty$.  Here is a really easy way to see this: prove that 
+$$\frac{p(z)}{z^n} \rightarrow a_n \text{ as } |z| \rightarrow \infty.$$
+
+Then you can assert without proof $p(z)$ stays away from 0 on any compact disk and outside of a big enough compact disk it must be close to its leading coefficient $a_n$ which is not zero. 
+
+-->
+
 <div class="Theorem">
 **Division Algorithm for Polynomials**. If $p(z)$ and $d(z)$ are polynomials with complex coefficients and $\operatorname{degree}(d) > 0$, then there are unique polynomials $q(z)$ and $r(z)$ with $\operatorname{degree}(r) < \operatorname{degree}(d)$ such that 
 $$p(z) = q(z) d(z) + r(z).$$
@@ -982,15 +990,34 @@ $$1 + z  + \frac{3}{4} z^2 + \frac{4}{8} z^3 + \frac{5}{16} z^4 + \ldots.$$
 2. Why can't you use the ratio test as written to find the radius of convergence for the Maclaurin series for $\sin z$? 
 
 
-<!-- For next time prove the following: 
+### Wed, Oct 30
 
-1. If $\sum_{n = 0}^\infty a_n (z-w)^n$ has radius of convergence $R$, then the function it converges to inside $B_R(w)$ is continuous in the open disk $B_R(w)$. 
+A sequence of functions $f_n: D \rightarrow \C$ **converges uniformly** to a function $f: D \rightarrow \C$ if for every $\epsilon > 0$, there exists $N >0$ such that $|f_n(z) - f(z)| < \epsilon$ for all $n \ge N$ and $z \in D$. 
 
-2. If two power series are both centered at $w$ with radii of convergence $R_1 \le R_2$, then the sum of the two series is a power series with radius of convergence at least $R_1$ (Q? why could it be more, can you think of an example?). 
+1. Show that if $f$ is a holomorphic function with a  power series $\sum_{n = 0}^\infty a_n (z-w)^n$ that has radius of convergence $R > 0$, then the partial sums converge uniformly to $f$ inside any closed disk around $w$ with a radius $r < R$.  
 
-3. The product of a power series that has radius of convergence $R$ with any non-zero polynomial is a power series with radius of convergence $R$. 
+2. Show that if $f_n$ is a sequence of continuous functions that converge uniformly to $f$ on an open set $D$, then $f$ is continuous on $D$. You have to show that for any $w \in D$ and any $\epsilon > 0$, there is a $\delta > 0$ such that 
+$$|z - w | < \delta \text{ implies } |f(z) - f(w)| < \epsilon.$$
+Hint: Fix $\epsilon$. Choose $N$ big enough so that $|f_n - f| < \tfrac{\epsilon}{3}$ for all $n \ge N$. Then use the continuity of $f_n$ and the triangle inequality (see the image below).  
 
--->
+<center>
+<img src="uniformConvergence.png" width =240></img>
+</center>
+
+
+After that, we talked about the **zeros of an analytic function**.  A point $w$ in a set $A \subset \C$ is **isolated** if there is an open disk around $w$ such that no other point of $A$ lies in the disk. 
+
+<div class="Theorem">
+**Theorem (Zeros are Isolated)** If $f$ is a non-constant analytic function in an open connected domain $D \subseteq \C$, then the zeros of $f$ are isolated.
+</div>
+
+You can prove this theorem using the power series for $f$ and arguing that it must have a first nonzero coefficient.  The **order of a zero** $w$ of $f(z)$ is the smallest $m$ such that the coefficient $a_m$ in the power series for $f$ centered at $w$ is nonzero.  
+
+Find the orders for the following zeros:
+
+3. $w = 0$ for $f(z) = z-\sin z$. 
+
+4. $w = \pi i$ for $g(z) = e^z + 1$. 
 
 - - - 
 

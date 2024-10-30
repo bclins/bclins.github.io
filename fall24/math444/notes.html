@@ -1960,6 +1960,13 @@ gets really really big? Use the max-times-length inequality to estimate
 Fundamental Theorem of Algebra. Unlike the proof we gave last time,
 using Liouville’s theorem to prove the FToA only guarantees one root.
 But that is enough if you use this result from algebra.</p>
+<!--
+IMPORTANT FOR NEXT TIME: In order to use Liouville's theorem to prove the FTofA, you do HTS that a non-constant polynomial is that is never zero grows to infinite as $|z| \rightarrow \infty$.  Here is a really easy way to see this: prove that 
+$$\frac{p(z)}{z^n} \rightarrow a_n \text{ as } |z| \rightarrow \infty.$$
+
+Then you can assert without proof $p(z)$ stays away from 0 on any compact disk and outside of a big enough compact disk it must be close to its leading coefficient $a_n$ which is not zero. 
+
+-->
 <div class="Theorem">
 <p><strong>Division Algorithm for Polynomials</strong>. If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(z)</annotation></semantics></math>
@@ -2119,15 +2126,111 @@ series
 convergence for the Maclaurin series for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">\sin z</annotation></semantics></math>?</li>
 </ol>
-<!-- For next time prove the following: 
-
-1. If $\sum_{n = 0}^\infty a_n (z-w)^n$ has radius of convergence $R$, then the function it converges to inside $B_R(w)$ is continuous in the open disk $B_R(w)$. 
-
-2. If two power series are both centered at $w$ with radii of convergence $R_1 \le R_2$, then the sum of the two series is a power series with radius of convergence at least $R_1$ (Q? why could it be more, can you think of an example?). 
-
-3. The product of a power series that has radius of convergence $R$ with any non-zero polynomial is a power series with radius of convergence $R$. 
-
--->
+<h3 id="wed-oct-30">Wed, Oct 30</h3>
+<p>A sequence of functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>n</mi></msub><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f_n: D \rightarrow \mathbb{C}</annotation></semantics></math>
+<strong>converges uniformly</strong> to a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f: D \rightarrow \mathbb{C}</annotation></semantics></math>
+if for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon &gt; 0</annotation></semantics></math>,
+there exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N &gt;0</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>f</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">|f_n(z) - f(z)| &lt; \epsilon</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">n \ge N</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">z \in D</annotation></semantics></math>.</p>
+<ol type="1">
+<li><p>Show that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is a holomorphic function with a power series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mi>∞</mi></msubsup><msub><mi>a</mi><mi>n</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{n = 0}^\infty a_n (z-w)^n</annotation></semantics></math>
+that has radius of convergence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R &gt; 0</annotation></semantics></math>,
+then the partial sums converge uniformly to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+inside any closed disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+with a radius
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">r &lt; R</annotation></semantics></math>.</p></li>
+<li><p>Show that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>n</mi></msub><annotation encoding="application/x-tex">f_n</annotation></semantics></math>
+is a sequence of continuous functions that converge uniformly to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+on an open set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is continuous on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.
+You have to show that for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">w \in D</annotation></semantics></math>
+and any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon &gt; 0</annotation></semantics></math>,
+there is a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta &gt; 0</annotation></semantics></math>
+such that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>δ</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> implies </mtext><mspace width="0.333em"></mspace></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">|z - w | &lt; \delta \text{ implies } |f(z) - f(w)| &lt; \epsilon.</annotation></semantics></math>
+Hint: Fix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.
+Choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+big enough so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>f</mi><mi>n</mi></msub><mo>−</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mfrac displaystyle="false"><mi>ϵ</mi><mn>3</mn></mfrac></mrow><annotation encoding="application/x-tex">|f_n - f| &lt; \tfrac{\epsilon}{3}</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">n \ge N</annotation></semantics></math>.
+Then use the continuity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>n</mi></msub><annotation encoding="application/x-tex">f_n</annotation></semantics></math>
+and the triangle inequality (see the image below).</p></li>
+</ol>
+<center>
+<img src="uniformConvergence.png" width =240></img>
+</center>
+<p>After that, we talked about the <strong>zeros of an analytic
+function</strong>. A point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+in a set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">A \subset \mathbb{C}</annotation></semantics></math>
+is <strong>isolated</strong> if there is an open disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+such that no other point of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+lies in the disk.</p>
+<div class="Theorem">
+<p><strong>Theorem (Zeros are Isolated)</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is a non-constant analytic function in an open connected domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{C}</annotation></semantics></math>,
+then the zeros of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+are isolated.</p>
+</div>
+<p>You can prove this theorem using the power series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and arguing that it must have a first nonzero coefficient. The
+<strong>order of a zero</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+is the smallest
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+such that the coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>m</mi></msub><annotation encoding="application/x-tex">a_m</annotation></semantics></math>
+in the power series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+centered at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is nonzero.</p>
+<p>Find the orders for the following zeros:</p>
+<ol start="3" type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w = 0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>z</mi><mo>−</mo><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">f(z) = z-\sin z</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">w = \pi i</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mi>z</mi></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g(z) = e^z + 1</annotation></semantics></math>.</p></li>
+</ol>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <h4 id="tentative-schedule-10">Tentative Schedule</h4>

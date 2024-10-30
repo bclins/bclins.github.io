@@ -594,6 +594,18 @@ We did two full examples in class. For each example, you should be able to do ea
 
 2. 13 out of 28 students (46.4%) in our class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA. 
 
+One other example we didn't have time to finish was this one. 
+
+3. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
+
+### Wed, Oct 30
+
+We reviewed the steps for doing a hypothesis test about a population proportion. We also talked about the **assumptions in a hypothesis test:**
+
+1. **No Bias**. Data should come from a simple random sample from the population.
+2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
+$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
+In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. 
 
 - - - 
 
