@@ -1004,7 +1004,23 @@ Hint: Fix $\epsilon$. Choose $N$ big enough so that $|f_n - f| < \tfrac{\epsilon
 <img src="uniformConvergence.png" width =240></img>
 </center>
 
+After that we talked about the idea that if a function is defined by a power series in a open disk, then you can often **analytically continue** the function by constructing a new power centered at a different point inside the open disk.  In this way you can extend the function past its original disk of convergence.  This has one immediate consequence.  If a holomorphic function $f:D \rightarrow \C$ on an open connected domain $D$ has $f^{n}(w) = 0$ for all $n \ge 0$ at one point $w \in D$, then $f = 0$ everywhere in $D$. 
 
+<div class="Theorem">
+**Theorem (Classification of Zeros)** If $f$ is a holomorphic function in an open connected domain $D \subseteq \C$ and $f(w) = 0$ for some $w \in D$, then either 
+1. $f = 0$ everywhere on $D$ or 
+2. The Taylor series for $f$ centered at $w$ has a first nonzero term $a_m (z-w)^m$.  In that case we say that $w$ is a **zero of order** $m$. 
+</div>
+
+Find the orders for the following zeros:
+
+3. $w = 0$ for $f(z) = z-\sin z$. 
+
+4. $w = \pi i$ for $g(z) = e^z + 1$. 
+
+
+
+<!--
 After that, we talked about the **zeros of an analytic function**.  A point $w$ in a set $A \subset \C$ is **isolated** if there is an open disk around $w$ such that no other point of $A$ lies in the disk. 
 
 <div class="Theorem">
@@ -1012,12 +1028,7 @@ After that, we talked about the **zeros of an analytic function**.  A point $w$ 
 </div>
 
 You can prove this theorem using the power series for $f$ and arguing that it must have a first nonzero coefficient.  The **order of a zero** $w$ of $f(z)$ is the smallest $m$ such that the coefficient $a_m$ in the power series for $f$ centered at $w$ is nonzero.  
-
-Find the orders for the following zeros:
-
-3. $w = 0$ for $f(z) = z-\sin z$. 
-
-4. $w = \pi i$ for $g(z) = e^z + 1$. 
+-->
 
 - - - 
 

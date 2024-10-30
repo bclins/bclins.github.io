@@ -2187,41 +2187,49 @@ and the triangle inequality (see the image below).</p></li>
 <center>
 <img src="uniformConvergence.png" width =240></img>
 </center>
-<p>After that, we talked about the <strong>zeros of an analytic
-function</strong>. A point
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-in a set
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊂</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">A \subset \mathbb{C}</annotation></semantics></math>
-is <strong>isolated</strong> if there is an open disk around
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-such that no other point of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
-lies in the disk.</p>
+<p>After that we talked about the idea that if a function is defined by
+a power series in a open disk, then you can often <strong>analytically
+continue</strong> the function by constructing a new power centered at a
+different point inside the open disk. In this way you can extend the
+function past its original disk of convergence. This has one immediate
+consequence. If a holomorphic function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f:D \rightarrow \mathbb{C}</annotation></semantics></math>
+on an open connected domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mi>n</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f^{n}(w) = 0</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n \ge 0</annotation></semantics></math>
+at one point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">w \in D</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f = 0</annotation></semantics></math>
+everywhere in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.</p>
 <div class="Theorem">
-<p><strong>Theorem (Zeros are Isolated)</strong> If
+<p><strong>Theorem (Classification of Zeros)</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-is a non-constant analytic function in an open connected domain
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{C}</annotation></semantics></math>,
-then the zeros of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-are isolated.</p>
-</div>
-<p>You can prove this theorem using the power series for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-and arguing that it must have a first nonzero coefficient. The
-<strong>order of a zero</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
-is the smallest
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
-such that the coefficient
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>m</mi></msub><annotation encoding="application/x-tex">a_m</annotation></semantics></math>
-in the power series for
+is a holomorphic function in an open connected domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{C}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(w) = 0</annotation></semantics></math>
+for some
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">w \in D</annotation></semantics></math>,
+then either 1.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f = 0</annotation></semantics></math>
+everywhere on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+or 2. The Taylor series for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 centered at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-is nonzero.</p>
+has a first nonzero term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>m</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">a_m (z-w)^m</annotation></semantics></math>.
+In that case we say that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is a <strong>zero of order</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.</p>
+</div>
 <p>Find the orders for the following zeros:</p>
 <ol start="3" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">w = 0</annotation></semantics></math>
@@ -2231,6 +2239,15 @@ for
 for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mi>z</mi></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g(z) = e^z + 1</annotation></semantics></math>.</p></li>
 </ol>
+<!--
+After that, we talked about the **zeros of an analytic function**.  A point $w$ in a set $A \subset \C$ is **isolated** if there is an open disk around $w$ such that no other point of $A$ lies in the disk. 
+
+<div class="Theorem">
+**Theorem (Zeros are Isolated)** If $f$ is a non-constant analytic function in an open connected domain $D \subseteq \C$, then the zeros of $f$ are isolated.
+</div>
+
+You can prove this theorem using the power series for $f$ and arguing that it must have a first nonzero coefficient.  The **order of a zero** $w$ of $f(z)$ is the smallest $m$ such that the coefficient $a_m$ in the power series for $f$ centered at $w$ is nonzero.  
+-->
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <h4 id="tentative-schedule-10">Tentative Schedule</h4>

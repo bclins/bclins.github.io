@@ -1325,39 +1325,39 @@ We talked about the following applications of tuples.
 
 2. **Tuple Return Values.** Some algorithms find more than one value and it would be nice if a function implementing an algorithm could return both. You can use a tuple as a return value to do this.
 
-```python
-def division_algorithm(n, d):
-    """Divides positive integer n by d using repeated subtraction. 
-    Returns the quotient q and the remainder r.
-    """
-    q, r = 0, n # initialize the quotient and remainder
-    while r >= d:
-        r -= d
-        q += 1
-    return q, r
-```
+    ```python
+    def division_algorithm(n, d):
+        """Divides positive integer n by d using repeated subtraction. 
+        Returns the quotient q and the remainder r.
+        """
+        q, r = 0, n # initialize the quotient and remainder
+        while r >= d:
+            r -= d
+            q += 1
+        return q, r
+    ```
 
 3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
 
-```python
-def argmax(number):
-    """Return the argument (i.e., index) of the largest element in a list of numbers."""
-    arg = 0
-    for i, x in enumerate(numbers):
-        if x > numbers[arg]:
-            arg = i
-    return arg
-```
+    ```python
+    def argmax(number):
+        """Return the argument (i.e., index) of the largest element in a list of numbers."""
+        arg = 0
+        for i, x in enumerate(numbers):
+            if x > numbers[arg]:
+                arg = i
+        return arg
+    ```
 
 4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
 
-```python
-days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
-                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
+    ```python
+    days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+                     'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
 
-for month, days in days_by_month.items():
-    print(month, "has", days, "days.")
-```
+    for month, days in days_by_month.items():
+        print(month, "has", days, "days.")
+    ```
 
 ### Fri, Oct 25
 
@@ -1403,12 +1403,13 @@ The two players are `"X"` and `"O"`. Once the player enters the result, the func
 </pre>
 </center>
 To do this we need a function `convert_input_to_pair(s)` that converts the player's input string to an integer and then to a tuple showing the row & column number.  
-```python
-def convert_input_to_pair(s):
-    """Returns the (row, column) tuple corresponding to a user's input.""" 
-    n = int(s) - 1
-    return n // 3, n % 3
-```
+
+    ```python
+    def convert_input_to_pair(s):
+        """Returns the (row, column) tuple corresponding to a user's input.""" 
+        n = int(s) - 1
+        return n // 3, n % 3
+    ```
 
 5. Use a `while True:` infinite loop to let two human players play tic-tac-toe against each other. 
 
@@ -1432,7 +1433,7 @@ We didn't have time to include those in our program in class today, but they are
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 28  | [TP18.1](https://allendowney.github.io/ThinkPython/chap18.html#sets) | Sets and set comprehensions
-Wed, Oct 30  |  | Sorting and searching
+Wed, Oct 30  |  | Search algorithms
 Thu, Oct 31  |  | 
 Fri, Nov 1   |  |
 
@@ -1482,20 +1483,22 @@ print(powers_of_2_mod_7)
 
 ### Wed, Oct 30
 
-Last time we introduced the **set** type in Python. We can use sets to write a very simple version of the `unique()` function from last time!
+Last time we introduced the **set** type in Python. Like other types in Python, sets have a **constructor function** called `set()`.  We reviewed some of the constructor functions we've seen like:
+
+```python
+int()         list()
+float()       tuple()
+str()         set()
+```
+
+We can use these constructor to write a very simple version of the `unique()` function from last time!
 
 ```python
 def unique(lst): return list(set(lst)) 
 # Notice that you can define a function all on one line if it is really simple!
 ```
 
-Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  For lists however, order matters a lot, and some times it is helpful if the elements are sorted in increasing or decreasing order.  
-
-1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  
-
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any sequence type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
-
-2. Try to use the `.sort()` method to sort this list: `[4,5,2,3,1,0]`. 
+Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  For lists however, order matters a lot, and sometimes it is helpful if the elements are sorted in increasing or decreasing order.  
 
 One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
 
@@ -1505,8 +1508,31 @@ One advantage of having a sorted list is that it is much faster to check whether
     - If the middle element is bigger than the target element, then recursively search the bottom half of the list. 
     - If the middle element is smaller than the target element, then recursively search the top half of the list. 
 
+Binary search can be much faster than linear search. Suppose that a list has length $n$.  The **time complexity** of linear search is $O(n)$ which means that the number of steps to run the algorithm is roughly proportional to $n$.  That means that if a list is twice as long, the linear search will typically also take twice as long.  
+
+Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n$. In computer science we use $\log n$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
+
+<center>
+$n$ | 1 | 2 | 4 | 8 | 16 | 32 | 64 
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+$\log n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6
+</center>
+
+We say that binary search has a time complexity of $O(\log n)$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
+
+
+
+
+
 
 <!-- ### Thu, Oct 31
+
+
+1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  
+
+Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any sequence type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
+
+2. Try to use the `.sort()` method to sort this list: `[4,5,2,3,1,0]`. 
 
 Today we did several examples of nested loops. 
 

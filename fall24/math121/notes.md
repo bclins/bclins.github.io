@@ -596,16 +596,52 @@ We did two full examples in class. For each example, you should be able to do ea
 
 One other example we didn't have time to finish was this one. 
 
-3. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
 
 ### Wed, Oct 30
 
-We reviewed the steps for doing a hypothesis test about a population proportion. We also talked about the **assumptions in a hypothesis test:**
+We reviewed the steps for doing a hypothesis test about a population proportion. The we did this example that we ran out of time for last time:
+
+1. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
+
+We talked about how the null hypotheses must give a *specific* value for the parameter of interest so that we can create a **null model** that we can test.  If the sample statistic is far from what we expect, then we can reject the null hypothesis and say that the results are **statistically significant**. Unlike in English, the word significant does not mean "important" in statistics.  It actually means the following. 
+
+<div class="Theorem">
+**Logic of Hypothesis Testing.** The following are all equivalent:
+
+1. Results are statistically significant.
+2. We should reject the null hypothesis. 
+3. Low p-value (at least under 5%).
+4. Extreme z-value.
+5. Results are probably not a random fluke.
+</div>
+
+Notice that all of the items on the list above are statistics jargon except item 5. 
+
+We finished with two exercises from the book.
+
+2. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+
+Notice that in 5.16(b), you could make the case that we have prior knowledge based on the reputation of the state of Wisconsin to guess that that percent of people who have drank alcohol in the last year in Wisconsin (which we denoted $p_{WI}$) satisfies a **one-sided alternative hypothesis**:
+$$H_A ~:~ p_\text{WI} > 70\%.$$ 
+If you don't know about Wisconsin, then you should definitely use the **two-sided alternative hypothesis**:
+$$H_A ~:~ p_\text{WI} \ne 70\%$$ 
+The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
+
+
+3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+
+
+
+<!--
+
+We also talked about the **assumptions in a hypothesis test:**
 
 1. **No Bias**. Data should come from a simple random sample from the population.
 2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. 
+
+-->
 
 - - - 
 
