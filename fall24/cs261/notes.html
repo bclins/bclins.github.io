@@ -2084,7 +2084,7 @@ href="https://allendowney.github.io/ThinkPython/chap18.html#sets">TP18.1</a></td
 <tr class="odd">
 <td style="text-align: center;">Thu, Oct 31</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Sorting</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Nov 1</td>
@@ -2297,8 +2297,8 @@ list with the same numbers.</p>
 <div class="sourceCode" id="cb58"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random sample of 20 numbers from 0 to 999. </span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="dv">1000</span>), <span class="dv">20</span>)</span></code></pre></div></li>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random list of 20 numbers from 0 to 999. </span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [random.randint(<span class="dv">0</span>,<span class="dv">999</span>) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code></pre></div></li>
 <li><p>Try to use the <code>.sort()</code> method to sort <code>a</code>
 above. What happens when you enter
 <code>print(a.sort())</code>?</p></li>
@@ -2312,9 +2312,22 @@ of pairs with the length of the word followed by the word, e.g.,
 <div class="sourceCode" id="cb59"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>)</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>word_list <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span></code></pre></div></li>
-<li><p>This time, sort the words based on how many vowels they
-have.</p></li>
 </ol>
+<p>Brandon asked if there is a way to sort the pairs in reverse order so
+that the longest words come first. Gyabaah pointed out that you can use
+the optional argument <code>reverse = True</code> in the function
+sorted:</p>
+<div class="sourceCode" id="cb60"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>sorted_pairs <span class="op">=</span> <span class="bu">sorted</span>(pairs_list, reverse <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_pairs)</span></code></pre></div>
+<!-- 
+Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):
+
+5. Sort the words base on how many vowels they have
+
+(This would be a good exercise to introduce the key optional argument)
+
+-->
 <!--
 
 1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  

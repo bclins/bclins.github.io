@@ -1434,7 +1434,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 28  | [TP18.1](https://allendowney.github.io/ThinkPython/chap18.html#sets) | Sets and set comprehensions
 Wed, Oct 30  |  | Search algorithms
-Thu, Oct 31  |  | 
+Thu, Oct 31  |  | Sorting
 Fri, Nov 1   |  |
 
 ### Mon, Oct 28
@@ -1540,8 +1540,8 @@ Python has built in functions for sorting lists.  There are actually two.  One i
     ```python
     import random
 
-    # Create a random sample of 20 numbers from 0 to 999. 
-    a = random.sample(range(1000), 20)
+    # Create a random list of 20 numbers from 0 to 999. 
+    a = [random.randint(0,999) for k in range(20)]
     ```
 
 2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
@@ -1555,9 +1555,21 @@ Python has built in functions for sorting lists.  There are actually two.  One i
     word_list = [line.strip() for line in file]
     ```
 
-5. This time, sort the words based on how many vowels they have. 
+Brandon asked if there is a way to sort the pairs in reverse order so that the longest words come first.  Gyabaah pointed out that you can use the optional argument `reverse = True` in the function sorted:
 
+```python
+sorted_pairs = sorted(pairs_list, reverse = True)
+print(sorted_pairs)
+```
 
+<!-- 
+Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):
+
+5. Sort the words base on how many vowels they have
+
+(This would be a good exercise to introduce the key optional argument)
+
+-->
 
 
 <!--
