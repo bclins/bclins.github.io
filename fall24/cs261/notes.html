@@ -2162,7 +2162,7 @@ we’ve seen like:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>()         <span class="bu">list</span>()</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>()       <span class="bu">tuple</span>()</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>()         <span class="bu">set</span>()</span></code></pre></div>
-<p>We can use these constructor to write a very simple version of the
+<p>We can use these constructors to write a very simple version of the
 <code>unique()</code> function from last time!</p>
 <div class="sourceCode" id="cb57"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unique(lst): <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">set</span>(lst)) </span>
@@ -2249,14 +2249,75 @@ That means if we double the length of the list, it only takes one extra
 step to search for a target element. That is much faster! The
 disadvantage is that binary search only works if the list is already
 sorted.</p>
-<!-- ### Thu, Oct 31
-
+<h3 id="thu-oct-31">Thu, Oct 31</h3>
+<p>Python has built in functions for sorting lists. There are actually
+two. One is a function called <code>sorted()</code> that will sort any
+iterable type. The other is a <code>.sort()</code> method that sorts
+lists in place. That only works with lists because they are mutable.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+<code>sorted()</code> function
+</th>
+<th>
+<code>.sort()</code> method
+</th>
+</tr>
+<tr>
+<td>
+Works for any iterable type
+</td>
+<td>
+Only works for lists
+</td>
+</tr>
+<tr>
+<td>
+Returns a new list
+</td>
+<td>
+Returns nothing (sorts in place)
+</td>
+</tr>
+<tr>
+<td>
+Slightly slower
+</td>
+<td>
+Slightly faster
+</td>
+</tr>
+</table>
+</center>
+<ol type="1">
+<li><p>Consider the list <code>a</code> below which contains 20 random
+numbers. Use the <code>sorted</code> function to create a new sorted
+list with the same numbers.</p>
+<div class="sourceCode" id="cb58"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a random sample of 20 numbers from 0 to 999. </span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> random.sample(<span class="bu">range</span>(<span class="dv">1000</span>), <span class="dv">20</span>)</span></code></pre></div></li>
+<li><p>Try to use the <code>.sort()</code> method to sort <code>a</code>
+above. What happens when you enter
+<code>print(a.sort())</code>?</p></li>
+<li><p>Try <code>sorted("Hello?")</code> and
+<code>"Hello?".sort()</code>.</p></li>
+<li><p>Consider the list of words in <a href="words.txt">words.txt</a>
+(see below). Use the function <code>sorted()</code> to sort the words
+based on how long they are. Hint: you can do this if you create a list
+of pairs with the length of the word followed by the word, e.g.,
+<code>(3, "cat")</code>.</p>
+<div class="sourceCode" id="cb59"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>word_list <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span></code></pre></div></li>
+<li><p>This time, sort the words based on how many vowels they
+have.</p></li>
+</ol>
+<!--
 
 1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  
-
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any sequence type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
-
-2. Try to use the `.sort()` method to sort this list: `[4,5,2,3,1,0]`. 
 
 Today we did several examples of nested loops. 
 

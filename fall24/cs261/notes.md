@@ -1491,7 +1491,7 @@ float()       tuple()
 str()         set()
 ```
 
-We can use these constructor to write a very simple version of the `unique()` function from last time!
+We can use these constructors to write a very simple version of the `unique()` function from last time!
 
 ```python
 def unique(lst): return list(set(lst)) 
@@ -1521,18 +1521,48 @@ $\log n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6
 We say that binary search has a time complexity of $O(\log n)$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
 
 
+### Thu, Oct 31
+
+Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
+
+
+<center>
+<table class="bordered">
+<tr><th>`sorted()` function</th><th>`.sort()` method</th></tr>
+<tr><td>Works for any iterable type </td><td>Only works for lists</td></tr>
+<tr><td>Returns a new list</td><td>Returns nothing (sorts in place)</td></tr>
+<tr><td>Slightly slower</td><td>Slightly faster</td></tr>
+</table>
+</center>
+
+1. Consider the list `a` below which contains 20 random numbers.  Use the `sorted` function to create a new sorted list with the same numbers.
+
+    ```python
+    import random
+
+    # Create a random sample of 20 numbers from 0 to 999. 
+    a = random.sample(range(1000), 20)
+    ```
+
+2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
+
+3. Try `sorted("Hello?")` and `"Hello?".sort()`.  
+
+4. Consider the list of words in [words.txt](words.txt) (see below). Use the function `sorted()` to sort the words based on how long they are.  Hint: you can do this if you create a list of pairs with the length of the word followed by the word, e.g., `(3, "cat")`. 
+
+    ```python 
+    file = open("words.txt")
+    word_list = [line.strip() for line in file]
+    ```
+
+5. This time, sort the words based on how many vowels they have. 
 
 
 
 
-<!-- ### Thu, Oct 31
-
+<!--
 
 1. Try to write a function called `get_sorted_list()` that creates a new list that contains the same elements as an `input_list`, but in sorted order?  Hint: As you add elements to the `output_list`, you'll want to insert them in the correct position.  One way to do this is to loop through the index values of the output until `output_list[i]` is greater than the element you want to insert.  Then you can use `output_list.insert(i, element)` to insert the element at position `i`. That will automatically shift the other elements after `i` to the right.  
-
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any sequence type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
-
-2. Try to use the `.sort()` method to sort this list: `[4,5,2,3,1,0]`. 
 
 Today we did several examples of nested loops. 
 
