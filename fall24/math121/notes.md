@@ -592,6 +592,13 @@ We did two full examples in class. For each example, you should be able to do ea
 
 1. When I was a kid, I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different cards that I couldn't see.  If I were just guessing, I would only have a 20\% (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
 
+<center>
+<figure>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=500></img>
+<!--<figcaption><a href="https://en.wikipedia.org/wiki/Zener_cards">Zener cards</a></figcaption>-->
+</figure>
+</center>
+
 2. 13 out of 28 students (46.4%) in our class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA. 
 
 One other example we didn't have time to finish was this one. 
@@ -632,16 +639,31 @@ The only difference is when you calculate the p-value, you use two tails of the 
 
 
 
-<!--
+### Fri, Nov 1
 
-We also talked about the **assumptions in a hypothesis test:**
+When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
 
-1. **No Bias**. Data should come from a simple random sample from the population.
+1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
 2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. 
 
--->
+1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
+
+Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  I'm some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
+
+In the back of your mind, remember there are four possible things that might happen in a null hypothesis. 
+<center>
+<table class="bordered">
+<tr><th></th><th>$H_0$ is true</th><th>$H_A$ is true</th></tr>
+<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$ (correctly)</td><td>Type 2 error (false negative)</td></tr>
+<tr><th>p-value below $\alpha$</th><td>Type 1 error (false positive)</td><td>Reject $H_0$ (correctly)</td></tr>
+</table>
+</center>
+If $H_0$ is true, then the significance level $\alpha$ that you choose is the probability that you will make a **type 1 error** which is when you reject $H_0$ when you shouldn't.  The disadvantage of making $\alpha$ really small is that it does increase the chance of a **type 2 error** which is when you don't reject $H_0$ even though you should.
+
+In a criminal trial the prosecution tried to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type 1 error as when the jury convicts an innocent defendant.  A type 2 error would be if the jury does not convict someone who is actually guilty. 
+
 
 - - - 
 

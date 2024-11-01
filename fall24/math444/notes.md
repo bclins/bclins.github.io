@@ -1018,16 +1018,88 @@ Find the orders for the following zeros:
 
 4. $w = \pi i$ for $g(z) = e^z + 1$. 
 
+### Fri, Nov 1
+
+<div class="Theorem">
+**Theorem (Zeros are Isolated)** If $f$ is a non-constant analytic function in an open connected domain $D \subseteq \C$, then the zeros of $f$ are **isolated** which means that for every zero $w \in D$, there is an open disk around $w$ that does not contains any other zeros of $f$.
+</div>
+
+*Proof.* By the classification of zeros theorem, $f(z) = (z-w)^m g(z)$ for some $m > 0$ where $g$ is holomorphic and $g(w) \ne 0$.  Then by continuity $f \ne 0$ in an open disk around $w$, except at $w$. $\square$
+
+<div class="Theorem">
+**Identity Principle.** If $f: D \rightarrow \C$ is holomorphic on an open connected domain $D$ and $f$ has a sequence of distinct zeros $w_n$ that converge to a point $w \in D$, then $f = 0$ everywhere on $D$.  
+</div>
+
+1. Why doesn't the identity principle apply to the function $\sin(1/z)$ which has infinitely many zeros in the open disk of radius one around 1?  
+
+2. This theorem is called the identity principle because it implies that if two holomorphic functions are the same on a compact (closed and bounded) infinite set inside $D$, then they must the same on all of $D$.  
+
+If $D$ is an open set, $w \in D$, and $f: D \backslash \{ w \} \rightarrow \C$ is holomorphic, then we say that $w$ is an **isolated singularity** of $f$.  There are three types of isolated singularities.  
+
+* If $|f(z)|$ is bounded for all $z$ near $w$, then $w$ is a **removable singularity**. 
+* If $\lim_{z \rightarrow w} |f(z)| = \infty$, then $w$ is a **pole**. 
+* Otherwise we say that $w$ is an **essential singularity**.
+
+Here are examples of the three types of singularity.  
+
+1. $\frac{\sin z}{z- \pi}$ at $w = \pi$. 
+
+1. $\frac{z}{(z - 5)^2}$ at $w = 5$. 
+
+1. $e^{1/z}$ at $w = 0$. 
+
+<div class="Theorem"> 
+**Classification of Singularities.** If $f$ has an isolated singularity at $w$, then 
+
+1. $w$ is a removable singularity if and only if 
+$$\lim_{z \rightarrow w} (z-w) f(z) = 0.$$  
+In that there is a holomorphic function on an open disk around $w$ that is equal to $f$ everywhere except (technically) $w$ on the disk. 
+ 
+2. $w$ is a pole if and only if 
+$$\lim_{z \rightarrow w} (z-w)^{m+1} f(z) = 0.$$  
+We call $m$ the **order of the pole** at $w.$ 
+</div>
+
+3. Prove that if $\lim_{z \rightarrow w} (z-w) f(z) = 0$, then 
+$$g(z) = \begin{cases} 
+(z-w)^2 f(z) & \text{ if } z \ne w, \\
+0 & \text{ if } z = w  
+\end{cases}$$
+is holomorphic at $z = w$.  
+
+4. What can you say about the power series for $g$ centered at $w$? 
+
+5. If $\lim_{z \rightarrow w} |f(z)| = \infty$, then the function $g(z) = 1/f(z)$ has a removable singularity at $w$.  What can you say about the power series for $g$ centered at $w$?  
+
+
 
 
 <!--
-After that, we talked about the **zeros of an analytic function**.  A point $w$ in a set $A \subset \C$ is **isolated** if there is an open disk around $w$ such that no other point of $A$ lies in the disk. 
+Today we reviewed the concept of zeros and winding numbers.  We updated an old proof to show that if $\gamma:[0,2\pi) \rightarrow \C$ is a piecewise smooth simple closed curve in a simply connected open set where $f$ is holomorphic, then the winding number of $f(\gamma(t))$ around $w \in \C$ is equal to the sum of the orders of the zeros of $f-w$ that are enclosed by $\gamma$.   
+
+This is because the winding number must be equal to 
+$$\frac{1}{2\pi i} \int_{f(\gamma)} \frac{1}{z-w} \, dz$$
+by Cauchy's integral formula. Then by the definition of complex contour integrals, this is the same as:
+$$\frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)-w} \, dz.$$
+
+3. Show that if $f-w$ has a zero $z_0$ of order $m$ at $w$, that is, $f(z)-w = (z-z_0)^m g(z)$ where $g$ is holomorphic and $g(z_0) \ne 0$, then 
+$$\frac{f'(z)}{f(z)-w} = \frac{g'(z)}{g(z)} + \frac{m}{(z-z_0)}.$$
+
+4. If $z_0$ is the only zero of $f-w$ inside $\gamma$, explain why this proves that the winding number of $f(\gamma)$ around $w$ is $m$.
+
+5. What if $z_0$ is not the only zero of $f-w$ inside $\gamma$?
+
+Once we finished the proof, we observed the following: If $f$ is holomorphic in a open region $R$ and $f(z)-w_0$ has a zero of order $m$ at $z_0 \in R$, then $f(\gamma)$ winds around $w_0$ exactly $m$ times when $\gamma$ is a small circle around $z_0$. Therefore $f(\gamma)$ also winds around any $w$ close to $w_0$ exactly $m$ times as well. As a corollary, we have:
 
 <div class="Theorem">
-**Theorem (Zeros are Isolated)** If $f$ is a non-constant analytic function in an open connected domain $D \subseteq \C$, then the zeros of $f$ are isolated.
+**Open Mapping Theorem.** If $f$ is holomorphic on an open set $U \subseteq \C$, then $f(U)$ is an open set.  
 </div>
 
-You can prove this theorem using the power series for $f$ and arguing that it must have a first nonzero coefficient.  The **order of a zero** $w$ of $f(z)$ is the smallest $m$ such that the coefficient $a_m$ in the power series for $f$ centered at $w$ is nonzero.  
+Another immediate corollary is the following theorem:
+
+**Maximum Modulus Principle.** If $f$ is holomorphic on an open set $U$, then $|f|$ cannot have a local maximum in $U$.  
+
+*Proof.* Suppose that $z_0$ is a local maximum, that is, $|f(z_0)| \ge |f(z)|$ for all $z$ in a small disk around $z_0$.  This is a contradiction because $f(B_r(z_0))$ is an open set, so it contains an open disk around $f(z_0)$.  $\square$
 -->
 
 - - - 
