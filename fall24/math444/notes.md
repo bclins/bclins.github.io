@@ -1048,6 +1048,21 @@ Here are examples of the three types of singularity.
 
 1. $e^{1/z}$ at $w = 0$. 
 
+
+
+- - - 
+
+### Week 11 Notes
+
+#### Tentative Schedule
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 4  | [9.1][9.1] | Classification of singularities
+Wed, Nov 6  | [8.2][8.2] | The maximum modulus principle   
+Fri, Nov 8  | [9.2][9.2] | Residues       
+
+<!-- 
 <div class="Theorem"> 
 **Classification of Singularities.** If $f$ has an isolated singularity at $w$, then 
 
@@ -1071,10 +1086,6 @@ is holomorphic at $z = w$.
 
 5. If $\lim_{z \rightarrow w} |f(z)| = \infty$, then the function $g(z) = 1/f(z)$ has a removable singularity at $w$.  What can you say about the power series for $g$ centered at $w$?  
 
-
-
-
-<!--
 Today we reviewed the concept of zeros and winding numbers.  We updated an old proof to show that if $\gamma:[0,2\pi) \rightarrow \C$ is a piecewise smooth simple closed curve in a simply connected open set where $f$ is holomorphic, then the winding number of $f(\gamma(t))$ around $w \in \C$ is equal to the sum of the orders of the zeros of $f-w$ that are enclosed by $\gamma$.   
 
 This is because the winding number must be equal to 
@@ -1101,19 +1112,6 @@ Another immediate corollary is the following theorem:
 
 *Proof.* Suppose that $z_0$ is a local maximum, that is, $|f(z_0)| \ge |f(z)|$ for all $z$ in a small disk around $z_0$.  This is a contradiction because $f(B_r(z_0))$ is an open set, so it contains an open disk around $f(z_0)$.  $\square$
 -->
-
-- - - 
-
-### Week 11 Notes
-
-#### Tentative Schedule
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 4  | [8.2][8.2] | The maximum modulus principle   
-Wed, Nov 6  | [9.1][9.1] | Classification of singularities
-Fri, Nov 8  | [9.2][9.2] | Residues       
-
 
 
 - - - 

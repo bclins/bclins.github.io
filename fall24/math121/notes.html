@@ -1279,9 +1279,9 @@ href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page
 <strong>assumptions of a hypothesis test</strong> are satisfied. There
 are two that we need to check:</p>
 <ol type="1">
-<li><p><strong>No Bias</strong>. Data should come from a simple random
-sample (SRS) from the population.</p></li>
-<li><p><strong>Normality</strong>. Sample size should be large enough to
+<li><strong>No Bias</strong>. Data should come from a simple random
+sample (SRS) from the population.</li>
+<li><strong>Normality</strong>. Sample size should be large enough to
 trust that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
 will be normally distributed. Based on the
@@ -1290,10 +1290,14 @@ from the null hypothesis, you should expect at least 10 success and 10
 failures. So you need both
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>p</mi><mn>0</mn></msub><mo>≥</mo><mn>10</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mn>10</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.</annotation></semantics></math>
 In practice, the normality assumption is usually satisfied as long as
-there are at least 15 successes and 15 failures in the sample.</p></li>
-<li><p>In our first example of a hypothesis test we looked at an example
+there are at least 15 successes and 15 failures in the sample.</li>
+</ol>
+<p>We looked at whether these two assumptions are satisfied for this
+example:</p>
+<ol type="1">
+<li>In our first example of a hypothesis test we looked at an example
 where I got 10 out of 25 guesses correct with Zenner cards. Does that
-example satisfy the assumptions above?</p></li>
+example satisfy the assumptions above?</li>
 </ol>
 <p>Another thing you have to decide when you do a hypothesis test is how
 strong the evidence needs to be in order to convince you to reject the
@@ -1336,10 +1340,9 @@ p-value above
 <td>
 Don’t reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
-(correctly)
 </td>
 <td>
-Type 2 error (false negative)
+Type II error (false negative)
 </td>
 </tr>
 <tr>
@@ -1348,12 +1351,11 @@ p-value below
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
 </th>
 <td>
-Type 1 error (false positive)
+Type I error (false positive)
 </td>
 <td>
 Reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
-(correctly)
 </td>
 </tr>
 </table>
@@ -1362,18 +1364,18 @@ Reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
 is true, then the significance level
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-that you choose is the probability that you will make a <strong>type 1
+that you choose is the probability that you will make a <strong>type I
 error</strong> which is when you reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
 when you shouldn’t. The disadvantage of making
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-really small is that it does increase the chance of a <strong>type 2
+really small is that it does increase the chance of a <strong>type II
 error</strong> which is when you don’t reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
 even though you should.</p>
-<p>In a criminal trial the prosecution tried to prove that the defendant
-is “guilty beyond a reasonable doubt”. Think of a type 1 error as when
-the jury convicts an innocent defendant. A type 2 error would be if the
+<p>In a criminal trial the prosecution tries to prove that the defendant
+is “guilty beyond a reasonable doubt”. Think of a type I error as when
+the jury convicts an innocent defendant. A type II error would be if the
 jury does not convict someone who is actually guilty.</p>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>

@@ -648,6 +648,8 @@ When we do a hypothesis test, we need to make sure that the **assumptions of a h
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. 
 
+We looked at whether these two assumptions are satisfied for this example:
+
 1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
 
 Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  I'm some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
@@ -656,13 +658,13 @@ In the back of your mind, remember there are four possible things that might hap
 <center>
 <table class="bordered">
 <tr><th></th><th>$H_0$ is true</th><th>$H_A$ is true</th></tr>
-<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$ (correctly)</td><td>Type 2 error (false negative)</td></tr>
-<tr><th>p-value below $\alpha$</th><td>Type 1 error (false positive)</td><td>Reject $H_0$ (correctly)</td></tr>
+<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$</td><td>Type II error (false negative)</td></tr>
+<tr><th>p-value below $\alpha$</th><td>Type I error (false positive)</td><td>Reject $H_0$</td></tr>
 </table>
 </center>
-If $H_0$ is true, then the significance level $\alpha$ that you choose is the probability that you will make a **type 1 error** which is when you reject $H_0$ when you shouldn't.  The disadvantage of making $\alpha$ really small is that it does increase the chance of a **type 2 error** which is when you don't reject $H_0$ even though you should.
+If $H_0$ is true, then the significance level $\alpha$ that you choose is the probability that you will make a **type I error** which is when you reject $H_0$ when you shouldn't.  The disadvantage of making $\alpha$ really small is that it does increase the chance of a **type II error** which is when you don't reject $H_0$ even though you should.
 
-In a criminal trial the prosecution tried to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type 1 error as when the jury convicts an innocent defendant.  A type 2 error would be if the jury does not convict someone who is actually guilty. 
+In a criminal trial the prosecution tries to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type I error as when the jury convicts an innocent defendant.  A type II error would be if the jury does not convict someone who is actually guilty. 
 
 
 - - - 

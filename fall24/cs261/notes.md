@@ -1579,11 +1579,11 @@ Today we did several examples of **nested loops.**
 
 1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
 
-```python
-suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
-'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
-```
+    ```python
+    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+    'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
+    ```
 
 Consider the following registration data for 26 students at one school. 
 ```python
@@ -1617,13 +1617,14 @@ registration_data = [
 ]   
 ```
 
+
 2. Create a set object with all of the courses these students have registered for. 
 
 3. Create a dictionary object that counts how many students have signed up for each course.  
 
 4. Which students signed up for Span 201? 
 
-5. Which courses have the most students signed up? 
+5. Which courses have the most students signed up?  
 
 
 
