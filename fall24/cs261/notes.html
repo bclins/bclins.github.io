@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -997,7 +997,7 @@ talked about last time.</p>
 <li><p>Write an <code>even_elements(numbers)</code> function like the
 one from yesterday using this style of loop. It would be a good idea to
 use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
 as the index of the first even number if there aren’t any.</p></li>
 <li><p>Re-write the <code>is_integer_string(s)</code> function using
 this style of list. To make this one more interesting, we first created
@@ -2446,21 +2446,55 @@ program.<br />
 </p></li>
 </ol>
 </div>
-<p>In Python there is weird recommended way to call the
-<code>main()</code> function:</p>
+<p>We constructed an example Python program called
+<code>dictionary_tools.py</code> in class.</p>
 <div class="sourceCode" id="cb63"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can call the main function this way:</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>main()</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="co"># But this is the recommended way to call main:</span></span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="co">Dictionary tools.  </span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co">Author: Brian Lins</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="co">This program contains some useful functions for working with dictionaries. </span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> map_values(d, f):</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Applies a function f to every value in d and returns a new dictionary.&quot;&quot;&quot;</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {key: f(value) <span class="cf">for</span> key, value <span class="kw">in</span> d.items()} </span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> key_with_max_value(d):</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the key with the largest value in d.&quot;&quot;&quot;</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>    best_key, best_value <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># I got a little confused in class trying to figure out the best way to proceed here. </span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># You need an initial value for the best_key and best_value.  Here is one approach.</span></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> d.items():</span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> best_key <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> best_value <span class="op">&lt;</span> value:</span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>            best_key, best_value <span class="op">=</span> key, value</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> best_key</span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>    example_dict <span class="op">=</span> {<span class="st">&quot;A&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;B&quot;</span>: <span class="dv">2</span>, <span class="st">&quot;C&quot;</span>: <span class="dv">3</span>}</span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(map_values(example_dict, math.exp))</span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key_with_max_value(example_dict))</span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a>    main() </span></code></pre></div>
+<!--NOTE TO SELF: I ran into a little trouble today in class when I tried to write this program because
+I couldn't think of a good way to get the first key, value pair. My solution in class was clunky involving booleans and an if-else statement. This is a better that I came up with later.-->
+<p>Notice the last two lines in the program. In Python there is weird
+recommended way to call the <code>main()</code> function:</p>
+<div class="sourceCode" id="cb64"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can call the main function this way:</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>main()</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co"># But this is the recommended way to call main:</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
 <p>This recommendation has to do with the structure of more complicated
 Python programs. Python programs can import other Python programs as
 modules to build more complex programs. When you import a module, you
 typically only want to import functions from the module. You usually
 don’t want any code in the module to automatically run.</p>
-<!--The main function from a script you are importing may have been where its author included code to test the script or to solve a problem that isn't relevant to you.  You don't want that code to automatically run just because you imported the script.  So best practice in Python is to only call main if you are running the script, not if you are importing the script.  When you run a script, there is a special variable called `__name__` that is automatically set to the string `"__main__"`.  But when you import a script and ask Python what `__name__` is in that script you won't get `"__main__"`. -->
 <p>Python has a special variable called <code>__name__</code> that is
 set when the program starts. If the program is running as a
 <strong>script</strong> (i.e., it is the program that you are running),
@@ -2472,14 +2506,14 @@ of the module.</p>
 <li><p>Create two <code>.py</code> files. Call one
 <code>test_module.py</code> and the other <code>test_script.py</code>.
 In each file, include the following line:</p>
-<div class="sourceCode" id="cb64"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">__name__</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">__name__</span>)</span></code></pre></div>
 <p>In the <code>test_script.py</code> file also add a line to
 <code>import test_module</code>. Now run
 <code>test_script.py</code>.</p></li>
 <li><p>What is the type of the <code>__name__</code> variable?</p></li>
 </ol>
-<p>The reason Python has weird variable names like <code>__name__</code>
+<p>One reason Python has weird variable names like <code>__name__</code>
 and <code>__main__</code> with double underscores (called
 <strong>dunders</strong> for short) is so that they won’t conflict with
 user-defined variable names. In big programs it can be a real problem if
@@ -2490,14 +2524,12 @@ function has a <code>__doc__</code> variable which is equal to that
 function’s docstring. This is one reason why you should get in the habit
 of writing a clear docstring to explain what each function does.</p>
 <ol start="3" type="1">
-<li><p>Define a simple function in the file <code>test_module</code> and
-write a docstring. Then write a main</p></li>
 <li><p>What happens if you use an inline comment like the example below
 instead of a docstring?</p>
-<div class="sourceCode" id="cb65"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an example function. </span></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Hi!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an example function. </span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Hi!&quot;</span></span></code></pre></div>
 <p>What is the value of <code>example_function.__doc__</code>?</p></li>
 </ol>
 <hr />

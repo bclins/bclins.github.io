@@ -1657,7 +1657,45 @@ Up to now, we haven't worried much about how we structure our programs.  A simpl
 5. **Main Function**.  Any code that you want to execute automatically when you run your program should be put into a function called `main()`.  It is your choice whether to put the `main()` function at the top or bottom of your program, but you always call the `main()` function at the very end of the program.  
 </div>
 
-In Python there is weird recommended way to call the `main()` function: 
+We constructed an example Python program called `dictionary_tools.py` in class. 
+
+```python
+"""
+Dictionary tools.  
+Author: Brian Lins
+
+This program contains some useful functions for working with dictionaries. 
+"""
+
+import math
+
+def map_values(d, f):
+    """Applies a function f to every value in d and returns a new dictionary."""
+    return {key: f(value) for key, value in d.items()} 
+
+def key_with_max_value(d):
+    """Returns the key with the largest value in d."""
+    best_key, best_value = None, None
+    # I got a little confused in class trying to figure out the best way to proceed here. 
+    # You need an initial value for the best_key and best_value.  Here is one approach.
+    for key, value in d.items():
+        if best_key == None or best_value < value:
+            best_key, best_value = key, value
+    return best_key
+
+def main():
+    example_dict = {"A": 1, "B": 2, "C": 3}
+    print(map_values(example_dict, math.exp))
+    print(key_with_max_value(example_dict))
+    
+if __name__ == "__main__":
+    main() 
+```
+
+<!--NOTE TO SELF: I ran into a little trouble today in class when I tried to write this program because
+I couldn't think of a good way to get the first key, value pair. My solution in class was clunky involving booleans and an if-else statement. This is a better that I came up with later.-->
+
+Notice the last two lines in the program. In Python there is weird recommended way to call the `main()` function: 
 
 ```python
 # You can call the main function this way:
@@ -1669,8 +1707,6 @@ if __name__ == "__main__":
 ```
 
 This recommendation has to do with the structure of more complicated Python programs.  Python programs can import other Python programs as modules to build more complex programs.  When you import a module, you typically only want to import functions from the module.  You usually don't want any code in the module to automatically run.
-
-<!--The main function from a script you are importing may have been where its author included code to test the script or to solve a problem that isn't relevant to you.  You don't want that code to automatically run just because you imported the script.  So best practice in Python is to only call main if you are running the script, not if you are importing the script.  When you run a script, there is a special variable called `__name__` that is automatically set to the string `"__main__"`.  But when you import a script and ask Python what `__name__` is in that script you won't get `"__main__"`. --> 
 
 Python has a special variable called `__name__` that is set when the program starts. If the program is running as a **script** (i.e., it is the program that you are running), then `__name__` is automatically assigned the value `"__main__"`. Otherwise, if the program is being imported as a **module**, then `__name__` is set to the name of the module.  
 
@@ -1684,13 +1720,11 @@ Python has a special variable called `__name__` that is set when the program sta
 
 2. What is the type of the `__name__` variable?  
 
-The reason Python has weird variable names like `__name__` and `__main__` with double underscores (called **dunders** for short) is so that they won't conflict with user-defined variable names.  In big programs it can be a real problem if one part of the program has a variable name that conflicts with another part.  
+One reason Python has weird variable names like `__name__` and `__main__` with double underscores (called **dunders** for short) is so that they won't conflict with user-defined variable names.  In big programs it can be a real problem if one part of the program has a variable name that conflicts with another part.  
 
 Another example of a dunder variable is `__doc__`.  Every function has a `__doc__` variable which is equal to that function's docstring.  This is one reason why you should get in the habit of writing a clear docstring to explain what each function does.  
 
-3. Define a simple function in the file `test_module` and write a docstring.  Then write a main 
-
-4. What happens if you use an inline comment like the example below instead of a docstring?
+3. What happens if you use an inline comment like the example below instead of a docstring?
 
     ```python
     def example_function():

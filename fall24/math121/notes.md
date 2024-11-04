@@ -679,8 +679,51 @@ Mon, Nov 4  | [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 Wed, Nov 6  | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
 Fri, Nov 8  | [6.2][6.2]     | Difference of two proportions - con'd
 
+### Mon, Nov 4
 
 
+Today we talked about **two-sample hypothesis tests for proportions.** We did two examples in class:
+
+1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
+
+2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were never arriving. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
+
+In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
+
+* **Shape:** Approximately normal.
+* **Center:** Equal to the true population gap $p_A - p_B$.
+* **Spread:** The standard deviation is 
+$$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
+
+From this theory we talked about how to test the following hypotheses:
+
+* $H_0 ~:~ p_A = p_B$
+* $H_A ~:~ p_A \ne p_B$ 
+
+using the test statistic:
+$$z = \frac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p}(1- \hat{p})\left(\frac{1}{N_A} + \frac{1}{N_B}\right)}}$$
+where $\hat{p}$ is the **pooled proportion**:
+$$\hat{p} = \frac{\text{ Total number of successes in both groups }}{\text{ Combined sample size }}.$$
+
+You do need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
+
+If we want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then you can use a **two-sample confidence interval for proportions:**
+$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
+
+Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
+
+Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
+
+
+### Wed, Nov 6
+
+We started with this example:
+
+1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
+
+Then we did a workshop. 
+
+* **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
 - - - 
 

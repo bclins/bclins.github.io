@@ -1093,7 +1093,7 @@ is holomorphic at $z = w$.
 With this classification, we can prove a really cool theorem:
 
 <div class="Theorem">
-**Argument Principle.** Suppose that $f$ is holomorphic on an open simply connected domain $D$, except for isolated poles.  If $\gamma$ is a piecewise smooth, simple closed curve in $D$ and $\gamma$ does not pass through any zeros or poles of $f$, then the winding number of the path $f \circ \gamma$ around the origin is
+**Argument Principle.** Suppose that $f$ is holomorphic on an open simply connected domain $D$, except for isolated poles.  If $\gamma$ is a piecewise smooth, positively oriented, simple closed path in $D$ and $\gamma$ does not pass through any zeros or poles of $f$, then the winding number of the path $f \circ \gamma$ around the origin is
 $$\frac{1}{2 \pi i} \int_\gamma \frac{f'(z)}{f(z)} \, dz = \left\{ \begin{array}{l} \text{number of zeros} \\ \text{of }f\text{ inside } \gamma \end{array} \right\} - \left\{ \begin{array}{l} \text{number of poles} \\ \text{of }f\text{ inside } \gamma \end{array} \right\}.$$
 </div>
 
@@ -1121,11 +1121,13 @@ $$\frac{f'(z)}{f(z)} = \frac{g'(z)}{g(z)} - \frac{m}{(z-w)}.$$
 
 6. What if $f$ has several zeros and/or poles inside $\gamma$?
 
+<!--
 Once we finished the proof, we observed the following: If $f$ is holomorphic in a open region $R$ and $f(z)-w_0$ has a zero of order $m$ at $z_0 \in R$, then $f(\gamma)$ winds around $w_0$ exactly $m$ times when $\gamma$ is a small circle around $z_0$. Therefore $f(\gamma)$ also winds around any $w$ close to $w_0$ exactly $m$ times as well. As a corollary, we have:
 
 <div class="Theorem">
 **Open Mapping Theorem.** If $f$ is holomorphic on an open set $U \subseteq \C$, then $f(U)$ is an open set.  
 </div>
+-->
 
 <!--
 Another immediate corollary is the following theorem:
