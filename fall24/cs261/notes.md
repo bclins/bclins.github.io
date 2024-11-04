@@ -1435,7 +1435,7 @@ Day  | Section  | Topic
 Mon, Oct 28  | [TP18.1](https://allendowney.github.io/ThinkPython/chap18.html#sets) | Sets and set comprehensions
 Wed, Oct 30  |  | Search algorithms
 Thu, Oct 31  |  | Sorting
-Fri, Nov 1   |  |
+Fri, Nov 1   | [C11.13](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.11.13) | Nested loops
 
 ### Mon, Oct 28
 
@@ -1636,10 +1636,70 @@ registration_data = [
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 4  |            | 
+Mon, Nov 4  | [C9.2](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2) | Program structure
 Wed, Nov 6  |            | 
 Thu, Nov 7  |            | 
 Fri, Nov 8  |  |
+
+### Mon, Nov 4
+
+Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
+
+<div class="Theorem">
+1. **Docstring**. Start with a docstring that includes your name (as the author of the program) along with a brief description of what the program does. 
+
+2. **Imports** (if any). If you need to import any modules, the import statements go right after the docstring, near the top of the file. 
+
+3. **Constants** (if any). Put any constants next.  Note: try to use as few constants as possible, and avoid using any non-constant global variables if you can.  
+
+4. **Function Definitions**.  These will usually be the biggest part of any program.  
+
+5. **Main Function**.  Any code that you want to execute automatically when you run your program should be put into a function called `main()`.  It is your choice whether to put the `main()` function at the top or bottom of your program, but you always call the `main()` function at the very end of the program.  
+</div>
+
+In Python there is weird recommended way to call the `main()` function: 
+
+```python
+# You can call the main function this way:
+main()
+
+# But this is the recommended way to call main:
+if __name__ == "__main__":
+    main()
+```
+
+This recommendation has to do with the structure of more complicated Python programs.  Python programs can import other Python programs as modules to build more complex programs.  When you import a module, you typically only want to import functions from the module.  You usually don't want any code in the module to automatically run.
+
+<!--The main function from a script you are importing may have been where its author included code to test the script or to solve a problem that isn't relevant to you.  You don't want that code to automatically run just because you imported the script.  So best practice in Python is to only call main if you are running the script, not if you are importing the script.  When you run a script, there is a special variable called `__name__` that is automatically set to the string `"__main__"`.  But when you import a script and ask Python what `__name__` is in that script you won't get `"__main__"`. --> 
+
+Python has a special variable called `__name__` that is set when the program starts. If the program is running as a **script** (i.e., it is the program that you are running), then `__name__` is automatically assigned the value `"__main__"`. Otherwise, if the program is being imported as a **module**, then `__name__` is set to the name of the module.  
+
+1. Create two `.py` files.  Call one `test_module.py` and the other `test_script.py`.  In each file, include the following line:
+
+    ```python
+    print(__name__)
+    ```
+
+    In the `test_script.py` file also add a line to `import test_module`.  Now run `test_script.py`.  
+
+2. What is the type of the `__name__` variable?  
+
+The reason Python has weird variable names like `__name__` and `__main__` with double underscores (called **dunders** for short) is so that they won't conflict with user-defined variable names.  In big programs it can be a real problem if one part of the program has a variable name that conflicts with another part.  
+
+Another example of a dunder variable is `__doc__`.  Every function has a `__doc__` variable which is equal to that function's docstring.  This is one reason why you should get in the habit of writing a clear docstring to explain what each function does.  
+
+3. Define a simple function in the file `test_module` and write a docstring.  Then write a main 
+
+4. What happens if you use an inline comment like the example below instead of a docstring?
+
+    ```python
+    def example_function():
+        # This is an example function. 
+        return "Hi!"
+    ```
+    
+    What is the value of `example_function.__doc__`?
+
 
 - - - 
 

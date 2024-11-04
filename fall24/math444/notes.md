@@ -1008,8 +1008,11 @@ After that we talked about the idea that if a function is defined by a power ser
 
 <div class="Theorem">
 **Theorem (Classification of Zeros)** If $f$ is a holomorphic function in an open connected domain $D \subseteq \C$ and $f(w) = 0$ for some $w \in D$, then either 
+
 1. $f = 0$ everywhere on $D$ or 
+
 2. The Taylor series for $f$ centered at $w$ has a first nonzero term $a_m (z-w)^m$.  In that case we say that $w$ is a **zero of order** $m$. 
+
 </div>
 
 Find the orders for the following zeros:
@@ -1062,43 +1065,61 @@ Mon, Nov 4  | [9.1][9.1] | Classification of singularities
 Wed, Nov 6  | [8.2][8.2] | The maximum modulus principle   
 Fri, Nov 8  | [9.2][9.2] | Residues       
 
-<!-- 
+### Mon, Nov 4
+
 <div class="Theorem"> 
 **Classification of Singularities.** If $f$ has an isolated singularity at $w$, then 
 
 1. $w$ is a removable singularity if and only if 
 $$\lim_{z \rightarrow w} (z-w) f(z) = 0.$$  
-In that there is a holomorphic function on an open disk around $w$ that is equal to $f$ everywhere except (technically) $w$ on the disk. 
+In that case, there is a holomorphic function on an open disk around $w$ that is equal to $f$ everywhere except (technically) $w$ on the disk. 
  
-2. $w$ is a pole if and only if 
+2. $w$ is a pole if and only if there exists a positive integer $m$ such that
 $$\lim_{z \rightarrow w} (z-w)^{m+1} f(z) = 0.$$  
 We call $m$ the **order of the pole** at $w.$ 
 </div>
 
-3. Prove that if $\lim_{z \rightarrow w} (z-w) f(z) = 0$, then 
+1. Prove that if $\lim_{z \rightarrow w} (z-w) f(z) = 0$, then 
 $$g(z) = \begin{cases} 
 (z-w)^2 f(z) & \text{ if } z \ne w, \\
 0 & \text{ if } z = w  
 \end{cases}$$
 is holomorphic at $z = w$.  
 
-4. What can you say about the power series for $g$ centered at $w$? 
+2. What can you say about the power series for $g$ centered at $w$? 
 
-5. If $\lim_{z \rightarrow w} |f(z)| = \infty$, then the function $g(z) = 1/f(z)$ has a removable singularity at $w$.  What can you say about the power series for $g$ centered at $w$?  
+3. If $\lim_{z \rightarrow w} |f(z)| = \infty$, then the function $g(z) = 1/f(z)$ has a removable singularity at $w$.  What can you say about the power series for $g$ centered at $w$?  
 
+With this classification, we can prove a really cool theorem:
+
+<div class="Theorem">
+**Argument Principle.** Suppose that $f$ is holomorphic on an open simply connected domain $D$, except for isolated poles.  If $\gamma$ is a piecewise smooth, simple closed curve in $D$ and $\gamma$ does not pass through any zeros or poles of $f$, then the winding number of the path $f \circ \gamma$ around the origin is
+$$\frac{1}{2 \pi i} \int_\gamma \frac{f'(z)}{f(z)} \, dz = \left\{ \begin{array}{l} \text{number of zeros} \\ \text{of }f\text{ inside } \gamma \end{array} \right\} - \left\{ \begin{array}{l} \text{number of poles} \\ \text{of }f\text{ inside } \gamma \end{array} \right\}.$$
+</div>
+
+<center>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Argument_principle1.svg/212px-Argument_principle1.svg.png"></img>
+</center>
+
+<!--
 Today we reviewed the concept of zeros and winding numbers.  We updated an old proof to show that if $\gamma:[0,2\pi) \rightarrow \C$ is a piecewise smooth simple closed curve in a simply connected open set where $f$ is holomorphic, then the winding number of $f(\gamma(t))$ around $w \in \C$ is equal to the sum of the orders of the zeros of $f-w$ that are enclosed by $\gamma$.   
 
 This is because the winding number must be equal to 
 $$\frac{1}{2\pi i} \int_{f(\gamma)} \frac{1}{z-w} \, dz$$
 by Cauchy's integral formula. Then by the definition of complex contour integrals, this is the same as:
 $$\frac{1}{2\pi i} \int_\gamma \frac{f'(z)}{f(z)-w} \, dz.$$
+-->
 
-3. Show that if $f-w$ has a zero $z_0$ of order $m$ at $w$, that is, $f(z)-w = (z-z_0)^m g(z)$ where $g$ is holomorphic and $g(z_0) \ne 0$, then 
-$$\frac{f'(z)}{f(z)-w} = \frac{g'(z)}{g(z)} + \frac{m}{(z-z_0)}.$$
+4. If $f$ has a zero at $w$ of order $m$, then $f(z) = (z-w)^m g(z)$ where $g$ is holomorphic, $g(w) \ne 0,$ and 
+$$\frac{f'(z)}{f(z)} = \frac{g'(z)}{g(z)} + \frac{m}{(z-w)}.$$
+Similarly, if $f$ has a pole at $w$ of order $m$, then $f(z) = (z-z_0)^{-m} g(z)$ where $g$ is holomorphic, $g(w) \ne 0$, and 
+$$\frac{f'(z)}{f(z)} = \frac{g'(z)}{g(z)} - \frac{m}{(z-w)}.$$
 
-4. If $z_0$ is the only zero of $f-w$ inside $\gamma$, explain why this proves that the winding number of $f(\gamma)$ around $w$ is $m$.
 
-5. What if $z_0$ is not the only zero of $f-w$ inside $\gamma$?
+
+5. If $w$ is the only zero or pole of $f$ inside $\gamma$, explain why this proves that the winding number of $f(\gamma)$ around $w$ is either $m$ or $-m$ (depending on whether $w$ is a zero or a pole).
+
+6. What if $f$ has several zeros and/or poles inside $\gamma$?
 
 Once we finished the proof, we observed the following: If $f$ is holomorphic in a open region $R$ and $f(z)-w_0$ has a zero of order $m$ at $z_0 \in R$, then $f(\gamma)$ winds around $w_0$ exactly $m$ times when $\gamma$ is a small circle around $z_0$. Therefore $f(\gamma)$ also winds around any $w$ close to $w_0$ exactly $m$ times as well. As a corollary, we have:
 
@@ -1106,6 +1127,7 @@ Once we finished the proof, we observed the following: If $f$ is holomorphic in 
 **Open Mapping Theorem.** If $f$ is holomorphic on an open set $U \subseteq \C$, then $f(U)$ is an open set.  
 </div>
 
+<!--
 Another immediate corollary is the following theorem:
 
 **Maximum Modulus Principle.** If $f$ is holomorphic on an open set $U$, then $|f|$ cannot have a local maximum in $U$.  

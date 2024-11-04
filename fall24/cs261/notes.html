@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -997,7 +997,7 @@ talked about last time.</p>
 <li><p>Write an <code>even_elements(numbers)</code> function like the
 one from yesterday using this style of loop. It would be a good idea to
 use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
 as the index of the first even number if there aren’t any.</p></li>
 <li><p>Re-write the <code>is_integer_string(s)</code> function using
 this style of list. To make this one more interesting, we first created
@@ -2088,8 +2088,9 @@ href="https://allendowney.github.io/ThinkPython/chap18.html#sets">TP18.1</a></td
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Nov 1</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.11.13">C11.13</a></td>
+<td style="text-align: left;">Nested loops</td>
 </tr>
 </tbody>
 </table>
@@ -2383,6 +2384,11 @@ signed up for each course.</p></li>
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <h4 id="tentative-schedule-10">Tentative Schedule</h4>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2393,8 +2399,9 @@ signed up for each course.</p></li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 4</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2">C9.2</a></td>
+<td style="text-align: left;">Program structure</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 6</td>
@@ -2413,6 +2420,86 @@ signed up for each course.</p></li>
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-4">Mon, Nov 4</h3>
+<p>Up to now, we haven’t worried much about how we structure our
+programs. A simple recommended layout for a Python program is the
+following:</p>
+<div class="Theorem">
+<ol type="1">
+<li><p><strong>Docstring</strong>. Start with a docstring that includes
+your name (as the author of the program) along with a brief description
+of what the program does.</p></li>
+<li><p><strong>Imports</strong> (if any). If you need to import any
+modules, the import statements go right after the docstring, near the
+top of the file.</p></li>
+<li><p><strong>Constants</strong> (if any). Put any constants next.
+Note: try to use as few constants as possible, and avoid using any
+non-constant global variables if you can.</p></li>
+<li><p><strong>Function Definitions</strong>. These will usually be the
+biggest part of any program.</p></li>
+<li><p><strong>Main Function</strong>. Any code that you want to execute
+automatically when you run your program should be put into a function
+called <code>main()</code>. It is your choice whether to put the
+<code>main()</code> function at the top or bottom of your program, but
+you always call the <code>main()</code> function at the very end of the
+program.<br />
+</p></li>
+</ol>
+</div>
+<p>In Python there is weird recommended way to call the
+<code>main()</code> function:</p>
+<div class="sourceCode" id="cb63"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can call the main function this way:</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>main()</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="co"># But this is the recommended way to call main:</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
+<p>This recommendation has to do with the structure of more complicated
+Python programs. Python programs can import other Python programs as
+modules to build more complex programs. When you import a module, you
+typically only want to import functions from the module. You usually
+don’t want any code in the module to automatically run.</p>
+<!--The main function from a script you are importing may have been where its author included code to test the script or to solve a problem that isn't relevant to you.  You don't want that code to automatically run just because you imported the script.  So best practice in Python is to only call main if you are running the script, not if you are importing the script.  When you run a script, there is a special variable called `__name__` that is automatically set to the string `"__main__"`.  But when you import a script and ask Python what `__name__` is in that script you won't get `"__main__"`. -->
+<p>Python has a special variable called <code>__name__</code> that is
+set when the program starts. If the program is running as a
+<strong>script</strong> (i.e., it is the program that you are running),
+then <code>__name__</code> is automatically assigned the value
+<code>"__main__"</code>. Otherwise, if the program is being imported as
+a <strong>module</strong>, then <code>__name__</code> is set to the name
+of the module.</p>
+<ol type="1">
+<li><p>Create two <code>.py</code> files. Call one
+<code>test_module.py</code> and the other <code>test_script.py</code>.
+In each file, include the following line:</p>
+<div class="sourceCode" id="cb64"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">__name__</span>)</span></code></pre></div>
+<p>In the <code>test_script.py</code> file also add a line to
+<code>import test_module</code>. Now run
+<code>test_script.py</code>.</p></li>
+<li><p>What is the type of the <code>__name__</code> variable?</p></li>
+</ol>
+<p>The reason Python has weird variable names like <code>__name__</code>
+and <code>__main__</code> with double underscores (called
+<strong>dunders</strong> for short) is so that they won’t conflict with
+user-defined variable names. In big programs it can be a real problem if
+one part of the program has a variable name that conflicts with another
+part.</p>
+<p>Another example of a dunder variable is <code>__doc__</code>. Every
+function has a <code>__doc__</code> variable which is equal to that
+function’s docstring. This is one reason why you should get in the habit
+of writing a clear docstring to explain what each function does.</p>
+<ol start="3" type="1">
+<li><p>Define a simple function in the file <code>test_module</code> and
+write a docstring. Then write a main</p></li>
+<li><p>What happens if you use an inline comment like the example below
+instead of a docstring?</p>
+<div class="sourceCode" id="cb65"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an example function. </span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Hi!&quot;</span></span></code></pre></div>
+<p>What is the value of <code>example_function.__doc__</code>?</p></li>
+</ol>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <h4 id="tentative-schedule-11">Tentative Schedule</h4>
