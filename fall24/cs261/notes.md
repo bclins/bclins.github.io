@@ -1637,7 +1637,7 @@ registration_data = [
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 4  | [C9.2](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2) | Program structure
-Wed, Nov 6  |            | 
+Wed, Nov 6  | [C9.3](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3) | Function structure & incremental development
 Thu, Nov 7  |            | 
 Fri, Nov 8  |  |
 
@@ -1733,6 +1733,67 @@ Another example of a dunder variable is `__doc__`.  Every function has a `__doc_
     ```
     
     What is the value of `example_function.__doc__`?
+
+
+### Wed, Nov 6
+
+Last time we talked about the structure of programs.  Today we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.  
+
+A function should do exactly what it says it will do in its docstring.  You should be able to use a function and trust that it will produced the correct output every time, without looking at how it works.  In programming, we think of a function as a **black box**, which means we can use it reliably without knowing what is inside.  
+
+Here are somethings to keep in mind when writing functions. 
+
+1. **Use Parameters Not Global Variables.** Don't pass information into functions using global variables, especially if those global variables might change.  All of the information a function needs should be included in the list of parameters. The one exception is if you have global constants. 
+
+2. **Avoid Unintentional Side Effects.** A **side effect** is when a function does more than just finding its return value. A **pure function** is one with no side effects, it just returns a value at the end.  An **impure function** might change the values of a mutable parameter (like a list or dictionary) in addition to calculating a return value.  It can be hard to debug impure functions.  One nice thing about Python is that it won't let you change the values of immutable global variables from inside a function, unless you use a special keyword.  Keep in mind that a print statement inside a function is impure, since printing output on the computer screen is a side effect!  That doesn't mean you shouldn't do it, but be sure to explicitly describe any intentional side effects of a function when you write the docstring. 
+
+Here are some examples.
+
+1. What is wrong with the `caesar_shift` function below? How could it be improved?  
+
+    ```python
+    text = "the quick brown fox jumped over the lazy dog."
+
+    def caesar_shift(n):
+        """Shift all the letters in text by n places, wrapping back around after z."""
+        output = ""
+        for char in text:
+            if "a" <= char <= "z":
+                old_position = ord(char) - ord("a")
+                new_position = (old_position + n) % 26
+                new_letter = chr(new_position + ord("a"))
+                output += new_letter
+            else:
+                output += char
+        return output
+    ```
+
+2. Last time we wrote a program called `dictionary_tools.py` which had a function `key_with_max_value`. We could use that function to write a `top_keys(d, n)` function that returns the `n` keys in a dictionary `d`.  
+
+    ```python
+    def top_keys(d, n):
+        """
+        Returns a list with the n keys of a dictionary d that have the largest values.
+        """
+        output = []
+        for _ in range(n):
+            # Repeat the following step n times: 
+            # remove the key with the largest value from d and add that key to output
+            best_key = key_with_max_value(d)
+            d.pop(best_key)
+            output.append(best_key)
+        return output 
+    ```
+
+    a. Check that this function works. Try it on a dictionary like 
+
+        ```python
+        example_dict = {"A": 1, "B": 9, "C": 2, "D": 8, "E": 3, "F": 7}
+        ```
+
+    b. What is wrong with this `top_keys` function?
+
+    
 
 
 - - - 

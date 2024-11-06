@@ -1011,8 +1011,9 @@ After that we talked about the idea that if a function is defined by a power ser
 
 1. $f = 0$ everywhere on $D$ or 
 
-2. The Taylor series for $f$ centered at $w$ has a first nonzero term $a_m (z-w)^m$.  In that case we say that $w$ is a **zero of order** $m$. 
-
+2. The Taylor series for $f$ centered at $w$ has a first nonzero term $a_m (z-w)^m$.  In that case 
+$$f(z) = (z-w)^m g(z)$$
+where $g$ is holomorphic in an open disk around $w$ and $g(w) \ne 0$. Then we say that $w$ is a **zero of order** $m$. 
 </div>
 
 Find the orders for the following zeros:
@@ -1062,11 +1063,13 @@ Here are examples of the three types of singularity.
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 4  | [9.1][9.1] | Classification of singularities
-Wed, Nov 6  | [8.2][8.2] | The maximum modulus principle   
-Fri, Nov 8  | [9.2][9.2] | Residues       
+Wed, Nov 6  | [9.3][9.3] | The argument principle and Rouche's theorem
+Fri, Nov 8  | [8.3][8.3] | Laurent series
 
 ### Mon, Nov 4
 
+
+<!-- NOTE TO SELF: In class today, I presented this version, but it really isn't the right version. A better version is what I'm including in my online notes.
 <div class="Theorem"> 
 **Classification of Singularities.** If $f$ has an isolated singularity at $w$, then 
 
@@ -1077,6 +1080,17 @@ In that case, there is a holomorphic function on an open disk around $w$ that is
 2. $w$ is a pole if and only if there exists a positive integer $m$ such that
 $$\lim_{z \rightarrow w} (z-w)^{m+1} f(z) = 0.$$  
 We call $m$ the **order of the pole** at $w.$ 
+</div>
+-->
+
+<div class="Theorem"> 
+**Classification of Singularities.** If $f$ has an isolated singularity at $w$, then 
+
+1. $w$ is a removable singularity if and only if there is a holomorphic function $g$ on an open disk around $w$ such that $f(z) = g(z)$ everywhere, except (technically) $w$ on the disk. 
+ 
+2. $w$ is a pole if and only if there is a holomorphic $g$ and positive integer $m$ such that
+$$f(z) = \frac{ g(z) }{(z-w)^m}$$  
+for all $z \ne w$ in an open disk around $w$ and $g(w) \ne 0$.  We call $m$ the **order of the pole** at $w.$ 
 </div>
 
 1. Prove that if $\lim_{z \rightarrow w} (z-w) f(z) = 0$, then 
@@ -1121,6 +1135,33 @@ $$\frac{f'(z)}{f(z)} = \frac{g'(z)}{g(z)} - \frac{m}{(z-w)}.$$
 
 6. What if $f$ has several zeros and/or poles inside $\gamma$?
 
+
+### Wed, Nov 6
+
+The main application of the argument principle is not to find the winding number.  It is actually to use the winding number to confirm the existence of zeros or poles.  
+
+<div class="Theorem"> 
+**Rouche's Theorem.** Suppose that $f, g$ are holomorphic on an open, simply connected domain $D$, and $\gamma$ is a positively oriented, simple, closed, piecewise smooth path in $D$.  If 
+$$|f(z) - g(z)| < |f(z)|$$ 
+for all $z$ in the range of $\gamma$, then $f$ and $g$ have the same number of zeros inside $\gamma$ (counting multiplicity).  
+</div>
+
+*Proof.* The inequality condition is the same as the one for the [dog on a leash theorem](#:~:text=Dog on a Leash). Therefore $f \circ \gamma$ and $g \circ \gamma$ have the same winding numbers around the origin and then by the argument principle they must have the same number of zeros (they can't have poles because they are holomorphic on $D$). $\square$ 
+
+1. Use Rouche's theorem to do [Exercise 9.21](https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#exercise.9.21) from the book. 
+
+<div class="Theorem">
+**Open Mapping Principle.** If $f$ is a non-constant holomorphic function on an open set $U$, then $f(U)$ is an open set. 
+</div>
+
+*Proof.* We have to show that for every $w_0 \in f(U)$ is an interior point of $f(U)$.  In other words, there is an open disk around $w_0$ that is completely contained inside $f(U)$.  By definition, there is a $z_0$ such that $f(z_0) = w_0$, and $w_0$ is a zero of the function $f-w_0$.  We just have to show that $g = f-w$ has a zero for all $w$ sufficiently close to $w_0$. 
+
+Since zeros are isolated, we can choose a circle around $z_0$ in $U$ that doesn't have any zeros on its boundary.  Let $\gamma$ be a positively oriented parametrization of that circle.  Let $\delta$ be the distance from the closest point on $f \circ \gamma$ to $w_0$. If $|w - w_0| < \delta$, then Rouche's theorem guarantees that $f- w$ has a zero inside $\gamma$ and therefore $w \in f(U)$. $\square$
+
+<div class="Theorem">
+**Maximum Modulus Principle.** If $f$ is a non-constant holomorphic function on an open set $U$, then $|f|$ cannot have a local maximum in $U$. If in addition, $U$ is bounded and $f$ is continuous on the closure of $U$, then the maximum of $|f|$ occurs on the boundary of $U$.  
+</div>
+
 <!--
 Once we finished the proof, we observed the following: If $f$ is holomorphic in a open region $R$ and $f(z)-w_0$ has a zero of order $m$ at $z_0 \in R$, then $f(\gamma)$ winds around $w_0$ exactly $m$ times when $\gamma$ is a small circle around $z_0$. Therefore $f(\gamma)$ also winds around any $w$ close to $w_0$ exactly $m$ times as well. As a corollary, we have:
 
@@ -1146,7 +1187,7 @@ Another immediate corollary is the following theorem:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 11 | [9.3][9.3] | The argument principle and Rouche's theorem
+Mon, Nov 11 |  [9.2][9.2] | Residues       
 Wed, Nov 13 |  | Review
 Fri, Nov 15 |  | **Midterm 2**
 
