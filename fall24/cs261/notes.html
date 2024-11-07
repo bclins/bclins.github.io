@@ -2412,13 +2412,15 @@ development</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Nov 7</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3">C13.3</a></td>
+<td style="text-align: left;">Writing to a file</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Nov 8</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3">C13.3</a></td>
+<td style="text-align: left;">Writing to a file - con’d</td>
 </tr>
 </tbody>
 </table>
@@ -2651,12 +2653,14 @@ the file will get overwritten.</p></li>
 times, it does not add the contents on separate lines in the file. You
 have to add a newline character <code>\n</code> at the end of the string
 you are writing to get a line break. Write a program to print the
-contents of this list: `[“Apple”, “Banana”, “Carrot”, “Dill”,
-“Eggplant”] each on a separate line of the file.</p></li>
+contents of this list: `fruit_list = [“Apple”, “Banana”, “Orange”,
+“Lemon”] each on a separate line of the file.</p></li>
 <li><p>If you would like to keep the old contents of a file and just add
 on to them, use <code>"a"</code> as the optional argument when you open.
-Try adding another word <code>"Fig"</code> to the file you just
-created.</p></li>
+Try closing the file after adding the fruit from the
+<code>fruit_list</code>. Then open the file again and this time add
+<code>"Grapes"</code> without overwriting the other fruit in the
+file.</p></li>
 </ol>
 <p>You can run into trouble if you forget to close a file object in
 Python because of the way the computer operating system handles files
@@ -2669,19 +2673,21 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a h
 this way you won’t have to remember to close the file at the end. The
 <code>with</code> keyword takes care of that automatically. We will
 always use this approach to open files from now on.</p>
-<ol start="4" type="1">
-<li><p>The file <a href="average_temps.txt">average_temps.txt</a>
-contains data on the average high temperature in Farmville, VA for each
-day of the year. Save the file on your computer and open the data:</p>
-<div class="sourceCode" id="cb73"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;average_temps.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> [line.strip().split(<span class="st">&quot;;&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div>
-<p>Now that you have the data, write a program that converts the data
-from Fahrenheit to Celsius and then saves the data in new file called
-<code>celsius.txt</code>. Recall that the formula to convert Fahrenheit
-to Celsius is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mfrac displaystyle="false"><mn>5</mn><mn>9</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></p></li>
-</ol>
+<!--
+
+### Fri, Nov 8
+
+The file [average_temps.txt](average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
+
+```python
+with open("average_temps.txt") as file:
+    data = [line.strip().split(";") for line in file.readlines()]
+```
+
+1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+$$C = \tfrac{5}{9}(F - 32).$$
+
+-->
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <h4 id="tentative-schedule-11">Tentative Schedule</h4>

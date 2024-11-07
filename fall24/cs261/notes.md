@@ -1638,8 +1638,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 4  | [C9.2](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2) | Program structure
 Wed, Nov 6  | [C9.3](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3) | Function structure & incremental development
-Thu, Nov 7  |            | 
-Fri, Nov 8  |  |
+Thu, Nov 7  | [C13.3](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3) | Writing to a file
+Fri, Nov 8  | [C13.3](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3) | Writing to a file - con'd
 
 ### Mon, Nov 4
 
@@ -1823,9 +1823,9 @@ We started by finishing the root finding function from last time.  Then we talke
 
     What is contained in the file `example.txt`?  Notice that when we open files with the optional argument `"w"`, it allows us to write the the file.  Any contents that were previously in the file will get overwritten.  
 
-2. Notice that if you use the `.write()` method multiple times, it does not add the contents on separate lines in the file. You have to add a newline character `\n` at the end of the string you are writing to get a line break.  Write a program to print the contents of this list: `["Apple", "Banana", "Carrot", "Dill", "Eggplant"] each on a separate line of the file.  
+2. Notice that if you use the `.write()` method multiple times, it does not add the contents on separate lines in the file. You have to add a newline character `\n` at the end of the string you are writing to get a line break.  Write a program to print the contents of this list: `fruit_list = ["Apple", "Banana", "Orange", "Lemon"] each on a separate line of the file. 
 
-3. If you would like to keep the old contents of a file and just add on to them, use `"a"` as the optional argument when you open.  Try adding another word `"Fig"` to the file you just created.
+3. If you would like to keep the old contents of a file and just add on to them, use `"a"` as the optional argument when you open.  Try closing the file after adding the fruit from the `fruit_list`.  Then open the file again and this time add `"Grapes"` without overwriting the other fruit in the file.
 
 You can run into trouble if you forget to close a file object in Python because of the way the computer operating system handles files that are not closed.  It is recommended to use a special `with` keyword whenever you open a file in Python:
 
@@ -1836,18 +1836,21 @@ with open("example.txt", "w") as file:
 
 This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
 
+<!--
 
-4. The file [average_temps.txt](average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
+### Fri, Nov 8
 
-    ```python
-    with open("average_temps.txt") as file:
-        data = [line.strip().split(";") for line in file.readlines()]
-    ```
+The file [average_temps.txt](average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
 
-    Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+```python
+with open("average_temps.txt") as file:
+    data = [line.strip().split(";") for line in file.readlines()]
+```
+
+1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
 $$C = \tfrac{5}{9}(F - 32).$$
 
-
+-->
 
 
 
