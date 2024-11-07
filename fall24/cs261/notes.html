@@ -2611,6 +2611,25 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a h
 <li><p>What is wrong with this <code>top_keys</code> function?</p></li>
 </ol></li>
 </ol>
+<p>We finished by talking about <strong>incremental design</strong>
+where a programming task is broken into small manageable steps that can
+be tackled one at a time. We used incremental design to start
+implementing the following function:</p>
+<div class="sourceCode" id="cb70"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_root(f, a, b):</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Find the root of an increasing or decreasing function f on an interval between a and b.&quot;&quot;&quot;</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 1 - Find the midpoint of a and b.</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 2 - Check if the root is left or right of the midpoint. </span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 3 - Update the endpoints and midpoint of the interval.  </span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 4 - Repeat.</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Step 5 - Figure out a good stopping point if you never find the exact root. </span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> m</span></code></pre></div>
+<p>As you fill in more steps, you can pause and check if the function
+still runs and produces the output you expect. You can debug as you go.
+Don’t hesitate to add print statements in the code if things aren’t
+working the way you expect. You can also use pencil &amp; paper to try
+to figure out good ways to do each step.</p>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <h4 id="tentative-schedule-11">Tentative Schedule</h4>

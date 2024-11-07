@@ -1158,22 +1158,10 @@ for all $z$ in the range of $\gamma$, then $f$ and $g$ have the same number of z
 
 Since zeros are isolated, we can choose a circle around $z_0$ in $U$ that doesn't have any zeros on its boundary.  Let $\gamma$ be a positively oriented parametrization of that circle.  Let $\delta$ be the distance from the closest point on $f \circ \gamma$ to $w_0$. If $|w - w_0| < \delta$, then Rouche's theorem guarantees that $f- w$ has a zero inside $\gamma$ and therefore $w \in f(U)$. $\square$
 
+<!--
 <div class="Theorem">
 **Maximum Modulus Principle.** If $f$ is a non-constant holomorphic function on an open set $U$, then $|f|$ cannot have a local maximum in $U$. If in addition, $U$ is bounded and $f$ is continuous on the closure of $U$, then the maximum of $|f|$ occurs on the boundary of $U$.  
 </div>
-
-<!--
-Once we finished the proof, we observed the following: If $f$ is holomorphic in a open region $R$ and $f(z)-w_0$ has a zero of order $m$ at $z_0 \in R$, then $f(\gamma)$ winds around $w_0$ exactly $m$ times when $\gamma$ is a small circle around $z_0$. Therefore $f(\gamma)$ also winds around any $w$ close to $w_0$ exactly $m$ times as well. As a corollary, we have:
-
-<div class="Theorem">
-**Open Mapping Theorem.** If $f$ is holomorphic on an open set $U \subseteq \C$, then $f(U)$ is an open set.  
-</div>
--->
-
-<!--
-Another immediate corollary is the following theorem:
-
-**Maximum Modulus Principle.** If $f$ is holomorphic on an open set $U$, then $|f|$ cannot have a local maximum in $U$.  
 
 *Proof.* Suppose that $z_0$ is a local maximum, that is, $|f(z_0)| \ge |f(z)|$ for all $z$ in a small disk around $z_0$.  This is a contradiction because $f(B_r(z_0))$ is an open set, so it contains an open disk around $f(z_0)$.  $\square$
 -->

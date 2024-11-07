@@ -1793,7 +1793,21 @@ Here are some examples.
 
     b. What is wrong with this `top_keys` function?
 
-    
+We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  We used incremental design to start implementing the following function:
+
+```python
+def find_root(f, a, b):
+    """Find the root of an increasing or decreasing function f on an interval between a and b."""
+    # Step 1 - Find the midpoint of a and b.
+    m = (a + b) / 2
+    # Step 2 - Check if the root is left or right of the midpoint. 
+    # Step 3 - Update the endpoints and midpoint of the interval.  
+    # Step 4 - Repeat.
+    # Step 5 - Figure out a good stopping point if you never find the exact root. 
+    return m
+``` 
+
+As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
 
 
 - - - 
