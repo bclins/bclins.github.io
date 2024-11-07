@@ -1809,6 +1809,47 @@ def find_root(f, a, b):
 
 As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
 
+### Thu, Nov 7
+
+We started by finishing the root finding function from last time.  Then we talked about how to write to files from Python.  When you open a Python file, the default option is the open the file **read-only** which means you cannot change the file's contents.  It is possible to re-write the contents of a file if you open it with the optional `"w"` argument.  
+
+1. Try the following short Python program:
+
+    ```python
+    file = open("example.txt", "w")
+    file.write("Hello!")
+    file.close()
+    ```
+
+    What is contained in the file `example.txt`?  Notice that when we open files with the optional argument `"w"`, it allows us to write the the file.  Any contents that were previously in the file will get overwritten.  
+
+2. Notice that if you use the `.write()` method multiple times, it does not add the contents on separate lines in the file. You have to add a newline character `\n` at the end of the string you are writing to get a line break.  Write a program to print the contents of this list: `["Apple", "Banana", "Carrot", "Dill", "Eggplant"] each on a separate line of the file.  
+
+3. If you would like to keep the old contents of a file and just add on to them, use `"a"` as the optional argument when you open.  Try adding another word `"Fig"` to the file you just created.
+
+You can run into trouble if you forget to close a file object in Python because of the way the computer operating system handles files that are not closed.  It is recommended to use a special `with` keyword whenever you open a file in Python:
+
+```python
+with open("example.txt", "w") as file:
+    file.write("Hello!")
+```
+
+This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
+
+
+4. The file [average_temps.txt](average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
+
+    ```python
+    with open("average_temps.txt") as file:
+        data = [line.strip().split(";") for line in file.readlines()]
+    ```
+
+    Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+$$C = \tfrac{5}{9}(F - 32).$$
+
+
+
+
 
 - - - 
 

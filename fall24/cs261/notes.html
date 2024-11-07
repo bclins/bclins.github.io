@@ -2630,6 +2630,58 @@ still runs and produces the output you expect. You can debug as you go.
 Don’t hesitate to add print statements in the code if things aren’t
 working the way you expect. You can also use pencil &amp; paper to try
 to figure out good ways to do each step.</p>
+<h3 id="thu-nov-7">Thu, Nov 7</h3>
+<p>We started by finishing the root finding function from last time.
+Then we talked about how to write to files from Python. When you open a
+Python file, the default option is the open the file
+<strong>read-only</strong> which means you cannot change the file’s
+contents. It is possible to re-write the contents of a file if you open
+it with the optional <code>"w"</code> argument.</p>
+<ol type="1">
+<li><p>Try the following short Python program:</p>
+<div class="sourceCode" id="cb71"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">&quot;Hello!&quot;</span>)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code></pre></div>
+<p>What is contained in the file <code>example.txt</code>? Notice that
+when we open files with the optional argument <code>"w"</code>, it
+allows us to write the the file. Any contents that were previously in
+the file will get overwritten.</p></li>
+<li><p>Notice that if you use the <code>.write()</code> method multiple
+times, it does not add the contents on separate lines in the file. You
+have to add a newline character <code>\n</code> at the end of the string
+you are writing to get a line break. Write a program to print the
+contents of this list: `[“Apple”, “Banana”, “Carrot”, “Dill”,
+“Eggplant”] each on a separate line of the file.</p></li>
+<li><p>If you would like to keep the old contents of a file and just add
+on to them, use <code>"a"</code> as the optional argument when you open.
+Try adding another word <code>"Fig"</code> to the file you just
+created.</p></li>
+</ol>
+<p>You can run into trouble if you forget to close a file object in
+Python because of the way the computer operating system handles files
+that are not closed. It is recommended to use a special
+<code>with</code> keyword whenever you open a file in Python:</p>
+<div class="sourceCode" id="cb72"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<p>This code does the exact same thing as the code in exercise 1, but
+this way you won’t have to remember to close the file at the end. The
+<code>with</code> keyword takes care of that automatically. We will
+always use this approach to open files from now on.</p>
+<ol start="4" type="1">
+<li><p>The file <a href="average_temps.txt">average_temps.txt</a>
+contains data on the average high temperature in Farmville, VA for each
+day of the year. Save the file on your computer and open the data:</p>
+<div class="sourceCode" id="cb73"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;average_temps.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> [line.strip().split(<span class="st">&quot;;&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div>
+<p>Now that you have the data, write a program that converts the data
+from Fahrenheit to Celsius and then saves the data in new file called
+<code>celsius.txt</code>. Recall that the formula to convert Fahrenheit
+to Celsius is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mfrac displaystyle="false"><mn>5</mn><mn>9</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></p></li>
+</ol>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <h4 id="tentative-schedule-11">Tentative Schedule</h4>
