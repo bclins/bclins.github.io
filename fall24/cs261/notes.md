@@ -1836,7 +1836,6 @@ with open("example.txt", "w") as file:
 
 This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
 
-<!--
 
 ### Fri, Nov 8
 
@@ -1850,7 +1849,6 @@ with open("average_temps.txt") as file:
 1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
 $$C = \tfrac{5}{9}(F - 32).$$
 
--->
 
 
 

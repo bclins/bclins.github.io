@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on **Friday, Oct 4**.
+* Midterm 2 will be on **Friday, Nov 15**.
+* [Midterm 2 review problems](midterm2review.html)
 * [Midterm 1 review problems](midterm1review.html)
 * [Complex Grapher](https://mabotkin.github.io/complex/) by Alex Wang.
 * [Another Complex Grapher](https://people.hsc.edu/faculty-staff/blins/StatsTools/ComplexGrapher2.html) by me.
@@ -49,7 +50,7 @@ Week | Topic                      | Notes | Homework
 9  | Entire functions                               | [Week 09](notes.html#week-9-notes)  | [HW9](HW9.pdf)
 10 | Singularities and residues                     | [Week 10](notes.html#week-10-notes) | [HW10](HW10.pdf)
 11 | Applications of the residue theorem            | [Week 11](notes.html#week-11-notes) | [HW11](HW11.pdf)
-12 | Möbius transforms, **Midterm 2**               | [Week 12](notes.html#week-12-notes) |
+12 | Möbius transforms, **Midterm 2**               | [Week 12](notes.html#week-12-notes) | [HW12](HW12.pdf)
 13 | Discrete applications of residue               | [Week 13](notes.html#week-13-notes) |
 14 | Harmonic functions                             | [Week 14](notes.html#week-14-notes) |
 15 | The heat equation                              | [Week 15](notes.html#week-15-notes) |
