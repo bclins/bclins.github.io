@@ -1846,10 +1846,10 @@ with open("average_temps.txt") as file:
     data = [line.strip().split(";") for line in file.readlines()]
 ```
 
-1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius_temps.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
 $$C = \tfrac{5}{9}(F - 32).$$
 
-
+2. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
 
 
 - - - 

@@ -677,7 +677,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 4  | [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 Wed, Nov 6  | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
-Fri, Nov 8  | [6.2][6.2]     | Difference of two proportions - con'd
+Fri, Nov 8  | [7.1][7.1]     | Introducing the t-distribution
 
 ### Mon, Nov 4
 
@@ -724,6 +724,27 @@ We started with this example:
 Then we did a workshop. 
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
+
+### Fri, Nov 8
+
+We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
+
+* Hypothesis testing - Answers a yes/no question about a parameter
+* Confidence interval - Estimates the value of a parameter
+
+We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height.  We looked at our class data and saw that the sample mean height is $\bar{x}_{HS} = 71.8$ inches.  That suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
+
+* $H_0: \mu_{HS} = 70$
+* $H_A: \mu_{HS} > 70$
+
+To test these, we reviewed what we know about the sampling distribution for $\bar{x}$, and we tried to find the z-value using the formula
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.$$
+Unfortunately, we don't know the population standard deviation $\sigma$ for all HSC students.  We only know the sample standard deviation which was $s = 2.7$ inches.  If we use that instead of $\sigma$, then we get a **t-value**:
+$$t =  \frac{\bar{x} - \mu_0}{s / \sqrt{n}}.$$
+which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). When you do a hypothesis test for one mean or a confidence interval for one mean, 
+$$\text{degrees of freedom} = n - 1.$$
+We briefly talked about why this is.  Then we used the app to find a p-value for our class data and see whether or not we have strong evidence that HSC students are taller on average than other men in the USA. The logic of p-values is exactly the same for a t-test as it is for a hypothesis test with the normal distribution.
+
 
 - - - 
 

@@ -2634,13 +2634,120 @@ has a zero inside
 and therefore
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>U</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">w \in f(U)</annotation></semantics></math>.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
-<!--
+<h3 id="fri-nov-8">Fri, Nov 8</h3>
+<p>We ran out of time last class before we could write down this next
+corollary of the open mapping principle.</p>
 <div class="Theorem">
-**Maximum Modulus Principle.** If $f$ is a non-constant holomorphic function on an open set $U$, then $|f|$ cannot have a local maximum in $U$. If in addition, $U$ is bounded and $f$ is continuous on the closure of $U$, then the maximum of $|f|$ occurs on the boundary of $U$.  
+<p><strong>Maximum Modulus Principle.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is a non-constant holomorphic function on an open set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|f|</annotation></semantics></math>
+cannot have a local maximum in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>.
+If in addition,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+is bounded and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is continuous on the closure of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>,
+then the maximum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|f|</annotation></semantics></math>
+occurs on the boundary of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>.</p>
 </div>
-
-*Proof.* Suppose that $z_0$ is a local maximum, that is, $|f(z_0)| \ge |f(z)|$ for all $z$ in a small disk around $z_0$.  This is a contradiction because $f(B_r(z_0))$ is an open set, so it contains an open disk around $f(z_0)$.  $\square$
--->
+<p><em>Proof.</em> Suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>
+is a local maximum, that is,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">|f(z_0)| \ge |f(z)|</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+in a small disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>.
+This is a contradiction because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>B</mi><mi>r</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(B_r(z_0))</annotation></semantics></math>
+is an open set, so it contains an open disk around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z_0)</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>A <strong>Laurent series</strong> centered at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">w \in \mathbb{C}</annotation></semantics></math>
+is a series of the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mi>∞</mi></mrow><mo accent="false">∞</mo></munderover><msub><mi>a</mi><mi>k</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k = -\infty}^\infty a_k (z-w)^k</annotation></semantics></math>
+where the coefficients
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>k</mi></msub><annotation encoding="application/x-tex">a_k</annotation></semantics></math>
+are complex numbers and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+is a complex variable. We say that a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+has a Laurent series in a domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+if there is a Laurent series that converges absolutely to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">z \in D</annotation></semantics></math>.
+The sum of the terms of a Laurent series with negative powers is called
+the <strong>principal part</strong> and the sum of terms with
+nonnegative powers is the <strong>analytic part</strong> of a Laurent
+series.</p>
+<p>We calculated Laurent series for the following functions in
+class.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mo>cos</mo><mi>z</mi></mrow><msup><mi>z</mi><mn>5</mn></msup></mfrac><annotation encoding="application/x-tex">\dfrac{\cos z}{z^5}</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mn>1</mn><mi>/</mi><mi>z</mi></mrow></msup><annotation encoding="application/x-tex">e^{1/z}</annotation></semantics></math>.</p></li>
+</ol>
+<p>We talked about how you can tell from the Laurent series above that 0
+is an order 5 pole for the first example and an essential singularity in
+the second.</p>
+<ol start="3" type="1">
+<li>Find the Laurent series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><msup><mi>z</mi><mn>3</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">f(z) = \dfrac{z^3}{(z-1)^2}</annotation></semantics></math>
+centered at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">w=1</annotation></semantics></math>.
+Hint: Use the substitution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>z</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u = z - 1</annotation></semantics></math>
+to simplify
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</li>
+</ol>
+<p>A function might have different Laurent series with the same center
+(unlike power series which are unique). Each Laurent series will
+converge in a different region. It is not hard to show that the region
+of convergence for a Laurent series is always an <a
+href="https://en.wikipedia.org/wiki/Annulus_(mathematics)">annulus</a>,
+but we didn’t prove that in class.</p>
+<ol start="4" type="1">
+<li>Find the Laurent series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>2</mn><mrow><mi>z</mi><mo>−</mo><mn>4</mn></mrow></mfrac><mo>−</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mi>z</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">g(z) = \dfrac{2}{z-4} - \dfrac{1}{z-1}</annotation></semantics></math>
+on the annulus with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">1 &lt; |z| &lt; 4</annotation></semantics></math>.
+Then find a Laurent series on the annulus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>&lt;</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">4 &lt; |z| &lt; \infty</annotation></semantics></math>.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math>
+has a Laurent series
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><msub><mi>a</mi><mi>k</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k = -\infty}^{\infty} a_k (z-w)^k</annotation></semantics></math>
+in an open annulus, then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>i</mi><msub><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\oint_C f(z) \, dz = 2 \pi i a_{-1}</annotation></semantics></math>
+for any simple, closed, piecewise sooth curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+in the annulus that winds around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
+</div>
+<p>We proved this by using Cauchy’s theorem and Cauchy’s integral
+formulas to evaluate
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><msub><mi>a</mi><mi>k</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_C a_k (z-w)^k \, dz</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>,
+and we saw that the only integral that wasn’t zero was when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = -1</annotation></semantics></math>.
+The coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">a_{-1}</annotation></semantics></math>
+is called the <strong>residue</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <h4 id="tentative-schedule-11">Tentative Schedule</h4>

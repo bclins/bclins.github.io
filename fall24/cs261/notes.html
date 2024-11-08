@@ -2681,11 +2681,15 @@ the year. Save the file on your computer and open the data:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;average_temps.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> [line.strip().split(<span class="st">&quot;;&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div>
 <ol type="1">
-<li>Now that you have the data, write a program that converts the data
-from Fahrenheit to Celsius and then saves the data in new file called
-<code>celsius.txt</code>. Recall that the formula to convert Fahrenheit
-to Celsius is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mfrac displaystyle="false"><mn>5</mn><mn>9</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></li>
+<li><p>Now that you have the data, write a program that converts the
+data from Fahrenheit to Celsius and then saves the data in new file
+called <code>celsius_temps.txt</code>. Recall that the formula to
+convert Fahrenheit to Celsius is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mfrac displaystyle="false"><mn>5</mn><mn>9</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></p></li>
+<li><p>Write a program that uses the same data to find the average high
+temperature (in Fahrenheit) for each of the twelve months and then
+writes that information into a file
+<code>monthly_temps.txt</code>.</p></li>
 </ol>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>

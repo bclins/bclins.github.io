@@ -1158,14 +1158,43 @@ for all $z$ in the range of $\gamma$, then $f$ and $g$ have the same number of z
 
 Since zeros are isolated, we can choose a circle around $z_0$ in $U$ that doesn't have any zeros on its boundary.  Let $\gamma$ be a positively oriented parametrization of that circle.  Let $\delta$ be the distance from the closest point on $f \circ \gamma$ to $w_0$. If $|w - w_0| < \delta$, then Rouche's theorem guarantees that $f- w$ has a zero inside $\gamma$ and therefore $w \in f(U)$. $\square$
 
-<!--
+### Fri, Nov 8
+
+We ran out of time last class before we could write down this next corollary of the open mapping principle. 
+
 <div class="Theorem">
 **Maximum Modulus Principle.** If $f$ is a non-constant holomorphic function on an open set $U$, then $|f|$ cannot have a local maximum in $U$. If in addition, $U$ is bounded and $f$ is continuous on the closure of $U$, then the maximum of $|f|$ occurs on the boundary of $U$.  
 </div>
 
 *Proof.* Suppose that $z_0$ is a local maximum, that is, $|f(z_0)| \ge |f(z)|$ for all $z$ in a small disk around $z_0$.  This is a contradiction because $f(B_r(z_0))$ is an open set, so it contains an open disk around $f(z_0)$.  $\square$
--->
 
+A **Laurent series** centered at $w \in \C$ is a series of the form
+$$\sum_{k = -\infty}^\infty a_k (z-w)^k$$
+where the coefficients $a_k$ are complex numbers and $z$ is a complex variable.  We say that a function $f(z)$ has a Laurent series in a domain $D$ if there is a Laurent series that converges absolutely to $f$ for all $z \in D$.  The sum of the terms of a Laurent series with negative powers is called the **principal part** and the sum of terms with nonnegative powers is the **analytic part** of a Laurent series. 
+
+We calculated Laurent series for the following functions in class.  
+
+1. $\dfrac{\cos z}{z^5}$.  
+
+2. $e^{1/z}$.
+
+We talked about how you can tell from the Laurent series above that 0 is an order 5 pole for the first example and an essential singularity in the second.  
+
+3. Find the Laurent series for $f(z) = \dfrac{z^3}{(z-1)^2}$ centered at $w=1$.  Hint: Use the substitution $u = z - 1$ to simplify $f$. 
+
+A function might have different Laurent series with the same center (unlike power series which are unique). Each Laurent series will converge in a different region.  It is not hard to show that the region of convergence for a Laurent series is always an [annulus](https://en.wikipedia.org/wiki/Annulus_(mathematics)), but we didn't prove that in class. 
+
+4. Find the Laurent series for $g(z) = \dfrac{2}{z-4} - \dfrac{1}{z-1}$ on the annulus with $1 < |z| < 4$.  Then find a Laurent series on the annulus $4 < |z| < \infty$. 
+
+<div class="Theorem">
+**Theorem.** If $f(z)$ has a Laurent series $\sum_{k = -\infty}^{\infty} a_k (z-w)^k$ in an open annulus, then 
+$$\oint_C f(z) \, dz = 2 \pi i a_{-1}$$
+for any simple, closed, piecewise sooth curve $C$ in the annulus that winds around $w$.  
+</div>
+
+We proved this by using Cauchy's theorem and Cauchy's integral formulas to evaluate 
+$$\oint_C a_k (z-w)^k \, dz$$
+for every $k$, and we saw that the only integral that wasn't zero was when $k = -1$.  The coefficient $a_{-1}$ is called the **residue** of $f$ at $w$.  
 
 - - - 
 
