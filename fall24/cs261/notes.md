@@ -1904,7 +1904,7 @@ print(x.hours)
 print(x.minutes)
 ```
 
-So far this class is very basic.  Let's add some functionality by adding a method to convert a `Time` object to minutes.  
+So far this class is very basic.  Let's add some functionality by adding a **method** to convert a `Time` object to minutes.  
 
 
 ```python
@@ -1927,11 +1927,15 @@ Now when we initialize a `Time` object, it will have a `.to_minutes()` method th
 
 Here are some exercises. 
 
-1. What happens when you try to print a `Time` object? Could you write a function called `print_time(time_object)` that would do a better job?
+1. What happens when you try to print a `Time` object? Could you write a function called `print_time(time_object)` that would do a better job?  
 
-2. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
+2. Re-write the `print_time()` function as a method of the `Time` class. 
 
+3. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
+
+<!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
+-->
 
 - - - 
 

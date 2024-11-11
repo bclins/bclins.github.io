@@ -1218,12 +1218,14 @@ where $\on{Res}(f,z_k)$ is the residue of $f$ at $z_k$.
 
 We talked about why this theorem is true.  Then we looked at some examples.  
 
-1. $\oint_{|z| = 1} \frac{\cos z}{z^5} \, dz$.
+1. $\oint_{|z| = 1} \dfrac{\cos z}{z^5} \, dz$.
 
 1. Evaluate $\oint_{|z - 2| = 3} \dfrac{e^z}{\sin z} \, dz$. 
 
-1. Let $p, q$ be polynomials such that $q$ has no real roots and the degree of $q$ is at least two more than the degree of $p$.  Use the residue theorem to find a formula for 
-$$\int_{-\infty}^\infty \frac{p(x)}{q(x)} \, dx.$$
+We got bogged down with the second example because we were trying to derive the formula for a residue every time from scratch.  We probably should have proved the following formula as an abstract fact once, and then just used it on both singularities. 
+
+If $f$ has a pole at $z_0$, then for any $k$ at least as big as the order of the pole, $(z-z_0)^k f(z)$ has a removable singularity at $z_0$.  So we could (in theory) find a power series for $(z-z_0)^k f(z)$. Let $g(z)$ be the holomorphic function with that power series.  Then 
+$$\on{Res}(f, z_0)  = \frac{g^{(k-1)} (z_0)}{(k-1)!} = \frac{1}{(k-1)!} \lim_{z \rightarrow z_0} \left( \frac{d^{(k-1)}}{dz^{(k-1)}} (z-z_0)^k f(z)\right)$$
 
 
 - - - 

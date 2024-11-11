@@ -2794,7 +2794,8 @@ using dot-notation:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.hours)</span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.minutes)</span></code></pre></div>
 <p>So far this class is very basic. Let’s add some functionality by
-adding a method to convert a <code>Time</code> object to minutes.</p>
+adding a <strong>method</strong> to convert a <code>Time</code> object
+to minutes.</p>
 <div class="sourceCode" id="cb77"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Time:</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hours, minutes):</span>
@@ -2818,13 +2819,14 @@ that are commonly used on them.</p></li>
 <li><p>What happens when you try to print a <code>Time</code> object?
 Could you write a function called <code>print_time(time_object)</code>
 that would do a better job?</p></li>
+<li><p>Re-write the <code>print_time()</code> function as a method of
+the <code>Time</code> class.</p></li>
 <li><p>Write a function called <code>time_from_minutes(mins)</code> that
 converts a number of minutes to a <code>Time</code> object.</p></li>
-<li><p>Write a function called
-<code>time_difference(time1, time2)</code> that calculates the
-difference between two time objects and returns the result as a time
-object.</p></li>
 </ol>
+<!--
+3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
+-->
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <h4 id="tentative-schedule-12">Tentative Schedule</h4>

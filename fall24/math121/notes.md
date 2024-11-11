@@ -754,9 +754,28 @@ We briefly talked about why this is.  Then we used the app to find a p-value for
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 11 | [7.1][7.1]     | Introducing the t-distribution
-Wed, Nov 13 | [7.1.4][7.1.4] | One sample t-confidence intervals
-Fri, Nov 15 | [7.1.5][7.1.5] | One sample t-tests
+Mon, Nov 11 | [7.1.4][7.1.4] | One sample t-confidence intervals
+Wed, Nov 13 | [7.2][7.2] | Paired data 
+Fri, Nov 15 | [7.3][7.3] | Difference of two means 
+
+### Mon, Nov 11
+
+A **t-distribution confidence interval** is a tool to estimate the value of a population mean ($\mu$):
+$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}.$$
+
+In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table. 
+
+* **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
+
+We talked about how to use the table to find $t$-values.  Then we did the following examples. 
+
+1. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
+
+2. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 90\% confidence interval for the average weight of all HSC students. 
+
+We finished with this workshop.
+
+* **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
 
 - - - 
 
@@ -766,7 +785,7 @@ Fri, Nov 15 | [7.1.5][7.1.5] | One sample t-tests
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 18  | [7.2][7.2] | Paired data 
+Mon, Nov 18  | [7.3][7.3] | Difference of two means 
 Wed, Nov 20  |            | Review
 Fri, Nov 22  |            | **Midterm 3**
 - - - 
@@ -777,7 +796,7 @@ Fri, Nov 22  |            | **Midterm 3**
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Nov 25  | [7.3][7.3] | Difference of two means 
+Mon, Nov 25  |  | Choosing right inference technique
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
@@ -791,9 +810,9 @@ Fri, Nov 29  |  | Thanksgiving break, no class
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Dec 2  | [7.3][7.3] | Difference of two means - con'd 
-Wed, Dec 4  |            | Choosing the right inference technique
-Fri, Dec 6  | [7.4][7.4] | Statistical power
+Mon, Dec 2  | [7.4][7.4] | Statistical power 
+Wed, Dec 4  | [6.3][6.3] | Chi-squared statistic
+Fri, Dec 6  | [6.4][6.4] | Testing association with chi-squared
 Mon, Dec 9  |  | Last day, recap & review
 
 
