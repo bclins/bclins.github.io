@@ -1208,6 +1208,24 @@ Mon, Nov 11 |  [9.2][9.2] | Residues
 Wed, Nov 13 |  | Review
 Fri, Nov 15 |  | **Midterm 2**
 
+### Mon, Nov 11
+
+<div class="Theorem">
+**Residue Theorem.** If $f$ is holomorphic in an open simply connected domain $D$, except at some isolated singularities, and $\gamma$ is a positively oriented, simple, closed, piecewise smooth path in $D$ that avoids the singularities of $f$, then there are only finitely many singularities $z_1, \ldots, z_n$ inside $\gamma$ and 
+$$\int_\gamma f(z) \, dz = 2 \pi i \sum_{k = 1}^n \on{Res}(f, z_k)$$
+where $\on{Res}(f,z_k)$ is the residue of $f$ at $z_k$. 
+</div>
+
+We talked about why this theorem is true.  Then we looked at some examples.  
+
+1. $\oint_{|z| = 1} \frac{\cos z}{z^5} \, dz$.
+
+1. Evaluate $\oint_{|z - 2| = 3} \dfrac{e^z}{\sin z} \, dz$. 
+
+1. Let $p, q$ be polynomials such that $q$ has no real roots and the degree of $q$ is at least two more than the degree of $p$.  Use the residue theorem to find a formula for 
+$$\int_{-\infty}^\infty \frac{p(x)}{q(x)} \, dx.$$
+
+
 - - - 
 
 ### Week 13 Notes

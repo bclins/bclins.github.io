@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 10 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project10.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, November 15. }
+
+\subsection*{Deck of Cards}
+
+A regular deck of playing cards has 52 cards.  There are 4 suits: clubs $\clubsuit$, diamonds $\diamondsuit$, hearts $\heartsuit$, and spades $\spadesuit$, and each suit has thirteen ranks: 2 through 10, plus jacks, queens, kings, and aces.  In this project, you will create two classes for working with a deck of cards.  
+
+
+\begin{enumerate}
+
+\item Create a class called \verb|Card|.  Card objects should have two attributes, one for the suit and one for the rank.  The \verb|__init__| method should input two strings, one for the suit (\verb|'C'|, \verb|'D'|, \verb|'H'|, or \verb|'S'|) and the other for the rank. 
+
+\item Define the \verb|__str__| method for the \verb|Card| class.  It should return a string with the card object's suit \& rank in the following format.  Use one of these characters ($\clubsuit, \diamondsuit, \heartsuit, \spadesuit$) for the suit followed by the letter or number corresponding to the rank.  So, the jack of hearts would be $\heartsuit$J, and the 10 of diamonds would be $\diamondsuit$10. 
+
+\item Create a class called \verb|Deck|. Deck objects should have a \verb|card_list| attribute that contains all 52 cards in the deck.  The constructor function should initialize all 52 cards as instances of the \verb|Card| class. 
+
+\item Add a method to the \verb|Deck| class called \verb|.shuffle()|. When you define the \verb|shuffle()| method, it should only take \verb|self| as an argument. It should use the \verb|random.shuffle| function to shuffle the \verb|card_list| of a deck object.  You'll need to import the \verb|random| module to do this. 
+
+\item Add a method called \verb|.deal_cards(n)| to the \verb|Deck| class.  This method should pop $n$ cards off of the \verb|card_list| and then return a list containing those $n$ cards.  
+
+\item Add a method called \verb|.replace_card(card)|.  This method should place a card back into the \verb|card_list| of a deck object.  It should also have an optional argument \verb|bottom| which is \verb|False| by default.  If it is set to \verb|True|, then the card should be placed on the bottom of the deck. Since the list methods \verb|.pop()| and \verb|.append()| remove and replace elements at the end of a list, you can think of the end of \verb|card_list| as the ``top" of the deck, and the front as the ``bottom".  Hint: you can use the \verb|.insert(0, elem)| method to add an element to the front of a list. 
+
+\item To finish the project, create a deck object and use it to simulate dealing a hand of 5 cards. Check whether every card in the hand has the same suit (i.e., check if the hand would be a flush in poker).  Then return the cards to the deck and shuffle it.  Simulate this 10{,}000 times.  How many of the hands in your simulation were flushes?  
+
+
+
+\end{enumerate}
+
+
+\end{document}
+

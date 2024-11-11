@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{soul}
+\usepackage[empty]{fullpage}
+
+\begin{document}
+\section*{Project 10 \hfill CS 261}
+
+\textit{Save your program for this project as} \verb|<emailID>_project10.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, November 15. }
+
+\subsection*{Deck of Cards}
+
+A regular deck of playing cards has 52 cards.  There are 4 suits: clubs, diamonds, hearts, and spades, and each suit has thirteen cards, 2 through 10 plus jacks, queens, kings, and aces.  The Python file linked here:
+
+%There are lots of variations of the card game poker, but they almost all follow the same basic rules for deciding which hand of cards wins.  A set of five cards is ranked according to which of the following features it has. 
+%
+%\begin{enumerate}
+%\item \textbf{Straight flush}. Both a straight and flush.
+%\item \textbf{Four of a kind}. Four cards with the same rank.
+%\item \textbf{Full house}. A three-of-a-kind and also a separate pair.
+%\item \textbf{Flush}. All five cards have the same suit.
+%\item \textbf{Straight}. All five cards have ranks in an unbroken sequence. Aces can count high (e.g., 10-Jack-Queen-King-Ace) or low (Ace-2-3-4-5).
+%\item \textbf{Three of a kind}. Three cards with the same rank.
+%\item \textbf{Two pair}. Two different pairs.
+%\item \textbf{Pair}. Two cards that have the same rank.
+%\item \textbf{Nothing}. None of the options above apply.
+%\end{enumerate}
+%
+%Straight flushes are the best, and nothing is the worst. For this project, you will save the following Python file in the same folder as your project, then import the module \verb|cards|.  This module contains a class called \verb|Card| and its objects represent playing cards.  
+
+\begin{center}
+\verb|https://bclins.github.io/fall24/cs261/cards.py|
+\end{center}
+
+\noindent
+contains a class called \verb|Card| which allows you to construct playing card objects.  You should save your file and the \verb|cards.py| file in the same folder.  Then import cards into your program. To complete this project you will need to do the following things.
+
+\begin{enumerate}
+\item Create a class called \verb|Deck|. Deck objects should have a \verb|card_list| attribute that contains all 52 cards in the deck.  The constructor function should initialize all 52 cards as instances of the \verb|Card| class. 
+
+\item Add a method to the \verb|Deck| class called \verb|shuffle()|. When you define the \verb|shuffle()| method, it should only take \verb|self| as an argument. It should use the \verb|random.shuffle| function to shuffle the \verb|card_list| of a deck object.  You'll need to import the \verb|random| module to do this. 
+
+\item Add a method called \verb|deal_cards(n)| to the \verb|Deck| class.  This method should pop $n$ cards off of the \verb|card_list| and then return a list containing those $n$ cards.  
+
+\item The organizers of the conference plan on charging \$20 for everyone who registers, except seniors who only pay \$10.  In addition, they are charging \$12 for anyone who signed up for lunch at the conference.  For people who plan to eat dinner at the conference, there are three different meal options: beef, chicken, or vegetarian.  The beef dinner costs \$32, while the chicken and vegetarian dinners both cost \$28. Write a function \verb|registration_fees(person)| to calculate how much each person owes.  Your function should input a dictionary with the registration information for one person, and output the total cost of their registration plus meals. 
+
+\item Write a function \verb|meal_counts(registration_data)| that determines how many of each dinner option (beef, chicken, and vegetarian) is needed, and also how many lunches will be needed. 
+
+\item The caterers for the conference would like to know the names of the people who ordered vegetarian meals so that they can bring those meals out separately.  Write a function called \verb|get_vegetarians(registration_data)| that returns a list with the names of everyone who ordered a vegetarian dinner. 
+
+
+
+\end{enumerate}
+
+\subsubsection*{Hints}
+
+Be sure to carefully inspect how the data is stored in the \verb|registration_data| dictionary.  Make note of the types for each value. 
+
+\end{document}
+

@@ -1860,10 +1860,78 @@ $$C = \tfrac{5}{9}(F - 32).$$
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 11 |  |
+Mon, Nov 11 | [TP14][TP14] | Introduction to classes
 Wed, Nov 13 |  |
 Thu, Nov 14 |  |
 Fri, Nov 15 |  |
+
+### Mon, Nov 11
+
+Up to now, when we need a data type to represent complicated data, we've either used a list or a dictionary (or maybe a string, tuple, or set).  But sometimes it would be nice if we could create our own custom data types.  **Object-oriented programming** is a programming paradigm that allows users to create new data types that include both data and functions for working with that data.  Python uses **class objects** to implement object oriented programming.  
+
+Before we construct our first Python class, let's look at some data.  The files [sunrise.tsv](sunrise.tsv) and [sunset.tsv](sunset.tsv) contain tables stored in tab separated value format with the times of sunrise and sunset for every day of the year (2024) here at Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). Here is a link if you want to [preview the sunset data](sunset.html).
+
+If we want to write a program to work with sunset and sunrise times, we could convert all of this data to integers (minutes).  That would work, but then we would also need to write some helper functions.  For example, we would need:
+
+1. A function to convert a string like `"1:30"` to an integer number of minutes. 
+1. A function to convert a number of minutes like 90 to a string like `"1:30"`. 
+
+We might also want functions to find the difference and sum of two different times:
+
+1. We could create a function called `time_difference()` that would find the difference between two time strings like `"1:30"` and `"2:45"` and return `"1:15"`.  
+
+1. We could create a function called `add_times()` that would add times together.  
+
+There are other functions we could probably think of too.  Since all of these functions are only for working with one special type of data, a better approach would be to create a Python class.  A **class** is a custom data type that you can define in Python.  Usually we use a capitalized word as the name of a class, and then define the class using code like the following:
+
+```python
+class Time:
+    def __init__(self, hours, minutes):
+        self.hours = hours
+        self.minutes = minutes
+```
+
+This is a very basic class.  The special function called `__init__` inside the class is the **constructor function** which tells Python how to construct an **instance** of the `Time` class.  To call this special function, all we need to do is this:
+
+```python
+x = Time(5,40)
+```
+
+Now the variable `x` is an instance of the `Time` class.  We also say that `x` is a `Time` **object**.  When we initialized this `Time` object, we passed two arguments, hours and minutes.  Then we told Python to set the values of `self.hours` and `self.minutes` to those two numbers.  Now the object `x` has two **attributes**, `.hours` and `.minutes`.  We can access the values of these attributes using dot-notation:
+
+```python
+print(x.hours)
+print(x.minutes)
+```
+
+So far this class is very basic.  Let's add some functionality by adding a method to convert a `Time` object to minutes.  
+
+
+```python
+class Time:
+    def __init__(self, hours, minutes):
+        self.hours = hours
+        self.minutes = minutes
+    def to_minutes(self):
+        return 60 * self.hours + self.minutes
+
+```
+
+Now when we initialize a `Time` object, it will have a `.to_minutes()` method that we can use to convert it to an integer.  Things to know about objects:
+
+1. Objects are mutable.  Try changing the value of the hours or minutes of x. 
+
+2. Classes are a way to create new types.  What happens when you try to find `type(x)`?  
+
+3. Classes are a way to organize new data types and the functions that are commonly used on them.  
+
+Here are some exercises. 
+
+1. What happens when you try to print a `Time` object? Could you write a function called `print_time(time_object)` that would do a better job?
+
+2. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
+
+3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 
 - - - 
 

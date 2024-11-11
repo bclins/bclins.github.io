@@ -47,7 +47,7 @@ Week | Topic                      | Notes | Projects
 8  | Lists                                | [Week 08](notes.html#week-8-notes)  | [Project 7](project7.pdf)
 9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  | [Project 8](project8.pdf)
 10 | Tuples                               | [Week 10](notes.html#week-10-notes) | [Project 9](project9.pdf)
-11 | File                                 | [Week 11](notes.html#week-11-notes) | 
+11 | File                                 | [Week 11](notes.html#week-11-notes) | [Project 10](project10.pdf)
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
 13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 
 14 | Classes and methods                  | [Week 14](notes.html#week-14-notes) | 

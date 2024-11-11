@@ -54,8 +54,8 @@ Week | Topic                      | Notes | Projects
 9  | Confidence intervals, **Midterm 2**            | [Week 09](notes.html#week-9-notes)  |
 10 | Hypothesis testing                             | [Week 10](notes.html#week-10-notes) | [Project 1](Project1.pdf)
 11 | Comparing two proportions                      | [Week 11](notes.html#week-11-notes) | [Project 2](Project2.pdf)
-12 | Inference about means                          | [Week 12](notes.html#week-12-notes) |
-13 | Pair data, **Midterm 3**                       | [Week 13](notes.html#week-13-notes) | [Project 3](Project3.pdf)
+12 | Inference about means                          | [Week 12](notes.html#week-12-notes) | [Project 3](Project3.pdf)
+13 | Pair data, **Midterm 3**                       | [Week 13](notes.html#week-13-notes) |
 14 | Comparing two means                            | [Week 14](notes.html#week-14-notes) | [Project 4](Project4.pdf)
 15 | Choosing the right inference method            | [Week 15](notes.html#week-15-notes) | 
 
