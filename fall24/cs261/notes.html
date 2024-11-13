@@ -2824,6 +2824,53 @@ the <code>Time</code> class.</p></li>
 <li><p>Write a function called <code>time_from_minutes(mins)</code> that
 converts a number of minutes to a <code>Time</code> object.</p></li>
 </ol>
+<h3 id="wed-nov-13">Wed, Nov 13</h3>
+<p>We introduced <strong>magic methods</strong> in Python which are
+special methods with double underscore names that tell Python how to do
+common things you might want to do with objects like how to convert them
+to strings or add them together. We looked at these three example magic
+methods.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Magic Method
+</th>
+<th>
+Purpose
+</th>
+</tr>
+<tr>
+<td>
+<code>__str__</code>
+</td>
+<td>
+Tells Python how to convert the objects into strings.
+</td>
+</tr>
+<tr>
+<td>
+<code>__add__</code>
+</td>
+<td>
+Tells Python how to add objects with the <code>+</code> operator.
+</td>
+</tr>
+<tr>
+<td>
+<code>__lt__</code>
+</td>
+<td>
+Tells Python how to decide if <code>object1 &lt; object2</code>.
+</td>
+</tr>
+</table>
+</center>
+<p>We implemented each of these methods for our <code>Time</code> class.
+Then we tried to import the file <code>time.py</code> into another
+program. This didn’t work and I was a stumped. Luckily Gyabaah pointed
+out that Python has a built in <code>time</code> library that overrode
+my custom <code>time.py</code> module.</p>
 <!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 -->

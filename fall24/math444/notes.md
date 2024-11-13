@@ -1222,10 +1222,30 @@ We talked about why this theorem is true.  Then we looked at some examples.
 
 1. Evaluate $\oint_{|z - 2| = 3} \dfrac{e^z}{\sin z} \, dz$. 
 
-We got bogged down with the second example because we were trying to derive the formula for a residue every time from scratch.  We probably should have proved the following formula as an abstract fact once, and then just used it on both singularities. 
+We got bogged down with the second example because we were trying to derive the formula for a residue every time from scratch.  
 
-If $f$ has a pole at $z_0$, then for any $k$ at least as big as the order of the pole, $(z-z_0)^k f(z)$ has a removable singularity at $z_0$.  So we could (in theory) find a power series for $(z-z_0)^k f(z)$. Let $g(z)$ be the holomorphic function with that power series.  Then 
-$$\on{Res}(f, z_0)  = \frac{g^{(k-1)} (z_0)}{(k-1)!} = \frac{1}{(k-1)!} \lim_{z \rightarrow z_0} \left( \frac{d^{(k-1)}}{dz^{(k-1)}} (z-z_0)^k f(z)\right)$$
+### Wed, Nov 13
+
+Since we got held up last time with some tedious residue computations, I introduced the following formula today. 
+
+<div class="Theorem">
+**Theorem (Residue Formula).** If $f$ has a pole at $w$ with order no more than $m$, then
+$$\on{Res}(f, w)  = \frac{1}{(m-1)!} \lim_{z \rightarrow w} \left[ \left(\frac{d}{dz}\right)^{(m-1)} (z-w)^m f(z)\right].$$
+</div>
+
+*Proof.*  This follows from the fact that $(z-w)^m f(z)$ has a removable singularity at $w$.  So we could (in theory) find a power series for $(z-w)^m f(z)$. Then the residue corresponds the $(m-1)$-th order coefficient of the power series. $\square$
+
+We applied the formula to the following examples:
+
+1. Find the orders and residues of each pole of $f(z) = \dfrac{1}{(z-1)^2 (z-3)}$. 
+
+2. Evaluate $\displaystyle \oint_{|z-2|=3} \dfrac{z}{\sin z} \, dz$. 
+
+We also did some review problems to prepare for the midterm including:
+
+3. Use Rouche's theorem to determine how many zeros $f(z) = z^7 + 3z^2 + 1$ has in the annulus with $1 \le |z| \le 2$.  
+
+4. [Exercise 9.2](https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.44)
 
 
 

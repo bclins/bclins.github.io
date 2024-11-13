@@ -1645,7 +1645,29 @@ interval. So we have to be very careful about using a confidence
 interval or hypothesis test to say more than what it actually says.</p>
 <p>After that, we talked about comparing the averages of two correlated
 variables. You can use one sample t-distribution methods to do this as
-long as you focus on the <strong>matched pairs differences</strong>.</p>
+long as you focus on the <strong>matched pairs differences</strong>. The
+key is to focus on the difference or gap between the variables. For a
+<strong>matched pairs t-test</strong>, we always use the following:</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Hypotheses
+</th>
+<th>
+Test Statistic
+</th>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi>μ</mi><mtext mathvariant="normal">gap</mtext></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo><msub><mi>μ</mi><mtext mathvariant="normal">gap</mtext></msub><mo>≠</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l} H_0: \mu_\text{gap} = 0 \\ H_A: \mu_\text{gap} \ne 0 \end{array}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><mspace width="0.222em"></mspace><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mtext mathvariant="normal">gap</mtext></msub><mo>−</mo><mn>0</mn><mspace width="0.222em"></mspace></mrow><mrow><mi>s</mi><mi>/</mi><msqrt><mi>N</mi></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">t = \dfrac{~ \bar{x}_\text{gap} - 0 ~}{s/\sqrt{N}}</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
 <ol type="1">
 <li><p>Does the data in this <a
 href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">sample
@@ -1653,6 +1675,8 @@ of couples getting married</a> provide significant evidence that
 husbands are older than their wives on average? What is the average age
 gap? Use a one-sample hypothesis test and confidence interval for the
 average difference.</p></li>
+<li><p>Are the necessary assumptions for a t-test and a t-confidence
+interval satisfied in the previous example?</p></li>
 <li><p>Do helium filled footballs go farther when you kick them? An
 article in the <em>Columbus Dispatch</em> from 1993 described the
 following experiment. One football was filled with helium and another

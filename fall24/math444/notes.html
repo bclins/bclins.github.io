@@ -2811,25 +2811,48 @@ examples.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>3</mn></mrow></msub><mfrac displaystyle="true"><msup><mi>e</mi><mi>z</mi></msup><mrow><mo>sin</mo><mi>z</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_{|z - 2| = 3} \dfrac{e^z}{\sin z} \, dz</annotation></semantics></math>.</p></li>
 </ol>
 <p>We got bogged down with the second example because we were trying to
-derive the formula for a residue every time from scratch. We probably
-should have proved the following formula as an abstract fact once, and
-then just used it on both singularities.</p>
-<p>If
+derive the formula for a residue every time from scratch.</p>
+<h3 id="wed-nov-13">Wed, Nov 13</h3>
+<p>Since we got held up last time with some tedious residue
+computations, I introduced the following formula today.</p>
+<div class="Theorem">
+<p><strong>Theorem (Residue Formula).</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 has a pole at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>,
-then for any
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
-at least as big as the order of the pole,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(z-z_0)^k f(z)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+with order no more than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Res</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><munder><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><mi>w</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>d</mi><mrow><mi>d</mi><mi>z</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{Res}(f, w)  = \frac{1}{(m-1)!} \lim_{z \rightarrow w} \left[ \left(\frac{d}{dz}\right)^{(m-1)} (z-w)^m f(z)\right].</annotation></semantics></math></p>
+</div>
+<p><em>Proof.</em> This follows from the fact that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(z-w)^m f(z)</annotation></semantics></math>
 has a removable singularity at
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>z</mi><mn>0</mn></msub><annotation encoding="application/x-tex">z_0</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
 So we could (in theory) find a power series for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(z-z_0)^k f(z)</annotation></semantics></math>.
-Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(z)</annotation></semantics></math>
-be the holomorphic function with that power series. Then
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Res</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><munder><mo>lim</mo><mrow><mi>z</mi><mo>→</mo><msub><mi>z</mi><mn>0</mn></msub></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msup><mi>d</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mi>d</mi><msup><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Res}(f, z_0)  = \frac{g^{(k-1)} (z_0)}{(k-1)!} = \frac{1}{(k-1)!} \lim_{z \rightarrow z_0} \left( \frac{d^{(k-1)}}{dz^{(k-1)}} (z-z_0)^k f(z)\right)</annotation></semantics></math></p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>m</mi></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(z-w)^m f(z)</annotation></semantics></math>.
+Then the residue corresponds the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(m-1)</annotation></semantics></math>-th
+order coefficient of the power series.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+<p>We applied the formula to the following examples:</p>
+<ol type="1">
+<li><p>Find the orders and residues of each pole of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo>−</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(z) = \dfrac{1}{(z-1)^2 (z-3)}</annotation></semantics></math>.</p></li>
+<li><p>Evaluate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mn>3</mn></mrow></msub><mfrac displaystyle="true"><mi>z</mi><mrow><mo>sin</mo><mi>z</mi></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\displaystyle \oint_{|z-2|=3} \dfrac{z}{\sin z} \, dz</annotation></semantics></math>.</p></li>
+</ol>
+<p>We also did some review problems to prepare for the midterm
+including:</p>
+<ol start="3" type="1">
+<li><p>Use Rouche’s theorem to determine how many zeros
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>z</mi><mn>7</mn></msup><mo>+</mo><mn>3</mn><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(z) = z^7 + 3z^2 + 1</annotation></semantics></math>
+has in the annulus with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1 \le |z| \le 2</annotation></semantics></math>.</p></li>
+<li><p><a
+href="https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.44">Exercise
+9.2</a></p></li>
+</ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <h4 id="tentative-schedule-12">Tentative Schedule</h4>

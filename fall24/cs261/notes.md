@@ -1935,11 +1935,24 @@ Here are some exercises.
 
 ### Wed, Nov 13
 
-Introduce magic methods like add and subtract.  Define a vector class?  Definitely need a class that has a complex attribute like a list.  
+We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.
+
+<center>
+<table class="bordered">
+<tr><th>Magic Method</th><th>Purpose</th></tr>
+<tr><td>`__str__`</td><td>Tells Python how to convert the objects into strings.</td></tr>
+<tr><td>`__add__`</td><td>Tells Python how to add objects with the `+` operator.</td></tr>
+<tr><td>`__lt__`</td><td>Tells Python how to decide if `object1 < object2`.</td></tr>
+</table>
+</center>
+
+We implemented each of these methods for our `Time` class.  Then we tried to import the file `time.py` into another program.  This didn't work and I was a stumped.  Luckily Gyabaah pointed out that Python has a built in `time` library that overrode my custom `time.py` module.   
 
 <!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 -->
+
+
 
 - - - 
 
