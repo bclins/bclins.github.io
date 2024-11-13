@@ -1228,6 +1228,7 @@ If $f$ has a pole at $z_0$, then for any $k$ at least as big as the order of the
 $$\on{Res}(f, z_0)  = \frac{g^{(k-1)} (z_0)}{(k-1)!} = \frac{1}{(k-1)!} \lim_{z \rightarrow z_0} \left( \frac{d^{(k-1)}}{dz^{(k-1)}} (z-z_0)^k f(z)\right)$$
 
 
+
 - - - 
 
 ### Week 13 Notes

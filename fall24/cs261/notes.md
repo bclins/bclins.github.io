@@ -1933,6 +1933,10 @@ Here are some exercises.
 
 3. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
 
+### Wed, Nov 13
+
+Introduce magic methods like add and subtract.  Define a vector class?  Definitely need a class that has a complex attribute like a list.  
+
 <!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 -->

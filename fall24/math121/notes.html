@@ -1607,11 +1607,63 @@ href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xl
 data</a> to make a 90% confidence interval for the average weight of all
 HSC students.</p></li>
 </ol>
-<p>We finished with this workshop.</p>
+<p>We also did this workshop.</p>
 <ul>
 <li><strong>Workshop:</strong> <a
 href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf">Quarters</a></li>
 </ul>
+<p>t-distribution methods require the following assumptions:</p>
+<ol type="1">
+<li><p><strong>No Bias.</strong> Data should be a simple random sample
+from the population.</p></li>
+<li><p><strong>Normality.</strong> The sampling distribution for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+should be normal. This tends to be true if the sample size is big. Here
+is a quick rule of thumb:</p>
+<ul>
+<li><strong>Large samples</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">N \ge 30</annotation></semantics></math>,
+then the normality assumption is probably reasonable as long as the data
+isn’t extremely skewed or has large outliers.<br />
+</li>
+<li><strong>Small samples</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&lt;</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">N &lt; 30</annotation></semantics></math>,
+then even a little skew or outliers could mess up the p-values or
+confidence levels you get from the t-distribution formulas.</li>
+</ul></li>
+</ol>
+<h3 id="wed-nov-13">Wed, Nov 13</h3>
+<p>One interesting mistake came up in a couple of the Project 1
+write-ups. The confidence interval for the difference in survival rates
+for the two groups of monkeys ranges from 3% lower with calorie
+restriction to 35% higher. Several people said that because most of the
+interval is positive, that means we can conclude that calorie
+restriction <em>probably</em> increases survival rates. That is actually
+not true! The mathematics that lets us make a confidence interval don’t
+tell us anything about where the true parameter falls within the
+interval. So we have to be very careful about using a confidence
+interval or hypothesis test to say more than what it actually says.</p>
+<p>After that, we talked about comparing the averages of two correlated
+variables. You can use one sample t-distribution methods to do this as
+long as you focus on the <strong>matched pairs differences</strong>.</p>
+<ol type="1">
+<li><p>Does the data in this <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">sample
+of couples getting married</a> provide significant evidence that
+husbands are older than their wives on average? What is the average age
+gap? Use a one-sample hypothesis test and confidence interval for the
+average difference.</p></li>
+<li><p>Do helium filled footballs go farther when you kick them? An
+article in the <em>Columbus Dispatch</em> from 1993 described the
+following experiment. One football was filled with helium and another
+identical football with regular air. Each football was kicked 39 times
+and the two footballs alternated with each kick. The distances traveled
+by the balls on each kick is recorded in this spreadsheet: <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx">Helium
+filled footballs</a>.</p>
+<p>Does this data provide statistically significant evidence that helium
+filled footballs go farther when kicked?</p></li>
+</ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <h4 id="tentative-schedule-12">Tentative Schedule</h4>

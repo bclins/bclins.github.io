@@ -347,6 +347,7 @@ We talked about the **addition** and **multiplication rules** for **disjoint** a
 * **Workshop**: [Basic probability rules](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BasicProbabilityRules2.pdf)
 
 
+
 - - - 
 
 ### Week 7 Notes
@@ -773,9 +774,31 @@ We talked about how to use the table to find $t$-values.  Then we did the follow
 
 2. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 90\% confidence interval for the average weight of all HSC students. 
 
-We finished with this workshop.
+We also did this workshop.
 
 * **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
+
+t-distribution methods require the following assumptions:
+
+1. **No Bias.** Data should be a simple random sample from the population.
+
+2. **Normality.** The sampling distribution for $\bar{x}$ should be normal. This tends to be true if the sample size is big.  Here is a quick rule of thumb:
+
+    * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
+    * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
+
+
+### Wed, Nov 13
+
+One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  
+
+After that, we talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  
+
+1. Does the data in this [sample of couples getting married](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) provide significant evidence that husbands are older than their wives on average?  What is the average age gap?  Use a one-sample hypothesis test and confidence interval for the average difference. 
+
+2. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx).
+
+    Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
 - - - 
 
