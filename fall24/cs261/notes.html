@@ -2711,13 +2711,15 @@ href="https://allendowney.github.io/ThinkPython/chap14.html">TP14</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 13</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap15.html">TP15</a></td>
+<td style="text-align: left;">Magic methods</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Nov 14</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap15.html">TP15</a></td>
+<td style="text-align: left;">Static versus instance methods</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Nov 15</td>
@@ -2870,9 +2872,146 @@ Tells Python how to decide if <code>object1 &lt; object2</code>.
 Then we tried to import the file <code>time.py</code> into another
 program. This didn’t work and I was a stumped. Luckily Gyabaah pointed
 out that Python has a built in <code>time</code> library that overrode
-my custom <code>time.py</code> module.</p>
+my custom <code>time.py</code> module. So I renamed <code>time.py</code>
+to <code>my_time.py</code> and we were good to go.</p>
+<p>We finished by reading a tab-separated file with the <a
+href="sunset.html">sunset data</a> and converting each sunset to a time
+object.</p>
 <!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
+-->
+<h3 id="thu-nov-14">Thu, Nov 14</h3>
+<p>Suppose we create a class called Length that constructs Length
+objects with two attributes: a value that is a number and units that are
+strings like <code>"inches"</code>, <code>"feet"</code>,
+<code>"yards"</code>, <code>"miles"</code>, <code>"meters"</code>,
+etc.</p>
+<ol type="1">
+<li><p>Suppose we want to create a method for this class called
+<code>convert_to()</code> as shown below.</p>
+<div class="sourceCode" id="cb78"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Length:</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value, units):</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.units <span class="op">=</span> units</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> convert_to(<span class="va">self</span>, new_units):</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>        conversion_factor <span class="op">=</span> {(<span class="st">&quot;inches&quot;</span>, <span class="st">&quot;feet&quot;</span>): <span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, (<span class="st">&quot;feet&quot;</span>, <span class="st">&quot;inches&quot;</span>): <span class="dv">12</span>}</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.value <span class="op">*=</span> conversion_factor[<span class="va">self</span>.units, new_units]</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.units <span class="op">=</span> new_units</span></code></pre></div>
+<p>How would we call this method for a class object
+<code>x = Length(9, "inches")</code>?</p>
+<details>
+<ol type="a">
+<li><code>convert_to(x, "feet")</code></li>
+<li><code>"feet".convert_to(x)</code></li>
+<li><strong><code>x.convert_to("feet")</code></strong> &lt;– This is the
+best way to call the method.</li>
+<li><code>Length.convert_to("feet")</code></li>
+<li><strong><code>Length.convert_to(x, "feet")</code></strong> &lt;– But
+this also works!</li>
+</ol>
+</details></li>
+</ol>
+<p>Any method that has the special variable <code>self</code> as its
+first parameter is called an <strong>instance method</strong> and you
+should call these method with the following syntax:</p>
+<center>
+<span style="color:blue"><strong>class_object</strong></span>.<span
+style="color:red"><strong>class_method</strong></span>(<em>any
+additional arguments</em>)
+</center>
+<p>The <span style="color:blue"><strong>class_object</strong></span>
+gets passed into the <span
+style="color:red"><strong>class_method</strong></span> as
+<code>self</code>. But this also works (and is equivalent):</p>
+<center>
+<strong>Class_name</strong>.<span
+style="color:red"><strong>class_method</strong></span>(<span
+style="color:blue"><strong>class_object</strong></span>, <em>any
+additional arguments</em>)
+</center>
+<p>It is also possible to write methods that don’t input the special
+<code>self</code> variable. A method that doesn’t input
+<code>self</code> is called a <strong>static method</strong>. Static
+methods are very common in some languages, but seem to be less common in
+Python. But sometimes it is helpful to avoid name collisions if a
+function that goes with a class is included as a static method instead
+of being a standalone function.</p>
+<div class="sourceCode" id="cb79"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Time:</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hours, minutes):</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hours <span class="op">=</span> hours</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.minutes <span class="op">=</span> minutes</span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an instance method:</span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> to_minutes(<span class="va">self</span>):</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">60</span> <span class="op">*</span> <span class="va">self</span>.hours <span class="op">+</span> <span class="va">self</span>.minutes</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is a static method:</span></span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> from_minutes(mins):</span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Time(mins <span class="op">//</span> <span class="dv">60</span>, mins <span class="op">%</span> <span class="dv">60</span>)</span></code></pre></div>
+<p>To call a static method like <code>from_minutes()</code>, you use the
+name of the class followed by the method name:</p>
+<center>
+<strong>Class_name</strong>.<span
+style="color:red"><strong>class_method</strong></span>(<em>any
+arguments</em>)
+</center>
+<ol start="2" type="1">
+<li>How would you call the static method <code>from_minutes()</code>
+above to convert 75 minutes to a Time object?</li>
+</ol>
+<p>Just like any other functions in Python, methods can be <a
+href="#:~:text=pure%20function">pure</a> or <a
+href="#:~:text=impure%20function">impure</a>. It is very common for
+instance methods to not return any value, but instead mutate the object
+in place.</p>
+<ol start="3" type="1">
+<li>Which of the following four categories describes the method
+<code>convert_to</code> from the Length class? Try rewriting the method
+the other three ways.</li>
+</ol>
+<center>
+<table class="bordered">
+<tr>
+<th>
+ 
+</th>
+<th>
+Mutate in place
+</th>
+<th>
+Return new object
+</th>
+</tr>
+<tr>
+<th>
+Instance method
+</th>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+<tr>
+<th>
+Static method
+</th>
+<td>
+?
+</td>
+<td>
+?
+</td>
+</tr>
+</table>
+</center>
+<!--
+### Fri, Nov 15 
+
+Today we did an in-class project where we implemented a rational numbers class.  Recall that rational numbers are fractions.  
 -->
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>

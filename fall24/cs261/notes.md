@@ -1861,8 +1861,8 @@ $$C = \tfrac{5}{9}(F - 32).$$
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 11 | [TP14][TP14] | Introduction to classes
-Wed, Nov 13 |  |
-Thu, Nov 14 |  |
+Wed, Nov 13 | [TP15][TP15] | Magic methods
+Thu, Nov 14 | [TP15][TP15] | Static versus instance methods
 Fri, Nov 15 |  |
 
 ### Mon, Nov 11
@@ -1946,13 +1946,101 @@ We introduced **magic methods** in Python which are special methods with double 
 </table>
 </center>
 
-We implemented each of these methods for our `Time` class.  Then we tried to import the file `time.py` into another program.  This didn't work and I was a stumped.  Luckily Gyabaah pointed out that Python has a built in `time` library that overrode my custom `time.py` module.   
+We implemented each of these methods for our `Time` class.  Then we tried to import the file `time.py` into another program.  This didn't work and I was a stumped.  Luckily Gyabaah pointed out that Python has a built in `time` library that overrode my custom `time.py` module.  So I renamed `time.py` to `my_time.py` and we were good to go.  
+
+We finished by reading a tab-separated file with the [sunset data](sunset.html) and converting each sunset to a time object.   
 
 <!--
 3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 -->
 
+### Thu, Nov 14
 
+Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
+
+1. Suppose we want to create a method for this class called `convert_to()` as shown below.
+
+    ```python
+    class Length:
+        def __init__(self, value, units):
+            self.value = value
+            self.units = units
+        def convert_to(self, new_units):
+            conversion_factor = {("inches", "feet"): 1/12, ("feet", "inches"): 12}
+            self.value *= conversion_factor[self.units, new_units]
+            self.units = new_units
+    ```
+
+    How would we call this method for a class object `x = Length(9, "inches")`? 
+        
+    <details>
+
+    a. `convert_to(x, "feet")`
+    a. `"feet".convert_to(x)`
+    a. **`x.convert_to("feet")`** <-- This is the best way to call the method.
+    a. `Length.convert_to("feet")`
+    a. **`Length.convert_to(x, "feet")`** <-- But this also works!
+
+    </details>
+
+Any method that has the special variable `self` as its first parameter is called an **instance method** and you should call these method with the following syntax:
+
+<center>
+<span style="color:blue">**class_object**</span>.<span style="color:red">**class_method**</span>(*any additional arguments*)
+</center>
+
+The <span style="color:blue">**class_object**</span> gets passed into the <span style="color:red">**class_method**</span> as `self`.  But this also works (and is equivalent):
+
+
+<center>
+**Class_name**.<span style="color:red">**class_method**</span>(<span style="color:blue">**class_object**</span>, *any additional arguments*)
+</center>
+
+It is also possible to write methods that don't input the special `self` variable.  A method that doesn't input `self` is called a **static method**.  Static methods are very common in some languages, but seem to be less common in Python.  But sometimes it is helpful to avoid name collisions if a function that goes with a class is included as a static method instead of being a standalone function.  
+
+```python
+class Time:
+    def __init__(self, hours, minutes):
+        self.hours = hours
+        self.minutes = minutes
+
+    # This is an instance method:
+    def to_minutes(self):
+        return 60 * self.hours + self.minutes
+
+    # This is a static method:
+    def from_minutes(mins):
+        return Time(mins // 60, mins % 60)
+
+```
+
+To call a static method like `from_minutes()`, you use the name of the class followed by the method name:
+
+<center>
+**Class_name**.<span style="color:red">**class_method**</span>(*any arguments*)
+</center>
+
+2. How would you call the static method `from_minutes()` above to convert 75 minutes to a Time object?  
+
+Just like any other functions in Python, methods can be [pure](#:~:text=pure function) or [impure](#:~:text=impure function).  It is very common for instance methods to not return any value, but instead mutate the object in place. 
+
+3. Which of the following four categories describes the method `convert_to` from the Length class?  Try rewriting the method the other three ways.  
+
+<center>
+<table class="bordered">
+<tr><th>&nbsp;</th><th>Mutate in place</th><th>Return new object</th></tr>
+<tr><th>Instance method</th><td>?</td><td>?</td></tr>
+<tr><th>Static method</th><td>?</td><td>?</td></tr>
+</table>
+</center>
+
+
+
+<!--
+### Fri, Nov 15 
+
+Today we did an in-class project where we implemented a rational numbers class.  Recall that rational numbers are fractions.  
+-->
 
 - - - 
 
