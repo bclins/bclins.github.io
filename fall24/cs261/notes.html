@@ -2916,20 +2916,27 @@ this also works!</li>
 first parameter is called an <strong>instance method</strong> and you
 should call these method with the following syntax:</p>
 <center>
-<span style="color:blue"><strong>class_object</strong></span>.<span
-style="color:red"><strong>class_method</strong></span>(<em>any
-additional arguments</em>)
+<span style="color:blue"><strong>object_name</strong></span>.<span
+style="color:red"><strong>method_name</strong></span>(<em>any additional
+arguments</em>)
 </center>
-<p>The <span style="color:blue"><strong>class_object</strong></span>
-gets passed into the <span
-style="color:red"><strong>class_method</strong></span> as
+<p>The object called <span
+style="color:blue"><strong>object_name</strong></span> gets passed into
+the function called <span
+style="color:red"><strong>method_name</strong></span> as
 <code>self</code>. But this also works (and is equivalent):</p>
 <center>
 <strong>Class_name</strong>.<span
-style="color:red"><strong>class_method</strong></span>(<span
-style="color:blue"><strong>class_object</strong></span>, <em>any
+style="color:red"><strong>method_name</strong></span>(<span
+style="color:blue"><strong>object_name</strong></span>, <em>any
 additional arguments</em>)
 </center>
+<ol start="2" type="1">
+<li>What happens if you call <code>x.convert_to()</code>? Why do you get
+an error message saying it is missing a positional argument? Why does
+<code>x.convert_to(x, "feet")</code> say it takes 2 positional arguments
+but 3 were given?</li>
+</ol>
 <p>It is also possible to write methods that don’t input the special
 <code>self</code> variable. A method that doesn’t input
 <code>self</code> is called a <strong>static method</strong>. Static
@@ -2954,10 +2961,10 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a h
 name of the class followed by the method name:</p>
 <center>
 <strong>Class_name</strong>.<span
-style="color:red"><strong>class_method</strong></span>(<em>any
+style="color:red"><strong>method_name</strong></span>(<em>any
 arguments</em>)
 </center>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>How would you call the static method <code>from_minutes()</code>
 above to convert 75 minutes to a Time object?</li>
 </ol>
@@ -2966,7 +2973,7 @@ href="#:~:text=pure%20function">pure</a> or <a
 href="#:~:text=impure%20function">impure</a>. It is very common for
 instance methods to not return any value, but instead mutate the object
 in place.</p>
-<ol start="3" type="1">
+<ol start="4" type="1">
 <li>Which of the following four categories describes the method
 <code>convert_to</code> from the Length class? Try rewriting the method
 the other three ways.</li>

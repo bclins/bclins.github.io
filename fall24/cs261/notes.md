@@ -1986,15 +1986,17 @@ Suppose we create a class called Length that constructs Length objects with two 
 Any method that has the special variable `self` as its first parameter is called an **instance method** and you should call these method with the following syntax:
 
 <center>
-<span style="color:blue">**class_object**</span>.<span style="color:red">**class_method**</span>(*any additional arguments*)
+<span style="color:blue">**object_name**</span>.<span style="color:red">**method_name**</span>(*any additional arguments*)
 </center>
 
-The <span style="color:blue">**class_object**</span> gets passed into the <span style="color:red">**class_method**</span> as `self`.  But this also works (and is equivalent):
+The object called <span style="color:blue">**object_name**</span> gets passed into the function called <span style="color:red">**method_name**</span> as `self`.  But this also works (and is equivalent):
 
 
 <center>
-**Class_name**.<span style="color:red">**class_method**</span>(<span style="color:blue">**class_object**</span>, *any additional arguments*)
+**Class_name**.<span style="color:red">**method_name**</span>(<span style="color:blue">**object_name**</span>, *any additional arguments*)
 </center>
+
+2. What happens if you call `x.convert_to()`?  Why do you get an error message saying it is missing a positional argument?  Why does `x.convert_to(x, "feet")` say it takes 2 positional arguments but 3 were given?  
 
 It is also possible to write methods that don't input the special `self` variable.  A method that doesn't input `self` is called a **static method**.  Static methods are very common in some languages, but seem to be less common in Python.  But sometimes it is helpful to avoid name collisions if a function that goes with a class is included as a static method instead of being a standalone function.  
 
@@ -2017,14 +2019,14 @@ class Time:
 To call a static method like `from_minutes()`, you use the name of the class followed by the method name:
 
 <center>
-**Class_name**.<span style="color:red">**class_method**</span>(*any arguments*)
+**Class_name**.<span style="color:red">**method_name**</span>(*any arguments*)
 </center>
 
-2. How would you call the static method `from_minutes()` above to convert 75 minutes to a Time object?  
+3. How would you call the static method `from_minutes()` above to convert 75 minutes to a Time object?  
 
 Just like any other functions in Python, methods can be [pure](#:~:text=pure function) or [impure](#:~:text=impure function).  It is very common for instance methods to not return any value, but instead mutate the object in place. 
 
-3. Which of the following four categories describes the method `convert_to` from the Length class?  Try rewriting the method the other three ways.  
+4. Which of the following four categories describes the method `convert_to` from the Length class?  Try rewriting the method the other three ways.  
 
 <center>
 <table class="bordered">
