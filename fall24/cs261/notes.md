@@ -1863,7 +1863,7 @@ Day  | Section  | Topic
 Mon, Nov 11 | [TP14][TP14] | Introduction to classes
 Wed, Nov 13 | [TP15][TP15] | Magic methods
 Thu, Nov 14 | [TP15][TP15] | Static versus instance methods
-Fri, Nov 15 |  |
+Fri, Nov 15 | [TP15][TP15] | Calling magic methods
 
 ### Mon, Nov 11
 
@@ -2038,10 +2038,114 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 
 
 
-<!--
 ### Fri, Nov 15 
 
-Today we did an in-class project where we implemented a rational numbers class.  Recall that rational numbers are fractions.  
+We started today by reviewing how to call methods.  Suppose that we use our Length class from yesterday and define a length object as follows:
+
+```python
+x = Length(9, "inches")
+```
+
+1. What happens if you call `x.convert_to()`?  Why do you get an error message saying it is missing a positional argument?  Why does `x.convert_to(x, "feet")` say it takes 2 positional arguments but 3 were given?  
+
+We talked about the error messages you get, and how you need to understand that the the object that owns the instance method is what gets passed as the `self` variable.  
+
+Then we talked about how magic methods often break the pattern for calling methods.  For example, to call the `__init__` method you could try:
+
+<center>
+**Class_name**.`__init__`(<span style="color:blue">**object_name**</span>, *other arguments*)
+</center>
+
+but that typically won't work since the object you are trying to construction doesn't exist yet so it doesn't make sense to try to use 
+<span style="color:blue">**object_name**</span> yet.  Instead, you call the `__init__` method using a special expression:
+
+<center>
+<span style="color:blue">**object_name**</span> = **Class_name**(*other arguments*)
+</center>
+
+We talked about how other magic methods like `__str__` and `__add__` also have special ways called them.  For example you can call the `__str__` method using the special builtin `str()` function and you call the `__add__` method using the `+` operator.  The object on the left side of `+` gets passed to `__add__(self, other)` as `self` and the object on the right side becomes `other`.  
+
+<!--
+Another common issue with Python classes is that Python will let you do thing like this:
+
+```python 
+class Example
+    test = 5
+    this = "hello"
+```
+
+The variables `test` and `this` belong to the class Length.  They are sometimes called **static variables** to distinguish them from **instance variables** that belong to objects.  
+
+2. Try the following commands with the Example class above.  What happens?  
+
+```python
+x = Example
+print(x.test)
+print(Example.this)
+x.test = 4
+print(x.test)
+```
+-->
+
+
+We finished with the following in-class exercise.  
+
+2. Consider the rational numbers class below.  Define functions to add and multiply rational numbers. Also define a `__str__` method and a method called `reduce(self)` that mutates a Rational object by dividing its numerator and denominator by their greatest common divisor (you can use the `math.gcd` function from the `math` library).  
+
+
+    ```python
+    import math 
+
+    class Rational:
+        def __init__(self, num, denom):
+            self.num = num
+            self.denom = denom
+
+        # Add your own code to define these functions
+        def __str__(self):
+
+        def __add__(self, other):
+
+        def __mul__(self, other):
+
+        def reduce(self):
+            """This should mutate a Rational object in place so that 
+            its numerator and denominator are in simplest form.
+            """
+    ```
+
+3. One feature that it would be nice to have is if you could add a Rational object to an integer object:
+
+    ```python
+    >>> Rational(1, 2) + 5
+    ```
+
+    How could you adjust your `__add__` method to allow this?  
+
+
+
+- - - 
+
+### Week 13 Notes
+
+#### Tentative Schedule
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 18  |  |
+Wed, Nov 20  |  | Review
+Thu, Nov 21  |  | Review
+Fri, Nov 22  |  | **Midterm 2**
+
+
+<!--
+### Mon, Nov 18
+
+Last time we created a rational numbers class, but it had some limitations.  
+
+* You could only add two rationals or a rational plus an integer, but not an integer plus a rational.  
+
+* It would be nice if we could input rational numbers other ways: (i) integers are rational, (ii) what about strings like "4/5"?  
 
 ```python
 import math 
@@ -2050,6 +2154,7 @@ class Rational:
     def __init__(self, num, denom = 1):
         self.num = num
         self.denom = denom
+
     def reduce(self):
         gcd = math.gcd(self.num, self.denom)
         self.num = self.num // gcd
@@ -2083,19 +2188,6 @@ print(z)
 ```
 
 -->
-
-- - - 
-
-### Week 13 Notes
-
-#### Tentative Schedule
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 18  |  |
-Wed, Nov 20  |  | Review
-Thu, Nov 21  |  | **Midterm 2**
-Fri, Nov 22  |  |
 
 
 - - - 

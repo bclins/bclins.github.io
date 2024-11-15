@@ -823,7 +823,7 @@ We made side-by-side box and whisker plots for the data:
 <img src="men_women_talking.png"></img>
 </center>
 
-This picture suggests that there might be a significant difference, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
+This picture suggests that there might be a difference between men & women, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
 
 <center>
 <table class="bordered">
@@ -832,7 +832,11 @@ This picture suggests that there might be a significant difference, but is it re
 </table>
 </center>
 
-When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy rule of thumb is this: *use the smaller sample size minus 1 as the degrees of freedom*. Here is a quick summary of the numbers we need to calculate the t-value.
+When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
+$$dF = \min(n_1, n_2) - 1$$
+in other words, *use the smaller sample size minus 1 as the degrees of freedom*. 
+
+Here is a quick summary of the numbers we need to calculate the t-value for the example with men & women talking.
 
 <!--
 <center> 
@@ -886,12 +890,16 @@ Fri, Nov 22  |            | **Midterm 3**
 <!--
 ### Mon, Nov 18
 
+Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
+
+1. **No Bias**. As always, we need good simple random samples to avoid bias.  
+
+2. **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
+
+    * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
+    * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
+
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
-
-
-### Thursday, Apr 13
-
-* [Cloud seeding](http://people.hsc.edu/faculty-staff/blins/StatsExamples/CloudSeeding.xlsx)
 -->
 
 

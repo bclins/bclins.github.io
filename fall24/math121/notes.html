@@ -1704,9 +1704,10 @@ vs. women words per day</a></li>
 <center>
 <img src="men_women_talking.png"></img>
 </center>
-<p>This picture suggests that there might be a significant difference,
-but is it really significant? Or could this just be a random fluke? To
-find out, we can do a <strong>two sample t-test</strong>.</p>
+<p>This picture suggests that there might be a difference between men
+&amp; women, but is it really significant? Or could this just be a
+random fluke? To find out, we can do a <strong>two sample
+t-test</strong>.</p>
 <center>
 <table class="bordered">
 <tr>
@@ -1729,9 +1730,12 @@ Test Statistic
 </center>
 <p>When you do a two sample t-test (or a 2-sample t-confidence
 interval), there is a complicated formula for the right degrees of
-freedom. But an easy rule of thumb is this: <em>use the smaller sample
-size minus 1 as the degrees of freedom</em>. Here is a quick summary of
-the numbers we need to calculate the t-value.</p>
+freedom. But an easy safe approximation is this:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>F</mi><mo>=</mo><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><msub><mi>n</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">dF = \min(n_1, n_2) - 1</annotation></semantics></math>
+in other words, <em>use the smaller sample size minus 1 as the degrees
+of freedom</em>.</p>
+<p>Here is a quick summary of the numbers we need to calculate the
+t-value for the example with men &amp; women talking.</p>
 <!--
 <center> 
 &nbsp; | $n$ | $\bar{x}$ | s 
@@ -1886,12 +1890,16 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <!--
 ### Mon, Nov 18
 
+Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
+
+1. **No Bias**. As always, we need good simple random samples to avoid bias.  
+
+2. **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
+
+    * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
+    * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
+
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
-
-
-### Thursday, Apr 13
-
-* [Cloud seeding](http://people.hsc.edu/faculty-staff/blins/StatsExamples/CloudSeeding.xlsx)
 -->
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>

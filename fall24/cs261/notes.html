@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -226,7 +226,7 @@ input?</p></li>
 <li><p>Write a program to calculate the roots of a quadratic polynomial
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
 using the quadratic formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
 </ol>
 <h3 id="thu-aug-29">Thu, Aug 29</h3>
 <p>Today we talked about some of the errors that came up in the
@@ -346,7 +346,7 @@ style="width: 700px" /> <img
 src="https://bclins.github.io/spring24/math342/floating_point_math.svg"
 style="width: 700px" /></p>
 <p>In the IEEE 754 standard, a 64-bit floating point number has the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>s</mi></msup><mo>*</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>.</mi><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mn>52</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><mo>*</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup></mrow><annotation encoding="application/x-tex">x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}</annotation></semantics></math>
 where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
@@ -997,7 +997,7 @@ talked about last time.</p>
 <li><p>Write an <code>even_elements(numbers)</code> function like the
 one from yesterday using this style of loop. It would be a good idea to
 use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
 as the index of the first even number if there aren’t any.</p></li>
 <li><p>Re-write the <code>is_integer_string(s)</code> function using
 this style of list. To make this one more interesting, we first created
@@ -2723,8 +2723,9 @@ href="https://allendowney.github.io/ThinkPython/chap15.html">TP15</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Nov 15</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap15.html">TP15</a></td>
+<td style="text-align: left;">Calling magic methods</td>
 </tr>
 </tbody>
 </table>
@@ -3015,10 +3016,143 @@ Static method
 </tr>
 </table>
 </center>
+<h3 id="fri-nov-15">Fri, Nov 15</h3>
+<p>We started today by reviewing how to call methods. Suppose that we
+use our Length class from yesterday and define a length object as
+follows:</p>
+<div class="sourceCode" id="cb80"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Length(<span class="dv">9</span>, <span class="st">&quot;inches&quot;</span>)</span></code></pre></div>
+<ol type="1">
+<li>What happens if you call <code>x.convert_to()</code>? Why do you get
+an error message saying it is missing a positional argument? Why does
+<code>x.convert_to(x, "feet")</code> say it takes 2 positional arguments
+but 3 were given?</li>
+</ol>
+<p>We talked about the error messages you get, and how you need to
+understand that the the object that owns the instance method is what
+gets passed as the <code>self</code> variable.</p>
+<p>Then we talked about how magic methods often break the pattern for
+calling methods. For example, to call the <code>__init__</code> method
+you could try:</p>
+<center>
+<strong>Class_name</strong>.<code>__init__</code>(<span
+style="color:blue"><strong>object_name</strong></span>, <em>other
+arguments</em>)
+</center>
+<p>but that typically won’t work since the object you are trying to
+construction doesn’t exist yet so it doesn’t make sense to try to use
+<span style="color:blue"><strong>object_name</strong></span> yet.
+Instead, you call the <code>__init__</code> method using a special
+expression:</p>
+<center>
+<span style="color:blue"><strong>object_name</strong></span> =
+<strong>Class_name</strong>(<em>other arguments</em>)
+</center>
+<p>We talked about how other magic methods like <code>__str__</code> and
+<code>__add__</code> also have special ways called them. For example you
+can call the <code>__str__</code> method using the special builtin
+<code>str()</code> function and you call the <code>__add__</code> method
+using the <code>+</code> operator. The object on the left side of
+<code>+</code> gets passed to <code>__add__(self, other)</code> as
+<code>self</code> and the object on the right side becomes
+<code>other</code>.</p>
 <!--
-### Fri, Nov 15 
+Another common issue with Python classes is that Python will let you do thing like this:
 
-Today we did an in-class project where we implemented a rational numbers class.  Recall that rational numbers are fractions.  
+```python 
+class Example
+    test = 5
+    this = "hello"
+```
+
+The variables `test` and `this` belong to the class Length.  They are sometimes called **static variables** to distinguish them from **instance variables** that belong to objects.  
+
+2. Try the following commands with the Example class above.  What happens?  
+
+```python
+x = Example
+print(x.test)
+print(Example.this)
+x.test = 4
+print(x.test)
+```
+-->
+<p>We finished with the following in-class exercise.</p>
+<ol start="2" type="1">
+<li><p>Consider the rational numbers class below. Define functions to
+add and multiply rational numbers. Also define a <code>__str__</code>
+method and a method called <code>reduce(self)</code> that mutates a
+Rational object by dividing its numerator and denominator by their
+greatest common divisor (you can use the <code>math.gcd</code> function
+from the <code>math</code> library).</p>
+<div class="sourceCode" id="cb81"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math </span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rational:</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, num, denom):</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.num <span class="op">=</span> num</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.denom <span class="op">=</span> denom</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add your own code to define these functions</span></span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>, other):</span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="bu">reduce</span>(<span class="va">self</span>):</span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;This should mutate a Rational object in place so that </span></span>
+<span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a><span class="co">        its numerator and denominator are in simplest form.</span></span>
+<span id="cb81-18"><a href="#cb81-18" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span></code></pre></div></li>
+<li><p>One feature that it would be nice to have is if you could add a
+Rational object to an integer object:</p>
+<div class="sourceCode" id="cb82"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> Rational(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">+</span> <span class="dv">5</span></span></code></pre></div>
+<p>How could you adjust your <code>__add__</code> method to allow
+this?</p></li>
+</ol>
+<hr />
+<h3 id="week-13-notes">Week 13 Notes</h3>
+<h4 id="tentative-schedule-12">Tentative Schedule</h4>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Nov 18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Nov 20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Nov 21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Nov 22</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 2</strong></td>
+</tr>
+</tbody>
+</table>
+<!--
+### Mon, Nov 18
+
+Last time we created a rational numbers class, but it had some limitations.  
+
+* You could only add two rationals or a rational plus an integer, but not an integer plus a rational.  
+
+* It would be nice if we could input rational numbers other ways: (i) integers are rational, (ii) what about strings like "4/5"?  
 
 ```python
 import math 
@@ -3027,6 +3161,7 @@ class Rational:
     def __init__(self, num, denom = 1):
         self.num = num
         self.denom = denom
+
     def reduce(self):
         gcd = math.gcd(self.num, self.denom)
         self.num = self.num // gcd
@@ -3060,40 +3195,6 @@ print(z)
 ```
 
 -->
-<hr />
-<h3 id="week-13-notes">Week 13 Notes</h3>
-<h4 id="tentative-schedule-12">Tentative Schedule</h4>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Day</th>
-<th style="text-align: center;">Section</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Mon, Nov 18</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Nov 20</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Review</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Thu, Nov 21</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 2</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Fri, Nov 22</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <h4 id="tentative-schedule-13">Tentative Schedule</h4>
