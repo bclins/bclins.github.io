@@ -810,6 +810,67 @@ After that, we talked about comparing the averages of two correlated variables. 
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
+
+### Fri, Nov 15
+
+Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
+
+* [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
+
+We made side-by-side box and whisker plots for the data:
+
+<center>
+<img src="men_women_talking.png"></img>
+</center>
+
+This picture suggests that there might be a significant difference, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
+
+<center>
+<table class="bordered">
+<tr><th>Hypotheses</th><th>Test Statistic</th></tr>
+<tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
+</table>
+</center>
+
+When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy rule of thumb is this: *use the smaller sample size minus 1 as the degrees of freedom*. Here is a quick summary of the numbers we need to calculate the t-value.
+
+<!--
+<center> 
+&nbsp; | $n$ | $\bar{x}$ | s 
+:---:|:---:|:---:|:---:
+Women | 27 | 16496.1 | 7914.3
+Men   | 20 | 12866.7 | 8342.5
+</center>
+-->
+<center>
+<table class="bordered">
+<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><td>Women</td><td>27</td><td>16,496.1</td><td>7,914.3</td></tr>
+<tr><td>Men</td><td>20</td><td>12,866.7</td><td>8,342.5</td></tr>
+</table>
+</center>
+
+
+1. Is this statistically significant evidence that women talk more than men?  Carry out all 4-steps of the hypothesis test including (i) making hypotheses, (ii) finding the t-value, (iii) finding the p-value, and (iv) explaining what it means. 
+
+**Cloud Seeding**. An experiment done in the 1970's looked at whether it is possible to spray clouds with a silver iodide solution to increase the amount of rain that falls in an area. On 26 days with promising clouds a plane sprayed the clouds with silver iodide solution and on 26 similar days they didn't spray. The amount of rainfall (measured in acre-feet) was tracked by radar. Here were the results:
+
+<center>
+<table class="bordered">
+<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><td>Seeded</td><td>26</td><td>16,496.1</td><td>7,914.3</td></tr>
+<tr><td>Control</td><td>26</td><td>12,866.7</td><td>8,342.5</td></tr>
+</table>
+</center>
+
+2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
+
+3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
+
+$$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
+
+
+
 - - - 
 
 ### Week 13 Notes
@@ -821,6 +882,19 @@ Day  | Section  | Topic
 Mon, Nov 18  | [7.3][7.3] | Difference of two means 
 Wed, Nov 20  |            | Review
 Fri, Nov 22  |            | **Midterm 3**
+
+<!--
+### Mon, Nov 18
+
+* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
+
+
+### Thursday, Apr 13
+
+* [Cloud seeding](http://people.hsc.edu/faculty-staff/blins/StatsExamples/CloudSeeding.xlsx)
+-->
+
+
 - - - 
 
 ### Week 14 Notes

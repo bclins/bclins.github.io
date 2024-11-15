@@ -2042,6 +2042,46 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 ### Fri, Nov 15 
 
 Today we did an in-class project where we implemented a rational numbers class.  Recall that rational numbers are fractions.  
+
+```python
+import math 
+
+class Rational:
+    def __init__(self, num, denom = 1):
+        self.num = num
+        self.denom = denom
+    def reduce(self):
+        gcd = math.gcd(self.num, self.denom)
+        self.num = self.num // gcd
+        self.denom = self.denom // gcd
+    def __str__(self):
+        return f"{self.num}/{self.denom}"
+    def __add__(self, other):
+        if type(other) == int:
+            return Rational(self.denom * other + self.num, self.denom)
+        if type(other) == float: 
+            return self.num / self.denom + other
+        if type(other) == Rational:
+            return Rational(self.denom * other.num + self.num * other.denom, self.denom * other.denom)
+    __radd__ = __add__
+    def __mul__(self, other):
+        if type(other) == int:
+            return Rational(self.num * other, self.denom)
+        if type(other) == float: 
+            return self.num / self.denom * other
+        if type(other) == Rational:
+            return Rational(self.num * other.num, self.denom * other.denom)
+    __rmul__ = __mul__
+
+
+
+x = Rational(8) 
+y = Rational(1,2) 
+z = y * x
+z.reduce()                                                                                            
+print(z)                                                                                              
+```
+
 -->
 
 - - - 

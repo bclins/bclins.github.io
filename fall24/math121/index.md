@@ -30,7 +30,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be **Friday, Oct 25**.
+* Midterm 3 will be **Friday, Nov 22**.
+* Midterm 3 materials: [review problems](midterm3review.html), [formula sheet](midterm3formulas.pdf).
 * Midterm 2 materials: [review problems](midterm2review.pdf), [review solutions](midterm2reviewSolutions.pdf), [formula sheet](midterm2formulas.pdf).
 * Midterm 1 materials: [review problems](midterm1review.html).
 
