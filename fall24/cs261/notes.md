@@ -168,7 +168,7 @@ After that we talked about how to convert base-10 integers to base-2.  That is a
 
 6. Use the algorithm above to convert 13 to base-2. 
 
-After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  Unlike a lot of progamming languages, Python allows arbitrarily large integers.  This avoids **integer overflow** errors, but it can be slower for large integers.  
+After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  Unlike a lot of programming languages, Python allows arbitrarily large integers.  This avoids **integer overflow** errors, but it can be slower for large integers.  
 
 We also talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages (including Python) store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
 
@@ -2132,21 +2132,47 @@ We finished with the following in-class exercise.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 18  |  |
+Mon, Nov 18  | [TP16][TP16] | Converting class objects
 Wed, Nov 20  |  | Review
 Thu, Nov 21  |  | Review
 Fri, Nov 22  |  | **Midterm 2**
 
 
-<!--
 ### Mon, Nov 18
 
 Last time we created a rational numbers class, but it had some limitations.  
 
 * You could only add two rationals or a rational plus an integer, but not an integer plus a rational.  
 
+* What about adding floats?
+
 * It would be nice if we could input rational numbers other ways: (i) integers are rational, (ii) what about strings like "4/5"?  
 
+* What about multiplying by integers or floats?
+
+* What if you want to convert a Rational class object to a float? 
+
+As we discussed solutions to these problems, we saw some cool things you can do in Python.  
+
+1. You can define the `__radd__` method by just setting it equal to `__add__`.  This is because a function name is a variable like any other.  You can define a function using the assignment operator `=`, as long as it is the same as another function.  
+
+2. You can make a function work with different types of input using if-then statements to handle different input types.  
+
+3. You can let functions work with variable numbers of arguments by using **default parameter values**. 
+
+4. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method.  
+
+After we finished adding more features to the Rational class, we looked at some of the common classes.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len()__`, `__getitem()__`, and so on. 
+
+Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But there are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types. 
+
+5. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
+
+Also, sets and dictionaries are iterator types, but not sequence types. Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  
+
+
+
+<!--
 ```python
 import math 
 

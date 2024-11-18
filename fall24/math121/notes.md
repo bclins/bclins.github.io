@@ -887,7 +887,6 @@ Mon, Nov 18  | [7.3][7.3] | Difference of two means
 Wed, Nov 20  |            | Review
 Fri, Nov 22  |            | **Midterm 3**
 
-<!--
 ### Mon, Nov 18
 
 Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
@@ -900,7 +899,6 @@ Today we started by talking about the **assumptions of the two-sample t-methods*
     * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
 
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
--->
 
 
 - - - 

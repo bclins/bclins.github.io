@@ -1257,9 +1257,45 @@ We also did some review problems to prepare for the midterm including:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 18  | [10.1][10.1] | Applications of the residue theorem
-Wed, Nov 20  | [10.2][10.2] | Binomial coefficients
+Mon, Nov 18  |              | Contour integrals
+Wed, Nov 20  | [6.1][6.1] | Harmonic functions
 Fri, Nov 22  | [6.1][6.1] | Harmonic functions
+
+### Mon, Nov 18
+
+Today we talked about applications of residues to real integrals.  We started with the following result.
+
+<div class="Theorem">
+**Theorem (Integrals of Rational Functions on the Real Line).** If $p$ and $q$ are polynomials such that $q$ has no real zeros and the degree of $q$ is at least two greater than $p$, then 
+$$\int_{-\infty}^{\infty} \frac{p(x)}{q(x)} \, dx$$
+is $2 \pi i$ times the sum of the residues of $p/q$ at all zeros of $q$ in the upper half plane. 
+</div>
+
+After we sketched a proof, we applied this theorem to solve:
+
+1. $\int_{-\infty}^\infty \dfrac{x^2}{(x^2+1)(x^2 + 4)} \, dx$. 
+
+Another common type of problem that we can often solve using residues is $\int_{-\infty}^\infty R(x) \sin x \,dx$ or $\int_{-\infty}^\infty R(x) \cos x \, dx$ where $R$ is rational function that is continuous on the real axis.  To evaluate these integrals, we can apply the Residue Theorem to either the real or imaginary part of $f(z) = R(z) e^{iz}$.  It helps to know the following inequality. 
+
+<div class="Theorem">
+**Jordan's Lemma.** Let $\gamma(t) = Re^{it}$, with $0 \le t \le \pi$.  So $\gamma$ parametrizes the upper half of a circle of radius $R$ around the origin. Then  
+$$\left| \int_\gamma e^{iz} \, dz \right| < \pi.$$
+</div>
+
+Unfortunately the ML-inequality is not strong enough to prove this theorem.  So we need to dig a little deeper into the integral.
+
+**Step 1.** Show that if $z = \gamma(t)$, then $|e^{iz}| = e^{-R\sin t}$.  
+
+**Step 2.** Show that 
+$$|\int_\gamma e^{iz} \, dz| \le \int_0^\pi R e^{-R \sin t} \, dt.$$
+
+**Step 3.** Show that $\tfrac{2}{\pi} t \le \sin t$ for all $0 \le t \le \tfrac{\pi}{2}$.  
+
+Therefore
+$$\int_0^\pi R e^{-R \sin t} \, dt \le \int_0^{\pi/2} 2R e^{-\frac{2R}{\pi} t} \, dt = \pi(1-e^{-R}) < \pi.$$
+
+
+2. Compute $\int_{-\infty}^\infty \dfrac{x^3 \sin x}{x^4 + 16} \, dx$. 
 
 - - - 
 

@@ -2,8 +2,6 @@
 \usepackage{amsmath,amssymb}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{tikz}
-\usepackage{listings}
-\usepackage{pxfonts}
 \usepackage{soul}
 
 \newcommand{\blank}[1]{\underline{\hspace*{#1}}}
@@ -16,54 +14,117 @@
 \graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
 
 \subsection*{Practice Midterm 2 - CS 261}
-\textit{Here are questions similar to what will be on the midterm exam.  You won't be able to use any outside material during the midterm exam (no notes, computers, etc.) so see how much you can answer without looking things up.}
+\textit{Here are questions similar to what will be on the midterm exam.  You won't be able to use any outside material during the midterm exam (no notes, computers, etc.) so see how much you can answer without looking things up. Be sure to study any Python rules and terminology that you don't know. }
 
 \begin{questions}
 
-\question Suppose that \lstinline{a = [6, 2, 2, 3, 5])}. What will the following commands output?  
+\question Suppose that \verb|a = [6, 2, 2, 3, 5]|. What will the following commands output?  
 \begin{parts}
-\part \lstinline{print(set(a))} \\
-\part \lstinline{print(sorted(a))} \\
-\part \lstinline{print(tuple(a))} \\
-\part \lstinline{print(a.sort())} \\
+\part \verb|print(set(a))| 
+\begin{solution}
+\verb|{6, 2, 3, 5}|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(sorted(a))|
+\begin{solution}
+\verb|[2, 2, 3, 5, 6]|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(tuple(a))|
+\begin{solution}
+\verb|(6, 2, 2, 3, 5)|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(a.sort())|
+\begin{solution}
+\verb|None|
+\end{solution}
+\bigskip
+\bigskip
 \end{parts}
 
-
-\begin{solution}
-\end{solution}
- 
 
 \question Suppose that 
 \begin{center}
 \verb|d = {"Alfred": [1, 2, 3], "Bruce": (4, 5), "Selina": 6}|
 \end{center}
-What are the values of the following expressions? 
+What are the values of the following expressions? If there will be an error, briefly explain why.
 
 \begin{parts}
-\part \lstinline{d["Alfred"]} \\
-\part \lstinline{d["Bruce"]} \\
-\part \lstinline{"Selina" in d} \\
-\part \lstinline{(4, 5) in d} \\
+\part \verb|d["Alfred"]| 
+\begin{solution}
+\verb|[1, 2, 3]|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|d["Bruce"][2]| \\ \\
+\begin{solution}
+Error, because the tuple \verb|(4, 5)| has no value at index 2. 
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|"Selina" in d| \\ \\
+\begin{solution}
+\verb|True|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|(4, 5) in d| \\ \\
+\begin{solution}
+\verb|False|
+\end{solution}
+\bigskip
+\bigskip
 \end{parts}
 
 
-\question \hl{Tuples and tuple assignment}
+\question Determine the values of the variables \verb|a|, \verb|b|, \verb|c| at the end of this code. 
+\begin{verbatim}
+a, b = 5, 10
+c = b + 2
+a, b, c = c, a, b
+\end{verbatim}
+
+\begin{solution}
+\verb|a = 12, b = 5, c = 10|
+\end{solution}
 \vfill
 
 \newpage
 \question Consider the following code.
-\begin{lstlisting}
+\begin{verbatim}
 square = [
     [1, 2, 3], 
     [4, 5, 6], 
     [7, 8, 9]
 ]
-\end{lstlisting}
+\end{verbatim}
 \begin{parts}
 \item For what values of \verb|i| and \verb|j| would \verb|square[i][j]| be equal to 6? 
-\vfill
+\begin{solution}
+\verb|i = 1, j = 2|
+\end{solution}
+\bigskip
+\bigskip
+
+\item What is the value of \verb|square[1]|? 
+\begin{solution}
+\verb|[4, 5, 6]|
+\end{solution}
+\bigskip
+\bigskip
 
 \item How could you increase the values of each number in \verb|square| by 1? Write a nested loop that will do this.   
+\begin{solution}
+\begin{verbatim}
+for i in range(3):
+    for j in range(3):
+        square[i][j] += 1
+\end{verbatim}
+\end{solution}
 \vfill
 \vfill
 \end{parts}
@@ -79,6 +140,9 @@ a.append(3)
 \end{verbatim}
 
 What are the values of \verb|a|, \verb|b|, and \verb|c| after this code is run? 
+\begin{solution}
+\verb|a = [-2, 0, 4, 5, 7, 3], b = None, c = [-2, 0, 4, 5, 7]|
+\end{solution}
 \vfill
 
 \question Consider the following function which inputs a list of numbers and the code that follows it.
@@ -93,7 +157,10 @@ print(a) # prints [1, 2, 3, 4, 5]
 print(b) # prints None
 \end{verbatim}
 
-Explain what the function \lstinline{mystery()} does.  What does it return?  What side effects does it have?  
+Explain what the function \verb|mystery()| does.  What does it return?  What side effects does it have?  
+\begin{solution}
+After the loop, the value of the list \verb|xs| at index \verb|i| is the sum of the values of the list at the previous indices.  So \verb|mystery| mutates a list in place and fills it with the partial sums of the original input list.  This function does not return anything and its only side effect is to mutate whatever list is passed into the function.  
+\end{solution}
 \vfill
 \vfill
 
@@ -112,6 +179,13 @@ Here are examples of inputs and the correct outputs for this function.
 \begin{verbatim}
 def election_winner(vote_counts):
     # Step 1: Find the integer max_votes which is the most votes anyone got.
+\end{verbatim}
+\begin{solution}
+\begin{verbatim}
+    max_votes = max(vote_counts.values())
+\end{verbatim}
+\end{solution}
+\vfill
 
 
 
@@ -121,10 +195,15 @@ def election_winner(vote_counts):
 
 
 
-
-
+\begin{verbatim}
     # Step 2: Make a list called top_keys with the candidates who got max_votes. 
-
+\end{verbatim}
+\begin{solution}
+\begin{verbatim}
+    top_keys = [key for key, val in vote_counts.items() if val == max_votes]
+\end{verbatim}
+\end{solution}
+\vfill
 
 
 
@@ -134,249 +213,120 @@ def election_winner(vote_counts):
 
 
       
-
+\begin{verbatim}
     # Step 3: Return the correct output based on the name(s) in top_keys. 
-
-
-
-
 \end{verbatim}
-\vfill
-
-\newpage
-\question In a school, each student can nominate others as their friends. These nominations are collected into a
-list of pairs, each pair representing a one-way friendship nomination (i.e., friendships are not necessarily
-reciprocated). Write the function \verb|count_mutual| to analyze friendship nominations in a classroom. The
-function should accept one argument: a list of tuples nominations, where each tuple contains two strings
-representing the nominator and the nominee. The function should return an integer representing the total
-number of pairs who have mutually nominated each other as friends.
-
-A mutual friendship exists when student A nominates student B, and student B also nominates student A.
-Your function must accurately count these mutual relationships without considering repeated pairs. Assume
-all names are lowercase.
-
-
-\newpage
-\color{gray}
-\question For each of the following Python expressions, write down the output when the expression is evaluated using a Python interpreter. Write \textbf{error} if you think the expression will raise an error.
-
-\begin{parts}
-\part \lstinline{15 % 3}
 \begin{solution}
-\lstinline{0}
-\end{solution}
-\bigskip
-
-\part \lstinline{5 + 3 * 4 == 100}
-\begin{solution}
-False
-\end{solution}
-\bigskip
-
-\part \lstinline{"HSC" + "2024"}
-\begin{solution}
-\lstinline{"HSC2024"}
-\end{solution}
-\bigskip
-
-\part \lstinline{100+"1"}
-\begin{solution}
-\textbf{error}
-\end{solution}
-\bigskip
-
-\part \lstinline{6 / 2}
-\begin{solution}
-\lstinline{3.0}
-\end{solution}
-\bigskip
-\end{parts}
-
-\question Suppose that we type the following assignments and expressions in a Python
-shell in the given order. 
-
 \begin{verbatim}
-    >>> a = 10
-    >>> b = 20
-    >>> c = a + b
-\end{verbatim}
-
-\begin{parts}
-\part What will Python output if we enter the following (after those first three statements)?
-
-\begin{verbatim}
->>> a + 5
-\end{verbatim}
-\begin{solution}
-15
-\end{solution}
-\bigskip
-
-\part What will Python output if we enter this statement (after the one from part (a))?
-\begin{verbatim}
->>> a + b
-\end{verbatim}
-\begin{solution}
-30
-\end{solution}
-
-\bigskip
-
-\part What will Python output when we enter these two statements next?
-\begin{verbatim}
->>> b = b + 1
->>> c
-\end{verbatim}
-\begin{solution}
-30
-\end{solution}
-\bigskip
-
-\part What about if we enter this last?
-\begin{verbatim}
->>> a + b
-\end{verbatim}
-\begin{solution}
-31
-\end{solution}
-
-\end{parts} 
-
-\newpage
-\question Consider the following function.  What will it return if you call \lstinline{mystery(5)}?
-
-\begin{lstlisting}
-def mystery(n):
-    a = n 
-    a + 5
-    if a > 10:
-        return a
-    elif a == 10:
-        return 100
+    if top_keys == 1:
+        return top_keys[0]
     else:
-        return n
-\end{lstlisting}
-\begin{solution}
-5
-\end{solution}
-
-\question Write a function called \lstinline{average3} that inputs any three numbers and returns their average.  
-\begin{solution}
-\begin{lstlisting}
-def average3(a,b,c):
-    return (a + b + c) / 3
-\end{lstlisting}
+        return "tie"
+\end{verbatim}
 \end{solution}
 \vfill
 
-\question Consider the simple function below.
 
-\begin{lstlisting}
-def twice(n):
-    print(2 * n)
-\end{lstlisting}
 
-Why do we get \lstinline{False} if we enter the following into the shell? Explain why we get the output below. 
+
+
+\newpage
+\question Which of the following types are mutable?  Circle the ones that are.
+\begin{choices}
+\choice Integers
+\CorrectChoice Lists
+\choice Tuples
+\CorrectChoice Dictionaries
+\choice Strings
+\CorrectChoice Sets
+\end{choices}
+\smallskip
+\question Suppose that we have a list of pairs of distinct integers, like this:
+\begin{center}
+\verb|pairs_list = [(1, 2), (3, 5), (4, 7), (7, 4), (2, 4), (0, 1)]| 
+\end{center}
+We will say that a pair \verb|(x, y)| is \emph{reversible} if both \verb|(x, y)| and \verb|(y, x)| are in the \verb|pairs_list|. For example, the pair \verb|(4, 7)| is reversible in the list above.  Write a function called \verb|count_reversible| that inputs a \verb|pairs_list| and returns an integer equal to the total number of reversible pairs in the list.  For example, your function should return 2 for the list above since the only reversible pairs are \verb|(4, 7)| and \verb|(7, 4)|.  If the same pair appears more than once in a list, then it should only count once. % For example if we added another copy of \verb|(4, 7)| to the list above, then \verb|count_reversible| should still only return 2 since there are only 2 distinct pairs that are reversible.  
+\begin{solution}
+\begin{verbatim}
+def count_reversible(pairs_list):
+    reversible_pairs = 0
+    for pair in pairs_list:
+        if (pair[1], pair[0]) in pairs_list:
+            reversible_pairs += 1
+    return reversible_pairs
+\end{verbatim}
+\end{solution}
+
+\vfill
+\newpage
+
+\question For each of the following comprehensions, determine its value and state what type the output is.  
+\begin{parts}
+\part \verb|{word: len(word) for word in ["apple", "banana", "cantalope"]}| 
+\begin{solution}
+\verb|{"apple": 5, "banana": 6, "cantalope": 9} # This is a dictionary|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|[(n, n ** 2) for n in range(6)]| 
+\begin{solution}
+\verb|[(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)] # This is a list| 
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|{c for c in "this is a string"}| 
+\begin{solution}
+\verb|{"t", "h", "i", "s", " ", "a", "r", "n", "g"} # This is a set|
+\end{solution}
+\bigskip
+\bigskip
+\end{parts}
+
+\question Consider the following code. 
+
 
 \begin{verbatim}
-    >>> twice(5) == 10
-    10
-    False
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    def area(self):
+        return self.length * self.width
+
+x = Rectangle(4, 5)
 \end{verbatim}
-
-\begin{solution}
-The function prints 10, but \lstinline{twice(5)} is not equal to 10 because the function is returning nothing.  
-\end{solution}
-\vfill
-
-\question Describe in words what the following function will do when you call it.
-
-\begin{lstlisting}
-def loop_function():
-    for i in range(100):
-        if i % 3 == 0:
-            print(i)
-\end{lstlisting}
-
-\begin{solution}
-This function will print the integers that are multiples of 3, starting at 0, until 99. 
-\end{solution}
-
-\question Identify the type of the value (str, int, float, bool, or list) for each of the following expressions.
 \begin{parts}
-\part \lstinline{"hello" * 5}
+\part Which of the following best describes \verb|x|?
+\begin{choices}
+\choice \verb|x| is a method of the Rectangle class.
+\CorrectChoice \verb|x| is an instance of the Rectangle class.
+\choice \verb|x| is an attribute of the Rectangle class.
+\choice \verb|x| is the Rectangle class.
+\end{choices}
+\smallskip
+
+\part What Python statement would print the width of \verb|x|?  
 \begin{solution}
-\lstinline{str}
+\verb|print(x.width)|
 \end{solution}
 \bigskip
-
-\part \lstinline{ 7 // 2}
-\begin{solution}
-\lstinline{int}
-\end{solution}
 \bigskip
 
-\part \lstinline{"hello" == 5}
+\part What Python statement would print the area of \verb|x|? 
 \begin{solution}
-\lstinline{bool}
+\verb|print(x.area())|
 \end{solution}
 \bigskip
-
-\part \lstinline{("He" in "Hello") or ("Yes" in "No")}
-\begin{solution}
-\lstinline{bool}
-\end{solution}
-\bigskip
-
-\part \lstinline{3 + 4 / 7}
-\begin{solution}
-\lstinline{float}
-\end{solution}
-\bigskip
-
-\end{parts}
-
-\question Determine the values of the variables $x$, $y$, and $z$ after the following lines of code are run. 
-
-
-\begin{lstlisting}
-x = 5
-y = x
-z = 2 * y / 2
-x += 4
-y = (y - 1) * 2
-x = (x == z + 4)
-\end{lstlisting}
-
-\begin{solution}
-$y$ is 8, $z$ is 5.0, and $x$ is \lstinline{True}. 
-\end{solution}
-
-\question Consider the following recursive function: 
-
-
-\begin{lstlisting}
-def recurse(n, s):
-    if n == 0:
-        return s
-    else: 
-        return recurse(n - 1, s + n)
-\end{lstlisting}
-\begin{parts}
-\part What will \lstinline{recurse(3, 0)} return?
-\begin{solution}
-6
-\end{solution}
-\bigskip
-
-\part What will happen if you call \lstinline{recurse(-1, 0)}?
-\begin{solution}
-It will enter an infinite recursion because \lstinline{n} is never 0. 
-\end{solution}
 \bigskip
 \end{parts}
 
-
+\question Why is it recommended to check if \verb|__name__ == "__main__"| before running the contents of the main function in a Python program?  
+\begin{choices}
+\CorrectChoice So that main will not run when you import the program as a module. 
+\choice So that other functions that aren't named main won't get called accidentally. 
+\choice It keeps the program from getting too complicated with too many functions. 
+\choice It lets the program know which function is the most important one. 
+\end{choices}
 
 \end{questions}
 

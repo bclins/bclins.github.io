@@ -2867,15 +2867,14 @@ href="https://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section*.44">
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 18</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.1">10.1</a></td>
-<td style="text-align: left;">Applications of the residue theorem</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Contour integrals</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 20</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.10.2">10.2</a></td>
-<td style="text-align: left;">Binomial coefficients</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6.1</a></td>
+<td style="text-align: left;">Harmonic functions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 22</td>
@@ -2885,6 +2884,77 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-18">Mon, Nov 18</h3>
+<p>Today we talked about applications of residues to real integrals. We
+started with the following result.</p>
+<div class="Theorem">
+<p><strong>Theorem (Integrals of Rational Functions on the Real
+Line).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+are polynomials such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+has no real zeros and the degree of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+is at least two greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} \frac{p(x)}{q(x)} \, dx</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">2 \pi i</annotation></semantics></math>
+times the sum of the residues of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>/</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">p/q</annotation></semantics></math>
+at all zeros of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+in the upper half plane.</p>
+</div>
+<p>After we sketched a proof, we applied this theorem to solve:</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><msup><mi>x</mi><mn>2</mn></msup><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty \dfrac{x^2}{(x^2+1)(x^2 + 4)} \, dx</annotation></semantics></math>.</li>
+</ol>
+<p>Another common type of problem that we can often solve using residues
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>R</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mi>x</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty R(x) \sin x \,dx</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>R</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>cos</mo><mi>x</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty R(x) \cos x \, dx</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+is rational function that is continuous on the real axis. To evaluate
+these integrals, we can apply the Residue Theorem to either the real or
+imaginary part of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>R</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(z) = R(z) e^{iz}</annotation></semantics></math>.
+It helps to know the following inequality.</p>
+<div class="Theorem">
+<p><strong>Jordan’s Lemma.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>R</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\gamma(t) = Re^{it}</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">0 \le t \le \pi</annotation></semantics></math>.
+So
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math>
+parametrizes the upper half of a circle of radius
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+around the origin. Then<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mo>∫</mo><mi>γ</mi></msub><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>π</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\left| \int_\gamma e^{iz} \, dz \right| &lt; \pi.</annotation></semantics></math></p>
+</div>
+<p>Unfortunately the ML-inequality is not strong enough to prove this
+theorem. So we need to dig a little deeper into the integral.</p>
+<p><strong>Step 1.</strong> Show that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z = \gamma(t)</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>R</mi><mo>sin</mo><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">|e^{iz}| = e^{-R\sin t}</annotation></semantics></math>.</p>
+<p><strong>Step 2.</strong> Show that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msub><mo>∫</mo><mi>γ</mi></msub><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mi>R</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>R</mi><mo>sin</mo><mi>t</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">|\int_\gamma e^{iz} \, dz| \le \int_0^\pi R e^{-R \sin t} \, dt.</annotation></semantics></math></p>
+<p><strong>Step 3.</strong> Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="false"><mn>2</mn><mi>π</mi></mfrac><mi>t</mi><mo>≤</mo><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">\tfrac{2}{\pi} t \le \sin t</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">0 \le t \le \tfrac{\pi}{2}</annotation></semantics></math>.</p>
+<p>Therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi>π</mi></msubsup><mi>R</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>R</mi><mo>sin</mo><mi>t</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>≤</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>π</mi><mi>/</mi><mn>2</mn></mrow></msubsup><mn>2</mn><mi>R</mi><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mn>2</mn><mi>R</mi></mrow><mi>π</mi></mfrac><mi>t</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>R</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>π</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_0^\pi R e^{-R \sin t} \, dt \le \int_0^{\pi/2} 2R e^{-\frac{2R}{\pi} t} \, dt = \pi(1-e^{-R}) &lt; \pi.</annotation></semantics></math></p>
+<ol start="2" type="1">
+<li>Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>sin</mo><mi>x</mi></mrow><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>16</mn></mrow></mfrac><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty \dfrac{x^3 \sin x}{x^4 + 16} \, dx</annotation></semantics></math>.</li>
+</ol>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <h4 id="tentative-schedule-13">Tentative Schedule</h4>
