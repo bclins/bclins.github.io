@@ -1274,6 +1274,7 @@ is $2 \pi i$ times the sum of the residues of $p/q$ at all zeros of $q$ in the u
 After we sketched a proof, we applied this theorem to solve:
 
 1. $\int_{-\infty}^\infty \dfrac{x^2}{(x^2+1)(x^2 + 4)} \, dx$. 
+<!-- NOTE TO SELF: Make sure in the future that you have prepared this, including calculating the residues EXACTLY! It is very easy to mess things up in class and derail things--> 
 
 Another common type of problem that we can often solve using residues is $\int_{-\infty}^\infty R(x) \sin x \,dx$ or $\int_{-\infty}^\infty R(x) \cos x \, dx$ where $R$ is rational function that is continuous on the real axis.  To evaluate these integrals, we can apply the Residue Theorem to either the real or imaginary part of $f(z) = R(z) e^{iz}$.  It helps to know the following inequality. 
 
@@ -1287,15 +1288,20 @@ Unfortunately the ML-inequality is not strong enough to prove this theorem.  So 
 **Step 1.** Show that if $z = \gamma(t)$, then $|e^{iz}| = e^{-R\sin t}$.  
 
 **Step 2.** Show that 
-$$|\int_\gamma e^{iz} \, dz| \le \int_0^\pi R e^{-R \sin t} \, dt.$$
-
+$$|\int_\gamma e^{iz} \, dz| = \left|\int_0^\pi e^{-R\sin t} R e^{it} e^{Re^{it}} \, dt \right| \le \int_0^\pi R e^{-R \sin t} \, dt.$$
+ 
 **Step 3.** Show that $\tfrac{2}{\pi} t \le \sin t$ for all $0 \le t \le \tfrac{\pi}{2}$.  
+<!-- CAUTION!!!!!!!!!!!!!!!!!
+ This next step was not clear at all in class... redo this carefully next time!  Maybe review that 
+$$|\int_\gamma f(z) \, dz| \le \int_\gamma |f(z)| \, |dz|$$
+where $|dz| = |\gamma'(t)| \, dt$.  You were running out of time (because of those residue issues from before) and completely flubbed this time time!!!!
+-->
 
 Therefore
 $$\int_0^\pi R e^{-R \sin t} \, dt \le \int_0^{\pi/2} 2R e^{-\frac{2R}{\pi} t} \, dt = \pi(1-e^{-R}) < \pi.$$
 
 
-2. Compute $\int_{-\infty}^\infty \dfrac{x^3 \sin x}{x^4 + 16} \, dx$. 
+2. Compute $\int_{-\infty}^\infty \dfrac{x \sin x}{x^2 + 9} \, dx$. 
 
 - - - 
 

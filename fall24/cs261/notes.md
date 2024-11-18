@@ -2132,8 +2132,8 @@ We finished with the following in-class exercise.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 18  | [TP16][TP16] | Converting class objects
-Wed, Nov 20  |  | Review
+Mon, Nov 18  | [TP16][TP16] | Type conversion and casting
+Wed, Nov 20  |  | Sequence and iterator types
 Thu, Nov 21  |  | Review
 Fri, Nov 22  |  | **Midterm 2**
 
@@ -2162,6 +2162,11 @@ As we discussed solutions to these problems, we saw some cool things you can do 
 
 4. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method.  
 
+The converting an object of one type to another type is called **casting**.  In Python, we typically cast objects to a new type by using the constructor function for that type.  
+
+5. Add functionality to the Rational type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Rational.  
+
+<!--
 After we finished adding more features to the Rational class, we looked at some of the common classes.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len()__`, `__getitem()__`, and so on. 
 
 Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But there are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types. 
@@ -2170,7 +2175,7 @@ Every sequence type is also an [iterator types](https://docs.python.org/3/librar
 
 Also, sets and dictionaries are iterator types, but not sequence types. Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  
 
-
+-->
 
 <!--
 ```python

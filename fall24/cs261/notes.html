@@ -3127,12 +3127,12 @@ this?</p></li>
 <td style="text-align: center;">Mon, Nov 18</td>
 <td style="text-align: center;"><a
 href="https://allendowney.github.io/ThinkPython/chap16.html">TP16</a></td>
-<td style="text-align: left;">Converting class objects</td>
+<td style="text-align: left;">Type conversion and casting</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 20</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Review</td>
+<td style="text-align: left;">Sequence and iterator types</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Nov 21</td>
@@ -3178,30 +3178,24 @@ lists, etc.). When you construct a new class, you can define how each of
 these functions works with your class by using the corresponding magic
 method.</p></li>
 </ol>
-<p>After we finished adding more features to the Rational class, we
-looked at some of the common classes. A <a
-href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">sequence
-type</a> are types like lists, tuples, and ranges that implement a
-common set of features including the <code>len</code> function,
-subscripting, slicing, using the <code>+</code> operator for
-concatenation, and methods like <code>.index()</code> and
-<code>.count()</code>. It is possible to add these features to a custom
-class by using magic methods like <code>__len()__</code>,
-<code>__getitem()__</code>, and so on.</p>
-<p>Every sequence type is also an <a
-href="https://docs.python.org/3/library/stdtypes.html#iterator-types">iterator
-types</a>. But there are lots of other iterator types that don’t
-implement all of the features of sequence types. For example, we you
-have a dictionary <code>d</code>, both <code>d.values()</code> and
-<code>d.items()</code> are iterator types.</p>
+<p>The converting an object of one type to another type is called
+<strong>casting</strong>. In Python, we typically cast objects to a new
+type by using the constructor function for that type.</p>
 <ol start="5" type="1">
-<li>Create a dictionary <code>d</code> and then print the types of
-<code>d.values()</code> and <code>d.items()</code>.</li>
+<li>Add functionality to the Rational type initialization function to
+allow casting from from integer and string types (such as
+<code>"4/5"</code>) to Rational.</li>
 </ol>
-<p>Also, sets and dictionaries are iterator types, but not sequence
-types. Iterator types implement two magic methods
-<code>__iter()__</code> and <code>__next()__</code> that let you loop
-through any iterator type using a for-in loop.</p>
+<!--
+After we finished adding more features to the Rational class, we looked at some of the common classes.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len()__`, `__getitem()__`, and so on. 
+
+Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But there are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types. 
+
+5. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
+
+Also, sets and dictionaries are iterator types, but not sequence types. Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  
+
+-->
 <!--
 ```python
 import math 
