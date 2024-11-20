@@ -2992,7 +2992,7 @@ are functions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>:</mo><msup><mi>ℝ</mi><mn>2</mn></msup><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">u:\mathbb{R}^2 \rightarrow \mathbb{R}</annotation></semantics></math>
 with continuous partial derivatives such that
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>u</mi></mrow><mrow><mi>∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.</annotation></semantics></math></p>
-<ol type="1">
+<ol start="2" type="1">
 <li><p>Show that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">u(x,y) = x^3 - 3xy^2</annotation></semantics></math>
 is harmonic.</p></li>
@@ -3003,15 +3003,15 @@ such that
 satisfies the Cauchy-Riemann equations.</p></li>
 </ol>
 <div class="Theorem">
-<p><strong>Theorem (Harmonic Conjugates).</strong> For every harmonic
-function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>,
-it is always possible to construct another harmonic function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+<p><strong>Theorem (Harmonic Conjugates).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">u: D \rightarrow \mathbb{R}</annotation></semantics></math>
+is harmonic on a simply connected open domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{R}^2</annotation></semantics></math>,
+then there exists a harmonic function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">v:D \rightarrow \mathbb{R}</annotation></semantics></math>
 such that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">u+iv</annotation></semantics></math>
-is holomorphic (at least locally, that is in a small open set). The
-function
+is holomorphic. The function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
 is called a <strong>harmonic conjugate</strong> of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>.
@@ -3021,11 +3021,19 @@ is holomorphic, then both the real and imaginary parts of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 are harmonic functions.</p>
 </div>
+<ol start="4" type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u(x,y) = \ln(x^2 + y^2)</annotation></semantics></math>
+is harmonic on its domain. Why can’t you find a harmonic conjugate of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+on all of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>?</li>
+</ol>
 <p>A corollary of the previous theorem and the open mapping principle is
 this:</p>
 <div class="Theorem">
 <p><strong>Maximum Modulus Principle for Harmonic Functions</strong>. A
-harmonic function on an open domain
+harmonic function on a open domain
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{R}^2</annotation></semantics></math>
 cannot have a local max or local min in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.</p>

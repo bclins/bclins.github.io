@@ -2171,7 +2171,8 @@ The converting an object of one type to another type is called **casting**.  In 
 
 Today we looked sequence & iterator types.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
 
-Here is a table of features implemented by sequence types:
+Here is a table of features implemented by sequence types:  
+
 <center>
 <table class="bordered">
 <tr><th>Operators</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Methods&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
@@ -2188,31 +2189,33 @@ Every sequence type is also an [iterator types](https://docs.python.org/3/librar
 
 1. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
 
-Iterator types don't have many common features, but most implement the following:
+Iterator types don't have many common features, but most implement the following: 
 
 <center>
 <table class="bordered">
 <tr><th>Operators</th><th>Functions</th></tr>
 <tr><td>`x in s`</td><td>`enumerate(s)`</td></tr>
-<tr><td>`x not in s`</td><td></td></tr>
+<tr><td>`x not in s`</td><td>`sorted(s)`</td></tr>
 </table>
 </center>
 
 Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  Iterators also let you use the `enumerate(iterator)` function to loop pairs of indices and values in an iterator. 
 
-In addition to common features share by many classes, most classes in Python also have special methods that are only available for that class.  Here is a list of methods you should know:
+In addition to common features share by many classes, most classes in Python also have special methods that are only available for that class.  Here is a list of methods you should know:  
 
 <center>
 <table class="bordered">
-<tr><th>List</th><th>Strings</th><th>Dictionaries</th><th>Sets</th></tr>
-<tr><td>`a.append(item)`</td><td>`s.join(string_list)`</td><td>`d.items()`</td><td>`a.union(b)`</td></tr>
-<tr><td>`a.insert(i, item)`</td><td>`s.split()`</td><td>`d.values()`</td><td>`a.intersection(b)`</td></tr>
-<tr><td>`a.pop()`</td><td></td><td>`d.pop(key)`</td><td>`a.difference(b)`</td></tr>
-<tr><td>`a.sort()`</td><td></td><td></td><td>`a.add(elem)`</td></tr>
+<tr><th>List</th><th>Strings</th><th>Dictionaries</th><th>Sets</th><th>File Objects</th></tr>
+<tr><td>`a.append(item)`</td><td>`s.join(string_list)`</td><td>`d.items()`</td><td>`a.union(b)`</td><td>`f.read()`</td></tr>
+<tr><td>`a.insert(i, item)`</td><td>`s.split()`</td><td>`d.values()`</td><td>`a.intersection(b)`</td><td>`f.readlines()`</td></tr>
+<tr><td>`a.pop()`</td><td>`s.strip()`</td><td>`d.pop(key)`</td><td>`a.add(elem)`</td><td>`f.write(s)`</td></tr>
+<tr><td>`a.sort()`</td><td></td><td></td><td></td><td>`f.close()`</td></tr>
 </table>
 </center>
 
+Another special thing to know about file objects is that we usually open them using the `with` keyword so that we don't have to remember to close them.  
 
+<!--
 We finished with these practice problems.  
 
 2. Each line of the file [movies.txt](movies.txt) starts with the name of a person, and then a list of their favorite movies (separated by commas).  Save the file and then load its contents into Python.  Then convert the data in to a dictionary with each person's name as a key and a list with movie preferences as the values. You can start with this code:
@@ -2223,7 +2226,7 @@ We finished with these practice problems.
     ```
 
 3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
-
+-->
 
 <!--
 ```python

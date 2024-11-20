@@ -914,9 +914,33 @@ We did this example:
 
 3. How are the results of the 2-sample confidence interval different than the 1-sample confidence intervals we could construct for each group?  
 
-
-
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
+
+### Wed, Nov 20
+
+Today we reviewed for the midterm.  We talked about three questions you should ask to decide which inference formula(s) to use:
+
+<div class="Theorem">
+**Choosing the right inference method**
+
+1. Are you estimating a number (confidence interval) or answering a yes/no question about significance (hypothesis test)? 
+
+2. Do you have one sample or two?
+
+3. Are you interested in percents of a categorical variable (proportions) or averages of a numerical variable (means)?  
+</div>
+
+We also did some of the [midterm 3 review problems](midterm3review.html) in class.  We did this additional exercise that was not on the review:
+
+* [Exercise 7.18](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.18)
+
+We also reviewed the [logic of hypothesis testing](#:~:text=Logic of Hypothesis Testing)
+Finally, don't forget to *memorize the definition of a p-value*!
+
+<div class="Theorem">
+**Definition.** A **p-value** is the probability of getting a result at least as extreme as what happened, if the null hypothesis is true.
+</div>
+
 
 
 - - - 

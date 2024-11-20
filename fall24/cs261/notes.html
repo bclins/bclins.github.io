@@ -3196,7 +3196,7 @@ concatenation, and methods like <code>.index()</code> and
 <code>.count()</code>. It is possible to add these features to a custom
 class by using magic methods like <code>__len__()</code>,
 <code>__getitem__()</code>, and so on.</p>
-Here is a table of features implemented by sequence types:
+<p>Here is a table of features implemented by sequence types:</p>
 <center>
 <table class="bordered">
 <tr>
@@ -3299,6 +3299,7 @@ Functions
 <code>x not in s</code>
 </td>
 <td>
+<code>sorted(s)</code>
 </td>
 </tr>
 </table>
@@ -3326,6 +3327,9 @@ Dictionaries
 <th>
 Sets
 </th>
+<th>
+File Objects
+</th>
 </tr>
 <tr>
 <td>
@@ -3339,6 +3343,9 @@ Sets
 </td>
 <td>
 <code>a.union(b)</code>
+</td>
+<td>
+<code>f.read()</code>
 </td>
 </tr>
 <tr>
@@ -3354,18 +3361,25 @@ Sets
 <td>
 <code>a.intersection(b)</code>
 </td>
+<td>
+<code>f.readlines()</code>
+</td>
 </tr>
 <tr>
 <td>
 <code>a.pop()</code>
 </td>
 <td>
+<code>s.strip()</code>
 </td>
 <td>
 <code>d.pop(key)</code>
 </td>
 <td>
-<code>a.difference(b)</code>
+<code>a.add(elem)</code>
+</td>
+<td>
+<code>f.write(s)</code>
 </td>
 </tr>
 <tr>
@@ -3377,25 +3391,28 @@ Sets
 <td>
 </td>
 <td>
-<code>a.add(elem)</code>
+</td>
+<td>
+<code>f.close()</code>
 </td>
 </tr>
 </table>
 </center>
-<p>We finished with these practice problems.</p>
-<ol start="2" type="1">
-<li><p>Each line of the file <a href="movies.txt">movies.txt</a> starts
-with the name of a person, and then a list of their favorite movies
-(separated by commas). Save the file and then load its contents into
-Python. Then convert the data in to a dictionary with each person’s name
-as a key and a list with movie preferences as the values. You can start
-with this code:</p>
-<div class="sourceCode" id="cb83"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;movies.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>    data_list <span class="op">=</span> [line.strip().split(<span class="st">&quot;,&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div></li>
-<li><p>How could you combine all of the movie preferences to get a list
-of the favorite movies with no repeats?</p></li>
-</ol>
+<p>Another special thing to know about file objects is that we usually
+open them using the <code>with</code> keyword so that we don’t have to
+remember to close them.</p>
+<!--
+We finished with these practice problems.  
+
+2. Each line of the file [movies.txt](movies.txt) starts with the name of a person, and then a list of their favorite movies (separated by commas).  Save the file and then load its contents into Python.  Then convert the data in to a dictionary with each person's name as a key and a list with movie preferences as the values. You can start with this code:
+
+    ```python
+    with open("movies.txt") as file:
+        data_list = [line.strip().split(",") for line in file.readlines()]
+    ```
+
+3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
+-->
 <!--
 ```python
 import math 

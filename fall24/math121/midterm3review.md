@@ -40,14 +40,14 @@ Concepts to review: (i) Degrees of freedom and how to use the t-distribution tab
 Know when to use one sample method for the differences in match pairs data instead of two-sample methods.
 
 * [Exercise 7.17](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.17)
-* [Exercise 7.21](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.21)
+* [Exercise 7.23](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.23)
+* [Exercise 7.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.25)
 
 ### Two Sample t-Distribution Methods
 
-<!-- For next time: Both 7.23 & 7.25 are really matched pairs. And 7.23 is a much better matched pairs question than 7.21. Then 7.24 is a great 2-sample t-problem. -->
+* [Exercise 7.24](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.24)
+* [Exercise 7.26](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.26)
 
-* [Exercise 7.23](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.24)
-* [Exercise 7.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.26)
 
 
 
