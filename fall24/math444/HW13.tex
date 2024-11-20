@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amsfonts}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{soul}
+
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\on}{\operatorname}
+\newcommand{\Log}{\on{Log}}
+\newcommand{\Arg}{\on{Arg}}
+
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Math 444 - Homework 13 \hfill Name: \underline{\hspace*{2in}}}
+\noindent
+\begin{enumerate}
+\item Find the harmonic conjugate of $u(x,y) = x^2 - y^2$.  That is, find a harmonic function $v(x,y)$ such that $u+iv$ is holomorphic.  
+\vfill
+
+
+\item Prove that if $u(x,y)$ is harmonic and bounded on $\R^2$, then $u(x,y)$ is constant.  Hint: Recall that $u$ must have a harmonic conjugate $v$.  Use Liouville's theorem on $\exp(u+iv)$.   
+\vfill
+
+\item Give an example to show that the product of two harmonic functions is not necessarily harmonic.  
+\vfill 
+
+\item Use the Residue theorem to evaluate the following real integrals. 
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\ds \int_{-\infty}^\infty \frac{1}{(x^2+1)(x^2 + 2x + 2)} \, dx$ 
+
+\item $\ds \int_{-\infty}^\infty \frac{\cos x}{x^2 + 16} \, dx$
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\end{enumerate}
+
+\end{document}

@@ -2166,16 +2166,64 @@ The converting an object of one type to another type is called **casting**.  In 
 
 5. Add functionality to the Rational type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Rational.  
 
-<!--
-After we finished adding more features to the Rational class, we looked at some of the common classes.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len()__`, `__getitem()__`, and so on. 
 
-Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But there are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types. 
+### Wed, Nov 20 
 
-5. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
+Today we looked sequence & iterator types.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
 
-Also, sets and dictionaries are iterator types, but not sequence types. Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  
+Here is a table of features implemented by sequence types:
+<center>
+<table class="bordered">
+<tr><th>Operators</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Methods&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
+<tr><td>`x in s`</td><td>`len(s)`</td><td>`s.index(x)`</td></tr>
+<tr><td>`x not in s`</td><td>`max(s)`</td><td>`s.count(x)`</td></tr>
+<tr><td>`s + t`</td><td>`min(s)`</td><td></td></tr>
+<tr><td>`s * n` or `n * s`</td><td></td><td></td></tr>
+<tr><td>`s[i]` or `s[i:j]` or `s[i:j:k]`</td><td></td><td></td></tr>
+</table>
+</center>
 
--->
+
+Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But not all iterator types are sequences.  For example, sets and dictionaries are iterators but not sequences. There are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types.
+
+1. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
+
+Iterator types don't have many common features, but most implement the following:
+
+<center>
+<table class="bordered">
+<tr><th>Operators</th><th>Functions</th></tr>
+<tr><td>`x in s`</td><td>`enumerate(s)`</td></tr>
+<tr><td>`x not in s`</td><td></td></tr>
+</table>
+</center>
+
+Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  Iterators also let you use the `enumerate(iterator)` function to loop pairs of indices and values in an iterator. 
+
+In addition to common features share by many classes, most classes in Python also have special methods that are only available for that class.  Here is a list of methods you should know:
+
+<center>
+<table class="bordered">
+<tr><th>List</th><th>Strings</th><th>Dictionaries</th><th>Sets</th></tr>
+<tr><td>`a.append(item)`</td><td>`s.join(string_list)`</td><td>`d.items()`</td><td>`a.union(b)`</td></tr>
+<tr><td>`a.insert(i, item)`</td><td>`s.split()`</td><td>`d.values()`</td><td>`a.intersection(b)`</td></tr>
+<tr><td>`a.pop()`</td><td></td><td>`d.pop(key)`</td><td>`a.difference(b)`</td></tr>
+<tr><td>`a.sort()`</td><td></td><td></td><td>`a.add(elem)`</td></tr>
+</table>
+</center>
+
+
+We finished with these practice problems.  
+
+2. Each line of the file [movies.txt](movies.txt) starts with the name of a person, and then a list of their favorite movies (separated by commas).  Save the file and then load its contents into Python.  Then convert the data in to a dictionary with each person's name as a key and a list with movie preferences as the values. You can start with this code:
+
+    ```python
+    with open("movies.txt") as file:
+        data_list = [line.strip().split(",") for line in file.readlines()]
+    ```
+
+3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
+
 
 <!--
 ```python

@@ -3186,16 +3186,216 @@ type by using the constructor function for that type.</p>
 allow casting from from integer and string types (such as
 <code>"4/5"</code>) to Rational.</li>
 </ol>
-<!--
-After we finished adding more features to the Rational class, we looked at some of the common classes.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len()__`, `__getitem()__`, and so on. 
-
-Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But there are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types. 
-
-5. Create a dictionary `d` and then print the types of `d.values()` and `d.items()`.  
-
-Also, sets and dictionaries are iterator types, but not sequence types. Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  
-
--->
+<h3 id="wed-nov-20">Wed, Nov 20</h3>
+<p>Today we looked sequence &amp; iterator types. A <a
+href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">sequence
+type</a> are types like lists, tuples, and ranges that implement a
+common set of features including the <code>len</code> function,
+subscripting, slicing, using the <code>+</code> operator for
+concatenation, and methods like <code>.index()</code> and
+<code>.count()</code>. It is possible to add these features to a custom
+class by using magic methods like <code>__len__()</code>,
+<code>__getitem__()</code>, and so on.</p>
+Here is a table of features implemented by sequence types:
+<center>
+<table class="bordered">
+<tr>
+<th>
+Operators
+</th>
+<th>
+     Functions     
+</th>
+<th>
+     Methods     
+</th>
+</tr>
+<tr>
+<td>
+<code>x in s</code>
+</td>
+<td>
+<code>len(s)</code>
+</td>
+<td>
+<code>s.index(x)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>x not in s</code>
+</td>
+<td>
+<code>max(s)</code>
+</td>
+<td>
+<code>s.count(x)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>s + t</code>
+</td>
+<td>
+<code>min(s)</code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>s * n</code> or <code>n * s</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>s[i]</code> or <code>s[i:j]</code> or <code>s[i:j:k]</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</center>
+<p>Every sequence type is also an <a
+href="https://docs.python.org/3/library/stdtypes.html#iterator-types">iterator
+types</a>. But not all iterator types are sequences. For example, sets
+and dictionaries are iterators but not sequences. There are lots of
+other iterator types that don’t implement all of the features of
+sequence types. For example, we you have a dictionary <code>d</code>,
+both <code>d.values()</code> and <code>d.items()</code> are iterator
+types.</p>
+<ol type="1">
+<li>Create a dictionary <code>d</code> and then print the types of
+<code>d.values()</code> and <code>d.items()</code>.</li>
+</ol>
+<p>Iterator types don’t have many common features, but most implement
+the following:</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Operators
+</th>
+<th>
+Functions
+</th>
+</tr>
+<tr>
+<td>
+<code>x in s</code>
+</td>
+<td>
+<code>enumerate(s)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>x not in s</code>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</center>
+<p>Iterator types implement two magic methods <code>__iter()__</code>
+and <code>__next()__</code> that let you loop through any iterator type
+using a for-in loop. Iterators also let you use the
+<code>enumerate(iterator)</code> function to loop pairs of indices and
+values in an iterator.</p>
+<p>In addition to common features share by many classes, most classes in
+Python also have special methods that are only available for that class.
+Here is a list of methods you should know:</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+List
+</th>
+<th>
+Strings
+</th>
+<th>
+Dictionaries
+</th>
+<th>
+Sets
+</th>
+</tr>
+<tr>
+<td>
+<code>a.append(item)</code>
+</td>
+<td>
+<code>s.join(string_list)</code>
+</td>
+<td>
+<code>d.items()</code>
+</td>
+<td>
+<code>a.union(b)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>a.insert(i, item)</code>
+</td>
+<td>
+<code>s.split()</code>
+</td>
+<td>
+<code>d.values()</code>
+</td>
+<td>
+<code>a.intersection(b)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>a.pop()</code>
+</td>
+<td>
+</td>
+<td>
+<code>d.pop(key)</code>
+</td>
+<td>
+<code>a.difference(b)</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>a.sort()</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>a.add(elem)</code>
+</td>
+</tr>
+</table>
+</center>
+<p>We finished with these practice problems.</p>
+<ol start="2" type="1">
+<li><p>Each line of the file <a href="movies.txt">movies.txt</a> starts
+with the name of a person, and then a list of their favorite movies
+(separated by commas). Save the file and then load its contents into
+Python. Then convert the data in to a dictionary with each person’s name
+as a key and a list with movie preferences as the values. You can start
+with this code:</p>
+<div class="sourceCode" id="cb83"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;movies.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>    data_list <span class="op">=</span> [line.strip().split(<span class="st">&quot;,&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div></li>
+<li><p>How could you combine all of the movie preferences to get a list
+of the favorite movies with no repeats?</p></li>
+</ol>
 <!--
 ```python
 import math 

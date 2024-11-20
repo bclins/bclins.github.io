@@ -1303,6 +1303,43 @@ $$\int_0^\pi R e^{-R \sin t} \, dt \le \int_0^{\pi/2} 2R e^{-\frac{2R}{\pi} t} \
 
 2. Compute $\int_{-\infty}^\infty \dfrac{x \sin x}{x^2 + 9} \, dx$. 
 
+### Wed, Nov 20
+
+We started with this real integral 
+
+1. $\int_0^{2 \pi} \dfrac{1}{10 - 6 \cos \theta} \, d\theta$.  
+
+To convert integrals of functions involving sine & cosine from 0 to 2π, you can use the following substitutions, all based on letting $z = e^{i \theta}$ and integrating over the unit circle:
+
+* $d\theta = \dfrac{dz}{iz}$
+* $\cos \theta = \dfrac{z + z^{-1}}{2}$
+* $\sin \theta = \dfrac{z - z^{-1}}{2i}$. 
+
+<details>
+$$\int_0^{2\pi} \dfrac{1}{10 - 6 \cos \theta} \, d\theta = \oint_{|z|=1} \left(\dfrac{1}{10 - 3z - 3z^{-1}}\right) \left( \dfrac{dz}{iz} \right)$$
+$$=\frac{1}{i} \oint_{|z|=1} \dfrac{1}{10z - 3z^2 - 3} \, dz$$
+The roots of $10z - 3z^2 + 3$ are 3 and $1/3$, and only the later is inside the unit disk, so we just need to find the residue at $1/3$.
+$$2\pi \lim_{z \rightarrow \tfrac{1}{3}} \frac{z - \tfrac{1}{3}}{10 z - 3z^2 - 3} = 2 \pi \lim_{z \rightarrow \tfrac{1}{3}} \frac{1}{10 - 6z}  = \frac{\pi}{4}.$$
+</details>
+
+After that, we introduced **harmonic functions** which are functions $u:\mathbb{R}^2 \rightarrow \R$ with continuous partial derivatives such that 
+$$\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.$$ 
+
+1. Show that $u(x,y) = x^3 - 3xy^2$ is harmonic.
+
+2. Construct a real-valued function $v(x,y)$ such that $u+iv$ satisfies the Cauchy-Riemann equations. 
+
+<div class="Theorem">
+**Theorem (Harmonic Conjugates).** For every harmonic function $u$, it is always possible to construct another harmonic function $v$ such that $u+iv$ is holomorphic (at least locally, that is in a small open set). The function $v$ is called a **harmonic conjugate** of $u$. The converse is true as well, if $f$ is holomorphic, then both the real and imaginary parts of $f$ are harmonic functions. 
+</div>
+
+A corollary of the previous theorem and the open mapping principle is this:
+
+<div class="Theorem">
+**Maximum Modulus Principle for Harmonic Functions**. A harmonic function on an open domain $D \subseteq \R^2$ cannot have a local max or local min in $D$.  
+</div>
+
+
 - - - 
 
 ### Week 14 Notes

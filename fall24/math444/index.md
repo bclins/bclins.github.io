@@ -51,7 +51,7 @@ Week | Topic                      | Notes | Homework
 10 | Singularities and residues                     | [Week 10](notes.html#week-10-notes) | [HW10](HW10.pdf)
 11 | Applications of the residue theorem            | [Week 11](notes.html#week-11-notes) | [HW11](HW11.pdf)
 12 | Möbius transforms, **Midterm 2**               | [Week 12](notes.html#week-12-notes) | [HW12](HW12.pdf)
-13 | Discrete applications of residue               | [Week 13](notes.html#week-13-notes) |
+13 | Discrete applications of residue               | [Week 13](notes.html#week-13-notes) | [HW13](HW13.pdf)
 14 | Harmonic functions                             | [Week 14](notes.html#week-14-notes) |
 15 | The heat equation                              | [Week 15](notes.html#week-15-notes) |
 
