@@ -630,7 +630,7 @@ Then we talked about how to prove Cauchy's theorem using
 
 <div class="Theorem">
 **Green's Theorem.** If $P(x,y)$ and $Q(x,y)$ are real-valued functions with continuous partial derivatives in a simply connected domain $D$ with a piecewise smooth boundary curve $C$, then 
-$$\oint_C P \, dx + Q \, dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right).$$
+$$\oint_C P \, dx + Q \, dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, dA.$$
 </div>
 
 Here is a nice video explanation of the [intuition behind Green's theorem](https://youtu.be/JB99RbQAilI). One problem with using Green's theorem to prove Cauchy's theorem is that it requires us to assume that $f'(z)$ is continuous (so that the partial derivatives are all continuous.  It turns out that is true for all holomorphic functions, as we will see later.  The [Complex Variables](https://www.amazon.com/Complex-Variables-Second-Dover-Mathematics/dp/0486406792) book has a different proof of Cauchy's theorem that doesn't require this assumption.  

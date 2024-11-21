@@ -3413,48 +3413,21 @@ We finished with these practice problems.
 
 3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
 -->
-<!--
-```python
-import math 
-
-class Rational:
-    def __init__(self, num, denom = 1):
-        self.num = num
-        self.denom = denom
-
-    def reduce(self):
-        gcd = math.gcd(self.num, self.denom)
-        self.num = self.num // gcd
-        self.denom = self.denom // gcd
-    def __str__(self):
-        return f"{self.num}/{self.denom}"
-    def __add__(self, other):
-        if type(other) == int:
-            return Rational(self.denom * other + self.num, self.denom)
-        if type(other) == float: 
-            return self.num / self.denom + other
-        if type(other) == Rational:
-            return Rational(self.denom * other.num + self.num * other.denom, self.denom * other.denom)
-    __radd__ = __add__
-    def __mul__(self, other):
-        if type(other) == int:
-            return Rational(self.num * other, self.denom)
-        if type(other) == float: 
-            return self.num / self.denom * other
-        if type(other) == Rational:
-            return Rational(self.num * other.num, self.denom * other.denom)
-    __rmul__ = __mul__
-
-
-
-x = Rational(8) 
-y = Rational(1,2) 
-z = y * x
-z.reduce()                                                                                            
-print(z)                                                                                              
-```
-
--->
+<h3 id="thu-nov-21">Thu, Nov 21</h3>
+<p>Today we went over the <a href="practicemidterm2.pdf">midterm 2
+review problems</a> (see <a
+href="practicemidterm2solutions.pdf">here</a> for the solutions). We
+also talked about this example:</p>
+<ol type="1">
+<li><p>What is the value of variable <code>a</code> after the following
+code runs?</p>
+<div class="sourceCode" id="cb83"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> []</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>        a.append(<span class="dv">10</span> <span class="op">*</span> j <span class="op">+</span> i)</span></code></pre></div></li>
+</ol>
+<!-- NOTE TO SELF: Come up with better examples for tracing next time! -->
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <h4 id="tentative-schedule-13">Tentative Schedule</h4>

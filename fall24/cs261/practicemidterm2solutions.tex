@@ -1,0 +1,335 @@
+\documentclass[12pt,answers]{exam}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+
+
+\begin{document}
+\pagestyle{empty}
+\graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
+
+\subsection*{Practice Midterm 2 - CS 261}
+\textit{Here are questions similar to what will be on the midterm exam.  You won't be able to use any outside material during the midterm exam (no notes, computers, etc.) so see how much you can answer without looking things up. Be sure to study any Python rules and terminology that you don't know. }
+
+\begin{questions}
+
+\question Suppose that \verb|a = [6, 2, 2, 3, 5]|. What will the following commands output?  
+\begin{parts}
+\part \verb|print(set(a))| 
+\begin{solution}
+\verb|{6, 2, 3, 5}|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(sorted(a))|
+\begin{solution}
+\verb|[2, 2, 3, 5, 6]|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(tuple(a))|
+\begin{solution}
+\verb|(6, 2, 2, 3, 5)|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|print(a.sort())|
+\begin{solution}
+\verb|None|
+\end{solution}
+\bigskip
+\bigskip
+\end{parts}
+
+
+\question Suppose that 
+\begin{center}
+\verb|d = {"Alfred": [1, 2, 3], "Bruce": (4, 5), "Selina": 6}|
+\end{center}
+What are the values of the following expressions? If there will be an error, briefly explain why.
+
+\begin{parts}
+\part \verb|d["Alfred"]| 
+\begin{solution}
+\verb|[1, 2, 3]|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|d["Bruce"][2]| \\ \\
+\begin{solution}
+Error, because the tuple \verb|(4, 5)| has no value at index 2. 
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|"Selina" in d| \\ \\
+\begin{solution}
+\verb|True|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|(4, 5) in d| \\ \\
+\begin{solution}
+\verb|False|
+\end{solution}
+\bigskip
+\bigskip
+\end{parts}
+
+
+\question Determine the values of the variables \verb|a|, \verb|b|, \verb|c| at the end of this code. 
+\begin{verbatim}
+a, b = 5, 10
+c = b + 2
+a, b, c = c, a, b
+\end{verbatim}
+
+\begin{solution}
+\verb|a = 12, b = 5, c = 10|
+\end{solution}
+\vfill
+
+\newpage
+\question Consider the following code.
+\begin{verbatim}
+square = [
+    [1, 2, 3], 
+    [4, 5, 6], 
+    [7, 8, 9]
+]
+\end{verbatim}
+\begin{parts}
+\item For what values of \verb|i| and \verb|j| would \verb|square[i][j]| be equal to 6? 
+\begin{solution}
+\verb|i = 1, j = 2|
+\end{solution}
+\bigskip
+\bigskip
+
+\item What is the value of \verb|square[1]|? 
+\begin{solution}
+\verb|[4, 5, 6]|
+\end{solution}
+\bigskip
+\bigskip
+
+\item How could you increase the values of each number in \verb|square| by 1? Write a nested loop that will do this.   
+\begin{solution}
+\begin{verbatim}
+for i in range(3):
+    for j in range(3):
+        square[i][j] += 1
+\end{verbatim}
+\end{solution}
+\vfill
+\vfill
+\end{parts}
+
+
+\question Suppose we run the following code. 
+
+\begin{verbatim}
+a = [4, 7, 0, -2, 5]
+b = a.sort()
+c = sorted(a)
+a.append(3)
+\end{verbatim}
+
+What are the values of \verb|a|, \verb|b|, and \verb|c| after this code is run? 
+\begin{solution}
+\verb|a = [-2, 0, 4, 5, 7, 3], b = None, c = [-2, 0, 4, 5, 7]|
+\end{solution}
+\vfill
+
+\question Consider the following function which inputs a list of numbers and the code that follows it.
+\begin{verbatim}
+def mystery(xs): 
+    for i in range(1, len(xs)):
+        xs[i] += xs[i - 1]
+
+a = [1, 1, 1, 1, 1]
+b = mystery(a)
+print(a) # prints [1, 2, 3, 4, 5]
+print(b) # prints None
+\end{verbatim}
+
+Explain what the function \verb|mystery()| does.  What does it return?  What side effects does it have?  
+\begin{solution}
+After the loop, the value of the list \verb|xs| at index \verb|i| is the sum of the values of the list at the previous indices.  So \verb|mystery| mutates a list in place and fills it with the partial sums of the original input list.  This function does not return anything and its only side effect is to mutate whatever list is passed into the function.  
+\end{solution}
+\vfill
+\vfill
+
+\newpage
+\question After the votes for each candidate have been counted, we need to figure out which candidate has the most votes. Complete the function \verb|election_winner| below which inputs a dictionary \verb|vote_counts| with the vote counts for each candidate and returns the name of the candidate with the most votes.  If two or more candidates tie for the most votes, the function should just return the string \verb|"tie"|. \\ \\
+Here are examples of inputs and the correct outputs for this function.
+
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Input} & \textbf{Correct Output} \\ \hline
+\verb|{"Abe": 56, "Bob": 42, "Cal": 25}| & \verb|"Abe"| \hspace*{1in} \\ \hline
+\verb|{"Abe": 37, "Bob": 5, "Cal": 6, "Don": 37}| & \verb|"tie"| \hspace*{1in} \\ \hline
+\verb|{"Bob": 17, "Cal": 26, "Don": 37}| & \verb|"Don"| \hspace*{1in} \\ \hline
+\end{tabular}
+
+\begin{verbatim}
+def election_winner(vote_counts):
+    # Step 1: Find the integer max_votes which is the most votes anyone got.
+\end{verbatim}
+\begin{solution}
+\begin{verbatim}
+    max_votes = max(vote_counts.values())
+\end{verbatim}
+\end{solution}
+\vfill
+
+
+
+
+
+
+
+
+
+\begin{verbatim}
+    # Step 2: Make a list called top_keys with the candidates who got max_votes. 
+\end{verbatim}
+\begin{solution}
+\begin{verbatim}
+    top_keys = [key for key, val in vote_counts.items() if val == max_votes]
+\end{verbatim}
+\end{solution}
+\vfill
+
+
+
+
+
+
+
+
+      
+\begin{verbatim}
+    # Step 3: Return the correct output based on the name(s) in top_keys. 
+\end{verbatim}
+\begin{solution}
+\begin{verbatim}
+    if top_keys == 1:
+        return top_keys[0]
+    else:
+        return "tie"
+\end{verbatim}
+\end{solution}
+\vfill
+
+
+
+
+
+\newpage
+\question Which of the following types are mutable?  Circle the ones that are.
+\begin{choices}
+\choice Integers
+\CorrectChoice Lists
+\choice Tuples
+\CorrectChoice Dictionaries
+\choice Strings
+\CorrectChoice Sets
+\end{choices}
+\smallskip
+\question Suppose that we have a list of pairs of distinct integers, like this:
+\begin{center}
+\verb|pairs_list = [(1, 2), (3, 5), (4, 7), (7, 4), (2, 4), (0, 1)]| 
+\end{center}
+We will say that a pair \verb|(x, y)| is \emph{reversible} if both \verb|(x, y)| and \verb|(y, x)| are in the \verb|pairs_list|. For example, the pair \verb|(4, 7)| is reversible in the list above.  Write a function called \verb|count_reversible| that inputs a \verb|pairs_list| and returns an integer equal to the total number of reversible pairs in the list.  For example, your function should return 2 for the list above since the only reversible pairs are \verb|(4, 7)| and \verb|(7, 4)|.  If the same pair appears more than once in a list, then it should only count once. % For example if we added another copy of \verb|(4, 7)| to the list above, then \verb|count_reversible| should still only return 2 since there are only 2 distinct pairs that are reversible.  
+\begin{solution}
+\begin{verbatim}
+def count_reversible(pairs_list):
+    reversible_pairs = 0
+    for pair in pairs_list:
+        if (pair[1], pair[0]) in pairs_list:
+            reversible_pairs += 1
+    return reversible_pairs
+\end{verbatim}
+\end{solution}
+
+\vfill
+\newpage
+
+\question For each of the following comprehensions, determine its value and state what type the output is.  
+\begin{parts}
+\part \verb|{word: len(word) for word in ["apple", "banana", "cantalope"]}| 
+\begin{solution}
+\verb|{"apple": 5, "banana": 6, "cantalope": 9} # This is a dictionary|
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|[(n, n ** 2) for n in range(6)]| 
+\begin{solution}
+\verb|[(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)] # This is a list| 
+\end{solution}
+\bigskip
+\bigskip
+\part \verb|{c for c in "this is a string"}| 
+\begin{solution}
+\verb|{"t", "h", "i", "s", " ", "a", "r", "n", "g"} # This is a set|
+\end{solution}
+\bigskip
+\bigskip
+\end{parts}
+
+\question Consider the following code. 
+
+
+\begin{verbatim}
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    def area(self):
+        return self.length * self.width
+
+x = Rectangle(4, 5)
+\end{verbatim}
+\begin{parts}
+\part Which of the following best describes \verb|x|?
+\begin{choices}
+\choice \verb|x| is a method of the Rectangle class.
+\CorrectChoice \verb|x| is an instance of the Rectangle class.
+\choice \verb|x| is an attribute of the Rectangle class.
+\choice \verb|x| is the Rectangle class.
+\end{choices}
+\smallskip
+
+\part What Python statement would print the width of \verb|x|?  
+\begin{solution}
+\verb|print(x.width)|
+\end{solution}
+\bigskip
+\bigskip
+
+\part What Python statement would print the area of \verb|x|? 
+\begin{solution}
+\verb|print(x.area())|
+\end{solution}
+\bigskip
+\bigskip
+\end{parts}
+
+\question Why is it recommended to check if \verb|__name__ == "__main__"| before running the contents of the main function in a Python program?  
+\begin{choices}
+\CorrectChoice So that main will not run when you import the program as a module. 
+\choice So that other functions that aren't named main won't get called accidentally. 
+\choice It keeps the program from getting too complicated with too many functions. 
+\choice It lets the program know which function is the most important one. 
+\end{choices}
+
+\end{questions}
+
+
+
+\end{document} 

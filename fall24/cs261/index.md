@@ -26,7 +26,7 @@ header-includes: |
 ### Announcements
 
 * Midterm 2 will by on **Friday, Nov 22**
-* [Midterm 2 practice exam](practicemidterm2.pdf)
+* [Midterm 2 practice exam](practicemidterm2.pdf) and [solutions](practicemidterm2solutions.pdf)
 * [Midterm 1 practice exam](practicemidterm1.pdf) and [solutions](practicemidterm1solutions.pdf)
 * For extra help, check out [Harvard's CS50 with Python](https://www.youtube.com/watch?v=OvKCESUCWII&list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V) on YouTube. 
 

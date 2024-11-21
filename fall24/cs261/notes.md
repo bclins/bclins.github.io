@@ -2228,49 +2228,20 @@ We finished with these practice problems.
 3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
 -->
 
-<!--
-```python
-import math 
+### Thu, Nov 21
 
-class Rational:
-    def __init__(self, num, denom = 1):
-        self.num = num
-        self.denom = denom
+Today we went over the [midterm 2 review problems](practicemidterm2.pdf) (see [here](practicemidterm2solutions.pdf) for the solutions).  We also talked about this example:
 
-    def reduce(self):
-        gcd = math.gcd(self.num, self.denom)
-        self.num = self.num // gcd
-        self.denom = self.denom // gcd
-    def __str__(self):
-        return f"{self.num}/{self.denom}"
-    def __add__(self, other):
-        if type(other) == int:
-            return Rational(self.denom * other + self.num, self.denom)
-        if type(other) == float: 
-            return self.num / self.denom + other
-        if type(other) == Rational:
-            return Rational(self.denom * other.num + self.num * other.denom, self.denom * other.denom)
-    __radd__ = __add__
-    def __mul__(self, other):
-        if type(other) == int:
-            return Rational(self.num * other, self.denom)
-        if type(other) == float: 
-            return self.num / self.denom * other
-        if type(other) == Rational:
-            return Rational(self.num * other.num, self.denom * other.denom)
-    __rmul__ = __mul__
+1. What is the value of variable `a` after the following code runs?
 
+    ```python
+    a = []
+    for i in range(4):
+        for j in range(3):
+            a.append(10 * j + i)
+    ```
 
-
-x = Rational(8) 
-y = Rational(1,2) 
-z = y * x
-z.reduce()                                                                                            
-print(z)                                                                                              
-```
-
--->
-
+<!-- NOTE TO SELF: Come up with better examples for tracing next time! -->
 
 - - - 
 
