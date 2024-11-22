@@ -2878,9 +2878,9 @@ href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 22</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/complex.pdf#section.6.1">6.1</a></td>
-<td style="text-align: left;">Harmonic functions</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Vector fields &amp; holomorphic
+functions</td>
 </tr>
 </tbody>
 </table>
@@ -3038,6 +3038,127 @@ harmonic function on a open domain
 cannot have a local max or local min in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.</p>
 </div>
+<h3 id="fri-nov-22">Fri, Nov 22</h3>
+<p>For a domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⊆</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">D \subseteq \mathbb{R}^2</annotation></semantics></math>,
+we call a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>:</mo><mi>D</mi><mo>→</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F:D \rightarrow \mathbb{R}^2</annotation></semantics></math>
+a <strong>vector field</strong> on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>.
+If
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>Q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">F(x,y) = (P(x,y), Q(x,y)),</annotation></semantics></math>
+then the <strong>divergence</strong> and <strong>curl</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+are defined by
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>div</mo><mi>F</mi><mo>=</mo><mi>∇</mi><mo>⋅</mo><mi>F</mi><mo>=</mo><mfrac><mrow><mi>∂</mi><mi>P</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>∂</mi><mi>Q</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac><mo>,</mo></mrow><annotation encoding="application/x-tex">\operatorname{div} F = \nabla \cdot F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y},</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>curl</mo><mi>F</mi><mo>=</mo><mi>∇</mi><mo>×</mo><mi>F</mi><mo>=</mo><mfrac><mrow><mi>∂</mi><mi>Q</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>∂</mi><mi>P</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{curl} F = \nabla \times F = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}.</annotation></semantics></math></p>
+<div class="Theorem">
+<p><strong>Green’s Theorem (both versions).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>P</mi><mo>,</mo><mi>Q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F = (P, Q)</annotation></semantics></math>
+is a vector field in an open simply connected domain in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>
+that includes a simple, closed, piecewise smooth curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+be the inside of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.
+Then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>F</mi><mo>⋅</mo><mi>d</mi><mi>γ</mi><mo>=</mo><msub><mo>∬</mo><mi>D</mi></msub><mo>curl</mo><mi>F</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">\oint_C F \cdot d \gamma = \iint_D \operatorname{curl} F \, dA</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>F</mi><mo>⋅</mo><mi>n</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><msub><mo>∬</mo><mi>D</mi></msub><mo>div</mo><mi>F</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">\oint_C F \cdot n \, dt = \iint_D \operatorname{div} F \, dA</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">n = n(t)</annotation></semantics></math>
+is the normal vector to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\gamma(t)</annotation></semantics></math>
+at each point.</p>
+</div>
+<p>The div and curl versions of Green’s theorem explain the intuition
+that curl measures the net rotation of a flow (positive is
+counterclockwise, negative is clockwise), while divergence measures the
+net flux for the flow (inward is negative, outward is positive). When a
+vector field
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>curl</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{curl} F = 0</annotation></semantics></math>
+everywhere, we say it is <strong>irrotational.</strong> When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>div</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{div} F = 0</annotation></semantics></math>
+everywhere, we say that it is <strong>incompressible</strong>.</p>
+<!--<table>
+<tr><td><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=200></img></td><td><img src="" width=200</img></td></tr> 
+</table>-->
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=400></img>
+</center>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+is an open simply connected domain in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>,
+then any function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>D</mi><mo>→</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">f: D \rightarrow \mathbb{C}</annotation></semantics></math>
+can be thought of as a vector field. Furthermore, if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is holomorphic on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+then we know by Cauchy’s theorem that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C f \, dz = 0.</annotation></semantics></math>
+But keep in mind that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>≠</mo><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mo>⋅</mo><mi>d</mi><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C f \, dz \ne \oint_C f \cdot dz.</annotation></semantics></math>
+That’s because complex multiplication is not the same as the dot-product
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>.</p>
+<p>Recall that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>i</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">z = x + iy</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">w = u + iv</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Re</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mover><mi>w</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{Re}(z \bar{w}) = (x,y) \cdot (u, v).</annotation></semantics></math>
+Therefore, if we let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mover><mi>f</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">F = \bar{f}</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>F</mi><mo>⋅</mo><mi>d</mi><mi>z</mi><mo>=</mo><mo>Re</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C F \cdot dz = \operatorname{Re}\left( \oint_C f \, dz \right) = 0.</annotation></semantics></math>
+Since this is true on every small simple closed curve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>,
+it follows that the vector field
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>curl</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{curl} F = 0</annotation></semantics></math>
+everywhere.</p>
+<p>The vector field
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mover><mi>f</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">F = \bar{f}</annotation></semantics></math>
+is known as the <strong>Polya field</strong> of a holomorphic function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+It turns out that the Polya field also has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>div</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{div} F = 0</annotation></semantics></math>
+everywhere. To prove that, follow these exercises.</p>
+<ol type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">f = u + i v</annotation></semantics></math>,
+show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Im</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>v</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>+</mo><mi>u</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\operatorname{Im}(f \, dz) = v\, dx + u \, dy</annotation></semantics></math>.</p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">n(t)</annotation></semantics></math>
+is the normal vector for a path
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z(t)</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mo>−</mo><mi>i</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">n \, dt = -i \, dz</annotation></semantics></math>.</p></li>
+<li><p>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⋅</mo><mi>n</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mi>v</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>+</mo><mi>u</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">F \cdot n \, dt = v \, dx + u \, dv</annotation></semantics></math>.</p></li>
+</ol>
+<p>From these you can conclude that:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><mi>F</mi><mo>⋅</mo><mi>n</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mo>Im</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>∮</mo><mi>C</mi></msub><mi>f</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint_C F \cdot n \, dt = \operatorname{Im}\left( \oint_C f \, dz \right) = 0.</annotation></semantics></math></p>
+<p>So the Polya field of a holomorphic function is always both
+incompressible and irrotational. We ended with one more exercise that we
+didn’t have time to finish.</p>
+<ol start="4" type="1">
+<li>Show that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">f = u + i v</annotation></semantics></math>
+is holomorphic, then the Polya field for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f&#39;(z)</annotation></semantics></math>
+is the gradient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">\nabla u</annotation></semantics></math>.</li>
+</ol>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <h4 id="tentative-schedule-13">Tentative Schedule</h4>
@@ -3053,7 +3174,7 @@ cannot have a local max or local min in
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 25</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Conformal mappings &amp; heat flows</td>
+<td style="text-align: left;">The Dirichlet problem</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 27</td>
@@ -3082,17 +3203,17 @@ cannot have a local max or local min in
 <tr class="odd">
 <td style="text-align: center;">Mon, Dec 2</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Fourier transform</td>
+<td style="text-align: left;">The Dirichlet problem</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Dec 4</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">The heat equation</td>
+<td style="text-align: left;">Fourier transform</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Dec 6</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">The Dirichlet problem</td>
+<td style="text-align: left;">The heat equation</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Mon, Dec 9</td>

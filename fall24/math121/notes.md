@@ -955,7 +955,21 @@ Mon, Nov 25  |  | Choosing right inference technique
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
+<!--
+### Mon, Nov 25
 
+Today we introduced the following notion.
+
+<div class="Theorem">
+**Definition.** A hypothesis test is **statistically powerful** if the sample size is large enough so that random error probably won't cause a Type II error.  You can tell if test is powerful by estimating the margin of error of a confidence interval with plausible data and making sure it is smaller than the **effect size** you hope to find.  
+</div>
+
+In order to estimate if your experiment will be powerful enough, you typically need to make some guesses about what kind of data you might get and how big of an effect you are hoping to find.  
+
+We did this workshop in class:
+
+* **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
+-->
 
 - - - 
 

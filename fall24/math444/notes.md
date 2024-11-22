@@ -1259,7 +1259,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 18  |              | Contour integrals
 Wed, Nov 20  | [6.1][6.1] | Harmonic functions
-Fri, Nov 22  | [6.1][6.1] | Harmonic functions
+Fri, Nov 22  |            | Vector fields & holomorphic functions
 
 ### Mon, Nov 18
 
@@ -1341,6 +1341,60 @@ A corollary of the previous theorem and the open mapping principle is this:
 **Maximum Modulus Principle for Harmonic Functions**. A harmonic function on a open domain $D \subseteq \R^2$ cannot have a local max or local min in $D$.  
 </div>
 
+### Fri, Nov 22
+
+For a domain $D \subseteq \R^2$, we call a function $F:D \rightarrow \R^2$ a **vector field** on $D$. If 
+$$F(x,y) = (P(x,y), Q(x,y)),$$
+then the **divergence** and **curl** of $F$ are defined by 
+$$\on{div} F = \nabla \cdot F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y},$$
+$$\on{curl} F = \nabla \times F = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}.$$
+
+<div class="Theorem">
+**Green's Theorem (both versions).** If $F = (P, Q)$ is a vector field in an open simply connected domain in $\R^2$ that includes a simple, closed, piecewise smooth curve $C$ and let $D$ be the inside of $C$.  Then 
+
+$$\oint_C F \cdot d \gamma = \iint_D \on{curl} F \, dA$$
+$$\oint_C F \cdot n \, dt = \iint_D \on{div} F \, dA$$
+
+where $n = n(t)$ is the normal vector to $\gamma(t)$ at each point.  
+</div>
+
+The div and curl versions of Green's theorem explain the intuition that curl measures the net rotation of a flow (positive is counterclockwise, negative is clockwise), while divergence measures the net flux for the flow (inward is negative, outward is positive).  When a vector field $F$ has $\on{curl} F = 0$ everywhere, we say it is **irrotational.**  When $\on{div} F = 0$ everywhere, we say that it is **incompressible**.  
+
+<!--<table>
+<tr><td><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=200></img></td><td><img src="" width=200</img></td></tr> 
+</table>-->
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=400></img>
+</center>
+
+
+If $D$ is an open simply connected domain in $\C$, then any function $f: D \rightarrow \C$ can be thought of as a vector field.  Furthermore, if $f$ is holomorphic on $D$, then we know by Cauchy's theorem that 
+$$\oint_C f \, dz = 0.$$
+But keep in mind that 
+$$\oint_C f \, dz \ne \oint_C f \cdot dz.$$
+That's because complex multiplication is not the same as the dot-product on $\R^2$.  
+
+Recall that if $z = x + iy$ and $w = u + iv$, then 
+$$\re(z \bar{w}) = (x,y) \cdot (u, v).$$
+Therefore, if we let $F = \bar{f}$, then 
+$$\oint_C F \cdot dz = \re \left( \oint_C f \, dz \right) = 0.$$ 
+Since this is true on every small simple closed curve $C$ in $D$, it follows that the vector field $F$ has $\on{curl} F = 0$ everywhere.  
+
+The vector field $F = \bar{f}$ is known as the **Polya field** of a holomorphic function $f$.  It turns out that the Polya field also has $\on{div} F = 0$ everywhere.  To prove that, follow these exercises.  
+
+1. If $f = u + i v$, show that $\im(f \, dz) = v\, dx + u \, dy$. 
+
+2. If $n(t)$ is the normal vector for a path $z(t)$, then $n \, dt = -i \, dz$.
+
+3. Show that $F \cdot n \, dt = v \, dx + u \, dv$.  
+
+From these you can conclude that:
+$$\oint_C F \cdot n \, dt = \im \left( \oint_C f \, dz \right) = 0.$$ 
+
+So the Polya field of a holomorphic function is always both incompressible and irrotational.  We ended with one more exercise that we didn't have time to finish.
+
+4. Show that if $f = u + i v$ is holomorphic, then the Polya field for $f'(z)$ is the gradient $\nabla u$.  
+
 
 - - - 
 
@@ -1350,7 +1404,7 @@ A corollary of the previous theorem and the open mapping principle is this:
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Nov 25  |  | Conformal mappings & heat flows
+Mon, Nov 25  |  | The Dirichlet problem 
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
@@ -1364,9 +1418,9 @@ Fri, Nov 29  |  | Thanksgiving break, no class
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Dec 2  | | Fourier transform
-Wed, Dec 4  | | The heat equation     
-Fri, Dec 6  | | The Dirichlet problem 
+Mon, Dec 2  | | The Dirichlet problem 
+Wed, Dec 4  | | Fourier transform
+Fri, Dec 6  | | The heat equation     
 Mon, Dec 9  | | Recap & review
 
 
