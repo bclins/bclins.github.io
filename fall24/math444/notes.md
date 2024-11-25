@@ -1491,7 +1491,7 @@ So the Polya field of a holomorphic function is always both incompressible and i
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Nov 25  |  | The Dirichlet problem 
+Mon, Nov 25  |  | The heat equation
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
@@ -1499,22 +1499,37 @@ Fri, Nov 29  |  | Thanksgiving break, no class
 
 We began with this exercise that we didn't have time to finish last time.
 
-1. Show that if $f = u + i v$ is holomorphic, then the Polya field for $f'(z)$ is the gradient $\nabla u$.  
+1. Show that if $f = u + i v$ is holomorphic, then the Polya field for $f'(z)$ is the gradient $\nabla u$. Hint, recall that 
+$$f'(z) = \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x}.$$
 
 Since $f'(z)$ is holomorphic, its Polya field is both irrotational and incompressible.  We talked about why it makes sense that the gradient of a harmonic function $u(x,y)$ would have those two properties, in light of the maximum modulus principle for harmonic functions.   
 
-Then we looked at the 2-dimensional heat equation
+2. Graph the harmonic function $u = x^3 - 3x y^2$ on [Desmos 3D](https://www.desmos.com/3d/fsj1ydgcsq). Based on the graph, what should the vector field $\nabla u$ look like?
+
+Recall that a vector field $F$ on $\R^2$ is **conservative** if there is a **potential function** $u$ such that $F$ is the gradient of $u$.  The Polya fields of a holomorphic function are all conservative. There are lots of applications of conservative vector fields.  There are lots of examples of conservative vector fields in nature.  
+
+<table class="bordered">
+<tr><th>Application</th><th>Potential Function</th><th>Tangent Curves</th><th>Normal Curves</th></tr>
+<tr><td>Fluid flow</td><td>Pressure or elevation</td><td>Streamlines</td><td>Equipotential curves</td></tr>
+<tr><td>Heat flow</td><td>Temperature</td><td>Lines of heat flux</td><td>Isotherms</td></tr>
+<tr><td>Electrostatic force</td><td>Electric potential</td><td>Field lines</td><td>Equipotential curves</td></tr>
+</table>
+
+Then we looked at the 2-dimensional **heat equation**:
+
 $$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2}.$$
 
+This is a partial differential equation for modeling how the temperature $T$ at a point $(x,y)$ on a 2-dimensional object (like a thin metal plate) changes with respect to time $t$. The solution would be a function $T(t, x, y)$ that would tell us the temperature at any location and time.  To understand where this equation comes from, consider the following:
+
 The net flow of heat into a disk $D$ with boundary $C$ is equal to 
-$$\int_C \nabla T \cdot n(t) \, dt$$
-where $n(t) = (y'(t), - x'(t))$ is the normal vector and $\nabla T$ is the gradient of the temperature function (at a fixed time).  
+$$\oint_C \nabla T \cdot n(t) \, dt$$
+where $n(t) = (y'(t), - x'(t))$ is the (outward) normal vector and $\nabla T$ is the gradient of the temperature function (at a fixed time).  
 
 <center>
 <svg width="300" height="300" viewBox="-2.5 -2.5 5 5">
 <!-- x & y axes -->
 <g transform="scale(1,-1)">
-<circle cx="0" cy="0" r="1" fill="transparent" stroke="red" stroke-width="0.05"/>
+<circle cx="0" cy="0" r="1" fill="transparent" stroke="blue" stroke-width="0.05"/>
 </g>
 <g transform="rotate(0)" stroke="black" stroke-width="0.05">
  <line x1="1.2" y1="0" x2="1.8" y2="0"/>
@@ -1557,13 +1572,19 @@ where $n(t) = (y'(t), - x'(t))$ is the normal vector and $\nabla T$ is the gradi
 
 Note that the gradient points in the direction of greatest increase in temperature. If that is outwards (like in the image above), then it is hotter outside the disk $D$, so heat tends to flow inwards (opposite the gradient vectors). 
 
-1. Use the divergence form of Green's theorem to show that the net flow of heat into $D$ is 
+3. Use the divergence form of Green's theorem to show that the net flow of heat into $D$ is 
 $$\iint_D \dfrac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} \, dA,$$
 which explains why the heat equation makes sense as a model of heat flow. 
 
 #### Steady State Solutions
 
 When the temperature reaches equilibrium, it stops changing so the left side of the heat equation ($\partial T/ \partial t$) becomes zero.  When that happens, $T = T(x,y)$ is a harmonic function.  We've talked about functions that are harmonic on the entire complex plane.  But an important problem is to find functions that are harmonic on a domain $D \subset \C$ that satisfy a **boundary condition**.  This is called the **Dirichlet problem.**
+
+<div class="Theorem">
+**The Dirichlet Problem.** Let $D \subset \R^2$ be a simply connected open domain with boundary $C.$ Given a continuous real valued function $g$ defined on the boundary $C$, find a continuous function $u$ on $D \cup C$ such that $u$ is harmonic in $D$ and $u = g$ on $C.$  
+</div>
+
+<!--
 
 We looked at one solution to the Dirichlet problem on the upper-half plane:
 $$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$
@@ -1582,7 +1603,7 @@ We finished by talking about how a harmonic function $T: D_1 \rightarrow \R$ tha
 $$f(z) = i \frac{(z + 1)}{(z-1)}$$ 
 maps the unit disk onto the upper half plane.  
 
-
+-->
 
 - - - 
 

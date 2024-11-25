@@ -2270,18 +2270,62 @@ canvas.pack()
 root.mainloop()
 ```
 
+Notice that `bg`, `height`, `width` and `fill` are special **keyword arguments** that must include the keyword when you call the function. An advantage of keyword arguments is that you can put them in any order (as long as they come after the non-keyword arguments).   
+
 1. Now create a class called `Rectangle` which has attributes `left`, `top`, `width`, `height`, and `color`.  It should also have a method `.show(canvas)` that inputs a Canvas object and adds a rectangle widget to that object.  
 
 After we created the `Rectangle` class, we talked about how to create a subclass of rectangles called `Squares`.  To create a `Square`, you don't need both the height and width.  Python lets you create a **subclass** using the following syntax.   
 
 ```python
-
 class Square(Rectangle):
     __init__(self, left, top, width, color): 
         self.left = left
         self.top = top
         self.width, self.height = width, width
         self.color = color
+```
+
+Any method or attribute of a subclass that you don't redefine is **inherited** from the **superclass**.  In this case, the `Square` subclass inherits the `show` method from the `Rectangle` superclass.  
+
+Here was out final code for the day:
+
+```python
+from tkinter import *
+
+def main():
+    root = Tk()
+    canvas = Canvas(root, bg = 'white', height=400, width=600)
+    left, top, right, bottom = 100, 50, 500, 150
+    canvas.create_rectangle(left, top, right, bottom, fill = 'red')
+    my_rectangle = Rectangle(50, 200, 100, 50, 'blue')
+    my_square = Square(200, 200, 50, 'green')
+    my_rectangle.show(canvas)
+    my_square.show(canvas)
+    canvas.pack()
+    root.mainloop()
+
+class Rectangle:
+    def __init__(self, left, top, width, height, color):
+        self.left = left
+        self.top = top
+        self.width = width
+        self.height = height
+        self.color = color
+    def show(self, canvas):
+        """Add the rectangle to a Tk Canvas object"""
+        canvas.create_rectangle(self.left, self.top, self.left + self.width,
+                                self.top + self.height, fill=self.color)
+         
+class Square(Rectangle):
+    def __init__(self, top, left, width, color):
+        self.top = top
+        self.left = left
+        self.width = width
+        self.height = width
+        self.color = color
+
+if __name__ == "__main__":
+    main()
 ```
 
 - - - 

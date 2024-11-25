@@ -957,13 +957,20 @@ Fri, Nov 29  |  | Thanksgiving break, no class
 
 ### Mon, Nov 25
 
-Today we introduced the following notion.
+Recall the difference between type I and II errors. 
+
+<center>
+<table class="bordered">
+<tr><th>Type I error (false positive)</th><th>Type II error (false negative)</th></tr>
+<tr><td>Evidence looks significant, but in reality there is no effect.</td><td>Evidence does not look significant, but in reality there is an effect.</td></tr>
+</table>
+</center>
+
+The best way to avoid Type II errors is to use big sample sizes.  But how big is big enough?  One way to tell is to estimate the margin of error based on plausible guesses about the data you might see.  
 
 <div class="Theorem">
 **Definition.** A hypothesis test is **statistically powerful** if the sample size is large enough so that random error probably won't cause a Type II error.  You can tell if test is powerful by estimating the margin of error of a confidence interval with plausible data and making sure it is smaller than the **effect size** you hope to find.  
 </div>
-
-In order to estimate if your experiment will be powerful enough, you typically need to make some guesses about what kind of data you might get and how big of an effect you are hoping to find.  
 
 We did this workshop in class:
 
