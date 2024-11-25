@@ -2251,11 +2251,38 @@ Today we went over the [midterm 2 review problems](practicemidterm2.pdf) (see [h
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Nov 25  |  |
+Mon, Nov 25  | [TP17][TP17] | Inheritance
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
+### Mon, Nov 25
 
+Today we introduced **inheritance**.  We started by drawing some shapes using the **Tkinter** module.  
+
+```python
+from tkinter import *
+
+root = Tk()
+canvas = Canvas(root, bg = "white", height = 400, width = 600)
+left, top, right, bottom = 50, 100, 200, 150
+canvas.create_rectangle(left, top, right, bottom, fill = "red")
+canvas.pack()
+root.mainloop()
+```
+
+1. Now create a class called `Rectangle` which has attributes `left`, `top`, `width`, `height`, and `color`.  It should also have a method `.show(canvas)` that inputs a Canvas object and adds a rectangle widget to that object.  
+
+After we created the `Rectangle` class, we talked about how to create a subclass of rectangles called `Squares`.  To create a `Square`, you don't need both the height and width.  Python lets you create a **subclass** using the following syntax.   
+
+```python
+
+class Square(Rectangle):
+    __init__(self, left, top, width, color): 
+        self.left = left
+        self.top = top
+        self.width, self.height = width, width
+        self.color = color
+```
 
 - - - 
 

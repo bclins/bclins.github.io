@@ -951,11 +951,10 @@ Finally, don't forget to *memorize the definition of a p-value*!
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Nov 25  |  | Choosing right inference technique
+Mon, Nov 25  | [7.4][7.4] | Statistical power
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
 
-<!--
 ### Mon, Nov 25
 
 Today we introduced the following notion.
@@ -969,7 +968,6 @@ In order to estimate if your experiment will be powerful enough, you typically n
 We did this workshop in class:
 
 * **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
--->
 
 - - - 
 
@@ -979,9 +977,9 @@ We did this workshop in class:
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Dec 2  | [7.4][7.4] | Statistical power 
-Wed, Dec 4  | [6.3][6.3] | Chi-squared statistic
-Fri, Dec 6  | [6.4][6.4] | Testing association with chi-squared
+Mon, Dec 2  | [6.3][6.3] | Chi-squared statistic                
+Wed, Dec 4  | [6.4][6.4] | Testing association with chi-squared
+Fri, Dec 6  |            | Inference recap
 Mon, Dec 9  |  | Last day, recap & review
 
 

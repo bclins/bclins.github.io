@@ -1360,11 +1360,98 @@ where $n = n(t)$ is the normal vector to $\gamma(t)$ at each point.
 
 The div and curl versions of Green's theorem explain the intuition that curl measures the net rotation of a flow (positive is counterclockwise, negative is clockwise), while divergence measures the net flux for the flow (inward is negative, outward is positive).  When a vector field $F$ has $\on{curl} F = 0$ everywhere, we say it is **irrotational.**  When $\on{div} F = 0$ everywhere, we say that it is **incompressible**.  
 
-<!--<table>
-<tr><td><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=200></img></td><td><img src="" width=200</img></td></tr> 
-</table>-->
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Divergence_%28captions%29.svg" width=400></img>
+<table>
+<tr><td>
+<svg width="300" height="300" viewBox="-2.5 -2.5 5 5">
+<!-- x & y axes -->
+<g transform="scale(1,-1)">
+<circle cx="0" cy="0" r="1" fill="transparent" stroke="red" stroke-width="0.05"/>
+</g>
+<g transform="rotate(0)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(45)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-45)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(90)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-90)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(135)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-135)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(180)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g stroke="black" stroke-width="0.025">
+ <line x1="-2.5" y1="0" x2="2.5" y2="0"/>
+ <line x1="0" y1="-2" x2="0" y2="2"/>
+</g>
+</svg>
+</td><td>
+<svg width="300" height="300" viewBox="-2.5 -2.5 5 5">
+<!-- x & y axes -->
+<g transform="scale(1,-1)">
+<circle cx="0" cy="0" r="1" fill="transparent" stroke="red" stroke-width="0.05"/>
+</g>
+<g transform="rotate(0)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(45)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(-45)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(90)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(-90)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(135)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(-135)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g transform="rotate(180)" stroke="black" stroke-width="0.05">
+ <line x1="1.5" y1="-0.3" x2="1.5" y2="0.3"/>
+ <polygon points="1.58,0.3 1.42,0.3 1.5,0.5"/>
+</g>
+<g stroke="black" stroke-width="0.025">
+ <line x1="-2.5" y1="0" x2="2.5" y2="0"/>
+ <line x1="0" y1="-2" x2="0" y2="2"/>
+</g>
+</svg>
+</td></tr>
+<tr><td style="text-align:center">$\on{curl} F = 0$</td><td style="text-align:center">$\on{curl} F < 0$ </td></tr>
+<tr><td style="text-align:center">$\on{div} F > 0$ </td><td style="text-align:center">$\on{div} F = 0$ </td></tr>
+</table>
 </center>
 
 
@@ -1407,6 +1494,93 @@ Day  | Section  | Topic
 Mon, Nov 25  |  | The Dirichlet problem 
 Wed, Nov 27  |  | Thanksgiving break, no class
 Fri, Nov 29  |  | Thanksgiving break, no class
+
+### Mon, Nov 25
+
+We began with this exercise that we didn't have time to finish last time.
+
+1. Show that if $f = u + i v$ is holomorphic, then the Polya field for $f'(z)$ is the gradient $\nabla u$.  
+
+Since $f'(z)$ is holomorphic, its Polya field is both irrotational and incompressible.  We talked about why it makes sense that the gradient of a harmonic function $u(x,y)$ would have those two properties, in light of the maximum modulus principle for harmonic functions.   
+
+Then we looked at the 2-dimensional heat equation
+$$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2}.$$
+
+The net flow of heat into a disk $D$ with boundary $C$ is equal to 
+$$\int_C \nabla T \cdot n(t) \, dt$$
+where $n(t) = (y'(t), - x'(t))$ is the normal vector and $\nabla T$ is the gradient of the temperature function (at a fixed time).  
+
+<center>
+<svg width="300" height="300" viewBox="-2.5 -2.5 5 5">
+<!-- x & y axes -->
+<g transform="scale(1,-1)">
+<circle cx="0" cy="0" r="1" fill="transparent" stroke="red" stroke-width="0.05"/>
+</g>
+<g transform="rotate(0)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(45)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-45)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(90)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-90)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(135)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(-135)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g transform="rotate(180)" stroke="black" stroke-width="0.05">
+ <line x1="1.2" y1="0" x2="1.8" y2="0"/>
+ <polygon points="1.8,0.08 1.8,-0.08 2.0,0"/>
+</g>
+<g stroke="black" stroke-width="0.025">
+ <line x1="-2.5" y1="0" x2="2.5" y2="0"/>
+ <line x1="0" y1="-2" x2="0" y2="2"/>
+</g>
+</svg>
+</center>
+
+Note that the gradient points in the direction of greatest increase in temperature. If that is outwards (like in the image above), then it is hotter outside the disk $D$, so heat tends to flow inwards (opposite the gradient vectors). 
+
+1. Use the divergence form of Green's theorem to show that the net flow of heat into $D$ is 
+$$\iint_D \dfrac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} \, dA,$$
+which explains why the heat equation makes sense as a model of heat flow. 
+
+#### Steady State Solutions
+
+When the temperature reaches equilibrium, it stops changing so the left side of the heat equation ($\partial T/ \partial t$) becomes zero.  When that happens, $T = T(x,y)$ is a harmonic function.  We've talked about functions that are harmonic on the entire complex plane.  But an important problem is to find functions that are harmonic on a domain $D \subset \C$ that satisfy a **boundary condition**.  This is called the **Dirichlet problem.**
+
+We looked at one solution to the Dirichlet problem on the upper-half plane:
+$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$
+
+<center>
+<img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/DirichletSolution.png" alt="Level curves for T" width=400/>
+</center>
+
+2. Show that the function $T(z) = k_1 + \left(\dfrac{k_0 - k_1}{\pi} \right) \on{Arg} z$ is harmonic.  Hint: Is there a holomorphic function with $T(z)$ as its real or imaginary part?
+
+We finished by talking about how a harmonic function $T: D_1 \rightarrow \R$ that is defined on one domain $D_1 \subset \C$ can be turned into a harmonic function on another domain $D_2 \subset \C$ if you can find an invertible holomorphic function $f: D_2 \rightarrow D_1$.  In that case, $T(f(z))$ is a harmonic function on $D_2$.  
+
+3. Show that if $T$ is harmonic and $f$ is holomorphic, then $T \circ f$ is harmonic.  Hint: there is a holomorphic function $g$ such that $T = \re g$.  
+
+4. Show that the Möbius transform 
+$$f(z) = i \frac{(z + 1)}{(z-1)}$$ 
+maps the unit disk onto the upper half plane.  
 
 
 

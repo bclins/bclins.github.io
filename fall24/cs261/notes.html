@@ -3442,8 +3442,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a h
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 25</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap17.html">TP17</a></td>
+<td style="text-align: left;">Inheritance</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 27</td>
@@ -3457,6 +3458,38 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a h
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-25">Mon, Nov 25</h3>
+<p>Today we introduced <strong>inheritance</strong>. We started by
+drawing some shapes using the <strong>Tkinter</strong> module.</p>
+<div class="sourceCode" id="cb84"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tkinter <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> Tk()</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>canvas <span class="op">=</span> Canvas(root, bg <span class="op">=</span> <span class="st">&quot;white&quot;</span>, height <span class="op">=</span> <span class="dv">400</span>, width <span class="op">=</span> <span class="dv">600</span>)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>left, top, right, bottom <span class="op">=</span> <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>canvas.create_rectangle(left, top, right, bottom, fill <span class="op">=</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>canvas.pack()</span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>root.mainloop()</span></code></pre></div>
+<ol type="1">
+<li>Now create a class called <code>Rectangle</code> which has
+attributes <code>left</code>, <code>top</code>, <code>width</code>,
+<code>height</code>, and <code>color</code>. It should also have a
+method <code>.show(canvas)</code> that inputs a Canvas object and adds a
+rectangle widget to that object.</li>
+</ol>
+<p>After we created the <code>Rectangle</code> class, we talked about
+how to create a subclass of rectangles called <code>Squares</code>. To
+create a <code>Square</code>, you don’t need both the height and width.
+Python lets you create a <strong>subclass</strong> using the following
+syntax.</p>
+<div class="sourceCode" id="cb85"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Square(Rectangle):</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">__init__</span>(<span class="va">self</span>, left, top, width, color): </span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.left <span class="op">=</span> left</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.top <span class="op">=</span> top</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width, <span class="va">self</span>.height <span class="op">=</span> width, width</span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span></code></pre></div>
 <hr />
 <h3 id="week-15-notes">Week 15 Notes</h3>
 <h4 id="tentative-schedule-14">Tentative Schedule</h4>
