@@ -1,0 +1,48 @@
+\documentclass[12pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mymod}{\, \mathrm{mod}\,}
+
+\begin{document}
+
+\subsubsection*{Project 4 \hfill Math 121}
+
+\textit{Please type your solutions to the questions below in Microsoft Word or Google Docs and turn in your solutions in class on \textbf{Friday, Dec 6}. Use complete sentences to write your answers. It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. } \\
+
+\noindent
+Is there a relation between education level and religious observance in the United States? Below is data from a sample of 2{,}002 American adults who participated in the General Social Survey (GSS).
+One of the questions asked on the GSS is ``Have you attended religious services in the last week?"  Here are the results broken down by education level for adults surveyed with at least a high school education. 
+
+\begin{center}
+\begin{tabular}{l|cccc} 
+& \multicolumn{4}{c}{Highest Degree Held} \\ \hline 
+ & High School & 2-Year College & 4-Year College & Graduate \\ \hline
+Attended services & 400 & 62 & 146 & 76 \\
+Did not attend services & 880 & 101 & 232 & 105 \\ \hline
+Total & 1280 & 163 & 378 & 181 \\ 
+\end{tabular}
+\end{center}
+
+\begin{questions}
+\item Make a stacked bar graph showing the \textbf{column percentages} in this two way table. You can use Excel to make the graph. What is the biggest difference visible between the different groups?
+\vfill
+
+\item How many degrees of freedom does the table above have for the chi-squared test?
+\vfill
+
+\item For this table, $\chi^2 = 14.2$. What is the corresponding p-value? What does it mean about education level versus attendance at religious services? 
+\vfill
+
+\item Which group is the least likely to have attended religious services?   
+\vfill
+
+\item If you remove that group, then for the remaining three groups, $\chi^2 = 0.73$ which has a p-value of $69.4\%$.  What do these three groups have in common, and what does the chi-squared test say about the association between education level and religious attendance when you only look at these three groups? 
+\vfill
+
+\end{questions}
+\end{document}

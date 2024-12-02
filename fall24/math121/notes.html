@@ -977,7 +977,7 @@ is, we can use a <strong>95% confidence interval</strong>:
 <p>The confidence interval formula has two parts: a <strong>best guess
 estimate</strong> (or <strong>point estimate</strong>) before the
 plus/minus symbol, and a <strong>margin of error</strong> after the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
 symbol. The formula for the margin of error is 2 times the
 <strong>standard error</strong> which is an approximation of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
@@ -2055,7 +2055,8 @@ Type II error (false negative)
 </tr>
 <tr>
 <td>
-Evidence looks significant, but in reality there is no effect.
+Evidence looks statistically significant, but in reality there is no
+effect.
 </td>
 <td>
 Evidence does not look significant, but in reality there is an effect.
@@ -2116,6 +2117,26 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-dec-2">Mon, Dec 2</h3>
+<p>We started by reviewing a really important concept:
+<strong>association is not causation.</strong> In <a
+href="project3.pdf">Project 3</a> we saw that there is a strong
+(statistically significant) association between whether states increased
+speed limits and the percent change in traffic fatalities. The
+difference was probably not a random fluke, but we can’t conclude that
+it was definitely the speed limit change that <em>caused</em> the
+increase in fatalities. That’s because there might be other lurking
+variables that we haven’t ruled out (maybe some of those states also
+changed their alcohol laws, or the rules about teenage drivers).</p>
+<p>Being able to say that an association is statistically significant is
+useful, but it is not the same as proving cause-and-effect.</p>
+<p>This week we are going to introduce one more inference technique
+known as the <strong>chi-squared test for association</strong>. The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>
+statistic let’s you measure if an association between two categorical
+variables is statistically significant. Before we talked about the
+statistic, we looked at <strong>two-way tables</strong>. We talked about
+how to find row and column percentages in a two-way table.</p>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

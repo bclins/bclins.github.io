@@ -3550,8 +3550,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a h
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Dec 2</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap17.html">TP17</a></td>
+<td style="text-align: left;">Inheritance</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Dec 4</td>
@@ -3575,6 +3576,66 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a h
 </tr>
 </tbody>
 </table>
+<h3 id="mon-dec-2">Mon, Dec 2</h3>
+<p>Last time we defined classes to represent rectangles and squares.</p>
+<ol type="1">
+<li>Add a method called <code>.translate(dx, dy)</code> that shifts the
+coordinates of a rectangle or square horizontally by <code>dx</code> and
+vertically by <code>dy</code>. Where should you put the method?</li>
+</ol>
+<p>There is nothing stopping us from defining a translate method
+differently for squares than for rectangles. For example, we could have
+the square’s version take a tuple containing a coordinate pair. Although
+Python would allow this, it is a bad idea because functions/methods that
+work for a superclass should still work for a subclass too. Subclasses
+can have additional features, but they shouldn’t lose old features and
+they should behave the way you expect members of the superclass to
+behave.</p>
+<!--
+Consider the following classes:
+
+```python
+class Deck:
+    def __init__(self):
+        self.card_list = []
+        for suit in "CDHS":
+            for rank in ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]:
+                self.card_list.append(suit+rank)    
+    def shuffle(self):
+        random.shuffle(self.card_list)
+    def pop_card(self):
+        return self.card_list.pop()
+    def replace_card(self, card):
+        self.card_list.append(card)
+
+class Hand(Deck):
+    def __init__(self, cards):
+        self.card_list = cards
+```
+-->
+<!--
+* You should cover the **Liskov substitution principle**.  You should always make sure that the subclass is usable everywhere that the superclass can be used.  Give an example where you break this rule by overriding a method.  Then describe the correct way to override a method so that the inputs are allowed to be supertypes of the old inputs and the outputs must be subtypes of the old output.  Maybe use scale and translate methods for squares & rectangles?  
+-->
+<p>One thing that you can do is create subclasses of standard classes,
+like dict:</p>
+<div class="sourceCode" id="cb87"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Counter(<span class="bu">dict</span>):</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, iterator):</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(Counter, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> iterator:</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> item <span class="kw">in</span> <span class="va">self</span>:</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>[item] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>[item] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Counter([<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb87-11"><a href="#cb87-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb87-12"><a href="#cb87-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))</span>
+<span id="cb87-13"><a href="#cb87-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, val <span class="kw">in</span> x.items():</span>
+<span id="cb87-14"><a href="#cb87-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, val) </span></code></pre></div>
+<!--
+See this comment <https://stackoverflow.com/questions/18405618/extending-built-in-python-dict-class> to understand the `super(Counter, self).__init__()` line.
+-->
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

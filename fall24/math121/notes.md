@@ -962,7 +962,7 @@ Recall the difference between type I and II errors.
 <center>
 <table class="bordered">
 <tr><th>Type I error (false positive)</th><th>Type II error (false negative)</th></tr>
-<tr><td>Evidence looks significant, but in reality there is no effect.</td><td>Evidence does not look significant, but in reality there is an effect.</td></tr>
+<tr><td>Evidence looks statistically significant, but in reality there is no effect.</td><td>Evidence does not look significant, but in reality there is an effect.</td></tr>
 </table>
 </center>
 
@@ -988,6 +988,17 @@ Mon, Dec 2  | [6.3][6.3] | Chi-squared statistic
 Wed, Dec 4  | [6.4][6.4] | Testing association with chi-squared
 Fri, Dec 6  |            | Inference recap
 Mon, Dec 9  |  | Last day, recap & review
+
+### Mon, Dec 2
+
+We started by reviewing a really important concept: **association is not causation.** In [Project 3](project3.pdf) we saw that there is a strong (statistically significant) association between whether states increased speed limits and the percent change in traffic fatalities.  The difference was probably not a random fluke, but we can't conclude that it was definitely the speed limit change that *caused* the increase in fatalities.  That's because there might be other lurking variables that we haven't ruled out (maybe some of those states also changed their alcohol laws, or the rules about teenage drivers).  
+
+Being able to say that an association is statistically significant is useful, but it is not the same as proving cause-and-effect.  
+
+This week we are going to introduce one more inference technique known as the **chi-squared test for association**.  The $\chi^2$ statistic let's you measure if an association between two categorical variables is statistically significant.  Before we talked about the statistic, we looked at **two-way tables**.  We talked about how to find row and column percentages in a two-way table.  
+
+
+
 
 
 - - - 

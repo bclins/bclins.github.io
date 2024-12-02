@@ -1584,26 +1584,6 @@ When the temperature reaches equilibrium, it stops changing so the left side of 
 **The Dirichlet Problem.** Let $D \subset \R^2$ be a simply connected open domain with boundary $C.$ Given a continuous real valued function $g$ defined on the boundary $C$, find a continuous function $u$ on $D \cup C$ such that $u$ is harmonic in $D$ and $u = g$ on $C.$  
 </div>
 
-<!--
-
-We looked at one solution to the Dirichlet problem on the upper-half plane:
-$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$
-
-<center>
-<img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/DirichletSolution.png" alt="Level curves for T" width=400/>
-</center>
-
-2. Show that the function $T(z) = k_1 + \left(\dfrac{k_0 - k_1}{\pi} \right) \on{Arg} z$ is harmonic.  Hint: Is there a holomorphic function with $T(z)$ as its real or imaginary part?
-
-We finished by talking about how a harmonic function $T: D_1 \rightarrow \R$ that is defined on one domain $D_1 \subset \C$ can be turned into a harmonic function on another domain $D_2 \subset \C$ if you can find an invertible holomorphic function $f: D_2 \rightarrow D_1$.  In that case, $T(f(z))$ is a harmonic function on $D_2$.  
-
-3. Show that if $T$ is harmonic and $f$ is holomorphic, then $T \circ f$ is harmonic.  Hint: there is a holomorphic function $g$ such that $T = \re g$.  
-
-4. Show that the Möbius transform 
-$$f(z) = i \frac{(z + 1)}{(z-1)}$$ 
-maps the unit disk onto the upper half plane.  
-
--->
 
 - - - 
 
@@ -1618,6 +1598,56 @@ Wed, Dec 4  | | Fourier transform
 Fri, Dec 6  | | The heat equation     
 Mon, Dec 9  | | Recap & review
 
+### Mon, Dec 2
+
+We looked at one solution to the Dirichlet problem on the upper-half plane:
+$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$
+
+<center>
+<img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/DirichletSolution.png" alt="Level curves for T" width=400/>
+</center>
+
+1. Show that the function $T(z) = k_1 + \left(\dfrac{k_0 - k_1}{\pi} \right) \on{Arg} z$ is harmonic.  Hint: Is there a holomorphic function with $T(z)$ as its real or imaginary part?
+
+An important fact about harmonic functions and their conjugates is the following:
+
+<div class="Theorem">
+**Theorem.** If $T$ is a harmonic function and $V$ is its harmonic conjugate, then the level curves of $T$ are orthogonal to the level curves of $V$. 
+</div>
+
+2. Prove this! Hint: it might help to assume that $T = u(z)$ and $V = v(z)$ are the real and imaginary parts of a holomorphic function.  Then you can prove that their level curves are orthogonal by showing that their gradients are orthogonal.  
+
+<div class="Theorem"> 
+**Theorem.** A harmonic function $T: D_1 \rightarrow \R$ that is defined on one domain $D_1 \subset \C$ can be turned into a harmonic function on another domain $D_2 \subset \C$ if you can find an invertible holomorphic function $f: D_1 \rightarrow D_2$.  In that case, $T \circ f^{-1}$ is a harmonic function on $D_2$. 
+</div> 
+
+3. Prove this. Hint: there is a holomorphic function $g$ such that $T = \re g$.  
+
+4. The **Cayley transform** is the Möbius transform 
+$$f(z) = \frac{z - i}{z+i}$$
+which maps the upper half-plane into the unit disk. If $T(z) = \Arg(z)$, then what do the level curves of $T \circ f^{-1}$ look like? Hint: recall that Möbius transforms send lines and circles to lines and circles.
+
+<!--
+4. Show that the Möbius transform 
+$$f(z) = i \frac{(z + 1)}{(z-1)}$$ 
+maps the unit disk onto the upper half plane.  
+-->
+
+5. Let $f(z) = \sin z$. This function maps the open vertical strip $\{ w \in \C : -\pi < \re w < \pi \}$ onto the set of all complex numbers, except the real numbers $x$ with absolute value $|x| \ge 1$.  In fact, if $z = x + iy$, then 
+$$\sin z = \cosh x \sin y + i \sinh x \cos y$$
+where 
+$$\cosh x = \frac{e^x + e^{-x}}{2} \text{ and } \sinh x = \frac{e^x - e^{-x}}{2}$$
+are the **hyperbolic cosine and sine**. 
+Show that the image of the streamlines $z(t) = c + it$ under $\sin z$ are the hyperbolas 
+$$\cosh t \sin c + i \sinh t \cos c.$$ 
+Equivalently, they have implicit equations
+$$\frac{x^2}{(\sin c)^2} + \frac{y^2}{(\cos c)^2} = 1.$$ 
+
+6. Prove the complex angle addition formula for sine: for any $\alpha, \beta \in \C$, 
+$$\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta.$$
+Hint: Show that 
+$$2(e^{i \alpha + i \beta} - e^{-i \alpha - i \beta}) = (e^{i \alpha} - e^{-i \alpha})(e^{i \beta} + e^{-i \beta}) + (e^{i \alpha} + e^{-i \alpha}) (e^{i \beta} - e^{-i \beta}),$$
+then divide both sides by $4i$. 
 
 - - - 
 

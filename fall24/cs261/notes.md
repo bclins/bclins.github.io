@@ -2336,11 +2336,70 @@ if __name__ == "__main__":
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Dec 2  |  | 
+Mon, Dec 2  | [TP17][TP17] | Inheritance
 Wed, Dec 4  |  | 
 Thu, Dec 5  |  | 
 Fri, Dec 6  |  |
 Mon, Dec 9  |  | 
+
+### Mon, Dec 2
+
+Last time we defined classes to represent rectangles and squares.  
+
+1. Add a method called `.translate(dx, dy)` that shifts the coordinates of a rectangle or square horizontally by `dx` and vertically by `dy`.  Where should you put the method?  
+
+There is nothing stopping us from defining a translate method differently for squares than for rectangles.  For example, we could have the square's version take a tuple containing a coordinate pair.  Although Python would allow this, it is a bad idea because functions/methods that work for a superclass should still work for a subclass too. Subclasses can have additional features, but they shouldn't lose old features and they should behave the way you expect members of the superclass to behave.  
+
+<!--
+Consider the following classes:
+
+```python
+class Deck:
+    def __init__(self):
+        self.card_list = []
+        for suit in "CDHS":
+            for rank in ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]:
+                self.card_list.append(suit+rank)    
+    def shuffle(self):
+        random.shuffle(self.card_list)
+    def pop_card(self):
+        return self.card_list.pop()
+    def replace_card(self, card):
+        self.card_list.append(card)
+
+class Hand(Deck):
+    def __init__(self, cards):
+        self.card_list = cards
+```
+-->
+
+<!--
+* You should cover the **Liskov substitution principle**.  You should always make sure that the subclass is usable everywhere that the superclass can be used.  Give an example where you break this rule by overriding a method.  Then describe the correct way to override a method so that the inputs are allowed to be supertypes of the old inputs and the outputs must be subtypes of the old output.  Maybe use scale and translate methods for squares & rectangles?  
+-->
+
+One thing that you can do is create subclasses of standard classes, like dict:
+
+```python
+class Counter(dict):
+    def __init__(self, iterator):
+        super(Counter, self).__init__()
+        for item in iterator:
+            if item in self:
+                self[item] += 1
+            else:
+                self[item] = 1
+
+x = Counter([1,1,1,2,2,2,2,3,3,3])
+print(x)
+print(type(x))
+for key, val in x.items():
+    print(key, val) 
+```
+
+
+<!--
+See this comment <https://stackoverflow.com/questions/18405618/extending-built-in-python-dict-class> to understand the `super(Counter, self).__init__()` line.
+--> 
 
 
 - - - 
