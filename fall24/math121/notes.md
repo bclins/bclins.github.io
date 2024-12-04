@@ -1042,7 +1042,31 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
 
 ### Wed, Dec 4
 
-Today we talked some more about the $\chi^2$-test for association.  
+Today we talked some more about the $\chi^2$-test for association.  We mentioned that the $\chi^2$-distribution has these features:
+
+* **Shape**: Skewed right
+* **Center**: The mean $\mu$ is the degrees of freedom.
+
+The assumptions for the $\chi^2$-test are:
+
+1. **No Bias**: Data should come from a simple random sample. 
+2. **Normality**: Sample should have at least 5 individuals in each cell of the two-way table.  
+
+We did the following example where the $\chi^2$-test is inconclusive:
+
+1. The 2008 General Social Survey asked people if they were "very happy", "pretty happy", or "not too happy" with their lives.  Here are the results broken down by gender. 
+
+    <center>
+    <table class="bordered">
+    <tr><th></th><th>Female</th><th>Male</th></tr>
+    <tr><th>Very Happy</th><td>271</td><td>328</td></tr>
+    <tr><th>Pretty Happy</th><td>513</td><td>587</td></tr>
+    <tr><th>Not Too Happy</th><td>142</td><td>174</td></tr>
+    </table>
+    </center>
+
+    This table has $\chi^2 = 0.46$.  Is there a statistically significant association between the two variables in this two way table?  What are the two variables?  
+
 
 * **Workshop:** [Chi-squared test](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf)
 

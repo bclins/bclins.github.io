@@ -1666,20 +1666,68 @@ then divide both sides by $4i$.
 
 Today we talked about the **Fourier transform** of a real function $f:\R \rightarrow \R$ which is defined to be:
 
-$$\mathcal{F}(f) = \int_{-\infty}^\infty f(x) e^{i\alpha x} \, dx = F(\alpha).$$
+$$\mathcal{F}(f) = \int_{-\infty}^\infty f(x) e^{-i\alpha x} \, dx = F(\alpha).$$
 
+<!-- 
 The **inverse Fourier transform** is 
 
-$$\mathcal{F}^{-1}(F) = \int_{-\infty}^\infty F(\alpha) e^{-i\alpha x} \, d\alpha = f(x).$$
+$$\mathcal{F}^{-1}(F) = \frac{1}{2\pi}\int_{-\infty}^\infty F(\alpha) e^{i\alpha x} \, d\alpha = f(x).$$
+-->
 
-In class we used a contour integral to find the inverse Fourier transform of 
+In class we used a contour integral to find the Fourier transform of 
 
-1. $F(\alpha) = \dfrac{2}{1+\alpha^2}$
+1. $f(x) = \dfrac{1}{1+x^2}$. Hint: There are two cases: if $\alpha > 0$ and if $\alpha < 0$.  
 
 We also calculated the Fourier transform of the Gaussian $f(x) = e^{-x^2}$.  Before calculating that, we needed to know that $\int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}$.  Here is a [video that explains this](https://youtu.be/9CgOthUUdw4).  
 
 Then we used a rectangular contour to show that $\mathcal{F}(e^{-x^2}) = \sqrt{\pi} e^{-\alpha^2/4}$.
 
+2. Show that $e^{-x^2} e^{-i\alpha x} = e^{-\alpha^2/ 4} \exp(-[x+\tfrac{i \alpha}{2}]^2)$.
+
+3. Use the contour below to show that in the limit as $R \rightarrow \infty$, 
+$$\oint e^{-z^2} \, dz = \sqrt{\pi} - e^{-\alpha^2/4} \int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = 0.$$
+
+<center>
+<svg width="240" height="180" viewBox="-5 -4 10 6">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.05">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="2" x2="0" y2="-4"/>
+</g>
+<g stroke="blue" stroke-width="0.08">
+ <line x1="-4" y1="0" x2="4" y2="0"/>
+ <line x1="4" y1="0" x2="4" y2="-2"/>
+ <line x1="4" y1="-2" x2="-4" y2="-2"/>
+ <line x1="-4" y1="-2" x2="-4" y2="0"/>
+ <polygon points="2,-2.15 2,-1.85 1.5,-2"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4" y="0.6">R</text>
+ <text x="-4" y="0.6">-R</text>
+ <text x="0.4" y="-2.3">iα/2</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-4 0.15,-3.5 -0.15,-3.5"/>
+</center>
+
+
+4. Conclude that $\mathcal{F}(e^{-x^2}) = \sqrt{\pi} e^{-\alpha^2 / 4}$. 
+
+We finished by talking about some of the properties of the Fourier transform.  
+
+5. Show that $\mathcal{F}$ is linear, i.e.,
+
+    a. $\mathcal{F}(f+g) = \mathcal{F}(f) + \mathcal{F}(g)$, and 
+    b. $\mathcal{F}(cf) = c \mathcal{F}(f)$. 
+
+6. Prove the translation property: If $g(x) = f(x+c)$, then 
+$$\mathcal{F}(g) = e^{i \alpha c} F(\alpha).$$
+
+7. Prove the derivative property:
+$$\mathcal{F}(f') = i \alpha F(\alpha).$$
+Hint: Use integration by parts and use the fact that $\lim_{x \rightarrow \pm \infty} f(x) = 0$ since $|f|$ must have a finite integral. 
 
 <!--
 ### Fri, Dec 6 

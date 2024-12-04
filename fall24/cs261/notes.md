@@ -2406,8 +2406,21 @@ See this comment <https://stackoverflow.com/questions/18405618/extending-built-i
 Today as an in-class activity we started creating a checker board class using Tkinter.  
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=480></img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=320></img>
 </center>
+
+Some tips to keep in mind:
+
+1. It might help to have a global constant `SQUARE_SIZE`.  
+
+2. If you add the row and column number, the light squares are even and the dark squares are odd. 
+
+3. The `Board` class should have a method called `show()` that draws the board on the canvas. To draw the board, you might want to use nested for loops.  
+
+4. The `Board` class should also have checkers.  
+
+5. Each checker should be a `Checker` object with a position (column and row) and a color.  
+
 
 
 

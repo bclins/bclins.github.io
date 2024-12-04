@@ -3640,8 +3640,21 @@ See this comment <https://stackoverflow.com/questions/18405618/extending-built-i
 <p>Today as an in-class activity we started creating a checker board
 class using Tkinter.</p>
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=480></img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=320></img>
 </center>
+<p>Some tips to keep in mind:</p>
+<ol type="1">
+<li><p>It might help to have a global constant
+<code>SQUARE_SIZE</code>.</p></li>
+<li><p>If you add the row and column number, the light squares are even
+and the dark squares are odd.</p></li>
+<li><p>The <code>Board</code> class should have a method called
+<code>show()</code> that draws the board on the canvas. To draw the
+board, you might want to use nested for loops.</p></li>
+<li><p>The <code>Board</code> class should also have checkers.</p></li>
+<li><p>Each checker should be a <code>Checker</code> object with a
+position (column and row) and a color.</p></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
