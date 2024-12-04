@@ -1601,13 +1601,15 @@ Mon, Dec 9  | | Recap & review
 ### Mon, Dec 2
 
 We looked at one solution to the Dirichlet problem on the upper-half plane:
-$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$
+<!--
+$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$-->
+$$ T(z) = 1 - \tfrac{1}{\pi} \on{Arg} z.$$
 
 <center>
 <img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/DirichletSolution.png" alt="Level curves for T" width=400/>
 </center>
 
-1. Show that the function $T(z) = k_1 + \left(\dfrac{k_0 - k_1}{\pi} \right) \on{Arg} z$ is harmonic.  Hint: Is there a holomorphic function with $T(z)$ as its real or imaginary part?
+1. Show that the function $T(z) = 1-\tfrac{1}{\pi} \on{Arg} z$ is harmonic.  Hint: Is there a holomorphic function with $T(z)$ as its real or imaginary part?
 
 An important fact about harmonic functions and their conjugates is the following:
 
@@ -1633,7 +1635,17 @@ $$f(z) = i \frac{(z + 1)}{(z-1)}$$
 maps the unit disk onto the upper half plane.  
 -->
 
-5. Let $f(z) = \sin z$. This function maps the open vertical strip $\{ w \in \C : -\pi < \re w < \pi \}$ onto the set of all complex numbers, except the real numbers $x$ with absolute value $|x| \ge 1$.  In fact, if $z = x + iy$, then 
+5. Let $f(z) = \sin z$. This function maps the open vertical strip $D_1 = \{ w \in \C : -\pi < \re w < \pi \}$ onto the set $D_2 = \C \backslash ([1,\infty) \cup (-\infty, -1])$.  If we have flow lines in $D_1$ parametrized by $c + it$ where $-\tfrac{\pi}{2} < c < \tfrac{\pi}{2}$, then by the angle addition formula:
+$$w = \sin(c+it) = \sin(c) \cos(it) + \cos(c) \sin(it).$$
+If we let $w = u+iv$, then it is not hard to see that $u = \sin(c) \cos(it)$ and $iv = \cos(c) \sin(it)$.  Then 
+$$\frac{u^2}{(\sin c)^2} - \frac{v^2}{(\cos c)^2} = \cos^2(it) + \sin^2(it) = 1.$$
+In particular the graph 
+$$w(t) = u(t) + iv(t) = \sin(c) \cos(it) + \cos(c) \sin(it)$$
+is a hyperbola in $\C$.  
+These hyperbolas are the flow lines corresponding to a fluid flowing through a narrow opening in the real line. 
+
+<!--
+In fact, if $z = x + iy$, then 
 $$\sin z = \cosh x \sin y + i \sinh x \cos y$$
 where 
 $$\cosh x = \frac{e^x + e^{-x}}{2} \text{ and } \sinh x = \frac{e^x - e^{-x}}{2}$$
@@ -1648,6 +1660,59 @@ $$\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta.$$
 Hint: Show that 
 $$2(e^{i \alpha + i \beta} - e^{-i \alpha - i \beta}) = (e^{i \alpha} - e^{-i \alpha})(e^{i \beta} + e^{-i \beta}) + (e^{i \alpha} + e^{-i \alpha}) (e^{i \beta} - e^{-i \beta}),$$
 then divide both sides by $4i$. 
+-->
+
+### Wed, Dec 4
+
+Today we talked about the **Fourier transform** of a real function $f:\R \rightarrow \R$ which is defined to be:
+
+$$\mathcal{F}(f) = \int_{-\infty}^\infty f(x) e^{i\alpha x} \, dx = F(\alpha).$$
+
+The **inverse Fourier transform** is 
+
+$$\mathcal{F}^{-1}(F) = \int_{-\infty}^\infty F(\alpha) e^{-i\alpha x} \, d\alpha = f(x).$$
+
+In class we used a contour integral to find the inverse Fourier transform of 
+
+1. $F(\alpha) = \dfrac{2}{1+\alpha^2}$
+
+We also calculated the Fourier transform of the Gaussian $f(x) = e^{-x^2}$.  Before calculating that, we needed to know that $\int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}$.  Here is a [video that explains this](https://youtu.be/9CgOthUUdw4).  
+
+Then we used a rectangular contour to show that $\mathcal{F}(e^{-x^2}) = \sqrt{\pi} e^{-\alpha^2/4}$.
+
+
+<!--
+### Fri, Dec 6 
+
+Today we used the Fourier transform to solve the **1-dimensional heat equation**:
+$$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial^2 x}$$
+with initial condition $T(0,x) = f(x)$.  
+
+We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
+
+1. **Derivatives.** $\mathcal{F}(f'(x)) = - i\alpha \hat{f}(\alpha)$.
+
+2. **Convolution.** $\mathcal{F}(f \ast g) = \hat{f}(\alpha) \hat{g}(\alpha)$.  
+
+3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
+
+Then we used these steps to solve the heat equation.
+
+* **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
+
+* **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
+
+* **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
+
+* **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
+
+<center>
+<a href="https://www.desmos.com/calculator/x0dpzrqlvc">
+<img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/heatEQ.png" width="500"></img>
+</a>
+</center>
+-->
+
 
 - - - 
 

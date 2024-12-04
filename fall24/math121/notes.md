@@ -991,11 +991,60 @@ Mon, Dec 9  |  | Last day, recap & review
 
 ### Mon, Dec 2
 
-We started by reviewing a really important concept: **association is not causation.** In [Project 3](project3.pdf) we saw that there is a strong (statistically significant) association between whether states increased speed limits and the percent change in traffic fatalities.  The difference was probably not a random fluke, but we can't conclude that it was definitely the speed limit change that *caused* the increase in fatalities.  That's because there might be other lurking variables that we haven't ruled out (maybe some of those states also changed their alcohol laws, or the rules about teenage drivers).  
+We started by reviewing a two really important concepts: **association is not causation** and **only randomized controlled experiments can prove cause-and-effect**. In [Project 3](project3.pdf) we saw that there is a strong (statistically significant) association between whether states increased speed limits and the percent change in traffic fatalities.  The difference was probably not a random fluke, but we can't conclude that it was definitely the speed limit change that *caused* the increase in fatalities.  That's because there might be other lurking variables that we haven't ruled out (maybe some of those states also changed their alcohol laws, or the rules about teenage drivers).  
 
 Being able to say that an association is statistically significant is useful, but it is not the same as proving cause-and-effect.  
 
 This week we are going to introduce one more inference technique known as the **chi-squared test for association**.  The $\chi^2$ statistic let's you measure if an association between two categorical variables is statistically significant.  Before we talked about the statistic, we looked at **two-way tables**.  We talked about how to find row and column percentages in a two-way table.  
+
+The 2003-04 National Health & Nutrition Exam Survey asked participants how they felt about their weight (options were "underweight", "about right", or "overweight").  The results are shown in the two-way table below, broken down by gender.  
+
+<center>
+<table class="bordered">
+<tr><th></th><th>Female</th><th>Male</th><th>Total</th></tr>
+<tr><th>Underweight</th><td>116</td><td>274</td><td>390</td></tr>
+<tr><th>About right</th><td>1175</td><td>1469</td><td>2644</td></tr>
+<tr><th>Overweight</th><td>1730</td><td>1112</td><td>2842</td></tr>
+<tr><th>Total</th><td>3021</td><td>2855</td><td>5876</td></tr>
+</table>
+</center>
+
+1. What percent of women said that they felt overweight?
+
+2. What percent of overweight people were women?
+
+#### χ² Test for Association
+
+An association between two categorical variables is statistically significant if there is strong evidence that the association holds in the population, not just in the sample.  In a χ² test, you always test the following hypotheses:
+
+* $H_0$: There is no association (in the population)
+* $H_A$: There is an association (in the population)
+
+To determine whether or not to reject $H_0$, [use a computer](https://people.hsc.edu/faculty-staff/blins/StatsTools/chiSquared.html) to find the $\chi^2$ statistic for the two-way table.  If $H_0$ is true, then the $\chi^2$ statistic should follow a **χ² distribution** with **degrees of freedom** equal to:
+$$dF = (\# \text{rows} - 1) \cdot (\# \text{columns} - 1).$$
+You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/chisq.html) to find the corresponding p-value. 
+
+3. The two-way table above has a chi-squared statistic of $\chi^2 = 226.6$.  How many degrees of freedom does the table have and what is the corresponding p-value? 
+
+4. Is the association between gender and perceived body weight statistically significant?  
+
+5. A study from the 1990s looked at whether the anti-retroviral drug AZT can help prevent pregnant women with HIV from passing the virus on to their children.  The mom's were randomly assigned to receive either AZT or a placebo, and the results are shown in the two-way table below.  
+
+    <center>
+    <table class="bordered">
+    <tr><th></th><th>HIV-positive baby</th><th>HIV-negative baby</th></tr>
+    <tr><th>AZT</th><td>13</td><td>167</td></tr>
+    <tr><th>Placebo</th><td>40</td><td>143</td></tr>
+    </table>
+    </center>
+
+    This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
+
+### Wed, Dec 4
+
+Today we talked some more about the $\chi^2$-test for association.  
+
+* **Workshop:** [Chi-squared test](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf)
 
 
 

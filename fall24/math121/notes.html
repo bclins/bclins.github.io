@@ -977,7 +977,7 @@ is, we can use a <strong>95% confidence interval</strong>:
 <p>The confidence interval formula has two parts: a <strong>best guess
 estimate</strong> (or <strong>point estimate</strong>) before the
 plus/minus symbol, and a <strong>margin of error</strong> after the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
 symbol. The formula for the margin of error is 2 times the
 <strong>standard error</strong> which is an approximation of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
@@ -2118,9 +2118,10 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tbody>
 </table>
 <h3 id="mon-dec-2">Mon, Dec 2</h3>
-<p>We started by reviewing a really important concept:
-<strong>association is not causation.</strong> In <a
-href="project3.pdf">Project 3</a> we saw that there is a strong
+<p>We started by reviewing a two really important concepts:
+<strong>association is not causation</strong> and <strong>only
+randomized controlled experiments can prove cause-and-effect</strong>.
+In <a href="project3.pdf">Project 3</a> we saw that there is a strong
 (statistically significant) association between whether states increased
 speed limits and the percent change in traffic fatalities. The
 difference was probably not a random fluke, but we can’t conclude that
@@ -2137,6 +2138,175 @@ statistic let’s you measure if an association between two categorical
 variables is statistically significant. Before we talked about the
 statistic, we looked at <strong>two-way tables</strong>. We talked about
 how to find row and column percentages in a two-way table.</p>
+<p>The 2003-04 National Health &amp; Nutrition Exam Survey asked
+participants how they felt about their weight (options were
+“underweight”, “about right”, or “overweight”). The results are shown in
+the two-way table below, broken down by gender.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+</th>
+<th>
+Female
+</th>
+<th>
+Male
+</th>
+<th>
+Total
+</th>
+</tr>
+<tr>
+<th>
+Underweight
+</th>
+<td>
+116
+</td>
+<td>
+274
+</td>
+<td>
+390
+</td>
+</tr>
+<tr>
+<th>
+About right
+</th>
+<td>
+1175
+</td>
+<td>
+1469
+</td>
+<td>
+2644
+</td>
+</tr>
+<tr>
+<th>
+Overweight
+</th>
+<td>
+1730
+</td>
+<td>
+1112
+</td>
+<td>
+2842
+</td>
+</tr>
+<tr>
+<th>
+Total
+</th>
+<td>
+3021
+</td>
+<td>
+2855
+</td>
+<td>
+5876
+</td>
+</tr>
+</table>
+</center>
+<ol type="1">
+<li><p>What percent of women said that they felt overweight?</p></li>
+<li><p>What percent of overweight people were women?</p></li>
+</ol>
+<h4 id="χ²-test-for-association">χ² Test for Association</h4>
+<p>An association between two categorical variables is statistically
+significant if there is strong evidence that the association holds in
+the population, not just in the sample. In a χ² test, you always test
+the following hypotheses:</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>:
+There is no association (in the population)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>A</mi></msub><annotation encoding="application/x-tex">H_A</annotation></semantics></math>:
+There is an association (in the population)</li>
+</ul>
+<p>To determine whether or not to reject
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>,
+<a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/chiSquared.html">use
+a computer</a> to find the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>
+statistic for the two-way table. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+is true, then the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>
+statistic should follow a <strong>χ² distribution</strong> with
+<strong>degrees of freedom</strong> equal to:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>F</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>#</mi><mtext mathvariant="normal">rows</mtext><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>#</mi><mtext mathvariant="normal">columns</mtext><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">dF = (\# \text{rows} - 1) \cdot (\# \text{columns} - 1).</annotation></semantics></math>
+You can use the <a
+href="https://homepage.divms.uiowa.edu/~mbognar/applets/chisq.html">χ²
+distribution app</a> to find the corresponding p-value.</p>
+<ol start="3" type="1">
+<li><p>The two-way table above has a chi-squared statistic of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>226.6</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 226.6</annotation></semantics></math>.
+How many degrees of freedom does the table have and what is the
+corresponding p-value?</p></li>
+<li><p>Is the association between gender and perceived body weight
+statistically significant?</p></li>
+<li><p>A study from the 1990s looked at whether the anti-retroviral drug
+AZT can help prevent pregnant women with HIV from passing the virus on
+to their children. The mom’s were randomly assigned to receive either
+AZT or a placebo, and the results are shown in the two-way table
+below.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+</th>
+<th>
+<p>HIV-positive baby</p>
+</th>
+<th>
+<p>HIV-negative baby</p>
+</th>
+</tr>
+<tr>
+<th>
+<p>AZT</p>
+</th>
+<td>
+<p>13</p>
+</td>
+<td>
+<p>167</p>
+</td>
+</tr>
+<tr>
+<th>
+<p>Placebo</p>
+</th>
+<td>
+<p>40</p>
+</td>
+<td>
+<p>143</p>
+</td>
+</tr>
+</table>
+</center>
+<p>This table has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>15.6</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 15.6</annotation></semantics></math>.
+Is this strong evidence that AZT works better than a placebo?</p></li>
+</ol>
+<h3 id="wed-dec-4">Wed, Dec 4</h3>
+<p>Today we talked some more about the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>-test
+for association.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf">Chi-squared
+test</a></li>
+</ul>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

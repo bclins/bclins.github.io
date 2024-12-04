@@ -2401,6 +2401,16 @@ for key, val in x.items():
 See this comment <https://stackoverflow.com/questions/18405618/extending-built-in-python-dict-class> to understand the `super(Counter, self).__init__()` line.
 --> 
 
+### Wed, Dec 4
+
+Today as an in-class activity we started creating a checker board class using Tkinter.  
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=480></img>
+</center>
+
+
+
 
 - - - 
 

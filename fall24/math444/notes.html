@@ -3517,14 +3517,15 @@ on
 </table>
 <h3 id="mon-dec-2">Mon, Dec 2</h3>
 <p>We looked at one solution to the Dirichlet problem on the upper-half
-plane:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>k</mi><mn>1</mn></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>k</mi><mn>0</mn></msub><mo>−</mo><msub><mi>k</mi><mn>1</mn></msub></mrow><mi>π</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>Arg</mo><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex"> T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \operatorname{Arg} z.</annotation></semantics></math></p>
+plane: <!--
+$$ T(z) = k_1 + \left(\frac{k_0 - k_1}{\pi} \right) \on{Arg} z.$$-->
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mi>π</mi></mfrac><mo>Arg</mo><mi>z</mi><mi>.</mi></mrow><annotation encoding="application/x-tex"> T(z) = 1 - \tfrac{1}{\pi} \operatorname{Arg} z.</annotation></semantics></math></p>
 <center>
 <img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/DirichletSolution.png" alt="Level curves for T" width=400/>
 </center>
 <ol type="1">
 <li>Show that the function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>k</mi><mn>1</mn></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mrow><msub><mi>k</mi><mn>0</mn></msub><mo>−</mo><msub><mi>k</mi><mn>1</mn></msub></mrow><mi>π</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>Arg</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">T(z) = k_1 + \left(\dfrac{k_0 - k_1}{\pi} \right) \operatorname{Arg} z</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mi>π</mi></mfrac><mo>Arg</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">T(z) = 1-\tfrac{1}{\pi} \operatorname{Arg} z</annotation></semantics></math>
 is harmonic. Hint: Is there a holomorphic function with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(z)</annotation></semantics></math>
 as its real or imaginary part?</li>
@@ -3584,37 +3585,104 @@ $$f(z) = i \frac{(z + 1)}{(z-1)}$$
 maps the unit disk onto the upper half plane.  
 -->
 <ol start="5" type="1">
-<li><p>Let
+<li>Let
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">f(z) = \sin z</annotation></semantics></math>.
 This function maps the open vertical strip
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><mi>ℂ</mi><mo>:</mo><mi>−</mi><mi>π</mi><mo>&lt;</mo><mo>Re</mo><mi>w</mi><mo>&lt;</mo><mi>π</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{ w \in \mathbb{C}: -\pi &lt; \operatorname{Re}w &lt; \pi \}</annotation></semantics></math>
-onto the set of all complex numbers, except the real numbers
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-with absolute value
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|x| \ge 1</annotation></semantics></math>.
-In fact, if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>i</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">z = x + iy</annotation></semantics></math>,
-then
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>z</mi><mo>=</mo><mo>cosh</mo><mi>x</mi><mo>sin</mo><mi>y</mi><mo>+</mo><mi>i</mi><mo>sinh</mo><mi>x</mi><mo>cos</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">\sin z = \cosh x \sin y + i \sinh x \cos y</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><mi>ℂ</mi><mo>:</mo><mi>−</mi><mi>π</mi><mo>&lt;</mo><mo>Re</mo><mi>w</mi><mo>&lt;</mo><mi>π</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">D_1 = \{ w \in \mathbb{C}: -\pi &lt; \operatorname{Re}w &lt; \pi \}</annotation></semantics></math>
+onto the set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>2</mn></msub><mo>=</mo><mi>ℂ</mi><mo>∖</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">[</mo><mn>1</mn><mo>,</mo><mi>∞</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mi>∞</mi><mo>,</mo><mi>−</mi><mn>1</mn><mo stretchy="false" form="postfix">]</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">D_2 = \mathbb{C}\backslash ([1,\infty) \cup (-\infty, -1])</annotation></semantics></math>.
+If we have flow lines in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>D</mi><mn>1</mn></msub><annotation encoding="application/x-tex">D_1</annotation></semantics></math>
+parametrized by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>+</mo><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">c + it</annotation></semantics></math>
 where
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cosh</mo><mi>x</mi><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><mn>2</mn></mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mo>sinh</mo><mi>x</mi><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\cosh x = \frac{e^x + e^{-x}}{2} \text{ and } \sinh x = \frac{e^x - e^{-x}}{2}</annotation></semantics></math>
-are the <strong>hyperbolic cosine and sine</strong>. Show that the image
-of the streamlines
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mo>+</mo><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">z(t) = c + it</annotation></semantics></math>
-under
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">\sin z</annotation></semantics></math>
-are the hyperbolas
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cosh</mo><mi>t</mi><mo>sin</mo><mi>c</mi><mo>+</mo><mi>i</mi><mo>sinh</mo><mi>t</mi><mo>cos</mo><mi>c</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\cosh t \sin c + i \sinh t \cos c.</annotation></semantics></math>
-Equivalently, they have implicit equations
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msup><mi>x</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>sin</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>+</mo><mfrac><msup><mi>y</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>cos</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{x^2}{(\sin c)^2} + \frac{y^2}{(\cos c)^2} = 1.</annotation></semantics></math></p></li>
-<li><p>Prove the complex angle addition formula for sine: for any
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>,</mo><mi>β</mi><mo>∈</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">\alpha, \beta \in \mathbb{C}</annotation></semantics></math>,
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>sin</mo><mi>α</mi><mo>cos</mo><mi>β</mi><mo>+</mo><mo>cos</mo><mi>α</mi><mo>sin</mo><mi>β</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta.</annotation></semantics></math>
-Hint: Show that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi><mo>+</mo><mi>i</mi><mi>β</mi></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>α</mi><mo>−</mo><mi>i</mi><mi>β</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>α</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>β</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>β</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>α</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>β</mi></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>β</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">2(e^{i \alpha + i \beta} - e^{-i \alpha - i \beta}) = (e^{i \alpha} - e^{-i \alpha})(e^{i \beta} + e^{-i \beta}) + (e^{i \alpha} + e^{-i \alpha}) (e^{i \beta} - e^{-i \beta}),</annotation></semantics></math>
-then divide both sides by
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">4i</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo>&lt;</mo><mi>c</mi><mo>&lt;</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">-\tfrac{\pi}{2} &lt; c &lt; \tfrac{\pi}{2}</annotation></semantics></math>,
+then by the angle addition formula:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo>+</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">w = \sin(c+it) = \sin(c) \cos(it) + \cos(c) \sin(it).</annotation></semantics></math>
+If we let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>i</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">w = u+iv</annotation></semantics></math>,
+then it is not hard to see that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u = \sin(c) \cos(it)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mi>v</mi><mo>=</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">iv = \cos(c) \sin(it)</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msup><mi>u</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>sin</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>−</mo><mfrac><msup><mi>v</mi><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>cos</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mo>=</mo><msup><mo>cos</mo><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mo>sin</mo><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{u^2}{(\sin c)^2} - \frac{v^2}{(\cos c)^2} = \cos^2(it) + \sin^2(it) = 1.</annotation></semantics></math>
+In particular the graph
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>u</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>i</mi><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">w(t) = u(t) + iv(t) = \sin(c) \cos(it) + \cos(c) \sin(it)</annotation></semantics></math>
+is a hyperbola in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℂ</mi><annotation encoding="application/x-tex">\mathbb{C}</annotation></semantics></math>.<br />
+These hyperbolas are the flow lines corresponding to a fluid flowing
+through a narrow opening in the real line.</li>
 </ol>
+<!--
+In fact, if $z = x + iy$, then 
+$$\sin z = \cosh x \sin y + i \sinh x \cos y$$
+where 
+$$\cosh x = \frac{e^x + e^{-x}}{2} \text{ and } \sinh x = \frac{e^x - e^{-x}}{2}$$
+are the **hyperbolic cosine and sine**. 
+Show that the image of the streamlines $z(t) = c + it$ under $\sin z$ are the hyperbolas 
+$$\cosh t \sin c + i \sinh t \cos c.$$ 
+Equivalently, they have implicit equations
+$$\frac{x^2}{(\sin c)^2} + \frac{y^2}{(\cos c)^2} = 1.$$ 
+
+6. Prove the complex angle addition formula for sine: for any $\alpha, \beta \in \C$, 
+$$\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta.$$
+Hint: Show that 
+$$2(e^{i \alpha + i \beta} - e^{-i \alpha - i \beta}) = (e^{i \alpha} - e^{-i \alpha})(e^{i \beta} + e^{-i \beta}) + (e^{i \alpha} + e^{-i \alpha}) (e^{i \beta} - e^{-i \beta}),$$
+then divide both sides by $4i$. 
+-->
+<h3 id="wed-dec-4">Wed, Dec 4</h3>
+<p>Today we talked about the <strong>Fourier transform</strong> of a
+real function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℝ</mi><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{R}\rightarrow \mathbb{R}</annotation></semantics></math>
+which is defined to be:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mrow><mi>−</mi><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi><mi>x</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}(f) = \int_{-\infty}^\infty f(x) e^{i\alpha x} \, dx = F(\alpha).</annotation></semantics></math></p>
+<p>The <strong>inverse Fourier transform</strong> is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℱ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mrow><mi>−</mi><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>i</mi><mi>α</mi><mi>x</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>α</mi><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}^{-1}(F) = \int_{-\infty}^\infty F(\alpha) e^{-i\alpha x} \, d\alpha = f(x).</annotation></semantics></math></p>
+<p>In class we used a contour integral to find the inverse Fourier
+transform of</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>2</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>α</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">F(\alpha) = \dfrac{2}{1+\alpha^2}</annotation></semantics></math></li>
+</ol>
+<p>We also calculated the Fourier transform of the Gaussian
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><annotation encoding="application/x-tex">f(x) = e^{-x^2}</annotation></semantics></math>.
+Before calculating that, we needed to know that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mi>−</mi><mi>∞</mi></mrow><mi>∞</mi></msubsup><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msqrt><mi>π</mi></msqrt></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty e^{-x^2} \, dx = \sqrt{\pi}</annotation></semantics></math>.
+Here is a <a href="https://youtu.be/9CgOthUUdw4">video that explains
+this</a>.</p>
+<p>Then we used a rectangular contour to show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msqrt><mi>π</mi></msqrt><msup><mi>e</mi><mrow><mi>−</mi><msup><mi>α</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\mathcal{F}(e^{-x^2}) = \sqrt{\pi} e^{-\alpha^2/4}</annotation></semantics></math>.</p>
+<!--
+### Fri, Dec 6 
+
+Today we used the Fourier transform to solve the **1-dimensional heat equation**:
+$$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial^2 x}$$
+with initial condition $T(0,x) = f(x)$.  
+
+We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
+
+1. **Derivatives.** $\mathcal{F}(f'(x)) = - i\alpha \hat{f}(\alpha)$.
+
+2. **Convolution.** $\mathcal{F}(f \ast g) = \hat{f}(\alpha) \hat{g}(\alpha)$.  
+
+3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
+
+Then we used these steps to solve the heat equation.
+
+* **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
+
+* **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
+
+* **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
+
+* **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
+
+<center>
+<a href="https://www.desmos.com/calculator/x0dpzrqlvc">
+<img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/heatEQ.png" width="500"></img>
+</a>
+</center>
+-->
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
