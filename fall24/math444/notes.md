@@ -1685,7 +1685,9 @@ Then we used a rectangular contour to show that $\mathcal{F}(e^{-x^2}) = \sqrt{\
 2. Show that $e^{-x^2} e^{-i\alpha x} = e^{-\alpha^2/ 4} \exp(-[x+\tfrac{i \alpha}{2}]^2)$.
 
 3. Use the contour below to show that in the limit as $R \rightarrow \infty$, 
-$$\oint e^{-z^2} \, dz = \sqrt{\pi} - e^{-\alpha^2/4} \int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = 0.$$
+    $$\oint_C e^{-z^2} \, dz = \sqrt{\pi} - \int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = 0,$$
+    so 
+    $$\int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = \sqrt{\pi}.$$
 
 <center>
 <svg width="240" height="180" viewBox="-5 -4 10 6">
@@ -1699,6 +1701,8 @@ $$\oint e^{-z^2} \, dz = \sqrt{\pi} - e^{-\alpha^2/4} \int_{-\infty}^\infty \exp
  <line x1="4" y1="0" x2="4" y2="-2"/>
  <line x1="4" y1="-2" x2="-4" y2="-2"/>
  <line x1="-4" y1="-2" x2="-4" y2="0"/>
+</g>
+<g fill="blue">
  <polygon points="2,-2.15 2,-1.85 1.5,-2"/>
 </g>
 <!-- Axes labels -->
@@ -1722,10 +1726,10 @@ We finished by talking about some of the properties of the Fourier transform.
     a. $\mathcal{F}(f+g) = \mathcal{F}(f) + \mathcal{F}(g)$, and 
     b. $\mathcal{F}(cf) = c \mathcal{F}(f)$. 
 
-6. Prove the translation property: If $g(x) = f(x+c)$, then 
+6. Prove the **translation property**: If $g(x) = f(x+c)$, then 
 $$\mathcal{F}(g) = e^{i \alpha c} F(\alpha).$$
 
-7. Prove the derivative property:
+7. Prove the **derivative property**:
 $$\mathcal{F}(f') = i \alpha F(\alpha).$$
 Hint: Use integration by parts and use the fact that $\lim_{x \rightarrow \pm \infty} f(x) = 0$ since $|f|$ must have a finite integral. 
 
@@ -1738,19 +1742,21 @@ with initial condition $T(0,x) = f(x)$.
 
 We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
 
-1. **Derivatives.** $\mathcal{F}(f'(x)) = - i\alpha \hat{f}(\alpha)$.
+1. **Derivatives.** $\mathcal{F}(f'(x)) = i\alpha F(\alpha)$.
 
-2. **Convolution.** $\mathcal{F}(f \ast g) = \hat{f}(\alpha) \hat{g}(\alpha)$.  
+2. **Convolution.** $\mathcal{F}(f \ast g) = F(\alpha) G(\alpha)$.  
 
 3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
 
 Then we used these steps to solve the heat equation.
 
 * **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
+$$\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}.$$
 
 * **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
 
 * **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
+$$\hat{T}(t, \alpha) = e^{-t \alpha^2} F(\alpha).$$
 
 * **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
 

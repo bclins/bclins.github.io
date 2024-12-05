@@ -3664,7 +3664,9 @@ this</a>.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mi>α</mi><mi>x</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>α</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn></mrow></msup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mrow><mi>i</mi><mi>α</mi></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{-x^2} e^{-i\alpha x} = e^{-\alpha^2/ 4} \exp(-[x+\tfrac{i \alpha}{2}]^2)</annotation></semantics></math>.</p></li>
 <li><p>Use the contour below to show that in the limit as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">R \rightarrow \infty</annotation></semantics></math>,
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∮</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><msqrt><mi>π</mi></msqrt><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>α</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn></mrow></msup><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mrow><mi>i</mi><mi>α</mi></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\oint e^{-z^2} \, dz = \sqrt{\pi} - e^{-\alpha^2/4} \int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = 0.</annotation></semantics></math></p></li>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∮</mo><mi>C</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>z</mi><mo>=</mo><msqrt><mi>π</mi></msqrt><mo>−</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mrow><mi>i</mi><mi>α</mi></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">\oint_C e^{-z^2} \, dz = \sqrt{\pi} - \int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = 0,</annotation></semantics></math>
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mrow><mi>i</mi><mi>α</mi></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">]</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><msqrt><mi>π</mi></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty \exp(-[x+\tfrac{i \alpha}{2}]^2) \, dx = \sqrt{\pi}.</annotation></semantics></math></p></li>
 </ol>
 <center>
 <svg width="240" height="180" viewBox="-5 -4 10 6">
@@ -3676,7 +3678,7 @@ this</a>.</p>
 <line x1="-4" y1="0" x2="4" y2="0"/>
 <line x1="4" y1="0" x2="4" y2="-2"/>
 <line x1="4" y1="-2" x2="-4" y2="-2"/>
-<line x1="-4" y1="-2" x2="-4" y2="0"/>
+<line x1="-4" y1="-2" x2="-4" y2="0"/> </g> <g fill="blue">
 <polygon points="2,-2.15 2,-1.85 1.5,-2"/> </g> <!-- Axes labels -->
 <g font-size="0.5" font-style="italic"> <text x="4" y="0.6">R</text>
 <text x="-4" y="0.6">-R</text> <text x="0.4" y="-2.3">iα/2</text> </g>
@@ -3698,11 +3700,11 @@ is linear, i.e.,</p>
 and</li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}(cf) = c \mathcal{F}(f)</annotation></semantics></math>.</li>
 </ol></li>
-<li><p>Prove the translation property: If
+<li><p>Prove the <strong>translation property</strong>: If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(x) = f(x+c)</annotation></semantics></math>,
 then
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi><mi>c</mi></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}(g) = e^{i \alpha c} F(\alpha).</annotation></semantics></math></p></li>
-<li><p>Prove the derivative property:
+<li><p>Prove the <strong>derivative property</strong>:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>i</mi><mi>α</mi><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}(f&#39;) = i \alpha F(\alpha).</annotation></semantics></math>
 Hint: Use integration by parts and use the fact that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>lim</mo><mrow><mi>x</mi><mo>→</mo><mo>±</mo><mi>∞</mi></mrow></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{x \rightarrow \pm \infty} f(x) = 0</annotation></semantics></math>
@@ -3719,19 +3721,21 @@ with initial condition $T(0,x) = f(x)$.
 
 We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
 
-1. **Derivatives.** $\mathcal{F}(f'(x)) = - i\alpha \hat{f}(\alpha)$.
+1. **Derivatives.** $\mathcal{F}(f'(x)) = i\alpha F(\alpha)$.
 
-2. **Convolution.** $\mathcal{F}(f \ast g) = \hat{f}(\alpha) \hat{g}(\alpha)$.  
+2. **Convolution.** $\mathcal{F}(f \ast g) = F(\alpha) G(\alpha)$.  
 
 3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
 
 Then we used these steps to solve the heat equation.
 
 * **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
+$$\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}.$$
 
 * **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
 
 * **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
+$$\hat{T}(t, \alpha) = e^{-t \alpha^2} F(\alpha).$$
 
 * **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
 

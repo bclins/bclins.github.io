@@ -1,0 +1,45 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+
+
+\begin{document}
+\pagestyle{empty}
+\graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
+
+\subsection*{Practice Final Exam - CS 261}
+\textit{Here are questions similar to what will be on the final exam.  You won't be able to use any outside material during the final exam (no notes, computers, etc.) so see how much you can answer without looking things up. Be sure to study any Python rules and terminology that you don't know. }
+
+\begin{questions}
+
+\question What is the difference between \verb|"True"| and \verb|True| in Python? 
+\begin{solution}
+One is a string while the other is a boolean. 
+\end{solution}
+
+\question Name three different sequence types. Describe how they differ.
+
+\question Which of the following is a list method?
+\begin{choices}
+\choice \verb|.items()|
+\choice \verb|.keys()|
+\choice \verb|len()|
+\CorrectChoice \verb|.append()|
+\choice \verb|.length()|
+\end{choices}
+
+\question What is the difference between a for-loop and a while-loop.  
+
+\question Write a function \verb|near_and_far()| that accepts three ints \verb|a|, \verb|b|, and \verb|c| as arguments. Return \verb|True| if one of \verb|b| or \verb|c| is "close" to \verb|a| (differing from \verb|a| by at most 1), while the other is "far", differing from \verb|a| by 2 or more. Hint: you can use the \verb|abs()| function to find the absolute value of any number.  
+
+\question 
+
+\end{questions}
+
+\end{document} 

@@ -2406,7 +2406,7 @@ See this comment <https://stackoverflow.com/questions/18405618/extending-built-i
 Today as an in-class activity we started creating a checker board class using Tkinter.  
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Draughts.svg/600px-Draughts.svg.png" width=320></img>
+<img src="checkers.png" width=401></img>
 </center>
 
 Some tips to keep in mind:
@@ -2415,13 +2415,76 @@ Some tips to keep in mind:
 
 2. If you add the row and column number, the light squares are even and the dark squares are odd. 
 
-3. The `Board` class should have a method called `show()` that draws the board on the canvas. To draw the board, you might want to use nested for loops.  
+3. When you initialize the `Board` class, you should draw the squares on the board using 
+
+    ```python
+    canvas.create_rectangle(left, top, right, bottom, fill = color)
+    ```
+
+    It might help to have two different colors `LIGHT_SQUARE` and `DARK_SQUARE` stored as constants. 
 
 4. The `Board` class should also have checkers.  
 
-5. Each checker should be a `Checker` object with a position (column and row) and a color.  
+5. Each checker should be a `Checker` object with a position (column and row) and a color.  You should also pass the canvas object as a parameter so you can draw the checker when you initialize it.  Use the function    
 
+    ```python
+    canvas.create_oval(left, top, right, bottom, fill = color)
+    ```
 
+    It might help to have constants `DARK_CHECKER`, `LIGHT_CHECKER`, and `CHECKER_RADIUS`. 
+
+### Thu, Dec 5
+
+Today we talked about some ways to develop the checker board that we started yesterday.  
+
+To add the ability to move checkers, you can add these lines to the `__init__` method for the checkers:
+
+```python
+    """To make the checkers interactive, you'll need to store the return value of 
+    canvas.create_oval() as an attribute so you can change it when the user drags 
+    the checkers
+    """
+    self.canvas_image = canvas.create_oval(x - r, y - r, x + r, y + r, fill=color
+
+    #  Attributes to keep track of how far the checker has moved
+    self.offset_x = 0
+    self.offset_y = 0
+
+    # Bind mouse events to the checker
+    canvas.tag_bind(self.canvas_image, "<ButtonPress-1>", self.on_click)
+    canvas.tag_bind(self.canvas_image, "<B1-Motion>", self.on_drag)
+    canvas.tag_bind(self.canvas_image, "<ButtonRelease-1>", self.on_release)
+```
+
+Then you also need to add three methods to the `Checker` class:
+
+```python
+    def on_click(self, event):
+        # Save the offset of the mouse click relative to the checker's top-left corner
+        self.offset_x = event.x - self.canvas.coords(self.canvas_image)[0]
+        self.offset_y = event.y - self.canvas.coords(self.canvas_image)[1]
+
+    def on_drag(self, event):
+        # Update the checker's position as the mouse moves
+        x1, y1, x2, y2 = self.canvas.coords(self.canvas_image)
+        new_x1 = event.x - self.offset_x
+        new_y1 = event.y - self.offset_y
+        new_x2 = new_x1 + (x2 - x1) 
+        new_y2 = new_y1 + (y2 - y1) 
+        self.canvas.coords(self.canvas_image, new_x1, new_y1, new_x2, new_y2)
+
+    def on_release(self, event):
+        # Snap checkers into center of nearest square when you release the mouse botton
+        x1, y1, x2, y2 = self.canvas.coords(self.canvas_image)
+        new_x1 = event.x - self.offset_x
+        new_y1 = event.y - self.offset_y
+        new_x2 = new_x1 + (x2 - x1) 
+        new_y2 = new_y1 + (y2 - y1) 
+        x = ((new_x1 + new_x2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
+        y = ((new_y1 + new_y2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
+        r = (x2 - x1) // 2
+        self.canvas.coords(self.canvas_image, x-r, y-r, x+r, y+r)
+```
 
 
 
