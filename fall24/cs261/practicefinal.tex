@@ -34,11 +34,29 @@ One is a string while the other is a boolean.
 \choice \verb|.length()|
 \end{choices}
 
-\question What is the difference between a for-loop and a while-loop.  
+\question What is the difference between a for-loop and a while-loop?  
 
-\question Write a function \verb|near_and_far()| that accepts three ints \verb|a|, \verb|b|, and \verb|c| as arguments. Return \verb|True| if one of \verb|b| or \verb|c| is "close" to \verb|a| (differing from \verb|a| by at most 1), while the other is "far", differing from \verb|a| by 2 or more. Hint: you can use the \verb|abs()| function to find the absolute value of any number.  
+\question Write a function \verb|near_and_far()| that accepts three ints \verb|a|, \verb|b|, and \verb|c| as arguments. Return \verb|True| if one of \verb|b| or \verb|c| is ``close" to \verb|a| (differing from \verb|a| by at most 1), while the other is ``far", differing from \verb|a| by 2 or more. Hint: you can use the \verb|abs()| function to find the absolute value of any number.  
 
-\question 
+\question Consider the following recursive function 
+
+\begin{verbatim}
+def next_num(n):
+    if n == 1:
+        return 2
+    elif n == 2:
+        return 3
+    else:
+        return next_num(n-1) * next_num(n-2)
+\end{verbatim}
+
+Calculate the values \verb`next_num(3)`, \verb`next_num(4)`, and \verb`next_num(5)`.  
+
+\question Write a function called \verb|separate(nums)| that inputs a list of integers and returns a tuple containing two lists, one containing the even elements in \verb|nums| and the other containing the odd elements.  
+
+\question \hl{Interpret a class example}
+
+\question \hl{Understand modules and name equals main...}
 
 \end{questions}
 

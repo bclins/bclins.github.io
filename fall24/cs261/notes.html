@@ -3557,12 +3557,12 @@ href="https://allendowney.github.io/ThinkPython/chap17.html">TP17</a></td>
 <tr class="even">
 <td style="text-align: center;">Wed, Dec 4</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Checkers</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Thu, Dec 5</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Checkers - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fri, Dec 6</td>
@@ -3666,52 +3666,54 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a h
 </ol>
 <h3 id="thu-dec-5">Thu, Dec 5</h3>
 <p>Today we talked about some ways to develop the checker board that we
-started yesterday.</p>
+started yesterday. Then at the end of class, I showed briefly how to add
+interactivity to the program.</p>
 <p>To add the ability to move checkers, you can add these lines to the
 <code>__init__</code> method for the checkers:</p>
 <div class="sourceCode" id="cb90"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;To make the checkers interactive, you&#39;ll need to store the return value of </span></span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="co">    canvas.create_oval() as an attribute so you can change it when the user drags </span></span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co">    the checkers</span></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co">    the checkers. You&#39;ll also need to keep the canvas as an attribute as well.</span></span>
 <span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.canvas_image <span class="op">=</span> canvas.create_oval(x <span class="op">-</span> r, y <span class="op">-</span> r, x <span class="op">+</span> r, y <span class="op">+</span> r, fill<span class="op">=</span>color</span>
-<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  Attributes to keep track of how far the checker has moved</span></span>
-<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_x <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_y <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bind mouse events to the checker</span></span>
-<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.canvas_image, <span class="st">&quot;&lt;ButtonPress-1&gt;&quot;</span>, <span class="va">self</span>.on_click)</span>
-<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.canvas_image, <span class="st">&quot;&lt;B1-Motion&gt;&quot;</span>, <span class="va">self</span>.on_drag)</span>
-<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.canvas_image, <span class="st">&quot;&lt;ButtonRelease-1&gt;&quot;</span>, <span class="va">self</span>.on_release)</span></code></pre></div>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.canvas <span class="op">=</span> canvas</span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.oval <span class="op">=</span> canvas.create_oval(x <span class="op">-</span> r, y <span class="op">-</span> r, x <span class="op">+</span> r, y <span class="op">+</span> r, fill<span class="op">=</span>color)</span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  Attributes to keep track of how far the checker has moved</span></span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bind mouse events to the checker object</span></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;ButtonPress-1&gt;&quot;</span>, <span class="va">self</span>.on_click)</span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;B1-Motion&gt;&quot;</span>, <span class="va">self</span>.on_drag)</span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;ButtonRelease-1&gt;&quot;</span>, <span class="va">self</span>.on_release)</span></code></pre></div>
 <p>Then you also need to add three methods to the <code>Checker</code>
 class:</p>
 <div class="sourceCode" id="cb91"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_click(<span class="va">self</span>, event):</span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save the offset of the mouse click relative to the checker&#39;s top-left corner</span></span>
-<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_x <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image)[<span class="dv">0</span>]</span>
-<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_y <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image)[<span class="dv">1</span>]</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_x <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)[<span class="dv">0</span>]</span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_y <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)[<span class="dv">1</span>]</span>
 <span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_drag(<span class="va">self</span>, event):</span>
 <span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the checker&#39;s position as the mouse moves</span></span>
-<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image)</span>
-<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>        new_x1 <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.offset_x</span>
-<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>        new_y1 <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.offset_y</span>
-<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>        new_x2 <span class="op">=</span> new_x1 <span class="op">+</span> (x2 <span class="op">-</span> x1) </span>
-<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>        new_y2 <span class="op">=</span> new_y1 <span class="op">+</span> (y2 <span class="op">-</span> y1) </span>
-<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image, new_x1, new_y1, new_x2, new_y2)</span>
-<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_release(<span class="va">self</span>, event):</span>
-<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Snap checkers into center of nearest square when you release the mouse botton</span></span>
-<span id="cb91-17"><a href="#cb91-17" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image)</span>
-<span id="cb91-18"><a href="#cb91-18" aria-hidden="true" tabindex="-1"></a>        new_x1 <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.offset_x</span>
-<span id="cb91-19"><a href="#cb91-19" aria-hidden="true" tabindex="-1"></a>        new_y1 <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.offset_y</span>
-<span id="cb91-20"><a href="#cb91-20" aria-hidden="true" tabindex="-1"></a>        new_x2 <span class="op">=</span> new_x1 <span class="op">+</span> (x2 <span class="op">-</span> x1) </span>
-<span id="cb91-21"><a href="#cb91-21" aria-hidden="true" tabindex="-1"></a>        new_y2 <span class="op">=</span> new_y1 <span class="op">+</span> (y2 <span class="op">-</span> y1) </span>
-<span id="cb91-22"><a href="#cb91-22" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> ((new_x1 <span class="op">+</span> new_x2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
-<span id="cb91-23"><a href="#cb91-23" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> ((new_y1 <span class="op">+</span> new_y2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
-<span id="cb91-24"><a href="#cb91-24" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> (x2 <span class="op">-</span> x1) <span class="op">//</span> <span class="dv">2</span></span>
-<span id="cb91-25"><a href="#cb91-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.canvas_image, x<span class="op">-</span>r, y<span class="op">-</span>r, x<span class="op">+</span>r, y<span class="op">+</span>r)</span></code></pre></div>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)</span>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> x2 <span class="op">-</span> x1</span>
+<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a>        new_x1 <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.offset_x</span>
+<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>        new_y1 <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.offset_y</span>
+<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval, new_x1, new_y1, new_x1 <span class="op">+</span> width, new_y1 <span class="op">+</span> width)</span>
+<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_release(<span class="va">self</span>, event):</span>
+<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Snap checkers into center of nearest square when you release the mouse button</span></span>
+<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)</span>
+<span id="cb91-17"><a href="#cb91-17" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> (x2 <span class="op">-</span> x1) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb91-18"><a href="#cb91-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Need to calculate the center of the nearest square to our checker</span></span>
+<span id="cb91-19"><a href="#cb91-19" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> ((x1 <span class="op">+</span> x2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
+<span id="cb91-20"><a href="#cb91-20" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> ((y1 <span class="op">+</span> y2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
+<span id="cb91-21"><a href="#cb91-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval, x<span class="op">-</span>r, y<span class="op">-</span>r, x<span class="op">+</span>r, y<span class="op">+</span>r)</span></code></pre></div>
+<p>You can take a look at the final program here:</p>
+<ul>
+<li><strong>Example</strong>: <a href="checkers.py">checkers.py</a></li>
+</ul>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

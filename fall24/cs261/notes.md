@@ -2337,8 +2337,8 @@ if __name__ == "__main__":
 Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Dec 2  | [TP17][TP17] | Inheritance
-Wed, Dec 4  |  | 
-Thu, Dec 5  |  | 
+Wed, Dec 4  |  | Checkers
+Thu, Dec 5  |  | Checkers - con'd
 Fri, Dec 6  |  |
 Mon, Dec 9  |  | 
 
@@ -2435,25 +2435,26 @@ Some tips to keep in mind:
 
 ### Thu, Dec 5
 
-Today we talked about some ways to develop the checker board that we started yesterday.  
+Today we talked about some ways to develop the checker board that we started yesterday.  Then at the end of class, I showed briefly how to add interactivity to the program. 
 
 To add the ability to move checkers, you can add these lines to the `__init__` method for the checkers:
 
 ```python
     """To make the checkers interactive, you'll need to store the return value of 
     canvas.create_oval() as an attribute so you can change it when the user drags 
-    the checkers
+    the checkers. You'll also need to keep the canvas as an attribute as well.
     """
-    self.canvas_image = canvas.create_oval(x - r, y - r, x + r, y + r, fill=color
+    self.canvas = canvas
+    self.oval = canvas.create_oval(x - r, y - r, x + r, y + r, fill=color)
 
     #  Attributes to keep track of how far the checker has moved
     self.offset_x = 0
     self.offset_y = 0
 
-    # Bind mouse events to the checker
-    canvas.tag_bind(self.canvas_image, "<ButtonPress-1>", self.on_click)
-    canvas.tag_bind(self.canvas_image, "<B1-Motion>", self.on_drag)
-    canvas.tag_bind(self.canvas_image, "<ButtonRelease-1>", self.on_release)
+    # Bind mouse events to the checker object
+    canvas.tag_bind(self.oval, "<ButtonPress-1>", self.on_click)
+    canvas.tag_bind(self.oval, "<B1-Motion>", self.on_drag)
+    canvas.tag_bind(self.oval, "<ButtonRelease-1>", self.on_release)
 ```
 
 Then you also need to add three methods to the `Checker` class:
@@ -2461,30 +2462,30 @@ Then you also need to add three methods to the `Checker` class:
 ```python
     def on_click(self, event):
         # Save the offset of the mouse click relative to the checker's top-left corner
-        self.offset_x = event.x - self.canvas.coords(self.canvas_image)[0]
-        self.offset_y = event.y - self.canvas.coords(self.canvas_image)[1]
+        self.offset_x = event.x - self.canvas.coords(self.oval)[0]
+        self.offset_y = event.y - self.canvas.coords(self.oval)[1]
 
     def on_drag(self, event):
         # Update the checker's position as the mouse moves
-        x1, y1, x2, y2 = self.canvas.coords(self.canvas_image)
+        x1, y1, x2, y2 = self.canvas.coords(self.oval)
+        width = x2 - x1
         new_x1 = event.x - self.offset_x
         new_y1 = event.y - self.offset_y
-        new_x2 = new_x1 + (x2 - x1) 
-        new_y2 = new_y1 + (y2 - y1) 
-        self.canvas.coords(self.canvas_image, new_x1, new_y1, new_x2, new_y2)
-
+        self.canvas.coords(self.oval, new_x1, new_y1, new_x1 + width, new_y1 + width)
+ 
     def on_release(self, event):
-        # Snap checkers into center of nearest square when you release the mouse botton
-        x1, y1, x2, y2 = self.canvas.coords(self.canvas_image)
-        new_x1 = event.x - self.offset_x
-        new_y1 = event.y - self.offset_y
-        new_x2 = new_x1 + (x2 - x1) 
-        new_y2 = new_y1 + (y2 - y1) 
-        x = ((new_x1 + new_x2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
-        y = ((new_y1 + new_y2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
+        # Snap checkers into center of nearest square when you release the mouse button
+        x1, y1, x2, y2 = self.canvas.coords(self.oval)
         r = (x2 - x1) // 2
-        self.canvas.coords(self.canvas_image, x-r, y-r, x+r, y+r)
+        # Need to calculate the center of the nearest square to our checker
+        x = ((x1 + x2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
+        y = ((y1 + y2) // (2 * SQUARE_SIZE) + 0.5) * SQUARE_SIZE
+        self.canvas.coords(self.oval, x-r, y-r, x+r, y+r)
 ```
+
+You can take a look at the final program here:
+
+* **Example**: [checkers.py](checkers.py)
 
 
 
