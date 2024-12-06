@@ -986,7 +986,7 @@ Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Dec 2  | [6.3][6.3] | Chi-squared statistic                
 Wed, Dec 4  | [6.4][6.4] | Testing association with chi-squared
-Fri, Dec 6  |            | Inference recap
+Fri, Dec 6  |            | Choosing the right technique
 Mon, Dec 9  |  | Last day, recap & review
 
 ### Mon, Dec 2
@@ -1072,7 +1072,7 @@ We did the following example where the $\chi^2$-test is inconclusive:
 
 ### Fri, Dec 6
 
-Today we talk some more about choosing the right techniques in statistics. 
+Today we talked some more about choosing the right inference techniques in statistics. 
 
 * **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 

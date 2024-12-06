@@ -22,8 +22,10 @@
 \begin{solution}
 One is a string while the other is a boolean. 
 \end{solution}
+\vfill
 
 \question Name three different sequence types. Describe how they differ.
+\vfill
 
 \question Which of the following is a list method?
 \begin{choices}
@@ -33,10 +35,14 @@ One is a string while the other is a boolean.
 \CorrectChoice \verb|.append()|
 \choice \verb|.length()|
 \end{choices}
+\smallskip
 
 \question What is the difference between a for-loop and a while-loop?  
+\vfill
 
+\newpage
 \question Write a function \verb|near_and_far()| that accepts three ints \verb|a|, \verb|b|, and \verb|c| as arguments. Return \verb|True| if one of \verb|b| or \verb|c| is ``close" to \verb|a| (differing from \verb|a| by at most 1), while the other is ``far", differing from \verb|a| by 2 or more. Hint: you can use the \verb|abs()| function to find the absolute value of any number.  
+\vfill
 
 \question Consider the following recursive function 
 
@@ -51,12 +57,92 @@ def next_num(n):
 \end{verbatim}
 
 Calculate the values \verb`next_num(3)`, \verb`next_num(4)`, and \verb`next_num(5)`.  
+\vfill
+
+\newpage
 
 \question Write a function called \verb|separate(nums)| that inputs a list of integers and returns a tuple containing two lists, one containing the even elements in \verb|nums| and the other containing the odd elements.  
+\vfill
 
-\question \hl{Interpret a class example}
+\question Suppose that Bob writes a program called \verb|bob.py| that contains the following code:
+\begin{verbatim}
+-- bob.py ------------------------
+print("What's my name?")
 
-\question \hl{Understand modules and name equals main...}
+if __name__ == "__main__":
+    print("My name is __main__.")
+elif __name__ == "bob":
+    print("My name is bob.")
+else:
+    print("I don't know my name.")
+----------------------------------
+\end{verbatim}
+
+If Alice creates a program called \verb|alice.py| that contains the following single import statement and is in the same folder as \verb|bob.py|, then what will happen when Alice runs her program? 
+\begin{verbatim}
+-- alice.py ----------------------
+import bob
+----------------------------------
+\end{verbatim}
+\bigskip
+
+\newpage
+\question Describe at least three differences between dictionaries and lists.  
+\vfill
+
+\question What will the following code print? 
+\begin{verbatim}
+def f(a, b):
+    a += 1
+    b.append(1)
+
+a = 5
+b = []
+f(a, b)
+print(a)
+print(b)
+\end{verbatim}
+\bigskip
+\bigskip
+
+\question Consider the following class.  
+
+\begin{verbatim}
+class Mystery:
+    def __init__(self, x, y, z):
+        self.data = [x, y, z]
+    def method1(self):
+        self.data[0] += 2
+        self.data[1] += 1
+    def method2(n):
+        return Mystery(n, 2*n, 3*n)
+    def __str__(self):
+        return f"Mystery({self.data[0]},{self.data[1]},{self.data[2]})"
+\end{verbatim} 
+
+\begin{parts}
+\part What will the following code print?  
+\begin{verbatim}
+a = Mystery(1,2,3)
+a.method1()
+print(a)
+\end{verbatim}
+\bigskip
+\bigskip
+
+\part What will the following code print?
+\begin{verbatim}
+b = Mystery(4,5,6)
+print(b.method1())
+\end{verbatim}
+\bigskip
+\bigskip
+
+\part How would you call \verb|method2| if you wanted \verb|n| to be 5?  
+\bigskip
+\bigskip
+
+\end{parts}
 
 \end{questions}
 

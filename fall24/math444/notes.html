@@ -3712,39 +3712,92 @@ since
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|f|</annotation></semantics></math>
 must have a finite integral.</p></li>
 </ol>
-<!--
-### Fri, Dec 6 
-
-Today we used the Fourier transform to solve the **1-dimensional heat equation**:
-$$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial^2 x}$$
-with initial condition $T(0,x) = f(x)$.  
-
-We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
-
-1. **Derivatives.** $\mathcal{F}(f'(x)) = i\alpha F(\alpha)$.
-
-2. **Convolution.** $\mathcal{F}(f \ast g) = F(\alpha) G(\alpha)$.  
-
-3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
-
-Then we used these steps to solve the heat equation.
-
-* **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
-$$\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}.$$
-
-* **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
-
-* **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
-$$\hat{T}(t, \alpha) = e^{-t \alpha^2} F(\alpha).$$
-
-* **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
-
+<h3 id="fri-dec-6">Fri, Dec 6</h3>
+<p>Today we used the Fourier transform to solve the
+<strong>1-dimensional heat equation</strong>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>T</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>T</mi></mrow><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial^2 x}</annotation></semantics></math>
+with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(x,0) = f(x)</annotation></semantics></math>.
+The goal is to find an equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T = T(x,t)</annotation></semantics></math>
+that can predict the temperature at any location
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+on a thin rod.</p>
+<p>We started by defining the <strong>convolution</strong> of two
+functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>,</mo><mi>g</mi><mo>:</mo><mi>ℝ</mi><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f, g : \mathbb{R}\rightarrow \mathbb{R}</annotation></semantics></math>
+as
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>*</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">(f \ast g) (x) = \int_{-\infty}^\infty f(y) g(x-y) \, dy.</annotation></semantics></math></p>
+<p>Convolutions play very nicely with the Fourier transform.</p>
+<ol type="1">
+<li>Prove the <strong>convolution property</strong> of the Fourier
+transform. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}(f) = F(\alpha)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}(g) = G(\alpha)</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>*</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}(f \ast g) = F(\alpha) G(\alpha).</annotation></semantics></math>
+Hint: You can prove this by swapping the order of integration and
+applying a u-substitution.</li>
+</ol>
+<p>We need one more property of the Fourier transform before solving the
+heat equation.</p>
+<ol start="2" type="1">
+<li>Prove the <strong>scaling poperty:</strong> For any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c&gt;0</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>x</mi><mi>c</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{F}\left(f\left(\frac{x}{c}\right)\right) = c F(c \alpha).</annotation></semantics></math></li>
+</ol>
+<p>Then we used these steps to solve the heat equation. Before we did
+that, we briefly talked about why the 1-dimensional heat equation makes
+sense.</p>
+<ul>
+<li><p><strong>Step 1.</strong> Apply the Fourier transform in the
+variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+to both sides of the heat equation:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mrow><mi>∂</mi><mi>T</mi></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mi>α</mi><mi>x</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mrow><msup><mi>∂</mi><mn>2</mn></msup><mi>T</mi></mrow><mrow><mi>∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} \dfrac{\partial T}{\partial t} e^{-i \alpha x} \, dx = \mathcal{F}\left( \dfrac{\partial^2 T}{\partial x^2} \right).</annotation></semantics></math></p></li>
+<li><p><strong>Step 2.</strong> Observe (without proof) that you can
+swap the integral and the partial derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>∂</mi><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{\partial}{\partial t}</annotation></semantics></math>
+on the left side. And on the right side you can apply the derivative
+rule for Fourier transforms to get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mover><mi>T</mi><mo accent="true">̂</mo></mover></mrow><mrow><mi>∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>−</mo><msup><mi>α</mi><mn>2</mn></msup><mover><mi>T</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>T</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{T}</annotation></semantics></math>
+is the Fourier transform of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>.</p></li>
+<li><p><strong>Step 3.</strong> Solve the ordinary differential equation
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\hat{T}(\alpha, t)</annotation></semantics></math>.<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>T</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi><msup><mi>α</mi><mn>2</mn></msup></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{T}(\alpha,t) = e^{-t \alpha^2} F(\alpha).</annotation></semantics></math></p></li>
+<li><p><strong>Step 4.</strong> Show that the inverse Fourier transform
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi><msup><mi>α</mi><mn>2</mn></msup></mrow></msup><annotation encoding="application/x-tex">e^{-t \alpha^2}</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><mrow><mn>2</mn><msqrt><mrow><mi>π</mi><mi>t</mi></mrow></msqrt></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}.</annotation></semantics></math>
+Hint: Apply the scaling and linearity properties to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℱ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}(e^{-x^2})</annotation></semantics></math>
+which we calculated last time.</p></li>
+<li><p><strong>Step 5.</strong> Conclude that the solution of the heat
+equation is the convolution
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>∞</mi></mrow><mi>∞</mi></msubsup><mfrac displaystyle="true"><mn>1</mn><mrow><mn>2</mn><msqrt><mrow><mi>π</mi><mi>t</mi></mrow></msqrt></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup><mi>/</mi><mn>4</mn><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^\infty \dfrac{1}{2\sqrt{\pi t}} e^{-y^2/4t} f(x-y) \, dy.</annotation></semantics></math></p></li>
+</ul>
+<p>In some cases you can calculate the value of this convolution by
+hand, but usually it is easier to use a computer to calculate it
+numerically. Here is a graph of an example solution of the heat equation
+on Desmos (click on the image below):</p>
 <center>
 <a href="https://www.desmos.com/calculator/x0dpzrqlvc">
 <img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/heatEQ.png" width="500"></img>
 </a>
 </center>
--->
+<ol start="3" type="1">
+<li>See if you can use Desmos to graph the solution to the heat equation
+if the initial condition is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x) = \max(2 - |x|, 0).</annotation></semantics></math></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

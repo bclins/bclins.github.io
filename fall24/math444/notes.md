@@ -1733,39 +1733,55 @@ $$\mathcal{F}(g) = e^{i \alpha c} F(\alpha).$$
 $$\mathcal{F}(f') = i \alpha F(\alpha).$$
 Hint: Use integration by parts and use the fact that $\lim_{x \rightarrow \pm \infty} f(x) = 0$ since $|f|$ must have a finite integral. 
 
-<!--
 ### Fri, Dec 6 
 
 Today we used the Fourier transform to solve the **1-dimensional heat equation**:
 $$\frac{\partial T}{\partial t} = \frac{\partial^2 T}{\partial^2 x}$$
-with initial condition $T(0,x) = f(x)$.  
+with initial condition $T(x,0) = f(x)$.  The goal is to find an equation $T = T(x,t)$ that can predict the temperature at any location $x$ and time $t$ on a thin rod.
 
-We started with some properties of the Fourier transform. Suppose $f(x)$ is a real function with Fourier transform $\hat{f}(\alpha)$.  Then we have:
+We started by defining the **convolution** of two functions $f, g : \R \rightarrow \R$ as 
+$$(f \ast g) (x) = \int_{-\infty}^\infty f(y) g(x-y) \, dy.$$
 
-1. **Derivatives.** $\mathcal{F}(f'(x)) = i\alpha F(\alpha)$.
+Convolutions play very nicely with the Fourier transform.  
 
-2. **Convolution.** $\mathcal{F}(f \ast g) = F(\alpha) G(\alpha)$.  
+1. Prove the **convolution property** of the Fourier transform.  If $\mathcal{F}(f) = F(\alpha)$ and $\mathcal{F}(g) = G(\alpha)$, then 
+$$\mathcal{F}(f \ast g) = F(\alpha) G(\alpha).$$
+Hint: You can prove this by swapping the order of integration and applying a u-substitution. 
 
-3. **Scaling.** $\mathcal{F}(f(cx)) = \tfrac{1}{|c|} \hat{f} \left( \tfrac{\alpha}{c} \right)$ and $\mathcal{F}^{-1}(\hat{f}(c\alpha)) = \tfrac{1}{|c|} f \left( \tfrac{x}{c} \right)$
+We need one more property of the Fourier transform before solving the heat equation.
 
-Then we used these steps to solve the heat equation.
+2. Prove the **scaling poperty:** For any $c>0$ 
+$$\mathcal{F}\left(f\left(\frac{x}{c}\right)\right) = c F(c \alpha).$$
 
-* **Step 1.** Apply Fourier transform in variable $x$ to $T$.  
-$$\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}.$$
+Then we used these steps to solve the heat equation. Before we did that, we briefly talked about why the 1-dimensional heat equation makes sense. 
 
-* **Step 2.** Differentiate with respect to $t$.  Combined with the heat equation, you get an ordinary differential equation.
+* **Step 1.** Apply the Fourier transform in the variable $x$ to both sides of the heat equation:
+$$\int_{-\infty}^{\infty} \dfrac{\partial T}{\partial t} e^{-i \alpha x} \, dx = \mathcal{F}\left( \dfrac{\partial^2 T}{\partial x^2} \right).$$
 
-* **Step 3.** Solve the ordinary differential equation for $\hat{T}(t,\alpha)$.  
-$$\hat{T}(t, \alpha) = e^{-t \alpha^2} F(\alpha).$$
+* **Step 2.** Observe (without proof) that you can swap the integral and the partial derivative $\dfrac{\partial}{\partial t}$ on the left side.  And on the right side you can apply the derivative rule for Fourier transforms to get
+$$\frac{\partial \hat{T}}{\partial t} = -\alpha^2 \hat{T}$$
+where $\hat{T}$ is the Fourier transform of $T$.  
 
-* **Step 4.** Use the inverse Fourier transform to write the solution to the heat equation as a convolution of $f(x)$ and $\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}$.  
+* **Step 3.** Solve the ordinary differential equation for $\hat{T}(\alpha, t)$.  
+$$\hat{T}(\alpha,t) = e^{-t \alpha^2} F(\alpha).$$
+
+* **Step 4.** Show that the inverse Fourier transform of $e^{-t \alpha^2}$ is 
+$$\dfrac{1}{2\sqrt{\pi t}} e^{-x^2/4t}.$$
+Hint: Apply the scaling and linearity properties to $\mathcal{F}(e^{-x^2})$ which we calculated last time.  
+
+* **Step 5.** Conclude that the solution of the heat equation is the convolution
+$$\int_{-\infty}^\infty \dfrac{1}{2\sqrt{\pi t}} e^{-y^2/4t} f(x-y) \, dy.$$
+
+In some cases you can calculate the value of this convolution by hand, but usually it is easier to use a computer to calculate it numerically.  Here is a graph of an example solution of the heat equation on Desmos (click on the image below):
 
 <center>
 <a href="https://www.desmos.com/calculator/x0dpzrqlvc">
 <img src="https://people.hsc.edu/faculty-staff/blins/classes/spring23/math444/heatEQ.png" width="500"></img>
 </a>
 </center>
--->
+
+3. See if you can use Desmos to graph the solution to the heat equation if the initial condition is 
+$$f(x) = \max(2 - |x|, 0).$$
 
 
 - - - 

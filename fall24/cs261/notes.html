@@ -3567,7 +3567,7 @@ href="https://allendowney.github.io/ThinkPython/chap17.html">TP17</a></td>
 <tr class="even">
 <td style="text-align: center;">Fri, Dec 6</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Google Colab</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Mon, Dec 9</td>
@@ -3714,6 +3714,80 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a h
 <ul>
 <li><strong>Example</strong>: <a href="checkers.py">checkers.py</a></li>
 </ul>
+<h3 id="fri-dec-6">Fri, Dec 6</h3>
+<p>Today we introduced <a href="">Google Colab</a> as an alternative to
+using an integrated development environment (IDE) like Thonny. We also
+introduced graphing by importing <code>matplotlib.pyplot</code>.</p>
+<div class="sourceCode" id="cb92"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x): <span class="cf">return</span> cos(x) <span class="op">-</span> x <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [k <span class="op">/</span> <span class="dv">100</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)]</span>
+<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [f(x) <span class="cf">for</span> x <span class="kw">in</span> xs]</span>
+<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, ys) <span class="op">+</span> plt.plot(xs, [<span class="dv">0</span> <span class="cf">for</span> x <span class="kw">in</span> xs])</span>
+<span id="cb92-9"><a href="#cb92-9" aria-hidden="true" tabindex="-1"></a>plt.show() </span></code></pre></div>
+<center>
+<img src="example_plot.png" width = 400></img>
+</center>
+<p>We did two exercises in class.</p>
+<ol type="1">
+<li><p>We revisited an old exercise from November 1st, where we had data
+about which classes a list of students had registered for.</p>
+<div class="sourceCode" id="cb93"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>registration_data <span class="op">=</span> [</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Alice Adams&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 490&#39;</span>, <span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Phys 260&#39;</span>, <span class="st">&#39;Engl 450&#39;</span>, <span class="st">&#39;Math 260&#39;</span>]}, </span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Bob Brown&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Fren 301&#39;</span>, <span class="st">&#39;Germ 101&#39;</span>, <span class="st">&#39;Phys 450&#39;</span>]}, </span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Charlie Clark&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 490&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Hist 301&#39;</span>, <span class="st">&#39;Govt 301&#39;</span>]}, </span>
+<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Daisy Davis&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Govt 201&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Math 201&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>]}, </span>
+<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Edward Evans&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>, <span class="st">&#39;Fren 260&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>]},</span>
+<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Fiona Foster&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 330&#39;</span>, <span class="st">&#39;Hist 490&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>, <span class="st">&#39;Germ 490&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>]},</span>
+<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;George Green&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Chem 301&#39;</span>, <span class="st">&#39;Govt 490&#39;</span>, <span class="st">&#39;Govt 102&#39;</span>]},</span>
+<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Hannah Hill&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 490&#39;</span>, <span class="st">&#39;Fren 301&#39;</span>, <span class="st">&#39;Engl 260&#39;</span>, <span class="st">&#39;Engl 301&#39;</span>, <span class="st">&#39;Germ 450&#39;</span>]},</span>
+<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Isaac Ives&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Econ 201&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>, <span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Math 260&#39;</span>]},</span>
+<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Jessica Johnson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>, <span class="st">&#39;Span 101&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Chem 490&#39;</span>]},</span>
+<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Kevin King&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 330&#39;</span>, <span class="st">&#39;Span 260&#39;</span>, <span class="st">&#39;Biol 260&#39;</span>, <span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Math 102&#39;</span>]},</span>
+<span id="cb93-13"><a href="#cb93-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Lily Lewis&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 301&#39;</span>, <span class="st">&#39;Biol 102&#39;</span>, <span class="st">&#39;Math 330&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Engl 101&#39;</span>]},</span>
+<span id="cb93-14"><a href="#cb93-14" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Michael Miller&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Fren 102&#39;</span>, <span class="st">&#39;Fren 201&#39;</span>, <span class="st">&#39;Phys 102&#39;</span>, <span class="st">&#39;Math 102&#39;</span>]},</span>
+<span id="cb93-15"><a href="#cb93-15" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Nora Nelson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Math 260&#39;</span>, <span class="st">&#39;Fren 101&#39;</span>, <span class="st">&#39;Biol 101&#39;</span>, <span class="st">&#39;Engl 301&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>]},</span>
+<span id="cb93-16"><a href="#cb93-16" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Oliver Owens&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Biol 260&#39;</span>, <span class="st">&#39;Engl 490&#39;</span>, <span class="st">&#39;Germ 330&#39;</span>]},</span>
+<span id="cb93-17"><a href="#cb93-17" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Patricia Parker&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Phys 101&#39;</span>, <span class="st">&#39;Fren 201&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>, <span class="st">&#39;Germ 330&#39;</span>, <span class="st">&#39;Germ 102&#39;</span>]},</span>
+<span id="cb93-18"><a href="#cb93-18" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Quinn Quinn&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 301&#39;</span>, <span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Biol 101&#39;</span>, <span class="st">&#39;Biol 201&#39;</span>, <span class="st">&#39;Span 101&#39;</span>]},</span>
+<span id="cb93-19"><a href="#cb93-19" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Rachel Roberts&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Econ 301&#39;</span>, <span class="st">&#39;Chem 330&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Span 490&#39;</span>]},</span>
+<span id="cb93-20"><a href="#cb93-20" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Samuel Smith&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Econ 101&#39;</span>, <span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Govt 301&#39;</span>, <span class="st">&#39;Math 450&#39;</span>]},</span>
+<span id="cb93-21"><a href="#cb93-21" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Tina Taylor&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Govt 450&#39;</span>, <span class="st">&#39;Hist 101&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>]},</span>
+<span id="cb93-22"><a href="#cb93-22" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Ulysses Underwood&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Phys 101&#39;</span>, <span class="st">&#39;Engl 101&#39;</span>, <span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Chem 260&#39;</span>]},</span>
+<span id="cb93-23"><a href="#cb93-23" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Vanessa Vincent&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Econ 201&#39;</span>, <span class="st">&#39;Span 101&#39;</span>, <span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Math 260&#39;</span>, <span class="st">&#39;Phys 301&#39;</span>]},</span>
+<span id="cb93-24"><a href="#cb93-24" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;William Wilson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Math 490&#39;</span>, <span class="st">&#39;Math 201&#39;</span>, <span class="st">&#39;Biol 102&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Germ 102&#39;</span>]},</span>
+<span id="cb93-25"><a href="#cb93-25" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Xavier Xander&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Govt 101&#39;</span>, <span class="st">&#39;Govt 102&#39;</span>, <span class="st">&#39;Chem 490&#39;</span>, <span class="st">&#39;Hist 102&#39;</span>]}, </span>
+<span id="cb93-26"><a href="#cb93-26" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Yolanda Young&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 301&#39;</span>, <span class="st">&#39;Chem 102&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>, <span class="st">&#39;Econ 330&#39;</span>]},</span>
+<span id="cb93-27"><a href="#cb93-27" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Zachary Zimmerman&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 330&#39;</span>, <span class="st">&#39;Chem 330&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>, <span class="st">&#39;Phys 490&#39;</span>, <span class="st">&#39;Chem 260&#39;</span>]}</span>
+<span id="cb93-28"><a href="#cb93-28" aria-hidden="true" tabindex="-1"></a>]   </span></code></pre></div>
+<p>Make a list (including repeats) of all classes the students have
+signed up for. Then use the <code>Counter</code> class from the
+<code>collections</code> library to create a <code>Counter</code> with
+keys equal to the different courses and values equal to the number of
+these students who have signed up for each course.</p></li>
+<li><p>Suppose we have imported <code>cos</code> from the
+<code>math</code> library. Consider the function</p>
+<div class="sourceCode" id="cb94"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x): <span class="cf">return</span> cos(x) <span class="op">-</span> x <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
+<p>Write a recursive function
+<code>find_roots(f, a, b, precision = 10**(-6))</code> that can find the
+root of the function <code>f</code>. Recall the algorithm (which we also
+discussed on Nov 6) has these steps:</p>
+<ol type="a">
+<li>Find the midpoint of <code>a</code> and <code>b</code>.<br />
+</li>
+<li>If <code>f(m) == 0</code> or <code>b</code> and <code>a</code> are
+really really close, then return <code>m</code>.</li>
+<li>If <code>f(a) * f(m) &lt; 0</code>, then the root must be between
+<code>a</code> and <code>m</code>, so use recursion.</li>
+<li>Otherwise the root must be between <code>m</code> and
+<code>b</code>, so use recursion.</li>
+</ol></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

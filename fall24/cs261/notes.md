@@ -2339,7 +2339,7 @@ Day  | Section  | Topic
 Mon, Dec 2  | [TP17][TP17] | Inheritance
 Wed, Dec 4  |  | Checkers
 Thu, Dec 5  |  | Checkers - con'd
-Fri, Dec 6  |  |
+Fri, Dec 6  |  | Google Colab
 Mon, Dec 9  |  | 
 
 ### Mon, Dec 2
@@ -2487,7 +2487,76 @@ You can take a look at the final program here:
 
 * **Example**: [checkers.py](checkers.py)
 
+### Fri, Dec 6
 
+Today we introduced [Google Colab]() as an alternative to using an integrated development environment (IDE) like Thonny.  We also introduced graphing by importing `matplotlib.pyplot`.  
+
+```python
+import matplotlib.pyplot as plt
+from math import *
+
+def f(x): return cos(x) - x + 3
+
+xs = [k / 100 for k in range(1000)]
+ys = [f(x) for x in xs]
+plt.plot(xs, ys) + plt.plot(xs, [0 for x in xs])
+plt.show() 
+```
+
+<center>
+<img src="example_plot.png" width = 400></img>
+</center>
+
+
+We did two exercises in class.  
+
+1. We revisited an old exercise from November 1st, where we had data about which classes a list of students had registered for.  
+
+    ```python
+    registration_data = [
+        {'name': 'Alice Adams', 'classes': ['Engl 490', 'Span 330', 'Phys 260', 'Engl 450', 'Math 260']}, 
+        {'name': 'Bob Brown', 'classes': ['Biol 450', 'Govt 330', 'Fren 301', 'Germ 101', 'Phys 450']}, 
+        {'name': 'Charlie Clark', 'classes': ['Span 490', 'Span 201', 'Germ 260', 'Hist 301', 'Govt 301']}, 
+        {'name': 'Daisy Davis', 'classes': ['Govt 201', 'Span 201', 'Hist 260', 'Math 201', 'Chem 101']}, 
+        {'name': 'Edward Evans', 'classes': ['Biol 450', 'Fren 450', 'Econ 102', 'Fren 260', 'Fren 330']},
+        {'name': 'Fiona Foster', 'classes': ['Hist 330', 'Hist 490', 'Chem 101', 'Germ 490', 'Econ 102']},
+        {'name': 'George Green', 'classes': ['Span 330', 'Hist 260', 'Chem 301', 'Govt 490', 'Govt 102']},
+        {'name': 'Hannah Hill', 'classes': ['Biol 490', 'Fren 301', 'Engl 260', 'Engl 301', 'Germ 450']},
+        {'name': 'Isaac Ives', 'classes': ['Span 330', 'Econ 201', 'Fren 330', 'Biol 450', 'Math 260']},
+        {'name': 'Jessica Johnson', 'classes': ['Engl 201', 'Econ 102', 'Span 101', 'Govt 330', 'Chem 490']},
+        {'name': 'Kevin King', 'classes': ['Biol 330', 'Span 260', 'Biol 260', 'Germ 301', 'Math 102']},
+        {'name': 'Lily Lewis', 'classes': ['Span 301', 'Biol 102', 'Math 330', 'Fren 450', 'Engl 101']},
+        {'name': 'Michael Miller', 'classes': ['Biol 450', 'Fren 102', 'Fren 201', 'Phys 102', 'Math 102']},
+        {'name': 'Nora Nelson', 'classes': ['Math 260', 'Fren 101', 'Biol 101', 'Engl 301', 'Germ 260']},
+        {'name': 'Oliver Owens', 'classes': ['Econ 260', 'Fren 450', 'Biol 260', 'Engl 490', 'Germ 330']},
+        {'name': 'Patricia Parker', 'classes': ['Phys 101', 'Fren 201', 'Hist 201', 'Germ 330', 'Germ 102']},
+        {'name': 'Quinn Quinn', 'classes': ['Biol 301', 'Econ 260', 'Biol 101', 'Biol 201', 'Span 101']},
+        {'name': 'Rachel Roberts', 'classes': ['Biol 450', 'Econ 301', 'Chem 330', 'Germ 260', 'Span 490']},
+        {'name': 'Samuel Smith', 'classes': ['Hist 260', 'Econ 101', 'Germ 301', 'Govt 301', 'Math 450']},
+        {'name': 'Tina Taylor', 'classes': ['Govt 450', 'Hist 101', 'Span 201', 'Fren 330', 'Hist 201']},
+        {'name': 'Ulysses Underwood', 'classes': ['Engl 201', 'Phys 101', 'Engl 101', 'Econ 260', 'Chem 260']},
+        {'name': 'Vanessa Vincent', 'classes': ['Econ 201', 'Span 101', 'Engl 201', 'Math 260', 'Phys 301']},
+        {'name': 'William Wilson', 'classes': ['Math 490', 'Math 201', 'Biol 102', 'Germ 260', 'Germ 102']},
+        {'name': 'Xavier Xander', 'classes': ['Germ 301', 'Govt 101', 'Govt 102', 'Chem 490', 'Hist 102']}, 
+        {'name': 'Yolanda Young', 'classes': ['Hist 301', 'Chem 102', 'Govt 330', 'Chem 101', 'Econ 330']},
+        {'name': 'Zachary Zimmerman', 'classes': ['Biol 330', 'Chem 330', 'Hist 201', 'Phys 490', 'Chem 260']}
+    ]   
+    ```
+
+    Make a list (including repeats) of all classes the students have signed up for.  Then use the `Counter` class from the `collections` library to create a `Counter` with keys equal to the different courses and values equal to the number of these students who have signed up for each course.  
+
+2. Suppose we have imported `cos` from the `math` library. Consider the function
+
+    ```python
+    def f(x): return cos(x) - x + 3
+    ```
+
+    Write a recursive function `find_roots(f, a, b, precision = 10**(-6))` that can find the root of the function `f`.  Recall the algorithm (which we also discussed on Nov 6) has these steps:
+
+    a. Find the midpoint of `a` and `b`.  
+    b. If `f(m) == 0` or `b` and `a` are really really close, then return `m`. 
+    c. If `f(a) * f(m) < 0`, then the root must be between `a` and `m`, so use recursion.
+    d. Otherwise the root must be between `m` and `b`, so use recursion. 
 
 - - - 
 
