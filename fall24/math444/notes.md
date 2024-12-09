@@ -1783,6 +1783,23 @@ In some cases you can calculate the value of this convolution by hand, but usual
 3. See if you can use Desmos to graph the solution to the heat equation if the initial condition is 
 $$f(x) = \max(2 - |x|, 0).$$
 
+### Mon, Dec 9
+
+We went over some of the questions from the final exam.  In particular, we talked about how to find the Fourier transform of a function that is only non-zero in a finite interval like the one in the exam.  We did this example:
+
+1. Find the Fourier transform of the function 
+$$f(x) = \begin{cases} 
+0 & \text{ if } |x| > 1 \\ 
+x+1 & \text{ if } -1 < x < 0 \\
+1-x & \text{ if } 0 < x < 1 
+\end{cases}$$
+One issue with this example is that it requires integration by parts, so it is a little tedious to calculate without tabular integration. We didn't finish the computation, but we got the idea across.  Another issue is that this function is continuous, unlike the example on the final exam, but the continuity isn't that important. As long as the discontinuities only occur at a finite number of points, you can ignore those points when calculating the integrals.  
+
+We also looked at what the solution of the heat equation would look like with this function as the initial condition. Surprisingly we don't really need to know the Fourier transform of the initial condition since it goes away in the solution when we apply the inverse Fourier transform to get our final convolution equation for the solution.  
+
+We also talked about how to find a Laurent series.  
+
+2. Let $f(z) = \dfrac{\sin z}{z - 5}$.  Find a Laurent series for $f$ centered at 0 which converges when $|z| > 5$.  The solution is to find infinite series for $\sin z$ and $\dfrac{1}{z-5}$ separately and then multiply the Laurent series for $\dfrac{1}{z-5}$ with the MacLaurin series for $\sin z$. <!--NOTE TO SELF: I don't recommend either of these examples for the future!  Try to find better simple examples! -->
 
 - - - 
 

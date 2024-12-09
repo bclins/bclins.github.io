@@ -3798,6 +3798,49 @@ on Desmos (click on the image below):</p>
 if the initial condition is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>max</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>−</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x) = \max(2 - |x|, 0).</annotation></semantics></math></li>
 </ol>
+<h3 id="mon-dec-9">Mon, Dec 9</h3>
+<p>We went over some of the questions from the final exam. In
+particular, we talked about how to find the Fourier transform of a
+function that is only non-zero in a finite interval like the one in the
+exam. We did this example:</p>
+<ol type="1">
+<li>Find the Fourier transform of the function
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>x</mi><mo>+</mo><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mo>−</mo><mn>1</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn><mo>−</mo><mi>x</mi></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x) = \begin{cases} 
+0 &amp; \text{ if } |x| &gt; 1 \\ 
+x+1 &amp; \text{ if } -1 &lt; x &lt; 0 \\
+1-x &amp; \text{ if } 0 &lt; x &lt; 1 
+\end{cases}</annotation></semantics></math> One issue with this example
+is that it requires integration by parts, so it is a little tedious to
+calculate without tabular integration. We didn’t finish the computation,
+but we got the idea across. Another issue is that this function is
+continuous, unlike the example on the final exam, but the continuity
+isn’t that important. As long as the discontinuities only occur at a
+finite number of points, you can ignore those points when calculating
+the integrals.</li>
+</ol>
+<p>We also looked at what the solution of the heat equation would look
+like with this function as the initial condition. Surprisingly we don’t
+really need to know the Fourier transform of the initial condition since
+it goes away in the solution when we apply the inverse Fourier transform
+to get our final convolution equation for the solution.</p>
+<p>We also talked about how to find a Laurent series.</p>
+<ol start="2" type="1">
+<li>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mo>sin</mo><mi>z</mi></mrow><mrow><mi>z</mi><mo>−</mo><mn>5</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(z) = \dfrac{\sin z}{z - 5}</annotation></semantics></math>.
+Find a Laurent series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+centered at 0 which converges when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&gt;</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">|z| &gt; 5</annotation></semantics></math>.
+The solution is to find infinite series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">\sin z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mrow><mi>z</mi><mo>−</mo><mn>5</mn></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{1}{z-5}</annotation></semantics></math>
+separately and then multiply the Laurent series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mrow><mi>z</mi><mo>−</mo><mn>5</mn></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{1}{z-5}</annotation></semantics></math>
+with the MacLaurin series for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">\sin z</annotation></semantics></math>.
+<!--NOTE TO SELF: I don't recommend either of these examples for the future!  Try to find better simple examples! --></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

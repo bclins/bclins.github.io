@@ -3788,6 +3788,31 @@ really really close, then return <code>m</code>.</li>
 <code>b</code>, so use recursion.</li>
 </ol></li>
 </ol>
+<h3 id="mon-dec-9">Mon, Dec 9</h3>
+<p>Today we talked about a few of the problems from the <a
+href="practicefinal.pdf">final exam review</a>. It particular we talked
+about how to understand a recursive function by using a stack
+diagram.</p>
+<p>We also looked at this program:</p>
+<div class="sourceCode" id="cb95"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> median(nums):</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(nums) <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>        nums.pop(<span class="dv">0</span>)</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>        nums.pop()</span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(nums) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">sum</span>(nums) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nums[<span class="dv">0</span>]</span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">12</span>]</span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(median(a))</span></code></pre></div>
+<ol type="1">
+<li><p>What is the value of the list <code>nums</code> each time the
+while-loop condition is checked?</p></li>
+<li><p>What does this program print when it is run?</p></li>
+<li><p>Describe two bad things about the way this median function is
+implemented.</p></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

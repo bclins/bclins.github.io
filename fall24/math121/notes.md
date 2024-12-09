@@ -1076,6 +1076,10 @@ Today we talked some more about choosing the right inference techniques in stati
 
 * **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 
+### Mon, Dec 9
+
+Today we went over answers to the [review questions for the final exam](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf).
+
 
 
 - - - 

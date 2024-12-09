@@ -2558,6 +2558,34 @@ We did two exercises in class.
     c. If `f(a) * f(m) < 0`, then the root must be between `a` and `m`, so use recursion.
     d. Otherwise the root must be between `m` and `b`, so use recursion. 
 
+### Mon, Dec 9
+
+Today we talked about a few of the problems from the [final exam review](practicefinal.pdf). It particular we talked about how to understand a recursive function by using a stack diagram.  
+
+We also looked at this program:
+
+```python
+def median(nums):
+    while len(nums) < 2:
+        nums.pop(0)
+        nums.pop()
+    if len(nums) == 2:
+        return sum(nums) / 2
+    else: 
+        return nums[0]
+
+a = [2,4,6,8,10,12]
+print(median(a))
+```
+
+1. What is the value of the list `nums` each time the while-loop condition is checked?
+
+2. What does this program print when it is run?
+
+3. Describe two bad things about the way this median function is implemented.  
+
+
+
 - - - 
 
 [TP01]: <https://allendowney.github.io/ThinkPython/chap01.html>
