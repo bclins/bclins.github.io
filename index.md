@@ -33,15 +33,15 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 <!--- - --->
 
-### Fall 2024 Classes
+### Spring 2025 Classes
 
-* Math 121 - [Statistics](fall24/math121/index.html) 
-* Math 444 - [Complex Analysis](fall24/math444/index.html) 
-* CS 261 - [Computer Science I](fall24/cs261/index.html)
+* Math 121 - [Statistics](spring25/math121/index.html) 
+* Math 140 - [Calculus for Business & Economics](spring25/math140/index.html) 
+* CS 461 - [Theory of Computing](spring25/cs461/index.html)
 
 ### Weekly Schedule
 
-<a href="fall24/schedule2.pdf"><img src="fall24/schedule2.png" width="475"/></a>
+<a href="spring25/schedule.pdf"><img src="spring25/schedule.png" width="475"/></a>
 
 
 ### Teaching Materials

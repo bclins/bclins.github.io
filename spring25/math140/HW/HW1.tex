@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Homework 1 - Math 140 \hfill Name: \underline{\hspace*{2in}}}
+\textit{Using the common basic graphs as a reference, sketch the graphs of the following functions.  Be sure to label points where the graphs intersect the x or y-axis.  } 
+\begin{multicols}{2}
+\begin{enumerate}
+\item $y = \dfrac{1}{x-3}$ \\
+\begin{center}
+\begin{tikzpicture}
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{center}
+
+\item $y = \sqrt{x} + 3$ \\
+\begin{center}
+\begin{tikzpicture}
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{center}
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $y = \dfrac{x^2}{4}$ \\
+\begin{center}
+\begin{tikzpicture}
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{center}
+
+\item $y = -(x+1)^2$ \\
+\begin{center}
+\begin{tikzpicture}
+\draw[thick,->] (-2,0) -- (2,0);
+\draw[thick,->] (0,-2) -- (0,2);
+\end{tikzpicture}
+\end{center}
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+
+\noindent
+\textit{Solve the following equations.} 
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\dfrac{1}{x-3} = 2$ 
+
+\item $\sqrt{x} + 3 = 12$ 
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\dfrac{x^2}{4} = 25$ 
+
+\item $-(x+1)^2 = -9$ 
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $\dfrac{5}{x} = \dfrac{2}{3}$ 
+
+\item $\dfrac{x}{4-x} = 3$ 
+\setcounter{enumCount}{\theenumi}
+\end{enumerate}
+\end{multicols}
+\vfill
+\end{document}

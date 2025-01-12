@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Theory of Computing</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <style>
+  :root {
+    --header-color: #000; 
+    --link-color: #00e; 
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Theory of Computing</h1>
+</header>
+<h2 id="computer-science-461---spring-2025">Computer Science 461 -
+Spring 2025</h2>
+<center>
+Jump to: <a href="index.html">CS 461 Homepage</a>, <a
+href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a
+href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a
+href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a
+href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a
+href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>,
+<a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week
+12</a>, <a href="#week-13-notes">Week 13</a>, <a
+href="#week-14-notes">Week 14</a>
+</center>
+<h3 id="week-1-notes">Week 1 Notes</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Jan 13</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=15">1.3</a></td>
+<td style="text-align: left;">Proof techniques</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Jan 15</td>
+<td style="text-align: center;"><a
+href="https://introtcs.org/public/lec_02_representation.html#defining-representations">2.1
+- 2.2</a></td>
+<td style="text-align: left;">Notation &amp; encodings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Jan 17</td>
+<td style="text-align: center;"><a
+href="https://introtcs.org/public/lec_03_computation.html#defining-computation">3.1
+- 3.7</a></td>
+<td style="text-align: left;">Boolean circuits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mon-jan-13">Mon, Jan 13</h3>
+<p>Today we talked about proof techniques, particularly proof by
+induction. We looked at these two examples:</p>
+<ol type="1">
+<li>Prove that if a set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+elements, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>n</mi></msup><annotation encoding="application/x-tex">2^n</annotation></semantics></math>
+subsets.</li>
+</ol>
+<p>The second example had to do with the famous <strong>Tower’s of Hanoi
+puzzle</strong>( see <a href="https://youtu.be/SMleU0oeGLg"
+class="uri">https://youtu.be/SMleU0oeGLg</a>).</p>
+<ol start="2" type="1">
+<li>Use induction to prove that it is always possible to move the disks
+from one peg to another by moving one disk at a time without breaking
+the rules.</li>
+</ol>
+<p>You can also translate many induction arguments into recursive
+algorithms.</p>
+<ol start="3" type="1">
+<li><p>Suppose you have three stack variables (implemented as Python
+lists):</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stack1 <span class="op">=</span> [<span class="dv">10</span> <span class="op">-</span> k <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stack2 <span class="op">=</span> []</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stack3 <span class="op">=</span> []</span></code></pre></div>
+<p>Write a function
+<code>move_disks(n, start_stack, temp_stack, final_stack)</code> that
+recursively moves n disks from the <code>start_stack</code> to the
+<code>final stack</code>.</p></li>
+</ol>
+<h3 id="week-2-notes">Week 2 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Jan 20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">MLK day, no class</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Jan 22</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Impossible computer programs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Jan 24</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=29">2.1</a></td>
+<td style="text-align: left;">Intro to finite automata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-3-notes">Week 3 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Jan 27</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=31">2.2</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=39">2.3</a></td>
+<td style="text-align: left;">Regular languages</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Jan 29</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=43">2.4</a></td>
+<td style="text-align: left;">Nondeterministic finite automata</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Jan 31</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=56">2.6</a></td>
+<td style="text-align: left;">NFAs and regular languages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-4-notes">Week 4 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Feb 3</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=49">2.5</a></td>
+<td style="text-align: left;">NFAs and DFAs are equivalent</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 5</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=60">2.7</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=68">2.8</a></td>
+<td style="text-align: left;">Regular expressions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 7</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=75">2.9</a></td>
+<td style="text-align: left;">The pumping lemma</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-5-notes">Week 5 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Feb 10</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=75">2.9</a></td>
+<td style="text-align: left;">Non-regular languages</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 12</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 1</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-6-notes">Week 6 Notes</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Feb 17</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=99">3.1</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=102">3.2</a></td>
+<td style="text-align: left;">Context-free grammars</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 19</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=108">3.3</a></td>
+<td style="text-align: left;">Parsing and parse-trees</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 21</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=132">3.8</a></td>
+<td style="text-align: left;">The pumping lemma for context-free
+languages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-7-notes">Week 7 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Feb 24</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=120">3.5</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=124">3.6</a></td>
+<td style="text-align: left;">Pushdown automata</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 26</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=128">3.7</a></td>
+<td style="text-align: left;">Pushdown automata &amp; context-free
+grammars</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 28</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=145">4.1</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=149">4.2</a></td>
+<td style="text-align: left;">Definition of Turing machines</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-8-notes">Week 8 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Mar 3</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=149">4.2</a></td>
+<td style="text-align: left;">Turing computable functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Mar 5</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=156">4.3</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=159">4.4</a></td>
+<td style="text-align: left;">Church-Turing thesis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Mar 7</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=185">5.5</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=192">5.7</a></td>
+<td style="text-align: left;">Enumerators</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-9-notes">Week 9 Notes</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Mar 17</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Universal Turing machines</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Mar 19</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=165">5.1</a>-<a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">5.3</a></td>
+<td style="text-align: left;">The halting problem &amp; Rice’s
+theorem</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Mar 21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-10-notes">Week 10 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Mar 24</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Mar 26</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 2</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Mar 28</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=205">6.1</a></td>
+<td style="text-align: left;">The running time of algorithms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-11-notes">Week 11 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Mar 31</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=207">6.2</a></td>
+<td style="text-align: left;">The complexity class P</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 2</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=207">6.2</a></td>
+<td style="text-align: left;">The complexity class P - con’d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 4</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=210">6.3</a></td>
+<td style="text-align: left;">The complexity class NP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-12-notes">Week 12 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Apr 7</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=219">6.4</a></td>
+<td style="text-align: left;">Nondeterministic TMs</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 9</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">The SAT problem</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 11</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">Polynomial time reductions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-13-notes">Week 13 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Apr 14</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">Hamilton path problem</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 16</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">NP-Complete languages</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 18</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="week-14-notes">Week 14 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Apr 21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 23</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 3</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 25</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">TBA</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mon, Apr 28</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">TBA</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</body>
+</html>
