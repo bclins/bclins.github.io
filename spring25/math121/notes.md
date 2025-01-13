@@ -36,7 +36,6 @@ Mon, Jan 13 | [1.2][1.2]     | Data tables, variables, and individuals
 Wed, Jan 15 | [2.1.3][2.1.3] | Histograms & skew
 Fri, Jan 17 | [2.1.5][2.1.5] | Boxplots
 
-<!--
 ### Mon, Jan 13
 
 Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
@@ -58,6 +57,7 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
+<!--
 ### Wed, Aug 28 
 
 We talked about how to summarize quantitative data. We started by reviewing the **mean** and **median**. We saw how to find the average in Excel, and we talked about how to find the position of the median in a long list of numbers (assuming they are sorted). 
