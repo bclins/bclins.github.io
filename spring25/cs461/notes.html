@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -175,17 +175,107 @@ the rules.</li>
 <p>You can also translate many induction arguments into recursive
 algorithms.</p>
 <ol start="3" type="1">
+<li><p>Write a Python function <code>sublists(A)</code> that inputs a
+list <code>A</code> and returns a list containing every sublist of
+<code>A</code>.</p>
+<details>
+<p>We did this in class and we came up with something like this:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="kw">def</span> sublists(A):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> <span class="bu">len</span>(A) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="cf">return</span> [A]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>     last <span class="op">=</span> A[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     B <span class="op">=</span> A[<span class="dv">0</span>:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>     sublists_without_last <span class="op">=</span> sublists(other_elements)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     sublists_with_last <span class="op">=</span> [s <span class="op">+</span> [last] <span class="cf">for</span> s <span class="kw">in</span> sublists_without_last]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> sublists_without_last <span class="op">+</span> sublists_with_last</span></code></pre></div>
+</details></li>
 <li><p>Suppose you have three stack variables (implemented as Python
 lists):</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>stack1 <span class="op">=</span> [<span class="dv">10</span> <span class="op">-</span> k <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>stack2 <span class="op">=</span> []</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>stack3 <span class="op">=</span> []</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stack1 <span class="op">=</span> [<span class="dv">10</span> <span class="op">-</span> k <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stack2 <span class="op">=</span> []</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>stack3 <span class="op">=</span> []</span></code></pre></div>
 <p>Write a function
 <code>move_disks(n, start_stack, temp_stack, final_stack)</code> that
 recursively moves n disks from the <code>start_stack</code> to the
 <code>final stack</code>.</p></li>
 </ol>
+<h3 id="wed-jan-15">Wed, Jan 15</h3>
+<p>Today we reviewed mathematical notation, including some new notation
+we will be using. We defined <strong>alphabets</strong> which are sets
+of symbols we can use to represent things. The most common alphabet in
+computer science is the binary alphabet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma = \{0, 1\}</annotation></semantics></math>.
+We use the notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Σ</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\Sigma^*</annotation></semantics></math>
+to denote the set of all possible finite length strings constructed from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>.</p>
+<p>A set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+can be <strong>represented</strong> or <strong>encoded</strong> using an
+alphabet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+if there is a 1-to-1 function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>:</mo><mi>S</mi><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">E: S \rightarrow \Sigma^*</annotation></semantics></math>.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Any countable set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+can be encoded with a 1-to-1 function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>:</mo><mi>S</mi><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">E:S \rightarrow \{0,1\}^*</annotation></semantics></math>.</p>
+</div>
+<p>We discussed specific encodings such as how to encode the integers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℤ</mi><annotation encoding="application/x-tex">\mathbb{Z}</annotation></semantics></math>
+and the rationals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb{Q}</annotation></semantics></math>.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg">ASCII
+characters</a></li>
+</ul>
+<p>We also observed another fact:</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> If we can encode a set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>,
+then we can encode tuples in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>.</p>
+</div>
+<p>At the end we considered the set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>∞</mi></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>:</mo><mi>f</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,1\}^\infty = \{f : f : \mathbb{N}\rightarrow \{0,1\} \}</annotation></semantics></math>
+which you can think of as the set of all infinitely long strings of
+zeros and ones. We finished by proving</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> There is no one-to-one function from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>∞</mi></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^\infty</annotation></semantics></math>
+into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^*</annotation></semantics></math>.
+<!--*--></p>
+</div>
+<p>A corollary of this theorem is that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>∞</mi></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^\infty</annotation></semantics></math>
+is uncountable.</p>
+<!--
+### Fri, Jan 17
+
+
+
+Today we finished the proof that there is no 1-to-1 encoding function from $\{0,1\}^\infty$ to $\{0,1\}^*$. 
+
+Then we talked about Boolean circuits which are formed by AND, OR, and NOT gates. 
+
+1. Show that you can construction the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
+
+2. Use mathematical induction to prove the following:
+
+**Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented by a Boolean circuit.   
+
+We finished by talking about how NAND gates are also universal in the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
+
+-->
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
 <thead>

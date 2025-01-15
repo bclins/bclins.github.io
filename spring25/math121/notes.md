@@ -61,7 +61,7 @@ I like this incorrect answer because it is a perfect example of [bullshit](https
 
 Today we did our first in-class workshop:
 
-* **Workshop:** [Histograms & stemplots](Workshops/Histograms.pdf)
+* **Workshop:** [Histograms & stemplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Histograms.pdf)
 
 Before that, we talked about how to summarize quantitative data. We started by reviewing the **mean** and **median**. We saw how to find the average in Excel, and we talked about how to find the position of the median in a long list of numbers (assuming they are sorted). 
 

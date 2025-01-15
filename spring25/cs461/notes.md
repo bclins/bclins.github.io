@@ -13,6 +13,9 @@ header-includes: |
   </style>
 ---
 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
 ## Computer Science 461 - Spring 2025
 
 <center>
@@ -39,7 +42,24 @@ The second example had to do with the famous **Tower's of Hanoi puzzle**( see <h
 
 You can also translate many induction arguments into recursive algorithms.
 
-3. Suppose you have three stack variables (implemented as Python lists):
+3. Write a Python function `sublists(A)` that inputs a list `A` and returns a list containing every sublist of `A`.  
+
+    <details>
+    We did this in class and we came up with something like this:
+
+    ```python
+    def sublists(A):
+        if len(A) == 0:
+            return [A]
+        last = A[-1]
+        B = A[0:-1]
+        sublists_without_last = sublists(other_elements)
+        sublists_with_last = [s + [last] for s in sublists_without_last]
+        return sublists_without_last + sublists_with_last
+    ```
+    </details>
+
+4. Suppose you have three stack variables (implemented as Python lists):
 
     ```python
     stack1 = [10 - k for k in range(10)]
@@ -49,6 +69,53 @@ You can also translate many induction arguments into recursive algorithms.
 
     Write a function `move_disks(n, start_stack, temp_stack, final_stack)` that recursively moves n disks from the `start_stack` to the `final stack`.  
 
+### Wed, Jan 15
+
+Today we reviewed mathematical notation, including some new notation we will be using. We defined **alphabets** which are sets of symbols we can use to represent things.  The most common alphabet in computer science is the binary alphabet $\Sigma = \{0, 1\}$. We use the notation $\Sigma^*$ to denote the set of all possible finite length strings constructed from $\Sigma$. 
+
+A set $S$ can be **represented** or **encoded** using an alphabet $\Sigma$ if there is a 1-to-1 function $E: S \rightarrow \Sigma^*$. 
+
+<div class="Theorem">
+**Theorem.** Any countable set $S$ can be encoded with a 1-to-1 function $E:S \rightarrow \{0,1\}^*$. 
+</div>
+
+We discussed specific encodings such as how to encode the integers $\mathbb{Z}$ and the rationals $\mathbb{Q}$. 
+
+* **Example:** [ASCII characters](https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg)
+
+We also observed another fact: 
+
+<div class="Theorem"> 
+**Theorem.** If we can encode a set $S$ using $\Sigma$, then we can encode tuples in $S$ using $\Sigma$.  
+</div>
+
+At the end we considered the set $\{0,1\}^\infty = \{f : f : \N \rightarrow \{0,1\} \}$ which you can think of as the set of all infinitely long strings of zeros and ones.  We finished by proving 
+
+<div class="Theorem">
+**Theorem.** There is no one-to-one function from $\{0,1\}^\infty$ into $\{0,1\}^*$.  <!--*-->
+</div>
+
+A corollary of this theorem is that $\{0,1\}^\infty$ is uncountable.  
+
+
+<!--
+### Fri, Jan 17
+
+
+
+Today we finished the proof that there is no 1-to-1 encoding function from $\{0,1\}^\infty$ to $\{0,1\}^*$. 
+
+Then we talked about Boolean circuits which are formed by AND, OR, and NOT gates. 
+
+1. Show that you can construction the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
+
+2. Use mathematical induction to prove the following:
+
+**Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented by a Boolean circuit.   
+
+We finished by talking about how NAND gates are also universal in the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
+
+-->
 
 ### Week 2 Notes
 

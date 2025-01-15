@@ -44,7 +44,213 @@ After we solved these equations, we also talked about the geometric interpretati
 
 5. Graph the function $y = \sqrt{3x + 1}$. 
 
+### Wed, Jan 15
 
+To make it easier to graph functions, it helps to know some basic graphs.  Here are six you should memorize.
+
+<table cellpadding="20px">
+<tr><td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <line x1="-5" y1="-3" x2="5" y2="2" stroke="blue" stroke-width="0.05"/>
+</g>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="1.5" y="-3.5">y = mx+b</text>
+ </g>
+</svg>
+</td>
+
+<td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+<line x1="-5" y1="2" x2="5" y2="2" stroke="blue" stroke-width="0.05"/>
+</g>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="1.5" y="-3.5">y = c</text>
+ </g>
+</svg>
+</td>
+
+<td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="2.5" y="-3.5">y = x²</text>
+ </g>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <polyline points="-2.00,4.0000 -1.96,3.8416 -1.92,3.6864 -1.88,3.5344 -1.84,3.3856 -1.80,3.2400 -1.76,3.0976 -1.72,2.9584 -1.68,2.8224 -1.64,2.6896 -1.60,2.5600 -1.56,2.4336 -1.52,2.3104 -1.48,2.1904 -1.44,2.0736 -1.40,1.9600 -1.36,1.8496 -1.32,1.7424 -1.28,1.6384 -1.24,1.5376 -1.20,1.4400 -1.16,1.3456 -1.12,1.2544 -1.08,1.1664 -1.04,1.0816 -1.00,1.0000 -0.96,0.9216 -0.92,0.8464 -0.88,0.7744 -0.84,0.7056 -0.80,0.6400 -0.76,0.5776 -0.72,0.5184 -0.68,0.4624 -0.64,0.4096 -0.60,0.3600 -0.56,0.3136 -0.52,0.2704 -0.48,0.2304 -0.44,0.1936 -0.40,0.1600 -0.36,0.1296 -0.32,0.1024 -0.28,0.0784 -0.24,0.0576 -0.20,0.0400 -0.16,0.0256 -0.12,0.0144 -0.08,0.0064 -0.04,0.0016 0.00,0.0000 0.04,0.0016 0.08,0.0064 0.12,0.0144 0.16,0.0256 0.20,0.0400 0.24,0.0576 0.28,0.0784 0.32,0.1024 0.36,0.1296 0.40,0.1600 0.44,0.1936 0.48,0.2304 0.52,0.2704 0.56,0.3136 0.60,0.3600 0.64,0.4096 0.68,0.4624 0.72,0.5184 0.76,0.5776 0.80,0.6400 0.84,0.7056 0.88,0.7744 0.92,0.8464 0.96,0.9216 1.00,1.0000 1.04,1.0816 1.08,1.1664 1.12,1.2544 1.16,1.3456 1.20,1.4400 1.24,1.5376 1.28,1.6384 1.32,1.7424 1.36,1.8496 1.40,1.9600 1.44,2.0736 1.48,2.1904 1.52,2.3104 1.56,2.4336 1.60,2.5600 1.64,2.6896 1.68,2.8224 1.72,2.9584 1.76,3.0976 1.80,3.2400 1.84,3.3856 1.88,3.5344 1.92,3.6864 1.96,3.8416 2.00,4.0000" fill="none" stroke="blue" stroke-width="0.05" /></svg>
+</g>
+</svg>
+</td></tr>
+
+
+<tr><td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="1.5" y="-3.5">y = |x|</text>
+ </g>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <polyline points="-4,4 0,0 4,4" fill="none" stroke="blue" stroke-width="0.05"/>
+</g>
+</svg>
+</td>
+
+<td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="2.5" y="-3.5">y = 1/x</text>
+ </g>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+<polyline points=" 0.25,4.000 0.30,3.333 0.35,2.857 0.40,2.500 0.45,2.222 0.50,2.000 0.55,1.818 0.60,1.667 0.65,1.538 0.70,1.429 0.75,1.333 0.80,1.250 0.85,1.176 0.90,1.111 0.95,1.053 1.00,1.000 1.05,0.952 1.10,0.909 1.15,0.870 1.20,0.833 1.25,0.800 1.30,0.769 1.35,0.741 1.40,0.714 1.45,0.690 1.50,0.667 1.55,0.645 1.60,0.625 1.65,0.606 1.70,0.588 1.75,0.571 1.80,0.556 1.85,0.541 1.90,0.526 1.95,0.513 2.00,0.500 2.05,0.488 2.10,0.476 2.15,0.465 2.20,0.455 2.25,0.444 2.30,0.435 2.35,0.426 2.40,0.417 2.45,0.408 2.50,0.400 2.55,0.392 2.60,0.385 2.65,0.377 2.70,0.370 2.75,0.364 2.80,0.357 2.85,0.351 2.90,0.345 2.95,0.339 3.00,0.333 3.05,0.328 3.10,0.323 3.15,0.317 3.20,0.313 3.25,0.308 3.30,0.303 3.35,0.299 3.40,0.294 3.45,0.290 3.50,0.286 3.55,0.282 3.60,0.278 3.65,0.274 3.70,0.270 3.75,0.267 3.80,0.263 3.85,0.260 3.90,0.256 3.95,0.253 4.00,0.250 4.05,0.247 4.10,0.244 4.15,0.241 4.20,0.238 4.25,0.235 4.30,0.233 4.35,0.230 4.40,0.227 4.45,0.225 4.50,0.222 4.55,0.220 4.60,0.217 4.65,0.215 4.70,0.213 4.75,0.211 4.80,0.208 4.85,0.206 4.90,0.204 4.95,0.202" fill="none" stroke="blue" stroke-width="0.05"/>
+<polyline points="-5.00,-0.200 -4.95,-0.202 -4.90,-0.204 -4.85,-0.206 -4.80,-0.208 -4.75,-0.211 -4.70,-0.213 -4.65,-0.215 -4.60,-0.217 -4.55,-0.220 -4.50,-0.222 -4.45,-0.225 -4.40,-0.227 -4.35,-0.230 -4.30,-0.233 -4.25,-0.235 -4.20,-0.238 -4.15,-0.241 -4.10,-0.244 -4.05,-0.247 -4.00,-0.250 -3.95,-0.253 -3.90,-0.256 -3.85,-0.260 -3.80,-0.263 -3.75,-0.267 -3.70,-0.270 -3.65,-0.274 -3.60,-0.278 -3.55,-0.282 -3.50,-0.286 -3.45,-0.290 -3.40,-0.294 -3.35,-0.299 -3.30,-0.303 -3.25,-0.308 -3.20,-0.313 -3.15,-0.317 -3.10,-0.323 -3.05,-0.328 -3.00,-0.333 -2.95,-0.339 -2.90,-0.345 -2.85,-0.351 -2.80,-0.357 -2.75,-0.364 -2.70,-0.370 -2.65,-0.377 -2.60,-0.385 -2.55,-0.392 -2.50,-0.400 -2.45,-0.408 -2.40,-0.417 -2.35,-0.426 -2.30,-0.435 -2.25,-0.444 -2.20,-0.455 -2.15,-0.465 -2.10,-0.476 -2.05,-0.488 -2.00,-0.500 -1.95,-0.513 -1.90,-0.526 -1.85,-0.541 -1.80,-0.556 -1.75,-0.571 -1.70,-0.588 -1.65,-0.606 -1.60,-0.625 -1.55,-0.645 -1.50,-0.667 -1.45,-0.690 -1.40,-0.714 -1.35,-0.741 -1.30,-0.769 -1.25,-0.800 -1.20,-0.833 -1.15,-0.870 -1.10,-0.909 -1.05,-0.952 -1.00,-1.000 -0.95,-1.053 -0.90,-1.111 -0.85,-1.176 -0.80,-1.250 -0.75,-1.333 -0.70,-1.429 -0.65,-1.538 -0.60,-1.667 -0.55,-1.818 -0.50,-2.000 -0.45,-2.222 -0.40,-2.500 -0.35,-2.857 -0.30,-3.333 -0.25,-4.000" fill="none" stroke="blue" stroke-width="0.05"/>
+</g>
+</svg>
+</td>
+
+<td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.025">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="2.5" y="-2.5">y = √x</text>
+ </g>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <polyline points="0.00,0.000 0.05,0.224 0.10,0.316 0.15,0.387 0.20,0.447 0.25,0.500 0.30,0.548 0.35,0.592 0.40,0.632 0.45,0.671 0.50,0.707 0.55,0.742 0.60,0.775 0.65,0.806 0.70,0.837 0.75,0.866 0.80,0.894 0.85,0.922 0.90,0.949 0.95,0.975 1.00,1.000 1.05,1.025 1.10,1.049 1.15,1.072 1.20,1.095 1.25,1.118 1.30,1.140 1.35,1.162 1.40,1.183 1.45,1.204 1.50,1.225 1.55,1.245 1.60,1.265 1.65,1.285 1.70,1.304 1.75,1.323 1.80,1.342 1.85,1.360 1.90,1.378 1.95,1.396 2.00,1.414 2.05,1.432 2.10,1.449 2.15,1.466 2.20,1.483 2.25,1.500 2.30,1.517 2.35,1.533 2.40,1.549 2.45,1.565 2.50,1.581 2.55,1.597 2.60,1.612 2.65,1.628 2.70,1.643 2.75,1.658 2.80,1.673 2.85,1.688 2.90,1.703 2.95,1.718 3.00,1.732 3.05,1.746 3.10,1.761 3.15,1.775 3.20,1.789 3.25,1.803 3.30,1.817 3.35,1.830 3.40,1.844 3.45,1.857 3.50,1.871 3.55,1.884 3.60,1.897 3.65,1.910 3.70,1.924 3.75,1.936 3.80,1.949 3.85,1.962 3.90,1.975 3.95,1.987 4.00,2.000 4.05,2.012 4.10,2.025 4.15,2.037 4.20,2.049 4.25,2.062 4.30,2.074 4.35,2.086 4.40,2.098 4.45,2.110 4.50,2.121 4.55,2.133 4.60,2.145 4.65,2.156 4.70,2.168 4.75,2.179 4.80,2.191 4.85,2.202 4.90,2.214 4.95,2.225" fill="none" stroke="blue" stroke-width="0.05" /></svg>
+</g>
+</svg>
+</td></tr>
+</table>
+
+We used these examples to help graph the following in class:
+
+1. $y = 5|x|$
+
+2. $y = x^2 + 3$ (<https://youtu.be/tfF_-Db8iSA?t=2658>)
+
+3. $y = \dfrac{1}{x-2}$ (<https://youtu.be/tfF_-Db8iSA?t=3391>)
+
+<!--4. $y = |x-4|$
+
+5. $y = -x^2$-->
+
+4. $y = \sqrt{4 - x}$
+
+
+After those graphs, we talked about function notation.  Both $y = x^2$ and $f(x) = x^2$ to mean the same thing.  But the notation $f(x) = x^2$ emphasizes that $f$ is a function of the $x$ variable.  Be careful not to confuse function notation $f(5)$ with multiplication $(2)(5) = 10$.  Even though the notation looks the same, they are not the same!  
+
+We did these examples. 
+
+<!--7. Suppose that the cost for a business to manufacture $x$ watering pails is $C(x)$.  Explain in words what the equation $C(5{,}000) = 6{,}000$ means. (Move to homework) -->
+
+7. If $f(x) = x^2$ and $g(x) = x+5$, find $f(g(4))$ and $g(g(4))$.  
+
+8. Find $3 f(2) + 4 g(-1)$.
+
+9. The quantity of gasoline $Q$ sold by a gas station is a function of the price $p$ that the owner sets.  Here is a graph of the function $Q = Q(p)$. 
+
+    <center>
+    ![](https://people.hsc.edu/faculty-staff/blins/classes/spring21/math140/Notes/week1a.svg)
+    </center>
+
+    a. Use the graph above to find $Q(3)$.
+    b. Solve $Q(p) = 3000$ for $p$.   
+    c. If $Q(5) = 600$, explain in English what that means. 
+
+
+9. The function $f(x) = \frac{1}{2}(x + \frac{2}{x})$ can be used to approximate $\sqrt{2}$.  Calculate $f(2)$ and $f(f(2))$.  
+
+<!--
+10. The number of large animals that can be supported by a square kilometer of land is a function $N(m)$ that depends on the average mass ($m$) in kilograms of the animals. If $N(50) = 5$, what does that mean in words?  
+
+11. If $C(p)$ is the amount of carbon monoxide in the air, measured in parts per million (ppm), as a function of the number of residents $p$ in a town (measured in thousands of people).  If the population of the town is growing so that $p(t) = 10 + 0.1 t^2$ where $t$ is the number of years from now, then find the formula for a function that will predict the amount of carbon monoxide in the air $t$ years from now. 
+-->
 
 
 ### Week 2 Notes
