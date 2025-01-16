@@ -107,7 +107,7 @@ Today we finished the proof that there is no 1-to-1 encoding function from $\{0,
 
 Then we talked about Boolean circuits which are formed by AND, OR, and NOT gates. 
 
-1. Show that you can construction the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
+1. Show that you can construct the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
 
 2. Use mathematical induction to prove the following:
 

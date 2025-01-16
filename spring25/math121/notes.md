@@ -78,13 +78,11 @@ Until recently, Excel did not have an easy way to make histograms, but Google Sh
 3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
 
 
-<!--
-### Fri, Aug 30
+### Fri, Jan 17
 
 We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
 
-* **Workshop:** [Boxplots](Workshops/Spread2.pdf)
--->
+* **Workshop:** [Boxplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Spread2.pdf)
 
 - - -
 

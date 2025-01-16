@@ -229,11 +229,11 @@ We did these examples.
 
 <!--7. Suppose that the cost for a business to manufacture $x$ watering pails is $C(x)$.  Explain in words what the equation $C(5{,}000) = 6{,}000$ means. (Move to homework) -->
 
-7. If $f(x) = x^2$ and $g(x) = x+5$, find $f(g(4))$ and $g(g(4))$.  
+5. If $f(x) = x^2$ and $g(x) = x+5$, find $f(g(4))$ and $g(g(4))$.  
 
-8. Find $3 f(2) + 4 g(-1)$.
+6. Find $3 f(2) + 4 g(-1)$.
 
-9. The quantity of gasoline $Q$ sold by a gas station is a function of the price $p$ that the owner sets.  Here is a graph of the function $Q = Q(p)$. 
+7. The quantity of gasoline $Q$ sold by a gas station is a function of the price $p$ that the owner sets.  Here is a graph of the function $Q = Q(p)$. 
 
     <center>
     ![](https://people.hsc.edu/faculty-staff/blins/classes/spring21/math140/Notes/week1a.svg)
@@ -244,13 +244,46 @@ We did these examples.
     c. If $Q(5) = 600$, explain in English what that means. 
 
 
-9. The function $f(x) = \frac{1}{2}(x + \frac{2}{x})$ can be used to approximate $\sqrt{2}$.  Calculate $f(2)$ and $f(f(2))$.  
+8. The function $f(x) = \frac{1}{2}(x + \frac{2}{x})$ can be used to approximate $\sqrt{2}$.  Calculate $f(2)$ and $f(f(2))$.  
 
 <!--
 10. The number of large animals that can be supported by a square kilometer of land is a function $N(m)$ that depends on the average mass ($m$) in kilograms of the animals. If $N(50) = 5$, what does that mean in words?  
 
 11. If $C(p)$ is the amount of carbon monoxide in the air, measured in parts per million (ppm), as a function of the number of residents $p$ in a town (measured in thousands of people).  If the population of the town is growing so that $p(t) = 10 + 0.1 t^2$ where $t$ is the number of years from now, then find the formula for a function that will predict the amount of carbon monoxide in the air $t$ years from now. 
 -->
+
+### Fri, Jan 17
+
+We started talking about different ways you can combine functions.  We did the following exercises.
+
+1. Use the graph below to compute $g(f(-5))$. (<https://youtu.be/oORnGaJp1pk>)
+
+<center>
+<img src="functionComposition.png" width = 400></img>
+</center>
+
+2. ([Exercise 1.2# 29](https://people.hsc.edu/faculty-staff/blins/books/AppliedCalculusCalawayHoffmanLippman.pdf#page=28)) The function $D(p)$ gives the number of items that will be demanded when the price is $p$. The
+production cost, $C(x)$ is the cost of producing $x$ items. To determine the cost of production
+when the price is $6, you would do which of the following?
+
+    a. Evaluate $D(C(6))$
+    b. Evaluate $C(D(6))$
+    c. Solve $D(C(x)) = 6$
+    d. Solve $C(D(p)) = 6$ 
+
+3. Continuing the previous problem, profit is revenue minus cost, and revenue is price times quantity sold.  Using the functions $C$ and $D$, write down formulas for revenue and for profit. 
+
+After we talked about function composition, we switched to a quick review of linear functions. You need to know these formulas for linear functions:
+
+* **Slope-Intercept Form** $y = mx + b$
+* **Point-Slope Form** $y-y_0 = m(x - x_0)$
+
+You also need to understand slope very well:
+
+* **Slope** $m = \dfrac{\text{rise}}{\text{run}} = \dfrac{\Delta y}{\Delta x} = \dfrac{ y_2 - y_1}{x_2 - x_1}$
+
+4. A line passes through $(-1, 6)$ and $(5, -4)$.  Find an equation for the line. (<https://youtu.be/XMJ72mtMn4>) 
+
 
 
 ### Week 2 Notes
@@ -260,6 +293,32 @@ Day  | Section  | Topic
 Mon, Jan 20  |  | MLK day - no class
 Wed, Jan 22  | [1.3][1.3]  | Linear functions
 Fri, Jan 24  | [1.3][1.3]  | Slope
+
+<!-- 
+
+Wed, Jan 22 
+
+Try out this example for constructing a linear equation: https://youtu.be/hBpI9IfmMKg 
+
+1. Find a formula to convert Celsius to Fahrenheit.
+
+2. Find a formula to convert Fahrenheit to Celsius.
+
+
+3. Find an equation for the line passing through $(-1,4)$ and $(3,-4)$.
+
+4. Find the slope and $y$ intercept of the equation $6x − 5y + 15 = 0$.
+
+5. Find a formula for a line with slope 2 passing through $(2,5)$.  
+
+6. $\dfrac{x+3}{4} = 3$
+
+7. $\dfrac{3}{x} - 5 = \dfrac{2}{x}$
+
+8. Pressure underwater (measured in ATMs) is a linear function of the depth $x$ in meters given by $P = \frac{1}{10}x+1$.  What is the slope and what are its units?
+
+9. In 2021, the Virginia state income tax for people making over $17,000 is $T = 720 + 0.0575 (I - 17000)$.  Graph this linear function.  What is the slope?  What does the input variable $I$ represent?  What about the output variable $T$?
+-->
 
 ### Week 3 Notes
 
