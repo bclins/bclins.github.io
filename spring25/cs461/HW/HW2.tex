@@ -84,15 +84,9 @@ For any singleton set $\{a\} \subset A$, let $g(\{a\}) = a$. For any other set $
 \end{solution}
 \vfill
 
-\question Suppose that there is a bijection $f:A \rightarrow 2^A$.  Let $B = \{a \in A : a \notin f(a)\}$ and let $b$ be the unique element of $A$ such that $f(b) = B$.  Then either $b \in B$ or $b \notin B$.  Explain why both possibilities lead to a contradiction.
+\question Show that $|2^A| > |A|$ by supposing that there is a bijection $f:A \rightarrow 2^A$.  Let $B = \{a \in A : a \notin f(a)\}$ and let $b$ be the unique element of $A$ such that $f(b) = B$.  Then either $b \in B$ or $b \notin B$.  Explain why both possibilities lead to a contradiction.
 \begin{solution}
-If $b \in B$, then $b \in f(b)$, which means that $b \notin B$, a contradiction.  Likewise, if $b \notin B$, then $b \notin f(b)$, which means $b \in B$, a contradiction.
-\end{solution}
-\vfill
-
-\question What does this mean about the cardinality $|2^A|$?  
-\begin{solution}
-By problem \#4, $|2^A| \ge |A|$, and by \#5, $|2^A| > |A|$.  
+If $b \in B$, then $b \in f(b)$, which means that $b \notin B$, a contradiction.  Likewise, if $b \notin B$, then $b \notin f(b)$, which means $b \in B$, a contradiction.  Therefore there is no bijection so $|2^A| > |A|$.
 \end{solution}
 \vfill
 

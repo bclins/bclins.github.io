@@ -117,7 +117,7 @@ We talked about **Boolean circuits** which are formed by AND, OR, and NOT gates.
     $$(x \wedge y) \vee (\neg x \wedge z)$$
     </details>
 
-3. Use mathematical induction to prove the following:
+3. Use mathematical induction (and the previous result) to prove the following:
 
 <div class="Theorem">
 **Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented by a Boolean circuit.   
@@ -125,7 +125,7 @@ We talked about **Boolean circuits** which are formed by AND, OR, and NOT gates.
 
 We say that the Boolean operations ($\wedge$, $\vee$, $\neg$) are a **universal set of operations** since every Boolean function on $\{0,1\}^n$ can be constructed using those operations.  
 
-We finished by talking about how the NAND operation is universal all by itself.  Using just the NAND operation, yin the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
+We finished by talking about how the NAND operation is universal all by itself.  Using just NAND gates, you can construct any Boolean function on $\{0,1\}^n$. 
 
 <div class="Theorem">
 **Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented using NAND operations.   
@@ -144,6 +144,12 @@ Day  | Section  | Topic
 Mon, Jan 20 |            | MLK day, no class
 Wed, Jan 22 |            | Impossible computer programs
 Fri, Jan 24 | [2.1][2.1] | Intro to finite automata
+
+<!--
+### Wed, Jan 22
+
+
+-->
 
 ### Week 3 Notes
 
