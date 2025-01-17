@@ -258,24 +258,68 @@ into
 <p>A corollary of this theorem is that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>∞</mi></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^\infty</annotation></semantics></math>
 is uncountable.</p>
-<!--
-### Fri, Jan 17
-
-
-
-Today we finished the proof that there is no 1-to-1 encoding function from $\{0,1\}^\infty$ to $\{0,1\}^*$. 
-
-Then we talked about Boolean circuits which are formed by AND, OR, and NOT gates. 
-
-1. Show that you can construction the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
-
-2. Use mathematical induction to prove the following:
-
-**Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented by a Boolean circuit.   
-
-We finished by talking about how NAND gates are also universal in the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
-
--->
+<h3 id="fri-jan-17">Fri, Jan 17</h3>
+<p>We talked about <strong>Boolean circuits</strong> which are formed by
+AND, OR, and NOT gates. These can be used to implement any
+<strong>Boolean expression</strong> formed by the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+(AND),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+(OR), and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
+(NOT) operators.</p>
+<center>
+<figure>
+<img src="https://imgs.xkcd.com/comics/logic_gates.png"></img>
+<figcaption>
+<a href="https://xkcd.com/2497/">XKCD 2497</a>
+</figcaption>
+</figure>
+</center>
+<ol type="1">
+<li><p>Write a Boolean expression that takes three Boolean inputs,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math>
+and returns <code>true</code> if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x, y, z</annotation></semantics></math>
+are all the same, and <code>false</code> otherwise.</p></li>
+<li><p>Show that you can construct the function IF x THEN y ELSE z for
+any Boolean inputs x, y, z using AND, OR, and NOT gates.</p>
+<details>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>∧</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∨</mo><mrow><mo stretchy="true" form="prefix">(</mo><mo>¬</mo><mi>x</mi><mo>∧</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(x \wedge y) \vee (\neg x \wedge z)</annotation></semantics></math></p>
+</details></li>
+<li><p>Use mathematical induction to prove the following:</p></li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Every function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\{0,1\}^n \rightarrow \{0,1\}</annotation></semantics></math>
+can be represented by a Boolean circuit.</p>
+</div>
+<p>We say that the Boolean operations
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
+are a <strong>universal set of operations</strong> since every Boolean
+function on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^n</annotation></semantics></math>
+can be constructed using those operations.</p>
+<p>We finished by talking about how the NAND operation is universal all
+by itself. Using just the NAND operation, yin the sense that any
+function that can be constructed from AND, OR, NOT gates can also be
+constructed with NAND gates.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Every function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\{0,1\}^n \rightarrow \{0,1\}</annotation></semantics></math>
+can be represented using NAND operations.</p>
+</div>
+<ol start="4" type="1">
+<li><p>Show that you can use a NAND gate to implement a NOT
+gate.</p></li>
+<li><p>Show that you can use two NAND gates to implement an AND
+gate.</p></li>
+<li><p>Use a truth table to confirm that
+<code>(NOT x) NAND (NOT y)</code> is equivalent to
+<code>x OR y</code>.</p></li>
+</ol>
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
 <thead>

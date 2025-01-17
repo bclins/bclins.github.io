@@ -28,7 +28,7 @@ Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-note
 
 ### Week 1 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
@@ -84,11 +84,20 @@ We introduced the **five number summary** and **box-and-whisker plots (boxplots)
 
 * **Workshop:** [Boxplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Spread2.pdf)
 
+We started with this simple example:
+
+1. An 8 man crew team actually includes 9 men, the 8 rowers and one coxswain. Suppose the weights (in pounds) of the 9 men on a team are as follows:
+
+        120  180  185  200  210  210  215  215  215
+
+    Find the 5-number summary and draw a box-and-whisker plot for this data.  Is the coxswain who weighs 120 lbs. an outlier?  
+
+
 - - -
 
 ### Week 2 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
@@ -131,7 +140,7 @@ We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/fac
 
 ### Week 3 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
@@ -166,7 +175,7 @@ There was no class since I was out with COVID.  Instead, there was this workshop
 
 ### Week 4 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
@@ -224,7 +233,7 @@ After the quiz, we talked about the **coefficient of determination** $R^2$ which
 
 ### Week 5 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -272,7 +281,7 @@ Then we talked about the [review problems for the midterm](midterm1review.html) 
 
 ### Week 6 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -359,7 +368,7 @@ We talked about the **addition** and **multiplication rules** for **disjoint** a
 
 ### Week 7 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -444,7 +453,7 @@ Examples of sampling distributions.
 
 ### Week 8 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -544,7 +553,7 @@ We finished by talking about how to choose a sample size large enough to get a d
 
 ### Week 9 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -564,7 +573,7 @@ We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The 
 
 ### Week 10 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -685,7 +694,7 @@ In a criminal trial the prosecution tries to prove that the defendant is "guilty
 
 ### Week 11 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -766,7 +775,7 @@ We briefly talked about why this is.  Then we used the app to find a p-value for
 
 ### Week 12 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -887,7 +896,7 @@ $$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$
 
 ### Week 13 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
@@ -956,7 +965,7 @@ Finally, don't forget to *memorize the definition of a p-value*!
 
 ### Week 14 Notes
 
-#### Tentative Schedule
+
 
 Day  | Section  | Topic
 :---:|:---:|:---------

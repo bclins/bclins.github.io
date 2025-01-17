@@ -98,24 +98,44 @@ At the end we considered the set $\{0,1\}^\infty = \{f : f : \N \rightarrow \{0,
 A corollary of this theorem is that $\{0,1\}^\infty$ is uncountable.  
 
 
-<!--
 ### Fri, Jan 17
 
+We talked about **Boolean circuits** which are formed by AND, OR, and NOT gates. These can be used to implement any **Boolean expression** formed by the $\wedge$ (AND), $\vee$ (OR), and $\neg$ (NOT) operators. 
 
+<center>
+<figure>
+<img src="https://imgs.xkcd.com/comics/logic_gates.png"></img>
+<figcaption><a href="https://xkcd.com/2497/">XKCD 2497</a></figcaption>
+</figure>
+</center>
 
-Today we finished the proof that there is no 1-to-1 encoding function from $\{0,1\}^\infty$ to $\{0,1\}^*$. 
+1. Write a Boolean expression that takes three Boolean inputs, $x, y, z$ and returns `true` if $x, y, z$ are all the same, and `false` otherwise. 
 
-Then we talked about Boolean circuits which are formed by AND, OR, and NOT gates. 
+2. Show that you can construct the function IF x THEN y ELSE z for any Boolean inputs x, y, z using AND, OR, and NOT gates.  
 
-1. Show that you can construct the function IF A THEN B ELSE C for any Boolean inputs A, B, C using AND, OR, and NOT gates.  
+    <details>
+    $$(x \wedge y) \vee (\neg x \wedge z)$$
+    </details>
 
-2. Use mathematical induction to prove the following:
+3. Use mathematical induction to prove the following:
 
+<div class="Theorem">
 **Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented by a Boolean circuit.   
+</div>
 
-We finished by talking about how NAND gates are also universal in the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
+We say that the Boolean operations ($\wedge$, $\vee$, $\neg$) are a **universal set of operations** since every Boolean function on $\{0,1\}^n$ can be constructed using those operations.  
 
--->
+We finished by talking about how the NAND operation is universal all by itself.  Using just the NAND operation, yin the sense that any function that can be constructed from AND, OR, NOT gates can also be constructed with NAND gates.  
+
+<div class="Theorem">
+**Theorem.** Every function $f:\{0,1\}^n \rightarrow \{0,1\}$ can be represented using NAND operations.   
+</div>
+
+4. Show that you can use a NAND gate to implement a NOT gate.
+
+5. Show that you can use two NAND gates to implement an AND gate.
+
+6. Use a truth table to confirm that `(NOT x) NAND (NOT y)` is equivalent to `x OR y`. 
 
 ### Week 2 Notes
 

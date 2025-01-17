@@ -1,0 +1,107 @@
+\documentclass[12pt]{exam}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz,soul}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bs}{\backslash}
+\newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagestyle{empty}
+\subsubsection*{Homework 2 - Computer Science 461 \hfill Name: \underline{\hspace*{2in}}}
+
+\textit{Due Monday, January 27.} % You can e-mail your code for the computer programming problems to me at }\verb|blins@hsc.edu|.
+
+\begin{questions}
+
+\question Find the cardinalities of the following sets. If the set is infinite, say whether the cardinality is equal to $|\N| = \aleph_0$ or not. 
+\begin{parts}
+\part $[10] \times [10] \times \{a,b,c\}$
+\begin{solution}
+300
+\end{solution}
+
+\vfill
+
+\part $\{f: f: \{0,1\}^3 \rightarrow \{\text{``yes", ``no", ``maybe"}\}\}$ 
+\vfill
+
+\part $[3]^*$.
+\vfill
+
+\end{parts}
+
+
+%\question Write a program to calculate the \#\ref{majority} function using only NAND functions. 
+%\begin{solution}
+%Ugghhh... this one seems super tedious.  
+%\end{solution}
+%\vfill
+
+
+\question The function IF-THEN-ELSE$:\{0,1\}^3 \rightarrow \{0,1\}$ is defined: 
+$$\on{IF-THEN-ELSE}(x,y,z) = \begin{cases} y & \text{ if } x = 1, \\ z & \text{ otherwise.}\end{cases}$$ 
+Prove that if you combine this function with the constant functions $0$ and $1$, then you get a universal set, i.e., you can construct any function $f:\{0,1\}^n \rightarrow \{0,1\}$ using just these three basic functions.  Hint: prove that you can use $\{\text{IF-THEN-ELSE}, 0, 1\}$ to construct all of the functions in another universal set such as $\{\text{AND},\text{OR},\text{NOT}\}$ or $\{\text{NAND}\}$.  
+\begin{solution}
+\begin{itemize}
+\item $\on{AND}(x,y) = \on{IF-THEN-ELSE}(x,y,0)$.  
+\item $\on{NOT}(x) = \on{IF-THEN-ELSE}(x,0,1)$.
+\end{itemize}
+$\{\on{NOT},\on{AND}\}$ is universal since you can construct the NAND function using NOT and AND.
+\end{solution}
+\vfill
+
+%\question Prove that the set of functions $\{\text{AND},\text{OR},0,1\}$ is not a universal set by showing that a Boolean function $f: \{0,1\}^n \rightarrow \{0,1\}$ that can be constructed from AND, OR, and the constant functions $0$ and $1$ is always \emph{monotone}, that is if $a, b \in \{0,1\}^n$ and $a_i \ge b_i$ for all $i \in [n]$, then $f(a) \ge f(b)$.  
+%\vfill
+
+
+%\question Suppose that $A$ and $B$ are sets and $f:A \rightarrow B$ is a 1-to-1 function (this means that if $a_1 \ne a_2$, then $f(a_1) \ne f(a_2)$).  Prove that there is a function $g: B \rightarrow A$ that is onto.  
+%\begin{solution}
+%If $b$ is in the range of $f$, then it has a unique preimage since $f$ is 1-to-1.  So define $g(b)$ to be the unique preimage of $b$ if $b \in f(A)$, and let $g(b)$ be any element of $A$ otherwise.  Since every $a \in A$ is the preimage of $f(a)$, the map $g$ is onto. \hl{This problem is very similar to part (a) of the next one.}
+%\end{solution}
+%\vfill
+
+\question Any function $f:\{0,1\}^* \rightarrow \{0,1\}^*$ can be encoded by a Boolean function $g:\{0,1\}^* \rightarrow \{0,1\}$. One way to do this is to let $g$ input two binary strings $s,t \in \{0,1\}^*$ and return 1 if $t = f(s)$ and 0 otherwise.  Suppose someone else wrote a computer program that could compute the value of $g(s,t)$ for all possible binary input strings.  Explain in words how you could use their code to write a new program that would evaluate the function $f(s)$ for any binary input string $s$. 
+\begin{solution}
+
+You would just need to check each possible binary string $t$ to see if $g(s,t)$ returns 1.  Since you can write a program to sequentially generate every possible binary input string, you will eventually find the one value of $t$ that works.  That is the output of $f(s)$. 
+
+\end{solution}
+
+\vfill
+
+\newpage
+\fullwidth{Let $A, B$ be sets and let $|A|$ and $|B|$ denote their cardinalities.  We say that $|B| \ge |A|$ if there is an onto function $f:A \rightarrow B$.  We say that $|B|> |A|$ if $|B| \ge |A|$ and there is no bijection from $B$ to $A$.  }
+
+\question Let $2^A$ denote the power set of $A$, i.e., the set of all subsets of $A$. Show that $|2^A| \ge |A|$ by describing an onto function $g:2^A \rightarrow A$. 
+\begin{solution}
+For any singleton set $\{a\} \subset A$, let $g(\{a\}) = a$. For any other set $B \subset A$, choose any value for $g(B)$.  Then $g$ is onto.
+\end{solution}
+\vfill
+
+\question Suppose that there is a bijection $f:A \rightarrow 2^A$.  Let $B = \{a \in A : a \notin f(a)\}$ and let $b$ be the unique element of $A$ such that $f(b) = B$.  Then either $b \in B$ or $b \notin B$.  Explain why both possibilities lead to a contradiction.
+\begin{solution}
+If $b \in B$, then $b \in f(b)$, which means that $b \notin B$, a contradiction.  Likewise, if $b \notin B$, then $b \notin f(b)$, which means $b \in B$, a contradiction.
+\end{solution}
+\vfill
+
+\question What does this mean about the cardinality $|2^A|$?  
+\begin{solution}
+By problem \#4, $|2^A| \ge |A|$, and by \#5, $|2^A| > |A|$.  
+\end{solution}
+\vfill
+
+\question \label{majority} The majority function $\text{MAJ}:\{0,1\}^3 \rightarrow \{0,1\}$ returns 1 if at least two of the inputs are 1, and returns 0 otherwise. Write a formula or psuedocode program that just uses the NAND function to compute MAJ$(x,y,z)$.  Your program can use as many variables as you need.  %Write a logical expression using AND ($\wedge$), OR ($\vee$), and NOT ($\neg$) that computes MAJ.
+\begin{solution}
+$$(x \wedge y) \vee (y \wedge z) \vee (x \wedge z)$$
+\end{solution}
+\vfill
+
+
+\end{questions}
+\end{document}

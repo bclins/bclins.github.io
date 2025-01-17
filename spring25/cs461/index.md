@@ -37,7 +37,7 @@ The schedule below is tentative, and may be subject to change. Changes will be a
 Week | Topic                      | Notes | Homework 
 :---:|:---------------------------|:-----:|:--------:
 1  | Boolean circuits                                     | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
-2  | Finite automata                                      | [Week 02](notes.html#week-2-notes)  | 
+2  | Finite automata                                      | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
 3  | Nondeterministic finite automata                     | [Week 03](notes.html#week-3-notes)  | 
 4  | Regular expressions & languages                      | [Week 04](notes.html#week-4-notes)  | 
 5  | Pumping lemma, **Midterm 1**                         | [Week 05](notes.html#week-5-notes)  |
