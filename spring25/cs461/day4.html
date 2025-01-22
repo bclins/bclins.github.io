@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="2025-01-22" />
+  <title>Functions and programs</title>
+  <style type="text/css">
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Functions and programs</h1>
+  <p class="date">January 22, 2025</p>
+</div>
+<div class="slide section level1">
+
+<!-- 
+You can use this command to compile this slide show:
+
+pandoc -s -t slidy day4.md -o day4.html
+ 
+-->
+</div>
+<div id="functions" class="slide section level1">
+<h1>Functions</h1>
+<ul class="incremental">
+<li>
+<p>We’ve seen that Boolean circuits can be used to calculate any
+function <span
+class="math inline">{0, 1}<sup><em>n</em></sup> → {0, 1}</span>.</p>
+<li>
+<p>What about functions <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span>?</p>
+<li>
+<strong>Answer: No!</strong> We’ll prove today that some of those
+functions are impossible to compute.<br />
+
+</ul>
+</div>
+<div id="programs" class="slide section level1">
+<h1>Programs</h1>
+<p>In this course, a <strong>program</strong> is a file or string that
+contains instructions written using a programming language (like C or
+Python) for how to compute a function.</p>
+<p>Consider the following computer program, that takes an input string
+called <code>input_string</code> from <span
+class="math inline">{0, 1}<sup>*</sup></span>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> contains_0101(input_string):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">&quot;0101&quot;</span> <span class="kw">in</span> input_string:</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+<ul class="incremental">
+<li>
+<p><strong>Functions and programs are not the same.</strong> The code
+above is just one way to implement the abstract function we are
+describing. A single function can have lots of programs that implement
+it.</p>
+</div>
+<div id="decision-programs" class="slide section level1">
+<h1>Decision Programs</h1>
+<li>
+<strong>Decision programs.</strong> A program that always returns a 0 or
+a 1 when it finishes is called a <strong>decision
+program</strong>.<br />
+
+<ul>
+<li>
+It’s okay if the program might crash on some inputs.
+<li>
+It’s also okay if some inputs cause the program to loop forever.
+<li>
+As long as the program only ever returns 0 or 1 when it finishes (if it
+ever does!).
+</ul>
+</ul>
+</div>
+<div id="example-decision-programs" class="slide section level1">
+<h1>Example Decision Programs</h1>
+<p>These are all decision programs.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> always_one(input_string):</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> maybe_loop_forever(input_string):</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">&quot;1&quot;</span> <span class="kw">in</span> input_string:</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>        n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>        <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>            n <span class="op">=</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">def</span> more_than_100_bits(input_string):</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(input_string) <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+<div>
+<ul class="incremental">
+<li><strong>Question:</strong> One of these programs does not correspond
+to a function <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span>.
+Which is it?</li>
+</ul>
+</div>
+</div>
+<div id="answer" class="slide section level1">
+<h1>Answer</h1>
+<p>The Python function <code>maybe_loop_forever</code> does not
+correspond to a true function <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span>.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> always_one(input_string):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> maybe_loop_forever(input_string):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">&quot;1&quot;</span> <span class="kw">in</span> input_string:</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>        n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>        <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>            n <span class="op">=</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> more_than_100_bits(input_string):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(input_string) <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+</div>
+<div id="converting-programs-to-strings" class="slide section level1">
+<h1>Converting Programs to Strings</h1>
+<p>Each program is written using ASCII characters. For example:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> always_one(input_string):</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span></span></code></pre></div>
+<p>has 43 ASCII characters (including an end of file EOF character). How
+many bits is that? Recall that standard ASCII codes go from 0 to
+127.</p>
+</div>
+<div id="inputing-one-program-into-another"
+class="slide section level1">
+<h1>Inputing One Program Into Another</h1>
+<p>What output would we get if we used the binary representation of the
+<code>always_one</code> program as the <code>input_string</code> for the
+<code>more_than_100_bits</code> program?</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>more_than_100_bits(binary_encoding(<span class="st">&quot;always_one.py&quot;</span>))</span></code></pre></div>
+<div>
+<ul class="incremental">
+<li>What about using the binary representation of
+<code>always_one.py</code> in <code>maybe_loop_forever</code>?</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> maybe_loop_forever(input_string):</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">&quot;1&quot;</span> <span class="kw">in</span> input_string:</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>        n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>        <span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>            n <span class="op">=</span> n <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span></code></pre></div>
+</div>
+</div>
+<div id="inputing-a-program-into-itself" class="slide section level1">
+<h1>Inputing a Program Into Itself</h1>
+<p>What happens with each of these commands?</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>always_one(binary_encoding(<span class="st">&quot;always_one.py&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>maybe_loop_forever(binary_encoding(<span class="st">&quot;maybe_loop_forever.py&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python incremental"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>more_than_100_bits(binary_encoding(<span class="st">&quot;more_than_100_bits.py&quot;</span>))</span></code></pre></div>
+</div>
+<div id="a-more-complicated-program" class="slide section level1">
+<h1>A More Complicated Program</h1>
+<p>Consider the following unfinished program:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> check_if_program_returns_one(program_string, input_string):</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;return 1 if </span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co">        1. program_string is the ASCII binary encoding of a valid Python program, and</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">        2. The program defined by program_string returns 1 when given input_string as its input.</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">    otherwise, return 0.&quot;&quot;&quot;</span></span></code></pre></div>
+<div>
+<ul class="incremental">
+<li><p><strong>This program is impossible!</strong></p></li>
+<li><p>We’ll use a proof by contradiction.</p></li>
+</ul>
+</div>
+</div>
+<div id="heres-the-idea" class="slide section level1">
+<h1>Here’s the idea:</h1>
+<p>If the program <code>check_if_program_returns_one</code> is possible,
+then we could make the following Python function:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">def</span> reverse_check(program_string):</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> check_if_program_returns_one(program_string, program_string)</span></code></pre></div>
+<p>What will <code>reverse_check</code> do?</p>
+<div>
+<ol class="incremental" style="list-style-type: decimal">
+<li><p>If we feed <code>reverse_check</code> itself as input, why can’t
+it return 1?</p></li>
+<li><p>Why can’t it return 0?</p></li>
+</ol>
+</div>
+</div>
+<div id="conclusion" class="slide section level1">
+<h1>Conclusion</h1>
+<p>Both <code>check_if_program_returns_one</code> and
+<code>reverse_check</code> are impossible programs.</p>
+<div>
+<ul class="incremental">
+<li><p>But the function we are trying to program with
+<code>reverse_check</code> is a perfectly well defined function <span
+class="math display"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}.</span></p>
+<ul class="incremental">
+<li>It inputs a binary encoding of a Python program.</li>
+<li>It outputs 0 if the program returns one when it runs on itself as
+its input.</li>
+<li>Otherwise if the input is gibberish or runs forever or doesn’t
+output 1, then <span class="math inline"><em>f</em></span> outputs
+1.</li>
+</ul></li>
+<li><p>There is just no binary encoding of a program for this function,
+because that would be impossible.</p></li>
+</ul>
+</div>
+</div>
+<div id="un-programmable-functions" class="slide section level1">
+<h1>Un-programmable Functions</h1>
+<p>There is an easier way to see that there are functions <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span>
+which are impossible to implement with computer programs based on
+cardinality.</p>
+<div>
+<ul class="incremental">
+<li><p>How many computer programs are possible (say programs written
+using ASCII characters)?</p></li>
+<li><p>How big is the set <span
+class="math inline">{0, 1}<sup>*</sup></span>?</p></li>
+<li><p><strong>Answer:</strong> The strings <span
+class="math inline">{0, 1}<sup>*</sup></span> are countable, so their
+cardinality is <span class="math inline">ℵ<sub>0</sub></span>.</p></li>
+<li><p>How many functions <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span> are
+there?</p></li>
+</ul>
+<!-- * How big is the set $\{f : f:\{0,1\}^* \rightarrow \{0,1\} \}$?  -->
+<ul class="incremental">
+<li><p><strong>Theorem.</strong> If <span
+class="math inline"><em>A</em></span>, <span
+class="math inline"><em>B</em></span> are finite sets and <span
+class="math inline">|<em>A</em>| = <em>a</em></span> and <span
+class="math inline">|<em>B</em>| = <em>b</em></span>, then the
+cardinality of the set of all functions <span
+class="math inline"><em>f</em> : <em>A</em> → <em>B</em></span> (denoted
+<span
+class="math inline">{<em>f</em> : <em>f</em> : <em>A</em> → <em>B</em>}</span>)
+is <span
+class="math inline"><em>b</em><sup><em>a</em></sup></span>.</p></li>
+<li><p>If <span class="math inline"><em>A</em></span> is an infinite
+set, then we abuse notation slightly and say that the cardinality of
+<span
+class="math inline">{<em>f</em> : <em>f</em> : <em>A</em> → <em>B</em>}</span>
+is <span
+class="math inline"><em>b</em><sup>|<em>A</em>|</sup></span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="how-many-functions" class="slide section level1">
+<h1>How Many Functions?</h1>
+<div>
+<ul class="incremental">
+<li><p>How many functions <span
+class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}</span> are
+there?</p></li>
+<li><p>Since <span
+class="math inline">|{0, 1}<sup>*</sup>| = ℵ<sub>0</sub></span>, the
+cardinality of <span
+class="math inline">{<em>f</em> : <em>f</em> : {0, 1}<sup>*</sup> → {0, 1}} = 2<sup>ℵ<sub>0</sub></sup></span>
+which is uncountable because it is the same as the cardinality of the
+power set (i.e., set of all subsets) of <span
+class="math inline">ℕ</span>.</p></li>
+<li><p><strong>Theorem (Exercises 4-5 on HW 2).</strong> The power set
+<span class="math inline">2<sup><em>A</em></sup></span> of a set <span
+class="math inline"><em>A</em></span> always has higher cardinality than
+the set <span class="math inline"><em>A</em></span> itself.</p></li>
+</ul>
+<!--* **Answer:** Every ASCII program can be encoded as a binary string in $\{0,1\}^*$. Since $\{0,1\}^*$ is countably infinite, so is the set of all possible ASCII programs.   The last set $\{f : f:\{0,1\}^* \rightarrow \{0,1\} \}$ has cardinality $2^{|\{0,1\}^*|} = 2^{\aleph_0}$ which is uncountable.  -->
+<ul class="incremental">
+<li><strong>Conclusion.</strong> You cannot program every function from
+<span class="math inline">{0, 1}<sup>*</sup></span> <!--*--> because
+there are <span class="math inline">2<sup>ℵ<sub>0</sub></sup></span>
+such functions, but only <span class="math inline">ℵ<sub>0</sub></span>
+possible computer programs.</li>
+</ul>
+</div>
+</div>
+<div id="schroeder-bernstein-theorem" class="slide section level1">
+<h1>Schroeder Bernstein Theorem</h1>
+<p>Another really useful theorem is:</p>
+<p><strong>Schroeder-Bernstein Theorem.</strong> If the are 1-to-1
+functions <span
+class="math inline"><em>f</em> : <em>A</em> → <em>B</em></span> and
+<span class="math inline"><em>g</em> : <em>B</em> → <em>A</em></span>,
+then there is a bijection from <span
+class="math inline"><em>A</em></span> to <span
+class="math inline"><em>B</em></span>. In particular, <span
+class="math inline">|<em>A</em>| = |<em>B</em>|</span>.</p>
+</div>
+</body>
+</html>

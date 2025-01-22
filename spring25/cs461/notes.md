@@ -145,11 +145,10 @@ Mon, Jan 20 |            | MLK day, no class
 Wed, Jan 22 |            | Impossible computer programs
 Fri, Jan 24 | [2.1][2.1] | Intro to finite automata
 
-<!--
 ### Wed, Jan 22
 
+* **Slides:** [Impossible programs](day4.html)
 
--->
 
 ### Week 3 Notes
 

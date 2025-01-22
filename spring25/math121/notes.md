@@ -103,7 +103,6 @@ Mon, Jan 20  |                | Martin Luther King day, no class
 Wed, Jan 22  | [2.1.4][2.1.4] | Standard deviation
 Fri, Jan 24  | [4.1][4.1]     | Normal distribution
 
-<!--
 ### Wed, Jan 22
 
 Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did this one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  
@@ -121,6 +120,10 @@ We finished by looking at some examples of histograms that have a shape that loo
 
 The **normal distribution** is a mathematical model for data with a histogram that is shaped like a bell.  The model has the following features:
 
+<center>
+<img src="NormalDistributionInflectionPoints.png" width = 520></img>
+</center>
+
 1. It is symmetric (left & right tails are same size)
 2. The mean ($\mu$) is the same as the median. 
 3. It has two inflection points (the two steepest points on the curve)
@@ -128,6 +131,8 @@ The **normal distribution** is a mathematical model for data with a histogram th
 5. The two numbers $\mu$ and $\sigma$ completely describe the model.
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
+
+<!--
 
 ### Fri, Sep 6
 

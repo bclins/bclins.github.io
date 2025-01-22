@@ -294,9 +294,8 @@ Mon, Jan 20  |  | MLK day - no class
 Wed, Jan 22  | [1.3][1.3]  | Linear functions
 Fri, Jan 24  | [1.3][1.3]  | Slope
 
-<!-- 
 
-Wed, Jan 22 
+### Wed, Jan 22 
 
 Try out this example for constructing a linear equation: https://youtu.be/hBpI9IfmMKg 
 
@@ -318,7 +317,6 @@ Try out this example for constructing a linear equation: https://youtu.be/hBpI9I
 8. Pressure underwater (measured in ATMs) is a linear function of the depth $x$ in meters given by $P = \frac{1}{10}x+1$.  What is the slope and what are its units?
 
 9. In 2021, the Virginia state income tax for people making over $17,000 is $T = 720 + 0.0575 (I - 17000)$.  Graph this linear function.  What is the slope?  What does the input variable $I$ represent?  What about the output variable $T$?
--->
 
 ### Week 3 Notes
 
