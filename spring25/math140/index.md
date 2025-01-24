@@ -33,7 +33,7 @@ Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:-----:
 1  | Functions & graphs                             | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
 2  | Linear functions                               | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
-3  | Systems of equations, Exponents                | [Week 03](notes.html#week-3-notes)  | 
+3  | Systems of equations, Exponents                | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 4  | Polynomial functions & equations               | [Week 04](notes.html#week-4-notes)  | 
 5  | Rational functions, **Midterm 1**              | [Week 05](notes.html#week-5-notes)  | 
 6  | Exponential & logarithmic functions            | [Week 06](notes.html#week-6-notes)  | 

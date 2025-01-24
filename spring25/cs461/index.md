@@ -38,7 +38,7 @@ Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:--------:
 1  | Boolean circuits                                     | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
 2  | Finite automata                                      | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
-3  | Nondeterministic finite automata                     | [Week 03](notes.html#week-3-notes)  | 
+3  | Nondeterministic finite automata                     | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 4  | Regular expressions & languages                      | [Week 04](notes.html#week-4-notes)  | 
 5  | Pumping lemma, **Midterm 1**                         | [Week 05](notes.html#week-5-notes)  |
 6  | Context free languages                               | [Week 06](notes.html#week-6-notes)  | 

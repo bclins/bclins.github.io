@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -150,7 +150,7 @@ href="https://introtcs.org/public/lec_03_computation.html#defining-computation">
 </tr>
 </tbody>
 </table>
-<h3 id="mon-jan-13">Mon, Jan 13</h3>
+<h4 id="mon-jan-13">Mon, Jan 13</h4>
 <p>Today we talked about proof techniques, particularly proof by
 induction. We looked at these two examples:</p>
 <ol type="1">
@@ -201,7 +201,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 recursively moves n disks from the <code>start_stack</code> to the
 <code>final stack</code>.</p></li>
 </ol>
-<h3 id="wed-jan-15">Wed, Jan 15</h3>
+<h4 id="wed-jan-15">Wed, Jan 15</h4>
 <p>Today we reviewed mathematical notation, including some new notation
 we will be using. We defined <strong>alphabets</strong> which are sets
 of symbols we can use to represent things. The most common alphabet in
@@ -258,13 +258,13 @@ into
 <p>A corollary of this theorem is that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>∞</mi></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^\infty</annotation></semantics></math>
 is uncountable.</p>
-<h3 id="fri-jan-17">Fri, Jan 17</h3>
+<h4 id="fri-jan-17">Fri, Jan 17</h4>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -349,11 +349,174 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
-<h3 id="wed-jan-22">Wed, Jan 22</h3>
+<h4 id="wed-jan-22">Wed, Jan 22</h4>
 <ul>
 <li><strong>Slides:</strong> <a href="day4.html">Impossible
 programs</a></li>
 </ul>
+<h4 id="fri-jan-24">Fri, Jan 24</h4>
+<p>Last time we saw that some functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f: \{0,1\}^* \rightarrow \{0,1\}</annotation></semantics></math>
+cannot be computed by a computer program. We saw two proofs that seemed
+very different. One used a cardinality argument and the other used proof
+by contradiction to show that the program
+<code>check_if_program_returns_one()</code> is impossible. It turns out
+that both proofs are actually closely related.</p>
+<p>Suppose we make a list of all possible programs on the left column of
+an infinite table, with a list of all possible input strings at the top
+of the table. The values in the body of the table are the output of each
+program on each input (including the possibility that there is no
+output). The table might look like this:</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+</th>
+<th>
+Input 1
+</th>
+<th>
+Input 2
+</th>
+<th>
+Input 3
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>…</mi><annotation encoding="application/x-tex">\ldots</annotation></semantics></math>
+</th>
+</tr>
+<tr>
+<th>
+Program 1
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>…</mi><annotation encoding="application/x-tex">\ldots</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<th>
+Program 2
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+na
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>…</mi><annotation encoding="application/x-tex">\ldots</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<th>
+Program 3
+</th>
+<td>
+0
+</td>
+<td>
+na
+</td>
+<td>
+1
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>…</mi><annotation encoding="application/x-tex">\ldots</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</th>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⋱</mo><annotation encoding="application/x-tex">\ddots</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>We can construct a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\{0,1\}^* \rightarrow \{0,1\}</annotation></semantics></math>
+that cannot correspond to any program by using the same diagonalization
+argument that proves that there are uncountably many infinite binary
+sequences. That’s essentially what we did when we tried to construct the
+function <code>check_if_program_returns_one()</code> last time. We
+created a function <code>reverse_check()</code> that corresponds to
+reversing the values on the main diagonal of the table above. So we were
+using a <strong>diagonalization</strong> argument, which is the same
+argument used to prove that there are uncountably many functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\{0,1\}^* \rightarrow \{0,1\}</annotation></semantics></math>.</p>
+<p>After that, we introduced finite automata. We started with this
+example: An automatic door at a grocery store has sensors on the front
+and rear. It opens if the sensor on the front is active. It won’t close
+until neither of the sensors are active. You can model this with the
+following <strong>state diagram</strong>:</p>
+<center>
+<img src="AutomaticDoorDFA.png" width = 360></img>
+</center>
+<p>This is an example of a <strong>finite state machine</strong>, also
+known as a <strong>deterministic finite automata (DFA)</strong>.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A <strong>deterministic finite automata
+(DFA)</strong> consists of</p>
+<ol type="1">
+<li>A finite set of <strong>states</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</li>
+<li>A finite <strong>alphabet</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+of possible input signals.</li>
+<li>A <strong>transition function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Σ</mi><mo>→</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">\delta: Q \times \Sigma \rightarrow Q</annotation></semantics></math>.</li>
+<li>An <strong>initial</strong> or <strong>start state</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_0 \in Q</annotation></semantics></math>.</li>
+<li>A set of <strong>final</strong> or <strong>accepting states</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">F \subseteq Q</annotation></semantics></math>.<br />
+</li>
+</ol>
+</div>
+<ol type="1">
+<li><p>What are the sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+for the automatic door example above?</p></li>
+<li><p>Make a table showing the values of the transition function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
+for the automatic door.</p></li>
+<li><p>An automatic toll booth accepts nickles, dimes, and quarters. The
+gate won’t open until it receives 25 cents. Draw a state diagram for the
+toll booth. What are the sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>?</p></li>
+<li><p>A combination lock (like the ones at the campus post office) can
+be modeled as a finite state machine. What are the states and what are
+the input signals?</p></li>
+<li><p>Describe a DFA that can compute the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f: \{0,1\}^* \rightarrow \{0,1\}</annotation></semantics></math>
+which returns 1 when the input string has an odd number of 1’s and 0
+otherwise.</p></li>
+</ol>
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
 <thead>
@@ -386,6 +549,25 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
+<!--
+#### Mon, Jan 27
+
+Today we started with these questions about DFAs:
+
+1. For the DFA shown below:
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/FiniteAutomata1.png)
+</center>
+    a. What is the transition function?
+    b. Describe the function $f:\{0,1\}^* \rightarrow \{0,1\}$ that this DFA computes.
+
+2. Draw the state diagram for a DFA that computes whether a binary string contains 011.
+
+3. Modify the DFA from the last problem so that it computer whether a binary string *ends with* 011. 
+
+4. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
+
+After we did these examples, we defined **languages** which are just subsets of strings in $\Sigma^*$. Then we gave a recursive definition of **regular languages** and looked at some simple examples. -->
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>

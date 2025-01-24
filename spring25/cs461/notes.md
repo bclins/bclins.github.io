@@ -30,7 +30,7 @@ Mon, Jan 13 | [1.3][1.3] | Proof techniques
 Wed, Jan 15 | [2.1 - 2.2](https://introtcs.org/public/lec_02_representation.html#defining-representations) | Notation & encodings
 Fri, Jan 17 | [3.1 - 3.7](https://introtcs.org/public/lec_03_computation.html#defining-computation) | Boolean circuits
 
-### Mon, Jan 13
+#### Mon, Jan 13
 
 Today we talked about proof techniques, particularly proof by induction.  We looked at these two examples:
 
@@ -69,7 +69,7 @@ You can also translate many induction arguments into recursive algorithms.
 
     Write a function `move_disks(n, start_stack, temp_stack, final_stack)` that recursively moves n disks from the `start_stack` to the `final stack`.  
 
-### Wed, Jan 15
+#### Wed, Jan 15
 
 Today we reviewed mathematical notation, including some new notation we will be using. We defined **alphabets** which are sets of symbols we can use to represent things.  The most common alphabet in computer science is the binary alphabet $\Sigma = \{0, 1\}$. We use the notation $\Sigma^*$ to denote the set of all possible finite length strings constructed from $\Sigma$. 
 
@@ -98,7 +98,7 @@ At the end we considered the set $\{0,1\}^\infty = \{f : f : \N \rightarrow \{0,
 A corollary of this theorem is that $\{0,1\}^\infty$ is uncountable.  
 
 
-### Fri, Jan 17
+#### Fri, Jan 17
 
 We talked about **Boolean circuits** which are formed by AND, OR, and NOT gates. These can be used to implement any **Boolean expression** formed by the $\wedge$ (AND), $\vee$ (OR), and $\neg$ (NOT) operators. 
 
@@ -145,9 +145,56 @@ Mon, Jan 20 |            | MLK day, no class
 Wed, Jan 22 |            | Impossible computer programs
 Fri, Jan 24 | [2.1][2.1] | Intro to finite automata
 
-### Wed, Jan 22
+#### Wed, Jan 22
 
 * **Slides:** [Impossible programs](day4.html)
+
+#### Fri, Jan 24
+
+Last time we saw that some functions $f: \{0,1\}^* \rightarrow \{0,1\}$ cannot be computed by a computer program.  We saw two proofs that seemed very different.  One used a cardinality argument and the other used proof by contradiction to show that the program `check_if_program_returns_one()` is impossible. It turns out that both proofs are actually closely related.
+
+Suppose we make a list of all possible programs on the left column of an infinite table, with a list of all possible input strings at the top of the table.  The values in the body of the table are the output of each program on each input (including the possibility that there is no output).  The table might look like this:
+
+<center>
+<table class="bordered">
+<tr><th></th><th>Input 1</th><th>Input 2</th><th>Input 3</th><th>$\ldots$</th></tr>
+<tr><th>Program 1</th><td>1</td><td>1</td><td>1</td><td>$\ldots$</td></tr>
+<tr><th>Program 2</th><td>0</td><td>0</td><td>na</td><td>$\ldots$</td></tr>
+<tr><th>Program 3</th><td>0</td><td>na</td><td>1</td><td>$\ldots$</td></tr>
+<tr><th>$\vdots$</th><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\ddots$</td></tr>
+</table>
+</center>
+
+We can construct a function $f:\{0,1\}^* \rightarrow \{0,1\}$ that cannot correspond to any program by using the same diagonalization argument that proves that there are uncountably many infinite binary sequences.  That's essentially what we did when we tried to construct the function `check_if_program_returns_one()` last time.  We created a function `reverse_check()` that corresponds to reversing the values on the main diagonal of the table above.  So we were using a **diagonalization** argument, which is the same argument used to prove that there are uncountably many functions $f:\{0,1\}^* \rightarrow \{0,1\}$. 
+
+
+After that, we introduced finite automata.  We started with this example: An automatic door at a grocery store has sensors on the front and rear.  It opens if the sensor on the front is active.  It won't close until neither of the sensors are active.  You can model this with the following **state diagram**:
+
+<center>
+<img src="AutomaticDoorDFA.png" width = 360></img>
+</center>
+
+This is an example of a **finite state machine**, also known as a **deterministic finite automata (DFA)**.  
+
+<div class="Theorem">
+**Definition.** A **deterministic finite automata (DFA)** consists of 
+
+1. A finite set of **states** $Q$.
+2. A finite **alphabet** $\Sigma$ of possible input signals.
+3. A **transition function** $\delta: Q \times \Sigma \rightarrow Q$.
+4. An **initial** or **start state** $q_0 \in Q$. 
+5. A set of **final** or **accepting states** $F \subseteq Q$.  
+</div>
+
+1. What are the sets $Q$ and $\Sigma$ for the automatic door example above?
+
+2. Make a table showing the values of the transition function $\delta$ for the automatic door.
+
+3. An automatic toll booth accepts nickles, dimes, and quarters.  The gate won't open until it receives 25 cents.  Draw a state diagram for the toll booth.  What are the sets $Q$ and $\Sigma$?  
+
+4. A combination lock (like the ones at the campus post office) can be modeled as a finite state machine.  What are the states and what are the input signals?  
+
+5. Describe a DFA that can compute the function $f: \{0,1\}^* \rightarrow \{0,1\}$ which returns 1 when the input string has an odd number of 1's and 0 otherwise.
 
 
 ### Week 3 Notes
@@ -157,6 +204,26 @@ Day  | Section  | Topic
 Mon, Jan 27 | [2.2][2.2] - [2.3][2.3] | Regular languages
 Wed, Jan 29 | [2.4][2.4] | Nondeterministic finite automata
 Fri, Jan 31 | [2.6][2.6] | NFAs and regular languages
+
+<!--
+#### Mon, Jan 27
+
+Today we started with these questions about DFAs:
+
+1. For the DFA shown below:
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/FiniteAutomata1.png)
+</center>
+    a. What is the transition function?
+    b. Describe the function $f:\{0,1\}^* \rightarrow \{0,1\}$ that this DFA computes.
+
+2. Draw the state diagram for a DFA that computes whether a binary string contains 011.
+
+3. Modify the DFA from the last problem so that it computer whether a binary string *ends with* 011. 
+
+4. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
+
+After we did these examples, we defined **languages** which are just subsets of strings in $\Sigma^*$. Then we gave a recursive definition of **regular languages** and looked at some simple examples. --> 
 
 ### Week 4 Notes
 

@@ -297,17 +297,28 @@ Fri, Jan 24  | [1.3][1.3]  | Slope
 
 ### Wed, Jan 22 
 
-Try out this example for constructing a linear equation: https://youtu.be/hBpI9IfmMKg 
+Today we talked about linear equation word problems. 
 
-1. Find a formula to convert Celsius to Fahrenheit.
+1. Someone is hiking up a mountain.  They start at an elevation of 1200 meters and climb at a constant rate.  After 4 hours, they are at an elevation of 1700 meters. Find a formula for their elevation $y$ as a function of the time $x$ in hours since they started hiking. (<https://youtu.be/hBpI9IfmMKg>)
 
-2. Find a formula to convert Fahrenheit to Celsius.
+2. Find a formula to convert Celsius to Fahrenheit.
 
+3. Find a formula to convert Fahrenheit to Celsius.
 
-3. Find an equation for the line passing through $(-1,4)$ and $(3,-4)$.
+<!--
+4. Find an equation for the line passing through $(-1,4)$ and $(3,-4)$.
+-->
 
-4. Find the slope and $y$ intercept of the equation $6x − 5y + 15 = 0$.
+4. Find the slope and $y$ intercept of the equation $5x-2y = 8$. (<https://youtu.be/voN3PBPEy2A>)
 
+5. Joe imports coffee.  He can import arabica beans for $6 per pound and he can import robusta beans for $5 per pound.  Suppose he spends $1500 to import $x$ pounds of arabica beans and $y$ pounds of robusta beans.  
+
+    a. Find an equation that relates $x$ and $y$.
+    b. What is the $x$-intercept for this equation, and what does it mean?
+    c. What is the $y$-intercept for this equation, and what does it mean?
+    d. What is the slope of this equation, and what does it mean?
+
+<!--
 5. Find a formula for a line with slope 2 passing through $(2,5)$.  
 
 6. $\dfrac{x+3}{4} = 3$
@@ -316,7 +327,35 @@ Try out this example for constructing a linear equation: https://youtu.be/hBpI9I
 
 8. Pressure underwater (measured in ATMs) is a linear function of the depth $x$ in meters given by $P = \frac{1}{10}x+1$.  What is the slope and what are its units?
 
-9. In 2021, the Virginia state income tax for people making over $17,000 is $T = 720 + 0.0575 (I - 17000)$.  Graph this linear function.  What is the slope?  What does the input variable $I$ represent?  What about the output variable $T$?
+9. The Virginia state income tax for people making over $17,000 is $T = 720 + 0.0575 (I - 17000)$.  Graph this linear function.  What is the slope?  What does the input variable $I$ represent?  What about the output variable $T$?
+-->
+
+6. The Virginia state income tax for people making over $17,000 is $720 plus 5.75% of all income over $17,000. Find a formula for the tax owed $y$ as a function of income $x$. 
+
+### Fri, Jan 24
+
+1. Solve the system of equations below. (<https://youtu.be/FgX3gLDDlzI>)
+
+$$ y = 2x$$
+$$3x + y = 30$$
+
+2. Solve the system of equations below. (<https://youtu.be/cblHUeq3bkE>)
+
+$$3x + 6y = 12$$
+$$5x - 8y = 2$$
+
+3. Suppose that the quantity of beef supplied ($Q_S$) and demanded ($Q_D$) are given by the following functions of price.  Find the equilibrium price and quantity. (<https://youtu.be/9n-xMt-Sj3A>)
+
+$$Q_S = -40 + 30P$$
+$$Q_D = 180 - 25P$$
+
+4. Leo has 4 more keys than Haley on his keychain.  Together they have 18 keys total.  How many keys does Haley have? (<https://youtu.be/2EcUlgR5ksY>)
+
+5. Solve the system of equations
+
+$$y = \dfrac{6}{x}$$
+$$y = 2 - \dfrac{5}{x}$$
+
 
 ### Week 3 Notes
 

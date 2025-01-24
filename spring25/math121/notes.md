@@ -113,6 +113,12 @@ Today we talked about **robust** statistics such as the median and IQR that are 
 
 From now on we will just use software to find standard deviation. In a spreadsheet (Excel or Google Sheets) you can use the `=STDEV()` function. 
 
+2. Which of the following data sets has the largest standard deviation?
+
+    a. 1000, 998, 1005
+    b. 8, 10, 15, 20, 22, 27
+    c. 30, 60, 90
+
 We finished by looking at some examples of histograms that have a shape that looks roughly like a bell.  This is a very common pattern in nature that is called the normal distribution.
 
 * **Example:** [Heights of men in the USA](http://people.hsc.edu/faculty-staff/blins/StatsExamples/cdcHeights.html)
@@ -132,17 +138,19 @@ The **normal distribution** is a mathematical model for data with a histogram th
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
 
-<!--
-
-### Fri, Sep 6
+### Fri, Jan 24
 
 We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 
 
-1. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10. The average high temperature in Honolulu, HI in January is 80°F with σ = 8°F. In which city would it be more unusual to have a high temperature of 57°F in January?
-
 * **Workshop:** [Normal distributions](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist.pdf)
 
--->
+We also did these exercises before the workshop.
+
+1. In 2020, Farmville got 61 inches of rain total (making 2020 the second wettest year on record). How many standard deviations is this above average? 
+
+2. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10. The average high temperature in Honolulu, HI in January is 80°F with σ = 8°F. In which city would it be more unusual to have a high temperature of 57°F in January?
+
+
 
 - - - 
 
