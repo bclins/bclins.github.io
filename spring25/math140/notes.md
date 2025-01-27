@@ -285,7 +285,6 @@ You also need to understand slope very well:
 4. A line passes through $(-1, 6)$ and $(5, -4)$.  Find an equation for the line. (<https://youtu.be/XMJ72mtMn4>) 
 
 
-
 ### Week 2 Notes
 
 Day  | Section  | Topic
@@ -364,6 +363,39 @@ Day  | Section  | Topic
 Mon, Jan 27  | [1.3][1.3]  | Systems of linear equations
 Wed, Jan 29  | [1.4][1.4]  | Exponents
 Fri, Jan 31  | [1.4][1.4]  | Exponents - con’d
+
+### Mon, Jan 27
+
+Today we started talking about [exponent rules](AlgebraRules.pdf#page=2). There are a bunch of rules, but they all boil down to three simple ideas:
+
+<div class = "Theorem">
+* Powers represent repeated multiplication: $x^m = \underbrace{x \cdot x \cdot \ldots \cdot x}_{m \text{ copies}}$. 
+
+* Negative powers represent reciprocals: $x^{-m} = \dfrac{1}{x^m}$.
+
+* Radicals (square roots, cube roots, etc.) are fractional powers $\sqrt[n]{x} = x^{1/n}$. 
+</div> 
+
+1. Simplify $\left( \dfrac{x^7 y^3}{x^2 y} \right)^4$. (<https://youtu.be/vQbwjlbJ0Vo>)
+
+2. Simplify $(a^3 b)^4 (a b^6)^2$. (<https://youtu.be/vQbwjlbJ0Vo?t=333>)
+
+3. Simplify $(b^{-3} c^{-7})^{-2} (b^3 c^{-2})^{-3}$. (<https://youtu.be/vQbwjlbJ0Vo?t=485>)
+
+4. Simplify $16^{1/4} + 16^{-1/4}$. 
+
+5. Simplify $\sqrt{x^2 + x^2 + x^2 + x^2}$. What do you think the most common mistake is here?
+
+6. Simplify $4^{5/2}$.
+
+7. Simplify $\sqrt[3]{64 z^6}$. (<https://youtu.be/KBP5EKcG1s4>)
+
+<!-- We didn't get to these problems about solving exponential equations:
+
+8. Solve $(x^{-1} + 2^{-1})^{-1} = \frac{1}{3}$. 
+
+9. Solve $\dfrac{2^{57}}{2^x} = 8$. 
+-->
 
 ### Week 4 Notes
 

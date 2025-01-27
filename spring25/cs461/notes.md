@@ -205,7 +205,6 @@ Mon, Jan 27 | [2.2][2.2] - [2.3][2.3] | Regular languages
 Wed, Jan 29 | [2.4][2.4] | Nondeterministic finite automata
 Fri, Jan 31 | [2.6][2.6] | NFAs and regular languages
 
-<!--
 #### Mon, Jan 27
 
 Today we started with these questions about DFAs:
@@ -223,7 +222,10 @@ Today we started with these questions about DFAs:
 
 4. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
 
-After we did these examples, we defined **languages** which are just subsets of strings in $\Sigma^*$. Then we gave a recursive definition of **regular languages** and looked at some simple examples. --> 
+<div class="Theorem"> 
+**Definition.** For any finite alphabet $\Sigma$, a **language** is a subset of $\Sigma^*$.  A language $L \subseteq \Sigma^*$ is **regular** if there is a DFA $M$ such that $L = \{w \in \Sigma^* : M \text{ accepts } w \}$. 
+</div>
+
 
 ### Week 4 Notes
 
