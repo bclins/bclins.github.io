@@ -552,10 +552,10 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 <h4 id="mon-jan-27">Mon, Jan 27</h4>
 <p>Today we started with these questions about DFAs:</p>
 <ol type="1">
-<li><p>For the DFA shown below:</p>
+<li>For the DFA shown below:
 <center>
-<p><img
-src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/FiniteAutomata1.png" /></p>
+<img
+src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/FiniteAutomata1.png" />
 </center>
 <ol type="a">
 <li>What is the transition function?</li>
@@ -563,12 +563,8 @@ src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/FiniteAut
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\{0,1\}^* \rightarrow \{0,1\}</annotation></semantics></math>
 that this DFA computes.</li>
 </ol></li>
-<li><p>Draw the state diagram for a DFA that computes whether a binary
-string contains 011.</p></li>
-<li><p>Modify the DFA from the last problem so that it computer whether
-a binary string <em>ends with</em> 011.</p></li>
-<li><p>How many states would a DFA need if you wanted to check whether a
-binary string has a 1 in the third position from the last?</p></li>
+<li>Draw the state diagram for a DFA that computes whether a binary
+string contains 011.</li>
 </ol>
 <div class="Theorem">
 <p><strong>Definition.</strong> For any finite alphabet
@@ -582,6 +578,63 @@ is <strong>regular</strong> if there is a DFA
 such that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> accepts </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{w \in \Sigma^* : M \text{ accepts } w \}</annotation></semantics></math>.</p>
 </div>
+<p>Conceptually, when we think about a DFA, we understand that it can do
+two things:</p>
+<ul>
+<li>A DFA can compute a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f:\Sigma^* \rightarrow \{0,1\}</annotation></semantics></math>.</li>
+<li>A DFA can recognize a language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>.</li>
+</ul>
+<p>It’s important to understand that these two interpretations of what a
+DFA does are equivalent, because there is a simple bijection between the
+set of all possible languages (the power set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><msup><mi>Σ</mi><mo>*</mo></msup></msup><annotation encoding="application/x-tex">2^{\Sigma^*}</annotation></semantics></math>
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>Σ</mi><mo>*</mo></msup><annotation encoding="application/x-tex">\Sigma^*</annotation></semantics></math>)
+and the set of all possible functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f: \Sigma^* \rightarrow \{0,1\}</annotation></semantics></math>.</p>
+<ol start="3" type="1">
+<li>Construct a bijection from the power set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><msup><mi>Σ</mi><mo>*</mo></msup></msup><annotation encoding="application/x-tex">2^{\Sigma^*}</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>f</mi><mo>:</mo><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{f: f: \Sigma^* \rightarrow \{0,1\}\}</annotation></semantics></math>.</li>
+</ol>
+<p>Our solution ended up involving the <strong>indicator
+function</strong> for a set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>,
+where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>L</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo>∈</mo><mi>L</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f_L(w) = \begin{cases} 1 &amp; \text{ if } w \in L, \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math></p>
+<!--
+#### Wed, Jan 29
+
+We started construction some more examples of DFAs. 
+
+1. Find a DFA that computes whether a binary string *ends with* 011. (This is similar, but not the same as a DFA we constructed last time).
+
+2. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
+
+Then we talked about these properties of regular languages. 
+
+<div class="Theorem">
+**Theorem.** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
+
+1. The **union** $A \cup B$ is a regular language.
+2. The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
+3. The **Kleene-star** $A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}$ is a regular language. 
+
+</div>
+
+We proved #1 in class by thinking about how to construct a new DFA $M$ that accepts $A \cup B$ using DFAs $M_A$ and $M_B$ that accept $A$ and $B$ respectively.  To prove this, we answered these questions:
+
+1. If the machine $M$ is built by running both $M_A$ and $M_B$ simultaneously, what are the possible states of $M$?
+
+2. What are the accepting states of $M$? 
+
+3. What are the initial states for $M$?
+
+4. What is the transition function for $M$?
+-->
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>

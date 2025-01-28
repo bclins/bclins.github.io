@@ -218,13 +218,52 @@ Today we started with these questions about DFAs:
 
 2. Draw the state diagram for a DFA that computes whether a binary string contains 011.
 
-3. Modify the DFA from the last problem so that it computer whether a binary string *ends with* 011. 
-
-4. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
-
 <div class="Theorem"> 
 **Definition.** For any finite alphabet $\Sigma$, a **language** is a subset of $\Sigma^*$.  A language $L \subseteq \Sigma^*$ is **regular** if there is a DFA $M$ such that $L = \{w \in \Sigma^* : M \text{ accepts } w \}$. 
 </div>
+
+Conceptually, when we think about a DFA, we understand that it can do two things:
+
+* A DFA can compute a function $f:\Sigma^* \rightarrow \{0,1\}$.
+* A DFA can recognize a language $L \subseteq \Sigma^*$.
+
+It's important to understand that these two interpretations of what a DFA does are equivalent, because there is a simple bijection between the set of all possible languages (the power set $2^{\Sigma^*}$ of $\Sigma^*$) and the set of all possible functions $f: \Sigma^* \rightarrow \{0,1\}$.  
+
+3. Construct a bijection from the power set $2^{\Sigma^*}$ to $\{f: f: \Sigma^* \rightarrow \{0,1\}\}$.  
+
+Our solution ended up involving the **indicator function** for a set $L \subseteq \Sigma^*$, where 
+$$f_L(w) = \begin{cases} 1 & \text{ if } w \in L, \\ 0 & \text{ otherwise.} \end{cases}$$
+
+<!--
+#### Wed, Jan 29
+
+We started construction some more examples of DFAs. 
+
+1. Find a DFA that computes whether a binary string *ends with* 011. (This is similar, but not the same as a DFA we constructed last time).
+
+2. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
+
+Then we talked about these properties of regular languages. 
+
+<div class="Theorem">
+**Theorem.** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
+
+1. The **union** $A \cup B$ is a regular language.
+2. The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
+3. The **Kleene-star** $A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}$ is a regular language. 
+
+</div>
+
+We proved #1 in class by thinking about how to construct a new DFA $M$ that accepts $A \cup B$ using DFAs $M_A$ and $M_B$ that accept $A$ and $B$ respectively.  To prove this, we answered these questions:
+
+1. If the machine $M$ is built by running both $M_A$ and $M_B$ simultaneously, what are the possible states of $M$?
+
+2. What are the accepting states of $M$? 
+
+3. What are the initial states for $M$?
+
+4. What is the transition function for $M$?
+-->
 
 
 ### Week 4 Notes

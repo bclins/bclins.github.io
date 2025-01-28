@@ -161,28 +161,48 @@ Mon, Jan 27 | [4.1.5][4.1.5] | 68-95-99.7 rule
 Wed, Jan 29 | [4.1.4][4.1.4] | Normal distribution computations
 Fri, Jan 31 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
-### Mon, Sep 9
+### Mon, Jan 27
 
 We introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 
 
-1. SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
+1. **Finding the percentile from a location on a bell curve.** SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
 
-2. What percent of years will Farmville get between 40 and 50 inches of rain?
+2. **Finding the percent between two locations.** What percent of years will Farmville get between 40 and 50 inches of rain?
 
-3. How much rain would Farmville get in a top 10% year?  
+3. **Converting a percentile to a location.** How much rain would Farmville get in year that was in the 90th percentile? 
+
+We also talked about the shorthand notation
+$$P(40 < X < 50)$$
+while literally means *"the probability that the outcome X is between 40 and 50"*.  
+
+4. What is the percentile of a man who is 6 feet tall (72 inches)? 
 
 4. Estimate the percent of men who are between 6 feet and 6'5" tall.  
 
-5. How tall are men in the 75-th percentile? 
+5. How tall are men in the 80-th percentile? 
+
+<!-- We didn't have time for this example:
+
+6. Men have an foot print length that is approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
+    a. $P(\text{Man} > 22 \text{cm})$
+    b. $P(\text{Woman} > 22 \text{cm})$
+
+-->
 
 <!--
-### Wed, Sep 11
+### Wed, Jan 29
 
-There was no class since I was out with COVID.  Instead, there was this workshop to complete on your own.  
+We continued practicing calculations with the normal distribution.
 
 **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
 
+We also did these examples.
+
+1. Footprints of men are approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
+    a. $P(\text{Man} > 22 \text{cm})$
+    b. $P(\text{Woman} > 22 \text{cm})$
 -->
+
 
 - - -
 
