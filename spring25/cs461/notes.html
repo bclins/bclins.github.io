@@ -605,36 +605,89 @@ function</strong> for a set
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>,
 where
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>L</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo>∈</mo><mi>L</mi><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f_L(w) = \begin{cases} 1 &amp; \text{ if } w \in L, \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math></p>
-<!--
-#### Wed, Jan 29
-
-We started construction some more examples of DFAs. 
-
-1. Find a DFA that computes whether a binary string *ends with* 011. (This is similar, but not the same as a DFA we constructed last time).
-
-2. How many states would a DFA need if you wanted to check whether a binary string has a 1 in the third position from the last?  
-
-Then we talked about these properties of regular languages. 
-
+<h4 id="wed-jan-29">Wed, Jan 29</h4>
+<p>We started by constructing some more examples of DFAs.</p>
+<ol type="1">
+<li><p>Find a DFA that computes whether a binary string <em>ends
+with</em> 011. (This is similar, but not the same as a DFA we
+constructed last time).</p></li>
+<li><p>How many states would a DFA need if you wanted to check whether a
+binary string has a 1 in the third position from the last?</p></li>
+</ol>
+<p>Then we talked about these properties of regular languages.</p>
 <div class="Theorem">
-**Theorem.** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
-
-1. The **union** $A \cup B$ is a regular language.
-2. The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
-3. The **Kleene-star** $A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}$ is a regular language. 
-
+<p><strong>Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+is a finite alphabet, then any finite
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊂</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subset \Sigma^*</annotation></semantics></math>
+is a regular language.</p>
 </div>
-
-We proved #1 in class by thinking about how to construct a new DFA $M$ that accepts $A \cup B$ using DFAs $M_A$ and $M_B$ that accept $A$ and $B$ respectively.  To prove this, we answered these questions:
-
-1. If the machine $M$ is built by running both $M_A$ and $M_B$ simultaneously, what are the possible states of $M$?
-
-2. What are the accepting states of $M$? 
-
-3. What are the initial states for $M$?
-
-4. What is the transition function for $M$?
--->
+<ol start="3" type="1">
+<li>How would you prove this? One way is to describe how to construct a
+DFA that can recognize a finite set of strings.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">A, B \subseteq \Sigma^*</annotation></semantics></math>
+be regular languages. Then</p>
+<ul>
+<li>The <strong>union</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cup B</annotation></semantics></math>
+is a regular language.</li>
+<li>The <strong>concatenation</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∘</mo><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mi>b</mi><mo>:</mo><mi>a</mi><mo>∈</mo><mi>A</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi>B</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A \circ B = \{ab : a \in A, b \in B\}</annotation></semantics></math>
+is a regular language.<br />
+</li>
+<li>The <strong>Kleene-star</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>*</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>a</mi><mn>2</mn></msub><mi>…</mi><msub><mi>a</mi><mi>k</mi></msub><mo>:</mo><mi>k</mi><mo>≥</mo><mn>0</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and each </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>a</mi><mi>i</mi></msub><mo>∈</mo><mi>A</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}</annotation></semantics></math>
+is a regular language.</li>
+</ul>
+<p>We say that the set of regular languages over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+is <strong>closed</strong> under the three operations: union,
+concatentation, and Kleene-star.</p>
+</div>
+<ol start="4" type="1">
+<li>Suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mtext mathvariant="normal">big</mtext><mo>,</mo><mtext mathvariant="normal">small</mtext><mo>,</mo><mtext mathvariant="normal">pet</mtext><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A = \{ \text{big}, \text{small}, \text{pet} \}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mtext mathvariant="normal">cat</mtext><mo>,</mo><mtext mathvariant="normal">dog</mtext><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">B = \{ \text{cat}, \text{dog} \}</annotation></semantics></math>.
+What are the elements of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∘</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \circ B</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>B</mi><mo>*</mo></msup><annotation encoding="application/x-tex">B^*</annotation></semantics></math>?</li>
+</ol>
+<p>We proved the first part of the theorem above (regular languages are
+closed under unions) in class by thinking about how to construct a new
+DFA
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+that accepts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cup B</annotation></semantics></math>
+using DFAs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>A</mi></msub><annotation encoding="application/x-tex">M_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
+that accept
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+respectively. To prove this, we answered these questions:</p>
+<ol type="1">
+<li><p>If the machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+is built by running both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>A</mi></msub><annotation encoding="application/x-tex">M_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
+simultaneously, what are the possible states of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
+<li><p>What are the accepting states of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
+<li><p>What are the initial states for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
+<li><p>What is the transition function for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
+</ol>
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>

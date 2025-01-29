@@ -189,7 +189,6 @@ while literally means *"the probability that the outcome X is between 40 and 50"
 
 -->
 
-<!--
 ### Wed, Jan 29
 
 We continued practicing calculations with the normal distribution.
@@ -201,7 +200,6 @@ We also did these examples.
 1. Footprints of men are approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
     a. $P(\text{Man} > 22 \text{cm})$
     b. $P(\text{Woman} > 22 \text{cm})$
--->
 
 
 - - -

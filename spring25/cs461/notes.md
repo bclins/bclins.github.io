@@ -234,10 +234,9 @@ It's important to understand that these two interpretations of what a DFA does a
 Our solution ended up involving the **indicator function** for a set $L \subseteq \Sigma^*$, where 
 $$f_L(w) = \begin{cases} 1 & \text{ if } w \in L, \\ 0 & \text{ otherwise.} \end{cases}$$
 
-<!--
 #### Wed, Jan 29
 
-We started construction some more examples of DFAs. 
+We started by constructing some more examples of DFAs. 
 
 1. Find a DFA that computes whether a binary string *ends with* 011. (This is similar, but not the same as a DFA we constructed last time).
 
@@ -245,16 +244,26 @@ We started construction some more examples of DFAs.
 
 Then we talked about these properties of regular languages. 
 
+<div class="Theorem"> 
+**Theorem.** If $\Sigma$ is a finite alphabet, then any finite $L \subset \Sigma^*$ is a regular language.  
+</div>
+
+3. How would you prove this?  One way is to describe how to construct a DFA that can recognize a finite set of strings.  
+
 <div class="Theorem">
 **Theorem.** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
 
-1. The **union** $A \cup B$ is a regular language.
-2. The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
-3. The **Kleene-star** $A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}$ is a regular language. 
+* The **union** $A \cup B$ is a regular language.
+* The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
+* The **Kleene-star** $A^* = \{a_1 a_2 \ldots a_k : k \ge 0 \text{ and each } a_i \in A \}$ is a regular language. 
+
+We say that the set of regular languages over $\Sigma$ is **closed** under the three operations: union, concatentation, and Kleene-star.
 
 </div>
 
-We proved #1 in class by thinking about how to construct a new DFA $M$ that accepts $A \cup B$ using DFAs $M_A$ and $M_B$ that accept $A$ and $B$ respectively.  To prove this, we answered these questions:
+4. Suppose that $A = \{ \text{big}, \text{small}, \text{pet} \}$ and $B = \{ \text{cat}, \text{dog} \}$. What are the elements of $A \circ B$ and $B^*$?  
+
+We proved the first part of the theorem above (regular languages are closed under unions) in class by thinking about how to construct a new DFA $M$ that accepts $A \cup B$ using DFAs $M_A$ and $M_B$ that accept $A$ and $B$ respectively.  To prove this, we answered these questions:
 
 1. If the machine $M$ is built by running both $M_A$ and $M_B$ simultaneously, what are the possible states of $M$?
 
@@ -263,7 +272,6 @@ We proved #1 in class by thinking about how to construct a new DFA $M$ that acce
 3. What are the initial states for $M$?
 
 4. What is the transition function for $M$?
--->
 
 
 ### Week 4 Notes

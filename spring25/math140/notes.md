@@ -369,6 +369,8 @@ Fri, Jan 31  | [1.4][1.4]  | Exponents - con’d
 Today we started talking about [exponent rules](AlgebraRules.pdf#page=2). There are a bunch of rules, but they all boil down to three simple ideas:
 
 <div class = "Theorem">
+#### Understanding Exponents
+
 * Powers represent repeated multiplication: $x^m = \underbrace{x \cdot x \cdot \ldots \cdot x}_{m \text{ copies}}$. 
 
 * Negative powers represent reciprocals: $x^{-m} = \dfrac{1}{x^m}$.
@@ -396,6 +398,41 @@ Today we started talking about [exponent rules](AlgebraRules.pdf#page=2). There 
 
 9. Solve $\dfrac{2^{57}}{2^x} = 8$. 
 -->
+
+### Wed, Feb 29
+
+Today we looked at using the exponent rules to help solve equations. 
+
+1. Solve $(x^{-1} + 2^{-1})^{-1} = \frac{1}{3}$. 
+
+2. Solve $\dfrac{2^{57}}{2^x} = 8$. 
+
+3. Solve $3^{x+2} = 9^{2x - 3}$. (<https://youtu.be/9tutJ5xrRwg>) 
+
+4. Solve $x^{-5/3} = \frac{1}{32}$. (<https://youtu.be/aA2b1bu0Q2c>) 
+
+5. Solve $2^{\sqrt{x}} = 8^x$. (<https://youtu.be/9-sHxZA0dqU>)
+
+This last problem opens a can of worms, since it turns into a 2nd degree polynomial. A **polynomial** is an expression constructed by adding up different whole number powers of $x$ multiplied by different numbers called **coefficients**.  The **degree** of a polynomial is the highest power of $x$.  For example, 
+$$x^3 + 4x^2 - 6x + 7$$
+is a 3rd degree polynomial.  Its coefficients are $1$, $4$, $-6$, and $7$. 
+
+Solving equations involving polynomials requires a non-intuitive technique: 
+
+<div class="Theorem">
+#### Solving Polynomial Equations
+ 
+* Move every term to one side so that the other side is zero. 
+* Factor the polynomial expression.  
+
+The solutions are the places where each factor is zero.
+</div>
+
+Here are some more examples where this technique can help:
+
+6. Solve $10x^2 - 6x = 0$. (<https://youtu.be/E3nUOaXMBSk>)
+
+7. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>)
 
 ### Week 4 Notes
 
