@@ -245,13 +245,13 @@ We started by constructing some more examples of DFAs.
 Then we talked about these properties of regular languages. 
 
 <div class="Theorem"> 
-**Theorem.** If $\Sigma$ is a finite alphabet, then any finite $L \subset \Sigma^*$ is a regular language.  
+**Theorem (Finite languages are regular).** If $\Sigma$ is a finite alphabet, then any finite $L \subset \Sigma^*$ is a regular language.  
 </div>
 
-3. How would you prove this?  One way is to describe how to construct a DFA that can recognize a finite set of strings.  
+3. How would you prove this? If I give you a finite set of strings $L$, how could you turn that into a DFA that recognizes $L$?
 
 <div class="Theorem">
-**Theorem.** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
+**Theorem (Closure properties of regular languages).** Let $A, B \subseteq \Sigma^*$ be regular languages.  Then 
 
 * The **union** $A \cup B$ is a regular language.
 * The **concatenation** $A \circ B = \{ab : a \in A, b \in B\}$ is a regular language.  
@@ -267,12 +267,55 @@ We proved the first part of the theorem above (regular languages are closed unde
 
 1. If the machine $M$ is built by running both $M_A$ and $M_B$ simultaneously, what are the possible states of $M$?
 
-2. What are the accepting states of $M$? 
+2. What are the initial states for $M$?
 
-3. What are the initial states for $M$?
+3. What is the transition function for $M$?
 
-4. What is the transition function for $M$?
+4. What are the accepting states of $M$? 
 
+#### Fri, Jan 31
+
+1. We started by asking whether regular languages are closed under intersections.  Can we adapt the proof we gave last time for unions to intersections?  
+
+    <details>
+    Yes, regularly languages are closed under intersections. The proof is almost exactly the same as the proof for unions, the only difference is that the DFA to recognize $A \cap B$ has final states $F_A \times F_B$ while the DFA to recognize $A \cup B$ has final states $(F_A \times Q_B) \cup (Q_A \times F_B)$, that is, any pair of states from $Q_A \times Q_B$ where at least one of the two is final. 
+    </details>
+
+To prove that regular languages are closed under concatenation, we introduced a new idea: **non-deterministic finite automata (NFAs)**.
+
+We looked at this example: 
+
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NFA1.png)
+</center>
+
+An NFA can have more than one arrow exiting a state with the same input.  When that happens, the machine splits into multiple copies, one for each possible next state. 
+
+If an NFA enters a state that has exiting arrows labeled with $\epsilon$, then the NFA immediately splits into multiple copies, one where the current state stays the same, and one where the current state moves along each branch labeled $\epsilon$. This can happen several times, if there is a sequence of branches labeled $\epsilon$.  
+
+If there is no arrow leaving a state for a given input signal, that means that the current copy of the machine is a dead end and it does not need to be continued. 
+
+The NFA accepts a string if any of the parallel computations is in an accepting state after the string is read. We answered these questions:
+
+2. Which states are active at each step as we read the input string 010110? 
+
+3. Does this NFA accept the string 010110?
+
+4. Describe the set of all strings in $\{0,1\}^*$ <!--*--> that this NFA will accept.
+
+Here is the technical definition of an NFA.
+
+<div class="Theorem">
+**Definition.** A **non-deterministic finite automata (NFA)** consists of 
+
+1. A finite set of **states** $Q$.
+2. A finite **alphabet** $\Sigma$ of possible input signals.
+3. A **transition function** $\delta: Q \times \Sigma \rightarrow 2^Q$.
+4. An **initial** or **start state** $q_0 \in Q$. 
+5. A set of **final** or **accepting states** $F \subseteq Q$.  
+</div>
+
+The only change from the definition of a DFA is that the transition function for an NFA can return a set of different next states at each step (including, possibly, the empty set).  Think of these multivalued transitions as creating multiple branching computations that run in parallel. If the transition function returns the empty set, that means that that branch of the parallel computation is a dead end. 
 
 ### Week 4 Notes
 

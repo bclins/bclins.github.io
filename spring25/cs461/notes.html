@@ -616,18 +616,21 @@ binary string has a 1 in the third position from the last?</p></li>
 </ol>
 <p>Then we talked about these properties of regular languages.</p>
 <div class="Theorem">
-<p><strong>Theorem.</strong> If
+<p><strong>Theorem (Finite languages are regular).</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
 is a finite alphabet, then any finite
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊂</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subset \Sigma^*</annotation></semantics></math>
 is a regular language.</p>
 </div>
 <ol start="3" type="1">
-<li>How would you prove this? One way is to describe how to construct a
-DFA that can recognize a finite set of strings.</li>
+<li>How would you prove this? If I give you a finite set of strings
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>,
+how could you turn that into a DFA that recognizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>?</li>
 </ol>
 <div class="Theorem">
-<p><strong>Theorem.</strong> Let
+<p><strong>Theorem (Closure properties of regular languages).</strong>
+Let
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">A, B \subseteq \Sigma^*</annotation></semantics></math>
 be regular languages. Then</p>
 <ul>
@@ -681,13 +684,93 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
 simultaneously, what are the possible states of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
-<li><p>What are the accepting states of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
 <li><p>What are the initial states for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
 <li><p>What is the transition function for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
+<li><p>What are the accepting states of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>?</p></li>
 </ol>
+<h4 id="fri-jan-31">Fri, Jan 31</h4>
+<ol type="1">
+<li><p>We started by asking whether regular languages are closed under
+intersections. Can we adapt the proof we gave last time for unions to
+intersections?</p>
+<details>
+<p>Yes, regularly languages are closed under intersections. The proof is
+almost exactly the same as the proof for unions, the only difference is
+that the DFA to recognize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cap B</annotation></semantics></math>
+has final states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>A</mi></msub><mo>×</mo><msub><mi>F</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">F_A \times F_B</annotation></semantics></math>
+while the DFA to recognize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cup B</annotation></semantics></math>
+has final states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>F</mi><mi>A</mi></msub><mo>×</mo><msub><mi>Q</mi><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Q</mi><mi>A</mi></msub><mo>×</mo><msub><mi>F</mi><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(F_A \times Q_B) \cup (Q_A \times F_B)</annotation></semantics></math>,
+that is, any pair of states from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Q</mi><mi>A</mi></msub><mo>×</mo><msub><mi>Q</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">Q_A \times Q_B</annotation></semantics></math>
+where at least one of the two is final.</p>
+</details></li>
+</ol>
+<p>To prove that regular languages are closed under concatenation, we
+introduced a new idea: <strong>non-deterministic finite automata
+(NFAs)</strong>.</p>
+<p>We looked at this example:</p>
+<center>
+<img
+src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NFA1.png" />
+</center>
+<p>An NFA can have more than one arrow exiting a state with the same
+input. When that happens, the machine splits into multiple copies, one
+for each possible next state.</p>
+<p>If an NFA enters a state that has exiting arrows labeled with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>,
+then the NFA immediately splits into multiple copies, one where the
+current state stays the same, and one where the current state moves
+along each branch labeled
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.
+This can happen several times, if there is a sequence of branches
+labeled
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>.</p>
+<p>If there is no arrow leaving a state for a given input signal, that
+means that the current copy of the machine is a dead end and it does not
+need to be continued.</p>
+<p>The NFA accepts a string if any of the parallel computations is in an
+accepting state after the string is read. We answered these
+questions:</p>
+<ol start="2" type="1">
+<li><p>Which states are active at each step as we read the input string
+010110?</p></li>
+<li><p>Does this NFA accept the string 010110?</p></li>
+<li><p>Describe the set of all strings in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^*</annotation></semantics></math>
+<!--*--> that this NFA will accept.</p></li>
+</ol>
+<p>Here is the technical definition of an NFA.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A <strong>non-deterministic finite
+automata (NFA)</strong> consists of</p>
+<ol type="1">
+<li>A finite set of <strong>states</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</li>
+<li>A finite <strong>alphabet</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+of possible input signals.</li>
+<li>A <strong>transition function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Σ</mi><mo>→</mo><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">\delta: Q \times \Sigma \rightarrow 2^Q</annotation></semantics></math>.</li>
+<li>An <strong>initial</strong> or <strong>start state</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_0 \in Q</annotation></semantics></math>.</li>
+<li>A set of <strong>final</strong> or <strong>accepting states</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">F \subseteq Q</annotation></semantics></math>.<br />
+</li>
+</ol>
+</div>
+<p>The only change from the definition of a DFA is that the transition
+function for an NFA can return a set of different next states at each
+step (including, possibly, the empty set). Think of these multivalued
+transitions as creating multiple branching computations that run in
+parallel. If the transition function returns the empty set, that means
+that that branch of the parallel computation is a dead end.</p>
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>

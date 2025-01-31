@@ -201,6 +201,22 @@ We also did these examples.
     a. $P(\text{Man} > 22 \text{cm})$
     b. $P(\text{Woman} > 22 \text{cm})$
 
+### Fri, Jan 31
+
+We introduced **scatterplots** and **correlation coefficients** with these examples:
+
+* [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf).
+* Height vs. Weight
+* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
+* [Guess the correlation](https://www.geogebra.org/m/KE6JfuF9)
+
+1. What would the correlation between husband and wife ages be in a country where every man married a woman exactly 10 years older? What if every man married a woman exactly half his age?  
+
+Important concept: correlation does not change if you change the units or apply a simple linear transformation to the axes.  Correlation just measures the strength of the linear trend in the scatterplot.  
+
+We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
+
+
 
 - - -
 

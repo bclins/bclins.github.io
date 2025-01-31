@@ -413,9 +413,9 @@ Today we looked at using the exponent rules to help solve equations.
 
 5. Solve $2^{\sqrt{x}} = 8^x$. (<https://youtu.be/9-sHxZA0dqU>)
 
-This last problem opens a can of worms, since it turns into a 2nd degree polynomial. A **polynomial** is an expression constructed by adding up different whole number powers of $x$ multiplied by different numbers called **coefficients**.  The **degree** of a polynomial is the highest power of $x$.  For example, 
+This last problem opens a can of worms, since it turns into a 2nd degree polynomial. A **polynomial** is any sum of terms that combine a whole number power of $x$ multiplied by a number called a **coefficient**.  <!--The **degree** of a polynomial is the highest power of $x$.  For example, 
 $$x^3 + 4x^2 - 6x + 7$$
-is a 3rd degree polynomial.  Its coefficients are $1$, $4$, $-6$, and $7$. 
+is a 3rd degree polynomial.  Its coefficients are $1$, $4$, $-6$, and $7$. -->
 
 Solving equations involving polynomials requires a non-intuitive technique: 
 
@@ -425,14 +425,41 @@ Solving equations involving polynomials requires a non-intuitive technique:
 * Move every term to one side so that the other side is zero. 
 * Factor the polynomial expression.  
 
-The solutions are the places where each factor is zero.
+The solutions are the **roots**, i.e., the places where each factor is zero.
 </div>
 
-Here are some more examples where this technique can help:
+Here is another polynomial equation:
 
 6. Solve $10x^2 - 6x = 0$. (<https://youtu.be/E3nUOaXMBSk>)
 
+<!-- 
+We didn't get to this last example: 
+
 7. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>)
+
+
+-->
+
+### Fri, Jan 31
+
+Here's an example we didn't get to last time. 
+
+1. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>)
+
+After some algebra, this turns into the equation $x^2 - 15x = 0$.  We can factor that by dividing out the common factor of $x$.  There is a second more complex kind of factoring that involves un-FOIL-ing a polynomial.  Recall that FOIL stands for First-Outside-Inside-Last, which is a mnemonic to remember how to multiply out expressions like:
+$$(x+a)(x+b) = x^2 + bx + ax + ab = x^2 + (a+b)x + ab.$$
+When you factor a polynomial with leading term $x^2$, you need to find factors of the constant term that add up to the middle coefficient. Here are some examples we did in class. 
+
+2. Factor $x^2 + 15x + 50$. (<https://youtu.be/eF6zYNzlZKQ?t=278>)
+
+3. Factor $x^2 - 11x + 24$. (<https://youtu.be/eF6zYNzlZKQ?t=368>)
+
+4. Solve $x^2 = 3x + 10$.  (<https://youtu.be/D3a8NnpQ2vU>)
+
+5. Where does the line $y = x+1$ intersect the parabola $y = x^2-1$?  (<https://youtu.be/S8NujgvvznQ>)
+
+6. Solve $(x+2)(x-5) = 8$
+
 
 ### Week 4 Notes
 
