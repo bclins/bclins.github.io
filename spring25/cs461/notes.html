@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -740,8 +740,8 @@ accepting state after the string is read. We answered these
 questions:</p>
 <ol start="2" type="1">
 <li><p>Which states are active at each step as we read the input string
-010110?</p></li>
-<li><p>Does this NFA accept the string 010110?</p></li>
+01010?</p></li>
+<li><p>Does this NFA accept the string 01010?</p></li>
 <li><p>Describe the set of all strings in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\{0,1\}^*</annotation></semantics></math>
 <!--*--> that this NFA will accept.</p></li>
@@ -766,11 +766,33 @@ of possible input signals.</li>
 </ol>
 </div>
 <p>The only change from the definition of a DFA is that the transition
-function for an NFA can return a set of different next states at each
-step (including, possibly, the empty set). Think of these multivalued
+function for an NFA can return a <em>set of states</em> at each step
+(including, possibly, the empty set). Think of these multivalued
 transitions as creating multiple branching computations that run in
 parallel. If the transition function returns the empty set, that means
-that that branch of the parallel computation is a dead end.</p>
+that that branch of the parallel computation is a dead end and does not
+continue.</p>
+<ol start="5" type="1">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>B</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">A, B \subseteq \Sigma^*</annotation></semantics></math>
+be regular languages recognized by DFAs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>A</mi></msub><annotation encoding="application/x-tex">M_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
+respectively. Describe an NFA that uses the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>A</mi></msub><annotation encoding="application/x-tex">M_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
+to check if a string is in the union
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cup B</annotation></semantics></math>.
+Note that every DFA is an NFA that has a transition function that only
+ever returns a single state at a time.</p></li>
+<li><p>Describe an NFA that can check whether or not the 3rd to last
+digit of a binary string is 1 using fewer states than the DFA we
+described last time. Hint: What if the NFA “guesses” every time it sees
+a 1 that that might be the third to last entry. What should it’s states
+be from that point on?</p></li>
+</ol>
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>
@@ -803,6 +825,139 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
+<h4 id="mon-feb-3">Mon, Feb 3</h4>
+<p>Today we continued talking about NFAs. We’ve been following the <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf">textbook
+by Meshwari &amp; Smid</a> pretty closely this week, so I recommend
+reading skimming <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=56">Section
+2.6</a> which is what we covered today.</p>
+<ol type="1">
+<li>Construct an NFA that accepts a string in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\{0\}^*</annotation></semantics></math>
+<!--*--> iff the length of the string is a multiple of 2 or 3. Can you
+construct a DFA that does the same thing and with the same number of
+states?</li>
+</ol>
+<p>After these examples, we explained two important ideas:</p>
+<ol type="1">
+<li><p>You can easily construct an NFA to check if a string is in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∘</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \circ B</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are regular languages.</p></li>
+<li><p>It is also easy to check if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>A</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">x \in A^*</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is a regular language.</p></li>
+</ol>
+<p>To complete the proof that regular languages are closed under these
+two operations, we need to prove this:</p>
+<div class="Theorem">
+<p><strong>Theorem (Equivalence of NFAs and DFAs).</strong> If there is
+an NFA that recognizes a language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">A \subseteq \Sigma^*</annotation></semantics></math>,
+then there is a DFA that also recognizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</p>
+</div>
+<p>The proof is surprisingly simple. An NFA with states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>,
+transition function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Σ</mi><mo>→</mo><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">\delta: Q \times \Sigma \rightarrow 2^Q</annotation></semantics></math>
+can be turned into a DFA that has states
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>Q</mi></msup><annotation encoding="application/x-tex">2^Q</annotation></semantics></math>
+and transition function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mn>2</mn></msub><mo>:</mo><msup><mn>2</mn><mi>Q</mi></msup><mo>×</mo><mi>Σ</mi><mo>→</mo><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">\delta_2: 2^Q \times \Sigma \rightarrow 2^Q</annotation></semantics></math>.</p>
+<ol type="1">
+<li><p>Describe specifically what
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>σ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta_2(S, \sigma)</annotation></semantics></math>
+returns for any subset
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">S \subseteq Q</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>.</p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+denotes the accepting states of the NFA, then what are the corresponding
+accepting states of the DFA?</p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q \in Q</annotation></semantics></math>
+is the initial state of the NFA, what is the initial state of the
+DFA?</p></li>
+</ol>
+<!--
+
+Today we explained the surprising fact that any language an NFA can recognize can also be recognized by a DFA.  The idea is to convert an NFA $N = (Q, \Sigma, \delta, q, F)$ into a DFA $M$ which has states that are subsets of the states of $N$, i.e., the states of $M$ are the power set $2^Q$ of the states of $N$.  Then you have to make a transition function from sets of states to sets of states using the transition function $\delta$.  
+
+We looked at this example (again) to see how the idea works:
+
+<center>
+![](NFA1.png)
+</center>
+
+Notice that this NFA starts at state 0, and no matter what input we receive, state 0 stays active. So there is no way to reach a set of active states that does not contain state 0. So that cuts the number of elements we need to worry about in $2^Q$ by half.  
+
+We also talked about **regular expressions**. 
+
+**Recursive Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{(,),*,|\}$ that has one of the following forms:
+
+1. $e$ is a single symbol in $\Sigma$. 
+2. $e = e_1e_2$
+3. $e = e_1|e_2$ where $e_1$ and $e_2$ are regular expressions.
+4. $e = (e_1)$ where $e_1$ is a regular expression
+5. $e = (e_1)*$ where $e_1$ is a regular expression
+
+We also accept the empty set $\varnothing$ and the empty string `""` as regular expressions.  
+
+Regular expressions are used to match sets of strings (i.e., languages over $\Sigma$). $e_1e_2$ matches any string that is a concatenation of a string matched by $e_1$ with a string matched by $e_2$.  The regular expression $e_1|e_2$ matches anything matched by $e_1$ or $e_2$.  Finally $(e_1)*$ matches any finite concatenation of strings that $e_1$ matches (including no repetitions). <!--*-->
+<!--
+1. What happens if one of the four extra symbols $*$, $|$, $($, or $)$ is already part of the alphabet?  
+
+2. Write a regular expression that recognizes any two digit number in the alphabet of numerals and letters. 
+
+Most computer implementations of regular expressions include several extra symbols which make working with regular expressions more convenient. For example `[5-8]` is short-hand for `(5|6|7|8)`. And `(`$e_1$`)+` is short hand for $e_1(e_1)*$.   
+
+1. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
+
+2. What strings does the regular expression `pet(dog|cat|bird)*` match?
+
+3. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
+
+#### Wednesday, September 13
+
+Today we mentioned the following theorem:
+
+**Theorem.** A language is regular if and only if it can be represented by a regular expression.
+
+This means that NFAs, DFAs, and RegEx's are all equivalent to each other in terms of what they can compute.  Then we looked at how to convert NFAs to RegEx's and vice versa.  We did the following examples.
+
+1. Use the ideas from last week about how to build NFAs to find the union, concatenation, and Kleene star of languages to convert to following regular expression `(ab|a)*` over the alphabet Σ = {a,b} to an NFA.  
+
+Then we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
+
+2. Let Σ={A,C,G,T}.  Convert the following NFA to a regular expression:
+
+<center>
+![](ACGT.png)
+</center>
+
+We finished today by talking about some of the short-hand and quirks in regular expression libraries for some programming languages.  
+
+#### Friday, September 15
+
+Today we talked about the **pumping lemma**.  We used the pumping lemma to prove that the following languages over Σ = {0,1} are not regular:
+
+1. $L = \{w : w \text{ has an equal number of 0 and 1's}\}$
+
+2. $L = \{ww : w ∈ {0,1}^* \}$ <
+
+3. $L = \{0^{n^2} : n \in \N \}$.
+
+Here is a nice [meme proof using the pumping lemma from Barak textbook](pumpinglemmaproof.png).
+
+-->
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
 <thead>
@@ -831,6 +986,30 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
+<!--
+
+#### Monday, September 18
+
+Today we looked at more examples of regular and non-regular languages.
+
+1. $L = \{0^{n^2} : n \in \N \}$.
+
+2. $L = \{w : w \text{ contains an equal number of } 01 \text{ and } 10 \text{ substrings}\}$.
+
+Many programming languages, including Python & Javascript allow backreferences to previous groups in a regular expression. A group is a part of the regular expression inside parentheses.  The special symbol `\1` refers to anything matched by the first group in the regular expression. Similarly `\2` refers back to anything matched by the second group, and so on. For example: the regular expression `"([a-z]*) \1"` would match "word word" or "dog dog".  
+
+3. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  
+
+We finished with this last example. Consider the language 
+$$F = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.$$
+
+4. Explain why there is a pumping number $p$ (in fact $p=1$ works) such that any string $s \in F$ can be "pumped".  
+
+5. Despite this, explain why $F$ is not a regular language.
+
+6. Why doesn't that contradict the pumping lemma?
+
+-->
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
 <colgroup>

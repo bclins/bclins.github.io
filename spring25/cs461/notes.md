@@ -297,9 +297,9 @@ If there is no arrow leaving a state for a given input signal, that means that t
 
 The NFA accepts a string if any of the parallel computations is in an accepting state after the string is read. We answered these questions:
 
-2. Which states are active at each step as we read the input string 010110? 
+2. Which states are active at each step as we read the input string 01010? 
 
-3. Does this NFA accept the string 010110?
+3. Does this NFA accept the string 01010?
 
 4. Describe the set of all strings in $\{0,1\}^*$ <!--*--> that this NFA will accept.
 
@@ -315,7 +315,11 @@ Here is the technical definition of an NFA.
 5. A set of **final** or **accepting states** $F \subseteq Q$.  
 </div>
 
-The only change from the definition of a DFA is that the transition function for an NFA can return a set of different next states at each step (including, possibly, the empty set).  Think of these multivalued transitions as creating multiple branching computations that run in parallel. If the transition function returns the empty set, that means that that branch of the parallel computation is a dead end. 
+The only change from the definition of a DFA is that the transition function for an NFA can return a *set of states* at each step (including, possibly, the empty set).  Think of these multivalued transitions as creating multiple branching computations that run in parallel. If the transition function returns the empty set, that means that that branch of the parallel computation is a dead end and does not continue. 
+
+5. Let $A, B \subseteq \Sigma^*$ be regular languages recognized by DFAs $M_A$ and $M_B$ respectively.  Describe an NFA that uses the $M_A$ and $M_B$ to check if a string is in the union $A \cup B$.  Note that every DFA is an NFA that has a transition function that only ever returns a single state at a time. 
+
+6. Describe an NFA that can check whether or not the 3rd to last digit of a binary string is 1 using fewer states than the DFA we described last time. Hint: What if the NFA "guesses" every time it sees a 1 that that might be the third to last entry.  What should it's states be from that point on?
 
 ### Week 4 Notes
 
@@ -325,6 +329,106 @@ Mon, Feb 3  | [2.5][2.5] | NFAs and DFAs are equivalent
 Wed, Feb 5  | [2.7][2.7] - [2.8][2.8] | Regular expressions
 Fri, Feb 7  | [2.9][2.9] | The pumping lemma
 
+#### Mon, Feb 3
+
+Today we continued talking about NFAs.  We've been following the [textbook by Meshwari & Smid](https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf) pretty closely this week, so I recommend reading skimming [Section 2.6][2.6] which is what we covered today.  
+
+1. Construct an NFA that accepts a string in $\{0\}^*$ <!--*--> iff the length of the string is a multiple of 2 or 3.  Can you construct a DFA that does the same thing and with the same number of states?
+
+After these examples, we explained two important ideas:
+
+1. You can easily construct an NFA to check if a string is in $A \circ B$ when $A$ and $B$ are regular languages.  
+
+2. It is also easy to check if $x \in A^*$ when $A$ is a regular language.   
+
+To complete the proof that regular languages are closed under these two operations, we need to prove this:
+
+<div class="Theorem">
+**Theorem (Equivalence of NFAs and DFAs).** If there is an NFA that recognizes a language $A \subseteq \Sigma^*$, then there is a DFA that also recognizes $A$.
+</div>
+
+The proof is surprisingly simple.  An NFA with states $Q$, transition function $\delta: Q \times \Sigma \rightarrow 2^Q$ can be turned into a DFA that has states $2^Q$ and transition function $\delta_2: 2^Q \times \Sigma \rightarrow 2^Q$.  
+
+1. Describe specifically what $\delta_2(S, \sigma)$ returns for any subset $S \subseteq Q$ using $\delta$. 
+
+2. If $F$ denotes the accepting states of the NFA, then what are the corresponding accepting states of the DFA? 
+
+3. If $q \in Q$ is the initial state of the NFA, what is the initial state of the DFA? 
+
+<!--
+
+Today we explained the surprising fact that any language an NFA can recognize can also be recognized by a DFA.  The idea is to convert an NFA $N = (Q, \Sigma, \delta, q, F)$ into a DFA $M$ which has states that are subsets of the states of $N$, i.e., the states of $M$ are the power set $2^Q$ of the states of $N$.  Then you have to make a transition function from sets of states to sets of states using the transition function $\delta$.  
+
+We looked at this example (again) to see how the idea works:
+
+<center>
+![](NFA1.png)
+</center>
+
+Notice that this NFA starts at state 0, and no matter what input we receive, state 0 stays active. So there is no way to reach a set of active states that does not contain state 0. So that cuts the number of elements we need to worry about in $2^Q$ by half.  
+
+We also talked about **regular expressions**. 
+
+**Recursive Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{(,),*,|\}$ that has one of the following forms:
+
+1. $e$ is a single symbol in $\Sigma$. 
+2. $e = e_1e_2$
+3. $e = e_1|e_2$ where $e_1$ and $e_2$ are regular expressions.
+4. $e = (e_1)$ where $e_1$ is a regular expression
+5. $e = (e_1)*$ where $e_1$ is a regular expression
+
+We also accept the empty set $\varnothing$ and the empty string `""` as regular expressions.  
+
+Regular expressions are used to match sets of strings (i.e., languages over $\Sigma$). $e_1e_2$ matches any string that is a concatenation of a string matched by $e_1$ with a string matched by $e_2$.  The regular expression $e_1|e_2$ matches anything matched by $e_1$ or $e_2$.  Finally $(e_1)*$ matches any finite concatenation of strings that $e_1$ matches (including no repetitions). <!--*-->
+
+<!--
+1. What happens if one of the four extra symbols $*$, $|$, $($, or $)$ is already part of the alphabet?  
+
+2. Write a regular expression that recognizes any two digit number in the alphabet of numerals and letters. 
+
+Most computer implementations of regular expressions include several extra symbols which make working with regular expressions more convenient. For example `[5-8]` is short-hand for `(5|6|7|8)`. And `(`$e_1$`)+` is short hand for $e_1(e_1)*$.   
+
+1. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
+
+2. What strings does the regular expression `pet(dog|cat|bird)*` match?
+
+3. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
+
+#### Wednesday, September 13
+
+Today we mentioned the following theorem:
+
+**Theorem.** A language is regular if and only if it can be represented by a regular expression.
+
+This means that NFAs, DFAs, and RegEx's are all equivalent to each other in terms of what they can compute.  Then we looked at how to convert NFAs to RegEx's and vice versa.  We did the following examples.
+
+1. Use the ideas from last week about how to build NFAs to find the union, concatenation, and Kleene star of languages to convert to following regular expression `(ab|a)*` over the alphabet Σ = {a,b} to an NFA.  
+
+Then we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
+
+2. Let Σ={A,C,G,T}.  Convert the following NFA to a regular expression:
+
+<center>
+![](ACGT.png)
+</center>
+
+We finished today by talking about some of the short-hand and quirks in regular expression libraries for some programming languages.  
+
+#### Friday, September 15
+
+Today we talked about the **pumping lemma**.  We used the pumping lemma to prove that the following languages over Σ = {0,1} are not regular:
+
+1. $L = \{w : w \text{ has an equal number of 0 and 1's}\}$
+
+2. $L = \{ww : w ∈ {0,1}^* \}$ <
+
+3. $L = \{0^{n^2} : n \in \N \}$.
+
+Here is a nice [meme proof using the pumping lemma from Barak textbook](pumpinglemmaproof.png).
+
+-->
+
+
 ### Week 5 Notes
 
 Day  | Section  | Topic
@@ -332,6 +436,31 @@ Day  | Section  | Topic
 Mon, Feb 10 | [2.9][2.9] | Non-regular languages
 Wed, Feb 12 |            | Review
 Fri, Feb 14 |            | **Midterm 1**
+
+<!--
+
+#### Monday, September 18
+
+Today we looked at more examples of regular and non-regular languages.
+
+1. $L = \{0^{n^2} : n \in \N \}$.
+
+2. $L = \{w : w \text{ contains an equal number of } 01 \text{ and } 10 \text{ substrings}\}$.
+
+Many programming languages, including Python & Javascript allow backreferences to previous groups in a regular expression. A group is a part of the regular expression inside parentheses.  The special symbol `\1` refers to anything matched by the first group in the regular expression. Similarly `\2` refers back to anything matched by the second group, and so on. For example: the regular expression `"([a-z]*) \1"` would match "word word" or "dog dog".  
+
+3. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  
+
+We finished with this last example. Consider the language 
+$$F = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.$$
+
+4. Explain why there is a pumping number $p$ (in fact $p=1$ works) such that any string $s \in F$ can be "pumped".  
+
+5. Despite this, explain why $F$ is not a regular language.
+
+6. Why doesn't that contradict the pumping lemma?
+
+-->
 
 ### Week 6 Notes
 

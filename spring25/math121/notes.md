@@ -205,17 +205,23 @@ We also did these examples.
 
 We introduced **scatterplots** and **correlation coefficients** with these examples:
 
-* [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf).
-* Height vs. Weight
+* Height vs. Weight <!-- Note to self, height vs. weight is only weakly correlated... it probably should not be the first example.
+* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx) Beers vs. BAC would be a better first example!  -->
 * [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
+* [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf)
 * [Guess the correlation](https://www.geogebra.org/m/KE6JfuF9)
 
 1. What would the correlation between husband and wife ages be in a country where every man married a woman exactly 10 years older? What if every man married a woman exactly half his age?  
 
 Important concept: correlation does not change if you change the units or apply a simple linear transformation to the axes.  Correlation just measures the strength of the linear trend in the scatterplot.  
 
-We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
+Another thing to know about the correlation coefficient is that only measures the strength of a linear trend.  The correlation coefficient is not as useful when a scatterplot has a clearly visible nonlinear trend. 
 
+<!--
+
+Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 
+
+We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!-->
 
 
 - - -
@@ -230,24 +236,7 @@ Mon, Feb 3  | [8.2][8.2] | Least squares regression introduction
 Wed, Feb 5  | [8.2][8.2] | Least squares regression practice
 Fri, Feb 7  | [1.3][1.3] | Sampling: populations and samples
 
-<!--
-
-### Mon, Sep 16
-
-We introduced **scatterplots** and **correlation coefficients** with these examples:
-
-* [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf).
-* Height vs. Weight
-* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
-* [Guess the correlation](https://www.geogebra.org/m/KE6JfuF9)
-
-1. What would the correlation between husband and wife ages be in a country where every man married a woman exactly 10 years older? What if every man married a woman exactly half his age?  
-
-Important concept: correlation does not change if you change the units or apply a simple linear transformation to the axes.  Correlation just measures the strength of the linear trend in the scatterplot.  
-
-We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
-
-### Wed, Sep 18
+### Mon, Feb 3
 
 We talked about **least squares regression**.  The least squares regression line has these features:
 
@@ -268,7 +257,9 @@ Keep in mind that regression lines have two important applications.
 1. **Make predictions** about average y-values at different x-values.
 2. The slope is the **rate of change**. 
 
-### Fri, Sep 20
+<!-- 
+
+### Wed, Fab 5
 
 After the quiz, we talked about the **coefficient of determination** $R^2$ which represents the percent of the variability in the $y$-values that follow the tend, the remaining $1-R^2$ is the percent of the varibility that is above and below the trend line.  
 

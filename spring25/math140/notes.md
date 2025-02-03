@@ -444,7 +444,7 @@ We didn't get to this last example:
 
 Here's an example we didn't get to last time. 
 
-1. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>)
+1. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>) <!-- Note to self: This is NOT A GOOD EXAMPLE! Because one of the solutions corresponds to the negative square root, not the positive square root. The video does at least check that one of the solutions is extraneous.  -->
 
 After some algebra, this turns into the equation $x^2 - 15x = 0$.  We can factor that by dividing out the common factor of $x$.  There is a second more complex kind of factoring that involves un-FOIL-ing a polynomial.  Recall that FOIL stands for First-Outside-Inside-Last, which is a mnemonic to remember how to multiply out expressions like:
 $$(x+a)(x+b) = x^2 + bx + ax + ab = x^2 + (a+b)x + ab.$$
@@ -455,6 +455,8 @@ When you factor a polynomial with leading term $x^2$, you need to find factors o
 3. Factor $x^2 - 11x + 24$. (<https://youtu.be/eF6zYNzlZKQ?t=368>)
 
 4. Solve $x^2 = 3x + 10$.  (<https://youtu.be/D3a8NnpQ2vU>)
+
+We didn't get to these last two examples in class, but they are good extra practice: 
 
 5. Where does the line $y = x+1$ intersect the parabola $y = x^2-1$?  (<https://youtu.be/S8NujgvvznQ>)
 

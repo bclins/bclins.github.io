@@ -54,6 +54,9 @@
 \vfill
 \end{parts}
 
+\question Let $\Sigma$ be the regular English alphabet $\{a,b,c,\ldots,z\}$.  Write a regular expression that matches all strings that contain at least two vowels (i.e., $a$,$e$,$i$,$o$,$u$).  
+
+\vfill
 
 
 \newpage
@@ -67,11 +70,14 @@
 \end{parts}
 
 
-\question Let $\Sigma$ be the regular English alphabet $\{a,b,c,\ldots,z\}$.  Write a regular expression that matches all strings that contain at least two vowels (i.e., $a$,$e$,$i$,$o$,$u$).  
-
-\vfill
 
 \question Prove that if $L \subset \Sigma^*$ is a regular language, then the complement $\Sigma^* \backslash L$ is also a regular language. Hint: \textit{If there is a DFA $M = (Q, \Sigma, \delta, q, F)$ that recognizes $L$, describe a different DFA that recognizes the complement.}  
+\vfill
+
+\question Let $A \subseteq \Sigma^*$ be a regular language.  Define a new language $\operatorname{REMOVE-ONE}(A)$ to be the set 
+$$\{x : xyz \in A \text{ where } y \in \Sigma, z \in \Sigma^*\}.$$
+In other words, $\operatorname{REMOVE-ONE}(A)$ is the set of all strings that can be obtained from strings in $A$ by removing one letter.
+Prove that $\operatorname{REMOVE-ONE}(A)$ is a regular language by describing an NFA that recognizes it. Hint: Create an NFA using two copies of a DFA that recognizes A.  Describe exactly how the NFA is constructed from the two DFAs.  
 \vfill
 
 %\question Let $L = \{w \in \Sigma^* : \text{ the length of }w\text{ is a power of 2} \}$. Use the pumping lemma to prove that $L$ is not a regular language.  
