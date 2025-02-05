@@ -489,23 +489,26 @@ A rational function is a function that can be expressed using polynomials and re
 
 3. $x + 2 = \dfrac{15}{x}$. 
 
-Today we talked about solving inequalities involving polynomials and rational functions.  
+After that, we talked about how to solve inequalities. We started with simple examples like: 
 
+4. Solve $x + 4 > 3$ and $-2x \ge 4$. 
+
+Then we moved on to harder examples. 
 
 4. Solve $x^3 - 3x^2 < 4x$.  (<https://youtu.be/1fCXjn9WoSc>)
 
 5. Solve $\dfrac{2}{x-3} \ge 1$. (<https://youtu.be/OPZAHBhPclc>)
 
-6. Solve $\dfrac{(x-3)(x+1)^2}{(x-1)} > 0$.
+<!-- 6. Solve $\dfrac{(x-3)(x+1)^2}{(x-1)} > 0$.-->
 
-7. Solve $x+3 > \dfrac{4}{x}$. 
+6. Solve $x+3 > \dfrac{4}{x}$. 
 
 <div class="Theorem">
 **Strategy for Solving Inequalities.**
 
-1. First solve for equality.  Mark a number line with every point where both sides of the inequality are equal, and with any bad points where the functions aren't defined.
+1. **Find crossings and discontinuities.** Solve for equality to find the crossing points, and also mark the bad points where the functions have vertical asymptotes. 
 
-2. Check whether the inequality is true for each subinterval on the number line by plugging in a test point or checking a graph. 
+2. **Check subintervals**. The x-values above divide the number line into subintervals.  For each subinterval, test a point to see if the original inequality is true.  It helps to either have a factored expression to compare with zero or a graph to check. 
 </div>
 
 ### Week 5 Notes

@@ -360,7 +360,7 @@ We applied the idea of this proof to [Exercise 5 from Homework 3](HW/HW3.pdf#pag
 
 #### Wed, Feb 5
 
-We introduced **regular expressions**. 
+We introduced **regular expressions** (regex). 
 
 <div class="Theorem">
 **Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{ ~(~ , ~)~ , ~*~ , ~|~ \}$ that has one of the following forms:
@@ -389,11 +389,51 @@ Regular expressions are used to match sets of strings (i.e., languages over $\Si
 
 2. Write a regular expression that recognizes the base-10 decimal form of any integer that is a multiple of 5. 
 
-Most computer implementations of regular expressions include several extra symbols which make working with regular expressions more convenient. For example `[5-8]` is short-hand for `(5|6|7|8)`. And `(`$e_1$`)+` is short hand for $e_1(e_1)*$.   
+Most programming languages use [Perl compatible regular expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions) which have several additional features to make it easier to work with regular expressions.  Here are some examples we talked about in class. 
 
-3. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
+<center>
+<table class="bordered">
+<tr><th colspan=2>Special Symbols</th></tr>
+<tr><td>`\s` </td><td> whitespace (tabs, spaces, etc.) </td></tr>
+<tr><td>`\w` </td><td> alphanumeric (letters & digits) </td></tr>
+<tr><td>`\d` </td><td> digits (0-9) </td></tr>
+<tr><td>`.`  </td><td> wildcard matches any single character </td></tr>
+<tr><td>`\`  </td><td> escape (for special characters) </td></tr>
+</table>
 
-4. What strings does the regular expression `pet(dog|cat|bird)*` match?
+
+<table>
+<tr>
+<td><table class="bordered">
+<tr><th colspan=2>Extra Operators</th></tr>
+<tr><td>`(e)+` </td><td> at least one </td></tr>
+<tr><td>`(e)?` </td><td> maybe one (0 or 1) </td></tr>
+</table>
+</td><td><table class="bordered">
+
+<tr><th colspan=2>Square Brackets</th></tr>
+<tr><td colspan=2>Can match one or more ranges of characters</td></tr>
+<tr><td>`[a-z]` </td><td> any lower case letter </td></tr>
+<tr><td>`[a-zA-Z]` </td><td> any letter </td></tr>
+<tr><td>`[^a-z]` </td><td> anything except a-z </td></tr>
+</table>
+</td></tr>
+</table>
+</center>
+
+Here is a simple Python regex example:
+
+```python
+import re 
+
+s = "My pet dog likes to go to the park."
+expr = "pet\s(dog|cat|bird)"
+match = re.search(expr, s)
+print(match)
+
+```
+
+3. Write a regular expression that would match any e-mail address of the form `name@domain.extension`.  
 
 5. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
 
@@ -406,6 +446,7 @@ We stated, but did not prove the following theorem.
 
 6. Find an NFA that recognizes the same language as the regular expression `(ab|a)*`. Use the ideas from the previous classes about how to build NFAs to find the union, concatenation, and Kleene star of languages.
 
+<!--
 #### Fri, Feb 7
 
 Today we talked about the proof of the theorem from last time that regular languages and regular expressions are equivalent. One direction is easy: every language described by a regular expression is regular.  This is because we already know that regular languages are closed under the union, concatenation, and Kleene-star operations and we also know that any finite set of strings is a regular language.  That is exactly what regular expressions can describe.  
