@@ -333,13 +333,14 @@ Fri, Feb 7  | [2.9][2.9] | The pumping lemma
 
 Today we continued talking about NFAs.  We've been following the [textbook by Meshwari & Smid](https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf) pretty closely this week, so I recommend reading skimming [Section 2.6][2.6] which is what we covered today.  
 
-1. Construct an NFA that accepts a string in $\{0\}^*$ <!--*--> iff the length of the string is a multiple of 2 or 3.  Can you construct a DFA that does the same thing and with the same number of states?
+<!--1. Construct an NFA that accepts a string in $\{0\}^*$ iff the length of the string is a multiple of 2 or 3.  Can you construct a DFA that does the same thing and with the same number of states? -->
 
-After these examples, we explained two important ideas:
+1. We described an NFA that recognizes the concatentation $AB$ of two regular languages by running DFAs $M_A$ and $M_B$ in parallel.  We answer these questions about the NFA:
 
-1. You can easily construct an NFA to check if a string is in $A \circ B$ when $A$ and $B$ are regular languages.  
+    a. What are the states of the NFA?
+    b. What are the final states of the NFA?
 
-2. It is also easy to check if $x \in A^*$ when $A$ is a regular language.   
+2. We also described an NFA that recognizes the Kleene star $A^*$ of a regular language.  The idea is similar to the previous construction, but you need a way to accept the empty string (if it isn't part of $A$).  
 
 To complete the proof that regular languages are closed under these two operations, we need to prove this:
 
@@ -349,71 +350,77 @@ To complete the proof that regular languages are closed under these two operatio
 
 The proof is surprisingly simple.  An NFA with states $Q$, transition function $\delta: Q \times \Sigma \rightarrow 2^Q$ can be turned into a DFA that has states $2^Q$ and transition function $\delta_2: 2^Q \times \Sigma \rightarrow 2^Q$.  
 
-1. Describe specifically what $\delta_2(S, \sigma)$ returns for any subset $S \subseteq Q$ using $\delta$. 
+3. Describe specifically what $\delta_2(S, \sigma)$ returns for any subset $S \subseteq Q$ using $\delta$. 
 
-2. If $F$ denotes the accepting states of the NFA, then what are the corresponding accepting states of the DFA? 
+4. If $F$ denotes the accepting states of the NFA, then what are the corresponding accepting states of the DFA? 
 
-3. If $q \in Q$ is the initial state of the NFA, what is the initial state of the DFA? 
+5. If $q \in Q$ is the initial state of the NFA, what is the initial state of the DFA? 
 
-<!--
+We applied the idea of this proof to [Exercise 5 from Homework 3](HW/HW3.pdf#page=2).
 
-Today we explained the surprising fact that any language an NFA can recognize can also be recognized by a DFA.  The idea is to convert an NFA $N = (Q, \Sigma, \delta, q, F)$ into a DFA $M$ which has states that are subsets of the states of $N$, i.e., the states of $M$ are the power set $2^Q$ of the states of $N$.  Then you have to make a transition function from sets of states to sets of states using the transition function $\delta$.  
+#### Wed, Feb 5
 
-We looked at this example (again) to see how the idea works:
+We introduced **regular expressions**. 
 
-<center>
-![](NFA1.png)
-</center>
+<div class="Theorem">
+**Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{ ~(~ , ~)~ , ~*~ , ~|~ \}$ that has one of the following forms:
 
-Notice that this NFA starts at state 0, and no matter what input we receive, state 0 stays active. So there is no way to reach a set of active states that does not contain state 0. So that cuts the number of elements we need to worry about in $2^Q$ by half.  
+1. A **symbol** $e \in \Sigma$ is a regular expression.
+2. A **concatenation** $e = e_1e_2$ where $e_1$ and $e_2$ are regular expressions.
+3. A **union** $e = e_1|e_2$ where $e_1$ and $e_2$ are regular expressions.
+4. A **grouping** $e = (e_1)$ where $e_1$ is a regular expression.
+5. A **star** $e = e_1*$ where $e_1$ is either a single symbol or grouping.
 
-We also talked about **regular expressions**. 
+We also accept the empty set $\varnothing$ and the empty string $\epsilon$ as regular expressions.  
 
-**Recursive Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{(,),*,|\}$ that has one of the following forms:
+</div>
 
-1. $e$ is a single symbol in $\Sigma$. 
-2. $e = e_1e_2$
-3. $e = e_1|e_2$ where $e_1$ and $e_2$ are regular expressions.
-4. $e = (e_1)$ where $e_1$ is a regular expression
-5. $e = (e_1)*$ where $e_1$ is a regular expression
+Regular expressions are used to match sets of strings (i.e., languages over $\Sigma$). 
 
-We also accept the empty set $\varnothing$ and the empty string `""` as regular expressions.  
+* $e_1e_2$ matches any concatenation of a string matched by $e_1$ with a string matched by $e_2$.  
+* $e_1|e_2$ matches anything matched by $e_1$ or $e_2$.  
+* $e_1*$ matches any finite concatenation of strings that $e_1$ matches (including zero matches). 
 
-Regular expressions are used to match sets of strings (i.e., languages over $\Sigma$). $e_1e_2$ matches any string that is a concatenation of a string matched by $e_1$ with a string matched by $e_2$.  The regular expression $e_1|e_2$ matches anything matched by $e_1$ or $e_2$.  Finally $(e_1)*$ matches any finite concatenation of strings that $e_1$ matches (including no repetitions). <!--*-->
+1. Describe what the following regular expressions represent:
 
-<!--
-1. What happens if one of the four extra symbols $*$, $|$, $($, or $)$ is already part of the alphabet?  
+    a. `(0|1)0*`
+    b. `Σ*1Σ*`
+    c. `(0|1)*`
 
-2. Write a regular expression that recognizes any two digit number in the alphabet of numerals and letters. 
+2. Write a regular expression that recognizes the base-10 decimal form of any integer that is a multiple of 5. 
 
 Most computer implementations of regular expressions include several extra symbols which make working with regular expressions more convenient. For example `[5-8]` is short-hand for `(5|6|7|8)`. And `(`$e_1$`)+` is short hand for $e_1(e_1)*$.   
 
-1. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
+3. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
 
-2. What strings does the regular expression `pet(dog|cat|bird)*` match?
+4. What strings does the regular expression `pet(dog|cat|bird)*` match?
 
-3. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
+5. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
 
-#### Wednesday, September 13
+We stated, but did not prove the following theorem. 
 
-Today we mentioned the following theorem:
+<div class="Theorem">
+**Theorem (Equivalence of regular expressions and regular languages).** A language $A \subseteq \Sigma$ is regular if and only if there is a regular expression that describes it. 
+</div>
 
-**Theorem.** A language is regular if and only if it can be represented by a regular expression.
 
-This means that NFAs, DFAs, and RegEx's are all equivalent to each other in terms of what they can compute.  Then we looked at how to convert NFAs to RegEx's and vice versa.  We did the following examples.
+6. Find an NFA that recognizes the same language as the regular expression `(ab|a)*`. Use the ideas from the previous classes about how to build NFAs to find the union, concatenation, and Kleene star of languages.
 
-1. Use the ideas from last week about how to build NFAs to find the union, concatenation, and Kleene star of languages to convert to following regular expression `(ab|a)*` over the alphabet Σ = {a,b} to an NFA.  
+#### Fri, Feb 7
 
-Then we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
+Today we talked about the proof of the theorem from last time that regular languages and regular expressions are equivalent. One direction is easy: every language described by a regular expression is regular.  This is because we already know that regular languages are closed under the union, concatenation, and Kleene-star operations and we also know that any finite set of strings is a regular language.  That is exactly what regular expressions can describe.  
+
+To prove the converse, we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
 
 2. Let Σ={A,C,G,T}.  Convert the following NFA to a regular expression:
 
 <center>
-![](ACGT.png)
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/ACGT.png)
 </center>
 
 We finished today by talking about some of the short-hand and quirks in regular expression libraries for some programming languages.  
 
+<!--
 #### Friday, September 15
 
 Today we talked about the **pumping lemma**.  We used the pumping lemma to prove that the following languages over Σ = {0,1} are not regular:

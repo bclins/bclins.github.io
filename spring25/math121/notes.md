@@ -254,18 +254,31 @@ We looked at these examples:
 
 Keep in mind that regression lines have two important applications. 
 
-1. **Make predictions** about average y-values at different x-values.
-2. The slope is the **rate of change**. 
+* **Make predictions** about average y-values at different x-values.
+* The slope is the **rate of change**.  
 
-<!-- 
+It is important to be able to describe the units of the slope.  
+
+1. What are the units of the slope of the regression line for predicting BAC from the number of beers someone drinks?
+
+2. What are the units of the slope for predicting someone's weight from their height? 
+
+We also introduced the following concepts. 
+
+<div class="Theorem">
+**The coefficient of determination** $R^2$ represents the proportion of the variability of the $y$-values that follows the trend line.  The remaining $1-R^2$ represents the proportion of the variability that is above and below the trend line. 
+</div>
+
+<div class="Theorem">
+**Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
+</div>
 
 ### Wed, Fab 5
 
-After the quiz, we talked about the **coefficient of determination** $R^2$ which represents the percent of the variability in the $y$-values that follow the tend, the remaining $1-R^2$ is the percent of the varibility that is above and below the trend line.  
-
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
--->
+<!-- Start with the exercise for predicting height from footprint size.-->
+
 
 - - - 
 

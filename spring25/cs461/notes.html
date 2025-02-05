@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -832,27 +832,24 @@ by Meshwari &amp; Smid</a> pretty closely this week, so I recommend
 reading skimming <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=56">Section
 2.6</a> which is what we covered today.</p>
+<!--1. Construct an NFA that accepts a string in $\{0\}^*$ iff the length of the string is a multiple of 2 or 3.  Can you construct a DFA that does the same thing and with the same number of states? -->
 <ol type="1">
-<li>Construct an NFA that accepts a string in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">\{0\}^*</annotation></semantics></math>
-<!--*--> iff the length of the string is a multiple of 2 or 3. Can you
-construct a DFA that does the same thing and with the same number of
-states?</li>
-</ol>
-<p>After these examples, we explained two important ideas:</p>
-<ol type="1">
-<li><p>You can easily construct an NFA to check if a string is in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∘</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \circ B</annotation></semantics></math>
-when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+<li><p>We described an NFA that recognizes the concatentation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">AB</annotation></semantics></math>
+of two regular languages by running DFAs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>A</mi></msub><annotation encoding="application/x-tex">M_A</annotation></semantics></math>
 and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-are regular languages.</p></li>
-<li><p>It is also easy to check if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>A</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">x \in A^*</annotation></semantics></math>
-when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
-is a regular language.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>B</mi></msub><annotation encoding="application/x-tex">M_B</annotation></semantics></math>
+in parallel. We answer these questions about the NFA:</p>
+<ol type="a">
+<li>What are the states of the NFA?</li>
+<li>What are the final states of the NFA?</li>
+</ol></li>
+<li><p>We also described an NFA that recognizes the Kleene star
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mo>*</mo></msup><annotation encoding="application/x-tex">A^*</annotation></semantics></math>
+of a regular language. The idea is similar to the previous construction,
+but you need a way to accept the empty string (if it isn’t part of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>).</p></li>
 </ol>
 <p>To complete the proof that regular languages are closed under these
 two operations, we need to prove this:</p>
@@ -871,7 +868,7 @@ can be turned into a DFA that has states
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mi>Q</mi></msup><annotation encoding="application/x-tex">2^Q</annotation></semantics></math>
 and transition function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mn>2</mn></msub><mo>:</mo><msup><mn>2</mn><mi>Q</mi></msup><mo>×</mo><mi>Σ</mi><mo>→</mo><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">\delta_2: 2^Q \times \Sigma \rightarrow 2^Q</annotation></semantics></math>.</p>
-<ol type="1">
+<ol start="3" type="1">
 <li><p>Describe specifically what
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>S</mi><mo>,</mo><mi>σ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta_2(S, \sigma)</annotation></semantics></math>
 returns for any subset
@@ -887,64 +884,143 @@ accepting states of the DFA?</p></li>
 is the initial state of the NFA, what is the initial state of the
 DFA?</p></li>
 </ol>
-<!--
-
-Today we explained the surprising fact that any language an NFA can recognize can also be recognized by a DFA.  The idea is to convert an NFA $N = (Q, \Sigma, \delta, q, F)$ into a DFA $M$ which has states that are subsets of the states of $N$, i.e., the states of $M$ are the power set $2^Q$ of the states of $N$.  Then you have to make a transition function from sets of states to sets of states using the transition function $\delta$.  
-
-We looked at this example (again) to see how the idea works:
-
+<p>We applied the idea of this proof to <a
+href="HW/HW3.pdf#page=2">Exercise 5 from Homework 3</a>.</p>
+<h4 id="wed-feb-5">Wed, Feb 5</h4>
+<p>We introduced <strong>regular expressions</strong>.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A <strong>regular expression</strong>
+over an alphabet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+is a string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+with symbols from the extended alphabet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mspace width="0.222em"></mspace><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mo>,</mo><mspace width="0.222em"></mspace><mo>*</mo><mspace width="0.222em"></mspace><mo>,</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.222em"></mspace><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma \cup \{ ~(~ , ~)~ , ~*~ , ~|~ \}</annotation></semantics></math>
+that has one of the following forms:</p>
+<ol type="1">
+<li>A <strong>symbol</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>∈</mo><mi>Σ</mi></mrow><annotation encoding="application/x-tex">e \in \Sigma</annotation></semantics></math>
+is a regular expression.</li>
+<li>A <strong>concatenation</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e = e_1e_2</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>2</mn></msub><annotation encoding="application/x-tex">e_2</annotation></semantics></math>
+are regular expressions.</li>
+<li>A <strong>union</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e = e_1|e_2</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>2</mn></msub><annotation encoding="application/x-tex">e_2</annotation></semantics></math>
+are regular expressions.</li>
+<li>A <strong>grouping</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e = (e_1)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+is a regular expression.</li>
+<li>A <strong>star</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub><mo>*</mo></mrow><annotation encoding="application/x-tex">e = e_1*</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+is either a single symbol or grouping.</li>
+</ol>
+<p>We also accept the empty set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⌀</mi><annotation encoding="application/x-tex">\varnothing</annotation></semantics></math>
+and the empty string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>
+as regular expressions.</p>
+</div>
+<p>Regular expressions are used to match sets of strings (i.e.,
+languages over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>).</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e_1e_2</annotation></semantics></math>
+matches any concatenation of a string matched by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+with a string matched by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>2</mn></msub><annotation encoding="application/x-tex">e_2</annotation></semantics></math>.<br />
+</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">e_1|e_2</annotation></semantics></math>
+matches anything matched by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>2</mn></msub><annotation encoding="application/x-tex">e_2</annotation></semantics></math>.<br />
+</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><mo>*</mo></mrow><annotation encoding="application/x-tex">e_1*</annotation></semantics></math>
+matches any finite concatenation of strings that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math>
+matches (including zero matches).</li>
+</ul>
+<ol type="1">
+<li><p>Describe what the following regular expressions represent:</p>
+<ol type="a">
+<li><code>(0|1)0*</code></li>
+<li><code>Σ*1Σ*</code></li>
+<li><code>(0|1)*</code></li>
+</ol></li>
+<li><p>Write a regular expression that recognizes the base-10 decimal
+form of any integer that is a multiple of 5.</p></li>
+</ol>
+<p>Most computer implementations of regular expressions include several
+extra symbols which make working with regular expressions more
+convenient. For example <code>[5-8]</code> is short-hand for
+<code>(5|6|7|8)</code>. And
+<code>(</code><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mn>1</mn></msub><annotation encoding="application/x-tex">e_1</annotation></semantics></math><code>)+</code>
+is short hand for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>e</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>*</mo></mrow><annotation encoding="application/x-tex">e_1(e_1)*</annotation></semantics></math>.</p>
+<ol start="3" type="1">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mi>…</mi><mo>,</mo><mi>z</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma = \{a,b,c,\ldots,z\}</annotation></semantics></math>.
+What strings does the regular expression <code>pet(dog|cat)</code>
+match?</p></li>
+<li><p>What strings does the regular expression
+<code>pet(dog|cat|bird)*</code> match?</p></li>
+<li><p>Find a regular expression over the alphabet
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma = \{0,1\}</annotation></semantics></math>
+that matches all strings that start with a 1, end with a 1, and have an
+even number of zeros between.</p></li>
+</ol>
+<p>We stated, but did not prove the following theorem.</p>
+<div class="Theorem">
+<p><strong>Theorem (Equivalence of regular expressions and regular
+languages).</strong> A language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>Σ</mi></mrow><annotation encoding="application/x-tex">A \subseteq \Sigma</annotation></semantics></math>
+is regular if and only if there is a regular expression that describes
+it.</p>
+</div>
+<ol start="6" type="1">
+<li>Find an NFA that recognizes the same language as the regular
+expression <code>(ab|a)*</code>. Use the ideas from the previous classes
+about how to build NFAs to find the union, concatenation, and Kleene
+star of languages.</li>
+</ol>
+<h4 id="fri-feb-7">Fri, Feb 7</h4>
+<p>Today we talked about the proof of the theorem from last time that
+regular languages and regular expressions are equivalent. One direction
+is easy: every language described by a regular expression is regular.
+This is because we already know that regular languages are closed under
+the union, concatenation, and Kleene-star operations and we also know
+that any finite set of strings is a regular language. That is exactly
+what regular expressions can describe.</p>
+<p>To prove the converse, we described an algorithm for converting NFAs
+to regular expressions. Note that the Maheshwwari &amp; Smid textbook
+describes a different approach to convert an NFA into a regular
+expression in <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=68">Section
+2.8</a>. We did the following example:</p>
+<ol start="2" type="1">
+<li>Let Σ={A,C,G,T}. Convert the following NFA to a regular
+expression:</li>
+</ol>
 <center>
-![](NFA1.png)
+<img
+src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/ACGT.png" />
 </center>
-
-Notice that this NFA starts at state 0, and no matter what input we receive, state 0 stays active. So there is no way to reach a set of active states that does not contain state 0. So that cuts the number of elements we need to worry about in $2^Q$ by half.  
-
-We also talked about **regular expressions**. 
-
-**Recursive Definition.** A **regular expression** over an alphabet $\Sigma$ is a string $e$ with symbols from the extended alphabet $\Sigma \cup \{(,),*,|\}$ that has one of the following forms:
-
-1. $e$ is a single symbol in $\Sigma$. 
-2. $e = e_1e_2$
-3. $e = e_1|e_2$ where $e_1$ and $e_2$ are regular expressions.
-4. $e = (e_1)$ where $e_1$ is a regular expression
-5. $e = (e_1)*$ where $e_1$ is a regular expression
-
-We also accept the empty set $\varnothing$ and the empty string `""` as regular expressions.  
-
-Regular expressions are used to match sets of strings (i.e., languages over $\Sigma$). $e_1e_2$ matches any string that is a concatenation of a string matched by $e_1$ with a string matched by $e_2$.  The regular expression $e_1|e_2$ matches anything matched by $e_1$ or $e_2$.  Finally $(e_1)*$ matches any finite concatenation of strings that $e_1$ matches (including no repetitions). <!--*-->
+<p>We finished today by talking about some of the short-hand and quirks
+in regular expression libraries for some programming languages.</p>
 <!--
-1. What happens if one of the four extra symbols $*$, $|$, $($, or $)$ is already part of the alphabet?  
-
-2. Write a regular expression that recognizes any two digit number in the alphabet of numerals and letters. 
-
-Most computer implementations of regular expressions include several extra symbols which make working with regular expressions more convenient. For example `[5-8]` is short-hand for `(5|6|7|8)`. And `(`$e_1$`)+` is short hand for $e_1(e_1)*$.   
-
-1. Let $\Sigma = \{a,b,c,\ldots,z\}$.  What strings does the regular expression `pet(dog|cat)` match?
-
-2. What strings does the regular expression `pet(dog|cat|bird)*` match?
-
-3. Find a regular expression over the alphabet $\Sigma = \{0,1\}$ that matches all strings that start with a 1, end with a 1, and have an even number of zeros between.  
-
-#### Wednesday, September 13
-
-Today we mentioned the following theorem:
-
-**Theorem.** A language is regular if and only if it can be represented by a regular expression.
-
-This means that NFAs, DFAs, and RegEx's are all equivalent to each other in terms of what they can compute.  Then we looked at how to convert NFAs to RegEx's and vice versa.  We did the following examples.
-
-1. Use the ideas from last week about how to build NFAs to find the union, concatenation, and Kleene star of languages to convert to following regular expression `(ab|a)*` over the alphabet Σ = {a,b} to an NFA.  
-
-Then we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
-
-2. Let Σ={A,C,G,T}.  Convert the following NFA to a regular expression:
-
-<center>
-![](ACGT.png)
-</center>
-
-We finished today by talking about some of the short-hand and quirks in regular expression libraries for some programming languages.  
-
 #### Friday, September 15
 
 Today we talked about the **pumping lemma**.  We used the pumping lemma to prove that the following languages over Σ = {0,1} are not regular:

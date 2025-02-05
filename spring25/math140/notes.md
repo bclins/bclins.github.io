@@ -471,6 +471,43 @@ Mon, Feb 3  | [1.5][1.5]  | Quadratics
 Wed, Feb 5  | [1.6][1.6]  | Polynomial functions
 Fri, Feb 7  | [1.6][1.6]  | Polynomial functions - con'd
 
+### Mon, Feb 3
+
+We did this in-class workshop: 
+
+* **Workshop**: [Parabolas](Parabolas.pdf)
+
+### Wed, Feb 5 
+
+We looked at some more examples of factoring to solve polynomial equations. 
+
+1. $-0.1x^2 +  0.7x + 6 = 0$. (This was from the workshop last time.)
+
+2. $4x^6 + 4 x^5 - 24 x^4 = 0$. (<https://youtu.be/PHc8B6MuE8s>)
+
+A rational function is a function that can be expressed using polynomials and reciprocals of polynomials.  You can use the same techniques we've already used to solve equations involving rational expressions. 
+
+3. $x + 2 = \dfrac{15}{x}$. 
+
+Today we talked about solving inequalities involving polynomials and rational functions.  
+
+
+4. Solve $x^3 - 3x^2 < 4x$.  (<https://youtu.be/1fCXjn9WoSc>)
+
+5. Solve $\dfrac{2}{x-3} \ge 1$. (<https://youtu.be/OPZAHBhPclc>)
+
+6. Solve $\dfrac{(x-3)(x+1)^2}{(x-1)} > 0$.
+
+7. Solve $x+3 > \dfrac{4}{x}$. 
+
+<div class="Theorem">
+**Strategy for Solving Inequalities.**
+
+1. First solve for equality.  Mark a number line with every point where both sides of the inequality are equal, and with any bad points where the functions aren't defined.
+
+2. Check whether the inequality is true for each subinterval on the number line by plugging in a test point or checking a graph. 
+</div>
+
 ### Week 5 Notes
 
 Day  | Section  | Topic
