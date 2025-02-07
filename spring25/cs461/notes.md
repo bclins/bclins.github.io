@@ -481,6 +481,8 @@ We did the following example to illustrate.
 ![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/ACGT.png)
 </center>
 
+<!-- NOTE: YOU GET MORE THAN ONE ANSWER WHEN YOU DO THIS, AND IT DEPENDS ON HOW YOU DO IT (MAKE SURE TO INCLUDE ANY PATH THAT LOOPS BACK TO A STATE AS A LOOP! -->
+
 3. What regular expression is equivalent to the NFA above? 
 
 We finished by talking about languages which are not regular.  One simple language that is not regular is the following: 

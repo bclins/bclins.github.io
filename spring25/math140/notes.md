@@ -525,11 +525,11 @@ Exponential growth/decay is what you get when you multiply by the same **growth 
 
     a. $3, 5, 7, 9, 11, \ldots$
     b. $400, 200, 100, 50, 25, \ldots$
-    c. $18, 12, 8, \tfrac{8}{3}, \tfrac{16}{9}, \ldots$
+    c. $18, 12, 8, \tfrac{16}{3}, \tfrac{32}{9}, \ldots$
 
 3. According to Newton's law of cooling, the temperature difference between a small object and its surroundings changes exponentially.  Suppose a cup of coffee is initially $60^\circ$C above room temperature.  If its temperature has decreased to only $50^\circ$C above room temperature ten minutes later, then what will the temperature be after 20 minutes?  What about after 30 minutes? What is the growth factor?  
 
-4. Suppose that the median house price in a city has been growing exponentially for a long time.  If the median price was $\$200{,}000$ in the year 2000, then what were prices in 2010 and 2020?  What are prices now?  Find an equation for the price of house as a function of time.  
+4. Suppose that the median house price in a city has been growing exponentially for some time.  If the median price was $\$200{,}000$ in the year 2000 and $\$260{,}000$ in 2010,  then what were prices in 2020?  What are prices now?  Find an equation for the price as a function of time.  
 
 
 ### Week 5 Notes

@@ -330,30 +330,7 @@ Wed, Feb 12  |            | Review
 Fri, Feb 14  |            | **Midterm 1**
 
 <!-- 
-### Mon, Sep 23
-
-We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 
-
-We looked at an example of sampling from the Gettysburg address, and we talked about the **central problem of statistics**: How can you answer questions about the population using samples?  
-
-The reason this is hard is because sample statistics usually don't match the true population parameter.  There are two reasons why:
-
-* **Bias**: systematic error (each source has error in a particular direction) 
-* **Random error**: non-systematic error
-
-We looked at this case study:
-
-* [Gallup polling & sample bias](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf)
-
-#### Important Concepts.
-
-1. You can avoid/reduce random error by choosing a large sample.
-
-2. Large samples don't reduce bias.
-
-3. The only sure way to avoid bias is a **simple random sample**.
-
-### Wed, Sep 25
+### Mon, Feb 10
 
 We started with this workshop (just the front page).  
 
