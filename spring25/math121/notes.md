@@ -290,6 +290,33 @@ $$\bar{x} = 28.5 \text{ cm}, ~\bar{y} = 67.75 \text{ in}, ~ s_x = 3.45 \text{ cm
     b. If a footprint was 30 cm long, how tall would you predict the subject was? 
 
 
+### Fri, Feb 7
+
+We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 
+
+We looked at an example of sampling from the Gettysburg address, and we talked about the **central problem of statistics**: How can you answer questions about the population using samples?  
+
+The reason this is hard is because sample statistics usually don't match the true population parameter.  There are two reasons why:
+
+* **Bias**: systematic error (each source has error in a particular direction) 
+* **Random error**: non-systematic error
+
+We looked at this case study:
+
+* [Gallup polling & sample bias](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf)
+
+<div class="Theorem">
+
+**Important Concepts**
+
+1. Bigger samples have *less* random error.
+
+2. Bigger samples *don't reduce* bias.
+
+3. The only sure way to avoid bias is a **simple random sample**.
+</div>
+
+
 - - - 
 
 ### Week 5 Notes

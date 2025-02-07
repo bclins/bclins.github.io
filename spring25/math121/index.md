@@ -31,7 +31,8 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet
+* Midterm 1 will be on Friday, Feb 14
+* Midterm 1 materials ([review problems](midterm1review.html))
 
 
 ### Tentative Schedule

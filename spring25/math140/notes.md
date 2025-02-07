@@ -468,8 +468,8 @@ We didn't get to these last two examples in class, but they are good extra pract
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Feb 3  | [1.5][1.5]  | Quadratics
-Wed, Feb 5  | [1.6][1.6]  | Polynomial functions
-Fri, Feb 7  | [1.6][1.6]  | Polynomial functions - con'd
+Wed, Feb 5  | [1.6][1.6]  | Polynomial & rational functions
+Fri, Feb 7  | [1.7][1.7]  | Exponential functions
 
 ### Mon, Feb 3
 
@@ -511,11 +511,32 @@ Then we moved on to harder examples.
 2. **Check subintervals**. The x-values above divide the number line into subintervals.  For each subinterval, test a point to see if the original inequality is true.  It helps to either have a factored expression to compare with zero or a graph to check. 
 </div>
 
+### Fri, Feb 7
+
+Today we talked about exponential growth.  We started with exponential functions.  
+$$f(x) = C_0 b^x$$
+where $C_0$ is the **initial value** and $b > 0$ is a constant called the **base**. The most common bases are base-10, base-2, and the natural exponential base which is $e = 2.71828\ldots$ which is also known as **Euler's number**.  
+
+1. Graph the function $y = 2^x$.  
+
+Exponential growth/decay is what you get when you multiply by the same **growth factor** every step.  This is different than linear growth where you add the same constant rate of change every step.  
+
+2. For each sequence below, determine if it a linear or exponential pattern.  If it is linear, what is the rate of change?  If it is exponential, what is the growth factor?    
+
+    a. $3, 5, 7, 9, 11, \ldots$
+    b. $400, 200, 100, 50, 25, \ldots$
+    c. $18, 12, 8, \tfrac{8}{3}, \tfrac{16}{9}, \ldots$
+
+3. According to Newton's law of cooling, the temperature difference between a small object and its surroundings changes exponentially.  Suppose a cup of coffee is initially $60^\circ$C above room temperature.  If its temperature has decreased to only $50^\circ$C above room temperature ten minutes later, then what will the temperature be after 20 minutes?  What about after 30 minutes? What is the growth factor?  
+
+4. Suppose that the median house price in a city has been growing exponentially for a long time.  If the median price was $\$200{,}000$ in the year 2000, then what were prices in 2010 and 2020?  What are prices now?  Find an equation for the price of house as a function of time.  
+
+
 ### Week 5 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 10  | [1.6][1.6]  | Rational functions
+Mon, Feb 10  | [1.7][1.7]  | Exponential functions - con'd
 Wed, Feb 12  |  | Review
 Fri, Feb 14  |  | Midterm 1
 
@@ -523,39 +544,39 @@ Fri, Feb 14  |  | Midterm 1
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 17  | [1.7][1.7]  | Exponential functions
-Wed, Feb 19  | [1.7][1.7]  | Exponential functions - con’d
-Fri, Feb 21  | [1.8][1.8]  | Logarithmic functions
+Mon, Feb 17  | [1.8][1.8]  | Logarithmic functions
+Wed, Feb 19  | [1.8][1.8]  | Logarithmic functions - con'd
+Fri, Feb 21  | [2.2][2.2]  | The derivative
 
 ### Week 7 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 24  | [1.8][1.8]  | Logarithmic functions - con’d
-Wed, Feb 26  | [2.2][2.2]  | The derivative
-Fri, Feb 28  | [2.2][2.2]  | The derivative as a function
+Mon, Feb 24  | [2.2][2.2]  | The derivative as a function
+Wed, Feb 26  | [2.3][2.3]  | The power & sum rule for derivatives
+Fri, Feb 28  | [2.3][2.3]  | Derivatives of logarithms and exponentials
 
 ### Week 8 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 3  | [2.3][2.3]  | The power & sum rule for derivatives
-Wed, Mar 5  | [2.3][2.3]  | Derivatives of logarithms and exponentials
-Fri, Mar 7  | [2.3][2.3]  | Applications of derivatives
+Mon, Mar 3  | [2.3][2.3]  | Applications of derivatives
+Wed, Mar 5  | [2.4][2.4]  | Product rule
+Fri, Mar 7  | [2.4][2.4]  | Product rule - con'd
 
 ### Week 9 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 17  | [2.4][2.4]  | Product rule
-Wed, Mar 19  | [2.4][2.4]  | Quotient rule
-Fri, Mar 21  | [2.5][2.5]  | Chain rule
+Mon, Mar 17  | [2.4][2.4]  | Quotient rule
+Wed, Mar 19  | [2.5][2.5]  | Chain rule
+Fri, Mar 21  | [2.5][2.5]  | Chain rule - con'd
 
 ### Week 10 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 24  | [2.5][2.5]  | Chain rule - con’d
+Mon, Mar 24  | [2.6][2.6]  | Second derivative & concavity
 Wed, Mar 26  |  | Review
 Fri, Mar 28  |  | Midterm 2
 

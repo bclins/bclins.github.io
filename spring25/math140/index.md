@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet
+* Midterm 1 will be on Friday, Feb 14
+* Midterm 1 materials ([review problems](midterm1review.pdf))
 
 
 ### Tentative Schedule
@@ -35,7 +36,7 @@ Week | Topic                      | Notes | Homework
 2  | Linear functions                               | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
 3  | Systems of equations, Exponents                | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 4  | Polynomial functions & equations               | [Week 04](notes.html#week-4-notes)  | [HW4](HW/HW4.pdf)
-5  | Rational functions, **Midterm 1**              | [Week 05](notes.html#week-5-notes)  | 
+5  | Rational functions, **Midterm 1**              | [Week 05](notes.html#week-5-notes)  | [HW5](HW/HW5.pdf)
 6  | Exponential & logarithmic functions            | [Week 06](notes.html#week-6-notes)  | 
 7  | The derivative                                 | [Week 07](notes.html#week-7-notes)  | 
 8  | Differentiation rules                          | [Week 08](notes.html#week-8-notes)  | 

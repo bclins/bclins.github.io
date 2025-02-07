@@ -444,22 +444,49 @@ We stated, but did not prove the following theorem.
 </div>
 
 
-6. Find an NFA that recognizes the same language as the regular expression `(ab|a)*`. Use the ideas from the previous classes about how to build NFAs to find the union, concatenation, and Kleene star of languages.
+5. Find an NFA that recognizes the same language as the regular expression `(ab|a)*`. Use the ideas from the previous classes about how to build NFAs to find the union, concatenation, and Kleene star of languages.
 
-<!--
 #### Fri, Feb 7
 
-Today we talked about the proof of the theorem from last time that regular languages and regular expressions are equivalent. One direction is easy: every language described by a regular expression is regular.  This is because we already know that regular languages are closed under the union, concatenation, and Kleene-star operations and we also know that any finite set of strings is a regular language.  That is exactly what regular expressions can describe.  
+Today we talked about the proof of the theorem from last time that regular languages and regular expressions are equivalent. One direction is easy: every language described by a regular expression is regular.  This is because we already know that regular languages are closed under the union, concatenation, and Kleene-star operations and we also know that any finite set of strings is a regular language.  
 
-To prove the converse, we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8]. We did the following example:
+Therefore, we should be able to solve this example, which we didn't have time for on Wednesday. 
 
-2. Let Σ={A,C,G,T}.  Convert the following NFA to a regular expression:
+1. Find an NFA that recognizes the same language as the regular expression `(ab|a)*`. Use the ideas from the previous classes about how to build NFAs to find the union, concatenation, and Kleene star of languages.
+
+To prove the converse, we described an algorithm for converting NFAs to regular expressions. Note that the Maheshwwari & Smid textbook describes a different approach to convert an NFA into a regular expression in [Section 2.8][2.8].  Our approach is to use a generalized NFA:
+
+<div class="Theorem">
+**Definition.** A **generalized non-deterministic finite automata** (GNFA) is just like an NFA, except for the following changes:
+
+1. There is only one accept state and it is not the start state.  
+
+1. No transitions enter the start state or leave the accept state. 
+
+1. Transitions can be triggered by input strings that match a regex (not just single symbols).  
+
+</div>
+
+To finish the proof, we make two observations:
+
+First, you can convert any NFA to a GNFA by adding a special start state that has an epsilon transition to the original start state and a new accept state that has an epsilon transition from any old final state. 
+
+Second, if you have a GNFA with $n > 2$ states, there is an equivalent GNFA with $n-1$ states, because you can remove any state (other than the initial and final states) and replace incoming/outgoing transitions with transitions described by a regex.  
+
+We did the following example to illustrate.
+
+2. Let Σ={A,C,G,T}.  Convert the following NFA to a GNFA, and then remove states until there are only 2 (the start and accept states).
 
 <center>
 ![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/ACGT.png)
 </center>
 
-We finished today by talking about some of the short-hand and quirks in regular expression libraries for some programming languages.  
+3. What regular expression is equivalent to the NFA above? 
+
+We finished by talking about languages which are not regular.  One simple language that is not regular is the following: 
+
+$$A = \{w \in \{0,1\}^* : w \text{ has an equal number of } 0 \text{s and } 1 \text{s} \}.$$
+
 
 <!--
 #### Friday, September 15
