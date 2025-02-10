@@ -541,9 +541,9 @@ We applied this technique to prove that the following languages are not regular.
 
 1. $L = \{w : w \text{ has an equal number of 0 and 1's}\}$
 
-2. $L = \{ww : w \in \{0,1\}^* \}$ 
+<!--2. $L = \{ww : w \in \{0,1\}^* \}$ -->
 
-3. $L = \{0^{n^2} : n \in \N \}$.
+2. $L = \{0^{n^2} : n \in \N \}$.
 
 Here is a nice [meme proof using the pumping lemma from Barak textbook](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/pumpinglemmaproof.png).
 

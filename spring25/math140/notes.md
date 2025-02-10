@@ -552,25 +552,27 @@ $$\mathbf{growth~factor} = \dfrac{\text{ new amount }}{\text{ old amount }}.$$
 
 1. The US population was 310 million in 2010. It was 330 million in 2020.  What is the growth factor and the percent change in the US population from 2010 to 2020? 
 
+2. What would the growth factor and percent change be if the population were to decline from 330 million in 2020 to 320 million in 2030?
+
 The tricky thing about percent growth is that it is not additive.  If something grows by 30% for two years in a row, that is not 60% total growth.  You have to multiply the growth factors.  
 
-2. If something grows by 30% one year and then 30% again the next year, how much did it grow total as a percentage?  
+3. If something grows by 30% one year and then 30% again the next year, how much did it grow total as a percentage?  
 
-3. If I have $100 invested and its value grows by 25% in the first year and shrinks 25% in the second year, then how much money is left after two years?  (<https://youtu.be/4oeoIOan_h4?t=322>)
+4. If I have $100 invested and its value grows by 25% in the first year and shrinks 25% in the second year, then how much money is left after two years?  (<https://youtu.be/4oeoIOan_h4?t=322>)
 
 Since you multiply growth factors instead of adding percent changes, you also have to take roots to break growth factors into equal amounts.  
 
-4. What was the (average) annual percent population change in the United States between 2010 and 2020? 
+5. What was the (average) annual percent population change in the United States between 2010 and 2020? 
 
-5. If that rate of population growth continues, what is the equation for the population of the United States as a function of time?  
+6. If that rate of population growth continues, what is the equation for the population of the United States as a function of time?  
 
-6. If a savings account earns 2% interest every year, and you put $100 in the bank and leave it there for 10 years, how much money will you have?  
+7. If a savings account earns 2% interest every year, and you put $100 in the bank and leave it there for 10 years, how much money will you have?  What about after $x$ years?
 
-7. Find the equation for the amount of money in the bank account as a function of time.  
+8. Which is better, to invest in a mutual fund that grows by 10% every year, or a fund that grows by 0.8% every month?
 
-8. Last time we talked about a cup of coffee that cools exponentially.  If it cools from $60^\circ$C above room temperature to $50^\circ$C in 10 minutes, then what is the percent change in temperature every minute?  
+Here is one more example that we didn't have time for in class:
 
-9. Which is better, to invest in a mutual fund that grows by 10% every year, or a fund that grows by 0.8% every month?
+9. Last time we talked about a cup of coffee that cools exponentially.  If it cools from $60^\circ$C above room temperature to $50^\circ$C in 10 minutes, then what is the percent change in temperature every minute?  
 
 ### Week 6 Notes
 
