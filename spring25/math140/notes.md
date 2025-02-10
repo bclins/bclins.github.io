@@ -540,6 +540,38 @@ Mon, Feb 10  | [1.7][1.7]  | Exponential functions - con'd
 Wed, Feb 12  |  | Review
 Fri, Feb 14  |  | Midterm 1
 
+### Mon, Feb 10
+
+One of the most common ways to talk about growth is with percentages. This type of growth is called **relative growth** because it is stated relative to the size of the population that is growing with a percentage. For example, 5% growth of the United States population would be a lot, because the US population is large. The best way to understand relative growth is to convert percentage increases and decreases into growth factors.
+
+$$\mathbf{growth~factor} = 100\% + \text{percent change}.$$
+
+A growth factor is also the ratio of the new amount divided by the old amount.
+
+$$\mathbf{growth~factor} = \dfrac{\text{ new amount }}{\text{ old amount }}.$$
+
+1. The US population was 310 million in 2010. It was 330 million in 2020.  What is the growth factor and the percent change in the US population from 2010 to 2020? 
+
+The tricky thing about percent growth is that it is not additive.  If something grows by 30% for two years in a row, that is not 60% total growth.  You have to multiply the growth factors.  
+
+2. If something grows by 30% one year and then 30% again the next year, how much did it grow total as a percentage?  
+
+3. If I have $100 invested and its value grows by 25% in the first year and shrinks 25% in the second year, then how much money is left after two years?  (<https://youtu.be/4oeoIOan_h4?t=322>)
+
+Since you multiply growth factors instead of adding percent changes, you also have to take roots to break growth factors into equal amounts.  
+
+4. What was the (average) annual percent population change in the United States between 2010 and 2020? 
+
+5. If that rate of population growth continues, what is the equation for the population of the United States as a function of time?  
+
+6. If a savings account earns 2% interest every year, and you put $100 in the bank and leave it there for 10 years, how much money will you have?  
+
+7. Find the equation for the amount of money in the bank account as a function of time.  
+
+8. Last time we talked about a cup of coffee that cools exponentially.  If it cools from $60^\circ$C above room temperature to $50^\circ$C in 10 minutes, then what is the percent change in temperature every minute?  
+
+9. Which is better, to invest in a mutual fund that grows by 10% every year, or a fund that grows by 0.8% every month?
+
 ### Week 6 Notes
 
 Day  | Section  | Topic
@@ -547,6 +579,8 @@ Day  | Section  | Topic
 Mon, Feb 17  | [1.8][1.8]  | Logarithmic functions
 Wed, Feb 19  | [1.8][1.8]  | Logarithmic functions - con'd
 Fri, Feb 21  | [2.2][2.2]  | The derivative
+
+
 
 ### Week 7 Notes
 

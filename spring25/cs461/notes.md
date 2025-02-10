@@ -491,17 +491,6 @@ $$A = \{w \in \{0,1\}^* : w \text{ has an equal number of } 0 \text{s and } 1 \t
 
 
 <!--
-#### Friday, September 15
-
-Today we talked about the **pumping lemma**.  We used the pumping lemma to prove that the following languages over Σ = {0,1} are not regular:
-
-1. $L = \{w : w \text{ has an equal number of 0 and 1's}\}$
-
-2. $L = \{ww : w ∈ {0,1}^* \}$ <
-
-3. $L = \{0^{n^2} : n \in \N \}$.
-
-Here is a nice [meme proof using the pumping lemma from Barak textbook](pumpinglemmaproof.png).
 
 -->
 
@@ -513,6 +502,50 @@ Day  | Section  | Topic
 Mon, Feb 10 | [2.9][2.9] | Non-regular languages
 Wed, Feb 12 |            | Review
 Fri, Feb 14 |            | **Midterm 1**
+
+
+#### Mon, Feb 10
+
+<div class="Theorem"> 
+**Theorem (Pumping Lemma).** If $L \subseteq \Sigma^*$ is a regular langauage, then $L$ has a length $p \ge 1$ (called the **pumping length** of $L$) such that if a string $w \in L$ is longer than $p$, then $w = xyz$ where $x, y, z \in \Sigma^*$ are substrings such that 
+
+1. The middle part $y$ is not the empty string (i.e., $|y| \ge 1$),
+2. The first two parts have length $|xy| \le p$, and 
+3. The middle part can be "pumped", that is $xy^nz \in L$ for all $n \ge 0$. 
+</div>
+
+Here is a picture that helps to understand what is going on.  It also gives a clue about why this theorem is true.
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Pumping_Lemma_for_regular_languages_diagram.png" width=500></img>
+</center>
+
+The proof is really simple.  If a finite state machine reads a long enough string, eventually it has to loop back to the same state twice.  The input signals that caused the machine to take that loop make up the substring $y$ in the theorem.  
+
+The pumping lemma is a useful tool to prove that some languages are not regular.  You can use the pumping lemma to give a proof by contradiction.  Be careful, the pumping lemma cannot be used to prove that a language *is* regular.  
+
+<div class="Theorem">
+**Steps to prove a language is not regular**
+
+1. Temporarily assume the language $L$ is regular and has pumping length $p$.  
+
+2. Try to construct a string in $L$ so that:
+
+    a. The first part of the string is longer than $p$.
+    b. No substring inside the first part can be pumped. 
+
+3. If you can't pump the string, that contradicts the pumping lemma, so $L$ can't be regular.
+</div>
+
+We applied this technique to prove that the following languages are not regular. 
+
+1. $L = \{w : w \text{ has an equal number of 0 and 1's}\}$
+
+2. $L = \{ww : w \in \{0,1\}^* \}$ 
+
+3. $L = \{0^{n^2} : n \in \N \}$.
+
+Here is a nice [meme proof using the pumping lemma from Barak textbook](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/pumpinglemmaproof.png).
 
 <!--
 
