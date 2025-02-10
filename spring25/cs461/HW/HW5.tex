@@ -1,0 +1,48 @@
+\documentclass[12pt,answers]{exam}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz,soul}
+\usepackage{diagbox}
+\usetikzlibrary{arrows,automata,positioning}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bs}{\backslash}
+\newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagestyle{empty}
+\subsubsection*{Homework 5 - Computer Science 461 \hfill Name: \underline{\hspace*{2in}}}
+
+\textit{Due Monday, Feb 17.} % You can e-mail your code for the computer programming problems to me at }\verb|blins@hsc.edu|.
+
+\begin{questions}
+
+
+\question Let $L = \{w \in \Sigma^* : \text{ the length of }w\text{ is a power of 2} \}$. Use the pumping lemma to prove that $L$ is not a regular language.  
+
+\vfill
+
+\question Let $L = \{u w u : u, w \in \{0,1\}^*, u \ne \epsilon \}$. Prove that $L$ is not a regular language. 
+\vfill
+
+%% I don't know if this next one is even true?
+%\question Let $\Sigma = \{0, \ldots, 9\}$ and let $L$ be the set of base-10 representations of powers of 2.  So 
+%$$L = \{1, 2, 4, 8, 16, 32, 64, 128, \ldots \}.$$
+%Use the pumping lemma to prove that $L$ is not regular. 
+%\vfill
+%\begin{solution}
+%Suppose that $w$ is a string in $L$ long enough to be pumped, i.e., $w = xyz$ where $xy^kz \in L$ for all $k \ge 0$, and $|y| \ge 1$.  At the same time, $w$ represents a number $2^n$ for some $n$.  So $xy^kz$ represents a number given by 
+%$$x*10^{k|y|+|z|} + y * (10^{(k-1)|y|+|z|} + 10^{(k-2)|y| + |z|} + \ldots + 10^{|z|}) + z$$
+%and the difference between $xy^{k+1}z$ and $xy^kz$ is:
+%$$x*(10^{(k+1)|y|+|z|} - 10^{k|y|+|z|}) + y * 10^{k|y|+|z|}= 10^{k|y|+|z|}(x (10^{|y|} - 1) + y)$$
+%which grows exponentially in $k$.  But I don't think this equation is always going to work out... you just need to prove that.
+%\end{solution}
+
+\vfill
+
+\end{questions}
+\end{document}

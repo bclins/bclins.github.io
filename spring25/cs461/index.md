@@ -26,7 +26,8 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet. 
+* Midterm 1 will be on Monday, Feb 17.
+* Midterm 1 materials ([review problems](midterm1review.pdf))
 
 ### Tentative Schedule
 
@@ -40,7 +41,7 @@ Week | Topic                      | Notes | Homework
 2  | Finite automata                                      | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
 3  | Nondeterministic finite automata                     | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 4  | Regular expressions & languages                      | [Week 04](notes.html#week-4-notes)  | [HW4](HW/HW4.pdf)
-5  | Pumping lemma, **Midterm 1**                         | [Week 05](notes.html#week-5-notes)  |
+5  | Pumping lemma, **Midterm 1**                         | [Week 05](notes.html#week-5-notes)  | [HW5](HW/HW5.pdf)
 6  | Context free languages                               | [Week 06](notes.html#week-6-notes)  | 
 7  | Pushdown automata                                    | [Week 07](notes.html#week-7-notes)  | 
 8  | Pumping lemma 2                                      | [Week 08](notes.html#week-8-notes)  | 
