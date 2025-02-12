@@ -547,30 +547,35 @@ We applied this technique to prove that the following languages are not regular.
 
 Here is a nice [meme proof using the pumping lemma from Barak textbook](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/pumpinglemmaproof.png).
 
-<!--
-
-#### Monday, September 18
+#### Wed, Feb 12
 
 Today we looked at more examples of regular and non-regular languages.
 
-1. $L = \{0^{n^2} : n \in \N \}$.
+1. $L = \{w \in \{0, 1\}^* : w \text{ is a palindrome} \}$.
 
 2. $L = \{w : w \text{ contains an equal number of } 01 \text{ and } 10 \text{ substrings}\}$.
 
-Many programming languages, including Python & Javascript allow backreferences to previous groups in a regular expression. A group is a part of the regular expression inside parentheses.  The special symbol `\1` refers to anything matched by the first group in the regular expression. Similarly `\2` refers back to anything matched by the second group, and so on. For example: the regular expression `"([a-z]*) \1"` would match "word word" or "dog dog".  
+The converse of the pumping lemma is not true.  So you can't use the pumping lemma to prove that a language is regular.  In fact, here is a language that is non-regular, but every string in the language is pump-able!
 
-3. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  
+$$L = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.$$
 
-We finished with this last example. Consider the language 
-$$F = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.$$
+3. Explain why there is a pumping number $p$ (in fact $p=1$ works) such that any string $w \in L$ can be "pumped".  
 
-4. Explain why there is a pumping number $p$ (in fact $p=1$ works) such that any string $s \in F$ can be "pumped".  
+4. Despite this, explain why $L$ is not a regular language. Hint: if there was a DFA that recognizes $L$, what other DFAs could you construct?
 
-5. Despite this, explain why $F$ is not a regular language.
 
-6. Why doesn't that contradict the pumping lemma?
+Many programming languages, including Python & Javascript allow backreferences to previous groups in a regular expression. A group is a part of the regular expression inside parentheses.  The special symbol `\1` refers to anything matched by the first group in the regular expression. Similarly `\2` refers back to anything matched by the second group, and so on. For example: the regular expression `"(\w\w*) \1"` would match any repeated word like "word word" or "dog dog".  *I tried to demonstrate this in class, but I got tripped up because Python requires the regular expression to be entered as a* [raw string](https://docs.python.org/3/library/re.html#:~:text=raw%20string).
 
--->
+```python
+import re
+
+regex = r"(\w\w*) \1" # need the r before the quotes to indicate that this is a raw string
+
+print(re.search(regex, "Did I type the the same word twice?"))
+```
+
+5. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  Show that they can match non-regular languages. 
+
 
 ### Week 6 Notes
 
@@ -579,6 +584,9 @@ Day  | Section  | Topic
 Mon, Feb 17 | [3.1][3.1] - [3.2][3.2] | Context-free grammars
 Wed, Feb 19 | [3.3][3.3] | Parsing and parse-trees
 Fri, Feb 21 | [3.8][3.8] | The pumping lemma for context-free languages
+
+
+
 
 ### Week 7 Notes
 

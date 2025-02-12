@@ -574,6 +574,11 @@ Here is one more example that we didn't have time for in class:
 
 9. Last time we talked about a cup of coffee that cools exponentially.  If it cools from $60^\circ$C above room temperature to $50^\circ$C in 10 minutes, then what is the percent change in temperature every minute?  
 
+
+### Wed, Feb 12
+
+Today we went over the [midterm 1 review problems](midterm1review.pdf) and a few problems from [homework 5](HW/HW5.pdf).
+
 ### Week 6 Notes
 
 Day  | Section  | Topic

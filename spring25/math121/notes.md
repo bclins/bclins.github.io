@@ -335,6 +335,9 @@ We did this workshop.
 
 * **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
 
+### Wed, Feb 12
+
+We talked about the [midterm 1 review problems](midterm1review.html).
 
 - - - 
  

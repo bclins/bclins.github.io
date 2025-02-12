@@ -1288,30 +1288,55 @@ not regular.</p>
 <p>Here is a nice <a
 href="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/pumpinglemmaproof.png">meme
 proof using the pumping lemma from Barak textbook</a>.</p>
-<!--
-
-#### Monday, September 18
-
-Today we looked at more examples of regular and non-regular languages.
-
-1. $L = \{0^{n^2} : n \in \N \}$.
-
-2. $L = \{w : w \text{ contains an equal number of } 01 \text{ and } 10 \text{ substrings}\}$.
-
-Many programming languages, including Python & Javascript allow backreferences to previous groups in a regular expression. A group is a part of the regular expression inside parentheses.  The special symbol `\1` refers to anything matched by the first group in the regular expression. Similarly `\2` refers back to anything matched by the second group, and so on. For example: the regular expression `"([a-z]*) \1"` would match "word word" or "dog dog".  
-
-3. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  
-
-We finished with this last example. Consider the language 
-$$F = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.$$
-
-4. Explain why there is a pumping number $p$ (in fact $p=1$ works) such that any string $s \in F$ can be "pumped".  
-
-5. Despite this, explain why $F$ is not a regular language.
-
-6. Why doesn't that contradict the pumping lemma?
-
--->
+<h4 id="wed-feb-12">Wed, Feb 12</h4>
+<p>Today we looked at more examples of regular and non-regular
+languages.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>:</mo><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a palindrome</mtext></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{w \in \{0, 1\}^* : w \text{ is a palindrome} \}</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>:</mo><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> contains an equal number of </mtext><mspace width="0.333em"></mspace></mrow><mn>01</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mn>10</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> substrings</mtext></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{w : w \text{ contains an equal number of } 01 \text{ and } 10 \text{ substrings}\}</annotation></semantics></math>.</p></li>
+</ol>
+<p>The converse of the pumping lemma is not true. So you can’t use the
+pumping lemma to prove that a language is regular. In fact, here is a
+language that is non-regular, but every string in the language is
+pump-able!</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>i</mi></msup><msup><mi>b</mi><mi>j</mi></msup><msup><mi>c</mi><mi>k</mi></msup><mo>:</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo>≥</mo><mn>0</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and if </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi><mo>=</mo><mn>1</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> then </mtext><mspace width="0.333em"></mspace></mrow><mi>j</mi><mo>=</mo><mi>k</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L = \{a^i b^j c^k : i, j, k \ge 0 \text{ and if } i = 1 \text{ then } j = k\}.</annotation></semantics></math></p>
+<ol start="3" type="1">
+<li><p>Explain why there is a pumping number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+(in fact
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p=1</annotation></semantics></math>
+works) such that any string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">w \in L</annotation></semantics></math>
+can be “pumped”.</p></li>
+<li><p>Despite this, explain why
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+is not a regular language. Hint: if there was a DFA that recognizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>,
+what other DFAs could you construct?</p></li>
+</ol>
+<p>Many programming languages, including Python &amp; Javascript allow
+backreferences to previous groups in a regular expression. A group is a
+part of the regular expression inside parentheses. The special symbol
+<code>\1</code> refers to anything matched by the first group in the
+regular expression. Similarly <code>\2</code> refers back to anything
+matched by the second group, and so on. For example: the regular
+expression <code>"(\w\w*) \1"</code> would match any repeated word like
+“word word” or “dog dog”. <em>I tried to demonstrate this in class, but
+I got tripped up because Python requires the regular expression to be
+entered as a</em> <a
+href="https://docs.python.org/3/library/re.html#:~:text=raw%20string">raw
+string</a>.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>regex <span class="op">=</span> <span class="vs">r&quot;(\w\w*) \1&quot;</span> <span class="co"># need the r before the quotes to indicate that this is a raw string</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.search(regex, <span class="st">&quot;Did I type the the same word twice?&quot;</span>))</span></code></pre></div>
+<ol start="5" type="1">
+<li>Explain why regular expressions with backreferences are not really
+regular expressions (at least not according to our definition). Show
+that they can match non-regular languages.</li>
+</ol>
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
 <colgroup>
