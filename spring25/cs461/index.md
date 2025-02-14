@@ -27,7 +27,7 @@ header-includes: |
 ### Announcements
 
 * Midterm 1 will be on Monday, Feb 17.
-* Midterm 1 materials ([review problems](midterm1review.pdf))
+* Midterm 1 materials ([review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf))
 
 ### Tentative Schedule
 

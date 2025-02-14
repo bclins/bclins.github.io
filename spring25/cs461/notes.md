@@ -577,6 +577,10 @@ print(re.search(regex, "Did I type the the same word twice?"))
 5. Explain why regular expressions with backreferences are not really regular expressions (at least not according to our definition).  Show that they can match non-regular languages. 
 
 
+#### Fri, Feb 14
+
+Today we went over some of the problems from [homework 4](HW/HW4.pdf) and the [midterm 1 review problems](midterm1review.pdf).
+
 ### Week 6 Notes
 
 Day  | Section  | Topic
