@@ -589,7 +589,22 @@ Fri, Feb 21  | [2.2][2.2]  | The derivative
 
 ### Mon, Feb 17
 
-Today we introduced **logarithms**.  We started by talking about base-10 logarithms which tell you the order of magnitude of a number.  
+Today we introduced **logarithms**.  We started by talking about **logarithmic scales**, which are number lines where the numbers are spaced by multiplication instead of addition. 
+
+<center>
+<img src="logscale2.png" width=600></img>
+<figcaption>A base-2 logarithmic scale</figcaption>
+</center>
+
+<center>
+<img src="logscale10.png" width=600></img>
+<figcaption>A base-10 logarithmic scale</figcaption>
+</center>
+
+The base-b logarithm function can be understood two ways:
+
+<!--
+We started by talking about base-10 logarithms which tell you the order of magnitude of a number.  
 
 <center>
 <table class="bordered">
@@ -599,21 +614,15 @@ Today we introduced **logarithms**.  We started by talking about base-10 logarit
 </center>
 
 Here is the definition of the logarithm for any base.
+-->
 
 <div class="Theorem">
-**Definition.** For any base $b > 0$, the function $\log_b(x)$ equals the power $y$ such that $b^y = x$.  
-</div>
+The **logarithm function** $\log_b(x)$ can be understood two ways:
 
-Logarithms are useful because they convert difficult multiplication/division problems into easier addition/subtraction problems.  They also convert exponential patterns into linear patterns.  
+1. $\log_b(x)$ equals the **number of steps** $x$ is away from 1 on a base-b log-scale.
 
+2. $\log_b(x)$ equals the **power of b** needed to get $x$.  
 
-
-<div class="Theorem">
-**Properties of Logarithms**.
-
-1. Logarithms convert multiplication to addition $\log(xy) = \log(x) + \log(y)$. 
-1. Logarithms convert division to subtraction $\log(x/y) = \log(x) - \log(y)$. 
-1. Logarithms let you pull down powers $\log(x^p) = p \log(x)$. 
 </div>
 
 1. Find $\log_2 16$. (<https://youtu.be/Z5myJ8dg_rM>)
@@ -624,17 +633,32 @@ Logarithms are useful because they convert difficult multiplication/division pro
 
 1. Find $\log_2 \left( \frac{1}{64} \right)$.  (<https://youtu.be/z9sJ3uusO98>)
 
+1. Find $\log_{10} (\sqrt{10}).$
+
+Logarithms are useful because they convert difficult multiplication/division problems into easier addition/subtraction problems.  They also convert exponential patterns into linear patterns.  
+
+<div class="Theorem">
+**Properties of Logarithms**.
+
+1. Logarithms convert multiplication to addition $\log(xy) = \log(x) + \log(y)$. 
+1. Logarithms convert division to subtraction $\log(x/y) = \log(x) - \log(y)$. 
+1. Logarithms let you pull down powers $\log(x^p) = p \log(x)$. 
+</div>
+
 The most important base for exponential and logarithmic functions in calculus is the number $e \approx 2.71828$.  This is the **natural base** for the logarithm and exponential function for reasons that we'll see later when we talk about derivatives.  We write $\ln(x)$ to denote the base-e logarithm.  
 
-5. What are $\ln(e^x)$ and $e^{\ln x}$?  
+6. What are $\ln(e^x)$ and $e^{\ln x}$?  
 
 One of the most important applications of logarithms is that they let you solve exponential equations.  
 
-6. Solve $e^x = 2$.  
-
-7. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  (<https://youtu.be/1XQHko0_Y-k?t=588>)
+7. Solve $e^x = 2$.  
 
 8. Solve $3^x = 2^{x+1}$ (<https://youtu.be/tJuTsq2TMm4>)
+
+Here is one more good exercise using logarithms that we didn't have time for:
+
+9. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  (<https://youtu.be/1XQHko0_Y-k?t=588>)
+
 
 
 

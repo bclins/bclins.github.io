@@ -356,19 +356,14 @@ Fri, Feb 21 | [3.1][3.1] | Multiplication and addition rules
 
 ### Mon, Feb 17
 
-One of the hardest problems in statistics is to prove causation.
+One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
-<div class="Theorem">
-**Explanatory & Response Variables**
+<center>
+<img src="correlation_not_causation.png"></img>
+</center>
 
-If one variable might be the cause a change in another variable, we called the first variable **explanatory** and the second variable is the **response**.  Other variables not included in the study are **lurking variables**, and a lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.
-</div>
+We might think that one variable (called the **explanatory variable**) causes a change in another variable (called the **response variable**). But we have to watch out for other variables that aren't part of the study called **lurking variables**.  A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.  We say that **correlation is not causation** because you can't assume that there is a cause and effect relationship between two variables just because they are strongly associated.  The association might be caused by lurking variables or the causal relationship might go in the opposite direction of what you expect.  
 
-<div class="Theorem">
-**Correlation is Not Causation**  
-
-You can't say for sure that an explanatory variable is the cause of a change in a response variable just based on a correlation. There might be other lurking variables that are the real reason for the change. The only way to prove that an explanatory variable is the cause of a response is to use a randomized controlled experiment. 
-</div>
 
 
 
