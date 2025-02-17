@@ -362,7 +362,11 @@ One of the hardest problems in statistics is to prove causation. Here is a diagr
 <img src="correlation_not_causation.png"></img>
 </center>
 
-We might think that one variable (called the **explanatory variable**) causes a change in another variable (called the **response variable**). But we have to watch out for other variables that aren't part of the study called **lurking variables**.  A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.  We say that **correlation is not causation** because you can't assume that there is a cause and effect relationship between two variables just because they are strongly associated.  The association might be caused by lurking variables or the causal relationship might go in the opposite direction of what you expect.  
+One variable (called the **explanatory variable**) might be the cause of a change in another variable (called the **response variable**). But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
+
+<!--A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.-->  
+
+We say that **correlation is not causation** because you can't assume that there is a cause and effect relationship between two variables just because they are strongly associated.  The association might be caused by lurking variables or the causal relationship might go in the opposite direction of what you expect.  
 
 
 
@@ -399,13 +403,15 @@ We looked at these examples.
 
 We talked about why the polio vaccine trials were **double blind** and what that means.      
 
+Here is one more example we didn't have time for:
+
 3. Do [magnetic bracelets](https://www.amazon.com/Bracelets-Adjustable-3000Gauss-Arthritis-Migraines/dp/B07QX2WYNS/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.S8qvWGHSHwQxRHG2yFf2gzEQVauNBaVky2_BHvgF4meM3f1vAL530i8oTdhNSTUc7Mk9pmXKIb6gSUWeQyil2KfiSsmqNf5SQ0zMkWv7o0oZU3uT21FKwIksTTCfs88gp8BLdzg6cY0V7bQ8SlHDqhi-SQ_1-uglO24g-WsO58e4ZqKvUFMJ3j0K2uRtmhTzd4MUWnwQyDq_wU8xDx789RUzuuU8yXZIh1WGygjZzbf7BDnEfdzRHkBnM5wzhbOm7gqhM3v8uY2JXvNRTP5E27YfvxroISSg6Alk4xM9jUY.5faFTIRYYwhnDzFp856CUR1u82Z7yQOvFbweRcKk9tg&dib_tag=se&hvadid=409961555257&hvdev=c&hvlocphy=1027155&hvnetw=g&hvqmt=e&hvrand=12006179576662034532&hvtargid=kwd-20439822&hydadcr=24657_11410751&keywords=magnetic+bracelets&qid=1727463369&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) work to help with arthritis pain?
 
     a. What is the explanatory variable?
     b. What is the response variable?
     c. How hard would it be to design a randomized controlled experiment to answer the question above? 
     
-We finished by talking about **anecdotal evidence**. 
+<!--We finished by talking about **anecdotal evidence**. -->
 
 <!--
 ### Wed, Oct 2

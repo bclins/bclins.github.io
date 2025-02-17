@@ -597,11 +597,11 @@ Today we introduced **logarithms**.  We started by talking about **logarithmic s
 </center>
 
 <center>
-<img src="logscale10.png" width=600></img>
+<img src="logscale10.png" width=700></img>
 <figcaption>A base-10 logarithmic scale</figcaption>
 </center>
 
-The base-b logarithm function can be understood two ways:
+Logarithmic scales help understand the logarithm function.  
 
 <!--
 We started by talking about base-10 logarithms which tell you the order of magnitude of a number.  
@@ -619,7 +619,7 @@ Here is the definition of the logarithm for any base.
 <div class="Theorem">
 The **logarithm function** $\log_b(x)$ can be understood two ways:
 
-1. $\log_b(x)$ equals the **number of steps** $x$ is away from 1 on a base-b log-scale.
+1. $\log_b(x)$ equals the **number of steps** $x$ is away from 1 on a (base-b) log-scale.
 
 2. $\log_b(x)$ equals the **power of b** needed to get $x$.  
 
