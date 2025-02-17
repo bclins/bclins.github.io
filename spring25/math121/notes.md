@@ -353,25 +353,51 @@ Mon, Feb 17 | [1.4][1.4] | Randomized controlled experiments
 Wed, Feb 19 | [3.1][3.1] | Defining probability
 Fri, Feb 21 | [3.1][3.1] | Multiplication and addition rules
 
-<!--
 
-### Mon, Sep 30
+### Mon, Feb 17
 
-Recall that **correlation is not causation**. The only way to prove that one (explanatory) variable is the cause of a response is to use a **randomized controlled experiment**. We looked at these examples. 
+One of the hardest problems in statistics is to prove causation.
 
-1. A study try to determine whether cellphones cause brain cancer.  The researchers interviewed 469 brain cancer patients about their cellphone use between 1994 and 1998.  They also interviewed 469 other hospital patients (without brain cancer) who had the same ages, genders, and races as the brain cancer patients.  
+<div class="Theorem">
+**Explanatory & Response Variables**
+
+If one variable might be the cause a change in another variable, we called the first variable **explanatory** and the second variable is the **response**.  Other variables not included in the study are **lurking variables**, and a lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.
+</div>
+
+<div class="Theorem">
+**Correlation is Not Causation**  
+
+You can't say for sure that an explanatory variable is the cause of a change in a response variable just based on a correlation. There might be other lurking variables that are the real reason for the change. The only way to prove that an explanatory variable is the cause of a response is to use a randomized controlled experiment. 
+</div>
+
+
+
+<div class="Theorem">
+**Experiments versus Observational Studies**
+
+An **experiment** is a study where the individuals are placed into different **treatment groups** by the researchers. An **observational study** is one where the researchers do not place the individuals into different treatment groups.  
+
+A **randomized controlled experiment** is one where the individuals are randomly assigned to treatment groups.  
+
+**Important concept:** Random assignment automatically controls all lurking variables, which let's you establish cause and effect.  
+</div>
+
+
+We looked at these examples. 
+
+1. A study tried determine whether cellphones cause brain cancer.  The researchers interviewed 469 brain cancer patients about their cellphone use between 1994 and 1998.  They also interviewed 469 other hospital patients (without brain cancer) who had the same ages, genders, and races as the brain cancer patients.  
 
     a. What was the explanatory variable?
     b. What was the response variable?
     c. Which variables were controlled?
-    d. Was this an **experiment** or an **observational study**?
-    e. Are there any possible **lurking variables**?
+    d. Was this an experiment or an observational study?
+    e. Are there any possible lurking variables?
 
 2. In 1954, the polio vaccine trials were one of the largest randomized controlled experiments ever conducted.  [Here were the results](https://people.hsc.edu/faculty-staff/blins/StatsExamples/polioTrials.html). 
 
     a. What was the explanatory variable?
     b. What was the response variable?
-    c. This was an experiment because it had a **treatment variable**.  What was that?
+    c. This was an experiment because it had a treatment variable.  What was that?
     c. Which variables were controlled?
     d. Why don't we have to worry about lurking variables?  
 
@@ -386,7 +412,7 @@ We talked about why the polio vaccine trials were **double blind** and what that
     
 We finished by talking about **anecdotal evidence**. 
 
-
+<!--
 ### Wed, Oct 2
 
 Today we introduced **probability models** which always have two parts:
