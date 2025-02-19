@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -812,16 +812,14 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 5</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=60">2.7</a>
-- <a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=68">2.8</a></td>
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=60">2.7</a></td>
 <td style="text-align: left;">Regular expressions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 7</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=75">2.9</a></td>
-<td style="text-align: left;">The pumping lemma</td>
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=68">2.8</a></td>
+<td style="text-align: left;">Regular expressions and languages</td>
 </tr>
 </tbody>
 </table>
@@ -1193,17 +1191,19 @@ simple language that is not regular is the following:</p>
 <td style="text-align: center;">Mon, Feb 10</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=75">2.9</a></td>
-<td style="text-align: left;">Non-regular languages</td>
+<td style="text-align: left;">Non-regular languages &amp; the pumping
+lemma</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 12</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Review</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=75">2.9</a></td>
+<td style="text-align: left;">More non-regular languages</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 14</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 1</strong></td>
+<td style="text-align: left;">Review</td>
 </tr>
 </tbody>
 </table>
@@ -1343,11 +1343,6 @@ href="HW/HW4.pdf">homework 4</a> and the <a
 href="midterm1review.pdf">midterm 1 review problems</a>.</p>
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 16%" />
-<col style="width: 63%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -1358,27 +1353,118 @@ href="midterm1review.pdf">midterm 1 review problems</a>.</p>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 17</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 1</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 19</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=99">3.1</a>
 - <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=102">3.2</a></td>
 <td style="text-align: left;">Context-free grammars</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Feb 19</td>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 21</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=108">3.3</a></td>
 <td style="text-align: left;">Parsing and parse-trees</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Feb 21</td>
-<td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=132">3.8</a></td>
-<td style="text-align: left;">The pumping lemma for context-free
-languages</td>
-</tr>
 </tbody>
 </table>
+<h4 id="wed-feb-19">Wed, Feb 19</h4>
+<p>Class canceled because of snow.</p>
+<!--
+#### Fri, Feb 21
+
+Today we introduced **context-free grammars**.  We started with some simple examples from Wikipedia (<https://en.wikipedia.org/wiki/Context-free_grammar#Examples>) to illustrate the definition.  
+
+1. We found a context free grammar that generates the (non-regular) language
+$$L = \{a^n b^n : n \in \N\}.$$
+
+2. We looked at the example of a CFG and used it to identify the parts $(V,\Sigma, R, S)$ in the formal definition.  
+
+    ```perl
+    S         →  <subject> <verb>
+    <subject> →  <article> <noun>
+    <article> →  a | the
+    <noun>    →  boy | girl | dog
+    <verb>    →  runs | jumps | swims
+    ```
+
+3. Find a context-free grammar for the language 
+$$L = \{w \in \{a,b\}^* : w \text{ has an equal number of } a\text{'s and } b \text{'s} \}.$$
+
+4. Describe how to generate the string `(a + a) * a` using the context free grammar below:
+
+    ```perl
+    <expr>    →  <expr> + <term> | <term>
+    <term>    →  <term> * <factor> | <factor>
+    <factor>  →  (<expr>) | a
+    ```
+
+
+
+We finished by looking at this example that gives the idea of how a programming language can be though of as a context-free language.  
+
+* <https://en.wikipedia.org/wiki/File:C_grammar_stmt2_svg.svg>
+-->
+<!--
+#### Wednesday, September 27
+
+Today, we briefly went over the first midterm exam. I talked about the [grading scale](gradingScale.html) and went over some of the problems . 
+
+Today we spent more time discussing context free grammars. We talked about **left derivations** and **right derivations**
+
+We looked at this example: 
+
+$$E \rightarrow ~E+E~ | ~E*E~ | ~(E)~ | ~a~ $$
+
+1. Use this CFG to derive the string $a+a*a$.  Try to use a left derivation.  Then use a right derivation.  
+
+2. Show that that string actually has more than one left derivation.  
+
+A grammar is **ambiguous** if there are strings with more than one left derivation.  If every left-derivation is unique, then the grammar is **unambiguous**. Note that some CFGs have unambiguous grammars, but so do not.  This alternate grammar generates the same language as our first example, but is unambiguous:
+
+```
+    <expr>    →  <expr> + <term> | <term>
+    <term>    →  <term> * <factor> | <factor>
+    <factor>  →  (<expr>) | a
+```
+
+We looked at this [ambiguous grammar](ambiguousGrammar.html).
+
+3. Show that the sentence "the girl touches the boy with the flower" has two left derivations and those derivations correspond to two different meanings this sentence can have.  
+<!--
+Tips on constructing context free grammars:
+
+1. To construct the union of two context-free languages: Use a new start variable with this production rule: $S \rightarrow S_1 | S_2$ where $S_1, S_2$ denote the start variables for the CFG's for $L_1$ and $L_2$ respectively.  From that point on, you just separately apply the rules for those two grammars.
+
+2. It is 
+
+#### Friday, September 29
+
+Today we discussed the **pumping lemma for context-free languages**.  This is a little more complicated than the pumping lemma for regular languages. We drew some pictures of parse trees to give an intuitive explanation for why this new pumping lemma is true (see [page 126 in Maheshwari & Smid](https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=134)). In particular, we looked at how the string `a+a*a` gets generated by the grammar:
+
+```
+    E →  E + T | T
+    T →  T * F | F
+    F →  (E) | a
+```
+
+In the parse tree, there is a branch where the variable `T` gets repeated, and that lets us "pump".  
+
+We used the pumping lemma to prove that the following languages are not context-free:
+
+1. $L = \{a^n b^n c^n : n \in \N\}$.
+
+1. $L = \{a^{n^2} : n \in \N\}$.
+
+1. $L = \{w = w : w \in \{a, b\}^* \}$.
+
+We also talked about how there are always an uncountable number of languages over a finite alphabet $\Sigma$ (since the set of languages is the power set of $\Sigma^*$), and a computer can only compute a countable set of languages, so it is not surprising that most languages are not context-free.  
+
+--->
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>
 <thead>
@@ -1392,25 +1478,23 @@ languages</td>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 24</td>
 <td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=132">3.8</a></td>
+<td style="text-align: left;">The pumping lemma for CFGs</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 26</td>
+<td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=120">3.5</a>
 - <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=124">3.6</a></td>
 <td style="text-align: left;">Pushdown automata</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Feb 26</td>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 28</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=128">3.7</a></td>
 <td style="text-align: left;">Pushdown automata &amp; context-free
 grammars</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Feb 28</td>
-<td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=145">4.1</a>
-- <a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=149">4.2</a></td>
-<td style="text-align: left;">Definition of Turing machines</td>
 </tr>
 </tbody>
 </table>
@@ -1427,24 +1511,24 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 3</td>
 <td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=145">4.1</a>
+- <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=149">4.2</a></td>
-<td style="text-align: left;">Turing computable functions</td>
+<td style="text-align: left;">Definition of Turing machines</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 5</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=149">4.2</a></td>
+<td style="text-align: left;">Turing computable functions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Mar 7</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=156">4.3</a>
 - <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=159">4.4</a></td>
 <td style="text-align: left;">Church-Turing thesis</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Mar 7</td>
-<td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=185">5.5</a>
-- <a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=192">5.7</a></td>
-<td style="text-align: left;">Enumerators</td>
 </tr>
 </tbody>
 </table>
@@ -1465,21 +1549,24 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 17</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Universal Turing machines</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=185">5.5</a>
+- <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=192">5.7</a></td>
+<td style="text-align: left;">Enumerators</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 19</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Universal Turing machines</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Mar 21</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=165">5.1</a>-<a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">5.3</a></td>
 <td style="text-align: left;">The halting problem &amp; Rice’s
 theorem</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Mar 21</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>

@@ -414,7 +414,7 @@ Here is one more example we didn't have time for:
 <!--We finished by talking about **anecdotal evidence**. -->
 
 <!--
-### Wed, Oct 2
+### Fri, Feb 21
 
 Today we introduced **probability models** which always have two parts:
 
@@ -439,20 +439,6 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 
 * **Workshop**: [Probability distributions](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
-
-
-### Fri, Oct 4
-
-We talked about the **addition** and **multiplication rules** for **disjoint** and **independent** events.  
-
-1. If you shuffle a deck of 52 playing cards, and then draw one card, what is $P(\text{Ace})$?
-2. If you shuffle a deck of 52 playing cards, and then draw one card, what is $P(\text{Heart})$?
-3. Is the event that you get an Ace and the event that you get a Heart disjoint?  Are they independent?  
-4. What if you draw the top two cards from the deck.  Are the events $A = \text{First card is an ace}$ and $B = \text{Second card is an ace}$ independent? 
-
-
-* **Workshop**: [Basic probability rules](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BasicProbabilityRules2.pdf)
-
 -->
 
 - - - 
