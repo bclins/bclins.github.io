@@ -426,7 +426,7 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 2. Roll a six-sided die.
 
-3. If you roll a six-sided die, what is $P(\text{result is even})?$
+3. If you roll a six-sided die, what is $P(\text{result at least 5})?$
 
 4. The proportion of people in the US with each of the four blood types is shown in the table below.
 

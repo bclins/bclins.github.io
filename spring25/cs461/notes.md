@@ -595,25 +595,64 @@ Class canceled because of snow.
 
 #### Fri, Feb 21
 
-Today we introduced **context-free grammars**.  We started with some simple examples from Wikipedia (<https://en.wikipedia.org/wiki/Context-free_grammar#Examples>) to illustrate the definition.  
+Today we introduced context-free grammars. 
 
-1. We found a context free grammar that generates the (non-regular) language
-$$L = \{a^n b^n : n \in \N\}.$$
+<div class="Theorem">
+**Definition.** A **context-free grammar (CFG)** consists of 
+
+1. A set of **variables** $V$
+2. A set of **symbols** $\Sigma$ (disjoint from $V$)
+3. A set of **rules** of the form $A \rightarrow B$ where $A \in V$ and $B \in (\Sigma \cup V)^*$
+4. A **start state** $S \in V$. 
+</div>
+
+ <!-- We started with some simple examples from Wikipedia (<https://en.wikipedia.org/wiki/Context-free_grammar#Examples>) to illustrate the definition.  -->
+
+1. We explained how the context free grammar
+
+    ```perl
+    S         →  aSb
+    S         →  ε
+    ```
+
+    generates the (non-regular) language
+    $$L = \{a^n b^n : n \in \N\}.$$
 
 2. We looked at the example of a CFG and used it to identify the parts $(V,\Sigma, R, S)$ in the formal definition.  
 
     ```perl
-    S         →  <subject> <verb>
+    S         →  <subject> <verb> <object>
     <subject> →  <article> <noun>
     <article> →  a | the
     <noun>    →  boy | girl | dog
-    <verb>    →  runs | jumps | swims
+    <verb>    →  runs | walks | talks
+    <object>  →  <prep> <subject>
+    <prep>    →  to |from
     ```
 
-3. Find a context-free grammar for the language 
-$$L = \{w \in \{a,b\}^* : w \text{ has an equal number of } a\text{'s and } b \text{'s} \}.$$
+3. Draw a parse tree for the sentence "The boy talks to the girl."
 
-4. Describe how to generate the string `(a + a) * a` using the context free grammar below:
+4. Find a CFG for the language of matched parentheses.  
+
+    <details>
+    Seth suggested this CFG:
+
+    ```perl
+        S         →  (S)
+        S         →  ()S
+        S         →  ε
+    ```
+
+    This isn't correct, but it is a good first guess.  Explain why this grammar cannot be used to construct the string `(())()`. 
+
+    </details>
+
+4. Find a context-free grammar for the language 
+$$L = \{w \in \{0,1\}^* : w \text{ has an equal number of } 0\text{'s and } 1 \text{'s} \}.$$
+
+We didn't get to this example, but it is good practice too.
+
+5. Describe how to generate the string `(a + a) * a` using the context free grammar below:
 
     ```perl
     <expr>    →  <expr> + <term> | <term>

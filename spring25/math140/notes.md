@@ -680,89 +680,82 @@ Class is canceled today because of the snow, but I recommend starting [homework 
 5. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  (<https://youtu.be/1XQHko0_Y-k?t=588>)
 
 
-<!-- After we practiced solving for variables in the exponent, we talked about the graphs of logarithms and exponential functions.  You should memorize the graphs of $y = e^x$ and $y = \ln x$.  
-
-<!--<center>
-<!--<table cellpadding="20px">
-<!--< tr><td>
-<!--<svg width="240" height="240" viewBox="-5 -5 10 10">
-<!--<!-- x & y axes -->
-<!--<g stroke="black" stroke-width="0.05">
-<!-- <line x1="-5" y1="0" x2="5" y2="0"/>
-<!-- <line x1="0" y1="-5" x2="0" y2="5"/>
-<!--</g>
-<!--<!-- Axes labels -->
-<!-- <g font-size="0.5" font-style="italic">
-<!-- <text x="4.4" y="0.6">x</text>
-<!-- <text x="-0.6" y="-4.4">y</text>
-<!-- </g>
-<!--<!-- Axes arrow tips -->
-<!-- <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
-<!-- <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
-<!--<!-- Graph of function -->
-<!--<g transform="scale(1,-1)">
-<!--  <polyline points="-4.00, 0.02 -3.95, 0.02 -3.90, 0.02 -3.85, 0.02 -3.80, 0.02 -3.75, 0.02 -3.70, 0.02 -3.65, 0.03 -3.60, 0.03 -3.55, 0.03 -3.50, 0.03 -3.45, 0.03 -3.40, 0.03 -3.35, 0.04 -3.30, 0.04 -3.25, 0.04 -3.20, 0.04 -3.15, 0.04 -3.10, 0.05 -3.05, 0.05 -3.00, 0.05 -2.95, 0.05 -2.90, 0.06 -2.85, 0.06 -2.80, 0.06 -2.75, 0.06 -2.70, 0.07 -2.65, 0.07 -2.60, 0.07 -2.55, 0.08 -2.50, 0.08 -2.45, 0.09 -2.40, 0.09 -2.35, 0.10 -2.30, 0.10 -2.25, 0.11 -2.20, 0.11 -2.15, 0.12 -2.10, 0.12 -2.05, 0.13 -2.00, 0.14 -1.95, 0.14 -1.90, 0.15 -1.85, 0.16 -1.80, 0.17 -1.75, 0.17 -1.70, 0.18 -1.65, 0.19 -1.60, 0.20 -1.55, 0.21 -1.50, 0.22 -1.45, 0.23 -1.40, 0.25 -1.35, 0.26 -1.30, 0.27 -1.25, 0.29 -1.20, 0.30 -1.15, 0.32 -1.10, 0.33 -1.05, 0.35 -1.00, 0.37 -0.95, 0.39 -0.90, 0.41 -0.85, 0.43 -0.80, 0.45 -0.75, 0.47 -0.70, 0.50 -0.65, 0.52 -0.60, 0.55 -0.55, 0.58 -0.50, 0.61 -0.45, 0.64 -0.40, 0.67 -0.35, 0.70 -0.30, 0.74 -0.25, 0.78 -0.20, 0.82 -0.15, 0.86 -0.10, 0.90 -0.05, 0.95 -0.00, 1.00 0.05, 1.05 0.10, 1.11 0.15, 1.16 0.20, 1.22 0.25, 1.28 0.30, 1.35 0.35, 1.42 0.40, 1.49 0.45, 1.57 0.50, 1.65 0.55, 1.73 0.60, 1.82 0.65, 1.92 0.70, 2.01 0.75, 2.12 0.80, 2.23 0.85, 2.34 0.90, 2.46 0.95, 2.59 1.00, 2.72 1.05, 2.86 1.10, 3.00 1.15, 3.16 1.20, 3.32 1.25, 3.49 1.30, 3.67 1.35, 3.86 1.40, 4.06 1.45, 4.26 1.50, 4.48 1.55, 4.71 1.60, 4.95 1.65, 5.21 1.70, 5.47 1.75, 5.75 1.80, 6.05 1.85, 6.36 1.90, 6.69 1.95, 7.03 2.00, 7.39 2.05, 7.77 2.10, 8.17 2.15, 8.58 2.20, 9.03 2.25, 9.49 2.30, 9.97 2.35, 10.49 2.40, 11.02 2.45, 11.59 2.50, 12.18 2.55, 12.81 2.60, 13.46 2.65, 14.15 2.70, 14.88 2.75, 15.64 2.80, 16.44 2.85, 17.29 2.90, 18.17 2.95, 19.11 3.00, 20.09 3.05, 21.12 3.10, 22.20 3.15, 23.34 3.20, 24.53 3.25, 25.79 3.30, 27.11 3.35, 28.50 3.40, 29.96 3.45, 31.50 3.50, 33.12 3.55, 34.81 3.60, 36.60 3.65, 38.47 3.70, 40.45 3.75, 42.52 3.80, 44.70 3.85, 46.99 3.90, 49.40 3.95, 51.94 4.00, 54.60" fill="none" stroke="blue" stroke-width="0.10" />
-<!--</g>
-<!--<!-- Function label -->
-<!-- <g font-size="0.5" font-style="italic" fill="blue">
-<!-- <text x="2.0" y="-3.5">y = eˣ</text>
-<!-- </g>
-<!--</svg>
-<!--</td>
-<!--
-<!--<td>
-<!--<svg width="240" height="240" viewBox="-5 -5 10 10">
-<!--<!-- x & y axes -->
-<!--<g stroke="black" stroke-width="0.05">
-<!-- <line x1="-5" y1="0" x2="5" y2="0"/>
-<!-- <line x1="0" y1="-5" x2="0" y2="5"/>
-<!--</g>
-<!--<!-- Axes labels -->
-<!-- <g font-size="0.5" font-style="italic">
-<!-- <text x="4.4" y="0.6">x</text>
-<!-- <text x="-0.6" y="-4.4">y</text>
-<!-- </g>
-<!--<!-- Axes arrow tips -->
-<!-- <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
-<!-- <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
-<!--<!-- Graph of function -->
-<!--<g transform="scale(1,-1)">
-<!--  <polyline points="0.02, -4.00 0.05, -3.00 0.10, -2.30 0.15, -1.90 0.20, -1.61 0.25, -1.39 0.30, -1.20 0.35, -1.05 0.40, -0.92 0.45, -0.80 0.50, -0.69 0.55, -0.60 0.60, -0.51 0.65, -0.43 0.70, -0.36 0.75, -0.29 0.80, -0.22 0.85, -0.16 0.90, -0.11 0.95, -0.05 1.00, 0.00 1.05, 0.05 1.10, 0.10 1.15, 0.14 1.20, 0.18 1.25, 0.22 1.30, 0.26 1.35, 0.30 1.40, 0.34 1.45, 0.37 1.50, 0.41 1.55, 0.44 1.60, 0.47 1.65, 0.50 1.70, 0.53 1.75, 0.56 1.80, 0.59 1.85, 0.62 1.90, 0.64 1.95, 0.67 2.00, 0.69 2.05, 0.72 2.10, 0.74 2.15, 0.77 2.20, 0.79 2.25, 0.81 2.30, 0.83 2.35, 0.85 2.40, 0.88 2.45, 0.90 2.50, 0.92 2.55, 0.94 2.60, 0.96 2.65, 0.97 2.70, 0.99 2.75, 1.01 2.80, 1.03 2.85, 1.05 2.90, 1.06 2.95, 1.08 3.00, 1.10 3.05, 1.12 3.10, 1.13 3.15, 1.15 3.20, 1.16 3.25, 1.18 3.30, 1.19 3.35, 1.21 3.40, 1.22 3.45, 1.24 3.50, 1.25 3.55, 1.27 3.60, 1.28 3.65, 1.29 3.70, 1.31 3.75, 1.32 3.80, 1.34 3.85, 1.35 3.90, 1.36 3.95, 1.37 4.00, 1.39 4.05, 1.40 4.10, 1.41 4.15, 1.42 4.20, 1.44 4.25, 1.45 4.30, 1.46 4.35, 1.47 4.40, 1.48 4.45, 1.49 4.50, 1.50 4.55, 1.52 4.60, 1.53 4.65, 1.54 4.70, 1.55 4.75, 1.56 4.80, 1.57 4.85, 1.58 4.90, 1.59 4.95, 1.60 5.00, 1.61" fill="none" stroke="blue" stroke-width="0.10" />
-<!--</g>
-<!--<!-- Function label -->
-<!-- <g font-size="0.5" font-style="italic" fill="blue">
-<!-- <text x="2.5" y="-2.5">y = ln x</text>
-<!-- </g>
-<!--</svg>
-<!--</td>
-<!--</tr>
-<!--</table>
-<!--</center>
- -->
-
 ### Fri, Feb 21
 
-Today we introduced the derivative of a function.  
+We started by going over problems #5 and #7 from [Homework 6](HW/HW6.pdf).  We also talked about the shape of the graph of a logarithm function.  You should memorize the graph of the natural exponential and logarithm functions.  
+
+<center>
+<table cellpadding="20px">
+<tr><td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.05">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <polyline points="-4.00, 0.02 -3.95, 0.02 -3.90, 0.02 -3.85, 0.02 -3.80, 0.02 -3.75, 0.02 -3.70, 0.02 -3.65, 0.03 -3.60, 0.03 -3.55, 0.03 -3.50, 0.03 -3.45, 0.03 -3.40, 0.03 -3.35, 0.04 -3.30, 0.04 -3.25, 0.04 -3.20, 0.04 -3.15, 0.04 -3.10, 0.05 -3.05, 0.05 -3.00, 0.05 -2.95, 0.05 -2.90, 0.06 -2.85, 0.06 -2.80, 0.06 -2.75, 0.06 -2.70, 0.07 -2.65, 0.07 -2.60, 0.07 -2.55, 0.08 -2.50, 0.08 -2.45, 0.09 -2.40, 0.09 -2.35, 0.10 -2.30, 0.10 -2.25, 0.11 -2.20, 0.11 -2.15, 0.12 -2.10, 0.12 -2.05, 0.13 -2.00, 0.14 -1.95, 0.14 -1.90, 0.15 -1.85, 0.16 -1.80, 0.17 -1.75, 0.17 -1.70, 0.18 -1.65, 0.19 -1.60, 0.20 -1.55, 0.21 -1.50, 0.22 -1.45, 0.23 -1.40, 0.25 -1.35, 0.26 -1.30, 0.27 -1.25, 0.29 -1.20, 0.30 -1.15, 0.32 -1.10, 0.33 -1.05, 0.35 -1.00, 0.37 -0.95, 0.39 -0.90, 0.41 -0.85, 0.43 -0.80, 0.45 -0.75, 0.47 -0.70, 0.50 -0.65, 0.52 -0.60, 0.55 -0.55, 0.58 -0.50, 0.61 -0.45, 0.64 -0.40, 0.67 -0.35, 0.70 -0.30, 0.74 -0.25, 0.78 -0.20, 0.82 -0.15, 0.86 -0.10, 0.90 -0.05, 0.95 -0.00, 1.00 0.05, 1.05 0.10, 1.11 0.15, 1.16 0.20, 1.22 0.25, 1.28 0.30, 1.35 0.35, 1.42 0.40, 1.49 0.45, 1.57 0.50, 1.65 0.55, 1.73 0.60, 1.82 0.65, 1.92 0.70, 2.01 0.75, 2.12 0.80, 2.23 0.85, 2.34 0.90, 2.46 0.95, 2.59 1.00, 2.72 1.05, 2.86 1.10, 3.00 1.15, 3.16 1.20, 3.32 1.25, 3.49 1.30, 3.67 1.35, 3.86 1.40, 4.06 1.45, 4.26 1.50, 4.48 1.55, 4.71 1.60, 4.95 1.65, 5.21 1.70, 5.47 1.75, 5.75 1.80, 6.05 1.85, 6.36 1.90, 6.69 1.95, 7.03 2.00, 7.39 2.05, 7.77 2.10, 8.17 2.15, 8.58 2.20, 9.03 2.25, 9.49 2.30, 9.97 2.35, 10.49 2.40, 11.02 2.45, 11.59 2.50, 12.18 2.55, 12.81 2.60, 13.46 2.65, 14.15 2.70, 14.88 2.75, 15.64 2.80, 16.44 2.85, 17.29 2.90, 18.17 2.95, 19.11 3.00, 20.09 3.05, 21.12 3.10, 22.20 3.15, 23.34 3.20, 24.53 3.25, 25.79 3.30, 27.11 3.35, 28.50 3.40, 29.96 3.45, 31.50 3.50, 33.12 3.55, 34.81 3.60, 36.60 3.65, 38.47 3.70, 40.45 3.75, 42.52 3.80, 44.70 3.85, 46.99 3.90, 49.40 3.95, 51.94 4.00, 54.60" fill="none" stroke="blue" stroke-width="0.10" />
+</g>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="2.0" y="-3.5">y = eˣ</text>
+ </g>
+</svg>
+</td>
+
+<td>
+<svg width="240" height="240" viewBox="-5 -5 10 10">
+<!-- x & y axes -->
+<g stroke="black" stroke-width="0.05">
+ <line x1="-5" y1="0" x2="5" y2="0"/>
+ <line x1="0" y1="-5" x2="0" y2="5"/>
+</g>
+<!-- Axes labels -->
+ <g font-size="0.5" font-style="italic">
+ <text x="4.4" y="0.6">x</text>
+ <text x="-0.6" y="-4.4">y</text>
+ </g>
+<!-- Axes arrow tips -->
+ <polygon points="5,0 4.5,0.15 4.5,-0.15"/>
+ <polygon points="0,-5 0.15,-4.5 -0.15,-4.5"/>
+<!-- Graph of function -->
+<g transform="scale(1,-1)">
+  <polyline points="0.02, -4.00 0.05, -3.00 0.10, -2.30 0.15, -1.90 0.20, -1.61 0.25, -1.39 0.30, -1.20 0.35, -1.05 0.40, -0.92 0.45, -0.80 0.50, -0.69 0.55, -0.60 0.60, -0.51 0.65, -0.43 0.70, -0.36 0.75, -0.29 0.80, -0.22 0.85, -0.16 0.90, -0.11 0.95, -0.05 1.00, 0.00 1.05, 0.05 1.10, 0.10 1.15, 0.14 1.20, 0.18 1.25, 0.22 1.30, 0.26 1.35, 0.30 1.40, 0.34 1.45, 0.37 1.50, 0.41 1.55, 0.44 1.60, 0.47 1.65, 0.50 1.70, 0.53 1.75, 0.56 1.80, 0.59 1.85, 0.62 1.90, 0.64 1.95, 0.67 2.00, 0.69 2.05, 0.72 2.10, 0.74 2.15, 0.77 2.20, 0.79 2.25, 0.81 2.30, 0.83 2.35, 0.85 2.40, 0.88 2.45, 0.90 2.50, 0.92 2.55, 0.94 2.60, 0.96 2.65, 0.97 2.70, 0.99 2.75, 1.01 2.80, 1.03 2.85, 1.05 2.90, 1.06 2.95, 1.08 3.00, 1.10 3.05, 1.12 3.10, 1.13 3.15, 1.15 3.20, 1.16 3.25, 1.18 3.30, 1.19 3.35, 1.21 3.40, 1.22 3.45, 1.24 3.50, 1.25 3.55, 1.27 3.60, 1.28 3.65, 1.29 3.70, 1.31 3.75, 1.32 3.80, 1.34 3.85, 1.35 3.90, 1.36 3.95, 1.37 4.00, 1.39 4.05, 1.40 4.10, 1.41 4.15, 1.42 4.20, 1.44 4.25, 1.45 4.30, 1.46 4.35, 1.47 4.40, 1.48 4.45, 1.49 4.50, 1.50 4.55, 1.52 4.60, 1.53 4.65, 1.54 4.70, 1.55 4.75, 1.56 4.80, 1.57 4.85, 1.58 4.90, 1.59 4.95, 1.60 5.00, 1.61" fill="none" stroke="blue" stroke-width="0.10" />
+</g>
+<!-- Function label -->
+ <g font-size="0.5" font-style="italic" fill="blue">
+ <text x="2.5" y="-2.5">y = ln x</text>
+ </g>
+</svg>
+</td>
+</tr>
+</table>
+</center>
+
+After that quick review, we introduced derivatives. 
 
 
 <div class="Theorem">
 
 **Derivatives**
 
-A function $f(x)$ is **differentiable** at a point $x = a$ if graph $y = f(x)$ looks more and more like a straight line as you zoom in on the point $(a, f(a))$.  That straight line is called the **tangent line** to $f(x)$ at $x = a$ and its slope is called the **derivative**.  
+A function $f(x)$ is **differentiable** at a point if the graph $y = f(x)$ looks more and more like a straight line as you zoom in.  That straight line is called the **tangent line** and its slope is called the **derivative**.  
 
 If $y = f(x)$, then all three of the following notations are used for the derivative:
 $$y' = f'(x) = \dfrac{dy}{dx}.$$
 
 </div>
 
-Calculus was discovered independently by both Newton and Leibniz, and they invented different notations for the derivative. Newton used a mark like $y'$ or $f'(x)$ to represent the derivative.  Leibniz used the fraction $dy/dx$. Newton's notation emphasizes that the derivative is function that depends on which $x$ we input.  Leibniz's notation emphasizes that the derivative is the slope of a tangent line, so it is equal to a rise over a run.  The symbols $dy$ and $dx$ are called **differentials**, and can represent any rise and run of a tangent line, the same way that $\Delta y$ and $\Delta x$ represent rise and run for other lines.  (<https://youtu.be/N2PpRnFqnqY>)
-
-We looked at some examples.  
-
-1. Graph $y = e^x$ and the line with slope $e$ that passes through the point $(1, e)$.  
-
-2. Graph the function $y = x^2$.  It is a fact that the derivative of $x^2$ is $2x$.  Find the formula for the tangent line of $y = x^2$ when $x = 1$.  
+Calculus was discovered independently by both Newton and Leibniz, and they invented different notations for the derivative. Newton used a mark like $y'$ or $f'(x)$ to represent the derivative.  Leibniz used the fraction $dy/dx$. Newton's notation emphasizes that the derivative is a function that depends on which $x$ we input.  Leibniz's notation emphasizes that the derivative is the slope of a tangent line, so it is equal to a rise over a run.  The symbols $dy$ and $dx$ are called **differentials**, and can represent any rise and run of a tangent line, the same way that $\Delta y$ and $\Delta x$ represent rise and run for other lines.  (<https://youtu.be/N2PpRnFqnqY>)
 
 <div class="Theorem">
 **Average versus Instantaneous Rate of Change**
@@ -777,22 +770,23 @@ This is the slope of a tangent line at one point on the graph of $f(x)$.
 
 </div>
 
-3. If you drop a rock from a height of 400 feet in the air, its height after $t$ seconds will be
+1. If you drop a rock from a height of 400 feet in the air, its height after $t$ seconds will be
 $$h(t) = -16 t^2 + 400$$
 The derivative of height is the velocity:
 $$h'(t) = -32 t.$$
 <center>
-<iframe src="https://www.desmos.com/calculator/29tyizhppm?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/yccvhzrxxc?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
-    a. How far did the rock fall in 2 seconds?  
+    a. What is the average velocity of the rock as it falls?  
 
-    b. What is the average velocity of the rock?  
+    b. Zoom in on the graph at $t = 5$ seconds.  Use the graph to estimate the instantenous velocity when the rock hits the ground. 
 
-    c. What is the instantaneous velocity of the rock at time $t = 2$?
+    c. Guess which point on the graph has a tangent line with slope equal to the average velocity over the interval $[0,5]$. 
 
-    d. What is the instantaneous velocity of the rock when it hits the ground at time $t = 5$? 
+2. Graph the velocity function $v(t) = -32t$.  Why are the average rate of change and instantaneous rates of change the same for the velocity function?  What is the derivative of the velocity, and what does it represent?   
 
+<!--
 4. The function to convert Celsius to Fahrenheit is 
 $$F = \frac{9}{5} C + 32.$$
 What is the derivative of this function?  What does it mean?  
@@ -807,6 +801,7 @@ What is the derivative when $x = \$3$?
 
     a. Find the average cost of the first 2 thousand widgets. 
     a. The marginal cost of an additional widget is the derivative $C'(x) = -6x + 3x^2$. What is the marginal cost of the next widget when you are producing $x = 2$ thousand widgets?
+-->
 
 ### Week 7 Notes
 
