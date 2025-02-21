@@ -740,6 +740,74 @@ Class is canceled today because of the snow, but I recommend starting [homework 
 <!--</center>
  -->
 
+### Fri, Feb 21
+
+Today we introduced the derivative of a function.  
+
+
+<div class="Theorem">
+
+**Derivatives**
+
+A function $f(x)$ is **differentiable** at a point $x = a$ if graph $y = f(x)$ looks more and more like a straight line as you zoom in on the point $(a, f(a))$.  That straight line is called the **tangent line** to $f(x)$ at $x = a$ and its slope is called the **derivative**.  
+
+If $y = f(x)$, then all three of the following notations are used for the derivative:
+$$y' = f'(x) = \dfrac{dy}{dx}.$$
+
+</div>
+
+Calculus was discovered independently by both Newton and Leibniz, and they invented different notations for the derivative. Newton used a mark like $y'$ or $f'(x)$ to represent the derivative.  Leibniz used the fraction $dy/dx$. Newton's notation emphasizes that the derivative is function that depends on which $x$ we input.  Leibniz's notation emphasizes that the derivative is the slope of a tangent line, so it is equal to a rise over a run.  The symbols $dy$ and $dx$ are called **differentials**, and can represent any rise and run of a tangent line, the same way that $\Delta y$ and $\Delta x$ represent rise and run for other lines.  (<https://youtu.be/N2PpRnFqnqY>)
+
+We looked at some examples.  
+
+1. Graph $y = e^x$ and the line with slope $e$ that passes through the point $(1, e)$.  
+
+2. Graph the function $y = x^2$.  It is a fact that the derivative of $x^2$ is $2x$.  Find the formula for the tangent line of $y = x^2$ when $x = 1$.  
+
+<div class="Theorem">
+**Average versus Instantaneous Rate of Change**
+
+The **average rate of change** of a function $f(x)$ on an interval $[x_1, x_2]$ is 
+$$\frac{\Delta y}{ \Delta x} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}.$$
+This is the slope of a secant line that passes through two points on the graph of $f(x)$. 
+
+The **instantaneous rate of change** of $f(x)$ at a point $x_0$ is the derivative
+$$\frac{dy}{dx} = f'(x_0).$$
+This is the slope of a tangent line at one point on the graph of $f(x)$. 
+
+</div>
+
+3. If you drop a rock from a height of 400 feet in the air, its height after $t$ seconds will be
+$$h(t) = -16 t^2 + 400$$
+The derivative of height is the velocity:
+$$h'(t) = -32 t.$$
+<center>
+<iframe src="https://www.desmos.com/calculator/29tyizhppm?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+    a. How far did the rock fall in 2 seconds?  
+
+    b. What is the average velocity of the rock?  
+
+    c. What is the instantaneous velocity of the rock at time $t = 2$?
+
+    d. What is the instantaneous velocity of the rock when it hits the ground at time $t = 5$? 
+
+4. The function to convert Celsius to Fahrenheit is 
+$$F = \frac{9}{5} C + 32.$$
+What is the derivative of this function?  What does it mean?  
+
+5. In [exercise 4 from the Parabolas workshop](Parabolas.pdf), we looked at an example where a gas station's revenue $R$ is a function of the price they charge $x$ per gallon.  The formula for the revenue was
+$$R(x) = 36000x - 9000x^2$$
+and the derivative of the revenue is 
+$$R'(x) = 36000 - 18000x$$
+What is the derivative when $x = \$3$?  
+
+6. Suppose the cost of producing $x$ thousand widgets is $C(x) = 5 - 3x^2 + x^3$. 
+
+    a. Find the average cost of the first 2 thousand widgets. 
+    a. The marginal cost of an additional widget is the derivative $C'(x) = -6x + 3x^2$. What is the marginal cost of the next widget when you are producing $x = 2$ thousand widgets?
+
 ### Week 7 Notes
 
 Day  | Section  | Topic

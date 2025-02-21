@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -1374,41 +1374,41 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </table>
 <h4 id="wed-feb-19">Wed, Feb 19</h4>
 <p>Class canceled because of snow.</p>
-<!--
-#### Fri, Feb 21
-
-Today we introduced **context-free grammars**.  We started with some simple examples from Wikipedia (<https://en.wikipedia.org/wiki/Context-free_grammar#Examples>) to illustrate the definition.  
-
-1. We found a context free grammar that generates the (non-regular) language
-$$L = \{a^n b^n : n \in \N\}.$$
-
-2. We looked at the example of a CFG and used it to identify the parts $(V,\Sigma, R, S)$ in the formal definition.  
-
-    ```perl
-    S         →  <subject> <verb>
-    <subject> →  <article> <noun>
-    <article> →  a | the
-    <noun>    →  boy | girl | dog
-    <verb>    →  runs | jumps | swims
-    ```
-
-3. Find a context-free grammar for the language 
-$$L = \{w \in \{a,b\}^* : w \text{ has an equal number of } a\text{'s and } b \text{'s} \}.$$
-
-4. Describe how to generate the string `(a + a) * a` using the context free grammar below:
-
-    ```perl
-    <expr>    →  <expr> + <term> | <term>
-    <term>    →  <term> * <factor> | <factor>
-    <factor>  →  (<expr>) | a
-    ```
-
-
-
-We finished by looking at this example that gives the idea of how a programming language can be though of as a context-free language.  
-
-* <https://en.wikipedia.org/wiki/File:C_grammar_stmt2_svg.svg>
--->
+<h4 id="fri-feb-21">Fri, Feb 21</h4>
+<p>Today we introduced <strong>context-free grammars</strong>. We
+started with some simple examples from Wikipedia (<a
+href="https://en.wikipedia.org/wiki/Context-free_grammar#Examples"
+class="uri">https://en.wikipedia.org/wiki/Context-free_grammar#Examples</a>)
+to illustrate the definition.</p>
+<ol type="1">
+<li><p>We found a context free grammar that generates the (non-regular)
+language
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L = \{a^n b^n : n \in \mathbb{N}\}.</annotation></semantics></math></p></li>
+<li><p>We looked at the example of a CFG and used it to identify the
+parts
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>Σ</mi><mo>,</mo><mi>R</mi><mo>,</mo><mi>S</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(V,\Sigma, R, S)</annotation></semantics></math>
+in the formal definition.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>S         →  &lt;subject&gt; &lt;verb&gt;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>&lt;subject&gt; →  &lt;article&gt; &lt;noun&gt;</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>&lt;article&gt; →  a | the</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>&lt;noun&gt;    →  boy | girl | dog</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>&lt;verb&gt;    →  runs | jumps | swims</span></code></pre></div></li>
+<li><p>Find a context-free grammar for the language
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup><mo>:</mo><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> has an equal number of </mtext><mspace width="0.333em"></mspace></mrow><mi>a</mi><mrow><mtext mathvariant="normal">’s and </mtext><mspace width="0.333em"></mspace></mrow><mi>b</mi><mtext mathvariant="normal">’s</mtext><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L = \{w \in \{a,b\}^* : w \text{ has an equal number of } a\text{&#39;s and } b \text{&#39;s} \}.</annotation></semantics></math></p></li>
+<li><p>Describe how to generate the string <code>(a + a) * a</code>
+using the context free grammar below:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;expr&gt;    →  &lt;expr&gt; + &lt;term&gt; | &lt;term&gt;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>&lt;term&gt;    →  &lt;term&gt; <span class="ot">*</span> &lt;factor&gt; | &lt;factor&gt;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>&lt;factor&gt;  →  (&lt;expr&gt;) | a</span></code></pre></div></li>
+</ol>
+<p>We finished by looking at this example that gives the idea of how a
+programming language can be though of as a context-free language.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/File:C_grammar_stmt2_svg.svg"
+class="uri">https://en.wikipedia.org/wiki/File:C_grammar_stmt2_svg.svg</a></li>
+</ul>
 <!--
 #### Wednesday, September 27
 

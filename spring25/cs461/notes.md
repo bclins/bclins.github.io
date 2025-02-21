@@ -593,7 +593,6 @@ Fri, Feb 21 | [3.3][3.3] | Parsing and parse-trees
 
 Class canceled because of snow. 
 
-<!--
 #### Fri, Feb 21
 
 Today we introduced **context-free grammars**.  We started with some simple examples from Wikipedia (<https://en.wikipedia.org/wiki/Context-free_grammar#Examples>) to illustrate the definition.  
@@ -627,7 +626,6 @@ $$L = \{w \in \{a,b\}^* : w \text{ has an equal number of } a\text{'s and } b \t
 We finished by looking at this example that gives the idea of how a programming language can be though of as a context-free language.  
 
 * <https://en.wikipedia.org/wiki/File:C_grammar_stmt2_svg.svg>
--->
 
 <!--
 #### Wednesday, September 27
