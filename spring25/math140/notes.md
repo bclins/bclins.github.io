@@ -818,20 +818,35 @@ means "take the derivative of the function".  We write either $f'(x)$, $y'$, $\f
 
 </div> 
 
-1. Find the derivative of $y = 6x^2$. 
+1. Use the power rule to find each of the following derivatives.
 
-2. Find the derivative of $f(x) = 4x - x^3$.
+    a. $\frac{d}{dx} x^2$
+    a. $\frac{d}{dx} x^3$
+    a. $\frac{d}{dx} x^4$
+    a. $\frac{d}{dx} x^{-1}$
+    a. $\frac{d}{dx} \sqrt{x}$
 
-3. In [exercise 4 from the Parabolas workshop](Parabolas.pdf), we looked at an example where a gas station's revenue $R$ is a function of the price they charge $p$ per gallon.  The formula for the revenue was
+2. What is the slope of the tangent line to $y = \sqrt{x}$ at the point $(4,2)$? 
+
+3. Find the derivative of $y = 6x^2$. 
+
+4. Find the derivative of $f(x) = 4x - x^3$.
+
+5. In [exercise 4 from the Parabolas workshop](Parabolas.pdf), we looked at an example where a gas station's revenue $R$ is a function of the price they charge $p$ per gallon.  The formula for the revenue was
 $$R(p) = 36000p - 9000p^2$$
     a. Find the formula for the derivative $\frac{dR}{dp}$. 
     b. Find the value of $\frac{dR}{dp}$ when $p = \$3$ and explain what it means. 
 
-6. Suppose the cost of producing $x$ thousand widgets is $C(x) = 5 - 3x^2 + x^3$. 
+<!--
+6. Suppose the cost (in millions of dollars) of producing $x$ thousand widgets is $C(x) = 5 - 3x^2 + x^3$. 
 
+    a. Find $C(2)$.
     a. Find the average cost of the first 2 thousand widgets. 
-    a. The marginal cost of an additional widget is the derivative $C'(x) = -6x + 3x^2$. What is the marginal cost of the next widget when you are producing $x = 2$ thousand widgets?
+    a. The marginal cost is the derivative $C'(x)$. Find the marginal cost function.
+    a. What is C'(2)$ and what does it mean?
+-->
 
+6. Find the derivative of $y = (x-1)(x-4)$.  
 
 
 ### Week 8 Notes
