@@ -451,8 +451,7 @@ Mon, Feb 24 | [3.4][3.4] | Weighted averages & expected value
 Wed, Feb 26 | [3.4][3.4] | Random variables
 Fri, Feb 28 | [7.1][7.1] | Sampling distributions
 
-<!--
-### Mon, Oct 7
+### Mon, Feb 24
 
 Today we talked about **weighted averages**. To find a weighted average:
 
@@ -472,6 +471,7 @@ We also talked about **expected value** (also known as the **theoretical average
 
 We finished by talking about the **Law of Large Numbers** which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
 
+<!--
 ### Wed, Oct 9
 
 A **random variable** is a probability model where the outcome are numbers. We often use a capital letter like $X$ or $Y$ to represent a random variable.  We use the shorthand $E(X)$ to represent the expected value of a random variable.  Recall that the expected value (also known as the theoretical average) is the weighted average of the possible outcomes weighted by their probabilities.  

@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -1415,9 +1415,9 @@ class="sourceCode perl"><code class="sourceCode perl"><span id="cb6-1"><a href="
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>&lt;noun&gt;    →  boy | girl | dog</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>&lt;verb&gt;    →  runs | walks | talks</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>&lt;object&gt;  →  &lt;prep&gt; &lt;subject&gt;</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>&lt;prep&gt;    →  to |from</span></code></pre></div></li>
-<li><p>Draw a parse tree for the sentence “The boy talks to the
-girl.”</p></li>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>&lt;prep&gt;    →  to |from</span></code></pre></div>
+<p>Draw a parse tree that shows how to derive the sentence “The boy
+talks to the girl.”</p></li>
 <li><p>Find a CFG for the language of matched parentheses.</p>
 <details>
 <p>Seth suggested this CFG:</p>
@@ -1535,6 +1535,93 @@ grammars</td>
 </tr>
 </tbody>
 </table>
+<h4 id="mon-feb-24">Mon, Feb 24</h4>
+<p>Today we looked at some more examples of Context Free Grammars. <a
+href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>
+is a family of programming languages that have a particularly simple
+syntax. Lisps are built around S-expressions, which are defined by the
+following CFG rules:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>S → (L) | A</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>L → S | S L</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A → &lt;number&gt; | &lt;string&gt; | &lt;symbol&gt;</span></code></pre></div>
+<p>For the variables above, <code>S</code> represents any S-expression,
+<code>L</code> represents a list, and <code>A</code> represents an atom,
+which can be a number, a string, or a symbolic expression like a
+variable name or operator (among other things).</p>
+<ol type="1">
+<li><p>Draw a parse tree for the S-expression
+<code>(* (+ 5 6) (- 4 2))</code>.</p></li>
+<li><p>Is it possible to draw a different parse tree for this
+expression? Why or why not?</p></li>
+</ol>
+<p>The S-expression grammar is <strong>unambigious</strong>, every
+expression has only one possible parse tree. Unfortunately, many CFGs
+are <strong>ambiguous</strong>, i.e., they allow strings with more than
+one parse tree. Here is a simple example.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>E → E + E </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>E → E <span class="ot">*</span> E </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>E → (E) </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>E → a</span></code></pre></div>
+<ol start="3" type="1">
+<li>Use this CFG to derive the string <code>a+a*a</code> two different
+ways.</li>
+</ol>
+<p>In some (but not all cases) it is possible to find two CFGs that
+generate the same set of strings, but one is ambiguous and the other
+isn’t. For example, if we change the grammar above to distinguish
+between expressions that are terms (<code>T</code>), or factors
+(<code>F</code>) or sums of terms (<code>E</code>), then we can make an
+equivalent CFG that is unambiguous:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>E  →  E + T | T</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>T  →  T <span class="ot">*</span> F | F</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>F  →  (E) | a</span></code></pre></div>
+<p>Sentences in ambiguous grammars are hard to parse, since they might
+have different meanings depending on how they are derived. For example,
+the sentence “the girl touches the boy with the flower” is ambiguous in
+English.</p>
+<p>We say that a language is <strong>context-free</strong> if it can be
+generated by a CFG. We use the shorthand CFL to denote a context-free
+language.</p>
+<div class="Theorem">
+<p><strong>Theorem (Regular Languages are Context-Free).</strong> Every
+regular language is context-free.</p>
+</div>
+<p>We’ll prove this later by showing that context-free grammars
+correspond to a special kind of automata with a (potentially infinte)
+stack called a pushdown automata. But today, we talked about how you can
+prove this theorem using the three operations (union, concatenation, and
+Kleene star) for regular expressions.</p>
+<ol start="4" type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mn>1</mn></msub><annotation encoding="application/x-tex">L_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mn>2</mn></msub><annotation encoding="application/x-tex">L_2</annotation></semantics></math>
+are both context-free languages, explain why the union
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>L</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">L_1 \cup L_2</annotation></semantics></math>
+is context free.</p></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mn>1</mn></msub><annotation encoding="application/x-tex">L_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mn>2</mn></msub><annotation encoding="application/x-tex">L_2</annotation></semantics></math>
+are both context-free languages, explain why the concatenation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>1</mn></msub><mo>∘</mo><msub><mi>L</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">L_1 \circ L_2</annotation></semantics></math>
+is context free.</p></li>
+<li><p>Explain why the Kleene star of a CFL is context-free.</p></li>
+</ol>
+<!--
+We looked at this [ambiguous grammar](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/ambiguousGrammar.html).
+
+3. Show that the sentence "the girl touches the boy with the flower" has two left derivations and those derivations correspond to two different meanings this sentence can have.  
+
+
+
+Tips on constructing context free grammars:
+
+1. To construct the union of two context-free languages: Use a new start variable with this production rule: $S \rightarrow S_1 | S_2$ where $S_1, S_2$ denote the start variables for the CFG's for $L_1$ and $L_2$ respectively.  From that point on, you just separately apply the rules for those two grammars.
+-->
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
 <thead>

@@ -791,16 +791,6 @@ $$h'(t) = -32 t.$$
 $$F = \frac{9}{5} C + 32.$$
 What is the derivative of this function?  What does it mean?  
 
-5. In [exercise 4 from the Parabolas workshop](Parabolas.pdf), we looked at an example where a gas station's revenue $R$ is a function of the price they charge $x$ per gallon.  The formula for the revenue was
-$$R(x) = 36000x - 9000x^2$$
-and the derivative of the revenue is 
-$$R'(x) = 36000 - 18000x$$
-What is the derivative when $x = \$3$?  
-
-6. Suppose the cost of producing $x$ thousand widgets is $C(x) = 5 - 3x^2 + x^3$. 
-
-    a. Find the average cost of the first 2 thousand widgets. 
-    a. The marginal cost of an additional widget is the derivative $C'(x) = -6x + 3x^2$. What is the marginal cost of the next widget when you are producing $x = 2$ thousand widgets?
 -->
 
 ### Week 7 Notes
@@ -810,6 +800,39 @@ Day  | Section  | Topic
 Mon, Feb 24  | [2.2][2.2]  | The derivative as a function
 Wed, Feb 26  | [2.3][2.3]  | The power & sum rule for derivatives
 Fri, Feb 28  | [2.3][2.3]  | Derivatives of logarithms and exponentials
+
+### Mon, Feb 24
+
+Today we introduced some rules for calculating the derivative. For any function $f(x)$, the notation 
+$$\dfrac{d}{dx} f(x)$$
+means "take the derivative of the function".  We write either $f'(x)$, $y'$, $\frac{dy}{dx}$, or sometimes $\frac{df}{dx}$ to represent the result. 
+
+<div class="Theorem">
+**Basic Differentiation Rules**
+
+1. **Power Rule.** $\dfrac{d}{dx} x^n = n x^{n-1}$.
+
+2. **Constant Multiple Rule.** $\dfrac{d}{dx} c f(x) = c f'(x)$.
+
+3. **Addition Rule.** $\dfrac{d}{dx}  f(x) + g(x) = f'(x) + g'(x)$.
+
+</div> 
+
+1. Find the derivative of $y = 6x^2$. 
+
+2. Find the derivative of $f(x) = 4x - x^3$.
+
+3. In [exercise 4 from the Parabolas workshop](Parabolas.pdf), we looked at an example where a gas station's revenue $R$ is a function of the price they charge $p$ per gallon.  The formula for the revenue was
+$$R(p) = 36000p - 9000p^2$$
+    a. Find the formula for the derivative $\frac{dR}{dp}$. 
+    b. Find the value of $\frac{dR}{dp}$ when $p = \$3$ and explain what it means. 
+
+6. Suppose the cost of producing $x$ thousand widgets is $C(x) = 5 - 3x^2 + x^3$. 
+
+    a. Find the average cost of the first 2 thousand widgets. 
+    a. The marginal cost of an additional widget is the derivative $C'(x) = -6x + 3x^2$. What is the marginal cost of the next widget when you are producing $x = 2$ thousand widgets?
+
+
 
 ### Week 8 Notes
 
