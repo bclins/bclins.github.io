@@ -848,6 +848,43 @@ $$R(p) = 36000p - 9000p^2$$
 
 6. Find the derivative of $y = (x-1)(x-4)$.  
 
+### Fri, Feb 28
+
+We applied the rules from last time to find the derivatives of the following examples. 
+
+1. Let $f(x) = x^5 + 2x^3 - x^2$.  Find $f'(x)$ and $f'(2)$.  (<https://youtu.be/-CTaxKTzbEI>)
+
+1. Differentiate $y = 7x ( 2x - x^3)$. (<https://youtu.be/8Sv6CNuNwqo?t=132>)
+
+1. Find $\dfrac{d}{dx} \dfrac{4x^5 - 5x^4 + 2x^3}{x^2}$. (<https://youtu.be/8Sv6CNuNwqo?t=266>)
+
+1. Find $\dfrac{d}{dx} \sqrt[3]{x^2}$. (<https://youtu.be/OjVHcgBhYUE>)
+
+1. Find the derivative of $y = \dfrac{\sqrt{x}}{x^2}$. 
+
+1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
+
+1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
+
+<!--
+Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product and quotient rules:
+
+* **Product Rule** $\displaystyle \frac{d}{dx} f(x) g(x) = f'(x) g(x) + f(x) g'(x)$.
+
+* **Quotient Rule** $\displaystyle \frac{d}{dx} \frac{f(x)}{g(x)} = \frac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} = \frac{\text{Lo DHi}- \text{Hi DLo}}{\text{Lo Lo}}$.    
+
+We did the following examples:
+
+1. $\displaystyle \frac{d}{dx} (3x^3 - 2x + 5) (\sqrt{x} + 2x )$
+
+2. $\displaystyle \frac{d}{dx} (2x+1) (3x-2)$
+
+3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
+
+4. $\displaystyle \frac{d}{dx} \frac{1}{x^2 + 4x + 4}$
+
+5. $\displaystyle \frac{d}{dx} \frac{2x-3}{x^3}$
+-->
 
 ### Week 8 Notes
 
