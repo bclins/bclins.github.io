@@ -848,6 +848,11 @@ $$R(p) = 36000p - 9000p^2$$
 
 6. Find the derivative of $y = (x-1)(x-4)$.  
 
+### Wed, Feb 26
+
+Class was canceled today.  
+
+<!--
 ### Fri, Feb 28
 
 We applied the rules from last time to find the derivatives of the following examples. 
@@ -865,6 +870,7 @@ We applied the rules from last time to find the derivatives of the following exa
 1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
 
 1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
+!-->
 
 <!--
 Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product and quotient rules:
@@ -885,6 +891,7 @@ We did the following examples:
 
 5. $\displaystyle \frac{d}{dx} \frac{2x-3}{x^3}$
 -->
+
 
 ### Week 8 Notes
 
