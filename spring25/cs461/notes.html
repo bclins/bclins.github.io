@@ -1759,12 +1759,12 @@ automata (PDA)</strong> consists of</p>
 <ol type="1">
 <li>A finite set of <strong>states</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</li>
-<li>A finite set of <strong>input symbols</strong>
+<li>A finite <strong>input alphabet</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>.</li>
-<li>A finite set of <strong>stack symbols</strong>
+<li>A finite <strong>stack alphabet</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Γ</mi><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math>.</li>
 <li>A <strong>transition function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Σ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Γ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><msup><mn>2</mn><mrow><mi>Q</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Σ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\delta: Q \times (\Sigma \cup \{\epsilon\}) \times (\Gamma \cup \{ \epsilon \}) \rightarrow 2^{Q \times (\Sigma \cup \{\epsilon\})}</annotation></semantics></math>.</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Σ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Γ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>→</mo><msup><mn>2</mn><mrow><mi>Q</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Γ</mi><mo>∪</mo><mo stretchy="false" form="prefix">{</mo><mi>ϵ</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\delta: Q \times (\Sigma \cup \{\epsilon\}) \times (\Gamma \cup \{ \epsilon \}) \rightarrow 2^{Q \times (\Gamma \cup \{\epsilon\})}</annotation></semantics></math>.</li>
 <li>A <strong>start state</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_0 \in Q</annotation></semantics></math>.</li>
 <li>A set of <strong>accepting states</strong>
@@ -1783,6 +1783,9 @@ src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NPDA2.png
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>m</mi></msup><mo>:</mo><mi>n</mi><mo>≥</mo><mi>m</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{ a^n b^m : n \ge m \}</annotation></semantics></math>.</p></li>
 <li><p>Describe an PDA with just one state that accepts the language of
 balanced parentheses.</p></li>
+<li><p>How many distinct PDAs with 5 states, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>=</mo><mi>Γ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma = \Gamma = \{0,1\}</annotation></semantics></math>
+are possible, according to the definition?</p></li>
 </ol>
 <!--
 #### Wednesday, October 4

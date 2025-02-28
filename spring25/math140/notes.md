@@ -856,7 +856,11 @@ Class was canceled today.
 
 We applied the rules from last time to find the derivatives of the following examples. 
 
+<!--
 1. Let $f(x) = x^5 + 2x^3 - x^2$.  Find $f'(x)$ and $f'(2)$.  (<https://youtu.be/-CTaxKTzbEI>)
+-->
+
+1. Let $f(x) = x^3 - 6x^2 + x - 5$.  Find the slope of the tangent line when $x = 1$. (<https://youtu.be/j9FDoYNxZlw>)
 
 1. Differentiate $y = 7x ( 2x - x^3)$. (<https://youtu.be/8Sv6CNuNwqo?t=132>)
 
@@ -866,9 +870,26 @@ We applied the rules from last time to find the derivatives of the following exa
 
 1. Find the derivative of $y = \dfrac{\sqrt{x}}{x^2}$. 
 
+In addition to these exercises, we also talked about derivative notation.  
+
+<div class="Theorem">
+**Derivative Notation**
+
+Don't confuse $\dfrac{d}{dx}$ and $\dfrac{dy}{dx}$.
+
+* $\dfrac{d}{dx}$ is a **command** that means "take the derivative" of what comes next. 
+
+* $\dfrac{dy}{dx}$ is the **derivative**.  It means the same thing as $y'$ or $f'(x)$.
+
+</div>
+
+The derivative can be a formula or a number. So it might make sense to say that $\dfrac{dy}{dx} = 3x^2$, but it would never make sense to say that $\dfrac{d}{dx} = 3x^2$. 
+
+<!--
 1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
 
 1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
+-->
 
 <!--
 Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product and quotient rules:

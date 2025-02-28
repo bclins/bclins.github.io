@@ -872,9 +872,9 @@ Here is the formal definition.
 **Definition.** A **nondeterministic pushdown automata (PDA)** consists of 
 
 1. A finite set of **states** $Q$.
-2. A finite set of **input symbols** $\Sigma$.
-3. A finite set of **stack symbols** $\Gamma$.
-4. A **transition function** $\delta: Q \times (\Sigma \cup \{\epsilon\}) \times (\Gamma \cup \{ \epsilon \}) \rightarrow 2^{Q \times (\Sigma \cup \{\epsilon\})}$.
+2. A finite **input alphabet** $\Sigma$.
+3. A finite **stack alphabet** $\Gamma$.
+4. A **transition function** $\delta: Q \times (\Sigma \cup \{\epsilon\}) \times (\Gamma \cup \{ \epsilon \}) \rightarrow 2^{Q \times (\Gamma \cup \{\epsilon\})}$.
 5. A **start state** $q_0 \in Q$. 
 6. A set of **accepting states** $F \subseteq Q$. 
 
@@ -890,6 +890,8 @@ We looked at these questions:
 2. Describe an PDA that accepts the language $L = \{ a^n b^m : n \ge m \}$.
 
 3. Describe an PDA with just one state that accepts the language of balanced parentheses.  
+
+4. How many distinct PDAs with 5 states, and $\Sigma = \Gamma = \{0,1\}$ are possible, according to the definition?  
 
 <!--
 #### Wednesday, October 4
