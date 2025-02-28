@@ -13,7 +13,7 @@
 \begin{document}
 \newcounter{enumCount}
 \pagestyle{empty}
-\subsection*{Homework 7 - Math 140 \hfill Name: \underline{\hspace*{2in}}}
+\subsection*{Homework 8 - Math 140 \hfill Name: \underline{\hspace*{2in}}}
 
 \noindent
 \textit{Calculate the following derivatives.  }
@@ -21,8 +21,8 @@
 
 \begin{multicols}{2}
 \begin{enumerate}
-\item $\ds \frac{d}{dx} 6 \sqrt{x}$
-\item $\ds \frac{d}{dx} \frac{3}{x^2}$
+\item $\ds \frac{d}{dx} \sqrt{x}(x^2 - 4)$
+\item $\ds \frac{d}{dx} \left(\frac{3}{x} - \frac{4}{x^2}\right)$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate}
 \end{multicols}
@@ -31,8 +31,8 @@
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\ds \frac{d}{dt} 16t^2 - 64t + 100$
-\item $\ds \frac{d}{dp} \left( p^{-2} - p^2 \right)$
+\item $\ds \frac{d}{dt} (t-1)(t+1)$
+\item $\ds \frac{d}{dx} \dfrac{x^4 - 5x^3 + 6x^2}{x^2}$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate}
 \end{multicols}
@@ -41,72 +41,70 @@
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\ds \frac{d}{dt} 2t^3(t^2 + \sqrt{t})$
-\item $\ds \frac{d}{dx} (x-5)(x+3)$
+\item $\ds \frac{d}{dt} (\sqrt{t})^3$
+\item $\ds \frac{d}{dx} \dfrac{x^3}{\sqrt{x}}$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate}
 \end{multicols}
 \vfill
 
 
-\noindent
-\textit{Find the slope of the tangent line for the following functions at the indicated point.}
-
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\ds y= 4 - 3x - x^2$ at $x=1$.
-
-\begin{tikzpicture}[yscale=0.6,xscale=0.5]
-\draw[gray] (-1.7,-0.7) grid (3.7,3.7);
-\draw[very thick,->] (-2,0) -- (4,0);
-\draw[very thick,->] (0,-1) -- (0,4);
-\draw[very thick,color=blue] plot[domain=-1.2:2.2,samples=400] function {2+x-x**2};
-\fill[blue,xscale=1] (1,2) circle (0.1);
-\end{tikzpicture}
-
-\item $\ds y = \frac{4}{x^2}$ at $x = -1$.
-
-\begin{tikzpicture}[yscale=0.6,xscale=0.6]
-\draw[gray] (-3.2,-0.7) grid (3.2,3.2);
-\draw[very thick,->] (-3.5,0) -- (3.5,0);
-\draw[very thick,->] (0,-0.7) -- (0,3.5);
-\draw[very thick,color=blue] plot[domain=-3.2:-0.8,samples=400] function {2/(x**2)};
-\draw[very thick,color=blue] plot[domain=0.8:3.2,samples=400] function {2/(x**2)};
-\fill[blue,xscale=1] (-1,2) circle (0.1);
-\end{tikzpicture}
-
+\item $\ds \frac{d}{dx} x^2 e^x$
+\item $\ds \frac{d}{dx} x \ln x$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate}
 \end{multicols}
-\vspace*{0.75in}
+\vfill
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item \hl{Product rule concept questions?}
 
 \newpage
-\noindent
-\textit{Where do the following functions have horizontal tangent lines? Hint: find the derivatives first, then solve for when the derivative equals zero.}
-\begin{multicols}{2}
+\item A manufacturer's total monthly revenue is $R(x) = 240 x - 0.05 x^2$ where $x$ is the number of products sold. 
 \begin{enumerate}
-\setcounter{enumi}{\theenumCount}
-
-\item $\ds f(x) =  x^3-3x^2$ 
-
-\item $\ds y= \tfrac{1}{5} x^{5} - \tfrac{7}{4} x^{4} + 4 x^{3}$. 
-\setcounter{enumCount}{\theenumi}
-\end{enumerate}
-\end{multicols}
+\item Find the marginal revenue $R'(x)$. 
+\vfill
+\item Calculate $R'(80)$.  
 \vfill
 
-\noindent
-\textit{Solve the following.}
-\begin{enumerate}
-\setcounter{enumi}{\theenumCount}
-\item A company estimates that if they hire $L$ workers, the output of their factor will be $Q(L) = 600 L^{2/3}$.  Find the derivative $Q'(x)$, then use $Q'(1000)$ to estimate how much output will increase if they have 1,000 workers and hire one more.
-\vfill
-
-\item A ball thrown in the air has a height of $h(t) = 6 + 29 t - 16t^2$ feet, where $t$ is time in seconds.  If the ball hits the ground at $t = 2$ seconds, calculate how fast the ball is falling then.  Recall that velocity is the derivative of the position (i.e., the height). 
+\item Calculate $R(81) - R(80)$.  Is it close to the previous answer?  Should it be? 
 \vfill
 
 \end{enumerate}
+
+
+\item Suppose that the total cost to produce $x$ units is $C(x) = 3x^2 + x + 500$.  
+\begin{enumerate}
+\item Find the marginal cost $R'(x)$. 
+\vfill
+
+\item Calculate $C'(40)$.  
+\vfill
+\end{enumerate}
+
+\item The average cost per item from the previous problem is $A(x) = 3x + 1 + \dfrac{500}{x}$.  
+\begin{enumerate}
+\item Find the derivative of the average cost function. 
+\vfill
+
+\item Is the average cost increasing or decreasing when the level of production is $x=10$?  
+\vfill
+\end{enumerate}
+
+\end{enumerate}
+
+
+\vfill
+
+%\item A coffee cup is cooling so that its temperature (in Celsius) is given by $T(t) = 80 e^{-0.4t}$ where $t$ is the time in minutes.   
+%\vfill
+
 
 \end{document}
 

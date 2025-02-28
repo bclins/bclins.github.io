@@ -810,7 +810,7 @@ Tips on constructing context free grammars:
 #### Wed, Feb 26
 
 <div class = "Theorem">
-**Theorem (Pumping Lemma for CFLs)**. If $L \subseteq \Sigma^*$ is a context-free language, then $L$ has a length $p \ge 1$ (called the **pumping length** of $L$) such that if a string $w \in L$ is longer than $p$, then $w = uvxyz$ where $u, v, x, y, z \in \Sigma^*$ are substrings such that 
+**Theorem (Pumping Lemma for CFLs)**. If $L \subseteq \Sigma^*$ is a context-free language, then $L$ has a length $p \ge 1$ (called the **pumping length** of $L$) such that if a string $w \in L$ is longer than $p,$ then $w = uvxyz$ where $u, v, x, y, z \in \Sigma^*$ are substrings such that 
 
 1. At least one of $v$ or $y$ is not empty (i.e., $|vy| \ge 1$),
 2. The middle part has length $|vxy| \le p$, and 
@@ -847,6 +847,78 @@ We didn't have time for this last problem, so I left it as an exercise to consid
 
 <!--
 We also talked about how there are always an uncountable number of languages over a finite alphabet $\Sigma$ (since the set of languages is the power set of $\Sigma^*$), and a computer can only compute a countable set of languages, so it is not surprising that most languages are not context-free.  -->
+
+#### Fri, Feb 28
+
+Today we talked about **pushdown automata (PDA)** which are basically just NFAs with a stack. Note that the [book calls these nondeterministic pushdown automata][3.5]. There are also deterministic pushdown automata, but those turn out to be more complicated, and only the nondeterministic pushdown automata are actually equivalent to CFGs. So, we will always assume that our PDAs are nondeterministic, unless specifically mentioned otherwise. We started with this example:
+
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NPDA1.png)
+</center>
+
+This PDA accepts the language $L = \{a^n b^n : n \in \N\}$.  Notice that each arrow has three parts, for example the first loop is labeled $a, \epsilon/a$ which means you can take this loop if you read an $a$ from the input string, and pop $\epsilon$ (i.e., nothing) from the stack, and then push $a$ onto the stack.  We will always use this notation (read, pop/push) for each arc. 
+
+PDAs work just like NFAs, except they have this extra rule: *You only accept a string if you finish in an accepting state and the stack is empty.* 
+
+Some things to note:
+
+1. Since the machine is nondeterministic, you can have more than one state (and more than one stack) branching off whenever you have a choice about which arrow to take.  
+
+2. If you are in a state and there is no valid arrow to take, then that state dies.  
+
+Here is the formal definition. 
+
+<div class="Theorem">
+**Definition.** A **nondeterministic pushdown automata (PDA)** consists of 
+
+1. A finite set of **states** $Q$.
+2. A finite set of **input symbols** $\Sigma$.
+3. A finite set of **stack symbols** $\Gamma$.
+4. A **transition function** $\delta: Q \times (\Sigma \cup \{\epsilon\}) \times (\Gamma \cup \{ \epsilon \}) \rightarrow 2^{Q \times (\Sigma \cup \{\epsilon\})}$.
+5. A **start state** $q_0 \in Q$. 
+6. A set of **accepting states** $F \subseteq Q$. 
+
+</div>
+
+We looked at these questions:
+
+1. For the PDA below, describe the language that it accepts.  
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NPDA2.png)
+</center>
+
+2. Describe an PDA that accepts the language $L = \{ a^n b^m : n \ge m \}$.
+
+3. Describe an PDA with just one state that accepts the language of balanced parentheses.  
+
+<!--
+#### Wednesday, October 4
+
+Today we talked about the equivalence between CFGs and NPDAs.  We sketched the proof of one direction: that if you have a CFG, then there is an NPDA that accepted the same language.  
+
+The idea of the proof is to create an NPDA with three states.  In state $q_0$ you immediately transition to $q_1$ reading nothing and push `S$` on the stack (where `$` is a special symbol to mark the bottom of the stack).  Then in state $q_1$ you have two different types of transitions that loop back to $q_1$:
+
+1. Transitions where you read nothing and pop a variable off the stack, then push the output of one of the grammar rules for that variable back onto the stack. (I called these red transitions.) You have one red transition for each of the rules in the grammar.
+
+2. Transitions where you read a symbol from the input and pop that symbol off the stack.  (I called these blue transitions.) You have one blue transition for each of the terminals in the grammar.
+
+Finally, you have a final transition to the accepting state $q_2$ which involves reading nothing and popping the `$` off the stack.  If you have finished reading the input when you do this, you will accept the string.  
+
+We illustrated how this idea works using the grammar and the input string `aabbbb`. 
+
+```
+    S →  AB
+    A →  aAb | ε
+    B →  bB | b
+```
+
+We finished by describing how Deterministic Pushdown Automata (DPDAs) are different from Nondeterministic Pushdown Automata (NPDAs) and the hierarchy of different languages that we have seen so far.  We looked at this example DPDA:
+
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/DPDA.png)
+</center>
+
+-->
 
 ### Week 8 Notes
 
