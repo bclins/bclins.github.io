@@ -543,18 +543,27 @@ Mon, Mar 3 | [5.1][5.1] | Sampling distributions for proportions
 Wed, Mar 5 | [5.2][5.2] | Confidence intervals for a proportion 
 Fri, Mar 7 | [5.2][5.2] | Confidence intervals for a proportion - con'd
 
-<!--
 
-### Wed, Oct 16
+### Mon, Mar 3
 
 We started with this warm-up problem which is a review of the things we talked about last week. 
 
+1. Annual rainfall totals in Farmville are approximately normal with mean 44 inches and standard deviation 7 inches.  
+
+    a. How likely is a year with more than 50 inches of rain? 
+
+    b. How likely is a whole decade with average annual rainfall over 50 inches?
+
+<!--
 1. Before state lotteries, mobsters used to run illegal lotteries called the numbers game in many cities.  It cost 1 dollar to buy a numbers game lottery ticket and players could pick any three digit number from 000 to 999.  If their number was picked, they would win \$600.  
     a. What is the expected value of a numbers ticket?  
     b. The standard deviation for a numbers ticket was $\sigma = \$18.96$.  If someone played the numbers game every day (350 days per year) for 40 years, that would be 14,000 games.  Describe the sampling distribution for this person's average winnings per game. Is it possible they win more than \$1 per game?   
     c. The mobster Casper Holstein took as many as 150,000 bets per week.  How likely would it be for the mob to have a bad week where they lost money?  
+-->
 
-Then we talked about **sample proportions** which are denoted $\hat{p}$. **NEXT TIME MAKE SURE TO EXPLAIN THAT P-P-HAT IS THE NUMBER OF "SUCCESSES" DIVIDED BY THE SAMPLE SIZE.**   In a SRS from a large population, $\hat{p}$ is random with **sampling distribution** that has the following features. 
+Then we talked about **sample proportions** which are denoted $\hat{p}$ and can be found using the formula
+$$\hat{p} = \frac{\text{ number of "successes" }}{\text{ sample size }}.$$ 
+In a SRS from a large population, $\hat{p}$ is random with a **sampling distribution** that has the following features. 
 
 
 <div class="Theorem">
@@ -568,14 +577,23 @@ $$\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.$$
 
 We did the following exercises in class. 
 
-1. In our class, 13 out of 28 students were born in VA.  Is $\frac{13}{28}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
+1. In our class, 13 out of 24 students were born in VA.  Is $\frac{13}{24}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
 
+1. In the United States about 7.2% of people have type O-negative blood, so they are universal donors.  Is 7.2% a parameter ($p$) or a statistic ($\hat{p}$)? 
+
+1. If a hospital has $N = 900$ patients, describe the sampling distribution for the proportion of patients who are universal donors. 
+
+1. Find the probability that $P(\hat{p}_{\text{universal donor}} > 8\%)$. 
+
+<!--
 2. Assuming that the true proportion of all HSC students that were born in VA is 50%, describe the sampling distribution for $\hat{p}_\text{VA}$ in a random sample of $N = 25$ students. 
 
 3. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+-->
 
+<!--
 ### Fri, Oct 18 
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:

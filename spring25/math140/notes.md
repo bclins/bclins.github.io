@@ -929,11 +929,13 @@ Another important application in economics is the notion of marginal functions i
 
 3. Suppose the cost of producing $x$ machines is $C(x) = 1100 + 140x - 0.2x^2$. Find the marginal cost of producing one more machine beyond $x = 105$. Show that this is roughly the same as the actual cost of the 106th machine.  (<https://youtu.be/RN0BTZ46Knk>)
 
+<!--
 4. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  (<https://youtu.be/3x0tnqNWodI>)
-
+-->
 <!-- Another good example, but messier numbers: https://youtu.be/27ZPoVpBYk8 -->
-
+<!--
 5. Suppose that $C(x) = \frac{100}{x} + 0.05x^2$.  Find the marginal cost.  When is the marginal cost zero?  
+-->
 
 
 ### Week 9 Notes
