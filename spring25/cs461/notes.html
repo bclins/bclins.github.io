@@ -1770,6 +1770,10 @@ automata (PDA)</strong> consists of</p>
 <li>A set of <strong>accepting states</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊆</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">F \subseteq Q</annotation></semantics></math>.</li>
 </ol>
+<p>Note: Some alternative definitions allow PDAs to push more than one
+symbol from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Γ</mi><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math>
+onto the stack in one step.</p>
 </div>
 <p>We looked at these questions:</p>
 <ol type="1">
@@ -1785,7 +1789,8 @@ src="https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/NPDA2.png
 balanced parentheses.</p></li>
 <li><p>How many distinct PDAs with 5 states, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>=</mo><mi>Γ</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\Sigma = \Gamma = \{0,1\}</annotation></semantics></math>
-are possible, according to the definition?</p></li>
+are possible (assuming you only push at most one variable onto the stack
+at each step), according to the definition?</p></li>
 </ol>
 <!--
 #### Wednesday, October 4
@@ -1849,6 +1854,117 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
+<h4 id="mon-mar-3">Mon, Mar 3</h4>
+<p>Today we talked about the equivalence between CFGs and PDAs.</p>
+<div class="Theorem">
+<p><strong>Theorem (Equivalence of CFGs and PDAs).</strong> A language
+is context-free if and only if there is a pushdown automata that
+recognizes it.</p>
+</div>
+<p>We sketched the proof of one direction: that if you have a CFG, then
+there is an PDA that accepts the same language. The other direction is
+harder to prove, so we skipped it, but you can find the details in more
+advanced theory of computing textbooks.</p>
+<p>The idea of the proof for the forward direction is to create an PDA
+with three states. In state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>0</mn></msub><annotation encoding="application/x-tex">q_0</annotation></semantics></math>
+you immediately transition to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">q_1</annotation></semantics></math>
+reading nothing and push <code>S$</code> on the stack (where
+<code>$</code> is a special symbol to mark the bottom of the stack and
+<code>S</code> is the symbol for the start variable). Then in state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">q_1</annotation></semantics></math>
+you have two different types of transitions that loop back to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">q_1</annotation></semantics></math>:</p>
+<ol type="1">
+<li><p>Transitions where you read nothing and pop a variable off the
+stack, then push the output of one of the grammar rules for that
+variable back onto the stack. (I called these red transitions.) You have
+one red transition for each of the rules in the grammar.</p></li>
+<li><p>Transitions where you read a symbol from the input and pop that
+symbol off the stack. (I called these blue transitions.) You have one
+blue transition for each of the terminals in the grammar.</p></li>
+</ol>
+<p>Finally, you have a final transition to the accepting state
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>2</mn></msub><annotation encoding="application/x-tex">q_2</annotation></semantics></math>
+which involves reading nothing and popping the <code>$</code> off the
+stack. If you have finished reading the input when you do this, you will
+accept the string.</p>
+<p>We illustrated how this idea works using the grammar and the input
+string <code>aabbbb</code>.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode perl"><code class="sourceCode perl"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    S →  AB</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    A →  aAb | ε</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    B →  bB | b</span></code></pre></div>
+<p>We finished with these additional exercises about CFGs. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+be a CFG, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+be the language generated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.</p>
+<ol type="1">
+<li><p>A variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+in a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+is <strong>useless</strong> if there are no strings in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+that have a parse tree with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+as one of the nodes. Prove that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+has any useless variables, then there is another context-free grammar
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+that generates the same language, but does not have any useless
+variables.</p>
+<details>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+be the CFG obtained by removing all useless variables from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+and all rules that reference those useless variables. We HTS that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+both generate the same language. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>G</mi></msub><annotation encoding="application/x-tex">L_G</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>H</mi></msub><annotation encoding="application/x-tex">L_H</annotation></semantics></math>
+be the languages generated by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+respectively. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msub><mi>L</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">w \in L_G</annotation></semantics></math>,
+then there is a parse tree for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+that doesn’t contain any useless variables. Therefore the same parse
+tree is a parse tree for generating
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msub><mi>L</mi><mi>H</mi></msub></mrow><annotation encoding="application/x-tex">w \in L_H</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msub><mi>L</mi><mi>H</mi></msub></mrow><annotation encoding="application/x-tex">w \in L_H</annotation></semantics></math>,
+then all of the variables and rules for the parse tree to generate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+are also variables and rules of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.
+Therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msub><mi>L</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">w \in L_G</annotation></semantics></math>
+which proves that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>H</mi></msub><mo>=</mo><msub><mi>L</mi><mi>G</mi></msub></mrow><annotation encoding="application/x-tex">L_H = L_G</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>▫</mi><annotation encoding="application/x-tex">\square</annotation></semantics></math></p>
+</details></li>
+</ol>
+<!--
+We finished by describing how Deterministic Pushdown Automata (DPDAs) are different from Nondeterministic Pushdown Automata (NPDAs) and the hierarchy of different languages that we have seen so far.  We looked at this example DPDA:
+
+<center>
+![](https://people.hsc.edu/faculty-staff/blins/classes/fall23/coms461/DPDA.png)
+</center>
+-->
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
 <colgroup>

@@ -38,7 +38,7 @@ Week | Topic                      | Notes | Homework
 5  | Rational functions, **Midterm 1**              | [Week 05](notes.html#week-5-notes)  | [HW5](HW/HW5.pdf)
 6  | Exponential & logarithmic functions            | [Week 06](notes.html#week-6-notes)  | [HW6](HW/HW6.pdf)
 7  | The derivative                                 | [Week 07](notes.html#week-7-notes)  | [HW7](HW/HW7.pdf)
-8  | Differentiation rules                          | [Week 08](notes.html#week-8-notes)  | 
+8  | Differentiation rules                          | [Week 08](notes.html#week-8-notes)  | [HW8](HW/HW8.pdf)
 9  | Product, quotient, & chain rule                | [Week 09](notes.html#week-9-notes)  | 
 10 | **Midterm 2**                                  | [Week 10](notes.html#week-10-notes) | 
 11 | Optimization                                   | [Week 11](notes.html#week-11-notes) | 

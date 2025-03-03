@@ -877,18 +877,15 @@ In addition to these exercises, we also talked about derivative notation.
 
 Don't confuse $\dfrac{d}{dx}$ and $\dfrac{dy}{dx}$.
 
-* $\dfrac{d}{dx}$ is a **command** that means "take the derivative" of what comes next. 
+* $\dfrac{d}{dx}$ is a **command** that means "find the derivative" of what comes next. 
 
-* $\dfrac{dy}{dx}$ is the **derivative**.  It means the same thing as $y'$ or $f'(x)$.
+* $\dfrac{dy}{dx}$ is the **derivative** value or function.  It means the same thing as $y'$ or $f'(x)$.
 
 </div>
 
 The derivative can be a formula or a number. So it might make sense to say that $\dfrac{dy}{dx} = 3x^2$, but it would never make sense to say that $\dfrac{d}{dx} = 3x^2$. 
 
 <!--
-1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
-
-1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
 -->
 
 <!--
@@ -919,6 +916,25 @@ Day  | Section  | Topic
 Mon, Mar 3  | [2.3][2.3]  | Applications of derivatives
 Wed, Mar 5  | [2.4][2.4]  | Product rule
 Fri, Mar 7  | [2.4][2.4]  | Product rule - con'd
+
+### Mon, Mar 3
+
+Today we talked about applications of derivatives.  One application is to find the points on a graph where the slope is zero:
+
+1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
+
+1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
+
+Another important application in economics is the notion of marginal functions including marginal cost and marginal revenue.  If a company produces $x$ goods and the cost to produce those goods is a function $C(x)$, then the marginal cost to produce the next one item after already producing $x$ is called the **marginal cost**.  Technically it is equal to $C(x+1) - C(x)$, but it is often easier to just use the derivative $C'(x)$ to estimate the marginal cost instead.  Likewise, the **marginal revenue** is the extra bit of revenue that comes from selling the next one item after selling the first $x$, and it can be approximated by the derivative $R'(x)$ of the revenue function. 
+
+3. Suppose the cost of producing $x$ machines is $C(x) = 1100 + 140x - 0.2x^2$. Find the marginal cost of producing one more machine beyond $x = 105$. Show that this is roughly the same as the actual cost of the 106th machine.  (<https://youtu.be/RN0BTZ46Knk>)
+
+4. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  (<https://youtu.be/3x0tnqNWodI>)
+
+<!-- Another good example, but messier numbers: https://youtu.be/27ZPoVpBYk8 -->
+
+5. Suppose that $C(x) = \frac{100}{x} + 0.05x^2$.  Find the marginal cost.  When is the marginal cost zero?  
+
 
 ### Week 9 Notes
 

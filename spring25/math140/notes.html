@@ -1347,10 +1347,11 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{dy}{dx}</annotation></semantics></math>.</p>
 <ul>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{d}{dx}</annotation></semantics></math>
-is a <strong>command</strong> that means “take the derivative” of what
+is a <strong>command</strong> that means “find the derivative” of what
 comes next.</p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{dy}{dx}</annotation></semantics></math>
-is the <strong>derivative</strong>. It means the same thing as
+is the <strong>derivative</strong> value or function. It means the same
+thing as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">y&#39;</annotation></semantics></math>
 or
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f&#39;(x)</annotation></semantics></math>.</p></li>
@@ -1362,9 +1363,6 @@ to say that
 but it would never make sense to say that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\dfrac{d}{dx} = 3x^2</annotation></semantics></math>.</p>
 <!--
-1. Let $p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24$.  Find $p'(x)$ and find the points where $p'(x) = 0$.
-
-1. Let $y = \dfrac{1}{2x^2} - \dfrac{6}{x}$.  Find $y'$ and the point where $y' = 0$. 
 -->
 <!--
 Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product and quotient rules:
@@ -1415,6 +1413,67 @@ href="https://people.hsc.edu/faculty-staff/blins/books/AppliedCalculusCalawayHof
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-3">Mon, Mar 3</h3>
+<p>Today we talked about applications of derivatives. One application is
+to find the points on a graph where the slope is zero:</p>
+<ol type="1">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>8</mn><mi>x</mi><mo>+</mo><mn>24</mn></mrow><annotation encoding="application/x-tex">p(x) = \frac{1}{3}x^3 - x^2 - 8x + 24</annotation></semantics></math>.
+Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p&#39;(x)</annotation></semantics></math>
+and find the points where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p&#39;(x) = 0</annotation></semantics></math>.</p></li>
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>−</mo><mfrac displaystyle="true"><mn>6</mn><mi>x</mi></mfrac></mrow><annotation encoding="application/x-tex">y = \dfrac{1}{2x^2} - \dfrac{6}{x}</annotation></semantics></math>.
+Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">y&#39;</annotation></semantics></math>
+and the point where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39; = 0</annotation></semantics></math>.</p></li>
+</ol>
+<p>Another important application in economics is the notion of marginal
+functions including marginal cost and marginal revenue. If a company
+produces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+goods and the cost to produce those goods is a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(x)</annotation></semantics></math>,
+then the marginal cost to produce the next one item after already
+producing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is called the <strong>marginal cost</strong>. Technically it is equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(x+1) - C(x)</annotation></semantics></math>,
+but it is often easier to just use the derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C&#39;(x)</annotation></semantics></math>
+to estimate the marginal cost instead. Likewise, the <strong>marginal
+revenue</strong> is the extra bit of revenue that comes from selling the
+next one item after selling the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>,
+and it can be approximated by the derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">R&#39;(x)</annotation></semantics></math>
+of the revenue function.</p>
+<ol start="3" type="1">
+<li><p>Suppose the cost of producing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+machines is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1100</mn><mo>+</mo><mn>140</mn><mi>x</mi><mo>−</mo><mn>0.2</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">C(x) = 1100 + 140x - 0.2x^2</annotation></semantics></math>.
+Find the marginal cost of producing one more machine beyond
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>105</mn></mrow><annotation encoding="application/x-tex">x = 105</annotation></semantics></math>.
+Show that this is roughly the same as the actual cost of the 106th
+machine. (<a href="https://youtu.be/RN0BTZ46Knk"
+class="uri">https://youtu.be/RN0BTZ46Knk</a>)</p></li>
+<li><p>Suppose a company has total revenue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>30</mn><mi>x</mi><mo>−</mo><mn>0.025</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">R(x) = 30x - 0.025x^2</annotation></semantics></math>
+and cost
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">C(x) = 2x + 5</annotation></semantics></math>.
+Find the marginal revenue, marginal cost, and marginal profit. (<a
+href="https://youtu.be/3x0tnqNWodI"
+class="uri">https://youtu.be/3x0tnqNWodI</a>)</p></li>
+</ol>
+<!-- Another good example, but messier numbers: https://youtu.be/27ZPoVpBYk8 -->
+<ol start="5" type="1">
+<li>Suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>100</mn><mi>x</mi></mfrac><mo>+</mo><mn>0.05</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">C(x) = \frac{100}{x} + 0.05x^2</annotation></semantics></math>.
+Find the marginal cost. When is the marginal cost zero?</li>
+</ol>
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
 <thead>
