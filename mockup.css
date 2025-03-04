@@ -1,6 +1,6 @@
 :root {
-  --header-color:	#046; /* better green: #264; gray: #333; brown: #522200; green: #163; red: #622; /* original blue: #046; */  
-  --link-color: #069; /* better green: #486; gray: #555; brown: #8b4513; green: #195; red: #A32; /* original blue: #069; */
+  --header-color:	#000; /* better green: #264; gray: #333; brown: #522200; green: #163; red: #622; /* original blue: #046; */  
+  --link-color: #00e; /* better green: #486; gray: #555; brown: #8b4513; green: #195; red: #A32; /* original blue: #069; */
 }
 
 /* @font-face {
@@ -36,6 +36,10 @@ body {
   margin-right: auto; 
   font-family: sans-serif;
   text-align: justify;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 h1 {
   color: var(--header-color); 

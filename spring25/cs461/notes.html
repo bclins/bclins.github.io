@@ -1888,21 +1888,20 @@ reading nothing and push <code>S$</code> on the stack (where
 you have two different types of transitions that loop back to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>q</mi><mn>1</mn></msub><annotation encoding="application/x-tex">q_1</annotation></semantics></math>:</p>
 <ul>
-<li>(<span style="color:red">Red loops</span>) Transitions where you:
+<li>(<span style="color:red">Red loops - one for each rule </span>)
 <ol type="i">
 <li>Read nothing</li>
 <li>Pop a variable off the stack</li>
 <li>Push the output of one of the grammar rules for that variable back
-onto the stack. You have one red transition for each of the rules in the
-grammar.</li>
+onto the stack.</li>
 </ol></li>
-<li>(<span style="color:blue">Blue loops</span>) Transitions where you:
+<li>(<span style="color:blue">Blue loops - one for each input alphabet
+symbol</span>)
 <ol type="i">
 <li>Read a symbol from the input</li>
 <li>Pop that symbol off the stack.<br />
 </li>
-<li>Push nothing You have one blue transition for each of the input
-signals in the grammar.</li>
+<li>Push nothing</li>
 </ol></li>
 </ul>
 <p>Finally, you have a final transition to the accepting state

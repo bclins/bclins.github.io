@@ -25,7 +25,7 @@ header-includes: |
 <center>
 Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
-
+ 
 ### Week 1 Notes
 
 
@@ -359,7 +359,7 @@ Fri, Feb 21 | [3.1][3.1] | Multiplication and addition rules
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
 <center>
-<img src="correlation_not_causation.png"></img>
+<img src="correlation_not_causation.png" style="max-width:100%"></img>
 </center>
 
 One variable (called the **explanatory variable**) might be the cause of a change in another variable (called the **response variable**). But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
@@ -593,8 +593,7 @@ We did the following exercises in class.
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 -->
 
-<!--
-### Fri, Oct 18 
+### Wed, Mar 5
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
@@ -608,6 +607,7 @@ The confidence interval formula has two parts: a **best guess estimate** (or **p
 1. In our class 13 out of 28 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
 
+<!--
 ### Mon, Oct 21
 
 Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  

@@ -941,18 +941,15 @@ We sketched the proof of one direction: that if you have a CFG, then there is an
 
 The idea of the proof for the forward direction is to create an PDA with three states.  In state $q_0$ you immediately transition to $q_1$ reading nothing and push `S$` on the stack (where `$` is a special symbol to mark the bottom of the stack and `S` is the symbol for the start variable).  Then in state $q_1$ you have two different types of transitions that loop back to $q_1$:
 
-* (<span style="color:red">Red loops</span>) Transitions where you:
+* (<span style="color:red">Red loops - one for each rule </span>) 
     i. Read nothing 
     ii. Pop a variable off the stack 
     iii. Push the output of one of the grammar rules for that variable back onto the stack. 
-You have one red transition for each of the rules in the grammar.
 
-
-* (<span style="color:blue">Blue loops</span>) Transitions where you:
+* (<span style="color:blue">Blue loops - one for each input alphabet symbol</span>) 
     i. Read a symbol from the input 
     ii. Pop that symbol off the stack.  
     iii. Push nothing
-You have one blue transition for each of the input signals in the grammar.
 
 
 Finally, you have a final transition to the accepting state $q_2$ which involves reading nothing and popping the `$` off the stack.  If you have finished reading the input when you do this, you will accept the string.  

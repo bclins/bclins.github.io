@@ -885,29 +885,6 @@ Don't confuse $\dfrac{d}{dx}$ and $\dfrac{dy}{dx}$.
 
 The derivative can be a formula or a number. So it might make sense to say that $\dfrac{dy}{dx} = 3x^2$, but it would never make sense to say that $\dfrac{d}{dx} = 3x^2$. 
 
-<!--
--->
-
-<!--
-Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product and quotient rules:
-
-* **Product Rule** $\displaystyle \frac{d}{dx} f(x) g(x) = f'(x) g(x) + f(x) g'(x)$.
-
-* **Quotient Rule** $\displaystyle \frac{d}{dx} \frac{f(x)}{g(x)} = \frac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} = \frac{\text{Lo DHi}- \text{Hi DLo}}{\text{Lo Lo}}$.    
-
-We did the following examples:
-
-1. $\displaystyle \frac{d}{dx} (3x^3 - 2x + 5) (\sqrt{x} + 2x )$
-
-2. $\displaystyle \frac{d}{dx} (2x+1) (3x-2)$
-
-3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
-
-4. $\displaystyle \frac{d}{dx} \frac{1}{x^2 + 4x + 4}$
-
-5. $\displaystyle \frac{d}{dx} \frac{2x-3}{x^3}$
--->
-
 
 ### Week 8 Notes
 
@@ -936,6 +913,53 @@ Another important application in economics is the notion of marginal functions i
 <!--
 5. Suppose that $C(x) = \frac{100}{x} + 0.05x^2$.  Find the marginal cost.  When is the marginal cost zero?  
 -->
+
+### Wed, Mar 5
+
+We started with some more marginal analysis examples. 
+
+1. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  (<https://youtu.be/3x0tnqNWodI>)
+
+2. Suppose that $C(x) = \frac{100}{x} + 0.05x^2$.  Find the marginal cost.  When is the marginal cost zero?  
+
+Although derivatives work term-by-term, they don't play nice with factors.  For example, you can't just take the derivatives the two factors in the expression $x^2 \cdot x^3$. To work with factors, you need to use the product rules.
+
+<div class="Theorem">
+
+**More Derivative Rules**
+
+* **Product Rule.** $\dfrac{d}{dx} f(x) g(x) = f'(x) g(x) + f(x) g'(x)$.
+
+<!-- * **Quotient Rule** $\dfrac{d}{dx} \dfrac{f(x)}{g(x)} = \dfrac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} = \dfrac{\text{Lo DHi}- \text{Hi DLo}}{\text{Lo Lo}}$.   --> 
+
+* **Exponential Rule.** $\dfrac{d}{dx} e^x = e^x$.
+
+* **Logarithm Rule.** $\dfrac{d}{dx} \ln x = \dfrac{1}{x}$. 
+</div>
+
+We did the following examples:
+
+3. $\dfrac{d}{dx} x^2 ( x^3 + 4)$ (<https://youtu.be/uPCjqfT0Ixg>)
+
+4. $\dfrac{d}{dx} (9x^2 - 6x + 2) e^x$ (<https://youtu.be/0qmL7gxVFF4?t=81>)
+
+5. $\dfrac{d}{dx} x^{-5} e^x$ (<https://youtu.be/musrpqfDH4s>)
+
+6. $\dfrac{d}{dx} (x-1) \ln x$ (<https://youtu.be/sifwajx0VN8>)
+
+In many cases, we can also use the rules for exponents and logarithms to simplify functions before we calculate the derivative.  
+
+7. $\dfrac{d}{dx} \ln(5x^2)$.  
+
+8. $\dfrac{d}{dx} \ln(3^{5x})$ (<https://youtu.be/WdowXXLXse4>)
+
+<!--
+3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
+
+4. $\displaystyle \frac{d}{dx} \frac{1}{x^2 + 4x + 4}$
+
+5. $\displaystyle \frac{d}{dx} \frac{2x-3}{x^3}$
+--> 
 
 
 ### Week 9 Notes

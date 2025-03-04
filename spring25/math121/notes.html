@@ -666,7 +666,7 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <p>One of the hardest problems in statistics is to prove causation. Here
 is a diagram that illustrates the problem.</p>
 <center>
-<img src="correlation_not_causation.png"></img>
+<img src="correlation_not_causation.png" style="max-width:100%"></img>
 </center>
 <p>One variable (called the <strong>explanatory variable</strong>) might
 be the cause of a change in another variable (called the
@@ -1080,21 +1080,42 @@ patients who are universal donors.</p></li>
 
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 -->
+<h3 id="wed-mar-5">Wed, Mar 5</h3>
+<p>Last time we saw that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is a random variable with a sampling distribution. We started today with
+this exercise from the book:</p>
+<ul>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4">Exercise
+5.4</a></li>
+</ul>
+<p>Then we talked about the following simple idea: there is a 95% chance
+that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is within 2 standard deviations of the true population proportion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
+So if we want to estimate what the true
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is, we can use a <strong>95% confidence interval</strong>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><mn>2</mn><msqrt><mfrac><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.</annotation></semantics></math></p>
+<p>The confidence interval formula has two parts: a <strong>best guess
+estimate</strong> (or <strong>point estimate</strong>) before the
+plus/minus symbol, and a <strong>margin of error</strong> after the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+symbol. The formula for the margin of error is 2 times the
+<strong>standard error</strong> which is an approximation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
+using
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+instead of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
+<ol type="1">
+<li>In our class 13 out of 28 students were born in VA. Use the 95%
+confidence interval formula to estimate the percent of all HSC students
+that were born in VA.</li>
+</ol>
 <!--
-### Fri, Oct 18 
-
-Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
-
-* [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
-
-Then we talked about the following simple idea: there is a 95% chance that $\hat{p}$ is within 2 standard deviations of the true population proportion $p$. So if we want to estimate what the true $p$ is, we can use a **95% confidence interval**:
-$$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
-
-The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is 2 times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
-
-1. In our class 13 out of 28 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
-
-
 ### Mon, Oct 21
 
 Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
