@@ -604,8 +604,15 @@ $$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
 
 The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is 2 times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
 
-1. In our class 13 out of 28 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
+1. In our class 13 out of 24 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
+2. A Gallup poll in 2017 asked 1,011 adults this question: Which of the following comes closest to your views on the origin and development of human beings?
+    a. Human beings developed over millions of year, but God guided this process;
+    b. Human beings developed over millions of years, but God had no part in this process;
+    c. God created man in present form
+    d. Other
+
+    Of people who answered the question, 38% said that God created man in present form.  Make a 95% confidence interval for the proportion of all Americans who believe this.  
 
 <!--
 ### Mon, Oct 21

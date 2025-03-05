@@ -995,20 +995,18 @@ One nice feature of Chomsky normal form is that it makes it easier to check whet
 It turns out that there is no general algorithm to check whether or not two CFGs are equivalent.  But all CFGs can be converted to Chomsky normal form.  
 
 <div class="Theorem">
-**Theorem (Chomsky).** Every context free grammar is equivalent to a CFG in Chomsky normal form.
+**Theorem (Chomsky).** Every CFG is equivalent to a CFG in Chomsky normal form.
 </div>
 
-To prove this theorem, we will describe an algorithm to convert a CFG into Chomsky normal form.  
+The proof is the following algorithm to convert any CFG into Chomsky normal form.  
 
+* **Step 1 (Preliminaries).** 
 
-* **Step 1 (Preliminaries).** First, remove any useless rules from the grammar.  
+    i. If any rule has $S$ on the right-hand side, then add a new start variable $S_0$ and rule $S_0 \rightarrow S$ so that the start variable never appears on the right side of a rule. If the grammar can generate the empty string, then add the rule $S_0 \rightarrow \epsilon$. 
+    ii. Remove any **$\epsilon$-rules**.  If $A \rightarrow \epsilon$ is a rule (where $A$ is not the start variable), then for any rule with $A$ on the right-hand side, add an alternative version without the $A$.
+    iii. Remove any **unit rules**. Replace any rule $A \rightarrow B$ with rules that directly transition from $A$ to any string that $B$ can transition to.  
 
-    i. Remove any useless rules.
-    ii. If any rule has $S$ on the right-hand side, then add a new start variable $S_0$ and rule $S_0 \rightarrow S$ so that the start variable never appears on the right side of a rule. If the grammar can generate the empty string, then add the rule $S_0 \rightarrow \epsilon$. 
-    iii. Remove any $\epsilon$-rules of the form $A \rightarrow \epsilon$.  If $A \rightarrow \epsilon$ is a rule, then for any rule with $A$ on the right-hand side, add an alternative version without the $A$ 
-    iv. Remove any unit rules of the form $A \rightarrow B$.  Replace any rule with $A$ on the right-hand side with a rule with $B$ in that same position.   
-
-* **Step 2 (Add terminal variables).** For each terminal symbol $a \in \Sigma$, create a variable $T_a$ and add the rule $T_a \rightarrow a$.  Then replace all terminal symbols in other rules with the corresponding terminal variables.  
+* **Step 2 (Add terminal variables).** For each terminal symbol $a \in \Sigma$, create a variable $T_a$ and add the rule $T_a \rightarrow a$.  If a rule has more than one symbol in its output, then replace any terminal symbols with their corresponding terminal variables. 
 
 * **Step 3 (Break up long rules).** For any rule of the form
 $$A \rightarrow X_1 X_2 \cdots X_n$$
@@ -1035,7 +1033,14 @@ At the end of this process your grammar will be in Chomsky normal form.
     A → abA | b
     ```
 
-3. Convert the following CFG to Chomsky normal form. 
+3. Explain why the following algorithm won't work to check if any two CFGs are equivalent:
+
+    * Step 1 - Convert both CFGs to Chomsky normal form.
+    * Step 2 - Check to see if the two Chomsky normal forms are the same. 
+
+We didn't have time for it today, but here is one more practice example:
+
+4. Convert the following CFG to Chomsky normal form. 
 
     ```perl
     S → ASA | A | ε

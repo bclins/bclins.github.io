@@ -2004,16 +2004,14 @@ grammars are equivalent if they generate the same language.</p>
 not two CFGs are equivalent. But all CFGs can be converted to Chomsky
 normal form.</p>
 <div class="Theorem">
-<p><strong>Theorem (Chomsky).</strong> Every context free grammar is
-equivalent to a CFG in Chomsky normal form.</p>
+<p><strong>Theorem (Chomsky).</strong> Every CFG is equivalent to a CFG
+in Chomsky normal form.</p>
 </div>
-<p>To prove this theorem, we will describe an algorithm to convert a CFG
-into Chomsky normal form.</p>
+<p>The proof is the following algorithm to convert any CFG into Chomsky
+normal form.</p>
 <ul>
-<li><p><strong>Step 1 (Preliminaries).</strong> First, remove any
-useless rules from the grammar.</p>
+<li><p><strong>Step 1 (Preliminaries).</strong></p>
 <ol type="i">
-<li>Remove any useless rules.</li>
 <li>If any rule has
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
 on the right-hand side, then add a new start variable
@@ -2024,22 +2022,22 @@ so that the start variable never appears on the right side of a rule. If
 the grammar can generate the empty string, then add the rule
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>→</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">S_0 \rightarrow \epsilon</annotation></semantics></math>.</li>
 <li>Remove any
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>-rules
-of the form
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">A \rightarrow \epsilon</annotation></semantics></math>.
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϵ</mi><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math>-rules</strong>.
 If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">A \rightarrow \epsilon</annotation></semantics></math>
-is a rule, then for any rule with
+is a rule (where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is not the start variable), then for any rule with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
 on the right-hand side, add an alternative version without the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math></li>
-<li>Remove any unit rules of the form
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \rightarrow B</annotation></semantics></math>.
-Replace any rule with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</li>
+<li>Remove any <strong>unit rules</strong>. Replace any rule
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \rightarrow B</annotation></semantics></math>
+with rules that directly transition from
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
-on the right-hand side with a rule with
+to any string that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
-in that same position.</li>
+can transition to.</li>
 </ol></li>
 <li><p><strong>Step 2 (Add terminal variables).</strong> For each
 terminal symbol
@@ -2048,8 +2046,8 @@ create a variable
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>a</mi></msub><annotation encoding="application/x-tex">T_a</annotation></semantics></math>
 and add the rule
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>T</mi><mi>a</mi></msub><mo>→</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">T_a \rightarrow a</annotation></semantics></math>.
-Then replace all terminal symbols in other rules with the corresponding
-terminal variables.</p></li>
+If a rule has more than one symbol in its output, then replace any
+terminal symbols with their corresponding terminal variables.</p></li>
 <li><p><strong>Step 3 (Break up long rules).</strong> For any rule of
 the form
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><msub><mi>X</mi><mn>1</mn></msub><msub><mi>X</mi><mn>2</mn></msub><mi>⋯</mi><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">A \rightarrow X_1 X_2 \cdots X_n</annotation></semantics></math>
@@ -2076,6 +2074,17 @@ class="sourceCode perl"><code class="sourceCode perl"><span id="cb13-1"><a href=
 <div class="sourceCode" id="cb14"><pre
 class="sourceCode perl"><code class="sourceCode perl"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>S → aSa | A</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>A → abA | b</span></code></pre></div></li>
+<li><p>Explain why the following algorithm won’t work to check if any
+two CFGs are equivalent:</p>
+<ul>
+<li>Step 1 - Convert both CFGs to Chomsky normal form.</li>
+<li>Step 2 - Check to see if the two Chomsky normal forms are the
+same.</li>
+</ul></li>
+</ol>
+<p>We didn’t have time for it today, but here is one more practice
+example:</p>
+<ol start="4" type="1">
 <li><p>Convert the following CFG to Chomsky normal form.</p>
 <div class="sourceCode" id="cb15"><pre
 class="sourceCode perl"><code class="sourceCode perl"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>S → ASA | A | ε</span>
