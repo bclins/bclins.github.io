@@ -11,8 +11,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -22,9 +25,6 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><br />
   <meta http-equiv="Pragma" content="no-cache" /><br />
   <meta http-equiv="Expires" content="0" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -35,7 +35,7 @@ style="background-color:#ccc; border: 0px solid black; border-radius: 12px">
 <table>
 <tr>
 <td>
-<img src="MeFall2017c.jpg" height=187 style="display:block; margin:-3px; border: 0px solid black;"></img>
+<img src="MeFall2017c.jpg" width=163 style="display:block; margin:-3px; border: 0px solid black;"></img>
 </td>
 <td>
 <p>Professor of Mathematics<br />

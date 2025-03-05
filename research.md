@@ -11,7 +11,7 @@ header-includes:
 <table>
 <tr>
 <td>
-<img src="MeFeb2019_3.jpg" height=187 style="display:block; margin:-3px; border: 0px solid black;"></img>
+<img src="MeFeb2019_3.jpg" width=150 style="display:block; margin:-3px; border: 0px solid black;"></img>
 </td>
 <td>
 Professor of Mathematics \

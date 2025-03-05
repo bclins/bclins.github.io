@@ -31,10 +31,10 @@ Fri, Jan 17  | [1.2][1.2]  | Combining functions
 
 Today we introduced the course syllabus. Then we looked at how to solve the following equations algebraically. 
 
-1. Solve $5-2x = -5$. (<https://youtu.be/7GShZYevLGU>)
+1. Solve $5-2x = -5$. ([video](https://youtu.be/7GShZYevLGU))
 
 
-1. Solve $\sqrt{3x + 1} = 4$. (<https://youtu.be/0gicD4STzpg>)
+1. Solve $\sqrt{3x + 1} = 4$. ([video](https://youtu.be/0gicD4STzpg))
 
 1. Solve $\dfrac{x}{x-1} = 3$. 
 
@@ -212,9 +212,9 @@ We used these examples to help graph the following in class:
 
 1. $y = 5|x|$
 
-2. $y = x^2 + 3$ (<https://youtu.be/tfF_-Db8iSA?t=2658>)
+2. $y = x^2 + 3$ ([video](https://youtu.be/tfF_-Db8iSA?t=2658))
 
-3. $y = \dfrac{1}{x-2}$ (<https://youtu.be/tfF_-Db8iSA?t=3391>)
+3. $y = \dfrac{1}{x-2}$ ([video](https://youtu.be/tfF_-Db8iSA?t=3391))
 
 <!--4. $y = |x-4|$
 
@@ -256,7 +256,7 @@ We did these examples.
 
 We started talking about different ways you can combine functions.  We did the following exercises.
 
-1. Use the graph below to compute $g(f(-5))$. (<https://youtu.be/oORnGaJp1pk>)
+1. Use the graph below to compute $g(f(-5))$. ([video](https://youtu.be/oORnGaJp1pk))
 
 <center>
 <img src="functionComposition.png" width = 400></img>
@@ -282,7 +282,7 @@ You also need to understand slope very well:
 
 * **Slope** $m = \dfrac{\text{rise}}{\text{run}} = \dfrac{\Delta y}{\Delta x} = \dfrac{ y_2 - y_1}{x_2 - x_1}$
 
-4. A line passes through $(-1, 6)$ and $(5, -4)$.  Find an equation for the line. (<https://youtu.be/XMJ72mtMn4>) 
+4. A line passes through $(-1, 6)$ and $(5, -4)$.  Find an equation for the line. ([video](https://youtu.be/XMJ72mtMn4)) 
 
 
 ### Week 2 Notes
@@ -298,7 +298,7 @@ Fri, Jan 24  | [1.3][1.3]  | Slope
 
 Today we talked about linear equation word problems. 
 
-1. Someone is hiking up a mountain.  They start at an elevation of 1200 meters and climb at a constant rate.  After 4 hours, they are at an elevation of 1700 meters. Find a formula for their elevation $y$ as a function of the time $x$ in hours since they started hiking. (<https://youtu.be/hBpI9IfmMKg>)
+1. Someone is hiking up a mountain.  They start at an elevation of 1200 meters and climb at a constant rate.  After 4 hours, they are at an elevation of 1700 meters. Find a formula for their elevation $y$ as a function of the time $x$ in hours since they started hiking. ([video](https://youtu.be/hBpI9IfmMKg))
 
 2. Find a formula to convert Celsius to Fahrenheit.
 
@@ -308,7 +308,7 @@ Today we talked about linear equation word problems.
 4. Find an equation for the line passing through $(-1,4)$ and $(3,-4)$.
 -->
 
-4. Find the slope and $y$ intercept of the equation $5x-2y = 8$. (<https://youtu.be/voN3PBPEy2A>)
+4. Find the slope and $y$ intercept of the equation $5x-2y = 8$. ([video](https://youtu.be/voN3PBPEy2A))
 
 5. Joe imports coffee.  He can import arabica beans for $6 per pound and he can import robusta beans for $5 per pound.  Suppose he spends $1500 to import $x$ pounds of arabica beans and $y$ pounds of robusta beans.  
 
@@ -333,22 +333,22 @@ Today we talked about linear equation word problems.
 
 ### Fri, Jan 24
 
-1. Solve the system of equations below. (<https://youtu.be/FgX3gLDDlzI>)
+1. Solve the system of equations below. ([video](https://youtu.be/FgX3gLDDlzI))
 
 $$ y = 2x$$
 $$3x + y = 30$$
 
-2. Solve the system of equations below. (<https://youtu.be/cblHUeq3bkE>)
+2. Solve the system of equations below. ([video](https://youtu.be/cblHUeq3bkE))
 
 $$3x + 6y = 12$$
 $$5x - 8y = 2$$
 
-3. Suppose that the quantity of beef supplied ($Q_S$) and demanded ($Q_D$) are given by the following functions of price.  Find the equilibrium price and quantity. (<https://youtu.be/9n-xMt-Sj3A>)
+3. Suppose that the quantity of beef supplied ($Q_S$) and demanded ($Q_D$) are given by the following functions of price.  Find the equilibrium price and quantity. ([video](https://youtu.be/9n-xMt-Sj3A))
 
 $$Q_S = -40 + 30P$$
 $$Q_D = 180 - 25P$$
 
-4. Leo has 4 more keys than Haley on his keychain.  Together they have 18 keys total.  How many keys does Haley have? (<https://youtu.be/2EcUlgR5ksY>)
+4. Leo has 4 more keys than Haley on his keychain.  Together they have 18 keys total.  How many keys does Haley have? ([video](https://youtu.be/2EcUlgR5ksY))
 
 5. Solve the system of equations
 
@@ -378,11 +378,11 @@ Today we started talking about [exponent rules](AlgebraRules.pdf#page=2). There 
 * Radicals (square roots, cube roots, etc.) are fractional powers $\sqrt[n]{x} = x^{1/n}$. 
 </div> 
 
-1. Simplify $\left( \dfrac{x^7 y^3}{x^2 y} \right)^4$. (<https://youtu.be/vQbwjlbJ0Vo>)
+1. Simplify $\left( \dfrac{x^7 y^3}{x^2 y} \right)^4$. ([video](https://youtu.be/vQbwjlbJ0Vo))
 
-2. Simplify $(a^3 b)^4 (a b^6)^2$. (<https://youtu.be/vQbwjlbJ0Vo?t=333>)
+2. Simplify $(a^3 b)^4 (a b^6)^2$. ([video](https://youtu.be/vQbwjlbJ0Vo?t=333))
 
-3. Simplify $(b^{-3} c^{-7})^{-2} (b^3 c^{-2})^{-3}$. (<https://youtu.be/vQbwjlbJ0Vo?t=485>)
+3. Simplify $(b^{-3} c^{-7})^{-2} (b^3 c^{-2})^{-3}$. ([video](https://youtu.be/vQbwjlbJ0Vo?t=485))
 
 4. Simplify $16^{1/4} + 16^{-1/4}$. 
 
@@ -390,7 +390,7 @@ Today we started talking about [exponent rules](AlgebraRules.pdf#page=2). There 
 
 6. Simplify $4^{5/2}$.
 
-7. Simplify $\sqrt[3]{64 z^6}$. (<https://youtu.be/KBP5EKcG1s4>)
+7. Simplify $\sqrt[3]{64 z^6}$. ([video](https://youtu.be/KBP5EKcG1s4))
 
 <!-- We didn't get to these problems about solving exponential equations:
 
@@ -407,11 +407,11 @@ Today we looked at using the exponent rules to help solve equations.
 
 2. Solve $\dfrac{2^{57}}{2^x} = 8$. 
 
-3. Solve $3^{x+2} = 9^{2x - 3}$. (<https://youtu.be/9tutJ5xrRwg>) 
+3. Solve $3^{x+2} = 9^{2x - 3}$. ([video](https://youtu.be/9tutJ5xrRwg)) 
 
-4. Solve $x^{-5/3} = \frac{1}{32}$. (<https://youtu.be/aA2b1bu0Q2c>) 
+4. Solve $x^{-5/3} = \frac{1}{32}$. ([video](https://youtu.be/aA2b1bu0Q2c)) 
 
-5. Solve $2^{\sqrt{x}} = 8^x$. (<https://youtu.be/9-sHxZA0dqU>)
+5. Solve $2^{\sqrt{x}} = 8^x$. ([video](https://youtu.be/9-sHxZA0dqU))
 
 This last problem opens a can of worms, since it turns into a 2nd degree polynomial. A **polynomial** is any sum of terms that combine a whole number power of $x$ multiplied by a number called a **coefficient**.  <!--The **degree** of a polynomial is the highest power of $x$.  For example, 
 $$x^3 + 4x^2 - 6x + 7$$
@@ -430,12 +430,12 @@ The solutions are the **roots**, i.e., the places where each factor is zero.
 
 Here is another polynomial equation:
 
-6. Solve $10x^2 - 6x = 0$. (<https://youtu.be/E3nUOaXMBSk>)
+6. Solve $10x^2 - 6x = 0$. ([video](https://youtu.be/E3nUOaXMBSk))
 
 <!-- 
 We didn't get to this last example: 
 
-7. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>)
+7. Solve $\sqrt{3x + 36} + 6 = x$. ([video](https://youtu.be/XPofycvymFk))
 
 
 -->
@@ -444,21 +444,21 @@ We didn't get to this last example:
 
 Here's an example we didn't get to last time. 
 
-1. Solve $\sqrt{3x + 36} + 6 = x$. (<https://youtu.be/XPofycvymFk>) <!-- Note to self: This is NOT A GOOD EXAMPLE! Because one of the solutions corresponds to the negative square root, not the positive square root. The video does at least check that one of the solutions is extraneous.  -->
+1. Solve $\sqrt{3x + 36} + 6 = x$. ([video](https://youtu.be/XPofycvymFk)) <!-- Note to self: This is NOT A GOOD EXAMPLE! Because one of the solutions corresponds to the negative square root, not the positive square root. The video does at least check that one of the solutions is extraneous.  -->
 
 After some algebra, this turns into the equation $x^2 - 15x = 0$.  We can factor that by dividing out the common factor of $x$.  There is a second more complex kind of factoring that involves un-FOIL-ing a polynomial.  Recall that FOIL stands for First-Outside-Inside-Last, which is a mnemonic to remember how to multiply out expressions like:
 $$(x+a)(x+b) = x^2 + bx + ax + ab = x^2 + (a+b)x + ab.$$
 When you factor a polynomial with leading term $x^2$, you need to find factors of the constant term that add up to the middle coefficient. Here are some examples we did in class. 
 
-2. Factor $x^2 + 15x + 50$. (<https://youtu.be/eF6zYNzlZKQ?t=278>)
+2. Factor $x^2 + 15x + 50$. ([video](https://youtu.be/eF6zYNzlZKQ?t=278))
 
-3. Factor $x^2 - 11x + 24$. (<https://youtu.be/eF6zYNzlZKQ?t=368>)
+3. Factor $x^2 - 11x + 24$. ([video](https://youtu.be/eF6zYNzlZKQ?t=368))
 
-4. Solve $x^2 = 3x + 10$.  (<https://youtu.be/D3a8NnpQ2vU>)
+4. Solve $x^2 = 3x + 10$.  ([video](https://youtu.be/D3a8NnpQ2vU))
 
 We didn't get to these last two examples in class, but they are good extra practice: 
 
-5. Where does the line $y = x+1$ intersect the parabola $y = x^2-1$?  (<https://youtu.be/S8NujgvvznQ>)
+5. Where does the line $y = x+1$ intersect the parabola $y = x^2-1$?  ([video](https://youtu.be/S8NujgvvznQ))
 
 6. Solve $(x+2)(x-5) = 8$
 
@@ -483,7 +483,7 @@ We looked at some more examples of factoring to solve polynomial equations.
 
 1. $-0.1x^2 +  0.7x + 6 = 0$. (This was from the workshop last time.)
 
-2. $4x^6 + 4 x^5 - 24 x^4 = 0$. (<https://youtu.be/PHc8B6MuE8s>)
+2. $4x^6 + 4 x^5 - 24 x^4 = 0$. ([video](https://youtu.be/PHc8B6MuE8s))
 
 A rational function is a function that can be expressed using polynomials and reciprocals of polynomials.  You can use the same techniques we've already used to solve equations involving rational expressions. 
 
@@ -495,9 +495,9 @@ After that, we talked about how to solve inequalities. We started with simple ex
 
 Then we moved on to harder examples. 
 
-4. Solve $x^3 - 3x^2 < 4x$.  (<https://youtu.be/1fCXjn9WoSc>)
+4. Solve $x^3 - 3x^2 < 4x$.  ([video](https://youtu.be/1fCXjn9WoSc))
 
-5. Solve $\dfrac{2}{x-3} \ge 1$. (<https://youtu.be/OPZAHBhPclc>)
+5. Solve $\dfrac{2}{x-3} \ge 1$. ([video](https://youtu.be/OPZAHBhPclc))
 
 <!-- 6. Solve $\dfrac{(x-3)(x+1)^2}{(x-1)} > 0$.-->
 
@@ -558,7 +558,7 @@ The tricky thing about percent growth is that it is not additive.  If something 
 
 3. If something grows by 30% one year and then 30% again the next year, how much did it grow total as a percentage?  
 
-4. If I have $100 invested and its value grows by 25% in the first year and shrinks 25% in the second year, then how much money is left after two years?  (<https://youtu.be/4oeoIOan_h4?t=322>)
+4. If I have $100 invested and its value grows by 25% in the first year and shrinks 25% in the second year, then how much money is left after two years?  ([video](https://youtu.be/4oeoIOan_h4?t=322))
 
 Since you multiply growth factors instead of adding percent changes, you also have to take roots to break growth factors into equal amounts.  
 
@@ -625,13 +625,13 @@ The **logarithm function** $\log_b(x)$ can be understood two ways:
 
 </div>
 
-1. Find $\log_2 16$. (<https://youtu.be/Z5myJ8dg_rM>)
+1. Find $\log_2 16$. ([video](https://youtu.be/Z5myJ8dg_rM))
 
-1. Find $\log_3 81$. (<https://youtu.be/Z5myJ8dg_rM?t=134>)
+1. Find $\log_3 81$. ([video](https://youtu.be/Z5myJ8dg_rM?t=134))
 
-1. Find $\log_{100} 1$. (<https://youtu.be/Z5myJ8dg_rM?t=353>)
+1. Find $\log_{100} 1$. ([video](https://youtu.be/Z5myJ8dg_rM?t=353))
 
-1. Find $\log_2 \left( \frac{1}{64} \right)$.  (<https://youtu.be/z9sJ3uusO98>)
+1. Find $\log_2 \left( \frac{1}{64} \right)$.  ([video](https://youtu.be/z9sJ3uusO98))
 
 1. Find $\log_{10} (\sqrt{10}).$
 
@@ -653,31 +653,31 @@ One of the most important applications of logarithms is that they let you solve 
 
 7. Solve $e^x = 2$.  
 
-8. Solve $3^x = 2^{x+1}$ (<https://youtu.be/tJuTsq2TMm4>)
+8. Solve $3^x = 2^{x+1}$ ([video](https://youtu.be/tJuTsq2TMm4))
 
 Here is one more good exercise using logarithms that we didn't have time for:
 
-9. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  (<https://youtu.be/1XQHko0_Y-k?t=588>)
+9. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  ([video](https://youtu.be/1XQHko0_Y-k?t=588))
 
 ### Wed, Feb 19
 
 Class is canceled today because of the snow, but I recommend starting [homework 6](HW/HW6.pdf) if you haven't already.  Here are some video links for problems similar to the ones on the homework. 
 
-1. Which of the following equations would you need a logarithm to solve?  (<https://www.youtube.com/shorts/2MT89tcjnQo>)
+1. Which of the following equations would you need a logarithm to solve?  (<https://www.youtube.com/shorts/2MT89tcjnQo))
 
     a. $3^x = 9$
     b. $3^x = 27$
     c. $3^x = 10$
 
-1. Solve $10^{2t-3} = 7$. (<https://youtu.be/R443Db-wJ5o>)
+1. Solve $10^{2t-3} = 7$. ([video](https://youtu.be/R443Db-wJ5o))
 
-1. Solve $3^x = 7^{x+2}$. (<https://youtu.be/32GJXjJ6nf0>)
+1. Solve $3^x = 7^{x+2}$. ([video](https://youtu.be/32GJXjJ6nf0))
 
 <!--1. Health insurance premiums are increasing by 7\% per year.  How long until they double?  -->
 
-4. How long would it take an investment of $4,000 to grow to $20,000 if it grows by 7% each year? (<https://youtu.be/lWXMkcCUhkA>)
+4. How long would it take an investment of $4,000 to grow to $20,000 if it grows by 7% each year? ([video](https://youtu.be/lWXMkcCUhkA))
 
-5. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  (<https://youtu.be/1XQHko0_Y-k?t=588>)
+5. A lumber company has 1,200,000 trees. They plan to harvest 7% of the remaining trees each year.  How long until they have harvested half of the trees?  ([video](https://youtu.be/1XQHko0_Y-k?t=588))
 
 
 ### Fri, Feb 21
@@ -755,7 +755,7 @@ $$y' = f'(x) = \dfrac{dy}{dx}.$$
 
 </div>
 
-Calculus was discovered independently by both Newton and Leibniz, and they invented different notations for the derivative. Newton used a mark like $y'$ or $f'(x)$ to represent the derivative.  Leibniz used the fraction $dy/dx$. Newton's notation emphasizes that the derivative is a function that depends on which $x$ we input.  Leibniz's notation emphasizes that the derivative is the slope of a tangent line, so it is equal to a rise over a run.  The symbols $dy$ and $dx$ are called **differentials**, and can represent any rise and run of a tangent line, the same way that $\Delta y$ and $\Delta x$ represent rise and run for other lines.  (<https://youtu.be/N2PpRnFqnqY>)
+Calculus was discovered independently by both Newton and Leibniz, and they invented different notations for the derivative. Newton used a mark like $y'$ or $f'(x)$ to represent the derivative.  Leibniz used the fraction $dy/dx$. Newton's notation emphasizes that the derivative is a function that depends on which $x$ we input.  Leibniz's notation emphasizes that the derivative is the slope of a tangent line, so it is equal to a rise over a run.  The symbols $dy$ and $dx$ are called **differentials**, and can represent any rise and run of a tangent line, the same way that $\Delta y$ and $\Delta x$ represent rise and run for other lines.  ([video](https://youtu.be/N2PpRnFqnqY))
 
 <div class="Theorem">
 **Average versus Instantaneous Rate of Change**
@@ -857,16 +857,16 @@ Class was canceled today.
 We applied the rules from last time to find the derivatives of the following examples. 
 
 <!--
-1. Let $f(x) = x^5 + 2x^3 - x^2$.  Find $f'(x)$ and $f'(2)$.  (<https://youtu.be/-CTaxKTzbEI>)
+1. Let $f(x) = x^5 + 2x^3 - x^2$.  Find $f'(x)$ and $f'(2)$.  ([video](https://youtu.be/-CTaxKTzbEI))
 -->
 
-1. Let $f(x) = x^3 - 6x^2 + x - 5$.  Find the slope of the tangent line when $x = 1$. (<https://youtu.be/j9FDoYNxZlw>)
+1. Let $f(x) = x^3 - 6x^2 + x - 5$.  Find the slope of the tangent line when $x = 1$. ([video](https://youtu.be/j9FDoYNxZlw))
 
-1. Differentiate $y = 7x ( 2x - x^3)$. (<https://youtu.be/8Sv6CNuNwqo?t=132>)
+1. Differentiate $y = 7x ( 2x - x^3)$. ([video](https://youtu.be/8Sv6CNuNwqo?t=132))
 
-1. Find $\dfrac{d}{dx} \dfrac{4x^5 - 5x^4 + 2x^3}{x^2}$. (<https://youtu.be/8Sv6CNuNwqo?t=266>)
+1. Find $\dfrac{d}{dx} \dfrac{4x^5 - 5x^4 + 2x^3}{x^2}$. ([video](https://youtu.be/8Sv6CNuNwqo?t=266))
 
-1. Find $\dfrac{d}{dx} \sqrt[3]{x^2}$. (<https://youtu.be/OjVHcgBhYUE>)
+1. Find $\dfrac{d}{dx} \sqrt[3]{x^2}$. ([video](https://youtu.be/OjVHcgBhYUE))
 
 1. Find the derivative of $y = \dfrac{\sqrt{x}}{x^2}$. 
 
@@ -904,10 +904,10 @@ Today we talked about applications of derivatives.  One application is to find t
 
 Another important application in economics is the notion of marginal functions including marginal cost and marginal revenue.  If a company produces $x$ goods and the cost to produce those goods is a function $C(x)$, then the marginal cost to produce the next one item after already producing $x$ is called the **marginal cost**.  Technically it is equal to $C(x+1) - C(x)$, but it is often easier to just use the derivative $C'(x)$ to estimate the marginal cost instead.  Likewise, the **marginal revenue** is the extra bit of revenue that comes from selling the next one item after selling the first $x$, and it can be approximated by the derivative $R'(x)$ of the revenue function. 
 
-3. Suppose the cost of producing $x$ machines is $C(x) = 1100 + 140x - 0.2x^2$. Find the marginal cost of producing one more machine beyond $x = 105$. Show that this is roughly the same as the actual cost of the 106th machine.  (<https://youtu.be/RN0BTZ46Knk>)
+3. Suppose the cost of producing $x$ machines is $C(x) = 1100 + 140x - 0.2x^2$. Find the marginal cost of producing one more machine beyond $x = 105$. Show that this is roughly the same as the actual cost of the 106th machine.  ([video](https://youtu.be/RN0BTZ46Knk))
 
 <!--
-4. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  (<https://youtu.be/3x0tnqNWodI>)
+4. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  ([video](https://youtu.be/3x0tnqNWodI))
 -->
 <!-- Another good example, but messier numbers: https://youtu.be/27ZPoVpBYk8 -->
 <!--
@@ -918,7 +918,7 @@ Another important application in economics is the notion of marginal functions i
 
 We started with some more marginal analysis examples. 
 
-1. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  (<https://youtu.be/3x0tnqNWodI>)
+1. Suppose a company has total revenue $R(x) = 30x - 0.025x^2$ and cost $C(x) = 2x + 5$. Find the marginal revenue, marginal cost, and marginal profit.  ([video](https://youtu.be/3x0tnqNWodI))
 
 2. Suppose that $C(x) = \frac{100}{x} + 0.05x^2$.  Find the marginal cost.  When is the marginal cost zero?  
 
@@ -939,19 +939,19 @@ Although derivatives work term-by-term, they don't play nice with factors.  For 
 
 We did the following examples:
 
-3. $\dfrac{d}{dx} x^2 ( x^3 + 4)$ (<https://youtu.be/uPCjqfT0Ixg>)
+3. $\dfrac{d}{dx} x^2 ( x^3 + 4)$ ([video](https://youtu.be/uPCjqfT0Ixg))
 
-4. $\dfrac{d}{dx} (9x^2 - 6x + 2) e^x$ (<https://youtu.be/0qmL7gxVFF4?t=81>)
+4. $\dfrac{d}{dx} (9x^2 - 6x + 2) e^x$ ([video](https://youtu.be/0qmL7gxVFF4?t=81))
 
-5. $\dfrac{d}{dx} x^{-5} e^x$ (<https://youtu.be/musrpqfDH4s>)
+5. $\dfrac{d}{dx} x^{-5} e^x$ ([video](https://youtu.be/musrpqfDH4s))
 
-6. $\dfrac{d}{dx} (x-1) \ln x$ (<https://youtu.be/sifwajx0VN8>)
+6. $\dfrac{d}{dx} (x-1) \ln x$ ([video](https://youtu.be/sifwajx0VN8))
 
 In many cases, we can also use the rules for exponents and logarithms to simplify functions before we calculate the derivative.  
 
 7. $\dfrac{d}{dx} \ln(5x^2)$.  
 
-8. $\dfrac{d}{dx} \ln(3^{5x})$ (<https://youtu.be/WdowXXLXse4>)
+8. $\dfrac{d}{dx} \ln(3^{5x})$ ([video](https://youtu.be/WdowXXLXse4))
 
 <!--
 3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
