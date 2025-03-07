@@ -611,7 +611,7 @@ The confidence interval formula has two parts: a **best guess estimate** (or **p
 
 ### Fri, Mar 7
 
-Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula with different **critical z-values**.
+Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
 
 <div class = "Theorem"> 
 **Confidence Interval for a Proportion.** To estimate a population proportion, use 
@@ -619,7 +619,7 @@ Last time we only looked at 95% confidence intervals, but you can adjust the **c
 $$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
 </div> 
 
-The critical z-value ($z^*$ in the formula above) is determined by the desired confidence level. Here are some common choices.
+The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
 
 <center>
 Confidence Level | 90% | 95% | 99% | 99.9%
@@ -646,11 +646,13 @@ Examples.
     c. 90% sure that the population proportion is in the interval.
     d. 90% sure that the sample proportion is in the interval. 
 
+<!-- We didn't get to these other exercises because we spend time going over the quiz.  Definitely do the last one next time! 
 3. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 
 We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
 
 4. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+-->
 
 - - - 
 
@@ -660,9 +662,9 @@ We finished by talking about how to choose a sample size large enough to get a d
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 17  |            | Review
-Wed, Mar 19  |            | **Midterm 2**
-Fri, Mar 21  | [5.3][5.3] | Hypothesis testing for a proportion
+Mon, Mar 17  | [5.3][5.3] | Hypothesis testing for a proportion 
+Wed, Mar 19  |            | Review  
+Fri, Mar 21  |            | **Midterm 2**
 
 <!--
 

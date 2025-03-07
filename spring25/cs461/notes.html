@@ -2137,7 +2137,8 @@ or
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>,
 and you can use regular expressions for the character to read. The
 character to write is optional, you can move without writing
-anything.</p></li>
+anything.<br />
+<!-- NOTE FOR NEXT TIME: THIS STATE DIAGRAM IS WAY TOO COMPLICATED TO DO IN CLASS.  DO A SIMPLER EXAMPLE. THERE ARE SIMPLE 3 STATE EXAMPLES YOU COULD USE INSTEAD.--></p></li>
 <li><p>Describe an algorithm that a TM could use to accept the language
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><msup><mn>2</mn><mi>n</mi></msup></msup><mo>:</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\{a^{2^n} : n \ge 0\}.</annotation></semantics></math>
 Hint: Try moving from left to right, crossing out every other
@@ -2145,59 +2146,13 @@ Hint: Try moving from left to right, crossing out every other
 as you go. How will you know if there were an even number of a’s? Could
 you repeat the process? When should you stop?</p></li>
 </ol>
+<p>We didn’t get to it in class, but here is a state diagram for a TM
+that can accept the language
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><msup><mn>2</mn><mi>n</mi></msup></msup><mo>:</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L = \{a^{2^n}: n \ge 0\}.</annotation></semantics></math></p>
+<center>
+<img src="TM.png" width = 600></img>
+</center>
 <!-- Note to self: These are examples 3.7 & 3.9 in Sipser.-->
-<p>Here is the formal definition of a Turing machine.</p>
-<div class="Theorem">
-<p><strong>Definition.</strong> A <strong>Turing machine</strong>
-consists of</p>
-<ol type="1">
-<li>A finite set of <strong>states</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</li>
-<li>A finite <strong>input alphabet</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
-that doesn’t include the blank symbol □.</li>
-<li>A finite <strong>tape alphabet</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Γ</mi><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math>
-such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>⊂</mo><mi>Γ</mi></mrow><annotation encoding="application/x-tex">\Sigma \subset \Gamma</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>□</mi><mo>∈</mo><mi>Γ</mi></mrow><annotation encoding="application/x-tex">□ \in \Gamma</annotation></semantics></math>.</li>
-<li>A <strong>transition function</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>→</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}</annotation></semantics></math>.</li>
-<li>A <strong>start state</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_0 \in Q</annotation></semantics></math>.</li>
-<li>An <strong>accept state</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mtext mathvariant="normal">accept</mtext></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_{\text{accept}} \in Q</annotation></semantics></math>.</li>
-<li>A <strong>reject state</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mtext mathvariant="normal">reject</mtext></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_{\text{reject}} \in Q</annotation></semantics></math>.</li>
-</ol>
-</div>
-<p>Because Turing machines can loop forever, there is a difference
-between recognizing/accepting a language and deciding a language.</p>
-<div class="Theorem">
-<p><strong>Definition.</strong> A Turing machine
-<strong>accepts</strong> (or <strong>recognizes</strong>) a language
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
-if the set of strings that it accepts is exactly
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
-</div>
-<p>A Turing machine that only recognizes a language
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
-might loop forever when you give it a string that is not in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
-<div class="Theorem">
-<p><strong>Definition.</strong> A Turing machine
-<strong>decides</strong> a language
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
-if it not only recognizes
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>,
-but also rejects every string that is not in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
-</div>
-<p>Both of the example Turing Machines above actually decide their
-languages, since they will successfully reject any input that doesn’t
-match a valid string (they won’t get stuck looping forever without
-halting).</p>
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
 <colgroup>
@@ -2236,6 +2191,38 @@ theorem</td>
 </tr>
 </tbody>
 </table>
+<!--
+#### Mon, Mar 17
+
+Here is the formal definition of a Turing machine.
+
+<div class="Theorem">
+**Definition.** A **Turing machine** consists of 
+
+1. A finite set of **states** $Q$.
+2. A finite **input alphabet** $\Sigma$ that doesn't include the blank symbol □.
+3. A finite **tape alphabet** $\Gamma$ such that $\Sigma \subset \Gamma$ and $□ \in \Gamma$. 
+4. A **transition function** $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}$. 
+5. A **start state** $q_0 \in Q$. 
+6. An **accept state** $q_{\text{accept}} \in Q$. 
+7. A **reject state** $q_{\text{reject}} \in Q$. 
+
+</div>
+
+Because Turing machines can loop forever, there is a difference between recognizing/accepting a language and deciding a language. 
+
+<div class="Theorem">
+**Definition.** A Turing machine **accepts** (or **recognizes**) a language $L \subseteq \Sigma^*$ if the set of strings that it accepts is exactly $L$.  
+</div>
+
+A Turing machine that only recognizes a language $L$ might loop forever when you give it a string that is not in $L$.
+
+<div class="Theorem">
+**Definition.** A Turing machine **decides** a language $L \subseteq \Sigma^*$ if it not only recognizes $L$, but also rejects every string that is not in $L$. 
+</div>
+
+Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  
+-->
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>

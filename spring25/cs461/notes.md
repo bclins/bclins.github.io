@@ -1071,10 +1071,31 @@ We looked at these examples of TMs:
 2. Draw a state diagram for the Turing machine above.  Use the notation 
 $$\text{read} \rightarrow \text{write}, \text{move}$$ 
 to label transitions.  The move can be either $L$ or $R$, and you can use regular expressions for the character to read.  The character to write is optional, you can move without writing anything.  
+<!-- NOTE FOR NEXT TIME: THIS STATE DIAGRAM IS WAY TOO COMPLICATED TO DO IN CLASS.  DO A SIMPLER EXAMPLE. THERE ARE SIMPLE 3 STATE EXAMPLES YOU COULD USE INSTEAD.-->
 
-2. Describe an algorithm that a TM could use to accept the language $\{a^{2^n} : n \ge 0\}.$  Hint: Try moving from left to right, crossing out every other $a$ as you go.  How will you know if there were an even number of a's?  Could you repeat the process?  When should you stop? 
+3. Describe an algorithm that a TM could use to accept the language $\{a^{2^n} : n \ge 0\}.$  Hint: Try moving from left to right, crossing out every other $a$ as you go.  How will you know if there were an even number of a's?  Could you repeat the process?  When should you stop? 
+
+We didn't get to it in class, but here is a state diagram for a TM that can accept the language 
+$$L = \{a^{2^n}: n \ge 0\}.$$
+
+
+<center>
+<img src="TM.png" width = 600></img>
+</center>
 
 <!-- Note to self: These are examples 3.7 & 3.9 in Sipser.-->
+
+
+### Week 9 Notes
+
+Day  | Section  | Topic
+:----:|:---:|:------------------
+Mon, Mar 17 | [5.5][5.5] - [5.7][5.7] | Enumerators
+Wed, Mar 19 |             | Universal Turing machines
+Fri, Mar 21 | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem                       
+
+<!--
+#### Mon, Mar 17
 
 Here is the formal definition of a Turing machine.
 
@@ -1104,15 +1125,8 @@ A Turing machine that only recognizes a language $L$ might loop forever when you
 </div>
 
 Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  
+-->
 
-
-### Week 9 Notes
-
-Day  | Section  | Topic
-:----:|:---:|:------------------
-Mon, Mar 17 | [5.5][5.5] - [5.7][5.7] | Enumerators
-Wed, Mar 19 |             | Universal Turing machines
-Fri, Mar 21 | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem                       
 
 ### Week 10 Notes
 
