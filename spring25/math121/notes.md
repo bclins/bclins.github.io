@@ -624,12 +624,12 @@ The critical z-value ($z^*$ in the formula above) is determined by the desired c
 <center>
 Confidence Level | 90% | 95% | 99% | 99.9%
 :---|:---:|:---:|:---:|:---:
-Critical z-value | 1.645 | 1.96 | 2.576 | 3.291
+Critical z-value ($z^*$) | 1.645 | 1.96 | 2.576 | 3.291
 </center>
 
 This formula works well as long as two assumptions are true:
 
-1. **No Bias.** The data should be a simple random sample to avoid bias.
+1. **No Bias.** The data should come from a simple random sample to avoid bias.
 
 2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in the sample.
 

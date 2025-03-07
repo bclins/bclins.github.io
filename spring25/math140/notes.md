@@ -981,6 +981,16 @@ $$\dfrac{d}{dx} \dfrac{f(x)}{g(x)} = \dfrac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} 
 
 4. Use the quotient rule to find $\dfrac{d}{dx} e^{-x}$. ([video](https://youtu.be/r9AEnL0REAk))
 
+5. Suppose that $f(x) = \dfrac{g(x)}{h(x)}$ where the values of $g$ and $h$ at $x=5$ are given by the table below. Find the value of $f'(5)$.
+
+<center>
+<table class="bordered">
+<tr><td>$x$</td><td>$g(x)$</td><td>$g'(x)$</td><td>$h(x)$</td><td>$h'(x)$</td>
+<tr><td>5</td><td>$-3$</td><td>$6$</td><td>$3$</td><td>$-2$</td>
+</table>
+</center>
+
+
 <!--
 3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
 
