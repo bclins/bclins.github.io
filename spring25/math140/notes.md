@@ -953,6 +953,34 @@ In many cases, we can also use the rules for exponents and logarithms to simplif
 
 8. $\dfrac{d}{dx} \ln(3^{5x})$ ([video](https://youtu.be/WdowXXLXse4))
 
+
+
+### Fri, Mar 7
+
+We started with an abstract product rule example.
+
+1. Suppose that $f(x) = g(x) h(x)$ where the values of $g$ and $h$ at $x=5$ are given by the table below. Find the value of $f'(5)$. ([video](https://youtu.be/9LY59pImhZQ))
+
+<center>
+<table class="bordered">
+<tr><td>$x$</td><td>$g(x)$</td><td>$g'(x)$</td><td>$h(x)$</td><td>$h'(x)$</td>
+<tr><td>5</td><td>$-3$</td><td>$6$</td><td>$3$</td><td>$-2$</td>
+</table>
+</center>
+
+Then we introduced the quotient rule. 
+
+<div class="Theorem">
+**Quotient Rule.**
+$$\dfrac{d}{dx} \dfrac{f(x)}{g(x)} = \dfrac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} = \dfrac{\text{Lo DHi}- \text{Hi DLo}}{\text{Lo Lo}}$$
+</div>
+
+2. Find the derivative of $y = \dfrac{4x^2 - 3}{2x + 1}$. ([video](https://youtu.be/hPTxhqUnRLA))
+
+3. Find $\dfrac{d}{dx} \dfrac{\ln x}{ x }$.
+
+4. Use the quotient rule to find $\dfrac{d}{dx} e^{-x}$. ([video](https://youtu.be/r9AEnL0REAk))
+
 <!--
 3. $\displaystyle \frac{d}{dt} \frac{2t}{3t^2 + 16}$
 

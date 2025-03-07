@@ -1047,6 +1047,64 @@ We didn't have time for it today, but here is one more practice example:
     A → aa | ε
     ```
 
+#### Fri, Mar 7
+
+Today we introduced **Turing machines** (TMs) which are the most general model of computation that we will discuss.  Turing machines are deterministic finite state machines, with an infinite tape that the machine can move along, and both read and write from.  Like DFAs and PDAs, Turing machines can accept or reject an input string, but Turing machines also have a third possibility: they might loop forever and neither accept nor reject. 
+
+Here are some differences between finite automata and Turing machines:
+
+* The input string is initially written on the tape and the Turing machine is initially pointed at the first symbol of the input string. 
+
+* Aside from the input string, the tape is initially filled with special blank symbols (which we'll denote □). 
+ 
+* The Turing machine can read and (optionally) replace one symbol on the tape at a time before moving left or right.
+
+* The TM can have both accept and reject states.  When the Turing machine enters one of these states, it immediately halts and the program is complete. 
+
+* A TM might loop forever without ever accepting or rejecting a string.    
+
+ 
+We looked at these examples of TMs:
+
+1. Describe an algorithm that a Turing machine could implement to check if a string in $\{a,b,=\}^*$ is in the language $\{w=w : w \in \{a,b\}^* \}$. Use the tape alphabet $\{a,b,=,x, □\}$, where you can use an $x$ to mark symbols that have been dealt with.  Hint: How could you check that the first character of the string matches the first character after the equals sign? 
+
+2. Draw a state diagram for the Turing machine above.  Use the notation 
+$$\text{read} \rightarrow \text{write}, \text{move}$$ 
+to label transitions.  The move can be either $L$ or $R$, and you can use regular expressions for the character to read.  The character to write is optional, you can move without writing anything.  
+
+2. Describe an algorithm that a TM could use to accept the language $\{a^{2^n} : n \ge 0\}.$  Hint: Try moving from left to right, crossing out every other $a$ as you go.  How will you know if there were an even number of a's?  Could you repeat the process?  When should you stop? 
+
+<!-- Note to self: These are examples 3.7 & 3.9 in Sipser.-->
+
+Here is the formal definition of a Turing machine.
+
+<div class="Theorem">
+**Definition.** A **Turing machine** consists of 
+
+1. A finite set of **states** $Q$.
+2. A finite **input alphabet** $\Sigma$ that doesn't include the blank symbol □.
+3. A finite **tape alphabet** $\Gamma$ such that $\Sigma \subset \Gamma$ and $□ \in \Gamma$. 
+4. A **transition function** $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}$. 
+5. A **start state** $q_0 \in Q$. 
+6. An **accept state** $q_{\text{accept}} \in Q$. 
+7. A **reject state** $q_{\text{reject}} \in Q$. 
+
+</div>
+
+Because Turing machines can loop forever, there is a difference between recognizing/accepting a language and deciding a language. 
+
+<div class="Theorem">
+**Definition.** A Turing machine **accepts** (or **recognizes**) a language $L \subseteq \Sigma^*$ if the set of strings that it accepts is exactly $L$.  
+</div>
+
+A Turing machine that only recognizes a language $L$ might loop forever when you give it a string that is not in $L$.
+
+<div class="Theorem">
+**Definition.** A Turing machine **decides** a language $L \subseteq \Sigma^*$ if it not only recognizes $L$, but also rejects every string that is not in $L$. 
+</div>
+
+Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  
+
 
 ### Week 9 Notes
 

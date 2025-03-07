@@ -32,7 +32,7 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 All of my recent papers are on the ArXiv. My CV includes a complete list of publications. 
 
-* [ArXiv preprints](https://arxiv.org/search/math?searchtype=author&query=Lins%2C+Brian)
+* [ArXiv preprints](https://arxiv.org/search/math?searchtype=author&query=Lins%2C+B)
 * [Curriculum vitae](LinsCV_Fall24.pdf)
 
 ### Research Interests

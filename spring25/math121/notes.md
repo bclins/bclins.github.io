@@ -606,25 +606,35 @@ The confidence interval formula has two parts: a **best guess estimate** (or **p
 
 1. In our class 13 out of 24 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
-2. A Gallup poll in 2017 asked 1,011 adults this question: Which of the following comes closest to your views on the origin and development of human beings?
-    a. Human beings developed over millions of year, but God guided this process;
-    b. Human beings developed over millions of years, but God had no part in this process;
-    c. God created man in present form
-    d. Other
+2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
-    Of people who answered the question, 38% said that God created man in present form.  Make a 95% confidence interval for the proportion of all Americans who believe this.  
 
-<!--
-### Mon, Oct 21
+### Fri, Mar 7
 
-Today we talked about **confidence intervals** for a population proportion again.  We talked about how you can change the **confidence level** by adjusting the **critical z-value** $z^*$.  
-$$\hat{p} \pm z^* \sqrt{ \frac{\hat{p}(1-\hat{p})}{N}}.$$
+Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula with different **critical z-values**.
+
+<div class = "Theorem"> 
+**Confidence Interval for a Proportion.** To estimate a population proportion, use 
+
+$$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
+</div> 
+
+The critical z-value ($z^*$ in the formula above) is determined by the desired confidence level. Here are some common choices.
 
 <center>
 Confidence Level | 90% | 95% | 99% | 99.9%
 :---|:---:|:---:|:---:|:---:
 Critical z-value | 1.645 | 1.96 | 2.576 | 3.291
 </center>
+
+This formula works well as long as two assumptions are true:
+
+1. **No Bias.** The data should be a simple random sample to avoid bias.
+
+2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in the sample.
+
+
+</div>
 
 Examples.
 
@@ -636,25 +646,11 @@ Examples.
     c. 90% sure that the population proportion is in the interval.
     d. 90% sure that the sample proportion is in the interval. 
 
-Confidence intervals for proportions are based on some big assumptions.  
-
-1. **No Bias.** The data must be a simple random sample from the population to avoid bias.
-
-2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in your data in order to use this kind of confidence interval.
-
-We finished with one more exercise.  
-
-3. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
-
-
-We didn't have time for these last problems because we were reviewing probability models, probabilities vs. expected value, and sample proportions from last quiz. 
-
-2. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.2)
+3. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 
 We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
 
-3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
--->
+4. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 
 - - - 
 
