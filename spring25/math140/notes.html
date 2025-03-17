@@ -1624,13 +1624,17 @@ and also one of the most important rules for finding the derivative.</p>
 <p><strong>Chain Rule</strong></p>
 <p>To find the derivative of a composition of two functions (one
 function inside another):</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>g</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d}{dx} f(g(x)) = f&#39;(g(x)) g&#39;(x)</annotation></semantics></math></p>
-<p>or if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z = f(y)</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = g(x)</annotation></semantics></math>,
-then this is another way to write the chain rule:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>z</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>d</mi><mi>z</mi></mrow><mrow><mi>d</mi><mi>y</mi></mrow></mfrac><mo>⋅</mo><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dz}{dx} = \dfrac{dz}{dy} \cdot \dfrac{dy}{dx}.</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mi>g</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{d}{dx} f(g(x)) = f&#39;(g(x)) \cdot g&#39;(x).</annotation></semantics></math></p>
+<p>Think of this as a two step process:</p>
+<ul>
+<li><strong>Step 1.</strong> Take the derivative of the outside function
+(leave the inside alone).</li>
+<li><strong>Step 2.</strong> Multiply by the derivative of the inside.
+<!--
+or if $z = f(y)$ and $y = g(x)$, then this is another way to write the chain rule:
+
+$$\dfrac{dz}{dx} = \dfrac{dz}{dy} \cdot \dfrac{dy}{dx}.$$--></li>
+</ul>
 </div>
 <p>The chain rule takes practice to get used to, but here is an
 intuitive example to start to get the hang of it.</p>
@@ -1650,13 +1654,15 @@ is miles driven,
 is elevation, and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
 is time. If you are driving 60 miles per hour, then
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>60</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">x = 60t</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>60</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">x(t) = 60t</annotation></semantics></math>.
 And the elevation is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1270</mn><mo>−</mo><mn>2.5</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">y(x) = 1270 - 2.5 x</annotation></semantics></math>.
-To find
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{dy}{dt}</annotation></semantics></math>,
-we need to combine
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>⋅</mo><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.</annotation></semantics></math></p>
+<!--To find $\dfrac{dy}{dt}$, we need to combine 
+$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.$$ --> To find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x&#39;(t)</annotation></semantics></math>,
+you need to multiply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mi>x</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y&#39;(x(t)) \cdot x&#39;(t)</annotation></semantics></math>.
+<!--NOTE TO SELF. THIS EXAMPLE WAS OKAY, BUT IT WASN'T IDEAL SINCE I DECIDED NOT TO COVER THE LEIBNIZ NOTATION VERSION OF THE CHAIN RULE YET.  IS THERE A BETTER EXAMPLE FOR NEWTON NOTATION? --></p>
 <ol start="2" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">y = (4x+3)^3</annotation></semantics></math>,
 find
@@ -1664,6 +1670,8 @@ find
 (<a href="https://youtu.be/I876Sb5xrws">video</a>)</p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{d}{dx} \ln( x^2 + 1 ).</annotation></semantics></math>
 (<a href="https://youtu.be/92V9DzQ3ZRA">video</a>)</p></li>
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>100</mn></msup></mrow><annotation encoding="application/x-tex">\dfrac{d}{dx} (x^2 + 3x)^{100}</annotation></semantics></math>.</p></li>
 </ol>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>

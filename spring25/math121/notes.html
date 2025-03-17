@@ -1218,12 +1218,23 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tbody>
 </table>
 <h3 id="mon-mar-17">Mon, Mar 17</h3>
-<p>We started with this exercise:</p>
+<p>One important problem in statistics is to estimate how large an
+sample needs to be in order to get a small enough margin of error. For
+proportions, if you don’t know the sample proportion, then you can use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\hat{p} = 0.5</annotation></semantics></math>
+in the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">margin of error</mtext><mo>=</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mfrac displaystyle="true"><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>N</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">\text{margin of error} = z^* \sqrt{\dfrac{\hat{p}(1 - \hat{p})}{N}}</annotation></semantics></math>
+since the <strong>worst case margin of error</strong> happens when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\hat{p} = 0.5</annotation></semantics></math>.
+Any other
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+gives a smaller margin of error.</p>
 <ol type="1">
 <li>A university newspaper is conducting a survey to determine what
 fraction of students support a $200 a year increase in fees to pay for a
-new football stadium. How big of a sample is required to ensure the
-margin of error is smaller than 0.04 using a 95% confidence level?</li>
+new football stadium. How big of a sample is required to ensure that the
+worst case margin of error is smaller than 0.04 using a 95% confidence
+level?</li>
 </ol>
 <p>After that, we introduced <strong>hypothesis testing</strong>. This
 is a tool for answering yes/no questions about a population parameter.
@@ -1303,7 +1314,8 @@ not reject
 </tbody>
 </table>
 </center>
-<p>Here is another example we did in class:</p>
+<p>Here is another example that we didn’t have time for in class, but
+we’ll revisit later.</p>
 <ol start="2" type="1">
 <li>13 out of 24 students (54.2%) in our class were born in VA. Is this
 strong evidence that more than half of all HSC students were born in VA?

@@ -1027,23 +1027,33 @@ After those examples, we introduced the chain rule, which is the last and also o
 
 To find the derivative of a composition of two functions (one function inside another):
 
-$$\dfrac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$$
+$$\dfrac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x).$$
 
+Think of this as a two step process:
+
+* **Step 1.** Take the derivative of the outside function (leave the inside alone).
+* **Step 2.** Multiply by the derivative of the inside.
+<!--
 or if $z = f(y)$ and $y = g(x)$, then this is another way to write the chain rule:
 
-$$\dfrac{dz}{dx} = \dfrac{dz}{dy} \cdot \dfrac{dy}{dx}.$$
+$$\dfrac{dz}{dx} = \dfrac{dz}{dy} \cdot \dfrac{dy}{dx}.$$-->
 </div> 
 
 The chain rule takes practice to get used to, but here is an intuitive example to start to get the hang of it.  
 
 1. If you drive along Interstate-70 across Kansas from milepost 0 in the west to milepost 400 near where the highway crosses into Missouri, then your elevation decreases from 1270 meters to only 270 meters.  So the average change in elevation is $-2.5$ meters per mile as you drive east.  How fast is your elevation changing if you are driving at 60 miles per hour?  
 
-In this example, $x$ is miles driven, $y$ is elevation, and $t$ is time.  If you are driving 60 miles per hour, then $x = 60t$.  And the elevation is $y(x) = 1270 - 2.5 x$.  To find $\dfrac{dy}{dt}$, we need to combine 
-$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.$$
+In this example, $x$ is miles driven, $y$ is elevation, and $t$ is time.  If you are driving 60 miles per hour, then $x(t) = 60t$.  And the elevation is $y(x) = 1270 - 2.5 x$.  <!--To find $\dfrac{dy}{dt}$, we need to combine 
+$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.$$ -->
+To find $x'(t)$, you need to multiply $y'(x(t)) \cdot x'(t)$. 
+<!--NOTE TO SELF. THIS EXAMPLE WAS OKAY, BUT IT WASN'T IDEAL SINCE I DECIDED NOT TO COVER THE LEIBNIZ NOTATION VERSION OF THE CHAIN RULE YET.  IS THERE A BETTER EXAMPLE FOR NEWTON NOTATION? -->
+
 
 2. $y = (4x+3)^3$, find $y'$. ([video](https://youtu.be/I876Sb5xrws))
 
 3. $\dfrac{d}{dx} \ln( x^2 + 1 ).$ ([video](https://youtu.be/92V9DzQ3ZRA))
+
+4. Find $\dfrac{d}{dx} (x^2 + 3x)^{100}$. 
 
 
 ### Week 10 Notes

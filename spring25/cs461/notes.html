@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -2249,7 +2249,7 @@ don’t decide a language.</p>
 leaving the output on the tape when it halts.</p>
 <ol type="1">
 <li>Construct a Turing machine that reads an input string
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a,b\}^*</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a\}^*</annotation></semantics></math>
 and leaves
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">ww</annotation></semantics></math>
 on the tape when it halts. <!--*--></li>
@@ -2268,17 +2268,21 @@ on the tape whenever it is given a tape with
 as input.</p>
 </div>
 <ol start="2" type="1">
-<li><p>Explain why the function
+<li>Explain why the function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>w</mi><mi>w</mi><mi>w</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">f(w) = wwww</annotation></semantics></math>
-is Turing computable.</p></li>
-<li><p>Prove that if
+is Turing computable.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem (Compostions are computable).</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>,</mo><mi>g</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f, g : \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
 are both Turing computable functions, then so is the composition
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∘</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f \circ g</annotation></semantics></math>.</p></li>
-<li><p>Explain why the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∘</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f \circ g</annotation></semantics></math>.</p>
+</div>
+<ol start="3" type="1">
+<li>Explain why the function
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if length of </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is even.</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(w) = \begin{cases} 1 &amp; \text{ if length of } w \text{ is even.} \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math>
 is Turing computable. Hint: Every regular language is Turing
-decidable.</p></li>
+decidable.</li>
 </ol>
 <p>We finished by describing how this function (which comes up in the <a
 href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz-Conjecture</a>)

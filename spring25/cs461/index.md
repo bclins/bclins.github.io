@@ -44,7 +44,7 @@ Week | Topic                      | Notes | Homework
 6  | Context free languages                               | [Week 06](notes.html#week-6-notes)  | 
 7  | Pushdown automata                                    | [Week 07](notes.html#week-7-notes)  | [HW6](HW/HW6.pdf)
 8  | Pumping lemma 2                                      | [Week 08](notes.html#week-8-notes)  | [HW7](HW/HW7.pdf)
-9  | Turing machines                                      | [Week 09](notes.html#week-9-notes)  | 
+9  | Turing machines                                      | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 10 | Decidability, **Midterm 2**                          | [Week 10](notes.html#week-10-notes) | 
 11 | Enumerability                                        | [Week 11](notes.html#week-11-notes) | 
 12 | Complexity theory                                    | [Week 12](notes.html#week-12-notes) | 

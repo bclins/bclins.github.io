@@ -669,9 +669,12 @@ Fri, Mar 21  |            | **Midterm 2**
 
 ### Mon, Mar 17
 
-We started with this exercise:
+One important problem in statistics is to estimate how large an sample needs to be in order to get a small enough margin of error.  For proportions, if you don't know the sample proportion, then you can use $\hat{p} = 0.5$ in the formula 
+$$\text{margin of error} = z^* \sqrt{\dfrac{\hat{p}(1 - \hat{p})}{N}}$$
+since the **worst case margin of error** happens when $\hat{p} = 0.5$. Any other $\hat{p}$ gives a smaller margin of error.
 
-1. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+1. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure that the worst case margin of error is smaller than 0.04 using a 95% confidence level? 
+
 
 After that, we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
 
@@ -711,7 +714,7 @@ Over 5% | Weak evidence
 Under 0.1% | Very strong evidence
 </center>
 
-Here is another example we did in class:
+Here is another example that we didn't have time for in class, but we'll revisit later. 
 
 2. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 

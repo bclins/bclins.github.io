@@ -1127,7 +1127,7 @@ Both of the example Turing Machines above actually decide their languages, since
 
 Another thing that Turing Machines can do is compute functions by leaving the output on the tape when it halts. 
 
-1. Construct a Turing machine that reads an input string $w \in \{a,b\}^*$ and leaves $ww$ on the tape when it halts.  <!--*-->
+1. Construct a Turing machine that reads an input string $w \in \{a\}^*$ and leaves $ww$ on the tape when it halts.  <!--*-->
 
 This wasn't to hard to describe the algorithm, but it got a little complicated when we made the state diagram.  Once we did that, we defined Turing computable functions.  
 
@@ -1138,9 +1138,11 @@ This wasn't to hard to describe the algorithm, but it got a little complicated w
 
 2. Explain why the function $f(w) = wwww$ is Turing computable.  
 
-3. Prove that if $f, g : \Sigma^* \rightarrow \Sigma^*$ are both Turing computable functions, then so is the composition $f \circ g$.  
+<div class="Theorem">
+**Theorem (Compostions are computable).** If $f, g : \Sigma^* \rightarrow \Sigma^*$ are both Turing computable functions, then so is the composition $f \circ g$.  
+</div>
 
-4. Explain why the function 
+3. Explain why the function 
 $$f(w) = \begin{cases} 1 & \text{ if length of } w \text{ is even.} \\ 0 & \text{ otherwise.} \end{cases}$$
 is Turing computable.  Hint: Every regular language is Turing decidable.  
 
