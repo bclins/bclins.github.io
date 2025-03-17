@@ -617,6 +617,8 @@ Here is the definition of the logarithm for any base.
 -->
 
 <div class="Theorem">
+**What are Logarithms?**
+
 The **logarithm function** $\log_b(x)$ can be understood two ways:
 
 1. $\log_b(x)$ equals the **number of steps** $x$ is away from 1 on a (base-b) log-scale.
@@ -638,7 +640,7 @@ The **logarithm function** $\log_b(x)$ can be understood two ways:
 Logarithms are useful because they convert difficult multiplication/division problems into easier addition/subtraction problems.  They also convert exponential patterns into linear patterns.  
 
 <div class="Theorem">
-**Properties of Logarithms**.
+**Properties of Logarithms**
 
 1. Logarithms convert multiplication to addition $\log(xy) = \log(x) + \log(y)$. 
 1. Logarithms convert division to subtraction $\log(x/y) = \log(x) - \log(y)$. 
@@ -971,7 +973,7 @@ We started with an abstract product rule example.
 Then we introduced the quotient rule. 
 
 <div class="Theorem">
-**Quotient Rule.**
+**Quotient Rule**
 $$\dfrac{d}{dx} \dfrac{f(x)}{g(x)} = \dfrac{g(x) f'(x)  - f(x) g'(x)}{(g(x))^2} = \dfrac{\text{Lo DHi}- \text{Hi DLo}}{\text{Lo Lo}}$$
 </div>
 
@@ -1007,6 +1009,42 @@ Day  | Section  | Topic
 Mon, Mar 17  | [2.4][2.4]  | Quotient rule
 Wed, Mar 19  | [2.5][2.5]  | Chain rule
 Fri, Mar 21  | [2.5][2.5]  | Chain rule - con'd
+
+### Mon, Mar 17
+
+We started with some practice examples to review the product and quotient rules. 
+
+1. $f(x) = \dfrac{5x+2}{3x-4}$. Find $f'(x)$.  ([video](https://youtu.be/BF4e2vbmGkk))
+
+2. $\dfrac{d}{dx} 3x^4 (2x^2 - 1)$. ([video](https://youtu.be/jjmTVqbyLug))
+
+3. $\dfrac{d}{dx} \dfrac{1}{x^2 + 4x + 4}$
+
+After those examples, we introduced the chain rule, which is the last and also one of the most important rules for finding the derivative.  
+
+<div class = "Theorem">
+**Chain Rule**
+
+To find the derivative of a composition of two functions (one function inside another):
+
+$$\dfrac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$$
+
+or if $z = f(y)$ and $y = g(x)$, then this is another way to write the chain rule:
+
+$$\dfrac{dz}{dx} = \dfrac{dz}{dy} \cdot \dfrac{dy}{dx}.$$
+</div> 
+
+The chain rule takes practice to get used to, but here is an intuitive example to start to get the hang of it.  
+
+1. If you drive along Interstate-70 across Kansas from milepost 0 in the west to milepost 400 near where the highway crosses into Missouri, then your elevation decreases from 1270 meters to only 270 meters.  So the average change in elevation is $-2.5$ meters per mile as you drive east.  How fast is your elevation changing if you are driving at 60 miles per hour?  
+
+In this example, $x$ is miles driven, $y$ is elevation, and $t$ is time.  If you are driving 60 miles per hour, then $x = 60t$.  And the elevation is $y(x) = 1270 - 2.5 x$.  To find $\dfrac{dy}{dt}$, we need to combine 
+$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.$$
+
+2. $y = (4x+3)^3$, find $y'$. ([video](https://youtu.be/I876Sb5xrws))
+
+3. $\dfrac{d}{dx} \ln( x^2 + 1 ).$ ([video](https://youtu.be/92V9DzQ3ZRA))
+
 
 ### Week 10 Notes
 

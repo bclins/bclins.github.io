@@ -666,7 +666,57 @@ Mon, Mar 17  | [5.3][5.3] | Hypothesis testing for a proportion
 Wed, Mar 19  |            | Review  
 Fri, Mar 21  |            | **Midterm 2**
 
+
+### Mon, Mar 17
+
+We started with this exercise:
+
+1. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+
+After that, we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
+
+1. Once I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different Zenner cards (see below) that I couldn't see.  If I were just guessing, I would only have a 20\% chance (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
+
+<center>
+<figure>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=400 title="Zenner cards"></img>
+</figure>
+</center>
+
+Every hypothesis test starts with two possibilities: 
+
+* **Null Hypothesis ($H_0$)** - is a specific claim about the parameter. 
+* **Alternative Hypothesis ($H_A$)** - is what must be true if the null hypothesis is false. 
+
+Here are the steps to do a hypothesis test for a single proportion:
+
+1. **State the hypotheses.** These will pretty much always look like 
+    - $H_0 ~:~ p = p_0$
+    - $H_A ~:~ p \ne p_0$ \
+where $p_0$ is a specific number that makes sense in the context of the situation.
+
+2. **Calculate the test statistic.** Using the formula 
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
+
+3. **Find the p-value.** The p-value is *the probability of getting a result at least as extreme as the sample statistic if the null hypothesis is true.*
+
+4. **Explain what it means.** A low p-value is evidence that we should reject the null hypotheses.  Usually this means that the results are too surprising to be caused by random chance along.  A p-value over 5% means the results might be a random fluke and we should not reject $H_0$.
+
+<center>
+p-value | Meaning
+:---:|:---:
+Over 5% | Weak evidence
+1% to 5% | Moderate evidence
+0.1% to 1% | Strong evidence
+Under 0.1% | Very strong evidence
+</center>
+
+Here is another example we did in class:
+
+2. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
+
 <!--
+
 
 ### Wed, Oct 23
 

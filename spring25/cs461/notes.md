@@ -1094,7 +1094,6 @@ Mon, Mar 17 | [5.5][5.5] - [5.7][5.7] | Enumerators
 Wed, Mar 19 |             | Universal Turing machines
 Fri, Mar 21 | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem                       
 
-<!--
 #### Mon, Mar 17
 
 Here is the formal definition of a Turing machine.
@@ -1124,9 +1123,31 @@ A Turing machine that only recognizes a language $L$ might loop forever when you
 **Definition.** A Turing machine **decides** a language $L \subseteq \Sigma^*$ if it not only recognizes $L$, but also rejects every string that is not in $L$. 
 </div>
 
-Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  
--->
+Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  We'll see examples later of Turing machines that accept but don't decide a language. 
 
+Another thing that Turing Machines can do is compute functions by leaving the output on the tape when it halts. 
+
+1. Construct a Turing machine that reads an input string $w \in \{a,b\}^*$ and leaves $ww$ on the tape when it halts.  <!--*-->
+
+This wasn't to hard to describe the algorithm, but it got a little complicated when we made the state diagram.  Once we did that, we defined Turing computable functions.  
+
+<div class="Theorem">
+**Definition.** A function $f: \Sigma^* \rightarrow \Sigma^*$ is **Turing computable** if there is a Turing machine that halts with $f(w)$ on the tape whenever it is given a tape with $w \in \Sigma^*$ as input.
+
+</div>
+
+2. Explain why the function $f(w) = wwww$ is Turing computable.  
+
+3. Prove that if $f, g : \Sigma^* \rightarrow \Sigma^*$ are both Turing computable functions, then so is the composition $f \circ g$.  
+
+4. Explain why the function 
+$$f(w) = \begin{cases} 1 & \text{ if length of } w \text{ is even.} \\ 0 & \text{ otherwise.} \end{cases}$$
+is Turing computable.  Hint: Every regular language is Turing decidable.  
+
+We finished by describing how this function (which comes up in the [Collatz-Conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture)) is Turing computable:
+$$f(n) = \begin{cases}
+n/2 & \text{ if } n \text{ is even,}  \\
+3n+1 & \text{ if } n \text{ is odd.} \end{cases}$$
 
 ### Week 10 Notes
 

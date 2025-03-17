@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -2191,38 +2191,101 @@ theorem</td>
 </tr>
 </tbody>
 </table>
-<!--
-#### Mon, Mar 17
-
-Here is the formal definition of a Turing machine.
-
+<h4 id="mon-mar-17">Mon, Mar 17</h4>
+<p>Here is the formal definition of a Turing machine.</p>
 <div class="Theorem">
-**Definition.** A **Turing machine** consists of 
-
-1. A finite set of **states** $Q$.
-2. A finite **input alphabet** $\Sigma$ that doesn't include the blank symbol □.
-3. A finite **tape alphabet** $\Gamma$ such that $\Sigma \subset \Gamma$ and $□ \in \Gamma$. 
-4. A **transition function** $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}$. 
-5. A **start state** $q_0 \in Q$. 
-6. An **accept state** $q_{\text{accept}} \in Q$. 
-7. A **reject state** $q_{\text{reject}} \in Q$. 
-
+<p><strong>Definition.</strong> A <strong>Turing machine</strong>
+consists of</p>
+<ol type="1">
+<li>A finite set of <strong>states</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.</li>
+<li>A finite <strong>input alphabet</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Σ</mi><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math>
+that doesn’t include the blank symbol □.</li>
+<li>A finite <strong>tape alphabet</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Γ</mi><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Σ</mi><mo>⊂</mo><mi>Γ</mi></mrow><annotation encoding="application/x-tex">\Sigma \subset \Gamma</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>□</mi><mo>∈</mo><mi>Γ</mi></mrow><annotation encoding="application/x-tex">□ \in \Gamma</annotation></semantics></math>.</li>
+<li>A <strong>transition function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>→</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}</annotation></semantics></math>.</li>
+<li>A <strong>start state</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_0 \in Q</annotation></semantics></math>.</li>
+<li>An <strong>accept state</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mtext mathvariant="normal">accept</mtext></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_{\text{accept}} \in Q</annotation></semantics></math>.</li>
+<li>A <strong>reject state</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mtext mathvariant="normal">reject</mtext></msub><mo>∈</mo><mi>Q</mi></mrow><annotation encoding="application/x-tex">q_{\text{reject}} \in Q</annotation></semantics></math>.</li>
+</ol>
 </div>
-
-Because Turing machines can loop forever, there is a difference between recognizing/accepting a language and deciding a language. 
-
+<p>Because Turing machines can loop forever, there is a difference
+between recognizing/accepting a language and deciding a language.</p>
 <div class="Theorem">
-**Definition.** A Turing machine **accepts** (or **recognizes**) a language $L \subseteq \Sigma^*$ if the set of strings that it accepts is exactly $L$.  
+<p><strong>Definition.</strong> A Turing machine
+<strong>accepts</strong> (or <strong>recognizes</strong>) a language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
+if the set of strings that it accepts is exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
 </div>
-
-A Turing machine that only recognizes a language $L$ might loop forever when you give it a string that is not in $L$.
-
+<p>A Turing machine that only recognizes a language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+might loop forever when you give it a string that is not in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
 <div class="Theorem">
-**Definition.** A Turing machine **decides** a language $L \subseteq \Sigma^*$ if it not only recognizes $L$, but also rejects every string that is not in $L$. 
+<p><strong>Definition.</strong> A Turing machine
+<strong>decides</strong> a language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
+if it not only recognizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>,
+but also rejects every string that is not in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>.</p>
 </div>
-
-Both of the example Turing Machines above actually decide their languages, since they will successfully reject any input that doesn't match a valid string (they won't get stuck looping forever without halting).  
--->
+<p>Both of the example Turing Machines above actually decide their
+languages, since they will successfully reject any input that doesn’t
+match a valid string (they won’t get stuck looping forever without
+halting). We’ll see examples later of Turing machines that accept but
+don’t decide a language.</p>
+<p>Another thing that Turing Machines can do is compute functions by
+leaving the output on the tape when it halts.</p>
+<ol type="1">
+<li>Construct a Turing machine that reads an input string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a,b\}^*</annotation></semantics></math>
+and leaves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">ww</annotation></semantics></math>
+on the tape when it halts. <!--*--></li>
+</ol>
+<p>This wasn’t to hard to describe the algorithm, but it got a little
+complicated when we made the state diagram. Once we did that, we defined
+Turing computable functions.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f: \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
+is <strong>Turing computable</strong> if there is a Turing machine that
+halts with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(w)</annotation></semantics></math>
+on the tape whenever it is given a tape with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \Sigma^*</annotation></semantics></math>
+as input.</p>
+</div>
+<ol start="2" type="1">
+<li><p>Explain why the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>w</mi><mi>w</mi><mi>w</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">f(w) = wwww</annotation></semantics></math>
+is Turing computable.</p></li>
+<li><p>Prove that if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>,</mo><mi>g</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f, g : \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
+are both Turing computable functions, then so is the composition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∘</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">f \circ g</annotation></semantics></math>.</p></li>
+<li><p>Explain why the function
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if length of </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is even.</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(w) = \begin{cases} 1 &amp; \text{ if length of } w \text{ is even.} \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math>
+is Turing computable. Hint: Every regular language is Turing
+decidable.</p></li>
+</ol>
+<p>We finished by describing how this function (which comes up in the <a
+href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz-Conjecture</a>)
+is Turing computable:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>n</mi><mi>/</mi><mn>2</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is even,</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>3</mn><mi>n</mi><mo>+</mo><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is odd.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(n) = \begin{cases}
+n/2 &amp; \text{ if } n \text{ is even,}  \\
+3n+1 &amp; \text{ if } n \text{ is odd.} \end{cases}</annotation></semantics></math></p>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>
