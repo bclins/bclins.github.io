@@ -1055,6 +1055,47 @@ To find $x'(t)$, you need to multiply $y'(x(t)) \cdot x'(t)$.
 
 4. Find $\dfrac{d}{dx} (x^2 + 3x)^{100}$. 
 
+### Wed, March 19
+
+Today we did more examples of the chain rule.  
+
+1. If $y = e^{-x^2}$, find $\dfrac{dy}{dx}$. ([video](https://youtu.be/OHtFBpjzY2U))
+
+2. $\dfrac{d}{dx} \ln( x + 2 )$. 
+
+You can also use the chain rule to avoid using the quotient rule.  Here is an example we did last time, re-written as a product rule:
+
+3. Find the derivative of $\dfrac{5x + 4}{3x - 4} = (5x+4)(3x - 4)^{-1}.$
+
+4. A rock is thrown into the center of a still pond, causing ripples to spread out in a circle.  The ripples move outwards at 4 feet per second.  
+
+    a. Find a formula for the area of the disturbed water as a function of radius. 
+    a. Find a formula for the area of the disturbed water as a function of time. 
+    a. Calculate $\dfrac{dA}{dr}$
+    a. Calculate $\dfrac{dA}{dt}$
+
+
+<div class = "Theorem">
+**Chain Rule (Leibniz Notation)**
+
+If $y = f(x)$ and $x = g(t)$, then this is another way to write the chain rule:
+
+$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}.$$
+
+</div> 
+
+
+5. Suppose that the crime rate $C(p)$ in a city is a function of the population $p$. The population $p=p(t)$ is a function of time $t$ in years. Suppose that the city's population is currently 300,000 at $t=0$. If $p'(0)=5{,}000$ people per year and $C'(300{,}000)=0.4$ crimes per person, then estimate the rate of change in crime this year.
+
+Here are some examples that combine the chain rule with other rules:
+
+6. Find the derivative of $\left(\dfrac{x-1}{2x+1} \right)^{7}$. ([video](https://youtu.be/ed5pQoqHXeU))
+
+7. $\dfrac{d}{dx} x^2 \sqrt{4 - 9x}$. ([video](https://youtu.be/3lUOtjkqfQo?t=228))
+
+And here is an example of a problem where you need to use the chain rule twice:
+
+8. $\dfrac{d}{dx} e^{\sqrt{4x + 3}}$
 
 ### Week 10 Notes
 

@@ -1151,6 +1151,41 @@ $$f(n) = \begin{cases}
 n/2 & \text{ if } n \text{ is even,}  \\
 3n+1 & \text{ if } n \text{ is odd.} \end{cases}$$
 
+
+#### Wed, Mar 19
+
+Today we looked at **multi-tape Turing machines**.  
+
+<div class = "Theorem">
+**Theorem.** Any k-tape Turing machine has an equivalent single-tape Turing machine. 
+</div>
+
+*Proof idea.* For every tape symbol of the k-tape TM, we need a "dotted" symbol and we also need a special separator symbol (#).  Then we can put the contents of the k tapes onto a single tape if we add separators and dotted symbols to mark the which symbols are currently pointed to by the TM. 
+
+<center>
+<table class="bordered">
+<tr> <td> # </td><td> a </td><td> a&#775; </td><td> □ </td><td> a </td><td> # </td><td> b&#775; </td><td> b </td><td> b </td><td> a </td><td> # </td><td> a </td><td> a </td><td> a </td><td> a&#775; </td><td> # </td> </tr>
+</table>
+</center>
+
+For each step of the k-tape TM, the 1-tape TM follows these rules:
+
+* Starting from the left, it reads the dotted symbols for each of the k-substrings.  Then it returns to the leftmost position. 
+
+* Then it makes a 2nd pass, updating the contents at each dotted symbol, and then moving the dot to the left or right.
+
+* If it reaches the end of a substring but needs to add a character, it first prints a special-blank then shifts every other character to the right by one, before returning to the special-blank and proceeding.  
+
+Another variation on a standard TM is a **nondeterministic Turing machine (NTM)**.  At each step, these can split into more than one possible next state.  The transition function has form:
+$$\delta: Q \times \Gamma \rightarrow 2^{Q \times \Gamma \times \{L, R \}}.$$
+The nondeterministic TM accepts a language as soon as any of its parallel versions reaches an accept state.  
+
+<div class = "Theorem"> 
+Any language that can be accepted by a nondeterministic Turing machine can also be accepted by a regular Turing machine. 
+</div>
+
+*Proof idea.* We'll construct a regular 3-tape TM that simulates our NTM.  The key is to do a breadth first search through the tree of possible branches the NTM can take.  
+
 ### Week 10 Notes
 
 Day  | Section  | Topic

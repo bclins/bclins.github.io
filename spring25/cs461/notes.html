@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -2290,6 +2290,97 @@ is Turing computable:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>n</mi><mi>/</mi><mn>2</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is even,</mtext></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>3</mn><mi>n</mi><mo>+</mo><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is odd.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(n) = \begin{cases}
 n/2 &amp; \text{ if } n \text{ is even,}  \\
 3n+1 &amp; \text{ if } n \text{ is odd.} \end{cases}</annotation></semantics></math></p>
+<h4 id="wed-mar-19">Wed, Mar 19</h4>
+<p>Today we looked at <strong>multi-tape Turing machines</strong>.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> Any k-tape Turing machine has an equivalent
+single-tape Turing machine.</p>
+</div>
+<p><em>Proof idea.</em> For every tape symbol of the k-tape TM, we need
+a “dotted” symbol and we also need a special separator symbol (#). Then
+we can put the contents of the k tapes onto a single tape if we add
+separators and dotted symbols to mark the which symbols are currently
+pointed to by the TM.</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+#
+</td>
+<td>
+a
+</td>
+<td>
+ȧ
+</td>
+<td>
+□
+</td>
+<td>
+a
+</td>
+<td>
+#
+</td>
+<td>
+ḃ
+</td>
+<td>
+b
+</td>
+<td>
+b
+</td>
+<td>
+a
+</td>
+<td>
+#
+</td>
+<td>
+a
+</td>
+<td>
+a
+</td>
+<td>
+a
+</td>
+<td>
+ȧ
+</td>
+<td>
+#
+</td>
+</tr>
+</table>
+</center>
+<p>For each step of the k-tape TM, the 1-tape TM follows these
+rules:</p>
+<ul>
+<li><p>Starting from the left, it reads the dotted symbols for each of
+the k-substrings. Then it returns to the leftmost position.</p></li>
+<li><p>Then it makes a 2nd pass, updating the contents at each dotted
+symbol, and then moving the dot to the left or right.</p></li>
+<li><p>If it reaches the end of a substring but needs to add a
+character, it first prints a special-blank then shifts every other
+character to the right by one, before returning to the special-blank and
+proceeding.</p></li>
+</ul>
+<p>Another variation on a standard TM is a <strong>nondeterministic
+Turing machine</strong>. At each step, these can split into more than
+one possible next state. The transition function has form:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>→</mo><msup><mn>2</mn><mrow><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\delta: Q \times \Gamma \rightarrow 2^{Q \times \Gamma \times \{L, R \}}.</annotation></semantics></math>
+The nondeterministic TM accepts a language as soon as any of its
+parallel versions reaches an accept state.</p>
+<div class="Theorem">
+<p>Any language that can be accepted by a nondeterministic Turing
+machine can also be accepted by a regular Turing machine.</p>
+</div>
+<p><em>Proof idea.</em> We’ll construct a regular 3-tape TM that
+simulates our nondeterministic TM. The key is to do a breadth first
+search through the tree of possible nondeterministic branches the NTM
+can take.</p>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>
