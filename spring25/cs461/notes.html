@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -262,9 +262,9 @@ is uncountable.</p>
 <p>We talked about <strong>Boolean circuits</strong> which are formed by
 AND, OR, and NOT gates. These can be used to implement any
 <strong>Boolean expression</strong> formed by the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>
 (AND),
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>
 (OR), and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>
 (NOT) operators.</p>
@@ -296,8 +296,8 @@ following:</p></li>
 can be represented by a Boolean circuit.</p>
 </div>
 <p>We say that the Boolean operations
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∧</mi><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∨</mi><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>¬</mo><annotation encoding="application/x-tex">\neg</annotation></semantics></math>)
 are a <strong>universal set of operations</strong> since every Boolean
 function on
@@ -2368,19 +2368,51 @@ character to the right by one, before returning to the special-blank and
 proceeding.</p></li>
 </ul>
 <p>Another variation on a standard TM is a <strong>nondeterministic
-Turing machine</strong>. At each step, these can split into more than
-one possible next state. The transition function has form:
+Turing machine (NTM)</strong>. At each step, these can split into more
+than one possible next state. The transition function has form:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>:</mo><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>→</mo><msup><mn>2</mn><mrow><mi>Q</mi><mo>×</mo><mi>Γ</mi><mo>×</mo><mo stretchy="false" form="prefix">{</mo><mi>L</mi><mo>,</mo><mi>R</mi><mo stretchy="false" form="postfix">}</mo></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\delta: Q \times \Gamma \rightarrow 2^{Q \times \Gamma \times \{L, R \}}.</annotation></semantics></math>
 The nondeterministic TM accepts a language as soon as any of its
 parallel versions reaches an accept state.</p>
 <div class="Theorem">
-<p>Any language that can be accepted by a nondeterministic Turing
-machine can also be accepted by a regular Turing machine.</p>
+<p><strong>Theorem.</strong> Any language that can be accepted by a
+nondeterministic Turing machine can also be accepted by a regular Turing
+machine.</p>
 </div>
-<p><em>Proof idea.</em> We’ll construct a regular 3-tape TM that
-simulates our nondeterministic TM. The key is to do a breadth first
-search through the tree of possible nondeterministic branches the NTM
-can take.</p>
+<p>We talked about how you can use a 3-tape TM to used a breadth first
+search through the branching possibilities of a NTM to see if any
+accept.<br />
+<!--
+*Proof idea.* We'll construct a regular 3-tape TM that simulates our NTM.  The key is to do a breadth first search through the tree of possible branches the NTM can take.  If you think of the branches that the NTM can take as a tree, then you can label every node of the tree with an integer.  Then simulate the NTM deterministically 
+--></p>
+<p>We also talked about other things that a TM can do:</p>
+<ol type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">f: \Sigma^* \rightarrow \{0,1\}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>,</mo><mi>h</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">g, h: \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
+are Turing computable, then so is the function</p>
+<center>
+<p><code>IF f(x) THEN g(x) ELSE h(x).</code></p>
+</center></li>
+<li><p>What about a while-loop?</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(f(x)):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> g(x)</span></code></pre></div></li>
+</ol>
+<p>We didn’t have time for this last example:</p>
+<ol start="3" type="1">
+<li><p>Can a Turing machine have a for-loop, where it repeats some
+function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+times? Something like this <code>Python</code> example where function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is applied
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+times?</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n): </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> f(x)</span></code></pre></div></li>
+</ol>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>

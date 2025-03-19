@@ -718,14 +718,19 @@ Here is another example that we didn't have time for in class, but we'll revisit
 
 2. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
-<!--
-
-
-### Wed, Oct 23
+### Wed, Mar 19
 
 We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online too. 
 
--->
+We also did two extra problems:
+
+1. 6 out of 24 students in our class have blue eyes.  Make a 90% confidence interval to estimate what percent of all HSC students have blue eyes. 
+
+2. In the 1920s and 30s, organized criminals used to run an illegal lottery in many major cities called the numbers game.  People could pay $1 to buy a ticket with any 3-digit number from 000 to 999 on it.  At the end of the week, the winning number would be announced and anyone who bought a winning ticket would win $600.  What is the expected value of a ticket? 
+
+3. Describe the sampling distribution for the proportion $\hat{p}$ of tickets that are winners if someone sold $N = 250{,}000$ tickets.  What are the shape, center, and spread for the distribution of $\hat{p}$.  
+<!-- NOTE TO SELF, THIS ISN'T A GREAT EXAMPLE, BECAUSE THE CENTER IS REALLY SMALL.  MAYBE LOOK AT THE % OF HOUSES THAT HAVE A PET CAT? -->
+
 
 - - - 
 

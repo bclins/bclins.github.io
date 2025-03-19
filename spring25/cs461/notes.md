@@ -1181,10 +1181,39 @@ $$\delta: Q \times \Gamma \rightarrow 2^{Q \times \Gamma \times \{L, R \}}.$$
 The nondeterministic TM accepts a language as soon as any of its parallel versions reaches an accept state.  
 
 <div class = "Theorem"> 
-Any language that can be accepted by a nondeterministic Turing machine can also be accepted by a regular Turing machine. 
+**Theorem.** Any language that can be accepted by a nondeterministic Turing machine can also be accepted by a regular Turing machine. 
 </div>
 
-*Proof idea.* We'll construct a regular 3-tape TM that simulates our NTM.  The key is to do a breadth first search through the tree of possible branches the NTM can take.  
+We talked about how you can use a 3-tape TM to used a breadth first search through the branching possibilities of a NTM to see if any accept.  
+<!--
+*Proof idea.* We'll construct a regular 3-tape TM that simulates our NTM.  The key is to do a breadth first search through the tree of possible branches the NTM can take.  If you think of the branches that the NTM can take as a tree, then you can label every node of the tree with an integer.  Then simulate the NTM deterministically 
+-->
+
+We also talked about other things that a TM can do:
+
+1. If $f: \Sigma^* \rightarrow \{0,1\}$, and $g, h: \Sigma^* \rightarrow \Sigma^*$ are Turing computable, then so is the function 
+<center>
+`IF f(x) THEN g(x) ELSE h(x).`
+</center>
+
+
+2. What about a while-loop?
+
+    ```python 
+    while(f(x)):
+        x = g(x)
+    ```
+
+We didn't have time for this last example:
+
+3. Can a Turing machine have a for-loop, where it repeats some function $n$ times? Something like this `Python` example where function $f$ is applied $n$ times?
+
+    ```python
+    for i in range(n): 
+        x = f(x)
+    ```
+
+
 
 ### Week 10 Notes
 

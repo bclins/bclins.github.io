@@ -1065,7 +1065,7 @@ Today we did more examples of the chain rule.
 
 You can also use the chain rule to avoid using the quotient rule.  Here is an example we did last time, re-written as a product rule:
 
-3. Find the derivative of $\dfrac{5x + 4}{3x - 4} = (5x+4)(3x - 4)^{-1}.$
+3. Find the derivative of $\dfrac{5x + 2}{3x - 4} = (5x+2)(3x - 4)^{-1}.$
 
 4. A rock is thrown into the center of a still pond, causing ripples to spread out in a circle.  The ripples move outwards at 4 feet per second.  
 
@@ -1093,9 +1093,11 @@ Here are some examples that combine the chain rule with other rules:
 
 7. $\dfrac{d}{dx} x^2 \sqrt{4 - 9x}$. ([video](https://youtu.be/3lUOtjkqfQo?t=228))
 
+<!--
 And here is an example of a problem where you need to use the chain rule twice:
 
 8. $\dfrac{d}{dx} e^{\sqrt{4x + 3}}$
+-->
 
 ### Week 10 Notes
 
