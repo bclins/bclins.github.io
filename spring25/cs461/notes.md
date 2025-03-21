@@ -1234,7 +1234,8 @@ The idea is that Turing machines can do all of the things (like looping, and con
 
 There are many other models of computing that can be proven to be **Turing complete**, that is, they can compute the same functions as Turing machines.  But it is believed that there is no [effective method](https://en.wikipedia.org/wiki/Effective_method) of computation that can solve problems that Turing machines cannot solve.  
 
-We finished by discussing Hilbert's 10th problem: Is there an algorithm to determine whether a multivariable polynomial with integer coefficients has an integer root?  We looked at some example polynomials like
+We finished by discussing Hilbert's 10th problem: Is there an algorithm to determine whether or not a multivariable polynomial with integer coefficients has an integer root?  We looked at some example polynomials like
+
 $$p(x,y) = 3x^2 - 2xy + y^2 - 2$$
 and 
 $$q(x,y) = x^2 + y^2 + 1.$$
@@ -1242,7 +1243,8 @@ The pair $(1,1)$ is a root for the first polynomial, since $p(1,1) = 0$, but the
 
 2. Describe an algorithm that we could implement using a TM or computer program to try to find out if a polynomial has a root.  
 
-It turns out that no Turing machine can *decide* the language of integer multivariable polynomials with integer roots.  But we did describe an algorithm that *recognizes* that language.  
+The algorithm we described will *accept* any polynomial that has a root.  But it doesn't reject polynomials that don't, instead it loops forever looking for a root.  It wasn't until 1970 that Hilbert's 10th problem was solved, when it was proved that there is no Turing machine that can *decide* the language of integer multivariable polynomials with integer roots.  We'll look at other examples of **undecidable languages** after the midterm.  
+
 
 
 

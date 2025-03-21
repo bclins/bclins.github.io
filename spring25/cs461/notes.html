@@ -2428,24 +2428,32 @@ on one tape and a number
 1’s) on the second tape, that computes
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mi>k</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:=</mo><munder><munder><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>⋯</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo></mrow><mo accent="true">⏟</mo></munder><mrow><mi>k</mi><mtext mathvariant="normal">-times</mtext></mrow></munder><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f^{k}(x) := \underbrace{f(f(\cdots f(}_{k\text{-times}}x)))).</annotation></semantics></math></li>
 </ol>
-<p>I think we get the idea that you can implement pretty much all of the
-basic building blocks of most programming languages using Turing
-machines. There are many other models of computing that can be proven to
-be <strong>Turing complete</strong>, that is, they can compute the same
-functions as Turing machines. But it is believed that there is no <a
-href="https://en.wikipedia.org/wiki/Effective_method">effective
-method</a> of computation that can solve problems that Turing machines
-cannot solve.</p>
+<p>In mathematics, there are many algorithms, which are step-by-step
+procedures that can be carried out to solve problems. Prior to the work
+of Turing and other computer scientists, no one ever tried to define
+exactly what an algorithm is. It turns out to be hard to give a precise
+definition of an algorithm. Computer scientists have settled on the
+following:</p>
 <div class="Theorem">
 <p><strong>Definition (Church-Turing thesis).</strong> An
 <strong>algorithm</strong> is a computational task that can be carried
 out by a Turing machine.</p>
 </div>
+<p>The idea is that Turing machines can do all of the things (like
+looping, and conditionals, storing variables) that we think of
+algorithms can do, so we use TMs (which have a precise definition) to
+define algorithms.</p>
+<p>There are many other models of computing that can be proven to be
+<strong>Turing complete</strong>, that is, they can compute the same
+functions as Turing machines. But it is believed that there is no <a
+href="https://en.wikipedia.org/wiki/Effective_method">effective
+method</a> of computation that can solve problems that Turing machines
+cannot solve.</p>
 <p>We finished by discussing Hilbert’s 10th problem: Is there an
-algorithm to determine whether a multivariable polynomial with integer
-coefficients has an integer root. We looked at some example polynomials
-like
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p(x,y) = 3x^2 - 2xy + y^2 - 2</annotation></semantics></math>
+algorithm to determine whether or not a multivariable polynomial with
+integer coefficients has an integer root? We looked at some example
+polynomials like</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p(x,y) = 3x^2 - 2xy + y^2 - 2</annotation></semantics></math>
 and
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">q(x,y) = x^2 + y^2 + 1.</annotation></semantics></math>
 The pair
@@ -2453,13 +2461,17 @@ The pair
 is a root for the first polynomial, since
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p(1,1) = 0</annotation></semantics></math>,
 but the second polynomial has no integer roots.</p>
-<ol type="1">
+<ol start="2" type="1">
 <li>Describe an algorithm that we could implement using a TM or computer
-program to try to find out if a</li>
+program to try to find out if a polynomial has a root.</li>
 </ol>
-<p>It turns out that no Turing machine can <em>decide</em> the language
-of integer multivariable polynomials with integer roots. But we did
-describe an algorithm that <em>recognizes</em> that language.</p>
+<p>The algorithm we described will <em>accept</em> any polynomial that
+has a root. But it doesn’t reject polynomials that don’t, instead it
+loops forever looking for a root. It wasn’t until 1970 that Hilbert’s
+10th problem was solved, when it was proved that there is no Turing
+machine that can <em>decide</em> the language of integer multivariable
+polynomials with integer roots. We’ll look at other examples of
+<strong>undecidable languages</strong> after the midterm.</p>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>

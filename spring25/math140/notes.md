@@ -1107,8 +1107,6 @@ Here is an example of a problem where you need to use the chain rule twice:
 After that, we talked about **higher derivatives**. The **second derivative** of a function $y = f(x)$ is
 $$y'' =  \frac{d}{dx} \left( \frac{d}{dx} y \right) = \dfrac{d^2}{dx^2} y = \dfrac{d^2 y}{dx^2} = f''(x).$$
 
-2. Find the second derivative $y''$ when $y = \dfrac{6}{x^2}$. ([video](https://youtu.be/WC5VYKI807Q))
-
 The first derivative is the slope of the tangent line.  
 
 <div class="Theorem">
@@ -1122,16 +1120,18 @@ The second derivative measures the **concavity** of a graph, which is how fast t
 A point where the concavity changes is called an **inflection point.**
 </div>
 
-3. Find the second derivatives of $\ln x$ and $e^x$.  Does the value of the second derivative match the concavity of the graphs for these functions?
+2. Find the second derivatives of $\ln x$ and $e^x$.  Does the value of the second derivative match the concavity of the graphs for these functions?
 
 
+3. Find the second derivative $y''$ when $y = \dfrac{6}{x^2}$. ([video](https://youtu.be/WC5VYKI807Q))
+
+<!--
 In physics, if $s(t)$ is the position of an object as a function of time, then the first derivative is velocity and the second derivative is acceleration.  
 
 4. A rock thrown straight up has height $h(t) = 4 + 30t - 16t^2$ in feet after $t$ seconds. Find $h'(t)$ and $h''(t)$ (that is, find the velocity and acceleration).    
 
 5. The normal distribution (bell curve) in statistics has equation $y = e^{-x^2/2}$.  Find the first and second derivatives, and use the second derivative to determine when the graph is concave up and concave down.  
 
-<!--
 4. Find the intervals where the function $f(x) = \dfrac{x^4}{8} - \dfrac{x^3}{2}$ is concave up.  ([similar example](https://youtu.be/tzkq_oBBEgY))
 
 5. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
