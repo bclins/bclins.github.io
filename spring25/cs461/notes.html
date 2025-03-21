@@ -2413,6 +2413,53 @@ times?</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n): </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> f(x)</span></code></pre></div></li>
 </ol>
+<h4 id="fri-mar-21">Fri, Mar 21</h4>
+<p>We started with this example:</p>
+<ol type="1">
+<li>Suppose that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f: \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
+is a Turing computable function. Describe a 2-tape TM that inputs a
+string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">x \in \Sigma^*</annotation></semantics></math>
+on one tape and a number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+(encoded with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+1’s) on the second tape, that computes
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mi>k</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:=</mo><munder><munder><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>⋯</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo></mrow><mo accent="true">⏟</mo></munder><mrow><mi>k</mi><mtext mathvariant="normal">-times</mtext></mrow></munder><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">f^{k}(x) := \underbrace{f(f(\cdots f(}_{k\text{-times}}x)))).</annotation></semantics></math></li>
+</ol>
+<p>I think we get the idea that you can implement pretty much all of the
+basic building blocks of most programming languages using Turing
+machines. There are many other models of computing that can be proven to
+be <strong>Turing complete</strong>, that is, they can compute the same
+functions as Turing machines. But it is believed that there is no <a
+href="https://en.wikipedia.org/wiki/Effective_method">effective
+method</a> of computation that can solve problems that Turing machines
+cannot solve.</p>
+<div class="Theorem">
+<p><strong>Definition (Church-Turing thesis).</strong> An
+<strong>algorithm</strong> is a computational task that can be carried
+out by a Turing machine.</p>
+</div>
+<p>We finished by discussing Hilbert’s 10th problem: Is there an
+algorithm to determine whether a multivariable polynomial with integer
+coefficients has an integer root. We looked at some example polynomials
+like
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p(x,y) = 3x^2 - 2xy + y^2 - 2</annotation></semantics></math>
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">q(x,y) = x^2 + y^2 + 1.</annotation></semantics></math>
+The pair
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>
+is a root for the first polynomial, since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p(1,1) = 0</annotation></semantics></math>,
+but the second polynomial has no integer roots.</p>
+<ol type="1">
+<li>Describe an algorithm that we could implement using a TM or computer
+program to try to find out if a</li>
+</ol>
+<p>It turns out that no Turing machine can <em>decide</em> the language
+of integer multivariable polynomials with integer roots. But we did
+describe an algorithm that <em>recognizes</em> that language.</p>
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>

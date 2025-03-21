@@ -24,7 +24,9 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 materials ([review problems](midterm1review.pdf))
+* Midterm 2 will be on **Friday, March 28**
+* Midterm 2 materials: [review problems](midterm2review.pdf)
+* Midterm 1 materials: [review problems](midterm1review.pdf)
 
 
 ### Tentative Schedule

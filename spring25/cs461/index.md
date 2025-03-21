@@ -26,7 +26,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 materials ([review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf))
+* Midterm 2 materials: [review problems](midterm2review.pdf)
+* Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 
 ### Tentative Schedule
 

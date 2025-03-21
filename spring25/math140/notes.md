@@ -1093,12 +1093,50 @@ Here are some examples that combine the chain rule with other rules:
 
 7. $\dfrac{d}{dx} x^2 \sqrt{4 - 9x}$. ([video](https://youtu.be/3lUOtjkqfQo?t=228))
 
+### Fri, Mar 21
+
+Why is the chain rule called the *chain* rule?  It's because you can apply the chain rule to a sequence of nested functions, no matter how long the chain of functions is.  For example: if $z = z(y)$, $y = y(x)$, and $x = x(t)$, then this chain of functions has derivative:
+$$\frac{dz}{dt} = \frac{dz}{dy} \frac{dy}{dx} \frac{dx}{dt}.$$
+
+Here is an example of a problem where you need to use the chain rule twice:
+
+<!-- 1. $\dfrac{d}{dx} e^{\sqrt{4x + 3}}$ -->
+
+1. $y = e^{(3x+2x^2)^5}$, find $\dfrac{dy}{dx}$.  ([video](https://youtu.be/Ur_kdKXnZPo?t=271))
+
+After that, we talked about **higher derivatives**. The **second derivative** of a function $y = f(x)$ is
+$$y'' =  \frac{d}{dx} \left( \frac{d}{dx} y \right) = \dfrac{d^2}{dx^2} y = \dfrac{d^2 y}{dx^2} = f''(x).$$
+
+2. Find the second derivative $y''$ when $y = \dfrac{6}{x^2}$. ([video](https://youtu.be/WC5VYKI807Q))
+
+The first derivative is the slope of the tangent line.  
+
+<div class="Theorem">
+**Meaning of the Second Derivative**
+
+The second derivative measures the **concavity** of a graph, which is how fast the graph is bending upwards. 
+
+* When $y'' > 0$, the graph is **concave up**.
+* When $y'' < 0$, the graph is **concave down**.  
+
+A point where the concavity changes is called an **inflection point.**
+</div>
+
+3. Find the second derivatives of $\ln x$ and $e^x$.  Does the value of the second derivative match the concavity of the graphs for these functions?
+
+
+In physics, if $s(t)$ is the position of an object as a function of time, then the first derivative is velocity and the second derivative is acceleration.  
+
+4. A rock thrown straight up has height $h(t) = 4 + 30t - 16t^2$ in feet after $t$ seconds. Find $h'(t)$ and $h''(t)$ (that is, find the velocity and acceleration).    
+
+5. The normal distribution (bell curve) in statistics has equation $y = e^{-x^2/2}$.  Find the first and second derivatives, and use the second derivative to determine when the graph is concave up and concave down.  
+
 <!--
-And here is an example of a problem where you need to use the chain rule twice:
+4. Find the intervals where the function $f(x) = \dfrac{x^4}{8} - \dfrac{x^3}{2}$ is concave up.  ([similar example](https://youtu.be/tzkq_oBBEgY))
 
-8. $\dfrac{d}{dx} e^{\sqrt{4x + 3}}$
+5. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
 -->
-
+ 
 ### Week 10 Notes
 
 Day  | Section  | Topic

@@ -1213,6 +1213,37 @@ We didn't have time for this last example:
         x = f(x)
     ```
 
+#### Fri, Mar 21
+
+We started with this example:
+
+1. Suppose that $f: \Sigma^* \rightarrow \Sigma^*$ is a Turing computable function.  Describe a 2-tape TM that inputs a string $x \in \Sigma^*$ on one tape and a number $n$ (encoded with $n$ 1's) on the second tape, that computes 
+$$f^{k}(x) := \underbrace{f(f(\cdots f(}_{k\text{-times}}x)))).$$
+
+In mathematics, there are many algorithms, which are step-by-step procedures that can be carried out to solve problems.  Prior to the work of Turing and other computer scientists, no one ever tried to define exactly what an algorithm is.  It turns out to be hard to give a precise definition of an algorithm.  Computer scientists have settled on the following: 
+
+
+<div class="Theorem">
+
+**Definition (Church-Turing thesis).** An **algorithm** is a computational task that can be carried out by a Turing machine. 
+
+</div>
+
+
+The idea is that Turing machines can do all of the things (like looping, and conditionals, storing variables) that we think of algorithms can do, so we use TMs (which have a precise definition) to define algorithms.   
+
+There are many other models of computing that can be proven to be **Turing complete**, that is, they can compute the same functions as Turing machines.  But it is believed that there is no [effective method](https://en.wikipedia.org/wiki/Effective_method) of computation that can solve problems that Turing machines cannot solve.  
+
+We finished by discussing Hilbert's 10th problem: Is there an algorithm to determine whether a multivariable polynomial with integer coefficients has an integer root?  We looked at some example polynomials like
+$$p(x,y) = 3x^2 - 2xy + y^2 - 2$$
+and 
+$$q(x,y) = x^2 + y^2 + 1.$$
+The pair $(1,1)$ is a root for the first polynomial, since $p(1,1) = 0$, but the second polynomial has no integer roots. 
+
+2. Describe an algorithm that we could implement using a TM or computer program to try to find out if a polynomial has a root.  
+
+It turns out that no Turing machine can *decide* the language of integer multivariable polynomials with integer roots.  But we did describe an algorithm that *recognizes* that language.  
+
 
 
 ### Week 10 Notes
