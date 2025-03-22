@@ -1230,7 +1230,7 @@ In mathematics, there are many algorithms, which are step-by-step procedures tha
 </div>
 
 
-The idea is that Turing machines can do all of the things (like looping, and conditionals, storing variables) that we think of algorithms can do, so we use TMs (which have a precise definition) to define algorithms.   
+The idea is that Turing machines can do all of the things (like looping, and conditionals, storing variables) that we think of algorithms as doing, so we use TMs to give a precise definition for algorithms.   
 
 There are many other models of computing that can be proven to be **Turing complete**, that is, they can compute the same functions as Turing machines.  But it is believed that there is no [effective method](https://en.wikipedia.org/wiki/Effective_method) of computation that can solve problems that Turing machines cannot solve.  
 

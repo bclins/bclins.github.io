@@ -744,57 +744,15 @@ Mon, Mar 24 | [6.1][6.1] | Inference for a single proportion
 Wed, Mar 26 | [5.3.3][5.3.3] | Decision errors
 Fri, Mar 28 | [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 
-<!--
-### Mon, Oct 28
 
-Today we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  You start by considering two possible hypotheses about the parameter of interest. 
+### Mon, Mar 24
 
-* **Null Hypothesis ($H_0$)** - is a specific claim about the parameter. 
-* **Alternative Hypothesis ($H_A$)** - is what must be true if the null hypothesis is false. 
+We reviewed the steps for doing a hypothesis test about a population proportion. The we did these example that we ran out of time for last time:
 
-Here are the steps to do a hypothesis test for a single proportion:
-
-1. **State the hypotheses.** These will pretty much always look like 
-    - $H_0 ~:~ p = p_0$
-    - $H_A ~:~ p \ne p_0$ \
-where $p_0$ is a specific proportion that makes sense in the context of the situation.
-
-2. **Calculate the test statistic.** Using the formula 
-$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
-
-3. **Find the p-value.** The p-value is *the probability of getting a result at least as extreme as the sample statistic if the null hypothesis is true.*
-
-4. **Explain what it means.** A low p-value is evidence that we should reject the null hypotheses.  Usually this means that the results are too surprising to be caused by random chance along.  A p-value over 5% means we definitely should not reject $H_0$.
-
-<center>
-p-value | Meaning
-:---:|:---:
-Over 5% | Weak evidence
-1% to 5% | Moderate evidence
-0.1% to 1% | Strong evidence
-Under 0.1% | Very strong evidence
-</center>
-
-We did two full examples in class. For each example, you should be able to do each of the four steps above to test the hypotheses. 
-
-1. When I was a kid, I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different cards that I couldn't see.  If I were just guessing, I would only have a 20\% (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
-
-<center>
-<figure>
-<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=500></img>
-</figure>
-</center>
-
-2. 13 out of 28 students (46.4%) in our class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA. 
-
-One other example we didn't have time to finish was this one. 
+1. 13 out of 28 students (46.4%) in our class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? 
 
 
-### Wed, Oct 30
-
-We reviewed the steps for doing a hypothesis test about a population proportion. The we did this example that we ran out of time for last time:
-
-1. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
+2. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
 
 We talked about how the null hypotheses must give a *specific* value for the parameter of interest so that we can create a **null model** that we can test.  If the sample statistic is far from what we expect, then we can reject the null hypothesis and say that the results are **statistically significant**. Unlike in English, the word significant does not mean "important" in statistics.  It actually means the following. 
 
@@ -812,7 +770,7 @@ Notice that all of the items on the list above are statistics jargon except item
 
 We finished with two exercises from the book.
 
-2. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+3. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
 Notice that in 5.16(b), you could make the case that we have prior knowledge based on the reputation of the state of Wisconsin to guess that that percent of people who have drank alcohol in the last year in Wisconsin (which we denoted $p_{WI}$) satisfies a **one-sided alternative hypothesis**:
 $$H_A ~:~ p_\text{WI} > 70\%.$$ 
@@ -821,8 +779,9 @@ $$H_A ~:~ p_\text{WI} \ne 70\%$$
 The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
 
 
-3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+4. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
+<!--
 ### Fri, Nov 1
 
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
