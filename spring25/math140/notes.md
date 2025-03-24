@@ -1125,17 +1125,6 @@ A point where the concavity changes is called an **inflection point.**
 
 3. Find the second derivative $y''$ when $y = \dfrac{6}{x^2}$. ([video](https://youtu.be/WC5VYKI807Q))
 
-<!--
-In physics, if $s(t)$ is the position of an object as a function of time, then the first derivative is velocity and the second derivative is acceleration.  
-
-4. A rock thrown straight up has height $h(t) = 4 + 30t - 16t^2$ in feet after $t$ seconds. Find $h'(t)$ and $h''(t)$ (that is, find the velocity and acceleration).    
-
-5. The normal distribution (bell curve) in statistics has equation $y = e^{-x^2/2}$.  Find the first and second derivatives, and use the second derivative to determine when the graph is concave up and concave down.  
-
-4. Find the intervals where the function $f(x) = \dfrac{x^4}{8} - \dfrac{x^3}{2}$ is concave up.  ([similar example](https://youtu.be/tzkq_oBBEgY))
-
-5. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
--->
  
 ### Week 10 Notes
 
@@ -1144,6 +1133,23 @@ Day  | Section  | Topic
 Mon, Mar 24  | [2.6][2.6]  | Second derivative & concavity
 Wed, Mar 26  |  | Review
 Fri, Mar 28  |  | Midterm 2
+
+### Mon, Mar 24
+
+In physics, if $s(t)$ is the position of an object as a function of time, then the first derivative is velocity and the second derivative is acceleration.  
+
+1. A rock thrown straight up has height $h(t) = 4 + 30t - 16t^2$ in feet after $t$ seconds. Find $h'(t)$ and $h''(t)$ (that is, find the velocity and acceleration).    
+
+2. The normal distribution (bell curve) in statistics has equation $y = e^{-x^2/2}$.  Find the first and second derivatives, and use the second derivative to determine when the graph is concave up and concave down.  
+
+3. Find the intervals where the function $f(x) = \dfrac{x^4}{8} - \dfrac{x^3}{2}$ is concave up.  ([similar example](https://youtu.be/tzkq_oBBEgY))
+
+4. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
+
+5. Find the inflection points of $g(x) = \tfrac{1}{4} x^4 - 4x^3 + 24x^2$. ([video](https://youtu.be/RoxefQ_Qgm8))
+
+6. Find the inflection points of $y = \ln(1+x^2)$. ([video](https://youtu.be/colwQK_3aBo))
+
 
 ### Week 11 Notes
 
