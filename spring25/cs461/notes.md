@@ -1256,6 +1256,10 @@ Mon, Mar 24 | | Review
 Wed, Mar 26 | | **Midterm 2** 
 Fri, Mar 28 | [6.1][6.1] | The running time of algorithms
 
+#### Mon, Mar 24
+
+Today we reviewed context-free languages for the midterm exam.  We also talked about the [Chomsky hierarchy of languages](https://en.wikipedia.org/wiki/Chomsky_hierarchy). 
+
 ### Week 11 Notes
 
 Day  | Section  | Topic

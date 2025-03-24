@@ -1144,9 +1144,11 @@ In physics, if $s(t)$ is the position of an object as a function of time, then t
 
 3. Find the intervals where the function $f(x) = \dfrac{x^4}{8} - \dfrac{x^3}{2}$ is concave up.  ([similar example](https://youtu.be/tzkq_oBBEgY))
 
-4. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
+4. Find the inflection points of $g(x) = \tfrac{1}{4} x^4 - 4x^3 + 24x^2$. ([video](https://youtu.be/RoxefQ_Qgm8))
 
-5. Find the inflection points of $g(x) = \tfrac{1}{4} x^4 - 4x^3 + 24x^2$. ([video](https://youtu.be/RoxefQ_Qgm8))
+Here are some additional problems that we didn't have time for in class. 
+
+5. Find the intervals where the function $y = \dfrac{x^{4}}{12} - \dfrac{x^{3}}{3} - \dfrac{3 x^{2}}{2}$ is concave up. 
 
 6. Find the inflection points of $y = \ln(1+x^2)$. ([video](https://youtu.be/colwQK_3aBo))
 

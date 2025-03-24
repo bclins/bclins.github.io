@@ -749,7 +749,7 @@ Fri, Mar 28 | [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 
 We reviewed the steps for doing a hypothesis test about a population proportion. The we did these example that we ran out of time for last time:
 
-1. 13 out of 28 students (46.4%) in our class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? 
+1. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? 
 
 
 2. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
@@ -758,18 +758,18 @@ We talked about how the null hypotheses must give a *specific* value for the par
 
 <div class="Theorem">
 **Logic of Hypothesis Testing.** The following are all equivalent:
-
+ 
 1. Results are statistically significant.
 2. We should reject the null hypothesis. 
 3. Low p-value (at least under 5%).
-4. Extreme z-value.
-5. Results are probably not a random fluke.
+4. Results are probably not a random fluke.
 </div>
 
-Notice that all of the items on the list above are statistics jargon except item 5. 
+Notice that all of the items on the list above are statistics jargon except the last. 
 
-We finished with two exercises from the book.
+We finished with this exercise from the book.
 
+<!--
 3. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
 Notice that in 5.16(b), you could make the case that we have prior knowledge based on the reputation of the state of Wisconsin to guess that that percent of people who have drank alcohol in the last year in Wisconsin (which we denoted $p_{WI}$) satisfies a **one-sided alternative hypothesis**:
@@ -777,9 +777,9 @@ $$H_A ~:~ p_\text{WI} > 70\%.$$
 If you don't know about Wisconsin, then you should definitely use the **two-sided alternative hypothesis**:
 $$H_A ~:~ p_\text{WI} \ne 70\%$$ 
 The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
+-->
 
-
-4. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
 <!--
 ### Fri, Nov 1
