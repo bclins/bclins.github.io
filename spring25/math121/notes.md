@@ -772,30 +772,36 @@ We finished with this exercise from the book.
 <!--
 3. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
+-->
+
+3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+
+### Wed, Mar 26
+
+We started with this example about making hypotheses for a hypothesis test:
+
+1. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+
 Notice that in 5.16(b), you could make the case that we have prior knowledge based on the reputation of the state of Wisconsin to guess that that percent of people who have drank alcohol in the last year in Wisconsin (which we denoted $p_{WI}$) satisfies a **one-sided alternative hypothesis**:
 $$H_A ~:~ p_\text{WI} > 70\%.$$ 
 If you don't know about Wisconsin, then you should definitely use the **two-sided alternative hypothesis**:
 $$H_A ~:~ p_\text{WI} \ne 70\%$$ 
 The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
--->
-
-3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
-
-<!--
-### Fri, Nov 1
 
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
 
 1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
 2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
-In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. 
+<!--In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. -->
 
 We looked at whether these two assumptions are satisfied for this example:
 
 1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
 
-Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  I'm some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
+2. In our 2nd hypothesis test, we asked whether more than half of HSC students were born in VA.  Did that test satisfy these assumptions?
+
+Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
 
 In the back of your mind, remember there are four possible things that might happen in a null hypothesis. 
 <center>
@@ -809,8 +815,6 @@ If $H_0$ is true, then the significance level $\alpha$ that you choose is the pr
 
 In a criminal trial the prosecution tries to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type I error as when the jury convicts an innocent defendant.  A type II error would be if the jury does not convict someone who is actually guilty. 
 
-
--->
 
 - - - 
 

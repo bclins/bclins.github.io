@@ -1152,6 +1152,10 @@ Here are some additional problems that we didn't have time for in class.
 
 6. Find the inflection points of $y = \ln(1+x^2)$. ([video](https://youtu.be/colwQK_3aBo))
 
+### Wed, Mar 26
+
+Today we went over the [midterm 2 review problems](midterm2review.pdf) in class. 
+
 
 ### Week 11 Notes
 
