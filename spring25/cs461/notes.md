@@ -727,9 +727,9 @@ We also talked about how there are always an uncountable number of languages ove
 
 Day  | Section  | Topic
 :----:|:---:|:------------------
-Mon, Feb 24 | [3.8][3.8] | The pumping lemma for CFGs
-Wed, Feb 26 | [3.5][3.5] - [3.6][3.6] | Pushdown automata
-Fri, Feb 28 | [3.7][3.7] | Pushdown automata & context-free grammars
+Mon, Feb 24 |  [3.3][3.3] | Parsing and parse-trees    
+Wed, Feb 26 | [3.8][3.8] | The pumping lemma for CFGs
+Fri, Feb 28 | [3.5][3.5] - [3.6][3.6] | Pushdown automata 
 
 
 #### Mon, Feb 24
@@ -924,9 +924,9 @@ We finished by describing how Deterministic Pushdown Automata (DPDAs) are differ
 
 Day  | Section  | Topic
 :----:|:---:|:------------------ 
-Mon, Mar 3  | [4.1][4.1] - [4.2][4.2] | Definition of Turing machines
-Wed, Mar 5  | [4.2][4.2] | Turing computable functions
-Fri, Mar 7  | [4.3][4.3] - [4.4][4.4] | Church-Turing thesis
+Mon, Mar 3  | [3.7][3.7] | Pushdown automata & context-free grammars
+Wed, Mar 5  | [3.4][3.4] | Chomsky normal form
+Fri, Mar 7  | [4.1][4.1] - [4.2][4.2] | Definition of Turing machines
 
 
 #### Mon, Mar 3
@@ -1090,9 +1090,10 @@ $$L = \{a^{2^n}: n \ge 0\}.$$
 
 Day  | Section  | Topic
 :----:|:---:|:------------------
-Mon, Mar 17 | [5.5][5.5] - [5.7][5.7] | Enumerators
-Wed, Mar 19 |             | Universal Turing machines
-Fri, Mar 21 | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem                       
+Mon, Mar 17 | [4.2][4.2] | Turing computable functions
+Wed, Mar 19 | [4.3][4.3] | Multi-tape Turing machines 
+Fri, Mar 21 | [4.4][4.4] | Church-Turing thesis
+
 
 #### Mon, Mar 17
 
@@ -1254,27 +1255,86 @@ Day  | Section  | Topic
 :----:|:---:|:-----------------
 Mon, Mar 24 | | Review
 Wed, Mar 26 | | **Midterm 2** 
-Fri, Mar 28 | [6.1][6.1] | The running time of algorithms
+Fri, Mar 28 |  [5.5][5.5] - [5.7][5.7] | Enumerators
 
 #### Mon, Mar 24
 
 Today we reviewed context-free languages for the midterm exam.  We also talked about the [Chomsky hierarchy of languages](https://en.wikipedia.org/wiki/Chomsky_hierarchy). 
 
+#### Fri, Mar 28
+
+Today we introduced **universal Turing machines**.  We used them to consider this language:
+
+$$\text{Accept} = \{ \langle M, w \rangle : M \text{ is a Turing machine and } w \text{ is a string that } M \text{ accepts}\}.$$
+
+1. Explain why Accept is Turing recognizable. 
+
+Then we gave a diagonalization proof that Accept is not Turing decidable. Suppose there was a decider for Accept.  Then we could make a table with rows for each Turing machine $M_i$ and columns every Turing machine encoding $\langle M_j\rangle$ and entries 1 or 0 depending on whether $M_i$ accepts $\langle M_j \rangle$.  
+
+2. What would happen if we created a TM $N$ inputs any TM encoding $\langle M \rangle$ and then does the opposite of what $D$ does on $\langle M, \langle M \rangle \rangle$. What would $N$ do when you input $\langle N \rangle$ into $N$? 
+
+3. Why is that a contradiction? 
+
+We finished by observed that there are only a countably infinite number of possible Turing machines, but there is an uncountable infinite number of languages, so there must be *lots* of languages that are not decidable!  
+<!--
+Today we introduced enumerators.  An **enumerator** for a language $L \subseteq \Sigma^*$ is a Turing machines that computes a function $f: \N \rightarrow L$ that is onto.  We started by proving the following:
+
+<div class="Theorem">
+**"Easy" Lemma.** If $L \subseteq \Sigma^*$ is decidable, then there is an enumerator for $L$. 
+</div>
+
+To prove this lemma, we came up with the following algorithm. In class I didn't include the `just_started` variable which caused a minor issue in the proof. 
+
+```python
+input n
+# use a decider function to return the n-th string in the language
+s = ""
+for i in range(n):
+    just_started = True
+    while just_started or not decider(s):
+        just_started = False
+        increment(s)
+return s
+```
+
+<div class="Theorem">
+**"Harder" Theorem.** A language $L \subseteq \Sigma^*$ is recognizable if and only if there is an enumerator for $L$.  
+</div>
+
+It was relatively easy to prove the $(\Leftarrow)$ direction as this algorithm demonstrates:
+
+```python
+input w
+# use an enumerator function to return True if w is in L
+n = 0
+while not w == enumerater(n):
+    n++
+return True
+```
+
+The other direction is harder to prove.  We sketched a proof at the board, but the important thing to understand is this: Why doesn't the algorithm for the "Easy Lemma" prove the $(\Rightarrow)$ case of the "Harder Theorem"?  
+-->
+
 ### Week 11 Notes
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Mar 31 | [6.2][6.2] | The complexity class P
-Wed, Apr 2  | [6.2][6.2] | The complexity class P - con'd 
-Fri, Apr 4  | [6.3][6.3] | The complexity class NP
+Mon, Mar 31 | [6.1][6.1] | The running time of algorithms
+Wed, Apr 2  |             | Universal Turing machines
+Fri, Apr 4  | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem
+
 
 ### Week 12 Notes
 
+
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 7  | [6.4][6.4] | Nondeterministic TMs
-Wed, Apr 9  | [6.5][6.5] | The SAT problem
-Fri, Apr 11 | [6.5][6.5] | Polynomial time reductions
+Mon, Apr 7  | [6.2][6.2] | The complexity class P
+Wed, Apr 9  | [6.3][6.3] | The complexity class NP
+Fri, Apr 11 | [6.5][6.5] | The SAT problem
+
+
+
 
 ### Week 13 Notes
 

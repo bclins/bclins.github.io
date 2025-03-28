@@ -788,18 +788,6 @@ If you don't know about Wisconsin, then you should definitely use the **two-side
 $$H_A ~:~ p_\text{WI} \ne 70\%$$ 
 The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
 
-When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
-
-1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
-2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
-$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
-<!--In practice, the normality assumption is usually satisfied as long as there are at least 15 successes and 15 failures in the sample. -->
-
-We looked at whether these two assumptions are satisfied for this example:
-
-1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
-
-2. In our 2nd hypothesis test, we asked whether more than half of HSC students were born in VA.  Did that test satisfy these assumptions?
 
 Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
 
@@ -816,23 +804,23 @@ If $H_0$ is true, then the significance level $\alpha$ that you choose is the pr
 In a criminal trial the prosecution tries to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type I error as when the jury convicts an innocent defendant.  A type II error would be if the jury does not convict someone who is actually guilty. 
 
 
-- - - 
-
-### Week 11 Notes
+### Fri, Mar 28
 
 
+When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
 
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Mar 31 | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
-Wed, Apr 2 |  [7.1][7.1]     | Introducing the t-distribution
-Fri, Apr 4 |  [7.1.4][7.1.4] | One sample t-confidence intervals
+1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
+2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
+$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 
-<!--
-### Mon, Nov 4
+We looked at whether these two assumptions are satisfied for this example:
+
+1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
+
+2. In our 2nd hypothesis test, we asked whether more than half of HSC students were born in VA.  Did that test satisfy these assumptions?
 
 
-Today we talked about **two-sample hypothesis tests for proportions.** We did two examples in class:
+After that, we talked about **two-sample hypothesis tests for proportions.** We did two examples in class:
 
 1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
 
@@ -857,13 +845,28 @@ $$\hat{p} = \frac{\text{ Total number of successes in both groups }}{\text{ Comb
 
 You do need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
 
+<!--
 If we want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then you can use a **two-sample confidence interval for proportions:**
 $$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
 
 Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
 
 Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
+-->
 
+- - - 
+
+### Week 11 Notes
+
+
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Mar 31 | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
+Wed, Apr 2 |  [7.1][7.1]     | Introducing the t-distribution
+Fri, Apr 4 |  [7.1.4][7.1.4] | One sample t-confidence intervals
+
+<!--
 
 ### Wed, Nov 6
 

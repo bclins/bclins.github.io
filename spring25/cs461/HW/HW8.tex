@@ -1,4 +1,4 @@
-\documentclass[12pt]{exam}
+\documentclass[12pt,answers]{exam}
 
 \usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath,amssymb}
@@ -31,11 +31,39 @@ S &\rightarrow ASA ~|~ A ~|~ \epsilon \\
 A &\rightarrow aa ~|~ \epsilon \\
 \end{align*}
 \end{minipage}
+
+\begin{solution}
+\begin{description}
+\item[Add new start variable.] $S_0 \rightarrow S ~|~ \epsilon$.
+\item[Remove epsilon rules.] $S \rightarrow AS ~|~ SA ~|~ASA  ~|~ A$ and $A \rightarrow aa$. 
+\item[Remove unit rules.] $S \rightarrow AS ~|~ SA ~|~ASA  ~|~ aa$. 
+\item[Add terminal variables.] $A \rightarrow T_a T_a$ and $T_a \rightarrow a$.
+\item[Break up long rules.] $S \rightarrow AS ~|~ SA ~|~ AU ~|~ aa$ where $U \rightarrow SA$. 
+\end{description} 
+
+So the grammar in Chomsky normal form is:
+\begin{align*}
+S_0 &\rightarrow S ~|~ \epsilon \\
+S &\rightarrow AS ~|~ SA ~|~ AU ~|~ T_a T_a\\
+A &\rightarrow T_a T_a \\
+U &\rightarrow SA \\
+T_a &\rightarrow a 
+\end{align*}
+
+\end{solution}
 \vfill
 
 
 \question Give a detailed written description (but not a state diagram) of a Turing machine that accepts the following language.
 $$L = \{ w \in \{a,b\}^* : w \text{ has an equal number of }a\text{'s and }b\text{'s} \}.$$
+
+\begin{solution}
+\textbf{Option 1.} Use a section of the tape to store an encoding of an integer which is initially 0.  Move left to right through the input reading either $a$ or $b$.  If you get an $a$, then replace with an $x$ and then move to the integer and increase it by one.  If you get a $b$, replace it with an $x$ and decrease the integer by 1.  When there are no more $a$s and $b$s, move to the integer and accept if it is zero and reject otherwise. \\
+ 
+\textbf{Option 2.} Reading left to right, if you see an $a$, then replace it with an $x$, then move right until you see a $b$.  If you find one replace it with an $x$ too, but if you get to a blank first, reject.  If you see a $b$ replace it with an $x$, then more right until you get to an $a$.  Replace it with an $x$, or reject if you get to a blank first.  If you see an $x$ ignore it, and move right.  
+
+After this, move all the way to the left and then repeat.  If you get to a blank without seeing either an $a$ or $b$, then accept. 
+\end{solution}
 \vfill
 
 %\question Give a detailed written description (but not a state diagram) of a Turing machine that accepts the following languages.
@@ -63,8 +91,21 @@ $$L = \{ w \in \{a,b\}^* : w \text{ has an equal number of }a\text{'s and }b\tex
 %\question Describe an algorithm for a Turing machine that computes the function $f(a^n) = a^{2n}$. 
 %\vfill
 
-\question A \verb|binary-incrementer| is a function that reads a binary number from a tape, and replaces it with the binary number that is one greater.  So 111 becomes 1000, for example.  Draw a state diagram for a Turing machine that evaluates the \verb|binary-incrementer| function. Hint: You should only need four or five states. 
-
+\question A \verb|binary-incrementer| is a function that reads a binary number from a tape, and replaces it with the binary number that is one greater.  So 111 becomes 1000, for example.  Draw a state diagram for a Turing machine that evaluates the \verb|binary-incrementer| function. Hint: You should only need a few states.  
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}[node distance=4cm,auto]
+  \node[state,initial]   (q_1)                 {Scan};
+  \node[state]           (q_2) [right of=q_1]  {Flip};
+  \node[state,accepting]           (q_3) [right of=q_2]  {Halt};
+  \path[thick,->]
+  (q_1) edge [loop above] node {$0|1 \rightarrow R$} (q_1)
+  (q_1) edge              node {$\square \rightarrow L$} (q_2)
+  (q_2) edge              node {$0|\square \rightarrow 1,R$} (q_3)
+  (q_2) edge [loop above] node {$1 \rightarrow 0,L$} ();
+\end{tikzpicture}
+\end{center}
+\end{solution}
 \vfill
 
 \newpage
