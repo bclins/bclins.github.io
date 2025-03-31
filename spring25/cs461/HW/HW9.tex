@@ -1,0 +1,87 @@
+\documentclass[12pt]{exam}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz,soul}
+\usepackage{diagbox}
+\usetikzlibrary{arrows,automata,positioning}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bs}{\backslash}
+\newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagestyle{empty}
+\subsubsection*{Homework 9 - Computer Science 461 \hfill Name: \underline{\hspace*{2in}}}
+
+\textit{Due Monday, April 7.} % You can e-mail your code for the computer programming problems to me at }\verb|blins@hsc.edu|.
+
+\begin{questions}
+
+\question Prove that if $A, B \subseteq \Sigma^*$ are both Turing decidable languages, then the intersection $A \cap B$ is also a decidable language. 
+\begin{solution}
+For any input string $w \in \Sigma^*$, run a deciders $D_A$ and $D_B$ for $A$ and $B$ respectively on $w$.  If both accept, then accept $w$.  If either rejects $w$, then reject $w$.  Since $D_A$ and $D_B$ are deciders, you will get a definitive answer.  
+\end{solution}
+\vfill
+
+%\question Explain why the following language over the alphabet $\{0,1\}$ is decidable.
+%$$\{ \langle R \rangle : R \text{ is a regular expression that describes all strings containing 11}\}.$$ 
+%Hint: There are many regular expressions in this language, here is one: \verb:(0|1)*11(0|1)*:.
+%\begin{solution}
+%Create a TM that reads a regular expression and a string and determines whether the regular expression accepts the string.  Then for any regular expression, feed that TM different strings until it either rejects a string that it should accept or accepts a string it should reject.  Hmmm... this is tricky b/c you have to prove several intermediate results like:
+%1. Applying a regex to a string is decidable. 
+%2. A TM can convert a regex to a DFA. 
+%3. Determining whether a regular language is empty is decidable.  
+%\end{solution}
+%\vfill
+%\begin{parts}
+%\part $\{ \langle M \rangle : M \text{ is a DFA that only accepts strings that are all 1's}\}$.
+%\begin{solution}
+%You can use a Turing machine that simulates $M$. When you simulate $M$, if it is a valid DFA, then it will 
+%\end{solution}
+%\vfill
+
+
+\question Let $D \subset \Sigma^*$ be a decidable language. Prove that
+$$C = \{x \in \Sigma^* : \text{ there exists } y \in \Sigma^* \text{ such that } xy \in D \}$$
+is recognizable. Hint: Given a string $x \in \Sigma^*$, describe an algorithm you could implement using a Turing machine that decides $D$ to determine if $x \in C$. 
+\begin{solution}
+For $x$, try adding $y$'s chosen sequentially from $\Sigma^*$ until you find a $y$ such that $xy \in D$.  If you find one, then accept $x$.  If you don't, then loop forever.  This algorithm will recognize any $x \in C$.  
+\end{solution}
+\vfill
+
+\question Use Rice's theorem to prove that the property $\text{EMPTY} = \{ \langle M \rangle : L(M) = \varnothing \}$ is undecidable.  That is, prove that there is no algorithm to decide whether a Turing machine accepts no strings.
+\begin{solution}
+The set $\text{EMPTY}$ is a non-empty since there are Turing machines that reject every string. It is also a proper subset of the set $L_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine} \}$ since there are Turing machines that accept some strings.  So \text{EMPTY} is a nontrivial property.  It is also a semantic property, since whether a Turing machine has the property only depends on the language that the machine accepts.  Therefore Rice's theorem applies. 
+\end{solution} 
+\vfill
+
+\newpage
+\question A subset $S \subset \N$ is \emph{decidable} if there is a computable function $f:\N \rightarrow \{0,1\}$ such that $f(n) = 1$ if and only if $n \in S$.  Give an informal argument to explain the following fact: A subset $S \subset \N$ is decidable if and only if there is a computer program that prints the elements of $S$ \textit{in increasing order}.  Hint: Since the fact is an if-and-only-if statement, you'll have to explain both directions.  
+\begin{solution}
+You have to give an explanation of both directions.  First, if there is a computer program that prints the elements of $S$ in increasing order, then will know if an $n \in \N$ is not in $S$ when you get to a number in $S$ bigger than $n$ without seeing $n$ first.  You will also know if $n \in S$ if you see $n$ in the output.  Therefore you can decide $S$.  
+
+To show the converse, consider the following algorithm: 
+\begin{verbatim}
+while true
+  if f(n) == 1:
+    print n
+  n++
+\end{verbatim}
+\end{solution}
+\vfill
+
+\question Let $L$ be a Turing recognizable language that consists of binary descriptions of Turing machines 
+$$L = \{\langle D_0 \rangle, \langle D_1 \rangle, \langle D_2 \rangle, \ldots \},$$ 
+where every $D_i$ is a decider (assume that every $D_i$ has input alphabet $\Sigma = \{0,1\}$).
+Prove that there is a decidable language in $\{0,1\}^*$ that is not decided by any of the deciders $D_i$, $i \in \N$.  Hint: Use a diagonalization argument on the strings in $\{0,1\}^*$ to construct a new Turing machine $N$ which decides a language $L(N)$ that is different from any of the languages $L(D_i)$.  
+\begin{solution}
+
+\end{solution}
+\vfill
+
+\end{questions}
+\end{document}

@@ -1167,23 +1167,29 @@ Fri, Apr 4  | [2.9][2.9]  | Applied optimization
 
 ### Mon, Mar 31
 
-Today we talked about finding the intervals where a function is increasing and where it is decreasing.  This works exactly like finding the intervals of concavity, except you use the first derivative, not the second.  We also talked about **local maximums** and **local minimums**. A local max occurs when a continuous function is increasing before and decreasing after a point.  A local minimum occurs when the function is decreasing before and increasing after a point.
+We started by reviewing the problem on the midterm exam where the temperature of a can of soda in Celsius after $t$ hours in a refrigerator is
+$$T(t) = 4 + 20 e^{-3t}.$$
+We talked about how to find the derivative and about what the derivative means.  In particular we talked about [units](https://en.wikipedia.org/wiki/Unit_of_measurement) and how to find the units of derivatives.  
+
+After that, we talked about finding the intervals where a function is increasing and where it is decreasing.  This works exactly like finding the intervals of concavity, except you use the first derivative, not the second.  We also talked about **local maximums** and **local minimums**. A local max occurs when a continuous function is increasing before and decreasing after a point.  A local minimum occurs when the function is decreasing before and increasing after a point.
 
 1. Find the intervals of increase and decrease for $f(x) = x^2 - 3x + 1$.  ([video](https://youtu.be/Dyl7jPlJXOM))
 
 2. Find the intervals of increase and decrease for $y = x^3 - 9x^2 + 24x$. ([video](https://youtu.be/Dyl7jPlJXOM?t=186))
 
+3. Find the intervals of increase and decrease for $y = \dfrac{4}{x} + x$. 
+
+<!--
 3. Find the intervals of increase and decrease for $f(x) = (x-2)e^{-3x}$. ([video](https://youtu.be/BPaadqLSpa4))
 
 4. Find the intervals of increase and decrease for $f(x) = \dfrac{x^2}{x^2 - 1}$. ([video](https://youtu.be/57bjrMD9qbg))
 
-<!-- 5. Find the intervals of increase and decrease for $h(t) = t^{3/4} - 2t^{1/4}$. ([video](https://youtu.be/Lo4AjHdtqzc)) -->
 
 5. Suppose that a business has total costs of $C(x) = 2x^2 + 3x + 5$ and revenue $R(x) = 5x-2x^2$. What level of production $x$ would maximize profit (recall that profit is revenue minus costs)? 
 
-6. Find the intervals of increase and decrease for $y = \dfrac{4}{x} + x$. 
 
 7. Find the intervals of increase and decrease for $y = (x-1)^2 (x-2)$.
+-->
 
 ### Week 12 Notes
 

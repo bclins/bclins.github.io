@@ -47,7 +47,7 @@ Week | Topic                      | Notes | Homework
 8  | Pumping lemma 2                                      | [Week 08](notes.html#week-8-notes)  | [HW7](HW/HW7.pdf)
 9  | Turing machines                                      | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 10 | Decidability, **Midterm 2**                          | [Week 10](notes.html#week-10-notes) | 
-11 | Enumerability                                        | [Week 11](notes.html#week-11-notes) | 
+11 | Enumerability                                        | [Week 11](notes.html#week-11-notes) | [HW9](HW/HW9.pdf)
 12 | Complexity theory                                    | [Week 12](notes.html#week-12-notes) | 
 13 | Nodeterministic algorithms                           | [Week 13](notes.html#week-13-notes) | 
 14 | NP-completeness, **Midterm 3**                       | [Week 14](notes.html#week-14-notes) | 

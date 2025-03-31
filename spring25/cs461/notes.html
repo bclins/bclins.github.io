@@ -2613,16 +2613,23 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </table>
 <h4 id="mon-mar-31">Mon, Mar 31</h4>
 <p>We started by explaining why our proof from last time that the
-language Accept is undecidable was a diagonalization argument. The idea
-is that we can make a table with columns corresponding to different
+language Accept is undecidable was a diagonalization argument. Suppose
+there were a Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+(call it a <strong>decider</strong>) that can decide whether or not any
+other TM will accept any string.<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> accepts </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mi>.</mi></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">otherwise</mtext><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">D(\langle M, w \rangle) = \begin{cases} 1 &amp; \text{ if }M \text{ accepts } w. \\
+                                          0 &amp; \text{otherwise}. \end{cases}</annotation></semantics></math></p>
+<p>Imagine we make a table with columns corresponding to different
 Turing machine encodings and rows corresponding to different Turing
-machines and we can ask whether each Turing machine accepts each
-encoding.</p>
+machines showing the output of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+on each pair.</p>
 <center>
 <table class="bordered">
 <tr>
 <td>
- 
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
 </td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>M</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle M_1 \rangle</annotation></semantics></math>
@@ -2642,13 +2649,13 @@ encoding.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
 </td>
 <td>
-accept
+1
 </td>
 <td>
-reject
+0
 </td>
 <td>
-accept
+1
 </td>
 <td>
 </td>
@@ -2658,13 +2665,13 @@ accept
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>2</mn></msub><annotation encoding="application/x-tex">M_2</annotation></semantics></math>
 </td>
 <td>
-reject
+0
 </td>
 <td>
-accept
+1
 </td>
 <td>
-accept
+0
 </td>
 <td>
 </td>
@@ -2674,13 +2681,13 @@ accept
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>3</mn></msub><annotation encoding="application/x-tex">M_3</annotation></semantics></math>
 </td>
 <td>
-reject
+0
 </td>
 <td>
-reject
+0
 </td>
 <td>
-reject
+0
 </td>
 <td>
 </td>
@@ -2700,43 +2707,205 @@ reject
 </tr>
 </table>
 </center>
-<p>If there was a machine that could decide if each
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>k</mi></msub><annotation encoding="application/x-tex">M_k</annotation></semantics></math>
-accepts any string (so every entry in the table above is either accept
-or reject), then we could create a machine where we flip the values on
-the diagonal. But then, would that machine accept or reject itself?</p>
+<p>But what happens if we create a new TM
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+that always returns the opposite of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>?
+Why is there a contradiction if we try to look up the diagonal entry
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is given itself and its encoding string as inputs?</p>
+<p>By proving that no TM can decide the language Accept, we get the
+following corollary about the <a
+href="https://en.wikipedia.org/wiki/Halting_problem">halting
+problem</a>.</p>
 <div class="Theorem">
-<p><strong>Theorem.</strong> The language<br />
+<p><strong>Theorem (The Halting Problem is Undecidable).</strong> The
+language<br />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Halt</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM that halts on </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Halt} = \{ \langle M, w \rangle : M \text{ is a TM that halts on }w \}</annotation></semantics></math></p>
 <p>is undecidable.</p>
 </div>
-<p>Here is the proof:</p>
-<p>If Halt were decidable, then we could use the following algorithm to
-decide if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mtext mathvariant="normal">Accept</mtext></mrow><annotation encoding="application/x-tex">\langle M, w \rangle \in \text{Accept}</annotation></semantics></math>:</p>
+<p>We gave a proof by contradiction for this theorem.</p>
+<ul>
+<li><strong>Question.</strong> Suppose we had a Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+that can decide the halting problem. Describe a clever algorithm we
+could use with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+to determine whether any other Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+accepts any string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.
+Why would that algorithm lead to a contradiction?</li>
+</ul>
+<!--
+Here is the proof:
+
+If Halt were decidable, then we could use the following algorithm to decide if $\langle M, w \rangle \in \text{Accept}$:
+
+1. Check if $\langle M, w \rangle \in \text{Halt}$.
+2. If it is, run $M$ on $w$ and accept or reject accordingly. 
+3. If not, then reject.  
+
+Since this algorithm would decide the language Accept from last time, but we proved that the language Accept is undecidable, we conclude that Halt must also be undecidable.  
+-->
+<p>It turns out that not only is the halting problem undecidable, but
+lots of other questions about Turing machines are undecidable. A
+powerful theorem known as <strong>Rice’s theorem</strong> says that
+every nontrivial semantic property of a Turing machine is
+undecidable.</p>
+<p>Fix an encoding method and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi>T</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">L_{TM}</annotation></semantics></math>
+be the set of all strings that are encoded Turing machines, i.e.,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mrow><mi>T</mi><mi>M</mi></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a Turing machine</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine} \}.</annotation></semantics></math>
+For any Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>w</mi><mo>∈</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> accepts </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L(M) = \{w \in \Sigma^* : M \text{ accepts } w \}.</annotation></semantics></math></p>
+<div class="Theorem">
+<p><strong>Definitions.</strong> A <strong>property</strong> of Turing
+machines is a subset
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>⊆</mo><msub><mi>L</mi><mrow><mi>T</mi><mi>M</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P \subseteq L_{TM}</annotation></semantics></math>.
+We say that a Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+has property
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">\langle M \rangle \in P</annotation></semantics></math>.</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is <strong>nontrivial</strong> if both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+and its complement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>P</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{P}</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mrow><mi>T</mi><mi>M</mi></mrow></msub><annotation encoding="application/x-tex">L_{TM}</annotation></semantics></math>
+are nonempty sets.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is <strong>syntactic</strong> if there exist two Turing machines
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>2</mn></msub><annotation encoding="application/x-tex">M_2</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(M_1) = L(M_2)</annotation></semantics></math>,
+but only one has property
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+(i.e., the difference between the machines is in the syntax of the
+algorithm, not the languages they recognize).</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is <strong>semantic</strong> if it is not syntatic. So if two Turing
+machines recognize the same language, then either they both have
+property
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+or they both don’t.<br />
+</p></li>
+</ul>
+</div>
+<p>Here are some examples of properties. For each example, determine
+whether it is a syntactic or semantic property.</p>
 <ol type="1">
-<li>Check if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mtext mathvariant="normal">Halt</mtext></mrow><annotation encoding="application/x-tex">\langle M, w \rangle \in \text{Halt}</annotation></semantics></math>.</li>
-<li>If it is, run
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">INFINITE</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is infinite</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{INFINITE} = \{\langle M \rangle : L(M) \text{ is infinite} \}.</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">REGULAR</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a regular language</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{REGULAR} = \{\langle M \rangle : L(M) \text{ is a regular language} \}.</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">HAS-THREE-STATES</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> has 3 states</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{HAS-THREE-STATES} = \{\langle M \rangle : M \text{ has 3 states} \}.</annotation></semantics></math></li>
+</ol>
+<div class="Theorem">
+<p><strong>Rice’s Theorem.</strong> Every nontrivial semantic property
+is undecidable.</p>
+</div>
+<p>We proved <strong>Rice’s theorem</strong> using a proof by
+contradiction (see below). Our book also has a different proof in <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">Section
+5.3</a> if you are interested.</p>
+<p><em>Proof.</em> Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+is a Turing machine with property
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>2</mn></msub><annotation encoding="application/x-tex">M_2</annotation></semantics></math>
+is a Turing machine that doesn’t have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>.
+We can assume without loss of generality that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi></mrow><annotation encoding="application/x-tex">L(M_2) = \varnothing</annotation></semantics></math>.
+Then for any Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+and string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+construct a new Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi>M</mi><mi>w</mi></mrow></msub><annotation encoding="application/x-tex">T_{Mw}</annotation></semantics></math>
+that starts by running
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
 on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-and accept or reject accordingly.</li>
-<li>If not, then reject.</li>
-</ol>
-<p>Since this algorithm would decide the language Accept from last time,
-but we proved that the language Accept is undecidable, we conclude that
-Halt must also be undecidable.</p>
-<p>Then we proved <strong>Rice’s theorem</strong> (our book also has a
-proof in <a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">Section
-5.3</a>, my proof was shorter, but I glossed over some of the details).
-We used Rice’s theorem to prove that these two languages are
-undecidable.</p>
-<ol type="1">
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Infinte</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM and </mtext><mspace width="0.333em"></mspace></mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is infinite</mtext></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Infinte} = \{ \langle M \rangle : M \text{ is a TM and } L(M) \text{ is infinite}\}</annotation></semantics></math>.</p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Empty</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM and </mtext><mspace width="0.333em"></mspace></mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Empty} = \{ \langle M \rangle : M \text{ is a TM and } L(M) = \varnothing \}</annotation></semantics></math>.</p></li>
-</ol>
+until that halts, then it runs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+on the actual input, returning whatever
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+returns. So
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>T</mi><mrow><mi>M</mi><mi>w</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> halts on </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>M</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> doesn’t halt on </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">L(T_{Mw}) = \begin{cases} L(M_1) &amp; \text{ if } M \text{ halts on } w \\
+                            L(M_2) = \varnothing &amp; \text{ if } M \text{ doesn&#39;t halt on } w. \end{cases}</annotation></semantics></math>
+Therefore
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi>M</mi><mi>w</mi></mrow></msub><annotation encoding="application/x-tex">T_{Mw}</annotation></semantics></math>
+has property
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+halts on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>.</p>
+<ul>
+<li><strong>Question.</strong> Why would this lead to a contradiction if
+there were a Turing machine that could decide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>?</li>
+</ul>
+<!--
+#### Wed, Apr 2
+
+Today we introduced **big-O notation** and used it to talk about running times of algorithms. 
+
+<div class="Theorem">
+**Definition (Big-O notation).** Let $f, g: \N \rightarrow [0, \infty)$.  We say that $f \in O(g)$ if there are constants $C, n_0 > 0$ such that $f(n) \le C g(n)$ for all $n \ge n_0$.  So $O(g)$ is the set of all functions that are eventually bounded by $C g$ for some constant $C$. 
+</div>
+
+Note that there are lots of important examples in [Barak Chapter 12](https://introtcs.org/public/lec_10_efficient_alg.html) of algorithms and their running times. 
+
+1. Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$?
+
+We proved the following facts about big-O notation:
+
+<div class="Theorem">
+**Theorem (Only Dominant Terms Matter).** If $f: \N \rightarrow [0,\infty)$ is a sum of nonnegative functions $f_1, \ldots, f_k$, then there is at least one function $f_j$ such that $O(f) = O(f_j)$.  We call that function a **dominant term** for $f$. 
+</div>
+
+
+<div class="Theorem">
+**Theorem (Constant Multiples Don't Matter).** For any $f: \N \rightarrow [0,\infty)$ and constant $c > 0$, $O(cf) = O(f)$.
+</div>
+
+<div class="Theorem">
+**Theorem (Products of Functions).** If $f_1 \in O(g_1)$ and $f_2 \in O(g_2)$, then $f_1f_2 \in O(g_1 g_2)$. 
+</div>
+ 
+We also reviewed this heirarchy of functions:
+
+$$\text{logarithms} \ll \text{polynomials} \ll \text{exponentials} \ll \text{factorials}$$
+
+We used these ideas to find the dominant term for these expressions:
+
+1. $n^4 + n^3 \log n + (\log n)^5$.
+
+2. $n^{100} + 2^n$. 
+
+So why do we use big-O notation?  It makes it easier to talk about a lot of formulas.  For example, an algorithm that requires $7(n+3) \dfrac{n!}{k!(n-k)!}+167$ steps can be described simply as being $O(n^{k+1})$.
+
+**Caution 1.** Big-O notation only gives an upper bound for how fast functions grow.  Functions in $O(f)$ don't have to grow at the same rate as $f$, they can also grow much slower.  
+
+**Caution 2.** You should always write the simplest possible expression inside big-O notation.  For example $O(5n^3 + \log n) = O(n^3)$, so just write $O(n^3)$.  
+
+We finished by talking about how we use Big-O notation to describe the runtime of algorithms such as:
+
+1. The TM from Midterm 2 that decrements a binary string by 1. 
+
+1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
+-->
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
 <thead>

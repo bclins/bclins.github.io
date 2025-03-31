@@ -1326,30 +1326,40 @@ Fri, Apr 4  | [6.1][6.1] | The running time of algorithms
 
 #### Mon, Mar 31
 
-We started by explaining why our proof from last time that the language Accept is undecidable was a diagonalization argument.  The idea is that we can make a table with columns corresponding to different Turing machine encodings and rows corresponding to different Turing machines and we can ask whether each Turing machine accepts each encoding.  
+We started by explaining why our proof from last time that the language Accept is undecidable was a diagonalization argument.  Suppose there were a Turing machine $D$ (call it a **decider**) that can decide whether or not any other TM will accept any string.  
+$$D(\langle M, w \rangle) = \begin{cases} 1 & \text{ if }M \text{ accepts } w. \\
+                                          0 & \text{otherwise}. \end{cases}$$
+
+Imagine we make a table with columns corresponding to different Turing machine encodings and rows corresponding to different Turing machines showing the output of $D$ on each pair.  
 
 <center>
 <table class = "bordered">
-<tr><td> &nbsp; </td> <td> $\langle M_1 \rangle$ </td> <td> $\langle M_2 \rangle$ </td> <td> $\langle M_3 \rangle$ </td> <td> $\ldots$ </td> </tr>
+<tr><td> $D$ </td> <td> $\langle M_1 \rangle$ </td> <td> $\langle M_2 \rangle$ </td> <td> $\langle M_3 \rangle$ </td> <td> $\ldots$ </td> </tr>
 
-<tr><td> $M_1$ </td> <td> accept </td> <td> reject </td> <td> accept </td> <td> </td> </tr>
-<tr><td> $M_2$ </td> <td> reject </td> <td> accept </td> <td> accept </td> <td> </td> </tr>
-<tr><td> $M_3$ </td> <td> reject </td> <td> reject </td> <td> reject </td> <td> </td> </tr>
+<tr><td> $M_1$ </td> <td> 1 </td> <td> 0 </td> <td> 1 </td> <td> </td> </tr>
+<tr><td> $M_2$ </td> <td> 0 </td> <td> 1 </td> <td> 0 </td> <td> </td> </tr>
+<tr><td> $M_3$ </td> <td> 0 </td> <td> 0 </td> <td> 0 </td> <td> </td> </tr>
 <tr><td> $\vdots$ </td> <td> </td> <td> </td> <td> </td> <td> </td> </tr>
-
-
 </table>
 </center>
 
-If there was a machine that could decide if each $M_k$ accepts any string (so every entry in the table above is either accept or reject), then we could create a machine where we flip the values on the diagonal.  But then, would that machine accept or reject itself?  
+But what happens if we create a new TM $N$ that always returns the opposite of $D$? Why is there a contradiction if we try to look up the diagonal entry where $N$ is given itself and its encoding string as inputs?  
+
+By proving that no TM can decide the language Accept, we get the following corollary about the [halting problem](https://en.wikipedia.org/wiki/Halting_problem).
+
 
 <div class = "Theorem">
-**Theorem.** The language  
+**Theorem (The Halting Problem is Undecidable).** The language  
 $$\text{Halt} = \{ \langle M, w \rangle : M \text{ is a TM that halts on }w \}$$
 
 is undecidable. 
 </div>
 
+We gave a proof by contradiction for this theorem.  
+
+* **Question.** Suppose we had a Turing machine $H$ that can decide the halting problem.  Describe a clever algorithm we could use with $H$ to determine whether any other Turing machine $M$ accepts any string $w$.  Why would that algorithm lead to a contradiction?
+
+<!--
 Here is the proof:
 
 If Halt were decidable, then we could use the following algorithm to decide if $\langle M, w \rangle \in \text{Accept}$:
@@ -1359,14 +1369,94 @@ If Halt were decidable, then we could use the following algorithm to decide if $
 3. If not, then reject.  
 
 Since this algorithm would decide the language Accept from last time, but we proved that the language Accept is undecidable, we conclude that Halt must also be undecidable.  
+-->
 
-Then we proved **Rice's theorem** (our book also has a proof in [Section 5.3][5.3], my proof was shorter, but I glossed over some of the details).  We used Rice's theorem to prove that these two languages are undecidable.  
+It turns out that not only is the halting problem undecidable, but lots of other questions about Turing machines are undecidable.  A powerful theorem known as **Rice's theorem** says that every nontrivial semantic property of a Turing machine is undecidable. 
 
-1. $\text{Infinte} = \{ \langle M \rangle : M \text{ is a TM and } L(M) \text{ is infinite}\}$.
+Fix an encoding method and let $L_{TM}$ be the set of all strings that are encoded Turing machines, i.e., 
+$$L_{TM} = \{ \langle M \rangle : M \text{ is a Turing machine} \}.$$
+For any Turing machine $M$, let 
+$$L(M) = \{w \in \Sigma^* : M \text{ accepts } w \}.$$
 
-2. $\text{Empty} = \{ \langle M \rangle : M \text{ is a TM and } L(M) = \varnothing \}$.
+<div class="Theorem">
+**Definitions.** A **property** of Turing machines is a subset $P \subseteq L_{TM}$.  We say that a Turing machine $M$ has property $P$ if $\langle M \rangle \in P$. 
+
+* $P$ is **nontrivial** if both $P$ and its complement $\bar{P}$ in $L_{TM}$ are nonempty sets.  
+
+* $P$ is **syntactic** if there exist two Turing machines $M_1$ and $M_2$ such that $L(M_1) = L(M_2)$, but only one has property $P$ (i.e., the difference between the machines is in the syntax of the algorithm, not the languages they recognize). 
+
+* $P$ is **semantic** if it is not syntatic.  So if two Turing machines recognize the same language, then either they both have property $P$ or they both don't.  
+</div> 
+
+Here are some examples of properties.  For each example, determine whether it is a syntactic or semantic property. 
+
+1. $\text{INFINITE} = \{\langle M \rangle :  L(M) \text{ is infinite} \}.$
+2. $\text{REGULAR} = \{\langle M \rangle :  L(M) \text{ is a regular language} \}.$
+3. $\text{HAS-THREE-STATES} = \{\langle M \rangle :  M \text{ has 3 states} \}.$
+
+<div class="Theorem">
+**Rice's Theorem.** Every nontrivial semantic property is undecidable. 
+</div>
+
+We proved **Rice's theorem** using a proof by contradiction (see below). Our book also has a different proof in [Section 5.3][5.3] if you are interested. 
+
+*Proof.* Suppose $M_1$ is a Turing machine with property $P$ and $M_2$ is a Turing machine that doesn't have $P$.  We can assume without loss of generality that $L(M_2) = \varnothing$.  Then for any Turing machine $M$ and string $w$, construct a new Turing machine $T_{Mw}$ that starts by running $M$ on $w$ until that halts, then it runs $M_1$ on the actual input, returning whatever $M_1$ returns.  So
+$$L(T_{Mw}) = \begin{cases} L(M_1) & \text{ if } M \text{ halts on } w \\
+                            L(M_2) = \varnothing & \text{ if } M \text{ doesn't halt on } w. \end{cases}$$
+Therefore $T_{Mw}$ has property $P$ if and only if $M$ halts on $w$.
+
+* **Question.** Why would this lead to a contradiction if there were a Turing machine that could decide $P$?  
+
+<!--
+#### Wed, Apr 2
+
+Today we introduced **big-O notation** and used it to talk about running times of algorithms. 
+
+<div class="Theorem">
+**Definition (Big-O notation).** Let $f, g: \N \rightarrow [0, \infty)$.  We say that $f \in O(g)$ if there are constants $C, n_0 > 0$ such that $f(n) \le C g(n)$ for all $n \ge n_0$.  So $O(g)$ is the set of all functions that are eventually bounded by $C g$ for some constant $C$. 
+</div>
+
+Note that there are lots of important examples in [Barak Chapter 12](https://introtcs.org/public/lec_10_efficient_alg.html) of algorithms and their running times. 
+
+1. Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$?
+
+We proved the following facts about big-O notation:
+
+<div class="Theorem">
+**Theorem (Only Dominant Terms Matter).** If $f: \N \rightarrow [0,\infty)$ is a sum of nonnegative functions $f_1, \ldots, f_k$, then there is at least one function $f_j$ such that $O(f) = O(f_j)$.  We call that function a **dominant term** for $f$. 
+</div>
 
 
+<div class="Theorem">
+**Theorem (Constant Multiples Don't Matter).** For any $f: \N \rightarrow [0,\infty)$ and constant $c > 0$, $O(cf) = O(f)$.
+</div>
+
+<div class="Theorem">
+**Theorem (Products of Functions).** If $f_1 \in O(g_1)$ and $f_2 \in O(g_2)$, then $f_1f_2 \in O(g_1 g_2)$. 
+</div>
+ 
+We also reviewed this heirarchy of functions:
+
+$$\text{logarithms} \ll \text{polynomials} \ll \text{exponentials} \ll \text{factorials}$$
+
+We used these ideas to find the dominant term for these expressions:
+
+1. $n^4 + n^3 \log n + (\log n)^5$.
+
+2. $n^{100} + 2^n$. 
+
+So why do we use big-O notation?  It makes it easier to talk about a lot of formulas.  For example, an algorithm that requires $7(n+3) \dfrac{n!}{k!(n-k)!}+167$ steps can be described simply as being $O(n^{k+1})$.
+
+**Caution 1.** Big-O notation only gives an upper bound for how fast functions grow.  Functions in $O(f)$ don't have to grow at the same rate as $f$, they can also grow much slower.  
+
+**Caution 2.** You should always write the simplest possible expression inside big-O notation.  For example $O(5n^3 + \log n) = O(n^3)$, so just write $O(n^3)$.  
+
+We finished by talking about how we use Big-O notation to describe the runtime of algorithms such as:
+
+1. The TM from Midterm 2 that decrements a binary string by 1. 
+
+1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
+-->
 
 
 ### Week 12 Notes
