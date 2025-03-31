@@ -1255,7 +1255,7 @@ Day  | Section  | Topic
 :----:|:---:|:-----------------
 Mon, Mar 24 | | Review
 Wed, Mar 26 | | **Midterm 2** 
-Fri, Mar 28 |  [5.5][5.5] - [5.7][5.7] | Enumerators
+Fri, Mar 28 |  [5.5][5.5] - [5.7][5.7] | Universal Turing machines
 
 #### Mon, Mar 24
 
@@ -1264,6 +1264,7 @@ Today we reviewed context-free languages for the midterm exam.  We also talked a
 #### Fri, Mar 28
 
 Today we introduced **universal Turing machines**.  We used them to consider this language:
+<!-- This year, I actually went into some details about how to construct a Universal TM.  We talked about how to encode the transition function on a string if Γ* = {0, 1, |,  □} and Σ = {0, 1}.  The idea is that you arrange all of the possible output transitions in Q x Γ x {L, R} using 3 contiguous sections of the tape, and then the output for state k, and symbol $\sigma$ is located in the $|Γ| k + \sigma$ through |Γ| k + \sigma + |Γ| (k+1) - 1$ cells on the tape. From there, it is easy to describe a TM algorithm that can use reference the transition function on one tape and to edit the input string on another tape. --> 
 
 $$\text{Accept} = \{ \langle M, w \rangle : M \text{ is a Turing machine and } w \text{ is a string that } M \text{ accepts}\}.$$
 
@@ -1319,9 +1320,53 @@ The other direction is harder to prove.  We sketched a proof at the board, but t
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Mar 31 | [6.1][6.1] | The running time of algorithms
-Wed, Apr 2  |             | Universal Turing machines
-Fri, Apr 4  | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem
+Mon, Mar 31 | [5.1][5.1]-[5.3][5.3] | The halting problem & Rice's theorem
+Wed, Apr 2  | [6.1][6.1] | The running time of algorithms
+Fri, Apr 4  | [6.1][6.1] | The running time of algorithms
+
+#### Mon, Mar 31
+
+We started by explaining why our proof from last time that the language Accept is undecidable was a diagonalization argument.  The idea is that we can make a table with columns corresponding to different Turing machine encodings and rows corresponding to different Turing machines and we can ask whether each Turing machine accepts each encoding.  
+
+<center>
+<table class = "bordered">
+<tr><td> &nbsp; </td> <td> $\langle M_1 \rangle$ </td> <td> $\langle M_2 \rangle$ </td> <td> $\langle M_3 \rangle$ </td> <td> $\ldots$ </td> </tr>
+
+<tr><td> $M_1$ </td> <td> accept </td> <td> reject </td> <td> accept </td> <td> </td> </tr>
+<tr><td> $M_2$ </td> <td> reject </td> <td> accept </td> <td> accept </td> <td> </td> </tr>
+<tr><td> $M_3$ </td> <td> reject </td> <td> reject </td> <td> reject </td> <td> </td> </tr>
+<tr><td> $\vdots$ </td> <td> </td> <td> </td> <td> </td> <td> </td> </tr>
+
+
+</table>
+</center>
+
+If there was a machine that could decide if each $M_k$ accepts any string (so every entry in the table above is either accept or reject), then we could create a machine where we flip the values on the diagonal.  But then, would that machine accept or reject itself?  
+
+<div class = "Theorem">
+**Theorem.** The language  
+$$\text{Halt} = \{ \langle M, w \rangle : M \text{ is a TM that halts on }w \}$$
+
+is undecidable. 
+</div>
+
+Here is the proof:
+
+If Halt were decidable, then we could use the following algorithm to decide if $\langle M, w \rangle \in \text{Accept}$:
+
+1. Check if $\langle M, w \rangle \in \text{Halt}$.
+2. If it is, run $M$ on $w$ and accept or reject accordingly. 
+3. If not, then reject.  
+
+Since this algorithm would decide the language Accept from last time, but we proved that the language Accept is undecidable, we conclude that Halt must also be undecidable.  
+
+Then we proved **Rice's theorem** (our book also has a proof in [Section 5.3][5.3], my proof was shorter, but I glossed over some of the details).  We used Rice's theorem to prove that these two languages are undecidable.  
+
+1. $\text{Infinte} = \{ \langle M \rangle : M \text{ is a TM and } L(M) \text{ is infinite}\}$.
+
+2. $\text{Empty} = \{ \langle M \rangle : M \text{ is a TM and } L(M) = \varnothing \}$.
+
+
 
 
 ### Week 12 Notes

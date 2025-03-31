@@ -2488,7 +2488,7 @@ polynomials with integer roots. We’ll look at other examples of
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=185">5.5</a>
 - <a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=192">5.7</a></td>
-<td style="text-align: left;">Enumerators</td>
+<td style="text-align: left;">Universal Turing machines</td>
 </tr>
 </tbody>
 </table>
@@ -2499,7 +2499,8 @@ href="https://en.wikipedia.org/wiki/Chomsky_hierarchy">Chomsky hierarchy
 of languages</a>.</p>
 <h4 id="fri-mar-28">Fri, Mar 28</h4>
 <p>Today we introduced <strong>universal Turing machines</strong>. We
-used them to consider this language:</p>
+used them to consider this language:
+<!-- This year, I actually went into some details about how to construct a Universal TM.  We talked about how to encode the transition function on a string if Γ* = {0, 1, |,  □} and Σ = {0, 1}.  The idea is that you arrange all of the possible output transitions in Q x Γ x {L, R} using 3 contiguous sections of the tape, and then the output for state k, and symbol $\sigma$ is located in the $|Γ| k + \sigma$ through |Γ| k + \sigma + |Γ| (k+1) - 1$ cells on the tape. From there, it is easy to describe a TM algorithm that can use reference the transition function on one tape and to edit the input string on another tape. --></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Accept</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a Turing machine and </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a string that </mtext><mspace width="0.333em"></mspace></mrow><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> accepts</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Accept} = \{ \langle M, w \rangle : M \text{ is a Turing machine and } w \text{ is a string that } M \text{ accepts}\}.</annotation></semantics></math></p>
 <ol type="1">
 <li>Explain why Accept is Turing recognizable.</li>
@@ -2591,24 +2592,151 @@ The other direction is harder to prove.  We sketched a proof at the board, but t
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 31</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=205">6.1</a></td>
-<td style="text-align: left;">The running time of algorithms</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Apr 2</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Universal Turing machines</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Apr 4</td>
-<td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=165">5.1</a>-<a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">5.3</a></td>
 <td style="text-align: left;">The halting problem &amp; Rice’s
 theorem</td>
 </tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 2</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=205">6.1</a></td>
+<td style="text-align: left;">The running time of algorithms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 4</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=205">6.1</a></td>
+<td style="text-align: left;">The running time of algorithms</td>
+</tr>
 </tbody>
 </table>
+<h4 id="mon-mar-31">Mon, Mar 31</h4>
+<p>We started by explaining why our proof from last time that the
+language Accept is undecidable was a diagonalization argument. The idea
+is that we can make a table with columns corresponding to different
+Turing machine encodings and rows corresponding to different Turing
+machines and we can ask whether each Turing machine accepts each
+encoding.</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>M</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle M_1 \rangle</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>M</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle M_2 \rangle</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msub><mi>M</mi><mn>3</mn></msub><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle M_3 \rangle</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>…</mi><annotation encoding="application/x-tex">\ldots</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>1</mn></msub><annotation encoding="application/x-tex">M_1</annotation></semantics></math>
+</td>
+<td>
+accept
+</td>
+<td>
+reject
+</td>
+<td>
+accept
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>2</mn></msub><annotation encoding="application/x-tex">M_2</annotation></semantics></math>
+</td>
+<td>
+reject
+</td>
+<td>
+accept
+</td>
+<td>
+accept
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mn>3</mn></msub><annotation encoding="application/x-tex">M_3</annotation></semantics></math>
+</td>
+<td>
+reject
+</td>
+<td>
+reject
+</td>
+<td>
+reject
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>⋮</mi><annotation encoding="application/x-tex">\vdots</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</center>
+<p>If there was a machine that could decide if each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>M</mi><mi>k</mi></msub><annotation encoding="application/x-tex">M_k</annotation></semantics></math>
+accepts any string (so every entry in the table above is either accept
+or reject), then we could create a machine where we flip the values on
+the diagonal. But then, would that machine accept or reject itself?</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> The language<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Halt</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM that halts on </mtext><mspace width="0.333em"></mspace></mrow><mi>w</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Halt} = \{ \langle M, w \rangle : M \text{ is a TM that halts on }w \}</annotation></semantics></math></p>
+<p>is undecidable.</p>
+</div>
+<p>Here is the proof:</p>
+<p>If Halt were decidable, then we could use the following algorithm to
+decide if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mtext mathvariant="normal">Accept</mtext></mrow><annotation encoding="application/x-tex">\langle M, w \rangle \in \text{Accept}</annotation></semantics></math>:</p>
+<ol type="1">
+<li>Check if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo>,</mo><mi>w</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mtext mathvariant="normal">Halt</mtext></mrow><annotation encoding="application/x-tex">\langle M, w \rangle \in \text{Halt}</annotation></semantics></math>.</li>
+<li>If it is, run
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+and accept or reject accordingly.</li>
+<li>If not, then reject.</li>
+</ol>
+<p>Since this algorithm would decide the language Accept from last time,
+but we proved that the language Accept is undecidable, we conclude that
+Halt must also be undecidable.</p>
+<p>Then we proved <strong>Rice’s theorem</strong> (our book also has a
+proof in <a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=178">Section
+5.3</a>, my proof was shorter, but I glossed over some of the details).
+We used Rice’s theorem to prove that these two languages are
+undecidable.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Infinte</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM and </mtext><mspace width="0.333em"></mspace></mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is infinite</mtext></mrow><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Infinte} = \{ \langle M \rangle : M \text{ is a TM and } L(M) \text{ is infinite}\}</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Empty</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>M</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>M</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a TM and </mtext><mspace width="0.333em"></mspace></mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>M</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>⌀</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\text{Empty} = \{ \langle M \rangle : M \text{ is a TM and } L(M) = \varnothing \}</annotation></semantics></math>.</p></li>
+</ol>
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
 <thead>

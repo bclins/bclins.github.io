@@ -806,6 +806,15 @@ In a criminal trial the prosecution tries to prove that the defendant is "guilty
 
 ### Fri, Mar 28
 
+This week we've been talking about:
+
+<div class="Theorem">
+**One-Sample Hypothesis Test for a Proportion**
+ 
+<center>
+$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$
+</center>
+</div>
 
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
 
@@ -813,19 +822,37 @@ When we do a hypothesis test, we need to make sure that the **assumptions of a h
 2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 
+<!--
 We looked at whether these two assumptions are satisfied for this example:
+
 
 1. In our first example of a hypothesis test we looked at an example where I got 10 out of 25 guesses correct with Zenner cards.  Does that example satisfy the assumptions above? 
 
 2. In our 2nd hypothesis test, we asked whether more than half of HSC students were born in VA.  Did that test satisfy these assumptions?
+-->
 
+After that, we talked about:
 
-After that, we talked about **two-sample hypothesis tests for proportions.** We did two examples in class:
+<div class="Theorem">
+**Two-Sample Hypothesis Test for Proportions.** 
+
+<center>
+$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$
+</center>
+
+where $\hat{p}$ is the **pooled proportion**:
+$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
+</div>
+
+As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
+
+We did these two examples in class.  
 
 1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
 
-2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were never arriving. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
+2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
+<!--
 In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
 * **Shape:** Approximately normal.
@@ -842,16 +869,10 @@ using the test statistic:
 $$z = \frac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p}(1- \hat{p})\left(\frac{1}{N_A} + \frac{1}{N_B}\right)}}$$
 where $\hat{p}$ is the **pooled proportion**:
 $$\hat{p} = \frac{\text{ Total number of successes in both groups }}{\text{ Combined sample size }}.$$
+-->
 
-You do need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
 
 <!--
-If we want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then you can use a **two-sample confidence interval for proportions:**
-$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
-
-Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
-
-Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
 -->
 
 - - - 
@@ -866,9 +887,23 @@ Mon, Mar 31 | [6.2.3][6.2.3] | Difference of two proportions (confidence interva
 Wed, Apr 2 |  [7.1][7.1]     | Introducing the t-distribution
 Fri, Apr 4 |  [7.1.4][7.1.4] | One sample t-confidence intervals
 
-<!--
 
-### Wed, Nov 6
+### Mon, Mar 31
+
+
+If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
+
+<div class="Theorem">
+**Two-sample confidence interval for proportions.**
+
+$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
+
+Works best if both samples contain at least 10 successes and 10 failures.
+</div>
+
+Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
+
+Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
 
 We started with this example:
 
@@ -878,6 +913,7 @@ Then we did a workshop.
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
+<!--
 ### Fri, Nov 8
 
 We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
