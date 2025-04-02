@@ -913,28 +913,31 @@ Then we did a workshop.
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
-<!--
-### Fri, Nov 8
+### Wed, Apr 2
 
 We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
 
 * Hypothesis testing - Answers a yes/no question about a parameter
 * Confidence interval - Estimates the value of a parameter
 
-We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height.  We looked at our class data and saw that the sample mean height is $\bar{x}_{HS} = 71.8$ inches.  That suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
+We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height.  We looked at our class data and saw that the sample mean height is $\bar{x}_{HS} = 71.2$ inches.  That suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
 
 * $H_0: \mu_{HS} = 70$
 * $H_A: \mu_{HS} > 70$
 
 To test these, we reviewed what we know about the sampling distribution for $\bar{x}$, and we tried to find the z-value using the formula
 $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.$$
-Unfortunately, we don't know the population standard deviation $\sigma$ for all HSC students.  We only know the sample standard deviation which was $s = 2.7$ inches.  If we use that instead of $\sigma$, then we get a **t-value**:
+Unfortunately, we don't know the population standard deviation $\sigma$ for all HSC students.  We only know the sample standard deviation which was $s = 1.89$ inches.  If we use that instead of $\sigma$, then we get a **t-value**:
 $$t =  \frac{\bar{x} - \mu_0}{s / \sqrt{n}}.$$
 which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). When you do a hypothesis test for one mean or a confidence interval for one mean, 
 $$\text{degrees of freedom} = n - 1.$$
 We briefly talked about why this is.  Then we used the app to find a p-value for our class data and see whether or not we have strong evidence that HSC students are taller on average than other men in the USA. The logic of p-values is exactly the same for a t-test as it is for a hypothesis test with the normal distribution.
 
--->
+We finished with this example:
+
+1. In 2017, the median home price in the USA was 254,900.  Is there strong evidence that the average home price in Farmville, VA is lower than this number?  Here is data from a random sample of 10 homes that sold in Farmville in 2017: 
+    $$N = 10, ~~~~~ s = 76{,}550, ~~~~~ \bar{x} = 161{,}900.$$
+    Carry out a hypothesis test with this data  to answer the question. 
 
 - - - 
 

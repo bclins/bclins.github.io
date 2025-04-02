@@ -2856,53 +2856,110 @@ halts on
 there were a Turing machine that could decide
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>?</li>
 </ul>
+<h4 id="wed-apr-2">Wed, Apr 2</h4>
+<p>Today we introduced <strong>big-O notation</strong> and used it to
+talk about running times of algorithms.</p>
+<div class="Theorem">
+<p><strong>Definition (Big-O notation).</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>,</mo><mi>g</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f, g: \mathbb{N}\rightarrow [0, \infty)</annotation></semantics></math>.
+We say that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f \in O(g)</annotation></semantics></math>
+if there are constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>,</mo><msub><mi>n</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C, n_0 &gt; 0</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mi>C</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(n) \le C g(n)</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">n \ge n_0</annotation></semantics></math>.
+So
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(g)</annotation></semantics></math>
+is the set of all functions that are eventually bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">C g</annotation></semantics></math>
+for some constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p>
+</div>
+<p>Note that there are lots of important examples in <a
+href="https://introtcs.org/public/lec_10_efficient_alg.html">Barak
+Chapter 12</a> of algorithms and their running times.</p>
+<ul>
+<li><strong>Question.</strong> Which is true?
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(\log n)^3 \in O(n)</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n \in (\log n)^3</annotation></semantics></math>?
+<!-- USEFUL TRICK: REDUCE TO $\log n$ versus $n^{1/6}$ --></li>
+</ul>
+<p>We proved the following facts about big-O notation:</p>
+<div class="Theorem">
+<p><strong>Theorem (Only Dominant Terms Matter).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f: \mathbb{N}\rightarrow [0,\infty)</annotation></semantics></math>
+is a sum of nonnegative functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>f</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">f_1, \ldots, f_k</annotation></semantics></math>,
+then there is at least one function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mi>j</mi></msub><annotation encoding="application/x-tex">f_j</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>f</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(f) = O(f_j)</annotation></semantics></math>.
+We call that function a <strong>dominant term</strong> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.</p>
+</div>
+<div class="Theorem">
+<p><strong>Theorem (Constants Don’t Matter).</strong> For any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>ℕ</mi><mo>→</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f: \mathbb{N}\rightarrow [0,\infty)</annotation></semantics></math>
+and constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c &gt; 0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(cf) = O(f)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>±</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(f \pm c) = O(f)</annotation></semantics></math>.</p>
+</div>
+<div class="Theorem">
+<p><strong>Theorem (Products of Functions).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_1 \in O(g_1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_2 \in O(g_2)</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><msub><mi>f</mi><mn>2</mn></msub><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mn>1</mn></msub><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_1f_2 \in O(g_1 g_2)</annotation></semantics></math>.</p>
+</div>
+<ul>
+<li><strong>Question.</strong> Does the base of an exponential function
+matter in O-notation? What about for logarithms?</li>
+</ul>
+<p>We get this hierarchy of functions:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><munder><mtext mathvariant="normal">logarithms</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">base doesn’t matter</mtext></munder><mo>≪</mo><munder><munder><mtext mathvariant="normal">polynomials</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">dominant power matters</mtext></munder><mo>≪</mo><munder><munder><mtext mathvariant="normal">exponentials</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">base matters</mtext></munder><mo>≪</mo><mtext mathvariant="normal">factorials</mtext></mrow><annotation encoding="application/x-tex">\underbrace{\text{logarithms}}_{\text{base doesn&#39;t matter}} \ll \underbrace{\text{polynomials}}_{\text{dominant power matters}} \ll \underbrace{\text{exponentials}}_{\text{base matters}} \ll \text{factorials}</annotation></semantics></math></p>
+<p>We used these ideas to find the dominant term for these
+expressions:</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>4</mn></msup><mo>+</mo><msup><mi>n</mi><mn>3</mn></msup><mo>log</mo><mi>n</mi><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n^4 + n^3 \log n + (\log n)^5</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>100</mn></msup><mo>+</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">n^{100} + 2^n</annotation></semantics></math>.</p></li>
+</ol>
+<p>So why do we use big-O notation? It makes it easier to talk about a
+lot of formulas. For example, an algorithm that requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mfrac displaystyle="true"><mrow><mi>n</mi><mi>!</mi></mrow><mrow><mi>k</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><mo>+</mo><mn>167</mn></mrow><annotation encoding="application/x-tex">7(n+3) \dfrac{n!}{k!(n-k)!}+167</annotation></semantics></math>
+steps can be described simply as being
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n^{k+1})</annotation></semantics></math>.</p>
+<p><strong>Caution 1.</strong> Big-O notation only gives an upper bound
+for how fast functions grow. Functions in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(f)</annotation></semantics></math>
+don’t have to grow at the same rate as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>,
+they can also grow much slower.</p>
+<p><strong>Caution 2.</strong> You should always write the simplest
+possible expression inside big-O notation. For example
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><msup><mi>n</mi><mn>3</mn></msup><mo>+</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(5n^3 + \log n) = O(n^3)</annotation></semantics></math>,
+so just write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math>.</p>
+<p>We finished by talking about how we use big-O notation to describe
+the runtime of algorithms. We did this example:</p>
+<ul>
+<li><strong>Question.</strong> We (previously) described a very simple
+Turing machine algorithm for deciding if a string is in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{ a^n b^n : n \in \mathbb{N}\}</annotation></semantics></math>.
+Estimate the worst-case number of steps it will take to decide if a
+string with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-characters
+is in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+with this algorithm. Use big-O notation to express the answer.</li>
+</ul>
 <!--
-#### Wed, Apr 2
-
-Today we introduced **big-O notation** and used it to talk about running times of algorithms. 
-
-<div class="Theorem">
-**Definition (Big-O notation).** Let $f, g: \N \rightarrow [0, \infty)$.  We say that $f \in O(g)$ if there are constants $C, n_0 > 0$ such that $f(n) \le C g(n)$ for all $n \ge n_0$.  So $O(g)$ is the set of all functions that are eventually bounded by $C g$ for some constant $C$. 
-</div>
-
-Note that there are lots of important examples in [Barak Chapter 12](https://introtcs.org/public/lec_10_efficient_alg.html) of algorithms and their running times. 
-
-1. Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$?
-
-We proved the following facts about big-O notation:
-
-<div class="Theorem">
-**Theorem (Only Dominant Terms Matter).** If $f: \N \rightarrow [0,\infty)$ is a sum of nonnegative functions $f_1, \ldots, f_k$, then there is at least one function $f_j$ such that $O(f) = O(f_j)$.  We call that function a **dominant term** for $f$. 
-</div>
-
-
-<div class="Theorem">
-**Theorem (Constant Multiples Don't Matter).** For any $f: \N \rightarrow [0,\infty)$ and constant $c > 0$, $O(cf) = O(f)$.
-</div>
-
-<div class="Theorem">
-**Theorem (Products of Functions).** If $f_1 \in O(g_1)$ and $f_2 \in O(g_2)$, then $f_1f_2 \in O(g_1 g_2)$. 
-</div>
- 
-We also reviewed this heirarchy of functions:
-
-$$\text{logarithms} \ll \text{polynomials} \ll \text{exponentials} \ll \text{factorials}$$
-
-We used these ideas to find the dominant term for these expressions:
-
-1. $n^4 + n^3 \log n + (\log n)^5$.
-
-2. $n^{100} + 2^n$. 
-
-So why do we use big-O notation?  It makes it easier to talk about a lot of formulas.  For example, an algorithm that requires $7(n+3) \dfrac{n!}{k!(n-k)!}+167$ steps can be described simply as being $O(n^{k+1})$.
-
-**Caution 1.** Big-O notation only gives an upper bound for how fast functions grow.  Functions in $O(f)$ don't have to grow at the same rate as $f$, they can also grow much slower.  
-
-**Caution 2.** You should always write the simplest possible expression inside big-O notation.  For example $O(5n^3 + \log n) = O(n^3)$, so just write $O(n^3)$.  
-
-We finished by talking about how we use Big-O notation to describe the runtime of algorithms such as:
-
-1. The TM from Midterm 2 that decrements a binary string by 1. 
+1. The TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
 
 1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
 -->

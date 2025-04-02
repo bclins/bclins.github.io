@@ -1407,7 +1407,6 @@ Therefore $T_{Mw}$ has property $P$ if and only if $M$ halts on $w$.
 
 * **Question.** Why would this lead to a contradiction if there were a Turing machine that could decide $P$?  
 
-<!--
 #### Wed, Apr 2
 
 Today we introduced **big-O notation** and used it to talk about running times of algorithms. 
@@ -1418,7 +1417,7 @@ Today we introduced **big-O notation** and used it to talk about running times o
 
 Note that there are lots of important examples in [Barak Chapter 12](https://introtcs.org/public/lec_10_efficient_alg.html) of algorithms and their running times. 
 
-1. Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$?
+* **Question.** Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$? <!-- USEFUL TRICK: REDUCE TO $\log n$ versus $n^{1/6}$ -->
 
 We proved the following facts about big-O notation:
 
@@ -1428,16 +1427,20 @@ We proved the following facts about big-O notation:
 
 
 <div class="Theorem">
-**Theorem (Constant Multiples Don't Matter).** For any $f: \N \rightarrow [0,\infty)$ and constant $c > 0$, $O(cf) = O(f)$.
+**Theorem (Constants Don't Matter).** For any $f: \N \rightarrow [0,\infty)$ and constant $c > 0$, $O(cf) = O(f)$ and $O(f \pm c) = O(f)$.
 </div>
 
 <div class="Theorem">
 **Theorem (Products of Functions).** If $f_1 \in O(g_1)$ and $f_2 \in O(g_2)$, then $f_1f_2 \in O(g_1 g_2)$. 
 </div>
- 
-We also reviewed this heirarchy of functions:
 
-$$\text{logarithms} \ll \text{polynomials} \ll \text{exponentials} \ll \text{factorials}$$
+
+* **Question.** Does the base of an exponential function matter in O-notation? What about for logarithms? 
+ 
+We get this hierarchy of functions:
+
+$$\underbrace{\text{logarithms}}_{\text{base doesn't matter}} \ll \underbrace{\text{polynomials}}_{\text{dominant power matters}} \ll \underbrace{\text{exponentials}}_{\text{base matters}} \ll \text{factorials}$$
+
 
 We used these ideas to find the dominant term for these expressions:
 
@@ -1451,13 +1454,15 @@ So why do we use big-O notation?  It makes it easier to talk about a lot of form
 
 **Caution 2.** You should always write the simplest possible expression inside big-O notation.  For example $O(5n^3 + \log n) = O(n^3)$, so just write $O(n^3)$.  
 
-We finished by talking about how we use Big-O notation to describe the runtime of algorithms such as:
+We finished by talking about how we use big-O notation to describe the runtime of algorithms. We did this example:
 
-1. The TM from Midterm 2 that decrements a binary string by 1. 
+* **Question.** We (previously) described a very simple Turing machine algorithm for deciding if a string is in $L = \{ a^n b^n : n \in \N \}$.  Estimate the worst-case number of steps it will take to decide if a string with $n$-characters is in $L$ with this algorithm. Use big-O notation to express the answer. 
+
+<!--
+1. The TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
 
 1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
 -->
-
 
 ### Week 12 Notes
 

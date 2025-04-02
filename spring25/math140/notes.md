@@ -1179,16 +1179,38 @@ After that, we talked about finding the intervals where a function is increasing
 
 3. Find the intervals of increase and decrease for $y = \dfrac{4}{x} + x$. 
 
+### Wed, Apr 2
+
+We continued doing optimization problems today. We did these examples. 
+
+1. Find the local max and mins for $y = \dfrac{x^{5}}{5} - \dfrac{x^{4}}{4} - 2 x^{3}$. 
+
+2. Find the intervals of increase and decrease for $f(x) = \dfrac{x^2}{x^2 - 1}$. ([video](https://youtu.be/57bjrMD9qbg))
+
+We also talked about finding the **absolute maximum and minimum y-values on an interval**.  The key idea is that you need to check the y-values at both the critical points inside the interval and also the endpoints of the interval.  We did these two examples:
+
+3. Find the absolute max and min of $y = -x^2 + 4x - 3$ on $[0,4]$. 
+
+4. Find the absolute max and min of $y = xe^{-x}$ on $[0,2]$. ([video with similar example](https://youtu.be/ZJzRk_6Tw7k))
+
+<!--
+5. Find absolute max and min of $f(x) = 8 \ln x - x^2$ on the interval $[1,4]$.  ([video](https://youtu.be/JXVGPEOQCb8))
+-->
+
 <!--
 3. Find the intervals of increase and decrease for $f(x) = (x-2)e^{-3x}$. ([video](https://youtu.be/BPaadqLSpa4))
 
-4. Find the intervals of increase and decrease for $f(x) = \dfrac{x^2}{x^2 - 1}$. ([video](https://youtu.be/57bjrMD9qbg))
 
+
+4. Find the intervals of increase and decrease for $y = (x-1)^2 (x-2)$.
 
 5. Suppose that a business has total costs of $C(x) = 2x^2 + 3x + 5$ and revenue $R(x) = 5x-2x^2$. What level of production $x$ would maximize profit (recall that profit is revenue minus costs)? 
 
+6. A book seller sells books for $12 each.  He sells an average of 260 books per day.  He noticed that for each $1 price increase, he sells 13 less books.  ([video](https://www.youtube.com/watch?v=39pTv4Ad7sY))
 
-7. Find the intervals of increase and decrease for $y = (x-1)^2 (x-2)$.
+    a. Find the quantity $Q$ of books he sells as a function of price $p$. 
+    b. Find the revenue $R$ as a function of $p$.
+    c. Find the price that maximizes the revenue. 
 -->
 
 ### Week 12 Notes
