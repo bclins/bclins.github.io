@@ -2880,13 +2880,13 @@ for some constant
 <p>Note that there are lots of important examples in <a
 href="https://introtcs.org/public/lec_10_efficient_alg.html">Barak
 Chapter 12</a> of algorithms and their running times.</p>
-<ul>
-<li><strong>Question.</strong> Which is true?
+<ol type="1">
+<li>Which is true?
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(\log n)^3 \in O(n)</annotation></semantics></math>
 or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n \in (\log n)^3</annotation></semantics></math>?
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>O</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">n \in O(\log n)^3</annotation></semantics></math>?
 <!-- USEFUL TRICK: REDUCE TO $\log n$ versus $n^{1/6}$ --></li>
-</ul>
+</ol>
 <p>We proved the following facts about big-O notation:</p>
 <div class="Theorem">
 <p><strong>Theorem (Only Dominant Terms Matter).</strong> If
@@ -2917,15 +2917,15 @@ and
 then
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><msub><mi>f</mi><mn>2</mn></msub><mo>∈</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>g</mi><mn>1</mn></msub><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f_1f_2 \in O(g_1 g_2)</annotation></semantics></math>.</p>
 </div>
-<ul>
-<li><strong>Question.</strong> Does the base of an exponential function
-matter in O-notation? What about for logarithms?</li>
-</ul>
+<ol start="2" type="1">
+<li>Does the base of an exponential function matter in O-notation? What
+about for logarithms?</li>
+</ol>
 <p>We get this hierarchy of functions:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><munder><mtext mathvariant="normal">logarithms</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">base doesn’t matter</mtext></munder><mo>≪</mo><munder><munder><mtext mathvariant="normal">polynomials</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">dominant power matters</mtext></munder><mo>≪</mo><munder><munder><mtext mathvariant="normal">exponentials</mtext><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">base matters</mtext></munder><mo>≪</mo><mtext mathvariant="normal">factorials</mtext></mrow><annotation encoding="application/x-tex">\underbrace{\text{logarithms}}_{\text{base doesn&#39;t matter}} \ll \underbrace{\text{polynomials}}_{\text{dominant power matters}} \ll \underbrace{\text{exponentials}}_{\text{base matters}} \ll \text{factorials}</annotation></semantics></math></p>
 <p>We used these ideas to find the dominant term for these
 expressions:</p>
-<ol type="1">
+<ol start="3" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>4</mn></msup><mo>+</mo><msup><mi>n</mi><mn>3</mn></msup><mo>log</mo><mi>n</mi><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n^4 + n^3 \log n + (\log n)^5</annotation></semantics></math>.</p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mn>100</mn></msup><mo>+</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">n^{100} + 2^n</annotation></semantics></math>.</p></li>
 </ol>
@@ -2946,23 +2946,151 @@ possible expression inside big-O notation. For example
 so just write
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math>.</p>
 <p>We finished by talking about how we use big-O notation to describe
-the runtime of algorithms. We did this example:</p>
+the runtime of algorithms. Consider the language
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>:</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">L = \{a^n b^n : n \ge 0 \}.</annotation></semantics></math>
+Here is a simple algorithm to decide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>:</p>
 <ul>
-<li><strong>Question.</strong> We (previously) described a very simple
-Turing machine algorithm for deciding if a string is in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{ a^n b^n : n \in \mathbb{N}\}</annotation></semantics></math>.
-Estimate the worst-case number of steps it will take to decide if a
+<li><strong>Simple Algorithm.</strong> Input
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a, b \}^*</annotation></semantics></math>.
+<ul>
+<li>On each pass (left to right) cross out one
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and then one
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.</li>
+<li>If there are no letters remaining to cross out, then accept.<br />
+</li>
+<li>If there you can cross out only one letter, then reject.</li>
+</ul></li>
+</ul>
+<ol start="5" type="1">
+<li>Estimate the worst-case number of steps it will take to decide if a
 string with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-characters
 is in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
 with this algorithm. Use big-O notation to express the answer.</li>
+</ol>
+<h4 id="fri-apr-4">Fri, Apr 4</h4>
+<p>We started with this example:</p>
+<ol type="1">
+<li>Estimate the time complexity for the TM from <a
+href="midterm2review.pdf">midterm 2 review problem #3</a> that
+decrements a binary string by 1.</li>
+</ol>
+<p>Last time we saw an algorithm that can decide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup><mo>:</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">L = \{a^n b^n : n \ge 0 \}</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math>
+steps using a simple algorithm. There are actually better algorithms
+that can decide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+faster. Here’s one:</p>
+<ul>
+<li><strong>Improved Algorithm.</strong> Input
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a, b \}^*</annotation></semantics></math>.
+<ul>
+<li>On each pass (left to right) through
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>,
+cross out every other
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+(starting with first), then cross out every other
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+(starting with first).</li>
+<li>Reject if you find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+before you find an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+or if the total number of letters is odd.</li>
+<li>If all letters have been crossed out, then accept.</li>
+</ul></li>
 </ul>
-<!--
-1. The TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
-
-1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
--->
+<ol start="2" type="1">
+<li>What is the time complexity of this new algorithm? How many times
+does it need to pass through a string of length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+(worst case)?</li>
+</ol>
+<p>You can go even faster with a multi-tape Turing machine.</p>
+<ul>
+<li><strong>Multi-tape Algorithm.</strong> Input
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><msup><mo stretchy="false" form="postfix">}</mo><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \{a, b \}^*</annotation></semantics></math>.
+<ul>
+<li>Read the input once left to right.<br />
+</li>
+<li>Copy each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+to tape 2.<br />
+</li>
+<li>For each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+remove an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+from tape 2.</li>
+<li>Accept if tape 2 is empty at the end.</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>What is the time complexity of this multi-tape algorithm?</li>
+</ol>
+<div class="Theorem">
+<p><strong>Theorem (Multi-tape speedup).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">t(n) \ge n</annotation></semantics></math>,
+then any multi-tape Turing machine that runs in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t(n)</annotation></semantics></math>
+steps can be simulated by a single-tape Turing machine in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(t(n)^2)</annotation></semantics></math>
+steps.</p>
+</div>
+<div class="Theorem">
+<p><strong>Theorem (Nondeterministic speedup).</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">t(n) \ge n</annotation></semantics></math>,
+then any nondeterministic Turing machine that runs in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t(n)</annotation></semantics></math>
+steps can be simulated by a deterministic Turing machine in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">2^{O(t(n))}</annotation></semantics></math>
+steps, that is, the time complexity is at most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>c</mi><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">2^{c t(n)}</annotation></semantics></math>
+for some constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c&gt;0</annotation></semantics></math>.</p>
+</div>
+<p>We talked about how to prove the second theorem by considering the
+computation tree for a nondeterministic Turing machine. If the NTM runs
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t(n)</annotation></semantics></math>,
+steps, then a breadth first simulation of the NTM must check an
+exponential number of branches
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>b</mi><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(b^{t(n)})</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+is the maximum number of branches at each step. Each branch requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">t(n)</annotation></semantics></math>
+steps to simulate, so the total run time of the deterministic TM is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>b</mi><mrow><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(t(n) b^{t(n)})</annotation></semantics></math>
+which can be expressed as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">2^{O(t(n))}</annotation></semantics></math>.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
+is in <strong>class P</strong> if there is a Turing machine
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+and a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k \ge 0</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
+can decide
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>n</mi><mi>k</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n^k)</annotation></semantics></math>
+time.</p>
+</div>
+<ol start="4" type="1">
+<li>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+be the set of binary numbers that are divisible by 7. Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+is in class P.</li>
+</ol>
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
 <thead>

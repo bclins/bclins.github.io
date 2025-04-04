@@ -1203,15 +1203,49 @@ We also talked about finding the **absolute maximum and minimum y-values on an i
 
 
 4. Find the intervals of increase and decrease for $y = (x-1)^2 (x-2)$.
+-->
 
-5. Suppose that a business has total costs of $C(x) = 2x^2 + 3x + 5$ and revenue $R(x) = 5x-2x^2$. What level of production $x$ would maximize profit (recall that profit is revenue minus costs)? 
 
-6. A book seller sells books for $12 each.  He sells an average of 260 books per day.  He noticed that for each $1 price increase, he sells 13 less books.  ([video](https://www.youtube.com/watch?v=39pTv4Ad7sY))
+### Fri, Apr 4
+
+Today we went over [homework 10](HW/HW10.pdf).  We also looked at this example:
+
+1. Find absolute max and min of $f(x) = 8 \ln x - x^2$ on the interval $[1,4]$.  ([video](https://youtu.be/JXVGPEOQCb8))
+
+
+Then we looked at examples of optimization word problems. 
+
+<!--
+1. Suppose that a business has total costs of $C(x) = 2x^2 + 3x + 5$ and revenue $R(x) = 5x-2x^2$. What level of production $x$ would maximize profit (recall that profit is revenue minus costs)? NOTE: I made this a problem on HW 11 instead of presenting it in class.
+
+2. A book seller sells books for $12 each.  He sells an average of 260 books per day.  He noticed that for each $1 price increase, he sells 13 less books.  ([video](https://www.youtube.com/watch?v=39pTv4Ad7sY))
 
     a. Find the quantity $Q$ of books he sells as a function of price $p$. 
     b. Find the revenue $R$ as a function of $p$.
     c. Find the price that maximizes the revenue. 
 -->
+
+2. A farmer wants to fence off a rectangular plot of land along the side of a long straight river. He has a total of 2400 feet of fence. How large of and area can he fence off? ([video](https://www.youtube.com/watch?v=gt4Qtp0Wxtk))
+
+With the last example, we talked about the first and second derivative tests. 
+
+<div class="Theorem"> 
+**First Derivative Test.** Suppose $f(x)$ has a critical point $c$ where $f'(c) = 0$.
+
+* If $f'$ changes from positive to negative at $c$, then $c$ is a local max.
+* If $f'$ changes from negative to positive at $c$, then $c$ is a local min.
+
+</div> 
+
+
+<div class="Theorem"> 
+**Second Derivative Test.** If $f(x)$ has a critical point $c$ where $f'(c) = 0$, then the sign of the second derivative can tell you if the critical point is a local max or min.  
+
+* If $f''(c) < 0$, then $c$ is a local max.
+* If $f''(c) > 0$, then $c$ is a local min.
+* If $f''(c) = 0$, the test is inconclusive.
+
+</div> 
 
 ### Week 12 Notes
 

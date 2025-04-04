@@ -1417,7 +1417,7 @@ Today we introduced **big-O notation** and used it to talk about running times o
 
 Note that there are lots of important examples in [Barak Chapter 12](https://introtcs.org/public/lec_10_efficient_alg.html) of algorithms and their running times. 
 
-* **Question.** Which is true?  $(\log n)^3 \in O(n)$ or $n \in (\log n)^3$? <!-- USEFUL TRICK: REDUCE TO $\log n$ versus $n^{1/6}$ -->
+1. Which is true?  $(\log n)^3 \in O(n)$ or $n \in O(\log n)^3$? <!-- USEFUL TRICK: REDUCE TO $\log n$ versus $n^{1/6}$ -->
 
 We proved the following facts about big-O notation:
 
@@ -1435,7 +1435,7 @@ We proved the following facts about big-O notation:
 </div>
 
 
-* **Question.** Does the base of an exponential function matter in O-notation? What about for logarithms? 
+2. Does the base of an exponential function matter in O-notation? What about for logarithms? 
  
 We get this hierarchy of functions:
 
@@ -1444,9 +1444,9 @@ $$\underbrace{\text{logarithms}}_{\text{base doesn't matter}} \ll \underbrace{\t
 
 We used these ideas to find the dominant term for these expressions:
 
-1. $n^4 + n^3 \log n + (\log n)^5$.
+3. $n^4 + n^3 \log n + (\log n)^5$.
 
-2. $n^{100} + 2^n$. 
+4. $n^{100} + 2^n$. 
 
 So why do we use big-O notation?  It makes it easier to talk about a lot of formulas.  For example, an algorithm that requires $7(n+3) \dfrac{n!}{k!(n-k)!}+167$ steps can be described simply as being $O(n^{k+1})$.
 
@@ -1454,15 +1454,58 @@ So why do we use big-O notation?  It makes it easier to talk about a lot of form
 
 **Caution 2.** You should always write the simplest possible expression inside big-O notation.  For example $O(5n^3 + \log n) = O(n^3)$, so just write $O(n^3)$.  
 
-We finished by talking about how we use big-O notation to describe the runtime of algorithms. We did this example:
+We finished by talking about how we use big-O notation to describe the runtime of algorithms. Consider the language 
+$$L = \{a^n b^n : n \ge 0 \}.$$
+Here is a simple algorithm to decide $L$:
 
-* **Question.** We (previously) described a very simple Turing machine algorithm for deciding if a string is in $L = \{ a^n b^n : n \in \N \}$.  Estimate the worst-case number of steps it will take to decide if a string with $n$-characters is in $L$ with this algorithm. Use big-O notation to express the answer. 
+* **Simple Algorithm.** Input $w \in \{a, b \}^*$. 
+    - On each pass (left to right) cross out one $a$ and then one $b$. 
+    - If there are no letters remaining to cross out, then accept.  
+    - If there you can cross out only one letter, then reject. 
 
-<!--
-1. The TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
+5. Estimate the worst-case number of steps it will take to decide if a string with $n$-characters is in $L$ with this algorithm. Use big-O notation to express the answer. 
 
-1. Testing whether a number $N \in \N$ (represented in binary) is prime.   
--->
+
+#### Fri, Apr 4
+
+We started with this example:
+
+1. Estimate the time complexity for the TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
+
+Last time we saw an algorithm that can decide $L = \{a^n b^n : n \ge 0 \}$ in $O(n^2)$ steps using a simple algorithm.  There are actually better algorithms that can decide $L$ faster.  Here's one:
+
+* **Improved Algorithm.** Input $w \in \{a, b \}^*$. 
+    - On each pass (left to right) through $w$, cross out every other $a$ (starting with first), then cross out every other $b$ (starting with first). 
+    - Reject if you find $b$ before you find an $a$, or if the total number of letters is odd. 
+    - If all letters have been crossed out, then accept.  
+
+2. What is the time complexity of this new algorithm?  How many times does it need to pass through a string of length $n$ (worst case)? 
+
+You can go even faster with a multi-tape Turing machine.
+
+* **Multi-tape Algorithm.** Input $w \in \{a, b \}^*$. 
+    - Read the input once left to right.  
+    - Copy each $a$ to tape 2.  
+    - For each $b$, remove an $a$ from tape 2. 
+    - Accept if tape 2 is empty at the end.  
+
+3. What is the time complexity of this multi-tape algorithm?  
+
+<div class="Theorem">
+**Theorem (Multi-tape speedup).** If $t(n) \ge n$, then any multi-tape Turing machine that runs in $t(n)$ steps can be simulated by a single-tape Turing machine in $O(t(n)^2)$ steps.  
+</div>
+
+<div class="Theorem">
+**Theorem (Nondeterministic speedup).** If $t(n) \ge n$, then any nondeterministic Turing machine that runs in $t(n)$ steps can be simulated by a deterministic Turing machine in $2^{O(t(n))}$ steps, that is, the time complexity is at most $2^{c t(n)}$ for some constant $c>0$.  
+</div>
+
+We talked about how to prove the second theorem by considering the computation tree for a nondeterministic Turing machine.  If the NTM runs in $t(n)$, steps, then a breadth first simulation of the NTM must check an exponential number of branches $O(b^{t(n)})$ where $b$ is the maximum number of branches at each step. Each branch requires $t(n)$ steps to simulate, so the total run time of the deterministic TM is $O(t(n) b^{t(n)})$ which can be expressed as $2^{O(t(n))}$.  
+
+<div class="Theorem">
+**Definition.** A language $L \subseteq \Sigma^*$ is in **class P** if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
+</div>
+
+4. Let $L$ be the set of binary numbers that are divisible by 7.  Show that $L$ is in class P. 
 
 ### Week 12 Notes
 
