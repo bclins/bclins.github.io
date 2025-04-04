@@ -1468,9 +1468,24 @@ Here is a simple algorithm to decide $L$:
 
 #### Fri, Apr 4
 
+We started with this example: 
+
+1. Find an algorithm that determines whether a binary number is divisible by 7.  Hint: if $k$ is a positive integer written in binary and you add a zero at the end, what number do you get?  What if you add a 1 at the end.  How could you use this idea to keep tract of the remainder modulo 7 as you read a binary number?  
+
+2. What is the time complexity of the algorithm above?
+
+It turns out that the language $L = \{ w \in \{0,1\}^* : w \text{ is a binary number divisible by } 7\}$ is a regular language.  For regular languages, we proved the following result. 
+
+<div class="Theorem">
+**Theorem.** If $L \subseteq \Sigma^*$ is regular, then $L$ can be decided in $O(n)$ time.
+</div>
+
+<!--
 We started with this example:
 
 1. Estimate the time complexity for the TM from [midterm 2 review problem #3](midterm2review.pdf) that decrements a binary string by 1. 
+
+-->
 
 Last time we saw an algorithm that can decide $L = \{a^n b^n : n \ge 0 \}$ in $O(n^2)$ steps using a simple algorithm.  There are actually better algorithms that can decide $L$ faster.  Here's one:
 
@@ -1479,7 +1494,7 @@ Last time we saw an algorithm that can decide $L = \{a^n b^n : n \ge 0 \}$ in $O
     - Reject if you find $b$ before you find an $a$, or if the total number of letters is odd. 
     - If all letters have been crossed out, then accept.  
 
-2. What is the time complexity of this new algorithm?  How many times does it need to pass through a string of length $n$ (worst case)? 
+3. What is the time complexity of this new algorithm? Hint: How many times does it need to pass through a string of length $n$ (worst case)? 
 
 You can go even faster with a multi-tape Turing machine.
 
@@ -1489,7 +1504,7 @@ You can go even faster with a multi-tape Turing machine.
     - For each $b$, remove an $a$ from tape 2. 
     - Accept if tape 2 is empty at the end.  
 
-3. What is the time complexity of this multi-tape algorithm?  
+4. What is the time complexity of this multi-tape algorithm?  
 
 <div class="Theorem">
 **Theorem (Multi-tape speedup).** If $t(n) \ge n$, then any multi-tape Turing machine that runs in $t(n)$ steps can be simulated by a single-tape Turing machine in $O(t(n)^2)$ steps.  
@@ -1501,12 +1516,6 @@ You can go even faster with a multi-tape Turing machine.
 
 We talked about how to prove the second theorem by considering the computation tree for a nondeterministic Turing machine.  If the NTM runs in $t(n)$, steps, then a breadth first simulation of the NTM must check an exponential number of branches $O(b^{t(n)})$ where $b$ is the maximum number of branches at each step. Each branch requires $t(n)$ steps to simulate, so the total run time of the deterministic TM is $O(t(n) b^{t(n)})$ which can be expressed as $2^{O(t(n))}$.  
 
-<div class="Theorem">
-**Definition.** A language $L \subseteq \Sigma^*$ is in **class P** if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
-</div>
-
-4. Let $L$ be the set of binary numbers that are divisible by 7.  Show that $L$ is in class P. 
-
 ### Week 12 Notes
 
 
@@ -1516,7 +1525,16 @@ Mon, Apr 7  | [6.2][6.2] | The complexity class P
 Wed, Apr 9  | [6.3][6.3] | The complexity class NP
 Fri, Apr 11 | [6.5][6.5] | The SAT problem
 
+<!-- 
 
+#### Mon, Apr 7
+
+<div class="Theorem">
+**Definition.** A language $L \subseteq \Sigma^*$ is in **class P** if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
+</div>
+
+4. Let $L$ be the set of binary numbers that are divisible by 7.  Show that $L$ is in class P. 
+-->
 
 
 ### Week 13 Notes

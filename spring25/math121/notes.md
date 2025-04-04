@@ -981,36 +981,7 @@ Wed, Apr 9 | [7.3][7.3] | Difference of two means
 Fri, Apr 11 | [7.3][7.3] | Difference of two means 
 
 <!--
-### Mon, Nov 11
-
-A **t-distribution confidence interval** is a tool to estimate the value of a population mean ($\mu$):
-$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}.$$
-
-In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table. 
-
-* **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
-
-We talked about how to use the table to find $t$-values.  Then we did the following examples. 
-
-1. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
-
-2. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 90\% confidence interval for the average weight of all HSC students. 
-
-We also did this workshop.
-
-* **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
-
-t-distribution methods require the following assumptions:
-
-1. **No Bias.** Data should be a simple random sample from the population.
-
-2. **Normality.** The sampling distribution for $\bar{x}$ should be normal. This tends to be true if the sample size is big.  Here is a quick rule of thumb:
-
-    * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
-    * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
-
-
-### Wed, Nov 13
+### Mon, Apr 7
 
 One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  
 
