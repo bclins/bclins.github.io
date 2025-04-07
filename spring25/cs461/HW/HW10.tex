@@ -1,0 +1,63 @@
+\documentclass[12pt]{exam}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{tikz,soul}
+\usepackage{diagbox}
+\usetikzlibrary{arrows,automata,positioning}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bs}{\backslash}
+\newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagestyle{empty}
+\subsubsection*{Homework 10 - Computer Science 461}
+\textit{Due Monday, April 14}
+
+\begin{questions}
+\question For each of the following, determine if the statement is true or false.  Briefly explain your answers.
+\begin{multicols}{2}
+\begin{parts}
+\part $n^2 \in O(n)$.\\ \bigskip 
+\part $n^2 + 3 \log n \in O(n^2 \log n)$.
+\part $n^3 + \sqrt{2^n} \in O(n^3)$.  \\ \bigskip
+\part $2^{2^n} \in O(n^n)$. 
+\end{parts}
+\end{multicols}
+
+
+\begin{solution}
+(a) False, (b) True, (c) False, (d) False since $2^{2^n} = (2^n)^{2^n/n} \gg n^n$. 
+\end{solution}
+\vspace*{0.5in}
+
+
+\question Let $L = \{ w \in \{a,b\}^* : w \text{ has an equal number of a's and b's} \}$. Prove that $L \in \mathsf{P}$.  
+\begin{solution}
+You can prove this by observing that this is a context-free language, so it must be in $\mathsf{P}$. 
+\end{solution}
+\vfill
+
+\question Suppose that $L, K \subset \{0,1\}^*$ are languages in class $\textsf{P}$.  Prove the following are also in class $\textsf{P}$. 
+\begin{parts}
+\part The complement of $L$.
+\begin{solution}
+If there is an algorithm $A$ that decides whether $w \in L$ in polynomial time, then the algorithm that outputs the opposite of $A$'s result also runs in polynomial time. 
+\end{solution}
+\vfill
+
+\part The union $L \cup K$.
+\begin{solution}
+If there are algorithms $A_L$ and $A_K$ that decide $L$ and $K$ respectively in polynomial time, then $A_L$ on $w$.  If it accepts, then accept, otherwise run $A_K$ on $w$ and accept accordingly.  At worst, this has running time equal to the sum of the running times of $A_L$ and $A_K$, so that is polynomial. 
+\end{solution}
+\vfill
+\end{parts}
+
+
+\end{questions}
+\end{document}

@@ -31,7 +31,7 @@ header-includes: |
 
 ### Announcements
 
-* Project 1 is due **Friday, April 4**.
+* Project 2 is due **Friday, April 11**.
 * Midterm 2 materials: [review problems](midterm2review.pdf), [solutions](midterm2reviewSolutions.pdf), [formula sheet](https://bclins.github.io/fall24/math121/midterm2formulas.pdf)
 * Midterm 1 materials: [review problems](midterm1review.html)
 
