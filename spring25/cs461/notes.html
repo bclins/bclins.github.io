@@ -3130,10 +3130,16 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tbody>
 </table>
 <h4 id="mon-apr-7">Mon, Apr 7</h4>
+<p>Today we started by talking about <a href="HW/HW9.pdf">problem #4 on
+homework 9</a>. We also looked at examples using Rice’s theorem like
+problem #3. Then we introduced the following class of languages which
+can be decided in polynomial time.</p>
 <div class="Theorem">
 <p><strong>Definition.</strong> A language
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">L \subseteq \Sigma^*</annotation></semantics></math>
-is in <strong>class P</strong> if there is a Turing machine
+is in <strong>class P</strong> (denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>∈</mo><mi>𝖯</mi></mrow><annotation encoding="application/x-tex">L \in \mathsf{P}</annotation></semantics></math>)
+if there is a Turing machine
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>
 and a
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k \ge 0</annotation></semantics></math>
@@ -3146,59 +3152,21 @@ in
 time.</p>
 </div>
 <ol type="1">
-<li><p>Explain why all regular languages are in class P.</p></li>
-<li><p>If
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>,</mo><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">K, L \subseteq \Sigma^*</annotation></semantics></math>
-are both in class
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
-then prove that the concatenation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">KL</annotation></semantics></math>
-is in class P. Hint: if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">w \in KL</annotation></semantics></math>,
-then there exist
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>
-such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-is the concatenation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>.
-So to check if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">w \in KL</annotation></semantics></math>,
-you just need to check if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-can be decomposed into
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>
-where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>.</p>
-<ul>
-<li>If the length of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
-then how many different ways can you decompose
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
-into
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>?</li>
-<li>How long will it take a Turing machine to check all of those
-decompositions to see if any have
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>?</li>
-</ul></li>
+<li>Explain why all regular languages are in class P.</li>
 </ol>
+<!--
+2. If $K, L \subseteq \Sigma^*$ are both in class $P$, then prove that the concatenation $KL$ is in class P. Hint: if $w \in KL$, then there exist $x \in K$ and $y \in L$ such that $w$ is the concatenation $xy$.  So to check if $w \in KL$, you just need to check if $w$ can be decomposed into $xy$ where $x \in K$ and $y \in L$. 
+    * If the length of $w$ is $n$, then how many different ways can you decompose $w$ into $xy$? 
+    * How long will it take a Turing machine to check all of those decompositions to see if any have $x \in K$ and $y \in L$?  
+
 <div class="Theorem">
-<p><strong>Theorem.</strong> If any of the following types of machines
-has a polynomial time algorithm to solve a problem, then so do all of
-the others.</p>
-<ol type="1">
-<li>Turing machine</li>
-<li>Multi-tape Turing machine</li>
-<li>C++ program (or any other general programming language)</li>
-</ol>
+**Theorem.** If any of the following types of machines has a polynomial time algorithm to solve a problem, then so do all of the others.
+
+1. Turing machine
+2. Multi-tape Turing machine
+3. C++ program (or any other general programming language)
 </div>
+-->
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
 <thead>

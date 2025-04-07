@@ -1533,12 +1533,15 @@ Fri, Apr 11 | [6.5][6.5] | The SAT problem
 
 #### Mon, Apr 7
 
+Today we started by talking about [problem #4 on homework 9](HW/HW9.pdf).  We also looked at examples using Rice's theorem like problem #3.  Then we introduced the following class of languages which can be decided in polynomial time.  
+
 <div class="Theorem">
-**Definition.** A language $L \subseteq \Sigma^*$ is in **class P** if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
+**Definition.** A language $L \subseteq \Sigma^*$ is in **class P** (denoted $L \in \mathsf{P}$) if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
 </div>
 
 1. Explain why all regular languages are in class P. 
 
+<!--
 2. If $K, L \subseteq \Sigma^*$ are both in class $P$, then prove that the concatenation $KL$ is in class P. Hint: if $w \in KL$, then there exist $x \in K$ and $y \in L$ such that $w$ is the concatenation $xy$.  So to check if $w \in KL$, you just need to check if $w$ can be decomposed into $xy$ where $x \in K$ and $y \in L$. 
     * If the length of $w$ is $n$, then how many different ways can you decompose $w$ into $xy$? 
     * How long will it take a Turing machine to check all of those decompositions to see if any have $x \in K$ and $y \in L$?  
@@ -1550,6 +1553,7 @@ Fri, Apr 11 | [6.5][6.5] | The SAT problem
 2. Multi-tape Turing machine
 3. C++ program (or any other general programming language)
 </div>
+-->
 
 ### Week 13 Notes
 

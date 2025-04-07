@@ -1003,7 +1003,7 @@ We talked about comparing the averages of two correlated variables.  You can use
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
-
+<!--
 ### Fri, Nov 15
 
 Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
