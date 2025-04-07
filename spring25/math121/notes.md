@@ -890,7 +890,6 @@ Fri, Apr 4 |  [7.1.4][7.1.4] | One sample t-confidence intervals
 
 ### Mon, Mar 31
 
-
 If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
 
 <div class="Theorem">
@@ -980,17 +979,18 @@ Mon, Apr 7 | [7.2][7.2] | Paired data
 Wed, Apr 9 | [7.3][7.3] | Difference of two means  
 Fri, Apr 11 | [7.3][7.3] | Difference of two means 
 
-<!--
 ### Mon, Apr 7
 
+<!-- 
 One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  
+--> 
 
-After that, we talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
+We talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
 
 <center>
 <table class="bordered">
 <tr><th>Hypotheses</th><th>Test Statistic</th></tr>
-<tr><td>$\begin{array}{l} H_0: \mu_\text{gap} = 0 \\ H_A: \mu_\text{gap} \ne 0 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_\text{gap} - 0 ~}{s/\sqrt{N}}$ </td></tr>
+<tr><td>$\begin{array}{l} H_0: \mu_\text{difference} = 0 \\ H_A: \mu_\text{difference} \ne 0 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_\text{difference} - 0 ~}{s/\sqrt{N}}$ </td></tr>
 </table>
 </center>
 

@@ -1102,7 +1102,7 @@ is, we can use a <strong>95% confidence interval</strong>:
 <p>The confidence interval formula has two parts: a <strong>best guess
 estimate</strong> (or <strong>point estimate</strong>) before the
 plus/minus symbol, and a <strong>margin of error</strong> after the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>±</mo><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
 symbol. The formula for the margin of error is 2 times the
 <strong>standard error</strong> which is an approximation of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
@@ -1827,85 +1827,217 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Apr 7
-
+<h3 id="mon-apr-7">Mon, Apr 7</h3>
+<!-- 
 One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  
-
-After that, we talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
-
+-->
+<p>We talked about comparing the averages of two correlated variables.
+You can use one sample t-distribution methods to do this as long as you
+focus on the <strong>matched pairs differences</strong>. The key is to
+focus on the difference or gap between the variables. For a
+<strong>matched pairs t-test</strong>, we always use the following:</p>
 <center>
 <table class="bordered">
-<tr><th>Hypotheses</th><th>Test Statistic</th></tr>
-<tr><td>$\begin{array}{l} H_0: \mu_\text{gap} = 0 \\ H_A: \mu_\text{gap} \ne 0 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_\text{gap} - 0 ~}{s/\sqrt{N}}$ </td></tr>
+<tr>
+<th>
+Hypotheses
+</th>
+<th>
+Test Statistic
+</th>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi>μ</mi><mtext mathvariant="normal">difference</mtext></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo><msub><mi>μ</mi><mtext mathvariant="normal">difference</mtext></msub><mo>≠</mo><mn>0</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l} H_0: \mu_\text{difference} = 0 \\ H_A: \mu_\text{difference} \ne 0 \end{array}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><mspace width="0.222em"></mspace><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mtext mathvariant="normal">difference</mtext></msub><mo>−</mo><mn>0</mn><mspace width="0.222em"></mspace></mrow><mrow><mi>s</mi><mi>/</mi><msqrt><mi>N</mi></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">t = \dfrac{~ \bar{x}_\text{difference} - 0 ~}{s/\sqrt{N}}</annotation></semantics></math>
+</td>
+</tr>
 </table>
 </center>
-
-
-1. Does the data in this [sample of couples getting married](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) provide significant evidence that husbands are older than their wives on average?  What is the average age gap?  Use a one-sample hypothesis test and confidence interval for the average difference. 
-
-2. Are the necessary assumptions for a t-test and a t-confidence interval satisfied in the previous example? 
-
-3. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx).
-
-    Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
-
-
-### Fri, Nov 15
-
-Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
-
-* [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
-
-We made side-by-side box and whisker plots for the data:
-
+<ol type="1">
+<li><p>Does the data in this <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">sample
+of couples getting married</a> provide significant evidence that
+husbands are older than their wives on average? What is the average age
+gap? Use a one-sample hypothesis test and confidence interval for the
+average difference.</p></li>
+<li><p>Are the necessary assumptions for a t-test and a t-confidence
+interval satisfied in the previous example?</p></li>
+<li><p>Do helium filled footballs go farther when you kick them? An
+article in the <em>Columbus Dispatch</em> from 1993 described the
+following experiment. One football was filled with helium and another
+identical football with regular air. Each football was kicked 39 times
+and the two footballs alternated with each kick. The distances traveled
+by the balls on each kick is recorded in this spreadsheet: <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx">Helium
+filled footballs</a>.</p>
+<p>Does this data provide statistically significant evidence that helium
+filled footballs go farther when kicked?</p></li>
+</ol>
+<h3 id="fri-nov-15">Fri, Nov 15</h3>
+<p>Today we introduced the last two inference formulas from the <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html">interactive
+formula sheet</a>: <strong>two sample inference for means</strong>. We
+looked at this example which is from a study where college student
+volunteers wore a voice recorder that let the researchers estimate how
+many words each student spoke per day.</p>
+<ul>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx">Men
+vs. women words per day</a></li>
+</ul>
+<p>We made side-by-side box and whisker plots for the data:</p>
 <center>
 <img src="men_women_talking.png"></img>
 </center>
-
-This picture suggests that there might be a difference between men & women, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
-
+<p>This picture suggests that there might be a difference between men
+&amp; women, but is it really significant? Or could this just be a
+random fluke? To find out, we can do a <strong>two sample
+t-test</strong>.</p>
 <center>
 <table class="bordered">
-<tr><th>Hypotheses</th><th>Test Statistic</th></tr>
-<tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
+<tr>
+<th>
+Hypotheses
+</th>
+<th>
+Test Statistic
+</th>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><msub><mi>μ</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>μ</mi><mn>2</mn></msub></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><mspace width="0.222em"></mspace><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mspace width="0.222em"></mspace></mrow><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}</annotation></semantics></math>
+</td>
+</tr>
 </table>
 </center>
-
-When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
-$$dF = \min(n_1, n_2) - 1$$
-in other words, *use the smaller sample size minus 1 as the degrees of freedom*. 
-
-Here is a quick summary of the numbers we need to calculate the t-value for the example with men & women talking.
-
+<p>When you do a two sample t-test (or a 2-sample t-confidence
+interval), there is a complicated formula for the right degrees of
+freedom. But an easy safe approximation is this:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>F</mi><mo>=</mo><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><msub><mi>n</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">dF = \min(n_1, n_2) - 1</annotation></semantics></math>
+in other words, <em>use the smaller sample size minus 1 as the degrees
+of freedom</em>.</p>
+<p>Here is a quick summary of the numbers we need to calculate the
+t-value for the example with men &amp; women talking.</p>
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Women</td><td>27</td><td>16,496.1</td><td>7,914.3</td></tr>
-<tr><td>Men</td><td>20</td><td>12,866.7</td><td>8,342.5</td></tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Women
+</td>
+<td>
+27
+</td>
+<td>
+16,496.1
+</td>
+<td>
+7,914.3
+</td>
+</tr>
+<tr>
+<td>
+Men
+</td>
+<td>
+20
+</td>
+<td>
+12,866.7
+</td>
+<td>
+8,342.5
+</td>
+</tr>
 </table>
 </center>
-
-
-1. Is this statistically significant evidence that women talk more than men?  Carry out all 4-steps of the hypothesis test including (i) making hypotheses, (ii) finding the t-value, (iii) finding the p-value, and (iv) explaining what it means. 
-
-**Cloud Seeding**. An experiment done in the 1970's looked at whether it is possible to spray clouds with a silver iodide solution to increase the amount of rain that falls in an area. On 26 days with promising clouds a plane sprayed the clouds with silver iodide solution and on 26 similar days they didn't spray. The amount of rainfall (measured in acre-feet) was tracked by radar. Here were the results:
-
+<ol type="1">
+<li>Is this statistically significant evidence that women talk more than
+men? Carry out all 4-steps of the hypothesis test including (i) making
+hypotheses, (ii) finding the t-value, (iii) finding the p-value, and
+(iv) explaining what it means.</li>
+</ol>
+<p><strong>Cloud Seeding</strong>. An experiment done in the 1970’s
+looked at whether it is possible to spray clouds with a silver iodide
+solution to increase the amount of rain that falls in an area. On 26
+days with promising clouds a plane sprayed the clouds with silver iodide
+solution and on 26 similar days they didn’t spray. The amount of
+rainfall (measured in acre-feet) was tracked by radar. Here were the
+results:</p>
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Seeded</td><td>26</td><td>16,496.1</td><td>7,914.3</td></tr>
-<tr><td>Control</td><td>26</td><td>12,866.7</td><td>8,342.5</td></tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Seeded
+</td>
+<td>
+26
+</td>
+<td>
+16,496.1
+</td>
+<td>
+7,914.3
+</td>
+</tr>
+<tr>
+<td>
+Control
+</td>
+<td>
+26
+</td>
+<td>
+12,866.7
+</td>
+<td>
+8,342.5
+</td>
+</tr>
 </table>
 </center>
-
-2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
-
-3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
-
-$$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
-
--->
+<ol start="2" type="1">
+<li><p>Is there statistically significant evidence that cloud seeding
+works to produce more rain?</p></li>
+<li><p>Use the <strong>two sample t-confidence interval</strong> to
+estimate how much more rain cloud seeding would produce on
+average.</p></li>
+</ol>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.</annotation></semantics></math></p>
+<p>–&gt;</p>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>

@@ -1255,6 +1255,27 @@ Mon, Apr 7  | [2.10][2.10]  | Other applications
 Wed, Apr 9  | [4.1][4.1]  | Functions of two variables
 Fri, Apr 11  | [4.2][4.2]  | Partial derivatives
 
+### Mon, Apr 7
+
+<div class="Theorem">
+**Differentials**
+
+If $y = f(x)$, then the **differential of y** is 
+$$dy = f'(x) dx.$$
+
+</div>
+
+A differential represents a change in a variable along a tangent line, and so it can have a numerical value.  The change in $y$ along the tangent line is $dy$ and the change in $x$ is $dx$.  
+
+1. Find the differential $dy$ when $y = x^2$.  What is $dy$ when $x = 2$ and $dx = 0.1$? 
+
+1. Find the differential $dy$ when $y = e^{x/10}$. What is the value of $dy$ when $x = 10$ and $dx = 0.05$?  ([video](https://youtu.be/bZynz33AXR0))
+
+1. The radius of the Earth is about 4000 miles.  According to the [snowball Earth hypothesis](https://en.wikipedia.org/wiki/Snowball_Earth), the Earth might once have been covered in a layer of ice that was half a mile thick.  Approximately how many cubic miles of ice is that?  Hint: Find the differential of $V = \tfrac{4}{3} \pi r^3$ when $r = 4{,}000$ and $dr = 0.5$.  
+
+1. Estimate $\sqrt{101}$ using differentials. Hint: How much bigger is $\sqrt{101}$ than $\sqrt{100}$? Calculate the differential of $y = \sqrt{x}$ at $x = 100$ to find out.  ([video](https://youtu.be/SloS7A0kbEU))
+
+
 ### Week 13 Notes
 
 Day  | Section  | Topic

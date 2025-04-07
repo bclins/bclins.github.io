@@ -9,7 +9,13 @@ header-includes: |
   :root {
     --header-color:	#000; 
     --link-color: #00e; 
+
+
   }
+
+  body {
+    text-align: left;
+  } 
   </style>
 ---
 
@@ -1470,7 +1476,7 @@ Here is a simple algorithm to decide $L$:
 
 We started with this example: 
 
-1. Find an algorithm that determines whether a binary number is divisible by 7.  Hint: if $k$ is a positive integer written in binary and you add a zero at the end, what number do you get?  What if you add a 1 at the end.  How could you use this idea to keep tract of the remainder modulo 7 as you read a binary number?  
+1. Find an algorithm that determines whether a binary number is divisible by 7.  Hint: if $k$ is a positive integer written in binary and you add a zero at the end, what number do you get?  What if you add a 1 at the end.  How could you use this idea to keep track of the remainder modulo 7 as you read a binary number?  
 
 2. What is the time complexity of the algorithm above?
 
@@ -1525,17 +1531,25 @@ Mon, Apr 7  | [6.2][6.2] | The complexity class P
 Wed, Apr 9  | [6.3][6.3] | The complexity class NP
 Fri, Apr 11 | [6.5][6.5] | The SAT problem
 
-<!-- 
-
 #### Mon, Apr 7
 
 <div class="Theorem">
 **Definition.** A language $L \subseteq \Sigma^*$ is in **class P** if there is a Turing machine $M$ and a $k \ge 0$ such that $M$ can decide $L$ in $O(n^k)$ time. 
 </div>
 
-4. Let $L$ be the set of binary numbers that are divisible by 7.  Show that $L$ is in class P. 
--->
+1. Explain why all regular languages are in class P. 
 
+2. If $K, L \subseteq \Sigma^*$ are both in class $P$, then prove that the concatenation $KL$ is in class P. Hint: if $w \in KL$, then there exist $x \in K$ and $y \in L$ such that $w$ is the concatenation $xy$.  So to check if $w \in KL$, you just need to check if $w$ can be decomposed into $xy$ where $x \in K$ and $y \in L$. 
+    * If the length of $w$ is $n$, then how many different ways can you decompose $w$ into $xy$? 
+    * How long will it take a Turing machine to check all of those decompositions to see if any have $x \in K$ and $y \in L$?  
+
+<div class="Theorem">
+**Theorem.** If any of the following types of machines has a polynomial time algorithm to solve a problem, then so do all of the others.
+
+1. Turing machine
+2. Multi-tape Turing machine
+3. C++ program (or any other general programming language)
+</div>
 
 ### Week 13 Notes
 
