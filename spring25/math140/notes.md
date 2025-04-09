@@ -1275,6 +1275,43 @@ A differential represents a change in a variable along a tangent line, and so it
 
 1. Estimate $\sqrt{101}$ using differentials. Hint: How much bigger is $\sqrt{101}$ than $\sqrt{100}$? Calculate the differential of $y = \sqrt{x}$ at $x = 100$ to find out.  ([video](https://youtu.be/SloS7A0kbEU))
 
+### Wed, Apr 9
+
+Today we looked at examples of functions of two or more variables and how to graph them.  There are two options for graphing function with two variables. You can either graph the **level curves** on a regular xy-plane or you can graph the surface $z = f(x,y)$ using a 3D grapher (like [Desmos 3D](https://www.desmos.com/3d)). 
+
+We discussed the following examples:
+
+1. Volume of a cylinder is $V(r, h) = \pi r^2 h$. 
+
+2. Body mass index (BMI) is 
+$$\operatorname{BMI} = 703 \frac{W}{h^2}$$
+where $W$ is a person's weight in lbs and $h$ is their height in inches. A BMI less than 18.5 is underweight, over 25 is overweight, and over 30 is obese.  Find $\operatorname{BMI}(180 \text{lbs.}, 70 \text{in.})$.  
+
+3. Volume of a box is $V(l,w,h) = lwh$.
+
+4. We made a 3D graph of the function $f(x,y) = 4-x^2 -y^2$ using ([Desmos 3D](https://www.desmos.com/3d/t1isg09xpt)).
+
+<!--5. We also made a 3D graph and a level curve graph of the distance function $f(x,y) = \sqrt{x^2+y^2}$.  ([Desmos 3D](https://www.desmos.com/3d/asc7ctx3sq))-->
+
+5. Make a graph showing three different level curves for $g(x,y) = x^2 + y$. ([Desmos](https://www.desmos.com/calculator/hp1drz84gm)) 
+
+
+<div class="Theorem">
+**Partial Derivatives**
+
+If $z = f(x,y)$, then the **partial derivative** of $f$ with respect to $x$ is denoted 
+$$\frac{\partial f}{\partial x} \text{ or } \frac{ \partial z}{\partial x} \text{ or } f_x(x,y)$$
+and it represents the derivative of $f$ with respect to $x$ treating $y$ as a constant.  Likewise
+$$\frac{\partial f}{\partial y} = \frac{ \partial z}{\partial y} = f_y(x,y)$$
+is the derivative of $f$ with respect to $y$ treating $x$ as a constant.
+</div>
+
+6. Find $\dfrac{\partial g}{\partial x}$ and $\dfrac{\partial g}{\partial y}$ for $g(x,y) = x^2 + y$.  
+
+7. Find $\dfrac{\partial V}{\partial r}$ and $\dfrac{\partial V}{\partial h}$ for $V = \pi r^2 h$.  
+
+8. Find $f_x$ and $f_y$ for $f(x,y) = x e^{-2x}$. ([video with similar example](https://youtu.be/V_W4n-ZtBRs))
+
 
 ### Week 13 Notes
 

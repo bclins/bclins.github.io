@@ -1876,62 +1876,167 @@ filled footballs</a>.</p>
 <p>Does this data provide statistically significant evidence that helium
 filled footballs go farther when kicked?</p></li>
 </ol>
-<!--
-### Fri, Nov 15
-
-Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
-
-* [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
-
-We made side-by-side box and whisker plots for the data:
-
+<h3 id="wed-apr-9">Wed, Apr 9</h3>
+<p>Today we introduced the last two inference formulas from the <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html">interactive
+formula sheet</a>: <strong>two sample inference for means</strong>. We
+looked at this example which is from a study where college student
+volunteers wore a voice recorder that let the researchers estimate how
+many words each student spoke per day.</p>
+<ul>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx">Men
+vs. women words per day</a></li>
+</ul>
+<p>We made side-by-side box and whisker plots for the data:</p>
 <center>
-<img src="men_women_talking.png"></img>
+<img src="https://bclins.github.io/fall24/math121/men_women_talking.png"></img>
 </center>
-
-This picture suggests that there might be a difference between men & women, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
-
-<center>
-<table class="bordered">
-<tr><th>Hypotheses</th><th>Test Statistic</th></tr>
-<tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
-</table>
-</center>
-
-When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
-$$dF = \min(n_1, n_2) - 1$$
-in other words, *use the smaller sample size minus 1 as the degrees of freedom*. 
-
-Here is a quick summary of the numbers we need to calculate the t-value for the example with men & women talking.
-
+<p>This picture suggests that there might be a difference between men
+&amp; women, but is it really significant? Or could this just be a
+random fluke? To find out, we can do a <strong>two sample
+t-test</strong>.</p>
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Women</td><td>27</td><td>16,496.1</td><td>7,914.3</td></tr>
-<tr><td>Men</td><td>20</td><td>12,866.7</td><td>8,342.5</td></tr>
+<tr>
+<th>
+Hypotheses
+</th>
+<th>
+Test Statistic
+</th>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><msub><mi>μ</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>μ</mi><mn>2</mn></msub></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><mspace width="0.222em"></mspace><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mspace width="0.222em"></mspace></mrow><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}</annotation></semantics></math>
+</td>
+</tr>
 </table>
 </center>
-
-
-1. Is this statistically significant evidence that women talk more than men?  Carry out all 4-steps of the hypothesis test including (i) making hypotheses, (ii) finding the t-value, (iii) finding the p-value, and (iv) explaining what it means. 
-
-**Cloud Seeding**. An experiment done in the 1970's looked at whether it is possible to spray clouds with a silver iodide solution to increase the amount of rain that falls in an area. On 26 days with promising clouds a plane sprayed the clouds with silver iodide solution and on 26 similar days they didn't spray. The amount of rainfall (measured in acre-feet) was tracked by radar. Here were the results:
-
+<p>When you do a two sample t-test (or a 2-sample t-confidence
+interval), there is a complicated formula for the right degrees of
+freedom. But an easy safe approximation is this:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>F</mi><mo>=</mo><mo>min</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>,</mo><msub><mi>n</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">dF = \min(n_1, n_2) - 1</annotation></semantics></math>
+in other words, <em>use the smaller sample size minus 1 as the degrees
+of freedom</em>.</p>
+<p>Here is a quick summary of the numbers we need to calculate the
+t-value for the example with men &amp; women talking.</p>
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Seeded</td><td>26</td><td>16,496.1</td><td>7,914.3</td></tr>
-<tr><td>Control</td><td>26</td><td>12,866.7</td><td>8,342.5</td></tr>
+<tr>
+<td>
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Women
+</td>
+<td>
+27
+</td>
+<td>
+16,496.1
+</td>
+<td>
+7,914.3
+</td>
+</tr>
+<tr>
+<td>
+Men
+</td>
+<td>
+20
+</td>
+<td>
+12,866.7
+</td>
+<td>
+8,342.5
+</td>
+</tr>
 </table>
 </center>
-
-2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
-
-3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
-
-$$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
-
--->
+<ol type="1">
+<li>Is this statistically significant evidence that women talk more than
+men? Carry out all 4-steps of the hypothesis test including (i) making
+hypotheses, (ii) finding the t-value, (iii) finding the p-value, and
+(iv) explaining what it means.</li>
+</ol>
+<p><strong>Cloud Seeding</strong>. An experiment done in the 1970’s
+looked at whether it is possible to spray clouds with a silver iodide
+solution to increase the amount of rain that falls in an area. On 26
+days with promising clouds a plane sprayed the clouds with silver iodide
+solution and on 26 similar days they didn’t spray. The amount of
+rainfall (measured in acre-feet) was tracked by radar. Here were the
+results:</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+ 
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Seeded
+</td>
+<td>
+26
+</td>
+<td>
+16,496.1
+</td>
+<td>
+7,914.3
+</td>
+</tr>
+<tr>
+<td>
+Control
+</td>
+<td>
+26
+</td>
+<td>
+12,866.7
+</td>
+<td>
+8,342.5
+</td>
+</tr>
+</table>
+</center>
+<ol start="2" type="1">
+<li><p>Is there statistically significant evidence that cloud seeding
+works to produce more rain?</p></li>
+<li><p>Use the <strong>two sample t-confidence interval</strong> to
+estimate how much more rain cloud seeding would produce on
+average.</p></li>
+</ol>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.</annotation></semantics></math></p>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>

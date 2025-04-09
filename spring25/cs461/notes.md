@@ -1541,6 +1541,12 @@ Today we started by talking about [problem #4 on homework 9](HW/HW9.pdf).  We al
 
 1. Explain why all regular languages are in class P. 
 
+#### Wed, Apr 9
+
+Today we did this in-class workshop to prove that all context-free languages are in class P. 
+
+* **Workshop:** [Context Free Languages are in P](ChomskyNF.pdf)
+
 <!--
 2. If $K, L \subseteq \Sigma^*$ are both in class $P$, then prove that the concatenation $KL$ is in class P. Hint: if $w \in KL$, then there exist $x \in K$ and $y \in L$ such that $w$ is the concatenation $xy$.  So to check if $w \in KL$, you just need to check if $w$ can be decomposed into $xy$ where $x \in K$ and $y \in L$. 
     * If the length of $w$ is $n$, then how many different ways can you decompose $w$ into $xy$? 

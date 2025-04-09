@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on **Friday, March 28**
+* Midterm 3 will be on **Friday, April 18**
+<!-- * Midterm 3 materials: [review problems](midterm3review.pdf) ADD SOME PARTIAL DERIVATIVE QUESTIONS! -->
 * Midterm 2 materials: [review problems](midterm2review.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 
