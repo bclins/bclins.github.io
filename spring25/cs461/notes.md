@@ -1561,7 +1561,33 @@ Today we did this in-class workshop to prove that all context-free languages are
 </div>
 -->
 
+ 
 #### Fri, Apr 11
+
+Today we looked at some examples of languages that are in class P. We also briefly discussed **random access memory (RAM) machines** which are sometimes a more convenient model for discussing time complexity.  It turns out that any problem that can be solved in polynomial time by a RAM machine can also be solved in polynomial time by a Turing machine.  There is more in [Barak Chapter 8 about RAM machines](https://introtcs.org/public/lec_07_other_models.html#ram-machines-and-nand-ram). 
+
+1. Let $\operatorname{PATH} = \{ \langle G, s, t \rangle : G \text{ is a directed graph with a path from } s \text{ to } t \}$.  Estimate the time complexity of the following algorithm:
+    - Step 1 - Mark s. 
+    - Step 2 - Scan edges. For any edge from a marked node to an unmarked node, mark the second node. 
+    - Step 3 - Repeat step 2 until there are no remaining edges from marked to unmarked nodes. 
+    - Step 4 - Accept if $t$ is marked, otherwise reject. 
+
+2. If $K, L \subseteq \Sigma^*$ are both in class $P$, then prove that the concatenation $KL$ is in class P. Hint: if $w \in KL$, then there exist $x \in K$ and $y \in L$ such that $w$ is the concatenation $xy$.  So to check if $w \in KL$, you just need to check if $w$ can be decomposed into $xy$ where $x \in K$ and $y \in L$. 
+    * If the length of $w$ is $n$, then how many different ways can you decompose $w$ into $xy$? 
+    * How long will it take a Turing machine to check all of those decompositions to see if any have $x \in K$ and $y \in L$?  
+
+3. Estimate the time complexity of the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor of two positive integers:
+
+    ```python
+    def gcd(a, b): 
+        while (b != 0): 
+            t = b
+            b = a % b
+            a = t
+        return a
+    ```
+
+    Hint: For every two steps of the while loop, the size of $a$ will decrease by a factor of at least 2, and $b$ will be strictly smaller than $a$.  
 
 ### Week 13 Notes
 

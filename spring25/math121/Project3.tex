@@ -1,0 +1,58 @@
+\documentclass[12pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mymod}{\, \mathrm{mod}\,}
+
+\begin{document}
+
+\subsubsection*{Project 3 \hfill Math 121}
+
+\textit{Please type your solutions to the questions below in Microsoft Word or Google Docs (or other document editor) and turn in your solutions in class on \textbf{Friday, April 18}. Use complete sentences to write your answers.  It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. }  \\
+
+\noindent
+From 1974 to 1995, the maximum speed limit on all roads in the United States was 55 miles per hour.  In 1995 Congress passed the National Highway System Designation Act which allowed states to set their own maximum speed limit. Of the 50 states (plus the District of Columbia), 32 increased their speed limits in 1996. The data in this spreadsheet:
+\begin{center}
+{\small
+\url{http://people.hsc.edu/faculty-staff/blins/StatsExamples/TrafficFatalities.xlsx}
+}
+\end{center}
+shows the percentage change in interstate highway traffic fatalities from 1995 to 1996 and whether or not the state
+increased their speed limit. (Data from the National Highway Traffic Safety Administration as reported
+in Ramsey and Schafer, 2002.)
+
+\begin{questions}
+
+\question Who or what are the individuals in this example? What is the explanatory variable and what is the response variable? 
+\begin{solution}
+The individuals are the states.  The explanatory variable is whether or not the state increased the speed limit and the response variable is the percent change in traffic fatalities.
+\end{solution}
+\question  Make and compare two box-and-whisker plots.  One that shows the percent change in interstate highway traffic fatalities in states that increased the speed limit and one for states that did not increase the speed limit. (To make the box-and-whisker plots, you can use the boxplots \& histograms app on my website or you can scan a hand drawn picture and paste it into your document.) 
+\question  Do a two-sample t-test to determine whether the average percentage change in interstate
+highway traffic fatalities is significantly higher in states that increased their speed limit.  Be sure to state the hypotheses, calculate both the t-value and the p-value, and clearly explain what the results mean.
+\begin{solution}
+\begin{itemize}
+\item $H_0: \mu_\text{change} = \mu_\text{no change}$ \\
+\item $H_A: \mu_\text{change} > \mu_\text{no change}$ 
+\end{itemize}
+The t-value for the difference is $t = 2.76$ which corresponds to a (one sided) p-value of $p = 0.645\%$. This is strong evidence that increasing speed limits lead to more traffic fatalities on average. 
+\end{solution}
+\question Make a 95\% t-distribution confidence interval to estimate the difference in average percent change in traffic fatalities between states that increased their speed limits and states that didn't.
+\begin{solution}
+The 95\% confidence interval is from 5.3\% to 39.1\% larger increase in traffic fatalities in states that increased speed limits. 
+\end{solution}
+\question Looking at the sample sizes and the shape of the data, does it look like the t-distribution methods will give trustworthy estimates? Why or why not?
+\begin{solution}
+The data for both groups is fairly symmetric, with no outliers except for the District of Columbia.  Because the combined sample size is 51, it is probably safe to use two-sample t-distribution methods.  
+\end{solution}
+\question Was this an experiment or an observational study? Can we conclude that raising speed limits \textbf{caused} more traffic fatalities? Give a brief explanation of your conclusions. 
+\begin{solution}
+It was an observational study.  States were free to choose whether or not to increase speed limits.  That means there might be lurking variables like other law changes or demographic changes that might be confounders, so we should be careful about assuming that the speed limit change was definitely the cause of the difference.  
+\end{solution}
+
+\end{questions}
+\end{document}

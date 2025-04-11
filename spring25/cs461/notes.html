@@ -3174,6 +3174,88 @@ Languages are in P</a></li>
 3. C++ program (or any other general programming language)
 </div>
 -->
+<h4 id="fri-apr-11">Fri, Apr 11</h4>
+<p>Today we looked at some examples of languages that are in class P. We
+also briefly discussed <strong>random access memory (RAM)
+machines</strong> which are sometimes a more convenient model for
+discussing time complexity. It turns out that any problem that can be
+solved in polynomial time by a RAM machine can also be solved in
+polynomial time by a Turing machine. There is more in <a
+href="https://introtcs.org/public/lec_07_other_models.html#ram-machines-and-nand-ram">Barak
+Chapter 8 about RAM machines</a>.</p>
+<ol type="1">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>PATH</mo><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>G</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>t</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>G</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a directed graph with a path from </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> to </mtext><mspace width="0.333em"></mspace></mrow><mi>t</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\operatorname{PATH} = \{ \langle G, s, t \rangle : G \text{ is a directed graph with a path from } s \text{ to } t \}</annotation></semantics></math>.
+Estimate the time complexity of the following algorithm:</p>
+<ul>
+<li>Step 1 - Mark s.</li>
+<li>Step 2 - Scan edges. For any edge from a marked node to an unmarked
+node, mark the second node.</li>
+<li>Step 3 - Repeat step 2 until there are no remaining edges from
+marked to unmarked nodes.</li>
+<li>Step 4 - Accept if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+is marked, otherwise reject.</li>
+</ul></li>
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>,</mo><mi>L</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">K, L \subseteq \Sigma^*</annotation></semantics></math>
+are both in class
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>,
+then prove that the concatenation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">KL</annotation></semantics></math>
+is in class P. Hint: if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">w \in KL</annotation></semantics></math>,
+then there exist
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is the concatenation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>.
+So to check if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>K</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">w \in KL</annotation></semantics></math>,
+you just need to check if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+can be decomposed into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>.</p>
+<ul>
+<li>If the length of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+then how many different ways can you decompose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math>?</li>
+<li>How long will it take a Turing machine to check all of those
+decompositions to see if any have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">x \in K</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">y \in L</annotation></semantics></math>?</li>
+</ul></li>
+<li><p>Estimate the time complexity of the <a
+href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean
+algorithm</a> for finding the greatest common divisor of two positive
+integers:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gcd(a, b): </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (b <span class="op">!=</span> <span class="dv">0</span>): </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> b</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        b <span class="op">=</span> a <span class="op">%</span> b</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> t</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a</span></code></pre></div>
+<p>Hint: For every two steps of the while loop, the size of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+will decrease by a factor of at least 2, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+will be strictly smaller than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>.</p></li>
+</ol>
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
 <thead>
