@@ -1009,7 +1009,7 @@ Today we introduced the last two inference formulas from the [interactive formul
 
 * [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
 
-We made side-by-side box and whisker plots for the data:
+Here are side-by-side box and whisker plots for the data:
 
 <center>
 <img src="https://bclins.github.io/fall24/math121/men_women_talking.png"></img>
@@ -1056,6 +1056,37 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
 
 $$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
+
+### Fri, Apr 11
+
+Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
+
+1. **No Bias**. As always, we need good simple random samples to avoid bias.  
+
+2. **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
+
+    * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
+    * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
+
+<!-- 
+We did this example:
+
+1. In a random sample of students who took the SATs twice found 427 had paid for coaching before their second try and 2733 had not. The table below shows the average improvements of both groups on their Verbal SAT scores:   \
+  <center>
+  <table class="bordered">
+  <tr><td></td><td>$\bar{x}_\text{gain}$</td><td>$s$</td><td>$n$</td></tr>
+  <tr><td>Coached</td><td>29</td><td>59</td><td>427</td></tr>
+  <tr><td>Not</td><td>21</td><td>52</td><td>2,733</td></tr>
+  </table>
+  </center> \
+  A 2-sample t-test has a t-value of $t = 2.646$ which has a corresponding p-value of $0.4\%$.  Explain what that means about coaching and the SATs?
+
+2. Use a 2-sample confidence interval to estimate how much more students would gain with coaching than without. 
+
+3. How are the results of the 2-sample confidence interval different than the 1-sample confidence intervals we could construct for each group?  
+-->
+
+* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
 
 - - - 

@@ -1561,6 +1561,8 @@ Today we did this in-class workshop to prove that all context-free languages are
 </div>
 -->
 
+#### Fri, Apr 11
+
 ### Week 13 Notes
 
 Day  | Section  | Topic

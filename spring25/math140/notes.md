@@ -1312,6 +1312,12 @@ is the derivative of $f$ with respect to $y$ treating $x$ as a constant.
 
 8. Find $f_x$ and $f_y$ for $f(x,y) = x e^{-2x}$. ([video with similar example](https://youtu.be/V_W4n-ZtBRs))
 
+### Fri, Apr 11
+
+We spent most of class reviewing [homework 11](HW/HW11.pdf) before the quiz today. But at the end, we looked at this example of partial derivatives. 
+
+1. Find $\dfrac{\partial}{\partial x} x^2 y^2 + x + y^4 + 5$. Then find the partial derivative with respect to $y$. ([video](https://youtu.be/xnhz1Ngr4w8)) 
+
 
 ### Week 13 Notes
 
@@ -1320,6 +1326,32 @@ Day  | Section  | Topic
 Mon, Apr 14  | [4.2][4.2]  | Partial derivatives - con’d
 Wed, Apr 16  |  | Review
 Fri, Apr 18  |  | Midterm 3
+
+<!--
+### Fri, Apr 14 
+
+1. Find $f_x$ and $f_y$ when $f(x,y) = \ln(x^2 + y^2)$. ([video](https://youtu.be/JAf_aSIJryg?t=598))
+
+2. Find $f_x$ and $f_y$ when $f(x, y) = \ln\left( \dfrac{x^2}{y} \right)$. ([video](https://youtu.be/JAf_aSIJryg?t=723))
+
+3. Find the slope of the surface in the $x$ and $y$ directions at the point $(3,2)$ when $f(x,y) = x^2 y^3$. ([video](https://youtu.be/JAf_aSIJryg?t=1901))
+
+A special kind of multivariable function is a **linear function** of two or more variables.  A linear function of two variables has the form
+$$z = ax + by + c$$
+where $a$, $b$, and $c$ are constants. The graph of a linear function with two input variables is a flat 2-dimensional plane in 3-dimensional space.  
+
+
+<div class = "Theorem"> 
+**Tangent Plane**
+
+The tangent plane to a function $z = f(x,y)$ at a point $z_0 = f(x_0, y_0)$ is 
+$$z - z_0 = \dfrac{ \partial f (x_0, y_0)}{\partial x} (x - x_0)  + \dfrac{ \partial f (x_0, y_0)}{\partial y} (y - y_0).$$ 
+Here is the same equation written more concisely using differential notation:
+
+$$dz = \dfrac{ \partial f}{\partial x} dx  + \dfrac{ \partial f}{\partial y} dy.$$ 
+
+</div>
+-->
 
 ### Week 14 Notes
 

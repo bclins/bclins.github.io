@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Formula Sheet} %%% FORMULA SHEET FOR MIDTERM 3 (and final exam too).
+\hrule
+
+\noindent
+
+\begin{description}
+
+\item[Standardized Normal Data]
+$$z = \frac{\text{statistic} - \text{parameter}}{\text{standard deviation of the statistic}}$$
+
+\item[Least Squares Regression Line] 
+$$y = m x + (\bar{y}-m\bar{x})  \hspace*{0.2in} \text{where} \hspace*{0.2in}  m = r \frac{s_y}{s_x}   $$  
+%$$ y - \bar{y} = m (x - \bar{x}) ~~\text{ or }~~  y = m x + (\bar{y}-m\bar{x})  \hspace*{0.2in} \text{where} \hspace*{0.2in}  m = r \frac{s_y}{s_x}   $$  
+
+
+%\item[Addition \& Multiplication Rule] 
+%$$\operatorname{P} (A \text{ or } B) = \operatorname{P} (A)+ \operatorname{P} (B) - \operatorname{P} (A \text{ and } B) \hspace*{0.5in} \underset{^*\textit{only if A and B are independent}}{\operatorname{P} (A \text{ and } B) = \operatorname{P} (A) \cdot \operatorname{P} (B)^*}$$
+
+%\item[Binomial Distribution Parameters] 
+%$$\mu = pN \hspace*{0.5in} \sigma = \sqrt{p(1-p)N}$$
+
+\item[Standard Deviations for Sample Means and Sample Proportions] 
+$$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} \hspace*{0.5in} \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n} }$$
+
+
+\item[One Sample Inference for Proportions] ~ %\emph{Should have at least 15 successes and 15 failures in the sample. }
+$$\underset{\text{Should have at least 15 successes and 15 failures}}{\displaystyle \hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}}  \hspace*{0.5in} \underset{\text{Should have } np_0 \ge 10 \text{ and } n(1-p_0) \ge 10}{z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}}$$
+
+
+\item[Two Sample Inference for Proportions] ~%\emph{Should have at least 5 successes and 5 failures in each group. At least 10 and 10 for the confidence interval formula which is a little less robust.}
+\[
+\underset{\text{Should have at least 10 successes and 10 failures in each group}}{\displaystyle(\hat{p}_1 - \hat{p}_2)  \pm z^* \sqrt{ \frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2} }} \hspace{0.5in} \underset{\scriptsize \begin{array}{c}\text{Should have 5 successes and 5 failures in each group} \\ (\hat{p} \text{ is the pooled proportion}) \end{array}}{ z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left( \frac{1}{n_1} + \frac{1}{n_2} \right)}} }
+\]
+
+\item[One Sample Inference for Means] ~
+$${\bar{x} \pm t^* \frac{s}{\sqrt{n}} \hspace*{0.5in} \ds t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}} \hspace*{0.5in} dF = n-1}$$
+{\footnotesize Works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample. }
+
+\item[Two Sample Inference for Means] 
+\[
+(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} } \hspace*{0.5in} t = \frac{\bar{x}_1 - \bar{x}_2}{ \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} }  \hspace*{0.5in} dF = \min(n_1,n_2) - 1
+\]
+{\footnotesize Works best if the samples are large $(n_1 + n_2 \ge 30)$ or there is very little skew and no outliers in either sample. }
+
+\item[$\chi^2$ Test for Association]
+$$dF = (\#\text{rows}-1)(\#\text{columns}-1)$$
+{\footnotesize Works best if there are at least 5 observations in each cell of the two-way table.}
+%$$\chi^2 = \sum \frac{(E_{ij}-O_{ij})^2}{E_{ij}} ~~ \text{where} ~~ E_{ij} = \frac{\text{Row Total} \times \text{Column Total}}{\text{Table Total}} ~~ \text{and} ~~ dF= (\#\text{Rows}-1)(\#\text{Columns}-1)$$
+\end{description}
+
+\end{document}
