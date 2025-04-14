@@ -1,0 +1,86 @@
+\documentclass[12pt]{exam}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{tikz,soul}
+\usepackage{diagbox}
+\usetikzlibrary{arrows,automata,positioning}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bs}{\backslash}
+\newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagestyle{empty}
+\subsubsection*{Homework 11 - Computer Science 461 \hfill Name: \underline{\hspace*{2in}}}
+
+\textit{Due Monday, April 21.} % You can e-mail your code for the computer programming problems to me at }\verb|blins@hsc.edu|.
+
+\begin{questions}
+\question Recall that a graph $G$ is \textbf{bipartite} if it is 2-colorable, i.e., the vertices of $G$ can be colored either white or black so that every edge connects one black vertex with one white vertex.  Let
+$$\text{BIPARTITE} = \{ \langle G \rangle : G \text{ is a bipartite graph}\}.$$
+Prove that $\text{BIPARTITE}$ is in class NP by describing what counts as a \textbf{solution} for a graph $G$ and describing a \textbf{verifier} algorithm that can confirm the solution is correct in polynomial time. 
+\begin{solution}
+A solution would be a list of which vertices are black and which are white.  Then you could do a double loop through all of the pairs of vertices and check that every pair of vertices that are different colors are connected by an edge and every pair that are the same color are not connected by an edge.  This double loop would run in $O(n^2)$ time, and checking the colors of a pair of vertices and whether they share an edge would take constant time.  
+\end{solution}
+\vfill
+
+
+
+\question A graph is \textbf{connected} if there is a path from any vertex to any other. Let
+$$\text{CONNECTED} = \{ \langle G \rangle : G \text{ is a connected graph}\}.$$
+Consider the following algorithm to decide whether a graph is connected:
+\begin{itemize}
+\item \textbf{Step 1.} Select the first vertex of $G$ and mark it.
+\item \textbf{Step 2.} Loop through the edges of $G$.  For any edge that touches one marked vertex, mark the other vertex it touches. 
+\item \textbf{Step 3.} Repeat step 2 until you don't find any more vertices to mark. 
+\item \textbf{Step 4.} Loop through all of the vertices and check that they are marked.  Reject if any are not marked, otherwise accept. 
+\end{itemize}
+Determine the run time of the algorithm in big-O notation as a function of the number of vertices ($n$) in the graph. Hint: What is the maximum number of edges a graph with $n$ vertices can have?  
+\begin{solution}
+A graph with $n$ vertices can have up to $\binom{n}{2} = \tfrac{1}{2}n(n+1)$ edges, so looping through the edges is $O(n^2)$. You might only add one additional marked vertex each time you loop through the edges, so it might require $n$ loops through the edges, which could take $O(n^3)$ time.  Checking that each vertex is marked only takes $O(n)$ time and that is added to $O(n^3)$ which is $O(n^3)$ for the whole algorithm. 
+\end{solution}
+\vfill
+
+\newpage
+\question The Kleene star of a language is the set $L^* = \{w_1 w_2 \ldots w_k : k \in \N \text{ and each } w_i \in L \}$. The following algorithm shows that if $L$ is a language in class P, then so is $L^*$.
+
+\begin{verbatim}
+--------------------------------------------------------------------------------
+# Given an input string w, determine whether w is in L* (the Kleene star of L). 
+
+n = length(w)
+table = [0] # table is a list to store indices k such that w[0:k] is in L*. 
+            # 0 is always in table since the empty string is in L*.
+
+for k from 1 to n:
+    for j from 0 to k-1:
+        if (j in table) and (w[j:k] in L):
+            add k to table
+
+if n in table:
+    return TRUE
+else:
+    return FALSE
+--------------------------------------------------------------------------------
+\end{verbatim}
+
+If $L$ can be decided in $O(n^p)$ time, then what is the big-O run time for the algorithm above? 
+
+\begin{solution}
+Since this algorithm involves two nested for-loops that each require at most n steps, and since the operations inside the for-loop require either constant, $O(n)$, or in the case of checking if $w[j:k]$ is in $L$, it could be $O(n^p)$ steps, the whole algorithm runs in $O(n^{p+2})$ time. 
+\end{solution}
+\vfill
+
+\question Given two strings $a, b \in \{0,1\}^*$, can we decide if $a$ and $b$ are equal in polynomial time?  Explain why or why not.
+\begin{solution}
+We need to loop from index 1 until we reach the end of both strings (let $n$ be the length of the longer string). For each index, check the value in both strings at that index.  If they differ, then reject, otherwise continue.  If you reach the end of both strings without finding any differences, then accept.  This requires $n$ comparisons, so the algorithm will run in $O(n)$ time.  
+\end{solution}
+\vfill
+
+\end{questions}
+\end{document}

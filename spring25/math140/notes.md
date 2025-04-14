@@ -1295,7 +1295,7 @@ where $W$ is a person's weight in lbs and $h$ is their height in inches. A BMI l
 
 5. Make a graph showing three different level curves for $g(x,y) = x^2 + y$. ([Desmos](https://www.desmos.com/calculator/hp1drz84gm)) 
 
-
+ 
 <div class="Theorem">
 **Partial Derivatives**
 
@@ -1327,30 +1327,44 @@ Mon, Apr 14  | [4.2][4.2]  | Partial derivatives - con’d
 Wed, Apr 16  |  | Review
 Fri, Apr 18  |  | Midterm 3
 
-<!--
-### Fri, Apr 14 
+### Mon, Apr 14 
 
+<!--
+These two really aren't the level that I want to focus on:
 1. Find $f_x$ and $f_y$ when $f(x,y) = \ln(x^2 + y^2)$. ([video](https://youtu.be/JAf_aSIJryg?t=598))
 
 2. Find $f_x$ and $f_y$ when $f(x, y) = \ln\left( \dfrac{x^2}{y} \right)$. ([video](https://youtu.be/JAf_aSIJryg?t=723))
+-->
 
-3. Find the slope of the surface in the $x$ and $y$ directions at the point $(3,2)$ when $f(x,y) = x^2 y^3$. ([video](https://youtu.be/JAf_aSIJryg?t=1901))
+We started with this warm-up problem. 
+
+1. Find the partial derivatives of $z = \sqrt{9 - x^2 - y^2}$ when $x = 2$ and $y = 1$.  
+
+2. The body mass index function is $B = \dfrac{m}{h^2}$ when $m$ is a person's mass in kilograms and $h$ is their height in meters.  Find the partial derivatives $\dfrac{\partial B}{\partial m}$ and $\dfrac{\partial B}{\partial h}$ for someone who is 2 meters tall (about 6'6") and weighs 100 kg (about 220 lbs.).  Include the units for both partial derivative.  
+
+3. A factor produces $Q = 60 K^{1/2} L^{1/3}$ units of output where $K$ is the capital invested in the factor (in dollars) and $L$ is the worker-hours of labor.  Find $Q_K$ and $Q_L$ when $K = \$9{,}000{,}000$ and $L = 1000$ hours of labor.  Which would increase production more, adding one extra hour of labor or $1000 of capital investment?  
+
+
 
 A special kind of multivariable function is a **linear function** of two or more variables.  A linear function of two variables has the form
 $$z = ax + by + c$$
 where $a$, $b$, and $c$ are constants. The graph of a linear function with two input variables is a flat 2-dimensional plane in 3-dimensional space.  
 
+4. What are the partial derivatives of a linear function $z = ax + by + c$? 
 
-<div class = "Theorem"> 
-**Tangent Plane**
 
-The tangent plane to a function $z = f(x,y)$ at a point $z_0 = f(x_0, y_0)$ is 
-$$z - z_0 = \dfrac{ \partial f (x_0, y_0)}{\partial x} (x - x_0)  + \dfrac{ \partial f (x_0, y_0)}{\partial y} (y - y_0).$$ 
-Here is the same equation written more concisely using differential notation:
+An important thing to understand about partial derivatives is that they let you find the **direction of steepest ascent** also known as the **gradient** of a function.  If you start at a point $(x_0, y_0)$, then draw an arrow by moving $\dfrac{\partial f}{\partial x}$ units to the right and $\dfrac{\partial f}{\partial y}$ units upwards, then that arrow always points in the direction of steepest ascent.  It is always perpendicular to the level curve at $(x_0, y_0)$.  
 
-$$dz = \dfrac{ \partial f}{\partial x} dx  + \dfrac{ \partial f}{\partial y} dy.$$ 
+<!--
+Here are some good examples that we didn't get to yet:
 
-</div>
+5. Find the direction of steepest ascent at the point $(2,1)$ for $f(x,y) = x^2 - y^2$.  
+
+
+6. Find the direction of steepest ascent at the point $(3,4)$ for $f(x,y) = x^2 + xy + y^2$.  
+
+
+3. Find the slope of the surface in the $x$ and $y$ directions at the point $(3,2)$ when $f(x,y) = x^2 y^3$. ([video](https://youtu.be/JAf_aSIJryg?t=1901))
 -->
 
 ### Week 14 Notes

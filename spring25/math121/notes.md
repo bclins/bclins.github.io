@@ -1101,36 +1101,31 @@ Mon, Apr 14  |            | Review
 Wed, Apr 16  |            | **Midterm 3**
 Fri, Apr 18  | [7.4][7.4] | Statistical power
 
+### Mon, Apr 14
+
+Today we talked about reviewing for midterm 3.  We talked about using these three questions to decide which interference formula to use:
+
+* Do you have one or two samples?
+* Are you trying to estimate how big a parameter is (confidence interval) or answer a yes/no question about whether the results are significant (hypothesis test)?  
+* Are you interested in averages of a quantitative variable (means) or percentages of a categorical variable (proportions)?   
+
+The answer to these three questions will guide you to the [right formula](finalformulas.pdf) to use. We applied these questions to the following examples in class:
+
+1. Suppose you wanted to estimate how many times people go to the grocery store each month.  What inference formula should you use?
+
+2. Suppose you wanted to find out if more men than women approve of Donald Trump's first 100 days in office.  What inference formula should you use?  
+
+We also reviewed how to find p-values using the app and how to use the t-distribution table (including how to find critical z-values in addition to t-values). 
+
+One question that will definitely be on the midterm is this: *what is the exact definition of a p-value*?  To answer this question you need to memorize:
+
+<div class="Theorem">
+A **p-value** is the probability of getting a result at least as extreme as what happened, if the null hypothesis is true. 
+</div>  
+
+We finished by reviewing Type I versus Type II errors with [Exercise 5.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.25) from the review problems. 
+
 <!--
-### Mon, Nov 18
-
-Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
-
-1. **No Bias**. As always, we need good simple random samples to avoid bias.  
-
-2. **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
-
-    * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
-    * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
-
-We did this example:
-
-1. In a random sample of students who took the SATs twice found 427 had paid for coaching before their second try and 2733 had not. The table below shows the average improvements of both groups on their Verbal SAT scores:   \
-  <center>
-  <table class="bordered">
-  <tr><td></td><td>$\bar{x}_\text{gain}$</td><td>$s$</td><td>$n$</td></tr>
-  <tr><td>Coached</td><td>29</td><td>59</td><td>427</td></tr>
-  <tr><td>Not</td><td>21</td><td>52</td><td>2,733</td></tr>
-  </table>
-  </center> \
-  A 2-sample t-test has a t-value of $t = 2.646$ which has a corresponding p-value of $0.4\%$.  Explain what that means about coaching and the SATs?
-
-2. Use a 2-sample confidence interval to estimate how much more students would gain with coaching than without. 
-
-3. How are the results of the 2-sample confidence interval different than the 1-sample confidence intervals we could construct for each group?  
-
-* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
-
 ### Wed, Nov 20
 
 Today we reviewed for the midterm.  We talked about three questions you should ask to decide which inference formula(s) to use:

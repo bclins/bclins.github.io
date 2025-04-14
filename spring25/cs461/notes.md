@@ -1597,6 +1597,62 @@ Mon, Apr 14 | [6.5][6.5] | Hamilton path problem
 Wed, Apr 16 | [6.5][6.5] | NP-Complete languages
 Fri, Apr 18 |            | 
 
+#### Mon, Apr 14 
+
+
+<div class="Theorem"> 
+A **verifier** $V$ for a language $L \subseteq \Sigma^*$ is a Turing machine such that
+$$L = \{w \in \Sigma^* : V \text{ accepts } \langle w, s \rangle \text{ for some string } s \}.$$
+The string $s$ is called the **solution** or **certificate** for $w$.  
+</div>
+
+Consider the language COMPOSITE $= \{ w \in \{0,1\}^* : w \text{ is a binary number that is not prime}\}$.   This language is hard to decide, but it is easy to verify that a number is composite if someone tells you two of its factors.  For example $850441 = 853 \cdot 997$.  
+
+It turns out that long multiplying two $n$-bit integers can be done in $O(n^2)$ time.  
+
+<div class="Theorem">
+A language $L \subseteq \Sigma^*$ is in **class NP** (also known as **polynomial time verifiable**) if there is a verifier for $L$ that runs in polynomial time as a function of the length of the input string $w$. We don't make any assumptions about the length of the solution string $s$ or how long it will take to find $s$.
+</div> 
+
+
+We showed that these languages are both in class NP:
+
+1. COMPOSITE $= \{ w \in \{0,1\}^* : w \text{ is a binary number that is not prime}\}$. 
+
+2. 3-CLIQUE $= \{\langle G \rangle : G \text{ is a graph with 3 vertices that are all connected by edges}\}$. 
+
+We also proved this theorem:
+
+<div class = "Theorem">
+**Theorem.** P $\subseteq$ NP.
+</div>
+
+3. Why doesn't the following algorithm show that COMPOSITE is in class P? 
+
+    ```python
+    # Input: An integer N > 1
+
+    for k = 2 to N-1:
+        if (N % k == 0): 
+            ACCEPT
+    # If N has no smaller divisors after the loop, then
+    REJECT
+    ```
+
+We also stated and gave a hand-wavy proof of this result:
+
+<div class = "Theorem"> 
+**Theorem.** A language $L$ is in class NP if and only if there is a nondeterministic Turing Machine that decides $L$ in polynomial time.  
+</div> 
+
+Along the way, we mentioned some interesting new results:
+
+* 2019 Harvey & van der Hoeven Multiplication Algorithm $O(n \log n)$. 
+* 2003 Agarwal, Kayal, Saxena (AKS) Primality Test - polynomial time algorithm.
+
+It is still unknown whether P $\ne$ NP.  
+
+
 ### Week 14 Notes
 
 Day  | Section  | Topic

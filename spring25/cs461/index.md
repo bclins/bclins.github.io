@@ -49,7 +49,7 @@ Week | Topic                      | Notes | Homework
 10 | Decidability, **Midterm 2**                          | [Week 10](notes.html#week-10-notes) | 
 11 | Enumerability                                        | [Week 11](notes.html#week-11-notes) | [HW9](HW/HW9.pdf)
 12 | Complexity theory                                    | [Week 12](notes.html#week-12-notes) | [HW10](HW/HW10.pdf)
-13 | Nodeterministic algorithms                           | [Week 13](notes.html#week-13-notes) | 
+13 | Nodeterministic algorithms                           | [Week 13](notes.html#week-13-notes) | [HW11](HW/HW11.pdf)
 14 | NP-completeness, **Midterm 3**                       | [Week 14](notes.html#week-14-notes) | 
 
 
