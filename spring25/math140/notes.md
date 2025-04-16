@@ -1340,9 +1340,9 @@ We started with this warm-up problem.
 
 1. Find the partial derivatives of $z = \sqrt{9 - x^2 - y^2}$ when $x = 2$ and $y = 1$.  
 
-2. The body mass index function is $B = \dfrac{m}{h^2}$ when $m$ is a person's mass in kilograms and $h$ is their height in meters.  Find the partial derivatives $\dfrac{\partial B}{\partial m}$ and $\dfrac{\partial B}{\partial h}$ for someone who is 2 meters tall (about 6'6") and weighs 100 kg (about 220 lbs.).  Include the units for both partial derivative.  
+2. The body mass index function is $B = \dfrac{m}{h^2}$ when $m$ is a person's mass in kilograms and $h$ is their height in meters.  Find the partial derivatives $\dfrac{\partial B}{\partial m}$ and $\dfrac{\partial B}{\partial h}$ for someone who is 2 meters tall (about 6'6") and weighs 100 kg (about 220 lbs.).  Include the units for both partial derivatives.  
 
-3. A factor produces $Q = 60 K^{1/2} L^{1/3}$ units of output where $K$ is the capital invested in the factor (in dollars) and $L$ is the worker-hours of labor.  Find $Q_K$ and $Q_L$ when $K = \$9{,}000{,}000$ and $L = 1000$ hours of labor.  Which would increase production more, adding one extra hour of labor or $1000 of capital investment?  
+3. A factory produces $Q = 60 K^{1/2} L^{1/3}$ units of output where $K$ is the capital invested in the factor (in dollars) and $L$ is the worker-hours of labor.  Find $Q_K$ and $Q_L$ when $K = \$9{,}000{,}000$ and $L = 1000$ hours of labor.  Which would increase production more, adding one extra hour of labor or $1000 of capital investment?  
 
 
 

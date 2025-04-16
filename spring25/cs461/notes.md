@@ -1652,6 +1652,62 @@ Along the way, we mentioned some interesting new results:
 
 It is still unknown whether P $\ne$ NP.  
 
+#### Wed, Apr 16
+
+Today we introduced the **Boolean satisfiability problem** (SAT). 
+
+<div class="Theorem">
+**Definition.** A Boolean function $\phi:\{0,1\}^n \rightarrow \{0,1\}$ is **satisfiable** if there is an input $x \in \{0,1\}^n$ such that $\phi(x) = 1$. 
+</div>
+
+1. Show that the Boolean function $\phi(x,y,z) = (\bar{x} \vee y) \wedge (x \vee \bar{z})$ is satisfiable. 
+
+2. Give an example of a Boolean function that is not satisfiable. 
+
+A **Boolean formula** is a string involving variables and the logical operators AND ($\wedge$), OR ($\vee$), and NOT (denoted by $\sim$ or a line on top of a variable).  Consider the following language: 
+
+$$SAT = \{ \langle \phi \rangle : \phi \text{ is a satisfiable Boolean formula} \}.$$ 
+
+
+3. Prove that SAT is decidable. 
+
+<div class="Theorem">
+**Definition.** In a Boolean formula, 
+
+* A **literal** is a variable $x_i$ or a negated variable $\bar{x}_i$. 
+* A **clause** is an expression formed by combining a finite collection of literals with the OR operator. 
+
+A Boolean formula is in **conjunctive normal form** (CNF) if it consists of a finite number of clauses all connected together by AND operators.  
+
+</div>
+
+For example  
+$$\phi = (\bar{x} \vee y) \wedge (x \vee \bar{z})$$
+is in CNF. 
+
+An important special case of the SAT problem is the 3SAT problem, which only looks at Boolean formulas in CNF where the clauses each involve only 3 literals (possibly including repeated literals). So a 3-CNF formula would be something like:
+$$(x_1 \vee \bar{x_2} \vee x_3 ) \wedge (\bar{x_3} \vee x_5 \vee x_6 ) \wedge (\bar{x_3} \vee x_6 \vee \bar{x_4}) \wedge (x_4 \vee x_5 \vee x_6 ).$$ 
+
+4. If a Boolean formula has $n$-variables, then how many different 3-clauses are possible?  
+
+Instead of using a brute force algorithm to decide 3SAT, we will take a different approach and prove that solving the 3SAT problem is not much harder than deciding this language:
+
+$$\text{CLIQUE} = \{ \langle G, k \rangle : G \text{ is a graph with a } k\text{-clique} \}.$$
+
+5. Prove that CLIQUE is in class NP. 
+
+The key to link 3SAT and CLIQUE is to draw a graph where every vertex corresponds to a literal in one of the clauses, and we draw edges according to the following rules:
+
+* Never draw an edge connecting literals in the same clause. 
+* Always draw an edge connecting literals in different clauses, unless they are negations of each other.
+
+Then, if a Boolean formula in 3-CNF has $k$-clauses, then it is decidable iff the corresponding graph has a $k$-clique (as the following image illustrates):  
+
+<center>
+<a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability"><img width = 400 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sat_reduced_to_Clique_from_Sipser.svg/280px-Sat_reduced_to_Clique_from_Sipser.svg.png"/></a>
+<figcaption>3-satisfiability</figcaption>
+</center>
+
 
 ### Week 14 Notes
 

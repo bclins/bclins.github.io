@@ -3367,6 +3367,89 @@ algorithm.</li>
 <p>It is still unknown whether P
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≠</mo><annotation encoding="application/x-tex">\ne</annotation></semantics></math>
 NP.</p>
+<h4 id="wed-apr-16">Wed, Apr 16</h4>
+<p>Today we introduced the <strong>Boolean satisfiability
+problem</strong> (SAT).</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> A Boolean function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>:</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup><mo>→</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\phi:\{0,1\}^n \rightarrow \{0,1\}</annotation></semantics></math>
+is <strong>satisfiable</strong> if there is an input
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">}</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x \in \{0,1\}^n</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\phi(x) = 1</annotation></semantics></math>.</p>
+</div>
+<ol type="1">
+<li><p>Show that the Boolean function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>∨</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>∨</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi(x,y,z) = (\bar{x} \vee y) \wedge (x \vee \bar{z})</annotation></semantics></math>
+is satisfiable.</p></li>
+<li><p>Give an example of a Boolean function that is not
+satisfiable.</p></li>
+</ol>
+<p>A <strong>Boolean formula</strong> is a string involving variables
+and the logical operators AND
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∧</mo><annotation encoding="application/x-tex">\wedge</annotation></semantics></math>),
+OR
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∨</mo><annotation encoding="application/x-tex">\vee</annotation></semantics></math>),
+and NOT (denoted by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>
+or a line on top of a variable). Consider the following language:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>A</mi><mi>T</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>ϕ</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a satisfiable Boolean formula</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">SAT = \{ \langle \phi \rangle : \phi \text{ is a satisfiable Boolean formula} \}.</annotation></semantics></math></p>
+<ol start="3" type="1">
+<li>Prove that SAT is decidable.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Definition.</strong> In a Boolean formula,</p>
+<ul>
+<li>A <strong>literal</strong> is a variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+or a negated variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>i</mi></msub><annotation encoding="application/x-tex">\bar{x}_i</annotation></semantics></math>.</li>
+<li>A <strong>clause</strong> is an expression formed by combining a
+finite collection of literals with the OR operator.</li>
+</ul>
+<p>A Boolean formula is in <strong>conjunctive normal form</strong>
+(CNF) if it consists of a finite number of clauses all connected
+together by AND operators.</p>
+</div>
+<p>For example<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>∨</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>∨</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi = (\bar{x} \vee y) \wedge (x \vee \bar{z})</annotation></semantics></math>
+is in CNF.</p>
+<p>An important special case of the SAT problem is the 3SAT problem,
+which only looks at Boolean formulas in CNF where the clauses each
+involve only 3 literals (possibly including repeated literals). So a
+3-CNF formula would be something like:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∨</mo><mover><msub><mi>x</mi><mn>2</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><msub><mi>x</mi><mn>3</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>5</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><msub><mi>x</mi><mn>3</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo>∨</mo><mover><msub><mi>x</mi><mn>4</mn></msub><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>4</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>5</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">(x_1 \vee \bar{x_2} \vee x_3 ) \wedge (\bar{x_3} \vee x_5 \vee x_6 ) \wedge (\bar{x_3} \vee x_6 \vee \bar{x_4}) \wedge (x_4 \vee x_5 \vee x_6 ).</annotation></semantics></math></p>
+<ol start="4" type="1">
+<li>If a Boolean formula has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-variables,
+then how many different 3-clauses are possible?</li>
+</ol>
+<p>Instead of using a brute force algorithm to decide 3SAT, we will take
+a different approach and prove that solving the 3SAT problem is not much
+harder than deciding this language:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">CLIQUE</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>G</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>G</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a graph with a </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mtext mathvariant="normal">-clique</mtext><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{CLIQUE} = \{ \langle G, k \rangle : G \text{ is a graph with a } k\text{-clique} \}.</annotation></semantics></math></p>
+<ol start="5" type="1">
+<li>Prove that CLIQUE is in class NP.</li>
+</ol>
+<p>The key to link 3SAT and CLIQUE is to draw a graph where every vertex
+corresponds to a literal in one of the clauses, and we draw edges
+according to the following rules:</p>
+<ul>
+<li>Never draw an edge connecting literals in the same clause.</li>
+<li>Always draw an edge connecting literals in different clauses, unless
+they are negations of each other.</li>
+</ul>
+<p>Then, if a Boolean formula in 3-CNF has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-clauses,
+then it is decidable iff the corresponding graph has a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-clique
+(as the following image illustrates):</p>
+<center>
+<a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability"><img width = 400 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sat_reduced_to_Clique_from_Sipser.svg/280px-Sat_reduced_to_Clique_from_Sipser.svg.png"/></a>
+<figcaption>
+3-satisfiability
+</figcaption>
+</center>
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
 <thead>
