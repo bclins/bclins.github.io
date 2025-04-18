@@ -26,6 +26,7 @@ header-includes: |
 
 ### Announcements
 
+* Midterm 3 materials: [review problems](midterm3review.pdf), [solutions](midterm3reviewSolutions.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 

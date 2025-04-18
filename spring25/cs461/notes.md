@@ -1528,8 +1528,8 @@ We talked about how to prove the second theorem by considering the computation t
 Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Apr 7  | [6.2][6.2] | The complexity class P
-Wed, Apr 9  | [6.3][6.3] | The complexity class NP
-Fri, Apr 11 | [6.5][6.5] | The SAT problem
+Wed, Apr 9  | [6.2][6.2] | The complexity class P
+Fri, Apr 11 | [B8.1](https://introtcs.org/public/lec_07_other_models.html#ram-machines-and-nand-ram) | RAM machines
 
 #### Mon, Apr 7
 
@@ -1593,9 +1593,9 @@ Today we looked at some examples of languages that are in class P. We also brief
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 14 | [6.5][6.5] | Hamilton path problem
-Wed, Apr 16 | [6.5][6.5] | NP-Complete languages
-Fri, Apr 18 |            | 
+Mon, Apr 14 | [6.3][6.3] | The complexity class NP
+Wed, Apr 16 | [6.5][6.5] | NP-complete languages
+Fri, Apr 18 | [6.5][6.5] | NP-complete languages
 
 #### Mon, Apr 14 
 
@@ -1671,6 +1671,10 @@ $$SAT = \{ \langle \phi \rangle : \phi \text{ is a satisfiable Boolean formula} 
 
 3. Prove that SAT is decidable. 
 
+4. Prove that SAT is in NP.
+
+It turns out that SAT is actually an **NP-complete** language, which means that if SAT turns out to be in P, then so does every NP language!  That's a theorem that we aren't ready to prove yet, but one of the key ideas in the proof is to be able to reduce one problem to another problem in polynomial time.  
+
 <div class="Theorem">
 **Definition.** In a Boolean formula, 
 
@@ -1685,37 +1689,87 @@ For example
 $$\phi = (\bar{x} \vee y) \wedge (x \vee \bar{z})$$
 is in CNF. 
 
-An important special case of the SAT problem is the 3SAT problem, which only looks at Boolean formulas in CNF where the clauses each involve only 3 literals (possibly including repeated literals). So a 3-CNF formula would be something like:
+In logic, a **conjunction** is when two or more statements are joined with an AND, and a **disjunction** is when two or more statements are joined with an OR. 
+
+An important special case of the SAT problem is the 3-SAT problem, which only looks at Boolean formulas in CNF where the clauses each involve only 3 literals (possibly including repeated literals). So a 3-CNF formula would be something like:
 $$(x_1 \vee \bar{x_2} \vee x_3 ) \wedge (\bar{x_3} \vee x_5 \vee x_6 ) \wedge (\bar{x_3} \vee x_6 \vee \bar{x_4}) \wedge (x_4 \vee x_5 \vee x_6 ).$$ 
 
-4. If a Boolean formula has $n$-variables, then how many different 3-clauses are possible?  
 
-Instead of using a brute force algorithm to decide 3SAT, we will take a different approach and prove that solving the 3SAT problem is not much harder than deciding this language:
+
+
+Instead of using a brute force algorithm to decide 3-SAT, we will take a different approach and prove that solving the 3-SAT problem is not much harder than deciding this language:
 
 $$\text{CLIQUE} = \{ \langle G, k \rangle : G \text{ is a graph with a } k\text{-clique} \}.$$
 
-5. Prove that CLIQUE is in class NP. 
+In fact, we gave the outline of a proof for the following theorem (although we didn't formally define "polynomial time reducible" yet). 
 
-The key to link 3SAT and CLIQUE is to draw a graph where every vertex corresponds to a literal in one of the clauses, and we draw edges according to the following rules:
+<div class="Theorem">
+**Theorem.** 3-SAT is polynomial time reducible to CLIQUE.  
+</div>
+
+The key to link 3-SAT and CLIQUE is to draw a graph where every vertex corresponds to a literal in one of the clauses, and we draw edges according to the following rules:
 
 * Never draw an edge connecting literals in the same clause. 
 * Always draw an edge connecting literals in different clauses, unless they are negations of each other.
 
-Then, if a Boolean formula in 3-CNF has $k$-clauses, then it is decidable iff the corresponding graph has a $k$-clique (as the following image illustrates):  
+Then, if a Boolean formula in 3-CNF has $k$-clauses, then it is satisfiable iff the corresponding graph has a $k$-clique (as the following image illustrates):  
 
 <center>
 <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability"><img width = 400 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sat_reduced_to_Clique_from_Sipser.svg/280px-Sat_reduced_to_Clique_from_Sipser.svg.png"/></a>
 <figcaption>3-satisfiability</figcaption>
 </center>
 
+#### Fri, Apr 18
+
+<div class="Theorem">
+**Definition.** A language $A \subseteq \Sigma^*$ is **polynomial time reducible** to another language $B \subseteq \Sigma^*$ (denoted $A \le_P B$) when there is a polynomial time computable function $f: \Sigma^* \rightarrow \Sigma^*$ such that for every $w \in \Sigma^*$,
+$$w \in A \text{ if and only if } f(w) \in B.$$
+</div> 
+
+Last time we proved that we can turn any Boolean formula in 3-conjunctive normal form into a graph $G$, and that the graph has a k-clique (where $k$ is the number of clauses in the formula) if and only if the original formula was in 3-SAT.  
+
+1. If our formula has $k$ clauses, then how many vertices does the graph $G$ have?
+
+2. What is an upper bound for the number of edges in $G$? 
+
+3. Based on the previous answers, how long will it take an algorithm to to convert a 3-CNF formula to the graph $G$ and number $k$?  
+
+<div class="Theorem">
+**Definition.** A language $B$ is **NP-hard** if every $A$ in NP is polynomial time reducible to $B$.  Languages that are both NP and NP-hard are called **NP-complete**. 
+</div>
+
+In the early 1970s, researchers in both the USA and Soviet Union were studying algorithms.  Cook (USA) and Levin (USSR) gave the first proof that some problems are NP-complete. 
+
+<div class="Theorem">
+**Theorem (Cook-Levin).** 3-SAT is NP-complete.
+</div>
+
+There are several proofs of this theorem.  They are all a bit technical, but we'll hopefully take a look at one later. For today we proved the following result.  
+
+4. Prove that if any NP-complete language is in P, then P = NP.  
+
+Then we looked at another example of a polynomial time reduction.  
+
+Let 
+$$k\text{-SAT} =  \{ \langle \phi \rangle : \phi \text{ is a CNF Boolean formula with at most } k \text{ literals per clause} \}.$$
+
+Here is an algorithm to reduce k-SAT to 3-SAT. 
+
+* Loop through the clauses of $\phi$.  
+* For any clause with more than 3 literals do the following:
+    - Replace the last two literals with a new dummy variable $d_i$.  
+    - Add a new clause with $\bar{d_i}$ and the two literals you removed.  
+* Repeat until the clause has just 3 literals.  
+
+It's not hard to confirm that at every step, the new clauses will be satisfiable if and only if the old clauses were.  It is also not hard to verify that this algorithm runs in polynomial time.  
 
 ### Week 14 Notes
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 21 |  | Review
-Wed, Apr 23 |  | **Midterm 3** 
-Fri, Apr 25 |  | TBA
+Mon, Apr 21 | [6.5][6.5] | Examples of NP-complete languages
+Wed, Apr 23 |  | Review
+Fri, Apr 25 |  | **Midterm 3** 
 Mon, Apr 28 |  | TBA
 
 [1.1]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=9>

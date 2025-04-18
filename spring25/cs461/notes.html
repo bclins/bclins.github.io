@@ -3101,6 +3101,11 @@ which can be expressed as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>2</mn><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><annotation encoding="application/x-tex">2^{O(t(n))}</annotation></semantics></math>.</p>
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -3118,14 +3123,14 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 9</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=210">6.3</a></td>
-<td style="text-align: left;">The complexity class NP</td>
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=207">6.2</a></td>
+<td style="text-align: left;">The complexity class P</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 11</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
-<td style="text-align: left;">The SAT problem</td>
+href="https://introtcs.org/public/lec_07_other_models.html#ram-machines-and-nand-ram">B8.1</a></td>
+<td style="text-align: left;">RAM machines</td>
 </tr>
 </tbody>
 </table>
@@ -3269,19 +3274,20 @@ will be strictly smaller than
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 14</td>
 <td style="text-align: center;"><a
-href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
-<td style="text-align: left;">Hamilton path problem</td>
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=210">6.3</a></td>
+<td style="text-align: left;">The complexity class NP</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 16</td>
 <td style="text-align: center;"><a
 href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
-<td style="text-align: left;">NP-Complete languages</td>
+<td style="text-align: left;">NP-complete languages</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 18</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">NP-complete languages</td>
 </tr>
 </tbody>
 </table>
@@ -3395,8 +3401,14 @@ and NOT (denoted by
 or a line on top of a variable). Consider the following language:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>A</mi><mi>T</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>ϕ</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a satisfiable Boolean formula</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">SAT = \{ \langle \phi \rangle : \phi \text{ is a satisfiable Boolean formula} \}.</annotation></semantics></math></p>
 <ol start="3" type="1">
-<li>Prove that SAT is decidable.</li>
+<li><p>Prove that SAT is decidable.</p></li>
+<li><p>Prove that SAT is in NP.</p></li>
 </ol>
+<p>It turns out that SAT is actually an <strong>NP-complete</strong>
+language, which means that if SAT turns out to be in P, then so does
+every NP language! That’s a theorem that we aren’t ready to prove yet,
+but one of the key ideas in the proof is to be able to reduce one
+problem to another problem in polynomial time.</p>
 <div class="Theorem">
 <p><strong>Definition.</strong> In a Boolean formula,</p>
 <ul>
@@ -3414,25 +3426,27 @@ together by AND operators.</p>
 <p>For example<br />
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>∨</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>∨</mo><mover><mi>z</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi = (\bar{x} \vee y) \wedge (x \vee \bar{z})</annotation></semantics></math>
 is in CNF.</p>
-<p>An important special case of the SAT problem is the 3SAT problem,
+<p>In logic, a <strong>conjunction</strong> is when two or more
+statements are joined with an AND, and a <strong>disjunction</strong> is
+when two or more statements are joined with an OR.</p>
+<p>An important special case of the SAT problem is the 3-SAT problem,
 which only looks at Boolean formulas in CNF where the clauses each
 involve only 3 literals (possibly including repeated literals). So a
 3-CNF formula would be something like:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∨</mo><mover><msub><mi>x</mi><mn>2</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><msub><mi>x</mi><mn>3</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>5</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><mover><msub><mi>x</mi><mn>3</mn></msub><mo accent="true">‾</mo></mover><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo>∨</mo><mover><msub><mi>x</mi><mn>4</mn></msub><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>4</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>5</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">(x_1 \vee \bar{x_2} \vee x_3 ) \wedge (\bar{x_3} \vee x_5 \vee x_6 ) \wedge (\bar{x_3} \vee x_6 \vee \bar{x_4}) \wedge (x_4 \vee x_5 \vee x_6 ).</annotation></semantics></math></p>
-<ol start="4" type="1">
-<li>If a Boolean formula has
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-variables,
-then how many different 3-clauses are possible?</li>
-</ol>
-<p>Instead of using a brute force algorithm to decide 3SAT, we will take
-a different approach and prove that solving the 3SAT problem is not much
-harder than deciding this language:</p>
+<p>Instead of using a brute force algorithm to decide 3-SAT, we will
+take a different approach and prove that solving the 3-SAT problem is
+not much harder than deciding this language:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">CLIQUE</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>G</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>G</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a graph with a </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mtext mathvariant="normal">-clique</mtext><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{CLIQUE} = \{ \langle G, k \rangle : G \text{ is a graph with a } k\text{-clique} \}.</annotation></semantics></math></p>
-<ol start="5" type="1">
-<li>Prove that CLIQUE is in class NP.</li>
-</ol>
-<p>The key to link 3SAT and CLIQUE is to draw a graph where every vertex
-corresponds to a literal in one of the clauses, and we draw edges
+<p>In fact, we gave the outline of a proof for the following theorem
+(although we didn’t formally define “polynomial time reducible”
+yet).</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> 3-SAT is polynomial time reducible to
+CLIQUE.</p>
+</div>
+<p>The key to link 3-SAT and CLIQUE is to draw a graph where every
+vertex corresponds to a literal in one of the clauses, and we draw edges
 according to the following rules:</p>
 <ul>
 <li>Never draw an edge connecting literals in the same clause.</li>
@@ -3441,7 +3455,7 @@ they are negations of each other.</li>
 </ul>
 <p>Then, if a Boolean formula in 3-CNF has
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-clauses,
-then it is decidable iff the corresponding graph has a
+then it is satisfiable iff the corresponding graph has a
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-clique
 (as the following image illustrates):</p>
 <center>
@@ -3450,6 +3464,86 @@ then it is decidable iff the corresponding graph has a
 3-satisfiability
 </figcaption>
 </center>
+<h4 id="fri-apr-18">Fri, Apr 18</h4>
+<div class="Theorem">
+<p><strong>Definition.</strong> A language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">A \subseteq \Sigma^*</annotation></semantics></math>
+is <strong>polynomial time reducible</strong> to another language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>⊆</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">B \subseteq \Sigma^*</annotation></semantics></math>
+(denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><msub><mo>≤</mo><mi>P</mi></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">A \le_P B</annotation></semantics></math>)
+when there is a polynomial time computable function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>Σ</mi><mo>*</mo></msup><mo>→</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">f: \Sigma^* \rightarrow \Sigma^*</annotation></semantics></math>
+such that for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><msup><mi>Σ</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">w \in \Sigma^*</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo>∈</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if and only if </mtext><mspace width="0.333em"></mspace></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">w \in A \text{ if and only if } f(w) \in B.</annotation></semantics></math></p>
+</div>
+<p>Last time we proved that we can turn any Boolean formula in
+3-conjunctive normal form into a graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+and that the graph has a k-clique (where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is the number of clauses in the formula) if and only if the original
+formula was in 3-SAT.</p>
+<ol type="1">
+<li><p>If our formula has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+clauses, then how many vertices does the graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+have?</p></li>
+<li><p>What is an upper bound for the number of edges in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>?</p></li>
+<li><p>Based on the previous answers, how long will it take an algorithm
+to to convert a 3-CNF formula to the graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+and number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>?</p></li>
+</ol>
+<div class="Theorem">
+<p><strong>Definition.</strong> A language
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is <strong>NP-hard</strong> if every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+in NP is polynomial time reducible to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.
+Languages that are both NP and NP-hard are called
+<strong>NP-complete</strong>.</p>
+</div>
+<p>In the early 1970s, researchers in both the USA and Soviet Union were
+studying algorithms. Cook (USA) and Levin (USSR) gave the first proof
+that some problems are NP-complete.</p>
+<div class="Theorem">
+<p><strong>Theorem (Cook-Levin).</strong> 3-SAT is NP-complete.</p>
+</div>
+<p>There are several proofs of this theorem. They are all a bit
+technical, but we’ll hopefully take a look at one later. For today we
+proved the following result.</p>
+<ol start="4" type="1">
+<li>Prove that if any NP-complete language is in P, then P = NP.</li>
+</ol>
+<p>Then we looked at another example of a polynomial time reduction.</p>
+<p>Let
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mtext mathvariant="normal">-SAT</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>ϕ</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a CNF Boolean formula with at most </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> literals per clause</mtext></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">k\text{-SAT} =  \{ \langle \phi \rangle : \phi \text{ is a CNF Boolean formula with at most } k \text{ literals per clause} \}.</annotation></semantics></math></p>
+<p>Here is an algorithm to reduce k-SAT to 3-SAT.</p>
+<ul>
+<li>Loop through the clauses of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>.<br />
+</li>
+<li>For any clause with more than 3 literals do the following:
+<ul>
+<li>Replace the last two literals with a new dummy variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math>.<br />
+</li>
+<li>Add a new clause with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><msub><mi>d</mi><mi>i</mi></msub><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{d_i}</annotation></semantics></math>
+and the two literals you removed.<br />
+</li>
+</ul></li>
+<li>Repeat until the clause has just 3 literals.</li>
+</ul>
+<p>It’s not hard to confirm that at every step, the new clauses will be
+satisfiable if and only if the old clauses were. It is also not hard to
+verify that this algorithm runs in polynomial time.</p>
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
 <thead>
@@ -3462,18 +3556,19 @@ then it is decidable iff the corresponding graph has a
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 21</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Review</td>
+<td style="text-align: center;"><a
+href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=221">6.5</a></td>
+<td style="text-align: left;">Examples of NP-complete languages</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 23</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;"><strong>Midterm 3</strong></td>
+<td style="text-align: left;">Review</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 25</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">TBA</td>
+<td style="text-align: left;"><strong>Midterm 3</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Mon, Apr 28</td>

@@ -1125,33 +1125,19 @@ A **p-value** is the probability of getting a result at least as extreme as what
 
 We finished by reviewing Type I versus Type II errors with [Exercise 5.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.25) from the review problems. 
 
-<!--
-### Wed, Nov 20
+### Fri, Apr 18
 
-Today we reviewed for the midterm.  We talked about three questions you should ask to decide which inference formula(s) to use:
+Today we talked about **statistical power**. 
 
-<div class="Theorem">
-**Choosing the right inference method**
-
-1. Are you estimating a number (confidence interval) or answering a yes/no question about significance (hypothesis test)? 
-
-2. Do you have one sample or two?
-
-3. Are you interested in percents of a categorical variable (proportions) or averages of a numerical variable (means)?  
-</div>
-
-We also did some of the [midterm 3 review problems](midterm3review.html) in class.  We did this additional exercise that was not on the review:
-
-* [Exercise 7.18](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.18)
-
-We also reviewed the [logic of hypothesis testing](#:~:text=Logic of Hypothesis Testing)
-Finally, don't forget to *memorize the definition of a p-value*!
 
 <div class="Theorem">
-**Definition.** A **p-value** is the probability of getting a result at least as extreme as what happened, if the null hypothesis is true.
+**Definition.** A study is **statistically powerful** if the sample size is large enough so that random error probably won't cause a Type II error.  You can tell if test is powerful by estimating the margin of error of a confidence interval with plausible data and making sure it is smaller than the **effect size** you hope to find.  
 </div>
 
--->
+We did this workshop in class:
+
+* **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
+
 
 - - - 
 
