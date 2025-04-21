@@ -47,7 +47,7 @@ Week | Topic                      | Notes | Homework
 11 | Optimization                                   | [Week 11](notes.html#week-11-notes) | [HW10](HW/HW10.pdf)
 12 | Functions of two variables                     | [Week 12](notes.html#week-12-notes) | [HW11](HW/HW11.pdf)
 13 | Partial derivatives, **Midterm 3**             | [Week 13](notes.html#week-13-notes) | 
-14 | Constrained optimization                       | [Week 14](notes.html#week-14-notes) | 
+14 | Constrained optimization                       | [Week 14](notes.html#week-14-notes) | [HW12](HW/HW12.pdf)
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
 

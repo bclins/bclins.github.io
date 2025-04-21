@@ -3577,6 +3577,107 @@ href="https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page
 </tr>
 </tbody>
 </table>
+<h4 id="mon-apr-21">Mon, Apr 21</h4>
+<p>Today we gave an example of a language that is in NP-complete. For an
+(undirected) graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">G,</annotation></semantics></math>
+we say that a set of vertices is a <strong>vertex cover</strong> for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+if every edge in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+is adjacent to at least one vertex in the cover. Let</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">VERTEX-COVER</mtext><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="prefix">⟨</mo><mi>G</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>:</mo><mi>G</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is a graph with a </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mtext mathvariant="normal">-element vertex cover</mtext><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{VERTEX-COVER} = \{\langle G, k \rangle : G \text{ is a graph with a }k\text{-element vertex cover} \}.</annotation></semantics></math></p>
+<div class="Theorem">
+<p><strong>Theorem.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> VERTEX-COVER </mtext><mspace width="0.333em"></mspace></mrow><mo>∈</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> NP-complete</mtext></mrow></mrow><annotation encoding="application/x-tex">\text{ VERTEX-COVER } \in \text{ NP-complete}</annotation></semantics></math>.</p>
+</div>
+<p>We spent the rest of class explaining the proof. The first part is
+easier:</p>
+<ol type="1">
+<li>Explain why VERTEX-COVER is in NP by describing how a polynomial
+time verifier might work.</li>
+</ol>
+<p>The harder part of the theorem is to prove that VERTEX-COVER is
+NP-hard. The standard way to do this is to show that there is a
+polynomial time reduction from a problem we already know is NP-hard to
+VERTEX-COVER.</p>
+<div class="Theorem">
+<p><strong>Claim.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 3-SAT </mtext><mspace width="0.333em"></mspace></mrow><msub><mo>≤</mo><mi>P</mi></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> VERTEX-COVER</mtext></mrow></mrow><annotation encoding="application/x-tex">\text{ 3-SAT } \le_P \text{ VERTEX-COVER}</annotation></semantics></math>.</p>
+</div>
+<p>To prove this claim we had to describe a polynomial time function
+that converts any Boolean formula
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>
+in 3-CNF to a graph
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+and an integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+has a vertex-cover with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+elements if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>
+is satisfiable. Here’s how the graph is constructed.</p>
+<ul>
+<li><p>For each variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>,
+create <span style="color:blue">two blue nodes connected by a blue
+edge</span>. Label the nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>i</mi></msub><annotation encoding="application/x-tex">\bar{x}_i</annotation></semantics></math>
+respectively.</p></li>
+<li><p>For each clause, create <span style="color:red">three red nodes
+all connected in a triangle with three edges</span>. Label these nodes
+with the literals from the clause.</p></li>
+<li><p>Draw a black edge from each red node to the blue node with the
+same label.</p></li>
+</ul>
+<p>In addition to finding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+the constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is set equal to
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal"># of variables</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal"># of edges</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">k = (\text{# of variables}) + 2 (\text{# of edges}).</annotation></semantics></math></p>
+<p>We did this example:</p>
+<ol start="4" type="1">
+<li><p>Draw the graph above for the Boolean formula
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>2</mn></msub><mo>∨</mo><msub><mi>x</mi><mn>4</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>∧</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>∨</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mo>∨</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(x_1 \vee x_2 \vee x_4) \wedge (x_1 \vee \bar{x}_2 \vee \bar{x}_3)</annotation></semantics></math>.</p></li>
+<li><p>How many passes through a string
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">\langle \phi \rangle</annotation></semantics></math>
+will it take to construct a string representing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>?
+Can it be done in polynomial time?</p></li>
+</ol>
+<p>Once we determined that this construction can be done in polynomial
+time, we had to show that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>ϕ</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> 3-SAT </mtext><mspace width="0.333em"></mspace></mrow><mo>⇔</mo><mo stretchy="false" form="prefix">⟨</mo><mi>G</mi><mo>,</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>∈</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> VERTEX-COVER</mtext></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\langle \phi \rangle \in \text{ 3-SAT } \iff \langle G, k \rangle \in \text{ VERTEX-COVER}.</annotation></semantics></math></p>
+<p>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇒</mo><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math>)
+Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>
+is satisfiable. Consider a satisfying assignment of values to the
+variables of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ϕ</mi><annotation encoding="application/x-tex">\phi</annotation></semantics></math>.
+For every true literal, add the corresponding blue node of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+to the cover. Notice that one node in each each red triangle must be
+connected by a black edge to a blue node in the cover. So we can add the
+other two red nodes from each triangle and cover every red edge and the
+other black edges.</p>
+<p>(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⇐</mo><annotation encoding="application/x-tex">\Leftarrow</annotation></semantics></math>)
+Suppose we have a vertex cover for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>
+with exactly
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal"># of variables</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal"># of edges</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">k = (\text{# of variables}) + 2 (\text{# of edges})</annotation></semantics></math>
+elements. Every blue edge must have one blue node in the cover. Every
+red triangle must have at least 2 nodes in the cover to reach every red
+edge. That uses up all of the nodes in the cover (<mark>I got a little
+confused about this point in class, but the solution is pretty
+simple!</mark>). Set the value of each blue literal in the cover to
+TRUE. Since each red triangle has one node not in the cover, that node’s
+black edge must connect to a true literal, so each red clause is true
+making the whole Boolean formula satisfiable.</p>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>
 </html>

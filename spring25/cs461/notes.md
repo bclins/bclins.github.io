@@ -1772,6 +1772,51 @@ Wed, Apr 23 |  | Review
 Fri, Apr 25 |  | **Midterm 3** 
 Mon, Apr 28 |  | TBA
 
+#### Mon, Apr 21
+
+Today we gave an example of a language that is in NP-complete.  For an (undirected) graph $G,$ we say that a set of vertices is a **vertex cover** for $G$ if every edge in $G$ is adjacent to at least one vertex in the cover.  Let 
+
+$$\text{VERTEX-COVER} = \{\langle G, k \rangle : G \text{ is a graph with a }k\text{-element vertex cover} \}.$$
+
+<div class="Theorem">
+**Theorem.** $\text{ VERTEX-COVER } \in \text{ NP-complete}$. 
+</div>
+
+We spent the rest of class explaining the proof. The first part is easier:
+
+1. Explain why VERTEX-COVER is in NP by describing how a polynomial time verifier might work.  
+
+The harder part of the theorem is to prove that VERTEX-COVER is NP-hard.  The standard way to do this is to show that there is a polynomial time reduction from a problem we already know is NP-hard to VERTEX-COVER.  
+
+<div class="Theorem">
+**Claim.** $\text{ 3-SAT } \le_P \text{ VERTEX-COVER}$. 
+</div>
+
+To prove this claim we had to describe a polynomial time function that converts any Boolean formula $\phi$ in 3-CNF to a graph $G$ and an integer $k$ such that $G$ has a vertex-cover with $k$ elements if and only if $\phi$ is satisfiable.  Here's how the graph is constructed. 
+
+* For each variable $x_i$, create <span style="color:blue">two blue nodes connected by a blue edge</span>. Label the nodes $x_i$ and $\bar{x}_i$ respectively. 
+
+* For each clause, create <span style="color:red">three red nodes all connected in a triangle with three edges</span>.  Label these nodes with the literals from the clause.  
+
+* Draw a black edge from each red node to the blue node with the same label.  
+
+In addition to finding $G$, the constant $k$ is set equal to
+$$k = (\text{# of variables}) + 2 (\text{# of edges}).$$
+
+We did this example:
+
+4. Draw the graph above for the Boolean formula $(x_1 \vee x_2 \vee x_4) \wedge (x_1 \vee \bar{x}_2 \vee \bar{x}_3)$. 
+
+5. How many passes through a string $\langle \phi \rangle$ will it take to construct a string representing $G$? Can it be done in polynomial time?  
+
+Once we determined that this construction can be done in polynomial time, we had to show that 
+$$\langle \phi \rangle \in \text{ 3-SAT } \iff \langle G, k \rangle \in \text{ VERTEX-COVER}.$$
+
+($\Rightarrow$) Suppose $\phi$ is satisfiable.  Consider a satisfying assignment of values to the variables of $\phi$.  For every true literal, add the corresponding blue node of $G$ to the cover.  Notice that one node in each each red triangle must be connected by a black edge to a blue node in the cover.  So we can add the other two red nodes from each triangle and cover every red edge and the other black edges. 
+
+($\Leftarrow$) Suppose we have a vertex cover for $G$ with exactly $k = (\text{# of variables}) + 2 (\text{# of edges})$ elements.  Every blue edge must have one blue node in the cover.  Every red triangle must have at least 2 nodes in the cover to reach every red edge.  That uses up all of the nodes in the cover (<mark>I got a little confused about this point in class, but the solution is pretty simple!</mark>).  Set the value of each blue literal in the cover to TRUE.  Since each red triangle has one node not in the cover, that node's black edge must connect to a true literal, so each red clause is true making the whole Boolean formula satisfiable. 
+
+
 [1.1]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=9>
 [1.2]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=12>
 [1.3]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=15>

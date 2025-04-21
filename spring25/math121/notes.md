@@ -1152,30 +1152,8 @@ Wed, Apr 23 | [6.4][6.4] | Testing association with chi-squared
 Fri, Apr 25 |            | Choosing the right technique
 Mon, Apr 28  |  | Last day, recap & review
 
-<!--
-### Mon, Nov 25
 
-Recall the difference between type I and II errors. 
-
-<center>
-<table class="bordered">
-<tr><th>Type I error (false positive)</th><th>Type II error (false negative)</th></tr>
-<tr><td>Evidence looks statistically significant, but in reality there is no effect.</td><td>Evidence does not look significant, but in reality there is an effect.</td></tr>
-</table>
-</center>
-
-The best way to avoid Type II errors is to use big sample sizes.  But how big is big enough?  One way to tell is to estimate the margin of error based on plausible guesses about the data you might see.  
-
-<div class="Theorem">
-**Definition.** A hypothesis test is **statistically powerful** if the sample size is large enough so that random error probably won't cause a Type II error.  You can tell if test is powerful by estimating the margin of error of a confidence interval with plausible data and making sure it is smaller than the **effect size** you hope to find.  
-</div>
-
-We did this workshop in class:
-
-* **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
-
-
-### Mon, Dec 2
+### Mon, Apr 21
 
 We started by reviewing a two really important concepts: **association is not causation** and **only randomized controlled experiments can prove cause-and-effect**. In [Project 3](project3.pdf) we saw that there is a strong (statistically significant) association between whether states increased speed limits and the percent change in traffic fatalities.  The difference was probably not a random fluke, but we can't conclude that it was definitely the speed limit change that *caused* the increase in fatalities.  That's because there might be other lurking variables that we haven't ruled out (maybe some of those states also changed their alcohol laws, or the rules about teenage drivers).  
 
@@ -1199,6 +1177,7 @@ The 2003-04 National Health & Nutrition Exam Survey asked participants how they 
 
 2. What percent of overweight people were women?
 
+<div class="Theorem">
 #### χ² Test for Association
 
 An association between two categorical variables is statistically significant if there is strong evidence that the association holds in the population, not just in the sample.  In a χ² test, you always test the following hypotheses:
@@ -1209,6 +1188,7 @@ An association between two categorical variables is statistically significant if
 To determine whether or not to reject $H_0$, [use a computer](https://people.hsc.edu/faculty-staff/blins/StatsTools/chiSquared.html) to find the $\chi^2$ statistic for the two-way table.  If $H_0$ is true, then the $\chi^2$ statistic should follow a **χ² distribution** with **degrees of freedom** equal to:
 $$dF = (\# \text{rows} - 1) \cdot (\# \text{columns} - 1).$$
 You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/chisq.html) to find the corresponding p-value. 
+</div>
 
 3. The two-way table above has a chi-squared statistic of $\chi^2 = 226.6$.  How many degrees of freedom does the table have and what is the corresponding p-value? 
 
@@ -1226,6 +1206,7 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
 
     This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
 
+<!--
 ### Wed, Dec 4
 
 Today we talked some more about the $\chi^2$-test for association.  We mentioned that the $\chi^2$-distribution has these features:

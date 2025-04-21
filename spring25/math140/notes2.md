@@ -10,14 +10,21 @@ header-includes: |
     --header-color:	#622; 
     --link-color: #A32; 
   }
+  .Sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
   </style>
 ---
 
-## Math 140 - Spring 2025
-
+<div class="Sticky">
+<hr>
 <center>
 Jump to: [Math 140 Homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
+<hr>
+</div>
 
 ### Week 1 Notes
 
@@ -1399,11 +1406,8 @@ Find the **determinant** $D = f_{xx} \cdot f_{yy} - (f_{xy})^2$.
 
 2. $z = 6x+8y - x^2 - y^2$.
 
-3. $z = x^3 + y^2 - 12x$. Notice that this one has two different critical points.
+3. $z = x^3 + y^4 - 12x$. Notice that this one has two different critical points.
 
-<!--
-
-### Wed, Apr 23
 
 4. A company makes two products.  The demand equations for the two products are given below where $x$ and $y$ are the prices the company chooses for product 1 and product 2 respectively.
 $$Q_1=200-3x-y$$
@@ -1411,8 +1415,6 @@ $$Q_2=150-x-2y$$
 Find the price the company should charge for each product in order to maximize total revenue. What is that maximum revenue?
 
 5. Notice that $\partial Q_1/\partial y = -1$ and $\partial Q_2/\partial x = -1$.  What does this mean about product 1 and product 2? Are they complimentary or substitute goods? 
-
--->
 
 
 
