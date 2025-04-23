@@ -1401,18 +1401,42 @@ Find the **determinant** $D = f_{xx} \cdot f_{yy} - (f_{xy})^2$.
 
 3. $z = x^3 + y^2 - 12x$. Notice that this one has two different critical points.
 
-<!--
+
 
 ### Wed, Apr 23
 
-4. A company makes two products.  The demand equations for the two products are given below where $x$ and $y$ are the prices the company chooses for product 1 and product 2 respectively.
+1. A company makes two products.  The demand equations for the two products are given below where $x$ and $y$ are the prices the company chooses for product 1 and product 2 respectively.
 $$Q_1=200-3x-y$$
 $$Q_2=150-x-2y$$
 Find the price the company should charge for each product in order to maximize total revenue. What is that maximum revenue?
 
-5. Notice that $\partial Q_1/\partial y = -1$ and $\partial Q_2/\partial x = -1$.  What does this mean about product 1 and product 2? Are they complimentary or substitute goods? 
+2. Notice that $\partial Q_1/\partial y = -1$ and $\partial Q_2/\partial x = -1$.  What does this mean about product 1 and product 2? Are they complimentary or substitute goods? 
 
--->
+Many multivariable optimization problems have both an objective function that you want to maximize or minimize and a constraint equation.  One method for solving these problems is to use Lagrange multipliers.
+
+<div class="Theorem">
+**Lagrange Multipliers**
+
+To maximize or minimize a function $f(x,y)$ subject to a constraint $g(x,y) = k$, solve the system of equations
+$$f_x = \lambda g_x$$
+$$f_y = \lambda g_y$$
+$$g(x,y) = k.$$
+</div> 
+
+The intuition behind these equations is that the direction of greatest ascent at the max/min point (blue arrow in the picture below) points in the same (or exact opposite) direction as the direction of greatest ascent for the constraint equation (red arrow).  So there is a number $\lambda$ (called the Lagrange multiplier) such that the coordinates of the blue arrow are just $\lambda$ times the coordinates of the red arrow. 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LagrangeMultipliers2D.svg/1920px-LagrangeMultipliers2D.svg.png" width=500></img>
+</center>
+
+3. Use the Lagrange multiplier method to maximize $f(x,y) = 3x + 4y$ subject to the constraint $x^2 + y^2 = 100$. ([video](https://youtu.be/x6j6yFzTUgU))
+
+
+4. Suppose that the level of production $Y = 32 L^{0.6} K^{0.4}$ where $L$ is the amount of labor (in worker-hours) and $K$ is the capital invested (in dollars).  Find the maximum level of production given the constraint
+$4 L + 2 K = 50$. ([video](https://youtu.be/x6j6yFzTUgU?t=783))  
+
+5. According to US postal service rules, a cylindrical package may not have a circumference plus height of more than 9 feet.  Find the dimensions of a cylindrical package that you could mail with the largest volume. 
+
 
 
 
