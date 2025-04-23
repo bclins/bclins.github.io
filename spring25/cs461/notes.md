@@ -1816,6 +1816,10 @@ $$\langle \phi \rangle \in \text{ 3-SAT } \iff \langle G, k \rangle \in \text{ V
 
 ($\Leftarrow$) Suppose we have a vertex cover for $G$ with exactly $k = (\text{# of variables}) + 2 (\text{# of edges})$ elements.  Every blue edge must have one blue node in the cover.  Every red triangle must have at least 2 nodes in the cover to reach every red edge.  That uses up all of the nodes in the cover (<mark>I got a little confused about this point in class, but the solution is pretty simple!</mark>).  Set the value of each blue literal in the cover to TRUE.  Since each red triangle has one node not in the cover, that node's black edge must connect to a true literal, so each red clause is true making the whole Boolean formula satisfiable. 
 
+#### Wed, Apr 23
+
+Today we went over problems 1 through 3 from [homework 11](HW/HW11.pdf) in detail.  Then we also went over problem 8 from the [midterm 3 review](midterm3review.pdf). 
+
 
 [1.1]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=9>
 [1.2]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=12>

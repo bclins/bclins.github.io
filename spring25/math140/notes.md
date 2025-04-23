@@ -1410,7 +1410,7 @@ $$Q_1=200-3x-y$$
 $$Q_2=150-x-2y$$
 Find the price the company should charge for each product in order to maximize total revenue. What is that maximum revenue?
 
-2. Notice that $\partial Q_1/\partial y = -1$ and $\partial Q_2/\partial x = -1$.  What does this mean about product 1 and product 2? Are they complimentary or substitute goods? 
+<!--2. Notice that $\partial Q_1/\partial y = -1$ and $\partial Q_2/\partial x = -1$.  What does this mean about product 1 and product 2? Are they complimentary or substitute goods? -->
 
 Many multivariable optimization problems have both an objective function that you want to maximize or minimize and a constraint equation.  One method for solving these problems is to use Lagrange multipliers.
 
@@ -1429,13 +1429,19 @@ The intuition behind these equations is that the direction of greatest ascent at
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/LagrangeMultipliers2D.svg/1920px-LagrangeMultipliers2D.svg.png" width=500></img>
 </center>
 
+We used the method of Lagrange multiplier to solve this problem in class:
+
+2. According to US postal service rules, a cylindrical package may not have a circumference plus height of more than 9 feet.  Find the dimensions of a cylindrical package that you could mail with the largest volume. 
+
+Here are two more examples that we didn't do in class, but they both have video explanations.  
+
 3. Use the Lagrange multiplier method to maximize $f(x,y) = 3x + 4y$ subject to the constraint $x^2 + y^2 = 100$. ([video](https://youtu.be/x6j6yFzTUgU))
 
 
 4. Suppose that the level of production $Y = 32 L^{0.6} K^{0.4}$ where $L$ is the amount of labor (in worker-hours) and $K$ is the capital invested (in dollars).  Find the maximum level of production given the constraint
 $4 L + 2 K = 50$. ([video](https://youtu.be/x6j6yFzTUgU?t=783))  
 
-5. According to US postal service rules, a cylindrical package may not have a circumference plus height of more than 9 feet.  Find the dimensions of a cylindrical package that you could mail with the largest volume. 
+
 
 
 
