@@ -1441,7 +1441,9 @@ Here are two more examples that we didn't do in class, but they both have video 
 4. Suppose that the level of production $Y = 32 L^{0.6} K^{0.4}$ where $L$ is the amount of labor (in worker-hours) and $K$ is the capital invested (in dollars).  Find the maximum level of production given the constraint
 $4 L + 2 K = 50$. ([video](https://youtu.be/x6j6yFzTUgU?t=783))  
 
+### Fri, Apr 25
 
+Today we went over [homework 12](HW/HW12.pdf) before the quiz.  
 
 
 

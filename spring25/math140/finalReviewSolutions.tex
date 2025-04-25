@@ -237,11 +237,19 @@ $Q_x = 10 x^{-0.75}y^{0.75}$ and $Q_y = 30 x^{0.25} y^{-0.25}$. Plugging in 100 
 
 \question A box with a square bottom and an open top needs to have exactly 4 cubic feet of volume.  Find the dimensions of the box with the smallest possible surface area.  Recall that the volume of a box is $V = x^2 y$ where $x$ is the length and width and $y$ is the height.  The surface area is $S = 4xy + x^2$.  
 \begin{solution}
-Substituting $y = 4/x^2$ into $S$, we get $S = 16/x + x^2$.  So $S' = -16/x^2 + 2x = 0$ when $x = 2$. Then $y = 1$.  And that is a minimum since $S'' = 32/x^3 + 2$ which is positive.  
+Substituting $y = \tfrac{4}{x^2}$ into $S$, we get $S = \tfrac{16}{x} + x^2$.  So $S' = -\tfrac{16}{x^2} + 2x = 0$ when $x = 2$. Then $y = 1$.  And that is a minimum since $S'' = 32/x^3 + 2$ which is positive.  
 
-\textbf{Solution using Lagrange multipliers} \\
-Constraint: $V = x^2 y = 4$
-Objective: $S = 4xy + x^2$. 
+%\textbf{Solution using Lagrange multipliers} \\
+%Constraint: $V = x^2 y = 4$ \\
+%Objective: $S = 4xy + x^2$. \\
+%~ \\
+%\bigskip
+%Have to solve this system of equations
+%$$4y + 2x = \lambda \cdot 2xy$$
+%$$4x = \lambda \cdot x^2 \Rightarrow x = \tfrac{4}{\lambda}$$
+%$$x^2y = 4$$
+
+
 \end{solution}
 \vfill
 \vfill
