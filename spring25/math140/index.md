@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 3 will be on **Friday, April 18**
+* The final exam will be on **Saturday, May 3 at 9am**.
+* Final exam materials: [practice final exam](finalReview.pdf) 
 * Midterm 3 materials: [review problems](midterm3review.pdf) 
 * Midterm 2 materials: [review problems](midterm2review.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
