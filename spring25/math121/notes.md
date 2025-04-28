@@ -1242,13 +1242,15 @@ Today we talked some more about choosing the right inference techniques in stati
 
 * **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 
-<!--
 
-### Mon, Dec 9
+### Mon, Apr 28
 
 Today we went over answers to the [review questions for the final exam](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf).
 
--->
+We also talked about some other things to review including sampling distributions.  We did this example:
+
+1. American adults have a average weight of $\mu = 170$ lbs. and a standard deviation of $\sigma = 40$ lbs. Describe the shape, center, and spread of the sampling distribution for the sample mean weight of a group of 100 adults. 
+
 
 - - - 
 

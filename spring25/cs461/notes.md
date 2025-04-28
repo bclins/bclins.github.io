@@ -1820,6 +1820,18 @@ $$\langle \phi \rangle \in \text{ 3-SAT } \iff \langle G, k \rangle \in \text{ V
 
 Today we went over problems 1 through 3 from [homework 11](HW/HW11.pdf) in detail.  Then we also went over problem 8 from the [midterm 3 review](midterm3review.pdf). 
 
+#### Mon, Apr 28
+
+Today we went over this problem from midterm 3:
+
+1. Show that BIPARTITE $\in$ P.  
+
+We started by talking about the brute-force algorithm for deciding if a graph is bipartite, and why it isn't polynomial time.  Then we talked about finding a better algorithm, and verifying that the improved algorithm does run in polynomial time.  
+
+We finished by talking about the traveling salesman problem: For a given weighted graph, find the minimum cost path that visits every vertex exactly once and then returns to the start vertex.  
+
+2. Prove that the traveling salesman problem is NP-hard by comparing with HAMILTON-CYCLE (see problem 8 from the [midterm 3 review](midterm3review.pdf)).
+
 
 [1.1]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=9>
 [1.2]: <https://cglab.ca/~michiel/TheoryOfComputation/TheoryOfComputation.pdf#page=12>

@@ -1445,7 +1445,21 @@ $4 L + 2 K = 50$. ([video](https://youtu.be/x6j6yFzTUgU?t=783))
 
 Today we went over [homework 12](HW/HW12.pdf) before the quiz.  
 
+### Mon, Apr 28
 
+We started with this example of Lagrange multipliers:
+
+1. Use the Lagrange multiplier method to maximize $f(x,y) = 3x + 4y$ subject to the constraint $x^2 + y^2 = 100$. ([video](https://youtu.be/x6j6yFzTUgU))
+
+Then we talked about some problems on old homework and the review problems.  
+
+2. Graph $y = \frac{x^2}{4}$ (this was problem 3 from [homework 1](HW/HW1.pdf)) 
+
+3. Inspired by problem 5 from [homework 1](HW/HW1.pdf): find the maximum of $f(x) = \ln(x-3) - 2x$. 
+
+4. Similar to problem 15(b) from the [practice final exam](finalReview.pdf): calculate $\log_5\left(\frac{125}{\sqrt[3]{5}} \right)$. 
+
+5. Similar to problem 13 from the [practice final](finalReview.pdf): solve $1{,}000e^{4x} = 500$. 
 
 
 [1.1]: <https://people.hsc.edu/faculty-staff/blins/books/AppliedCalculusCalawayHoffmanLippman.pdf#%5B%7B%22num%22%3A51%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C680%2C0%5D>
