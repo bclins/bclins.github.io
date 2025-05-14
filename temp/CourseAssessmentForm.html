@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>Course Assessment Form</title>
+<style>
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    background-color: lightgray;
+    color: black;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+</style>
+<script>
+const destination = "blins@hsc.edu";
+const courses = {
+    "MATH242": ["problem-solving"],
+    "MATH254": ["rigor","written-communication"],
+    "COMS262": ["problem-solving","written-communication"],
+    "MATH345": ["written-communication"],
+    "MATH421": ["rigor","problem-solving"],
+    "MATH431": ["rigor","problem-solving"],
+    "MATH441": ["written-communication"],
+    "COMS460": ["problem-solving"],
+    "COMS461": ["rigor","written-communication"],
+}
+
+function printCourseName(courseName) {
+    let courseNameElements = document.getElementsByClassName("course-name");
+    for (let i = 0; i < courseNameElements.length; i++) {
+        courseNameElements[i].innerHTML = courseName;
+    }
+}
+
+function sendResults(courseName, SLOs) {
+    let results = ""
+    for (SLO of SLOs) {
+        results += SLO + ";"
+        let entries = document.getElementsByClassName(SLO + "-entry");
+        for (let i = 0; i < entries.length; i++) {
+            let entryText = entries[i].value;
+            results += entryText.replaceAll(";",",") // Make sure not to allow semi-colons in the input.
+            results += ";"
+        }
+        results += "%0D%0A"; // Separate the different SLOs with a line break.
+    }
+    window.location.href = `mailto:${destination}?subject=${courseName} Assessment Results&body=${results}`;
+}
+
+// function saveResults() {
+//     // Update the URL to contain the data in each textarea. 
+//     // Unfortunately, this doesn't work great because spaces are encoded as %20 and I'm not sure this 
+//     // feature is valuable enough to deal with that. 
+//     let url = window.location.href.split(";")[0];
+//     let textAreas = document.getElementsByTagName("textarea");
+//     for (let i = 0; i < textAreas.length; i++) {
+//         url += ";" + (textAreas[i].value ? textAreas[i].value : "");
+//     }
+//     window.location.href = url;
+// }
+
+window.onload = () => {
+    let url= window.location.href; 
+    let courseName = url.split("?")[1];
+    // let urlData = url.slice(url.indexOf("?") + 1).split(";");
+    // let courseName = urlData.shift();
+    // let textAreas = document.getElementsByTagName("textarea");
+    // for (let i = 0; i < textAreas.length; i++) {
+    //     textAreas[i].value = urlData[i] ? urlData[i] : "";
+    // }
+    printCourseName(courseName);
+    let SLOs = courses[courseName];
+
+    for (SLO of SLOs) {
+        let rows = document.getElementsByClassName(SLO);
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].style.display="";
+        }
+        
+    }
+
+    document.getElementById("send-button").onclick = () => sendResults(courseName, SLOs);
+//    document.getElementById("url-button").onclick = saveResults;
+    
+}
+</script>
+
+</head>
+<body>
+<h3><span class="course-name"></span> Assessment Results</h3>
+
+<p>Enter your assessment results in the text areas below.  When you are finished, click on the send e-mail button at the bottom to send your results.  You can also create a URL link to save your data with the create URL button, but you'll need to bookmark the page or copy the URL from the URL bar after you click it. 
+
+<table id = "results-table">
+<tr><th></th><th>Assessment Tools</th><th>Performance Target</th><th>Results</th><th>Analysis</th></tr>
+
+<tr class = "problem-solving"  style = "display: none">
+<td width="100">Problem Solving SLO.</td>
+<td width="200">Students will be assessed using a portfolio of completed work via the Problem Solving rubric.</td>
+<td width="200">Students will score a total of 8 or higher on the rubric.</td>
+<td><textarea class = "problem-solving-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "problem-solving-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+<tr class = "rigor" style = "display: none">
+<td width="100">Rigor SLO.</td> 
+<td width="200">Students will be assessed using a portfolio of completed work via the Proof Writing rubric.</td>
+<td width="200">Students will score a total of 8 or higher on the rubric.</td>
+<td><textarea class = "rigor-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "rigor-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+<tr class = "written-communication" style = "display: none">
+<td width="100">Written Communication SLO.</td>
+<td width="200">Students will be assessed using a portfolio of completed work via the Written Communication rubric.</td>
+<td width="200">Students will score a total of 3 or higher on the rubric.</td>
+<td><textarea class = "written-communication-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "written-communication-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+</table>
+<br>
+
+
+<h3><span class="course-name"></span> Improvement Plan</h3>
+<table id = "improvements-table">
+<tr><th></th><th>Improvements Implemented This Year</th><th>Were The Improvements Successful?</th><th>Improvements Planned for Next Year</th></tr>
+<tr class = "problem-solving" style = "display: none">
+<td width="100">Problem Solving SLO.</td>
+<td><textarea class = "problem-solving-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "problem-solving-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "problem-solving-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+<tr class = "rigor" style = "display: none">
+<td width="100">Rigor SLO.</td>
+<td><textarea class = "rigor-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "rigor-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "rigor-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+<tr class = "written-communication" style = "display: none">
+<td width="100">Written Communication SLO.</td>
+<td><textarea class = "written-communication-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "written-communication-entry" cols="20" rows = "8"></textarea></td> 
+<td><textarea class = "written-communication-entry" cols="20" rows = "8"></textarea></td> 
+</tr>
+</table>
+<br>
+<input type="button" id = "send-button" value="Send E-mail"></input>
+<!-- <input type="button" id = "url-button" value="Create URL"></input> -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+
+</html>
