@@ -22,7 +22,7 @@ Professor of Mathematics \
 [Hampden-Sydney College](https://www.hsc.edu)
 
 Office: Pauley 301 \
-E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a>
+E-mail: <img src="address.png"  style="vertical-align:bottom"/>
 
 [About](about.html) | [Research](research.html) | [Teaching](index.html) 
 
@@ -33,15 +33,15 @@ E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/
 
 <!--- - --->
 
-### Spring 2025 Classes
+### Fall 2025 Classes
 
-* Math 121 - [Statistics](spring25/math121/index.html) 
-* Math 140 - [Calculus for Business & Economics](spring25/math140/index.html) 
-* CS 461 - [Theory of Computing](spring25/cs461/index.html)
+* Math 105 - [Prep for Calculus](fall25/math105/index.html) 
+* Math 121 - [Statistics](fall25/math121/index.html) 
+* Math 243 - [Differential Equations](fall25/math243/index.html) 
 
 ### Weekly Schedule
 
-<a href="spring25/schedule.pdf"><img src="spring25/schedule.png" width="475"/></a>
+<a href="fall25/schedule.pdf"><img src="fall25/schedule.png" width="475"/></a>
 
 
 ### Teaching Materials

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Differential Equations</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <style>
+  :root {
+    --header-color: #000; 
+    --link-color: #00e; 
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Differential Equations</h1>
+</header>
+<h2 id="math-243---fall-2025">Math 243 - Fall 2025</h2>
+<ul>
+<li><strong>Instructor:</strong> <a
+href="https://bclins.github.io">Brian Lins</a></li>
+<li><strong>Office Hours:</strong> See my <a
+href="https://bclins.github.io/index.html#weekly-schedule">weekly
+schedule</a>, and by appointment</li>
+<li><strong>Office Location:</strong> Pauley 301</li>
+<li><strong>Free Textbook:</strong> <a
+href="https://judsonbooks.org/odeproject/odeproject-html/odeproject.html">The
+Ordinary Differential Equations Project</a></li>
+<li><strong>Course Syllabus:</strong> <a
+href="syllabus.pdf">syllabus.pdf</a></li>
+</ul>
+<h3 id="announcements">Announcements</h3>
+<ul>
+<li>No announcements yet.</li>
+</ul>
+<h3 id="tentative-schedule">Tentative Schedule</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 56%" />
+<col style="width: 14%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Week</th>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: center;">Notes</th>
+<th style="text-align: center;">Homework</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Separable differential equations</td>
+<td style="text-align: center;"><a href="notes.html#week-1-notes">Week
+01</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Numerical methods for ODEs</td>
+<td style="text-align: center;"><a href="notes.html#week-2-notes">Week
+02</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">First order linear equations</td>
+<td style="text-align: center;"><a href="notes.html#week-3-notes">Week
+03</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Systems of differential equations</td>
+<td style="text-align: center;"><a href="notes.html#week-4-notes">Week
+04</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Solving systems numerically &amp;
+analytically</td>
+<td style="text-align: center;"><a href="notes.html#week-5-notes">Week
+05</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>Midterm 1</strong>, Linear algebra
+basics</td>
+<td style="text-align: center;"><a href="notes.html#week-6-notes">Week
+06</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Planar systems</td>
+<td style="text-align: center;"><a href="notes.html#week-7-notes">Week
+07</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Complex and repeated eigenvalues</td>
+<td style="text-align: center;"><a href="notes.html#week-8-notes">Week
+08</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Classification of planar systems</td>
+<td style="text-align: center;"><a href="notes.html#week-9-notes">Week
+09</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>Midterm 2</strong>, Systems in
+higher dimensions</td>
+<td style="text-align: center;"><a href="notes.html#week-10-notes">Week
+10</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Homogeneous linear systems</td>
+<td style="text-align: center;"><a href="notes.html#week-11-notes">Week
+11</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Forcing and resonance</td>
+<td style="text-align: center;"><a href="notes.html#week-12-notes">Week
+12</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Nonlinear systems, <strong>Midterm
+3</strong></td>
+<td style="text-align: center;"><a href="notes.html#week-13-notes">Week
+13</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">The Laplace transform</td>
+<td style="text-align: center;"><a href="notes.html#week-14-notes">Week
+14</a></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>The schedule above is tentative, and may be subject to change.
+Changes will be announced in class, and you are responsible for knowing
+about any changes even if you miss the class when they are
+announced.</p>
+<h3 id="attendance-policy">Attendance Policy</h3>
+<p>Attendance in this class is required. Repeated absences may result in
+a forced withdrawal from the course. You are responsible for any
+material you miss due to absence. Please let me know ahead of time if
+you know that you will not be able to attend class.</p>
+<h3 id="grading-policy">Grading Policy</h3>
+<p>The term grade will be based on the following factors.</p>
+<!--
+| Component &nbsp; &nbsp;  | Proportion  &nbsp; &nbsp;|
+| :--- | :---: |
+| Midterms  | 45% |
+| Projects | 10% |
+| Quizzes | 20% |
+| Final Exam | 25% |  
+-->
+<table class="bordered">
+<tr>
+<td>
+Midterms
+</td>
+<td>
+Quizzes
+</td>
+<td>
+Projects
+</td>
+<td>
+Final Exam
+</td>
+</tr>
+<tr>
+<td>
+45%
+</td>
+<td>
+20%
+</td>
+<td>
+10%
+</td>
+<td>
+25%
+</td>
+</tr>
+</table>
+<p>I use the following grading scale for quizzes and tests.</p>
+<!--
+| Letter Grade | Percentage |
+| :---: | :---: | 
+| A | 93 - 100 |
+| A- | 90 - 92 |
+| B+ | 87 - 89 |
+| B | 83 - 86 | 
+| B- | 80 - 82 | 
+| C+ | 77 - 79 | 
+| C | 73 - 76 | 
+| C- | 70 - 72 | 
+| D+ | 67 - 69 |
+| D | 60 - 66 | 
+| F | 0 - 59 |
+-->
+<table class="bordered">
+<tr>
+<td>
+A
+</td>
+<td>
+A-
+</td>
+<td>
+B+
+</td>
+<td>
+B
+</td>
+<td>
+B-
+</td>
+<td>
+C+
+</td>
+<td>
+C
+</td>
+<td>
+C-
+</td>
+<td>
+D+
+</td>
+<td>
+D
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td>
+≥ 93
+</td>
+<td>
+90-92
+</td>
+<td>
+87-89
+</td>
+<td>
+83-86
+</td>
+<td>
+80-82
+</td>
+<td>
+77-79
+</td>
+<td>
+73-76
+</td>
+<td>
+70-72
+</td>
+<td>
+67-69
+</td>
+<td>
+60-66
+</td>
+<td>
+≤ 59
+</td>
+</tr>
+</table>
+<h3 id="homework">Homework</h3>
+<p>There is a saying that, “you learn math by doing math.” This is very
+true! There will be homework problems assigned every week. These will be
+due on Fridays. I will not collect these problems however. Instead, you
+may consult your homework solutions &amp; class notes during the weekly
+quizzes.</p>
+<h3 id="quizzes">Quizzes</h3>
+<p>Every Friday (except when there is a midterm exam) there will be a
+10-15 minute quiz on recently covered material. Each quiz will have
+around 3 problems and will cover material similar to the homework
+problems. During quizzes you are allowed to use your notes and homework
+solutions. There are no make-up quizzes for absences. If you know that
+you will miss class on a Friday for an excused absence (athletic or
+other school sponsored event), then let me know in at least one day in
+advance so that we can arrange an alternative assignment. The lowest
+quiz grade will be dropped from the final average.</p>
+<h3 id="projects">Projects</h3>
+<p>There will be three or four projects during the semester. These
+projects will require you to model real world phenomena and write your
+conclusions. The projects must by typed using a computer and you can
+e-mail them to me when they are due. If you wish, you may work with a
+partner on the project. If you do work with a partner, then you can both
+submit one file together, just be sure that both of your names are
+clearly listed on the file that you submit. Aside from work with your
+partner, all work should be your own. Each project will be graded
+holistically using the following rubric:</p>
+<ul>
+<li><strong>Grade: A.</strong> Every part of the assignment is complete
+and your work is clear and correct.<br />
+</li>
+<li><strong>Grade: B.</strong> Almost every part of the assignment is
+complete and your work is clear. There may be a few minor mistakes, but
+no major errors.<br />
+</li>
+<li><strong>Grade: C.</strong> Most of the assignment is complete, but
+is either not clear or has significant mistakes.</li>
+<li><strong>Grade: D.</strong> You turn in something, but it has major
+errors or omissions.</li>
+</ul>
+<p>Projects will be assigned at least one week before they are due.</p>
+<h3 id="exams">Exams</h3>
+<p>There will be three in-class midterm exams and a cumulative final.
+These exams will be announced in advance, and you will know exactly what
+concepts will be covered on each exam.</p>
+<h3 id="office-hours">Office Hours</h3>
+<p>My office hours are shown on my <a
+href="https://bclins.github.io/index.html#weekly-schedule">weekly
+schedule</a>. I am also available by appointment. If you can’t stop by
+during my regular office hours, just ask me after class or by e-mail,
+and I’ll be happy to make an appointment that works for both of us.</p>
+<h3 id="special-accommodations">Special Accommodations</h3>
+<p>Students who think they may need accommodations in this course
+because of the impact of a disability are encouraged to meet with me
+privately at the beginning of the semester. Students also should contact
+Melissa Wood, Title IX/504 Coordinator (mwood@hsc.edu, 434-223-6061) to
+verify their eligibility for reasonable accommodations. Early contact
+will help to avoid unnecessary inconvenience and delays.</p>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</body>
+</html>
