@@ -30,7 +30,7 @@ header-includes: |
 
 Week | Topic                      | Notes | Homework 
 :---:|:---------------------------|:-----:|:--------:
-1  | Pre-test, rational expressions                 | [Week 01](notes.html#week-1-notes)  | 
+1  | Pre-test, rational expressions                 | [Week 01](notes.html#week-1-notes)  | [HW1](HW1.pdf)
 2  | Algebra rules, factors versus terms            | [Week 02](notes.html#week-2-notes)  |
 3  | Solving simple equations                       | [Week 03](notes.html#week-3-notes)  |
 4  | Quadratic functions                            | [Week 04](notes.html#week-4-notes)  |
