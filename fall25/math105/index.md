@@ -28,22 +28,22 @@ header-includes: |
 
 ### Tentative Schedule
 
-Week | Topic                      | Notes | Homework 
-:---:|:---------------------------|:-----:|:--------:
-1  | Pre-test, rational expressions                 | [Week 01](notes.html#week-1-notes)  | [HW1](HW1.pdf)
-2  | Algebra rules, factors versus terms            | [Week 02](notes.html#week-2-notes)  |
-3  | Solving simple equations                       | [Week 03](notes.html#week-3-notes)  |
-4  | Quadratic functions                            | [Week 04](notes.html#week-4-notes)  |
-5  | Factoring and polynomials                      | [Week 05](notes.html#week-5-notes)  |
-6  | Solving polynomial equations                   | [Week 06](notes.html#week-6-notes)  |
-7  | **Midterm exam**                               | [Week 07](notes.html#week-7-notes)  |
-8  | Solving rational equations                     | [Week 08](notes.html#week-8-notes)  |
-9  | Exponent rules                                 | [Week 09](notes.html#week-9-notes)  |
-10 | Logarithms and orders of magnitude             | [Week 10](notes.html#week-10-notes) | 
-11 | Solving exponential equations                  | [Week 11](notes.html#week-11-notes) | 
-12 | Graphs and inequalities                        | [Week 12](notes.html#week-12-notes) | 
-13 | Solving systems of equations                   | [Week 13](notes.html#week-13-notes) | 
-14 | **Final exam**                                 | [Week 14](notes.html#week-14-notes) |
+Day | Topic                      | Notes | Homework 
+:------:|:---------------------------|:-----:|:--------:
+Aug 25  | Pre-test, rational expressions                 | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
+Sep 8  | Algebra rules, factors versus terms            | [Week 02](notes.html#week-2-notes)  |
+Sep 15  | Solving simple equations                       | [Week 03](notes.html#week-3-notes)  |
+Sep 22  | Quadratic functions                            | [Week 04](notes.html#week-4-notes)  |
+Sep 29  | Factoring and polynomials                      | [Week 05](notes.html#week-5-notes)  |
+Oct 6  | Solving polynomial equations                   | [Week 06](notes.html#week-6-notes)  |
+Oct 20 | **Midterm exam**                               | [Week 07](notes.html#week-7-notes)  |
+Oct 27  | Solving rational equations                     | [Week 08](notes.html#week-8-notes)  |
+Nov 3  | Exponent rules                                 | [Week 09](notes.html#week-9-notes)  |
+Nov 10 | Logarithms and orders of magnitude             | [Week 10](notes.html#week-10-notes) | 
+Nov 17 | Solving exponential equations                  | [Week 11](notes.html#week-11-notes) | 
+Nov 24 | Graphs and inequalities                        | [Week 12](notes.html#week-12-notes) | 
+Dec 1 | Solving systems of equations                   | [Week 13](notes.html#week-13-notes) | 
+Dec 8 | **Final exam**                                 | [Week 14](notes.html#week-14-notes) |
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
 

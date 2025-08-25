@@ -21,6 +21,22 @@ Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-note
  
 ### Week 1 Notes
 
+We started with a 30 minute assessment pre-test that is not for a grade.  After that we reviewed the rules for working with fractions. 
+
+1. **Addition.** To add fractions, they need a common denominator (bottom).  Once you have a common denominator, just add the numerators (tops).  We did these examples:
+
+    a. $\dfrac{1}{6} + \dfrac{2}{6}$
+    b. $\dfrac{1}{6} + \dfrac{2}{5}$
+
+2. **Multiplication.** I like to say that "fractions play nice with multiplication".  To multiply fractions, just multiply the tops and multiply the bottoms. 
+
+    a. $\dfrac{1}{6} \cdot \dfrac{2}{5}$
+
+3. **Division.** Division is just multiplication by the reciprocal.  You might have learned this as "keep-change-flip" or as "flip-and-multiply". 
+
+    a. $\dfrac{ ~\dfrac{1}{6}~}{~\dfrac{2}{5}~ }$
+    a. $\dfrac{ ~\dfrac{1}{6}~}{~5~ }$
+
 - - -
 
 ### Week 2 Notes
