@@ -36,11 +36,11 @@ Mon, Aug 25 | [1.2][1.2]     | Data tables, variables, and individuals
 Wed, Aug 27 | [2.1.3][2.1.3] | Histograms & skew
 Fri, Aug 29 | [2.1.5][2.1.5] | Boxplots
 
-<!-- ### Mon, Jan 13
+### Mon, Aug 25
 
 Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
 
-* **Example:** [Class Data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataSpring25.xlsx)
+* **Example:** [Class Data]()
 
 1. We looked at a case of a nurse who was accused of killing patients at the hospital where she worked for 18 months.  One piece of evidence against her was that 40 patients died during the shifts when she worked, but only 34 died during shifts when she wasn't working.  If this evidence came from a date table, what would be the most natural individuals (rows) & variables (columns) for that table?
 
@@ -57,6 +57,7 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
+<!--
 ### Wed, Jan 15
 
 Today we did our first in-class workshop:

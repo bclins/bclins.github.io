@@ -30,7 +30,7 @@ header-includes: |
 
 Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:--------:
-1  | Separable differential equations               | [Week 01](notes.html#week-1-notes)  |
+1  | Separable differential equations               | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
 2  | Numerical methods for ODEs                     | [Week 02](notes.html#week-2-notes)  |
 3  | First order linear equations                   | [Week 03](notes.html#week-3-notes)  |
 4  | Systems of differential equations              | [Week 04](notes.html#week-4-notes)  |
@@ -94,15 +94,15 @@ I use the following grading scale for quizzes and tests.
 
 ### Homework
   
-There is a saying that, "you learn math by doing math." This is very true! There will be homework problems assigned every week. These will be due on Fridays. I will not collect these problems however. Instead, you may consult your homework solutions & class notes during the weekly quizzes.
+There is a saying that, "you learn math by doing math." This is very true! There will be homework problems assigned every week. These will be due on Fridays. I will not collect these problems however. Instead, you may consult your homework solutions & paper notes during the weekly quizzes.  
 
 ### Quizzes
 
-Every Friday (except when there is a midterm exam) there will be a 10-15 minute quiz on recently covered material. Each quiz will have around 3 problems and will cover material similar to the homework problems. During quizzes you are allowed to use your notes and homework solutions. There are no make-up quizzes for absences. If you know that you will miss class on a Friday for an excused absence (athletic or other school sponsored event), then let me know in at least one day in advance so that we can arrange an alternative assignment. The lowest quiz grade will be dropped from the final average.
+Every Friday (except when there is a midterm exam) there will be a 10-15 minute quiz on recently covered material. Each quiz will have around 3 problems and will cover material similar to the homework problems. During quizzes you are allowed to use your paper notes and homework solutions. You cannot use a laptop or calculator or other device during the quizzes.  There are no make-up quizzes for absences. If you know that you will miss class on a Friday for an excused absence (athletic or other school sponsored event), then let me know in at least one day in advance so that we can arrange an alternative assignment. The lowest quiz grade will be dropped from the final average.
 
 ### Projects
 
-There will be three or four projects during the semester.  These projects will require you to model real world phenomena and write your conclusions.  The projects must by typed using a computer and you can e-mail them to me when they are due. If you wish, you may work with a partner on the project. If you do work with a partner, then you can both submit one file together, just be sure that both of your names are clearly listed on the file that you submit.  Aside from work with your partner, all work should be your own. Each project will be graded holistically using the following rubric:
+There will be three or four projects during the semester. These projects will require you to model real world phenomena and write your conclusions. The projects must by typed using a computer and submitted as a PDF file. You can e-mail them to me when they are due or turn in a printed copy. If you wish, you may work with a partner on the project. If you do work with a partner, then you can both submit one file together, just be sure that both of your names are clearly listed on the file that you submit. Aside from work with your partner, all work should be your own. Each project will be graded holistically using the following rubric:
 
 * **Grade: A.** Every part of the assignment is complete and your work is clear and correct.  
 * **Grade: B.** Almost every part of the assignment is complete and your work is clear. There may be a few minor mistakes, but no major errors.  
@@ -115,7 +115,7 @@ Projects will be assigned at least one week before they are due.
 
 ### Exams
 
-There will be three in-class midterm exams and a cumulative final. These exams will be announced in advance, and you will know exactly what concepts will be covered on each exam.  
+There will be three in-class midterm exams and a cumulative final. These exams will be announced in advance, and you will know exactly what concepts will be covered on each exam.  Unlike quizzes, you won't be able to consult notes or old homework assignments during exams. 
 
 
 ### Office Hours

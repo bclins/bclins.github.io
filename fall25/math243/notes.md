@@ -16,7 +16,7 @@ header-includes: |
 ## Math 243 - Fall 2025
 
 <center>
-Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
+Jump to: [Math 243 homepage](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
  
 ### Week 1 Notes
@@ -26,6 +26,42 @@ Day  | Section  | Topic
 Mon, Aug 25 |  [1.1][1.1] | Modeling with Differential Equations
 Wed, Aug 27 |  [1.2][1.2] | Separable Differential Equations
 Fri, Aug 29 |  [1.3][1.3] | Geometric and Quantitative Analysis
+
+We talked about some examples of differential equations. 
+
+1. **Newton's Law of Cooling.** The rate of change in the temperature $T$ with respect to time $t$ for a small object is proportional to difference between temperature of the object and its surroundings $T_s$. 
+$$\dfrac{dT}{dt} = k (T - T_s).$$
+
+We talked about **dependent** and **independent** variables, the **order** of a differential equation and how to tell if a function is a **solution** of a differential equation.  We also talked about **initial conditions**.
+
+2. **Spring-Mass Model.** The force $F$ of a mass $m$ at the end of a spring can be modeled by **Hooke's Law** which says $F = -k x$ where $x$ is the displacement of the spring from its rest position. 
+$$m\dfrac{d^2 x}{dt^2} = -kx.$$
+
+    a. Show that $x = \sin t$ and $x = \cos t$ are two different solutions of the spring equation when $m = k = 1$. 
+    b. How would the solutions change if $m$ and $k$ were not both equal to 1?  How would the oscillation of the spring change if the mass was twice as heavy?  
+    c. How would the spring equation change if there was also a linear drag force $F = -b \frac{dx}{dt}$?  What if there is a non-linear drag force $F = -b \left(\frac{dx}{dt}\right)^2$?
+
+The last question led to a discussion of **linear** versus **non-linear** differential equations.  It's usually much harder to solve non-linear equations!  We will also study **systems** of differential equations, like the following.  
+
+3. **Rabbits and Foxes.** Suppose there are $R$ rabbits and $F$ foxes in an ecosystem.  The rabbit population would grow exponentially, except for the foxes which prey on the rabbits.  The fox population would decay exponentially if there wasn't food to eat, but as long as they can catch enough rabbits, it will grow.  The number of rabbits that are eaten by foxes is proportional to the product $RF$.  
+\begin{align*} 
+\dfrac{dR}{dt} &= a R - b RF \\
+\dfrac{dF}{dt} &= -c R + d RF 
+\end{align*}
+    
+Here is a graph showing these equations as a vector field (with constants $a = 3, b = 4, c = 1, d= 2$).  
+
+<center>
+<img src="rabbitsfoxes.png"></img>
+</center>
+
+4. **Logistic Growth.** $\dfrac{dP}{dt} = kP \left( 1 - \dfrac{P}{N} \right)$ where $k$ is a proportionality constant and $N$ is the carrying capacity.  
+    
+    a. Under what circumstances does the population $P$ stop changing in this model?
+    b. What are the units for the constants $k$ and $N$? 
+    c. Suppose that we use the logistic growth equation to model a population of rabbits in a region.  What if we introduce a predator that always consumes $b$ rabbits per year.  How would that change the differential equation above?  
+
+
 
 - - - 
 

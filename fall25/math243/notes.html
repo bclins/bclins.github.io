@@ -38,15 +38,15 @@
 </header>
 <h2 id="math-243---fall-2025">Math 243 - Fall 2025</h2>
 <center>
-Jump to: <a href="index.html">Syllabus</a>, <a href="#week-1-notes">Week
-1</a> , <a href="#week-2-notes">Week 2</a>, <a href="#week-3-notes">Week
-3</a>, <a href="#week-4-notes">Week 4</a>, <a href="#week-5-notes">Week
-5</a>, <a href="#week-6-notes">Week 6</a>, <a href="#week-7-notes">Week
-7</a>, <a href="#week-8-notes">Week 8</a>, <a href="#week-9-notes">Week
-9</a>, <a href="#week-10-notes">Week 10</a>, <a
-href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week 12</a>,
-<a href="#week-13-notes">Week 13</a>, <a href="#week-14-notes">Week
-14</a>
+Jump to: <a href="index.html">Math 243 homepage</a>, <a
+href="#week-1-notes">Week 1</a> , <a href="#week-2-notes">Week 2</a>, <a
+href="#week-3-notes">Week 3</a>, <a href="#week-4-notes">Week 4</a>, <a
+href="#week-5-notes">Week 5</a>, <a href="#week-6-notes">Week 6</a>, <a
+href="#week-7-notes">Week 7</a>, <a href="#week-8-notes">Week 8</a>, <a
+href="#week-9-notes">Week 9</a>, <a href="#week-10-notes">Week 10</a>,
+<a href="#week-11-notes">Week 11</a>, <a href="#week-12-notes">Week
+12</a>, <a href="#week-13-notes">Week 13</a>, <a
+href="#week-14-notes">Week 14</a>
 </center>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
@@ -78,6 +78,107 @@ href="https://judsonbooks.org/odeproject/odeproject-html/firstlook03.html">1.3</
 </tr>
 </tbody>
 </table>
+<p>We talked about some examples of differential equations.</p>
+<ol type="1">
+<li><strong>Newton’s Law of Cooling.</strong> The rate of change in the
+temperature
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+with respect to time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+for a small object is proportional to difference between temperature of
+the object and its surroundings
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>s</mi></msub><annotation encoding="application/x-tex">T_s</annotation></semantics></math>.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo>−</mo><msub><mi>T</mi><mi>s</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dT}{dt} = k (T - T_s).</annotation></semantics></math></li>
+</ol>
+<p>We talked about <strong>dependent</strong> and
+<strong>independent</strong> variables, the <strong>order</strong> of a
+differential equation and how to tell if a function is a
+<strong>solution</strong> of a differential equation. We also talked
+about <strong>initial conditions</strong>.</p>
+<ol start="2" type="1">
+<li><p><strong>Spring-Mass Model.</strong> The force
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+of a mass
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+at the end of a spring can be modeled by <strong>Hooke’s Law</strong>
+which says
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>k</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">F = -k x</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is the displacement of the spring from its rest position.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mi>k</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">m\dfrac{d^2 x}{dt^2} = -kx.</annotation></semantics></math></p>
+<ol type="a">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x = \sin t</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x = \cos t</annotation></semantics></math>
+are two different solutions of the spring equation when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m = k = 1</annotation></semantics></math>.</li>
+<li>How would the solutions change if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+were not both equal to 1? How would the oscillation of the spring change
+if the mass was twice as heavy?<br />
+</li>
+<li>How would the spring equation change if there was also a linear drag
+force
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>b</mi><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">F = -b \frac{dx}{dt}</annotation></semantics></math>?
+What if there is a non-linear drag force
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F = -b \left(\frac{dx}{dt}\right)^2</annotation></semantics></math>?</li>
+</ol></li>
+</ol>
+<p>The last question led to a discussion of <strong>linear</strong>
+versus <strong>non-linear</strong> differential equations. It’s usually
+much harder to solve non-linear equations! We will also study
+<strong>systems</strong> of differential equations, like the
+following.</p>
+<ol start="3" type="1">
+<li><strong>Rabbits and Foxes.</strong> Suppose there are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+rabbits and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+foxes in an ecosystem. The rabbit population would grow exponentially,
+except for the foxes which prey on the rabbits. The fox population would
+decay exponentially if there wasn’t food to eat, but as long as they can
+catch enough rabbits, it will grow. The number of rabbits that are eaten
+by foxes is proportional to the product
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">RF</annotation></semantics></math>.<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>a</mi><mi>R</mi><mo>−</mo><mi>b</mi><mi>R</mi><mi>F</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mi>c</mi><mi>R</mi><mo>+</mo><mi>d</mi><mi>R</mi><mi>F</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} 
+\dfrac{dR}{dt} &amp;= a R - b RF \\
+\dfrac{dF}{dt} &amp;= -c R + d RF 
+\end{align*}</annotation></semantics></math></li>
+</ol>
+<p>Here is a graph showing these equations as a vector field (with
+constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>3</mn><mo>,</mo><mi>b</mi><mo>=</mo><mn>4</mn><mo>,</mo><mi>c</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>d</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">a = 3, b = 4, c = 1, d= 2</annotation></semantics></math>).</p>
+<center>
+<img src="rabbitsfoxes.png"></img>
+</center>
+<ol start="4" type="1">
+<li><p><strong>Logistic Growth.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>P</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac displaystyle="true"><mi>P</mi><mi>N</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dP}{dt} = kP \left( 1 - \dfrac{P}{N} \right)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is a proportionality constant and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+is the carrying capacity.</p>
+<ol type="a">
+<li>Under what circumstances does the population
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+stop changing in this model?</li>
+<li>What are the units for the constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>?</li>
+<li>Suppose that we use the logistic growth equation to model a
+population of rabbits in a region. What if we introduce a predator that
+always consumes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+rabbits per year. How would that change the differential equation
+above?</li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
