@@ -29,8 +29,11 @@ Fri, Aug 29 |  [1.3][1.3] | Geometric and Quantitative Analysis
 
 We talked about some examples of differential equations. 
 
-1. **Newton's Law of Cooling.** The rate of change in the temperature $T$ with respect to time $t$ for a small object is proportional to difference between temperature of the object and its surroundings $T_s$. 
-$$\dfrac{dT}{dt} = k (T - T_s).$$
+1. **Exponential Growth/Decay.** The rate of change in a variable $y$ with respect to time $t$ is proportional to $y$ itself. 
+$$\dfrac{dy}{dt} = k y.$$
+    a. Check that $y(t) = Ce^{kt}$ is a solution. 
+    b. Find the constant $C$ which satisfies the **initial value problem** with **initial condition** $y(0) = 1000$. 
+
 
 We talked about **dependent** and **independent** variables, the **order** of a differential equation and how to tell if a function is a **solution** of a differential equation.  We also talked about **initial conditions**.
 
