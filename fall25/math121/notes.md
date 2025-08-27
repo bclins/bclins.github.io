@@ -40,7 +40,7 @@ Fri, Aug 29 | [2.1.5][2.1.5] | Boxplots
 
 Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
 
-* **Example:** [Class Data]()
+* **Example:** Class Data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
 
 1. We looked at a case of a nurse who was accused of killing patients at the hospital where she worked for 18 months.  One piece of evidence against her was that 40 patients died during the shifts when she worked, but only 34 died during shifts when she wasn't working.  If this evidence came from a date table, what would be the most natural individuals (rows) & variables (columns) for that table?
 
@@ -57,8 +57,7 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
-<!--
-### Wed, Jan 15
+### Wed, Aug 27
 
 Today we did our first in-class workshop:
 
@@ -70,7 +69,7 @@ Then we used the class data we collected last time to introduce **histograms** a
 
 Until recently, Excel did not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html). 
 
-* **Example:** [US Household Income (2010)](https://upload.wikimedia.org/wikipedia/commons/0/0d/Distribution_of_Annual_Household_Income_in_the_United_States_2010.png)
+* **Example:** [US Household Income (2023)](https://www.reddit.com/r/dataisbeautiful/comments/1h0b4pv/oc_us_household_income_distribution_2023/#lightbox)
 
 1. Which is greater, the mean or the median household income?
 
@@ -78,7 +77,7 @@ Until recently, Excel did not have an easy way to make histograms, but Google Sh
 
 3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
 
-
+<!--
 ### Fri, Jan 17
 
 We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 

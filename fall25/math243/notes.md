@@ -27,6 +27,8 @@ Mon, Aug 25 |  [1.1][1.1] | Modeling with Differential Equations
 Wed, Aug 27 |  [1.2][1.2] | Separable Differential Equations
 Fri, Aug 29 |  [1.3][1.3] | Geometric and Quantitative Analysis
 
+### Mon, Aug 25
+
 We talked about some examples of differential equations. 
 
 1. **Exponential Growth/Decay.** The rate of change in a variable $y$ with respect to time $t$ is proportional to $y$ itself. 
@@ -64,7 +66,38 @@ Here is a graph showing these equations as a vector field (with constants $a = 3
     b. What are the units for the constants $k$ and $N$? 
     c. Suppose that we use the logistic growth equation to model a population of rabbits in a region.  What if we introduce a predator that always consumes $b$ rabbits per year.  How would that change the differential equation above?  
 
+### Wed, Aug 27
 
+Today we talked about **separable equations**.  We solved the following examples. 
+
+1. Solve $\dfrac{dy}{dx} = - \dfrac{x}{y}$. (<https://youtu.be/8Amgakx5aII>)
+
+2. Solve $\dfrac{dy}{dx} = - x^2 y$. 
+
+We also pointed out that separation of variables doesn't always work, but you can still say something about the solutions using the slope field:
+
+3. Sketch the slope field for $\dfrac{dy}{dx} = x - y$. (<https://youtu.be/24pxJ1DuWR8>)
+
+Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/classes/fall23/math142/SlopeFields.html) that I made a few years ago.  We finished with this example:
+
+4. **Newton's Law of Cooling.** The temperature of a small object changes at a rate proportional to the difference between the object's temperature and its surroundings.  
+
+    a. Express Newton's Law of Cooling as a differential equation.  
+    b. Is that differential equation separable? 
+
+<!--4. Show that $y = C e^{-x} + x - 1$ is a solution to $y' = x-y$ for any $C$. 
+
+5. Show that $y = C e^{-x} + x - 1$ is a solution to $y' = x-y$ for any $C$. Then solve the initial value problem with initial condition $y(0) = 2$.
+-->
+
+
+
+6. $\dfrac{dy}{dx} = \dfrac{4 \sin x}{3 y^2}$ with initial condition $y(0) = 2$. (<https://youtu.be/cc3qtMBdQlE>)
+
+7. **Mixing Problem.** Salty water containing 0.02 kg of salt per liter is flowing into a mixing tank at a rate of 10 L/min.  At the same time, water is draining from the tank at 10 L/min.  
+
+    a. Write a differential equation to model how the amount of salt in the tank changes with respect to time.  
+    b. Solve the differential equation if the amound of salt in the tank is initially 15 kg. (<https://youtu.be/aFfAz9wnoyY>)
 
 - - - 
 
