@@ -70,13 +70,24 @@ Here is a graph showing these equations as a vector field (with constants $a = 3
 
 Today we talked about **separable equations**.  We solved the following examples. 
 
-1. Solve $\dfrac{dy}{dx} = - \dfrac{x}{y}$. (<https://youtu.be/8Amgakx5aII>)
+<!--1. Solve $\dfrac{dy}{dx} = - \dfrac{x}{y}$. (<https://youtu.be/8Amgakx5aII>)-->
 
-2. Solve $\dfrac{dy}{dx} = - x^2 y$. 
+1. Solve $\dfrac{dy}{dx} = - x^2 y$. 
 
-We also pointed out that separation of variables doesn't always work, but you can still say something about the solutions using the slope field:
+2. Solve $xy^2 y' = x+1$. (<https://youtu.be/1_Q4kndQrtk>)
 
-3. Sketch the slope field for $\dfrac{dy}{dx} = x - y$. (<https://youtu.be/24pxJ1DuWR8>)
+Not every differential equation is separable.  For example:
+$$\frac{dy}{dx} = x-y$$
+is not separable.
+<!--3. Sketch the slope field for $\dfrac{dy}{dx} = x - y$. (<https://youtu.be/24pxJ1DuWR8>) -->
+
+3. Which of the following differential equations are separable? (<https://youtu.be/6vUjGgI8Dso>)
+
+    a. $xy' + y = 3$    
+    b. $2x + 2y + 2y' - 1 = 0$
+    c. $y' = (x^2+x)(y^2+y)$ 
+    d. $x \dfrac{dy}{dx} + y \dfrac{dy}{dx} = x$
+
 
 Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/classes/fall23/math142/SlopeFields.html) that I made a few years ago.  We finished with this example:
 
@@ -90,14 +101,14 @@ Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/
 5. Show that $y = C e^{-x} + x - 1$ is a solution to $y' = x-y$ for any $C$. Then solve the initial value problem with initial condition $y(0) = 2$.
 -->
 
+5. **Mixing Problem.** Salty water containing 0.02 kg of salt per liter is flowing into a mixing tank at a rate of 10 L/min.  At the same time, water is draining from the tank at 10 L/min.  
+
+    a. Write a differential equation to model how the amount of salt in the tank changes with respect to time.  
+    b. Solve the differential equation if the amound of salt in the tank is initially 15 kg. (<https://youtu.be/aFfAz9wnoyY>)
 
 
 6. $\dfrac{dy}{dx} = \dfrac{4 \sin x}{3 y^2}$ with initial condition $y(0) = 2$. (<https://youtu.be/cc3qtMBdQlE>)
 
-7. **Mixing Problem.** Salty water containing 0.02 kg of salt per liter is flowing into a mixing tank at a rate of 10 L/min.  At the same time, water is draining from the tank at 10 L/min.  
-
-    a. Write a differential equation to model how the amount of salt in the tank changes with respect to time.  
-    b. Solve the differential equation if the amound of salt in the tank is initially 15 kg. (<https://youtu.be/aFfAz9wnoyY>)
 
 - - - 
 

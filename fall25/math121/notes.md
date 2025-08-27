@@ -63,11 +63,20 @@ Today we did our first in-class workshop:
 
 * **Workshop:** [Histograms & stemplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Histograms.pdf)
 
-Before that, we talked about how to summarize quantitative data. We started by reviewing the **mean** and **median**. We saw how to find the average in Excel, and we talked about how to find the position of the median in a long list of numbers (assuming they are sorted). 
 
-Then we used the class data we collected last time to introduce **histograms** and **stem-and-leaf plots** (also known as **stemplots**). We also talked about how to tell if data is **skewed left** or **skewed right**. One important concept is that the median is not affected by skew, but the average is pulled in the direction of the skew, so the average will be bigger than the median when the data is skewed right. 
+Before that, we talked about how to summarize data. We talked briefly about making bar charts for categorical data. Then we used the class data we collected last time to introduce **histograms** and **stem-and-leaf plots** (also known as **stemplots**). 
 
-Until recently, Excel did not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html). 
+We talked about how to tell if data is **skewed left** or **skewed right**. We also reviewed the **mean** and the **median**.  
+
+<div class="Theorem">
+#### Median versus Average
+
+The median of $N$ numbers is located at position $\dfrac{N+1}{2}$. 
+
+The median is not affected by skew, but the average is pulled in the direction of the skew. So the average will be bigger than the median when the data is skewed right, and smaller when the data is skewed left. 
+</div>
+
+We finished by talking about these examples.
 
 * **Example:** [US Household Income (2023)](https://www.reddit.com/r/dataisbeautiful/comments/1h0b4pv/oc_us_household_income_distribution_2023/#lightbox)
 
@@ -76,6 +85,9 @@ Until recently, Excel did not have an easy way to make histograms, but Google Sh
 2. Can you think of a distribution that is skewed left?  
 
 3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
+
+Until recently, Excel did not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html). 
+
 
 <!--
 ### Fri, Jan 17
