@@ -106,6 +106,7 @@ Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/
     a. Write a differential equation to model how the amount of salt in the tank changes with respect to time.  
     b. Solve the differential equation if the amound of salt in the tank is initially 15 kg. (<https://youtu.be/aFfAz9wnoyY>)
 
+We didn't get to this last example in class, but it is a good practice problem. 
 
 6. $\dfrac{dy}{dx} = \dfrac{4 \sin x}{3 y^2}$ with initial condition $y(0) = 2$. (<https://youtu.be/cc3qtMBdQlE>)
 
