@@ -79,7 +79,6 @@ Today we talked about **separable equations**.  We solved the following examples
 Not every differential equation is separable.  For example:
 $$\frac{dy}{dx} = x-y$$
 is not separable.
-<!--3. Sketch the slope field for $\dfrac{dy}{dx} = x - y$. (<https://youtu.be/24pxJ1DuWR8>) -->
 
 3. Which of the following differential equations are separable? (<https://youtu.be/6vUjGgI8Dso>)
 
@@ -88,8 +87,7 @@ is not separable.
     c. $y' = (x^2+x)(y^2+y)$ 
     d. $x \dfrac{dy}{dx} + y \dfrac{dy}{dx} = x$
 
-
-Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/classes/fall23/math142/SlopeFields.html) that I made a few years ago.  We finished with this example:
+We finished with this example:
 
 4. **Newton's Law of Cooling.** The temperature of a small object changes at a rate proportional to the difference between the object's temperature and its surroundings.  
 
@@ -110,6 +108,38 @@ We didn't get to this last example in class, but it is a good practice problem.
 
 6. $\dfrac{dy}{dx} = \dfrac{4 \sin x}{3 y^2}$ with initial condition $y(0) = 2$. (<https://youtu.be/cc3qtMBdQlE>)
 
+### Fri, Aug 29
+
+Today we talked about **slope fields**.  
+
+1. Sketch the slope field for $\dfrac{dy}{dx} = x - y$. (<https://youtu.be/24pxJ1DuWR8>) 
+
+Here is a [slope field grapher tool](https://people.hsc.edu/faculty-staff/blins/classes/fall23/math142/SlopeFields.html) that I made a few years ago. You can also use Sage to plot slope fields. Here is an example from the book, with color added. 
+
+<figure>
+```python
+t, y = var('t, y')
+f(t, y) = y^2/2 - t
+plot_slope_field(f, (t, -1, 5), (y, -5, 10), headaxislength=3, headlength=3, 
+    axes_labels=['$t$','$y(t)$'], color = "blue")
+```
+<figcaption>[Open example in SageCell](https://sagecell.sagemath.org/?z=eJxFjsEKgzAQRO-C_7BIIAlEWi0e8yWllVjXKiyNmG0xf9-VHjqnN485DDvI4OETNqNZWNuymMxBVnS-t6cWauCyWClynyiu2E8L0mgmB8eubhx0VjgLdw6as5QZwxj2JRG-njz7y8_8W1mAJOyYegoDUvJXrVhpp1U2bJW-OXhEipt8qAZ6Y2W_bmUvVA==&lang=sage&interacts=eJyLjgUAARUAuQ==)</figcaption>
+</figure>
+
+
+
+2. Consider the logistic equation with harvesting. 
+$$\dfrac{dP}{dt} = k P \left(1 - \dfrac{P}{N} \right) - h$$
+where $h$ is a number of rabbits that are harvested each year. 
+
+    a. If $k = 1$, $N = 8$, and $h = 1.5$, then what are the values of $P$ where $\dfrac{dP}{dt} = 0$? [Slope field](https://sagecell.sagemath.org/?z=eJxFjt2KwjAQhe8DeYeDFJLI-FN3F7zpK_gCIiW1qSnNNtJEsW_vqBfO1Xe-mQOTCTMq3O2kVWZWRoqBcCB41iVhTyjXf1JI0enXgWE9YMmtJXSJFcMGB8PgpbiGmOsU4tXVXe9CqzvCq7Ul7H4N8_zmcsvsnW3to0_BjZfsq5-P-SYpwGMfLtXBNi6k6qiKXED_xzH7ZBSpYuaYfbwlO7YJscNkm6bPvDwRzjHEib9dNOHmFuYJHnNAEA==&lang=sage&interacts=eJyLjgUAARUAuQ==) 
+    b. Graph the function 
+$$y =k x \left(1 - \dfrac{x}{N} \right) - h.$$
+    Where does the graph cross the x-axis?  Is the slope positive or negative at those crossing points?
+     
+The logistic equation (with or without harvesting) is **autonomous** which means that the rate of change $\dfrac{dP}{dt}$ does not depend on time, just on $P$.  An **equilibrium solution** for an autonomous differential equation is a solution where $y'(t) = 0$ for all $t$.  An equilibrium solution $y_0$ for $y' = f(y)$ is **stable** if $f'(y_0) < 0$ and it is **unstable** if $f'(y_0) > 0$.  
+
+3. How could you modify the logistic equation equation so that you get a realistic non-autonomous model for rabbits in a field?  Why might the rate of change in the population of rabbits change with respect to time?  
 
 - - - 
 

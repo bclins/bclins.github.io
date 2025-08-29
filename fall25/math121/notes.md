@@ -89,8 +89,7 @@ We finished by talking about these examples.
 Until recently, Excel did not have an easy way to make histograms, but Google Sheets does.  If you need to make a histogram, I recommend using Google Sheets or this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html). 
 
 
-<!--
-### Fri, Jan 17
+### Fri, Aug 29
 
 We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
 
@@ -104,7 +103,6 @@ We started with this simple example:
 
     Find the 5-number summary and draw a box-and-whisker plot for this data.  Is the coxswain who weighs 120 lbs. an outlier?  
 
--->
 
 - - -
 
