@@ -23,12 +23,10 @@ header-includes: |
 
 
 <center>
-Jump to: [Syllabus](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
+Jump to: [Syllabus](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
  
 ### Week 1 Notes
-
-
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
@@ -114,8 +112,7 @@ Mon, Sep 1  |                | Labor day - no class
 Wed, Sep 3  | [2.1.4][2.1.4] | Standard deviation
 Fri, Sep 5  | [4.1][4.1]     | Normal distribution
 
-<!--
-### Wed, Jan 22
+### Wed, Sep 3
 
 Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did this one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  
 
@@ -139,7 +136,7 @@ We finished by looking at some examples of histograms that have a shape that loo
 The **normal distribution** is a mathematical model for data with a histogram that is shaped like a bell.  The model has the following features:
 
 <center>
-<img src="NormalDistributionInflectionPoints.png" width = 520></img>
+<img src="https://bclins.github.io/spring25/math121/NormalDistributionInflectionPoints.png" width = 520></img>
 </center>
 
 1. It is symmetric (left & right tails are same size)
@@ -150,6 +147,7 @@ The **normal distribution** is a mathematical model for data with a histogram th
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
 
+<!--
 ### Fri, Jan 24
 
 We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 

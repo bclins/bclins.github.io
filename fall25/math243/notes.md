@@ -16,7 +16,7 @@ header-includes: |
 ## Math 243 - Fall 2025
 
 <center>
-Jump to: [Math 243 homepage](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
+Jump to: [Math 243 homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
  
 ### Week 1 Notes
@@ -154,8 +154,35 @@ The logistic equation (with or without harvesting) is **autonomous** which means
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 1  |             | Labor day - no class
-Wed, Sep 3  |  [1.4][1.4] | Analyzing Equations Numerically
-Fri, Sep 5  |  [1.4][1.4] | Analyzing Equations Numerically - con'd
+Wed, Sep 3  |  [1.7][1.7] | Bifurcations
+Fri, Sep 5  |  [1.6][1.6] | Existence and Uniqueness of Solutions
+
+### Wed, Sep 3
+
+Last time we talked about equilibrium solutions of autonomous equations.  An equilibrium $y_0$ for $y' = f(y)$ is **stable** (also known as a **sink** or **attactor**) if any solution with initial value close to $y_0$ converges to $y_0$ as $t \rightarrow \infty$. An equilibrium is **unstable** (also known as a **source** or **repeller**) if all solutions move away from $y_0$ as $t \rightarrow \infty$. 
+
+One way to quickly analyze whether equilibria are stable or unstable is to graph $f(y)$.  
+
+1. Consider the ODE $y' = y(y-2)(y+3)$.  What are the equilibria for this ODE?  Which are stable and which are unstable?
+<center>
+<iframe src="https://www.desmos.com/calculator/ahjugcxvgb?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+2. What would happen to the number of equilibrium solutions if we replaced $y(y-2)(y+3)$ by $y(y-2)(y+3) + 5$?
+
+We talked about the **phase line** for an autonomous ODE.  
+
+3. Draw the phase line for the logistic equation.
+$$y' = y \left( 1 - \frac{y}{8} \right)$$
+
+4. Draw different phase lines for the logistic equation with harvesting parameters $h = 0, 1.5, 2, 2.5$
+$$y' = y \left( 1 - \frac{y}{8} \right) - h$$ 
+
+Suppose that $y' = f_\lambda(y)$ is a family of differential equations that depends on a parameter $\lambda$.  A **bifurcation point** is a value of the parameter where the number of equilibrium solutions changes.  
+
+5. Draw a bifurcation diagram for the differential equation $y' = \lambda y - y^2$ showing the phase lines when $\lambda = -1, 0,$ and $1$. 
+
+6. Describe the phase line portraits for $y' = y - \lambda \sin y$.  How do they change as $\lambda$ changes?  How many values of $\lambda$ are bifurcation points? 
 
 - - - 
 
@@ -163,11 +190,19 @@ Fri, Sep 5  |  [1.4][1.4] | Analyzing Equations Numerically - con'd
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Sep 8  |  [1.5][1.5] | First-Order Linear Equations
-Wed, Sep 10 |  [1.6][1.6] | Existence and Uniqueness of Solutions
-Fri, Sep 12 |  [1.7][1.7] | Bifurcations
+Mon, Sep 8  |  [1.4][1.4] | Analyzing Equations Numerically
+Wed, Sep 10 |  [1.4][1.4] | Analyzing Equations Numerically - con'd
+Fri, Sep 12 |  [1.5][1.5] | First-Order Linear Equations
+
+
+
+
+
+
+
 
 - - -
+
 
 ### Week 4 Notes
 
@@ -281,6 +316,10 @@ Fri, Dec 5  |  [6.2][6.2] | Solving Initial Value Problems - con'd
 Mon, Dec 8  |             | Recap & review                        
 
 - - - 
+
+* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#3>
+* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#4>
+* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#c>
 
 [1.1]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook01.html>
 [1.2]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook02.html>
