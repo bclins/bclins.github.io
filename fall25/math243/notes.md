@@ -161,28 +161,36 @@ Fri, Sep 5  |  [1.6][1.6] | Existence and Uniqueness of Solutions
 
 Last time we talked about equilibrium solutions of autonomous equations.  An equilibrium $y_0$ for $y' = f(y)$ is **stable** (also known as a **sink** or **attactor**) if any solution with initial value close to $y_0$ converges to $y_0$ as $t \rightarrow \infty$. An equilibrium is **unstable** (also known as a **source** or **repeller**) if all solutions move away from $y_0$ as $t \rightarrow \infty$. 
 
-One way to quickly analyze whether equilibria are stable or unstable is to graph $f(y)$.  
 
 1. Consider the ODE $y' = y(y-2)(y+3)$.  What are the equilibria for this ODE?  Which are stable and which are unstable?
+
+One way to quickly analyze whether equilibria are stable or unstable is to graph $f(y)$.  If $y_0$ is an equilibrium solution and $f'(y_0) < 0$, then $y_0$ is stable, and if $f'(y_0) > 0$, then $y_0$ is unstable.  
 <center>
-<iframe src="https://www.desmos.com/calculator/ahjugcxvgb?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/7xmuwyicde?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 </center>
 
 2. What would happen to the number of equilibrium solutions if we replaced $y(y-2)(y+3)$ by $y(y-2)(y+3) + 5$?
 
+
 We talked about the **phase line** for an autonomous ODE.  
 
-3. Draw the phase line for the logistic equation.
-$$y' = y \left( 1 - \frac{y}{8} \right)$$
-
-4. Draw different phase lines for the logistic equation with harvesting parameters $h = 0, 1.5, 2, 2.5$
+2. Draw different phase lines for the logistic equation with harvesting parameters $h = 0, 1.5, 2, 2.5$
 $$y' = y \left( 1 - \frac{y}{8} \right) - h$$ 
 
-Suppose that $y' = f_\lambda(y)$ is a family of differential equations that depends on a parameter $\lambda$.  A **bifurcation point** is a value of the parameter where the number of equilibrium solutions changes.  
 
-5. Draw a bifurcation diagram for the differential equation $y' = \lambda y - y^2$ showing the phase lines when $\lambda = -1, 0,$ and $1$. 
+Suppose that $y' = f_\lambda(y)$ is a family of differential equations that depends on a parameter $\lambda$.  A **bifurcation point** is a value of the parameter where the number of equilibrium solutions changes.  A **bifurcation diagram** is a graph that shows how the phase lines change as the value of a parameter changes. 
 
+3. Draw a bifurcation diagram for the differential equation $y' = \lambda y - y^2$ showing the phase lines when $\lambda = -1, 0,$ and $1$. 
+
+You can use Desmos to help with the previous problem.  Using $x$ to represent $\lambda$, you can graph the region where $dy/dt$ is positive in blue and the region where $dy/dt$ is negative in red.  Then it is easier to draw the phase lines in the bifurcation diagram. 
+
+<center>
+<iframe src="https://www.desmos.com/calculator/m8ez8hc9is?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+</center>
+
+<!--
 6. Describe the phase line portraits for $y' = y - \lambda \sin y$.  How do they change as $\lambda$ changes?  How many values of $\lambda$ are bifurcation points? 
+-->
 
 - - - 
 
@@ -317,48 +325,44 @@ Mon, Dec 8  |             | Recap & review
 
 - - - 
 
-* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#3>
-* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#4>
-* <file:///Users/brian/Documents/Books/DifferentialEquations/odeproject.pdf#c>
-
-[1.1]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook01.html>
-[1.2]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook02.html>
-[1.3]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook03.html>
-[1.4]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook04.html>
-[1.5]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook05.html>
-[1.6]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook06.html>
-[1.7]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook07.html>
-[1.8]: <https://judsonbooks.org/odeproject/odeproject-html/firstlook08.html>
-[2.1]: <https://judsonbooks.org/odeproject/odeproject-html/systems01.html>
-[2.2]: <https://judsonbooks.org/odeproject/odeproject-html/systems02.html>
-[2.3]: <https://judsonbooks.org/odeproject/odeproject-html/systems03.html>
-[2.4]: <https://judsonbooks.org/odeproject/odeproject-html/systems04.html>
-[2.5]: <https://judsonbooks.org/odeproject/odeproject-html/systems05.html>
-[3.1]: <https://judsonbooks.org/odeproject/odeproject-html/linear01.html>
-[3.2]: <https://judsonbooks.org/odeproject/odeproject-html/linear02.html>
-[3.3]: <https://judsonbooks.org/odeproject/odeproject-html/linear03.html>
-[3.4]: <https://judsonbooks.org/odeproject/odeproject-html/linear04.html>
-[3.5]: <https://judsonbooks.org/odeproject/odeproject-html/linear05.html>
-[3.6]: <https://judsonbooks.org/odeproject/odeproject-html/linear06.html>
-[3.7]: <https://judsonbooks.org/odeproject/odeproject-html/linear07.html>
-[3.8]: <https://judsonbooks.org/odeproject/odeproject-html/linear08.html>
-[3.9]: <https://judsonbooks.org/odeproject/odeproject-html/linear09.html>
-[3.10]: <https://judsonbooks.org/odeproject/odeproject-html/linear10.html>
-[4.1]: <https://judsonbooks.org/odeproject/odeproject-html/secondorder01.html>
-[4.2]: <https://judsonbooks.org/odeproject/odeproject-html/secondorder02.html>
-[4.3]: <https://judsonbooks.org/odeproject/odeproject-html/secondorder03.html>
-[4.4]: <https://judsonbooks.org/odeproject/odeproject-html/secondorder04.html>
-[4.5]: <https://judsonbooks.org/odeproject/odeproject-html/secondorder05.html>
-[5.1]: <https://judsonbooks.org/odeproject/odeproject-html/nonlinear01.html>
-[5.2]: <https://judsonbooks.org/odeproject/odeproject-html/nonlinear02.html>
-[5.3]: <https://judsonbooks.org/odeproject/odeproject-html/nonlinear03.html>
-[5.4]: <https://judsonbooks.org/odeproject/odeproject-html/nonlinear04.html>
-[5.5]: <https://judsonbooks.org/odeproject/odeproject-html/nonlinear05.html>
-[6.1]: <https://judsonbooks.org/odeproject/odeproject-html/laplace01.html>
-[6.2]: <https://judsonbooks.org/odeproject/odeproject-html/laplace02.html>
-[6.3]: <https://judsonbooks.org/odeproject/odeproject-html/laplace03.html>
-[6.4]: <https://judsonbooks.org/odeproject/odeproject-html/laplace04.html>
-[6.5]: <https://judsonbooks.org/odeproject/odeproject-html/laplace05.html>
+[1.1]:  <https://runestone.academy/ns/books/published/odeproject/firstlook01.html>
+[1.2]:  <https://runestone.academy/ns/books/published/odeproject/firstlook02.html>
+[1.3]:  <https://runestone.academy/ns/books/published/odeproject/firstlook03.html>
+[1.4]:  <https://runestone.academy/ns/books/published/odeproject/firstlook04.html>
+[1.5]:  <https://runestone.academy/ns/books/published/odeproject/firstlook05.html>
+[1.6]:  <https://runestone.academy/ns/books/published/odeproject/firstlook06.html>
+[1.7]:  <https://runestone.academy/ns/books/published/odeproject/firstlook07.html>
+[1.8]:  <https://runestone.academy/ns/books/published/odeproject/firstlook08.html>
+[2.1]:  <https://runestone.academy/ns/books/published/odeproject/systems01.html>
+[2.2]:  <https://runestone.academy/ns/books/published/odeproject/systems02.html>
+[2.3]:  <https://runestone.academy/ns/books/published/odeproject/systems03.html>
+[2.4]:  <https://runestone.academy/ns/books/published/odeproject/systems04.html>
+[2.5]:  <https://runestone.academy/ns/books/published/odeproject/systems05.html>
+[3.1]:  <https://runestone.academy/ns/books/published/odeproject/linear01.html>
+[3.2]:  <https://runestone.academy/ns/books/published/odeproject/linear02.html>
+[3.3]:  <https://runestone.academy/ns/books/published/odeproject/linear03.html>
+[3.4]:  <https://runestone.academy/ns/books/published/odeproject/linear04.html>
+[3.5]:  <https://runestone.academy/ns/books/published/odeproject/linear05.html>
+[3.6]:  <https://runestone.academy/ns/books/published/odeproject/linear06.html>
+[3.7]:  <https://runestone.academy/ns/books/published/odeproject/linear07.html>
+[3.8]:  <https://runestone.academy/ns/books/published/odeproject/linear08.html>
+[3.9]:  <https://runestone.academy/ns/books/published/odeproject/linear09.html>
+[3.10]: <https://runestone.academy/ns/books/published/odeproject/linear10.html>
+[4.1]:  <https://runestone.academy/ns/books/published/odeproject/secondorder01.html>
+[4.2]:  <https://runestone.academy/ns/books/published/odeproject/secondorder02.html>
+[4.3]:  <https://runestone.academy/ns/books/published/odeproject/secondorder03.html>
+[4.4]:  <https://runestone.academy/ns/books/published/odeproject/secondorder04.html>
+[4.5]:  <https://runestone.academy/ns/books/published/odeproject/secondorder05.html>
+[5.1]:  <https://runestone.academy/ns/books/published/odeproject/nonlinear01.html>
+[5.2]:  <https://runestone.academy/ns/books/published/odeproject/nonlinear02.html>
+[5.3]:  <https://runestone.academy/ns/books/published/odeproject/nonlinear03.html>
+[5.4]:  <https://runestone.academy/ns/books/published/odeproject/nonlinear04.html>
+[5.5]:  <https://runestone.academy/ns/books/published/odeproject/nonlinear05.html>
+[6.1]:  <https://runestone.academy/ns/books/published/odeproject/laplace01.html>
+[6.2]:  <https://runestone.academy/ns/books/published/odeproject/laplace02.html>
+[6.3]:  <https://runestone.academy/ns/books/published/odeproject/laplace03.html>
+[6.4]:  <https://runestone.academy/ns/books/published/odeproject/laplace04.html>
+[6.5]:  <https://runestone.academy/ns/books/published/odeproject/laplace05.html>
 
 
 
