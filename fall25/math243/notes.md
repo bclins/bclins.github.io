@@ -204,7 +204,6 @@ This theorem guarantees that in most circumstances, we are guarantee to have sol
 
 1. Solve the IVP $y' = y^2$ with initial condition $y(0) = 1$.  Notice that the function $f(t,y) = y^2$ is continuous everywhere.  But the solution is not. 
 
-2. In our first homework we solved the IVP $xy' = \sqrt{1-y^2}$, with $y(1) = 0$.  The solution was $y = \sin(\ln(t))$. But if you graph the solution with the slope field, there is something wrong! [SageCell Plot](https://sagecell.sagemath.org/?z=eJxFjssKwyAQRfeB_IOIoFKTJunaLyltMI15wBBTtSX-fcd20VndezkwJyqSiCZv4wWPmLksi0nkJHEOTx9FW6V7J8-xLHZwsQ_gdttPq4VRTIpktlGkbSTmpEjV1h3WusO-WDOaYw1gtzku-vJb_q0sCJ45bOjBDBaCvnIWGVecJREl4zdFHg6cRxU6wMtSecoOIqybADcjIxUKNCq__5KaejtS-QGNMD12&lang=sage&interacts=eJyLjgUAARUAuQ==) 
 
 
 
@@ -214,7 +213,7 @@ This theorem guarantees that in most circumstances, we are guarantee to have sol
 
 If the partial derivative $f_y$ is not continuous, then we might not get unique solutions.  Here is an example. 
 
-3. Solve the IVP $y' = y^{1/3}$, with $y(0) = 0$ using separation of variables.  Then show that $y(t) = -\tfrac{2}{3} y^{3/2}$ and $y(t) = 0$ are also valid solutions of this IVP. 
+2. Solve the IVP $y' = y^{1/3}$, with $y(0) = 0$ using separation of variables.  Then show that $y(t) = -(\tfrac{2}{3} t)^{3/2}$ and $y(t) = 0$ are also valid solutions of this IVP. 
 
 One very nice consequence of the uniqueness theorem is this important concept:
 
@@ -222,7 +221,9 @@ One very nice consequence of the uniqueness theorem is this important concept:
 **No Crossing Rule.** If $f$ and $f_y$ are both continuous, then solution curves for the differential equation $y' = f(t,y)$ cannot cross. 
 </div>
 
- 
+3. In our first homework we solved the IVP $xy' = \sqrt{1-y^2}$, with $y(1) = 0$.  The solution was $y = \sin(\ln(t))$. But if you graph the solution with the slope field, there is something wrong! [SageCell Plot](https://sagecell.sagemath.org/?z=eJxFjssKwyAQRfeB_IOIoFKTJunaLyltMI15wBBTtSX-fcd20VndezkwJyqSiCZv4wWPmLksi0nkJHEOTx9FW6V7J8-xLHZwsQ_gdttPq4VRTIpktlGkbSTmpEjV1h3WusO-WDOaYw1gtzku-vJb_q0sCJ45bOjBDBaCvnIWGVecJREl4zdFHg6cRxU6wMtSecoOIqybADcjIxUKNCq__5KaejtS-QGNMD12&lang=sage&interacts=eJyLjgUAARUAuQ==) 
+
+This illustrates that a formula for a solution to $y' = f(t,y)$ might not apply after we reach a point where $f_y$ is no longer continuous. 
 
 - - - 
 
@@ -234,12 +235,65 @@ Mon, Sep 8  |  [1.4][1.4] | Analyzing Equations Numerically
 Wed, Sep 10 |  [1.4][1.4] | Analyzing Equations Numerically - con'd
 Fri, Sep 12 |  [1.5][1.5] | First-Order Linear Equations
 
+<!--
+### Mon, Sep 8
+
+Many ODEs cannot be solved analytically.  That means there is no formula you can write down using standard functions for the solution.  This is true even when the existence and uniqueness theorems apply.  So there might be a solution that doesn't have a solution you can write down.  But you can still approximate the solution using numerical techniques.  
+
+Today we introduced **Euler's method** which is the simplest method to numerically approximate the solution of a first order differential equation.  
+
+We wrote a program to implement Euler's method in Python to help solve this differential equation which you might recognize as one potential solution to Problem 8 from Homework #2: 
+
+$$\dfrac{dy}{dt} = y \left( 1 - \dfrac{y}{N(t)} \right) \text{ where } N(t) = 8 - 4 \cos (\tfrac{2\pi}{12} t)$$
+
+Here is the [slope field for this differential equation](https://sagecell.sagemath.org/?z=eJxFjk0KgzAQhfeCdxgkkB8iGttFN16hFyhFosZWGBoxaTG374QuOqv3vvctJmpI0MPH7oJHylyWxVVESewCNZzV5IPo1LY2plORxkVkLe9JCVOnJtvEN_RxCOg3Nyyrw1ksGrLaajCdpJw01EZD11J5OjvbYw3oXo_47E8_8m9lAXT2cGFAOzoM_Y2zyLjmLDF-1zB59Dv9UI34dpX8AjMhNfM=&lang=sage&interacts=eJyLjgUAARUAuQ==).
+
+```python
+from math import *
+import matplotlib.pyplot as plt
+
+def EulersMethod(f,a,b,h,y0):
+    # Returns two lists, one of t-values and the other of y-values. 
+    t, y = a, y0
+    ts, ys = [a], [y0]
+    while t < b:
+      y += f(t,y)*h
+      t += h
+      ts.append(t)
+      ys.append(y)
+    return ts, ys
+
+N = lambda t: 8 - 4 * cos(2*pi/12 * t)
+f = lambda t,y: y * (1 - y / N(t))
+
+# h = 1
+ts, ys = EulersMethod(f,0,12,1,4)
+plt.plot(ts,ys)
+# h = 0.1
+ts, ys = EulersMethod(f,0,12,0.1,4)
+plt.plot(ts,ys)
+# h = 0.01
+ts, ys = EulersMethod(f,0,12,0.01,4)
+plt.plot(ts,ys)
+plt.show()
+```
+
+Here's the [output for this code](https://sagecell.sagemath.org/?z=eJyFkTFvwyAQhXdL_g9PymK7xMFRhihqxo7N0DXKgGssLGFjmUsj_n2PxkmrSm0Y4Ph49-6AdnI9ekUGXT-6iVCkyRwxHa0j29XlGGIE5TFaSpM0aXSLl7PVk3_VZFyTtUKJWhgRZL5LE_BY4E3TeRo86OJgO09ewA0argUtP5Q9aw81NCDDjKcpnoT5pMTVhQQC9lC8yJmwTfDMjuokcAzydOUX01kNwjPquQNw6tMebUYi5IW5QYrwe-dLNY56aDLK72l3FmY2fV1lrh0f4MANWNXXjQLtsMUSGxR4dz5bF2O3qta8i4btD50IO-6oQFaxPGCFA9fMo9sChnVVmtwv9-txpajWohIbVvMPlPE3MtYGn9-SZfkonRX_G8jHDvIPiwi8cZcs_wQKxKL_&lang=python&interacts=eJyLjgUAARUAuQ==) and here is a [version with the slope field added](https://sagecell.sagemath.org/?z=eJyFkkFvozAQhe9I_Ien9mKoSwCl1SraHPfYHnqtejDBBCSDXds063_fcULTqqpSDuB5M_PNs01n9YhpHk3AMBptPfI0WVaj8EZpr4amMCGuIByM8mmSJq3s8G9W0roH6Xvdso4L3vCehzLbpAnoucaT9LOdHPxBQw3OOw49SegO_vZNqFk6iKmF70mjl42ZsGQKnCieI2ALQZ9yUQgTHGnP4oXjOZQvJ_3QD0rC4y-axQGo9WaLjnkesrz_EH0UPyNXCGPk1DKfndvOWlg0e9zKMjsewCMZUGJsWgG_wR_cYo0cO-1YnZthVdUURWD3pY6HDTnKwSoqD1jhkWZmkcb-k0OqHKXr93ZomRomZ8ROspJXNa_XGT8r66hU97GRLqN4nYc3aSOAl8Xdyr1az6qb7kjM8zqLan4Kf0jutNJ2e9XQkV8R8Bo9uajS5HzI3y75aKfi62V4_CsY1Qb3QdpbKadPVFn8BqOKCzgr26-w8ndaeQmnrZj2x53GvOv1gWXv0bTZAg==&lang=python&interacts=eJyLjgUAARUAuQ==). 
+
+After demonstrating how to implement Euler's method in code, we talked about some simpler questions that we can answer with pencil & paper. 
+ 
+1. Suppose that we want to solve $\dfrac{dy}{dx} = y - x$ with initial condition $y(0) = 2$.  Make a table showing the first two steps using Euler's method with step size $h = 2$.  
+
+<div class="Theorem">
+**Euler's Method Error.** If we use Euler's method with a step size $h$ to approximate the solution of $y' = f(t,y)$ on an interval $[a,b]$, then
+$$\text{Error} \le \dfrac{e^{L(b-a)} - 1}{L} \left( \dfrac{Mh}{2} + \dfrac{\delta}{h} \right)$$
+where $L = \max \left| \frac{\partial f(t,y)}{\partial y} \right|$, $M = \max |y''(t)|$, and $\delta$ is the smallest floating point number our computer can accurately represent. 
+
+At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\delta}{h}$ term (which comes from computer rounding errors) gets very large, so there are limits to how accurate you can get.
+</div>
 
 
-
-
-
-
+-->
 
 - -  -
 
