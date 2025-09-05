@@ -192,6 +192,38 @@ You can use Desmos to help with the previous problem.  Using $x$ to represent $\
 6. Describe the phase line portraits for $y' = y - \lambda \sin y$.  How do they change as $\lambda$ changes?  How many values of $\lambda$ are bifurcation points? 
 -->
 
+### Fri, Sep 5
+
+Today we talked about two important theorems in differential equations. 
+
+<div class="Theorem">
+**Existence Theorem.** Suppose that $y' = f(t,y)$ where $f$ is a continuous function in an open rectangle $\{(t,y) :  a < t < b, c < y < d \}$.  For any $(t_0, y_0)$ inside the rectangle, there exists a solution $y(t)$ defined on an open interval around $t_0$ such that $y(t_0) = y_0$.
+</div> 
+
+This theorem guarantees that in most circumstances, we are guarantee to have solutions to differential equations.  But there are things to watch out for.  Solutions might blow up in finite time, so they might not be defined on the whole interval $(a,b)$.  
+
+1. Solve the IVP $y' = y^2$ with initial condition $y(0) = 1$.  Notice that the function $f(t,y) = y^2$ is continuous everywhere.  But the solution is not. 
+
+2. In our first homework we solved the IVP $xy' = \sqrt{1-y^2}$, with $y(1) = 0$.  The solution was $y = \sin(\ln(t))$. But if you graph the solution with the slope field, there is something wrong! [SageCell Plot](https://sagecell.sagemath.org/?z=eJxFjssKwyAQRfeB_IOIoFKTJunaLyltMI15wBBTtSX-fcd20VndezkwJyqSiCZv4wWPmLksi0nkJHEOTx9FW6V7J8-xLHZwsQ_gdttPq4VRTIpktlGkbSTmpEjV1h3WusO-WDOaYw1gtzku-vJb_q0sCJ45bOjBDBaCvnIWGVecJREl4zdFHg6cRxU6wMtSecoOIqybADcjIxUKNCq__5KaejtS-QGNMD12&lang=sage&interacts=eJyLjgUAARUAuQ==) 
+
+
+
+<div class="Theorem">
+**Uniqueness Theorem.** Suppose that $y' = f(t,y)$ where both $f$ and its partial derivative $f_y$ are continuous in an open rectangle $\{(t,y) : a < t < b, c < y < d \}$. Then for any $(t_0,y_0)$, there exists a unique solution $y(t)$ defined on an open interval around $t_0$ such that $y(t_0) = y_0$.
+</div>
+
+If the partial derivative $f_y$ is not continuous, then we might not get unique solutions.  Here is an example. 
+
+3. Solve the IVP $y' = y^{1/3}$, with $y(0) = 0$ using separation of variables.  Then show that $y(t) = -\tfrac{2}{3} y^{3/2}$ and $y(t) = 0$ are also valid solutions of this IVP. 
+
+One very nice consequence of the uniqueness theorem is this important concept:
+
+<div class="Theorem">
+**No Crossing Rule.** If $f$ and $f_y$ are both continuous, then solution curves for the differential equation $y' = f(t,y)$ cannot cross. 
+</div>
+
+ 
+
 - - - 
 
 ### Week 3 Notes
@@ -209,7 +241,7 @@ Fri, Sep 12 |  [1.5][1.5] | First-Order Linear Equations
 
 
 
-- - -
+- -  -
 
 
 ### Week 4 Notes
