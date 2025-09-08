@@ -32,7 +32,7 @@ Week | Topic                      | Notes | Homework
 :---:|:---------------------------|:-----:|:--------:
 1  | Separable differential equations               | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
 2  | Numerical methods for ODEs                     | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
-3  | First order linear equations                   | [Week 03](notes.html#week-3-notes)  |
+3  | First order linear equations                   | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 4  | Systems of differential equations              | [Week 04](notes.html#week-4-notes)  |
 5  | Solving systems numerically & analytically     | [Week 05](notes.html#week-5-notes)  |
 6  | **Midterm 1**, Linear algebra basics           | [Week 06](notes.html#week-6-notes)  |

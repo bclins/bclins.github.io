@@ -169,8 +169,7 @@ Mon, Sep 8  | [4.1.5][4.1.5] | 68-95-99.7 rule
 Wed, Sep 10 | [4.1.4][4.1.4] | Normal distribution computations
 Fri, Sep 12 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
-<!--
-### Mon, Jan 27
+### Mon, Sep 8
 
 We introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 
 

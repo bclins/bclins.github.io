@@ -235,7 +235,6 @@ Mon, Sep 8  |  [1.4][1.4] | Analyzing Equations Numerically
 Wed, Sep 10 |  [1.4][1.4] | Analyzing Equations Numerically - con'd
 Fri, Sep 12 |  [1.5][1.5] | First-Order Linear Equations
 
-<!--
 ### Mon, Sep 8
 
 Many ODEs cannot be solved analytically.  That means there is no formula you can write down using standard functions for the solution.  This is true even when the existence and uniqueness theorems apply.  So there might be a solution that doesn't have a solution you can write down.  But you can still approximate the solution using numerical techniques.  
@@ -293,7 +292,6 @@ At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\de
 </div>
 
 
--->
 
 - -  -
 

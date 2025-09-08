@@ -41,9 +41,45 @@ We started with a 30 minute assessment pre-test that is not for a grade.  After 
 
 ### Week 2 Notes
 
+Today we reviewed **order of operations** and how to solve algebraic equations that don't require factoring.  You might have learned the acronym 
+
+* **PEMDAS** (**P**arenthesis, **E**xponents, **M**ultiplication/**D**ivision, **A**ddition/**S**ubtraction) 
+
+to remember order of operations. Another acronym is 
+
+* **GEMS** (**G**rouping, **E**xponents, **M**ultiplication/Division, Addition/**S**ubtraction).
+
+Algebra notation can be helpful.  The notation for multiplication $2 \cdot 5$ or $(2)(5)$ and division $2/5$ or $\tfrac{2}{5}$ puts numbers close together. Numbers being added or subtracted are more spread out: $2 ~ \pm ~ 5$.  This is deliberate and it can help you remember that numbers being multiplied/divided are more tightly bound together and so those operations come before addition/subtraction.
+
+After reviewing order of operations, we talked about: 
+
+<div class="Theorem">
+**The Most Important Rule of Algebra.** You can do whatever you want to an equation, as long as you do it to both sides!
+</div>
+
+More specifically, you can perform any algebraic operation to the expression on the left side of the equals sign as long as you also do the same operation to the right side expression.  **Caution:** Make sure you perform the operation to everything on both sides!  
+
+* Solve the following expression for $x$: $4 x + 2 - 6y = 0$
+
+
 - - - 
 
 ### Week 3 Notes
+
+<!--
+This week we talked about the difference between factors and terms.  A factor is an expression being multiplied/divided by other factors.  A term is an expression being added or subtracted from other terms.  
+
+When working with terms, keep in mind:
+
+    * Only like terms can be combined.  
+    * If you are subtracting a term, that really means you are adding the negative version of the term.
+
+When mixing terms and factors, remember:
+
+    * Distribute to expand factors into terms. 
+    * You can **factor out** common factors in a sum of terms.  
+    * **Quadratic factoring** is a fancy way to factor quadratic polynomial expressions. 
+-->
 
 - - -
 
