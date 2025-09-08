@@ -239,13 +239,53 @@ Fri, Sep 12 |  [1.5][1.5] | First-Order Linear Equations
 
 Many ODEs cannot be solved analytically.  That means there is no formula you can write down using standard functions for the solution.  This is true even when the existence and uniqueness theorems apply.  So there might be a solution that doesn't have a solution you can write down.  But you can still approximate the solution using numerical techniques.  
 
-Today we introduced **Euler's method** which is the simplest method to numerically approximate the solution of a first order differential equation.  
+Today we introduced **Euler's method** which is the simplest method to numerically approximate the solution of a first order differential equation. We used it to approximate the solution to 
+$$\dfrac{dy}{dt} = \dfrac{y^2}{2} - t \text{ with initial condition } y(-1) = 0.$$ 
+
+```python
+from numpy import *
+import matplotlib.pyplot as plt
+
+def EulersMethod(f,a,b,h,y0):
+    ''' 
+    Approximates the solution of y' = f(t, y) on the interval a < t < b with initial 
+    condition y(a) = y0 and step size h. 
+    Returns two lists, one of t-values and the other of y-values. 
+    '''
+    t, y = a, y0
+    ts, ys = [a], [y0]
+    while t < b:
+        y = y + f(t,y)*h
+        t = t + h
+        ts.append(t)
+        ys.append(y)
+    return ts, ys
+
+f = lambda t,y: y**2 / 2 - t
+
+# h = 1
+ts, ys = EulersMethod(f, -1, 5, 1, 0)
+plt.plot(ts,ys)
+# h = 0.1
+ts, ys = EulersMethod(f, -1, 5, 0.1, 0)
+plt.plot(ts,ys)
+# h = 0.01
+ts, ys = EulersMethod(f, -1, 5, 0.01, 0)
+plt.plot(ts,ys)
+plt.show()
+```
+
+Here's the [output for this code](https://sagecell.sagemath.org/?z=eJyNUrFOwzAQ3SPlH57E0CS4Ia3EUsHAwMjCWnVwiSNbcmMrvlLM13NO0lIhIbBk5_Tu_N47X7rBHXCQpGEO3g2EKs_miFFvHVmzr31MEWSAt5RnedaqDs9Hq4bwoki7tuiEFHuhRWzKTZ6B12KxwBQ9eT-4D8N8KoC0QnD2SMb1cB3iAo_oChKIJRhKedOTGt6lhcQDiPceJ5Ms9oYMwxPtm-tbM9LEQpbMEhvIvkUg5RHMp4Ku59JXRcehZ_GTgzWBgmApleRpyTpH9pVuJm3HxzAamzNnDu5nCpJVVpP8aWaE-WJgbCt3AtvY7Cb8pI1VUwPzo6SVLkfcjk3HstLfGeIMceYaCrX0XvVtQeUVxQWNMzqMHc5O0oQ65rLysG8lG44bxKpa4w5rLDFO8AaaK1Z5djH_Y55YrgTuBfhsWIQHX6efoOD6GMozQVP_g4KL_iBp_sXS_EaTgKDdqSi_ANEKxnU=&lang=python&interacts=eJyLjgUAARUAuQ==) and here is a [version with the slope field added](https://sagecell.sagemath.org/?z=eJyNkrFu3DAMhncDfgciHSw7Osc-9JagGTp07NI1yKCL5ZMAWVIkOhf16UvZTnIogjYGLNM_qY-kqDG4Cew8-QR68i4gNGWxWZNAbxwafWx9yhaICN5gWZTFIEf4MRsZ4k-Jyg1s5IIfueKpq2_LAuipqgpW67v3wb1o4skIqCREZ2bUzoIbIVVwByNDDqkGkrJfW5ThWRgQ8A2Q3iOcNSrSNWqSV-yjs4NeMImJmiipA2EHiCg9RP1bgmq30F8S52Ap-dmB0REjp1Qyp8cd5Zmprrwz53a0hKWwzfPKoH5WI5dK2QR9uk0hXoqk3YsHDvepe1j1s9JGrg1sh5KfvDnB9dJ0qhv17kHyIHkupdgK76UdGNYXiDc1bWpYOtwqyRMaiWXEdBwEFZxuITXNHm5gDztYJvgFFEX0ZfFW_F_zhF3P4cCB1o6S0ODbfAnYGs_p-I0Ld1WQQ1W_4rr2E0AK-jfSBWFP8pLafQrb_Yd7ClLajC0L9kJHT6xJRnUKemBG2-jFo2REO_B-X_N35cD3vP9ab-SnWT_LkAG8aw838Skg66_HhUhnXGe1WX8_cK6lXB3pZl1twKjcmdV_AOZb_WU=&lang=python&interacts=eJyLjgUAARUAuQ==). 
+
+
+<!--
 
 We wrote a program to implement Euler's method in Python to help solve this differential equation which you might recognize as one potential solution to Problem 8 from Homework #2: 
 
 $$\dfrac{dy}{dt} = y \left( 1 - \dfrac{y}{N(t)} \right) \text{ where } N(t) = 8 - 4 \cos (\tfrac{2\pi}{12} t)$$
 
 Here is the [slope field for this differential equation](https://sagecell.sagemath.org/?z=eJxFjk0KgzAQhfeCdxgkkB8iGttFN16hFyhFosZWGBoxaTG374QuOqv3vvctJmpI0MPH7oJHylyWxVVESewCNZzV5IPo1LY2plORxkVkLe9JCVOnJtvEN_RxCOg3Nyyrw1ksGrLaajCdpJw01EZD11J5OjvbYw3oXo_47E8_8m9lAXT2cGFAOzoM_Y2zyLjmLDF-1zB59Dv9UI34dpX8AjMhNfM=&lang=sage&interacts=eJyLjgUAARUAuQ==).
+
 
 ```python
 from math import *
@@ -256,8 +296,8 @@ def EulersMethod(f,a,b,h,y0):
     t, y = a, y0
     ts, ys = [a], [y0]
     while t < b:
-      y += f(t,y)*h
-      t += h
+      y = y + f(t,y)*h
+      t = t + h
       ts.append(t)
       ys.append(y)
     return ts, ys
@@ -278,10 +318,31 @@ plt.show()
 ```
 
 Here's the [output for this code](https://sagecell.sagemath.org/?z=eJyFkTFvwyAQhXdL_g9PymK7xMFRhihqxo7N0DXKgGssLGFjmUsj_n2PxkmrSm0Y4Ph49-6AdnI9ekUGXT-6iVCkyRwxHa0j29XlGGIE5TFaSpM0aXSLl7PVk3_VZFyTtUKJWhgRZL5LE_BY4E3TeRo86OJgO09ewA0argUtP5Q9aw81NCDDjKcpnoT5pMTVhQQC9lC8yJmwTfDMjuokcAzydOUX01kNwjPquQNw6tMebUYi5IW5QYrwe-dLNY56aDLK72l3FmY2fV1lrh0f4MANWNXXjQLtsMUSGxR4dz5bF2O3qta8i4btD50IO-6oQFaxPGCFA9fMo9sChnVVmtwv9-txpajWohIbVvMPlPE3MtYGn9-SZfkonRX_G8jHDvIPiwi8cZcs_wQKxKL_&lang=python&interacts=eJyLjgUAARUAuQ==) and here is a [version with the slope field added](https://sagecell.sagemath.org/?z=eJyFkkFvozAQhe9I_Ien9mKoSwCl1SraHPfYHnqtejDBBCSDXds063_fcULTqqpSDuB5M_PNs01n9YhpHk3AMBptPfI0WVaj8EZpr4amMCGuIByM8mmSJq3s8G9W0roH6Xvdso4L3vCehzLbpAnoucaT9LOdHPxBQw3OOw49SegO_vZNqFk6iKmF70mjl42ZsGQKnCieI2ALQZ9yUQgTHGnP4oXjOZQvJ_3QD0rC4y-axQGo9WaLjnkesrz_EH0UPyNXCGPk1DKfndvOWlg0e9zKMjsewCMZUGJsWgG_wR_cYo0cO-1YnZthVdUURWD3pY6HDTnKwSoqD1jhkWZmkcb-k0OqHKXr93ZomRomZ8ROspJXNa_XGT8r66hU97GRLqN4nYc3aSOAl8Xdyr1az6qb7kjM8zqLan4Kf0jutNJ2e9XQkV8R8Bo9uajS5HzI3y75aKfi62V4_CsY1Qb3QdpbKadPVFn8BqOKCzgr26-w8ndaeQmnrZj2x53GvOv1gWXv0bTZAg==&lang=python&interacts=eJyLjgUAARUAuQ==). 
+-->
 
 After demonstrating how to implement Euler's method in code, we talked about some simpler questions that we can answer with pencil & paper. 
  
-1. Suppose that we want to solve $\dfrac{dy}{dx} = y - x$ with initial condition $y(0) = 2$.  Make a table showing the first two steps using Euler's method with step size $h = 2$.  
+1. Suppose that we want to solve $\dfrac{dy}{dx} = y - x$ with initial condition $y(0) = 2$.  Make a table showing the first three steps using Euler's method with step size $h = 1$.  
+
+Euler's method is only an approximation, so there is a gap between the actual y-value at $t = b$ and the Euler's method approximation.  That gap is the error in Euler's method. There are two sources of error. 
+
+* **Discretization Error** - caused by using a discrete approximation to a continuously changing quantity. 
+* **Rounding Error** - caused by using a computer that can't represent small decimal places accurately.  
+
+As $h$ gets smaller, the discretization error gets smaller, but the round off error gets worse.  
+A worst case upper bound for the error is: 
+$$\text{Error} \le \dfrac{e^{L(b-a)} - 1}{L} \left( \dfrac{Mh}{2} + \dfrac{\delta}{h} \right)$$
+where $L = \max \left| \frac{\partial f(t,y)}{\partial y} \right|$, $M = \max |y''(t)|$, and $\delta$ is the smallest floating point number our computer can accurately represent. 
+Using the standard base-64 floating point numbers, $\delta \approx 10^{-16}$. In practice, Euler's method tends to get more accurate as $h$ gets smaller until around $h \approx 10^{-7}$.  After that point the rounding error gets worse and there is no advantage to shrinking $h$ further. 
+
+<!--
+<div class="Theorem">
+**Euler's Method Error.** If we use Euler's method with a step size $h$ to approximate the solution of $y' = f(t,y)$ on an interval $[a,b]$, then there are constants $C_1$ and $C_2$ depending on the length of the interval $(b-a)$, the partial derivative $f_y$ and the second derivative $y''$  such that 
+$$\text{Error} \le C_1 h + \dfrac{C_2 \delta}{h}$$
+where $\delta$ is the smallest floating point number our computer can accurately represent. ($\delta \approx 10^{-16}$ using standard base-64 floating point numbers).
+
+At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\delta}{h}$ term (which comes from computer rounding errors) gets very large, so there are limits to how accurate you can get.
+</div>
 
 <div class="Theorem">
 **Euler's Method Error.** If we use Euler's method with a step size $h$ to approximate the solution of $y' = f(t,y)$ on an interval $[a,b]$, then
@@ -291,6 +352,7 @@ where $L = \max \left| \frac{\partial f(t,y)}{\partial y} \right|$, $M = \max |y
 At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\delta}{h}$ term (which comes from computer rounding errors) gets very large, so there are limits to how accurate you can get.
 </div>
 
+-->
 
 
 - -  -

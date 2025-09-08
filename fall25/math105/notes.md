@@ -51,6 +51,8 @@ to remember order of operations. Another acronym is
 
 Algebra notation can be helpful.  The notation for multiplication $2 \cdot 5$ or $(2)(5)$ and division $2/5$ or $\tfrac{2}{5}$ puts numbers close together. Numbers being added or subtracted are more spread out: $2 ~ \pm ~ 5$.  This is deliberate and it can help you remember that numbers being multiplied/divided are more tightly bound together and so those operations come before addition/subtraction.
 
+1. Evaluate $\dfrac{1}{14} \left( \dfrac{1 + 2^2 \cdot 3}{7 + 2 \cdot 3} + 1 \right)^2$ (<https://youtu.be/jAVbApE7lJ8>)
+
 After reviewing order of operations, we talked about: 
 
 <div class="Theorem">
@@ -59,7 +61,18 @@ After reviewing order of operations, we talked about:
 
 More specifically, you can perform any algebraic operation to the expression on the left side of the equals sign as long as you also do the same operation to the right side expression.  **Caution:** Make sure you perform the operation to everything on both sides!  
 
-* Solve the following expression for $x$: $4 x + 2 - 6y = 0$
+2. Solve the following expression for $x$: $4 x + 2 - 6y = 0$
+
+3. Solve $6x + 5 = 5x + 7$ (<https://youtu.be/r95Yh7dMVVc>)
+
+We also talked about these two examples. 
+
+4. Simplify $\dfrac{x - 5x^2}{5x}$
+
+5. Explain why $2(a \cdot b) \ne 2a \cdot 2b$
+
+<!-- 3. Solve $2(x+1) + 3(x-4) = 5$  --> 
+
 
 
 - - - 
