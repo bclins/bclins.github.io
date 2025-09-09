@@ -322,7 +322,7 @@ Here's the [output for this code](https://sagecell.sagemath.org/?z=eJyFkTFvwyAQh
 
 After demonstrating how to implement Euler's method in code, we talked about some simpler questions that we can answer with pencil & paper. 
  
-1. Suppose that we want to solve $\dfrac{dy}{dx} = y - x$ with initial condition $y(0) = 2$.  Make a table showing the first three steps using Euler's method with step size $h = 1$.  
+1. Suppose that we want to solve $\dfrac{dy}{dx} = x - y$ with initial condition $y(0) = 2$.  Make a table showing the first three steps using Euler's method with step size $h = 1$.  
 
 Euler's method is only an approximation, so there is a gap between the actual y-value at $t = b$ and the Euler's method approximation.  That gap is the error in Euler's method. There are two sources of error. 
 
