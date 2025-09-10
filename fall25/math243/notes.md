@@ -329,7 +329,7 @@ Euler's method is only an approximation, so there is a gap between the actual y-
 * **Discretization Error** - caused by using a discrete approximation to a continuously changing quantity. 
 * **Rounding Error** - caused by using a computer that can't represent small decimal places accurately.  
 
-As $h$ gets smaller, the discretization error gets smaller, but the round off error gets worse.  
+As $h$ gets smaller, the discretization error gets smaller, but the rounding error gets worse.  
 A worst case upper bound for the error is: 
 $$\text{Error} \le \dfrac{e^{L(b-a)} - 1}{L} \left( \dfrac{Mh}{2} + \dfrac{\delta}{h} \right)$$
 where $L = \max \left| \frac{\partial f(t,y)}{\partial y} \right|$, $M = \max |y''(t)|$, and $\delta$ is the smallest floating point number our computer can accurately represent. 
@@ -354,6 +354,61 @@ At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\de
 
 -->
 
+### Wed, Sep 10
+
+**Runge-Kutta methods** are a family of methods to solve ODEs numerically.  Euler's method is a first order Runge-Kutta method, which means that the discretization error for Euler's method is $O(h^1)$ which means that the error is less than a constant times $h$ to the first power. 
+
+Better Runge-Kutta methods have higher order error bounds.  For example, RK4 is a popular method with fourth order error $O(h^4)$.  Another Runge-Kutta method is the **midpoint method** also known as RK2 which has second order error. 
+
+<div class="Theorem">
+**Midpoint Method (RK2).** Algorithm to approximate the solution of the initial value problem $y'(t) = f(t, y)$ on the interval $[a, b]$ with initial condition $y(a) = y_0$.
+
+1. Choose a step size $h$ and initialize variables $t = a$ and $y = y_0$. 
+2. Repeat the following two steps while $t < b$:
+    a. Update $y = y + f(t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y))$,
+    b. Update $t = t + h$.
+</div>
+
+<center>
+<img src="RungeKutta4.png" width = 500></img>
+</center>
+
+In RK2 the slope used to calculate the next point from a point $P_1$ is the slope at the midpoint between $P_1$ and the Euler's method next step. In RK4, the slope used is a weighted average of the slopes at $P_1$, $P_2$, $P_3$, and $P_4$ shown in the diagram above. Specifically, it is 1/6 of the slopes at $P_1$ and $P_4$ plus 1/3 of the slopes at $P_2$ and $P_3$. 
+
+<!--
+Today, we'll derive the RK2 method, also known as the **midpoint method** which is a second order Runge-Kutta method.  
+
+The idea of 2nd order Runge-Kutta is to look for constants $\alpha, \beta$ such that the solution $y(t)$ for a differential equation $y' = f(t, y)$ satisfies
+
+$$y(t+h) = y(t) + f(t + \alpha h, y(t) + \beta h) h + O(h^3).$$
+
+It's not obvious that you'll be able to find these constants, but it turns out that you can by using Taylor's theorem which says that:  
+
+$$y(t+h) = y(t) + y'(t) h + y''(t) \dfrac{h^2}{2} + O(h^3).$$
+
+The actual formula for the last term is $y'''(\xi) \dfrac{h^3}{6}$ where $t \le \xi \le t+h$, but as long as we assume that the 3rd derivative of the solution is bounded in the interval of interest, it is safe to say that the remainder term is $O(h^3)$.  
+
+You need $f(t + \alpha h, y(t) + \beta h) \approx y'(t) + \tfrac{1}{2} y''(t) h$.  
+
+Here are the ingredients we need:
+
+1. Use the chain rule for multivariable functions to compute the derivative 
+$$y''(t) = \dfrac{d}{dt} f(t, y(t)).$$ 
+
+2. Use Taylor's theorem for multivariable functions to show that 
+$$f(t + \alpha h, y + \beta h) = f(t, y) + \alpha h f_t(t,y) + \beta h f_y(t,y) + O(h^2).$$
+
+Then match the like terms to show that $\alpha = \tfrac{1}{2}$ and $\beta = \tfrac{1}{2}f(t,y)$ works. This gives us the **Midpoint Method** also known as **RK2**.
+
+<div class="Theorem">
+**Midpoint Method (RK2).** Algorithm to approximate the solution of the initial value problem $y'(t) = f(t, y)$ on the interval $[a, b]$ with initial condition $y(a) = y_0$.
+
+1. Choose a step size $h$ and initialize variables $t = a$ and $y = y_0$. 
+2. Repeat the following two steps while $t < b$:
+    a. Update $y = y + f(t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y))$,
+    b. Update $t = t + h$.
+</div>
+-->
 
 - -  -
 

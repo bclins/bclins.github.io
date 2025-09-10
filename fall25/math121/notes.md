@@ -189,24 +189,23 @@ while literally means *"the probability that the outcome X is between 40 and 50"
 
 5. How tall are men in the 80-th percentile? 
 
-<!-- We didn't have time for this example:
-
 6. Men have an foot print length that is approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
     a. $P(\text{Man} > 22 \text{cm})$
     b. $P(\text{Woman} > 22 \text{cm})$
 
-
-### Wed, Jan 29
+### Wed, Sep 10
 
 We continued practicing calculations with the normal distribution.
 
 **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
 
-We also did these examples.
+After we finished that, we talked about **explanatory & response variables**. 
 
-1. Footprints of men are approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
-    a. $P(\text{Man} > 22 \text{cm})$
-    b. $P(\text{Woman} > 22 \text{cm})$
+* An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children. 
+
+* Does the home team have an advantage in a basketball game?  If you wanted to answer this question, what would the variables be, and which would be explanatory and which would be response?  
+
+<!--
 
 ### Fri, Jan 31
 

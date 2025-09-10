@@ -24,7 +24,7 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet.
+* [Project 1](Project1.pdf) is due on **Wednesday, September 17.**
 
 ### Tentative Schedule
 
