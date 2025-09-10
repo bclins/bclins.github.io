@@ -356,6 +356,8 @@ At first, the error decreases as $h$ gets smaller, but eventually the $\frac{\de
 
 ### Wed, Sep 10
 
+Today I announced [Project 1](Project1.pdf) which is due next Wednesday.  I've been posting Python & Sage code examples, but if you would rather use Octave/Matlab, here are some [Octave code examples](octave.html).
+
 **Runge-Kutta methods** are a family of methods to solve ODEs numerically.  Euler's method is a first order Runge-Kutta method, which means that the discretization error for Euler's method is $O(h^1)$ which means that the error is less than a constant times $h$ to the first power. 
 
 Better Runge-Kutta methods have higher order error bounds.  For example, RK4 is a popular method with fourth order error $O(h^4)$.  Another Runge-Kutta method is the **midpoint method** also known as RK2 which has second order error. 
@@ -373,7 +375,22 @@ Better Runge-Kutta methods have higher order error bounds.  For example, RK4 is 
 <img src="RungeKutta4.png" width = 500></img>
 </center>
 
-In RK2 the slope used to calculate the next point from a point $P_1$ is the slope at the midpoint between $P_1$ and the Euler's method next step. In RK4, the slope used is a weighted average of the slopes at $P_1$, $P_2$, $P_3$, and $P_4$ shown in the diagram above. Specifically, it is 1/6 of the slopes at $P_1$ and $P_4$ plus 1/3 of the slopes at $P_2$ and $P_3$. 
+In RK2 the slope used to calculate the next point from a point $P_1$ is the slope at the midpoint between $P_1$ and the Euler's method next step. In RK4, the slope used is a weighted average of the slopes at $P_1$, $P_2$, $P_3$, and $P_4$ shown in the diagram above. Specifically, it is 1/6 of the slopes at $P_1$ and $P_4$ plus 1/3 of the slopes at $P_2$ and $P_3$.  
+
+There are even higher order Runge-Kutta methods, but there is a trade-off between increasing the order and increasing complexity. 
+
+After we talked about Runge-Kutta methods, we introduced the **integrating factors method** for solving first order linear ODEs
+$$y'(t) + f(t) y = g(t).$$
+The key idea is that if $F(t)$ is an antiderivative of $f(t)$, then $e^{F(t)}$ is an **integrating factor** for the ODE.  Since 
+$$\dfrac{d}{dt} \left( e^{F(t)} y(t) \right) = e^{F(t)} y'(t) + e^{F(t)} f(t) y(t)$$
+by the product rule, we can re-write the ODE as:
+$$\dfrac{d}{dt} \left( e^{F(t)} y(t) \right) = e^{F(t)} g(t).$$
+Then just integrate both sides to find the solution.  
+
+1. $\dfrac{dy}{dt} + \dfrac{y}{t} = 3t$
+
+2. $\dfrac{dy}{dx} + 2y = 3$
+
 
 <!--
 Today, we'll derive the RK2 method, also known as the **midpoint method** which is a second order Runge-Kutta method.  
