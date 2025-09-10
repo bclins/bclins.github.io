@@ -199,11 +199,12 @@ We continued practicing calculations with the normal distribution.
 
 **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
 
-After we finished that, we talked about **explanatory & response variables**. 
+After we finished that, we talked about **explanatory & response variables** (see [section 1.2.4 in the book](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.1.2.4)). 
 
-* An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children. 
+* An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children later in life. What are the variables? Which is explanatory and which is response?
 
-* Does the home team have an advantage in a basketball game?  If you wanted to answer this question, what would the variables be, and which would be explanatory and which would be response?  
+* Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
+
 
 <!--
 
