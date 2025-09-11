@@ -206,14 +206,13 @@ After we finished that, we talked about **explanatory & response variables** (se
 * Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
 
 
-<!--
 
-### Fri, Jan 31
+### Fri, Sep 12
 
 We introduced **scatterplots** and **correlation coefficients** with these examples:
 
-* Height vs. Weight <!-- Note to self, height vs. weight is only weakly correlated... it probably should not be the first example.
-* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx) Beers vs. BAC would be a better first example! 
+<!-- * Height vs. Weight <!-- Note to self, height vs. weight is only weakly correlated... it probably should not be the first example. -->
+* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx) 
 * [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
 * [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf)
 * [Guess the correlation](https://www.geogebra.org/m/KE6JfuF9)
@@ -225,11 +224,9 @@ Important concept: correlation does not change if you change the units or apply 
 Another thing to know about the correlation coefficient is that only measures the strength of a linear trend.  The correlation coefficient is not as useful when a scatterplot has a clearly visible nonlinear trend. 
 
 <!--
-
 Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 
 
 We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
-
 -->
 
 - - -
