@@ -924,7 +924,8 @@ well-mixed water from the tank.</li>
 to represent the amount of salt in the tank.</p></li>
 <li><p>Use integrating factors to solve the IVP. (<a
 href="https://youtu.be/b5QWC2DA5l4"
-class="uri">https://youtu.be/b5QWC2DA5l4</a>)</p></li>
+class="uri">https://youtu.be/b5QWC2DA5l4</a>)
+<!-- There is a small error in the video where they say C = -10,000, but actually C = -100,000. --></p></li>
 </ol>
 <p>Sometimes it can be faster to use a guess-and-check method instead of
 integrating factors to solve linear ODEs. Here is an example. Consider
@@ -947,14 +948,32 @@ A + 2B &amp;= 1
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mfrac displaystyle="false"><mn>2</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">B = \tfrac{2}{5}</annotation></semantics></math>
 which means that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>5</mn></mfrac><mo>sin</mo><mi>t</mi><mo>+</mo><mfrac displaystyle="false"><mn>2</mn><mn>5</mn></mfrac><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t</annotation></semantics></math>
-is one solution to the ODE. To get all of the solutions we discussed
-<strong>homogeneous solutions</strong> and <strong>particular
-solutions</strong> for linear differential equations. The
-<strong>general solution</strong> is the sum of any particular solution
-plus all possible homogeneous solutions.</p>
+is one solution to the ODE. To get the general solution, we talked about
+the following theory:</p>
+<div class="Theorem">
+<p>A first order linear differential equation is
+<strong>homogeneous</strong> if it can be put into the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + f(t) y = 0.</annotation></semantics></math>
+The general solution of an <strong>inhomogeneous</strong> first order
+differential equation
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + f(t) y = g(t)</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>C</mi><msub><mi>y</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t) = y_p(t) + C y_h(t)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>p</mi></msub><annotation encoding="application/x-tex">y_p</annotation></semantics></math>
+is any <strong>particular solution</strong> of the inhomogeneous
+equation,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>h</mi></msub><annotation encoding="application/x-tex">y_h</annotation></semantics></math>
+is any (non-zero) <strong>homogeneous solution</strong> to the
+homogeneous equation, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is any constant.</p>
+</div>
 <ol start="3" type="1">
-<li>Use either guess-and-check or integrating factors to solve
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>.</li>
+<li>Use guess-and-check to find a particular solution to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>,
+then find the general solution by solving the corresponding homogeneous
+differential equation.</li>
 </ol>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>

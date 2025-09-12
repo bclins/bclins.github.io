@@ -435,7 +435,7 @@ Today we looked at more examples of linear first order ODEs.
 
 a. Write down an IVP to model this situation using $y$ to represent the amount of salt in the tank. 
 
-b. Use integrating factors to solve the IVP. (<https://youtu.be/b5QWC2DA5l4>)
+b. Use integrating factors to solve the IVP. (<https://youtu.be/b5QWC2DA5l4>) <!-- There is a small error in the video where they say C = -10,000, but actually C = -100,000. -->
 
 Sometimes it can be faster to use a guess-and-check method instead of integrating factors to solve linear ODEs.  Here is an example.  Consider the first order linear ODE:
 $$\dfrac{dy}{dt} + 2y = \cos t.$$
@@ -448,9 +448,20 @@ So we can find a solution to the ODE by solving the system of equations
 2A - B &= 0 \\
 A + 2B &= 1 
 \end{align*}
-The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE.  To get all of the solutions we discussed **homogeneous solutions** and **particular solutions** for linear differential equations.  The **general solution** is the sum of any particular solution plus all possible homogeneous solutions. 
+The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE. To get the general solution, we talked about the following theory: 
 
-3. Use either guess-and-check or integrating factors to solve $y' + 4y = e^{-x}$. 
+<div class="Theorem">
+A first order linear differential equation is **homogeneous** if it can be put into the form
+$$\dfrac{dy}{dt} + f(t) y = 0.$$
+The general solution of an **inhomogeneous** first order differential equation 
+$$\dfrac{dy}{dt} + f(t) y = g(t)$$
+is 
+$$y(t) = y_p(t) + C y_h(t)$$ 
+where $y_p$ is any **particular solution** of the inhomogeneous equation, $y_h$ is any (non-zero) **homogeneous solution** to the homogeneous equation, and $C$ is any constant. 
+</div>
+
+
+3. Use guess-and-check to find a particular solution to $y' + 4y = e^{-x}$, then find the general solution by solving the corresponding homogeneous differential equation. 
 
 
 - -  -
