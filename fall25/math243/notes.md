@@ -438,6 +438,32 @@ a. Write down an IVP to model this situation using $y$ to represent the amount o
 b. Use integrating factors to solve the IVP. (<https://youtu.be/b5QWC2DA5l4>) <!-- There is a small error in the video where they say C = -10,000, but actually C = -100,000. -->
 
 Sometimes it can be faster to use a guess-and-check method instead of integrating factors to solve linear ODEs.  Here is an example.  Consider the first order linear ODE:
+$$\dfrac{dy}{dx} + 4y = e^{-x}.$$
+You might guess that there is a constant $A$ such that $y(t) = Ae^{-x}$ is a solution of this differential equation.  This is true!  
+
+2. Find the constant $A$ by substituting $y = Ae^{-x}$ into the differential equation $y' + 4y = e^{-x}$. 
+
+So $y(t) = \tfrac{1}{3} e^{-x}$ is one particular solution for this ODE.  To get all of the solutions, we need some theory:
+
+
+<div class="Theorem">
+A first order linear differential equation is **homogeneous** if it can be put into the form
+$$\dfrac{dy}{dt} + f(t) y = 0.$$
+Any **inhomogeneous** equation 
+$$\dfrac{dy}{dt} + f(t) y = g(t)$$
+has a general solution $y(t) = y_p(t) + C y_h(t)$ where $C$ is a constant and
+
+* $y_p$ is any **particular solution** of the inhomogeneous equation, 
+* $y_h$ is any (non-zero) **homogeneous solution** to the homogeneous equation.
+</div>
+
+
+3. Solve the homogeneous ODE $y' + 4y = 0$, then find the general solution of $y' + 4y = e^{-x}$ by combining the homogeneous solutions with the particular solution we found above. 
+
+
+<!--
+
+We didn't have time for this next example, so we'll do it next week: 
 $$\dfrac{dy}{dt} + 2y = \cos t.$$
 If you know that waves can be modeled by equations of the form $A \sin t + B \cos t$, then you might guess that the solution $y(t)$ might have this form.  Then 
 $$y'(t) = A \cos t - B \sin t$$  
@@ -448,21 +474,8 @@ So we can find a solution to the ODE by solving the system of equations
 2A - B &= 0 \\
 A + 2B &= 1 
 \end{align*}
-The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE. To get the general solution, we talked about the following theory: 
-
-<div class="Theorem">
-A first order linear differential equation is **homogeneous** if it can be put into the form
-$$\dfrac{dy}{dt} + f(t) y = 0.$$
-The general solution of an **inhomogeneous** first order differential equation 
-$$\dfrac{dy}{dt} + f(t) y = g(t)$$
-is 
-$$y(t) = y_p(t) + C y_h(t)$$ 
-where $y_p$ is any **particular solution** of the inhomogeneous equation, $y_h$ is any (non-zero) **homogeneous solution** to the homogeneous equation, and $C$ is any constant. 
-</div>
-
-
-3. Use guess-and-check to find a particular solution to $y' + 4y = e^{-x}$, then find the general solution by solving the corresponding homogeneous differential equation. 
-
+The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE. 
+-->
 
 - -  -
 
@@ -474,6 +487,60 @@ Day  | Section  | Topic
 Mon, Sep 15 |  [2.1][2.1] | Modeling with Systems            
 Wed, Sep 17 |  [2.2][2.2] | The Geometry of Systems 
 Fri, Sep 19 |  [2.2][2.2] | The Geometry of Systems - con'd
+
+<!--
+### Mon, Sep 15
+
+Consider the inhomogeneous linear ODE: 
+$$\dfrac{dy}{dt} + 2y = \cos t.$$
+If you know that waves can be modeled by equations of the form $A \sin t + B \cos t$, then you might guess that the solution $y(t)$ might have this form.  Then substituting into the equation, we get
+$$\underbrace{A \cos t - B \sin t}_{y'} + \underbrace{2A \sin t + 2B \cos t}_{2y} = \cos t.$$  
+By combining like terms, we get a system of equations
+\begin{align*}
+A + 2B &= 1 \\
+2A - B &= 0. 
+\end{align*}
+The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE. 
+
+1. What is the corresponding homogeneous equation, and what is its solution?
+
+2. What is the general solution to $y' + 2y = \cos t$?
+
+3. Why is the method of integrating factors harder here?
+
+After that, we introduced **systems of differential equations.**  We started with this simple model of a predator-prey system with rabbits $R$ and foxes $F$:
+
+\begin{align*}
+\dfrac{dR}{dt} &= 2R - RF \\
+\dfrac{dF}{dt} &= -5F + RF 
+\end{align*}
+
+4. Find an equilibrium solution where both $dR/dt$ and $dF/dt$ are zero.
+
+A graph of the vector field defined by a system of two differential equations is called a **phase plane**.  Solution curves are parametric functions $R(t)$ and $F(t)$ that follow the vector field in the phase plane.  
+
+<figure>
+<img src = "rabbitsfoxes2.png" width = 600></img>
+<figcaption style="text-align: right">**Figure:** Rabbits & foxes phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python code</a>)</figcaption>
+</figure>
+
+#### Converting a 2nd order equation to a system of equations
+
+According to Hooke's law the force of a spring is 
+$$m \dfrac{d^2 x}{dt^2} = - k x$$
+or equivalently
+$$\dfrac{d^2 x}{dt^2} + \dfrac{k}{m} x = 0.$$
+This is a homogeneous 2nd order linear differential equation.  
+
+We can convert a second order ODE to a first order system of equations by using an extra variable equal to the first derivative $v = x'$.  Then $x'' = v'$, so we get the system:
+
+\begin{align*}
+\dfrac{dv}{dt} + \dfrac{k}{m} x &= 0 \\
+\dfrac{dx}{dt} - v &= 0.
+\end{align*}
+
+5. Convert the 2nd order equation $y'' + y' + 4y = \sin t$ into a 1st order system of equations.
+-->
 
 - - - 
 
