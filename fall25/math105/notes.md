@@ -79,20 +79,36 @@ We also talked about these two examples.
 
 ### Week 3 Notes
 
-<!--
-This week we talked about the difference between factors and terms.  A factor is an expression being multiplied/divided by other factors.  A term is an expression being added or subtracted from other terms.  
+We started by talking about [Homework 1](HW/HW1.pdf). When you multiply & divide fractions, look for opportunities to cancel factors whenever possible:
+
+1. $\dfrac{24x y^2}{35} \div \dfrac{54x^3 y^2}{63 xy}$. (<https://youtu.be/JIpvc0WbUBE?t=255>)
+
+<div class="Theorem">
+#### Factors versus Terms 
+
+* A **factor** is an expression being multiplied/divided by other factors.  
+* A **term** is an expression being added or subtracted from other terms.  
+</div>
 
 When working with terms, keep in mind:
 
-    * Only like terms can be combined.  
-    * If you are subtracting a term, that really means you are adding the negative version of the term.
+* Only like terms can be combined.  
+* The coefficient keeps track of how many like terms have been added together.
+<!-- * If you are subtracting a term, that really means you are adding the negative version of the term. --> 
 
 When mixing terms and factors, remember:
 
-    * Distribute to expand factors into terms. 
-    * You can **factor out** common factors in a sum of terms.  
-    * **Quadratic factoring** is a fancy way to factor quadratic polynomial expressions. 
--->
+* **Distribute** to expand factors into terms. 
+* You can **factor out** common factors in a sum of terms.  
+<!-- * **Quadratic factoring** is a fancy way to factor quadratic polynomial expressions (we'll focus on that later).-->
+
+2. Expand $2x \left(4y + \dfrac{z}{2} + x^2\right)$.
+
+3. Factor out all common factors from $30 x^2 y + 6 x y^2 + 12 x^2 y^3$.
+
+4. Solve $\dfrac{x}{x-1} = 3$. 
+
+5. Simplify $\dfrac{(x+3)(x+2)}{x+2}$. (<https://youtu.be/lBQmy1IMko8>)
 
 - - -
 

@@ -451,10 +451,10 @@ A first order linear differential equation is **homogeneous** if it can be put i
 $$\dfrac{dy}{dt} + f(t) y = 0.$$
 Any **inhomogeneous** equation 
 $$\dfrac{dy}{dt} + f(t) y = g(t)$$
-has a general solution $y(t) = y_p(t) + C y_h(t)$ where $C$ is a constant and
+has a general solution $y(t) = y_p(t) + C y_h(t)$ where
 
-* $y_p$ is any **particular solution** of the inhomogeneous equation, 
-* $y_h$ is any (non-zero) **homogeneous solution** to the homogeneous equation.
+* $y_p$ is any **particular solution** of the inhomogeneous equation, and
+* $C y_h$ is the general solution of the homogeneous equation.
 </div>
 
 
@@ -488,7 +488,6 @@ Mon, Sep 15 |  [2.1][2.1] | Modeling with Systems
 Wed, Sep 17 |  [2.2][2.2] | The Geometry of Systems 
 Fri, Sep 19 |  [2.2][2.2] | The Geometry of Systems - con'd
 
-<!--
 ### Mon, Sep 15
 
 Consider the inhomogeneous linear ODE: 
@@ -521,7 +520,7 @@ A graph of the vector field defined by a system of two differential equations is
 
 <figure>
 <img src = "rabbitsfoxes2.png" width = 600></img>
-<figcaption style="text-align: right">**Figure:** Rabbits & foxes phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python code</a>)</figcaption>
+<figcaption style="text-align: center">**Figure:** Example phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python code</a>)</figcaption>
 </figure>
 
 #### Converting a 2nd order equation to a system of equations
@@ -540,7 +539,6 @@ We can convert a second order ODE to a first order system of equations by using 
 \end{align*}
 
 5. Convert the 2nd order equation $y'' + y' + 4y = \sin t$ into a 1st order system of equations.
--->
 
 - - - 
 

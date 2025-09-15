@@ -241,7 +241,6 @@ Mon, Sep 15  | [8.2][8.2] | Least squares regression introduction
 Wed, Sep 17  | [8.2][8.2] | Least squares regression practice
 Fri, Sep 19  | [1.3][1.3] | Sampling: populations and samples
 
-<!--
 ### Mon, Sep 15
 
 We talked about **least squares regression**.  The least squares regression line has these features:
@@ -278,7 +277,6 @@ We also introduced the following concepts.
 <div class="Theorem">
 **Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
 </div>
--->
 
 <!--
 

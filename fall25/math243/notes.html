@@ -33,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -177,11 +177,11 @@ of a mass
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
 at the end of a spring can be modeled by <strong>Hooke’s Law</strong>
 which says
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>k</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">F = -k x</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo>−</mo><mi>k</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">F = -k x</annotation></semantics></math>
 where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 is the displacement of the spring from its rest position.
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mi>k</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">m\dfrac{d^2 x}{dt^2} = -kx.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mi>k</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">m\dfrac{d^2 x}{dt^2} = -kx.</annotation></semantics></math></p>
 <ol type="a">
 <li>Show that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x = \sin t</annotation></semantics></math>
@@ -198,9 +198,9 @@ if the mass was twice as heavy?<br />
 </li>
 <li>How would the spring equation change if there was also a linear drag
 force
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>b</mi><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">F = -b \frac{dx}{dt}</annotation></semantics></math>?
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo>−</mo><mi>b</mi><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">F = -b \frac{dx}{dt}</annotation></semantics></math>?
 What if there is a non-linear drag force
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mi>−</mi><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F = -b \left(\frac{dx}{dt}\right)^2</annotation></semantics></math>?</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo>−</mo><mi>b</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F = -b \left(\frac{dx}{dt}\right)^2</annotation></semantics></math>?</li>
 </ol></li>
 </ol>
 <p>The last question led to a discussion of <strong>linear</strong>
@@ -219,7 +219,7 @@ decay exponentially if there wasn’t food to eat, but as long as they can
 catch enough rabbits, it will grow. The number of rabbits that are eaten
 by foxes is proportional to the product
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">RF</annotation></semantics></math>.<br />
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>a</mi><mi>R</mi><mo>−</mo><mi>b</mi><mi>R</mi><mi>F</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mi>c</mi><mi>R</mi><mo>+</mo><mi>d</mi><mi>R</mi><mi>F</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} 
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>a</mi><mi>R</mi><mo>−</mo><mi>b</mi><mi>R</mi><mi>F</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo>−</mo><mi>c</mi><mi>R</mi><mo>+</mo><mi>d</mi><mi>R</mi><mi>F</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} 
 \dfrac{dR}{dt} &amp;= a R - b RF \\
 \dfrac{dF}{dt} &amp;= -c R + d RF 
 \end{align*}</annotation></semantics></math></li>
@@ -260,7 +260,7 @@ the following examples.</p>
 <!--1. Solve $\dfrac{dy}{dx} = - \dfrac{x}{y}$. (<https://youtu.be/8Amgakx5aII>)-->
 <ol type="1">
 <li><p>Solve
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dx} = - x^2 y</annotation></semantics></math>.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dx} = - x^2 y</annotation></semantics></math>.</p></li>
 <li><p>Solve
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup><mi>y</mi><mi>′</mi><mo>=</mo><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">xy^2 y&#39; = x+1</annotation></semantics></math>.
 (<a href="https://youtu.be/1_Q4kndQrtk"
@@ -492,7 +492,7 @@ value of a parameter changes.</p>
 <li>Draw a bifurcation diagram for the differential equation
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>=</mo><mi>λ</mi><mi>y</mi><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">y&#39; = \lambda y - y^2</annotation></semantics></math>
 showing the phase lines when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">\lambda = -1, 0,</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">\lambda = -1, 0,</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.</li>
 </ol>
@@ -522,7 +522,7 @@ equations.</p>
 where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
 is a continuous function in an open rectangle
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>a</mi><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>&lt;</mo><mi>y</mi><mo>&lt;</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{(t,y) :  a &lt; t &lt; b, c &lt; y &lt; d \}</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>a</mi><mo>&lt;</mo><mi>t</mi><mo>&lt;</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>&lt;</mo><mi>y</mi><mo>&lt;</mo><mi>d</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{(t,y) : a &lt; t &lt; b, c &lt; y &lt; d \}</annotation></semantics></math>.
 For any
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(t_0, y_0)</annotation></semantics></math>
 inside the rectangle, there exists a solution
@@ -574,7 +574,7 @@ example.</p>
 with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y(0) = 0</annotation></semantics></math>
 using separation of variables. Then show that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="false"><mn>2</mn><mn>3</mn></mfrac><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = -(\tfrac{2}{3} t)^{3/2}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="false"><mn>2</mn><mn>3</mn></mfrac><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = -(\tfrac{2}{3} t)^{3/2}</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y(t) = 0</annotation></semantics></math>
 are also valid solutions of this IVP.</li>
@@ -649,7 +649,7 @@ techniques.</p>
 <p>Today we introduced <strong>Euler’s method</strong> which is the
 simplest method to numerically approximate the solution of a first order
 differential equation. We used it to approximate the solution to
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><msup><mi>y</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo>−</mo><mi>t</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> with initial condition </mtext><mspace width="0.333em"></mspace></mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = \dfrac{y^2}{2} - t \text{ with initial condition } y(-1) = 0.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><msup><mi>y</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo>−</mo><mi>t</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> with initial condition </mtext><mspace width="0.333em"></mspace></mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = \dfrac{y^2}{2} - t \text{ with initial condition } y(-1) = 0.</annotation></semantics></math></p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -763,11 +763,11 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
 is the smallest floating point number our computer can accurately
 represent. Using the standard base-64 floating point numbers,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>≈</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\delta \approx 10^{-16}</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>≈</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\delta \approx 10^{-16}</annotation></semantics></math>.
 In practice, Euler’s method tends to get more accurate as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
 gets smaller until around
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≈</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">h \approx 10^{-7}</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≈</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">h \approx 10^{-7}</annotation></semantics></math>.
 After that point the rounding error gets worse and there is no advantage
 to shrinking
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
@@ -930,22 +930,22 @@ class="uri">https://youtu.be/b5QWC2DA5l4</a>)
 <p>Sometimes it can be faster to use a guess-and-check method instead of
 integrating factors to solve linear ODEs. Here is an example. Consider
 the first order linear ODE:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dx} + 4y = e^{-x}.</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dx} + 4y = e^{-x}.</annotation></semantics></math>
 You might guess that there is a constant
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
 such that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = Ae^{-x}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = Ae^{-x}</annotation></semantics></math>
 is a solution of this differential equation. This is true!</p>
 <ol start="2" type="1">
 <li>Find the constant
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
 by substituting
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y = Ae^{-x}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y = Ae^{-x}</annotation></semantics></math>
 into the differential equation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>.</li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>.</li>
 </ol>
 <p>So
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>3</mn></mfrac><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = \tfrac{1}{3} e^{-x}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>3</mn></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = \tfrac{1}{3} e^{-x}</annotation></semantics></math>
 is one particular solution for this ODE. To get all of the solutions, we
 need some theory:</p>
 <div class="Theorem">
@@ -956,23 +956,20 @@ Any <strong>inhomogeneous</strong> equation
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + f(t) y = g(t)</annotation></semantics></math>
 has a general solution
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>C</mi><msub><mi>y</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t) = y_p(t) + C y_h(t)</annotation></semantics></math>
-where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
-is a constant and</p>
+where</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>p</mi></msub><annotation encoding="application/x-tex">y_p</annotation></semantics></math>
 is any <strong>particular solution</strong> of the inhomogeneous
-equation,</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>h</mi></msub><annotation encoding="application/x-tex">y_h</annotation></semantics></math>
-is any (non-zero) <strong>homogeneous solution</strong> to the
-homogeneous equation.</li>
+equation, and</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>y</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">C y_h</annotation></semantics></math>
+is the general solution of the homogeneous equation.</li>
 </ul>
 </div>
 <ol start="3" type="1">
 <li>Solve the homogeneous ODE
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39; + 4y = 0</annotation></semantics></math>,
 then find the general solution of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39; + 4y = e^{-x}</annotation></semantics></math>
 by combining the homogeneous solutions with the particular solution we
 found above.</li>
 </ol>
@@ -1022,59 +1019,87 @@ href="https://runestone.academy/ns/books/published/odeproject/systems02.html">2.
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Sep 15
-
-Consider the inhomogeneous linear ODE: 
-$$\dfrac{dy}{dt} + 2y = \cos t.$$
-If you know that waves can be modeled by equations of the form $A \sin t + B \cos t$, then you might guess that the solution $y(t)$ might have this form.  Then substituting into the equation, we get
-$$\underbrace{A \cos t - B \sin t}_{y'} + \underbrace{2A \sin t + 2B \cos t}_{2y} = \cos t.$$  
+<h3 id="mon-sep-15">Mon, Sep 15</h3>
+<p>Consider the inhomogeneous linear ODE:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + 2y = \cos t.</annotation></semantics></math>
+If you know that waves can be modeled by equations of the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>sin</mo><mi>t</mi><mo>+</mo><mi>B</mi><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">A \sin t + B \cos t</annotation></semantics></math>,
+then you might guess that the solution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>
+might have this form. Then substituting into the equation, we get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><munder><mrow><mi>A</mi><mo>cos</mo><mi>t</mi><mo>−</mo><mi>B</mi><mo>sin</mo><mi>t</mi></mrow><mo accent="true">⏟</mo></munder><mrow><mi>y</mi><mi>′</mi></mrow></munder><mo>+</mo><munder><munder><mrow><mn>2</mn><mi>A</mi><mo>sin</mo><mi>t</mi><mo>+</mo><mn>2</mn><mi>B</mi><mo>cos</mo><mi>t</mi></mrow><mo accent="true">⏟</mo></munder><mrow><mn>2</mn><mi>y</mi></mrow></munder><mo>=</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\underbrace{A \cos t - B \sin t}_{y&#39;} + \underbrace{2A \sin t + 2B \cos t}_{2y} = \cos t.</annotation></semantics></math><br />
 By combining like terms, we get a system of equations
-\begin{align*}
-A + 2B &= 1 \\
-2A - B &= 0. 
-\end{align*}
-The solution is $A = \tfrac{1}{5}$, $B = \tfrac{2}{5}$ which means that $y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t$ is one solution to the ODE. 
-
-1. What is the corresponding homogeneous equation, and what is its solution?
-
-2. What is the general solution to $y' + 2y = \cos t$?
-
-3. Why is the method of integrating factors harder here?
-
-After that, we introduced **systems of differential equations.**  We started with this simple model of a predator-prey system with rabbits $R$ and foxes $F$:
-
-\begin{align*}
-\dfrac{dR}{dt} &= 2R - RF \\
-\dfrac{dF}{dt} &= -5F + RF 
-\end{align*}
-
-4. Find an equilibrium solution where both $dR/dt$ and $dF/dt$ are zero.
-
-A graph of the vector field defined by a system of two differential equations is called a **phase plane**.  Solution curves are parametric functions $R(t)$ and $F(t)$ that follow the vector field in the phase plane.  
-
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>A</mi><mo>+</mo><mn>2</mn><mi>B</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mn>2</mn><mi>A</mi><mo>−</mo><mi>B</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+A + 2B &amp;= 1 \\
+2A - B &amp;= 0. 
+\end{align*}</annotation></semantics></math> The solution is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">A = \tfrac{1}{5}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mfrac displaystyle="false"><mn>2</mn><mn>5</mn></mfrac></mrow><annotation encoding="application/x-tex">B = \tfrac{2}{5}</annotation></semantics></math>
+which means that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>5</mn></mfrac><mo>sin</mo><mi>t</mi><mo>+</mo><mfrac displaystyle="false"><mn>2</mn><mn>5</mn></mfrac><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">y(t) = \tfrac{1}{5} \sin t + \tfrac{2}{5} \cos t</annotation></semantics></math>
+is one solution to the ODE.</p>
+<ol type="1">
+<li><p>What is the corresponding homogeneous equation, and what is its
+solution?</p></li>
+<li><p>What is the general solution to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">y&#39; + 2y = \cos t</annotation></semantics></math>?</p></li>
+<li><p>Why is the method of integrating factors harder here?</p></li>
+</ol>
+<p>After that, we introduced <strong>systems of differential
+equations.</strong> We started with this simple model of a predator-prey
+system with rabbits
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+and foxes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>2</mn><mi>R</mi><mo>−</mo><mi>R</mi><mi>F</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mo>−</mo><mn>5</mn><mi>F</mi><mo>+</mo><mi>R</mi><mi>F</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+\dfrac{dR}{dt} &amp;= 2R - RF \\
+\dfrac{dF}{dt} &amp;= -5F + RF 
+\end{align*}</annotation></semantics></math></p>
+<ol start="4" type="1">
+<li>Find an equilibrium solution where both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>R</mi><mi>/</mi><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dR/dt</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>F</mi><mi>/</mi><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dF/dt</annotation></semantics></math>
+are zero.</li>
+</ol>
+<p>A graph of the vector field defined by a system of two differential
+equations is called a <strong>phase plane</strong>. Solution curves are
+parametric functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">R(t)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(t)</annotation></semantics></math>
+that follow the vector field in the phase plane.</p>
 <figure>
 <img src = "rabbitsfoxes2.png" width = 600></img>
-<figcaption style="text-align: right">**Figure:** Rabbits & foxes phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python code</a>)</figcaption>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Example phase plane
+(<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python
+code</a>)
+</figcaption>
 </figure>
-
-#### Converting a 2nd order equation to a system of equations
-
-According to Hooke's law the force of a spring is 
-$$m \dfrac{d^2 x}{dt^2} = - k x$$
+<h4
+id="converting-a-2nd-order-equation-to-a-system-of-equations">Converting
+a 2nd order equation to a system of equations</h4>
+<p>According to Hooke’s law the force of a spring is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mi>k</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">m \dfrac{d^2 x}{dt^2} = - k x</annotation></semantics></math>
 or equivalently
-$$\dfrac{d^2 x}{dt^2} + \dfrac{k}{m} x = 0.$$
-This is a homogeneous 2nd order linear differential equation.  
-
-We can convert a second order ODE to a first order system of equations by using an extra variable equal to the first derivative $v = x'$.  Then $x'' = v'$, so we get the system:
-
-\begin{align*}
-\dfrac{dv}{dt} + \dfrac{k}{m} x &= 0 \\
-\dfrac{dx}{dt} - v &= 0.
-\end{align*}
-
-5. Convert the 2nd order equation $y'' + y' + 4y = \sin t$ into a 1st order system of equations.
--->
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>k</mi><mi>m</mi></mfrac><mi>x</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{d^2 x}{dt^2} + \dfrac{k}{m} x = 0.</annotation></semantics></math>
+This is a homogeneous 2nd order linear differential equation.</p>
+<p>We can convert a second order ODE to a first order system of
+equations by using an extra variable equal to the first derivative
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>x</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">v = x&#39;</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>″</mi><mo>=</mo><mi>v</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">x&#39;&#39; = v&#39;</annotation></semantics></math>,
+so we get the system:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>v</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>k</mi><mi>m</mi></mfrac><mi>x</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mi>v</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+\dfrac{dv}{dt} + \dfrac{k}{m} x &amp;= 0 \\
+\dfrac{dx}{dt} - v &amp;= 0.
+\end{align*}</annotation></semantics></math></p>
+<ol start="5" type="1">
+<li>Convert the 2nd order equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mi>y</mi><mi>′</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">y&#39;&#39; + y&#39; + 4y = \sin t</annotation></semantics></math>
+into a 1st order system of equations.</li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>

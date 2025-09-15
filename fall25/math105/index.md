@@ -32,7 +32,7 @@ Day | Topic                      | Notes | Homework
 :------:|:---------------------------|:-----:|:--------:
 Aug 25  | Pre-test, rational expressions                | [Week 01](notes.html#week-1-notes)  | [HW1](HW/HW1.pdf)
 Sep 8   | Algebra rules, factors versus terms           | [Week 02](notes.html#week-2-notes)  | [HW2](HW/HW2.pdf)
-Sep 15  | Solving simple equations                      | [Week 03](notes.html#week-3-notes)  |
+Sep 15  | Solving simple equations                      | [Week 03](notes.html#week-3-notes)  | [HW3](HW/HW3.pdf)
 Sep 22  | Quadratic functions                           | [Week 04](notes.html#week-4-notes)  |
 Sep 29  | Factoring and polynomials                     | [Week 05](notes.html#week-5-notes)  |
 Oct 6   | Solving polynomial equations                  | [Week 06](notes.html#week-6-notes)  |
