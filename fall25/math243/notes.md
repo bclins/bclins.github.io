@@ -13,6 +13,8 @@ header-includes: |
   </style>
 ---
 
+\newcommand{\R}{\mathbb{R}}
+
 ## Math 243 - Fall 2025
 
 <center>
@@ -520,7 +522,7 @@ A graph of the vector field defined by a system of two differential equations is
 
 <figure>
 <img src = "rabbitsfoxes2.png" width = 600></img>
-<figcaption style="text-align: center">**Figure:** Example phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python code</a>)</figcaption>
+<figcaption style="text-align: center">**Figure:** Example phase plane (<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>, <a href="https://sagecell.sagemath.org/?z=eJxNkMFqwzAMhu-BvMN_KU26NEsD3WXsulPZyq5jAzdWE4Nrp7abOX36KU0HM0iyPiTrlxfYd8ITei0MgaI49ZqgDN6bIAZKkzT5jAXGL7zgRL5rnZKZVsb3oqGsKrBhq6u8wH_4xLzO8-epXUZurctVxBqxXI0M5choveUEDzPDfKb6Bd6sOwmtroTQEYRz9sfjaB0aa7zygUyAJtOGDpmQkiSqstogWIjBKgmpBuWVNTiMuJKzeZrseKA_u5DJWH7XPFWOc5w6J503lezKR-z-FLK7p5OqvbYBXtuecFSkJS5emRbnixrIpckcs-mvCn6IjWNVbnNeazFd4Buhyc_7wPN6aRK1OJDOlh_icFDBL1npeEevNtINiKg8gmq78Au5zHxa&lang=octave&interacts=eJyLjgUAARUAuQ==">Octave</a>)</figcaption>
 </figure>
 
 #### Converting a 2nd order equation to a system of equations
@@ -539,6 +541,60 @@ We can convert a second order ODE to a first order system of equations by using 
 \end{align*}
 
 5. Convert the 2nd order equation $y'' + y' + 4y = \sin t$ into a 1st order system of equations.
+
+### Wed, Sep 17
+
+<!--
+A system of differential equations can be written in vector form. If $\mathbf{x} = (x_1, \ldots, x_n)$ is a vector in $\R^n$ and $F = (f_1, \ldots, f_n)$ is a vector-valued function where each component is a function $f_i(t,x_1, \ldots, x_n)$, then the system
+
+\begin{align*} 
+\dfrac{dx_1}{dt} &= f_1(t, x_1, \ldots, x_n) \\
+\dfrac{dx_2}{dt} &= f_2(t, x_1, \ldots, x_n) \\
+ & \vdots \\
+\dfrac{dx_n}{dt} &= f_n(t, x_1, \ldots, x_n) 
+\end{align*}
+
+can be written more concisely as:
+
+$$\dfrac{d\mathbf{x}}{dt} = F(t, \mathbf{x}).$$
+-->
+
+Today we looked at more examples of systems of ODEs.  
+
+Suppose that we have two species that compete for resources and their populations $x$ and $y$ satisfy 
+
+\begin{align*}
+\dfrac{dx}{dt} = x(1-x) - \alpha xy \\
+\dfrac{dy}{dt} = y(1-y) - \alpha xy \\
+\end{align*}
+
+1. Plot the phase plane for this system when $\alpha = 2$ and when $\alpha = \tfrac{1}{2}$ ([Python](https://sagecell.sagemath.org/?z=eJxtjsGKwyAQQO-C_zDkpNZmTY6FfIxpTSqM1arZ1b9v0k2h7PY0j8djZqboHdwWFypYF3zMICjZyekc0Ge0YxvqRqATBMyUUKJhgJ6SaR2o3XjRUCTUExTBumPhcAQtiqiUzH-LuhX1raCEFbmKAZxJ1znaC0N7S0GfDVOya5XsFZf_Fadkfaa9L_bbxG2FnJ6LvtI9ZvbLQvRwgPmNVauU6ricP7WHT-XZo49DM-Jimv1mQT0aZE15ibqL-hLp6n8YfwBQ-2Qo&lang=python&interacts=eJyLjgUAARUAuQ==)). Describe the difference between the equilibrium solutions of the two systems.  
+
+Later in chapter 3 we will learn how to classify different types of equilibrium solutions on the phase plane using linear algebra.  For now, here is a preview of some of the types of equilibria.  
+
+<figure>
+<img src= "https://upload.wikimedia.org/wikipedia/commons/3/3b/Stability_Diagram.png" width = 600></img>
+<figcaption style="text-align:center">**Figure:** Types of equilibria for 2D-systems. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Stability_theory))</figcaption>
+</figure>
+
+A simple model used to understand epidemics is the SIR-model, which stands for Susceptible-Infected-Recovered. The idea is that a disease will spread from people who are infected to people who are still susceptible.  After infected people recover, they are usually immune to the disease, at least for a little while.  In the system below, $S(t)$ is the percent of the population that is still susceptible, $I(t)$ is the percent that are currently infected, and $R(t)$ is the percent of the population that are recovered.  The constants $\alpha$ and $\beta$ are the transmission rate and recovery rate, respectively. 
+
+\begin{align*}
+\dfrac{dS}{dt} &= -\alpha SI \\ 
+\dfrac{dI}{dt} &= \alpha SI - \beta I \\ 
+\dfrac{dR}{dt} &= \beta I
+\end{align*}
+
+2. Under what circumstances is the number of infected people increasing?  
+
+3. If we introduce a vaccine, what effect might that have on the model?  
+
+4. What if the disease is fatal for some people?  How would you change the model to account for that? Hint: You could have a constant $\gamma$ that represents the fatality rate, i.e., the proportion of the infected population that die each day.  
+
+5. If you divide $dI/dt$ by $dS/dt$, you get the differential equation 
+$$\dfrac{dI}{dS} = -1 + \dfrac{\beta}{\alpha} \dfrac{1}{S}.$$
+Solve this differential equation with initial condition $S = 1$ and $I = 0$.   
+
 
 - - - 
 

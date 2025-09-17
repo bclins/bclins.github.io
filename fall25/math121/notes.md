@@ -278,9 +278,8 @@ We also introduced the following concepts.
 **Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
 </div>
 
-<!--
 
-### Wed, Fab 5
+### Wed, Sep 17
 
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
@@ -296,7 +295,7 @@ $$\bar{x} = 28.5 \text{ cm}, ~\bar{y} = 67.75 \text{ in}, ~ s_x = 3.45 \text{ cm
     a. Find the slope of the regression line to predict height ($y$) based on footprint length ($x$). Include the units and briefly explain what it means.  
     b. If a footprint was 30 cm long, how tall would you predict the subject was? 
 
-
+<!--
 ### Fri, Feb 7
 
 We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 
