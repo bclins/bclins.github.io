@@ -1187,6 +1187,58 @@ Solve this differential equation with initial condition
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">I = 0</annotation></semantics></math>.</p></li>
 </ol>
+<p>Here is a <a
+href="https://sagecell.sagemath.org/?z=eJxtUEtuwyAU3CNxhydvAoQ42NlVygG67gkgxh8JAsF2C7cvJG4VtVm9Yd5oZnh9cBauq_UJJutdWIBhtCErF2_cYiZV-1QQyBm8WTDCSMIZWoxUHg1GfR5GWtVJiBzSGxwkiyxhNPxd3Hk4gCpbjEjkiWaN1fM4hKkjZrrOXl40EbypBW8F5f8pilGuUd_W6VOHYsH7u9FxvoWFPDBjLexheMKiFkI0lA-vtPtXyoszLpwrZVZdbZnRSKUNqT5-iLQR74XAKJYP_xau24Y3_CTyany6RL5PzDHqKIGBcTma5mfzMCyHzl1gzOzWYBd0t9vy5tF9EfoNpZl7qA==&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">plot
+showing the solution</a> superimposed on the direction field (for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>S</mi><annotation encoding="application/x-tex">S</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+only).</p>
+<h3 id="fri-sep-19">Fri, Sep 19</h3>
+<p>Today we talked about <strong>decoupled systems</strong> and
+<strong>partially coupled systems.</strong></p>
+<p>A system of equations
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} 
+\dfrac{dx}{dt} &amp;= f(x) \\
+\dfrac{dy}{dt} &amp;= g(y) \\
+\end{align*}</annotation></semantics></math> is called
+<strong>decoupled</strong> since the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-variable
+doesn’t depend on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,
+and the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-variable
+doesn’t depend on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+You can solve the differential equations in a decouple system
+separately.</p>
+<p>A system of equations
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} 
+\dfrac{dx}{dt} &amp;= f(x, y) \\
+\dfrac{dy}{dt} &amp;= g(y) \\
+\end{align*}</annotation></semantics></math> is <strong>partially
+coupled</strong>. You can solve for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>
+first, and then substitute into the first equation to create a single
+variable differential equation for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>.</p>
+<ol type="1">
+<li><p>Solve the system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>x</mi><mi>′</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mi>x</mi><mo>−</mo><mi>y</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>y</mi><mi>′</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mn>3</mn><mi>y</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+x&#39; &amp;= -x - y \\
+y&#39; &amp;= -3y \\
+\end{align*}</annotation></semantics></math></p></li>
+<li><p>Solve the system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>x</mi><mi>′</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mi>y</mi><mi>′</mi></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mi>y</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+x&#39; &amp;= 2x + y^2 \\
+y&#39; &amp;= -y \\
+\end{align*}</annotation></semantics></math> with initial conditions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">x(0) = 3</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y(0) = 2</annotation></semantics></math>.
+(<a href="https://youtu.be/sJ3CuM-QmOk"
+class="uri">https://youtu.be/sJ3CuM-QmOk</a>)</p></li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>

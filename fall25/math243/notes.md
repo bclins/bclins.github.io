@@ -488,7 +488,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 15 |  [2.1][2.1] | Modeling with Systems            
 Wed, Sep 17 |  [2.2][2.2] | The Geometry of Systems 
-Fri, Sep 19 |  [2.2][2.2] | The Geometry of Systems - con'd
+Fri, Sep 19 |  [2.4][2.4] | Solving Systems Analytically
 
 ### Mon, Sep 15
 
@@ -595,6 +595,39 @@ A simple model used to understand epidemics is the SIR-model, which stands for S
 $$\dfrac{dI}{dS} = -1 + \dfrac{\beta}{\alpha} \dfrac{1}{S}.$$
 Solve this differential equation with initial condition $S = 1$ and $I = 0$.   
 
+Here is a [plot showing the solution](https://sagecell.sagemath.org/?z=eJxtUEtuwyAU3CNxhydvAoQ42NlVygG67gkgxh8JAsF2C7cvJG4VtVm9Yd5oZnh9cBauq_UJJutdWIBhtCErF2_cYiZV-1QQyBm8WTDCSMIZWoxUHg1GfR5GWtVJiBzSGxwkiyxhNPxd3Hk4gCpbjEjkiWaN1fM4hKkjZrrOXl40EbypBW8F5f8pilGuUd_W6VOHYsH7u9FxvoWFPDBjLexheMKiFkI0lA-vtPtXyoszLpwrZVZdbZnRSKUNqT5-iLQR74XAKJYP_xau24Y3_CTyany6RL5PzDHqKIGBcTma5mfzMCyHzl1gzOzWYBd0t9vy5tF9EfoNpZl7qA==&lang=python&interacts=eJyLjgUAARUAuQ==) superimposed on the direction field (for $S$ and $I$ only).
+
+### Fri, Sep 19
+
+Today we talked about **decoupled systems** and **partially coupled systems.**
+
+A system of equations 
+\begin{align*} 
+\dfrac{dx}{dt} &= f(x) \\
+\dfrac{dy}{dt} &= g(y) \\
+\end{align*}
+is called **decoupled** since the $x$-variable doesn't depend on $y$, and the $y$-variable doesn't depend on $x$.  You can solve the differential equations in a decouple system separately.  
+
+
+A system of equations 
+\begin{align*} 
+\dfrac{dx}{dt} &= f(x, y) \\
+\dfrac{dy}{dt} &= g(y) \\
+\end{align*}
+is **partially coupled**.  You can solve for $y(t)$ first, and then substitute into the first equation to create a single variable differential equation for $x(t)$.  
+
+1. Solve the system 
+\begin{align*}
+x' &= -x - y \\
+y' &= -3y \\
+\end{align*}
+
+2. Solve the system 
+\begin{align*}
+x' &= 2x + y^2 \\
+y' &= -y \\
+\end{align*}
+with initial conditions $x(0) = 3$ and $y(0) = 2$. (<https://youtu.be/sJ3CuM-QmOk>)
 
 - - - 
 

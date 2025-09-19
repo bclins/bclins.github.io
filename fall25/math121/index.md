@@ -30,7 +30,8 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet.
+* Midterm 1 will be on **Friday, Sep 26.**
+* Midterm 1 materials: [review problems](midterm1review.pdf)
 
 ### Tentative Schedule
 

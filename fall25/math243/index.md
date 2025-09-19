@@ -18,7 +18,7 @@ header-includes: |
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
 * **Office Hours:** See my [weekly schedule](https://bclins.github.io/index.html#weekly-schedule), and by appointment
 * **Office Location:** Pauley 301
-* **Free Textbook:** [The Ordinary Differential Equations Project](https://judsonbooks.org/odeproject/odeproject-html/odeproject.html)
+* **Free Textbook:** [The Ordinary Differential Equations Project](https://runestone.academy/ns/books/published/odeproject/odeproject.html)
 * **Course Syllabus:** [syllabus.pdf](syllabus.pdf)
 
 
