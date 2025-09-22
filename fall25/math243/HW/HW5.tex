@@ -26,10 +26,10 @@
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item \hl{insert!}
+\item ~ \\ $\begin{array}{rcl} \dfrac{dx}{dt} & = & -4 x \\ ~ & & \\ \dfrac{dy}{dt} & = & 3x + 2y  \end{array}$
 
 
-\item \hl{insert}
+\item ~ \\ $\begin{array}{rcl} \dfrac{dx}{dt} & = & x y \\ ~ & & \\ \dfrac{dy}{dt} & = & y + 1  \end{array}$
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
@@ -56,56 +56,49 @@
 % Use the classification rule for equilibria to identify the type of equilibrium at (1,5).
 %\vfill
 
-\setcounter{enumCount}{\theenumi}
-\end{enumerate}
-
-\textit{Find all equilibrium solutions for the following systems of equations.}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\theenumCount}
-\item ~ \\ $\begin{array}{c} \dfrac{dx}{dt} = x - 2y + 4 \\ ~ \\ \dfrac{dy}{dt} = 2x + y - 7 \end{array}$.
-
-
-\item ~ \\ $\begin{array}{c} \dfrac{dR}{dt} = 5R - 0.5 RF \\ ~ \\ \dfrac{dF}{dt} = -4F + 0.1RF \end{array}$.
-
-\setcounter{enumCount}{\theenumi}
-\end{enumerate} 
-\end{multicols}
+\item Suppose that $\mathbf{F}(1,2) = (2,3)$.  If you apply Euler's method to the system of differential equations 
+$$\dfrac{d\mathbf{Y}}{dt} = \mathbf{F}(\mathbf{Y})$$
+with initial condition $\mathbf{Y}_0 = (1,2)$,
+then what is the value of $\mathbf{Y}$ after one step with $h = 0.1$? 
 \vfill
-
 
 \newpage
-\begin{enumerate}
-\setcounter{enumi}{\theenumCount}
-\item Consider the differential equation $\dfrac{dv}{dt} + 6v = e^{2t}$.  
-\begin{enumerate}
-\item What is the corresponding homogeneous differential equation? 
+\item Write the following 2nd order differential equation as a system of first order differential equations.  You do not need to solve it.
+$$2y'' - 5ty' + \sin y = 0.$$
 \vfill
-
-\item What is the general solution of the homogeneous differential equation?
-\vfill
-
-\item Find one particular solution for the original equation of the form $v(t) = Ae^{2t}$. Then combine the particular solution and the homogeneous solution to express the general solution.  
-\vfill
-\end{enumerate}
-
-
-
-
-
-\item Consider the differential equation $\dfrac{dy}{dt} + y = 6 \cos x.$
-\begin{enumerate}
-\item Find constants $A$ and $B$ such that $y(t) = A \cos t + B \sin t$ is a solution to this ODE.
-\vfill
-
-
-\item Find the general solution of $\dfrac{dy}{dt} + y = 6 \cos x$. 
-\vfill
-\end{enumerate}
+% v = y' 
+% v' = 5tv - \sin y
+%\item The motion of a pendulum obeys the differential equation $\dfrac{d^2 \theta}{dt^2} = - \dfrac{g}{L} \sin \theta.$ 
+%Convert this second order equation into a system of two first order equations. 
+%\vfill
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate}
 
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item The \textbf{Van der Pol equation} is 
+$$\dfrac{d^2 x}{dt} - (1-x^2) \dfrac{dx}{dt} + x = 0.$$
+We can study this equation numerically by converting to the system of equations
+\begin{align*}
+\dfrac{dx}{dt} &= v \\ 
+\dfrac{dv}{dt} &= (1-x^2)v - x.
+\end{align*}
+Use Euler's method to approximate the solution of this equation with initial condition $(x_0,v_0) = (1,1)$, and a step size of $h = 0.01$ after $N = 1{,}000$ steps.  What do you get for $x(10)$ and $v(10)$?  
+\vfill
+
+
+
+
+\item Use Euler's method with $h = 0.1$ and $N = 50$ steps to approximate the values of $x(5)$ and $y(5)$ if $(x_0, y_0) = (0,2)$ and \hl{Get an example!}
+\begin{align*}
+\dfrac{dx}{dt} &= ? \\ 
+\dfrac{dy}{dt} &= ?
+\end{align*}
+\vfill
+
+\end{enumerate}
 
 \end{document}

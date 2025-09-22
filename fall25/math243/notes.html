@@ -1014,8 +1014,8 @@ href="https://runestone.academy/ns/books/published/odeproject/systems02.html">2.
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 19</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/systems02.html">2.2</a></td>
-<td style="text-align: left;">The Geometry of Systems - con’d</td>
+href="https://runestone.academy/ns/books/published/odeproject/systems04.html">2.4</a></td>
+<td style="text-align: left;">Solving Systems Analytically</td>
 </tr>
 </tbody>
 </table>
@@ -1239,6 +1239,11 @@ and
 (<a href="https://youtu.be/sJ3CuM-QmOk"
 class="uri">https://youtu.be/sJ3CuM-QmOk</a>)</p></li>
 </ol>
+<p>Here is a <a
+href="https://www.desmos.com/calculator/j9usdeagpv">Desmos graph</a>
+showing the solutions to the last problem as different parametric
+curves.</p>
+<!-- Another partially couple example we didn't have time for is: x'' + 2x' = 0. -->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
@@ -1275,6 +1280,48 @@ href="https://runestone.academy/ns/books/published/odeproject/systems04.html">2.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-sep-22">Mon, Sep 22</h3>
+<p>Today we introduced Euler’s method for systems of differential
+equations equations.</p>
+<ol type="1">
+<li>We started by implementing Euler’s method for the system of rabbits
+and foxes:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>2</mn><mi>R</mi><mo>−</mo><mi>R</mi><mi>F</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mi>−</mi><mn>5</mn><mi>F</mi><mo>+</mo><mi>R</mi><mi>F</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+\dfrac{dR}{dt} &amp;= 2R - RF \\
+\dfrac{dF}{dt} &amp;= -5F + RF 
+\end{align*}</annotation></semantics></math></li>
+</ol>
+We started with an initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>R</mi><mn>0</mn></msub><mo>,</mo><msub><mi>F</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(R_0, F_0) = (2,1)</annotation></semantics></math>.<br />
+
+<figure>
+<img src = "rabbitsfoxes3.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Two-dimensional Euler’s method example
+(<a href="https://sagecell.sagemath.org/?z=eJxtUj2PnDAQ7VfiP4y2WcM5nJdom5O2y6VLk_Z0hVkbsGRszjYXnF-fMR8bdFoaHm_em_Hz0Djbgxn7IYLqB-sCFNlhRT0Pg7ZBq7ocYkLAPQw6ZIfsIGQDr6OWzv-SobOi-kEaCi2FjoKhMDEKkeUv2QHwOZ1OC5gdJw_97IHGOhDTswhwhYZMaMmBGwEiLly7cOVi7kB5CJ0EH-QAXv2VC282HmPU0oFtZoVfqhObW0Z8OTnLlFFBcQ03awQia_yXU6ahOH3JsFIesUfybWLvFN4ie18KKYLCluC4aSUxW-R9H3iCrljzJSp9rtF2Yl_yYZBGkGnHxju7aZ0MozPrgf4L004aHKZ5Xws-j36BqmTFBN9gKmJ2aL9WkcXaBTUxue8RH66VlYydKVwYw1upKJzz5MEQuLIr7tN3rVOCaGX8wG-SMHq-0O8sp3uG0YrlaMR_qPwY1ad0qQFt5jbP_sMFsuCiqPCW2h1O89k5p-0j7dMj5c1q667HWo_yuM6cNK-lJsffvK5V8BsdV_qnneSdTP87wTuJfuvkpNiKvrN_SP4PriPkJw==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
+</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>A more realistic model for the rabbits &amp; foxes might be if
+the rabbits growth was constrained by a carrying capacity of 10 thousand
+rabbits (logistic growth), in the absence of foxes. How would this
+change the differential equation above?</p></li>
+<li><p>Now use Euler’s method to investigate the long-run behavior of
+the rabbits &amp; foxes with this new model. What changes?</p></li>
+</ol>
+<p>Now talk about the equation for a pendulum:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>θ</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac displaystyle="true"><mi>g</mi><mi>L</mi></mfrac><mo>sin</mo><mi>θ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{d^2 \theta}{d t^2}  = - \dfrac{g}{L} \sin \theta.</annotation></semantics></math></p>
+<ol start="4" type="1">
+<li>Re-write this 2nd order ODE as a system of 1st order equations.</li>
+</ol>
+<p>Typically in introductory physics, you find an approximate solution
+of this equation by assuming that the angle
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+stays small and so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>θ</mi><mo>≈</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">\sin \theta \approx \theta</annotation></semantics></math>.
+But we can use Euler’s method instead to generate solutions numerically
+(<a
+href="https://sagecell.sagemath.org/?z=eJyVU8Fu3CAUvFvyPzztZbFDvOyqySHSHiq1x35BlANrsI2EgQBOTb--gO1kle4htQ8eD_Nm3jO4s3oENY0mgBiNth7qsljRSL2R2ktxaUxICKgDI31ZlAXjHfycJLfuF_eDZqcfqMPQYxgwKAwzwRBI9VQWEK_9fr-AXLF3MOYa6LQFNh-YhzN0aI4lFVDFgIWF6xeuWYoHEA78wMF5bsCJP3zh1cbHMS7cgu6ywi2rM8mWIT4szzKhhBdUQqsVi0gr96nLFBrTlxlWykXsIvk8kxcMz4G8LAtpBBEtwVLVc6S2ka994A6Gep0vUel1He1K7BpqDFcMzVdseGc3reV-smpt6EOY9qSLYZKOF0Zz9BOEsug_c_dOqByR7thE_OTnuB9u6K1gSArlDG05un_AD_hEKvwPE0vjGWheJ_HGbTLAXbY5uFfr0YLr-hSn7K8waQghxwr3t7R3t5Stltqedxc58d2aOUt64RLtvqteckD5qzNBlas2RfhQTJJaeONSt8IHQKvy4Hib1WXxvqc3z3Fq44jhMTaDwYjDY6TWkPQroFgd3Nak5ew_PI8km36rv2ibFt2gf6PqLxvdByU=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>).</p>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>

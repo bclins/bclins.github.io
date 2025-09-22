@@ -25,17 +25,15 @@ We started with a 30 minute assessment pre-test that is not for a grade.  After 
 
 1. **Addition.** To add fractions, they need a common denominator (bottom).  Once you have a common denominator, just add the numerators (tops).  We did these examples:
 
-    a. $\dfrac{1}{6} + \dfrac{2}{6}$
-    b. $\dfrac{1}{6} + \dfrac{2}{5}$
+    $$\dfrac{1}{6} + \dfrac{2}{6} \text{ and }\dfrac{1}{6} + \dfrac{2}{5}$$
 
 2. **Multiplication.** I like to say that "fractions play nice with multiplication".  To multiply fractions, just multiply the tops and multiply the bottoms. 
 
-    a. $\dfrac{1}{6} \cdot \dfrac{2}{5}$
+    $$\dfrac{1}{6} \cdot \dfrac{2}{5}$$
 
-3. **Division.** Division is just multiplication by the reciprocal.  You might have learned this as "keep-change-flip" or as "flip-and-multiply". 
+3. **Division.** Division is just multiplication by the reciprocal.  You might have learned this as "keep-change-flip" or as "flip-and-multiply".  We did these examples:
 
-    a. $\dfrac{ ~\dfrac{1}{6}~}{~\dfrac{2}{5}~ }$
-    a. $\dfrac{ ~\dfrac{1}{6}~}{~5~ }$
+    $$\dfrac{ ~\dfrac{1}{6}~}{~\dfrac{2}{5}~ } \text { and } \dfrac{ ~\dfrac{1}{6}~}{~5~ }.$$
 
 - - -
 
@@ -90,16 +88,23 @@ We started by talking about [Homework 1](HW/HW1.pdf). When you multiply & divide
 * A **term** is an expression being added or subtracted from other terms.  
 </div>
 
-When working with terms, keep in mind:
+We reviewed these techniques:
 
-* Only like terms can be combined.  
-* The coefficient keeps track of how many like terms have been added together.
+* **Distributing** 
+$$a (b + c) = ab + ac$$
+
+* **Factoring out** common factors from terms.
+$$ab + ac = a(b+c)$$
+
+* **Canceling common factors** in fractions. 
+$$\frac{5(x+1)}{x+1} = 5$$
+
+* **Collecting like terms**. The coefficient keeps track of how many terms have been added together.
+$$x + 2x + 3x = 6x$$
+
 <!-- * If you are subtracting a term, that really means you are adding the negative version of the term. --> 
 
-When mixing terms and factors, remember:
 
-* **Distribute** to expand factors into terms. 
-* You can **factor out** common factors in a sum of terms.  
 <!-- * **Quadratic factoring** is a fancy way to factor quadratic polynomial expressions (we'll focus on that later).-->
 
 2. Expand $2x \left(4y + \dfrac{z}{2} + x^2\right)$.
@@ -113,6 +118,22 @@ When mixing terms and factors, remember:
 - - -
 
 ### Week 4 Notes
+
+We started by reviewing some of the common mistakes that came up in the last homework.  There were two that are worth mentioning.  
+
+1. If you multiply both sides of an equation by a number, make sure you distribute that number to *every* term! 
+
+2. When you take square roots, there are two answers, a positive one and a negative one. 
+
+We reviewed these techniques (which are opposites of each other).
+
+* **Factoring quadratic polynomials**. 
+
+* **FOIL**-ing (**F**irst-**O**utside-**I**nside-**L**ast).
+
+1. Expand $(3x+2)(5x-7)$. (<https://youtu.be/ZMLFfTX615w>)
+
+2. Solve $s^2 - 2s - 35 = 0$.  (<https://youtu.be/2ZzuZvz33X0>)
 
 - - - 
 

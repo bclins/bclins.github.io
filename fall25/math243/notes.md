@@ -629,6 +629,11 @@ y' &= -y \\
 \end{align*}
 with initial conditions $x(0) = 3$ and $y(0) = 2$. (<https://youtu.be/sJ3CuM-QmOk>)
 
+Here is a [Desmos graph](https://www.desmos.com/calculator/j9usdeagpv) showing the solutions to the last problem as different parametric curves.
+
+
+<!-- Another partially couple example we didn't have time for is: x'' + 2x' = 0. -->
+
 - - - 
 
 ### Week 5 Notes
@@ -638,6 +643,33 @@ Day  | Section  | Topic
 Mon, Sep 22 |  [2.3][2.3] | Numerical Techniques for Systems                     
 Wed, Sep 24 |  [2.4][2.4] | Solving System Analytically   
 Fri, Sep 26 |  [2.4][2.4] | Solving System Analytically - con'd
+
+### Mon, Sep 22
+
+Today we introduced Euler's method for systems of differential equations equations.  
+
+1. We started by implementing Euler's method for the system of rabbits and foxes: 
+\begin{align*}
+\dfrac{dR}{dt} &= 2R - RF \\
+\dfrac{dF}{dt} &= -5F + RF 
+\end{align*}
+
+We started with an initial condition $(R_0, F_0) = (2,1)$.  
+<figure>
+<img src = "rabbitsfoxes3.png" width = 600></img>
+<figcaption style="text-align: center">**Figure:** Two-dimensional Euler's method example (<a href="https://sagecell.sagemath.org/?z=eJxtUj2PnDAQ7VfiP4y2WcM5nJdom5O2y6VLk_Z0hVkbsGRszjYXnF-fMR8bdFoaHm_em_Hz0Djbgxn7IYLqB-sCFNlhRT0Pg7ZBq7ocYkLAPQw6ZIfsIGQDr6OWzv-SobOi-kEaCi2FjoKhMDEKkeUv2QHwOZ1OC5gdJw_97IHGOhDTswhwhYZMaMmBGwEiLly7cOVi7kB5CJ0EH-QAXv2VC282HmPU0oFtZoVfqhObW0Z8OTnLlFFBcQ03awQia_yXU6ahOH3JsFIesUfybWLvFN4ie18KKYLCluC4aSUxW-R9H3iCrljzJSp9rtF2Yl_yYZBGkGnHxju7aZ0MozPrgf4L004aHKZ5Xws-j36BqmTFBN9gKmJ2aL9WkcXaBTUxue8RH66VlYydKVwYw1upKJzz5MEQuLIr7tN3rVOCaGX8wG-SMHq-0O8sp3uG0YrlaMR_qPwY1ad0qQFt5jbP_sMFsuCiqPCW2h1O89k5p-0j7dMj5c1q667HWo_yuM6cNK-lJsffvK5V8BsdV_qnneSdTP87wTuJfuvkpNiKvrN_SP4PriPkJw==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
+</figure>
+
+2. A more realistic model for the rabbits & foxes might be if the rabbits growth was constrained by a carrying capacity of 10 thousand rabbits (logistic growth), in the absence of foxes.  How would this change the differential equation above?  
+
+3. Now use Euler's method to investigate the long-run behavior of the rabbits & foxes with this new model. What changes?  
+
+Now talk about the equation for a pendulum:
+$$\dfrac{d^2 \theta}{d t^2}  = - \dfrac{g}{L} \sin \theta.$$
+
+4. Re-write this 2nd order ODE as a system of 1st order equations.  
+
+Typically in introductory physics, you find an approximate solution of this equation by assuming that the angle $\theta$ stays small and so $\sin \theta \approx \theta$.  But we can use Euler's method instead to generate solutions numerically ([Python](https://sagecell.sagemath.org/?z=eJyVU8Fu3CAUvFvyPzztZbFDvOyqySHSHiq1x35BlANrsI2EgQBOTb--gO1kle4htQ8eD_Nm3jO4s3oENY0mgBiNth7qsljRSL2R2ktxaUxICKgDI31ZlAXjHfycJLfuF_eDZqcfqMPQYxgwKAwzwRBI9VQWEK_9fr-AXLF3MOYa6LQFNh-YhzN0aI4lFVDFgIWF6xeuWYoHEA78wMF5bsCJP3zh1cbHMS7cgu6ywi2rM8mWIT4szzKhhBdUQqsVi0gr96nLFBrTlxlWykXsIvk8kxcMz4G8LAtpBBEtwVLVc6S2ka994A6Gep0vUel1He1K7BpqDFcMzVdseGc3reV-smpt6EOY9qSLYZKOF0Zz9BOEsug_c_dOqByR7thE_OTnuB9u6K1gSArlDG05un_AD_hEKvwPE0vjGWheJ_HGbTLAXbY5uFfr0YLr-hSn7K8waQghxwr3t7R3t5Stltqedxc58d2aOUt64RLtvqteckD5qzNBlas2RfhQTJJaeONSt8IHQKvy4Hib1WXxvqc3z3Fq44jhMTaDwYjDY6TWkPQroFgd3Nak5ew_PI8km36rv2ibFt2gf6PqLxvdByU=&lang=python&interacts=eJyLjgUAARUAuQ==)).
 
 - - - 
  
