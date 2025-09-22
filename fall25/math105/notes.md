@@ -69,6 +69,8 @@ We also talked about these two examples.
 
 5. Explain why $2(a \cdot b) \ne 2a \cdot 2b$
 
+
+
 <!-- 3. Solve $2(x+1) + 3(x-4) = 5$  --> 
 
 
@@ -134,6 +136,14 @@ We reviewed these techniques (which are opposites of each other).
 1. Expand $(3x+2)(5x-7)$. (<https://youtu.be/ZMLFfTX615w>)
 
 2. Solve $s^2 - 2s - 35 = 0$.  (<https://youtu.be/2ZzuZvz33X0>)
+
+We also talked about the **AC-method** and **factoring by grouping**.
+
+3. Factor $4y^2 + 4y - 15$. (<https://youtu.be/u1SAo2GiX8A>)
+
+4. How would you factor $4y^2 + 4y - 24$?  Is it easier or harder than the last problem?
+
+
 
 - - - 
 
