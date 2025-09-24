@@ -1269,13 +1269,13 @@ href="https://runestone.academy/ns/books/published/odeproject/systems03.html">2.
 <tr class="even">
 <td style="text-align: center;">Wed, Sep 24</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/systems04.html">2.4</a></td>
-<td style="text-align: left;">Solving System Analytically</td>
+href="https://mathbooks.unl.edu/DifferentialEquations/firstlook08.html">C1</a></td>
+<td style="text-align: left;">Complex Numbers and Differential
+Equations</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Sep 26</td>
-<td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/systems04.html">2.4</a></td>
+<td style="text-align: center;">[C2][C2]</td>
 <td style="text-align: left;">Solving System Analytically - con’d</td>
 </tr>
 </tbody>
@@ -1322,6 +1322,92 @@ stays small and so
 But we can use Euler’s method instead to generate solutions numerically
 (<a
 href="https://sagecell.sagemath.org/?z=eJyVU8Fu3CAUvFvyPzztZbFDvOyqySHSHiq1x35BlANrsI2EgQBOTb--gO1kle4htQ8eD_Nm3jO4s3oENY0mgBiNth7qsljRSL2R2ktxaUxICKgDI31ZlAXjHfycJLfuF_eDZqcfqMPQYxgwKAwzwRBI9VQWEK_9fr-AXLF3MOYa6LQFNh-YhzN0aI4lFVDFgIWF6xeuWYoHEA78wMF5bsCJP3zh1cbHMS7cgu6ywi2rM8mWIT4szzKhhBdUQqsVi0gr96nLFBrTlxlWykXsIvk8kxcMz4G8LAtpBBEtwVLVc6S2ka994A6Gep0vUel1He1K7BpqDFcMzVdseGc3reV-smpt6EOY9qSLYZKOF0Zz9BOEsug_c_dOqByR7thE_OTnuB9u6K1gSArlDG05un_AD_hEKvwPE0vjGWheJ_HGbTLAXbY5uFfr0YLr-hSn7K8waQghxwr3t7R3t5Stltqedxc58d2aOUt64RLtvqteckD5qzNBlas2RfhQTJJaeONSt8IHQKvy4Hib1WXxvqc3z3Fq44jhMTaDwYjDY6TWkPQroFgd3Nak5ew_PI8km36rv2ibFt2gf6PqLxvdByU=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>).</p>
+<h3 id="wed-sep-24">Wed, Sep 24</h3>
+<p>Today we introduced <strong>complex numbers</strong> and talked about
+how they can arise in differential equations.</p>
+<div class="Theorem">
+<p>A <strong>complex number</strong> is an expression
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">z = a + b i</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a, b</annotation></semantics></math>
+are real numbers and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+has the property that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mn>2</mn></msup><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">i^2 = -1</annotation></semantics></math>.</p>
+<ul>
+<li><p>The <strong>real-part</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Re</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\operatorname{Re}(z) = a</annotation></semantics></math>
+and the <strong>imaginary part</strong> is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Im</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\operatorname{Im}(z) = b</annotation></semantics></math>.</p></li>
+<li><p>The <strong>absolute value</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">|z| = \sqrt{a^2 + b^2 }</annotation></semantics></math>.</p></li>
+<li><p>The <strong>complex conjugate</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>z</mi><mo accent="true">¯</mo></mover><mo>=</mo><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\overline{z} = a - ib</annotation></semantics></math>.</p></li>
+</ul>
+</div>
+<ol type="1">
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>+</mo><msqrt><mn>2</mn></msqrt><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><msqrt><mn>3</mn></msqrt><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(\sqrt{2} + \sqrt{2}i)(1 + \sqrt{3} i)</annotation></semantics></math>.</p></li>
+<li><p>Show that for any complex number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>⋅</mo><mover><mi>z</mi><mo accent="true">¯</mo></mover><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">z \cdot \overline{z} = |z|^2</annotation></semantics></math>.</p></li>
+</ol>
+<div class="Theorem">
+<p><strong>Euler’s Formula.</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><mo>=</mo><mo>cos</mo><mi>t</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">e^{i t } = \cos t + i \sin t</annotation></semantics></math></p>
+</div>
+<p>A <strong>complex-valued function</strong> is a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>i</mi><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z(t) = x(t) + i y(t)</annotation></semantics></math>
+where both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>
+are real-valued functions. You can integrate and differentiate
+complex-valued functions by integrating/differentiating the real and
+imaginary parts.</p>
+<ol start="3" type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>cos</mo><mi>t</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">z(t) = \cos t + i \sin t</annotation></semantics></math>
+is a solution of the differential equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>z</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>i</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\dfrac{dz}{dt} = i z</annotation></semantics></math>.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Polar Form.</strong> Any complex number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+can be expressed as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>r</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z = re^{i \theta}</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>z</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">r = |z|</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+is an angle called the <strong>argument</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>.</p>
+</div>
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Complex_number_illustration_modarg.svg/1920px-Complex_number_illustration_modarg.svg.png" width = 300></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Polar form. (Source:
+<a href="https://en.wikipedia.org/wiki/Complex_number">Wikipedia</a>)
+</center>
+<ol start="4" type="1">
+<li><p>Convert
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mn>2</mn></msqrt><mo>+</mo><msqrt><mn>2</mn></msqrt><mi>i</mi></mrow><annotation encoding="application/x-tex">\sqrt{2} + \sqrt{2}i</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><msqrt><mn>3</mn></msqrt><mi>i</mi></mrow><annotation encoding="application/x-tex">1 + \sqrt{3} i</annotation></semantics></math>
+to polar form, then multiply them by applying the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>α</mi></mrow></msup><msup><mi>e</mi><mrow><mi>i</mi><mi>β</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>+</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{i \alpha} e^{i \beta} = e^{i (\alpha + \beta)}.</annotation></semantics></math></p></li>
+<li><p>Solve the differential equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>′</mi><mo>+</mo><mi>z</mi><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">z&#39; + z = i</annotation></semantics></math>.</p></li>
+<li><p>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{it}</annotation></semantics></math>
+is a solution for the differential equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + y = 0</annotation></semantics></math>.
+Hint: The chain rule applies to complex-valued functions, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><mo>=</mo><mi>i</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\frac{d}{dt} e^{it} = i e^{it}</annotation></semantics></math>.</p></li>
+</ol>
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>

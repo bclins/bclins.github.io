@@ -14,6 +14,8 @@ header-includes: |
 ---
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\on}{\operatorname}
 
 ## Math 243 - Fall 2025
 
@@ -641,8 +643,8 @@ Here is a [Desmos graph](https://www.desmos.com/calculator/j9usdeagpv) showing t
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 22 |  [2.3][2.3] | Numerical Techniques for Systems                     
-Wed, Sep 24 |  [2.4][2.4] | Solving System Analytically   
-Fri, Sep 26 |  [2.4][2.4] | Solving System Analytically - con'd
+Wed, Sep 24 |  [C1][C1] | Complex Numbers and Differential Equations
+Fri, Sep 26 |  [C2][C2] | Solving System Analytically - con'd
 
 ### Mon, Sep 22
 
@@ -670,6 +672,51 @@ $$\dfrac{d^2 \theta}{d t^2}  = - \dfrac{g}{L} \sin \theta.$$
 4. Re-write this 2nd order ODE as a system of 1st order equations.  
 
 Typically in introductory physics, you find an approximate solution of this equation by assuming that the angle $\theta$ stays small and so $\sin \theta \approx \theta$.  But we can use Euler's method instead to generate solutions numerically ([Python](https://sagecell.sagemath.org/?z=eJyVU8Fu3CAUvFvyPzztZbFDvOyqySHSHiq1x35BlANrsI2EgQBOTb--gO1kle4htQ8eD_Nm3jO4s3oENY0mgBiNth7qsljRSL2R2ktxaUxICKgDI31ZlAXjHfycJLfuF_eDZqcfqMPQYxgwKAwzwRBI9VQWEK_9fr-AXLF3MOYa6LQFNh-YhzN0aI4lFVDFgIWF6xeuWYoHEA78wMF5bsCJP3zh1cbHMS7cgu6ywi2rM8mWIT4szzKhhBdUQqsVi0gr96nLFBrTlxlWykXsIvk8kxcMz4G8LAtpBBEtwVLVc6S2ka994A6Gep0vUel1He1K7BpqDFcMzVdseGc3reV-smpt6EOY9qSLYZKOF0Zz9BOEsug_c_dOqByR7thE_OTnuB9u6K1gSArlDG05un_AD_hEKvwPE0vjGWheJ_HGbTLAXbY5uFfr0YLr-hSn7K8waQghxwr3t7R3t5Stltqedxc58d2aOUt64RLtvqteckD5qzNBlas2RfhQTJJaeONSt8IHQKvy4Hib1WXxvqc3z3Fq44jhMTaDwYjDY6TWkPQroFgd3Nak5ew_PI8km36rv2ibFt2gf6PqLxvdByU=&lang=python&interacts=eJyLjgUAARUAuQ==)).
+
+### Wed, Sep 24
+
+Today we introduced **complex numbers** and talked about how they can arise in differential equations.  
+
+<div class="Theorem">
+A **complex number** is an expression $z = a + b i$ where $a, b$ are real numbers and $i$ has the property that $i^2 = -1$.  
+
+* The **real-part** of $z$ is $\on{Re}(z) = a$ and the **imaginary part** is $\on{Im}(z) = b$.  
+
+* The **absolute value** $|z| = \sqrt{a^2 + b^2 }$. 
+
+* The **complex conjugate** of $z$ is $\overline{z} = a - ib$. 
+</div>
+
+1. Calculate $(\sqrt{2} + \sqrt{2}i)(1 + \sqrt{3} i)$. 
+
+2. Show that for any complex number $z \cdot \overline{z} = |z|^2$. 
+
+<div class="Theorem">
+**Euler's Formula.** 
+$$e^{i t } = \cos t + i \sin t$$
+</div>
+
+A **complex-valued function** is a function $z(t) = x(t) + i y(t)$ where both $x(t)$ and $y(t)$ are real-valued functions.  You can integrate and differentiate complex-valued functions by integrating/differentiating the real and imaginary parts.  
+
+3. Show that $z(t) = \cos t + i \sin t$ is a solution of the differential equation $\dfrac{dz}{dt} = i z$.  
+
+<div class="Theorem"> 
+**Polar Form.** Any complex number $z$ can be expressed as $z = re^{i \theta}$, where 
+$r = |z|$ and $\theta$ is an angle called the **argument** of $z$. 
+</div>
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Complex_number_illustration_modarg.svg/1920px-Complex_number_illustration_modarg.svg.png" width = 300></img>
+<figcaption style="text-align: center">**Figure:** Polar form. (Source: <a href="https://en.wikipedia.org/wiki/Complex_number">Wikipedia</a>)
+</center> 
+
+4. Convert  $\sqrt{2} + \sqrt{2}i$ and $1 + \sqrt{3} i$ to polar form, then multiply them by applying the formula 
+$$e^{i \alpha} e^{i \beta} = e^{i (\alpha + \beta)}.$$
+
+5. Solve the differential equation $z' + z = i$. 
+
+6. Show that $e^{it}$ is a solution for the differential equation $y'' + y = 0$. Hint: The chain rule applies to complex-valued functions, so $\frac{d}{dt} e^{it} = i e^{it}$. 
+
 
 - - - 
  
@@ -804,7 +851,7 @@ Mon, Dec 8  |             | Recap & review
 [6.3]:  <https://runestone.academy/ns/books/published/odeproject/laplace03.html>
 [6.4]:  <https://runestone.academy/ns/books/published/odeproject/laplace04.html>
 [6.5]:  <https://runestone.academy/ns/books/published/odeproject/laplace05.html>
-
+[C1]: <https://mathbooks.unl.edu/DifferentialEquations/firstlook08.html>
 
 
 
