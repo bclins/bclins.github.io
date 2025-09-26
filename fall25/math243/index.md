@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* [Project 1](Project1.pdf) is due on **Wednesday, September 17.**
+* Midterm 1 materials: [review problems](midterm1review.pdf)
+<!--* [Project 1](Project1.pdf) is due on **Wednesday, September 17.**-->
 
 ### Tentative Schedule
 

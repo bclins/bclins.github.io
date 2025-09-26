@@ -687,7 +687,7 @@ A **complex number** is an expression $z = a + b i$ where $a, b$ are real number
 * The **complex conjugate** of $z$ is $\overline{z} = a - ib$. 
 </div>
 
-1. Calculate $(\sqrt{2} + \sqrt{2}i)(1 + \sqrt{3} i)$. 
+1. Calculate $(-2 + 2i)(3+2i)$. 
 
 2. Show that for any complex number $z \cdot \overline{z} = |z|^2$. 
 
@@ -717,6 +717,62 @@ $$e^{i \alpha} e^{i \beta} = e^{i (\alpha + \beta)}.$$
 
 6. Show that $e^{it}$ is a solution for the differential equation $y'' + y = 0$. Hint: The chain rule applies to complex-valued functions, so $\frac{d}{dt} e^{it} = i e^{it}$. 
 
+### Fri, Sep 26
+
+Today we talked about homogeneous second order linear differential equations with constant coefficients.  
+
+$$ ay'' + b y' + c = 0.$$
+
+These equations are used to model simple harmonic oscillators where the total force depends on a spring force $-k x$ and a friction or damping force $-b x'$:  
+
+$$m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0.$$
+
+
+1. Show that $e^{\lambda t}$ is a solution of $ay'' + by' + cy$ if and only if $\lambda$ is a root of the polynomial $ax^2 + bx + c$.  
+
+
+<div class="Theorem"> 
+**General Solution of a 2nd Order Homogeneous Linear Differential Equation**.
+
+If the polynomial $ax^2 + bx + c$ has two roots $\lambda_1 \ne \lambda_2$, then the general solution of 
+$$a y'' + by' + c = 0$$
+is the set of all linear combinations (i.e., the span) of the functions $e^{\lambda_1 t}$ and $e^{\lambda_2 t}$.  That is, all functions of the form
+$$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.$$
+</div>
+
+2. Find the general solution to $y'' + 3y' + 2y = 0$.  (<https://youtu.be/Pxc7VIgr5kc?t=241>)
+
+
+3. Find the general solution of $y'' + 2 y' + 2 y = 0$. 
+
+4. Suppose that $y'(0) = 2$ and $y(0) = 2$.  Find the particular solution of $y'' + 2y' + 2y = 0$ that satisfies these initial conditions.  
+
+We did the last problem two ways:
+
+**Hard Way** (Using complex numbers): The general solution is 
+$$y(t) = C_1 e^{(-1 + 2i)t} + C_2 e^{(-1+2i)t}$$
+so 
+$$y'(t) = C_1 (-1 + 2i) e^{(-1 + 2i)t} + C_2 (-1 - 2i)e^{(-1+2i)t}$$
+by the chain rule.  When you plug in $t = 0$, you get a system of equations:
+$$C_1 + C_2 = 2$$
+$$C_1(-1 + 2i) + C_2(-1-2i) = 2$$
+You solve this just like any other system of equations, and you get $C_1 = 1 - i$ and $C_2 = 1 + i$.  
+
+So the particular solution is 
+$$y(t) = (1-i) e^{(-1 +2i) t} + (1+i) e^{(-1 - 2i)t}.$$
+That's not very nice.  
+
+There is an easier way, which is based on the following idea:
+
+<div class="Theorem">
+**Theorem.** If $f(t)$ and $g(t)$ are linearly independent solutions of $ay'' + by' + cy = 0$, then $f$ and $g$ are a basis for the set of all solutions of the differential equation.  In other words, all other solutions have the form
+$$C_1 f(t) + C_2 g(t).$$
+</div>
+
+**Easier Way** (Find a different basis): If the roots are complex numbers $\alpha \pm i \beta$.  Then both $e^{\alpha t} \cos(\beta t)$ and $e^{\alpha t} \sin(\beta t)$ are real-valued solutions.  All other solutions are linear combinations of these two.  So there must be constants $C_1, C_2$ such that 
+$$y(t) = C_1 e^{\alpha t} \cos(\beta t) + e^{\alpha t} \sin(\beta t).$$
+
+5. Find the constants $C_1$ and $C_2$ that satisfy $y(0) = 2$ and $y'(0) = 2$ in the example above. 
 
 - - - 
  
