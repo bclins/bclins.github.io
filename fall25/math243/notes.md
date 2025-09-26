@@ -723,14 +723,31 @@ Today we talked about homogeneous second order linear differential equations wit
 
 $$ ay'' + b y' + c = 0.$$
 
-These equations are used to model simple harmonic oscillators where the total force depends on a spring force $-k x$ and a friction or damping force $-b x'$:  
+These equations are used to model simple harmonic oscillators such as a spring where the total force depends on a spring force $-k x$ and a friction or damping force $-b x'$:  
 
-$$m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0.$$
-
-
-1. Show that $e^{\lambda t}$ is a solution of $ay'' + by' + cy$ if and only if $\lambda$ is a root of the polynomial $ax^2 + bx + c$.  
+$$m \dfrac{d^2 x}{dt^2} = - b \dfrac{dx}{dt} - k x.$$
 
 
+1. Show that $e^{\lambda t}$ is a solution of $ay'' + by' + cy$ if and only if $\lambda$ is a root of the **characteristic polynomial** $ax^2 + bx + c$.  
+
+
+<div class="Theorem"> 
+**General Solution of a 2nd Order Homogeneous Linear Differential Equation**.
+
+**Theorem.** If $f(t)$ and $g(t)$ are linearly independent solutions of 
+$$a y'' + by' + c = 0,$$
+then the general solution is 
+$$y(t) = C_1 f(t) + C_2 g(t).$$
+</div>
+
+Using the language of linear algebra, we can describe the result above several ways:
+
+* $f$ and $g$ are a **basis** for the set of general solutions.
+* $f$ and $g$ **span** the set of all general solutions.
+* Every solution is a **linear combination** of $f$ and $g$. 
+
+
+<!-- 
 <div class="Theorem"> 
 **General Solution of a 2nd Order Homogeneous Linear Differential Equation**.
 
@@ -739,12 +756,14 @@ $$a y'' + by' + c = 0$$
 is the set of all linear combinations (i.e., the span) of the functions $e^{\lambda_1 t}$ and $e^{\lambda_2 t}$.  That is, all functions of the form
 $$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.$$
 </div>
+-->
 
 2. Find the general solution to $y'' + 3y' + 2y = 0$.  (<https://youtu.be/Pxc7VIgr5kc?t=241>)
 
 
-3. Find the general solution of $y'' + 2 y' + 2 y = 0$. 
+3. Find the general solution of $y'' + 2 y' + 2 y = 0$. Hint: Use the quadratic formula. 
 
+<!--
 4. Suppose that $y'(0) = 2$ and $y(0) = 2$.  Find the particular solution of $y'' + 2y' + 2y = 0$ that satisfies these initial conditions.  
 
 We did the last problem two ways:
@@ -764,6 +783,8 @@ That's not very nice.
 
 There is an easier way, which is based on the following idea:
 
+A more general version of the previous result is the following.
+
 <div class="Theorem">
 **Theorem.** If $f(t)$ and $g(t)$ are linearly independent solutions of $ay'' + by' + cy = 0$, then $f$ and $g$ are a basis for the set of all solutions of the differential equation.  In other words, all other solutions have the form
 $$C_1 f(t) + C_2 g(t).$$
@@ -773,6 +794,8 @@ $$C_1 f(t) + C_2 g(t).$$
 $$y(t) = C_1 e^{\alpha t} \cos(\beta t) + e^{\alpha t} \sin(\beta t).$$
 
 5. Find the constants $C_1$ and $C_2$ that satisfy $y(0) = 2$ and $y'(0) = 2$ in the example above. 
+
+-->
 
 - - - 
  

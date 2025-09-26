@@ -1412,12 +1412,12 @@ Hint: The chain rule applies to complex-valued functions, so
 <p>Today we talked about homogeneous second order linear differential
 equations with constant coefficients.</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>y</mi><mi>″</mi><mo>+</mo><mi>b</mi><mi>y</mi><mi>′</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex"> ay&#39;&#39; + b y&#39; + c = 0.</annotation></semantics></math></p>
-<p>These equations are used to model simple harmonic oscillators where
-the total force depends on a spring force
+<p>These equations are used to model simple harmonic oscillators such as
+a spring where the total force depends on a spring force
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>k</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">-k x</annotation></semantics></math>
 and a friction or damping force
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>b</mi><mi>x</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">-b x&#39;</annotation></semantics></math>:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>b</mi><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>k</mi><mi>x</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0.</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mi>b</mi><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mi>k</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">m \dfrac{d^2 x}{dt^2} = - b \dfrac{dx}{dt} - k x.</annotation></semantics></math></p>
 <ol type="1">
 <li>Show that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{\lambda t}</annotation></semantics></math>
@@ -1425,97 +1425,89 @@ is a solution of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>y</mi><mi>″</mi><mo>+</mo><mi>b</mi><mi>y</mi><mi>′</mi><mo>+</mo><mi>c</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">ay&#39;&#39; + by&#39; + cy</annotation></semantics></math>
 if and only if
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
-is a root of the polynomial
+is a root of the <strong>characteristic polynomial</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">ax^2 + bx + c</annotation></semantics></math>.</li>
 </ol>
 <div class="Theorem">
 <p><strong>General Solution of a 2nd Order Homogeneous Linear
 Differential Equation</strong>.</p>
-<p>If the polynomial
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">ax^2 + bx + c</annotation></semantics></math>
-has two roots
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>λ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1 \ne \lambda_2</annotation></semantics></math>,
-then the general solution of
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>y</mi><mi>″</mi><mo>+</mo><mi>b</mi><mi>y</mi><mi>′</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a y&#39;&#39; + by&#39; + c = 0</annotation></semantics></math>
-is the set of all linear combinations (i.e., the span) of the functions
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>1</mn></msub><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{\lambda_1 t}</annotation></semantics></math>
+<p><strong>Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math>
 and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>2</mn></msub><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{\lambda_2 t}</annotation></semantics></math>.
-That is, all functions of the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>1</mn></msub><mi>t</mi></mrow></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>2</mn></msub><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.</annotation></semantics></math></p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(t)</annotation></semantics></math>
+are linearly independent solutions of
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>y</mi><mi>″</mi><mo>+</mo><mi>b</mi><mi>y</mi><mi>′</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">a y&#39;&#39; + by&#39; + c = 0,</annotation></semantics></math>
+then the general solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = C_1 f(t) + C_2 g(t).</annotation></semantics></math></p>
 </div>
+<p>Using the language of linear algebra, we can describe the result
+above several ways:</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+are a <strong>basis</strong> for the set of general solutions.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+<strong>span</strong> the set of all general solutions.</li>
+<li>Every solution is a <strong>linear combination</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.</li>
+</ul>
+<!-- 
+<div class="Theorem"> 
+**General Solution of a 2nd Order Homogeneous Linear Differential Equation**.
+
+If the polynomial $ax^2 + bx + c$ has two roots $\lambda_1 \ne \lambda_2$, then the general solution of 
+$$a y'' + by' + c = 0$$
+is the set of all linear combinations (i.e., the span) of the functions $e^{\lambda_1 t}$ and $e^{\lambda_2 t}$.  That is, all functions of the form
+$$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.$$
+</div>
+-->
 <ol start="2" type="1">
 <li><p>Find the general solution to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>3</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 3y&#39; + 2y = 0</annotation></semantics></math>.
 (<a href="https://youtu.be/Pxc7VIgr5kc?t=241"
 class="uri">https://youtu.be/Pxc7VIgr5kc?t=241</a>)</p></li>
 <li><p>Find the general solution of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 2 y&#39; + 2 y = 0</annotation></semantics></math>.</p></li>
-<li><p>Suppose that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y&#39;(0) = 2</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y(0) = 2</annotation></semantics></math>.
-Find the particular solution of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 2y&#39; + 2y = 0</annotation></semantics></math>
-that satisfies these initial conditions.</p></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 2 y&#39; + 2 y = 0</annotation></semantics></math>.
+Hint: Use the quadratic formula.</p></li>
 </ol>
-<p>We did the last problem two ways:</p>
-<p><strong>Hard Way</strong> (Using complex numbers): The general
-solution is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y(t) = C_1 e^{(-1 + 2i)t} + C_2 e^{(-1+2i)t}</annotation></semantics></math>
-so
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>−</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;(t) = C_1 (-1 + 2i) e^{(-1 + 2i)t} + C_2 (-1 - 2i)e^{(-1+2i)t}</annotation></semantics></math>
-by the chain rule. When you plug in
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t = 0</annotation></semantics></math>,
-you get a system of equations:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">C_1 + C_2 = 2</annotation></semantics></math>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>−</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">C_1(-1 + 2i) + C_2(-1-2i) = 2</annotation></semantics></math>
-You solve this just like any other system of equations, and you get
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">C_1 = 1 - i</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">C_2 = 1 + i</annotation></semantics></math>.</p>
-<p>So the particular solution is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>+</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>−</mo><mn>2</mn><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = (1-i) e^{(-1 +2i) t} + (1+i) e^{(-1 - 2i)t}.</annotation></semantics></math>
-That’s not very nice.</p>
-<p>There is an easier way, which is based on the following idea:</p>
+<!--
+4. Suppose that $y'(0) = 2$ and $y(0) = 2$.  Find the particular solution of $y'' + 2y' + 2y = 0$ that satisfies these initial conditions.  
+
+We did the last problem two ways:
+
+**Hard Way** (Using complex numbers): The general solution is 
+$$y(t) = C_1 e^{(-1 + 2i)t} + C_2 e^{(-1+2i)t}$$
+so 
+$$y'(t) = C_1 (-1 + 2i) e^{(-1 + 2i)t} + C_2 (-1 - 2i)e^{(-1+2i)t}$$
+by the chain rule.  When you plug in $t = 0$, you get a system of equations:
+$$C_1 + C_2 = 2$$
+$$C_1(-1 + 2i) + C_2(-1-2i) = 2$$
+You solve this just like any other system of equations, and you get $C_1 = 1 - i$ and $C_2 = 1 + i$.  
+
+So the particular solution is 
+$$y(t) = (1-i) e^{(-1 +2i) t} + (1+i) e^{(-1 - 2i)t}.$$
+That's not very nice.  
+
+There is an easier way, which is based on the following idea:
+
+A more general version of the previous result is the following.
+
 <div class="Theorem">
-<p><strong>Theorem.</strong> If
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(t)</annotation></semantics></math>
-are linearly independent solutions of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>y</mi><mi>″</mi><mo>+</mo><mi>b</mi><mi>y</mi><mi>′</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ay&#39;&#39; + by&#39; + cy = 0</annotation></semantics></math>,
-then
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
-are a basis for the set of all solutions of the differential equation.
-In other words, all other solutions have the form
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C_1 f(t) + C_2 g(t).</annotation></semantics></math></p>
+**Theorem.** If $f(t)$ and $g(t)$ are linearly independent solutions of $ay'' + by' + cy = 0$, then $f$ and $g$ are a basis for the set of all solutions of the differential equation.  In other words, all other solutions have the form
+$$C_1 f(t) + C_2 g(t).$$
 </div>
-<p><strong>Easier Way</strong> (Find a different basis): If the roots
-are complex numbers
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>±</mo><mi>i</mi><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha \pm i \beta</annotation></semantics></math>.
-Then both
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{\alpha t} \cos(\beta t)</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{\alpha t} \sin(\beta t)</annotation></semantics></math>
-are real-valued solutions. All other solutions are linear combinations
-of these two. So there must be constants
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>,</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">C_1, C_2</annotation></semantics></math>
-such that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = C_1 e^{\alpha t} \cos(\beta t) + e^{\alpha t} \sin(\beta t).</annotation></semantics></math></p>
-<ol start="5" type="1">
-<li>Find the constants
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>1</mn></msub><annotation encoding="application/x-tex">C_1</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>2</mn></msub><annotation encoding="application/x-tex">C_2</annotation></semantics></math>
-that satisfy
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y(0) = 2</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">y&#39;(0) = 2</annotation></semantics></math>
-in the example above.</li>
-</ol>
+
+**Easier Way** (Find a different basis): If the roots are complex numbers $\alpha \pm i \beta$.  Then both $e^{\alpha t} \cos(\beta t)$ and $e^{\alpha t} \sin(\beta t)$ are real-valued solutions.  All other solutions are linear combinations of these two.  So there must be constants $C_1, C_2$ such that 
+$$y(t) = C_1 e^{\alpha t} \cos(\beta t) + e^{\alpha t} \sin(\beta t).$$
+
+5. Find the constants $C_1$ and $C_2$ that satisfy $y(0) = 2$ and $y'(0) = 2$ in the example above. 
+
+-->
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
