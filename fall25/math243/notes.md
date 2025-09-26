@@ -758,6 +758,8 @@ $$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.$$
 </div>
 -->
 
+We applied the theorem above to the following two examples:
+
 2. Find the general solution to $y'' + 3y' + 2y = 0$.  (<https://youtu.be/Pxc7VIgr5kc?t=241>)
 
 
@@ -931,7 +933,7 @@ Mon, Dec 8  |             | Recap & review
 [6.4]:  <https://runestone.academy/ns/books/published/odeproject/laplace04.html>
 [6.5]:  <https://runestone.academy/ns/books/published/odeproject/laplace05.html>
 [C1]: <https://mathbooks.unl.edu/DifferentialEquations/firstlook08.html>
-
+[C2]: <https://mathbooks.unl.edu/DifferentialEquations/secondorder01.html>
 
 
 
