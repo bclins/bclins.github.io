@@ -360,7 +360,7 @@ Fri, Oct 3  | [3.1][3.1] | Multiplication and addition rules
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
 <center>
-<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:80%"></img>
+<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:60%"></img>
 </center>
 
 The explanatory variable *might* be the cause of a change in the response variable. But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
@@ -412,7 +412,7 @@ Here is one more example we didn't have time for:
 We finished by talking about **anecdotal evidence**. 
 
 <!--
-### Fri, Feb 21
+### Wed, Oct 1
 
 Today we introduced **probability models** which always have two parts:
 
@@ -436,7 +436,7 @@ A subset of the sample space is called an **event**.  We already intuitively kno
     What is $P(\text{Type AB})?$
 
 
-* **Workshop**: [Probability distributions](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
+* **Workshop**: [Probability models](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
 -->
 

@@ -165,8 +165,9 @@ where $m = \dfrac{\text{ rise }}{\text{ run }} = \dfrac{\Delta y}{\Delta x}$ is 
 
 2. Graph the line through $(4,-3)$ with a slope of $-2$. (<https://youtu.be/5mgH-_5UJ54>)
 
-
+<!--
 3. A father is three times as old as his son.  Five years ago, he was four times as old as his son.  How old are they now?
+-->
 
 <div class="Theorem">
 **Quadratic Polynomials**
@@ -182,10 +183,14 @@ $$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 $$x = \dfrac{-b}{2a}.$$
 </div>
 
-4. A local elementary school wants to make a rectangular flower garden along the side of the school
-building. One side of the garden will the be along the wall of the school, but the other three sides will
-be fenced off. If you have 60 feet of fencing material, what is the largest area possible for the flower
-garden?
+3. What are the x-values of the roots and vertex for the parabola $y = x^2 - 5x + 6$?  Use those to help sketch a graph of the parabola. 
+
+4. A local elementary school wants to make a rectangular flower garden along the side of the school building. One side of the garden will the be along the wall of the school, but the other three sides will be fenced off. If you have 60 feet of fencing material, what is the largest area possible for the flower garden?
+
+We didn't have time for this last example, but it there are a couple of problems on [homework 5](HW/HW5.pdf) that use this idea: 
+
+5. Where does the parabola $y = x^2 + 4x + 6$ intersect the line $y= -3x - 4$? (<https://youtu.be/t6n-ShpFFjo>)
+
 
 
 

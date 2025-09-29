@@ -809,6 +809,12 @@ Mon, Sep 29 |             | Review
 Wed, Oct 1  |             | **Midterm 1**
 Fri, Oct 3  |  [3.1][3.1] | Linear Algebra in a Nutshell                        
 
+### Mon, Sep 29
+
+We talked about the [midterm 1 review problems](midterm1review.pdf).  We also looked at this example:
+
+1. Find the general solution of the differential equation $y' + 3y = t + 1$ using the guess & check method. Hint: A good guess for the particular solution is that $y$ is a linear function, so $y(t) = A t + B$ for some constants $A$ and $B$. 
+
 - - - 
 
 ### Week 7 Notes

@@ -30,8 +30,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on **Friday, Sep 26.**
-* Midterm 1 materials: [review problems](midterm1review.pdf), [review solutions](midterm1reviewSolutions.pdf)
+* Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 * Statistics tutoring is available in Pauley 105 on Mondays and Wednesdays 8-10pm. 
 
 ### Tentative Schedule
