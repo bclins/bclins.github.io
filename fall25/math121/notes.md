@@ -355,23 +355,19 @@ Mon, Sep 29 | [1.4][1.4] | Randomized controlled experiments
 Wed, Oct 1  | [3.1][3.1] | Defining probability
 Fri, Oct 3  | [3.1][3.1] | Multiplication and addition rules
 
-<!--
-### Mon, Feb 17
+### Mon, Sep 29
 
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
 <center>
-<img src="correlation_not_causation.png" style="max-width:100%"></img>
+<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:80%"></img>
 </center>
 
-One variable (called the **explanatory variable**) might be the cause of a change in another variable (called the **response variable**). But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
+The explanatory variable *might* be the cause of a change in the response variable. But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
 
-<!--A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.
+A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.
 
 We say that **correlation is not causation** because you can't assume that there is a cause and effect relationship between two variables just because they are strongly associated.  The association might be caused by lurking variables or the causal relationship might go in the opposite direction of what you expect.  
-
-
-
 
 <div class="Theorem">
 **Experiments versus Observational Studies**
@@ -413,8 +409,9 @@ Here is one more example we didn't have time for:
     b. What is the response variable?
     c. How hard would it be to design a randomized controlled experiment to answer the question above? 
     
-<!--We finished by talking about **anecdotal evidence**. 
+We finished by talking about **anecdotal evidence**. 
 
+<!--
 ### Fri, Feb 21
 
 Today we introduced **probability models** which always have two parts:

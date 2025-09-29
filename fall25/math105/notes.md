@@ -149,6 +149,46 @@ We also talked about the **AC-method** and **factoring by grouping**.
 
 ### Week 5 Notes
 
+Today we talked about graphing equations, and we focused on two important special cases: lines and parabolas.  
+
+<div class="Theorem">
+**Equations for Line**
+
+* **Slope-intercept form:** $y = mx + b$ 
+
+* **Point-slope form:** $y - y_0 = m(x- x_0)$
+
+where $m = \dfrac{\text{ rise }}{\text{ run }} = \dfrac{\Delta y}{\Delta x}$ is the **slope**, $b$ is the **y-intercept** and $(x_0, y_0)$ are the coordinates of any point on the line. 
+</div>
+
+1. Find an equation for the line that passes through $(-3,5)$ and $(2,1)$ in slope-intercept and point-slope form. (<https://youtu.be/lzqTD0JWwhY?t=174>)
+
+2. Graph the line through $(4,-3)$ with a slope of $-2$. (<https://youtu.be/5mgH-_5UJ54>)
+
+
+3. A father is three times as old as his son.  Five years ago, he was four times as old as his son.  How old are they now?
+
+<div class="Theorem">
+**Quadratic Polynomials**
+
+The graph of $y = ax^2 + bx +c$ is a parabola.  
+
+* The **roots** are where the graph crosses the $x$-axis.
+
+* If you can't factor, then you can find the roots using the **quadratic formula**
+$$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
+
+* The **vertex** is where the parabola reaches its highest (or lowest) point. It is located at 
+$$x = \dfrac{-b}{2a}.$$
+</div>
+
+4. A local elementary school wants to make a rectangular flower garden along the side of the school
+building. One side of the garden will the be along the wall of the school, but the other three sides will
+be fenced off. If you have 60 feet of fencing material, what is the largest area possible for the flower
+garden?
+
+
+
 - - - 
  
 ### Week 6 Notes
