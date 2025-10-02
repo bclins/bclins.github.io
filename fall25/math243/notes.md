@@ -19,6 +19,13 @@ header-includes: |
 
 ## Math 243 - Fall 2025
 
+
+<ul class="nav">
+  <li>[Class Notes](notes.html)</li>
+  <li>[Schedule & Syllabus](index.html)</li>
+  <li>[Example Code](examples.html)</li>
+</ul>
+
 <center>
 Jump to: [Math 243 homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
@@ -814,6 +821,45 @@ Fri, Oct 3  |  [3.1][3.1] | Linear Algebra in a Nutshell
 We talked about the [midterm 1 review problems](midterm1review.pdf).  We also looked at this example:
 
 1. Find the general solution of the differential equation $y' + 3y = t + 1$ using the guess & check method. Hint: A good guess for the particular solution is that $y$ is a linear function, so $y(t) = A t + B$ for some constants $A$ and $B$. 
+
+<!--
+### Fri, Oct 3
+
+Today we talked about **homogeneous linear systems** of differential equations.  These can be expressed using a matrix.  For example, if $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$, then the system of differential equations
+$$\dfrac{dx_1}{dt} = a x_1 + b x_2 $$
+$$\dfrac{dx_2}{dt} = c x_1 + d x_2 $$
+can be re-written as 
+$$\dfrac{d \mathbf{x}}{dt} = A \mathbf{x} \text{ where } A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
+It turns out that the eigenvectors and eigenvalues of $A$ tell you a lot about the solutions of the system.  
+
+We reviewed the following concepts from linear algebra.  
+
+A set of vectors $v_1, \ldots, v_n$ is **linearly independent** if there is no **linear combination** with constants $c_1, \ldots, c_n$ that aren't all zero such that
+$$c_1 v_1 + c_2 v_2 + \ldots c_n v_n = 0.$$ 
+A set of just two vectors is linearly independent as long as neither is a scalar multiple of the other. 
+
+<div class="Theorem"> 
+**Invertible Matrix Theorem.** For an $n$-by-$n$ matrix $A$, the following are equivalent. 
+
+1. $A$ is **invertible.**
+2. The **determinant** of $A$ is not zero.
+3. The columns of $A$ are **linearly independent.**
+4. The **null space** of $A$ is $\{0\}$. 
+</div>
+
+For 2-by-2 matrices it is easy to calculate the determinant:
+$$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc.$$
+The **characteristic polynomial** of an n-by-n matrix $A$ is 
+$$p_A(\lambda) = \det(A - \lambda I)$$
+where $I = \begin{bmatrix} 1 & & 0 \\ & \ddots & \\ 0 & & 1 \end{bmatrix}$ is the **identity matrix**.
+The roots of the characteristic polynomial are the **eigenvalues** of $A$. If $\lambda$ is an eigenvalue of $A$, then any non-zero vector $x$ such that $Ax = \lambda x$ is called an **eigenvector**.  You can find the eigenvectors by finding the null space of the matrix $A - \lambda I$.   
+
+1. Find the eigenvalues of $\begin{bmatrix} 5 & -6 \\ 3 & -4 \end{bmatrix}$. 
+ 
+2. Show that $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$ is an eigenvector of $\begin{bmatrix} 7 & -10 \\ 5 & -8 \end{bmatrix}$.  What is the corresponding eigenvalue?  
+
+3. Find the eigenvalues of $\begin{bmatrix} 2 & -3 \\ 3 & 2 \end{bmatrix}$. 
+-->
 
 - - - 
 

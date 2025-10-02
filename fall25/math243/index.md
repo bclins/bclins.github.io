@@ -15,6 +15,13 @@ header-includes: |
 
 ## Math 243 - Fall 2025
 
+
+<ul class="nav">
+  <li>[Class Notes](notes.html)</li>
+  <li>[Schedule & Syllabus](index.html)</li>
+  <li>[Example Code](examples.html)</li>
+</ul>
+
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
 * **Office Hours:** See my [weekly schedule](https://bclins.github.io/index.html#weekly-schedule), and by appointment
 * **Office Location:** Pauley 301

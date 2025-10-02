@@ -411,7 +411,6 @@ Here is one more example we didn't have time for:
     
 We finished by talking about **anecdotal evidence**. 
 
-<!--
 ### Wed, Oct 1
 
 Today we introduced **probability models** which always have two parts:
@@ -438,7 +437,6 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 * **Workshop**: [Probability models](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
--->
 
 - - - 
 

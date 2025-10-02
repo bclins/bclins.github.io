@@ -187,7 +187,7 @@ $$x = \dfrac{-b}{2a}.$$
 
 4. A local elementary school wants to make a rectangular flower garden along the side of the school building. One side of the garden will the be along the wall of the school, but the other three sides will be fenced off. If you have 60 feet of fencing material, what is the largest area possible for the flower garden?
 
-We didn't have time for this last example, but it there are a couple of problems on [homework 5](HW/HW5.pdf) that use this idea: 
+We didn't have time for this last example, but there are a couple of problems on [homework 5](HW/HW5.pdf) that use this idea: 
 
 5. Where does the parabola $y = x^2 + 4x + 6$ intersect the line $y= -3x - 4$? (<https://youtu.be/t6n-ShpFFjo>)
 

@@ -101,6 +101,17 @@
 <h1 class="title">Differential Equations Notes</h1>
 </header>
 <h2 id="math-243---fall-2025">Math 243 - Fall 2025</h2>
+<ul class="nav">
+<li>
+<a href="notes.html">Class Notes</a>
+</li>
+<li>
+<a href="index.html">Schedule &amp; Syllabus</a>
+</li>
+<li>
+<a href="examples.html">Example Code</a>
+</li>
+</ul>
 <center>
 Jump to: <a href="index.html">Math 243 homepage</a>, <a
 href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a
@@ -1560,6 +1571,44 @@ for some constants
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>.</li>
 </ol>
+<!--
+### Fri, Oct 3
+
+Today we talked about **homogeneous linear systems** of differential equations.  These can be expressed using a matrix.  For example, if $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$, then the system of differential equations
+$$\dfrac{dx_1}{dt} = a x_1 + b x_2 $$
+$$\dfrac{dx_2}{dt} = c x_1 + d x_2 $$
+can be re-written as 
+$$\dfrac{d \mathbf{x}}{dt} = A \mathbf{x} \text{ where } A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
+It turns out that the eigenvectors and eigenvalues of $A$ tell you a lot about the solutions of the system.  
+
+We reviewed the following concepts from linear algebra.  
+
+A set of vectors $v_1, \ldots, v_n$ is **linearly independent** if there is no **linear combination** with constants $c_1, \ldots, c_n$ that aren't all zero such that
+$$c_1 v_1 + c_2 v_2 + \ldots c_n v_n = 0.$$ 
+A set of just two vectors is linearly independent as long as neither is a scalar multiple of the other. 
+
+<div class="Theorem"> 
+**Invertible Matrix Theorem.** For an $n$-by-$n$ matrix $A$, the following are equivalent. 
+
+1. $A$ is **invertible.**
+2. The **determinant** of $A$ is not zero.
+3. The columns of $A$ are **linearly independent.**
+4. The **null space** of $A$ is $\{0\}$. 
+</div>
+
+For 2-by-2 matrices it is easy to calculate the determinant:
+$$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc.$$
+The **characteristic polynomial** of an n-by-n matrix $A$ is 
+$$p_A(\lambda) = \det(A - \lambda I)$$
+where $I = \begin{bmatrix} 1 & & 0 \\ & \ddots & \\ 0 & & 1 \end{bmatrix}$ is the **identity matrix**.
+The roots of the characteristic polynomial are the **eigenvalues** of $A$. If $\lambda$ is an eigenvalue of $A$, then any non-zero vector $x$ such that $Ax = \lambda x$ is called an **eigenvector**.  You can find the eigenvectors by finding the null space of the matrix $A - \lambda I$.   
+
+1. Find the eigenvalues of $\begin{bmatrix} 5 & -6 \\ 3 & -4 \end{bmatrix}$. 
+ 
+2. Show that $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$ is an eigenvector of $\begin{bmatrix} 7 & -10 \\ 5 & -8 \end{bmatrix}$.  What is the corresponding eigenvalue?  
+
+3. Find the eigenvalues of $\begin{bmatrix} 2 & -3 \\ 3 & 2 \end{bmatrix}$. 
+-->
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Differential Equations Examples</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <style>
+  :root {
+    --header-color: #000; 
+    --link-color: #00e; 
+  }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Differential Equations Examples</h1>
+</header>
+<h2 id="math-243---fall-2025">Math 243 - Fall 2025</h2>
+<ul class="nav">
+<li>
+<a href="notes.html">Class Notes</a>
+</li>
+<li>
+<a href="index.html">Schedule &amp; Syllabus</a>
+</li>
+<li>
+<a href="examples.html">Example Code</a>
+</li>
+</ul>
+<h3 id="slope-fields">Slope Fields</h3>
+<figure>
+<img src = "slopefield.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Slope field example
+(<a href="https://sagecell.sagemath.org/?z=eJxNUk2L2zAQvQv0H94lRKbebBLIKRQWttDL0hZ6LF3Q2uNEIEtZabIb9dd3ZLtLDZY0X2_mPWmFnz5eCIMj32OICWWNz7hj3KPABXzv2L6RVlqt8IUGFwh8lvxr6NjFoNUg6Q-G29JIweYZe6nc4w58nIu-JjcDTzla8Sio0mF3BI_2JseDZJbFeziizN7dVty_uEX5LdZI-XwSJONdyBfbkak47QTRYr9tWnxEyhQp_yLNMshjHC9XJuRKOGvVF8EdTO1QU_raNAbKJrs_ZPoihZi_FXqGy7D-3ZaMnVCJSHRJlCkwepdoEmNWsZnbfYtptF6gJr1sSvE9Tzp0MWSXuVZ6Cic-a_UkrfNrYtPfNs97fEJfZP-YSpbNPZ6Oy8yyLGbt88NHnjktl3jNLpzwenVvlLSa94llK0Dyy77dHJqJlxyQO-spzxOictfq5u0LebPmtZApi1GqwY49mfV_j6Z67U3UYXc6s1b1lkTHvxhpsOQ=&lang=octave&interacts=eJyLjgUAARUAuQ==">Octave</a>,
+<a href="https://sagecell.sagemath.org/?z=eJxtj0tuhDAQRPeWfIfSZGOI5wPSbEaaXW6QExgwwZJ_Y5okvn0MQZlNdl1dqtfVYwoOfnExw7gYEqHmbJ-comgDWdOdYl4nqBnREmecveBNj8Zr0KQxLr4nEzxnI-6wynWDAknkG3JdtzijxRF77t2GWCJG24EzcsZLkFPfJXhsJK6c5W2X991VorlwJkjmqmin5-kjmUFY4-eoei2eCIn2Ukn8OU_Q5lSclfKnx2I-dRJrvYI-z49EonkdtwOlbAE09a_6z-uDDel-6OyiD9X60Iqcp_Alqh_4SWLG&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>,
+<a href="https://sagecell.sagemath.org/?z=eJxFjsEKgzAQRO-C_7BIIAlEWi0e8yWllVjXKiyNmG0xf9-VHjqnN485DDvI4OETNqNZWNuymMxBVnS-t6cWauCyWClynyiu2E8L0mgmB8eubhx0VjgLdw6as5QZwxj2JRG-njz7y8_8W1mAJOyYegoDUvJXrVhpp1U2bJW-OXhEipt8qAZ6Y2W_bmUvVA==&lang=sage&interacts=eJyLjgUAARUAuQ==">Sage</a>)
+</figcaption>
+</figure>
+<h3 id="eulers-method">Euler’s Method</h3>
+<figure>
+<img src = "EulersMethod.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Euler’s method
+(<a href="https://sagecell.sagemath.org/?z=eJyNkrFu3DAMhncDfgciHWw5Osc-9JagGTp07NKOQQZdTJ8EyJIiybmoT1_KdpJDUbQxYJn-SX0kRY3eTmDmySVQk7M-QlMWmzWJ6LSNWh1bl7IFIoDTsSzKYsARvs0affiOUdqhHrngRy556thtWQA9VVXBan11ztsXRTwMECVCsHqOyhqwI6QK7mCsI4fEgKTsVyaifxYaBHyBSO8RzipK0lVUJK_YR2sGtWBSLRhRUgfCDBAiOgjqF4Jst9AfGGdvKPnZglYhBk6pMKePO8ozU115Z85tafFLYZvnlUH9rEYulbIJ-nSbQrwUSLsXDxzuU_ew6mepNK4NbIeSn7w5wfXSdGKNfPdE8kTyXEqhFc6hGerILhBvatpUv3S4VZInNBJLi-k4CCo43UJqmj3cwB52sEzwE0iK6Mvirfg_5gm7nsOBA60dJaHBt_kS1Gs8p-PX1t9VHoeKveK69gNACvo30nphTnhJ7T6E7f7DPXlEs2J_ausQRoV6KIv6heZA4AmDPHk11FqZ4MQj1oQ-8H7P-Lty4Hvef2ZbmqdZPaPPAN61h5vw5GPdX48LkQ6cZbVZf__iXOu6OtI1u2J5KBkZpD3X7Dc-iAH1&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
+</figcaption>
+</figure>
+<h3 id="phase-planes">Phase Planes</h3>
+<figure>
+<img src = "rabbitsfoxes2.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Example phase plane
+(<a href="https://sagecell.sagemath.org/?z=eJxtjUFuwyAQRfdI3GHkFRDq2pbSRaVsc4DeABLsIA2BAE7h9rVbt4ra7p7e_zN_jN7BdXahgnXBxwyCko2cygF9RqvbUFcClSBgpoSSEQ6AyumzgiKhvsIgCjxBEZWS6Xe22CXbrxklrMjKl4Yz6TJFe2Zorymok2Gd7Ds5dFw-mBfZD5xTssy2t9neTVzv5fj55TndYmZfLMQAO5geuGt7Lqf_irs_tZNHHw-Nxtk021pBpQ2y5k1pbXP61nXTR1_Mj0wX_874ByNQYjg=&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>,
+<a href="https://sagecell.sagemath.org/?z=eJxNkMFqwzAMhu-BvMN_KU26NEsD3WXsulPZyq5jAzdWE4Nrp7abOX36KU0HM0iyPiTrlxfYd8ITei0MgaI49ZqgDN6bIAZKkzT5jAXGL7zgRL5rnZKZVsb3oqGsKrBhq6u8wH_4xLzO8-epXUZurctVxBqxXI0M5choveUEDzPDfKb6Bd6sOwmtroTQEYRz9sfjaB0aa7zygUyAJtOGDpmQkiSqstogWIjBKgmpBuWVNTiMuJKzeZrseKA_u5DJWH7XPFWOc5w6J503lezKR-z-FLK7p5OqvbYBXtuecFSkJS5emRbnixrIpckcs-mvCn6IjWNVbnNeazFd4Buhyc_7wPN6aRK1OJDOlh_icFDBL1npeEevNtINiKg8gmq78Au5zHxa&lang=octave&interacts=eJyLjgUAARUAuQ==">Octave</a>)
+</figcaption>
+</figure>
+<h3 id="eulers-method-for-systems">Euler’s Method for Systems</h3>
+<figure>
+<img src = "rabbitsfoxes3.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Two-dimensional Euler’s method example
+(<a href="https://sagecell.sagemath.org/?z=eJxtUj2PnDAQ7VfiP4y2WcM5nJdom5O2y6VLk_Z0hVkbsGRszjYXnF-fMR8bdFoaHm_em_Hz0Djbgxn7IYLqB-sCFNlhRT0Pg7ZBq7ocYkLAPQw6ZIfsIGQDr6OWzv-SobOi-kEaCi2FjoKhMDEKkeUv2QHwOZ1OC5gdJw_97IHGOhDTswhwhYZMaMmBGwEiLly7cOVi7kB5CJ0EH-QAXv2VC282HmPU0oFtZoVfqhObW0Z8OTnLlFFBcQ03awQia_yXU6ahOH3JsFIesUfybWLvFN4ie18KKYLCluC4aSUxW-R9H3iCrljzJSp9rtF2Yl_yYZBGkGnHxju7aZ0MozPrgf4L004aHKZ5Xws-j36BqmTFBN9gKmJ2aL9WkcXaBTUxue8RH66VlYydKVwYw1upKJzz5MEQuLIr7tN3rVOCaGX8wG-SMHq-0O8sp3uG0YrlaMR_qPwY1ad0qQFt5jbP_sMFsuCiqPCW2h1O89k5p-0j7dMj5c1q667HWo_yuM6cNK-lJsffvK5V8BsdV_qnneSdTP87wTuJfuvkpNiKvrN_SP4PriPkJw==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
+</figcaption>
+</figure>
+<p><br> <br> <br> <br> <br> <br> <br> <br></p>
+</body>
+</html>
