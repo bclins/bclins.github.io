@@ -822,7 +822,6 @@ We talked about the [midterm 1 review problems](midterm1review.pdf).  We also lo
 
 1. Find the general solution of the differential equation $y' + 3y = t + 1$ using the guess & check method. Hint: A good guess for the particular solution is that $y$ is a linear function, so $y(t) = A t + B$ for some constants $A$ and $B$. 
 
-<!--
 ### Fri, Oct 3
 
 Today we talked about **homogeneous linear systems** of differential equations.  These can be expressed using a matrix.  For example, if $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$, then the system of differential equations
@@ -832,34 +831,28 @@ can be re-written as
 $$\dfrac{d \mathbf{x}}{dt} = A \mathbf{x} \text{ where } A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
 It turns out that the eigenvectors and eigenvalues of $A$ tell you a lot about the solutions of the system.  
 
-We reviewed the following concepts from linear algebra.  
+We reviewed some important concepts from linear algebra with an in-class workshop.
 
-A set of vectors $v_1, \ldots, v_n$ is **linearly independent** if there is no **linear combination** with constants $c_1, \ldots, c_n$ that aren't all zero such that
-$$c_1 v_1 + c_2 v_2 + \ldots c_n v_n = 0.$$ 
-A set of just two vectors is linearly independent as long as neither is a scalar multiple of the other. 
+* **Workshop**: [Linear Algebra Review](LinearAlgebraReview.pdf)
 
-<div class="Theorem"> 
-**Invertible Matrix Theorem.** For an $n$-by-$n$ matrix $A$, the following are equivalent. 
+We also talked about how to calculate the eigenvectors of a matrix using a computer.  In Python, the `sympy` library lets you calculate the eigenvectors of a matrix exactly when possible. 
 
-1. $A$ is **invertible.**
-2. The **determinant** of $A$ is not zero.
-3. The columns of $A$ are **linearly independent.**
-4. The **null space** of $A$ is $\{0\}$. 
-</div>
+<figure>
+```python
+from sympy import *
 
-For 2-by-2 matrices it is easy to calculate the determinant:
-$$\det \begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc.$$
-The **characteristic polynomial** of an n-by-n matrix $A$ is 
-$$p_A(\lambda) = \det(A - \lambda I)$$
-where $I = \begin{bmatrix} 1 & & 0 \\ & \ddots & \\ 0 & & 1 \end{bmatrix}$ is the **identity matrix**.
-The roots of the characteristic polynomial are the **eigenvalues** of $A$. If $\lambda$ is an eigenvalue of $A$, then any non-zero vector $x$ such that $Ax = \lambda x$ is called an **eigenvector**.  You can find the eigenvectors by finding the null space of the matrix $A - \lambda I$.   
+A = Matrix([[2,7],[1,8]])
+'''
+The .eigenvects() method returns a list of tuples containing: 
+1. an eigenvalue, 
+2. its multiplicity (how many times it is a root), and
+3. a list of corresponding eigenvectors. 
+'''
+pretty_print(A.eigenvects())
+```
+<figcaption style="text-align:center">**Figure:** Finding eigenpairs using `sympy`. (<a href="https://sagecell.sagemath.org/?z=eJxVj7FqwzAURXeB_uFutosQJB1aChnyAd26GVOErcQPLD0hPSfV31elpbTrHc4595I5oNSQKigkzoIHrbQ644RXJ5k--nE8mqfJjAfzPE2DVl3XafW2elhPVx9vfpbSDwheVl6Qvew5FjhsVAR8gexp8wUzR3EUKV5foNXBwkV8A9y2e9O2owVJQdg3obTRTFLRr3xHcLFCKDQKCegLnpllMI2xaPVo_9hmztmXxHFpJvwWci4WP-2pNUp9T5mi9Od_L4ZP0MtYNA==&lang=sage&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
+</figure>
 
-1. Find the eigenvalues of $\begin{bmatrix} 5 & -6 \\ 3 & -4 \end{bmatrix}$. 
- 
-2. Show that $\begin{bmatrix} 2 \\ 1 \end{bmatrix}$ is an eigenvector of $\begin{bmatrix} 7 & -10 \\ 5 & -8 \end{bmatrix}$.  What is the corresponding eigenvalue?  
-
-3. Find the eigenvalues of $\begin{bmatrix} 2 & -3 \\ 3 & 2 \end{bmatrix}$. 
--->
 
 - - - 
 
