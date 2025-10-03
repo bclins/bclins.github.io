@@ -829,19 +829,25 @@ $$\dfrac{dx_1}{dt} = a x_1 + b x_2 $$
 $$\dfrac{dx_2}{dt} = c x_1 + d x_2 $$
 can be re-written as 
 $$\dfrac{d \mathbf{x}}{dt} = A \mathbf{x} \text{ where } A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}.$$
-It turns out that the eigenvectors and eigenvalues of $A$ tell you a lot about the solutions of the system.  
+It turns out that the eigenvectors and eigenvalues of $A$ tell you a lot about the solutions of the system.  We did these exercises in class.
 
-We reviewed some important concepts from linear algebra with an in-class workshop.
+1. Find the characteristic polynomial and eigenvalues of the matrix $A = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix}.$
+
+2. Show that $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$ is an eigenvector for $A$.  What is its eigenvalue?
+
+3. Find an eigenvector for $A$ corresponding to the eigenvalue $\lambda = 1$ by finding the null space of $A - \lambda I$. 
+
+After those examples, we did a workshop.
 
 * **Workshop**: [Linear Algebra Review](LinearAlgebraReview.pdf)
 
-We also talked about how to calculate the eigenvectors of a matrix using a computer.  In Python, the `sympy` library lets you calculate the eigenvectors of a matrix exactly when possible. 
+We also talked about how to calculate the eigenvectors of a matrix using a computer.  In Python, the `sympy` library lets you calculate the eigenvectors of a matrix exactly when possible. You can also do this in Octave if you load the `symbolic` package. 
 
 <figure>
 ```python
 from sympy import *
 
-A = Matrix([[2,7],[1,8]])
+A = Matrix([[3,5],[2,6]])
 '''
 The .eigenvects() method returns a list of tuples containing: 
 1. an eigenvalue, 
@@ -850,7 +856,7 @@ The .eigenvects() method returns a list of tuples containing:
 '''
 pretty_print(A.eigenvects())
 ```
-<figcaption style="text-align:center">**Figure:** Finding eigenpairs using `sympy`. (<a href="https://sagecell.sagemath.org/?z=eJxVj7FqwzAURXeB_uFutosQJB1aChnyAd26GVOErcQPLD0hPSfV31elpbTrHc4595I5oNSQKigkzoIHrbQ644RXJ5k--nE8mqfJjAfzPE2DVl3XafW2elhPVx9vfpbSDwheVl6Qvew5FjhsVAR8gexp8wUzR3EUKV5foNXBwkV8A9y2e9O2owVJQdg3obTRTFLRr3xHcLFCKDQKCegLnpllMI2xaPVo_9hmztmXxHFpJvwWci4WP-2pNUp9T5mi9Od_L4ZP0MtYNA==&lang=sage&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
+<figcaption style="text-align:center">**Figure:** Finding exact eigenpairs. (<a href="https://sagecell.sagemath.org/?z=eJxdzbEKwjAUheE9kHc44NKCOCi6iEOhjyBdSodrco3BNFeSVPDtjR0dzwc_5_V0CEIW-TPfJHijVYfLbzXjAccz9jhNrVZabXB9MIyEZY4ZcscASoxSkb3j-GZTJGVQtCtaT04iBXAsyfOa9H8JhYXzTqtx2KKf6m_lpmu_tD0vSg==&lang=octave&interacts=eJyLjgUAARUAuQ==">Octave</a>, <a href="https://sagecell.sagemath.org/?z=eJxVj7FqwzAURXeB_uFutosQNKEdChnyAd26GVOErcQPLD0hPSfV31elpbTrHc4595I5oNSQKigkzoIHrbQ644RXJ5k--nE8mqfJjAfzPE2DVl3XafW2elhPVx9vfpbSDwheVl6Qvew5FjhsVAR8gexp8wUzR3EUKV5foNWjhYv4Brht96ZtBwuSgrBvQmmjmaSiX_mO4GKFUGgUEtAXPDPLYBpj0epo_9hmztmXxHFpJvwWci4WP-2pNUp9T5mi9Od_L4ZPzwNYMg==&lang=sage&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
 </figure>
 
 

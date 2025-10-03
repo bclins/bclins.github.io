@@ -443,10 +443,10 @@ Today we talked about the **multiplication** and **addition rules** for probabil
 
 1. If you roll two six-sided dice, the results are independent.  What is the probability that both dice land on a six?
 
-2. If you shuffle a deck of 52 playing cards, and then draw two cards from the top find
-    - $P(\text{First card is an ace})$
-    - $P(\text{Second card is an ace } | \text{ first is an ace})$
-    - $P(\text{Second card is an ace } | \text{ first is not an ace})$
+2. Suppose you shuffle a deck of 52 playing cards and then draw two cards from the top. Find
+    a. $P(\text{First card is an ace})$
+    a. $P(\text{Second card is an ace } | \text{ first is an ace})$
+    a. $P(\text{Second card is an ace } | \text{ first is not an ace})$
 
 Then we did this workshop:
 
