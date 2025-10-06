@@ -870,6 +870,32 @@ Mon, Oct 6  |  [3.2][3.2] | Planar Systems
 Wed, Oct 8  |  [3.2][3.2] | Planar Systems - con'd
 Fri, Oct 10 |  [3.3][3.3] | Phase Plane Analysis of Linear Systems             
 
+### Mon, Oct 6
+
+Today we talked about how to solve a homogeneous linear system $\dfrac{dx}{dt} = Ax$ using the eigenvectors and eigenvalues of $A$ when the eigenvalues are all real with no repeats.  We did the following examples:
+
+1. $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. 
+
+2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$. (<https://youtu.be/DWzq_jMPRgc>)
+
+We graphed different solution curves on Desmos.  This led us to ask how we can solve initial value problems for homogeneous linear systems.  
+
+3. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
+
+
+4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
+
+<!--
+4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
+-->
+
+Then we talked about equilibrium solutions for homogeneous linear systems.
+
+5. The zero vector is always an equilibrium solution of $x' = Ax$.  Under what conditions will there be other equilibrium solutions?  
+
+We finished by talking about how to solve homogeneous linear systems on a computer. 
+
+
 - - - 
 
 ### Week 8 Notes

@@ -56,6 +56,32 @@ header-includes: |
 <figcaption style="text-align: center">**Figure:** Two-dimensional Euler's method example (<a href="https://sagecell.sagemath.org/?z=eJxtUj2PnDAQ7VfiP4y2WcM5nJdom5O2y6VLk_Z0hVkbsGRszjYXnF-fMR8bdFoaHm_em_Hz0Djbgxn7IYLqB-sCFNlhRT0Pg7ZBq7ocYkLAPQw6ZIfsIGQDr6OWzv-SobOi-kEaCi2FjoKhMDEKkeUv2QHwOZ1OC5gdJw_97IHGOhDTswhwhYZMaMmBGwEiLly7cOVi7kB5CJ0EH-QAXv2VC282HmPU0oFtZoVfqhObW0Z8OTnLlFFBcQ03awQia_yXU6ahOH3JsFIesUfybWLvFN4ie18KKYLCluC4aSUxW-R9H3iCrljzJSp9rtF2Yl_yYZBGkGnHxju7aZ0MozPrgf4L004aHKZ5Xws-j36BqmTFBN9gKmJ2aL9WkcXaBTUxue8RH66VlYydKVwYw1upKJzz5MEQuLIr7tN3rVOCaGX8wG-SMHq-0O8sp3uG0YrlaMR_qPwY1ad0qQFt5jbP_sMFsuCiqPCW2h1O89k5p-0j7dMj5c1q667HWo_yuM6cNK-lJsffvK5V8BsdV_qnneSdTP87wTuJfuvkpNiKvrN_SP4PriPkJw==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
 </figure>
 
+### Finding Exact Eigenvectors and Eigenvalues
+
+<figure>
+```python
+from sympy import *
+
+A = Matrix([[3,5],[2,6]])
+'''
+The .eigenvects() method returns a list of tuples containing: 
+1. an eigenvalue, 
+2. its multiplicity (how many times it is a root), and
+3. a list of corresponding eigenvectors. 
+'''
+pretty_print(A.eigenvects())
+```
+<figcaption style="text-align:center">**Figure:** Finding exact eigenpairs. (<a href="https://sagecell.sagemath.org/?z=eJxdzbEKwjAUheE9kHc44NKCOCi6iEOhjyBdSodrco3BNFeSVPDtjR0dzwc_5_V0CEIW-TPfJHijVYfLbzXjAccz9jhNrVZabXB9MIyEZY4ZcscASoxSkb3j-GZTJGVQtCtaT04iBXAsyfOa9H8JhYXzTqtx2KKf6m_lpmu_tD0vSg==&lang=octave&interacts=eJyLjgUAARUAuQ==">Octave</a>, <a href="https://sagecell.sagemath.org/?z=eJxVj7FqwzAURXeB_uFutosQNKEdChnyAd26GVOErcQPLD0hPSfV31elpbTrHc4595I5oNSQKigkzoIHrbQ644RXJ5k--nE8mqfJjAfzPE2DVl3XafW2elhPVx9vfpbSDwheVl6Qvew5FjhsVAR8gexp8wUzR3EUKV5foNWjhYv4Brht96ZtBwuSgrBvQmmjmaSiX_mO4GKFUGgUEtAXPDPLYBpj0epo_9hmztmXxHFpJvwWci4WP-2pNUp9T5mi9Od_L4ZPzwNYMg==&lang=sage&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
+</figure>
+
+### Finding Solutions of Linear Homogeneous Systems
+
+<figure>
+
+<img src = "linearSolutions.png" width = 600></img>
+
+<figcaption style="text-align: center">**Figure:** Solution curves for linear systems (<a href="https://sagecell.sagemath.org/?z=eJxtUsFuozAQvSPxD6P0AolLDStW20q9dXcve-sRoZUDhlgymNoOC3-_Y-xUaZsIxeN5njdPb6bTaoDxPEwriGFS2sI-jkI0MDtJZaU4ZtPqImAGJmnjCMIvju7gdTWWD3HUwTNINhxbBguB9Qm-ZXS_wAFKPNc46j_jRcC_e9xxvQjNGyvUCL8El20cJQtZUywcuDn1WrSJFKOZWMOT-5KUpKAp-ZJJ4whFZm9nMXPtCEi30TyYN20TH-_3BXbur2KaUUrzlPS33h5uvWyUVPp5d5Rnvgs9F8mOXCa75ZJYQ2J1ic0tbuG3ZtMJ_ohBWHN5JganH8p3Ip8oQ9lP0fNxZtjKPPgYfVLaQKc02BN_n4J3OCfB6gK9w8uPOJrxmN21cn2KmkCFmbz2_JskMfY4ga7jmo8WXpU8u1GgRNdEjMIKJv82amzFNiIxQoUcuaOiWUnuaVZcx9dA_ljXT35v7nC2SIG9Nt2hi8calNQ4kThUJvvMKDnzpHKSka0q8L8mX5RsHnlqb60jNh-Iref0i0JJ7j6aesz57bY7aXLYw5xXtMaTL1MSzMSbTQ-oC9HiM1psKMoOxfmtYtyaS3l-szzskuatXxSnyZzUvyT9DwdUByk=&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)</figcaption>
+</figure>
 
 <br>
 <br>

@@ -198,6 +198,28 @@ We didn't have time for this last example, but there are a couple of problems on
  
 ### Week 6 Notes
 
+We talked about **function notation** and how **graphs**.  We did the following examples.  
+
+1. Let $f(x) = \sqrt{25-x^2}$.  Find $f(0)$, $f(3)$, $f(4)$ and $f(0)$, then graph $y = f(x)$. <br> (see: <https://youtu.be/ucxtbUhjwYY>)
+
+We also defined the **domain** and **range** of a function.  Then we looked at different ways to express functions.  For example, we had these two examples:
+
+* The volume of a sphere: $V = \frac{4}{3} \pi r^3$.
+
+* The function to convert Celsius to Fahrenheit: $f(x) = \tfrac{9}{5}x + 32$. 
+
+We also talked about **inverse functions**
+
+2. Find the inverse of $V(r) = \tfrac{4}{3}\pi r^3$ and explain what it does in words.
+
+3. Find the inverse of $f(x) = 2x +1$. (see: <https://youtu.be/W84lObmOp8M>)
+
+
+Finally we looked at using the graph of a function to answer questions like the following:
+
+4. Use the graph of $f(x) = x^4 - 3x^2 + 2$ to find all values of $x$ where $f(x) > 0$. <br> (see: <https://youtu.be/0-SgHGSJpKM>)
+
+
 - - - 
 
 ### Week 7 Notes

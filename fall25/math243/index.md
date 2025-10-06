@@ -45,7 +45,7 @@ Week | Topic                      | Notes | Homework
 4  | Systems of differential equations              | [Week 04](notes.html#week-4-notes)  | [HW4](HW/HW4.pdf)
 5  | Solving systems numerically & analytically     | [Week 05](notes.html#week-5-notes)  | [HW5](HW/HW5.pdf)
 6  | **Midterm 1**, Linear algebra basics           | [Week 06](notes.html#week-6-notes)  |
-7  | Planar systems                                 | [Week 07](notes.html#week-7-notes)  |
+7  | Planar systems                                 | [Week 07](notes.html#week-7-notes)  | [HW6](HW/HW6.pdf)
 8  | Complex and repeated eigenvalues               | [Week 08](notes.html#week-8-notes)  |
 9  | Classification of planar systems               | [Week 09](notes.html#week-9-notes)  |
 10 | **Midterm 2**, Systems in higher dimensions    | [Week 10](notes.html#week-10-notes) | 
