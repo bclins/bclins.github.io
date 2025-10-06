@@ -466,23 +466,34 @@ Fri, Oct 10 | [7.1][7.1] | Sampling distributions
 
 ### Mon, Oct 6
 
+
 Today we talked about **weighted averages**. To find a weighted average:
 
 1. Multiply each number by its weight.
 2. Add the results.
 
-We did an two examples. 
+We did this workshop.
+
+* **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
+
+Before that, we did some examples. 
 
 1. Calculate the final grade of a student who gets an 80 quiz average, 72 midterm average, 95 project average, and an 89 on the final exam. 
 
 2. Eleven nursing students graduated from a nursing program.  Four students completed the program in 3 years, four took 4 years, two took 5 years, and one student took 6 years to graduate.  Express the average time to complete the program as a weighted average. 
 
 
-We also talked about **expected value** (also known as the **theoretical average**) which is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
+The **expected value** (also known as the **theoretical average**) is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
 
-* **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
+3. In roulette there is a wheel with 38 slots. There are 18 red slot, 18 black slots and 2 green slots.  When you spin the wheel, you can bet that the ball will land on a black slot.  If you bet $1, and the ball lands on black, then you win $2, otherwise you win nothing.  What is the expected value for this bet? 
 
-We finished by talking about the **Law of Large Numbers** which says: when you repeat a random experiment many times, the sample mean tends to get closer to the theoretical average.
+<div class="Theorem">
+**The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
+</div>
+
+
+
+ 
 
 <!--
 ### Wed, Feb 26

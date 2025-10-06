@@ -1673,36 +1673,68 @@ using the eigenvectors and eigenvalues of
 when the eigenvalues are all real with no repeats. We did the following
 examples:</p>
 <ol type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mn>8</mn><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x(t) = e^{8t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}</annotation></semantics></math>
+is a solution to the linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 3 &amp; 5 \\ 2 &amp; 6 \end{bmatrix} x</annotation></semantics></math>.</li>
+</ol>
+<div class="Theorem">
+<p><strong>Fact.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐯</mi><annotation encoding="application/x-tex">\mathbf{v}</annotation></semantics></math>
+is an eigenvector of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+with eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mi>𝐯</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}(t) = e^{\lambda t} \mathbf{v}</annotation></semantics></math>
+is a solution of the linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A\mathbf{x}</annotation></semantics></math>.</p>
+<p><strong>Fact 2.</strong> The general solution of a planar system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A \mathbf{x}</annotation></semantics></math>
+with distinct real eigenvalues
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>λ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1, \lambda_2</annotation></semantics></math>
+and corresponding eigenvectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝐯</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{v}_1, \mathbf{v}_2</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>1</mn></msub><mi>t</mi></mrow></msup><msub><mi>𝐯</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>2</mn></msub><mi>t</mi></mrow></msup><msub><mi>𝐯</mi><mn>2</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">C_1 e^{\lambda_1 t} \mathbf{v}_1 + C_2 e^{\lambda_2 t} \mathbf{v}_2.</annotation></semantics></math></p>
+</div>
+<p>We used these facts to find the general solutions for the following
+systems.</p>
+<ol start="2" type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 3 &amp; 5 \\ 2 &amp; 6 \end{bmatrix} x</annotation></semantics></math>.</p></li>
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix} x</annotation></semantics></math>.
 (<a href="https://youtu.be/DWzq_jMPRgc"
 class="uri">https://youtu.be/DWzq_jMPRgc</a>)</p></li>
 </ol>
-<p>We graphed different solution curves on Desmos. This led us to ask
-how we can solve initial value problems for homogeneous linear
-systems.</p>
-<ol start="3" type="1">
-<li><p>Find the solution to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 3 &amp; 5 \\ 2 &amp; 6 \end{bmatrix} x</annotation></semantics></math>
-that satisfies
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>5</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.</annotation></semantics></math></p></li>
-<li><p>Find the solution to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; 2 \\ 4 &amp; 3 \end{bmatrix} x</annotation></semantics></math>
-that satisfies
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.</annotation></semantics></math></p></li>
-</ol>
-<!--
-4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
--->
-<p>Then we talked about equilibrium solutions for homogeneous linear
-systems.</p>
-<ol start="5" type="1">
+<p>We also talked about how to graph the solutions.</p>
+<figure>
+<img src="straightlineSolutions.png" width=600></img>
+<figcaption style="text-align:center">
+<strong>Figure:</strong> Straight-line solutions for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 3 &amp; 5 \\ 2 &amp; 6 \end{bmatrix} x</annotation></semantics></math>.
+(<a href="https://sagecell.sagemath.org/?z=eJx1UstugzAQvCPxDyt6gcRJgIqqqpRbH5fceoxycIIDlmzs2Ibiv68dnLRqUoTk2dnd2dXYRyU4dD2XFiiXQhmYxVFAHBvJhGF0v5TWI8AaJDNxBOGLowf4tNoQHkdHWAPDfF9jGBHYF3hc5rMR5lC508ZR8zdfhvzTlPdar1SRg6Gig3dKWB1H6Yhs5ho50W2jaJ0y2mmJDyRdVKhCZZ6hGyaLI7fk8tTTgSgvgI5nmZU-KZNOeDYr3eTmF86XeZ4XGWru1c7vVR4EE2qd7FlPkjBzZHhPWJqMF8IGwnri7BYx8KGwbGFDOTX6Uka53x-qq9BEVKHtjTakG7AbpVcTdj4JpeEoFJiWXG9hcrhAwerSeeeC5zga3DH4cOvnlDsEW8cUu0l_WuksZBSmTWsWG9q5SLDe34fb0_j7u3pd5Mj9ZVjXP47UPR0Yim3upAMsdheTFKkT5NuJNpaRdVJj3Trupr_86S9_9cteSUb-k5hEdCu-0uwbOTbRdQ==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
+</figcaption>
+</figure>
+<p>We finished with the following question:</p>
+<ol start="4" type="1">
 <li>The zero vector is always an equilibrium solution of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>.
 Under what conditions will there be other equilibrium solutions?</li>
 </ol>
-<p>We finished by talking about how to solve homogeneous linear systems
-on a computer.</p>
+<!-- 
+
+### Wed, Oct 8
+
+Last time we talked about how to find general solutions for linear systems.  Today we talked about how to find specific solutions that satisfy an initial condition. 
+
+3. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
+
+
+4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
+
+4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
+
+-->
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>

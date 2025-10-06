@@ -874,27 +874,47 @@ Fri, Oct 10 |  [3.3][3.3] | Phase Plane Analysis of Linear Systems
 
 Today we talked about how to solve a homogeneous linear system $\dfrac{dx}{dt} = Ax$ using the eigenvectors and eigenvalues of $A$ when the eigenvalues are all real with no repeats.  We did the following examples:
 
-1. $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. 
+1. Show that $x(t) = e^{8t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ is a solution to the linear system $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. 
 
-2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$. (<https://youtu.be/DWzq_jMPRgc>)
+<div class="Theorem"> 
+**Fact.** If $\mathbf{v}$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $\mathbf{x}(t) = e^{\lambda t} \mathbf{v}$ is a solution of the linear system $\mathbf{x}' = A\mathbf{x}$. 
 
-We graphed different solution curves on Desmos.  This led us to ask how we can solve initial value problems for homogeneous linear systems.  
+**Fact 2.** The general solution of a planar system $\mathbf{x}' = A \mathbf{x}$ with distinct real eigenvalues $\lambda_1, \lambda_2$ and corresponding eigenvectors $\mathbf{v}_1, \mathbf{v}_2$ is
+$$C_1 e^{\lambda_1 t} \mathbf{v}_1 + C_2 e^{\lambda_2 t} \mathbf{v}_2.$$
+</div>
+
+We used these facts to find the general solutions for the following systems. 
+
+2. $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. 
+
+3. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$. (<https://youtu.be/DWzq_jMPRgc>)
+
+We also talked about how to graph the solutions.  
+
+<figure>
+<img src="straightlineSolutions.png" width=600></img>
+<figcaption style="text-align:center">**Figure:** Straight-line solutions for $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. (<a href="https://sagecell.sagemath.org/?z=eJx1UstugzAQvCPxDyt6gcRJgIqqqpRbH5fceoxycIIDlmzs2Ibiv68dnLRqUoTk2dnd2dXYRyU4dD2XFiiXQhmYxVFAHBvJhGF0v5TWI8AaJDNxBOGLowf4tNoQHkdHWAPDfF9jGBHYF3hc5rMR5lC508ZR8zdfhvzTlPdar1SRg6Gig3dKWB1H6Yhs5ho50W2jaJ0y2mmJDyRdVKhCZZ6hGyaLI7fk8tTTgSgvgI5nmZU-KZNOeDYr3eTmF86XeZ4XGWru1c7vVR4EE2qd7FlPkjBzZHhPWJqMF8IGwnri7BYx8KGwbGFDOTX6Uka53x-qq9BEVKHtjTakG7AbpVcTdj4JpeEoFJiWXG9hcrhAwerSeeeC5zga3DH4cOvnlDsEW8cUu0l_WuksZBSmTWsWG9q5SLDe34fb0_j7u3pd5Mj9ZVjXP47UPR0Yim3upAMsdheTFKkT5NuJNpaRdVJj3Trupr_86S9_9cteSUb-k5hEdCu-0uwbOTbRdQ==&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
+</figcaption>
+</figure>
+
+We finished with the following question:
+
+4. The zero vector is always an equilibrium solution of $x' = Ax$.  Under what conditions will there be other equilibrium solutions?  
+
+<!-- 
+
+### Wed, Oct 8
+
+Last time we talked about how to find general solutions for linear systems.  Today we talked about how to find specific solutions that satisfy an initial condition. 
 
 3. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
 
 
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
 
-<!--
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
+
 -->
-
-Then we talked about equilibrium solutions for homogeneous linear systems.
-
-5. The zero vector is always an equilibrium solution of $x' = Ax$.  Under what conditions will there be other equilibrium solutions?  
-
-We finished by talking about how to solve homogeneous linear systems on a computer. 
-
 
 - - - 
 

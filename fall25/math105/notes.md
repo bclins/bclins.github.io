@@ -198,7 +198,9 @@ We didn't have time for this last example, but there are a couple of problems on
  
 ### Week 6 Notes
 
-We talked about **function notation** and how **graphs**.  We did the following examples.  
+We started by going over questions about [Homework 5](HW/HW5.pdf) and some of the common mistakes on [Homework 4](HW/HW4.pdf).  In particular we talked about the fact that **a fraction is zero when its top is zero**.  A fraction is undefined if the bottom is zero, and we talked about why that is.. 
+
+After that, we talked about **function notation** and **graphs**.  We did the following examples.  
 
 1. Let $f(x) = \sqrt{25-x^2}$.  Find $f(0)$, $f(3)$, $f(4)$ and $f(0)$, then graph $y = f(x)$. <br> (see: <https://youtu.be/ucxtbUhjwYY>)
 
