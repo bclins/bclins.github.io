@@ -491,12 +491,7 @@ The **expected value** (also known as the **theoretical average**) is the weight
 **The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
 </div>
 
-
-
- 
-
-<!--
-### Wed, Feb 26
+### Wed, Oct 8
 
 A **random variable** is a probability model where the outcome are numbers. We often use a capital letter like $X$ or $Y$ to represent a random variable.  We use the shorthand $E(X)$ to represent the expected value of a random variable.  Recall that the expected value (also known as the theoretical average) is the weighted average of the possible outcomes weighted by their probabilities.  
 
@@ -519,17 +514,14 @@ In the game roulette there is a wheel with 38 slots.  The slots numbered 1 throu
 
 We also looked at what happens if you bet \$1 on a color like black.  Then you win \$2 if it lands on black.  It turns out that the expected value is the same, but the distribution has a different shape (more skewed) and much larger spread ($\sigma = \$0.9986$ for betting on a number versus $\sigma = \$5.763$ if you bet on black). 
 
-<!-- 
-Another good exercise we didn't do is this:
-
 5. [Exercise 3.34](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34).
 
-We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
-
+We talked about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 
 We finished by talking briefly about the **binomial distribution** which is the distribution of the total number of successes when you have a two outcome situation where the probability $p$ of a success in each trial is always the same and you repeat the trials $n$ times.  We looked at what happens if you play a lot of games of roulette using [this app](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html).
 
 
+<!--
 ### Fri, Feb 28
 
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:

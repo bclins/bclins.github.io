@@ -901,17 +901,31 @@ We finished with the following question:
 
 4. The zero vector is always an equilibrium solution of $x' = Ax$.  Under what conditions will there be other equilibrium solutions?  
 
-<!-- 
 
 ### Wed, Oct 8
 
 Last time we talked about how to find general solutions for linear systems.  Today we talked about how to find specific solutions that satisfy an initial condition. 
 
-3. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
+1. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
 
 
-4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
+2. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
 
+After that, we talked about the classification of equilibria for linear systems.  
+
+<div class="Theorem"> 
+**Types of Equilibria for Planar Systems with Real Eigenvalues.**
+
+1. If both eigenvalues are positive, then the origin is a source (unstable) equilibrium. 
+2. If both eigenvalues are negative, then the origin is a sink (stable) equilibrium. 
+3. If one eigenvalue is positive and the other is negative, the origin is a saddle equilibrium.
+</div>
+
+3. Under what circumstances does $x' = A x$ have more than one equilibrium solution? 
+
+
+
+<!-- 
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
 
 -->
