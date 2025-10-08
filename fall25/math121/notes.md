@@ -13,6 +13,8 @@ header-includes: |
   </style>
 ---
 
+\newcommand{\on}{\operatorname}
+
 ## Math 121 - Fall 2025
 
 <ul class="nav">
@@ -493,37 +495,41 @@ The **expected value** (also known as the **theoretical average**) is the weight
 
 ### Wed, Oct 8
 
-A **random variable** is a probability model where the outcome are numbers. We often use a capital letter like $X$ or $Y$ to represent a random variable.  We use the shorthand $E(X)$ to represent the expected value of a random variable.  Recall that the expected value (also known as the theoretical average) is the weighted average of the possible outcomes weighted by their probabilities.  
+Today we talked about **random variables**.  We usually use capital letters like $X$ or $Y$ to represent the outcomes of probability models when the outcomes are numbers. Any random variable $X$ has
 
-A probability histogram shows the **probability distribution** of a random variable. Every probability distribution can be described in terms of the following three things:
+* A theoretical average $E(X) = \mu_X$. 
+* A theoretical standard deviation $\on{SD}(X) = \sigma_X$. 
 
-1. **Shape** - is it shaped like a bell, or skewed, or something even more complicated?
-2. **Center** - the theoretical average $\mu$ (i.e., the expected value)
-3. **Spread** - the theoretical standard deviation $\sigma$
+1. Find $E(Y)$ where $Y = \text{result of rolling a 6-sided die}$. 
+
+The probability model for a random variable is called its **probability distribution**. Every probability distribution can be described by three things:
+
+* **Shape** - is it shaped like a bell, or skewed, or something even more complicated?
+* **Center** - the theoretical average $\mu$ (i.e., the expected value)
+* **Spread** - the theoretical standard deviation $\sigma$
+
+2. If you play roulette and bet on one number (like 7), you have a $\tfrac{1}{38}$ chance of winning and you win \$36 for every one dollar you bet.  
+    a. Find the expected value for a \$1 bet. 
+    b. Draw the probability histogram.  Describe the shape of the distribution. 
+
+It turns out that betting on 7 has the same expected value as betting on black, but the standard deviations are not the same ($\sigma = \$0.9986$ for betting on a number versus $\sigma = \$5.763$ if you bet on black). 
+
+We talked about the difference between **continuous distributions** where there is an infinite range of outcomes between any two possibilities, and **discrete distributions** which only have finitely many outcomes between any two possibilities.  The normal distribution is continuous, rolling a six-sided die is discrete. 
+
+An important discrete probability distribution is the **binomial distribution** $\on{Bin}(N,p)$ which counts the total number of successes when you flip a fair or unfair coin $N$ times.  The number $p$ is the probability of a success on each flip.  
 
 
-In the game roulette there is a wheel with 38 slots.  The slots numbered 1 through 36 are split equally between black and red slots.  The other two slots are 0 and 00 which are green.  When you spin the wheel, you can bet that the ball will land in a specific slot or a specific color.  If you bet $1, and the ball lands on the specific number you picked, then you win $36.  
+3. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
 
-1. Find the expected value of your bet.  
+4. What about playing 100 games and betting on black every time?  Which is a better strategy? 
 
-2. Draw a probability histogram for this situation. 
+We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 
-3. Describe the shape of the distribution. 
-
-4. What does the law of large numbers predict will happen if you play many games of roulette?
-
-We also looked at what happens if you bet \$1 on a color like black.  Then you win \$2 if it lands on black.  It turns out that the expected value is the same, but the distribution has a different shape (more skewed) and much larger spread ($\sigma = \$0.9986$ for betting on a number versus $\sigma = \$5.763$ if you bet on black). 
-
-5. [Exercise 3.34](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34).
-
-We talked about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
-
-We finished by talking briefly about the **binomial distribution** which is the distribution of the total number of successes when you have a two outcome situation where the probability $p$ of a success in each trial is always the same and you repeat the trials $n$ times.  We looked at what happens if you play a lot of games of roulette using [this app](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html).
 
 
 <!--
 ### Fri, Feb 28
-
+ 
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
 
 <div class="Theorem">

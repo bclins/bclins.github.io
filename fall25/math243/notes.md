@@ -906,10 +906,23 @@ We finished with the following question:
 
 Last time we talked about how to find general solutions for linear systems.  Today we talked about how to find specific solutions that satisfy an initial condition. 
 
-1. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ -5 \end{bmatrix}.$
+1. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 7 \\ 0 \end{bmatrix}.$
 
 
 2. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 1 & 2 \\ 4 & 3 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 5 \\ 4 \end{bmatrix}.$ 
+
+We used row reduction to solve these initial value problems.  After that, we discussed how Octave makes this kind of matrix computation very easy.  
+
+```octave
+pkg load symbolic
+A = sym([3 5; 2 6])
+
+# The columns of V are the eigenvectors and the diagonal entries of D are the eigenvalues.
+[V, D] = eig(A)
+
+# The backslash operator A \ b solves the matrix equation Ax = b. 
+V \ [7;0]
+```
 
 After that, we talked about the classification of equilibria for linear systems.  
 
@@ -923,7 +936,17 @@ After that, we talked about the classification of equilibria for linear systems.
 
 3. Under what circumstances does $x' = A x$ have more than one equilibrium solution? 
 
-
+    <details>
+    Any time $\det A = 0$, there will be nonzero equilibria because of:
+    <div class="Theorem">
+    **Invertible Matrix Theorem.** For an n-by-n matrix $A$, the following are equivalent.
+    1. $A$ is invertible.
+    2. $\det A \ne 0$. 
+    3. The columns of $A$ are linearly independent. 
+    4. The rows of $A$ are linearly independent.
+    5. The null space of $A$ is $\{0\}$.
+    </div>
+    </details>
 
 <!-- 
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
