@@ -877,6 +877,8 @@ Today we talked about how to solve a homogeneous linear system $\dfrac{dx}{dt} =
 1. Show that $x(t) = e^{8t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ is a solution to the linear system $\dfrac{dx}{dt} = \begin{bmatrix} 3 & 5 \\ 2 & 6 \end{bmatrix} x$. 
 
 <div class="Theorem"> 
+**Solutions of Homogeneous Linear Systems.**
+
 **Fact.** If $\mathbf{v}$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $\mathbf{x}(t) = e^{\lambda t} \mathbf{v}$ is a solution of the linear system $\mathbf{x}' = A\mathbf{x}$. 
 
 **Fact 2.** The general solution of a planar system $\mathbf{x}' = A \mathbf{x}$ with distinct real eigenvalues $\lambda_1, \lambda_2$ and corresponding eigenvectors $\mathbf{v}_1, \mathbf{v}_2$ is
@@ -926,9 +928,9 @@ After that, we talked about the classification of equilibria for linear systems.
 <div class="Theorem"> 
 **Types of Equilibria for Planar Systems with Real Eigenvalues.**
 
-1. If both eigenvalues are positive, then the origin is a source (unstable) equilibrium. 
-2. If both eigenvalues are negative, then the origin is a sink (stable) equilibrium. 
-3. If one eigenvalue is positive and the other is negative, the origin is a saddle equilibrium.
+1. If both eigenvalues are positive, then the origin is a **source** (unstable). 
+2. If both eigenvalues are negative, then the origin is a **sink** (stable). 
+3. If one eigenvalue is positive and the other is negative, the origin is a **saddle** equilibrium.
 </div>
 
 Then we solved the following initial value problems. 
@@ -957,6 +959,50 @@ V \ [7;0]
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
 
 -->
+
+### Fri, Oct 10
+
+Today we talked about systems with complex eigenvalues.  We started by looking at three different [direction fields](https://sagecell.sagemath.org/?z=eJx1UjtvgzAQ3pH4Dye6GGIokGaJlIG26tZM3aIoMsEQSwYc46T439c8klpK6-n8vXy6cynbGppLLTSwWrRSQeA65QB22gI_iZKsxyAkVUofhGSNcp2ZrIkSvFWc5ZHQQwWkA8GNwHUKWkLBJD0q1jaHklFeoMxfuw6YU8IGOKnzgoDJ1msoeUsUynYxhnjvQwA9LGwwGUE9uav_3Mlf7sRyT_4neL81Bh9DYxM8ZJnkmnanSrICcdZ0ghwpCld4hdPYxw-IPzm3xtadpUIl6rH2gyA171e3ehaZuUTnC7tSORB4kj6j7SKO4jhOfDw7bOjY8lZuvJxfqGfF9JzklCOvt0E9g9oGu1P7jea762Smz2mhaDdMNd1j2IXLodgb0atNhymG5cibAYaT4M0WGH418i933mz9YeOuM_4Z5H2dKFBW0UYQJjsgkq69OzsWvz8MZdEovZqwDvn-D9EEwb8=&lang=python&interacts=eJyLjgUAARUAuQ==){target="_blank"} for the following three matrices:
+
+$$A= \begin{bmatrix} 0 & 2 \\ -3 & 2 \end{bmatrix} ~~~~~~ B = \begin{bmatrix} -2 & 3 \\ -1 & -2 \end{bmatrix} ~~~~~~ C = \begin{bmatrix} 2 & 5 \\ -4 & -2 \end{bmatrix}$$
+
+<figure>
+<img src="SpiralSinksSources.png" width = 600></img>
+<figcaption style="text-align: center">**Figure:** Spiral sources, spiral sinks, and centers.</figcaption>
+</figure>
+
+
+<div class="Theorem"> 
+**Types of Equilibria for Planar Systems with Complex Eigenvalues.**
+
+Suppose $x' = Ax$ is a planar system with complex eigenvalues $\alpha \pm \beta i$.
+
+1. If $\alpha$ is positive, then the origin is a **spiral source** (unstable). 
+1. If $\alpha$ is negative, then the origin is a **spiral sink** (stable). 
+1. If $\alpha$ is zero, then the origin is a **center** equilibrium and the solutions are periodic.
+</div>
+
+After that, we talked about how to find general solutions for planar systems with complex eigenvalues.  It is still true that the general solution is 
+$$x(t) = C_1 e^{\lambda_1 t} v_1 + C_2 e^{\lambda_2 t} v_2$$
+but the coefficients are typically complex numbers and we only want real solutions.  The following important fact can help us out:
+
+<div class="Theorem">
+**Solutions for Systems with Complex Eigenvalues.**
+
+**Fact.** If $x(t)$ is a complex solution to a real linear system $x' = Ax$, then both the real and imaginary parts of $x(t)$ are real solutions for the system.  
+
+**Fact 2.** If $x(t)$ is a complex solution of a planar system $x' = Ax$ where the real-part $x_{\text{real}}(t)$ and the imaginary-part $x_\text{imag}(t)$ are linearly independent when $t=0$, then the general solution is 
+$$C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).$$
+</div>
+
+We used this fact to find the general (real) solutions for the following planar systems. 
+
+1. $\dfrac{dx}{dt} = \begin{bmatrix} -2 & 3 \\ -1 & -2 \end{bmatrix} x$
+
+2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
+
+
+
 
 - - - 
 

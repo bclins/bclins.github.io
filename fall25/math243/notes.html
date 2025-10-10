@@ -1679,6 +1679,7 @@ is a solution to the linear system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 3 &amp; 5 \\ 2 &amp; 6 \end{bmatrix} x</annotation></semantics></math>.</li>
 </ol>
 <div class="Theorem">
+<p><strong>Solutions of Homogeneous Linear Systems.</strong></p>
 <p><strong>Fact.</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐯</mi><annotation encoding="application/x-tex">\mathbf{v}</annotation></semantics></math>
 is an eigenvector of
@@ -1768,12 +1769,12 @@ linear systems.</p>
 <p><strong>Types of Equilibria for Planar Systems with Real
 Eigenvalues.</strong></p>
 <ol type="1">
-<li>If both eigenvalues are positive, then the origin is a source
-(unstable) equilibrium.</li>
-<li>If both eigenvalues are negative, then the origin is a sink (stable)
-equilibrium.</li>
+<li>If both eigenvalues are positive, then the origin is a
+<strong>source</strong> (unstable).</li>
+<li>If both eigenvalues are negative, then the origin is a
+<strong>sink</strong> (stable).</li>
 <li>If one eigenvalue is positive and the other is negative, the origin
-is a saddle equilibrium.</li>
+is a <strong>saddle</strong> equilibrium.</li>
 </ol>
 </div>
 <p>Then we solved the following initial value problems.</p>
@@ -1804,6 +1805,77 @@ class="sourceCode octave"><code class="sourceCode octave"><span id="cb4-1"><a hr
 4. Find the solution to $\dfrac{dx}{dt} = \begin{bmatrix} 2 & -3 \\ -3 & 2 \end{bmatrix} x$ that satisfies $x(0) = \begin{bmatrix} 4 \\ 2 \end{bmatrix}.$ 
 
 -->
+<h3 id="fri-oct-10">Fri, Oct 10</h3>
+<p>Today we talked about systems with complex eigenvalues. We started by
+looking at three different <a
+href="https://sagecell.sagemath.org/?z=eJx1UjtvgzAQ3pH4Dye6GGIokGaJlIG26tZM3aIoMsEQSwYc46T439c8klpK6-n8vXy6cynbGppLLTSwWrRSQeA65QB22gI_iZKsxyAkVUofhGSNcp2ZrIkSvFWc5ZHQQwWkA8GNwHUKWkLBJD0q1jaHklFeoMxfuw6YU8IGOKnzgoDJ1msoeUsUynYxhnjvQwA9LGwwGUE9uav_3Mlf7sRyT_4neL81Bh9DYxM8ZJnkmnanSrICcdZ0ghwpCld4hdPYxw-IPzm3xtadpUIl6rH2gyA171e3ehaZuUTnC7tSORB4kj6j7SKO4jhOfDw7bOjY8lZuvJxfqGfF9JzklCOvt0E9g9oGu1P7jea762Smz2mhaDdMNd1j2IXLodgb0atNhymG5cibAYaT4M0WGH418i933mz9YeOuM_4Z5H2dKFBW0UYQJjsgkq69OzsWvz8MZdEovZqwDvn-D9EEwb8=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ=="
+target="_blank">direction fields</a> for the following three
+matrices:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>C</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A= \begin{bmatrix} 0 &amp; 2 \\ -3 &amp; 2 \end{bmatrix} ~~~~~~ B = \begin{bmatrix} -2 &amp; 3 \\ -1 &amp; -2 \end{bmatrix} ~~~~~~ C = \begin{bmatrix} 2 &amp; 5 \\ -4 &amp; -2 \end{bmatrix}</annotation></semantics></math></p>
+<figure>
+<img src="SpiralSinksSources.png" width = 600></img>
+<figcaption style="text-align: center">
+<strong>Figure:</strong> Spiral sources, spiral sinks, and centers.
+</figcaption>
+</figure>
+<div class="Theorem">
+<p><strong>Types of Equilibria for Planar Systems with Complex
+Eigenvalues.</strong></p>
+<p>Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>
+is a planar system with complex eigenvalues
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>±</mo><mi>β</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\alpha \pm \beta i</annotation></semantics></math>.</p>
+<ol type="1">
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+is positive, then the origin is a <strong>spiral source</strong>
+(unstable).</li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+is negative, then the origin is a <strong>spiral sink</strong>
+(stable).</li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+is zero, then the origin is a <strong>center</strong> equilibrium and
+the solutions are periodic.</li>
+</ol>
+</div>
+<p>After that, we talked about how to find general solutions for planar
+systems with complex eigenvalues. It is still true that the general
+solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>1</mn></msub><mi>t</mi></mrow></msup><msub><mi>v</mi><mn>1</mn></msub><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><msub><mi>λ</mi><mn>2</mn></msub><mi>t</mi></mrow></msup><msub><mi>v</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x(t) = C_1 e^{\lambda_1 t} v_1 + C_2 e^{\lambda_2 t} v_2</annotation></semantics></math>
+but the coefficients are typically complex numbers and we only want real
+solutions. The following important fact can help us out:</p>
+<div class="Theorem">
+<p><strong>Solutions for Systems with Complex Eigenvalues.</strong></p>
+<p><strong>Fact.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+is a complex solution to a real linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>,
+then both the real and imaginary parts of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+are real solutions for the system.</p>
+<p><strong>Fact 2.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+is a complex solution of a planar system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>
+where the real-part
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mtext mathvariant="normal">real</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_{\text{real}}(t)</annotation></semantics></math>
+and the imaginary-part
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mtext mathvariant="normal">imag</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_\text{imag}(t)</annotation></semantics></math>
+are linearly independent when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t=0</annotation></semantics></math>,
+then the general solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">real</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">imag</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).</annotation></semantics></math></p>
+</div>
+<p>We used this fact to find the general (real) solutions for the
+following planar systems.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} -2 &amp; 3 \\ -1 &amp; -2 \end{bmatrix} x</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; -1 \\ 4 &amp; 1 \end{bmatrix} x</annotation></semantics></math>
+(<a href="https://youtu.be/j-qvdT8nSnw"
+class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>

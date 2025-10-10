@@ -893,15 +893,15 @@ tends to get closer to the theoretical average
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</p>
 </div>
 <h3 id="wed-oct-8">Wed, Oct 8</h3>
-<p>Today we talked about <strong>random variables</strong>. We usually
-use capital letters like
+<p>Today we talked about <strong>probability distributions</strong>. A
+probability distribution is a probability model where the outcomes are
+numbers. We often use capital letters like
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-or
+and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
-to represent the outcomes of probability models when the outcomes are
-numbers. Any random variable
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-has</p>
+as <strong>random variables</strong>. A random variable represents the
+possible outcome of a random experiment that follows a probability
+distribution. A random variable has:</p>
 <ul>
 <li>A theoretical average
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">E(X) = \mu_X</annotation></semantics></math>.</li>
@@ -914,9 +914,7 @@ has</p>
 where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mtext mathvariant="normal">result of rolling a 6-sided die</mtext></mrow><annotation encoding="application/x-tex">Y = \text{result of rolling a 6-sided die}</annotation></semantics></math>.</li>
 </ol>
-<p>The probability model for a random variable is called its
-<strong>probability distribution</strong>. Every probability
-distribution can be described by three things:</p>
+<p>Every probability distribution can be described by three things:</p>
 <ul>
 <li><strong>Shape</strong> - is it shaped like a bell, or skewed, or
 something even more complicated?</li>
@@ -971,32 +969,67 @@ Which is a better strategy?</p></li>
 versus expected returns
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>)
 when investing.</p>
-<!--
-### Fri, Feb 28
- 
-Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
-
+<h3 id="fri-oct-10">Fri, Oct 10</h3>
+<p>Suppose we are trying to study a large population with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+and standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.
+If we take a random sample, the sample mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is a random variable and its probability distribution is called the
+<strong>sampling distribution</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>.
+Assuming that the population is large and our sample is a simple random
+sample, the sampling distribution always has the following features:</p>
 <div class="Theorem">
-**Sampling Distribution of $\bar{x}$.**
-
-1. **Shape**: gets more normal as the sample size $N$ gets larger.
-2. **Center**: the theoretical average of $\bar{x}$ is the true population mean $\mu$. 
-3. **Spread**: the theoretical standard deviation of $\bar{x}$ gets smaller as $N$ gets bigger. In fact: 
-$$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.$$
+<p><strong>Sampling Distribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>.</strong></p>
+<ol type="1">
+<li><strong>Shape</strong>: gets more normal as the sample size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets larger.</li>
+<li><strong>Center</strong>: the theoretical average of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is the true population mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</li>
+<li><strong>Spread</strong>: the theoretical standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+gets smaller as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets bigger. In fact:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></msub><mo>=</mo><mfrac><mi>σ</mi><msqrt><mi>N</mi></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.</annotation></semantics></math></li>
+</ol>
 </div>
-
-Examples of sampling distributions.
-
-* [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
-* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
-* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
-
-
-1. Every week in the Fall there are about 15 NFL games.  In each game, there are about 13 kickoffs, on average.  So we can estimate that there might be about 200 kickoffs in one week of NFL games.  Those 200 kickoffs would be a reasonably random sample of all NFL kickoffs.  Describe the sampling distribution of the average kickoff distance.  
-
-1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If a commuter plan is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than $4{,}000$ lbs?  (This is the same as finding $P(\bar{x} > 181.8)$)
-
--->
+<p>Examples of sampling distributions.</p>
+<ul>
+<li><a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html">Gettysburg
+Address words</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html">Weights
+of adults</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html">NFL
+kickoffs</a></li>
+</ul>
+<ol type="1">
+<li><p>Every week in the Fall there are about 15 NFL games. In each
+game, there are about 13 kickoffs, on average. So we can estimate that
+there might be about 200 kickoffs in one week of NFL games. Those 200
+kickoffs would be a reasonably random sample of all NFL kickoffs.
+Describe the sampling distribution of the average kickoff
+distance.</p></li>
+<li><p>The average American weighs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">\mu = 170</annotation></semantics></math>
+lbs. with a standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">\sigma = 40</annotation></semantics></math>
+lbs. If a commuter plan is designed to seat 22 passengers, what is the
+probability that the combined weight of the passengers would be greater
+than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>,</mo><mn>000</mn></mrow><annotation encoding="application/x-tex">4{,}000</annotation></semantics></math>
+lbs? Hint: This is the same as finding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>181.8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(\bar{x} &gt; 181.8)</annotation></semantics></math></p></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
