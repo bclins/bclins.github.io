@@ -982,9 +982,27 @@ Suppose $x' = Ax$ is a planar system with complex eigenvalues $\alpha \pm \beta 
 1. If $\alpha$ is zero, then the origin is a **center** equilibrium and the solutions are periodic.
 </div>
 
-After that, we talked about how to find general solutions for planar systems with complex eigenvalues.  It is still true that the general solution is 
+We talked about why this is true using Euler's formula
+$$e^{\alpha t \pm i \beta t} = e^{\alpha t} ( \cos (\beta t) \pm i \sin (\beta t) ).$$
+
+It is still true that the general solution is 
 $$x(t) = C_1 e^{\lambda_1 t} v_1 + C_2 e^{\lambda_2 t} v_2$$
-but the coefficients are typically complex numbers and we only want real solutions.  The following important fact can help us out:
+but the coefficients are typically complex numbers and we only want real solutions. Next time we'll discuss a better way to find the real-valued solutions.
+
+- - - 
+
+### Week 8 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 13 |             | Fall break - no class
+Wed, Oct 15 |  [3.4][3.4] | Complex Eigenvalues                              
+Fri, Oct 17 |  [3.5][3.5] | Repeated Eigenvalues                        
+
+<!--
+### Wed, Oct 15
+
+Last time we talked about planar systems with complex eigenvalues.  We haven't seen how to find nice solutions for those systems yet.  Here is the key idea we need:
 
 <div class="Theorem">
 **Solutions for Systems with Complex Eigenvalues.**
@@ -1001,19 +1019,11 @@ We used this fact to find the general (real) solutions for the following planar 
 
 2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
 
+3. Suppose a planar system $x' = Ax$ has an eigenvector $\begin{bmatrix} 1 \\ 4 - 3i \end{bmatrix}$ with corresponding eigenvalue $1 - 4i$.  What is the general solution for the system?  
 
+4. Find a solution for the previous example with initial condition $x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}$. 
 
-
-- - - 
-
-### Week 8 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 13 |             | Fall break - no class
-Wed, Oct 15 |  [3.4][3.4] | Complex Eigenvalues                              
-Fri, Oct 17 |  [3.5][3.5] | Repeated Eigenvalues                        
-
+-->
 
 - - - 
 
