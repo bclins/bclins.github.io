@@ -24,9 +24,9 @@
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\dfrac{dx}{dt} =  \begin{bmatrix} -1 & 6 \\ -2 & 6 \end{bmatrix}x$
+\item $\dfrac{dx}{dt} =  \begin{bmatrix} 3 & -4 \\ 1 & 3 \end{bmatrix}x$
 
-\item $\dfrac{dy}{dt} = \begin{bmatrix} 1 & -2 \\ 2 & 1 \end{bmatrix}y$
+\item $\dfrac{dy}{dt} = \begin{bmatrix} -1 & -8 \\ 2 & -1 \end{bmatrix}y$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
 \end{multicols}
@@ -35,9 +35,9 @@
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\dfrac{dx}{dt} =  \begin{bmatrix} -1 & 6 \\ -2 & 6 \end{bmatrix}x$
+\item $\dfrac{dx}{dt} =  \begin{bmatrix} 5 & 6 \\ 0 & 3 \end{bmatrix}x$
 
-\item $\dfrac{dy}{dt} = \begin{bmatrix} 1 & -2 \\ 2 & 1 \end{bmatrix}y$
+\item $\dfrac{dy}{dt} = \begin{bmatrix} 1 & -2 \\ 2 & -1 \end{bmatrix}y$
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
 \end{multicols}
@@ -46,41 +46,21 @@
 
 
 
-\newpage
 \noindent
-\textit{Find the characteristic polynomial and eigenvalues for each of the following matrices.}
-
-
-\noindent
-\textit{Use a computer to find the eigenvectors and eigenvalues for the following matrices. Be clear about which eigenvalue corresponds to which eigenvector.}
+\textit{Find real-valued general solutions for the following linear systems.  You can use a computer to find the relevant eigenvectors/eigenvalues.}
 
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-\item $\begin{bmatrix} 5 & 1 & 1 \\ -3 & 1 & -3 \\ 0 & 0 & 4 \end{bmatrix}$
 
+\item $\begin{array}{ccc} x' & = & 2y \\ y' & = & -2x \end{array}$
 
-\item $\begin{bmatrix} 3 & 4 \\ -4 & 3 \end{bmatrix}$
+\item $\begin{array}{ccc} x' & = & -x + y \\ y' & = & -9x - y \end{array}$
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
 \end{multicols}
 \vfill
-
-\noindent
-\textit{Find general solutions for the following linear systems.  You can use a computer to find the relevant eigenvectors/eigenvalues.}
-
-\begin{multicols}{2}
-\begin{enumerate}
-\setcounter{enumi}{\theenumCount}
-
-\item $\begin{array}{ccc} x' & = & 4x + 2y \\ y' & = & 1x + 3y \end{array}$
-
-\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$
-
-\setcounter{enumCount}{\theenumi}
-\end{enumerate} 
-\end{multicols}
 \vfill
 
 \noindent
@@ -90,13 +70,24 @@
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
 
-\item $\begin{array}{ccc} x' & = & 4x + 2y \\ y' & = & 1x + 3y \end{array}$, $x(0) = 2$ and $y(0) = 7$. 
+\item $\begin{array}{ccc} x' & = & 2y \\ y' & = & -2x \end{array}$ with $x(0) = 1$ and $y(0) = 0$. 
 
-\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$, $x(0) = 8$ and $y(0) = -6$. 
+\item $\begin{array}{ccc} x' & = & -x + y \\ y' & = & -9x - y \end{array}$ with $x(0) = 4$ and $y(0) = -6$. 
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
 \end{multicols}
 \vfill
+\vfill
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item Suppose that a 2-by-2 real matrix $A$ has eigenvector $\begin{bmatrix} 1 \\ 2 + i \end{bmatrix}$ with corresponding eigenvector $\lambda = 1 + 5i$. Find the general solution of the system $\mathbf{x}' = A \mathbf{x}$. 
+\vfill
+\vfill
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+
 
 \end{document}
