@@ -17,9 +17,9 @@ header-includes: |
 
 
 <ul class="nav">
-  <li>[Class Notes](notes.html)</li>
+  <li>[Examples](examples.html)</li>
+  <li>[Notes](notes.html)</li>
   <li>[Schedule & Syllabus](index.html)</li>
-  <li>[Example Code](examples.html)</li>
 </ul>
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 

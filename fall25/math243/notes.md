@@ -21,9 +21,9 @@ header-includes: |
 
 
 <ul class="nav">
-  <li>[Class Notes](notes.html)</li>
+  <li>[Examples](examples.html)</li>
+  <li>[Notes](notes.html)</li>
   <li>[Schedule & Syllabus](index.html)</li>
-  <li>[Example Code](examples.html)</li>
 </ul>
 
 <center>
@@ -1012,16 +1012,27 @@ Last time we talked about planar systems with complex eigenvalues.  We haven't s
 $$C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).$$
 </div>
 
-We used this fact to find the general (real) solutions for the following planar systems. 
+Here's how to use these facts to find the general real-valued solution:
+
+* **Step 1.** Find an eigenvector $v$ and its corresponding eigenvalue $\lambda = \alpha + i \beta$. 
+Then 
+$$x(t) = e^{\lambda t} v$$
+is one complex solution for the system.  
+
+* **Step 2.** Use Euler's formula to convert 
+$$e^{\lambda t} =  e^{\alpha t} (\cos (\beta t) + i \sin (\beta t)).$$ 
+
+* **Step 3.** Expand $x(t)$ to find the real and imaginary parts. 
+
+We used this approach to find the general (real) solutions for the following planar systems. 
 
 1. $\dfrac{dx}{dt} = \begin{bmatrix} -2 & 3 \\ -1 & -2 \end{bmatrix} x$
 
-2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
+2. Suppose a planar system $x' = Ax$ has an eigenvector $\begin{bmatrix} 1 \\ 4 - 3i \end{bmatrix}$ with corresponding eigenvalue $1 - 4i$.  What is the general solution for the system?  
 
-3. Suppose a planar system $x' = Ax$ has an eigenvector $\begin{bmatrix} 1 \\ 4 - 3i \end{bmatrix}$ with corresponding eigenvalue $1 - 4i$.  What is the general solution for the system?  
+3. Find a solution for the previous example with initial condition $x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}$. 
 
-4. Find a solution for the previous example with initial condition $x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}$. 
-
+4. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
 
 - - - 
 

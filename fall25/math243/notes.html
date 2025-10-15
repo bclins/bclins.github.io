@@ -103,13 +103,13 @@
 <h2 id="math-243---fall-2025">Math 243 - Fall 2025</h2>
 <ul class="nav">
 <li>
-<a href="notes.html">Class Notes</a>
+<a href="examples.html">Examples</a>
+</li>
+<li>
+<a href="notes.html">Notes</a>
 </li>
 <li>
 <a href="index.html">Schedule &amp; Syllabus</a>
-</li>
-<li>
-<a href="examples.html">Example Code</a>
 </li>
 </ul>
 <center>
@@ -1908,13 +1908,26 @@ are linearly independent when
 then the general solution is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">real</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">imag</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).</annotation></semantics></math></p>
 </div>
-<p>We used this fact to find the general (real) solutions for the
+<p>Here’s how to use these facts to find the general real-valued
+solution:</p>
+<ul>
+<li><p><strong>Step 1.</strong> Find an eigenvector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+and its corresponding eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mi>α</mi><mo>+</mo><mi>i</mi><mi>β</mi></mrow><annotation encoding="application/x-tex">\lambda = \alpha + i \beta</annotation></semantics></math>.
+Then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mi>v</mi></mrow><annotation encoding="application/x-tex">x(t) = e^{\lambda t} v</annotation></semantics></math>
+is one complex solution for the system.</p></li>
+<li><p><strong>Step 2.</strong> Use Euler’s formula to convert
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>i</mi><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{\lambda t} =  e^{\alpha t} (\cos (\beta t) + i \sin (\beta t)).</annotation></semantics></math></p></li>
+<li><p><strong>Step 3.</strong> Expand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+to find the real and imaginary parts.</p></li>
+</ul>
+<p>We used this approach to find the general (real) solutions for the
 following planar systems.</p>
 <ol type="1">
 <li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} -2 &amp; 3 \\ -1 &amp; -2 \end{bmatrix} x</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; -1 \\ 4 &amp; 1 \end{bmatrix} x</annotation></semantics></math>
-(<a href="https://youtu.be/j-qvdT8nSnw"
-class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
 <li><p>Suppose a planar system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>
 has an eigenvector
@@ -1924,6 +1937,9 @@ with corresponding eigenvalue
 What is the general solution for the system?</p></li>
 <li><p>Find a solution for the previous example with initial condition
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}</annotation></semantics></math>.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; -1 \\ 4 &amp; 1 \end{bmatrix} x</annotation></semantics></math>
+(<a href="https://youtu.be/j-qvdT8nSnw"
+class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
 </ol>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
