@@ -563,9 +563,8 @@ Wed, Oct 15 | [5.1][5.1] | Sampling distributions for proportions
 Fri, Oct 17 | [5.2][5.2] | Confidence intervals for a proportion
 
 
-### Wed, Oct 13
+### Wed, Oct 15
 
-<!--
 We started with this warm-up problem which is a review of the things we talked about last week. 
 
 1. Annual rainfall totals in Farmville are approximately normal with mean 44 inches and standard deviation 7 inches.  
@@ -604,6 +603,7 @@ We did the following exercises in class.
 
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 
+<!--
 ### Wed, Mar 5
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:

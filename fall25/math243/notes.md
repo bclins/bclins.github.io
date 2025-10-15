@@ -879,7 +879,7 @@ Today we talked about how to solve a homogeneous linear system $\dfrac{dx}{dt} =
 <div class="Theorem"> 
 **Solutions of Homogeneous Linear Systems.**
 
-**Fact.** If $\mathbf{v}$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $\mathbf{x}(t) = e^{\lambda t} \mathbf{v}$ is a solution of the linear system $\mathbf{x}' = A\mathbf{x}$. 
+**Fact.** If $\mathbf{v}$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $\mathbf{x}(t) = e^{\lambda t} \mathbf{v}$ is a **straight-line solution** for the linear system $\mathbf{x}' = A\mathbf{x}$. 
 
 **Fact 2.** The general solution of a planar system $\mathbf{x}' = A \mathbf{x}$ with distinct real eigenvalues $\lambda_1, \lambda_2$ and corresponding eigenvectors $\mathbf{v}_1, \mathbf{v}_2$ is
 $$C_1 e^{\lambda_1 t} \mathbf{v}_1 + C_2 e^{\lambda_2 t} \mathbf{v}_2.$$
@@ -999,7 +999,6 @@ Mon, Oct 13 |             | Fall break - no class
 Wed, Oct 15 |  [3.4][3.4] | Complex Eigenvalues                              
 Fri, Oct 17 |  [3.5][3.5] | Repeated Eigenvalues                        
 
-<!--
 ### Wed, Oct 15
 
 Last time we talked about planar systems with complex eigenvalues.  We haven't seen how to find nice solutions for those systems yet.  Here is the key idea we need:
@@ -1023,7 +1022,6 @@ We used this fact to find the general (real) solutions for the following planar 
 
 4. Find a solution for the previous example with initial condition $x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}$. 
 
--->
 
 - - - 
 

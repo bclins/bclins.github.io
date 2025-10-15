@@ -1688,7 +1688,7 @@ with eigenvalue
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
 then
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mi>𝐯</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}(t) = e^{\lambda t} \mathbf{v}</annotation></semantics></math>
-is a solution of the linear system
+is a <strong>straight-line solution</strong> for the linear system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A\mathbf{x}</annotation></semantics></math>.</p>
 <p><strong>Fact 2.</strong> The general solution of a planar system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A \mathbf{x}</annotation></semantics></math>
@@ -1882,31 +1882,49 @@ href="https://runestone.academy/ns/books/published/odeproject/linear05.html">3.5
 </tr>
 </tbody>
 </table>
-<!--
-### Wed, Oct 15
-
-Last time we talked about planar systems with complex eigenvalues.  We haven't seen how to find nice solutions for those systems yet.  Here is the key idea we need:
-
+<h3 id="wed-oct-15">Wed, Oct 15</h3>
+<p>Last time we talked about planar systems with complex eigenvalues. We
+haven’t seen how to find nice solutions for those systems yet. Here is
+the key idea we need:</p>
 <div class="Theorem">
-**Solutions for Systems with Complex Eigenvalues.**
-
-**Fact.** If $x(t)$ is a complex solution to a real linear system $x' = Ax$, then both the real and imaginary parts of $x(t)$ are real solutions for the system.  
-
-**Fact 2.** If $x(t)$ is a complex solution of a planar system $x' = Ax$ where the real-part $x_{\text{real}}(t)$ and the imaginary-part $x_\text{imag}(t)$ are linearly independent when $t=0$, then the general solution is 
-$$C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).$$
+<p><strong>Solutions for Systems with Complex Eigenvalues.</strong></p>
+<p><strong>Fact.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+is a complex solution to a real linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>,
+then both the real and imaginary parts of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+are real solutions for the system.</p>
+<p><strong>Fact 2.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+is a complex solution of a planar system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>
+where the real-part
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mtext mathvariant="normal">real</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_{\text{real}}(t)</annotation></semantics></math>
+and the imaginary-part
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mtext mathvariant="normal">imag</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x_\text{imag}(t)</annotation></semantics></math>
+are linearly independent when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t=0</annotation></semantics></math>,
+then the general solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">real</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msub><mi>x</mi><mtext mathvariant="normal">imag</mtext></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">C_1 x_\text{real}(t) + C_2 x_\text{imag}(t).</annotation></semantics></math></p>
 </div>
-
-We used this fact to find the general (real) solutions for the following planar systems. 
-
-1. $\dfrac{dx}{dt} = \begin{bmatrix} -2 & 3 \\ -1 & -2 \end{bmatrix} x$
-
-2. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
-
-3. Suppose a planar system $x' = Ax$ has an eigenvector $\begin{bmatrix} 1 \\ 4 - 3i \end{bmatrix}$ with corresponding eigenvalue $1 - 4i$.  What is the general solution for the system?  
-
-4. Find a solution for the previous example with initial condition $x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}$. 
-
--->
+<p>We used this fact to find the general (real) solutions for the
+following planar systems.</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} -2 &amp; 3 \\ -1 &amp; -2 \end{bmatrix} x</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \begin{bmatrix} 1 &amp; -1 \\ 4 &amp; 1 \end{bmatrix} x</annotation></semantics></math>
+(<a href="https://youtu.be/j-qvdT8nSnw"
+class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
+<li><p>Suppose a planar system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x&#39; = Ax</annotation></semantics></math>
+has an eigenvector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn><mo>−</mo><mn>3</mn><mi>i</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix} 1 \\ 4 - 3i \end{bmatrix}</annotation></semantics></math>
+with corresponding eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>4</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">1 - 4i</annotation></semantics></math>.
+What is the general solution for the system?</p></li>
+<li><p>Find a solution for the previous example with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">x(0) = \begin{bmatrix} 2 \\ -6 \end{bmatrix}</annotation></semantics></math>.</p></li>
+</ol>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
