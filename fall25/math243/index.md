@@ -47,7 +47,7 @@ Week | Topic                      | Notes | Homework
 6  | **Midterm 1**, Linear algebra basics           | [Week 06](notes.html#week-6-notes)  |
 7  | Planar systems                                 | [Week 07](notes.html#week-7-notes)  | [HW6](HW/HW6.pdf)
 8  | Complex and repeated eigenvalues               | [Week 08](notes.html#week-8-notes)  | [HW7](HW/HW7.pdf)
-9  | Classification of planar systems               | [Week 09](notes.html#week-9-notes)  |
+9  | Classification of planar systems               | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 10 | **Midterm 2**, Systems in higher dimensions    | [Week 10](notes.html#week-10-notes) | 
 11 | Homogeneous linear systems                     | [Week 11](notes.html#week-11-notes) | 
 12 | Forcing and resonance                          | [Week 12](notes.html#week-12-notes) | 

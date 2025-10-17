@@ -39,9 +39,14 @@
 
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
-
-\item Suppose that we have a linear system $\mathbf{x}' = A \mathbf{x}$ where $A$ is a 2-by-2 matrix.  If we replace the matrix $A$ with the matrix $-A$, then how would the equilibrium at the origin change?  Use the trace and the determinant to justify your answer. 
+\item Consider the 2-parameter family $\dfrac{d\mathbf{y}}{dt} = \begin{bmatrix} 1 & a \\ -b & 0 \end{bmatrix} \mathbf{y}$.  Describe in words how the type of equilibrium depends on the parameters $a$ and $b$.  
 \vfill
+
+
+\item If a 2-by-2 matrix $A$ has one eigenvalue equal to $4$, express the trace and determinant of $A$ as functions of the other eigenvalue $\lambda$. What types of equilibria are possible for the system $\mathbf{x}' = A \mathbf{x}$ with different values of $\lambda$? \vfill
+
+%\item Suppose that we have a linear planar system $\mathbf{x}' = A \mathbf{x}$ with a spiral source at the origin.  If we replace the matrix $A$ with the matrix $-A$, then how would the equilibrium at the origin change?  Use the trace and the determinant to justify your answer. 
+%\vfill
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
@@ -49,15 +54,15 @@
 
 
 \noindent
-\textit{Use the matrix exponential function to solve the following initial value problems.}
+\textit{Use the matrix exponential function (on a computer) to solve the following initial value problems.}
 
 \begin{multicols}{2}
 \begin{enumerate}
 \setcounter{enumi}{\theenumCount}
 
-\item $\begin{array}{ccc} x' & = & 4x + 2y \\ y' & = & 1x + 3y \end{array}$, $x(0) = 2$ and $y(0) = 7$. 
+\item $\begin{array}{ccl} x' & = & x + 2y \\ y' & = & 3x - 4y \\ x(0) & = & 1 \\ y(0) & = & 0.\end{array}$ 
 
-\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$, $x(0) = 8$ and $y(0) = -6$. 
+\item $\begin{array}{ccl} x' & = & 2x + y \\ y' & = & 2y \\ x(0) & = & 1 \\ y(0) & = & 2.\end{array}$ 
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
@@ -70,12 +75,52 @@
 \setcounter{enumi}{\theenumCount}
 
 \item $\begin{array}{ccl} x' & = & 3x - y  \\ y' & = & -x + 3y  \\ z' & = & 5x - 5y - 6z \\ x(0) & = & 4 \\  y(0) & = & 2 \\ z(0) & = & -3. \end{array}$ \\  
-\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$, $x(0) = 8$ and $y(0) = -6$. 
+\item $\begin{array}{ccl} x' & = & -x + 6y \\ y' & = & -6x - y \\ x(0) & = & 3 \\ y(0) & = & 0.\end{array}$ 
 
 \setcounter{enumCount}{\theenumi}
 \end{enumerate} 
 \end{multicols}
 \vfill
+
+\newpage
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+
+\item Use the definition of the matrix exponential $e^A = I + A + \tfrac{A^2}{2!} + \tfrac{A^3}{3!} + \ldots $ to calculate the matrix exponential $e^{tB}$ when $B = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$.  Hint: Calculate $(tB)^2$.  What do you notice?   
+\vfill
+
+\item The matrix $A = \begin{bmatrix} 2 & -3 \\ 0 & -1 \end{bmatrix}$ has eigenvectors $v_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $v_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ and corresponding eigenvalues $\lambda_1 = 2$ and $\lambda_2 = -1$.  
+\begin{enumerate}
+\item Use the formula $\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$ to find the inverse of $V = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$. 
+\vfill
+
+\item Calculate $D = V^{-1} A V$ by hand and show that it is a diagonal matrix.
+\vfill
+
+\item Calculate $e^{tA} = V e^{tD} V^{-1}$ by hand.  Recall that for a diagonal matrix $D = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}$, $e^{tD} = \begin{bmatrix} e^{\lambda_1 t} & 0 \\ 0 & e^{\lambda_2 t} \end{bmatrix}$.
+\vfill
+\end{enumerate}
+
+
+%\item Use the definition of the matrix exponential $e^A = I + A + \tfrac{A^2}{2!} + \tfrac{A^3}{3!} + \ldots $ to calculate the matrix exponential $e^{tB}$ when $B = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$.  Hint: Calculate $(tB)^2$.  What do you notice?   
+%\vfill
+%
+%\item The matrix $A = \begin{bmatrix} 5 & -3 \\ 6 & -4 \end{bmatrix}$ has eigenvectors $v_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$ and $v_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and corresponding eigenvalues $\lambda_1 = 2$ and $\lambda_2 = -1$.  
+%\begin{enumerate}
+%\item Use the formula $\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$ to find the inverse of $V = \begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix}$. 
+%\vfill
+%
+%\item Calculate $V D V^{-1}$ by hand and show that it is equal to $A$.  
+%\vfill
+%
+%\item Calculate $e^{tA} = V e^{tD} V^{-1}$ by hand.  Recall that for a diagonal matrix $D = \begin{bmatrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{bmatrix}$, $e^{tD} = \begin{bmatrix} e^{\lambda_1 t} & 0 \\ 0 & e^{\lambda_2 t} \end{bmatrix}$.
+%\vfill
+%\end{enumerate}
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
 
 
 \end{document}

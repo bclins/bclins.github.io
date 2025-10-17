@@ -1057,12 +1057,17 @@ If you change the parameters of a system of differential equations, a bifurcatio
 
 1. Consider the 1-parameter family $\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} a & a^2 - a \\ 1 & a \end{bmatrix} \mathbf{x}$. For what values of $a$ do you get bifurcations?  
 
-2. Consider the 2-parameter family $\dfrac{d\mathbf{y}}{dt} = \begin{bmatrix} 0 & a \\ b & 0 \end{bmatrix} \mathbf{y}$.  Describe how the type of equilibrium depends on the parameters $a$ and $b$.  
 
-3. Consider the harmonic oscillator $m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0$. 
+2. Consider the harmonic oscillator $m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0$. 
     a. Re-write this as a linear system.
     b. Express the trace and determinant of the system as functions of $m, b,$ and $k$. 
     c. Describe how the type of the equilibrium in phase space changes depending on $m, b, k$.  
+
+Here are two more examples that we didn't have time for in class.  
+
+3. Consider the 1-parameter family $\dfrac{d\mathbf{Y}}{dt} = \begin{bmatrix} a & a \\ 1 & a \end{bmatrix} \mathbf{Y}$. For what values of $a$ do you get bifurcations?  (<https://youtu.be/F2ew7_dD5Zg>)
+
+4. Consider the 2-parameter family $\dfrac{d\mathbf{y}}{dt} = \begin{bmatrix} 0 & a \\ b & 0 \end{bmatrix} \mathbf{y}$.  Describe how the type of equilibrium depends on the parameters $a$ and $b$.  
 
 - - - 
 
