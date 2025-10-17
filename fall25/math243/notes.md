@@ -16,6 +16,7 @@ header-includes: |
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\on}{\operatorname}
+\newcommand{\tr}{\on{tr}}
 
 ## Math 243 - Fall 2025
 
@@ -997,7 +998,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 13 |             | Fall break - no class
 Wed, Oct 15 |  [3.4][3.4] | Complex Eigenvalues                              
-Fri, Oct 17 |  [3.5][3.5] | Repeated Eigenvalues                        
+Fri, Oct 17 |  [3.7][3.7] | The Trace-Determinant Plane      
 
 ### Wed, Oct 15
 
@@ -1034,15 +1035,44 @@ We used this approach to find the general (real) solutions for the following pla
 
 4. $\dfrac{dx}{dt} = \begin{bmatrix} 1 & -1 \\ 4 & 1 \end{bmatrix} x$ (<https://youtu.be/j-qvdT8nSnw>)
 
+### Fri, Oct 17
+
+<!--
+There is one special case of planar linear systems that we haven't dealt with: when the eigenvalue is repeated. In this case there is typically only one linear solution. We'll save that case until after we talk about the matrix exponential function.      
+-->
+
+In [homework 6](HW/HW6.pdf) we showed that the characteristic polynomial of a 2-by-2 matrix $A$ is:
+$$\lambda^2 - \tr A \lambda + \det A.$$
+This implies that 
+$$\tr A = \lambda_1 + \lambda_2 \text{ and } \det A = \lambda_1 \lambda_2$$
+where $\lambda_1, \lambda_2$ are the eigenvalues of $A$.  You can also turn this around to say that 
+$$\lambda = \frac{\tr A \pm \sqrt{(\tr A)^2 - 4 \det A}}{2}.$$
+This explains this picture:
+<figure>
+<img src= "https://upload.wikimedia.org/wikipedia/commons/3/3b/Stability_Diagram.png" width = 600></img>
+<figcaption style="text-align:center">**Figure:** Types of equilibria for 2D-systems. (Source: [Wikipedia](https://en.wikipedia.org/wiki/Stability_theory))</figcaption>
+</figure>
+
+If you change the parameters of a system of differential equations, a bifurcation happens when the type or number of equilibria changes.  For planar systems, that happens when $\det A = 0$, $\tr A = 0$, or when $(\tr A)^2 = 4 \det A$.  
+
+1. Consider the 1-parameter family $\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} a & a^2 - a \\ 1 & a \end{bmatrix} \mathbf{x}$. For what values of $a$ do you get bifurcations?  
+
+2. Consider the 2-parameter family $\dfrac{d\mathbf{y}}{dt} = \begin{bmatrix} 0 & a \\ b & 0 \end{bmatrix} \mathbf{y}$.  Describe how the type of equilibrium depends on the parameters $a$ and $b$.  
+
+3. Consider the harmonic oscillator $m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0$. 
+    a. Re-write this as a linear system.
+    b. Express the trace and determinant of the system as functions of $m, b,$ and $k$. 
+    c. Describe how the type of the equilibrium in phase space changes depending on $m, b, k$.  
+
 - - - 
 
 ### Week 9 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 20 |  [3.6][3.6] | Changing Coordinates                     
-Wed, Oct 22 |  [3.7][3.7] | The Trace-Determinant Plane      
-Fri, Oct 24 |  [3.7][3.7] | The Trace-Determinant Plane - con'd               
+Mon, Oct 20 |  [3.9][3.9] | The Matrix Exponential 
+Wed, Oct 22 |  [3.8][3.8] | Linear Systems in Higher Dimensions  
+Fri, Oct 24 |  [3.6][3.6] | Changing Coordinates                    
 
 - - - 
 
@@ -1052,7 +1082,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 27 |             | Review        
 Wed, Oct 29 |             | **Midterm 2**
-Fri, Oct 31 |  [3.8][3.8] | Linear Systems in Higher Dimensions 
+Fri, Oct 31 |  [4.1][4.1] | Homogeneous Linear Equations                         
 
 - - - 
 
@@ -1060,9 +1090,9 @@ Fri, Oct 31 |  [3.8][3.8] | Linear Systems in Higher Dimensions
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 3  |  [3.9][3.9] | The Matrix Exponential 
-Wed, Nov 5  |  [4.1][4.1] | Homogeneous Linear Equations                         
-Fri, Nov 7  |  [4.2][4.2] | Forcing                                              
+Mon, Nov 3  |  [4.2][4.2] | Forcing                                        
+Wed, Nov 5  |  [4.3][4.3] | Sinusoidal Forcing                                  
+Fri, Nov 7  |  [4.4][4.4] | Forcing and Resonance                                     
 
 - - - 
 
@@ -1070,9 +1100,9 @@ Fri, Nov 7  |  [4.2][4.2] | Forcing
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 10 |  [4.3][4.3] | Sinusoidal Forcing                                             
-Wed, Nov 12 |  [4.4][4.4] | Forcing and Resonance                                
-Fri, Nov 14 |  [5.1][5.1] | Linearization  
+Mon, Nov 10 |  [5.1][5.1] | Linearization            
+Wed, Nov 12 |  [5.1][5.1] | Linearization - con'd 
+Fri, Nov 14 |  [5.2][5.2] | Hamiltonian Systems
 
 - - - 
 
@@ -1080,7 +1110,7 @@ Fri, Nov 14 |  [5.1][5.1] | Linearization
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 17 |  [5.1][5.1] | Linearization - con'd
+Mon, Nov 17 |  [5.3][5.3] | More Nonlinear Mechanics
 Wed, Nov 19 |             | Review              
 Fri, Nov 21 |             | **Midterm 3** 
 Mon, Nov 23 |  [6.1][6.1] | The Laplace Transform                   

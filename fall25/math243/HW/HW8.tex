@@ -1,0 +1,81 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\tr}{\on{tr}}
+
+\renewcommand\arraystretch{1.5}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Homework 8 - Math 243 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\noindent
+\textit{Each of the following linear systems has a single parameter $a$. Calculate the trace and determinant for each system, and use them to find the values of $a$ where the type of equilibrium changes.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $\dfrac{d \mathbf{x}}{dt} = \begin{bmatrix} a & -1 \\ 2 & 0 \end{bmatrix} \mathbf{x}$. 
+
+\item $\dfrac{d \mathbf{y}}{dt} = \begin{bmatrix} a & a \\ 1 & 0 \end{bmatrix} \mathbf{y}$. 
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item Suppose that we have a linear system $\mathbf{x}' = A \mathbf{x}$ where $A$ is a 2-by-2 matrix.  If we replace the matrix $A$ with the matrix $-A$, then how would the equilibrium at the origin change?  Use the trace and the determinant to justify your answer. 
+\vfill
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+
+
+
+\noindent
+\textit{Use the matrix exponential function to solve the following initial value problems.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $\begin{array}{ccc} x' & = & 4x + 2y \\ y' & = & 1x + 3y \end{array}$, $x(0) = 2$ and $y(0) = 7$. 
+
+\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$, $x(0) = 8$ and $y(0) = -6$. 
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $\begin{array}{ccl} x' & = & 3x - y  \\ y' & = & -x + 3y  \\ z' & = & 5x - 5y - 6z \\ x(0) & = & 4 \\  y(0) & = & 2 \\ z(0) & = & -3. \end{array}$ \\  
+\item $\begin{array}{ccc} x' & = & -3x + 4y \\ y' & = & 3x - 2y \end{array}$, $x(0) = 8$ and $y(0) = -6$. 
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\end{document}

@@ -603,8 +603,7 @@ We did the following exercises in class.
 
 4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 
-<!--
-### Wed, Mar 5
+### Fri, Oct 17
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
@@ -620,7 +619,21 @@ The confidence interval formula has two parts: a **best guess estimate** (or **p
 2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
 
-### Fri, Mar 7
+
+- - - 
+
+### Week 9 Notes
+
+
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 20  | [5.2][5.2] | Confidence intervals for a proportion - con'd 
+Wed, Oct 22  |            | Review  
+Fri, Oct 24  |            | **Midterm 2**
+
+<!--
+### Mon, Oct 20
 
 Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
 
@@ -664,18 +677,6 @@ We finished by talking about how to choose a sample size large enough to get a d
 
 4. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 -->
-
-- - - 
-
-### Week 9 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 20  | [5.2][5.2] | Confidence intervals for a proportion - con'd 
-Wed, Oct 22  |            | Review  
-Fri, Oct 24  |            | **Midterm 2**
 
 <!-- 
 ### Mon, Mar 17

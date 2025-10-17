@@ -1877,8 +1877,8 @@ href="https://runestone.academy/ns/books/published/odeproject/linear04.html">3.4
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 17</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear05.html">3.5</a></td>
-<td style="text-align: left;">Repeated Eigenvalues</td>
+href="https://runestone.academy/ns/books/published/odeproject/linear07.html">3.7</a></td>
+<td style="text-align: left;">The Trace-Determinant Plane</td>
 </tr>
 </tbody>
 </table>
@@ -1941,14 +1941,66 @@ What is the general solution for the system?</p></li>
 (<a href="https://youtu.be/j-qvdT8nSnw"
 class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
 </ol>
+<h3 id="fri-oct-17">Fri, Oct 17</h3>
+<!--
+There is one special case of planar linear systems that we haven't dealt with: when the eigenvalue is repeated. In this case there is typically only one linear solution. We'll save that case until after we talk about the matrix exponential function.      
+-->
+In <a href="HW/HW6.pdf">homework 6</a> we showed that the characteristic
+polynomial of a 2-by-2 matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>λ</mi><mn>2</mn></msup><mo>−</mo><mo>tr</mo><mi>A</mi><mi>λ</mi><mo>+</mo><mo>det</mo><mi>A</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lambda^2 - \operatorname{tr}A \lambda + \det A.</annotation></semantics></math>
+This implies that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tr</mo><mi>A</mi><mo>=</mo><msub><mi>λ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>λ</mi><mn>2</mn></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mo>det</mo><mi>A</mi><mo>=</mo><msub><mi>λ</mi><mn>1</mn></msub><msub><mi>λ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\operatorname{tr}A = \lambda_1 + \lambda_2 \text{ and } \det A = \lambda_1 \lambda_2</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>λ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_1, \lambda_2</annotation></semantics></math>
+are the eigenvalues of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+You can also turn this around to say that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mfrac><mrow><mo>tr</mo><mi>A</mi><mo>±</mo><msqrt><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>tr</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>det</mo><mi>A</mi></mrow></msqrt></mrow><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\lambda = \frac{\operatorname{tr}A \pm \sqrt{(\operatorname{tr}A)^2 - 4 \det A}}{2}.</annotation></semantics></math>
+This explains this picture:
+<figure>
+<img src= "https://upload.wikimedia.org/wikipedia/commons/3/3b/Stability_Diagram.png" width = 600></img>
+<figcaption style="text-align:center">
+<strong>Figure:</strong> Types of equilibria for 2D-systems. (Source: <a
+href="https://en.wikipedia.org/wiki/Stability_theory">Wikipedia</a>)
+</figcaption>
+</figure>
+<p>If you change the parameters of a system of differential equations, a
+bifurcation happens when the type or number of equilibria changes. For
+planar systems, that happens when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>det</mo><mi>A</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\det A = 0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>tr</mo><mi>A</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{tr}A = 0</annotation></semantics></math>,
+or when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>tr</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>4</mn><mo>det</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">(\operatorname{tr}A)^2 = 4 \det A</annotation></semantics></math>.</p>
+<ol type="1">
+<li><p>Consider the 1-parameter family
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mi>a</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} a &amp; a^2 - a \\ 1 &amp; a \end{bmatrix} \mathbf{x}</annotation></semantics></math>.
+For what values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+do you get bifurcations?</p></li>
+<li><p>Consider the 2-parameter family
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐲</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>b</mi></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐲</mi></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{y}}{dt} = \begin{bmatrix} 0 &amp; a \\ b &amp; 0 \end{bmatrix} \mathbf{y}</annotation></semantics></math>.
+Describe how the type of equilibrium depends on the parameters
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.</p></li>
+<li><p>Consider the harmonic oscillator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mfrac displaystyle="true"><mrow><msup><mi>d</mi><mn>2</mn></msup><mi>x</mi></mrow><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>b</mi><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mi>k</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m \dfrac{d^2 x}{dt^2} + b \dfrac{dx}{dt} + k x = 0</annotation></semantics></math>.</p>
+<ol type="a">
+<li>Re-write this as a linear system.</li>
+<li>Express the trace and determinant of the system as functions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>b</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">m, b,</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
+<li>Describe how the type of the equilibrium in phase space changes
+depending on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">m, b, k</annotation></semantics></math>.</li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -1960,26 +2012,31 @@ class="uri">https://youtu.be/j-qvdT8nSnw</a>)</p></li>
 <tr class="odd">
 <td style="text-align: center;">Mon, Oct 20</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear06.html">3.6</a></td>
-<td style="text-align: left;">Changing Coordinates</td>
+href="https://runestone.academy/ns/books/published/odeproject/linear09.html">3.9</a></td>
+<td style="text-align: left;">The Matrix Exponential</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Oct 22</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear07.html">3.7</a></td>
-<td style="text-align: left;">The Trace-Determinant Plane</td>
+href="https://runestone.academy/ns/books/published/odeproject/linear08.html">3.8</a></td>
+<td style="text-align: left;">Linear Systems in Higher Dimensions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 24</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear07.html">3.7</a></td>
-<td style="text-align: left;">The Trace-Determinant Plane - con’d</td>
+href="https://runestone.academy/ns/books/published/odeproject/linear06.html">3.6</a></td>
+<td style="text-align: left;">Changing Coordinates</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2001,8 +2058,8 @@ href="https://runestone.academy/ns/books/published/odeproject/linear07.html">3.7
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 31</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear08.html">3.8</a></td>
-<td style="text-align: left;">Linear Systems in Higher Dimensions</td>
+href="https://runestone.academy/ns/books/published/odeproject/secondorder01.html">4.1</a></td>
+<td style="text-align: left;">Homogeneous Linear Equations</td>
 </tr>
 </tbody>
 </table>
@@ -2025,31 +2082,26 @@ href="https://runestone.academy/ns/books/published/odeproject/linear08.html">3.8
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 3</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear09.html">3.9</a></td>
-<td style="text-align: left;">The Matrix Exponential</td>
+href="https://runestone.academy/ns/books/published/odeproject/secondorder02.html">4.2</a></td>
+<td style="text-align: left;">Forcing</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 5</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/secondorder01.html">4.1</a></td>
-<td style="text-align: left;">Homogeneous Linear Equations</td>
+href="https://runestone.academy/ns/books/published/odeproject/secondorder03.html">4.3</a></td>
+<td style="text-align: left;">Sinusoidal Forcing</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 7</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/secondorder02.html">4.2</a></td>
-<td style="text-align: left;">Forcing</td>
+href="https://runestone.academy/ns/books/published/odeproject/secondorder04.html">4.4</a></td>
+<td style="text-align: left;">Forcing and Resonance</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2061,20 +2113,20 @@ href="https://runestone.academy/ns/books/published/odeproject/secondorder02.html
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 10</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/secondorder03.html">4.3</a></td>
-<td style="text-align: left;">Sinusoidal Forcing</td>
+href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
+<td style="text-align: left;">Linearization</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 12</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/secondorder04.html">4.4</a></td>
-<td style="text-align: left;">Forcing and Resonance</td>
+href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
+<td style="text-align: left;">Linearization - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 14</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
-<td style="text-align: left;">Linearization</td>
+href="https://runestone.academy/ns/books/published/odeproject/nonlinear02.html">5.2</a></td>
+<td style="text-align: left;">Hamiltonian Systems</td>
 </tr>
 </tbody>
 </table>
@@ -2092,8 +2144,8 @@ href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 17</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
-<td style="text-align: left;">Linearization - con’d</td>
+href="https://runestone.academy/ns/books/published/odeproject/nonlinear03.html">5.3</a></td>
+<td style="text-align: left;">More Nonlinear Mechanics</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 19</td>
