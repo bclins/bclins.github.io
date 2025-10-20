@@ -2033,11 +2033,81 @@ href="https://runestone.academy/ns/books/published/odeproject/linear08.html">3.8
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 24</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/linear06.html">3.6</a></td>
-<td style="text-align: left;">Changing Coordinates</td>
+href="https://runestone.academy/ns/books/published/odeproject/linear05.html">3.5</a></td>
+<td style="text-align: left;">Repeated Eigenvalues</td>
 </tr>
 </tbody>
 </table>
+<h3 id="mon-oct-20">Mon, Oct 20</h3>
+<p>Today we talked about the <strong>matrix exponential</strong> and how
+it solves any homogeneous linear system!</p>
+<div class="Theorem">
+<p><strong>The Matrix Exponential.</strong></p>
+<p><strong>Definition.</strong> For any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mi>A</mi></msup><mo>=</mo><mi>I</mi><mo>+</mo><mi>A</mi><mo>+</mo><mfrac><msup><mi>A</mi><mn>2</mn></msup><mrow><mn>2</mn><mi>!</mi></mrow></mfrac><mo>+</mo><mfrac><msup><mi>A</mi><mn>3</mn></msup><mrow><mn>3</mn><mi>!</mi></mrow></mfrac><mo>+</mo><mi>…</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">e^A = I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \ldots.</annotation></semantics></math></p>
+<p><strong>Fact.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>t</mi><mi>A</mi></mrow></msup><msub><mi>𝐱</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{x}(t) = e^{tA} \mathbf{x}_0</annotation></semantics></math>
+is the solution of the system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}</annotation></semantics></math>
+with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>𝐱</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{x}(0) = \mathbf{x}_0</annotation></semantics></math>.</p>
+</div>
+<p>To calculate a matrix exponential, start by
+<strong>diagonalizing</strong> the matrix, if possible.</p>
+<div class="Theorem">
+<p><strong>Diagonalization Theorem.</strong></p>
+<p>If an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+has linearly independent eigenvectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝐯</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>𝐯</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n</annotation></semantics></math>
+with corresponding eigenvalues
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>,</mo><msub><mi>λ</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>λ</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lambda_1, \lambda_2, \ldots, \lambda_n</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>V</mi><mi>D</mi><msup><mi>V</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A = V D V^{-1}</annotation></semantics></math>
+where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>𝐯</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>𝐯</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><mi>⋯</mi></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>𝐯</mi><mi>n</mi></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>λ</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>λ</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">V = \begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{v}_1 &amp; \mathbf{v}_2 &amp; \cdots &amp; \mathbf{v}_n \\  | &amp; | &amp; &amp; | \end{bmatrix} \text{ and } D = \begin{bmatrix} \lambda_1 &amp; &amp; 0 \\ &amp; \ddots  &amp; \\ 0 &amp;  &amp; \lambda_n \end{bmatrix}.</annotation></semantics></math></p>
+<p>Furthermore, the matrix exponential
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>t</mi><mi>A</mi></mrow></msup><annotation encoding="application/x-tex">e^{tA}</annotation></semantics></math>
+for a diagonalizable matrix is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>t</mi><mi>A</mi></mrow></msup><mo>=</mo><mi>V</mi><msup><mi>e</mi><mrow><mi>t</mi><mi>D</mi></mrow></msup><msup><mi>V</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mi>V</mi><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msup><mi>e</mi><mrow><mi>t</mi><msub><mi>λ</mi><mn>1</mn></msub></mrow></msup></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"></mtd><mtd columnalign="center" style="text-align: center"><msup><mi>e</mi><mrow><mi>t</mi><msub><mi>λ</mi><mi>n</mi></msub></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><msup><mi>V</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{tA} = V e^{tD} V^{-1} = V \begin{bmatrix} e^{t\lambda_1} &amp; &amp; 0 \\ &amp; \ddots  &amp; \\ 0 &amp;  &amp; e^{t\lambda_n} \end{bmatrix}V^{-1}.</annotation></semantics></math></p>
+</div>
+<ol type="1">
+<li>Diagonalize the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{bmatrix} 1 &amp; -1 \\ 2 &amp; 4 \end{bmatrix}</annotation></semantics></math>
+and then use the diagonalization to compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mn>100</mn></msup><annotation encoding="application/x-tex">A^{100}</annotation></semantics></math>.
+(<a href="https://www.youtube.com/watch?v=uHW2zThZDEw"
+class="uri">https://www.youtube.com/watch?v=uHW2zThZDEw</a>)</li>
+</ol>
+<p>To solve the last problem, it helps to know the following
+formula.</p>
+<div class="Theorem">
+<p><strong>Inverse of a 2-by-2 Matrix.</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>b</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>d</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mi>a</mi><mi>d</mi><mo>−</mo><mi>b</mi><mi>c</mi></mrow></mfrac><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>d</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>b</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mi>c</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>a</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}.</annotation></semantics></math></p>
+</div>
+<ol start="2" type="1">
+<li><p>Use the diagonalization of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{bmatrix} 1 &amp; -1 \\ 2 &amp; 4 \end{bmatrix}</annotation></semantics></math>
+to solve the initial value problem
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>𝐱</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\frac{d \mathbf{x}}{dt} =  \begin{bmatrix} 1 &amp; -1 \\ 2 &amp; 4 \end{bmatrix} \mathbf{x}, ~ \mathbf{x}(0) = \begin{bmatrix} 1 \\ 2 \end{bmatrix}.</annotation></semantics></math></p></li>
+<li><p>Calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>t</mi><mi>A</mi></mrow></msup><annotation encoding="application/x-tex">e^{tA}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{bmatrix} 3 &amp; 4 \\ -4 &amp; 3 \end{bmatrix}</annotation></semantics></math>
+and use it to find the general solution to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A \mathbf{x}</annotation></semantics></math>.
+Hint: the eigenvalues of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>±</mo><mn>4</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">3 \pm 4i</annotation></semantics></math>
+with corresponding eigenvectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>±</mi><mi>i</mi></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix} 1 \\ \pm i \end{bmatrix}</annotation></semantics></math>.</p></li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>

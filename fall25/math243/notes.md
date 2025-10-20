@@ -1077,7 +1077,50 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 20 |  [3.9][3.9] | The Matrix Exponential 
 Wed, Oct 22 |  [3.8][3.8] | Linear Systems in Higher Dimensions  
-Fri, Oct 24 |  [3.6][3.6] | Changing Coordinates                    
+Fri, Oct 24 |  [3.5][3.5] | Repeated Eigenvalues
+
+### Mon, Oct 20
+
+Today we talked about the **matrix exponential** and how it solves any homogeneous linear system!  
+
+<div class="Theorem">
+**The Matrix Exponential.** 
+
+**Definition.** For any $n$-by-$n$ matrix $A$,
+$$e^A = I + A + \frac{A^2}{2!} + \frac{A^3}{3!} + \ldots.$$
+
+**Fact.** $\mathbf{x}(t) = e^{tA} \mathbf{x}_0$ is the solution of the system $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}$ with initial condition $\mathbf{x}(0) = \mathbf{x}_0$.
+</div>
+
+To calculate a matrix exponential, start by **diagonalizing** the matrix, if possible.  
+
+<div class="Theorem">
+**Diagonalization Theorem.** 
+
+If an $n$-by-$n$ matrix $A$ has linearly independent eigenvectors $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ with corresponding eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$, then 
+$$A = V D V^{-1}$$
+where 
+$$V = \begin{bmatrix} | & | & & | \\ \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \\  | & | & & | \end{bmatrix} \text{ and } D = \begin{bmatrix} \lambda_1 & & 0 \\ & \ddots  & \\ 0 &  & \lambda_n \end{bmatrix}.$$
+
+Furthermore, the matrix exponential $e^{tA}$ for a diagonalizable matrix is: 
+$$e^{tA} = V e^{tD} V^{-1} = V \begin{bmatrix} e^{t\lambda_1} & & 0 \\ & \ddots  & \\ 0 &  & e^{t\lambda_n} \end{bmatrix}V^{-1}.$$
+</div>
+
+1. Diagonalize the matrix $A = \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix}$ and then use the diagonalization to compute $A^{100}$. (<https://www.youtube.com/watch?v=uHW2zThZDEw>)  
+
+To solve the last problem, it helps to know the following formula. 
+
+<div class="Theorem">
+**Inverse of a 2-by-2 Matrix.**
+$$\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \dfrac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}.$$
+</div>
+
+2. Use the diagonalization of $A = \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix}$ to solve the initial value problem
+$$\frac{d \mathbf{x}}{dt} =  \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix} \mathbf{x}, ~ \mathbf{x}(0) = \begin{bmatrix} 1 \\ 2 \end{bmatrix}.$$
+
+3. Calculate $e^{tA}$ for $A = \begin{bmatrix} 3 & 4 \\ -4 & 3 \end{bmatrix}$ and use it to find the general solution to $\mathbf{x}' = A \mathbf{x}$. Hint: the eigenvalues of $A$ are $3 \pm 4i$ with corresponding eigenvectors $\begin{bmatrix} 1 \\ \pm i \end{bmatrix}$. 
+
+
 
 - - - 
 

@@ -1214,51 +1214,96 @@ con’d</td>
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Oct 20
-
-Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
-
-<div class = "Theorem"> 
-**Confidence Interval for a Proportion.** To estimate a population proportion, use 
-
-$$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
-</div> 
-
-The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
-
-<center>
-Confidence Level | 90% | 95% | 99% | 99.9%
-:---|:---:|:---:|:---:|:---:
-Critical z-value ($z^*$) | 1.645 | 1.96 | 2.576 | 3.291
-</center>
-
-This formula works well as long as two assumptions are true:
-
-1. **No Bias.** The data should come from a simple random sample to avoid bias.
-
-2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in the sample.
-
-
+<h3 id="mon-oct-20">Mon, Oct 20</h3>
+<p>Last time we only looked at 95% confidence intervals, but you can
+adjust the <strong>confidence level</strong> by using the following
+formula.</p>
+<div class="Theorem">
+<p><strong>Confidence Interval for a Proportion.</strong> To estimate a
+population proportion, use</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mfrac displaystyle="true"><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.</annotation></semantics></math></p>
 </div>
-
-Examples.
-
-1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
-
-2. What are we 90% sure is true about the confidence interval we found? Only one of the following is the correct answer. Which is it?
-    a. 90% of Americans are in the interval.
-    b. 90% of future samples will have results in the interval.
-    c. 90% sure that the population proportion is in the interval.
-    d. 90% sure that the sample proportion is in the interval. 
-
-<!-- We didn't get to these other exercises because we spend time going over the quiz.  Definitely do the last one next time! 
-3. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
-
-We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
-
-4. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
--->
+<p>The variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mo>*</mo></msup><annotation encoding="application/x-tex">z^*</annotation></semantics></math>
+is called the <strong>critical z-value</strong> is determined by the
+desired confidence level. Here are some common choices.</p>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: left;">
+Confidence Level
+</th>
+<th style="text-align: center;">
+90%
+</th>
+<th style="text-align: center;">
+95%
+</th>
+<th style="text-align: center;">
+99%
+</th>
+<th style="text-align: center;">
+99.9%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Critical z-value
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mo>*</mo></msup><annotation encoding="application/x-tex">z^*</annotation></semantics></math>)
+</td>
+<td style="text-align: center;">
+1.645
+</td>
+<td style="text-align: center;">
+1.96
+</td>
+<td style="text-align: center;">
+2.576
+</td>
+<td style="text-align: center;">
+3.291
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>This formula works well as long as two assumptions are true:</p>
+<ol type="1">
+<li><p><strong>No Bias.</strong> The data should come from a simple
+random sample to avoid bias.</p></li>
+<li><p><strong>Normality.</strong> The sample size must be large enough
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+to be normally distributed. A rule of thumb (<strong>the success-failure
+condition</strong>) is that you should have at least 15 “successes” and
+15 “failures” in the sample.</p></li>
+</ol>
+</div>
+<p>Examples.</p>
+<ol type="1">
+<li><p>In 2004 the General Social Survey found 304 out 977 Americans
+always felt rushed. Find the margin of error for a 90% confidence
+interval with this data.</p></li>
+<li><p>What are we 90% sure is true about the confidence interval we
+found? Only one of the following is the correct answer. Which is it?</p>
+<ol type="a">
+<li>90% of Americans are in the interval.</li>
+<li>90% of future samples will have results in the interval.</li>
+<li>90% sure that the population proportion is in the interval.</li>
+<li>90% sure that the sample proportion is in the interval.</li>
+</ol></li>
+<li><p>A university newspaper is conducting a survey to determine what
+fraction of students support a $200 a year increase in fees to pay for a
+new football stadium. How big of a sample is required to ensure the
+margin of error is smaller than 0.04 using a 95% confidence
+level?</p></li>
+<li><p><a
+href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185">Case
+Study 5.2.4</a></p></li>
+</ol>
 <!-- 
 ### Mon, Mar 17
 

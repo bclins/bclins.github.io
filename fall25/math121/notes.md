@@ -632,7 +632,6 @@ Mon, Oct 20  | [5.2][5.2] | Confidence intervals for a proportion - con'd
 Wed, Oct 22  |            | Review  
 Fri, Oct 24  |            | **Midterm 2**
 
-<!--
 ### Mon, Oct 20
 
 Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
@@ -646,9 +645,26 @@ $$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
 The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
 
 <center>
-Confidence Level | 90% | 95% | 99% | 99.9%
-:---|:---:|:---:|:---:|:---:
-Critical z-value ($z^*$) | 1.645 | 1.96 | 2.576 | 3.291
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: left;">Confidence Level</th>
+<th style="text-align: center;">90%</th>
+<th style="text-align: center;">95%</th>
+<th style="text-align: center;">99%</th>
+<th style="text-align: center;">99.9%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Critical z-value ($z^*$)</td>
+<td style="text-align: center;">1.645</td>
+<td style="text-align: center;">1.96</td>
+<td style="text-align: center;">2.576</td>
+<td style="text-align: center;">3.291</td>
+</tr>
+</tbody>
+</table>
 </center>
 
 This formula works well as long as two assumptions are true:
@@ -670,13 +686,11 @@ Examples.
     c. 90% sure that the population proportion is in the interval.
     d. 90% sure that the sample proportion is in the interval. 
 
-<!-- We didn't get to these other exercises because we spend time going over the quiz.  Definitely do the last one next time! 
-3. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 
-We finished by talking about how to choose a sample size large enough to get a desired margin of error. 
+3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 
-4. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
--->
+4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
+
 
 <!-- 
 ### Mon, Mar 17
