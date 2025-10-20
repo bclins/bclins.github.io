@@ -686,8 +686,10 @@ Examples.
     c. 90% sure that the population proportion is in the interval.
     d. 90% sure that the sample proportion is in the interval. 
 
-
+3. About half of HSC students were born in Virginia. Given this fact, approximately how large of a sample of HSC students would you need to get a margin of error for a 95% confidence interval under 10%?  
+<!--
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
+-->
 
 4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 

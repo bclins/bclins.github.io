@@ -1120,6 +1120,12 @@ $$\frac{d \mathbf{x}}{dt} =  \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix} \math
 
 3. Calculate $e^{tA}$ for $A = \begin{bmatrix} 3 & 4 \\ -4 & 3 \end{bmatrix}$ and use it to find the general solution to $\mathbf{x}' = A \mathbf{x}$. Hint: the eigenvalues of $A$ are $3 \pm 4i$ with corresponding eigenvectors $\begin{bmatrix} 1 \\ \pm i \end{bmatrix}$. 
 
+Since calculating a matrix exponential by hand is so tedious, we'll usually use a computer.  
+
+* Symbolic matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJwdyb0KgCAQAOBd8B1uS8MG3Rt6gLY2kSgwEDKP64J8-37W79uoZDhrxgopYyGGVgqG_rO17KdquDFAcdn7ia6opZBieHtcmNKtvLfGBeM7Z2wI_yJF5jojpYNVvFENLWv9AKr_H44=&lang=sage&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJwryE5XyMlPTFEorsxNys_JTOblArKKFUp4uRKLi0tzUzVKdBTUi1ITc9Q1ebkcFWxBCjWiDRWMrBV0jRQMY4GivFypFQW5Go5aJZoA4V4WgQ==&lang=octave&interacts=eJyLjgUAARUAuQ==))
+* Numerical matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uVKAwkWJ2cWVOrlZOYl5qTD5FIrCnJ5uXi5HBVsFRKLihIrNaKjDXWMYnWidY10DGNjNUGSBUWZeSUaIKUajpqaADjgHlM=&lang=sage&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJxzVLBViDZUMLJW0DVSMIy15uXi5UqtKMjVcNQEAEsxBbo=&lang=octave&interacts=eJyLjgUAARUAuQ==))
+
+Be careful computing symbolic matrix exponentials.  It only works for very simple matrices.  
 
 
 - - - 
