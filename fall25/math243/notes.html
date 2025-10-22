@@ -2112,16 +2112,54 @@ with corresponding eigenvectors
 usually use a computer.</p>
 <ul>
 <li>Symbolic matrix exponentials (<a
-href="https://sagecell.sagemath.org/?z=eJwdyb0KgCAQAOBd8B1uS8MG3Rt6gLY2kSgwEDKP64J8-37W79uoZDhrxgopYyGGVgqG_rO17KdquDFAcdn7ia6opZBieHtcmNKtvLfGBeM7Z2wI_yJF5jojpYNVvFENLWv9AKr_H44=&amp;lang=sage&amp;interacts=eJyLjgUAARUAuQ==">Python</a>,
+href="https://sagecell.sagemath.org/?z=eJwdyb0KgCAQAOBd8B1uS8MG3Rt6gLY2kSgwEDKP64J8-37W79uoZDhrxgopYyGGVgqG_rO17KdquDFAcdn7ia6opZBieHtcmNKtvLfGBeM7Z2wI_yJF5jojpYNVvFENLWv9AKr_H44=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>,
 <a
 href="https://sagecell.sagemath.org/?z=eJwryE5XyMlPTFEorsxNys_JTOblArKKFUp4uRKLi0tzUzVKdBTUi1ITc9Q1ebkcFWxBCjWiDRWMrBV0jRQMY4GivFypFQW5Go5aJZoA4V4WgQ==&amp;lang=octave&amp;interacts=eJyLjgUAARUAuQ==">Octave</a>)</li>
 <li>Numerical matrix exponentials (<a
-href="https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uVKAwkWJ2cWVOrlZOYl5qTD5FIrCnJ5uXi5HBVsFRKLihIrNaKjDXWMYnWidY10DGNjNUGSBUWZeSUaIKUajpqaADjgHlM=&amp;lang=sage&amp;interacts=eJyLjgUAARUAuQ==">Python</a>,
+href="https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uVKAwkWJ2cWVOrlZOYl5qTD5FIrCnJ5uXi5HBVsFRKLihIrNaKjDXWMYnWidY10DGNjNUGSBUWZeSUaIKUajpqaADjgHlM=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>,
 <a
 href="https://sagecell.sagemath.org/?z=eJxzVLBViDZUMLJW0DVSMIy15uXi5UqtKMjVcNQEAEsxBbo=&amp;lang=octave&amp;interacts=eJyLjgUAARUAuQ==">Octave</a>)</li>
 </ul>
 <p>Be careful computing symbolic matrix exponentials. It only works for
 very simple matrices.</p>
+<h3 id="wed-oct-22">Wed, Oct 22</h3>
+<p>Today we talked about homogeneous linear systems in 3-dimensions. We
+started with these examples.</p>
+<ol type="1">
+<li><p>Use the matrix exponential function to find the solution to the
+initial value problem
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>X</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>10</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>10</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>X</mi><mo>,</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> with </mtext><mspace width="0.333em"></mspace></mrow><mi>X</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>100</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dX}{dt} = \begin{bmatrix} 1 &amp; 10 &amp; 0 \\ -10 &amp; 1 &amp; 0 \\ -4 &amp; 6 &amp; -1 \end{bmatrix}X, \text{ with } X(0) = \begin{bmatrix} 1 \\ 0 \\ 100 \end{bmatrix}.</annotation></semantics></math>
+<!--  https://sagecell.sagemath.org/?z=eJxNUD1PwzAQ3SPlPzxlid26UQKIAalDfwBbt6qDSd32kOOL7As0_x6XQmE53T3p3tcx8oA0D-MMGkaOgkVZyDojb-yTqqU2iM769TZOTpfFBmu8Wol0UbtdZ4CuRZ7t3uxWXZs3XMHb_WSezarb7_NbXddlsT07NI5OLny4XpLSGJyc-ZAFZIohwcJTEvARMo3eJfQcxFKgcHpBWXQNbMCNwPrJmYw9NCBJGCYvNHrqSWaoM39isGGG0JBZSEBX8sgs2mSOQ1k8Nv_Ueo7RpZHDISvh7pBjavDjPbGfhDjk-O4yqs1C9OKvh5z2mrhr2--0Y6QgqlLVsjJV884UlLfiLqrn3HFwQTSOHHE_QQG_CnpZ6Up_AWsYf0g=&lang=sage&interacts=eJyLjgUAARUAuQ==
+--></p></li>
+<li><p>Use <a href="https://www.desmos.com/3d">Desmos 3D</a> to graph
+the solution above.</p></li>
+<li><p>Find the straight-line solutions and the general solution for the
+system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>Y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>Y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dY}{dt} = \begin{bmatrix} -3 &amp; 1 &amp; 2 \\ 4 &amp; 0 &amp; -4 \\ -4 &amp; 1 &amp; 3 \end{bmatrix} Y.</annotation></semantics></math>
+Hint: The matrix for this system has eigenpairs
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><msub><mi>𝐯</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><msub><mi>λ</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>𝐯</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><msub><mi>λ</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>𝐯</mi><mn>3</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\lambda_1 = -1, \mathbf{v}_1 = \begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix}, \lambda_2 = 0, \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1\\ 1\end{bmatrix}, \lambda_3 = 1, \mathbf{v}_3 = \begin{bmatrix} 1 \\ 4 \\ 0 \end{bmatrix}.</annotation></semantics></math></p></li>
+<li><p>Consider the system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>Z</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">\dfrac{dZ}{dt} =  \begin{bmatrix} 0 &amp; 2 &amp; 0 \\ -2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \end{bmatrix} Z</annotation></semantics></math>.</p>
+<ol type="a">
+<li>The vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>i</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix} 1 \\ i \\ 0 \end{bmatrix}</annotation></semantics></math>
+is an eigenvector with eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>i</mi></mrow><annotation encoding="application/x-tex">2i</annotation></semantics></math>.
+Find the real and imaginary parts of the corresponding solution.<br />
+</li>
+<li>The system above decouples since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mn>3</mn></msub><annotation encoding="application/x-tex">Z_3</annotation></semantics></math>
+does not depend on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mn>1</mn></msub><annotation encoding="application/x-tex">Z_1</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Z</mi><mn>2</mn></msub><annotation encoding="application/x-tex">Z_2</annotation></semantics></math>.
+Find a solution for the third component of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math>.
+Express that solution as a straight line solution in vector form
+assuming that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mn>1</mn></msub><mo>=</mo><msub><mi>Z</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Z_1 = Z_2 = 0</annotation></semantics></math>.</li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>

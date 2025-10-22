@@ -1122,10 +1122,30 @@ $$\frac{d \mathbf{x}}{dt} =  \begin{bmatrix} 1 & -1 \\ 2 & 4 \end{bmatrix} \math
 
 Since calculating a matrix exponential by hand is so tedious, we'll usually use a computer.  
 
-* Symbolic matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJwdyb0KgCAQAOBd8B1uS8MG3Rt6gLY2kSgwEDKP64J8-37W79uoZDhrxgopYyGGVgqG_rO17KdquDFAcdn7ia6opZBieHtcmNKtvLfGBeM7Z2wI_yJF5jojpYNVvFENLWv9AKr_H44=&lang=sage&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJwryE5XyMlPTFEorsxNys_JTOblArKKFUp4uRKLi0tzUzVKdBTUi1ITc9Q1ebkcFWxBCjWiDRWMrBV0jRQMY4GivFypFQW5Go5aJZoA4V4WgQ==&lang=octave&interacts=eJyLjgUAARUAuQ==))
-* Numerical matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uVKAwkWJ2cWVOrlZOYl5qTD5FIrCnJ5uXi5HBVsFRKLihIrNaKjDXWMYnWidY10DGNjNUGSBUWZeSUaIKUajpqaADjgHlM=&lang=sage&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJxzVLBViDZUMLJW0DVSMIy15uXi5UqtKMjVcNQEAEsxBbo=&lang=octave&interacts=eJyLjgUAARUAuQ==))
+* Symbolic matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJwdyb0KgCAQAOBd8B1uS8MG3Rt6gLY2kSgwEDKP64J8-37W79uoZDhrxgopYyGGVgqG_rO17KdquDFAcdn7ia6opZBieHtcmNKtvLfGBeM7Z2wI_yJF5jojpYNVvFENLWv9AKr_H44=&lang=python&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJwryE5XyMlPTFEorsxNys_JTOblArKKFUp4uRKLi0tzUzVKdBTUi1ITc9Q1ebkcFWxBCjWiDRWMrBV0jRQMY4GivFypFQW5Go5aJZoA4V4WgQ==&lang=octave&interacts=eJyLjgUAARUAuQ==))
+* Numerical matrix exponentials ([Python](https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uVKAwkWJ2cWVOrlZOYl5qTD5FIrCnJ5uXi5HBVsFRKLihIrNaKjDXWMYnWidY10DGNjNUGSBUWZeSUaIKUajpqaADjgHlM=&lang=python&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJxzVLBViDZUMLJW0DVSMIy15uXi5UqtKMjVcNQEAEsxBbo=&lang=octave&interacts=eJyLjgUAARUAuQ==))
 
 Be careful computing symbolic matrix exponentials.  It only works for very simple matrices.  
+
+### Wed, Oct 22
+
+Today we talked about homogeneous linear systems in 3-dimensions. We started with these examples. 
+
+1. Use the matrix exponential function to find the solution to the initial value problem 
+$$\dfrac{dX}{dt} = \begin{bmatrix} 1 & 10 & 0 \\ -10 & 1 & 0 \\ -4 & 6 & -1 \end{bmatrix}X, \text{ with } X(0) = \begin{bmatrix} 1 \\ 0 \\ 100 \end{bmatrix}.$$
+<!--  https://sagecell.sagemath.org/?z=eJxNUD1PwzAQ3SPlPzxlid26UQKIAalDfwBbt6qDSd32kOOL7As0_x6XQmE53T3p3tcx8oA0D-MMGkaOgkVZyDojb-yTqqU2iM769TZOTpfFBmu8Wol0UbtdZ4CuRZ7t3uxWXZs3XMHb_WSezarb7_NbXddlsT07NI5OLny4XpLSGJyc-ZAFZIohwcJTEvARMo3eJfQcxFKgcHpBWXQNbMCNwPrJmYw9NCBJGCYvNHrqSWaoM39isGGG0JBZSEBX8sgs2mSOQ1k8Nv_Ueo7RpZHDISvh7pBjavDjPbGfhDjk-O4yqs1C9OKvh5z2mrhr2--0Y6QgqlLVsjJV884UlLfiLqrn3HFwQTSOHHE_QQG_CnpZ6Up_AWsYf0g=&lang=sage&interacts=eJyLjgUAARUAuQ==
+-->
+
+2. Use [Desmos 3D](https://www.desmos.com/3d) to graph the solution above. 
+
+3. Find the straight-line solutions and the general solution for the system
+$$\dfrac{dY}{dt} = \begin{bmatrix} -3 & 1 & 2 \\ 4 & 0 & -4 \\ -4 & 1 & 3 \end{bmatrix} Y.$$
+Hint: The matrix for this system has eigenpairs 
+$$\lambda_1 = -1, \mathbf{v}_1 = \begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix}, \lambda_2 = 0, \mathbf{v}_2 = \begin{bmatrix} 1 \\ 1\\ 1\end{bmatrix}, \lambda_3 = 1, \mathbf{v}_3 = \begin{bmatrix} 1 \\ 4 \\ 0 \end{bmatrix}.$$
+
+4. Consider the system $\dfrac{dZ}{dt} =  \begin{bmatrix} 0 & 2 & 0 \\ -2 & 0 & 0 \\ 0 & 0 & -1 \end{bmatrix} Z$. 
+    a. The vector $\begin{bmatrix} 1 \\ i \\ 0 \end{bmatrix}$ is an eigenvector with eigenvalue $2i$.  Find the real and imaginary parts of the corresponding solution.  
+    b. The system above decouples since $Z_3$ does not depend on $Z_1$ or $Z_2$.  Find a solution for the third component of $Z$. Express that solution as a straight line solution in vector form assuming that $Z_1 = Z_2 = 0$.  
 
 
 - - - 

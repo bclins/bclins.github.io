@@ -693,6 +693,20 @@ Examples.
 
 4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 
+### Wed, Oct 22
+
+We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online now too. 
+
+We also did the following extra problem about conditional probability. 
+
+1. Suppose that half of the voters in one county are women.  There are two candidates running, a Democrat and a Republican.  60% of the women support the Democrat, but only 35% of the men in the county do.  Assume that every voter supports one of the two candidates. Find the following probabilities.
+
+    a. P(Support Republican | Voter is male)
+    b. P(Support Republican | Voter is female)
+    c. P(Support Republican and voter is male)
+    d. P(Support Republican and voter is female)
+    e. P(Support Republican)
+
 
 <!-- 
 ### Mon, Mar 17
