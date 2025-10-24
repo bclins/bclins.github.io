@@ -1147,6 +1147,34 @@ $$\lambda_1 = -1, \mathbf{v}_1 = \begin{bmatrix}1 \\ 0 \\ 1 \end{bmatrix}, \lamb
     a. The vector $\begin{bmatrix} 1 \\ i \\ 0 \end{bmatrix}$ is an eigenvector with eigenvalue $2i$.  Find the real and imaginary parts of the corresponding solution.  
     b. The system above decouples since $Z_3$ does not depend on $Z_1$ or $Z_2$.  Find a solution for the third component of $Z$. Express that solution as a straight line solution in vector form assuming that $Z_1 = Z_2 = 0$.  
 
+### Fri, Oct 24 
+
+There is one other case of linear systems that we haven't considered yet.  What happens when there are repeated eigenvalues?   
+
+1. The matrix $A = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix}$ has the eigenvalue $\lambda = 2$ repeated twice, but it only has one eigenvector (up to scaling).  
+
+<div class="Theorem">
+**Linear Systems with Repeated Eigenvalues.**
+
+If $A$ is a 2-by-2 matrix with repeated eigenvalue $\lambda$, then 
+$$e^{At} = e^{\lambda t} (I + t(A-\lambda I)).$$
+
+Therefore the solution to $\mathbf{x}' = A\mathbf{x}$ with initial condition $\mathbf{x}_0$ is 
+$$e^{\lambda t} (I + t(A-\lambda I))\mathbf{x}_0.$$
+</div>
+
+We applied this theorem to the following examples:
+
+2. Consider the system $\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 & 1 \\ 0 & 2 \end{bmatrix} \mathbf{x}$.
+    a. Find the straight-line solutions. 
+    b. Find the solution with initial condition $\mathbf{x}_0 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.$
+
+This is an example of what is called a **degenerate source** equilibrium at the origin.   You can also have a **degenerate sink** if the repeated eigenvalue is negative. 
+
+3. We also talked about [Homework 8, exercise 9](HW/HW8.pdf).  
+
+We finished by talking about what happens when both eigenvalues are zero.  In that case you get uniform motion in a straight line parallel to the eigenvector, with a velocity proportional to the distance from the eigenvector.  
+ 
 
 - - - 
 

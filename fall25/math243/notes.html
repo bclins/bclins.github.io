@@ -2160,6 +2160,53 @@ assuming that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mn>1</mn></msub><mo>=</mo><msub><mi>Z</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Z_1 = Z_2 = 0</annotation></semantics></math>.</li>
 </ol></li>
 </ol>
+<h3 id="fri-oct-24">Fri, Oct 24</h3>
+<p>There is one other case of linear systems that we haven’t considered
+yet. What happens when there are repeated eigenvalues?</p>
+<ol type="1">
+<li>The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix}</annotation></semantics></math>
+has the eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda = 2</annotation></semantics></math>
+repeated twice, but it only has one eigenvector (up to scaling).</li>
+</ol>
+<div class="Theorem">
+<p><strong>Linear Systems with Repeated Eigenvalues.</strong></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is a 2-by-2 matrix with repeated eigenvalue
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>A</mi><mi>t</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>I</mi><mo>+</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>−</mo><mi>λ</mi><mi>I</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{At} = e^{\lambda t} (I + t(A-\lambda I)).</annotation></semantics></math></p>
+<p>Therefore the solution to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = A\mathbf{x}</annotation></semantics></math>
+with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐱</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mathbf{x}_0</annotation></semantics></math>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>λ</mi><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>I</mi><mo>+</mo><mi>t</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>−</mo><mi>λ</mi><mi>I</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>𝐱</mi><mn>0</mn></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{\lambda t} (I + t(A-\lambda I))\mathbf{x}_0.</annotation></semantics></math></p>
+</div>
+<p>We applied this theorem to the following examples:</p>
+<ol start="2" type="1">
+<li>Consider the system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix} \mathbf{x}</annotation></semantics></math>.
+<ol type="a">
+<li>Find the straight-line solutions.</li>
+<li>Find the solution with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}_0 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}.</annotation></semantics></math></li>
+</ol></li>
+</ol>
+<p>This is an example of what is called a <strong>degenerate
+source</strong> equilibrium at the origin. You can also have a
+<strong>degenerate sink</strong> if the repeated eigenvalue is
+negative.</p>
+<ol start="3" type="1">
+<li>We also talked about <a href="HW/HW8.pdf">Homework 8, exercise
+9</a>.</li>
+</ol>
+<p>We finished by talking about what happens when both eigenvalues are
+zero. In that case you get uniform motion in a straight line parallel to
+the eigenvector, with a velocity proportional to the distance from the
+eigenvector.</p>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>

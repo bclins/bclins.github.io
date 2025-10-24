@@ -31,7 +31,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 corrections due Friday, Oct 10. 
+* Midterm 2 will be on **Wednesday, Oct 29**.
+* Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](formulasheet2.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 <!--* [Project 1](Project1.pdf) is due on **Wednesday, September 17.**-->
 

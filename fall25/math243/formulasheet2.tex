@@ -1,0 +1,81 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage[empty]{fullpage}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+
+\begin{document}
+\section*{Formula Sheet} %%% FORMULA SHEET FOR MIDTERM 2 
+\hrule
+
+~
+
+\subsection*{Integrating Factors}
+
+A first order linear differential equation $\dfrac{dy}{dt} + f(t) y = g(t)$ has general solution 
+$$y(t) = \frac{\int e^{F(t)} g(t) \, dt}{e^{F(t)}}$$
+where $F(t)$ is any antiderivative of $f(t)$.
+
+\subsection*{Trace-Determinant Formula for Eigenvalues}
+
+For a 2-by-2 matrix $A$, 
+$$\lambda = \frac{\tr A \pm \sqrt{(\tr A)^2 - 4 \det A}}{2}.$$
+
+\subsection*{Linear Systems} 
+
+For a linear system $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}$:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\textbf{Straight-line solutions.} 
+$$\mathbf{x}(t) = C e^{\lambda t} \mathbf{v}.$$
+\bigskip
+\end{minipage}
+
+& 
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\textbf{Matrix exponential solution.}
+$$\mathbf{x}(t) = e^{At} \mathbf{x}(0).$$
+\bigskip
+\end{minipage}
+
+\\ \hline
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\item \textbf{Complex eigenvalues} \\
+
+If $\lambda = \alpha + i \beta$ is a complex eigenvalue with eigenvector $\mathbf{v}$, then the real and imaginary parts of 
+$$e^{\alpha t} (\cos (\beta t) + i \sin (\beta t)) \mathbf{v}$$
+are both real-valued solutions.
+\bigskip
+\end{minipage}
+
+& 
+
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\item \textbf{Repeated eigenvalues} \\
+
+If $A$ is a 2-by-2 matrix with repeated eigenvalue $\lambda$.
+
+$$\mathbf{x}(t) = e^{\lambda t} (I + t(A-\lambda I)) \mathbf{x}(0).$$
+
+\bigskip
+\end{minipage}
+
+
+\\ \hline
+\end{tabular}
+
+\end{center}
+
+\end{document}
