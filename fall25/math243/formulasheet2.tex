@@ -32,7 +32,7 @@ For a linear system $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}$:
 
 \begin{minipage}{0.4\textwidth}
 \bigskip
-\textbf{Straight-line solutions.} 
+\textbf{Straight-line solutions} 
 $$\mathbf{x}(t) = C e^{\lambda t} \mathbf{v}.$$
 \bigskip
 \end{minipage}
@@ -41,7 +41,7 @@ $$\mathbf{x}(t) = C e^{\lambda t} \mathbf{v}.$$
 
 \begin{minipage}{0.4\textwidth}
 \bigskip
-\textbf{Matrix exponential solution.}
+\textbf{Matrix exponential solution}
 $$\mathbf{x}(t) = e^{At} \mathbf{x}(0).$$
 \bigskip
 \end{minipage}
@@ -52,8 +52,8 @@ $$\mathbf{x}(t) = e^{At} \mathbf{x}(0).$$
 \bigskip
 \item \textbf{Complex eigenvalues} \\
 
-If $\lambda = \alpha + i \beta$ is a complex eigenvalue with eigenvector $\mathbf{v}$, then the real and imaginary parts of 
-$$e^{\alpha t} (\cos (\beta t) + i \sin (\beta t)) \mathbf{v}$$
+If $\lambda = \alpha \pm i \beta$ is a complex eigenvalue with eigenvector $\mathbf{v}$, then the real and imaginary parts of 
+$$e^{\alpha t} (\cos (\beta t) \pm i \sin (\beta t)) \mathbf{v}$$
 are both real-valued solutions.
 \bigskip
 \end{minipage}
@@ -65,9 +65,10 @@ are both real-valued solutions.
 \bigskip
 \item \textbf{Repeated eigenvalues} \\
 
-If $A$ is a 2-by-2 matrix with repeated eigenvalue $\lambda$.
+If $A$ is a 2-by-2 matrix with a repeated eigenvalue $\lambda$, then the solution is
 
 $$\mathbf{x}(t) = e^{\lambda t} (I + t(A-\lambda I)) \mathbf{x}(0).$$
+
 
 \bigskip
 \end{minipage}
