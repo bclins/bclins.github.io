@@ -226,9 +226,15 @@ Finally we looked at using the graph of a function to answer questions like the 
 
 ### Week 7 Notes
 
+Today we had the first midterm exam.
+
 - - - 
 
 ### Week 8 Notes
+
+Today we went over the midterm exam.  We also talked about the 
+
+* [Major Concepts of Algebra](concepts.pdf).
 
 - - - 
 

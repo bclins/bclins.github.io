@@ -1186,6 +1186,10 @@ Mon, Oct 27 |             | Review
 Wed, Oct 29 |             | **Midterm 2**
 Fri, Oct 31 |  [4.1][4.1] | Homogeneous Linear Equations                         
 
+### Mon, Oct 27
+
+Today we talked about the [midterm 2 review problems](midterm2review.pdf).  We also went over the problems on the quiz about the trace-determinant plane.  
+
 - - - 
 
 ### Week 11 Notes
