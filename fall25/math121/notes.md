@@ -718,7 +718,37 @@ since the **worst case margin of error** happens when $\hat{p} = 0.5$. Any other
 1. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure that the worst case margin of error is smaller than 0.04 using a 95% confidence level? 
 
 
-After that, we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
+
+### Wed, Mar 19
+
+We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online too. 
+
+We also did two extra problems:
+
+1. 6 out of 24 students in our class have blue eyes.  Make a 90% confidence interval to estimate what percent of all HSC students have blue eyes. 
+
+2. In the 1920s and 30s, organized criminals used to run an illegal lottery in many major cities called the numbers game.  People could pay $1 to buy a ticket with any 3-digit number from 000 to 999 on it.  At the end of the week, the winning number would be announced and anyone who bought a winning ticket would win $600.  What is the expected value of a ticket? 
+
+3. Describe the sampling distribution for the proportion $\hat{p}$ of tickets that are winners if someone sold $N = 250{,}000$ tickets.  What are the shape, center, and spread for the distribution of $\hat{p}$.  
+<!-- NOTE TO SELF, THIS ISN'T A GREAT EXAMPLE, BECAUSE THE CENTER IS REALLY SMALL.  MAYBE LOOK AT THE % OF HOUSES THAT HAVE A PET CAT? -->
+
+
+- - - 
+
+### Week 10 Notes
+
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 27 | [5.3][5.3] | Hypothesis testing for a proportion 
+Wed, Oct 29 | [6.1][6.1] | Inference for a single proportion
+Fri, Oct 31 | [5.3.3][5.3.3] | Decision errors
+
+
+
+### Mon, Oct 27
+
+Today we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
 
 1. Once I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different Zenner cards (see below) that I couldn't see.  If I were just guessing, I would only have a 20\% chance (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
 
@@ -748,42 +778,35 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 4. **Explain what it means.** A low p-value is evidence that we should reject the null hypotheses.  Usually this means that the results are too surprising to be caused by random chance along.  A p-value over 5% means the results might be a random fluke and we should not reject $H_0$.
 
 <center>
-p-value | Meaning
-:---:|:---:
-Over 5% | Weak evidence
-1% to 5% | Moderate evidence
-0.1% to 1% | Strong evidence
-Under 0.1% | Very strong evidence
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: center;">p-value</th>
+<th style="text-align: center;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Over 5%</td>
+<td style="text-align: center;">Weak evidence</td>
+</tr>
+<tr>
+<td style="text-align: center;">1% to 5%</td>
+<td style="text-align: center;">Moderate evidence</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1% to 1%</td>
+<td style="text-align: center;">Strong evidence</td>
+</tr>
+<tr>
+<td style="text-align: center;">Under 0.1%</td>
+<td style="text-align: center;">Very strong evidence</td>
+</tr>
+</tbody>
+</table>
 </center>
 
-Here is another example that we didn't have time for in class, but we'll revisit later. 
-
-2. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
-
-### Wed, Mar 19
-
-We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online too. 
-
-We also did two extra problems:
-
-1. 6 out of 24 students in our class have blue eyes.  Make a 90% confidence interval to estimate what percent of all HSC students have blue eyes. 
-
-2. In the 1920s and 30s, organized criminals used to run an illegal lottery in many major cities called the numbers game.  People could pay $1 to buy a ticket with any 3-digit number from 000 to 999 on it.  At the end of the week, the winning number would be announced and anyone who bought a winning ticket would win $600.  What is the expected value of a ticket? 
-
-3. Describe the sampling distribution for the proportion $\hat{p}$ of tickets that are winners if someone sold $N = 250{,}000$ tickets.  What are the shape, center, and spread for the distribution of $\hat{p}$.  
-<!-- NOTE TO SELF, THIS ISN'T A GREAT EXAMPLE, BECAUSE THE CENTER IS REALLY SMALL.  MAYBE LOOK AT THE % OF HOUSES THAT HAVE A PET CAT? -->
-
-
-- - - 
-
-### Week 10 Notes
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 27 | [5.3][5.3] | Hypothesis testing for a proportion 
-Wed, Oct 29 | [6.1][6.1] | Inference for a single proportion
-Fri, Oct 31 | [5.3.3][5.3.3] | Decision errors
+2. This year 59.6% (28 out of 47) of the students in my two sections of statistics were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
 <!--            
 

@@ -1335,47 +1335,6 @@ since the **worst case margin of error** happens when $\hat{p} = 0.5$. Any other
 1. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure that the worst case margin of error is smaller than 0.04 using a 95% confidence level? 
 
 
-After that, we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
-
-1. Once I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different Zenner cards (see below) that I couldn't see.  If I were just guessing, I would only have a 20\% chance (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
-
-<center>
-<figure>
-<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=400 title="Zenner cards"></img>
-</figure>
-</center>
-
-Every hypothesis test starts with two possibilities: 
-
-* **Null Hypothesis ($H_0$)** - is a specific claim about the parameter. 
-* **Alternative Hypothesis ($H_A$)** - is what must be true if the null hypothesis is false. 
-
-Here are the steps to do a hypothesis test for a single proportion:
-
-1. **State the hypotheses.** These will pretty much always look like 
-    - $H_0 ~:~ p = p_0$
-    - $H_A ~:~ p \ne p_0$ \
-where $p_0$ is a specific number that makes sense in the context of the situation.
-
-2. **Calculate the test statistic.** Using the formula 
-$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
-
-3. **Find the p-value.** The p-value is *the probability of getting a result at least as extreme as the sample statistic if the null hypothesis is true.*
-
-4. **Explain what it means.** A low p-value is evidence that we should reject the null hypotheses.  Usually this means that the results are too surprising to be caused by random chance along.  A p-value over 5% means the results might be a random fluke and we should not reject $H_0$.
-
-<center>
-p-value | Meaning
-:---:|:---:
-Over 5% | Weak evidence
-1% to 5% | Moderate evidence
-0.1% to 1% | Strong evidence
-Under 0.1% | Very strong evidence
-</center>
-
-Here is another example that we didn't have time for in class, but we'll revisit later. 
-
-2. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
 ### Wed, Mar 19
 
@@ -1420,6 +1379,111 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subse
 </tr>
 </tbody>
 </table>
+<h3 id="mon-oct-27">Mon, Oct 27</h3>
+<p>Today we introduced <strong>hypothesis testing</strong>. This is a
+tool for answering yes/no questions about a population parameter. We
+started with this example:</p>
+<ol type="1">
+<li>Once I took a test to see if I had psychic powers. In the test, I
+had 25 chances to guess which one of five symbols was on 25 different
+Zenner cards (see below) that I couldn’t see. If I were just guessing, I
+would only have a 20% chance (1 out of 5) of guessing right. But I
+actually got 10 out of 25 guesses correct. How strong is this evidence
+that I am psychic?</li>
+</ol>
+<center>
+<figure>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=400 title="Zenner cards"></img>
+</figure>
+</center>
+<p>Every hypothesis test starts with two possibilities:</p>
+<ul>
+<li><strong>Null Hypothesis
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>)</strong>
+- is a specific claim about the parameter.</li>
+<li><strong>Alternative Hypothesis
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>A</mi></msub><annotation encoding="application/x-tex">H_A</annotation></semantics></math>)</strong>
+- is what must be true if the null hypothesis is false.</li>
+</ul>
+<p>Here are the steps to do a hypothesis test for a single
+proportion:</p>
+<ol type="1">
+<li><p><strong>State the hypotheses.</strong> These will pretty much
+always look like</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mspace width="0.222em"></mspace><mo>:</mo><mspace width="0.222em"></mspace><mi>p</mi><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0 ~:~ p = p_0</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>A</mi></msub><mspace width="0.222em"></mspace><mo>:</mo><mspace width="0.222em"></mspace><mi>p</mi><mo>≠</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_A ~:~ p \ne p_0</annotation></semantics></math><br />
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mn>0</mn></msub><annotation encoding="application/x-tex">p_0</annotation></semantics></math>
+is a specific number that makes sense in the context of the
+situation.</li>
+</ul></li>
+<li><p><strong>Calculate the test statistic.</strong> Using the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub></mrow><msqrt><mfrac><mrow><msub><mi>p</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>N</mi></mfrac></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.</annotation></semantics></math></p></li>
+<li><p><strong>Find the p-value.</strong> The p-value is <em>the
+probability of getting a result at least as extreme as the sample
+statistic if the null hypothesis is true.</em></p></li>
+<li><p><strong>Explain what it means.</strong> A low p-value is evidence
+that we should reject the null hypotheses. Usually this means that the
+results are too surprising to be caused by random chance along. A
+p-value over 5% means the results might be a random fluke and we should
+not reject
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>.</p></li>
+</ol>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: center;">
+p-value
+</th>
+<th style="text-align: center;">
+Meaning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">
+Over 5%
+</td>
+<td style="text-align: center;">
+Weak evidence
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+1% to 5%
+</td>
+<td style="text-align: center;">
+Moderate evidence
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+0.1% to 1%
+</td>
+<td style="text-align: center;">
+Strong evidence
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+Under 0.1%
+</td>
+<td style="text-align: center;">
+Very strong evidence
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<ol start="2" type="1">
+<li>This year 59.6% (28 out of 47) of the students in my two sections of
+statistics were born in VA. Is this strong evidence that more than half
+of all HSC students were born in VA? State the hypotheses, find the
+z-value, find the p-value, and explain what it means.</li>
+</ol>
 <!--            
 
 ### Mon, Mar 24
