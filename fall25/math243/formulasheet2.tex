@@ -1,11 +1,12 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage{amsmath}
-\usepackage[empty]{fullpage}
+\usepackage[width=7.5in,height=9.5in]{geometry}
 
 \newcommand{\ds}{\displaystyle}
 \newcommand{\tr}{\operatorname{tr}}
 
 \begin{document}
+\pagestyle{empty}
 \section*{Formula Sheet} %%% FORMULA SHEET FOR MIDTERM 2 
 \hrule
 
@@ -17,8 +18,10 @@ A first order linear differential equation $\dfrac{dy}{dt} + f(t) y = g(t)$ has 
 $$y(t) = \frac{\int e^{F(t)} g(t) \, dt}{e^{F(t)}}$$
 where $F(t)$ is any antiderivative of $f(t)$.
 
-\subsection*{Trace-Determinant Formula for Eigenvalues}
+%\subsection*{Characteristic Polynomial for 2-by-2 Matrices}
+%$$\det(A - \lambda I) = \lambda^2 - (\tr A) \lambda + \det A.$$
 
+\subsection*{Trace-Determinant Formula for Eigenvalues}
 For a 2-by-2 matrix $A$, 
 $$\lambda = \frac{\tr A \pm \sqrt{(\tr A)^2 - 4 \det A}}{2}.$$
 
