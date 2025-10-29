@@ -755,6 +755,7 @@ Today we introduced **hypothesis testing**. This is a tool for answering yes/no 
 <center>
 <figure>
 <img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=400 title="Zenner cards"></img>
+<figcaption>Zenner cards (Source: Wikipedia)</figcaption>
 </figure>
 </center>
 
@@ -808,16 +809,30 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 
 2. This year 59.6% (28 out of 47) of the students in my two sections of statistics were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
-<!--            
 
-### Mon, Mar 24
+### Wed, Oct 29
 
-We reviewed the steps for doing a hypothesis test about a population proportion. The we did these example that we ran out of time for last time:
+On Monday we introduced hypothesis testing:
 
-1. 13 out of 24 students (54.2%) in our class were born in VA.  Is this strong evidence that more than half of all HSC students were born in VA? 
+<div class="Theorem">
+**One-Sample Hypothesis Test for a Proportion**
+ 
+<center>
+$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$
+</center>
 
+<!--Needs a large enough sample so that the expected number of successes $p_0 N$ and the expected number of failures $(1-p_0)N$ are both at least 10.-->
+</div>
 
-2. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
+When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
+
+1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
+2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
+$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
+
+We started with this example:
+
+1. In 2013, a random sample of 1028 U.S. adults found that 56\% support nuclear arms reduction.  Does this provide strong evidence that a majority of Americans support nuclear arms reduction?
 
 We talked about how the null hypotheses must give a *specific* value for the parameter of interest so that we can create a **null model** that we can test.  If the sample statistic is far from what we expect, then we can reject the null hypothesis and say that the results are **statistically significant**. Unlike in English, the word significant does not mean "important" in statistics.  It actually means the following. 
 
@@ -834,10 +849,16 @@ Notice that all of the items on the list above are statistics jargon except the 
 
 We finished with this exercise from the book.
 
+2. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
+
+Notice that in 5.16(b), you could make the case that we have prior knowledge based on the reputation of the state of Wisconsin to guess that that percent of people who have drank alcohol in the last year in Wisconsin (which we denoted $p_\text{WI}$) satisfies a **one-sided alternative hypothesis**:
+$$H_A ~:~ p_\text{WI} > 70\%.$$ 
+If you don't know about Wisconsin, then you should definitely use the **two-sided alternative hypothesis**:
+$$H_A ~:~ p_\text{WI} \ne 70\%$$ 
+The only difference is when you calculate the p-value, you use two tails of the bell curve if you are doing a two-sided p-value.  If you aren't sure, it is always safe to use a two-sided alternative. 
+
+
 <!--
-3. [Exercise 5.16](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
-
-
 3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
 ### Wed, Mar 26
