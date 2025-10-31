@@ -868,8 +868,8 @@ In the back of your mind, remember there are four possible things that might hap
 <center>
 <table class="bordered">
 <tr><th></th><th>$H_0$ is true</th><th>$H_A$ is true</th></tr>
-<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$</td><td>Type II error (false negative)</td></tr>
 <tr><th>p-value below $\alpha$</th><td>Type I error (false positive)</td><td>Reject $H_0$</td></tr>
+<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$</td><td>Type II error (false negative)</td></tr>
 </table>
 </center>
 If $H_0$ is true, then the significance level $\alpha$ that you choose is the probability that you will make a **type I error** which is when you reject $H_0$ when you shouldn't.  The disadvantage of making $\alpha$ really small is that it does increase the chance of a **type II error** which is when you don't reject $H_0$ even though you should.
@@ -889,15 +889,18 @@ where $\hat{p}$ is the **pooled proportion**:
 $$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
 </div>
 
+<!--
 As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
+-->
 
-We did these two examples in class.  
+We rushed a bit at the end to squeeze in this example.  
 
 1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
 
-2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
 <!--
+2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
+
 In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
 * **Shape:** Approximately normal.

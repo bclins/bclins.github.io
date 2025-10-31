@@ -1,68 +1,66 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
 \usepackage[empty]{fullpage}
-\usepackage{amsmath}
 \usepackage{tikz}
-\usepackage{hyperref}
+\usepackage{soul}
 
-\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
 \newcommand{\ds}{\displaystyle}
-\newcommand{\mymod}{\, \mathrm{mod}\,}
 
 \begin{document}
-
-\subsubsection*{Project 2 \hfill Math 243}
-
-\textit{Type your solutions using Microsoft Word, Google Docs, or LaTeX (or other document editor). Either print your solutions or send me a PDF file before class on \textbf{Wednesday, Sep 17}. Your grade will be based on three factors: completeness, correctness, and style. To get full style credit you should write all answers in complete sentences. You may work with a partner and submit one project together, if you prefer. It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. }  \\
-
-Imagine we have two train cars on a track.  The first car is attached to a wall by a spring and the second car is attached to the first by another spring.  The two springs have rest lengths of $L_1$ and $L_2$ respectively, as shown in the diagram below.  
-\begin{center}
-\begin{tikzpicture}
-
-\end{tikzpicture}
-\end{center}
-
-
-\begin{enumerate}
-\item Make a graph showing the slope field for this differential equation over a one year period.
-
-\item Use Euler's method with $h = 1$ and $h=0.01$ to estimate the solution of this differential equation if the initial population of rabbits is 2 thousand. For each step size, describe the predicted population of rabbits after 12 months (accurate to at least 3 decimal places). Notice that $y_0 = 2$ not $2{,}000$ since the units are thousands of rabbits. 
-\end{enumerate}
+\subsection*{Project 2 \hfill Math 243}
 
 \noindent
-A more accurate alternative to Euler's method is the 2nd order Runge-Kutta method, also known as the midpoint method.  
-\bigskip
+\textit{Type your solutions using Microsoft Word, Google Docs, or LaTeX (or other document editor). Either print your solutions or send me a PDF file by class on \textbf{Monday, Nov 10}. Your grade will be based on three factors: completeness, correctness, and style. To get full style credit you should write all answers in complete sentences. You may work with a partner and submit one project together, if you prefer. It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. }  \\
 
-\noindent\fbox{%
-\begin{minipage}{\textwidth}
-\subsubsection*{Midpoint Method (RK2)}
+A large reservoir is located near a small mining operation.  The reservoir holds 2 billion gallons of water.  Arsenic pollution from the mine has been draining into the reservoir.  The pollution levels in the reservoir are low enough that the local purification plant will have no trouble filtering the water for drinking.  Unfortunately, the some of the pollution from the reservoir may enter the local ground water supply and could reach dangerous levels for people who get their water from nearby wells.  
 
-To approximate the solution of $y' = f(t,y)$ on the interval $[a,b]$ with initial condition $y(a) = y_0$.
 
-\begin{description}
-\item[Step 1] Choose a step size $h$ and initialize $t = a$ and $y = y_0$. 
-\item[Step 2] While $t < b$, repeat the following:
+
+Hydrologists estimate that the local ground water aquifer holds 5 billion gallons of water at any given time.  Water enters the ground water aquifer via regular precipitation (about 80 million gallons per month) and also by absorption from the nearby reservoir (about 20 million gallons per month).  Water leaves the aquifer by either returning to the reservoir (about 50 million gallons/month), being absorbed by trees and plants (40 million gallons/month) or used by people via wells (10 million gallons/month).  Note that there is a net flow of 30 million gallons per month from the groundwater supply into the reservoir.  
+
+\begin{center}
+\includegraphics[width=120mm]{../aquifer.png}
+\end{center}
+
+Water drains from the reservoir through a dam at a rate of 100 million gallons per month.  This water is replaced both by the net flow from the groundwater supply into the reservoir and also by runoff from small streams which occurs at an average rate of 70 million gallons per month.  It is this runoff that is polluted.  Environmental surveys estimate that the level of arsenic in this runoff is very high due to the mine.  The measured level in the streams that feeds the reservoir are about 2.0 parts per million (ppm).  The EPA arsenic standard for safe drinking water is at most 0.010 parts per million.
+
+Assuming that the initial level of arsenic pollution in the ground and in the reservoir is negligible, determine how long it will take for pollution levels in local well water to exceed safe drinking water limits.  You should also predict what will happen to the arsenic pollution levels in both the reservoir and in the ground water over the long run if the pollution from the mine continues.  Be sure to explain your analysis and include any formulas or calculations needed to do so.  
+
+For this project you will need to: 
 \begin{itemize}
-\item Update $y = y + h \cdot f( t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y) )$, 
-\item Update $t = t + h$.
+\item Let $R$ denote the level of arsenic in the reservoir (in ppm) and let $G$ denote the level of arsenic in the ground water aquifer (again in ppm).  
+
+\item Find the differential equations that model the change in $R$ and $G$ as functions of time.  You may assume that both the reservoir and the ground water aquifer are well-mixed, so that pollution levels in each are uniform throughout.  Hint: To find the rates of change for $R$ and $G$, you need to find the rate in and the rate out for the arsenic levels.  For the reservoir, arsenic can come from runoff and also from groundwater sources.  The rate in from the polluted runoff is determined by the amount of runoff per month divided by the volume of the reservoir:
+$$\text{Rate in from runoff} = \frac{2.0 \text{ ppm} \left( \frac{ 70 \times 10^6 \text{ gallons}}{1 \text{ month}} \right)}{2.0 \times 10^9 \text{ gallons}}.$$
+You can use a similar approach to find the combined rate in and rate out for each part of the system. 
+
+%\begin{align*} 
+%\frac{dR}{dt} &= \frac{140}{2000} - \frac{120}{2000} R + \frac{50}{2000} G \\ %(70 \text{mil gals)/\text{month})(2 \text{ppm}) - (120 \text{mil gals}/\text{month}) R + (50 \text{mil gals}/\text{month}) G \\
+%\frac{dG}{dt} &= \dfrac{20}{5000} R - \dfrac{100}{5000} G %(70 \text{mil gals)/\text{month})(2 \text{ppm}) - (120 \text{mil gals}/\text{month}) R + (50 \text{mil gals}/\text{month}) G \\
+%\end{align*}
+
+\item Find the equilibrium level of pollution in both the reservoir and the ground water assuming that pollution from the mine stays constant.  
+
+\item Since this is a linear system of equations of the form $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x} + \mathbf{b}$, you can solve the system by adding any one particular solution (such as the equilibrium solution) to the general homogeneous solution.  Find the eigenvectors and eigenvalues of the matrix $A$ and use them to find the general solution for the system.  You may want to use a computer to help solve these equations, since the eigenvalues and eigenvectors will probably be messy.  
+%\item Use the substitution $\tilde{R} = R - R_{equilibrium}$ and $\tilde{G} = G - G_{equilibrium}$ to convert the system of differential equations into a linear system of differential equations.  
+
+\item Find the solutions for $R(t)$ and $G(t)$ if we assume the initial pollution levels in both the reservoir and ground water were zero.  
+
+\item Explain what the solutions mean about arsenic levels over time, particularly for people using wells.  
 \end{itemize}
-\end{description}
-\end{minipage}%
-}
-\bigskip
-
-\begin{enumerate}
-\setcounter{enumi}{2}
-\item Create a new function \verb|RK2(f, a, b, h, y0)| to implement the midpoint method. You can base your function on the Euler's method function on my website. Include the code for your function in your write-up. 
 
 
-\item Apply your RK2 function to solve the initial value problem above with $h = 0.01$. What value do you get for $y(12)$?  How does it compare to $y(12)$ using Euler's method with the same $h$? (It should be close.)
 
+\vspace{0.2in}
 
-\item Once again, assume the initial population of rabbits is 2 thousand. Run RK2 with $h = 0.01$ for 10 years (120 months).  Make a graph showing your solution $y(t)$ to the initial value problem.  
+%\noindent \textbf{Problem 2 (For Extra Credit)} 
 
-\item If we start harvesting 1.2 thousand rabbits per year, is that sustainable, or will it drive the population of rabbits extinct? Explain your reasoning and use either Euler's method or RK2 to support your answer.  
-
-\end{enumerate}
-
+%Suppose that after 12 months the EPA forces the mine to clean up its act, and the arsenic pollution in the runoff water entering the reservoir drops below measurable levels.  Assuming that initial arsenic pollution levels in both the reservoir and the ground water aquifer were negligible, will the pollution level in the groundwater supply ever reach dangerous levels?  If so, how long will it take for the pollution to drop to a safe threshold for people with wells in the area?  Note that the EPA arsenic standard for safe drinking water is at most 0.010 parts per million.  
 
 \end{document}
+
+
+
+
+
+

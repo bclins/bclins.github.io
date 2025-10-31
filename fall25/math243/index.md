@@ -31,7 +31,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on **Wednesday, Oct 29**.
+* [Project 2](Project2.pdf) is due on **Monday, Nov 10**.
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](formulasheet2.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 <!--* [Project 1](Project1.pdf) is due on **Wednesday, September 17.**-->

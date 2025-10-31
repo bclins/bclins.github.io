@@ -1600,19 +1600,6 @@ is true
 </tr>
 <tr>
 <th>
-p-value above
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
-</th>
-<td>
-Don’t reject
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
-</td>
-<td>
-Type II error (false negative)
-</td>
-</tr>
-<tr>
-<th>
 p-value below
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
 </th>
@@ -1622,6 +1609,19 @@ Type I error (false positive)
 <td>
 Reject
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<th>
+p-value above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+</th>
+<td>
+Don’t reject
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+</td>
+<td>
+Type II error (false negative)
 </td>
 </tr>
 </table>
@@ -1656,28 +1656,20 @@ jury does not convict someone who is actually guilty.</p>
 is the <strong>pooled proportion</strong>:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> Total number of successes in both samples </mtext><mspace width="0.333em"></mspace></mrow><mrow><msub><mi>N</mi><mi>A</mi></msub><mo>+</mo><msub><mi>N</mi><mi>B</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.</annotation></semantics></math></p>
 </div>
-<p>As with one-sample hypothesis tests, we need a big enough sample for
-the normality assumption to hold, and you need the samples to not be
-biased. A rule of thumb for the sample size is that you should have at
-least 5 successes and failures for each group.</p>
-<p>We did these two examples in class.</p>
+<!--
+As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
+-->
+<p>We rushed a bit at the end to squeeze in this example.</p>
 <ol type="1">
-<li><p>In the 2008 General Social Survey, people were asked to rate
-their lives as exciting, routine, or dull. 300 out of 610 men in the
-study said their lives were exciting versus 347 out of 739. Is that
-strong evidence that there is a difference between the proportions of
-men and women who find their lives exciting?</p></li>
-<li><p>In 2012, the Atheist Shoe Company noticed that packages they sent
-to customers in the USA were getting lost in the mail. So they did an
-experiment. They mailed 89 packages that were clearly labeled with the
-Atheist brand logo, and they also sent 89 unmarked packages in plain
-boxes. 9 out of the 89 labeled packages did not arrive on time compared
-with only 1 out of 89 unlabeled packages. Is that a statistically
-significant difference? (See this website for more details: <a
-href="https://atheist.shoes/pages/usps-study">Atheist shoes
-experiment</a>)</p></li>
+<li>In the 2008 General Social Survey, people were asked to rate their
+lives as exciting, routine, or dull. 300 out of 610 men in the study
+said their lives were exciting versus 347 out of 739. Is that strong
+evidence that there is a difference between the proportions of men and
+women who find their lives exciting?</li>
 </ol>
 <!--
+2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
+
 In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
 * **Shape:** Approximately normal.
