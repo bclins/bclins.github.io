@@ -2235,9 +2235,8 @@ eigenvector.</p>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Oct 31</td>
-<td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/secondorder01.html">4.1</a></td>
-<td style="text-align: left;">Homogeneous Linear Equations</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Inhomogeneous Linear Systems</td>
 </tr>
 </tbody>
 </table>
@@ -2245,6 +2244,79 @@ href="https://runestone.academy/ns/books/published/odeproject/secondorder01.html
 <p>Today we talked about the <a href="midterm2review.pdf">midterm 2
 review problems</a>. We also went over the problems on the quiz about
 the trace-determinant plane.</p>
+<h3 id="fri-oct-31">Fri, Oct 31</h3>
+<p>Today we talked about systems of linear equations that are not
+homogeneous, so the can be expressed in the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐟</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} - A \mathbf{x} = \mathbf{f}(t)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐟</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{f}(t)</annotation></semantics></math>
+is a vector-valued <strong>forcing function</strong>. As with any linear
+differential equations, the general solution is a combination of any one
+particular solution plus the general homogeneous solution.</p>
+<div class="Theorem">
+<p><strong>Solutions of Non-Homogeneous Linear Systems.</strong></p>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}_p(t)</annotation></semantics></math>
+is a particular solution to the inhomogeneous system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐟</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} - A \mathbf{x} = \mathbf{f}(t),</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}_h(t)</annotation></semantics></math>
+is the general solution of the homogeneous linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}</annotation></semantics></math>,
+then the general solution to the inhomogeneous system is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>𝐱</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}_p(t) + \mathbf{x}_h(t).</annotation></semantics></math></p>
+</div>
+<p>We solved the following examples.</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = \begin{bmatrix} 1 &amp; 1 \\ 2 &amp; 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}</annotation></semantics></math>
+(<a href="https://youtu.be/1VU8lIe6ftQ"
+class="uri">https://youtu.be/1VU8lIe6ftQ</a>)</li>
+</ol>
+<p>Here’s another similar example that we did not do in class.</p>
+<ol start="2" type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 &amp; 1 \\ 4 &amp; 2 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ 6 \end{bmatrix}</annotation></semantics></math>
+(<a href="https://youtu.be/pW1IaFkRXUg"
+class="uri">https://youtu.be/pW1IaFkRXUg</a>)</li>
+</ol>
+<p>Here’s an example where the forcing term depends on time. You need to
+use the guess-and-check method (also known as the <strong>method of
+undetermined coefficients</strong>) to find a particular solution.</p>
+<ol start="3" type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>𝐱</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>9</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>12</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 3 \end{bmatrix} \mathbf{x} + \begin{bmatrix} -9 e^{-t} \\ 12e^{-t} \end{bmatrix}</annotation></semantics></math></p>
+<details>
+<p>In this case, the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 3 \end{bmatrix}</annotation></semantics></math>
+has eigenvectors
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix} 1 \\ 0 \end{bmatrix}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\begin{bmatrix} 1 \\ 1 \end{bmatrix}</annotation></semantics></math>
+with eigenvalues
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>2</mn><mo>,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\lambda = 2, 3</annotation></semantics></math>
+respectively. So the general solution to the homogeneous equation is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>C</mi><mn>1</mn></msub><msup><mi>e</mi><mrow><mn>2</mn><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mo>+</mo><msub><mi>C</mi><mn>2</mn></msub><msup><mi>e</mi><mrow><mn>3</mn><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}_h(t) = C_1 e^{2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + C_2 e^{3t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}.</annotation></semantics></math>
+To find a particular solution, we will guess that it has the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mi>𝐯</mi></mrow><annotation encoding="application/x-tex">e^{-t} \mathbf{v}</annotation></semantics></math>
+for some vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐯</mi><annotation encoding="application/x-tex">\mathbf{v}</annotation></semantics></math>.
+Then, substituting into the equation, we need
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mi>𝐯</mi><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mi>𝐯</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>9</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>12</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">-e^{-t} \mathbf{v} =  A e^{-t} \mathbf{v} + \begin{bmatrix} -9e^{-t} \\ 12 e^{-t} \end{bmatrix}.</annotation></semantics></math>
+Since every term has a factor of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{-t}</annotation></semantics></math>,
+you can cancel that out, and solve the matrix equation:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mi>I</mi><mo>−</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>𝐯</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>9</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>12</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">(-I - A) \mathbf{v} = \begin{bmatrix} -9 \\ 12 \end{bmatrix}.</annotation></semantics></math>
+Using a computer, we find that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐯</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{v} = \begin{bmatrix} 4 \\ -3 \end{bmatrix}</annotation></semantics></math>.
+So the particular solution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}_p(t) = e^{-t} \begin{bmatrix} 4 \\ -3 \end{bmatrix}.</annotation></semantics></math></p>
+</details></li>
+</ol>
+<p>Here’s is another example that uses the guess-and-check method.</p>
+<ol start="4" type="1">
+<li>Solve the following non-homogeneous system. (<a
+href="https://youtu.be/zFwwYxJSlR0"
+class="uri">https://youtu.be/zFwwYxJSlR0</a>)
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>′</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x&#39; = 4x + 2y + t</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">y&#39; = 3x - y - 4</annotation></semantics></math></li>
+</ol>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <table>

@@ -1184,11 +1184,58 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 27 |             | Review        
 Wed, Oct 29 |             | **Midterm 2**
-Fri, Oct 31 |  [4.1][4.1] | Homogeneous Linear Equations                         
+Fri, Oct 31 |             | Inhomogeneous Linear Systems                         
 
 ### Mon, Oct 27
 
 Today we talked about the [midterm 2 review problems](midterm2review.pdf).  We also went over the problems on the quiz about the trace-determinant plane.  
+
+### Fri, Oct 31
+
+Today we talked about systems of linear equations that are not homogeneous, so the can be expressed in the form 
+$$\dfrac{d\mathbf{x}}{dt} - A \mathbf{x} = \mathbf{f}(t)$$
+where $\mathbf{f}(t)$ is a vector-valued **forcing function**. As with any linear differential equations, the general solution is a combination of any one particular solution plus the general homogeneous solution.   
+
+<div class="Theorem"> 
+**Solutions of Non-Homogeneous Linear Systems.**
+
+If $\mathbf{x}_p(t)$ is a particular solution to the inhomogeneous system 
+$$\dfrac{d\mathbf{x}}{dt} - A \mathbf{x} = \mathbf{f}(t),$$
+and $\mathbf{x}_h(t)$ is the general solution of the homogeneous linear system $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}$, then the general solution to the inhomogeneous system is:
+$$\mathbf{x}_p(t) + \mathbf{x}_h(t).$$
+</div>
+
+We solved the following examples. 
+
+1. $\mathbf{x}' = \begin{bmatrix} 1 & 1 \\ 2 & 1 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 2 \\ 3 \end{bmatrix}$ (<https://youtu.be/1VU8lIe6ftQ>)
+
+Here's another similar example that we did not do in class. 
+
+2. $\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 & 1 \\ 4 & 2 \end{bmatrix} \mathbf{x} + \begin{bmatrix} 3 \\ 6 \end{bmatrix}$ (<https://youtu.be/pW1IaFkRXUg>) 
+
+Here's an example where the forcing term depends on time.  You need to use the guess-and-check method (also known as the **method of undetermined coefficients**) to find a particular solution.
+
+3. $\dfrac{d\mathbf{x}}{dt} = \begin{bmatrix} 2 & 1 \\ 0 & 3 \end{bmatrix} \mathbf{x} + \begin{bmatrix} -9 e^{-t} \\ 12e^{-t} \end{bmatrix}$ 
+
+    <details>
+    In this case, the matrix $A = \begin{bmatrix} 2 & 1 \\ 0 & 3 \end{bmatrix}$ has eigenvectors $\begin{bmatrix} 1 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$ with eigenvalues $\lambda = 2, 3$ respectively.  So the general solution to the homogeneous equation is 
+$$\mathbf{x}_h(t) = C_1 e^{2t} \begin{bmatrix} 1 \\ 0 \end{bmatrix} + C_2 e^{3t} \begin{bmatrix} 1 \\ 1 \end{bmatrix}.$$
+    To find a particular solution, we will guess that it has the form $e^{-t} \mathbf{v}$ for some vector $\mathbf{v}$.  Then, substituting into the equation, we need 
+$$-e^{-t} \mathbf{v} =  A e^{-t} \mathbf{v} + \begin{bmatrix} -9e^{-t} \\ 12 e^{-t} \end{bmatrix}.$$
+    Since every term has a factor of $e^{-t}$, you can cancel that out, and solve the matrix equation:
+$$(-I - A) \mathbf{v} = \begin{bmatrix} -9 \\ 12 \end{bmatrix}.$$
+Using a computer, we find that $\mathbf{v} = \begin{bmatrix} 4 \\ -3 \end{bmatrix}$. So the particular solution is 
+$$\mathbf{x}_p(t) = e^{-t} \begin{bmatrix} 4 \\ -3 \end{bmatrix}.$$
+    </details>
+
+Here's is another example that uses the guess-and-check method.
+
+4. Solve the following non-homogeneous system. (<https://youtu.be/zFwwYxJSlR0>)
+$$x' = 4x + 2y + t$$
+$$y' = 3x - y - 4$$
+
+
+
 
 - - - 
 

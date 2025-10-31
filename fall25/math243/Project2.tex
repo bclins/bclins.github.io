@@ -1,0 +1,68 @@
+\documentclass[10pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mymod}{\, \mathrm{mod}\,}
+
+\begin{document}
+
+\subsubsection*{Project 2 \hfill Math 243}
+
+\textit{Type your solutions using Microsoft Word, Google Docs, or LaTeX (or other document editor). Either print your solutions or send me a PDF file before class on \textbf{Wednesday, Sep 17}. Your grade will be based on three factors: completeness, correctness, and style. To get full style credit you should write all answers in complete sentences. You may work with a partner and submit one project together, if you prefer. It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. }  \\
+
+Imagine we have two train cars on a track.  The first car is attached to a wall by a spring and the second car is attached to the first by another spring.  The two springs have rest lengths of $L_1$ and $L_2$ respectively, as shown in the diagram below.  
+\begin{center}
+\begin{tikzpicture}
+
+\end{tikzpicture}
+\end{center}
+
+
+\begin{enumerate}
+\item Make a graph showing the slope field for this differential equation over a one year period.
+
+\item Use Euler's method with $h = 1$ and $h=0.01$ to estimate the solution of this differential equation if the initial population of rabbits is 2 thousand. For each step size, describe the predicted population of rabbits after 12 months (accurate to at least 3 decimal places). Notice that $y_0 = 2$ not $2{,}000$ since the units are thousands of rabbits. 
+\end{enumerate}
+
+\noindent
+A more accurate alternative to Euler's method is the 2nd order Runge-Kutta method, also known as the midpoint method.  
+\bigskip
+
+\noindent\fbox{%
+\begin{minipage}{\textwidth}
+\subsubsection*{Midpoint Method (RK2)}
+
+To approximate the solution of $y' = f(t,y)$ on the interval $[a,b]$ with initial condition $y(a) = y_0$.
+
+\begin{description}
+\item[Step 1] Choose a step size $h$ and initialize $t = a$ and $y = y_0$. 
+\item[Step 2] While $t < b$, repeat the following:
+\begin{itemize}
+\item Update $y = y + h \cdot f( t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y) )$, 
+\item Update $t = t + h$.
+\end{itemize}
+\end{description}
+\end{minipage}%
+}
+\bigskip
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Create a new function \verb|RK2(f, a, b, h, y0)| to implement the midpoint method. You can base your function on the Euler's method function on my website. Include the code for your function in your write-up. 
+
+
+\item Apply your RK2 function to solve the initial value problem above with $h = 0.01$. What value do you get for $y(12)$?  How does it compare to $y(12)$ using Euler's method with the same $h$? (It should be close.)
+
+
+\item Once again, assume the initial population of rabbits is 2 thousand. Run RK2 with $h = 0.01$ for 10 years (120 months).  Make a graph showing your solution $y(t)$ to the initial value problem.  
+
+\item If we start harvesting 1.2 thousand rabbits per year, is that sustainable, or will it drive the population of rabbits extinct? Explain your reasoning and use either Euler's method or RK2 to support your answer.  
+
+\end{enumerate}
+
+
+\end{document}
