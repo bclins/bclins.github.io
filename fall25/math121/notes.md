@@ -899,7 +899,6 @@ We rushed a bit at the end to squeeze in this example.
 
 
 <!--
-2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
 In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
@@ -933,8 +932,13 @@ Wed, Nov 5 | [6.2.3][6.2.3] | Difference of two proportions (confidence interval
 Fri, Nov 7 | [7.1][7.1]     | Introducing the t-distribution
 
 
-<!--
-### Mon, Mar 31
+
+
+### Mon, Nov 3
+
+We started with this example of a 2-sample hypothesis test. 
+
+1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
 If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
 
@@ -954,15 +958,19 @@ We started with this example:
 
 1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
+
+<!--
 Then we did a workshop. 
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
+
+<!--
 ### Wed, Apr 2
 
 We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
 
-* Hypothesis testing - Answers a yes/no question about a parameter
+*  Hypothesis testing - Answers a yes/no question about a parameter
 * Confidence interval - Estimates the value of a parameter
 
 We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height.  We looked at our class data and saw that the sample mean height is $\bar{x}_{HS} = 71.2$ inches.  That suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:

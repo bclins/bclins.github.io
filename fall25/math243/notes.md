@@ -1247,6 +1247,37 @@ Mon, Nov 3  |  [4.2][4.2] | Forcing
 Wed, Nov 5  |  [4.3][4.3] | Sinusoidal Forcing                                  
 Fri, Nov 7  |  [4.4][4.4] | Forcing and Resonance                                     
 
+### Mon, Nov 3
+
+Today we switched from systems back to second order differential equations, like the equation for a spring.  The idea is the same: combine one particular solution to the non-homogeneous equation with the general solution of the homogeneous equation.  We started with this example. 
+
+1. $y'' - 5y' + 6y = 2x + 3$. (<https://youtu.be/tOtpqZLgxP0>)
+
+After that, we talked about what happens if the characteristic polynomial has complex roots. 
+
+<div class="Theorem">
+**Linear Differential Equations with Complex Solutions**
+
+If we have a homogeneous linear differential equation with real coefficients
+$$a_n \dfrac{d^n y}{dt^n} + \ldots + a_1 \dfrac{dy}{dt} + a_0 y = 0$$
+and $y(t)$ is a complex-valued solution, then both the real and imaginary parts of $y(t)$ are also solutions. 
+
+In particular, if $\lambda = \alpha + i \beta$ is a complex root of the characteristic polynomial $a_n \lambda^n + \ldots + a_1 \lambda + a_0$, then $e^{\alpha t} \cos (\beta t)$ and $e^{\alpha t} \sin (\beta t)$ are both solutions to the differential equation.  
+</div>
+
+
+The next few examples all have a characteristic polynomial with complex roots $\lambda = -1 \pm i$.  
+
+2. $z'' + 2z' + 2z = 0$.  
+
+3. $z'' + 2z' + 2z = e^{-t}$.  
+
+4. $z'' + 2z' + 2z = \sin t$.  
+
+<!-- 3. $4x'' -5x' - 6x = \sin t$. -->
+
+<!-- I liked this video about beats: https://youtu.be/IQ1q8XvOW6g -->
+
 - - - 
 
 ### Week 12 Notes

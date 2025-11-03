@@ -1668,7 +1668,6 @@ evidence that there is a difference between the proportions of men and
 women who find their lives exciting?</li>
 </ol>
 <!--
-2. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
 In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
@@ -1725,36 +1724,62 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Mar 31
-
-If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
-
+<h3 id="mon-nov-3">Mon, Nov 3</h3>
+<p>We started with this example of a 2-sample hypothesis test.</p>
+<ol type="1">
+<li>In 2012, the Atheist Shoe Company noticed that packages they sent to
+customers in the USA were getting lost in the mail. So they did an
+experiment. They mailed 89 packages that were clearly labeled with the
+Atheist brand logo, and they also sent 89 unmarked packages in plain
+boxes. 9 out of the 89 labeled packages did not arrive on time compared
+with only 1 out of 89 unlabeled packages. Is that a statistically
+significant difference? (See this website for more details: <a
+href="https://atheist.shoes/pages/usps-study">Atheist shoes
+experiment</a>)</li>
+</ol>
+<p>If you want to estimate how big the gap between the population
+proportions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>A</mi></msub><annotation encoding="application/x-tex">p_A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>B</mi></msub><annotation encoding="application/x-tex">p_B</annotation></semantics></math>
+is, then use:</p>
 <div class="Theorem">
-**Two-sample confidence interval for proportions.**
-
-$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
-
-Works best if both samples contain at least 10 successes and 10 failures.
+<p><strong>Two-sample confidence interval for proportions.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>±</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mrow><mfrac><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msub><mi>N</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msub><mi>N</mi><mi>B</mi></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.</annotation></semantics></math></p>
+<p>Works best if both samples contain at least 10 successes and 10
+failures.</p>
 </div>
-
-Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
-
-Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
-
-We started with this example:
-
-1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
-
+<p>Because the formulas for two-sample confidence intervals and
+hypothesis tests are so convoluted, I posted an <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html">interactive
+formula sheet</a> under the software tab of the website. Feel free to
+use it on the projects when you need to calculate these formulas.</p>
+<p>Two sample confidence intervals for proportions are a little less
+robust than hypothesis tests. It is recommended that you should have at
+least 10 successes &amp; 10 failures in each group before you put much
+trust in the interval.</p>
+<p>We started with this example:</p>
+<ol type="1">
+<li>A study in the early 1990s looked at whether the anti-retroviral
+drug AZT is effective at preventing HIV-positive pregnant women from
+passing the HIV virus on to their children. In the study, 13 out of 180
+babies whose mothers were given AZT while pregnant tested postive for
+HIV, compared with 40 out of 183 babies whose mothers got a placebo. Is
+this strong evidence that AZT is effective? How much of a difference
+does it make?</li>
+</ol>
+<!--
 Then we did a workshop. 
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
+
+<!--
 ### Wed, Apr 2
 
 We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
 
-* Hypothesis testing - Answers a yes/no question about a parameter
+*  Hypothesis testing - Answers a yes/no question about a parameter
 * Confidence interval - Estimates the value of a parameter
 
 We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height.  We looked at our class data and saw that the sample mean height is $\bar{x}_{HS} = 71.2$ inches.  That suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:

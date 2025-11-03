@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-- Midterm 2 will be on **Friday, October 24**.
+* [Project 1](Project1.pdf) is due on **Monday, Nov 10**.
 * Midterm 2 materials: [review problems](midterm2review.pdf), [solutions](midterm2reviewSolutions.pdf), [formula sheet](midterm2formulas.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 * Statistics tutoring is available in Pauley 105 on Mondays and Wednesdays 8-10pm. 

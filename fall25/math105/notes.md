@@ -240,6 +240,37 @@ Today we went over the midterm exam.  We also talked about the
 
 ### Week 9 Notes
 
+
+This week we talked about using algebra to solve inequalities. 
+
+
+<div class="Theorem">
+**Function Crossing Rule**
+
+For two functions defined using the usual operations ($+$,$-$,$\cdot$,$/$), the function which is greater can only change at an $x$-value where the graphs cross (are equal) or where one is undefined (a bad point).  
+
+Therefore you can solve complicated inequalities with these two steps:
+
+1. Mark the points of equality and any bad points on a number line.  
+2. Check each resulting sub-interval to see if the inequality is true.  
+</div>
+
+
+<!--
+<div style="padding-left: 10px; border: 1px solid black; border-radius: 5px; background-color: rgba(0, 0, 0, 0.2);
+">
+</div>
+-->
+
+
+We used this method to solve these examples. 
+
+1. $-5c \le 15$ (Video solution: <https://youtu.be/D1cKk48kz-E>)
+
+2. $x^2 \ge  7x - 12$ (Example video: <https://youtu.be/a10EuIFcphk>)
+
+3. $\dfrac{6}{x-4} < 2$ 
+
 - - - 
 
 ### Week 10 Notes
