@@ -39,7 +39,7 @@ Sep 29  | Factoring and polynomials                     | [Week 05](notes.html#w
 Oct 6   | Solving polynomial equations                  | [Week 06](notes.html#week-6-notes)  | [HW6](HW/HW6.pdf)
 Oct 20  | **Midterm exam**                              | [Week 07](notes.html#week-7-notes)  |
 Oct 27  | Solving rational equations                    | [Week 08](notes.html#week-8-notes)  | [HW7](HW/HW7.pdf)
-Nov 3   | Exponent rules                                | [Week 09](notes.html#week-9-notes)  |
+Nov 3   | Exponent rules                                | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 Nov 10  | Logarithms and orders of magnitude            | [Week 10](notes.html#week-10-notes) | 
 Nov 17  | Solving exponential equations                 | [Week 11](notes.html#week-11-notes) | 
 Nov 24  | Graphs and inequalities                       | [Week 12](notes.html#week-12-notes) | 

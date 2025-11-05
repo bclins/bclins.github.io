@@ -1725,7 +1725,28 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tbody>
 </table>
 <h3 id="mon-nov-3">Mon, Nov 3</h3>
-<p>We started with this example of a 2-sample hypothesis test.</p>
+<p>We started by reviewing what we introduced last time.</p>
+<div class="Theorem">
+<p><strong>Two-Sample Hypothesis Test for Proportions.</strong></p>
+<center>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>=</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>≠</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lr} H_0: &amp; p_A = p_B \\ H_A: &amp; p_A \ne p_B \end{array}</annotation></semantics></math>
+           
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub></mrow><msqrt><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msub><mi>N</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>N</mi><mi>B</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.</annotation></semantics></math>
+</center>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is the <strong>pooled proportion</strong>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> Total number of successes in both samples </mtext><mspace width="0.333em"></mspace></mrow><mrow><msub><mi>N</mi><mi>A</mi></msub><mo>+</mo><msub><mi>N</mi><mi>B</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.</annotation></semantics></math></p>
+</div>
+<p>As with any statistical inference method, this technique is based on
+two key assumptions:</p>
+<ul>
+<li><strong>No Bias</strong>: Data should come from a simple random
+sample.</li>
+<li><strong>Normality:</strong> Should have at least 5 successes and
+failures for each group.</li>
+</ul>
+<p>We used the 2-sample hypothesis test on this example.</p>
 <ol type="1">
 <li>In 2012, the Atheist Shoe Company noticed that packages they sent to
 customers in the USA were getting lost in the mail. So they did an
@@ -1768,12 +1789,12 @@ HIV, compared with 40 out of 183 babies whose mothers got a placebo. Is
 this strong evidence that AZT is effective? How much of a difference
 does it make?</li>
 </ol>
-<!--
-Then we did a workshop. 
-
-* **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
-
-
+<h3 id="wed-nov-5">Wed, Nov 5</h3>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf">High
+school drug testing</a></li>
+</ul>
 <!--
 ### Wed, Apr 2
 

@@ -1274,9 +1274,41 @@ The next few examples all have a characteristic polynomial with complex roots $\
 
 4. $z'' + 2z' + 2z = \sin t$.  
 
-<!-- 3. $4x'' -5x' - 6x = \sin t$. -->
 
-<!-- I liked this video about beats: https://youtu.be/IQ1q8XvOW6g -->
+### Wed, Nov 5
+
+Last time, we used the method of undetermined coefficients to find a particular solution $y_p(t) = A \cos t + B \sin t$ for the differential equation 
+$$z'' + 2z' + 2z = \sin t.$$
+
+If you are comfortable with complex numbers, then you can observe that $\sin t$ is the imaginary part of $e^{it}$, and so if you can find a complex-valued particular solution $y_p(t) = A e^{it}$ to
+$$z'' + 2z' + 2z = e^{it},$$
+then the imaginary part of that solution will be what we want. 
+
+In order to find the constant $A$, you need to divide by a complex number.  Here is how you do that:
+
+<div class = "Theorem"> 
+**Dividing by a Complex Number**
+If $z, w$ are complex numbers, then you can simplify $\dfrac{z}{w}$ by multiplying both the numerator and denominator by the **complex conjugate** $\overline{w}$. 
+</div>
+
+1. Simplify $\dfrac{6 + 3i}{7 - 5i}$. (<https://youtu.be/Z8j5RDOibV4>)
+
+We used this approach to find particular solutions to the following non-homogeneous equations.  
+
+<!--2. $4x'' -5x' - 6x = \sin t$. -->
+
+2. $x'' + 2x' + 6x = \cos t$. 
+
+Find the general solution to 
+
+3. $z'' + 8z = \cos (\omega t)$. (<https://youtu.be/xJz3NZap1lw>)
+
+The last example illustrates a phenomena known as **resonance**.  When the frequency $\omega$ is close to the **natural frequency** of the harmonic oscillator, the amplitude of the particular solution gets very large.  
+
+4. Find the solution to the previous problem that satisfies the initial conditions $z(0) = 1$ and $z'(0) = 0$ when $\omega = 3$.  
+
+We graphed the solution on Desmos, and talked about the concept of **beats**. Here is a nice video about beats:
+<https://youtu.be/IQ1q8XvOW6g>.
 
 - - - 
 

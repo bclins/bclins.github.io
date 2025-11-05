@@ -1,0 +1,68 @@
+\documentclass[12pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mymod}{\, \mathrm{mod}\,}
+
+\begin{document}
+
+\subsubsection*{Project 2 \hfill Math 121}
+
+\textit{Please type your solutions to the questions below in Microsoft Word or Google Docs (or other document editor), then print your document. It is due in class on \textbf{Monday, Nov 17}. Use complete sentences to write your answers. It is okay to discuss the problems with other students, but all of your solutions must be explained in your own words. } \\
+
+\noindent
+The spreadsheet linked below contains data from the 2018 High Bridge half marathon. It includes the race times (in minutes), as well as the age and gender of the runners.   
+
+
+\begin{center}
+\url{http://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/halfmarathon.xlsx}  
+\end{center}
+
+\begin{questions}
+
+\question Open the file above in a spreadsheet (either Excel or Google Sheets will work). Use the spreadsheet to make a scatterplot that shows the relation between age and time in minutes to finish the half marathon. You should include a (clearly labeled) copy of the scatterplot in your document.  
+\question Use the function \verb|=CORREL( )| to find the correlation coefficient for the scatterplot. 
+\begin{solution}
+The correlation coefficient is $R = 0.364$. 
+\end{solution}
+\question Find the formula for the least squares regression line.  You can use Excel or Google Sheets to get the formula for the regression line from the scatterplot.
+\begin{solution}
+The least squares regression line is $y = 0.862x+100.6$ where $y$ is time to finish in minutes and $x$ is the runners age.   
+\end{solution}
+\question Use the least squares regression line to predict the average half marathon times of runners who are 20 years old and also for runners who are 70 years old.  
+\begin{solution}
+The predicted y-values are 117.836 minutes for a 20 year old and 160.926 minutes for a 70 year old. 
+\end{solution}
+\question Explain the meaning of the slope of the least squares regression line (including its units) in words. 
+\begin{solution}
+The slope is 0.862 minutes per year.  It means that runners take about 0.862 minutes longer to finish on average, for every year older they get. 
+\end{solution}
+\question Because the slope is a statistic, not a parameter, it might not accurately represent the population due to random error.  You can make a confidence interval for what the slope is in the population of all half marathon runners by using the following formula:  
+$$m \pm t^*  \frac{m \sqrt{1-R^2}}{R \sqrt{n-2}}$$
+where the critical $t^*$ value has $n-2$ degrees of freedom.  Here $m$ is the slope based on the sample, $R$ is the correlation coefficient, and $n$ is the sample size. Find a 95\% confidence interval for the slope.   
+\begin{solution}
+Based on this sample, we can be 95\% confident that the slope in the population is between 0.454 and 1.27 minutes per year. 
+\end{solution}
+
+
+
+%\question \textbf{Optional Extra Credit.} In the spreadsheet, the gender of the students is also a variable.  Here is a summary of the averages and standard deviations for the mile run times broken down by gender.  
+%\begin{center}
+%\begin{tabular}{l|ccc}
+%\hline
+%~ & $n$ & $\bar{x}$ & $s$ \\ \hline
+%Boys & 80 & 9.97 & 2.18 \\
+%Girls & 96 & 10.71 & 2.29 \\ \hline
+%\end{tabular}
+%\end{center}
+%Is this statistically significant evidence that 7th grade boys run faster miles on average than girls? How strong is the evidence?  Explain.  
+
+
+
+
+\end{questions}
+\end{document}

@@ -936,7 +936,25 @@ Fri, Nov 7 | [7.1][7.1]     | Introducing the t-distribution
 
 ### Mon, Nov 3
 
-We started with this example of a 2-sample hypothesis test. 
+We started by reviewing what we introduced last time. 
+
+<div class="Theorem">
+**Two-Sample Hypothesis Test for Proportions.** 
+
+<center>
+$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$
+</center>
+
+where $\hat{p}$ is the **pooled proportion**:
+$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
+</div>
+
+As with any statistical inference method, this technique is based on two key assumptions:
+
+* **No Bias**: Data should come from a simple random sample.
+* **Normality:** Should have at least 5 successes and failures for each group.  
+
+We used the 2-sample hypothesis test on this example. 
 
 1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
@@ -959,8 +977,7 @@ We started with this example:
 1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
-<!--
-Then we did a workshop. 
+### Wed, Nov 5
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
