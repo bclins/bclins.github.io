@@ -2400,13 +2400,14 @@ particular solution
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mo>cos</mo><mi>t</mi><mo>+</mo><mi>B</mi><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">y_p(t) = A \cos t + B \sin t</annotation></semantics></math>
 for the differential equation
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>z</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>z</mi><mo>=</mo><mo>sin</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">z&#39;&#39; + 2z&#39; + 2z = \sin t.</annotation></semantics></math></p>
-<p>If you are comfortable with complex numbers, then you can observe
-that
+<p>If you are comfortable with complex numbers, then you can use a
+different technique called <strong>complexifying</strong> to find a
+particular solutions. Observe that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">\sin t</annotation></semantics></math>
 is the imaginary part of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{it}</annotation></semantics></math>,
-and so if you can find a complex-valued particular solution
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y_p(t) = A e^{it}</annotation></semantics></math>
+so if you can find a complex-valued particular solution
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z_p(t) = A e^{it}</annotation></semantics></math>
 to
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>z</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>z</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">z&#39;&#39; + 2z&#39; + 2z = e^{it},</annotation></semantics></math>
 then the imaginary part of that solution will be what we want.</p>
@@ -2422,43 +2423,41 @@ by multiplying both the numerator and denominator by the <strong>complex
 conjugate</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>w</mi><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{w}</annotation></semantics></math>.</p>
 </div>
+<!-- 1. Simplify $\dfrac{6 + 3i}{7 - 5i}$. (<https://youtu.be/Z8j5RDOibV4>) -->
+<p>We did the following examples in class</p>
 <ol type="1">
-<li>Simplify
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mn>6</mn><mo>+</mo><mn>3</mn><mi>i</mi></mrow><mrow><mn>7</mn><mo>−</mo><mn>5</mn><mi>i</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{6 + 3i}{7 - 5i}</annotation></semantics></math>.
-(<a href="https://youtu.be/Z8j5RDOibV4"
-class="uri">https://youtu.be/Z8j5RDOibV4</a>)</li>
+<li>Find the particular solution by complexifying
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>z</mi><mi>′</mi><mo>+</mo><mn>2</mn><mi>z</mi><mo>=</mo><mo>sin</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">z&#39;&#39; + 2z&#39; + 2z = \sin t</annotation></semantics></math>.</li>
 </ol>
-<p>We used this approach to find particular solutions to the following
-non-homogeneous equations.</p>
 <!--2. $4x'' -5x' - 6x = \sin t$. -->
 <ol start="2" type="1">
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>x</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>x</mi><mo>=</mo><mo>cos</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x&#39;&#39; + 2x&#39; + 6x = \cos t</annotation></semantics></math>.</li>
+<li>Find the general solution to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi>″</mi><mo>+</mo><mn>2</mn><mi>x</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>x</mi><mo>=</mo><mo>cos</mo><mn>2</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">x&#39;&#39; + 2x&#39; + 6x = \cos 2t</annotation></semantics></math>.</li>
 </ol>
-<p>Find the general solution to</p>
+<p>We spent a long time working out the general solution to the last
+problem because it does take a lot of steps. First we found one
+particular solution by complexifying and then we still needed to solve
+the homogeneous equation. We finished by graphing the solution on
+Desmos.</p>
+<p>Here is a cool video from a differential equations class at MIT where
+they use the exact same trick to integrate</p>
 <ol start="3" type="1">
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>″</mi><mo>+</mo><mn>8</mn><mi>z</mi><mo>=</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">z&#39;&#39; + 8z = \cos (\omega t)</annotation></semantics></math>.
-(<a href="https://youtu.be/xJz3NZap1lw"
-class="uri">https://youtu.be/xJz3NZap1lw</a>)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∫</mo><msup><mi>e</mi><mi>x</mi></msup><mo>cos</mo><mi>x</mi><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int e^x \cos x \, dx</annotation></semantics></math>.
+(<a href="https://youtu.be/CpM1jJ0lob8"
+class="uri">https://youtu.be/CpM1jJ0lob8</a>)</li>
 </ol>
-<p>The last example illustrates a phenomena known as
-<strong>resonance</strong>. When the frequency
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ω</mi><annotation encoding="application/x-tex">\omega</annotation></semantics></math>
-is close to the <strong>natural frequency</strong> of the harmonic
-oscillator, the amplitude of the particular solution gets very
-large.</p>
-<ol start="4" type="1">
-<li>Find the solution to the previous problem that satisfies the initial
-conditions
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z(0) = 1</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z&#39;(0) = 0</annotation></semantics></math>
-when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\omega = 3</annotation></semantics></math>.</li>
-</ol>
-<p>We graphed the solution on Desmos, and talked about the concept of
-<strong>beats</strong>. Here is a nice video about beats: <a
-href="https://youtu.be/IQ1q8XvOW6g"
-class="uri">https://youtu.be/IQ1q8XvOW6g</a>.</p>
+<!--
+Find the general solution to 
+
+3. $z'' + 8z = \cos (\omega t)$. (<https://youtu.be/xJz3NZap1lw>)
+
+The last example illustrates a phenomena known as **resonance**.  When the frequency $\omega$ is close to the **natural frequency** of the harmonic oscillator, the amplitude of the particular solution gets very large.  
+
+4. Find the solution to the previous problem that satisfies the initial conditions $z(0) = 1$ and $z'(0) = 0$ when $\omega = 3$.  
+
+We graphed the solution on Desmos, and talked about the concept of **beats**. Here is a nice video about beats:
+<https://youtu.be/IQ1q8XvOW6g>.
+-->
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
