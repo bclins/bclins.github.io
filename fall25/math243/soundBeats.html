@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Beats in Sound Waves</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Beats in Sound Waves</h1>
+</header>
+<p>If the frequencies of two sound waves are close, then you can hear a
+pulsing sound called a <strong>beat</strong>. The frequency of the beat
+is the difference between the two frequencies.</p>
+<p>Frequency 1 =
+<input type="text" id="frequency1" size = 4 value = 220></input> Hz  
+Frequency 2 =
+<input type="text" id="frequency2" size=4 value = 222></input> Hz</p>
+<button id="play">
+Play
+</button>
+<button id="stop">
+Stop
+</button>
+<script>
+let context;
+let sound1, sound2;
+
+document.getElementById("play").onclick = () => {
+    if (!context) {
+        context = new window.AudioContext();
+        sound1 = context.createOscillator();
+        sound2 = context.createOscillator();
+        sound1.frequency.value = document.getElementById("frequency1").value;
+        sound2.frequency.value = document.getElementById("frequency2").value;
+        sound1.connect(context.destination);
+        sound2.connect(context.destination);
+        sound1.start();
+        sound2.start();
+    }
+};
+
+document.getElementById("stop").onclick = () => {
+    sound1.stop();
+    sound2.stop();
+    sound1.disconnect();
+    sound2.disconnect();
+    context.close();
+    context = null;
+};
+</script>
+</body>
+</html>
+</body>
+</html>

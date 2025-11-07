@@ -1307,18 +1307,25 @@ Here is a cool video from a differential equations class at MIT where they use t
 
 3. $\int e^x \cos x \, dx$. (<https://youtu.be/CpM1jJ0lob8>)
 
-<!--
-Find the general solution to 
 
-3. $z'' + 8z = \cos (\omega t)$. (<https://youtu.be/xJz3NZap1lw>)
+### Fri, Nov 7 
+
+We started with this example, which you can solve using complexification like we did on Wednesday.  
+
+1. $z'' + 8z = \cos (\omega t)$. (<https://youtu.be/xJz3NZap1lw>)
 
 The last example illustrates a phenomena known as **resonance**.  When the frequency $\omega$ is close to the **natural frequency** of the harmonic oscillator, the amplitude of the particular solution gets very large.  
 
-4. Find the solution to the previous problem that satisfies the initial conditions $z(0) = 1$ and $z'(0) = 0$ when $\omega = 3$.  
+2. What is the natural frequency of an undamped spring with mass $m$ and spring constant $k$?  Solve the homogeneous equation $my'' + k y = 0$ to find out.  
 
-We graphed the solution on Desmos, and talked about the concept of **beats**. Here is a nice video about beats:
+3. Find the solution to $z'' + 8z = \cos (\omega t)$ that satisfies the initial conditions $z(0) = 1$ and $z'(0) = 0$ when $\omega = 3$.  
+
+We graphed the solution on Desmos, and talked about the concept of **beats**. 
+
+* **Example:** [Beats in Sound Waves](soundBeats.html)
+
+Here is a nice video about beats:
 <https://youtu.be/IQ1q8XvOW6g>.
--->
 
 - - - 
 
