@@ -1333,28 +1333,42 @@ Here is a nice video about beats:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 10 |  [5.1][5.1] | Linearization            
-Wed, Nov 12 |  [5.1][5.1] | Linearization - con'd 
+Mon, Nov 10 |  [4.4][4.4] | Forcing and Resonance           
+Wed, Nov 12 |  [5.1][5.1] | Linearization 
 Fri, Nov 14 |  [5.2][5.2] | Hamiltonian Systems
 
 ### Mon, Nov 10
 
-We started talking about the principle of superposition which we have talked about informally before, but I wanted to make it explicit today. We have been working with differential equations, which involve the linear operator $\dfrac{d}{dt}$.   A differential equation like
-$$y'' + 5y' + 6y = e^{-3t}$$
+We started with this example where the forcing term $e^{-t}$ is a solution of the homogeneous equation.  
+
+1. $y'' - 3y' - 4y = e^{-t}$ (<https://youtu.be/RNHzfeP7HQQ>)
+
+In order to get a good guess for the particular solution, you need to multiply $e^{-t}$ by $t$, because $y_p(t) = Ae^{-t}$ doesn't work, but $y_p(t) = Ate^{-t}$ does. This trick always works if the forcing term is an exponential function (although you might need to multiply by $t$ more than once).  
+
+2. What is the natural frequency of an undamped spring with mass m and spring constant k?
+
+What happens when you force a spring at exactly its natural frequency?  We used complexification to find a particular solution to this equation:
+
+3. $y'' + 16 y = \sin 4t$
+
+We have been working with differential equations, which involve the linear operator $\dfrac{d}{dt}$.   A differential equation like
+$$y'' - 3y' - 4y = e^{-t}$$
 can be expressed as 
-$$\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right) y = e^{-3t}.$$
+$$\left(\dfrac{d^2}{dt^2} - 3 \dfrac{d}{dt} - 4 \right) y = e^{-t}.$$
 The left-hand side is a linear transformation of the function $y(t)$. The expression 
-$$\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right)$$
+$$\left(\dfrac{d^2}{dt^2} - 3 \dfrac{d}{dt} - 4 \right)$$
 is called an **operator**.  An operator is a function that transforms one function into another.  
 
 <div class="Theorem">
-**Definition.** An operator $T$ is **linear** if it satisfies these two properties:
+**Definition.** An operator $L$ is **linear** if it satisfies these two properties:
 
-1. **Additivity.** $T(x + y) = T(x) + T(y)$ for all functions $x(t)$ and $y(t)$. 
-2. **Homogeneity.** $T(cx) = cT(x)$ for all functions $x(t)$ and constants $c$.
+1. **Additivity.** $L(x + y) = L(x) + L(y)$ for all functions $x(t)$ and $y(t)$. 
+2. **Homogeneity.** $L(cx) = cL(x)$ for all functions $x(t)$ and constants $c$.
 </div>
 
-An immediate consequence of linearity is the **Principle of Superposition** which says that a linear combination of solutions to a homogeneous linear differential equation is also a solution.
+An immediate consequence of linearity is the **Principle of Superposition** which says that a linear combination of solutions to a homogeneous linear differential equation is also a solution and you can add any homogeneous solution to the solution of a non-homogeneous equation.  That's why the general solution of a non-homogeneous linear differential equation is 
+$$y(t) = y_p(t) + y_h(t)$$
+where $y_p(t)$ is any one particular solution and $y_h(t)$ is the general solution of the corresponding homogeneous equation. 
 
 <!--
 <div class="Theorem">
@@ -1370,15 +1384,12 @@ and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf
 </div>
 -->
 
-1. What is the natural frequency of an undamped spring with mass m and spring constant k?
 
-What happens when the forcing term is also a solution of the homogeneous equation? 
+<!--
+4. $y'' + 5y' + 6y = e^{-3t}$ 
 
-2. $y'' + 16 y = \sin 4t$
-
-3. $y'' - 3y' - 4y = e^{-t}$ (<https://youtu.be/RNHzfeP7HQQ>)
-
-3. $y'' + 5y' + 6y = e^{-3t}$ 
+4. $y' - 2 y = e^{2t}$
+-->
 
 - - - 
 

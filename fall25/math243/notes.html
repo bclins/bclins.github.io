@@ -2500,14 +2500,14 @@ class="uri">https://youtu.be/IQ1q8XvOW6g</a>.</p>
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 10</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
-<td style="text-align: left;">Linearization</td>
+href="https://runestone.academy/ns/books/published/odeproject/secondorder04.html">4.4</a></td>
+<td style="text-align: left;">Forcing and Resonance</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 12</td>
 <td style="text-align: center;"><a
 href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">5.1</a></td>
-<td style="text-align: left;">Linearization - con’d</td>
+<td style="text-align: left;">Linearization</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 14</td>
@@ -2518,34 +2518,63 @@ href="https://runestone.academy/ns/books/published/odeproject/nonlinear02.html">
 </tbody>
 </table>
 <h3 id="mon-nov-10">Mon, Nov 10</h3>
-<p>We started talking about the principle of superposition which we have
-talked about informally before, but I wanted to make it explicit today.
-We have been working with differential equations, which involve the
+<p>We started with this example where the forcing term
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{-t}</annotation></semantics></math>
+is a solution of the homogeneous equation.</p>
+<ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>−</mo><mn>3</mn><mi>y</mi><mi>′</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; - 3y&#39; - 4y = e^{-t}</annotation></semantics></math>
+(<a href="https://youtu.be/RNHzfeP7HQQ"
+class="uri">https://youtu.be/RNHzfeP7HQQ</a>)</li>
+</ol>
+<p>In order to get a good guess for the particular solution, you need to
+multiply
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{-t}</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>,
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y_p(t) = Ae^{-t}</annotation></semantics></math>
+doesn’t work, but
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>t</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y_p(t) = Ate^{-t}</annotation></semantics></math>
+does. This trick always works if the forcing term is an exponential
+function (although you might need to multiply by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>
+more than once).</p>
+<ol start="2" type="1">
+<li>What is the natural frequency of an undamped spring with mass m and
+spring constant k?</li>
+</ol>
+<p>What happens when you force a spring at exactly its natural
+frequency? We used complexification to find a particular solution to
+this equation:</p>
+<ol start="3" type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>16</mn><mi>y</mi><mo>=</mo><mo>sin</mo><mn>4</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 16 y = \sin 4t</annotation></semantics></math></li>
+</ol>
+<p>We have been working with differential equations, which involve the
 linear operator
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{d}{dt}</annotation></semantics></math>.
 A differential equation like
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>5</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 5y&#39; + 6y = e^{-3t}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>−</mo><mn>3</mn><mi>y</mi><mi>′</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; - 3y&#39; - 4y = e^{-t}</annotation></semantics></math>
 can be expressed as
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mn>5</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right) y = e^{-3t}.</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>−</mo><mn>3</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} - 3 \dfrac{d}{dt} - 4 \right) y = e^{-t}.</annotation></semantics></math>
 The left-hand side is a linear transformation of the function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>.
 The expression
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mn>5</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right)</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>−</mo><mn>3</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>−</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} - 3 \dfrac{d}{dt} - 4 \right)</annotation></semantics></math>
 is called an <strong>operator</strong>. An operator is a function that
 transforms one function into another.</p>
 <div class="Theorem">
 <p><strong>Definition.</strong> An operator
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
 is <strong>linear</strong> if it satisfies these two properties:</p>
 <ol type="1">
 <li><strong>Additivity.</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(x + y) = T(x) + T(y)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(x + y) = L(x) + L(y)</annotation></semantics></math>
 for all functions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>.</li>
 <li><strong>Homogeneity.</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(cx) = cT(x)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(cx) = cL(x)</annotation></semantics></math>
 for all functions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
 and constants
@@ -2554,7 +2583,16 @@ and constants
 </div>
 <p>An immediate consequence of linearity is the <strong>Principle of
 Superposition</strong> which says that a linear combination of solutions
-to a homogeneous linear differential equation is also a solution.</p>
+to a homogeneous linear differential equation is also a solution and you
+can add any homogeneous solution to the solution of a non-homogeneous
+equation. That’s why the general solution of a non-homogeneous linear
+differential equation is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>y</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t) = y_p(t) + y_h(t)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>p</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y_p(t)</annotation></semantics></math>
+is any one particular solution and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>h</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y_h(t)</annotation></semantics></math>
+is the general solution of the corresponding homogeneous equation.</p>
 <!--
 <div class="Theorem">
 **Principle of Superposition**
@@ -2568,19 +2606,11 @@ $$T \mathbf{y} = \mathbf{b}(t),$$
 and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf{y}_p(t) + \mathbf{y}_h(t)$ is also a solution of the particular equation. 
 </div>
 -->
-<ol type="1">
-<li>What is the natural frequency of an undamped spring with mass m and
-spring constant k?</li>
-</ol>
-<p>What happens when the forcing term is also a solution of the
-homogeneous equation?</p>
-<ol start="2" type="1">
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>16</mn><mi>y</mi><mo>=</mo><mo>sin</mo><mn>4</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 16 y = \sin 4t</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>−</mo><mn>3</mn><mi>y</mi><mi>′</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; - 3y&#39; - 4y = e^{-t}</annotation></semantics></math>
-(<a href="https://youtu.be/RNHzfeP7HQQ"
-class="uri">https://youtu.be/RNHzfeP7HQQ</a>)</p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>5</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 5y&#39; + 6y = e^{-3t}</annotation></semantics></math></p></li>
-</ol>
+<!--
+4. $y'' + 5y' + 6y = e^{-3t}$ 
+
+4. $y' - 2 y = e^{2t}$
+-->
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
