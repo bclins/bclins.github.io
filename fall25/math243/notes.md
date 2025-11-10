@@ -1337,6 +1337,49 @@ Mon, Nov 10 |  [5.1][5.1] | Linearization
 Wed, Nov 12 |  [5.1][5.1] | Linearization - con'd 
 Fri, Nov 14 |  [5.2][5.2] | Hamiltonian Systems
 
+### Mon, Nov 10
+
+We started talking about the principle of superposition which we have talked about informally before, but I wanted to make it explicit today. We have been working with differential equations, which involve the linear operator $\dfrac{d}{dt}$.   A differential equation like
+$$y'' + 5y' + 6y = e^{-3t}$$
+can be expressed as 
+$$\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right) y = e^{-3t}.$$
+The left-hand side is a linear transformation of the function $y(t)$. The expression 
+$$\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right)$$
+is called an **operator**.  An operator is a function that transforms one function into another.  
+
+<div class="Theorem">
+**Definition.** An operator $T$ is **linear** if it satisfies these two properties:
+
+1. **Additivity.** $T(x + y) = T(x) + T(y)$ for all functions $x(t)$ and $y(t)$. 
+2. **Homogeneity.** $T(cx) = cT(x)$ for all functions $x(t)$ and constants $c$.
+</div>
+
+An immediate consequence of linearity is the **Principle of Superposition** which says that a linear combination of solutions to a homogeneous linear differential equation is also a solution.
+
+<!--
+<div class="Theorem">
+**Principle of Superposition**
+
+If $T$ is a linear transformation of functions, and $\mathbf{y}_1(t)$ and $\mathbf{y}_2(t)$ are both solutions to the homogeneous equation  
+$$T \mathbf{y} = 0,$$
+then $C_1 \mathbf{y}_1(t) + C_2 \mathbf{y}_2(t)$ also satisfy that equation for all constants $C_1$ and $C_2$.  
+
+If $\mathbf{y}_p(t)$ is a function that satisfies the non-homogeneous equation 
+$$T \mathbf{y} = \mathbf{b}(t),$$
+and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf{y}_p(t) + \mathbf{y}_h(t)$ is also a solution of the particular equation. 
+</div>
+-->
+
+1. What is the natural frequency of an undamped spring with mass m and spring constant k?
+
+What happens when the forcing term is also a solution of the homogeneous equation? 
+
+2. $y'' + 16 y = \sin 4t$
+
+3. $y'' - 3y' - 4y = e^{-t}$ (<https://youtu.be/RNHzfeP7HQQ>)
+
+3. $y'' + 5y' + 6y = e^{-3t}$ 
+
 - - - 
 
 ### Week 13 Notes

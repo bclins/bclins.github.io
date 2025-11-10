@@ -51,7 +51,7 @@ Week | Topic                      | Notes | Homework
 9  | Classification of planar systems               | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 10 | **Midterm 2**, Systems in higher dimensions    | [Week 10](notes.html#week-10-notes) | 
 11 | Homogeneous linear systems                     | [Week 11](notes.html#week-11-notes) | [HW9](HW/HW9.pdf)
-12 | Forcing and resonance                          | [Week 12](notes.html#week-12-notes) | 
+12 | Forcing and resonance                          | [Week 12](notes.html#week-12-notes) | [HW10](HW/HW10.pdf)
 13 | Nonlinear systems, **Midterm 3**               | [Week 13](notes.html#week-13-notes) | 
 14 | The Laplace transform                          | [Week 14](notes.html#week-14-notes) |
 

@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\tr}{\on{tr}}
+
+\renewcommand\arraystretch{1.5}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Homework 10 - Math 243 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\noindent
+\textit{Complexify the forcing term to find a particular solution for each of the following differential equations.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $y'' + 9y = \sin 4t$
+
+\item $x'' + 2x' + 10x = e^t \cos t$ \\
+Hint: $e^t \cos t$ is the real part of $e^{(1+i)t}$. 
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\noindent
+\textit{Find a particular solution for each of the following non-homogeneous linear equations.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $x'' + 7x' + 10x = e^{-5t}$
+
+\item $y'' + 9y = \sin 3t$
+
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item If a linear differential equation 
+$$ay'' + by' + c y = f(t) + g(t)$$
+has two different forcing functions $f$ and $g$ added together, then (by linearity) you can find a particular solution by adding together particular solutions when you only use $f$ as the forcing function and when you only use $g$ as the forcing function.  Use this to find a particular solution to 
+$$y'' + 100y = e^t + \cos t .$$
+
+\vfill
+
+\newpage
+\item The nonlinear system 
+\begin{align*} 
+x' &= 5y - xy \\ 
+y' &= 2x - xy 
+\end{align*}
+has two equilibrium points $(0,0)$ and $(2,5)$.  Calculate the Jacobian matrix at each equilibrium point and use it to determine whether the equilibrium is a source/sink, spiral source/sink, or a saddle.  
+\vfill
+
+\item Consider the nonlinear system
+\begin{align*} 
+x' &= y - x^2, \\
+y' &= y - 4.
+\end{align*}
+Find all equilibrium points and classify each equilibrium as a saddle, source/sink, or spiral source/sink.  
+\vfill
+
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+
+
+\end{document}

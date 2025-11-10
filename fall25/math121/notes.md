@@ -1021,21 +1021,35 @@ We finished with this example:
     $$N = 10, ~~~~~ s = 76{,}550, ~~~~~ \bar{x} = 161{,}900.$$
     Carry out a hypothesis test with this data  to answer the question. 
 
-<!--
-### Fri, Apr 4
+- - - 
 
-A **t-distribution confidence interval** is a tool to estimate the value of a population mean ($\mu$):
+### Week 12 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 10 |  [7.1.4][7.1.4] | One sample t-confidence intervals
+Wed, Nov 12 | [7.2][7.2] | Paired data 
+Fri, Nov 14 | [7.3][7.3] | Difference of two means  
+
+### Mon, Nov 10
+
+<div class="Theorem">
+**t-Distribution Confidence Interval.** To estimate a population mean $\mu$ use
+
 $$\bar{x} \pm t^* \frac{s}{\sqrt{n}}.$$
+</div>
 
-In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table. 
+In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table.  Use $n - 1$ degrees of freedom.
 
 * **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
 
 We talked about how to use the table to find $t$-values.  Then we did the following examples. 
 
-1. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
+1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
+to make a 95\% confidence interval for the average height of all HSC students. 
 
-2. Use the [class data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ClassDataFall24.xlsx) to make a 90\% confidence interval for the average weight of all HSC students. 
+1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
+to make a 90\% confidence interval for the average weight of all HSC students. 
 
 We also did this workshop.
 
@@ -1049,18 +1063,6 @@ t-distribution methods require the following assumptions:
 
     * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
     * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
-
--->
-
-- - - 
-
-### Week 12 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 10 |  [7.1.4][7.1.4] | One sample t-confidence intervals
-Wed, Nov 12 | [7.2][7.2] | Paired data 
-Fri, Nov 14 | [7.3][7.3] | Difference of two means  
 
 <!--
 ### Mon, Apr 7

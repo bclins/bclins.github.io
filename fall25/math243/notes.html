@@ -2517,6 +2517,70 @@ href="https://runestone.academy/ns/books/published/odeproject/nonlinear02.html">
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-10">Mon, Nov 10</h3>
+<p>We started talking about the principle of superposition which we have
+talked about informally before, but I wanted to make it explicit today.
+We have been working with differential equations, which involve the
+linear operator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{d}{dt}</annotation></semantics></math>.
+A differential equation like
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>5</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 5y&#39; + 6y = e^{-3t}</annotation></semantics></math>
+can be expressed as
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mn>5</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right) y = e^{-3t}.</annotation></semantics></math>
+The left-hand side is a linear transformation of the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>.
+The expression
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mn>5</mn><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\left(\dfrac{d^2}{dt^2} + 5 \dfrac{d}{dt} + 6 \right)</annotation></semantics></math>
+is called an <strong>operator</strong>. An operator is a function that
+transforms one function into another.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> An operator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+is <strong>linear</strong> if it satisfies these two properties:</p>
+<ol type="1">
+<li><strong>Additivity.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(x + y) = T(x) + T(y)</annotation></semantics></math>
+for all functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y(t)</annotation></semantics></math>.</li>
+<li><strong>Homogeneity.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>T</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">T(cx) = cT(x)</annotation></semantics></math>
+for all functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math>
+and constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>.</li>
+</ol>
+</div>
+<p>An immediate consequence of linearity is the <strong>Principle of
+Superposition</strong> which says that a linear combination of solutions
+to a homogeneous linear differential equation is also a solution.</p>
+<!--
+<div class="Theorem">
+**Principle of Superposition**
+
+If $T$ is a linear transformation of functions, and $\mathbf{y}_1(t)$ and $\mathbf{y}_2(t)$ are both solutions to the homogeneous equation  
+$$T \mathbf{y} = 0,$$
+then $C_1 \mathbf{y}_1(t) + C_2 \mathbf{y}_2(t)$ also satisfy that equation for all constants $C_1$ and $C_2$.  
+
+If $\mathbf{y}_p(t)$ is a function that satisfies the non-homogeneous equation 
+$$T \mathbf{y} = \mathbf{b}(t),$$
+and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf{y}_p(t) + \mathbf{y}_h(t)$ is also a solution of the particular equation. 
+</div>
+-->
+<ol type="1">
+<li>What is the natural frequency of an undamped spring with mass m and
+spring constant k?</li>
+</ol>
+<p>What happens when the forcing term is also a solution of the
+homogeneous equation?</p>
+<ol start="2" type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>16</mn><mi>y</mi><mo>=</mo><mo>sin</mo><mn>4</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 16 y = \sin 4t</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>−</mo><mn>3</mn><mi>y</mi><mi>′</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; - 3y&#39; - 4y = e^{-t}</annotation></semantics></math>
+(<a href="https://youtu.be/RNHzfeP7HQQ"
+class="uri">https://youtu.be/RNHzfeP7HQQ</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>5</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>3</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 5y&#39; + 6y = e^{-3t}</annotation></semantics></math></p></li>
+</ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
