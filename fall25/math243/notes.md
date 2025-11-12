@@ -10,6 +10,16 @@ header-includes: |
     --header-color:	#000; 
     --link-color: #00e; 
   }
+  footer {
+    position: fixed;
+    width: 700px;
+    bottom: 0;
+    background-color: white;
+    padding: 5px;
+    z-index: 10;
+    border-top: 1px solid black;
+    text-align: right;
+  }
   </style>
 ---
 
@@ -1343,7 +1353,27 @@ We started with this example where the forcing term $e^{-t}$ is a solution of th
 
 1. $y'' - 3y' - 4y = e^{-t}$ (<https://youtu.be/RNHzfeP7HQQ>)
 
+
 In order to get a good guess for the particular solution, you need to multiply $e^{-t}$ by $t$, because $y_p(t) = Ae^{-t}$ doesn't work, but $y_p(t) = Ate^{-t}$ does. This trick always works if the forcing term is an exponential function (although you might need to multiply by $t$ more than once).  
+
+Here is a summary of the different options we've discussed for finding a particular solution to a non-homogeneous linear differential equation.
+
+<center>
+<table class="bordered">
+<thead>
+<tr><th>Forcing Term</th><th>Good Guess</th><th>Next Option</th></tr>
+</thead>
+<tbody>
+<tr><td>$at + b$</td><td>$y_p = At + B$</td><td></td></tr> 
+<tr><td>$e^{kt}$</td><td>$y_p = Ae^{kt}$</td><td>Multiply your last guess by $t$</td></tr>
+<tr><td>$\sin \omega t$ or $\cos \omega t$</td><td>$y_p = A \cos \omega t + B \sin \omega t$</td><td>
+Complexify</td></tr>
+</tbody>
+</table>
+</center>
+
+
+
 
 2. What is the natural frequency of an undamped spring with mass m and spring constant k?
 
@@ -1396,9 +1426,9 @@ and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf
 Today we talked about how to classify the equilibrium points for nonlinear systems.  
 
 <div class="Theorem">
-**Jacobian Derivative.**
+**Jacobian Matrix.**
 
-The **Jacobian derivative** of a function $F:\R^n \rightarrow \R^n$ is the matrix 
+The **Jacobian matrix** of a function $F:\R^n \rightarrow \R^n$ is  
 $$J = \begin{bmatrix} \frac{\partial F_1}{\partial x_1} & \cdots & \frac{\partial F_1}{\partial x_n} \\ 
 \vdots & \ddots & \vdots \\ 
 \frac{\partial F_n}{\partial x_1} & \cdots & \frac{\partial F_n}{\partial x_n} \end{bmatrix}$$
@@ -1420,6 +1450,8 @@ Can you tell if the equilibrium $(5,2)$ is stable or unstable?  Why not?
 $$\dfrac{dx}{dt} = y$$
 $$\dfrac{dy}{dt} = -y -\sin x$$
 Classify each equilibrium by type. 
+
+
 
 - - - 
 
@@ -1497,3 +1529,8 @@ Mon, Dec 8  |             | Recap & review
 <br>
 <br>
 <br>
+
+
+<footer>
+<a href="#">Back to top ▲</a>
+</footer>
