@@ -818,7 +818,10 @@ On Monday we introduced hypothesis testing:
 **One-Sample Hypothesis Test for a Proportion**
  
 <center>
-$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$
+<table>
+<tr>
+<td>$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$</td></tr>
+</table>
 </center>
 
 <!--Needs a large enough sample so that the expected number of successes $p_0 N$ and the expected number of failures $(1-p_0)N$ are both at least 10.-->
@@ -882,7 +885,12 @@ After that, we introduced:
 **Two-Sample Hypothesis Test for Proportions.** 
 
 <center>
-$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$
+
+<table>
+<tr>
+<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$</td>
+</tr>
+</table>
 </center>
 
 where $\hat{p}$ is the **pooled proportion**:
@@ -942,7 +950,11 @@ We started by reviewing what we introduced last time.
 **Two-Sample Hypothesis Test for Proportions.** 
 
 <center>
-$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$
+<table>
+<tr>
+<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$</td>
+</tr>
+</table>
 </center>
 
 where $\hat{p}$ is the **pooled proportion**:
@@ -1007,7 +1019,11 @@ $$\text{degrees of freedom} = n - 1.$$-->
 **One-Sample Hypothesis Test for Means.** 
 
 <center>
-$\begin{array}{lr} H_0: & \mu = \mu_0 \\ H_A: & \mu \ne \mu_0 \end{array}$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $t = \dfrac{\bar{x} - \mu_0}{s / \sqrt{n}}.$
+<table>
+<tr>
+<td>$\begin{array}{lr} H_0: & \mu = \mu_0 \\ H_A: & \mu \ne \mu_0 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td>$t = \dfrac{\bar{x} - \mu_0}{s / \sqrt{n}}.$</td>
+</tr>
+</table>
 </center>
 
 This $t$-value has $n-1$ **degrees of freedom**. 
@@ -1043,12 +1059,14 @@ In order to use this formula, you need to find the **critical t-value** $t^*$ fo
 
 * **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
 
-We talked about how to use the table to find $t$-values.  Then we did the following examples. 
+We talked about how to use the table to find $t$-values.  Then we did the following example. 
 
 1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
 to make a 95\% confidence interval for the average height of all HSC students. 
 
-1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
+Here is another example that we didn't have time for.
+
+2. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
 to make a 90\% confidence interval for the average weight of all HSC students. 
 
 We also did this workshop.
@@ -1064,11 +1082,10 @@ t-distribution methods require the following assumptions:
     * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
     * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
 
-<!--
-### Mon, Apr 7
+### Wed, Nov 12
 
 <!-- 
-One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  
+One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  -->
 
 We talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
 
@@ -1088,6 +1105,7 @@ We talked about comparing the averages of two correlated variables.  You can use
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
+<!-- 
 ### Wed, Apr 9
 
 Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  

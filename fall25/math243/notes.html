@@ -2611,6 +2611,47 @@ and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf
 
 4. $y' - 2 y = e^{2t}$
 -->
+<h3 id="wed-nov-12">Wed, Nov 12</h3>
+<p>Today we talked about how to classify the equilibrium points for
+nonlinear systems.</p>
+<div class="Theorem">
+<p><strong>Jacobian Derivative.</strong></p>
+<p>The <strong>Jacobian derivative</strong> of a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>:</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>→</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">F:\mathbb{R}^n \rightarrow \mathbb{R}^n</annotation></semantics></math>
+is the matrix
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>J</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mn>1</mn></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd columnalign="center" style="text-align: center"><mi>⋯</mi></mtd><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mn>1</mn></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd columnalign="center" style="text-align: center"><mi>⋯</mi></mtd><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">J = \begin{bmatrix} \frac{\partial F_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial F_1}{\partial x_n} \\ 
+\vdots &amp; \ddots &amp; \vdots \\ 
+\frac{\partial F_n}{\partial x_1} &amp; \cdots &amp; \frac{\partial F_n}{\partial x_n} \end{bmatrix}</annotation></semantics></math></p>
+</div>
+<p>You can use the Jacobian matrix at an equilibrium point to classify
+the type of equilibrium. We did the following examples.</p>
+<ol type="1">
+<li><p>Consider two species in competition with populations
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+that satisfy
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mn>2</mn><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac displaystyle="true"><mi>x</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = 2x \left( 1 - \dfrac{x}{2} \right) - xy</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mn>3</mn><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac displaystyle="true"><mi>x</mi><mn>3</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>2</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = 3y \left( 1 - \dfrac{x}{3} \right) - 2xy</annotation></semantics></math>
+This system has four different equilibrium points:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(0,0), (2,0), (0,3)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>.
+Calculate the Jacobian matrix at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>
+and use it to classify the type of equilibrium there.</p></li>
+<li><p>Find the Jacobian matrix for the system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>R</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mn>2</mn><mi>R</mi><mo>−</mo><mi>R</mi><mi>F</mi></mrow><annotation encoding="application/x-tex">\dfrac{dR}{dt} = 2R - RF</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>5</mn><mi>F</mi><mo>+</mo><mi>R</mi><mi>F</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dF}{dt} = -5F + RF.</annotation></semantics></math>
+Can you tell if the equilibrium
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(5,2)</annotation></semantics></math>
+is stable or unstable? Why not?</p></li>
+<li><p>Find all equilibrium solutions for system below (which models a
+damped pendulum).
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = y</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mi>y</mi><mo>−</mo><mo>sin</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = -y -\sin x</annotation></semantics></math>
+Classify each equilibrium by type.</p></li>
+</ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>

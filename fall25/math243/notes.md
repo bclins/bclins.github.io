@@ -1391,6 +1391,36 @@ and $\mathbf{y}_h(t)$ is any solution to the homogeneous equation, then $\mathbf
 4. $y' - 2 y = e^{2t}$
 -->
 
+### Wed, Nov 12
+
+Today we talked about how to classify the equilibrium points for nonlinear systems.  
+
+<div class="Theorem">
+**Jacobian Derivative.**
+
+The **Jacobian derivative** of a function $F:\R^n \rightarrow \R^n$ is the matrix 
+$$J = \begin{bmatrix} \frac{\partial F_1}{\partial x_1} & \cdots & \frac{\partial F_1}{\partial x_n} \\ 
+\vdots & \ddots & \vdots \\ 
+\frac{\partial F_n}{\partial x_1} & \cdots & \frac{\partial F_n}{\partial x_n} \end{bmatrix}$$
+</div>
+
+You can use the Jacobian matrix at an equilibrium point to classify the type of equilibrium.  We did the following examples. 
+
+1. Consider two species in competition with populations $x$ and $y$ that satisfy
+$$\dfrac{dx}{dt} = 2x \left( 1 - \dfrac{x}{2} \right) - xy$$
+$$\dfrac{dy}{dt} = 3y \left( 1 - \dfrac{x}{3} \right) - 2xy$$
+This system has four different equilibrium points: $(0,0), (2,0), (0,3)$ and $(1,1)$.  Calculate the Jacobian matrix at $(1,1)$ and use it to classify the type of equilibrium there.
+
+2. Find the Jacobian matrix for the system 
+$$\dfrac{dR}{dt} = 2R - RF$$
+$$\dfrac{dF}{dt} = -5F + RF.$$
+Can you tell if the equilibrium $(5,2)$ is stable or unstable?  Why not?
+
+3. Find all equilibrium solutions for system below (which models a damped pendulum). 
+$$\dfrac{dx}{dt} = y$$
+$$\dfrac{dy}{dt} = -y -\sin x$$
+Classify each equilibrium by type. 
+
 - - - 
 
 ### Week 13 Notes
