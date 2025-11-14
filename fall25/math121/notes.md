@@ -1105,8 +1105,7 @@ We talked about comparing the averages of two correlated variables.  You can use
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
-<!-- 
-### Wed, Apr 9
+### Fri, Nov 14
 
 Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
 
@@ -1156,6 +1155,7 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
 
+<!--
 3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
 
 $$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$

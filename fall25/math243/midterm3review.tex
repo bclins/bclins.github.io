@@ -1,0 +1,131 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcounter{countA}
+
+\begin{document}
+\subsubsection*{Midterm 3 Review - Math 243}
+
+\begin{questions}
+\question Consider the system
+$$\frac{dx}{dt} = x^2 - y$$
+$$\frac{dy}{dt} = x^2 - 1$$
+\begin{parts}
+\item Find all equilibria.  
+\vfill
+
+\item Use linearization (i.e., the Jacobian matrix) to classify each equilibrium point.  
+\vfill
+
+%\item Which of the following phase portraits might represent the system above?  
+%\vfill
+\end{parts}
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 2 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the following one-parameter family of systems.  
+$$\frac{dx}{dt} = x^2 - y$$
+$$\frac{dy}{dt} = x^2 - a$$
+\begin{parts}
+\item Find all equilibrium points.
+\vfill
+\item Identify all values of $a$ at which a bifurcation occurs.   
+\vfill
+\item Briefly describe how the equilibrium points change at each of the bifurcation values.  
+\vfill
+
+\end{parts}
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 3 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the system 
+$$\dfrac{dx}{dt} = x \cos(xy)$$
+$$\dfrac{dy}{dt} = -y \cos(xy)$$
+\begin{parts}
+\item Show that the quantity $H(x,y) = \sin(xy)$ is a Hamiltonian function for the system.
+\vfill
+
+\item Sketch the level sets for this system.  Hint: The level sets occur when $xy$ is a constant.  What does the graph of $xy = c$ look like?  
+\vfill
+
+\item Sketch the solution curve that passes through the point $(1,\pi)$.  Be sure to indicate the direction of the solution.
+\vfill
+
+\end{parts}
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 4 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the following forced harmonic oscillator.  
+  $$y'' + 3y' + 2y = \cos 2t$$
+\begin{parts}
+\item What is the complexification of this differential equation?  
+\vfill
+
+\item Find a particular solution for this differential equation.  
+\vfill
+
+\item Find the general solution for this differential equation.
+\vfill
+
+\item If this system represents a harmonic oscillator, is it overdamped or underdamped?  How can you tell?  
+\vfill
+\end{parts}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 5 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the non-homogeneous linear system
+$$\frac{d \mathbf{y}}{dt} =   A \mathbf{y}  + \mathbf{b} , \text{ where } A = \begin{bmatrix} 1 & 3 \\ -1 & 1 \end{bmatrix}\text{ and } \mathbf{b} = \begin{bmatrix} -6 \\ 2 \end{bmatrix}.$$
+\begin{parts}
+\item Find the equilibrium point for the system.  
+\vfill
+
+\item Find the general solution to the system above.  
+\vfill
+
+\item If you replace the constant vector $\mathbf{b}$ above with the vector-valued function $\mathbf{b}(t) = \begin{bmatrix} -6e^{-t} \\ 2 e^{-t} \end{bmatrix}$. What would make a good guess for a particular solution $\mathbf{y}_p$ for this new system? 
+\vfill
+\end{parts}
+
+\question Find general solutions to the following non-homogeneous equations. 
+
+\begin{multicols}{2}
+\begin{parts}
+\part $y'' - y' - 6 = e^{4t}$
+
+
+\part $y'' - y' - 6 = e^{2t}$
+
+\setcounter{countA}{\value{partno}}
+\end{parts}
+\end{multicols}
+\vfill
+
+\begin{multicols}{2}
+\begin{parts}
+\setcounter{partno}{\value{countA}}
+\part $y'' + 4y = \cos(2t)$
+\vfill
+
+\part $y'' + 2y' + 6y = 3t+2$
+\vfill
+
+\end{parts}
+\end{multicols}
+
+
+
+\end{questions}
+
+\end{document}
