@@ -1453,6 +1453,7 @@ Classify each equilibrium by type.
 
 ### Fri, Nov 14
 
+<!--
 We started by looking at the Van der Pol system
 
 $$\dfrac{dx}{dt} = y,$$
@@ -1461,8 +1462,9 @@ $$\dfrac{dy}{dt} = -x + (1-x^2) y.$$
 1. Determine the type of equilibrium at the origin.  
 
 We looked at a graph of the direction field for the Van der Pol system.  One interesting feature is that solutions that start far from the origin spiral inwards, but solutions starting near the origin spiral outwards. 
+-->
 
-After that, we talked about **gradient systems** which are special planar systems where there is a real valued function $G(x,y)$ such that
+Today we introduced **gradient systems** which are special planar systems where there is a real valued function $G(x,y)$ such that
 
 $$\dfrac{dx}{dt} = \dfrac{\partial G}{\partial x}$$
 $$\dfrac{dy}{dt} = \dfrac{\partial G}{\partial y}$$
@@ -1471,15 +1473,22 @@ Recall from multivariable calulus that the **gradient** of a function $G(x,y)$ i
 $$\nabla G = \begin{bmatrix} \frac{\partial G}{\partial x} \\ \frac{\partial G}{\partial y} \end{bmatrix}.$$
 In a gradient system, the solution curves always try to take the path of steepest ascent up to higher values of $G$. 
 
+1. Calculate the gradient of $G(x,y) = 9 - x^2 - y^2$. Describe the behavior and equilibrium solutions of the gradient system $\mathbf{x}' = \nabla G$.
+
 2. Calculate the gradient of the function $G(x,y) = \cos x - \tfrac{1}{2} y^2$.   
 
 3. Sketch some level curves for $G(x,y)$ and then sketch some of the gradient vectors.  Use those to describe how different solution curves for the system $\mathbf{x}' = \nabla G$ will behave.  
+
+<center>
+<img src = "gradientSystem.png"></img>
+<figcaption>Countours and gradient vectors for $G(x,y) = \cos x - \tfrac{1}{2}y^2$. Source: [Python](https://sagecell.sagemath.org/?z=eJyNkNGugjAMhu9JeIfGqw0LcjAmxsSHGQi4ZKNzG8p8eoeYeBLOxbn70_79-7WdJQ3DqE0AqQ1ZD1mafJQW3ijyStaFCbMC4cAonyZp0sEZlND1RcCEEE6QOzmwiadJv-qEeYBNGHhs6dZdeysvTMnBGdG0LD_iEfcVx2_lgAesSh7T4rriNsp7a-cA7N4xO3ezni06yyrYQv9Ll8UPx_4v43Zla0iRPW9qNbYb_g_Ick35xnzGoYZcfADkEOKCXbWwNzR4Ghf45-ced6UH4y8rkG5J&lang=python&interacts=eJyLjgUAARUAuQ==)</figcaption>
+</center>
 
 The matrices
 $$L = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \text{ and } R = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$$
 rotate vectors in $\R^2$ to the left and right (respectively) by 90-degrees.  
 
-4. What will the system $\mathbf{x}' = R \nabla G$ look like?  How will the solutions behave? 
+4. For $G(x,y) = \cos x - \tfrac{1}{2} y^2$, what will the solutions of the system $\mathbf{x}' = R \nabla G$ look like?  How will the solutions behave if you graph them on a contour-plot for $G$? 
 
 - - - 
 

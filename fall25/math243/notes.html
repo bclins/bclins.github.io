@@ -2720,18 +2720,18 @@ damped pendulum).
 Classify each equilibrium by type.</p></li>
 </ol>
 <h3 id="fri-nov-14">Fri, Nov 14</h3>
-<p>We started by looking at the Van der Pol system</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>y</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = y,</annotation></semantics></math>
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mi>x</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>y</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = -x + (1-x^2) y.</annotation></semantics></math></p>
-<ol type="1">
-<li>Determine the type of equilibrium at the origin.</li>
-</ol>
-<p>We looked at a graph of the direction field for the Van der Pol
-system. One interesting feature is that solutions that start far from
-the origin spiral inwards, but solutions starting near the origin spiral
-outwards.</p>
-<p>After that, we talked about <strong>gradient systems</strong> which
-are special planar systems where there is a real valued function
+<!--
+We started by looking at the Van der Pol system
+
+$$\dfrac{dx}{dt} = y,$$
+$$\dfrac{dy}{dt} = -x + (1-x^2) y.$$
+
+1. Determine the type of equilibrium at the origin.  
+
+We looked at a graph of the direction field for the Van der Pol system.  One interesting feature is that solutions that start far from the origin spiral inwards, but solutions starting near the origin spiral outwards. 
+-->
+<p>Today we introduced <strong>gradient systems</strong> which are
+special planar systems where there is a real valued function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G(x,y)</annotation></semantics></math>
 such that</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>∂</mi><mi>G</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \dfrac{\partial G}{\partial x}</annotation></semantics></math>
@@ -2744,7 +2744,11 @@ is
 In a gradient system, the solution curves always try to take the path of
 steepest ascent up to higher values of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.</p>
-<ol start="2" type="1">
+<ol type="1">
+<li><p>Calculate the gradient of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>9</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">G(x,y) = 9 - x^2 - y^2</annotation></semantics></math>.
+Describe the behavior and equilibrium solutions of the gradient system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>∇</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = \nabla G</annotation></semantics></math>.</p></li>
 <li><p>Calculate the gradient of the function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>cos</mo><mi>x</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">G(x,y) = \cos x - \tfrac{1}{2} y^2</annotation></semantics></math>.</p></li>
 <li><p>Sketch some level curves for
@@ -2754,15 +2758,28 @@ different solution curves for the system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>∇</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = \nabla G</annotation></semantics></math>
 will behave.</p></li>
 </ol>
+<center>
+<img src = "gradientSystem.png"></img>
+<figcaption>
+Countours and gradient vectors for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>cos</mo><mi>x</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">G(x,y) = \cos x - \tfrac{1}{2}y^2</annotation></semantics></math>.
+Source: <a
+href="https://sagecell.sagemath.org/?z=eJyNkNGugjAMhu9JeIfGqw0LcjAmxsSHGQi4ZKNzG8p8eoeYeBLOxbn70_79-7WdJQ3DqE0AqQ1ZD1mafJQW3ijyStaFCbMC4cAonyZp0sEZlND1RcCEEE6QOzmwiadJv-qEeYBNGHhs6dZdeysvTMnBGdG0LD_iEfcVx2_lgAesSh7T4rriNsp7a-cA7N4xO3ezni06yyrYQv9Ll8UPx_4v43Zla0iRPW9qNbYb_g_Ick35xnzGoYZcfADkEOKCXbWwNzR4Ghf45-ced6UH4y8rkG5J&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>
+</figcaption>
+</center>
 <p>The matrices
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>R</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">L = \begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix} \text{ and } R = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix}</annotation></semantics></math>
 rotate vectors in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>
 to the left and right (respectively) by 90-degrees.</p>
 <ol start="4" type="1">
-<li>What will the system
+<li>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>cos</mo><mi>x</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">G(x,y) = \cos x - \tfrac{1}{2} y^2</annotation></semantics></math>,
+what will the solutions of the system
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mi>′</mi><mo>=</mo><mi>R</mi><mi>∇</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}&#39; = R \nabla G</annotation></semantics></math>
-look like? How will the solutions behave?</li>
+look like? How will the solutions behave if you graph them on a
+contour-plot for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>?</li>
 </ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
