@@ -1467,11 +1467,19 @@ After that, we talked about **gradient systems** which are special planar system
 $$\dfrac{dx}{dt} = \dfrac{\partial G}{\partial x}$$
 $$\dfrac{dy}{dt} = \dfrac{\partial G}{\partial y}$$
 
+Recall from multivariable calulus that the **gradient** of a function $G(x,y)$ is 
+$$\nabla G = \begin{bmatrix} \frac{\partial G}{\partial x} \\ \frac{\partial G}{\partial y} \end{bmatrix}.$$
 In a gradient system, the solution curves always try to take the path of steepest ascent up to higher values of $G$. 
 
 2. Calculate the gradient of the function $G(x,y) = \cos x - \tfrac{1}{2} y^2$.   
 
-3. 
+3. Sketch some level curves for $G(x,y)$ and then sketch some of the gradient vectors.  Use those to describe how different solution curves for the system $\mathbf{x}' = \nabla G$ will behave.  
+
+The matrices
+$$L = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \text{ and } R = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}$$
+rotate vectors in $\R^2$ to the left and right (respectively) by 90-degrees.  
+
+4. What will the system $\mathbf{x}' = R \nabla G$ look like?  How will the solutions behave? 
 
 - - - 
 

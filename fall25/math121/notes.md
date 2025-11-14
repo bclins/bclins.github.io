@@ -1148,8 +1148,8 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 <center>
 <table class="bordered">
 <tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Seeded</td><td>26</td><td>16,496.1</td><td>7,914.3</td></tr>
-<tr><td>Control</td><td>26</td><td>12,866.7</td><td>8,342.5</td></tr>
+<tr><td>Seeded</td><td>26</td><td>442.0</td><td>650.8</td></tr>
+<tr><td>Control</td><td>26</td><td>164.6</td><td>278.4</td></tr>
 </table>
 </center>
 
