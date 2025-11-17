@@ -1542,7 +1542,7 @@ The integral of $\frac{\partial H}{\partial y} = -2x - 3y^2$ with respect to $y$
 
 5. Show that the system 
 \begin{align*}
-\dfrac{dR}{dt} &= 2R - RF
+\dfrac{dR}{dt} &= 2R - RF \\
 \dfrac{dF}{dt} &= -5F + RF
 \end{align*}
 is not Hamiltonian by using the fact that $f_x = -g_y$ in a Hamiltonian system. 
