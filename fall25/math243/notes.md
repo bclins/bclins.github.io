@@ -1345,7 +1345,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 10 |  [4.4][4.4] | Forcing and Resonance           
 Wed, Nov 12 |  [5.1][5.1] | Linearization 
-Fri, Nov 14 |  [5.2][5.2] | Hamiltonian Systems
+Fri, Nov 14 |             | Gradient Systems
 
 ### Mon, Nov 10
 
@@ -1471,6 +1471,8 @@ $$\dfrac{dy}{dt} = \dfrac{\partial G}{\partial y}$$
 
 Recall from multivariable calulus that the **gradient** of a function $G(x,y)$ is 
 $$\nabla G = \begin{bmatrix} \frac{\partial G}{\partial x} \\ \frac{\partial G}{\partial y} \end{bmatrix}.$$
+So in vector form, a gradient system can be expressed as:
+$$\dfrac{d \mathbf{x}}{dt} = \nabla G.$$
 In a gradient system, the solution curves always try to take the path of steepest ascent up to higher values of $G$. 
 
 1. Calculate the gradient of $G(x,y) = 9 - x^2 - y^2$. Describe the behavior and equilibrium solutions of the gradient system $\mathbf{x}' = \nabla G$.
@@ -1496,10 +1498,47 @@ rotate vectors in $\R^2$ to the left and right (respectively) by 90-degrees.
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 17 |  [5.3][5.3] | More Nonlinear Mechanics
+Mon, Nov 17 |  [5.2][5.2] | Hamiltonian Systems
 Wed, Nov 19 |             | Review              
 Fri, Nov 21 |             | **Midterm 3** 
 Mon, Nov 23 |  [6.1][6.1] | The Laplace Transform                   
+
+### Mon, Nov 17
+
+Last time, we ended with a question: *what happens if you rotate the direction vectors in a gradient system by 90-degrees to the right?*  You get a Hamiltonian system.  A **Hamiltonian system** in 2-dimensions is a system of differential equations of the form
+$$\dfrac{dx}{dt} = \dfrac{\partial H}{\partial y}$$
+$$\dfrac{dy}{dt} = -\dfrac{\partial H}{\partial x}$$
+The function $H$ is called the **Hamiltonian function** for the system.
+Unlike gradient systems, the solution of a Hamiltonian system move along the level curves of $H$.  Therefore the value of $H$ is constant on any solution curve.  We say that $H$ is a **conserved quantity** for the system.  
+
+1. Show that $H = \tfrac{1}{2} y^2 - \cos(x)$ is a Hamiltonian for the nonlinear pendulum equation 
+$$\dfrac{dx}{dt} = y$$
+$$\dfrac{dy}{dt} = -\sin(x)$$
+We talked about how the terms of the Hamiltonian function for the nonlinear pendulum represent the kinetic energy plus the potential energy of the pendulum.   
+
+2. Consider the system
+$$\dfrac{dx}{dt} = -2x - 3y^2$$
+$$\dfrac{dy}{dt} = -3x^2 + 2y$$
+If this is a Hamiltonian system, then there is a function $H$ such that $\frac{\partial H}{\partial y} = -2x - 3y^2$ and $-\frac{\partial H}{\partial x} = -3x^2 + 2y$.  Try to integrate these two formulas to find a function $H$ that works.  
+<details>
+The integral of $\frac{\partial H}{\partial y} = -2x - 3y^2$ with respect to $y$ is $-2xy - y^3 + C(x)$ where $C(x)$ can be any function of $x$.  The integral of $\frac{\partial H}{\partial x} = 3x^2 - 2y$ with respect to $x$ is $-2xy + x^3 + C(y)$.  So a combined solution that works is $H = x^3 - y^3 - 2xy$.  
+</details>
+
+<center>
+<figure>
+<img src="Hamiltonian.png"></img>
+<figcaption>Hamiltonian system: solution curves and direction field. Source: [Python](https://sagecell.sagemath.org/?z=eJyFUMtuwyAQvCPxD6ucgGDXD-USKR-DHdtBAoMBtyZfX4gjtZIrVXtgtDvMzuzojIZ51TaC1Na4AAyjN9IiWGWCkl1pY0YgPFgVMMJohBsoobu7gI1DvELRsA0KaFlkrMFoOsxbtqUJnKFhMSuQjUeaWHrwj8nJO1Fy9lb0Aylanqqi_KfT8FQVpRil_eWyys_BZQE-vmQ-_OIC2fG-ZPqFq7KmfPqLeD7QeqOMu506tQ4n-q_J-nJwWVcvm8_0KeVt00ni_qT75ODZf2_mYNY9wPOdyT_MF6HfuKZxSA==&lang=python&interacts=eJyLjgUAARUAuQ==)
+</figure>
+
+<figure>
+<img src="Stream.png"></img>
+<figcaption>Stream plot. Source: [Python](https://sagecell.sagemath.org/?z=eJxljs0KwyAQhO-C77BHtZsQzK3QhzHNn6BR1FB9-2po6aHMYYed4dtdg7NwnNYX0Na7kEBQ8nFWJW9cMnrqfWkOVARvEiWUrPAAo-w0K8gI5Q6dFBk6GEURQlKy_eWjyDWBG0hRGoFlLLy27BL3LeiZGX1Er54L60asGjj-NhKrBs4pqff7mMKibPuoQXC9ULhd41vZ3YvxN21UQd0=&lang=python&interacts=eJyLjgUAARUAuQ==)
+</figure>
+</center>
+
+3. If $H$ is the Hamiltonian function of a Hamilton system, then what is the formula for the Jacobian matrix for the system?  What can you say about the trace and determinant of the Jacobian matrix? 
+
+4. What types of equilibria are not possible for Hamiltonian systems?  
 
 - - - 
 

@@ -391,8 +391,77 @@ class="uri">https://youtu.be/a10EuIFcphk</a>)</p></li>
 </ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
+<p>We had the second midterm exam this week.</p>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
+<p>This week was about working with <strong>exponents</strong>.</p>
+<div class="Theorem">
+<p><strong>Understanding Exponents</strong></p>
+<ol type="1">
+<li><p>Powers represent repeated multiplication.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>n</mi></msup><mo>=</mo><munder><munder><mrow><mi>a</mi><mo>⋅</mo><mi>a</mi><mo>⋅</mo><mi>a</mi><mo>⋅</mo><mi>⋯</mi><mo>⋅</mo><mi>a</mi></mrow><mo accent="true">⏟</mo></munder><mrow><mi>n</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> copies</mtext></mrow></mrow></munder></mrow><annotation encoding="application/x-tex">a^n = \underbrace{a \cdot a \cdot a \cdot \cdots \cdot a}_{n \text{ copies}}</annotation></semantics></math></p></li>
+<li><p>Negative powers represent reciprocals.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mi>−</mi><mi>n</mi></mrow></msup><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><msup><mi>a</mi><mi>n</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">a^{-n} = \dfrac{1}{a^n}</annotation></semantics></math></p></li>
+<li><p>Fraction powers represent roots.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow></msup><mo>=</mo><mroot><mi>a</mi><mi>n</mi></mroot></mrow><annotation encoding="application/x-tex">a^{1/n} = \sqrt[n]{a}</annotation></semantics></math></p></li>
+</ol>
+</div>
+<p>From these basic ideas, you can work out all of the other <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/fall22/math105/AlgebraAxioms.pdf#page=3">exponent
+rules</a>.</p>
+<table>
+<tr>
+<td>
+<div class="Theorem" style="width:300px">
+<p><strong>Powers Count Repeated Factors</strong></p>
+<p>Add powers of factors when you multiply.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mi>m</mi></msup><mo>⋅</mo><msup><mi>a</mi><mi>n</mi></msup><mo>=</mo><msup><mi>a</mi><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">a^m \cdot a^n = a^{m+n}</annotation></semantics></math></p>
+<p>Subtract powers when you divide.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><msup><mi>a</mi><mi>m</mi></msup><msup><mi>a</mi><mi>n</mi></msup></mfrac><mo>=</mo><msup><mi>a</mi><mrow><mi>m</mi><mo>−</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{a^m}{a^n} = a^{m-n}</annotation></semantics></math></p>
+</div>
+</td>
+<td>
+<div class="Theorem" style="width:300px">
+<p><strong>Powers Distribute to Factors</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>⋅</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>=</mo><msup><mi>a</mi><mi>n</mi></msup><mo>⋅</mo><msup><mi>b</mi><mi>n</mi></msup><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mi>a</mi><mi>b</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>=</mo><mfrac displaystyle="true"><msup><mi>a</mi><mi>n</mi></msup><msup><mi>b</mi><mi>n</mi></msup></mfrac></mrow><annotation encoding="application/x-tex">(a \cdot b)^n = a^n \cdot b^n \text{ and } \left( \dfrac{a}{b} \right)^n = \dfrac{a^n}{b^n}</annotation></semantics></math></p>
+<p>Powers <strong>do not</strong> distribute to terms.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>≠</mo><msup><mi>a</mi><mi>n</mi></msup><mo>+</mo><msup><mi>b</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">(a + b)^n \ne a^n + b^n</annotation></semantics></math></p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="Theorem">
+<p><strong>Power of a Power</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>a</mi><mi>m</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup><mo>=</mo><msup><mi>a</mi><mrow><mi>m</mi><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">(a^m)^n = a^{mn}</annotation></semantics></math></p>
+</div>
+</td>
+<td>
+<div class="Theorem">
+<p><strong>Zero Power</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>a</mi><mn>0</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a^0 = 1</annotation></semantics></math></p>
+</div>
+</td>
+</tr>
+</table>
+<p>We simplified these examples in class:</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>9</mn><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">9^{-1/2}</annotation></semantics></math>
+(<a href="https://youtu.be/tn53EdOr6Rw"
+class="uri">https://youtu.be/tn53EdOr6Rw</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>64</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>/</mi><mn>3</mn></mrow></msup><annotation encoding="application/x-tex">(64)^{2/3}</annotation></semantics></math>
+(<a href="https://youtu.be/S34NM0Po0eA"
+class="uri">https://youtu.be/S34NM0Po0eA</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mrow><msup><mi>a</mi><mn>3</mn></msup><msup><mi>b</mi><mn>4</mn></msup></mrow><mrow><msup><mi>a</mi><mn>2</mn></msup><mi>b</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><annotation encoding="application/x-tex">\left( \dfrac{a^3 b^4}{a^2 b} \right)^3</annotation></semantics></math>
+(<a href="https://youtu.be/AR1uqNbjM5s?t=332"
+class="uri">https://youtu.be/AR1uqNbjM5s?t=332</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><mn>20</mn><msup><mi>x</mi><mn>6</mn></msup></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{20x^6}</annotation></semantics></math>
+(<a href="https://youtu.be/kCP-ptqeNMQ"
+class="uri">https://youtu.be/kCP-ptqeNMQ</a>)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mn>8</mn><msup><mi>a</mi><mn>6</mn></msup><msup><mi>b</mi><mrow><mi>−</mi><mn>4</mn></mrow></msup></mrow><mrow><mn>24</mn><msup><mi>a</mi><mrow><mi>−</mi><mn>8</mn></mrow></msup><msup><mi>b</mi><mn>9</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{8 a^6 b^{-4}}{24 a^{-8} b^9}</annotation></semantics></math>
+(<a href="https://youtu.be/7gTfmXhFOVo"
+class="uri">https://youtu.be/7gTfmXhFOVo</a>)</p></li>
+</ol>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <hr />

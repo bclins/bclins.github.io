@@ -275,9 +275,72 @@ We used this method to solve these examples.
 
 ### Week 10 Notes
 
+We had the second midterm exam this week.
+
 - - - 
 
 ### Week 11 Notes
+
+This week was about working with **exponents**.  
+
+
+<div class="Theorem">
+**Understanding Exponents**
+
+1. Powers represent repeated multiplication. 
+$$a^n = \underbrace{a \cdot a \cdot a \cdot \cdots \cdot a}_{n \text{ copies}}$$
+
+2. Negative powers represent reciprocals.
+$$a^{-n} = \dfrac{1}{a^n}$$
+
+3. Fraction powers represent roots. 
+$$a^{1/n} = \sqrt[n]{a}$$ 
+
+</div>
+
+From these basic ideas, you can work out all of the other [exponent rules](https://people.hsc.edu/faculty-staff/blins/classes/fall22/math105/AlgebraAxioms.pdf#page=3).
+
+<table>
+<tr><td><div class="Theorem" style="width:300px">
+**Powers Count Repeated Factors**
+
+Add powers of factors when you multiply.
+$$a^m \cdot a^n = a^{m+n}$$ 
+
+Subtract powers when you divide.
+$$\dfrac{a^m}{a^n} = a^{m-n}$$
+</div></td><td><div class="Theorem" style="width:300px">
+**Powers Distribute to Factors**
+
+$$(a \cdot b)^n = a^n \cdot b^n \text{ and } \left( \dfrac{a}{b} \right)^n = \dfrac{a^n}{b^n}$$
+
+Powers **do not** distribute to terms.
+$$(a + b)^n \ne a^n + b^n$$
+</div>
+</td></tr>
+<tr><td><div class="Theorem">
+**Power of a Power**
+
+$$(a^m)^n = a^{mn}$$
+</div></td><td><div class="Theorem">
+**Zero Power**
+$$a^0 = 1$$
+</div></td></tr>
+</table>
+
+
+We simplified these examples in class:
+
+1. $9^{-1/2}$ (<https://youtu.be/tn53EdOr6Rw>)
+
+2. $(64)^{2/3}$ (<https://youtu.be/S34NM0Po0eA>)
+
+3. $\left( \dfrac{a^3 b^4}{a^2 b} \right)^3$ (<https://youtu.be/AR1uqNbjM5s?t=332>)
+
+4. $\sqrt{20x^6}$ (<https://youtu.be/kCP-ptqeNMQ>)
+
+5. $\dfrac{8 a^6 b^{-4}}{24 a^{-8} b^9}$ (<https://youtu.be/7gTfmXhFOVo>)
+
 
 - - - 
 

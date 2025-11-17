@@ -1119,17 +1119,30 @@ Here are side-by-side box and whisker plots for the data:
 
 This picture suggests that there might be a difference between men & women, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
 
+<div class="Theorem">
+**Two-Sample Hypothesis Test for Means**
+
+<center>
+<table>
+<tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp;</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
+</table>
+</center>
+
+You can use the smaller sample size minus one as the degrees of freedom. 
+</div>
+
+When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
+$$dF = \min(n_1, n_2) - 1$$
+in other words, *use the smaller sample size minus 1 as the degrees of freedom*. 
+<!--
 <center>
 <table class="bordered">
 <tr><th>Hypotheses</th><th>Test Statistic</th></tr>
 <tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
 </table>
 </center>
-
-When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
-$$dF = \min(n_1, n_2) - 1$$
-in other words, *use the smaller sample size minus 1 as the degrees of freedom*. 
-
+-->
+ 
 Here is a quick summary of the numbers we need to calculate the t-value for the example with men & women talking.
 
 <center>
@@ -1155,21 +1168,51 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
 
-<!--
-3. Use the **two sample t-confidence interval** to estimate how much more rain cloud seeding would produce on average.  
+
+- - - 
+
+### Week 13 Notes
+
+
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 17 | [7.3][7.3] | Difference of two means 
+Wed, Nov 19 |            | Review
+Fri, Nov 21 |            | **Midterm 3**
+Mon, Nov 23 | [7.4][7.4] | Statistical power
+
+
+### Mon, Nov 17
+
+Today we introduced the 2-sample confidence interval for means. 
+
+<div class="Theorem">
+**Two Sample Confidence Interval for Means**
+
+Use this to estimate the gap between two population means.  
 
 $$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
 
-### Fri, Apr 11
+You can use the smaller sample size minus one as the degrees of freedom to find $t^*$. 
+</div>
 
-Today we started by talking about the **assumptions of the two-sample t-methods** (both hypothesis tests and confidence intervals).  
+These formulas (both the two-sample t-test and t-confidence interval) are based on the same key assumptions. 
 
-1. **No Bias**. As always, we need good simple random samples to avoid bias.  
+* **No Bias**. As always, we need good simple random samples to avoid bias.  
 
-2. **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
-
+* **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
     * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
     * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
+
+1. Last time we looked at evidence that cloud seeding causes more rain to fall. Use a two sample t-confidence interval to estimate how much more rain cloud seeding would produce on average.  
+
+After that, we did this workshop in class. 
+
+* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
+
+
+
 
 <!-- 
 We did this example:
@@ -1188,22 +1231,8 @@ We did this example:
 
 3. How are the results of the 2-sample confidence interval different than the 1-sample confidence intervals we could construct for each group?  
 
-* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
 -->
-
-- - - 
-
-### Week 13 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 17 | [7.3][7.3] | Difference of two means 
-Wed, Nov 19 |            | Review
-Fri, Nov 21 |            | **Midterm 3**
-Mon, Nov 23 | [7.4][7.4] | Statistical power
 
 <!--
 ### Mon, Apr 14

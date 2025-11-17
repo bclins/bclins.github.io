@@ -2521,9 +2521,8 @@ href="https://runestone.academy/ns/books/published/odeproject/nonlinear01.html">
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Nov 14</td>
-<td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/nonlinear02.html">5.2</a></td>
-<td style="text-align: left;">Hamiltonian Systems</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Gradient Systems</td>
 </tr>
 </tbody>
 </table>
@@ -2741,6 +2740,8 @@ of a function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G(x,y)</annotation></semantics></math>
 is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><mi>G</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><mi>G</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\nabla G = \begin{bmatrix} \frac{\partial G}{\partial x} \\ \frac{\partial G}{\partial y} \end{bmatrix}.</annotation></semantics></math>
+So in vector form, a gradient system can be expressed as:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>𝐱</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>∇</mi><mi>G</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{d \mathbf{x}}{dt} = \nabla G.</annotation></semantics></math>
 In a gradient system, the solution curves always try to take the path of
 steepest ascent up to higher values of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>.</p>
@@ -2795,8 +2796,8 @@ contour-plot for
 <tr class="odd">
 <td style="text-align: center;">Mon, Nov 17</td>
 <td style="text-align: center;"><a
-href="https://runestone.academy/ns/books/published/odeproject/nonlinear03.html">5.3</a></td>
-<td style="text-align: left;">More Nonlinear Mechanics</td>
+href="https://runestone.academy/ns/books/published/odeproject/nonlinear02.html">5.2</a></td>
+<td style="text-align: left;">Hamiltonian Systems</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Nov 19</td>
@@ -2816,6 +2817,91 @@ href="https://runestone.academy/ns/books/published/odeproject/laplace01.html">6.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-17">Mon, Nov 17</h3>
+<p>Last time, we ended with a question: <em>what happens if you rotate
+the direction vectors in a gradient system by 90-degrees to the
+right?</em> You get a Hamiltonian system. A <strong>Hamiltonian
+system</strong> in 2-dimensions is a system of differential equations of
+the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = \dfrac{\partial H}{\partial y}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac displaystyle="true"><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = -\dfrac{\partial H}{\partial x}</annotation></semantics></math>
+The function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is called the <strong>Hamiltonian function</strong> for the system.
+Unlike gradient systems, the solution of a Hamiltonian system move along
+the level curves of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>.
+Therefore the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is constant on any solution curve. We say that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is a <strong>conserved quantity</strong> for the system.</p>
+<ol type="1">
+<li><p>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H = \tfrac{1}{2} y^2 - \cos(x)</annotation></semantics></math>
+is a Hamiltonian for the nonlinear pendulum equation
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = y</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = -\sin(x)</annotation></semantics></math>
+We talked about how the terms of the Hamiltonian function for the
+nonlinear pendulum represent the kinetic energy plus the potential
+energy of the pendulum.</p></li>
+<li><p>Consider the system
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>x</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\dfrac{dx}{dt} = -2x - 3y^2</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>y</mi></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} = -3x^2 + 2y</annotation></semantics></math>
+If this is a Hamiltonian system, then there is a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac{\partial H}{\partial y} = -2x - 3y^2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>y</mi></mrow><annotation encoding="application/x-tex">-\frac{\partial H}{\partial x} = -3x^2 + 2y</annotation></semantics></math>.
+Try to integrate these two formulas to find a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+that works.<br />
+</p>
+<details>
+<p>The integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mi>−</mi><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac{\partial H}{\partial y} = -2x - 3y^2</annotation></semantics></math>
+with respect to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>x</mi><mi>y</mi><mo>−</mo><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">-2xy - y^3 + C(x)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">C(x)</annotation></semantics></math>
+can be any function of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+The integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>H</mi></mrow><mrow><mi>∂</mi><mi>x</mi></mrow></mfrac><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>y</mi></mrow><annotation encoding="application/x-tex">\frac{\partial H}{\partial x} = 3x^2 - 2y</annotation></semantics></math>
+with respect to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">-2xy + x^3 + C(y)</annotation></semantics></math>.
+So a combined solution that works is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><msup><mi>y</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">H = x^3 - y^3 - 2xy</annotation></semantics></math>.</p>
+</details></li>
+</ol>
+<center>
+<figure>
+<img src="Hamiltonian.png"></img>
+<figcaption>
+Hamiltonian system: solution curves and direction field. Source: <a
+href="https://sagecell.sagemath.org/?z=eJyFUMtuwyAQvCPxD6ucgGDXD-USKR-DHdtBAoMBtyZfX4gjtZIrVXtgtDvMzuzojIZ51TaC1Na4AAyjN9IiWGWCkl1pY0YgPFgVMMJohBsoobu7gI1DvELRsA0KaFlkrMFoOsxbtqUJnKFhMSuQjUeaWHrwj8nJO1Fy9lb0Aylanqqi_KfT8FQVpRil_eWyys_BZQE-vmQ-_OIC2fG-ZPqFq7KmfPqLeD7QeqOMu506tQ4n-q_J-nJwWVcvm8_0KeVt00ni_qT75ODZf2_mYNY9wPOdyT_MF6HfuKZxSA==&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>
+</figure>
+<figure>
+<img src="Stream.png"></img>
+<figcaption>
+Stream plot. Source: <a
+href="https://sagecell.sagemath.org/?z=eJxljs0KwyAQhO-C77BHtZsQzK3QhzHNn6BR1FB9-2po6aHMYYed4dtdg7NwnNYX0Na7kEBQ8nFWJW9cMnrqfWkOVARvEiWUrPAAo-w0K8gI5Q6dFBk6GEURQlKy_eWjyDWBG0hRGoFlLLy27BL3LeiZGX1Er54L60asGjj-NhKrBs4pqff7mMKibPuoQXC9ULhd41vZ3YvxN21UQd0=&amp;lang=python&amp;interacts=eJyLjgUAARUAuQ==">Python</a>
+</figure>
+</center>
+<ol start="3" type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math>
+is the Hamiltonian function of a Hamilton system, then what is the
+formula for the Jacobian matrix for the system? What can you say about
+the trace and determinant of the Jacobian matrix?</p></li>
+<li><p>What types of equilibria are not possible for Hamiltonian
+systems?</p></li>
+</ol>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
