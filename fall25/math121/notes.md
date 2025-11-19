@@ -1234,13 +1234,12 @@ We did this example:
 
 -->
 
-<!--
-### Mon, Apr 14
+### Wed, Nov 19
 
-Today we talked about reviewing for midterm 3.  We talked about using these three questions to decide which interference formula to use:
+Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
 
 * Do you have one or two samples?
-* Are you trying to estimate how big a parameter is (confidence interval) or answer a yes/no question about whether the results are significant (hypothesis test)?  
+* Are you trying to *estimate how big* a parameter is (confidence interval) or *answer a yes/no question* about whether the results are significant (hypothesis test)?  
 * Are you interested in averages of a quantitative variable (means) or percentages of a categorical variable (proportions)?   
 
 The answer to these three questions will guide you to the [right formula](finalformulas.pdf) to use. We applied these questions to the following examples in class:
@@ -1258,6 +1257,8 @@ A **p-value** is the probability of getting a result at least as extreme as what
 </div>  
 
 We finished by reviewing Type I versus Type II errors with [Exercise 5.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.25) from the review problems. 
+
+<!-- 
 
 ### Fri, Apr 18
 
