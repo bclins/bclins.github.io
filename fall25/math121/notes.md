@@ -1244,10 +1244,6 @@ Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We a
 
 The answer to these three questions will guide you to the [right formula](finalformulas.pdf) to use. We applied these questions to the following examples in class:
 
-1. Suppose you wanted to estimate how many times people go to the grocery store each month.  What inference formula should you use?
-
-2. Suppose you wanted to find out if more men than women approve of Donald Trump's first 100 days in office.  What inference formula should you use?  
-
 We also reviewed how to find p-values using the app and how to use the t-distribution table (including how to find critical z-values in addition to t-values). 
 
 One question that will definitely be on the midterm is this: *what is the exact definition of a p-value*?  To answer this question you need to memorize:
@@ -1256,7 +1252,6 @@ One question that will definitely be on the midterm is this: *what is the exact 
 A **p-value** is the probability of getting a result at least as extreme as what happened, if the null hypothesis is true. 
 </div>  
 
-We finished by reviewing Type I versus Type II errors with [Exercise 5.25](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.25) from the review problems. 
 
 <!-- 
 

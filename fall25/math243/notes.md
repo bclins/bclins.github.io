@@ -1549,6 +1549,10 @@ is not Hamiltonian by using the fact that $f_x = -g_y$ in a Hamiltonian system.
 
 Even though this last example is not a Hamiltonian system, it does have a conserved quantity: $R + F - 5\ln R - 2 \ln F$.   
 
+### Wed, Nov 19
+
+We went over the [review problems for midterm 3](midterm3review.pdf).
+
 - - - 
 
 ### Week 14 Notes
