@@ -42,7 +42,7 @@ Oct 27  | Solving rational equations                    | [Week 08](notes.html#w
 Nov 3   | Exponent rules                                | [Week 09](notes.html#week-9-notes)  | [HW8](HW/HW8.pdf)
 Nov 10  | Logarithms and orders of magnitude            | [Week 10](notes.html#week-10-notes) | 
 Nov 17  | Solving exponential equations                 | [Week 11](notes.html#week-11-notes) | [HW9](HW/HW9.pdf)
-Nov 24  | Graphs and inequalities                       | [Week 12](notes.html#week-12-notes) | 
+Nov 24  | Graphs and inequalities                       | [Week 12](notes.html#week-12-notes) | [HW10](HW/HW10.pdf)
 Dec 1   | Solving systems of equations                  | [Week 13](notes.html#week-13-notes) | 
 Dec 8   | **Final exam**                                | [Week 14](notes.html#week-14-notes) |
 

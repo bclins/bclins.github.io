@@ -346,6 +346,75 @@ We simplified these examples in class:
 
 ### Week 12 Notes
 
+Today we introduced **logarithms**.  We started by talking about **logarithmic scales**, which are number lines where the numbers are spaced by multiplication instead of addition. 
+
+<center>
+<img src="https://bclins.github.io/spring25/math140/logscale2.png" width=600></img>
+<figcaption>A base-2 logarithmic scale</figcaption>
+</center>
+
+<center>
+<img src="https://bclins.github.io/spring25/math140/logscale10.png" width=700></img>
+<figcaption>A base-10 logarithmic scale</figcaption>
+</center>
+
+Logarithmic scales help understand the logarithm function.  
+
+<!--
+We started by talking about base-10 logarithms which tell you the order of magnitude of a number.  
+
+<center>
+<table class="bordered">
+<tr><th>$x$</th><td>0.01</td><td>0.1</td><td>1</td><td>10</td><td>100</td><td>1000</td><td>10,000</td></tr>
+<tr><th>$\log(x)$</th><td>$-2$</td><td>$-1$</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+</table>
+</center>
+
+Here is the definition of the logarithm for any base.
+-->
+
+<div class="Theorem">
+**What are Logarithms?**
+
+The **logarithm function** $\log_b(x)$ can be understood two ways:
+
+1. $\log_b(x)$ equals the **number of steps** $x$ is away from 1 on a (base-b) log-scale.
+
+2. $\log_b(x)$ equals the **power of b** needed to get $x$.  
+
+</div>
+
+1. Find $\log_2 16$. ([video](https://youtu.be/Z5myJ8dg_rM))
+
+1. Find $\log_3 81$. ([video](https://youtu.be/Z5myJ8dg_rM?t=134))
+
+1. Find $\log_{100} 1$. ([video](https://youtu.be/Z5myJ8dg_rM?t=353))
+
+1. Find $\log_2 \left( \frac{1}{64} \right)$.  ([video](https://youtu.be/z9sJ3uusO98))
+
+1. Find $\log_{10} (\sqrt{10}).$
+
+Logarithms are useful because they convert difficult multiplication/division problems into easier addition/subtraction problems.  They also convert exponential patterns into linear patterns.  
+
+<div class="Theorem">
+**Properties of Logarithms**
+
+1. Logarithms convert multiplication to addition $\log(xy) = \log(x) + \log(y)$. 
+1. Logarithms convert division to subtraction $\log(x/y) = \log(x) - \log(y)$. 
+1. Logarithms let you pull down powers $\log(x^p) = p \log(x)$. 
+</div>
+
+The most important base for exponential and logarithmic functions in calculus is the number $e \approx 2.71828$.  This is the **natural base** for the logarithm and exponential function for reasons that we'll see later when we talk about derivatives.  We write $\ln(x)$ to denote the base-e logarithm.  
+
+6. What are $\ln(e^x)$ and $e^{\ln x}$?  
+
+One of the most important applications of logarithms is that they let you solve equations with variables in the exponent. 
+
+7. Solve $e^x = 2$.  
+
+8. Solve $3^x = 2^{x+1}$ ([video](https://youtu.be/tJuTsq2TMm4))
+
+
 - - - 
 
 ### Week 13 Notes

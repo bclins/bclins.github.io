@@ -464,6 +464,104 @@ class="uri">https://youtu.be/7gTfmXhFOVo</a>)</p></li>
 </ol>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
+<p>Today we introduced <strong>logarithms</strong>. We started by
+talking about <strong>logarithmic scales</strong>, which are number
+lines where the numbers are spaced by multiplication instead of
+addition.</p>
+<center>
+<img src="https://bclins.github.io/spring25/math140/logscale2.png" width=600></img>
+<figcaption>
+A base-2 logarithmic scale
+</figcaption>
+</center>
+<center>
+<img src="https://bclins.github.io/spring25/math140/logscale10.png" width=700></img>
+<figcaption>
+A base-10 logarithmic scale
+</figcaption>
+</center>
+<p>Logarithmic scales help understand the logarithm function.</p>
+<!--
+We started by talking about base-10 logarithms which tell you the order of magnitude of a number.  
+
+<center>
+<table class="bordered">
+<tr><th>$x$</th><td>0.01</td><td>0.1</td><td>1</td><td>10</td><td>100</td><td>1000</td><td>10,000</td></tr>
+<tr><th>$\log(x)$</th><td>$-2$</td><td>$-1$</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+</table>
+</center>
+
+Here is the definition of the logarithm for any base.
+-->
+<div class="Theorem">
+<p><strong>What are Logarithms?</strong></p>
+<p>The <strong>logarithm function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mi>b</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log_b(x)</annotation></semantics></math>
+can be understood two ways:</p>
+<ol type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mi>b</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log_b(x)</annotation></semantics></math>
+equals the <strong>number of steps</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is away from 1 on a (base-b) log-scale.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mi>b</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log_b(x)</annotation></semantics></math>
+equals the <strong>power of b</strong> needed to get
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</p></li>
+</ol>
+</div>
+<ol type="1">
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>2</mn></msub><mn>16</mn></mrow><annotation encoding="application/x-tex">\log_2 16</annotation></semantics></math>.
+(<a href="https://youtu.be/Z5myJ8dg_rM">video</a>)</p></li>
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>3</mn></msub><mn>81</mn></mrow><annotation encoding="application/x-tex">\log_3 81</annotation></semantics></math>.
+(<a href="https://youtu.be/Z5myJ8dg_rM?t=134">video</a>)</p></li>
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>100</mn></msub><mn>1</mn></mrow><annotation encoding="application/x-tex">\log_{100} 1</annotation></semantics></math>.
+(<a href="https://youtu.be/Z5myJ8dg_rM?t=353">video</a>)</p></li>
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mn>64</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log_2 \left( \frac{1}{64} \right)</annotation></semantics></math>.
+(<a href="https://youtu.be/z9sJ3uusO98">video</a>)</p></li>
+<li><p>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>log</mo><mn>10</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msqrt><mn>10</mn></msqrt><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\log_{10} (\sqrt{10}).</annotation></semantics></math></p></li>
+</ol>
+<p>Logarithms are useful because they convert difficult
+multiplication/division problems into easier addition/subtraction
+problems. They also convert exponential patterns into linear
+patterns.</p>
+<div class="Theorem">
+<p><strong>Properties of Logarithms</strong></p>
+<ol type="1">
+<li>Logarithms convert multiplication to addition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(xy) = \log(x) + \log(y)</annotation></semantics></math>.</li>
+<li>Logarithms convert division to subtraction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>/</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(x/y) = \log(x) - \log(y)</annotation></semantics></math>.</li>
+<li>Logarithms let you pull down powers
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mi>p</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>p</mi><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(x^p) = p \log(x)</annotation></semantics></math>.</li>
+</ol>
+</div>
+<p>The most important base for exponential and logarithmic functions in
+calculus is the number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mo>≈</mo><mn>2.71828</mn></mrow><annotation encoding="application/x-tex">e \approx 2.71828</annotation></semantics></math>.
+This is the <strong>natural base</strong> for the logarithm and
+exponential function for reasons that we’ll see later when we talk about
+derivatives. We write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ln(x)</annotation></semantics></math>
+to denote the base-e logarithm.</p>
+<ol start="6" type="1">
+<li>What are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mi>x</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\ln(e^x)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mo>ln</mo><mi>x</mi></mrow></msup><annotation encoding="application/x-tex">e^{\ln x}</annotation></semantics></math>?</li>
+</ol>
+<p>One of the most important applications of logarithms is that they let
+you solve equations with variables in the exponent.</p>
+<ol start="7" type="1">
+<li><p>Solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">e^x = 2</annotation></semantics></math>.</p></li>
+<li><p>Solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>3</mn><mi>x</mi></msup><mo>=</mo><msup><mn>2</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">3^x = 2^{x+1}</annotation></semantics></math>
+(<a href="https://youtu.be/tJuTsq2TMm4">video</a>)</p></li>
+</ol>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <hr />
