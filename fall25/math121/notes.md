@@ -1249,13 +1249,13 @@ We also reviewed how to find p-values using the app and how to use the t-distrib
 One question that will definitely be on the midterm is this: *what is the exact definition of a p-value*?  To answer this question you need to memorize:
 
 <div class="Theorem">
-A **p-value** is the probability of getting a result at least as extreme as what happened, if the null hypothesis is true. 
+A **p-value** is the probability of getting a result at least as extreme as the observed data, if the null hypothesis is true. 
 </div>  
+<!-- I used to say: 'as the results that happened'... but it is clearer to say 'as the observed data' or even 'as the sample'.  -->
 
 
-<!-- 
 
-### Fri, Apr 18
+### Mon, Nov 24
 
 Today we talked about **statistical power**. 
 
@@ -1267,7 +1267,6 @@ Today we talked about **statistical power**.
 We did this workshop in class:
 
 * **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
--->
 
 - - - 
 

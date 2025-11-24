@@ -31,7 +31,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 3 will be on **Friday, Nov 21**
+* [Project 3](Project3.pdf) is due on **Friday, December 5.**
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](formulasheet3.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](formulasheet2.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)

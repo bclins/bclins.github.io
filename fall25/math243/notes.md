@@ -1553,6 +1553,23 @@ Even though this last example is not a Hamiltonian system, it does have a conser
 
 We went over the [review problems for midterm 3](midterm3review.pdf).
 
+### Mon, Nov 24
+
+Today we introduced the **Laplace transform**.  
+
+<div class="Theorem">
+The **Laplace transform** of a function $f(t)$ is 
+$$F(s) = \mathcal{L}(f) = \int_0^\infty f(t) e^{-st} \, dt.$$
+</div>
+
+1. Show that the Laplace transform is linear, i.e.,
+    * It is **additive**: $\mathcal{L}(f+g) = \mathcal{L}(f) + \mathcal{L}(g)$ and
+    * It is **homogeneous**: $\mathcal{L}(cf) = c \mathcal{L}(f)$.
+
+After that, we did the following activity about Laplace transforms.
+
+* **Workshop**: [The Laplace transform](LaplaceTransform.pdf).
+
 - - - 
 
 ### Week 14 Notes
