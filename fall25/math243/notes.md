@@ -1562,6 +1562,8 @@ The **Laplace transform** of a function $f(t)$ is
 $$F(s) = \mathcal{L}(f) = \int_0^\infty f(t) e^{-st} \, dt.$$
 </div>
 
+1. We computed $\mathcal{L}(e^t)$ and talked about its domain. 
+
 1. Show that the Laplace transform is linear, i.e.,
     * It is **additive**: $\mathcal{L}(f+g) = \mathcal{L}(f) + \mathcal{L}(g)$ and
     * It is **homogeneous**: $\mathcal{L}(cf) = c \mathcal{L}(f)$.
@@ -1569,6 +1571,23 @@ $$F(s) = \mathcal{L}(f) = \int_0^\infty f(t) e^{-st} \, dt.$$
 After that, we did the following activity about Laplace transforms.
 
 * **Workshop**: [The Laplace transform](LaplaceTransform.pdf).
+
+<!--
+Here is a table of common Laplace transforms.
+<center>
+<table class="bordered">
+<thead>
+<tr><th>$f(t) = \mathcal{L}^{-1}(F(s))$</th><th>$F(s) = \mathcal{L}(f(t))$</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>$\dfrac{1}{s}$</td></tr>
+<tr><td>$e^{at}$</td><td>$\dfrac{1}{s-a}$, $s > a$</td></tr>
+<tr><td>$t^n$, $n \in \mathbb{N}$</td><td>$\dfrac{n!}{s^{n+1}}$</td></tr>
+
+</tbody>
+</table>
+</center>
+-->
 
 - - - 
 

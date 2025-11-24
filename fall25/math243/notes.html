@@ -2925,7 +2925,10 @@ is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>s</mi><mi>t</mi></mrow></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">F(s) = \mathcal{L}(f) = \int_0^\infty f(t) e^{-st} \, dt.</annotation></semantics></math></p>
 </div>
 <ol type="1">
-<li>Show that the Laplace transform is linear, i.e.,
+<li><p>We computed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mi>t</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}(e^t)</annotation></semantics></math>
+and talked about its domain.</p></li>
+<li><p>Show that the Laplace transform is linear, i.e.,</p>
 <ul>
 <li>It is <strong>additive</strong>:
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo>+</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>g</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}(f+g) = \mathcal{L}(f) + \mathcal{L}(g)</annotation></semantics></math>
@@ -2940,6 +2943,22 @@ transforms.</p>
 <li><strong>Workshop</strong>: <a href="LaplaceTransform.pdf">The
 Laplace transform</a>.</li>
 </ul>
+<!--
+Here is a table of common Laplace transforms.
+<center>
+<table class="bordered">
+<thead>
+<tr><th>$f(t) = \mathcal{L}^{-1}(F(s))$</th><th>$F(s) = \mathcal{L}(f(t))$</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>$\dfrac{1}{s}$</td></tr>
+<tr><td>$e^{at}$</td><td>$\dfrac{1}{s-a}$, $s > a$</td></tr>
+<tr><td>$t^n$, $n \in \mathbb{N}$</td><td>$\dfrac{n!}{s^{n+1}}$</td></tr>
+
+</tbody>
+</table>
+</center>
+-->
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
