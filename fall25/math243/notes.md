@@ -1600,7 +1600,89 @@ Wed, Dec 3  |  [6.2][6.2] | Solving Initial Value Problems
 Fri, Dec 5  |  [6.2][6.2] | Solving Initial Value Problems - con'd
 Mon, Dec 8  |             | Recap & review                        
 
-- - - 
+
+### Mon, Dec 1
+
+When we work with Laplace transforms it is helpful to have a table. 
+Here is a table of common Laplace transforms.
+
+<center>
+<table class="bordered">
+<thead>
+<tr><th>Original function</th><th>Laplace transform</th><th>s-Domain</th></tr>
+</thead>
+<tbody>
+<tr><td>$f(t) = \mathcal{L}^{-1}(F(s))$</td><td>$F(s) = \mathcal{L}(f(t))$</td><td></td></tr>
+<!--<tr><td>1</td><td>$\dfrac{1}{s}$</td><td>$s > 0$</td></tr>-->
+<tr><td>$e^{at}$</td><td>$\dfrac{1}{s-a}$</td><td>$s > a$</td></tr>
+<tr><td>$t^n$, $n \in \mathbb{N}$</td><td>$\dfrac{n!}{s^{n+1}}$</td><td>$s>0$</td></tr>
+<tr><td>$\cos (at)$</td><td>$\dfrac{s}{s^2 + a^2}$</td><td>$s > 0$</td></tr>
+<tr><td>$\sin (at)$</td><td>$\dfrac{a}{s^2 + a^2}$</td><td>$s > 0$</td></tr>
+<tr><td>$H(t - a)$</td><td>$\dfrac{e^{-as}}{s}$</td><td>$-\infty < s < \infty$</td></tr>
+<tr><td>$\delta(t - a)$</td><td>$e^{-as}$</td><td>$-\infty < s < \infty$</td></tr>
+<tr><td>$\dfrac{d}{dt} f(t)$</td><td>$s F(s) - f(0)$</td><td></td></tr>
+<tr><td>$\dfrac{d^2}{dt^2} f(t)$</td><td>$s^2 F(s) - sf(0) - f'(0)$</td><td></td></tr>
+<tr><td>$e^{at} f(t)$</td><td>$F(s-a)$</td><td></td></tr>
+<tr><td>$H(t-a) f(t-a)$</td><td>$e^{-as} F(s)$</td><td></td></tr>
+<tr><td>$f(ct) \text{ with } c > 0$</td><td>$\dfrac{1}{c} F\left( \dfrac{s}{c} \right)$</td><td></td></tr>
+
+</tbody>
+</table>
+</center>
+
+1. Use the Laplace transform to convert the initial value problem 
+<!--$$y'' + 4y = e^{-t},  ~y(0) = 0, ~y'(0) = 0$$ (This was one I made up... )-->
+$$y'' + 5y' + 6y = 0, ~ y(0) = 2, y'(0) = 3$$
+into an algebraic equation, then solve for $Y(s)$. (<https://youtu.be/3uYb-RhM7lU>)
+
+<!--
+We got
+$$Y(s) = \dfrac{2s+13}{s^2 +5s + 6}.$$
+-->
+
+After that, we did a quick review of **partial fraction decomposition**. 
+
+2. Use the partial fraction decomposition to find constants $A$ and $B$ such that 
+$$\dfrac{2s+13}{(s+2)(s+3)} = \dfrac{A}{s+2} + \dfrac{B}{s+3}.$$
+Then use the inverse Laplace transform to solve the differential equation. (<https://youtu.be/EdQ7Q9VoF44>)
+
+3. Use the Laplace transform to convert the initial value problem 
+$$y'' - y = e^{-t}, ~ y(0) = 1, y'(0) = 0$$
+into an algebraic equation, then solve for $Y(s)$. (<https://youtu.be/qZHseRxAWZ8?t=2203>)
+
+<!--
+We got 
+$$Y(s) = \dfrac{s^2 + s + 1}{(s+1)^2 (s-1)}.$$
+-->
+
+4. Use a computer to find the partial fraction decomposition for $\dfrac{s^2 + s + 1}{(s+1)^2 (s-1)}$.
+
+    ```python
+    from sympy import *
+    s = symbols('s')
+
+    # The apart() function in sympy computes the partial fraction decomposition.
+    print(apart((s**2 + s + 1)/((s+1)**2 * (s-1))))
+    ```
+
+
+<!-- 1. Show that $\mathcal{L}(f''(t)) = s \mathcal{L}(f'(t)) - f'(0) = s^2 \mathcal{L}(f(t)) - s f(0) - f'(0)$. -->
+
+We finished by talking about the **exponential shift rule** for Laplace transforms:
+
+5. Show that $\mathcal{L}(e^{at} f(t)) = F(s-a)$. 
+
+    <details>
+    By definition, $\mathcal{L}(e^{at} f(t)) = \int_0^\infty e^{-(s-a)t} f(t) \, dt = F(s-a)$. 
+    </details>
+
+<!-- 
+### Wed, Dec 3
+
+Do Heavyside step functions and Dirac delta functions. Do the RC circuit example w/ a step function for voltage.  Do a Harmonic oscillator w/ sudden impulse? 
+
+-->
+
 
 [1.1]:  <https://runestone.academy/ns/books/published/odeproject/firstlook01.html>
 [1.2]:  <https://runestone.academy/ns/books/published/odeproject/firstlook02.html>

@@ -3001,7 +3001,219 @@ con’d</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<h3 id="mon-dec-1">Mon, Dec 1</h3>
+<p>When we work with Laplace transforms it is helpful to have a table.
+Here is a table of common Laplace transforms.</p>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th>
+Original function
+</th>
+<th>
+Laplace transform
+</th>
+<th>
+s-Domain
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>ℒ</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(t) = \mathcal{L}^{-1}(F(s))</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(s) = \mathcal{L}(f(t))</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<!--<tr><td>1</td><td>$\dfrac{1}{s}$</td><td>$s > 0$</td></tr>-->
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><annotation encoding="application/x-tex">e^{at}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mrow><mi>s</mi><mo>−</mo><mi>a</mi></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{1}{s-a}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">s &gt; a</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mi>n</mi></msup><annotation encoding="application/x-tex">t^n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation encoding="application/x-tex">n \in \mathbb{N}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>n</mi><mi>!</mi></mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><annotation encoding="application/x-tex">\dfrac{n!}{s^{n+1}}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\cos (at)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>s</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{s}{s^2 + a^2}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s &gt; 0</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sin (at)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mi>a</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{a}{s^2 + a^2}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s &gt; 0</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t - a)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>s</mi></mfrac><annotation encoding="application/x-tex">\dfrac{e^{-as}}{s}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty &lt; s &lt; \infty</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t - a)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><annotation encoding="application/x-tex">e^{-as}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty &lt; s &lt; \infty</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d}{dt} f(t)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">s F(s) - f(0)</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><msup><mi>d</mi><mn>2</mn></msup><mrow><mi>d</mi><msup><mi>t</mi><mn>2</mn></msup></mrow></mfrac><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d^2}{dt^2} f(t)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>s</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">s^2 F(s) - sf(0) - f&#39;(0)</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{at} f(t)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(s-a)</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t-a) f(t-a)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{-as} F(s)</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> with </mtext><mspace width="0.333em"></mspace></mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(ct) \text{ with } c &gt; 0</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><mi>c</mi></mfrac><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mi>s</mi><mi>c</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{1}{c} F\left( \dfrac{s}{c} \right)</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<ol type="1">
+<li>Use the Laplace transform to convert the initial value problem
+<!--$$y'' + 4y = e^{-t},  ~y(0) = 0, ~y'(0) = 0$$ (This was one I made up... )-->
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mn>5</mn><mi>y</mi><mi>′</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="0.222em"></mspace><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mo>,</mo><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; + 5y&#39; + 6y = 0, ~ y(0) = 2, y&#39;(0) = 3</annotation></semantics></math>
+into an algebraic equation, then solve for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(s)</annotation></semantics></math>.
+(<a href="https://youtu.be/3uYb-RhM7lU"
+class="uri">https://youtu.be/3uYb-RhM7lU</a>)</li>
+</ol>
+<!--
+We got
+$$Y(s) = \dfrac{2s+13}{s^2 +5s + 6}.$$
+-->
+<p>After that, we did a quick review of <strong>partial fraction
+decomposition</strong>.</p>
+<ol start="2" type="1">
+<li><p>Use the partial fraction decomposition to find constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+such that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mn>2</mn><mi>s</mi><mo>+</mo><mn>13</mn></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mi>A</mi><mrow><mi>s</mi><mo>+</mo><mn>2</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>B</mi><mrow><mi>s</mi><mo>+</mo><mn>3</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{2s+13}{(s+2)(s+3)} = \dfrac{A}{s+2} + \dfrac{B}{s+3}.</annotation></semantics></math>
+Then use the inverse Laplace transform to solve the differential
+equation. (<a href="https://youtu.be/EdQ7Q9VoF44"
+class="uri">https://youtu.be/EdQ7Q9VoF44</a>)</p></li>
+<li><p>Use the Laplace transform to convert the initial value problem
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>−</mo><mi>y</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mo>,</mo><mspace width="0.222em"></mspace><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mo>,</mo><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;&#39; - y = e^{-t}, ~ y(0) = 1, y&#39;(0) = 0</annotation></semantics></math>
+into an algebraic equation, then solve for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(s)</annotation></semantics></math>.
+(<a href="https://youtu.be/qZHseRxAWZ8?t=2203"
+class="uri">https://youtu.be/qZHseRxAWZ8?t=2203</a>)</p></li>
+</ol>
+<!--
+We got 
+$$Y(s) = \dfrac{s^2 + s + 1}{(s+1)^2 (s-1)}.$$
+-->
+<ol start="4" type="1">
+<li><p>Use a computer to find the partial fraction decomposition for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mi>s</mi><mo>+</mo><mn>1</mn></mrow><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{s^2 + s + 1}{(s+1)^2 (s-1)}</annotation></semantics></math>.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> symbols(<span class="st">&#39;s&#39;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The apart() function in sympy computes the partial fraction decomposition.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(apart((s<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> s <span class="op">+</span> <span class="dv">1</span>)<span class="op">/</span>((s<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> (s<span class="op">-</span><span class="dv">1</span>))))</span></code></pre></div></li>
+</ol>
+<!-- 1. Show that $\mathcal{L}(f''(t)) = s \mathcal{L}(f'(t)) - f'(0) = s^2 \mathcal{L}(f(t)) - s f(0) - f'(0)$. -->
+<p>We finished by talking about the <strong>exponential shift
+rule</strong> for Laplace transforms:</p>
+<ol start="5" type="1">
+<li><p>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}(e^{at} f(t)) = F(s-a)</annotation></semantics></math>.</p>
+<details>
+<p>By definition,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi>∞</mi></msubsup><msup><mi>e</mi><mrow><mi>−</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}(e^{at} f(t)) = \int_0^\infty e^{-(s-a)t} f(t) \, dt = F(s-a)</annotation></semantics></math>.</p>
+</details></li>
+</ol>
+<!-- 
+### Wed, Dec 3
+
+Do Heavyside step functions and Dirac delta functions. Do the RC circuit example w/ a step function for voltage.  Do a Harmonic oscillator w/ sudden impulse? 
+
+-->
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 <footer>
 <a href="#">Back to top ▲</a>

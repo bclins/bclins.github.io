@@ -50,6 +50,9 @@ header-includes: |
 4. Solving $A \mathbf{x} = \mathbf{b}$ numerically ([Octave](https://sagecell.sagemath.org/?z=eJwljLEOgjAURXcS_uEmLmp0EJ0kDh3d3dThPVJCY-URXov27y043ptzjsEF9wOqGkecnnVZ8HLU-2oeZbHCrbNoSQM-lBAEKn6yMN_MMZzOV1SLkDGm5qWetIMMdqQg47ksDB7gf-rawsyK6yc7Bsfe7pAkoqEe5FXwjj64wSdwWoILmOOSxZzKc2022IJ_bgo2Wg==&lang=octave&interacts=eJyLjgUAARUAuQ==), [Python](https://sagecell.sagemath.org/?z=eJxLK8rPVcgrzS2oVMjMLcgvKlHQ4uXi5XJUsFVILCpKrNSIjjbUMYrViTbWMYmN1eTlSkKWidVRiNY1AosXFGXmlWjkZOYl5qTrFefnlKVqOOokaWoCAIrDHNI=&lang=python&interacts=eJyLjgUAARUAuQ==))
 5. Solving $A \mathbf{x} = \mathbf{b}$ symbolically ([Python](https://sagecell.sagemath.org/?z=eJxLK8rPVSiuzC2oVMjMLcgvKlHQ4uXi5XJUsFXwTSwpyqzQiI421DGK1Yk21jGJjdXk5UpCkQJK6BqBxXm5CopSS0oq4wuKMvNKNBz1ivNzylI1kjQ1AeW9HeI=&lang=python&interacts=eJyLjgUAARUAuQ==), [Octave](https://sagecell.sagemath.org/?z=eJw9TbsOgjAU3Zv0H07iAiYOopPEgc8w6tBbG2m4cElbiPy9BRO38z5j9waLeSEuPQl7q5VWDa4rL-5HVDVOOD_LWiv6q_Wh2hStdrjJBGsGTNEhtQ5kbBfZxBYyumCSBCRBFJ4dmk-eoMt68AD9-tnvJ05-5AW0bBN-mF2ILucyKpoSe9AX5IUw8Q==&lang=octave&interacts=eJyLjgUAARUAuQ==))
 
+### Algebra and Calculus
+
+1. Partial fraction decomposition (<a href="https://sagecell.sagemath.org/?z=eJwtjM0KwyAQhO-C7zDQQ9TQlvTet8i92FSpEH9wNwffvkq6MIeZ-XZ8zRHUYmkIseTKMFIQniN7553URJOWQooL1q-DLbay0vBH2jjkhJD-31uO5WBH4I4NKtgdvtoT-7jRZwrD3aQo1TG3V6khsTpHFRnzwAzqWvS9-3nRIzJQdF10vx-evTby&lang=python&interacts=eJyLjgUAARUAuQ==">Python</a>)
 
 <!--
 ### Slope Fields

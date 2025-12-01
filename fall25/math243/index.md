@@ -54,7 +54,7 @@ Week | Topic                      | Notes | Homework
 11 | Homogeneous linear systems                     | [Week 11](notes.html#week-11-notes) | [HW9](HW/HW9.pdf)
 12 | Forcing and resonance                          | [Week 12](notes.html#week-12-notes) | [HW10](HW/HW10.pdf)
 13 | Nonlinear systems, **Midterm 3**               | [Week 13](notes.html#week-13-notes) | 
-14 | The Laplace transform                          | [Week 14](notes.html#week-14-notes) |
+14 | The Laplace transform                          | [Week 14](notes.html#week-14-notes) | [HW11](HW/HW11.pdf)
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
 

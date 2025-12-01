@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\tr}{\on{tr}}
+
+\renewcommand\arraystretch{1.5}
+
+\begin{document}
+\newcounter{enumCount}
+\pagestyle{empty}
+\subsection*{Homework 11 - Math 243 \hfill Name: \underline{\hspace*{2in}}}
+
+
+\noindent
+\textit{Use the Laplace transform to convert these IVPs into algebraic equations, then solve for $Y(s)$.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $y'' - 5 y' + 4y = 10e^{-t}$, $y(0) = 4$, $y'(0) = 5$
+
+\item $y'' + 4y' + 3y = \cos t$, $y(0) = 1$, $y'(0) = -1$
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\noindent
+\textit{Use partial fraction decomposition (without a computer) to break up the following rational functions. Then find the inverse Laplace transform to get $y(t)$.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $Y(s) = \dfrac{s+10}{(s-2)(s+1)}$
+
+\item $Y(s) = \dfrac{4s^2 + 9s + 5}{(s+1)(s-1)(s-4)}$
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+\noindent
+\textit{Find the inverse Laplace transforms of the following. Hint: Use a computer to handle the partial fraction decompositions.}
+
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+\item $Y(s) = \dfrac{s^3 + 3s^2 + 2s + 3}{(s^2+1)(s+1)(s+3)}$ 
+
+\item $Y(s) = \dfrac{s^2 + 1}{(s-1) (s-2)^2}$
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+\end{multicols}
+\vfill
+
+
+\newpage
+\noindent
+\textit{Use the Laplace transform to solve the following initial value problems.}
+\begin{enumerate}
+\setcounter{enumi}{\theenumCount}
+
+\item $y'' + 2y' + y = H(t-1) - H(t-2)$ where $y(0) = y'(0) = 0$ and $H(t)$ is the Heavyside step function. 
+\vfill
+
+\item $y'' + 2y' + y = \delta(t)$ where $y(0) = y'(0) = 0$ and $\delta(t)$ is the Dirac delta function. 
+\vfill
+
+
+\setcounter{enumCount}{\theenumi}
+\end{enumerate} 
+
+
+\end{document}

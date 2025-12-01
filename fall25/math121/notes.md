@@ -1282,12 +1282,7 @@ Fri, Dec 5 |            | Choosing the right technique
 Mon, Dec 8  |  | Last day, recap & review
 
 
-<!--
-### Mon, Apr 21
-
-We started by reviewing a two really important concepts: **association is not causation** and **only randomized controlled experiments can prove cause-and-effect**. In [Project 3](project3.pdf) we saw that there is a strong (statistically significant) association between whether states increased speed limits and the percent change in traffic fatalities.  The difference was probably not a random fluke, but we can't conclude that it was definitely the speed limit change that *caused* the increase in fatalities.  That's because there might be other lurking variables that we haven't ruled out (maybe some of those states also changed their alcohol laws, or the rules about teenage drivers).  
-
-Being able to say that an association is statistically significant is useful, but it is not the same as proving cause-and-effect.  
+### Mon, Dec 1
 
 This week we are going to introduce one more inference technique known as the **chi-squared test for association**.  The $\chi^2$ statistic let's you measure if an association between two categorical variables is statistically significant.  Before we talked about the statistic, we looked at **two-way tables**.  We talked about how to find row and column percentages in a two-way table.  
 
@@ -1336,6 +1331,7 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
 
     This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
 
+<!--
 ### Wed, Apr 23
 
 Today we talked some more about the $\chi^2$-test for association.  We mentioned that the $\chi^2$-distribution has these features:
