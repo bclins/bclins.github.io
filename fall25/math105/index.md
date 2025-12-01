@@ -24,7 +24,8 @@ header-includes: |
 
 ### Announcements
 
-* The second midterm exam will be on **Monday, Nov 10**. 
+* The final exam will be on **Monday, Dec 8**
+* Final exam materials [practice exam](PracticeFinalExam.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 
 ### Tentative Schedule
