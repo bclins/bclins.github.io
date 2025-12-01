@@ -419,10 +419,21 @@ One of the most important applications of logarithms is that they let you solve 
 
 ### Week 13 Notes
 
+We started by going over some problems from [homework 10](HW/HW10.pdf).  Then we talked about these examples. 
+
+1. Where do the lines $y = 5x + 3$ and $y = -4x + 2$ intersect? 
+
+2. What are the solutions of the system of equations $y = x + 1$ and $x^2 + y^2 = 25$? (<https://youtu.be/swFohliPgmQ>)
+
+3. Solve $10^{2t - 3} = 7$. (<https://youtu.be/R443Db-wJ5o>)
+
+After that, we spent the last 20 minutes of class on this [practice final exam](PracticeFinalExam.pdf).
+
 - - - 
 
 ### Week 14 Notes
 
+The final exam is **Monday, Dec 8.** at 2:30pm (our regular class time and room).  
 
 - - - 
 

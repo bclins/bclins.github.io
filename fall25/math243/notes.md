@@ -1676,7 +1676,8 @@ We finished by talking about the **exponential shift rule** for Laplace transfor
     By definition, $\mathcal{L}(e^{at} f(t)) = \int_0^\infty e^{-(s-a)t} f(t) \, dt = F(s-a)$. 
     </details>
 
-6. Use the exponential shift rule to find the inverse Laplace transform of $\dfrac{1}{(s+1)^2}.$
+6. Use the exponential shift rule to find the inverse Laplace transform of $\dfrac{1}{(s+1)^2}.$ 
+
 <!-- 
 ### Wed, Dec 3
 
