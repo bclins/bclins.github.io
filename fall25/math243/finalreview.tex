@@ -1,0 +1,220 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcounter{countA}
+
+\begin{document}
+\subsubsection*{Final Exam Review - Math 243}
+
+\begin{questions}
+
+
+\question Consider the linear system below.  
+\begin{align*}
+\ds\frac{dx}{dt} &= x+2y \\
+\ds\frac{dy}{dt} &= x 
+\end{align*}
+
+\begin{parts}
+
+\item Re-write the system in matrix form. 
+\vfill
+
+\item Find the general solution for the system.  
+\vfill
+\vfill
+
+\item Find the solution to the initial value problem $x(0)  = 1$ and $y(0) = 2$.  
+\vfill
+
+\end{parts}
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 2 %%%
+%%%%%%%%%%%%%%%%%
+\question \hl{Laplace transform example!}
+\begin{parts}
+
+\item \hl{Find $Y(s)$}
+\vfill
+
+\item \hl{Partial fraction decomposition?}
+\vfill
+
+\item \hl{Solve the equation by computing the inverse Laplace transform of each term.}
+\vfill
+
+\end{parts}
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 3 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the population model
+$$\frac{dP}{dt} = -\tfrac{1}{25}P^2 + 4 P - C$$
+for a species of fish in a lake (here $dP/dt$ is measured in fish/year).  Here $C$ is a parameter that represents the number of fish caught per year.  
+\begin{parts}
+\item Draw a bifurcation diagram showing how the equilibrium fish populations depend on $C$.  Include the phase lines at three different values of $C$.  
+\vfill
+\vfill
+%\begin{center}
+%\includegraphics[height=3in]{final1.jpeg}
+%\end{center}
+\item What is the maximum catch $C$ that would still allow the fish to have a chance of survival in the lake?  
+\vfill
+\item Given the possibility of unexpected perturbations of the population not included in the model, what do you think would happen to the actual fish population if the yearly catch determined in part (b) was actually taken every year?  
+\vfill
+
+
+\end{parts} 
+
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 4 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the following one-parameter family of linear systems
+$$\frac{dY}{dt} = AY ~~~\mathrm{where}~~~ A = \left( \begin{array}{cc} 2 & -a \\ 1 & 0 \end{array} \right)$$
+\begin{parts}
+\item Sketch the the curve determined by the parameter $a$ in the trace-determinant plane.  
+\vspace{1in}
+\vfill
+
+\item Describe the different types of equilibrium behaviors exhibited by the system as $a$ increases.  
+\vfill
+\end{parts}
+
+
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 5 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the system below.  
+\begin{align*}
+\ds\frac{dx}{dt} &= 1 \\
+\ds\frac{dy}{dt} &= 2x
+\end{align*}
+
+\begin{parts}
+\item Verify that the system is a Hamiltonian system.  
+\vfill
+
+\item Find the Hamiltonian function $H$.  
+\vfill
+
+\item Use the Hamiltonian to sketch the solution curves in the phase plane for this system.  
+\vfill
+\vfill
+\end{parts}
+
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 6 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the forced harmonic oscillator
+$$y'' + 5y'  + 6y = 6t-1$$ 
+\begin{parts}
+\item Find the general solution.  
+\vfill
+
+\item If the forcing term were removed, would this oscillator be over-damped, under-damped, or critically damped?  
+\vfill
+
+
+
+\end{parts}
+
+
+
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 7 %%%
+%%%%%%%%%%%%%%%%%
+\question A 1000 L tank is filled with salt water.  The water currently contains 20 kg of dissolved salt.  Suppose that fresh water is added to the tank at a rate of 10 L per minute and an equal amount of water drains out of the bottom so that the water level stays constant.  Assume that the water draining from the bottom is well mixed.  
+
+\begin{parts}
+\item Find a differential equation that models the amount of salt in the tank. 
+\vfill
+
+\item Solve the differential equation to find an equation for the amount of salt in the tank as a function of time. 
+\vfill
+
+
+\end{parts}
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 8 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the differential equation $y' = 2 y + \cos t$.  
+\begin{parts}
+\item Find the general solution.  
+
+\vfill
+\item Solve the initial value problem $y(0) = 0$. 
+\vfill
+ 
+
+\end{parts}
+\newpage
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 9 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the differential equation $\ds \frac{dy}{dt} = 3y^{2/3}$.  
+\begin{parts}
+\item Verify that $y(t) = 0$ is a solution to the differential equation.  
+\vfill
+
+\item Verify that $y(t) = t^3$ is also a solution to the differential equation.
+\vfill
+
+\item One of the most important theorems about differential equations is the following: \\
+
+\textbf{Uniqueness Theorem}. \emph{If $\dfrac{dy}{dt} = f(t,y)$ is a differential equation where both $f$ and its partial derivative $f_y$ are continuous for all points $(t,y)$ near $(t_0,y_0)$, then there exists a unique solution $y(t)$ defined on an open interval around $t_0$ such that $y(t_0) = y_0$.  } \\
+
+Given that solutions of a differential equation are supposed to be unique, how is it possible that the differential equation above have two different solutions with $y(0) = 0$?  Explain how this does not contradict the Uniqueness Theorem. 
+\vfill
+
+\end{parts}
+
+\newpage
+%%%%%%%%%%%%%%%%%%
+%%% Problem 10 %%%
+%%%%%%%%%%%%%%%%%%
+\question Consider the following nonlinear system of equations.
+\begin{align*}
+\ds\frac{dx}{dt} &=  x^2-y \\
+\ds\frac{dy}{dt} &=  2y^2-2 
+\end{align*}
+
+\begin{parts}
+
+\item Identify all of the equilibrium points of the system and classify the type of equilibrium for each (sink, source, spiral sink, spiral source, or saddle).  
+\vfill
+
+\item Describe what will happen to the solution with initial condition $(x_0,y_0)=(-1,0)$ as $t \rightarrow \infty$?  \hl{This one still needs to be fixed... maybe a graph question instead?}
+\vfill
+\end{parts}
+%%%%%%%%%%%%%%%%%%
+%%% Problem 11 %%%
+%%%%%%%%%%%%%%%%%%
+\question  Find the general solution to the linear system 
+$$\frac{dY}{dt} = \left( \begin{array}{rr} -4 & 3 \\ -3 & -4 \end{array} \right)Y$$
+If it helps, every matrix of the form $A = \ds \left( \begin{array}{rr} a & b \\ -b & a \end{array} \right)$ has $\ds\left(\begin{array}{r} 1 \\ i \end{array}\right)$ as an eigenvector.  
+\vfill
+\vfill
+
+
+\newpage
+
+
+\end{questions}
+
+\end{document}

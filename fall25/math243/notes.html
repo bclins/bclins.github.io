@@ -3281,7 +3281,9 @@ defined as the integral of a force
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(t)</annotation></semantics></math>
 with respect to time.
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">I = \int_a^b F(t) \, dt.</annotation></semantics></math>
-In some situations, we may apply a very large force over a very short
+The impulse applied to an object is equal to the object’s change in
+momentum.</p>
+<p>In some situations, we may apply a very large force over a very short
 period of time, for example, hitting something with a hammer. In a case
 like that, you can model the forcing term using the <strong>Dirac delta
 function</strong>
@@ -3315,39 +3317,43 @@ as a function that suddenly delivers an impulse of one at time
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">t=c</annotation></semantics></math>.</p>
 </div>
 <ol start="2" type="1">
-<li><p>Solve
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + 6y = \delta(t - 1)</annotation></semantics></math>
-with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y(0) = 3</annotation></semantics></math>.
-(<a href="https://youtu.be/0gst5RkLtOg"
-class="uri">https://youtu.be/0gst5RkLtOg</a>)</p></li>
-<li><p>Solve
+<li>Solve
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>A</mi><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y&#39;&#39; + y = A \delta( t - \tfrac{\pi}{2} )</annotation></semantics></math>
 with initial conditions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y(0) = 1</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;(0) = 0</annotation></semantics></math>.
 (<a href="https://youtu.be/peYvLk_HZdw?t=1265"
-class="uri">https://youtu.be/peYvLk_HZdw?t=1265</a>)</p>
+class="uri">https://youtu.be/peYvLk_HZdw?t=1265</a>)
 <details>
-<p>First we take the Laplace transform:
+First we take the Laplace transform:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>s</mi><mo>+</mo><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">s^2 Y(s) - s + Y(s) = A e^{-\pi s/2}</annotation></semantics></math>
 Then we solve for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(s)</annotation></semantics></math>
 to get
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup><mo>+</mo><mi>s</mi></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>s</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">Y(s) = \dfrac{Ae^{-\pi s/ 2} + s}{s^2 + 1} = \dfrac{A e^{-\pi s / 2}}{s^2 + 1} + \dfrac{s}{s^2 + 1}</annotation></semantics></math>
 Taking the inverse Laplace transform, we get
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.</annotation></semantics></math>
 </details></li>
-<li><p>What happens if we apply the impulse at time
+</ol>
+<p>We didn’t get to the next two examples in class today. But they are
+good practice if you want to try them on your own.</p>
+<ol start="3" type="1">
+<li>What happens if we apply the impulse at time
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">t = \pi</annotation></semantics></math>
-instead?</p>
+instead?
 <details>
-<p>This time
+This time
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi></mrow></msup><mo>+</mo><mi>s</mi></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi></mrow></msup></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>s</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">Y(s) = \dfrac{Ae^{-\pi s} + s}{s^2 + 1} = \dfrac{A e^{-\pi s}}{s^2 + 1} + \dfrac{s}{s^2 + 1}</annotation></semantics></math>
 Taking the inverse Laplace transform, we get
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\pi) \sin(t - \pi) + \cos t.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\pi) \sin(t - \pi) + \cos t.</annotation></semantics></math>
 </details></li>
+<li>Solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mi>d</mi><mi>y</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{dy}{dt} + 6y = \delta(t - 1)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">y(0) = 3</annotation></semantics></math>.
+(<a href="https://youtu.be/0gst5RkLtOg"
+class="uri">https://youtu.be/0gst5RkLtOg</a>)</li>
 </ol>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 <footer>

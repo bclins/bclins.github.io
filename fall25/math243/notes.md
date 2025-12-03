@@ -1728,6 +1728,8 @@ $$v' + v = H(t) - H(t-1).$$
 
 After that example, we talked about **impulse** which is defined as the integral of a force $F(t)$ with respect to time. 
 $$I = \int_a^b F(t) \, dt.$$
+The impulse applied to an object is equal to the object's change in momentum.
+
 In some situations, we may apply a very large force over a very short period of time, for example, hitting something with a hammer.  In a case like that, you can model the forcing term using the **Dirac delta function** $\delta(t)$.  This isn't really a function itself, but it is a limiting case of the functions
 $$\dfrac{1}{h} (H(t) - H(t-h))$$ 
 as $h \rightarrow \infty$. The Dirac delta function delivers a total impulse of $1$ instantaneously.  
@@ -1748,11 +1750,7 @@ Intuitively, think of $\delta(t-c)$ as a function that suddenly delivers an impu
 </div>
 
 
-2. Solve $\dfrac{dy}{dt} + 6y = \delta(t - 1)$ with $y(0) = 3$. (<https://youtu.be/0gst5RkLtOg>)
-
-
-3. Solve $y'' + y = A \delta( t - \tfrac{\pi}{2} )$ with initial conditions $y(0) = 1$ and $y'(0) = 0$.  (<https://youtu.be/peYvLk_HZdw?t=1265>)
-
+2. Solve $y'' + y = A \delta( t - \tfrac{\pi}{2} )$ with initial conditions $y(0) = 1$ and $y'(0) = 0$.  (<https://youtu.be/peYvLk_HZdw?t=1265>)
     <details>
     First we take the Laplace transform:
     $$s^2 Y(s) - s + Y(s) = A e^{-\pi s/2}$$
@@ -1762,14 +1760,17 @@ Intuitively, think of $\delta(t-c)$ as a function that suddenly delivers an impu
     $$y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.$$
     </details>
 
-4. What happens if we apply the impulse at time $t = \pi$ instead? 
+We didn't get to the next two examples in class today. But they are good practice if you want to try them on your own. 
 
+3. What happens if we apply the impulse at time $t = \pi$ instead? 
     <details>
     This time
     $$Y(s) = \dfrac{Ae^{-\pi s} + s}{s^2 + 1} = \dfrac{A e^{-\pi s}}{s^2 + 1} + \dfrac{s}{s^2 + 1}$$
     Taking the inverse Laplace transform, we get 
     $$y(t) = A H(t-\pi) \sin(t - \pi) + \cos t.$$
     </details>
+
+4. Solve $\dfrac{dy}{dt} + 6y = \delta(t - 1)$ with $y(0) = 3$. (<https://youtu.be/0gst5RkLtOg>)
 
 
 [1.1]:  <https://runestone.academy/ns/books/published/odeproject/firstlook01.html>
