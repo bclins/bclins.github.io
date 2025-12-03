@@ -1615,17 +1615,28 @@ Here is a table of common Laplace transforms.
 <tr><td>$f(t) = \mathcal{L}^{-1}(F(s))$</td><td>$F(s) = \mathcal{L}(f(t))$</td><td></td></tr>
 <!--<tr><td>1</td><td>$\dfrac{1}{s}$</td><td>$s > 0$</td></tr>-->
 <tr><td>$e^{at}$</td><td>$\dfrac{1}{s-a}$</td><td>$s > a$</td></tr>
-<tr><td>$t^n$, $n \in \mathbb{N}$</td><td>$\dfrac{n!}{s^{n+1}}$</td><td>$s>0$</td></tr>
+<tr><td>$e^{at} t^n$, $n \in \mathbb{N}$</td><td>$\dfrac{n!}{(s-a)^{n+1}}$</td><td>$s>a$</td></tr>
 <tr><td>$\cos (at)$</td><td>$\dfrac{s}{s^2 + a^2}$</td><td>$s > 0$</td></tr>
 <tr><td>$\sin (at)$</td><td>$\dfrac{a}{s^2 + a^2}$</td><td>$s > 0$</td></tr>
-<tr><td>$H(t - a)$</td><td>$\dfrac{e^{-as}}{s}$</td><td>$-\infty < s < \infty$</td></tr>
-<tr><td>$\delta(t - a)$</td><td>$e^{-as}$</td><td>$-\infty < s < \infty$</td></tr>
-<tr><td>$\dfrac{d}{dt} f(t)$</td><td>$s F(s) - f(0)$</td><td></td></tr>
-<tr><td>$\dfrac{d^2}{dt^2} f(t)$</td><td>$s^2 F(s) - sf(0) - f'(0)$</td><td></td></tr>
-<tr><td>$e^{at} f(t)$</td><td>$F(s-a)$</td><td></td></tr>
-<tr><td>$H(t-a) f(t-a)$</td><td>$e^{-as} F(s)$</td><td></td></tr>
-<tr><td>$f(ct) \text{ with } c > 0$</td><td>$\dfrac{1}{c} F\left( \dfrac{s}{c} \right)$</td><td></td></tr>
+<tr><td>$H(t - c)$</td><td>$\dfrac{e^{-cs}}{s}$</td><td>$-\infty < s < \infty$</td></tr>
+<tr><td>$\delta(t - c)$</td><td>$e^{-cs}$</td><td>$-\infty < s < \infty$</td></tr>
+</tbody>
+</table>
+</center>
 
+Here are some of the important rules for the Laplace transform.
+
+<center>
+<table class="bordered">
+<thead>
+<tr><th>&nbsp;</th><th>Original function</th><th>Laplace transform</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan = 2>**Derivative rules**</td><td>$\dfrac{d}{dt} f(t)$</td><td>$s F(s) - f(0)$</td></tr>
+<tr><td>$\dfrac{d^2}{dt^2} f(t)$</td><td>$s^2 F(s) - sf(0) - f'(0)$</td></tr>
+<tr><td rowspan = 2>**Exponential shift rules**</td><td>$e^{at} f(t)$</td><td>$F(s-a)$</td></tr>
+<tr><td>$H(t-c) f(t-c)$</td><td>$e^{-cs} F(s)$</td></tr>
+<!--<tr><td>$f(ct) \text{ with } c > 0$</td><td>$\dfrac{1}{c} F\left( \dfrac{s}{c} \right)$</td><td></td></tr>-->
 </tbody>
 </table>
 </center>
@@ -1678,12 +1689,84 @@ We finished by talking about the **exponential shift rule** for Laplace transfor
 
 6. Use the exponential shift rule to find the inverse Laplace transform of $\dfrac{1}{(s+1)^2}.$ 
 
-<!-- 
 ### Wed, Dec 3
 
-Do Heavyside step functions and Dirac delta functions. Do the RC circuit example w/ a step function for voltage.  Do a Harmonic oscillator w/ sudden impulse? 
+Today we introduced the **Heavyside step function** $H(t)$ (also known as the **unit step function**). 
+$$H(t) = \begin{cases}
+0 & \text{ if } x < 0 \\
+1 & \text{ if } x \ge 0.
+\end{cases}$$
+These are useful because they let us work with differential equations that have discontinuous forcing functions.  
 
--->
+<div class = "Theorem">
+**Laplace Transform of the Heavyside Function**
+
+$$\mathcal{L}(H(t)) = \dfrac{1}{s}$$
+
+**Second Exponential Shift Formula**
+
+$$\mathcal{L}(H(t-a) f(t-a)) = e^{-as} F(s)$$
+
+</div>
+
+1. A simple circuit has a resistor with resistance $R = 1$ ohm and a capacitor with capacitance $C = 1$ farad. At time $t=0$, the circuit is connected to a 1 volt source and then at time $t = 1$ second the circuit is disconnected. The voltage drop across the capacitor is a function $v(t)$ that satisfies 
+$$v' + v = H(t) - H(t-1).$$ 
+    a. Assuming that $v(0) = 0$, find the Laplace transform of this equation.
+
+        <details>
+        $s V(s) + V(s) = \dfrac{1}{s} - \dfrac{e^t}{s}$.  So $V(s) = \dfrac{1 - e^t}{s(s+1)}$.  
+        </details>
+
+    b. Find the inverse Laplace transform of $V(s) = \dfrac{1 - e^t}{s(s+1)}$. Hint, first find the partial fraction decomposition of $$\left( \dfrac{1}{s(s+1)} \right) = \dfrac{A}{s} + \dfrac{B}{s+1}.$$ 
+        
+        <details>
+        In the partial fraction decomposition, $A = 1$ and $B = -1$, so 
+        $$V(s) = \dfrac{1}{s} - \dfrac{e^t}{s} - \dfrac{1}{s+1} + \dfrac{e^t}{s+1}.$$
+        So 
+        $$v(t) = H(t) - H(t-1) - H(t)e^{-t} + H(t - 1) e^{-(t-1)}.$$
+        </details>
+
+After that example, we talked about **impulse** which is defined as the integral of a force $F(t)$ with respect to time. 
+$$I = \int_a^b F(t) \, dt.$$
+In some situations, we may apply a very large force over a very short period of time, for example, hitting something with a hammer.  In a case like that, you can model the forcing term using the **Dirac delta function** $\delta(t)$.  This isn't really a function itself, but it is a limiting case of the functions
+$$\dfrac{1}{h} (H(t) - H(t-h))$$ 
+as $h \rightarrow \infty$. The Dirac delta function delivers a total impulse of $1$ instantaneously.  
+Although $\delta(t)$ is not technically a function, it still has a nice well-defined Laplace transform.  
+
+<div class="Theorem">
+**The Dirac Delta Function**
+
+This is not actually a function, but it has the following properties. 
+
+1. For any continuous function $f(t)$: 
+$$\int_{-\infty}^{\infty} f(t) \delta(t-a) \, dt = f(a).$$
+
+2. Laplace transform. 
+$$\mathcal{L}(\delta(t-a)) = e^{-as}.$$
+
+Intuitively, think of $\delta(t-a)$ as a function that suddenly delivers an impulse of one at time $t=a$. 
+</div>
+
+
+2. Solve $y'' + y = A \delta( t - \tfrac{\pi}{2} )$ with initial conditions $y(0) = 1$ and $y'(0) = 0$.  (<https://youtu.be/peYvLk_HZdw?t=1265>)
+
+    <details>
+    First we take the Laplace transform:
+    $$s^2 Y(s) - s + Y(s) = A e^{-\pi s/2}$$
+    Then we solve for $Y(s)$ to get
+    $$Y(s) = \dfrac{Ae^{-\pi s/ 2} + s}{s^2 + 1} = \dfrac{A e^{-\pi s / 2}}{s^2 + 1} + \dfrac{s}{s^2 + 1}$$
+    Taking the inverse Laplace transform, we get 
+    $$y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.$$
+    </details>
+
+3. What happens if we apply the impulse at time $t = \pi$ instead? 
+
+    <details>
+    This time
+    $$Y(s) = \dfrac{Ae^{-\pi s} + s}{s^2 + 1} = \dfrac{A e^{-\pi s}}{s^2 + 1} + \dfrac{s}{s^2 + 1}$$
+    Taking the inverse Laplace transform, we get 
+    $$y(t) = A H(t-\pi) \sin(t - \pi) + \cos t.$$
+    </details>
 
 
 [1.1]:  <https://runestone.academy/ns/books/published/odeproject/firstlook01.html>

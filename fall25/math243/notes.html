@@ -3044,14 +3044,14 @@ s-Domain
 </tr>
 <tr>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mi>n</mi></msup><annotation encoding="application/x-tex">t^n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><msup><mi>t</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">e^{at} t^n</annotation></semantics></math>,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation encoding="application/x-tex">n \in \mathbb{N}</annotation></semantics></math>
 </td>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>n</mi><mi>!</mi></mrow><msup><mi>s</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><annotation encoding="application/x-tex">\dfrac{n!}{s^{n+1}}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mi>n</mi><mi>!</mi></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><annotation encoding="application/x-tex">\dfrac{n!}{(s-a)^{n+1}}</annotation></semantics></math>
 </td>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">s&gt;a</annotation></semantics></math>
 </td>
 </tr>
 <tr>
@@ -3078,34 +3078,55 @@ s-Domain
 </tr>
 <tr>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t - a)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t - c)</annotation></semantics></math>
 </td>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>s</mi></mfrac><annotation encoding="application/x-tex">\dfrac{e^{-as}}{s}</annotation></semantics></math>
-</td>
-<td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty &lt; s &lt; \infty</annotation></semantics></math>
-</td>
-</tr>
-<tr>
-<td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t - a)</annotation></semantics></math>
-</td>
-<td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><annotation encoding="application/x-tex">e^{-as}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><msup><mi>e</mi><mrow><mi>−</mi><mi>c</mi><mi>s</mi></mrow></msup><mi>s</mi></mfrac><annotation encoding="application/x-tex">\dfrac{e^{-cs}}{s}</annotation></semantics></math>
 </td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty &lt; s &lt; \infty</annotation></semantics></math>
 </td>
 </tr>
 <tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t - c)</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mi>−</mi><mi>c</mi><mi>s</mi></mrow></msup><annotation encoding="application/x-tex">e^{-cs}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty &lt; s &lt; \infty</annotation></semantics></math>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Here are some of the important rules for the Laplace transform.</p>
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th>
+ 
+</th>
+<th>
+Original function
+</th>
+<th>
+Laplace transform
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2">
+<strong>Derivative rules</strong>
+</td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mi>d</mi><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{d}{dt} f(t)</annotation></semantics></math>
 </td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">s F(s) - f(0)</annotation></semantics></math>
-</td>
-<td>
 </td>
 </tr>
 <tr>
@@ -3115,39 +3136,27 @@ s-Domain
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>s</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">s^2 F(s) - sf(0) - f&#39;(0)</annotation></semantics></math>
 </td>
-<td>
-</td>
 </tr>
 <tr>
+<td rowspan="2">
+<strong>Exponential shift rules</strong>
+</td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{at} f(t)</annotation></semantics></math>
 </td>
 <td>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(s-a)</annotation></semantics></math>
 </td>
-<td>
-</td>
 </tr>
 <tr>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t-a) f(t-a)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>c</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t-c) f(t-c)</annotation></semantics></math>
 </td>
 <td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{-as} F(s)</annotation></semantics></math>
-</td>
-<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>c</mi><mi>s</mi></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e^{-cs} F(s)</annotation></semantics></math>
 </td>
 </tr>
-<tr>
-<td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> with </mtext><mspace width="0.333em"></mspace></mrow><mi>c</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(ct) \text{ with } c &gt; 0</annotation></semantics></math>
-</td>
-<td>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><mi>c</mi></mfrac><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mi>s</mi><mi>c</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{1}{c} F\left( \dfrac{s}{c} \right)</annotation></semantics></math>
-</td>
-<td>
-</td>
-</tr>
+<!--<tr><td>$f(ct) \text{ with } c > 0$</td><td>$\dfrac{1}{c} F\left( \dfrac{s}{c} \right)$</td><td></td></tr>-->
 </tbody>
 </table>
 </center>
@@ -3211,12 +3220,129 @@ rule</strong> for Laplace transforms:</p>
 transform of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{1}{(s+1)^2}.</annotation></semantics></math></p></li>
 </ol>
-<!-- 
-### Wed, Dec 3
-
-Do Heavyside step functions and Dirac delta functions. Do the RC circuit example w/ a step function for voltage.  Do a Harmonic oscillator w/ sudden impulse? 
-
--->
+<h3 id="wed-dec-3">Wed, Dec 3</h3>
+<p>Today we introduced the <strong>Heavyside step function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">H(t)</annotation></semantics></math>
+(also known as the <strong>unit step function</strong>).
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>x</mi><mo>≥</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">H(t) = \begin{cases}
+0 &amp; \text{ if } x &lt; 0 \\
+1 &amp; \text{ if } x \ge 0.
+\end{cases}</annotation></semantics></math> These are useful because
+they let us work with differential equations that have discontinuous
+forcing functions.</p>
+<div class="Theorem">
+<p><strong>Laplace Transform of the Heavyside Function</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mi>s</mi></mfrac></mrow><annotation encoding="application/x-tex">\mathcal{L}(H(t)) = \dfrac{1}{s}</annotation></semantics></math></p>
+<p><strong>Second Exponential Shift Formula</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{L}(H(t-a) f(t-a)) = e^{-as} F(s)</annotation></semantics></math></p>
+</div>
+<ol type="1">
+<li>A simple circuit has a resistor with resistance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R = 1</annotation></semantics></math>
+ohm and a capacitor with capacitance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">C = 1</annotation></semantics></math>
+farad. At time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t=0</annotation></semantics></math>,
+the circuit is connected to a 1 volt source and then at time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t = 1</annotation></semantics></math>
+second the circuit is disconnected. The voltage drop across the
+capacitor is a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">v(t)</annotation></semantics></math>
+that satisfies
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>′</mi><mo>+</mo><mi>v</mi><mo>=</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">v&#39; + v = H(t) - H(t-1).</annotation></semantics></math>
+<ol type="a">
+<li><p>Assuming that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v(0) = 0</annotation></semantics></math>,
+find the Laplace transform of this equation.</p>
+<details>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mi>s</mi></mfrac><mo>−</mo><mfrac displaystyle="true"><msup><mi>e</mi><mi>t</mi></msup><mi>s</mi></mfrac></mrow><annotation encoding="application/x-tex">s V(s) + V(s) = \dfrac{1}{s} - \dfrac{e^t}{s}</annotation></semantics></math>.
+So
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mi>t</mi></msup></mrow><mrow><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">V(s) = \dfrac{1 - e^t}{s(s+1)}</annotation></semantics></math>.<br />
+</p>
+</details></li>
+<li><p>Find the inverse Laplace transform of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mi>t</mi></msup></mrow><mrow><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">V(s) = \dfrac{1 - e^t}{s(s+1)}</annotation></semantics></math>.
+Hint, first find the partial fraction decomposition of
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mi>s</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mi>A</mi><mi>s</mi></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>B</mi><mrow><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\left( \dfrac{1}{s(s+1)} \right) = \dfrac{A}{s} + \dfrac{B}{s+1}.</annotation></semantics></math></p>
+<details>
+<p>In the partial fraction decomposition,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">A = 1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">B = -1</annotation></semantics></math>,
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mi>s</mi></mfrac><mo>−</mo><mfrac displaystyle="true"><msup><mi>e</mi><mi>t</mi></msup><mi>s</mi></mfrac><mo>−</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><msup><mi>e</mi><mi>t</mi></msup><mrow><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">V(s) = \dfrac{1}{s} - \dfrac{e^t}{s} - \dfrac{1}{s+1} + \dfrac{e^t}{s+1}.</annotation></semantics></math>
+So
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup><mo>+</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>e</mi><mrow><mi>−</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">v(t) = H(t) - H(t-1) - H(t)e^{-t} + H(t - 1) e^{-(t-1)}.</annotation></semantics></math></p>
+</details></li>
+</ol></li>
+</ol>
+<p>After that example, we talked about <strong>impulse</strong> which is
+defined as the integral of a force
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">F(t)</annotation></semantics></math>
+with respect to time.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>F</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">I = \int_a^b F(t) \, dt.</annotation></semantics></math>
+In some situations, we may apply a very large force over a very short
+period of time, for example, hitting something with a hammer. In a case
+like that, you can model the forcing term using the <strong>Dirac delta
+function</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t)</annotation></semantics></math>.
+This isn’t really a function itself, but it is a limiting case of the
+functions
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mn>1</mn><mi>h</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{1}{h} (H(t) - H(t-h))</annotation></semantics></math>
+as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">h \rightarrow \infty</annotation></semantics></math>.
+The Dirac delta function delivers a total impulse of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+instantaneously.<br />
+Although
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t)</annotation></semantics></math>
+is not technically a function, it still has a nice well-defined Laplace
+transform.</p>
+<div class="Theorem">
+<p><strong>The Dirac Delta Function</strong></p>
+<p>This is not actually a function, but it has the following
+properties.</p>
+<ol type="1">
+<li><p>For any continuous function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mrow><mi>−</mi><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>t</mi><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} f(t) \delta(t-a) \, dt = f(a).</annotation></semantics></math></p></li>
+<li><p>Laplace transform.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℒ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mi>a</mi><mi>s</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathcal{L}(\delta(t-a)) = e^{-as}.</annotation></semantics></math></p></li>
+</ol>
+<p>Intuitively, think of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(t-a)</annotation></semantics></math>
+as a function that suddenly delivers an impulse of one at time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">t=a</annotation></semantics></math>.</p>
+</div>
+<ol start="2" type="1">
+<li><p>Solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>″</mi><mo>+</mo><mi>y</mi><mo>=</mo><mi>A</mi><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y&#39;&#39; + y = A \delta( t - \tfrac{\pi}{2} )</annotation></semantics></math>
+with initial conditions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">y(0) = 1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&#39;(0) = 0</annotation></semantics></math>.
+(<a href="https://youtu.be/peYvLk_HZdw?t=1265"
+class="uri">https://youtu.be/peYvLk_HZdw?t=1265</a>)</p>
+<details>
+<p>First we take the Laplace transform:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>s</mi><mo>+</mo><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">s^2 Y(s) - s + Y(s) = A e^{-\pi s/2}</annotation></semantics></math>
+Then we solve for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y(s)</annotation></semantics></math>
+to get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup><mo>+</mo><mi>s</mi></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi><mi>/</mi><mn>2</mn></mrow></msup></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>s</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">Y(s) = \dfrac{Ae^{-\pi s/ 2} + s}{s^2 + 1} = \dfrac{A e^{-\pi s / 2}}{s^2 + 1} + \dfrac{s}{s^2 + 1}</annotation></semantics></math>
+Taking the inverse Laplace transform, we get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.</annotation></semantics></math></p>
+</details></li>
+<li><p>What happens if we apply the impulse at time
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">t = \pi</annotation></semantics></math>
+instead?</p>
+<details>
+<p>This time
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>s</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi></mrow></msup><mo>+</mo><mi>s</mi></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mi>A</mi><msup><mi>e</mi><mrow><mi>−</mi><mi>π</mi><mi>s</mi></mrow></msup></mrow><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mfrac displaystyle="true"><mi>s</mi><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">Y(s) = \dfrac{Ae^{-\pi s} + s}{s^2 + 1} = \dfrac{A e^{-\pi s}}{s^2 + 1} + \dfrac{s}{s^2 + 1}</annotation></semantics></math>
+Taking the inverse Laplace transform, we get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>A</mi><mi>H</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>−</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>cos</mo><mi>t</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">y(t) = A H(t-\pi) \sin(t - \pi) + \cos t.</annotation></semantics></math></p>
+</details></li>
+</ol>
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 <footer>
 <a href="#">Back to top ▲</a>
