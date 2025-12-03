@@ -1705,7 +1705,7 @@ $$\mathcal{L}(H(t)) = \dfrac{1}{s}$$
 
 **Second Exponential Shift Formula**
 
-$$\mathcal{L}(H(t-a) f(t-a)) = e^{-as} F(s)$$
+$$\mathcal{L}(H(t-c) f(t-c)) = e^{-cs} F(s)$$
 
 </div>
 
@@ -1739,16 +1739,19 @@ Although $\delta(t)$ is not technically a function, it still has a nice well-def
 This is not actually a function, but it has the following properties. 
 
 1. For any continuous function $f(t)$: 
-$$\int_{-\infty}^{\infty} f(t) \delta(t-a) \, dt = f(a).$$
+$$\int_{-\infty}^{\infty} f(t) \delta(t-c) \, dt = f(c).$$
 
 2. Laplace transform. 
-$$\mathcal{L}(\delta(t-a)) = e^{-as}.$$
+$$\mathcal{L}(\delta(t-c)) = e^{-cs}.$$
 
-Intuitively, think of $\delta(t-a)$ as a function that suddenly delivers an impulse of one at time $t=a$. 
+Intuitively, think of $\delta(t-c)$ as a function that suddenly delivers an impulse of one at time $t=c$. 
 </div>
 
 
-2. Solve $y'' + y = A \delta( t - \tfrac{\pi}{2} )$ with initial conditions $y(0) = 1$ and $y'(0) = 0$.  (<https://youtu.be/peYvLk_HZdw?t=1265>)
+2. Solve $\dfrac{dy}{dt} + 6y = \delta(t - 1)$ with $y(0) = 3$. (<https://youtu.be/0gst5RkLtOg>)
+
+
+3. Solve $y'' + y = A \delta( t - \tfrac{\pi}{2} )$ with initial conditions $y(0) = 1$ and $y'(0) = 0$.  (<https://youtu.be/peYvLk_HZdw?t=1265>)
 
     <details>
     First we take the Laplace transform:
@@ -1759,7 +1762,7 @@ Intuitively, think of $\delta(t-a)$ as a function that suddenly delivers an impu
     $$y(t) = A H(t-\tfrac{\pi}{2}) \sin(t - \tfrac{\pi}{2}) + \cos t.$$
     </details>
 
-3. What happens if we apply the impulse at time $t = \pi$ instead? 
+4. What happens if we apply the impulse at time $t = \pi$ instead? 
 
     <details>
     This time
