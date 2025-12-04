@@ -1,0 +1,199 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[width=7.5in,height=10.0in]{geometry}
+\usepackage{multicol}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Formula Sheet} %%% FORMULA SHEET FOR MIDTERM 3 
+\hrule
+
+\begin{multicols}{2}
+\subsection*{Quadratic Formula}
+$$x = \frac{-b \pm \sqrt{ b^2 - 4 ac }}{2a}$$
+
+
+\subsection*{Integrating Factors}
+
+The general solution of $y' + f(t) y = g(t)$ is
+$$y(t) = \frac{\int e^{F(t)} g(t) \, dt}{e^{F(t)}}$$
+where $F(t)$ is any antiderivative of $f(t)$.
+
+\columnbreak
+%\subsection*{Characteristic Polynomial for 2-by-2 Matrices}
+%$$\det(A - \lambda I) = \lambda^2 - (\tr A) \lambda + \det A.$$
+
+\subsection*{2-by-2 Matrix Characteristic Polynomial}
+$$\lambda^2 - \lambda \tr A  + \det A.$$
+
+\subsection*{Hamiltonian Systems}
+\begin{align*}
+\dfrac{dx}{dt} &= \dfrac{\partial H}{\partial y} \\[0.2cm]
+\dfrac{dy}{dt} &= -\dfrac{\partial H}{\partial x}
+\end{align*}
+
+\end{multicols}
+
+\hrule
+
+\subsection*{Linear Systems} 
+
+For a linear system $\dfrac{d\mathbf{x}}{dt} = A \mathbf{x}$:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\textbf{Straight-line solutions} 
+$$\mathbf{x}(t) = C e^{\lambda t} \mathbf{v}$$
+\smallskip
+\end{minipage}
+
+& 
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\textbf{Matrix exponential solution}
+$$\mathbf{x}(t) = e^{At} \mathbf{x}(0)$$
+\smallskip
+\end{minipage}
+
+\\ \hline
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\item \textbf{Complex eigenvalues} \\
+
+If $\lambda = \alpha \pm i \beta$ is a complex eigenvalue with eigenvector $\mathbf{v}$, then the real and imaginary parts of 
+$$e^{\alpha t} (\cos (\beta t) \pm i \sin (\beta t)) \mathbf{v}$$
+are both real-valued solutions.
+\bigskip
+\end{minipage}
+
+& 
+
+
+\begin{minipage}{0.4\textwidth}
+\bigskip
+\item \textbf{Repeated eigenvalues} \\
+
+If $A$ is a 2-by-2 matrix with a repeated eigenvalue $\lambda$, then the solution is
+
+$$\mathbf{x}(t) = e^{\lambda t} (I + t(A-\lambda I)) \mathbf{x}(0).$$
+
+
+\bigskip
+\end{minipage}
+
+
+\\ \hline
+\end{tabular}
+
+\end{center}
+
+\vfill
+
+\subsection*{Second Order Linear Equations} 
+
+For a homogeneous differential equation $y'' + by' + cy = 0$ with real coefficients:
+
+\begin{center}
+%%\begin{tabular}{|c|c|c|}
+%%\hline
+%%
+%%\begin{minipage}{0.22\textwidth}
+%%\bigskip
+%%\textbf{Distinct real roots}  \\
+%%
+%%The general solution is
+%%$$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}.$$
+%%\bigskip
+%%\end{minipage}
+%%
+%%& 
+%%
+%%\begin{minipage}{0.35\textwidth}
+%%\bigskip
+%%\textbf{Complex roots} ~ \\
+%%
+%%If $\lambda = \alpha \pm \beta i$, the general solution is 
+%%$$y(t) = C_1 e^{\alpha t} \cos \beta t + C_2 e^{\alpha t} \sin \beta t.$$
+%%\bigskip
+%%\end{minipage}
+%%
+%%& 
+%%
+%%\begin{minipage}{0.35\textwidth}
+%%\bigskip
+%%\textbf{Repeated real roots} ~ \\
+%%
+%%If $\lambda$ is a repeated root, then the general solution is
+%%$$y(t) = C_1 e^{\lambda t} + C_2 t e^{\lambda t}.$$
+%%\bigskip
+%%\end{minipage}
+%%
+%%\\ \hline
+%%\end{tabular}
+
+\bgroup
+\def\arraystretch{2.0}
+\begin{tabular}{|l|c|c|c|}
+\hline
+~ & \textbf{Distinct real roots} & \textbf{Complex roots} & \textbf{Repeated real roots} \\ \hline
+Roots of $\lambda^2 + b \lambda + c$ & $\lambda_1, \lambda_2$ & $\lambda = \alpha \pm i \beta$ & $\lambda$ \\ \hline
+General solution & ~~$y(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}$~~ & ~~ $y(t) = C_1 e^{\alpha t} \cos \beta t + C_2 e^{\alpha t} \sin \beta t$ ~~ & ~~ $y(t) = C_1 e^{\lambda t} + C_2 t e^{\lambda t}$ ~~ \\ \hline
+\end{tabular}
+\egroup
+
+\end{center}
+
+\vfill
+
+\subsection*{Guessing a Particular Solution (Method of Undetermined Coefficients)} 
+
+\begin{center}
+\bgroup
+\def\arraystretch{2.0}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Forcing term} & \textbf{Good guess} & \textbf{Next option} \\ \hline
+$at + b$ & $y_p = At + B$ & ~ \\ \hline
+$e^{kt}$ & $y_p = Ae^{kt}$ & ~~ Multiply last guess by $t$ ~~ \\ \hline
+~~ $\cos \omega t$ or $\sin \omega t$ ~~ & ~~ $A \cos \omega t + B \sin \omega t$ ~~ & Complexify \\ \hline
+\end{tabular}
+\egroup
+\end{center}
+
+\newpage
+
+\subsection*{Laplace transforms}
+
+\renewcommand{\arraystretch}{2.5}
+
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+Original function & Laplace transform & Comments \\ \hline
+
+$e^{at}$ & $\dfrac{1}{s-a}$ & $s > a$ \\
+$e^{at} t^n$, $n \in \mathbb{N}$ & $\dfrac{n!}{(s-a)^{n+1}}$ & $s > a$ \\
+$\cos (at)$ & $\dfrac{s}{s^2 + a^2}$ & $s > 0$ \\
+$\sin (at)$ & $\dfrac{a}{s^2 + a^2}$ & $s > 0$ \\
+$H(t - c)$ & $\dfrac{e^{-cs}}{s}$ & $-\infty <  s < \infty$ \\
+$\delta(t - c)$ & $e^{-cs}$ & $-\infty < s < \infty$ \\ \hline
+$\dfrac{d}{dt} f(t)$ & $s F(s) - f(0)$ & First derivative rule \\
+$\dfrac{d^2}{dt^2} f(t)$ & $s^2 F(s) - sf(0) - f'(0)$ & Second derivative rule \\
+$e^{at} f(t)$ & $F(s-a)$ & First exponential shift rule \\
+$H(t-c) f(t-c)$ & $e^{-cs} F(s)$ & Second exponential shift rule\\ \hline
+\end{tabular}
+\end{center}
+
+\vfill
+
+
+\end{document}

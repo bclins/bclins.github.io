@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-
+* Final Exam materials: [review problems](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf), [major concepts](https://people.hsc.edu/faculty-staff/blins/StatsExamples/concepts.pdf), [formula sheet](finalformulas.pdf).
 * [Project 4](Project4.pdf) is due on **Monday, Dec 8**.
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](finalformulas.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [solutions](midterm2reviewSolutions.pdf), [formula sheet](midterm2formulas.pdf)

@@ -26,7 +26,7 @@
 \item Re-write the system in matrix form. 
 \vfill
 
-\item Find the general solution for the system.  
+\item The eigenvectors for the system above are $\mathbf{v}_1 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$ with eigenvalue $\lambda_1 = -1$ and $\mathbf{v}_2 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ with eigenvalue $\lambda_2 = 2$. Use these to find the general solution for the linear system. 
 \vfill
 \vfill
 
@@ -38,16 +38,73 @@
 %%%%%%%%%%%%%%%%%
 %%% Problem 2 %%%
 %%%%%%%%%%%%%%%%%
-\question \hl{Laplace transform example!}
+\question Consider the forced harmonic oscillator
+$$y'' + 5y'  + 6y = 6t-1$$ 
+\begin{parts}
+\item Find the general solution.  
+\vfill
+
+\item If the forcing term were removed, would this oscillator be over-damped, under-damped, or critically damped?  
+\vfill
+
+
+
+\end{parts}
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 3 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the following one-parameter family of linear systems
+$$\frac{dY}{dt} = AY ~~~\mathrm{where}~~~ A = \begin{bmatrix} 2 & -a \\ 1 & 0 \end{bmatrix}.$$
+\begin{parts}
+\item Sketch the curve determined by the parameter $a$ in the trace-determinant plane.  
+\vfill
+\vfill
+
+\item Describe the different types of equilibrium behaviors exhibited by the system as $a$ varies.  
+\vfill
+\end{parts}
+
+
+%%%%%%%%%%%%%%%%%
+%%% Problem 4 %%%
+%%%%%%%%%%%%%%%%%
+\question Consider the system below.  
+\begin{align*}
+\ds\frac{dx}{dt} &= 1 \\
+\ds\frac{dy}{dt} &= 2x
+\end{align*}
+
+\begin{parts}
+\item Verify that the system is a Hamiltonian system.  
+\vfill
+
+\item Find the Hamiltonian function $H$.  
+\vfill
+
+\item Use the Hamiltonian to sketch some solution curves for this system (including arrows to indicate direction).  
+\vfill
+\vfill
+\end{parts}
+
+\newpage
+%%%%%%%%%%%%%%%%%
+%%% Problem 5 %%%
+%%%%%%%%%%%%%%%%%
+\question A patient is being treated with morphine for their pain.  The amount of morphine $y(t)$ (measured in micrograms per liter) in the patient's bloodstream after $t$ hours can be modeled by the differential equation 
+$$y' + 0.1 \, y = 30 \, \delta(t - 4).$$
 \begin{parts}
 
-\item \hl{Find $Y(s)$}
+\item Suppose the patient initially has 100 $\mu$g/L of morphine in their blood.  In the model above, the amount of morphine in the patient would decay exponentially if it weren't for an additional injection of morphine that happens at time $t = 4$ hours.  How much extra morphine is the patient given at that time?  
 \vfill
 
-\item \hl{Partial fraction decomposition?}
+\item Apply the Laplace transform to the differential equation above and solve for $Y(s)$.  
 \vfill
 
-\item \hl{Solve the equation by computing the inverse Laplace transform of each term.}
+\item Solve the equation by computing the inverse Laplace transform of $Y(s)$.
 \vfill
 
 \end{parts}
@@ -56,7 +113,7 @@
 
 \newpage
 %%%%%%%%%%%%%%%%%
-%%% Problem 3 %%%
+%%% Problem 6 %%%
 %%%%%%%%%%%%%%%%%
 \question Consider the population model
 $$\frac{dP}{dt} = -\tfrac{1}{25}P^2 + 4 P - C$$
@@ -75,62 +132,6 @@ for a species of fish in a lake (here $dP/dt$ is measured in fish/year).  Here $
 
 
 \end{parts} 
-
-
-%%%%%%%%%%%%%%%%%
-%%% Problem 4 %%%
-%%%%%%%%%%%%%%%%%
-\question Consider the following one-parameter family of linear systems
-$$\frac{dY}{dt} = AY ~~~\mathrm{where}~~~ A = \left( \begin{array}{cc} 2 & -a \\ 1 & 0 \end{array} \right)$$
-\begin{parts}
-\item Sketch the the curve determined by the parameter $a$ in the trace-determinant plane.  
-\vspace{1in}
-\vfill
-
-\item Describe the different types of equilibrium behaviors exhibited by the system as $a$ increases.  
-\vfill
-\end{parts}
-
-
-\newpage
-%%%%%%%%%%%%%%%%%
-%%% Problem 5 %%%
-%%%%%%%%%%%%%%%%%
-\question Consider the system below.  
-\begin{align*}
-\ds\frac{dx}{dt} &= 1 \\
-\ds\frac{dy}{dt} &= 2x
-\end{align*}
-
-\begin{parts}
-\item Verify that the system is a Hamiltonian system.  
-\vfill
-
-\item Find the Hamiltonian function $H$.  
-\vfill
-
-\item Use the Hamiltonian to sketch the solution curves in the phase plane for this system.  
-\vfill
-\vfill
-\end{parts}
-
-
-%%%%%%%%%%%%%%%%%
-%%% Problem 6 %%%
-%%%%%%%%%%%%%%%%%
-\question Consider the forced harmonic oscillator
-$$y'' + 5y'  + 6y = 6t-1$$ 
-\begin{parts}
-\item Find the general solution.  
-\vfill
-
-\item If the forcing term were removed, would this oscillator be over-damped, under-damped, or critically damped?  
-\vfill
-
-
-
-\end{parts}
-
 
 
 \newpage
@@ -179,7 +180,7 @@ $$y'' + 5y'  + 6y = 6t-1$$
 
 \textbf{Uniqueness Theorem}. \emph{If $\dfrac{dy}{dt} = f(t,y)$ is a differential equation where both $f$ and its partial derivative $f_y$ are continuous for all points $(t,y)$ near $(t_0,y_0)$, then there exists a unique solution $y(t)$ defined on an open interval around $t_0$ such that $y(t_0) = y_0$.  } \\
 
-Given that solutions of a differential equation are supposed to be unique, how is it possible that the differential equation above have two different solutions with $y(0) = 0$?  Explain how this does not contradict the Uniqueness Theorem. 
+Given that solutions of a differential equation are supposed to be unique, how is it possible that the differential equation above has two different solutions that pass through the point $(0,0)$?  Explain why this does not contradict the Uniqueness Theorem. 
 \vfill
 
 \end{parts}
@@ -196,21 +197,26 @@ Given that solutions of a differential equation are supposed to be unique, how i
 
 \begin{parts}
 
-\item Identify all of the equilibrium points of the system and classify the type of equilibrium for each (sink, source, spiral sink, spiral source, or saddle).  
+\item Identify all of the equilibrium points for this system. 
 \vfill
 
-\item Describe what will happen to the solution with initial condition $(x_0,y_0)=(-1,0)$ as $t \rightarrow \infty$?  \hl{This one still needs to be fixed... maybe a graph question instead?}
+\item Find the Jacobian matrix at each equilibrium and use it to classify the type for each (sink, source, spiral sink, spiral source, or saddle).  
+\vfill
+
 \vfill
 \end{parts}
 %%%%%%%%%%%%%%%%%%
 %%% Problem 11 %%%
 %%%%%%%%%%%%%%%%%%
-\question  Find the general solution to the linear system 
-$$\frac{dY}{dt} = \left( \begin{array}{rr} -4 & 3 \\ -3 & -4 \end{array} \right)Y$$
-If it helps, every matrix of the form $A = \ds \left( \begin{array}{rr} a & b \\ -b & a \end{array} \right)$ has $\ds\left(\begin{array}{r} 1 \\ i \end{array}\right)$ as an eigenvector.  
-\vfill
+\question  Consider the linear system
+$$\frac{dY}{dt} = \begin{bmatrix} -4 & 3 \\ -3 & -4 \end{bmatrix}\, Y.$$
+\begin{parts}
+\part Verify that $\begin{bmatrix} 1 \\ i \end{bmatrix}$ as an eigenvector of $\begin{bmatrix} -4 & 3 \\ -3 & -4 \end{bmatrix}$.  What is its corresponding eigenvalue? 
 \vfill
 
+\part Find the general (real-valued) solution of the system above.
+\vfill
+\end{parts}
 
 \newpage
 
