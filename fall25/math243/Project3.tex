@@ -74,11 +74,11 @@ $$\mathbf{y}' = \begin{bmatrix}
 -\tfrac{k_1}{m_1}  - \tfrac{k_2}{m_1} & \tfrac{c_1}{m_1} - \tfrac{c_2}{m_1} & \tfrac{k_2}{m_1} & \tfrac{c_2}{m_1} \\
 0 & 0 & 0 & 1 \\ 
 \tfrac{k_2}{m_2} & \tfrac{c_2}{m_2} & -\tfrac{k_2}{m_2} &- \tfrac{c_2}{m_2} 
-\end{bmatrix} \mathbf{y} + \begin{bmatrix} 0 \\ f(t) \\ 0 \\ 0 \end{bmatrix}.$$
+\end{bmatrix} \mathbf{y} + \begin{bmatrix} 0 \\ \tfrac{f(t)}{m_1} \\ 0 \\ 0 \end{bmatrix}.$$
 
 \end{solution}
 
-\question \textbf{Find the undetermined coefficients.} Suppose that $m_1 = 100$, $m_2 = 1$, $c_1 = c_2 =0$, $k_1 = 900$ and $k_2 = 1$.  Suppose also that the forcing function is $f(t) = \cos 3t$ so that $\mathbf{f}(t) = \cos 3t \, \mathbf{e}_2$ where $\mathbf{e}_2 = \langle 0, 1, 0, 0 \rangle$.  To guess a particular solution for $\mathbf{y}' = A \mathbf{y} + \mathbf{f}(t)$, first switch to a complexified equation:
+\question \textbf{Find the undetermined coefficients.} Suppose that $m_1 = 100$, $m_2 = 1$, $c_1 = c_2 =0$, $k_1 = 900$ and $k_2 = 1$.  Suppose also that the forcing function is $f(t) = 100\cos 3t$ so that $\mathbf{f}(t) = \cos 3t \, \mathbf{e}_2$ where $\mathbf{e}_2 = \langle 0, 1, 0, 0 \rangle$.  To guess a particular solution for $\mathbf{y}' = A \mathbf{y} + \mathbf{f}(t)$, first switch to a complexified equation:
 \[
 \mathbf{y}' = A \mathbf{y} + e^{3i t} \mathbf{e}_2.
 \]
