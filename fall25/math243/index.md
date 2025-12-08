@@ -31,7 +31,8 @@ header-includes: |
 
 ### Announcements
 
-* Final exam materials: [review problems](finalreview.pdf), [formula sheet](finalformulas.pdf)
+* The final exam will be on **Thursday, Dec 11 at 2:00pm**.
+* Final exam materials: [review problems](finalreview.pdf), [solutions](finalreviewSolutions.pdf), [formula sheet](finalformulas.pdf)
 * [Project 3](Project3.pdf) is due on **Friday, December 5.**
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](formulasheet3.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](formulasheet2.pdf)
