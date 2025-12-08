@@ -374,6 +374,80 @@ Y(t) = C_1 e^{-4t} \begin{bmatrix} \cos 3t \\ - \sin 3t \end{bmatrix} + C_2 e^{-
 
 \newpage
 
+\question Consider the initial value problem $y' = y^2 - 2y + 1$ with $y(0) = 0$.
+\begin{parts}
+\part Draw a rough sketch of the slope field for this differential equation.  
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}[scale=1.0] 
+\draw[gray] (-2.2,-1.2) grid (2.2,3.2);
+\def\xmax{2}; 
+\def\xmin{-2};
+\def\xstep{1.0};
+\def\ymax{3};
+\def\ymin{-1};
+\def\ystep{1.0};
+\def\ext{0.5};  % how far arrows extend past last tick mark
+\def\tick{0.2}  % radius of tickmarks 
+\def\w{0.25};    % radius of the scaled slope vector
+\pgfmathparse{\xmin+\xstep};
+\let\xnext\pgfmathresult;
+\pgfmathparse{\ymin+\ystep};
+\let\ynext\pgfmathresult;
+\draw[very thick,<->] (\xmin-\ext,0) -- (\xmax+\ext,0);
+\draw[very thick,<->] (0,\ymin-\ext) -- (0,\ymax+\ext);
+\foreach \x in {\xmin,\xnext,...,\xmax} { 
+  \foreach \y in {\ymin,\ynext,...,\ymax} {
+    \pgfmathparse{(\y * \y  - 2 * \y + 1)}; 	% Enter your differential equation here.  
+    \let\m\pgfmathresult;  % \m is the slope
+    \pgfmathparse{sqrt(1+\m*\m)};
+    \let\n\pgfmathresult;  % \n is the radius of the unscaled slope vector
+    \pgfmathparse{\w/\n};	
+    \let\dx\pgfmathresult;   
+    \pgfmathparse{\dx*\m};	
+    \let\dy\pgfmathresult;
+    \draw[very thick,color=blue] (\x-\dx,\y-\dy) -- (\x+\dx,\y +\dy);
+  }
+}
+%\foreach \x in {\xmin,...,\xmax}  
+%  \draw[very thick] (\x,\tick) -- (\x,-\tick);
+%\foreach \y in {\ymin,...,\ymax} 
+%  \draw[very thick] (-\tick,\y) -- (\tick,\y);
+%\foreach \x in {-3,-2,-1,1,2,3} {
+%  \draw (\x,-\tick) node[below,scale=1.0] {\textbf{\x}};
+%}
+%\foreach \y in {-2,-1,1,2} {
+%  \draw (-\tick,\y) node[left,scale=1.0] {\textbf{\y}};
+%}
+\end{tikzpicture} 
+\end{center}
+\end{solution}
+\vfill
+\vfill
+
+\part Use Euler's method with $\Delta t = \tfrac{1}{2}$ to approximate the solution over the interval $0 \le t \le 1$. 
+\begin{solution}
+    \renewcommand{\arraystretch}{2.5}
+\begin{center}
+\begin{tabular}{c|c}
+~~~~ $t$ ~~~~  & $y$ \\ \hline
+0 & 0 \\ 
+$\tfrac{1}{2}$ & $0 + \tfrac{1}{2} (0^2 - 2(0) + 1) = \tfrac{1}{2}$ \\
+1 & $\tfrac{1}{2} + \tfrac{1}{2} ( (\tfrac{1}{2})^2 - 2(\tfrac{1}{2}) + 1) = \tfrac{5}{8}$
+\end{tabular}
+\end{center}
+\end{solution}
+\vfill
+
+\part Use separation of variables to solve the initial value problem. 
+\begin{solution}
+$$y = 1 - \dfrac{1}{t + 1}.$$
+\end{solution}
+\vfill
+
+\end{parts}
+
+
 
 \end{questions}
 

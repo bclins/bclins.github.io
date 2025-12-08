@@ -1369,9 +1369,6 @@ Class was canceled because of snow.
 
 Today we went over answers to the [review questions for the final exam](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf).
 
-We also talked some more about choosing the right inference techniques in statistics. 
-
-* **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 
 <!--
 ### Fri, Apr 25

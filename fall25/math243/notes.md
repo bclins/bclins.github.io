@@ -1772,6 +1772,16 @@ We didn't get to the next two examples in class today. But they are good practic
 
 4. Solve $\dfrac{dy}{dt} + 6y = \delta(t - 1)$ with $y(0) = 3$. (<https://youtu.be/0gst5RkLtOg>)
 
+### Mon, Dec 8
+
+Today we went over [Homework 11](HW/HW11.pdf) before the quiz. Then we talked about the final exam.  
+
+Originally, I didn't put any questions about Euler's method on the [final exam review problems](finalreview.pdf), so we did this example in class. 
+
+1. Use Euler's method with two steps to approximate the solution of this initial value problem with $\Delta t = \tfrac{1}{2}$. 
+$$\dfrac{dy}{dt} = y^2 - 2y + 1 \text{ with } y(0) = 0.$$
+
+I've actually added that problem to the review problems now and I've also posted the solutions.  
 
 [1.1]:  <https://runestone.academy/ns/books/published/odeproject/firstlook01.html>
 [1.2]:  <https://runestone.academy/ns/books/published/odeproject/firstlook02.html>
