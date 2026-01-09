@@ -33,15 +33,15 @@ E-mail: <img src="address.png"  style="vertical-align:bottom"/>
 
 <!--- - --->
 
-### Fall 2025 Classes
+### Spring 2026 Classes
 
-* Math 105 - [Prep for Calculus](fall25/math105/index.html) 
-* Math 121 - [Statistics](fall25/math121/index.html) 
-* Math 243 - [Differential Equations](fall25/math243/index.html) 
+* Math 121 - [Statistics](spring26/math121/index.html) 
+* Math 222 - [Statistical Methods](spring26/math222/index.html) 
+* Math 342 - [Numerical Analysis](spring26/math342/index.html) 
 
 ### Weekly Schedule
 
-<a href="fall25/schedule.pdf"><img src="fall25/schedule.png" width="475"/></a>
+<a href="spring26/schedule.pdf"><img src="spring26/schedule.png" width="475"/></a>
 
 
 ### Teaching Materials
