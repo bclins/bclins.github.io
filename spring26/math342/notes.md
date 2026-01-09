@@ -27,7 +27,7 @@ header-includes: |
 
 
 <center>
-Jump to: [Main page](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
+Jump to: [Math 342 homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes)
 </center>
  
 ### Week 1 Notes
@@ -38,6 +38,7 @@ Mon, Jan 12 | Floating point arithmetic
 Wed, Jan 14 | Relative error, significant digits
 Fri, Jan 16 | Taylor's theorem
 
+<!--
 #### Book Ideas:
 
 * Driscol and Braun: <https://fncbook.com/> - Uses Python, and has brief coverage of most of the topics I want to cover and seems well written, but not super detailed. 
@@ -57,16 +58,15 @@ This was the second time I taught this class.  I followed the same general outli
     c. Orthogonality and Gram-Schmidt. There is no point covering Fourier series or Legendre polynomials if students don't understand how to find the components of a vector in a basis and why orthogonal bases are nice.  
 
 2. I would cut out Gaussian quadrature.  It is a cool trick... but it takes too long to explain. A better use of time would be to introduce adaptive quadrature methods.  
+-->
 
 
-
-<!--
-### Wed, Jan 17
+### Mon, Jan 12
 
 We talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
 
-![](floating_point_layout.svg){ style="width: 700px" }
-![](floating_point_math.svg){style="width: 700px"}
+![](https://bclins.github.io/spring24/math342/floating_point_layout.svg){ style="width: 700px" }
+![](https://bclins.github.io/spring24/math342/floating_point_math.svg){style="width: 700px"}
 
 In the IEEE 754 standard, a 64-bit floating point number has the form 
 $$x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}$$
@@ -90,9 +90,7 @@ We did the following exercises in class:
 
 5. In Python, compare `2.0**1024` with `2.0**(-1024)` and `2.0**(-1070)`. What do you notice? 
 
-<!--
 6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
--->
 
 <!--
 ### Fri, Jan 19
