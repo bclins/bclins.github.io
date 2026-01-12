@@ -37,6 +37,10 @@ Day  | Section  | Topic
 Mon, Jan 12 |  | Working with R and Rstudio
 Wed, Jan 14 | [1.3][1.3]     | Sampling principles and strategies
 Fri, Jan 16 | [1.4][1.4]     | Experiments
+
+### Mon, Jan 12
+
+* **Lab:** [Working with R and Rstudio](https://htmlpreview.github.io/?https://github.com/andrewpbray/oiLabs-base-R/blob/master/intro_to_r/intro_to_r.html)
               
 - - -
 
