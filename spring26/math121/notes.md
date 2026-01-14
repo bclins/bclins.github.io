@@ -60,14 +60,26 @@ I like this incorrect answer because it is a perfect example of [bullshit](https
 
 ### Wed, Jan 14
 
-Today we did our first in-class workshop:
+We talked briefly about making bar charts for categorical data. 
+
+1. [Exercise 2.21](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.2.21)
+
+Then we introduced **stem & leaf plots (stemplots)** and **histograms** for quantitative data.  We started by making a stemplot and a histogram for the weights of the students in the class. We also talked about how to tell if data is **skewed left** or **skewed right**. 
+
+* **Example:** [US Household Income (2023)](https://www.reddit.com/r/dataisbeautiful/comments/1h0b4pv/oc_us_household_income_distribution_2023/#lightbox)
+
+2. Can you think of a distribution that is skewed left?  
+
+3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
+
+Then we did this workshop:
 
 * **Workshop:** [Histograms & stemplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Histograms.pdf)
 
 
-Before that, we talked about how to summarize data. We talked briefly about making bar charts for categorical data. Then we used the class data we collected last time to introduce **histograms** and **stem-and-leaf plots** (also known as **stemplots**). 
+<!--If you need to make a histogram, I recommend using this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) on my website. -->
 
-We talked about how to tell if data is **skewed left** or **skewed right**. We also reviewed the **mean** and the **median**.  
+We finished by reviewing the **mean** and the **median**.  
 
 <div class="Theorem">
 #### Median versus Average
@@ -77,17 +89,7 @@ The median of $N$ numbers is located at position $\dfrac{N+1}{2}$.
 The median is not affected by skew, but the average is pulled in the direction of the skew. So the average will be bigger than the median when the data is skewed right, and smaller when the data is skewed left. 
 </div>
 
-We finished by talking about these examples.
 
-* **Example:** [US Household Income (2023)](https://www.reddit.com/r/dataisbeautiful/comments/1h0b4pv/oc_us_household_income_distribution_2023/#lightbox)
-
-1. Which is greater, the mean or the median household income?
-
-2. Can you think of a distribution that is skewed left?  
-
-3. Why isn't [this bar graph](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.2.5) from the book a histogram?
-
-If you need to make a histogram, I recommend using this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) on my website. 
 
 <!--
 ### Fri, Aug 29

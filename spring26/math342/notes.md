@@ -135,13 +135,11 @@ We did these examples in class.
 
 1. $\pi = 3.141592...$.  What is the absolute and relative error if your round $\pi$ to $3.14$?  
 
-<!--
 <div class="Theorem">
 **Rounding Error.** The worst case relative error from rounding to $k$ significant digits is 
 $$\mathbf{relative~error} \le \begin{cases} 5 \times 10^{-k} & (\text{decimal}) \\ 2^{-k} & (\text{binary}). \end{cases}$$
 Since 64-bit floating point numbers have up to 53 significant digits, they typically have a relative error of up to $2^{-53} \approx 1.11 \times 10^{-16}$.  This quantity is known as **machine epsilon**. 
 </div>
--->
 
 You can sometimes re-write algorithms on a computer to avoid issues with floating point numbers such as overflow/underflow and catastrophic cancellation.  
 
@@ -152,7 +150,7 @@ your previous calculation.
 
 4. A better way to compute $f(x)$ is to use a trick to avoid the catastrophic cancellation:
 $$f(x) = \dfrac{1-\cos x}{\sin x} = \dfrac{1 - \cos x}{\sin x} \cdot \left( \frac{1+ \cos x}{1+\cos x} \right) = \dfrac{\sin x}{1 + \cos x}.$$
-Use this formula to compute $f(10^{-7})$.  What is the relative error now?
+Use this new formula to compute $f(10^{-7})$.  What is the relative error now?
 
 **Stirling's formula** is a famous approximation for the factorial function.
 $$n! \approx \sqrt{2 \pi n} \frac{n^n}{e^n}.$$

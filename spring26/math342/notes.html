@@ -273,13 +273,17 @@ What is the absolute and relative error if your round
 to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.14</mn><annotation encoding="application/x-tex">3.14</annotation></semantics></math>?</li>
 </ol>
-<!--
 <div class="Theorem">
-**Rounding Error.** The worst case relative error from rounding to $k$ significant digits is 
-$$\mathbf{relative~error} \le \begin{cases} 5 \times 10^{-k} & (\text{decimal}) \\ 2^{-k} & (\text{binary}). \end{cases}$$
-Since 64-bit floating point numbers have up to 53 significant digits, they typically have a relative error of up to $2^{-53} \approx 1.11 \times 10^{-16}$.  This quantity is known as **machine epsilon**. 
+<p><strong>Rounding Error.</strong> The worst case relative error from
+rounding to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+significant digits is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>𝐫</mi><mi>𝐞</mi><mi>𝐥</mi><mi>𝐚</mi><mi>𝐭</mi><mi>𝐢</mi><mi>𝐯</mi><mi>𝐞</mi><mspace width="0.222em"></mspace><mi>𝐞</mi><mi>𝐫</mi><mi>𝐫</mi><mi>𝐨</mi><mi>𝐫</mi></mrow><mo>≤</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>5</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup></mtd><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">decimal</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msup><mn>2</mn><mrow><mi>−</mi><mi>k</mi></mrow></msup></mtd><mtd columnalign="left" style="text-align: left"><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">binary</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\mathbf{relative~error} \le \begin{cases} 5 \times 10^{-k} &amp; (\text{decimal}) \\ 2^{-k} &amp; (\text{binary}). \end{cases}</annotation></semantics></math>
+Since 64-bit floating point numbers have up to 53 significant digits,
+they typically have a relative error of up to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mrow><mi>−</mi><mn>53</mn></mrow></msup><mo>≈</mo><mn>1.11</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>16</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-53} \approx 1.11 \times 10^{-16}</annotation></semantics></math>.
+This quantity is known as <strong>machine epsilon</strong>.</p>
 </div>
--->
 <p>You can sometimes re-write algorithms on a computer to avoid issues
 with floating point numbers such as overflow/underflow and catastrophic
 cancellation.</p>
@@ -296,7 +300,7 @@ your previous calculation.</p></li>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
 is to use a trick to avoid the catastrophic cancellation:
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mo>cos</mo><mi>x</mi></mrow><mrow><mo>sin</mo><mi>x</mi></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mo>cos</mo><mi>x</mi></mrow><mrow><mo>sin</mo><mi>x</mi></mrow></mfrac><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mo>cos</mo><mi>x</mi></mrow><mrow><mn>1</mn><mo>+</mo><mo>cos</mo><mi>x</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mo>sin</mo><mi>x</mi></mrow><mrow><mn>1</mn><mo>+</mo><mo>cos</mo><mi>x</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{1-\cos x}{\sin x} = \dfrac{1 - \cos x}{\sin x} \cdot \left( \frac{1+ \cos x}{1+\cos x} \right) = \dfrac{\sin x}{1 + \cos x}.</annotation></semantics></math>
-Use this formula to compute
+Use this new formula to compute
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>7</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(10^{-7})</annotation></semantics></math>.
 What is the relative error now?</p></li>
 </ol>
