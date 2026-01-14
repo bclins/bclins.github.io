@@ -44,6 +44,32 @@ Today we went over the course syllabus and talked about making R-markdown files 
 
 * **Lab:** [Working with R and Rstudio](https://htmlpreview.github.io/?https://github.com/andrewpbray/oiLabs-base-R/blob/master/intro_to_r/intro_to_r.html)
               
+
+### Wed, Jan 14
+
+Today we reviewed **populations** and **samples**.  We started with a famous example of a bad sample.
+
+* **Slides:** [Literary Digest election poll 1936](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf)
+
+Then we reviewed population **parameters**, sample **statistics**, and **sampling frames**.  
+
+<div class="Theorem">
+**Sample Error.** The difference between a sample statistic and a population parameter.  
+There are two sources of sample error. 
+
+1. **Bias.** Can be caused by a non-representative sample (**sample bias**) or by measurement errors, non-response, or biased questions (**non-sample bias**). The only way to avoid sample bias is a **simple random sample (SRS)** from the whole population.
+
+2. **Random error.** This is non-systematic error.  It tends to get smaller with larger samples. 
+
+To summarize:
+$$\text{Statistics} = \text{Parameters} + \underbrace{\text{Bias} + \text{Random error}}_\text{Sample error}.$$
+</div>
+
+We finished with this workshop. 
+
+* **Workshop:** [Sampling](BasicSampling.pdf)
+
+
 - - -
 
 ### Week 2 Notes

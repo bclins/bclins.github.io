@@ -14,6 +14,7 @@ header-includes: |
 ---
 
 \newcommand{\on}{\operatorname}
+\newcommand{\R}{\mathbb{R}}
 
 ## Math 342 - Spring 2026
 
@@ -65,40 +66,47 @@ This was the second time I taught this class.  I followed the same general outli
 
 We talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
 
-![](https://bclins.github.io/spring24/math342/floating_point_layout.svg){ style="width: 700px" }
-![](https://bclins.github.io/spring24/math342/floating_point_math.svg){style="width: 700px"}
+![](IEEE_754.svg){ style="width: 700px" }
 
 In the IEEE 754 standard, a 64-bit floating point number has the form 
-$$x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}$$
+
+$$\mathbf{value} = (-1)^\mathbf{sign} \, \times \, 2^{(\mathbf{exponent} - 1023)} \, \times \, (1 + \mathbf{fraction}) $$
+
 where 
 
-* $s$ is the 1-bit sign,
-* $a_1 a_2 \ldots a_{52}$ is the 52-bit mantissa, and
-* $e$ is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $e=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $e=2047$ is reserved for infinity and NaN ("not a number"). 
+* $\mathbf{sign}$ is a single bit: 0 for positive, 1 for negative.
+* $\mathbf{fraction}$ is a 52-bit fraction (in binary) with $0 \le \mathbf{fraction} < 1$.
+* $\mathbf{exponent}$ is the 11-bit binary integer which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $\mathbf{exponent}=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $\mathbf{exponent}=2047$ is reserved for infinity and NaN ("not a number"). 
 
-To understand floating point numbers, we also reviewed [binary numbers](https://en.wikipedia.org/wiki/Binary_numeral_system), [scientific notation](https://en.wikipedia.org/wiki/Scientific_notation), and [logarithmic scales](https://en.wikipedia.org/wiki/Logarithmic_scale ).
+We talked about how to convert between [binary numbers](https://en.wikipedia.org/wiki/Binary_numeral_system) and decimal numbers. <!--[scientific notation](https://en.wikipedia.org/wiki/Scientific_notation) and [logarithmic scales](https://en.wikipedia.org/wiki/Logarithmic_scale ).-->
+This system works very well, but it leads to weird outcomes like  `0.1 + 0.1 + 0.1 = 0.30000000000000004`.
 
-We did the following exercises in class:
+When you convert $\tfrac{1}{10} = 0.1$ to binary, you get a infinitely repeating binary decimal: 
+$$\tfrac{1}{10} = (0.000110011001100\ldots)_2.$$ 
+So any finite binary representation of $\tfrac{1}{10}$ will have **rounding errors**.
+
+We did the following examples in class:
 
 1. Convert (10110)<sub>2</sub> to decimal. (<https://youtu.be/a2FpnU9Mm3E>)
 
 2. Convert 35 to binary. (<https://youtu.be/gGiEu7QTi68>)
 
-3. What are the largest and smallest 64-bit floating point numbers that can be stored?  
+3. What is the 64-bit string that represents the number 35 in the IEEE standard? 
 
-4. In Python, compute `2.0**1024` and `2**1024`.  Why do you get different results?
+4. What are the largest and smallest 64-bit floating point numbers that can be stored?  
 
-5. In Python, compare `2.0**1024` with `2.0**(-1024)` and `2.0**(-1070)`. What do you notice? 
+5. In Python, compute `2.0**1024` and `2**1024`.  Why do you get different results?
 
-6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? 
+6. In Python, compare `2.0**1024` with `2.0**(-1024)` and `2.0**(-1070)`. What do you notice? 
 
-<!--
-### Fri, Jan 19
+<!--6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? -->
+
+### Wed, Jan 14
 
 Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). Then we defined absolute and relative error:
 
 <div class="Theorem">
-Let $x^*$ be an approximation of $x \in \R$. 
+**Definition.** Let $x^*$ be an approximation of a real number $x$. 
 
 * The **absolute error** is $|x^* - x|$. 
 * The **relative error** is $\dfrac{|x^*-x|}{|x|}$. 
@@ -119,14 +127,24 @@ only has 1 significant digit.
 
 We finished by looking at how you can sometimes re-write algorithms on a computer to avoid overflow/underflow issues.  Stirling's formula is an approximation for $n!$ which has a relative error that gets smaller as $n$ increases.  
 
-We used the `math` library in Python to test **Stirling's formula**, which is the following approximation 
+1. Consider the function $f(x) = \dfrac{1 - \cos x}{\sin x}$.  Use Python to compute $f(10^{-7})$. 
+
+2. The exact answer to previous question is $0.00000005$ (accurate to 22 decimal places).  Use this to find the relative error in 
+your previous calculation.
+
+3. A better way to compute $f(x)$ is to use a trick to avoid the catastrophic cancellation:
+$$f(x) = \dfrac{1-\cos x}{\sin x} = \dfrac{1 - \cos x}{\sin x} \cdot \left( \frac{1+ \cos x}{1+\cos x} \right) = \dfrac{\sin x}{1 + \cos x}.$$
+Use this formula to compute $f(10^{-7})$.  What is the relative error now?
+
+**Stirling's formula** is a famous approximation for the factorial function.
 $$n! \approx \sqrt{2 \pi n} \frac{n^n}{e^n}.$$
+We approximated Stirling's formula using the following code.
 
 ```python
 import math
 n = 100
 print(float(math.factorial(n)))
-f = lambda n: math.sqrt(2*math.pi*n)*n**n/math.exp(n)
+f = lambda n: math.sqrt(2 * math.pi * n) * n ** n / math.exp(n)
 print(f(n))
 ```
 
@@ -134,10 +152,11 @@ Our formula worked well until $n=143$, then we got an overflow error.  The probl
 
 ```python
 n = 143
-f = lambda n: math.sqrt(2*math.pi*n)*(n/math.exp(1))**n
+f = lambda n: math.sqrt(2 * math.pi * n) * (n / math.e) ** n
 print(f(n))
 ```
 
+<!--
 ### Mon, Jan 22
 
 Today we reviewed Taylor series.  We recalled the following important Maclaurin series (which are Taylor series with center $c = 0$):
@@ -151,8 +170,11 @@ Today we reviewed Taylor series.  We recalled the following important Maclaurin 
 The we did the following workshop in class. 
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
+* <mark>Interesting idea for some extra problems w/ the triangle inequality: <https://www.deanza.edu/faculty/balmcheryl/documents/M1C_Lab3_updated.pdf></mark>
+
 
 -->
+
               
 - - -
 
