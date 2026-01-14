@@ -41,7 +41,7 @@ Fri, Jan 16 | [2.1.5][2.1.5] | Boxplots
 
 Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
 
-* **Example:** [Class data]()
+* **Example:** [Class data](ClassData.xlsx)
 
 1. We looked at a case of a nurse who was accused of killing patients at the hospital where she worked for 18 months.  One piece of evidence against her was that 40 patients died during the shifts when she worked, but only 34 died during shifts when she wasn't working.  If this evidence came from a date table, what would be the most natural individuals (rows) & variables (columns) for that table?
 

@@ -103,7 +103,16 @@ We did the following examples in class:
 
 ### Wed, Jan 14
 
-Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). Then we defined absolute and relative error:
+Today we talked about significant digits.  Here is a [quick video on how these work](https://youtu.be/l2yuDvwYq5g). 
+
+<div class="Theorem">
+**Rules for Significant Digits.**
+
+1. **Addition/Subtraction.** The last common digit that is significant for both numbers is the last significant digit of the answer. 
+2. **Multiplication/Division.** Result has significant digits equal to the minimum number of significant digits of the two inputs. 
+</div>
+
+Next we defined absolute and relative error:
 
 <div class="Theorem">
 **Definition.** Let $x^*$ be an approximation of a real number $x$. 
@@ -112,10 +121,7 @@ Today we talked about significant digits.  Here is a [quick video on how these w
 * The **relative error** is $\dfrac{|x^*-x|}{|x|}$. 
 </div>
 
-The base-10 logarithm of the relative error is approximately the number of significant digits, so you can think of significant digits as a measure of relative error.  Keep in mind these rules:
-
-1. When you add/subtract numbers, the last common digit that is significant for both numbers is the last significant digit of the answer. 
-2. When you multiply/divide two numbers, the result has significant digits equal to the minimum number of significant digits of the two inputs. 
+The base-10 logarithm of the relative error is approximately the number of significant digits, so you can think of significant digits as a measure of relative error.  
 
 Intuitively, addition & subtraction "play nice" with absolute error while multiplication and division "play nice" with relative error.  This can lead to problems:
 
@@ -125,14 +131,26 @@ only has 1 significant digit.
 
 2. **Useless precision.** If you add two numbers with very different magnitudes, then having a very low relative error in the smaller one will not be useful.  
 
-We finished by looking at how you can sometimes re-write algorithms on a computer to avoid overflow/underflow issues.  Stirling's formula is an approximation for $n!$ which has a relative error that gets smaller as $n$ increases.  
+We did these examples in class.
 
-1. Consider the function $f(x) = \dfrac{1 - \cos x}{\sin x}$.  Use Python to compute $f(10^{-7})$. 
+1. $\pi = 3.141592...$.  What is the absolute and relative error if your round $\pi$ to $3.14$?  
 
-2. The exact answer to previous question is $0.00000005$ (accurate to 22 decimal places).  Use this to find the relative error in 
+<!--
+<div class="Theorem">
+**Rounding Error.** The worst case relative error from rounding to $k$ significant digits is 
+$$\mathbf{relative~error} \le \begin{cases} 5 \times 10^{-k} & (\text{decimal}) \\ 2^{-k} & (\text{binary}). \end{cases}$$
+Since 64-bit floating point numbers have up to 53 significant digits, they typically have a relative error of up to $2^{-53} \approx 1.11 \times 10^{-16}$.  This quantity is known as **machine epsilon**. 
+</div>
+-->
+
+You can sometimes re-write algorithms on a computer to avoid issues with floating point numbers such as overflow/underflow and catastrophic cancellation.  
+
+2. Consider the function $f(x) = \dfrac{1 - \cos x}{\sin x}$.  Use Python to compute $f(10^{-7})$. 
+
+3. The exact answer to previous question is $0.00000005 = 5 \times 10^{-8}$ (accurate to 22 decimal places).  Use this to find the relative error in 
 your previous calculation.
 
-3. A better way to compute $f(x)$ is to use a trick to avoid the catastrophic cancellation:
+4. A better way to compute $f(x)$ is to use a trick to avoid the catastrophic cancellation:
 $$f(x) = \dfrac{1-\cos x}{\sin x} = \dfrac{1 - \cos x}{\sin x} \cdot \left( \frac{1+ \cos x}{1+\cos x} \right) = \dfrac{\sin x}{1 + \cos x}.$$
 Use this formula to compute $f(10^{-7})$.  What is the relative error now?
 

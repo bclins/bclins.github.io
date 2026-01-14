@@ -223,8 +223,20 @@ notice?</p></li>
 <!--6. What number has mantissa (1011)<sub>2</sub> and exponent (110)<sub>2</sub>? -->
 <h3 id="wed-jan-14">Wed, Jan 14</h3>
 <p>Today we talked about significant digits. Here is a <a
-href="https://youtu.be/l2yuDvwYq5g">quick video on how these work</a>.
-Then we defined absolute and relative error:</p>
+href="https://youtu.be/l2yuDvwYq5g">quick video on how these
+work</a>.</p>
+<div class="Theorem">
+<p><strong>Rules for Significant Digits.</strong></p>
+<ol type="1">
+<li><strong>Addition/Subtraction.</strong> The last common digit that is
+significant for both numbers is the last significant digit of the
+answer.</li>
+<li><strong>Multiplication/Division.</strong> Result has significant
+digits equal to the minimum number of significant digits of the two
+inputs.</li>
+</ol>
+</div>
+<p>Next we defined absolute and relative error:</p>
 <div class="Theorem">
 <p><strong>Definition.</strong> Let
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>*</mo></msup><annotation encoding="application/x-tex">x^*</annotation></semantics></math>
@@ -239,15 +251,7 @@ be an approximation of a real number
 </div>
 <p>The base-10 logarithm of the relative error is approximately the
 number of significant digits, so you can think of significant digits as
-a measure of relative error. Keep in mind these rules:</p>
-<ol type="1">
-<li>When you add/subtract numbers, the last common digit that is
-significant for both numbers is the last significant digit of the
-answer.</li>
-<li>When you multiply/divide two numbers, the result has significant
-digits equal to the minimum number of significant digits of the two
-inputs.</li>
-</ol>
+a measure of relative error.</p>
 <p>Intuitively, addition &amp; subtraction “play nice” with absolute
 error while multiplication and division “play nice” with relative error.
 This can lead to problems:</p>
@@ -261,20 +265,31 @@ only has 1 significant digit.</p></li>
 very different magnitudes, then having a very low relative error in the
 smaller one will not be useful.</p></li>
 </ol>
-<p>We finished by looking at how you can sometimes re-write algorithms
-on a computer to avoid overflow/underflow issues. Stirling’s formula is
-an approximation for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">n!</annotation></semantics></math>
-which has a relative error that gets smaller as
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-increases.</p>
+<p>We did these examples in class.</p>
 <ol type="1">
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mo>=</mo><mn>3.141592</mn><mi>.</mi><mi>.</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\pi = 3.141592...</annotation></semantics></math>.
+What is the absolute and relative error if your round
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3.14</mn><annotation encoding="application/x-tex">3.14</annotation></semantics></math>?</li>
+</ol>
+<!--
+<div class="Theorem">
+**Rounding Error.** The worst case relative error from rounding to $k$ significant digits is 
+$$\mathbf{relative~error} \le \begin{cases} 5 \times 10^{-k} & (\text{decimal}) \\ 2^{-k} & (\text{binary}). \end{cases}$$
+Since 64-bit floating point numbers have up to 53 significant digits, they typically have a relative error of up to $2^{-53} \approx 1.11 \times 10^{-16}$.  This quantity is known as **machine epsilon**. 
+</div>
+-->
+<p>You can sometimes re-write algorithms on a computer to avoid issues
+with floating point numbers such as overflow/underflow and catastrophic
+cancellation.</p>
+<ol start="2" type="1">
 <li><p>Consider the function
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mn>1</mn><mo>−</mo><mo>cos</mo><mi>x</mi></mrow><mrow><mo>sin</mo><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{1 - \cos x}{\sin x}</annotation></semantics></math>.
 Use Python to compute
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>7</mn></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(10^{-7})</annotation></semantics></math>.</p></li>
 <li><p>The exact answer to previous question is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.00000005</mn><annotation encoding="application/x-tex">0.00000005</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.00000005</mn><mo>=</mo><mn>5</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">0.00000005 = 5 \times 10^{-8}</annotation></semantics></math>
 (accurate to 22 decimal places). Use this to find the relative error in
 your previous calculation.</p></li>
 <li><p>A better way to compute
