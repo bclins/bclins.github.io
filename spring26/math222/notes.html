@@ -20,6 +20,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -105,11 +169,10 @@ href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentat
 Digest election poll 1936</a></li>
 </ul>
 <p>Then we reviewed population <strong>parameters</strong>, sample
-<strong>statistics</strong>, and <strong>sampling frames</strong>.</p>
-<div class="Theorem">
-<p><strong>Sample Error.</strong> The difference between a sample
-statistic and a population parameter.<br />
-There are two sources of sample error.</p>
+<strong>statistics</strong>, and <strong>sampling frames</strong>. The
+difference between a sample statistic and a population parameter is
+called the <strong>sample error</strong>.<br />
+There are two sources of sample error:</p>
 <ol type="1">
 <li><p><strong>Bias.</strong> Can be caused by a non-representative
 sample (<strong>sample bias</strong>) or by measurement errors,
@@ -120,13 +183,46 @@ The only way to avoid sample bias is a <strong>simple random sample
 tends to get smaller with larger samples.</p></li>
 </ol>
 <p>To summarize:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Statistics</mtext><mo>=</mo><mtext mathvariant="normal">Parameters</mtext><mo>+</mo><munder><munder><mrow><mtext mathvariant="normal">Bias</mtext><mo>+</mo><mtext mathvariant="normal">Random error</mtext></mrow><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">Sample error</mtext></munder><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Statistics} = \text{Parameters} + \underbrace{\text{Bias} + \text{Random error}}_\text{Sample error}.</annotation></semantics></math></p>
-</div>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Statistics</mtext><mo>=</mo><mtext mathvariant="normal">Parameters</mtext><mo>+</mo><munder><munder><mrow><mrow><mtext mathvariant="normal">Bias </mtext><mspace width="0.333em"></mspace></mrow><mo>+</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> Random error</mtext></mrow></mrow><mo accent="true">⏟</mo></munder><mtext mathvariant="normal">Sample error</mtext></munder><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Statistics} = \text{Parameters} + \underbrace{\text{Bias } + \text{ Random error}}_\text{Sample error}.</annotation></semantics></math></p>
 <p>We finished with this workshop.</p>
 <ul>
 <li><strong>Workshop:</strong> <a
 href="BasicSampling.pdf">Sampling</a></li>
 </ul>
+<h3 id="fri-jan-16">Fri, Jan 16</h3>
+<p>If you find an association between an <strong>explanatory</strong>
+variable and a <strong>response</strong> variable in an
+<strong>observational study</strong>, then you can’t say for sure that
+the explanatory variable is the cause. We say that <strong>correlation
+is not causation</strong> because there might be
+<strong>lurking</strong> variables that are
+<strong>confounders</strong>, that is, they are associated with both the
+explanatory and response variables and so you can tell what is the true
+cause.</p>
+<p>It turns out that <strong>randomized experiments</strong> can prove
+cause and effect because <strong>random assignment</strong> to treatment
+groups controls all <strong>lurking variables</strong>. We also talked
+about <strong>blocking</strong> and <strong>double-blind</strong>
+experiments.</p>
+<ul>
+<li><p><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/polioTrials.html">1954
+polio vaccine trials</a></p></li>
+<li><p><strong>Workshop:</strong> <a
+href="Experiments.pdf">Experiments</a></p></li>
+</ul>
+<p>We finished by simulating the results of the polio vaccine trials to
+see if they might just be a random fluke. We wrote this R code in
+class:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">c</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>trials <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>trials) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  simulated.result <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="dv">244</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  percent <span class="ot">&lt;-</span> <span class="fu">sum</span>(simulated.result) <span class="sc">/</span> <span class="dv">244</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">c</span>(results, percent)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(results)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(results <span class="sc">&lt;</span> <span class="fl">0.336</span>) <span class="sc">/</span> trials</span></code></pre></div>
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>

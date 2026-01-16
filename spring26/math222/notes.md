@@ -51,23 +51,43 @@ Today we reviewed **populations** and **samples**.  We started with a famous exa
 
 * **Slides:** [Literary Digest election poll 1936](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf)
 
-Then we reviewed population **parameters**, sample **statistics**, and **sampling frames**.  
-
-<div class="Theorem">
-**Sample Error.** The difference between a sample statistic and a population parameter.  
-There are two sources of sample error. 
+Then we reviewed population **parameters**, sample **statistics**, and **sampling frames**.  The difference between a sample statistic and a population parameter is called the **sample error**.  
+There are two sources of sample error: 
 
 1. **Bias.** Can be caused by a non-representative sample (**sample bias**) or by measurement errors, non-response, or biased questions (**non-sample bias**). The only way to avoid sample bias is a **simple random sample (SRS)** from the whole population.
 
 2. **Random error.** This is non-systematic error.  It tends to get smaller with larger samples. 
 
 To summarize:
-$$\text{Statistics} = \text{Parameters} + \underbrace{\text{Bias} + \text{Random error}}_\text{Sample error}.$$
-</div>
+$$\text{Statistics} = \text{Parameters} + \underbrace{\text{Bias } + \text{ Random error}}_\text{Sample error}.$$
 
 We finished with this workshop. 
 
 * **Workshop:** [Sampling](BasicSampling.pdf)
+
+### Fri, Jan 16
+
+If you find an association between an **explanatory** variable and a **response** variable in an **observational study**, then you can't say for sure that the explanatory variable is the cause. We say that **correlation is not causation** because there might be **lurking** variables that are **confounders**, that is, they are associated with both the explanatory and response variables and so you can tell what is the true cause.  
+
+It turns out that **randomized experiments** can prove cause and effect because **random assignment** to treatment groups controls all **lurking variables**.  We also talked about **blocking** and **double-blind** experiments.  
+
+* **Example:** [1954 polio vaccine trials](https://people.hsc.edu/faculty-staff/blins/StatsExamples/polioTrials.html)
+
+* **Workshop:** [Experiments](Experiments.pdf)
+
+We finished by simulating the results of the polio vaccine trials to see if they might just be a random fluke.  We wrote this R code in class:
+
+```r
+results = c()
+trials <- 1000
+for (x in 1:trials) {
+  simulated.result <- sample(c(0,1), size = 244, replace = TRUE)
+  percent <- sum(simulated.result) / 244
+  results <- c(results, percent)
+}
+hist(results)
+sum(results < 0.336) / trials
+```
 
 
 - - -

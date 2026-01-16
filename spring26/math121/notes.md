@@ -91,12 +91,9 @@ The median is not affected by skew, but the average is pulled in the direction o
 
 
 
-<!--
-### Fri, Aug 29
+### Fri, Jan 16
 
 We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
-
-* **Workshop:** [Boxplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Spread2.pdf)
 
 We started with this simple example:
 
@@ -106,7 +103,8 @@ We started with this simple example:
 
     Find the 5-number summary and draw a box-and-whisker plot for this data.  Is the coxswain who weighs 120 lbs. an outlier?  
 
--->
+* **Workshop:** [Boxplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Spread2.pdf)
+
 
 - - -
 

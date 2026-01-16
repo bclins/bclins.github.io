@@ -172,24 +172,20 @@ f = lambda n: math.sqrt(2 * math.pi * n) * (n / math.e) ** n
 print(f(n))
 ```
 
-<!--
-### Mon, Jan 22
+### Fri, Jan 26
 
 Today we reviewed Taylor series.  We recalled the following important Maclaurin series (which are Taylor series with center $c = 0$):
 
-* $\ds e^x = \sum_{n=0}^\infty \dfrac{x^n}{n!}$
-* $\ds \sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n+1}}{(2n+1)!}$
-* $\ds \cos(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n}}{(2n)!}$
-* $\ds \dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n$
-* $\ds \ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}$
+* $e^x = \sum_{n=0}^\infty \dfrac{x^n}{n!}$
+* $\sin(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n+1}}{(2n+1)!}$
+* $\cos(x) = \sum_{n=0}^\infty \dfrac{(-1)^n \, x^{2n}}{(2n)!}$
+* $\dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n$
+* $\ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}$
 
-The we did the following workshop in class. 
+Then we did the following workshop in class. 
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
-* <mark>Interesting idea for some extra problems w/ the triangle inequality: <https://www.deanza.edu/faculty/balmcheryl/documents/M1C_Lab3_updated.pdf></mark>
-
-
--->
+<!--* <mark>Interesting idea for some extra problems w/ the triangle inequality: <https://www.deanza.edu/faculty/balmcheryl/documents/M1C_Lab3_updated.pdf></mark>-->
 
               
 - - -
