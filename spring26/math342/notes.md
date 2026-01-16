@@ -182,6 +182,8 @@ Today we reviewed Taylor series.  We recalled the following important Maclaurin 
 * $\dfrac{1}{1-x} = \sum_{n = 0}^\infty x^n$
 * $\ln(1+x) = \sum_{n = 0}^\infty \dfrac{(-1)^n \, x^{n+1}}{n+1}$
 
+We graphed Maclaurin polynomials for $\cos x$ and $\dfrac{1}{1-x}$ on [Desmos](https://www.desmos.com/calculator) to see how they converge with different **radii of convergence**. 
+
 Then we did the following workshop in class. 
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
