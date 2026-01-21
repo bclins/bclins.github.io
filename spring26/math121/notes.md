@@ -116,8 +116,7 @@ Mon, Jan 19 |                | Martin Luther King day - no class
 Wed, Jan 21 | [2.1.4][2.1.4] | Standard deviation
 Fri, Jan 23 | [4.1][4.1]     | Normal distribution
 
-<!--
-### Wed, Sep 3
+### Wed, Jan 21
 
 Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did this one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  
 
@@ -152,6 +151,7 @@ The **normal distribution** is a mathematical model for data with a histogram th
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
 
+<!--
 ### Fri, Sep 5
 
 We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 
