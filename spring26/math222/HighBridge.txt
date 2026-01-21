@@ -1,0 +1,88 @@
+---
+title: High Bridge 2018 Half-Marathon Results
+output: html_document
+---
+
+```{r}
+results = read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/highbridge2018.csv")
+head(results)
+```
+The variables in the `results` data frame are:
+
+* place - the place of the runner in the race.  
+* bib - the runner's bib number.
+* gender - the runner's gender.
+* age - the runner's age in years. 
+* state - the runner's home state.
+* time - the runner's race time (notice this variable is stored in the computer as a string)
+* minutes - the runner's time converted to minutes. 
+
+### Questions
+
+1. How many people ran the High Bridge half-marathon in 2018? Use the `nrow()` function.
+
+
+2. Make a histogram of the runners' times using the `hist()` function. What is the shape of the distribution? Would you say it is skewed left, skewed right, or symmetric?  Based on the shape of the distribution, which would you expect to be larger: the mean or the median?
+
+
+3. Use the `summary()` function to find the mean and the five number summary of the race times. Is your prediction about the mean vs. the median from the last problem correct? 
+
+
+4. To analyze a categorical variable like the state where the runners are from, you can make a table using the `table()` function.  Do this.  How many runners are from each state? 
+
+
+5. To make a bargraph to visualize how many runners are from each state, you can combine the `barplot()` function with the `table()` function.  Try this.
+
+
+6. Use the function `class()` to determine the data type that R is using for each of the variables in the data frame above.  How many different data types are there in this data frame? 
+
+
+7. What percent of runners were male/female?  Hint: try making a table and dividing the table by the total number of runners.
+
+
+8. Make two different barplots, one to show the number of male vs. female runners, the other to show the percents.
+
+
+9. Try the command `boxplot(minutes ~ gender, data = results)`. What do you get?  Note: the tilde (`~`) operator is used in R to specify that variables are related to each other.  
+
+
+10. Plotting functions like `hist`, `barplot`, and `boxplot` accept optional arguments to add features like titles (`main="Your Title"`), labels (`xlab="", ylab=""`), and color (`col=""`).  Try to add a title and labels to the previous plot and change the color to "lightblue".
+
+
+11. Add another column to the `results` data frame with a variable called `speed` that gives each runner's average speed (in miles per hour) for the race. (A half-marathon is 13.1 miles.)  Then use the `summary()` function to give a quick summary of the speeds of the runners.  
+
+
+What if we are only interested in the times of men?  To get a subset of a data frame, you can use the `subset()` function.  Here is an example:
+
+```{r}
+men = subset(results, results$gender == 'M')
+```
+The first argument of the `subset()` function is a data frame and the second argument is a logical expression.  You can use the operations `==`, `<`, `>`, `<=`, `>=` to create a logical expression.  You can also use the symbol `&` to combine one logical expression **and** another. The result will be `TRUE` if both logical expressions were true and `FALSE` otherwise. To get the logical **or**, use the symbol `|`.
+
+Use this idea to answer the following additional questions. 
+
+12. How many men ran the half-marathon? 
+
+
+13. Make a data frame with information about the women who ran the marathon. 
+
+
+14. What was the average time for runners who were at least 50 years old?
+
+
+15. How would you make a data frame for runners in their twenties only? 
+
+
+16. What about a data frame with any runner who is a woman or at least 50 years old?
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

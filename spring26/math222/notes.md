@@ -104,7 +104,7 @@ Fri, Jan 23 | [2.2][2.2]     | Considering categorical data
 
 Today we did a lab about using R to visualize data.
 
-* **Lab:** High Bridge half marathon ([Rmd](HighBridge.Rmd), [html](HighBridge.html))
+* **Lab:** High Bridge half marathon ([Rmd](HighBridge.txt), [html](HighBridge.html))
 
 You should be able to open this file in your browser, then hit CTRL-A and CTRL-C to select it and copy it so that you can paste it into Rstudio as an R-markdown document. 
 
