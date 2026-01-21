@@ -184,6 +184,10 @@ Today we reviewed Taylor series.  We recalled the following important Maclaurin 
 
 We graphed Maclaurin polynomials for $\cos x$ and $\dfrac{1}{1-x}$ on [Desmos](https://www.desmos.com/calculator) to see how they converge with different **radii of convergence**. 
 
+We also use the Maclaurin series for $\dfrac{\sin x}{x}$ to approximate the integral 
+
+$$\displaystyle \int_{-\pi}^\pi \frac{\sin x}{x} \, dx.$$
+
 Then we did the following workshop in class. 
 
 * Workshop: [Taylor series](Workshops/TaylorSeries.pdf)
@@ -201,8 +205,7 @@ Wed, Jan 21 | Taylor's theorem - con'd
 Fri, Jan 23 | Babylonian algorithm for square roots
 
 
-<!--
-### Wed, Jan 24
+### Wed, Jan 21
 
 Today we reviewed some theorems that we will need throughout the course.  The first is probably the most important theorem in numerical analysis since it lets us estimate error when using Taylor series approximations.  
 
@@ -231,10 +234,15 @@ The proof of both the Mean Value Theorem and Taylor's Theorem comes from looking
 
 We briefly sketched an intuitive proof of Rolle's theorem using the [Extreme Value Theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem) from calculus, but the details of that proof are not really that important.  
 
-We did the following exercises in class. 
+We did this example:
 
 1. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $\sin(4\pi)$. 
 
+and then this workshop
+
+* **Workshop:** [Error bounds](Workshops/ErrorBounds.pdf)
+
+<!--
 2. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $e^6$.  
 
 We finished with a proof that the number $e$ is irrational. First we temporarily assumed that $e$ is a reduced fraction $\tfrac{m}{n}$.  Then we calculated the worst remainder for the $n$th degree Maclaurin polynomial for $e^x$ at $x = 1$. We did the following exercises that lead to a contradiction:
@@ -244,6 +252,7 @@ We finished with a proof that the number $e$ is irrational. First we temporarily
 4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
 
 
+<!-- 
 ### Fri, Jan 26
 
 Today we did a workshop about the Babylonian algorithm which is an ancient method for finding square roots.  

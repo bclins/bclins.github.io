@@ -100,6 +100,14 @@ Mon, Jan 19 |                | Martin Luther King day - no class
 Wed, Jan 21 | [2.1][2.1]     | Examining numerical data
 Fri, Jan 23 | [2.2][2.2]     | Considering categorical data
 
+### Wed, Jan 21
+
+Today we did a lab about using R to visualize data.
+
+* **Lab:** High Bridge half marathon ([Rmd](HighBridge.Rmd), [html](HighBridge.html))
+
+You should be able to open this file in your browser, then hit CTRL-A and CTRL-C to select it and copy it so that you can paste it into Rstudio as an R-markdown document. 
+
 
 - - - 
 
@@ -114,7 +122,7 @@ Fri, Jan 30 | [4.1][4.1] | Normal distribution
 
 - - -
 
-### Week 4 Notes
+### Week 4 Notes  
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
