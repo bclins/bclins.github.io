@@ -40,7 +40,7 @@ Week | Topic                      | Notes | Projects
 :---:|:---------------------------|:-----:|:--------:
 1  | Intro to R, sampling and experiments           | [Week 01](notes.html#week-1-notes)  |
 2  | Exploratory data analysis                      | [Week 02](notes.html#week-2-notes)  |
-3  | Probability and random variables               | [Week 03](notes.html#week-3-notes)  |
+3  | Probability and random variables               | [Week 03](notes.html#week-3-notes)  | [Project 1](project1.pdf)
 4  | Probability distributions                      | [Week 04](notes.html#week-4-notes)  |
 5  | Inference for proportions, **Midterm 1**       | [Week 05](notes.html#week-5-notes)  |
 6  | Comparing proportions                          | [Week 06](notes.html#week-6-notes)  |
