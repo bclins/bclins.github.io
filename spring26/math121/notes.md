@@ -151,8 +151,7 @@ The **normal distribution** is a mathematical model for data with a histogram th
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
 
-<!--
-### Fri, Sep 5
+### Fri, Jan 23
 
 We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 
 
@@ -164,6 +163,7 @@ We also did these exercises before the workshop.
 
 2. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10. The average high temperature in Honolulu, HI in January is 80°F with σ = 8°F. In which city would it be more unusual to have a high temperature of 57°F in January?
 
+
 - - - 
 
 ### Week 3 Notes
@@ -174,6 +174,8 @@ Mon, Jan 26 | [4.1.5][4.1.5] | 68-95-99.7 rule
 Wed, Jan 28 | [4.1.4][4.1.4] | Normal distribution computations
 Fri, Jan 30 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
+
+<!--
 ### Mon, Sep 8
 
 We introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 

@@ -108,6 +108,35 @@ Today we did a lab about using R to visualize data.
 
 You should be able to open this file in your browser, then hit CTRL-A and CTRL-C to select it and copy it so that you can paste it into Rstudio as an R-markdown document. 
 
+We had a little trouble with R-markdown on the lab computers.  <!--While that is getting fixed, here is a [Jupyter notebook version](HighBridge.ipynb) of today's lab that you should be able to open with GoogleColab. -->
+
+### Fri, Jan 23
+
+Last time we talked about how to visualize data with R.  Here are two quick summaries of how to make plots in R:
+
+* **Example**: [Basic plots with R](BasicPlots.html)
+* **Example**: [Facier plots with ggplot2](GGplots.html)
+
+After that, we started talking about probability.  We review some of the basic rules.  
+
+<div class="Theorem">
+#### Probability Rules
+
+1. **Addition Rule** 
+$$P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).$$
+2. **Multiplication Rule** 
+$$P(A \text{ and } B) = P(A) \cdot P(B \, | \, A).$$
+</div>
+
+The notation $P(B \, |\, A)$ means "the probability of B given that A happened".  Two events $A$ and $B$ are **independent** if the probability of $A$ does not depend on whether or not $B$ happens.  We did the following examples.  
+
+1. If you shuffle a deck of 52 playing cards and then draw two, what is the probability that the second card is an ace if the first card is?  
+
+We also talked about **tree diagrams** and how to use them to compute probabilities. 
+
+2. 5% of men are color blind, but only 0.25% of women are.  Find $P( \text{male} \, | \, \text{color-blind})$.  
+
+3. Base on a study of women in the United States and Germany, there is an 0.8% chance that a woman in her forties has breast cancer.  Mammograms are 90% accurate at detecting breast cancer if someone has it.  They are also 93% accurate at not detecting cancer in people who don't have it.  If a woman in her forties tests positive for cancer on a mammogram screening, what is the probability that she actually has breast cancer? 
 
 - - - 
 

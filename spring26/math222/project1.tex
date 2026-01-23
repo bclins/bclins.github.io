@@ -1,0 +1,72 @@
+\documentclass[12pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{soul}
+
+\begin{document}
+\subsection*{Project 1 \hfill Math 222 \\ Exploratory Data Analysis \hfill Due Friday, February 6}
+
+\begin{questions}
+
+\question The file 
+\begin{center}
+\url{http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv}
+\end{center} 
+contains monthly and annual precipitation totals for Farmville, VA from 1931 to 2011. Save a copy of this file in the same folder where you keep your R-markdown documents.  Then use the command 
+
+\begin{center}
+\verb|rain = read.csv("rainfall.csv")|
+\end{center}
+to load the file into \verb|R| as a data frame called \verb|rain|.
+\begin{parts}
+\part Make a graph that displays the distribution of annual rainfall totals.  Make sure to clearly label the axes of the graph.  How would you describe the shape of the distribution?
+
+\part Find the five number summary of the annual rainfall totals.  Are there any years that would be considered outliers by the $1.5 \times \mathrm{IQR}$ rule?  Explain your findings. 
+
+\part One important question is whether the rainfall amounts are independent from year to year. One way to check is to make a scatterplot of rainfall totals each year against the rainfall totals the following year. Do this, and describe what you see.  Do you think the graph is consistent with the assumption that precipitation amounts in consecutive years are independent? (Two helpful functions: the command \verb|head(x,-1)| removes the last entry from a vector \verb|x| and \verb|tail(x,-1)| removes the first entry.)
+
+\part Using the mean and standard deviation of the annual rainfall totals as parameters, we could make a normal distribution model to evaluate how unlikely extremely wet and dry years might be here in Farmville.  2018 was an extremely wet year. At Richmond International Airport, the total precipitation for 2018 was 63.7 inches.  Assuming the total for Farmville was the same, what percent of years are as extreme as 2018 according to your normal distribution model?  Do you think this is a reasonable estimate? Why or why not? 
+
+\end{parts}
+
+\question Over the last decade there has been an explosion in the number of confirmed planets orbiting other stars outside our solar system.  The NASA Exoplanet Archive keeps a record of confirmed exoplanet data available online.  The file 
+\begin{center}
+\url{http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/exoplanets.csv}
+\end{center}
+contains data on all of the confirmed exoplanets that have been discovered to date. The variables in the file are:
+
+\begin{itemize}
+\item \verb|pl_hostname|:    Host star name
+\item \verb|pl_name|:        Planet name
+\item \verb|pl_discmethod|:  Discovery method
+\item \verb|pl_pnum|:        Number of planets in system
+\item \verb|pl_orbper|:      Orbital period [days]
+\item \verb|pl_orbsmax|:     Orbit semi-major axis radius [astronomical units (AU)])
+\item \verb|pl_orbeccen|:    Orbit eccentricity
+\item \verb|pl_bmassj|:      Planet mass [Jupiter masses]
+\item \verb|st_dist|:        Distance from our solar system [parsecs]
+\item \verb|pl_facility|:    Discovery facility
+\end{itemize}
+
+Load this file into \verb|R| as a data frame and use it to help answer the following questions. 
+
+\begin{parts}
+\part How many different methods have been used to discover exoplanets? What are they? Which methods have been used to discover the most exoplanents?  
+
+\part How far away are most of the exoplanets that have been discovered?  Make a histogram showing the distribution of distances. 
+
+\part Which method has been the most effective for discovering far away exoplanets?  
+
+\part Do some research on your own.  How big is a parsec?  How big is the Milky Way galaxy?  How far away are the exoplanents that have been discovered relative to the size of the Milky Way galaxy?   
+
+\part The estimated mass of each exoplanet is given by the \verb|pl_bmassj| variable, which has units equal to Jupiter masses.  What is the mass Earth measured in Jupiter masses?  How many of the confirmed exoplanets are more massive than Earth? How many are less massive?
+
+\part If you plot a histogram of exoplanet masses, it isn't very interesting because the data is extremely right skewed.  One common approach to making nicer graphs with right-skewed data is to graph the logarithm of the data.  In \verb|R|, the \verb|log()| function computes the natural log of a numeric variable.  Make a histogram of the logarithms of the masses of the exoplanets.  Describe the distribution.  Where would the Earth and Jupiter fall in this histogram? 
+
+\end{parts}
+ 
+\end{questions}
+
+\end{document}

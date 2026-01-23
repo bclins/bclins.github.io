@@ -222,6 +222,7 @@ A special case of Taylor's theorem is when $n = 0$. Then you get the Mean Value 
 $$f'(c) = \frac{f(b) - f(a)}{b-a}.$$
 </div>
 
+<!--
 The proof of both the Mean Value Theorem and Taylor's Theorem comes from looking at an even simpler theorem called Rolle's theorem. 
 
 <div class="Theorem">
@@ -233,12 +234,13 @@ The proof of both the Mean Value Theorem and Taylor's Theorem comes from looking
 </center>
 
 We briefly sketched an intuitive proof of Rolle's theorem using the [Extreme Value Theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem) from calculus, but the details of that proof are not really that important.  
+-->
 
 We did this example:
 
-1. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $\sin(4\pi)$. 
+1. Use Taylor's theorem to estimate the error in using the 0th and 2nd degree Maclaurin polynomials to estimate $\cos(0.03)$ and $\cos(0.6)$. 
 
-and then this workshop
+Then we started this workshop
 
 * **Workshop:** [Error bounds](Workshops/ErrorBounds.pdf)
 
@@ -250,6 +252,23 @@ We finished with a proof that the number $e$ is irrational. First we temporarily
 3. Show that $n!(e - P_n(1))$ must be an integer. 
 
 4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
+-->
+
+### Fri, Jan 23
+
+Last time we started [this workshop](Workshops/ErrorBounds.pdf) about using Taylor's remainder formula and the triangle inequality to find upper bounds for functions.  Today we revisited that workshop, but first we talked about the following. 
+
+<div class="Theorem">
+**Taylor's Error Formula.** Let $f$ be a function that has $(n+1)$ derivatives in the interval between $x$ and $c$.  Then 
+$$|f(x) - P_n(x)| \le   \frac{M \cdot |x-c|^{n+1}}{(n+1)!}$$
+where $M$ is the maximum value of $|f^{(n+1)}(z)|$ with $z$ between $x$ and $c$. 
+</div>
+
+This error formula gives a way to estimate the worst case (absolute) error when you use a Talyor polynomial approximation.
+
+1. The 3rd degree Taylor polynomial for $\cos x$ centered at $c = \pi$ is $P_3(x) = -1 + \tfrac{1}{2}(x-\pi)^2$ (the coefficient on the 3rd degree term is zero).  What is the worst case absolute error using this polynomial to estimate $\cos 3$?
+
+2. What is the worst case absolute error if you use the 10th degree Maclaurin polynomial to estimate $e^x$ on the interval $[-1,1]$? 
 
 
 <!-- 

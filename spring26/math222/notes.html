@@ -262,6 +262,57 @@ href="HighBridge.txt">Rmd</a>, <a href="HighBridge.html">html</a>)</li>
 <p>You should be able to open this file in your browser, then hit CTRL-A
 and CTRL-C to select it and copy it so that you can paste it into
 Rstudio as an R-markdown document.</p>
+<p>We had a little trouble with R-markdown on the lab computers.
+<!--While that is getting fixed, here is a [Jupyter notebook version](HighBridge.ipynb) of today's lab that you should be able to open with GoogleColab. --></p>
+<h3 id="fri-jan-23">Fri, Jan 23</h3>
+<p>Last time we talked about how to visualize data with R. Here are two
+quick summaries of how to make plots in R:</p>
+<ul>
+<li><strong>Example</strong>: <a href="BasicPlots.html">Basic plots with
+R</a></li>
+<li><strong>Example</strong>: <a href="GGplots.html">Facier plots with
+ggplot2</a></li>
+</ul>
+<p>After that, we started talking about probability. We review some of
+the basic rules.</p>
+<section id="probability-rules" class="Theorem">
+<h4>Probability Rules</h4>
+<ol type="1">
+<li><strong>Addition Rule</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> or </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B).</annotation></semantics></math></li>
+<li><strong>Multiplication Rule</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">P(A \text{ and } B) = P(A) \cdot P(B \, | \, A).</annotation></semantics></math></li>
+</ol>
+</section>
+<p>The notation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(B \, |\, A)</annotation></semantics></math>
+means “the probability of B given that A happened”. Two events
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are <strong>independent</strong> if the probability of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+does not depend on whether or not
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+happens. We did the following examples.</p>
+<ol type="1">
+<li>If you shuffle a deck of 52 playing cards and then draw two, what is
+the probability that the second card is an ace if the first card
+is?</li>
+</ol>
+<p>We also talked about <strong>tree diagrams</strong> and how to use
+them to compute probabilities.</p>
+<ol start="2" type="1">
+<li><p>5% of men are color blind, but only 0.25% of women are. Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">male</mtext><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mtext mathvariant="normal">color-blind</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P( \text{male} \, | \, \text{color-blind})</annotation></semantics></math>.</p></li>
+<li><p>Base on a study of women in the United States and Germany, there
+is an 0.8% chance that a woman in her forties has breast cancer.
+Mammograms are 90% accurate at detecting breast cancer if someone has
+it. They are also 93% accurate at not detecting cancer in people who
+don’t have it. If a woman in her forties tests positive for cancer on a
+mammogram screening, what is the probability that she actually has
+breast cancer?</p></li>
+</ol>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
