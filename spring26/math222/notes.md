@@ -98,7 +98,7 @@ Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Jan 19 |                | Martin Luther King day - no class
 Wed, Jan 21 | [2.1][2.1]     | Examining numerical data
-Fri, Jan 23 | [2.2][2.2]     | Considering categorical data
+Fri, Jan 23 | [3.2][3.2]     | Conditional probability
 
 ### Wed, Jan 21
 
@@ -132,11 +132,11 @@ The notation $P(B \, |\, A)$ means "the probability of B given that A happened".
 
 1. If you shuffle a deck of 52 playing cards and then draw two, what is the probability that the second card is an ace if the first card is?  
 
-We also talked about **tree diagrams** and how to use them to compute probabilities. 
+We also talked about **tree diagrams** (see [subsection 3.2.7 from the book](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.3.2.7)) and how to use them to compute probabilities. 
 
-2. 5% of men are color blind, but only 0.25% of women are.  Find $P( \text{male} \, | \, \text{color-blind})$.  
+2. Based on a study of women in the United States and Germany, there is an 0.8% chance that a woman in her forties has breast cancer.  Mammograms are 90% accurate at detecting breast cancer if someone has it.  They are also 93% accurate at not detecting cancer in people who don't have it.  If a woman in her forties tests positive for cancer on a mammogram screening, what is the probability that she actually has breast cancer? 
 
-3. Based on a study of women in the United States and Germany, there is an 0.8% chance that a woman in her forties has breast cancer.  Mammograms are 90% accurate at detecting breast cancer if someone has it.  They are also 93% accurate at not detecting cancer in people who don't have it.  If a woman in her forties tests positive for cancer on a mammogram screening, what is the probability that she actually has breast cancer? 
+3. 5% of men are color blind, but only 0.25% of women are.  Find $P( \text{male} \, | \, \text{color-blind})$.  
 
 - - - 
 
@@ -144,10 +144,21 @@ We also talked about **tree diagrams** and how to use them to compute probabilit
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Jan 26 | [3.2][3.2] | Conditional probability
+Mon, Jan 26 |            | Class canceled (snow) 
 Wed, Jan 28 | [3.4][3.4] | Random variables
 Fri, Jan 30 | [4.1][4.1] | Normal distribution
 
+<!-- 
+### Wed, Jan 28
+
+Today we talked about **random variables** and **probability distributions**. We talk about some example probability distributions:
+
+* Flip a coin until you get a head.  Let $X$ represent the number of flips needed. 
+
+* How many months until Virginia has its next earthquake?  
+
+We talked about the difference between **continuous** and **discrete** probability distributions.  Then we introduced **expected value** and **variance**.  
+-->
 
 - - -
 

@@ -264,11 +264,25 @@ $$|f(x) - P_n(x)| \le   \frac{M \cdot |x-c|^{n+1}}{(n+1)!}$$
 where $M$ is the maximum value of $|f^{(n+1)}(z)|$ with $z$ between $x$ and $c$. 
 </div>
 
-This error formula gives a way to estimate the worst case (absolute) error when you use a Talyor polynomial approximation.
+This error formula gives a way to estimate the worst case (absolute) error when you use a Taylor polynomial approximation.
 
 1. The 3rd degree Taylor polynomial for $\cos x$ centered at $c = \pi$ is $P_3(x) = -1 + \tfrac{1}{2}(x-\pi)^2$ (the coefficient on the 3rd degree term is zero).  What is the worst case absolute error using this polynomial to estimate $\cos 3$?
 
+<!--
 2. What is the worst case absolute error if you use the 10th degree Maclaurin polynomial to estimate $e^x$ on the interval $[-1,1]$? 
+-->
+
+After that we talked about the triangle inequality. 
+
+<div class="Theorem">
+**Triangle Inequality.** For any numbers $a$ and $b$ (real or complex), 
+$$|a+b| \le |a| + |b|.$$
+</div>
+
+We talked about how you can use the triangle inequality to find **upper bounds** for functions. We also talked about **tight upper bounds** versus upper bounds that are not tight. We did this example. 
+
+2. Use the triangle inequality to find an upper bound for $|x^2 + 3x \cos x|$. 
+
 
 
 <!-- 
