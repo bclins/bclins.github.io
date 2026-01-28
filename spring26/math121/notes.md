@@ -177,27 +177,27 @@ Fri, Jan 30 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
 ### Wed, Jan 27
 
-We introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 
+We introduced how to find percentages on a normal distribution for locations that aren't exactly one, two, or three standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone. 
 
-1. **Finding the percentile from a location on a bell curve.** SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
+<!--
+<center><img src="https://play-lh.googleusercontent.com/MJBvWnR2eyB_b5y3CZl_Ir3_wosWe6IdmGOSUPTYk-qc6YvtC6ipW3RDW-aDshxuf1A=w240-h480" width = 100></img></center>
+-->
 
-2. **Finding the percent between two locations.** What percent of years will Farmville get between 40 and 50 inches of rain?
+We talked about how to use the app to solve the following types of problem:
 
-3. **Converting a percentile to a location.** How much rain would Farmville get in year that was in the 90th percentile? 
+1. (**Percent below**) SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
+
+2. (**Percent above**) What percent of students get above a 560 verbal score on the SATs? 
+
+3. (**Percent between**) What percent of men are between 6 and 6 and a half feet tall?
+
+4. (**Percent to locations**) What is the height of a man in the 25th percentile?
 
 We also talked about the shorthand notation
-$$P(40 < X < 50)$$
-while literally means *"the probability that the outcome X is between 40 and 50"*.  
+$$P(72 < X < 78)$$
+which literally means *"the probability that the outcome X is between 72 and 78"*.  Then we did this workshop. 
 
-4. What is the percentile of a man who is 6 feet tall (72 inches)? 
-
-4. Estimate the percent of men who are between 6 feet and 6'5" tall.  
-
-5. How tall are men in the 80-th percentile? 
-
-6. Men have an foot print length that is approximately $N(25 \text{cm}, 4 \text{cm})$.  Women's footprints are approximately $N(19, 3)$. Find 
-    a. $P(\text{Man} > 22 \text{cm})$
-    b. $P(\text{Woman} > 22 \text{cm})$
+* **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
 
 
 <!-- 

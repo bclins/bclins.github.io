@@ -561,28 +561,35 @@ is an
 where the function hits the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.
 We introduced an algorithm called the <strong>bisection method</strong>
-for finding roots of a continuous function. We did the following
-workshop.</p>
-<ul>
-<li><strong>Workshop</strong>: <a
-href="Workshops/Bisection.pdf">Bisection method</a></li>
-</ul>
+for finding roots of a continuous function that changes sign from
+positive to negative or negative to positive on an interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math>.
+We wrote the following code to implement this algorithm.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bisection(f, a, b, N):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Applies the bisection method recursively up to N times to estimate a root </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    of a continuous function f on an interval [a,b]. </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> (a <span class="op">+</span> b) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> N <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> f(m) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> m</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (f(a) <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> f(m) <span class="op">&gt;</span> <span class="dv">0</span>) <span class="kw">or</span> (f(a) <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">and</span> f(m) <span class="op">&lt;</span> <span class="dv">0</span>):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> bisection(f, m, b, N <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> bisection(f, a, m, N <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<p>We tested this algorithm on the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>tan</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = \tan x - 1</annotation></semantics></math>
+which has a root at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="false"><mi>π</mi><mn>4</mn></mfrac><annotation encoding="application/x-tex">\tfrac{\pi}{4}</annotation></semantics></math>.</p>
 <p>One feature of the bisection method is that we can easily find the
 worst case absolute error in our approximation of a root. That is
 because every time we repeat the algorithm and cut the interval in half,
 the error reduces by a factor of 2, so that
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute error</mtext><mo>≤</mo><mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mn>2</mn><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Absolute error} \le \frac{(b-a)}{2^n}.</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute error</mtext><mo>≤</mo><mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mn>2</mn><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Absolute error} \le \frac{(b-a)}{2^{N+1}}.</annotation></semantics></math>
 We saw that it takes about 10 iterations to increase the accuracy by 3
 decimal places (because
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>≈</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^{10} \approx 10^3</annotation></semantics></math>).</p>
-<p>We finished by comparing the bisection method for finding roots with
-<a
-href="https://en.wikipedia.org/wiki/Square_root_algorithms#Heron&#39;s_method">Heron’s
-method</a> for finding square roots. Why are square roots called roots?
-Because every square root is a root of a square function. For example,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5}</annotation></semantics></math>
-is a root of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2 - 5 = 0</annotation></semantics></math>.</p>
 <!-- 
 
 ### Wed, Jan 31

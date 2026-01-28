@@ -148,10 +148,15 @@ Mon, Jan 26 |            | Class canceled (snow)
 Wed, Jan 28 | [3.4][3.4] | Random variables
 Fri, Jan 30 | [4.1][4.1] | Normal distribution
 
-<!-- 
-Good video about how to compute normal distribution probabilities with R: <https://youtu.be/qLBmYfAVUdg>
-
 ### Wed, Jan 28
+
+Class was canceled today because I had a doctor's appointment.  But I recommended that everyone watch the following video and then complete a workshop about the R functions `pnorm`, `qnorm`, and `rnorm`. 
+
+* **Video:** <https://youtu.be/qLBmYfAVUdg>
+* **Workshop:** [Normal distribution calculations with R](NormalCalculations.pdf)
+
+<!--
+### Fri, Jan 30
 
 Today we talked about **random variables** and **probability distributions**. We talk about some example probability distributions:
 
