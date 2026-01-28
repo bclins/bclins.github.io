@@ -149,6 +149,8 @@ Wed, Jan 28 | [3.4][3.4] | Random variables
 Fri, Jan 30 | [4.1][4.1] | Normal distribution
 
 <!-- 
+Good video about how to compute normal distribution probabilities with R: <https://youtu.be/qLBmYfAVUdg>
+
 ### Wed, Jan 28
 
 Today we talked about **random variables** and **probability distributions**. We talk about some example probability distributions:

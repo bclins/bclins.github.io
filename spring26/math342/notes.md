@@ -202,7 +202,7 @@ Day  | Topic
 :---:|:-----------------------------------
 Mon, Jan 19 | Martin Luther King day - no class
 Wed, Jan 21 | Taylor's theorem - con'd
-Fri, Jan 23 | Babylonian algorithm for square roots
+Fri, Jan 23 | Bounding error
 
 
 ### Wed, Jan 21
@@ -301,22 +301,24 @@ As part of this workshop we also covered how to define variables and functions i
 
 Day  | Topic
 :---:|:-----------------------------------
-Mon, Jan 26 | Bisection  method
-Wed, Jan 28 | Newton's method
-Fri, Jan 30 | Rates of convergence
+Mon, Jan 26 | No class (snow day)
+Wed, Jan 28 | Bisection method
+Fri, Jan 30 | Newton's method
 
-<!--
-### Mon, Jan 29
 
-We talked about how to find the roots of a function.  Recall that a **root** (AKA a **zero**) of a function $f(x)$ is an $x$-value where the function hits the $x$-axis.  We introduced an algorithm called the **Bisection method** for finding roots of a continuous function. We did the following workshop.
+### Wed, Jan 28
+
+We talked about how to find the roots of a function.  Recall that a **root** (AKA a **zero**) of a function $f(x)$ is an $x$-value where the function hits the $x$-axis.  We introduced an algorithm called the **bisection method** for finding roots of a continuous function. We did the following workshop.
 
 * **Workshop**: [Bisection method](Workshops/Bisection.pdf)
 
-One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2, so that
+One feature of the bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2, so that
 $$\text{Absolute error} \le \frac{(b-a)}{2^n}.$$
 We saw that it takes about 10 iterations to increase the accuracy by 3 decimal places (because $2^{10} \approx 10^3$). 
 
-We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
+We finished by comparing the bisection method for finding roots with [Heron's method](https://en.wikipedia.org/wiki/Square_root_algorithms#Heron's_method) for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
+
+<!-- 
 
 ### Wed, Jan 31
 

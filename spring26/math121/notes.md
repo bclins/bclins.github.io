@@ -170,13 +170,12 @@ We also did these exercises before the workshop.
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Jan 26 | [4.1.5][4.1.5] | 68-95-99.7 rule
+Mon, Jan 26 | [4.1.5][4.1.5] | No class (snow day)
 Wed, Jan 28 | [4.1.4][4.1.4] | Normal distribution computations
 Fri, Jan 30 | [2.1][2.1], [8.1][8.1] | Scatterplots and correlation
 
 
-<!--
-### Mon, Sep 8
+### Wed, Jan 27
 
 We introduced how to find percentages on a normal distribution for locations that aren't exactly 1, 2, or 3 standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone.  We did the following examples. 
 
@@ -200,6 +199,8 @@ while literally means *"the probability that the outcome X is between 40 and 50"
     a. $P(\text{Man} > 22 \text{cm})$
     b. $P(\text{Woman} > 22 \text{cm})$
 
+
+<!-- 
 ### Wed, Sep 10
 
 We continued practicing calculations with the normal distribution.

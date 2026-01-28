@@ -370,7 +370,7 @@ to approximate the integral</p>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Jan 23</td>
-<td style="text-align: left;">Babylonian algorithm for square roots</td>
+<td style="text-align: left;">Bounding error</td>
 </tr>
 </tbody>
 </table>
@@ -540,30 +540,50 @@ As part of this workshop we also covered how to define variables and functions i
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Jan 26</td>
-<td style="text-align: left;">Bisection method</td>
+<td style="text-align: left;">No class (snow day)</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Jan 28</td>
-<td style="text-align: left;">Newton’s method</td>
+<td style="text-align: left;">Bisection method</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Jan 30</td>
-<td style="text-align: left;">Rates of convergence</td>
+<td style="text-align: left;">Newton’s method</td>
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Jan 29
-
-We talked about how to find the roots of a function.  Recall that a **root** (AKA a **zero**) of a function $f(x)$ is an $x$-value where the function hits the $x$-axis.  We introduced an algorithm called the **Bisection method** for finding roots of a continuous function. We did the following workshop.
-
-* **Workshop**: [Bisection method](Workshops/Bisection.pdf)
-
-One feature of the Bisection method is that we can easily find the worst case absolute error in our approximation of a root. That is because every time we repeat the algorithm and cut the interval in half, the error reduces by a factor of 2, so that
-$$\text{Absolute error} \le \frac{(b-a)}{2^n}.$$
-We saw that it takes about 10 iterations to increase the accuracy by 3 decimal places (because $2^{10} \approx 10^3$). 
-
-We finished by comparing the bisection method for finding roots with the Babylonian algorithm for finding square roots.  Why are square roots called roots?  Because every square root is a root of a square function.  For example, $\sqrt{5}$ is a root of $x^2 - 5 = 0$. 
+<h3 id="wed-jan-28">Wed, Jan 28</h3>
+<p>We talked about how to find the roots of a function. Recall that a
+<strong>root</strong> (AKA a <strong>zero</strong>) of a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+is an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-value
+where the function hits the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.
+We introduced an algorithm called the <strong>bisection method</strong>
+for finding roots of a continuous function. We did the following
+workshop.</p>
+<ul>
+<li><strong>Workshop</strong>: <a
+href="Workshops/Bisection.pdf">Bisection method</a></li>
+</ul>
+<p>One feature of the bisection method is that we can easily find the
+worst case absolute error in our approximation of a root. That is
+because every time we repeat the algorithm and cut the interval in half,
+the error reduces by a factor of 2, so that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Absolute error</mtext><mo>≤</mo><mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mn>2</mn><mi>n</mi></msup></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{Absolute error} \le \frac{(b-a)}{2^n}.</annotation></semantics></math>
+We saw that it takes about 10 iterations to increase the accuracy by 3
+decimal places (because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>≈</mo><msup><mn>10</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">2^{10} \approx 10^3</annotation></semantics></math>).</p>
+<p>We finished by comparing the bisection method for finding roots with
+<a
+href="https://en.wikipedia.org/wiki/Square_root_algorithms#Heron&#39;s_method">Heron’s
+method</a> for finding square roots. Why are square roots called roots?
+Because every square root is a root of a square function. For example,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5}</annotation></semantics></math>
+is a root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2 - 5 = 0</annotation></semantics></math>.</p>
+<!-- 
 
 ### Wed, Jan 31
 
