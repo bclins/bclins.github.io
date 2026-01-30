@@ -155,17 +155,62 @@ Class was canceled today because I had a doctor's appointment.  But I recommende
 * **Video:** <https://youtu.be/qLBmYfAVUdg>
 * **Workshop:** [Normal distribution calculations with R](NormalCalculations.pdf)
 
-<!--
+
 ### Fri, Jan 30
 
 Today we talked about **random variables** and **probability distributions**. We talk about some example probability distributions:
 
-* Flip a coin until you get a head.  Let $X$ represent the number of flips needed. 
+* Flip a coin until you get a head.  Let $X$ represent the number of flips needed. (**geometric distribution**)
 
-* How many months until Virginia has its next earthquake?  
+* How many months until Virginia has its next earthquake? (**exponential distribution**) 
 
-We talked about the difference between **continuous** and **discrete** probability distributions.  Then we introduced **expected value** and **variance**.  
--->
+We talked about the difference between **continuous** and **discrete** probability distributions.  Then we introduced **expected value**.  
+
+<div class="Theorem">
+#### Definition (Expected Value).
+
+If $X$ is a discrete random variable, then the expected value of $X$ is
+$$E(X) = \sum_{k} k P(X = k).$$
+If $X$ is a continuous random variable with probability density function $f(x)$, then the expected value of $X$ is
+$$E(X) = \int_{-\infty}^{\infty} x f(x) \, dx.$$
+</div>
+
+We did the following examples.  
+
+1. About 10 meteorites bigger than 1000 kg hit the Earth every year.  The time until the next meteorite hits the Earth has probability density function $f(t) = 10 e^{-10 t}$. Find the expected length of time until the next big meteorite hits. 
+
+2. In roulette, if you bet $1 on black, there is an 18/38 probability that you win $2, and a 20/38 chance that you lose (and win nothing).  What is the expected amount of money you will win? 
+
+3. Suppose that 1 out of 10 boxes of cereal have a prize.  What is the expected number of boxes you would need to buy before you get a prize?  
+
+After we talked about expected value, we introduced the **variance**. 
+
+<div class="Theorem">
+#### Definition (Variance and Standard Deviation).
+
+For a random variable $X$ with expected value $\mu$, the variance of $X$ is 
+$$\on{Var}(X) = E((X-\mu)^2).$$
+The **standard deviation** of $X$ is the square root of the variance. 
+</div>
+
+4. Find the variance when you roll a 6-sided die. 
+
+<div class="Theorem">
+#### Properties of Expected Value and Variance
+
+Expected value is **linear** which means that for any two random variables $X$ and $Y$ and any constant $c$, these two properties hold:
+
+1. **Additivity.** $E(X + Y) = E(X) + E(Y)$
+2. **Constant multiples.** $E(cX) = c E(X)$
+
+Variance is not linear.  Instead:
+
+1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
+2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
+</div>
+
+
+5. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
 
 - - -
 

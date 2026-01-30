@@ -200,27 +200,10 @@ which literally means *"the probability that the outcome X is between 72 and 78"
 * **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
 
 
-<!-- 
-### Wed, Sep 10
-
-We continued practicing calculations with the normal distribution.
-
-**Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
-
-After we finished that, we talked about **explanatory & response variables** (see [section 1.2.4 in the book](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.1.2.4)). 
-
-* An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children later in life. What are the variables? Which is explanatory and which is response?
-
-* Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
-
-
-
-### Fri, Sep 12
+### Fri, Jan 30
 
 We introduced **scatterplots** and **correlation coefficients** with these examples:
 
-<!-- * Height vs. Weight <!-- Note to self, height vs. weight is only weakly correlated... it probably should not be the first example. -->
-<!--
 * [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx) 
 * [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
 * [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf)
@@ -231,6 +214,12 @@ We introduced **scatterplots** and **correlation coefficients** with these examp
 Important concept: correlation does not change if you change the units or apply a simple linear transformation to the axes.  Correlation just measures the strength of the linear trend in the scatterplot.  
 
 Another thing to know about the correlation coefficient is that it only measures the strength of a linear trend.  The correlation coefficient is not as useful when a scatterplot has a clearly visible nonlinear trend. 
+
+After we finished that, we talked about **explanatory & response variables** (see [section 1.2.4 in the book](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.1.2.4)). 
+
+2. An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children later in life. What are the variables? Which is explanatory and which is response?
+
+3. Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
 
 <!--
 Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 

@@ -222,20 +222,6 @@ A special case of Taylor's theorem is when $n = 0$. Then you get the Mean Value 
 $$f'(c) = \frac{f(b) - f(a)}{b-a}.$$
 </div>
 
-<!--
-The proof of both the Mean Value Theorem and Taylor's Theorem comes from looking at an even simpler theorem called Rolle's theorem. 
-
-<div class="Theorem">
-**Rolle's Theorem.** Let $f$ be a function that is differentiable in the interval between $a$ and $b$ and suppose that $f(a) = f(b)$.  Then there exists a $c$ strictly inside the interval from $a$ to $b$ such that $f'(c) = 0.$
-</div>
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/RTCalc.svg" width = 300></img>
-</center>
-
-We briefly sketched an intuitive proof of Rolle's theorem using the [Extreme Value Theorem](https://en.wikipedia.org/wiki/Extreme_value_theorem) from calculus, but the details of that proof are not really that important.  
--->
-
 We did this example:
 
 1. Use Taylor's theorem to estimate the error in using the 0th and 2nd degree Maclaurin polynomials to estimate $\cos(0.03)$ and $\cos(0.6)$. 
@@ -245,14 +231,19 @@ Then we started this workshop
 * **Workshop:** [Error bounds](Workshops/ErrorBounds.pdf)
 
 <!--
-2. Use Taylor's theorem to estimate the error in using the 20th degree Maclaurin series to estimate $e^6$.  
+Note that finding upper bounds for functions is hard to teach!  You need to figure out better examples next time you teach this and maybe find better rules to help guide the students.  For example, the triangle inequality is one rule, but you also might need to spell out other rules, like for products and for different variables? Not sure what resources are available for this, I didn't find much when I looked this year. 
 
-We finished with a proof that the number $e$ is irrational. First we temporarily assumed that $e$ is a reduced fraction $\tfrac{m}{n}$.  Then we calculated the worst remainder for the $n$th degree Maclaurin polynomial for $e^x$ at $x = 1$. We did the following exercises that lead to a contradiction:
+Talk about ways to get upper bounds for arbitrary functions.
 
-3. Show that $n!(e - P_n(1))$ must be an integer. 
+1. Look at the endpoints for monotone functions (but not for other functions!)
 
-4. Use Taylor's theorem to show that $n! R_n(1)$ must be strictly between 0 and 1. 
+2. Use 1 for sine & cosine
+
+3. Combine upper bounds in products and using the triangle inequality.  
+
+4. Talk about how we typically want to find upper bounds for the absolute value so that might happen at the minimum not the maximum of a function (if it goes negative).  
 -->
+
 
 ### Fri, Jan 23
 
@@ -287,6 +278,11 @@ We talked about how you can use the triangle inequality to find **upper bounds**
 
 <!-- 
 ### Fri, Jan 26
+
+************
+*** NOTE ***
+************
+I canceled this one this year because of our snow day on Monday, Jan 26. 
 
 Today we did a workshop about the Babylonian algorithm which is an ancient method for finding square roots.  
 
@@ -332,11 +328,10 @@ $$\text{Absolute error} \le \frac{(b-a)}{2^{N+1}}.$$
 We saw that it takes about 10 iterations to increase the accuracy by 3 decimal places (because $2^{10} \approx 10^3$). 
 
 
-<!-- 
 
-### Wed, Jan 31
+### Fri, Jan 30
 
-Today we covered Newton's method.  This is probably the most important method for finding roots of differentiable functions.  The formula is 
+Today we covered **Newton's method**.  This is probably the most important method for finding roots of differentiable functions.  The formula is 
 $$ x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}.$$
 This formula comes from the idea which is to start with a guess $x_0$ for a root and then repeatedly improve your guess by following the tangent line at $x_n$ until it hits the $x$-axis.  
 
