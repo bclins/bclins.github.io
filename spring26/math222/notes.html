@@ -358,14 +358,17 @@ distribution calculations with R</a></li>
 </ul>
 <h3 id="fri-jan-30">Fri, Jan 30</h3>
 <p>Today we talked about <strong>random variables</strong> and
-<strong>probability distributions</strong>. We talk about some example
+<strong>probability distributions</strong>. We talked about some example
 probability distributions:</p>
 <ul>
-<li><p>Flip a coin until you get a head. Let
+<li><p>Flip a coin until you get a tail. Let
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
 represent the number of flips needed. (<strong>geometric
 distribution</strong>)</p></li>
-<li><p>How many months until Virginia has its next earthquake?
+<li><p>About 1 meteorite bigger than 1000 kg hits the Earth every year.
+The time until the next meteorite hits the Earth has probability density
+function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>e</mi><mrow><mi>−</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(t) = 10 e^{-t}</annotation></semantics></math>.
 (<strong>exponential distribution</strong>)</p></li>
 </ul>
 <p>We talked about the difference between <strong>continuous</strong>
@@ -388,75 +391,58 @@ then the expected value of
 is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><mrow><mi>−</mi><mi>∞</mi></mrow><mi>∞</mi></msubsup><mi>x</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">E(X) = \int_{-\infty}^{\infty} x f(x) \, dx.</annotation></semantics></math></p>
 </section>
-<p>We did the following examples.</p>
+<p>We did the following example.</p>
 <ol type="1">
-<li><p>About 10 meteorites bigger than 1000 kg hit the Earth every year.
-The time until the next meteorite hits the Earth has probability density
-function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>10</mn><msup><mi>e</mi><mrow><mi>−</mi><mn>10</mn><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(t) = 10 e^{-10 t}</annotation></semantics></math>.
-Find the expected length of time until the next big meteorite
-hits.</p></li>
-<li><p>In roulette, if you bet $1 on black, there is an 18/38
-probability that you win $2, and a 20/38 chance that you lose (and win
-nothing). What is the expected amount of money you will win?</p></li>
-<li><p>Suppose that 1 out of 10 boxes of cereal have a prize. What is
-the expected number of boxes you would need to buy before you get a
-prize?</p></li>
+<li>In roulette, if you bet $1 on black, there is an 18/38 probability
+that you win $2, and a 20/38 chance that you lose (and win nothing).
+What is the expected amount of money you will win?</li>
 </ol>
-<p>After we talked about expected value, we introduced the
-<strong>variance</strong>.</p>
-<section id="definition-variance-and-standard-deviation."
-class="Theorem">
-<h4>Definition (Variance and Standard Deviation).</h4>
-<p>For a random variable
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-with expected value
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>,
-the variance of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>−</mo><mi>μ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{Var}(X) = E((X-\mu)^2).</annotation></semantics></math>
-The <strong>standard deviation</strong> of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-is the square root of the variance.</p>
+<p>We finished by talking about what we mean when we say something is
+“expected”.</p>
+<section id="law-of-large-numbers" class="Theorem">
+<h4>Law of Large Numbers</h4>
+<p>If you repeat a random experiment many times, then the average
+outcome tends to get close to the expected value.</p>
 </section>
-<ol start="4" type="1">
-<li>Find the variance when you roll a 6-sided die.</li>
-</ol>
-<section id="properties-of-expected-value-and-variance" class="Theorem">
-<h4>Properties of Expected Value and Variance</h4>
-<p>Expected value is <strong>linear</strong> which means that for any
-two random variables
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
-and any constant
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math>,
-these two properties hold:</p>
-<ol type="1">
-<li><strong>Additivity.</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(X + Y) = E(X) + E(Y)</annotation></semantics></math></li>
-<li><strong>Constant multiples.</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>c</mi><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(cX) = c E(X)</annotation></semantics></math></li>
-</ol>
-<p>Variance is not linear. Instead:</p>
-<ol type="1">
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)</annotation></semantics></math>
-if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
-are independent.</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>c</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Var}(cX) = |c|^2 \operatorname{Var}(X)</annotation></semantics></math></li>
-</ol>
-</section>
-<ol start="5" type="1">
-<li>A single six-sided die has expected value
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">\mu = 3.5</annotation></semantics></math>
-and variance
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>2.91667</mn></mrow><annotation encoding="application/x-tex">\sigma^2 = 2.91667</annotation></semantics></math>.
-What is the mean and variance if you roll two dice and add them?</li>
-</ol>
+<!--
+3 students were late and 3 were absent, so I did not get far today. 
+
+We did the following examples.  
+
+1. Find the expected length of time until the next big meteorite hits. 
+
+
+3. Suppose that 1 out of 10 boxes of cereal have a prize.  What is the expected number of boxes you would need to buy before you get a prize?  
+
+After we talked about expected value, we introduced the **variance**. 
+
+<div class="Theorem">
+#### Definition (Variance and Standard Deviation).
+
+For a random variable $X$ with expected value $\mu$, the variance of $X$ is 
+$$\on{Var}(X) = E((X-\mu)^2).$$
+The **standard deviation** of $X$ is the square root of the variance. 
+</div>
+
+4. Find the variance when you roll a 6-sided die. 
+
+<div class="Theorem">
+#### Properties of Expected Value and Variance
+
+Expected value is **linear** which means that for any two random variables $X$ and $Y$ and any constant $c$, these two properties hold:
+
+1. **Additivity.** $E(X + Y) = E(X) + E(Y)$
+2. **Constant multiples.** $E(cX) = c E(X)$
+
+Variance is not linear.  Instead:
+
+1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
+2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
+</div>
+
+
+5. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
+-->
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>

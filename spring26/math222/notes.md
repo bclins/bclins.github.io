@@ -158,11 +158,11 @@ Class was canceled today because I had a doctor's appointment.  But I recommende
 
 ### Fri, Jan 30
 
-Today we talked about **random variables** and **probability distributions**. We talk about some example probability distributions:
+Today we talked about **random variables** and **probability distributions**. We talked about some example probability distributions:
 
-* Flip a coin until you get a head.  Let $X$ represent the number of flips needed. (**geometric distribution**)
+* Flip a coin until you get a tail.  Let $X$ represent the number of flips needed. (**geometric distribution**)
 
-* How many months until Virginia has its next earthquake? (**exponential distribution**) 
+* About 1 meteorite bigger than 1000 kg hits the Earth every year.  The time until the next meteorite hits the Earth has probability density function $f(t) = 10 e^{-t}$. (**exponential distribution**) 
 
 We talked about the difference between **continuous** and **discrete** probability distributions.  Then we introduced **expected value**.  
 
@@ -175,11 +175,25 @@ If $X$ is a continuous random variable with probability density function $f(x)$,
 $$E(X) = \int_{-\infty}^{\infty} x f(x) \, dx.$$
 </div>
 
+We did the following example.
+
+1. In roulette, if you bet $1 on black, there is an 18/38 probability that you win $2, and a 20/38 chance that you lose (and win nothing).  What is the expected amount of money you will win? 
+
+We finished by talking about what we mean when we say something is "expected".
+
+<div class="Theorem">
+#### Law of Large Numbers
+
+If you repeat a random experiment many times, then the average outcome tends to get close to the expected value.
+</div>
+
+<!--
+3 students were late and 3 were absent, so I did not get far today. 
+
 We did the following examples.  
 
-1. About 10 meteorites bigger than 1000 kg hit the Earth every year.  The time until the next meteorite hits the Earth has probability density function $f(t) = 10 e^{-10 t}$. Find the expected length of time until the next big meteorite hits. 
+1. Find the expected length of time until the next big meteorite hits. 
 
-2. In roulette, if you bet $1 on black, there is an 18/38 probability that you win $2, and a 20/38 chance that you lose (and win nothing).  What is the expected amount of money you will win? 
 
 3. Suppose that 1 out of 10 boxes of cereal have a prize.  What is the expected number of boxes you would need to buy before you get a prize?  
 
@@ -211,6 +225,7 @@ Variance is not linear.  Instead:
 
 
 5. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
+-->
 
 - - -
 

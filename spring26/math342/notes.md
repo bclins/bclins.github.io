@@ -359,12 +359,13 @@ Use this to get an upper bound on $|r-x_{n+1}|$. □
 
 
 <div class="Theorem">
-**Corollary.** The error in the $n$-th iterate of Newton's method satisfies
-$$|x_n-r| \le \left(\frac{M}{2L}\right)^{2^n-1} |x_0 - r|^{2^n}.$$
+**Corollary.** Let $C = \dfrac{2L}{M}$.  As long as the Newton method iterates $x_n$ stay in $[a,b]$, then the absolute error after $n$ steps will satisfy
+$$|\frac{x_n-r}{C}| \le \left|\frac{x_0 - r}{C} \right|^{2^n}.$$
 </div>
 
 This corollary explains why, if you start with a good guess in Newton's method, the number of correct decimal places tends to double with each iteration!
 
+<!--
 ### Fri, Feb 2
 
 Today we looked at some examples of what can go wrong with Newton's method. We did these examples:
