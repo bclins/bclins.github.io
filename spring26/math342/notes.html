@@ -696,47 +696,103 @@ We also did this workshop.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-feb-2">Mon, Feb 2</h3>
+<p>The <strong>secant method</strong> is a variation of Newton’s method
+that uses secant lines instead of tangent lines. The advantage of the
+secant method is that it doesn’t require calculating a derivative. The
+disadvantage is that it is a little slower to converge than Newton’s
+method, but it is still much faster than the bisection method. Here is
+the formula:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mfrac><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.</annotation></semantics></math></p>
 <!--
-### Mon, Feb 5
-
-We talked about the secant method which is a variation of Newton's method that uses secant lines instead of tangent lines.  The advantage of the secant method is that it doesn't require calculating a derivative.  The disadvantage is that it is a little slower to converge than Newton's method, but it is still much faster than the bisection method.  Here is the formula:
-
-$$x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.$$
-
 We wrote the following program in class. 
 
 ```python
-def Secant(f, a, b, precision = 10**(-8)):
+def secant(f, a, b, precision = 10**(-8)):
     while abs(b-a) > precision:
-        a, b = b, b - f(b)*(b-a)/(f(b)-f(a))
+        a, b = b, b - f(b) * (b - a) / (f(b) - f(a))
     return b
 ```
 
 Sometimes a function $f$ might be very time consuming for a computer to compute, so you could improve this function by reducing the number of times you have to call $f$. If speed is a concern, then this would be a better version of the function. 
 
 ```python
-def Secant(f, a, b, precision = 10**(-8)):
-    fa = f(a)
-    fb = f(b)
+def secant(f, a, b, precision = 10**(-8)):
+    fa, fb = f(a), f(b)
     while abs(b-a) > precision:
-        a, b = b, b - fb*(b-a)/(fb-fa) # update x-values
+        a, b = b, b - fb * (b - a) / (fb - fa) # update x-values
         fa, fb = fb, f(b) # update y-values using the new x-value
     return b
 ```
 
 Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once per iteration in the second version of the program.  
-
-1. Solve the equation $2^x = 10$ using the secant method.  What would make good initial guesses $x_0$ and $x_1$? 
-
-We finished by talking about the convergence rate of the secant method. 
-
+-->
+<ol type="1">
+<li><p>Solve the equation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>x</mi></msup><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">2^x = 10</annotation></semantics></math>
+using the secant method. What would make good initial guesses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>?</p>
+<details>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># This code will do one step of the secant method.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a> f <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">2</span> <span class="op">**</span> x <span class="op">-</span> <span class="dv">10</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> a, b <span class="op">=</span> <span class="dv">3</span>, <span class="fl">3.5</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a> a, b <span class="op">=</span> b, b <span class="op">-</span> f(b) <span class="op">*</span> (b <span class="op">-</span> a) <span class="op">/</span> (f(b) <span class="op">-</span> f(a))<span class="op">;</span> <span class="bu">print</span>(b)</span></code></pre></div>
+</details></li>
+</ol>
 <div class="Theorem">
-**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that for $x_n$, $x_{n-1}$ sufficiently close to $r$ (say $|x_0 - r| < 1/C$ and $|x_1 - r| < 1/C$), the next iterate of the secant method has
-$$|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.$$
+<p><strong>Definition.</strong> A sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+<strong>converges with order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></strong>
+if it converges to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+and there are constants
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C &gt; 0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha \ge 1</annotation></semantics></math>
+such that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>lim</mo><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow></munder><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo>−</mo><mi>r</mi><mo stretchy="true" form="postfix">|</mo></mrow><mi>α</mi></msup></mfrac><mo>=</mo><mi>C</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">\lim_{n \rightarrow \infty} \frac{|x_{n+1} - r|}{|x_n - r|^\alpha} = C.</annotation></semantics></math></p>
+</div>
+<p>Convergence of order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha = 1</annotation></semantics></math>
+is called <strong>linear convergence</strong> and convergence of order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha = 2</annotation></semantics></math>
+is called <strong>quadratic convergence</strong>. Newton’s method
+converges quadratically. It turns out that the secant method converges
+with order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><msqrt><mn>5</mn></msqrt></mrow><mn>2</mn></mfrac><mo>≈</mo><mn>1.618</mn></mrow><annotation encoding="application/x-tex">\alpha = \frac{1+\sqrt{5}}{2} \approx 1.618</annotation></semantics></math>
+which is the golden ratio!</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/NewtonsMethod.pdf">Root finding methods</a></li>
+</ul>
+<!--
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
+$$\left|\frac{x_{n+1} - r}{C}\right| \le  \left|\frac{x_n-r}{C}\right| \, \left|\frac{x_{n-1} - r}{C}\right|.$$
 In particular, $|x_n - r|$ will converge to $r$. 
 </div>
 
-Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
+<div class="Theorem">
+**Corollary.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < \delta C$ for some $0 < \delta < 1$, then 
+$$\left|x_{n} - r\right| \le  \delta^{F_n} C$$
+for every $n$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
+</div>
+-->
+<!--
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
+$$\left|\frac{x_{n} - r}{C} \right| \le \left| \frac{x_1 - r}{C} \right|^{F_{n - 1}} \, \left| \frac{x_0 - r}{C} \right|^{F_{n}}$$
+for every $n \ge 2$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
+</div>
+
+
+
+
+Note, the constant $C$ might be larger than the constant $\dfrac{2L}{M}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
 <!--
 2. Use this formula to estimate $|x_3-r|$ in terms of $|x_1-r|$ and $|x_0 - r|$. Assume that the same constant $C$ applies for all $x_{n+1}$. 
 3. Do the same for $|x_4 - r|$. 

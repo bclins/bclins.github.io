@@ -464,44 +464,70 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-feb-2">Mon, Feb 2</h3>
+<p>We talked about <strong>least squares regression</strong>. The least
+squares regression line has these features:</p>
+<ol type="1">
+<li><strong>Slope</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>R</mi><mfrac><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">m = R \frac{s_y}{s_x}</annotation></semantics></math></li>
+<li><strong>Point</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar{x}, \bar{y})</annotation></semantics></math></li>
+<li><strong>y-Intercept</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>−</mo><mi>m</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">b = \bar{y} - m \bar{x}</annotation></semantics></math></li>
+</ol>
+<p>You won’t have to calculate the correlation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>
+or the standard deviations
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>y</mi></msub><annotation encoding="application/x-tex">s_y</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>x</mi></msub><annotation encoding="application/x-tex">s_x</annotation></semantics></math>,
+but you might have to use them to find the formula for a regression
+line.</p>
+<p>We looked at these examples:</p>
+<ul>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx">Blood
+Alcohol Content vs. Number of Beers</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls">Marriage
+ages</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx">Midterm
+exam grades</a></li>
+</ul>
+<p>Keep in mind that regression lines have two important
+applications.</p>
+<ul>
+<li><strong>Make predictions</strong> about average y-values at
+different x-values.</li>
+<li>The slope is the <strong>rate of change</strong>.</li>
+</ul>
+<p>It is important to be able to describe the units of the slope.</p>
+<ol type="1">
+<li><p>What are the units of the slope of the regression line for
+predicting BAC from the number of beers someone drinks?</p></li>
+<li><p>What are the units of the slope for predicting someone’s weight
+from their height?</p></li>
+</ol>
+<p>We also introduced the following concepts.</p>
+<div class="Theorem">
+<p><strong>The coefficient of determination</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mn>2</mn></msup><annotation encoding="application/x-tex">R^2</annotation></semantics></math>
+represents the proportion of the variability of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+that follows the trend line. The remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1-R^2</annotation></semantics></math>
+represents the proportion of the variability that is above and below the
+trend line.</p>
+</div>
+<div class="Theorem">
+<p><strong>Regression to the mean.</strong> Extreme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values
+tend to have less extreme predicted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+in a least squares regression model.</p>
+</div>
 <!--
-### Mon, Sep 15
-
-We talked about **least squares regression**.  The least squares regression line has these features:
-
-1. **Slope** $m = R \frac{s_y}{s_x}$
-2. **Point** $(\bar{x}, \bar{y})$
-3. **y-Intercept** $b = \bar{y} - m \bar{x}$
-
-You won't have to calculate the correlation $R$ or the standard deviations $s_y$ and $s_x$, but you might have to use them to find the formula for a regression line. 
-
-We looked at these examples:
-
-* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
-* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
-* [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
-
-Keep in mind that regression lines have two important applications. 
-
-* **Make predictions** about average y-values at different x-values.
-* The slope is the **rate of change**.  
-
-It is important to be able to describe the units of the slope.  
-
-1. What are the units of the slope of the regression line for predicting BAC from the number of beers someone drinks?
-
-2. What are the units of the slope for predicting someone's weight from their height? 
-
-We also introduced the following concepts. 
-
-<div class="Theorem">
-**The coefficient of determination** $R^2$ represents the proportion of the variability of the $y$-values that follows the trend line.  The remaining $1-R^2$ represents the proportion of the variability that is above and below the trend line. 
-</div>
-
-<div class="Theorem">
-**Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
-</div>
-
 
 ### Wed, Sep 17
 

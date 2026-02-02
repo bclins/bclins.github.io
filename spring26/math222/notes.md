@@ -145,8 +145,8 @@ We also talked about **tree diagrams** (see [subsection 3.2.7 from the book](htt
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Jan 26 |            | Class canceled (snow) 
-Wed, Jan 28 | [3.4][3.4] | Random variables
-Fri, Jan 30 | [4.1][4.1] | Normal distribution
+Wed, Jan 28 | [4.1][4.1] | Normal distribution
+Fri, Jan 30 | [3.4][3.4] | Random variables
 
 ### Wed, Jan 28
 
@@ -162,7 +162,7 @@ Today we talked about **random variables** and **probability distributions**. We
 
 * Flip a coin until you get a tail.  Let $X$ represent the number of flips needed. (**geometric distribution**)
 
-* About 1 meteorite bigger than 1000 kg hits the Earth every year.  The time until the next meteorite hits the Earth has probability density function $f(t) = 10 e^{-t}$. (**exponential distribution**) 
+* About 1 meteorite bigger than 1000 kg hits the Earth every year.  The time until the next meteorite hits the Earth has probability density function $f(t) = e^{-t}$. (**exponential distribution**) 
 
 We talked about the difference between **continuous** and **discrete** probability distributions.  Then we introduced **expected value**.  
 
@@ -189,42 +189,6 @@ If you repeat a random experiment many times, then the average outcome tends to 
 
 <!--
 3 students were late and 3 were absent, so I did not get far today. 
-
-We did the following examples.  
-
-1. Find the expected length of time until the next big meteorite hits. 
-
-
-3. Suppose that 1 out of 10 boxes of cereal have a prize.  What is the expected number of boxes you would need to buy before you get a prize?  
-
-After we talked about expected value, we introduced the **variance**. 
-
-<div class="Theorem">
-#### Definition (Variance and Standard Deviation).
-
-For a random variable $X$ with expected value $\mu$, the variance of $X$ is 
-$$\on{Var}(X) = E((X-\mu)^2).$$
-The **standard deviation** of $X$ is the square root of the variance. 
-</div>
-
-4. Find the variance when you roll a 6-sided die. 
-
-<div class="Theorem">
-#### Properties of Expected Value and Variance
-
-Expected value is **linear** which means that for any two random variables $X$ and $Y$ and any constant $c$, these two properties hold:
-
-1. **Additivity.** $E(X + Y) = E(X) + E(Y)$
-2. **Constant multiples.** $E(cX) = c E(X)$
-
-Variance is not linear.  Instead:
-
-1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
-2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
-</div>
-
-
-5. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
 -->
 
 - - -
@@ -233,10 +197,50 @@ Variance is not linear.  Instead:
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Feb 2 | [4.3][4.3] | Binomial distribution
-Wed, Feb 4 | [5.1][5.1] | Point estimates and error
-Fri, Feb 6 | [5.2][5.2] | Confidence intervals for a proportion
+Mon, Feb 2 | [3.4][3.4] | Random variables - con'd
+Wed, Feb 4 | [4.3][4.3] | Binomial distribution
+Fri, Feb 6 | [5.1][5.1] | Point estimates and error
  
+### Notes
+
+<div class="Theorem">
+#### Definition (Variance and Standard Deviation).
+
+For a random variable $X$ with expected value $\mu$, the variance of $X$ is 
+$$\on{Var}(X) = E((X-\mu)^2).$$
+The **standard deviation** of $X$ (denoted $\sigma$) is the square root of the variance. 
+</div>
+
+1. Find the variance when you roll a 6-sided die. 
+
+    <details>
+    Since every outcome is equally likely, you can use the R command `mean((1:6 - 3.5)^2)`. 
+    </details>
+
+<div class="Theorem">
+#### Properties of Expected Value and Variance
+
+Expected value is **linear** which means that for any two random variables $X$ and $Y$ and any constant $c$, these two properties hold:
+
+1. $E(X + Y) = E(X) + E(Y)$ (**additivity**)
+2. $E(cX) = c E(X)$ (**constant multiples**)
+
+Variance is not linear.  Instead:
+
+1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
+2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
+</div>
+
+
+2. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
+
+<!-- 3. [Exercise 3.31](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.3.31) -->
+
+3. [Exercise 3.34](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34)
+
+We finished by talking about the **central limit theorem**.  
+
+* **Example:** [Central Limit Theorem](https://people.hsc.edu/faculty-staff/blins/StatsExamples/CentralLimit/)
 
 - - - 
 
@@ -244,7 +248,7 @@ Fri, Feb 6 | [5.2][5.2] | Confidence intervals for a proportion
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 9  | [5.3][5.3] | Hypothesis tests for a proportion
+Mon, Feb 9  | [5.2][5.2] | Confidence intervals for a proportion
 Wed, Feb 11 |            | Review
 Fri, Feb 13 |            | **Midterm 1**
 
@@ -255,10 +259,10 @@ Fri, Feb 13 |            | **Midterm 1**
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 16 | [6.2][6.2] | Difference in two proportions
-Wed, Feb 18 | [6.3][6.3] | Chi-squared goodness of fit test
-Fri, Feb 20 | [6.4][6.4] | Chi-squared test for association
-
+Mon, Feb 16 | [5.3][5.3] | Hypothesis tests for a proportion
+Wed, Feb 18 | [6.2][6.2] | Difference in two proportions 
+Fri, Feb 20 | [6.2][6.2] | Difference in two proportions - con'd 
+              
 
 - - - 
 
@@ -267,10 +271,10 @@ Fri, Feb 20 | [6.4][6.4] | Chi-squared test for association
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 23 | [7.1][7.1] | One-sample means with t-distribution
-Wed, Feb 25 | [7.2][7.2] | Paired data
-Fri, Feb 27 | [7.3][7.3] | Difference of two means
-
+Mon, Feb 23 | [6.3][6.3] | Chi-squared goodness of fit test
+Wed, Feb 25 | [6.4][6.4] | Chi-squared test for association
+Fri, Feb 27 | [7.1][7.1] | One-sample means with t-distribution
+             
 
 - - - 
 
@@ -278,10 +282,10 @@ Fri, Feb 27 | [7.3][7.3] | Difference of two means
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 2 | [7.4][7.4] | Power calculations
-Wed, Mar 4 | [7.5][7.5] | Comparing many means with ANOVA
-Fri, Mar 6 | [7.5][7.5] | ANOVA - con'd
-
+Mon, Mar 2 | [7.2][7.2] | Paired data
+Wed, Mar 4 | [7.3][7.3] | Difference of two means
+Fri, Mar 6 | [7.4][7.4] | Power calculations
+            
 
 - - - 
 
@@ -289,7 +293,7 @@ Fri, Mar 6 | [7.5][7.5] | ANOVA - con'd
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 16 | [7.5][7.5] | ANOVA - con'd
+Mon, Mar 16 | [7.5][7.5] | Comparing many means with ANOVA
 Wed, Mar 18 |            | Review  
 Fri, Mar 20 |            | **Midterm 2**
 
@@ -300,9 +304,9 @@ Fri, Mar 20 |            | **Midterm 2**
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 23 | [8.2][8.2] | Least squares regression
-Wed, Mar 25 | [9.1][9.1] | Introduction to multiple regression
-Fri, Mar 27 | [9.2][9.2] | Model selection
+Mon, Mar 23 | [7.5][7.5] | ANOVA - con'd
+Wed, Mar 25 | [8.2][8.2] | Least squares regression
+Fri, Mar 27 | [9.1][9.1] | Introduction to multiple regression
 
 
 - - - 
@@ -311,9 +315,9 @@ Fri, Mar 27 | [9.2][9.2] | Model selection
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 30 | [9.3][9.3] | Checking model conditions
-Wed, Apr 1  | [9.3][9.3] | Checking model conditions - con'd
-Fri, Apr 3  | [9.5][9.5] | Introduction to logistic regression
+Mon, Mar 30 | [9.2][9.2] | Model selection
+Wed, Apr 1  | [9.3][9.3] | Checking model conditions
+Fri, Apr 3  | [9.3][9.3] | Checking model conditions - con'd
 
 
 - - - 
@@ -322,9 +326,9 @@ Fri, Apr 3  | [9.5][9.5] | Introduction to logistic regression
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 6  |  [9.5][9.5] | Logistic regression - con'd     
-Wed, Apr 8  |       | Hypothesis testing with randomization            
-Fri, Apr 10 |       | Confidence intervals with bootstrapping
+Mon, Apr 6  |  [9.5][9.5] | Introduction to logistic regression
+Wed, Apr 8  |  [9.5][9.5] | Logistic regression - con'd     
+Fri, Apr 10 |       | Hypothesis testing with randomization                 
 
 
 - - - 
@@ -333,7 +337,7 @@ Fri, Apr 10 |       | Confidence intervals with bootstrapping
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 13 |            | Bootstrapping continued
+Mon, Apr 13 |            | Confidence intervals with bootstrapping
 Wed, Apr 15 |            | Review
 Fri, Apr 17 |            | **Midterm 3**
 

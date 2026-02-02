@@ -390,47 +390,82 @@ Mon, Feb 2 | Secant method
 Wed, Feb 4 | Fixed point iteration
 Fri, Feb 6 | Newton's method with complex numbers
  
-<!--
-### Mon, Feb 5
+### Mon, Feb 2
 
-We talked about the secant method which is a variation of Newton's method that uses secant lines instead of tangent lines.  The advantage of the secant method is that it doesn't require calculating a derivative.  The disadvantage is that it is a little slower to converge than Newton's method, but it is still much faster than the bisection method.  Here is the formula:
+The **secant method** is a variation of Newton's method that uses secant lines instead of tangent lines.  The advantage of the secant method is that it doesn't require calculating a derivative.  The disadvantage is that it is a little slower to converge than Newton's method, but it is still much faster than the bisection method.  Here is the formula:
 
 $$x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.$$
 
+<!--
 We wrote the following program in class. 
 
 ```python
-def Secant(f, a, b, precision = 10**(-8)):
+def secant(f, a, b, precision = 10**(-8)):
     while abs(b-a) > precision:
-        a, b = b, b - f(b)*(b-a)/(f(b)-f(a))
+        a, b = b, b - f(b) * (b - a) / (f(b) - f(a))
     return b
 ```
 
 Sometimes a function $f$ might be very time consuming for a computer to compute, so you could improve this function by reducing the number of times you have to call $f$. If speed is a concern, then this would be a better version of the function. 
 
 ```python
-def Secant(f, a, b, precision = 10**(-8)):
-    fa = f(a)
-    fb = f(b)
+def secant(f, a, b, precision = 10**(-8)):
+    fa, fb = f(a), f(b)
     while abs(b-a) > precision:
-        a, b = b, b - fb*(b-a)/(fb-fa) # update x-values
+        a, b = b, b - fb * (b - a) / (fb - fa) # update x-values
         fa, fb = fb, f(b) # update y-values using the new x-value
     return b
 ```
 
 Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once per iteration in the second version of the program.  
+-->
 
 1. Solve the equation $2^x = 10$ using the secant method.  What would make good initial guesses $x_0$ and $x_1$? 
 
-We finished by talking about the convergence rate of the secant method. 
+    <details>
+    ```python
+    # This code will do one step of the secant method.
+    f = lambda x: 2 ** x - 10
+    a, b = 3, 3.5
+    a, b = b, b - f(b) * (b - a) / (f(b) - f(a)); print(b)
+    ```
+    </details>
 
 <div class="Theorem">
-**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that for $x_n$, $x_{n-1}$ sufficiently close to $r$ (say $|x_0 - r| < 1/C$ and $|x_1 - r| < 1/C$), the next iterate of the secant method has
-$$|x_{n+1} - r| \le C |x_n-r| \, |x_{n-1} - r|.$$
+**Definition.** A sequence $x_n$ **converges with order $\alpha$** if it converges to $r$ and there are constants $C > 0$ and $\alpha \ge 1$ such that 
+$$\lim_{n \rightarrow \infty} \frac{|x_{n+1} - r|}{|x_n - r|^\alpha} = C.$$
+</div> 
+
+Convergence of order $\alpha = 1$ is called **linear convergence** and convergence of order $\alpha = 2$ is called **quadratic convergence**. Newton's method converges quadratically. It turns out that the secant method converges with order $\alpha = \frac{1+\sqrt{5}}{2} \approx 1.618$ which is the golden ratio!  
+
+* **Workshop:** [Root finding methods](Workshops/NewtonsMethod.pdf)
+
+
+<!--
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
+$$\left|\frac{x_{n+1} - r}{C}\right| \le  \left|\frac{x_n-r}{C}\right| \, \left|\frac{x_{n-1} - r}{C}\right|.$$
 In particular, $|x_n - r|$ will converge to $r$. 
 </div>
 
-Note, the constant $C$ might be larger than the constant $\dfrac{M}{2L}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
+<div class="Theorem">
+**Corollary.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < \delta C$ for some $0 < \delta < 1$, then 
+$$\left|x_{n} - r\right| \le  \delta^{F_n} C$$
+for every $n$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
+</div>
+-->
+
+<!--
+<div class="Theorem">
+**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
+$$\left|\frac{x_{n} - r}{C} \right| \le \left| \frac{x_1 - r}{C} \right|^{F_{n - 1}} \, \left| \frac{x_0 - r}{C} \right|^{F_{n}}$$
+for every $n \ge 2$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
+</div>
+
+
+
+
+Note, the constant $C$ might be larger than the constant $\dfrac{2L}{M}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
 
 <!--
 2. Use this formula to estimate $|x_3-r|$ in terms of $|x_1-r|$ and $|x_0 - r|$. Assume that the same constant $C$ applies for all $x_{n+1}$. 
