@@ -14,6 +14,7 @@ header-includes: |
 ---
 
 \newcommand{\on}{\operatorname}
+\newcommand{\Var}{\operatorname{Var}}
 
 ## Math 222 - Spring 2026
 
@@ -201,7 +202,7 @@ Mon, Feb 2 | [3.4][3.4] | Random variables - con'd
 Wed, Feb 4 | [4.3][4.3] | Binomial distribution
 Fri, Feb 6 | [5.1][5.1] | Point estimates and error
  
-### Notes
+### Mon, Feb 2
 
 <div class="Theorem">
 #### Definition (Variance and Standard Deviation).
@@ -211,11 +212,27 @@ $$\on{Var}(X) = E((X-\mu)^2).$$
 The **standard deviation** of $X$ (denoted $\sigma$) is the square root of the variance. 
 </div>
 
-1. Find the variance when you roll a 6-sided die. 
+We did these examples in class.
 
-    <details>
+1. Find the variance and standard deviation when you roll a 6-sided die. 
+
+<!--    <details>
     Since every outcome is equally likely, you can use the R command `mean((1:6 - 3.5)^2)`. 
-    </details>
+    </details>-->
+
+2. [Exercise 3.34(a)](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34)
+
+Here is an extra example from Kahn academy that we did not do in class. 
+
+3. Suppose a random variable $X$ has the following probability model. 
+
+    <table class="bordered">
+    <tr><td>$X$</td><td> 0 </td><td> 1 </td><td> 2 </td><td> 3 </td><td> 4</td></tr>
+    <tr><td>$P(X)$</td><td> 0.1</td><td>0.15</td><td>0.4</td><td>0.25</td><td>0.1</td></tr>
+    </table>
+
+    a. Find the expected value of $X$. (<https://youtu.be/qafPcWNUiM8>)
+    b. Find the variance and standard deviation of $X$. (<https://youtu.be/2egl_5c8i-g>)
 
 <div class="Theorem">
 #### Properties of Expected Value and Variance
@@ -225,22 +242,24 @@ Expected value is **linear** which means that for any two random variables $X$ a
 1. $E(X + Y) = E(X) + E(Y)$ (**additivity**)
 2. $E(cX) = c E(X)$ (**constant multiples**)
 
-Variance is not linear.  Instead:
+Variance is not linear.  Instead it has these properties:
 
 1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
 2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
 </div>
 
 
-2. A single six-sided die has expected value $\mu = 3.5$ and variance $\sigma^2 = 2.91667$.  What is the mean and variance if you roll two dice and add them?  
+4. A single six-sided die has expected value $\mu = 3.5$ and standard deviation $\sigma = 1.707$.  What is the mean and standard deviation if you roll two dice and add them?  
 
 <!-- 3. [Exercise 3.31](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.3.31) -->
 
-3. [Exercise 3.34](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34)
+5. [Exercise 3.34(b)](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34)
 
+<!--
 We finished by talking about the **central limit theorem**.  
 
 * **Example:** [Central Limit Theorem](https://people.hsc.edu/faculty-staff/blins/StatsExamples/CentralLimit/)
+-->
 
 - - - 
 
