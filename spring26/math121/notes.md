@@ -278,13 +278,14 @@ We also introduced the following concepts.
 
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
-Before the workshop, we started with these two exercises:
+Before the workshop, we started with this warm-up exercise.
 
+<!--
 1. Suppose that the correlation between the heights of fathers and adult sons is $R = 0.5$.  Given that both fathers and sons have normally distributed heights with mean $70$ inches and standard deviation 3 inches, find an equation for the least squares regression line. 
+-->
 
 
-
-2. A sample of 20 college students looked at the relationship between foot print length (cm) and height (in).  The sample had the following statistics:
+1. A sample of 20 college students looked at the relationship between foot print length (cm) and height (in).  The sample had the following statistics:
 $$\bar{x} = 28.5 \text{ cm}, ~\bar{y} = 67.75 \text{ in}, ~ s_x = 3.45 \text{ cm}, ~ s_y = 5.0 \text{ in}, ~ R = 0.71$$
 
     a. Find the slope of the regression line to predict height ($y$) based on footprint length ($x$). Include the units and briefly explain what it means.  

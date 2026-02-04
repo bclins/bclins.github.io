@@ -424,6 +424,8 @@ Newton's method is a special case of a method known as **fixed point iteration**
 
 2. Explain why $f(x) = e^x$ has no fixed points. 
 
+3. Does $\sin x$ have any fixed points?
+
 A fixed point $p$ is **attracting** if the recursive sequence defined by $x_{n+1} = f(x_n)$ converges to $p$ for all $x_0$ sufficiently close to $p$. It is **repelling** if points close to $p$ get pushed away from $p$ when you apply the function $f$. You can draw a picture of these fixed point iterates by drawing a [cobweb diagram](https://en.wikipedia.org/wiki/Cobweb_plot). 
 
 <center>
@@ -435,9 +437,9 @@ To make a cobweb diagram, repeat these steps:
 * Move vertically from your current x-value until you hit the graph $y = f(x)$. 
 * Now move horizontally to the graph $y = x$.  
 
-3. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
+4. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
 
-4. Show that $g(x) = 1 - 2x -x^5$ has a fixed point, but it is not attracting. 
+5. Show that $g(x) = 1 - 2x -x^5$ has a fixed point, but it is not attracting. 
 
 <div class="Theorem">
 **Theorem** If $f$ has a fixed point $p$ and 
@@ -451,13 +453,6 @@ To make a cobweb diagram, repeat these steps:
 $$|x_{n+1} - p| \le |x_n - p| \left(|f'(p)| + \frac{M}{2}|x_n-p| \right).$$
 Then as long as $x_n$ is close enough to $p$, the terms inside the parentheses are less than 1 which means that $|x_{n+1} - p| < |x_n - p|$, i.e, $x_{n+1}$ is closer to $p$ than $x_n$ for every $n$. □ 
 
-<!--
-You can sometimes use fixed point iteration to solve equations.  For example, here are two different ways to solve the equation $x^3 + 3x + 6 = 0$ using fixed point iteration. 
-
-1. Re-write the equation as $\dfrac{-6}{x^2+3} = x$.
-
-2. Replace $f(x) = 0$ with the equation $x + cf(x) = x$ where $c$ is a small constant. The constant $c = -\tfrac{1}{10}$ works well for the function above. 
--->
 
 <div class="Theorem">
 **Theorem.** If $f$ is differentiable at a fixed point $p$ and $0 < |f'(p)| < 1$, then for any point $x_0$ sufficiently close to $p$, the fixed point iterates $x_n$ defined by $x_{n+1} = f(x_n)$ converge to $p$ with linear order.  If $f'(p) = 0$, then the iterates converge to $p$ with order $\alpha$ where $f^{(\alpha)}(p)$ is the first nonzero derivative of $f$ at $p$. 
@@ -465,26 +460,14 @@ You can sometimes use fixed point iteration to solve equations.  For example, he
 
 5. For any function $f \in C^2[a,b]$ with a root $r$ in $(a,b)$, let $g(x) = x - \dfrac{f(x)}{f'(x)}$. Show that $r$ is a fixed point of $g$ and show that $g'(r) = 0$. 
 
-<!--
-### Fri, Feb 9
+<!-- 
 
-We started with this question:
+We had some extra time today at the end, so we ended class early, but I could have used the following question: 
 
-1. Why is Newton's method a special case of fixed point iteration?  When we apply Newton's method to find a root of $f(x)$, what function $N(x)$ are we iterating?  What is the derivative of $N$ at the root $r$? 
+6. Let $f \in C^1[a,b]$ with a root $r$ in $(a,b)$.  If $c$ is a constant that is close to $f'(r)$, then iterates of the function $g(x) = x - \dfrac{f(x)}{c}$ will converge to $r$.  Why is this iteration method usually slower than Newton's method?  
 
-Then we did this workshop in class. 
+### Fri, Feb 6
 
-* **Workshop:** [Fixed point iteration](Workshops/FixedPoints.pdf)
-
-In one step of the workshop, we used the **triangle inequality** which says that for any two numbers $a$ and $b$, 
-$$|a+b| \le |a| + |b|.$$
-
-<!--
-We've already seen that Newton's method has quadratic order of convergence.  Newton's method is the first in a family of root finding techniques called **Householder methods.** If $f \in C^{k+1}[a,b]$ has a root $r \in (a,b)$, then for $x_0$ close to $r$, we define a sequence
-$$x_{n+1} = x_n + k \dfrac{(1/f)^{(k-1)} (x_n)}{(1/f)^{(k)} (x_n)}$$
-When $x_0$ is close enough to $r$, the Householder iterates $x_n$ converge to $r$ with order $k+1$.
-
-2. Show that Householder iteration with $k = 1$ is Newton's method.  
 
 We finished with a cool fact about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
 

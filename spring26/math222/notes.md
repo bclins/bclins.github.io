@@ -279,7 +279,25 @@ The correct probability distribution to model the example above is called the **
 
 We finished by discussing the normal approximation of a binomial distribution.  When $n$ is large enough so that both $np \ge 10$ and $n(1-p) \ge 10$, then $\on{Binom}(n, p)$ is approximately normal with mean $np$ and standard deviation $\sqrt{n p (1-p)}$.  
 
+<!--
+We didn't get to this last exercise:
+
 4. How well does the normal approximation do to estimate the $P(X \le 82)$ when $X \sim \on{Binom}(244, 0.5)$? 
+-->
+
+<!--
+### Fri, Feb 6
+
+<div class="Theorem">
+#### The Central Limit Theorem
+
+Suppose that $X_1, X_2, \ldots, X_n$ are independent random variables that all have the same probability distribution with mean $\mu$ and standard deviation $\sigma$.  If $n$ is large, then the mean
+$$\bar{x} = \frac{X_1 + X_2 + \ldots + X_n}{n}$$
+has an approximately normal distribution with mean $\mu$ and standard deviation $\dfrac{\sigma}{\sqrt{n}}$. 
+</div>
+
+An important special case of the central limit theorem is when we take a simple random sample from a population and look at the proportion of "successes" for some categorical variable.  In this case, the average $\bar{x}$ is the sample proportion $\hat{p}$.  If the population proportion is $p$, the sample size is $n$, and the population is much larger than $n$, then the distribution of $\hat{p}$ will be approximately normal with mean $p$ and standard deviation $\sqrt{\dfrac{p(1-p)}{n}}$. 
+-->
 
 
 - - - 

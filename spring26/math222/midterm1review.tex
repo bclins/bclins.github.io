@@ -49,8 +49,7 @@ Experiment
 \vfill
 \part What are the explanatory and response variables in this study? 
 \begin{solution}
-Explanatory: Vitamin C. \\
-Response: Both cold duration and cold severity. 
+Explanatory: Vitamin C. Response: Duration and severity of the cold. 
 \end{solution}
 \vfill
 \part Were the patients blinded to their treatment?
@@ -135,39 +134,59 @@ The mean is \$2400 with a variance of $2200$, so the standard deviation is $\sqr
 \end{parts}
 
 \newpage
-\question The scores of high school seniors on the ACT college entrance examination in 2003 had mean $\mu = 20.8$ and standard deviation $\sigma = 4.8$. The distribution of scores is only roughly Normal.
+
+\question Men in the United States have an average height of 70.0 inches with a standard deviation 3.0 inches.  Women in the USA have an average height of 64.3 inches with a standard deviation of 2.7 inches.  Assume that both groups have a normal distribution.  
 
 \begin{parts}
-\part If we take a simple random sample of 25 students who took the test, what are the theoretical mean, variance, and standard deviation of the sample mean score $\bar{x}$ of these 25 students? 
+\part How tall is a woman in the 90th percentile?  Use the \verb|qnorm(p, mean, sd)| function to express your answer. 
 \begin{solution}
-Theoretical mean: $\mu_{\bar{x}} = 20.8$ \\
-Variance: $\sigma_{\bar{x}}^2 = 0.9216$ \\
-Standard deviation: $\sigma_{\bar{x}} = 0.96$ 
+$$\mathsf{qnorm}(0.9, 64.3, 2.7)$$
 \end{solution}
 \vfill
-\part Estimate the probability $P(\bar{x} > 23)$.  
+
+\part What percent of men are between 68 and 72 inches tall? Use the \verb|pnorm(x, mean, sd)| function to express your answer.  
 \begin{solution}
-\verb|1 - pnorm(23, 20.8, 0.96)|
+$$\mathsf{pnorm}(68, 70, 3) - \mathsf{pnorm}(72, 70, 3)$$
 \end{solution}
 \vfill
-\part Even though the scores for individuals students are only approximately normally distributed, it is pretty safe to use a normal distribution to answer the question above. Why?  
+
+
+\part What is the probability that a man is over 6 feet tall (72 inches)?  What is the probability that a woman is over 6 feet tall? 
 \begin{solution}
-Because the distribution gets even more normal when you take a random sample of 25 people. 
+$P(\text{Man} > 72) = 1 - \mathsf{pnorm}(72, 70, 3)$ \\
+$P(\text{Woman} > 72) = 1 - \mathsf{pnorm}(72, 64.3, 2.7)$.  
+\end{solution}
+\vfill
+
+\part It turns out that 91\% of women are shorter than 5'8" (68 inches) while only 25\% of men are.  Given that someone is shorter than 5'8", what is the conditional probability that they are a man? Hint: I recommend drawing a tree diagram.
+\begin{solution}
+$$P(\text{Man} | \text{Height} < 68) = \frac{0.125}{0.125 + 0.455} = 21.55\%.$$
 \end{solution}
 \vfill
 \end{parts}
+%\question The scores of high school seniors on the ACT college entrance examination in 2003 had mean $\mu = 20.8$ and standard deviation $\sigma = 4.8$. The distribution of scores is only roughly Normal.
+%
+%\begin{parts}
+%\part If we take a simple random sample of 25 students who took the test, what are the theoretical mean, variance, and standard deviation of the sample mean score $\bar{x}$ of these 25 students? 
+%\begin{solution}
+%Theoretical mean: $\mu_{\bar{x}} = 20.8$ \\
+%Variance: $\sigma_{\bar{x}}^2 = 0.9216$ \\
+%Standard deviation: $\sigma_{\bar{x}} = 0.96$ 
+%\end{solution}
+%\vfill
+%\part Estimate the probability $P(\bar{x} > 23)$.  
+%\begin{solution}
+%\verb|1 - pnorm(23, 20.8, 0.96)|
+%\end{solution}
+%\vfill
+%\part Even though the scores for individuals students are only approximately normally distributed, it is pretty safe to use a normal distribution to answer the question above. Why?  
+%\begin{solution}
+%Because the distribution gets even more normal when you take a random sample of 25 people. 
+%\end{solution}
+%\vfill
+%\end{parts}
 
 
-\question Probability models are based on assumptions.  Sometimes, we use models even when we know that the assumptions are not all 100\% true. Here are two situations where it is not a good idea to use a given probability model. 
-
-\begin{parts}
-\part In one elementary school, there are 56 boys and 44 girls in the 5th grade.  Suppose we randomly assign 25 fifth graders to one teacher's class. Why can't you use the $\on{Binom}(25, 0.56)$ distribution to model the possible number of boys who will end up in that class? \vfill
-
-\part The National AIDS Behavioral Surveys found that 0.2\% (that's 0.002 as a decimal fraction) of adult heterosexuals had both received a blood transfusion and had a sexual partner from a group at high risk of AIDS. Suppose that this national proportion holds for your region. Explain why you cannot safely use a Normal approximation to model the distribution of the number of people in this group when you interview an random sample of 1000 adults.  \vfill
-\end{parts}
-
-
-\newpage
 \question When polling companies conduct political polls, they usually only choose samples of between 800 to 1000 people.  What would happen if they choose larger samples?
 \begin{choices}
 \choice The random error would get larger, but bias would not be a problem.  
@@ -175,69 +194,25 @@ Because the distribution gets even more normal when you take a random sample of 
 \choice The random error would get larger, but bias might still a problem.  
 \CorrectChoice The random error would get smaller, but bias might still be a problem.  
 \end{choices}
-\bigskip
-\bigskip
 
-
-\question Data collected at elementary schools in DeKalb County, GA suggest that each year roughly 25\% of students miss exactly one day of school, 15\% miss 2 days, and 28\% miss 3 or more days due to sickness. 
-
-\begin{parts}
-\part What is the probability that a student chosen at random doesn't miss any days of school due to sickness this year? 
-\begin{solution}
-$$32\%$$
-\end{solution}
-\vfill
-\part If a parent has two kids at a DeKalb County elementary school, what is the probability that both of her kids will miss some school?  Note any assumption you make. \vfill
-\begin{solution}
-If the absences are independent, then $P(X > 0 \text{ and } Y > 0) = 0.68^2 = 46.24\%$.  
-\end{solution}
-\vfill
-\part If a parent has two kids at a DeKalb County elementary school, what is the probability that at least one of her kids will miss some school?  Note any assumption you make.  
-\begin{solution}
-If the absences are independent, then $P(X > 0 \text{ or } Y > 0) = 0.68 + 0.64 - 0.4624 = 89.76\%$.  
-\end{solution}
-\vfill
-\part Is the assumption that you need to make in parts (b) and (c) reasonable?  Explain. 
-\begin{solution}
-It might not be reasonable since if one kid gets sick, that increases the odds of the other one getting sick as well.
-\end{solution}
-\vfill
-
-\end{parts}
 
 \newpage
-\question Men in the United States have an average height of 70.0 inches with a standard deviation 3.0 inches.  Women in the USA have an average height of 64.3 inches with a standard deviation of 2.7 inches.  Assume that both groups have a normal distribution.  
+\question Probability models are based on assumptions.  Sometimes, we use models even when we know that the assumptions are not all 100\% true. Here are two situations where it is not a good idea to use a given probability model. 
 
 \begin{parts}
-\part What is the probability that a man is over 6 feet tall (72 inches)?  What is the probability that a woman is over 6 feet tall? 
+\part In one elementary school, there are 56 boys and 44 girls in the 5th grade.  Suppose we randomly assign 25 fifth graders to one teacher's class. Why can't you use the $\on{Binom}(25, 0.56)$ distribution to model the possible number of boys who will end up in that class? 
 \begin{solution}
-$P(\text{Man} > 72) = 1 - \verb|pnorm(72, 70, 3)|$ \\
-$P(\text{Woman} > 72) = 1 - \verb|pnorm(72, 64.3, 2.7)|$.  
+Because the population is only 100 fifth graders, the genders of each student will not be independent.  
 \end{solution}
 \vfill
 
-\part It turns out that 91\% of women are shorter than 5'8" (68 inches) while only 25\% of men are.  Given that someone is shorter than 5'8", what is the conditional probability that they are a man? 
+\part The National AIDS Behavioral Surveys found that 0.2\% (that's 0.002 as a decimal fraction) of adult heterosexuals had both received a blood transfusion and had a sexual partner from a group at high risk of AIDS. Suppose that this national proportion holds for your region. Explain why you cannot safely use a Normal approximation to model the distribution of the number of people in this group when you interview an random sample of 1000 adults. 
 \begin{solution}
-$$P(\text{Man} | \text{Height} < 68) = \frac{0.125}{0.125 + 0.455} = 21.55\%.$$
+Because the expected number of positive responses is only 2 which is not at least 10. 
 \end{solution}
 \vfill
 \end{parts}
 
-\question In the game roulette, if you bet on a color, like black or red, there is an 18/38 chance that you win. If you bet on a number, like 7, there is a 1/38 chance that you win. 
-\begin{parts}
-\part If you play roulette 100 times, and bet on 7 every time, what is the probability that you win at least 3 times? Use the \verb|pbinom(x, n, p)| function to express your answer.  
-\begin{solution}
-\verb|1 - pbinom(2, 100, 1/38)|
-\end{solution}
-\vfill
-
-\part If you play roulette 100 times, and bet on black every time, what is the probability that you win at least 50 times using the normal approximation? Use the \verb|pnorm(x, mean, sd)| function to express your answer.  
-\begin{solution}
-The mean is $np = 47.37$ and the standard deviation is $\sqrt{np(1-p)} = 4.99$.  So the normal approximation would be:
-\verb|1 - pnorm(2.5, 47.37, 4.99)|
-\end{solution}
-\vfill
-\end{parts}
 
 \question Suppose $X$ is the result when you roll a six-sided die and $Y$ is the result when you roll a 20-sided die.  The mean and standard deviation for $X$ are $\mu_X = 3.5$, $\sigma_X = 1.7078$.  The mean and standard deviation for $Y$ are $\mu_Y = 10.5$ and $\sigma_Y = 5.7663$.  Compute the following. 
 \begin{parts}
@@ -257,6 +232,52 @@ $$\sigma_{X + Y} = \sqrt{\Var(X + Y)} = 6.01$$
 \end{solution}
 \vfill
 \end{parts}
+
+\newpage
+\question Data collected at elementary schools in DeKalb County, GA suggest that each year roughly 25\% of students miss exactly one day of school, 15\% miss 2 days, and 28\% miss 3 or more days due to sickness. 
+
+\begin{parts}
+\part What is the probability that a student chosen at random doesn't miss any days of school due to sickness this year? 
+\begin{solution}
+$$32\%$$
+\end{solution}
+\vfill
+\part If a parent has two kids at a DeKalb County elementary school, what is the probability that both of her kids will miss some school?  Note any assumption you make. \vfill
+\begin{solution}
+If the absences are independent, then 
+$$P(X > 0 \text{ and } Y > 0) = 0.68^2 = 46.24\%.$$
+\end{solution}
+\vfill
+\part If a parent has two kids at a DeKalb County elementary school, what is the probability that at least one of her kids will miss some school?  Note any assumption you make.  
+\begin{solution}
+If the absences are independent, then 
+$$P(X > 0 \text{ or } Y > 0) = 0.68 + 0.64 - 0.4624 = 89.76\%.$$
+\end{solution}
+\vfill
+\part Is the assumption that you need to make in parts (b) and (c) reasonable?  Explain. 
+\begin{solution}
+It might not be reasonable since if one kid gets sick, that increases the odds of the other one getting sick as well.
+\end{solution}
+\vfill
+
+\end{parts}
+
+\question In the game roulette, if you bet on a color, like black or red, there is an 18/38 chance that you win. If you bet on a number, like 7, there is a 1/38 chance that you win. 
+\begin{parts}
+\part If you play roulette 100 times, and bet on 7 every time, what is the probability that you win at least 3 times? Use the \verb|pbinom(x, n, p)| function to express your answer.  
+\begin{solution}
+\verb|1 - pbinom(2, 100, 1/38)|
+\end{solution}
+\vfill
+
+\part If you play roulette 100 times, and bet on black every time, what is the probability that you win at least 50 times using the normal approximation? Use the \verb|pnorm(x, mean, sd)| function to express your answer.  
+\begin{solution}
+The mean is $np = 47.37$ and the standard deviation is $\sqrt{np(1-p)} = 4.99$.  So the normal approximation would be:
+\verb|1 - pnorm(2.5, 47.37, 4.99)|
+\end{solution}
+\vfill
+\end{parts}
+
 \end{questions}
 
 

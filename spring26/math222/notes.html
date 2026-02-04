@@ -632,12 +632,24 @@ is approximately normal with mean
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">np</annotation></semantics></math>
 and standard deviation
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><mi>n</mi><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{n p (1-p)}</annotation></semantics></math>.</p>
-<ol start="4" type="1">
-<li>How well does the normal approximation do to estimate the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>≤</mo><mn>82</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(X \le 82)</annotation></semantics></math>
-when
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mo>Binom</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>244</mn><mo>,</mo><mn>0.5</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X \sim \operatorname{Binom}(244, 0.5)</annotation></semantics></math>?</li>
-</ol>
+<!--
+We didn't get to this last exercise:
+
+4. How well does the normal approximation do to estimate the $P(X \le 82)$ when $X \sim \on{Binom}(244, 0.5)$? 
+-->
+<!--
+### Fri, Feb 6
+
+<div class="Theorem">
+#### The Central Limit Theorem
+
+Suppose that $X_1, X_2, \ldots, X_n$ are independent random variables that all have the same probability distribution with mean $\mu$ and standard deviation $\sigma$.  If $n$ is large, then the mean
+$$\bar{x} = \frac{X_1 + X_2 + \ldots + X_n}{n}$$
+has an approximately normal distribution with mean $\mu$ and standard deviation $\dfrac{\sigma}{\sqrt{n}}$. 
+</div>
+
+An important special case of the central limit theorem is when we take a simple random sample from a population and look at the proportion of "successes" for some categorical variable.  In this case, the average $\bar{x}$ is the sample proportion $\hat{p}$.  If the population proportion is $p$, the sample size is $n$, and the population is much larger than $n$, then the distribution of $\hat{p}$ will be approximately normal with mean $p$ and standard deviation $\sqrt{\dfrac{p(1-p)}{n}}$. 
+-->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
