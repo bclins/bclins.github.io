@@ -245,21 +245,42 @@ Expected value is **linear** which means that for any two random variables $X$ a
 Variance is not linear.  Instead it has these properties:
 
 1. $\on{Var}(X + Y) = \on{Var}(X) + \on{Var}(Y)$ if $X$ and $Y$ are independent.
-2. $\on{Var}(cX) = |c|^2 \on{Var}(X)$
+2. $\on{Var}(cX) = c^2 \on{Var}(X)$
 </div>
 
 
-4. A single six-sided die has expected value $\mu = 3.5$ and standard deviation $\sigma = 1.707$.  What is the mean and standard deviation if you roll two dice and add them?  
+4. A single six-sided die has expected value $\mu = 3.5$ and standard deviation $\sigma = 1.7078$.  What is the mean and standard deviation if you roll two dice and add them?  
 
-<!-- 3. [Exercise 3.31](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.3.31) -->
 
 5. [Exercise 3.34(b)](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34)
 
-<!--
-We finished by talking about the **central limit theorem**.  
+### Wed, Feb 4
 
-* **Example:** [Central Limit Theorem](https://people.hsc.edu/faculty-staff/blins/StatsExamples/CentralLimit/)
--->
+<div class="Theorem">
+**Binomial distribution.** If $X$ is the total number of successes in $n$ independent trials, each with probability $p$ of a success, then $X$ has a binomial distribution, denoted $\on{Binom}(n,p)$ for short. This distribution has
+
+* Probability mass function (PMF):
+$$P(X = k) = \frac{n!}{k! (n-k)!} p^k (1-p)^k.$$
+* Expected value $\mu = np$.
+* Variance $\sigma^2 = np(1-p)$.
+</div>
+
+1. If you play roulette and bet $1 on black, you have an 18/38 chance of winning $2.  If you bet on a number like 7, then you have a 1/38 chance of winning $36.  Both bets have the same expected value μ = $0.947.  What are the variances for both bets?  
+
+We used this [binomial distribution plotting tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter.html) to compare the distributions if you make these two bets 100 times.  In one case we get something that looks roughly like a bell curve, in the other case we get something that is definitely skewed to the right.  
+
+2. In the 1954 polio vaccine trials there were 244 polio cases, but only 82 actually had polio.  Use the binomial distribution to compute the probability that 82 or fewer fair coin tosses out of 244 come up heads.  This can model the p-value under the hypothesis that the polio vaccine does not work.  Use the `pbinom(x, n, p)` function in R. 
+
+Sometimes the assumption that the trials are independent is not justified.  
+
+3. Suppose you want to find the percent of Hampden-Sydney students who are left handed.  So you interview a random sample of 50 students (out of the population of about 900 HSC students).  Why aren't these observations independent?  
+
+The correct probability distribution to model the example above is called the **hypergeometric distribution**.  As long as the population is much larger than the sample, we typically do not need to worry about the trials not being independent. 
+
+We finished by discussing the normal approximation of a binomial distribution.  When $n$ is large enough so that both $np \ge 10$ and $n(1-p) \ge 10$, then $\on{Binom}(n, p)$ is approximately normal with mean $np$ and standard deviation $\sqrt{n p (1-p)}$.  
+
+4. How well does the normal approximation do to estimate the $P(X \le 82)$ when $X \sim \on{Binom}(244, 0.5)$? 
+
 
 - - - 
 

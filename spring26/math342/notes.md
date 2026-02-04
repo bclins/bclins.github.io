@@ -396,30 +396,6 @@ The **secant method** is a variation of Newton's method that uses secant lines i
 
 $$x_{n+1} = x_n - \frac{f(x_n) \, (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}.$$
 
-<!--
-We wrote the following program in class. 
-
-```python
-def secant(f, a, b, precision = 10**(-8)):
-    while abs(b-a) > precision:
-        a, b = b, b - f(b) * (b - a) / (f(b) - f(a))
-    return b
-```
-
-Sometimes a function $f$ might be very time consuming for a computer to compute, so you could improve this function by reducing the number of times you have to call $f$. If speed is a concern, then this would be a better version of the function. 
-
-```python
-def secant(f, a, b, precision = 10**(-8)):
-    fa, fb = f(a), f(b)
-    while abs(b-a) > precision:
-        a, b = b, b - fb * (b - a) / (fb - fa) # update x-values
-        fa, fb = fb, f(b) # update y-values using the new x-value
-    return b
-```
-
-Notice how we call the function $f$ three times in each iteration of the while-loop in the first program, but by storing the result in the variables `fa` and `fb`, we only have to call $f$ once per iteration in the second version of the program.  
--->
-
 1. Solve the equation $2^x = 10$ using the secant method.  What would make good initial guesses $x_0$ and $x_1$? 
 
     <details>
@@ -440,59 +416,24 @@ Convergence of order $\alpha = 1$ is called **linear convergence** and convergen
 
 * **Workshop:** [Root finding methods](Workshops/NewtonsMethod.pdf)
 
+### Wed, Feb 4
 
-<!--
-<div class="Theorem">
-**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
-$$\left|\frac{x_{n+1} - r}{C}\right| \le  \left|\frac{x_n-r}{C}\right| \, \left|\frac{x_{n-1} - r}{C}\right|.$$
-In particular, $|x_n - r|$ will converge to $r$. 
-</div>
-
-<div class="Theorem">
-**Corollary.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < \delta C$ for some $0 < \delta < 1$, then 
-$$\left|x_{n} - r\right| \le  \delta^{F_n} C$$
-for every $n$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
-</div>
--->
-
-<!--
-<div class="Theorem">
-**Theorem.** Let $f \in C^2[a,b]$ and suppose that $f$ has a root $r \in (a,b)$. There is a constant $C > 0$ such that if $|x_0 - r| < C$ and $|x_1 - r| < C$, then 
-$$\left|\frac{x_{n} - r}{C} \right| \le \left| \frac{x_1 - r}{C} \right|^{F_{n - 1}} \, \left| \frac{x_0 - r}{C} \right|^{F_{n}}$$
-for every $n \ge 2$, where $F_n$ is the $n$-th Fibonacci number (with $F_0 = 0$ and $F_1 = 1$).
-</div>
-
-
-
-
-Note, the constant $C$ might be larger than the constant $\dfrac{2L}{M}$ from Newton's method, but it is usually not much larger.<!-- when $x_n$ and $x_{n-1}$ are not close to $r$, but sufficiently close to $r$ it does converge to $\dfrac{f''r)}{2f'(r)}$. -->
-
-<!--
-2. Use this formula to estimate $|x_3-r|$ in terms of $|x_1-r|$ and $|x_0 - r|$. Assume that the same constant $C$ applies for all $x_{n+1}$. 
-3. Do the same for $|x_4 - r|$. 
-4. Keep going until you find a pattern. 
-
-We saw that the pattern is that the exponents of each factor is a Fibonacci number.  We talked briefly about [Binet's formula](https://en.wikipedia.org/wiki/Fibonacci_sequence#Relation_to_the_golden_ratio) for Fibonacci numbers and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618$. The lead to the following nice rule of thumb: The number of correct decimal places in the secant method increases by a factor of about 1.6 (the golden ratio) every step. 
-
-### Wed, Feb 7
-
-Newton's method is a special case of a method known as fixed point iteration.  A \textbf{fixed point} of a function $f(x)$ is a number $p$ such that $f(p) = p$.  Not every function has a fixed point, but we do have the following existence result:
-
-<div class="Theorem">
-**Theorem.** Let $f \in C^0[a,b]$.  If $f(x) \in [a,b]$ for every $x \in [a,b]$, then $f$ must have a fixed point in $[a,b]$.  
-</div>
+Newton's method is a special case of a method known as **fixed point iteration**.  A **fixed point** of a function $f(x)$ is a number $p$ such that $f(p) = p$.  A real-valued function $f(x)$ has a fixed point on an interval $[a, b]$ if and only if it intersects the graph $y = x$ on that interval. 
 
 1. Show that $\cos x$ has a fixed point in $[0,\tfrac{\pi}{2}]$. 
 
 2. Explain why $f(x) = e^x$ has no fixed points. 
 
-A fixed point $p$ is **attracting** if for all $x_0$ sufficiently close to $p$, the recursive sequence defined by 
-$$x_{n+1} = f(x_n)$$
-converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converges to $p$. You can draw a picture of these fixed point iterates by drawing a [cobweb diagram](https://en.wikipedia.org/wiki/Cobweb_plot). 
+A fixed point $p$ is **attracting** if the recursive sequence defined by $x_{n+1} = f(x_n)$ converges to $p$ for all $x_0$ sufficiently close to $p$. It is **repelling** if points close to $p$ get pushed away from $p$ when you apply the function $f$. You can draw a picture of these fixed point iterates by drawing a [cobweb diagram](https://en.wikipedia.org/wiki/Cobweb_plot). 
 
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/CobwebConstruction.gif" width=300></img>
 </center>
+
+To make a cobweb diagram, repeat these steps:
+
+* Move vertically from your current x-value until you hit the graph $y = f(x)$. 
+* Now move horizontally to the graph $y = x$.  
 
 3. Show that the fixed point of $\cos x$ is attracting by repeatedly iterating. 
 
@@ -506,25 +447,25 @@ converges to $p$. It is **repelling** if no (sub)sequence of $x_n$ ever converge
 3. $|f'(p)| = 1$, then no info. 
 </div>
 
+*Proof.* Write down the first degree Taylor approximation for $f$ centered at $p$. Use it with $x = x_n$, $f(x_n) = x_{n+1}$ to show that if $M$ is an upper bound for $f''(z)$ (near $p$), then 
+$$|x_{n+1} - p| \le |x_n - p| \left(|f'(p)| + \frac{M}{2}|x_n-p| \right).$$
+Then as long as $x_n$ is close enough to $p$, the terms inside the parentheses are less than 1 which means that $|x_{n+1} - p| < |x_n - p|$, i.e, $x_{n+1}$ is closer to $p$ than $x_n$ for every $n$. □ 
+
+<!--
 You can sometimes use fixed point iteration to solve equations.  For example, here are two different ways to solve the equation $x^3 + 3x + 6 = 0$ using fixed point iteration. 
 
 1. Re-write the equation as $\dfrac{-6}{x^2+3} = x$.
 
 2. Replace $f(x) = 0$ with the equation $x + cf(x) = x$ where $c$ is a small constant. The constant $c = -\tfrac{1}{10}$ works well for the function above. 
-
-When a sequence $x_n$ converges to a root $r$, we say that it has **a linear order of convergence** if there is a constant $0 < C < 1$ such that 
-$$|x_{n+1} - r| \le C |x_n - r| \text{ for all } n.$$
-We say that the sequence has a **quadratic order of convergence** if there is a constant $C > 0$ such that 
-$$|x_{n+1} - r| \le C |x_n - r|^2 \text{ for all } n.$$
-More generally, a sequence **converges with order $\alpha$** if there is are constants $C > 0$ and $\alpha > 1$ such that 
-$$|x_{n+1} - r| \le C |x_n - r|^\alpha \text{ for all } n.$$
-
-In general, a sequence that converges with order $\alpha > 1$ will have the number of correct decimal places grow by a factor of about $\alpha$ each step.  Newton's method is order 2, Secant method is order $\varphi \approx 1.618$, and the Bisection method is only linear order. 
+-->
 
 <div class="Theorem">
 **Theorem.** If $f$ is differentiable at a fixed point $p$ and $0 < |f'(p)| < 1$, then for any point $x_0$ sufficiently close to $p$, the fixed point iterates $x_n$ defined by $x_{n+1} = f(x_n)$ converge to $p$ with linear order.  If $f'(p) = 0$, then the iterates converge to $p$ with order $\alpha$ where $f^{(\alpha)}(p)$ is the first nonzero derivative of $f$ at $p$. 
 </div>
 
+5. For any function $f \in C^2[a,b]$ with a root $r$ in $(a,b)$, let $g(x) = x - \dfrac{f(x)}{f'(x)}$. Show that $r$ is a fixed point of $g$ and show that $g'(r) = 0$. 
+
+<!--
 ### Fri, Feb 9
 
 We started with this question:

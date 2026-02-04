@@ -552,28 +552,92 @@ if
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
 are independent.</li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><mi>c</mi><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></msup><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Var}(cX) = |c|^2 \operatorname{Var}(X)</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>c</mi><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>c</mi><mn>2</mn></msup><mo>Var</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Var}(cX) = c^2 \operatorname{Var}(X)</annotation></semantics></math></li>
 </ol>
 </section>
 <ol start="4" type="1">
-<li>A single six-sided die has expected value
+<li><p>A single six-sided die has expected value
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>3.5</mn></mrow><annotation encoding="application/x-tex">\mu = 3.5</annotation></semantics></math>
 and standard deviation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>1.707</mn></mrow><annotation encoding="application/x-tex">\sigma = 1.707</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>1.7078</mn></mrow><annotation encoding="application/x-tex">\sigma = 1.7078</annotation></semantics></math>.
 What is the mean and standard deviation if you roll two dice and add
-them?</li>
-</ol>
-<!-- 3. [Exercise 3.31](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.3.31) -->
-<ol start="5" type="1">
-<li><a
+them?</p></li>
+<li><p><a
 href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.3.34">Exercise
-3.34(b)</a></li>
+3.34(b)</a></p></li>
 </ol>
-<!--
-We finished by talking about the **central limit theorem**.  
-
-* **Example:** [Central Limit Theorem](https://people.hsc.edu/faculty-staff/blins/StatsExamples/CentralLimit/)
--->
+<h3 id="wed-feb-4">Wed, Feb 4</h3>
+<div class="Theorem">
+<p><strong>Binomial distribution.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+is the total number of successes in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+independent trials, each with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+of a success, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+has a binomial distribution, denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Binom</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Binom}(n,p)</annotation></semantics></math>
+for short. This distribution has</p>
+<ul>
+<li>Probability mass function (PMF):
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mi>!</mi></mrow><mrow><mi>k</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mi>p</mi><mi>k</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>k</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">P(X = k) = \frac{n!}{k! (n-k)!} p^k (1-p)^k.</annotation></semantics></math></li>
+<li>Expected value
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mi>n</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\mu = np</annotation></semantics></math>.</li>
+<li>Variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mi>n</mi><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\sigma^2 = np(1-p)</annotation></semantics></math>.</li>
+</ul>
+</div>
+<ol type="1">
+<li>If you play roulette and bet $1 on black, you have an 18/38 chance
+of winning $2. If you bet on a number like 7, then you have a 1/38
+chance of winning $36. Both bets have the same expected value μ =
+$0.947. What are the variances for both bets?</li>
+</ol>
+<p>We used this <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter.html">binomial
+distribution plotting tool</a> to compare the distributions if you make
+these two bets 100 times. In one case we get something that looks
+roughly like a bell curve, in the other case we get something that is
+definitely skewed to the right.</p>
+<ol start="2" type="1">
+<li>In the 1954 polio vaccine trials there were 244 polio cases, but
+only 82 actually had polio. Use the binomial distribution to compute the
+probability that 82 or fewer fair coin tosses out of 244 come up heads.
+This can model the p-value under the hypothesis that the polio vaccine
+does not work. Use the <code>pbinom(x, n, p)</code> function in R.</li>
+</ol>
+<p>Sometimes the assumption that the trials are independent is not
+justified.</p>
+<ol start="3" type="1">
+<li>Suppose you want to find the percent of Hampden-Sydney students who
+are left handed. So you interview a random sample of 50 students (out of
+the population of about 900 HSC students). Why aren’t these observations
+independent?</li>
+</ol>
+<p>The correct probability distribution to model the example above is
+called the <strong>hypergeometric distribution</strong>. As long as the
+population is much larger than the sample, we typically do not need to
+worry about the trials not being independent.</p>
+<p>We finished by discussing the normal approximation of a binomial
+distribution. When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is large enough so that both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>p</mi><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">np \ge 10</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">n(1-p) \ge 10</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Binom</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Binom}(n, p)</annotation></semantics></math>
+is approximately normal with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">np</annotation></semantics></math>
+and standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><mi>n</mi><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{n p (1-p)}</annotation></semantics></math>.</p>
+<ol start="4" type="1">
+<li>How well does the normal approximation do to estimate the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>≤</mo><mn>82</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(X \le 82)</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>∼</mo><mo>Binom</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>244</mn><mo>,</mo><mn>0.5</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">X \sim \operatorname{Binom}(244, 0.5)</annotation></semantics></math>?</li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
