@@ -465,19 +465,57 @@ Then as long as $x_n$ is close enough to $p$, the terms inside the parentheses a
 We had some extra time today at the end, so we ended class early, but I could have used the following question: 
 
 6. Let $f \in C^1[a,b]$ with a root $r$ in $(a,b)$.  If $c$ is a constant that is close to $f'(r)$, then iterates of the function $g(x) = x - \dfrac{f(x)}{c}$ will converge to $r$.  Why is this iteration method usually slower than Newton's method?  
+-->
 
 ### Fri, Feb 6
 
+In any root finding method, we have two ways of measuring the error when we compare an approximation $x_n$ with the actual root.  The **forward error** is the distance between the root $r$ and the approximation $x_n$ on the $x$-axis. Since we usually don't know the true value of $r$, it is hard to estimate the forward error.  The **backward error** is just $|f(x_n)|$, which is usually easy to calculate. 
 
-We finished with a cool fact about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
+<center>
+<img src="forwardBackwardError.png" width=400></img>
+</center>
+
+1. If $x_n$ is really close to $r$, then how could you use $f'(r)$ to estimate the forward error if you know the backward error?  
+
+We used the idea of forward and backward error to automate Newton's method.  The idea is to include an optional tolerance argument.  We stop iterating when the backward error is smaller than the tolerance. 
+
+```python
+def newton(f, Df, x, tolerance = 10 ** (-15)):
+    """
+    Applies Newton's method to a function f with derivative Df and initial guess x.  
+    Stops when |f(x)| < tol. 
+    """
+    step = 0
+    while not abs(f(x)) < tolerance:
+        x = x - f(x) / Df(x)
+        step = step + 1
+    print("Converged in", step, "steps.")
+    return x
+
+```
+
+We finished with a cool fact about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We did a quick review of complex numbers.
+
+<div class="Theorem">
+**Euler's formula.**
+
+$$e^{i \theta} = \cos \theta + i \sin \theta.$$
+</div>
+
+We used the `cmath` library in Python to do the following experiments with Newton's method.
+
+2. **Cube roots of unity.** Use Newton's method to find all 3 roots of $x^3 - 1$.  
+
+3. **Euler's identity.** Use Newton's method to solve $e^x + 1 = 0$.  
+
+We finished by talking about **Newton fractals**. When you use Newton's method on a function with more than one root in the complex plane, the set of points that converge to each root (called the **basins of attraction**) form fractal patterns. 
 
 <center>
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Julia_set_for_the_rational_function.png" width=300></img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Julia-set_N_z3-1.png" width=500></img>
 <figcaption>Basins of attraction for the roots of $x^3-1$.</figcaption>
 </figure>
 </center>
--->
 
 - - - 
 

@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+
+\newcommand{\Var}{\operatorname{Var}}
+
+\begin{document}
+\section*{Formula Sheet \hfill Math 222}
+\hrule 
+~\\
+
+\begin{description}
+\item[Probability Rules]
+$$P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)$$
+$$P(A \text{ and } B) = P(A) P(B|A)$$
+\vfill
+
+
+
+\item[Expected Value \& Variance] For a discrete random variable $X$ with outcomes $x_k$ and corresponding probabilities $p_k$.  
+$$E(X) = \mu = \sum p_k x_k$$
+$$\Var(X) = \sigma^2 = \sum p_k (x_k - \mu)^2$$
+\vfill
+
+\item[Expected Value Rules]
+$$E(cX) = cE(X)$$
+$$E(X+Y) = E(X)+E(Y)$$
+\vfill
+
+\item[Variance Rules]
+$$\Var(cX) = c^2 \Var(X)$$
+$$\Var(X+Y) = \Var(X)+\Var(Y) ~~~~~ ( \text{only if } X \text{ and } Y \text{ are independent})$$
+\vfill
+
+%\item[Mean \& Variance of a Sample Mean]
+%$$E(\bar{x}) = \mu_{\bar{x}} = \mu$$
+%$$\Var(\bar{x}) = \sigma^2_{\bar{x}} = \frac{\sigma^2}{{n}}$$
+%\vfill
+
+\item[Mean \& Variance for the Binomial Distribution] If $X \sim \operatorname{Binom}(n,p)$, then
+$$E(X) = \mu = np$$
+$$\Var(X) = \sigma^2 = p(1-p)n$$
+\vfill
+
+%\item[General form of a confidence interval] $\textit{estimate} \pm \textit{margin of error}$, where
+%$$\textit{margin of error} = (\textit{critical value}) \times SE_{\textit{estimate}}$$
+
+%\item[General form of a test statistic]
+%$$ \frac{\textit{statistic} - \textit{hypothesized valued}}{SE_{\textit{statistic}}}$$
+
+%%\item[Standard errors$^*$] ~
+%\begin{center}
+%\begin{tabular}{lcl} 
+%$\ds SE_{\bar{x}} = \frac{s}{\sqrt{n}}$ & ~~~~ & $\ds SE_{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ \\
+%$\ds SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ &  & $\ds SE_{\hat{p}_1-\hat{p}_2} = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$ \\
+%\end{tabular}
+%\end{center}
+%$*$\textit{When testing a null hypothesis about proportions, it is better to use the hypothesized population proportion $p_0$ rather than $\hat{p}$ in the formula for standard error for one-sample tests, and it is better to used the pooled proportion $\hat{p}$ rather than either individual sample proportion $\hat{p}_1$ or $\hat{p}_2$ in the formula for standard error in two-sample tests. }
+
+
+\end{description}
+
+
+\end{document}

@@ -909,19 +909,80 @@ and show that
 We had some extra time today at the end, so we ended class early, but I could have used the following question: 
 
 6. Let $f \in C^1[a,b]$ with a root $r$ in $(a,b)$.  If $c$ is a constant that is close to $f'(r)$, then iterates of the function $g(x) = x - \dfrac{f(x)}{c}$ will converge to $r$.  Why is this iteration method usually slower than Newton's method?  
-
-### Fri, Feb 6
-
-
-We finished with a cool fact about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
-
+-->
+<h3 id="fri-feb-6">Fri, Feb 6</h3>
+<p>In any root finding method, we have two ways of measuring the error
+when we compare an approximation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+with the actual root. The <strong>forward error</strong> is the distance
+between the root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>
+and the approximation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+on the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-axis.
+Since we usually don’t know the true value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+it is hard to estimate the forward error. The <strong>backward
+error</strong> is just
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><annotation encoding="application/x-tex">|f(x_n)|</annotation></semantics></math>,
+which is usually easy to calculate.</p>
+<center>
+<img src="forwardBackwardError.png" width=400></img>
+</center>
+<ol type="1">
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>n</mi></msub><annotation encoding="application/x-tex">x_n</annotation></semantics></math>
+is really close to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>,
+then how could you use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f&#39;(r)</annotation></semantics></math>
+to estimate the forward error if you know the backward error?</li>
+</ol>
+<p>We used the idea of forward and backward error to automate Newton’s
+method. The idea is to include an optional tolerance argument. We stop
+iterating when the backward error is smaller than the tolerance.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> newton(f, Df, x, tolerance <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">15</span>)):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Applies Newton&#39;s method to a function f with derivative Df and initial guess x.  </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Stops when |f(x)| &lt; tol. </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    step <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> <span class="bu">abs</span>(f(x)) <span class="op">&lt;</span> tolerance:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x <span class="op">-</span> f(x) <span class="op">/</span> Df(x)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> step <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Converged in&quot;</span>, step, <span class="st">&quot;steps.&quot;</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div>
+<p>We finished with a cool fact about Newton’s method. It also works for
+to find complex number roots if you use complex numbers. We did a quick
+review of complex numbers.</p>
+<div class="Theorem">
+<p><strong>Euler’s formula.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mo>cos</mo><mi>θ</mi><mo>+</mo><mi>i</mi><mo>sin</mo><mi>θ</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{i \theta} = \cos \theta + i \sin \theta.</annotation></semantics></math></p>
+</div>
+<p>We used the <code>cmath</code> library in Python to do the following
+experiments with Newton’s method.</p>
+<ol start="2" type="1">
+<li><p><strong>Cube roots of unity.</strong> Use Newton’s method to find
+all 3 roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^3 - 1</annotation></semantics></math>.</p></li>
+<li><p><strong>Euler’s identity.</strong> Use Newton’s method to solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e^x + 1 = 0</annotation></semantics></math>.</p></li>
+</ol>
+<p>We finished by talking about <strong>Newton fractals</strong>. When
+you use Newton’s method on a function with more than one root in the
+complex plane, the set of points that converge to each root (called the
+<strong>basins of attraction</strong>) form fractal patterns.</p>
 <center>
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Julia_set_for_the_rational_function.png" width=300></img>
-<figcaption>Basins of attraction for the roots of $x^3-1$.</figcaption>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Julia-set_N_z3-1.png" width=500></img>
+<figcaption>
+Basins of attraction for the roots of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^3-1</annotation></semantics></math>.
+</figcaption>
 </figure>
 </center>
--->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>

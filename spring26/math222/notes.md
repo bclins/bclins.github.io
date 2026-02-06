@@ -267,7 +267,7 @@ $$P(X = k) = \frac{n!}{k! (n-k)!} p^k (1-p)^k.$$
 
 1. If you play roulette and bet $1 on black, you have an 18/38 chance of winning $2.  If you bet on a number like 7, then you have a 1/38 chance of winning $36.  Both bets have the same expected value μ = $0.947.  What are the variances for both bets?  
 
-We used this [binomial distribution plotting tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter.html) to compare the distributions if you make these two bets 100 times.  In one case we get something that looks roughly like a bell curve, in the other case we get something that is definitely skewed to the right.  
+We used this [binomial distribution plotting tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) to compare the distributions if you make these two bets 100 times.  In one case we get something that looks roughly like a bell curve, in the other case we get something that is definitely skewed to the right.  
 
 2. In the 1954 polio vaccine trials there were 244 polio cases, but only 82 actually had polio.  Use the binomial distribution to compute the probability that 82 or fewer fair coin tosses out of 244 come up heads.  This can model the p-value under the hypothesis that the polio vaccine does not work.  Use the `pbinom(x, n, p)` function in R. 
 
@@ -285,19 +285,27 @@ We didn't get to this last exercise:
 4. How well does the normal approximation do to estimate the $P(X \le 82)$ when $X \sim \on{Binom}(244, 0.5)$? 
 -->
 
-<!--
 ### Fri, Feb 6
 
 <div class="Theorem">
 #### The Central Limit Theorem
 
-Suppose that $X_1, X_2, \ldots, X_n$ are independent random variables that all have the same probability distribution with mean $\mu$ and standard deviation $\sigma$.  If $n$ is large, then the mean
-$$\bar{x} = \frac{X_1 + X_2 + \ldots + X_n}{n}$$
-has an approximately normal distribution with mean $\mu$ and standard deviation $\dfrac{\sigma}{\sqrt{n}}$. 
+Suppose that $X_1, X_2, \ldots, X_n$ are independent random variables that all have the same probability distribution.  If $n$ is large, then the total $X_1 + X_2 + \ldots + X_n$ has an approximately normal distribution.
 </div>
 
-An important special case of the central limit theorem is when we take a simple random sample from a population and look at the proportion of "successes" for some categorical variable.  In this case, the average $\bar{x}$ is the sample proportion $\hat{p}$.  If the population proportion is $p$, the sample size is $n$, and the population is much larger than $n$, then the distribution of $\hat{p}$ will be approximately normal with mean $p$ and standard deviation $\sqrt{\dfrac{p(1-p)}{n}}$. 
--->
+1. If each $X_i$ has mean $\mu$ and standard deviation $\sigma$, then what is the mean and the standard deviation of the total?  
+
+2. In Dungeons and Dragons, you calculate the damage from a fireball spell by rolling 8 six-sided dice and adding up the results.  This has an approximately normal distribution.  What is the mean and standard deviation of this distribution.  (Recall that the mean and standard deviation of a single six-sided die is $\mu = 3.5$ and $\sigma = 1.7078$).  
+
+We looked at a [graph of the distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html) from the previous example to see that it is indeed approximately normal. 
+
+3. Use the normal approximation to estimate the probability of doing more than 35 points of damage with a fireball spell. 
+
+When you use a normal approximation to estimate discrete probabilities, it is recommended to use a **continuity correction** (see [Section 4.3.3](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.4.3.3)).  To estimate $P(X \le k)$, calculate $P(X < k + 0.5)$ using the normal approximation (and likewise, to estimate $P(X \ge k)$, compute $P(X > k - 0.5)$ using the normal approximation).  
+
+An important special case of the central limit theorem is the normal approximation of the binomial distribution, which has mean $\mu = np$ and standard deviation $\sigma = \sqrt{np(1-p)}$.  
+
+4. About 7\% of the US population has type O-negative blood (universal donors).  If a hospital has 700 patients, use the normal approximation to estimate the probability that more than 60 have type O-negative blood.  Compare your answer with the result if you use the `pbinom(x, n, p)` function. 
 
 
 - - - 
