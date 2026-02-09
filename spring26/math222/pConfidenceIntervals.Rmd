@@ -1,0 +1,39 @@
+---
+title: Confidence Intervals for Proportions
+output: html_document
+---
+
+```{r}
+student.data <- read.csv("StudentData.csv")
+head(student.data)
+```
+
+The `student.data` data frame contains data from my Math 121 students this year. 
+
+
+### Percent of HSC students born in Virginia
+
+R makes it very easy to quickly generate confidence intervals for categorical variables. First you need to compute the number of "successes" and the total sample size.  In this case, we can count students born in VA as "successes" and we can use the `nrow()` function to find the sample size. 
+
+```{r}
+n <- nrow(student.data) # n is the sample size
+x <- sum(student.data$Birthplace == 'VA') # x is the number born in VA
+prop.test(x, n)
+```
+
+In the sample, `r x` out of `r n` students were born in VA, which is `r x/n * 100`%. 
+
+Notice that we get a lot more information than just a confidence interval since the `prop.test()` function also calculates a chi-squared statistic, and does a hypothesis test to see if our sample proportion is significantly different than the null value which is $p = 0.5$ by default. 
+
+### Percent of HSC students who are only children
+
+```{r}
+x <- sum(student.data$Siblings == 0) # Now x is the number in the sample with no siblings
+prop.test(x, n)
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -327,13 +327,13 @@ Mon, Feb 9  | [1.3][1.3] | Bias versus random error
 Wed, Feb 11 |            | Review
 Fri, Feb 13 |            | **Midterm 1**
 
-<!--
-### Mon, Sep 22
+### Mon, Feb 9
 
 We did this workshop. 
 
 * **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
 
+<!--
 ### Wed, Sep 24
 
 We talked about the [midterm 1 review problems](midterm1review.pdf).

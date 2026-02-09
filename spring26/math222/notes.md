@@ -307,6 +307,9 @@ An important special case of the central limit theorem is the normal approximati
 
 4. About 7\% of the US population has type O-negative blood (universal donors).  If a hospital has 700 patients, use the normal approximation to estimate the probability that more than 60 have type O-negative blood.  Compare your answer with the result if you use the `pbinom(x, n, p)` function. 
 
+We finished by talking about the difference between the distribution of the total versus the distribution of the proportion of patients who are O-negative.  The standard deviation of the sample proportion $\hat{p}$ is 
+$$\sigma_{\hat{p}} = \sqrt{ \frac{p (1-p)}{n} }.$$
+
 
 - - - 
 
@@ -318,6 +321,43 @@ Mon, Feb 9  | [5.2][5.2] | Confidence intervals for a proportion
 Wed, Feb 11 |            | Review
 Fri, Feb 13 |            | **Midterm 1**
 
+### Mon, Feb 9
+
+Today we talked about confidence intervals for a proportion.  
+
+<div class="Theorem">
+**Sampling Distribution for a Sample Proportion.** In a SRS of size $n$ from a large population, the sample proportion $\hat{p}$ is random, so it has a probability distribution with the following features.  
+
+* **Shape.** The distribution gets more normal as the sample size $n$ increases. 
+* **Center.** The expected value of $\hat{p}$ is the same as the population proportion $p$. 
+* **Spread.** The standard deviation of $\hat{p}$ is 
+$$\sigma_{\hat{p}} = \sqrt{\frac{p (1-p)}{n}}.$$
+</div>
+
+In practice, we usually don't know the population proportion $p$.  Instead we can use the sample proportion $\hat{p}$ to calculate the **standard error** of $\hat{p}$:
+$$SE_{\hat{p}} =  \sqrt{\frac{\hat{p} (1-\hat{p})}{n}}.$$
+
+1. This year, 34 out of 72 students in my statistics classes were born in Virginia.  What is the sample proportion $\hat{p}$ and the standard error?  
+
+If the sample size is large enough, then there is a 95% chance that $\hat{p}$ will be within about two standard deviations of $p$. So if we know $\hat{p}$ and we assume that the standard error is close to the standard deviation for $\hat{p}$, then we can make a confidence interval for the location of the parameter $p$. 
+
+<div class = "Theorem"> 
+**Confidence Interval for a Proportion.**  This works well if the sample size $n$ is very large.  
+
+$$\hat{p} \pm z^* \sqrt{\frac{\hat{p} ( 1- \hat{p})}{n}}.$$
+</div>
+
+You can use the R command `qnorm((1 - p) / 2)` to find the critical z-value ($z^*$) when you want a specific **confidence level** $p$. 
+
+2. Use the data above to make a 95% confidence interval for the proportion of all HSC students born in VA. 
+
+After that, we talked about the `prop.test()` function in R which can make a confidence interval (among other things).  
+
+* **Example**: Confidence intervals for proportions with R ([Rmd](pConfidenceIntervals.Rmd), [html](pConfidenceIntervals.html))
+
+Notice that the `prop.test()` confidence interval is not the same as what we got using the formula above. Instead of using the formula above, R uses something called a [Wilson score confidence interval](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval_with_continuity_correction) with continuity correction.  The idea is to solve for the two points $p$ where
+$$p - \hat{p} = \pm z^* \sqrt{\frac{p(1-p)}{n}}.$$
+If you add in the continuity correction, this pretty much guarantees that there is at least a 95% chance (or whatever other confidence level you want) that the interval contains the true population parameter.  The Wilson method confidence intervals are fairly trustworthy even with relatively small samples and small numbers of successes/failures.  
 
 - - - 
 

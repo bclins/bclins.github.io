@@ -527,6 +527,52 @@ Mon, Feb 9  | Solving nonlinear systems
 Wed, Feb 11 | Systems of linear equations
 Fri, Feb 13 | LU decomposition
               
+
+### Mon, Feb 9
+
+Today we talked about how to solve systems of nonlinear equations with Newton's method.  We started with a motivating example:
+
+1. The [LORAN system](https://en.wikipedia.org/wiki/LORAN) (LOng-RAnge Navigation system) used pairs of radio transmitters that sent out synchronized pulses so that ships and planes could pin down their locations (like an old-fashioned GPS system).  By measuring the time gap between paired signals, you would be able to figure the difference in the distance to the two transmitters.  The set of all points with that particular difference is a hyperbola.  If you could simultaneously solve two hyperbola equations for $x$ and $y$, you could find your longitude and latitude. 
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hyperbolas.svg/500px-Hyperbolas.svg.png" width = 300></img>
+</center>
+
+To solve a vector-valued system $\mathbf{F}(\mathbf{x}) = \mathbf{0}$, you can iterate the formula
+$$\mathbf{x}_{n+1} = \mathbf{x}_n - \mathbf{J}(\mathbf{x}_n)^{-1} \mathbf{F}(\mathbf{x_n})$$
+where $\mathbf{J}(\mathbf{x})$ is the Jacobian matrix 
+$$\mathbf{J}(\mathbf{x}) = \begin{bmatrix} 
+\frac{\partial F_1}{\partial x_1} &  \ldots & \frac{\partial F_1}{\partial x_n} \\  
+\vdots & \ddots & \vdots \\
+\frac{\partial F_n}{\partial x_1} &  \ldots & \frac{\partial F_n}{\partial x_n} \end{bmatrix}.$$
+
+To program this formula in Python, we'll need to load the `numpy` library.  We wrote the following code to solve this system:
+
+\begin{align*}
+xy + y^2 &= 1 \\
+x^2 - y^2 &= 1 
+\end{align*}
+
+```python
+import numpy as np
+
+F = lambda x: np.array([
+    x[0] * x[1] + x[1]**2 - 1, 
+    x[0]**2 - x[1]**2 - 1
+])
+J = lambda x: np.array([
+    [   x[1], x[0] + 2*x[1] ], 
+    [ 2*x[0],       -2*x[1] ]
+])
+
+x = np.array([1,1])
+for i in range(10): 
+    x = x - np.linalg.inv(J(x)) @ F(x) # Use @ not * for matrix multiplication.
+    print(x)
+```
+
+* **Workshop:** [Nonlinear systems](Workshops/NonlinearSystems.pdf)
+
 <!--
 ### Mon, Feb 12
 

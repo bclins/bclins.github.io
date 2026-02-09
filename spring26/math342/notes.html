@@ -1007,6 +1007,64 @@ Basins of attraction for the roots of
 </tr>
 </tbody>
 </table>
+<h3 id="mon-feb-9">Mon, Feb 9</h3>
+<p>Today we talked about how to solve systems of nonlinear equations
+with Newton’s method. We started with a motivating example:</p>
+<ol type="1">
+<li>The <a href="https://en.wikipedia.org/wiki/LORAN">LORAN system</a>
+(LOng-RAnge Navigation system) used pairs of radio transmitters that
+sent out synchronized pulses so that ships and planes could pin down
+their locations (like an old-fashioned GPS system). By measuring the
+time gap between paired signals, you would be able to figure the
+difference in the distance to the two transmitters. The set of all
+points with that particular difference is a hyperbola. If you could
+simultaneously solve two hyperbola equations for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>,
+you could find your longitude and latitude.</li>
+</ol>
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hyperbolas.svg/500px-Hyperbolas.svg.png" width = 300></img>
+</center>
+<p>To solve a vector-valued system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐅</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>𝟎</mn></mrow><annotation encoding="application/x-tex">\mathbf{F}(\mathbf{x}) = \mathbf{0}</annotation></semantics></math>,
+you can iterate the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>𝐱</mi><mi>n</mi></msub><mo>−</mo><mi>𝐉</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>𝐱</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>𝐅</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>𝐱</mi><mi>𝐧</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}_{n+1} = \mathbf{x}_n - \mathbf{J}(\mathbf{x}_n)^{-1} \mathbf{F}(\mathbf{x_n})</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐉</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{J}(\mathbf{x})</annotation></semantics></math>
+is the Jacobian matrix
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐉</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mn>1</mn></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mn>1</mn></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><mfrac><mrow><mi>∂</mi><msub><mi>F</mi><mi>n</mi></msub></mrow><mrow><mi>∂</mi><msub><mi>x</mi><mi>n</mi></msub></mrow></mfrac></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{J}(\mathbf{x}) = \begin{bmatrix} 
+\frac{\partial F_1}{\partial x_1} &amp;  \ldots &amp; \frac{\partial F_1}{\partial x_n} \\  
+\vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial F_n}{\partial x_1} &amp;  \ldots &amp; \frac{\partial F_n}{\partial x_n} \end{bmatrix}.</annotation></semantics></math></p>
+<p>To program this formula in Python, we’ll need to load the
+<code>numpy</code> library. We wrote the following code to solve this
+system:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mn>1</mn></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+xy + y^2 &amp;= 1 \\
+x^2 - y^2 &amp;= 1 
+\end{align*}</annotation></semantics></math></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="kw">lambda</span> x: np.array([</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    x[<span class="dv">0</span>] <span class="op">*</span> x[<span class="dv">1</span>] <span class="op">+</span> x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>, </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>J <span class="op">=</span> <span class="kw">lambda</span> x: np.array([</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    [   x[<span class="dv">1</span>], x[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x[<span class="dv">1</span>] ], </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    [ <span class="dv">2</span><span class="op">*</span>x[<span class="dv">0</span>],       <span class="op">-</span><span class="dv">2</span><span class="op">*</span>x[<span class="dv">1</span>] ]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">1</span>])</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> np.linalg.inv(J(x)) <span class="op">@</span> F(x) <span class="co"># Use @ not * for matrix multiplication.</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/NonlinearSystems.pdf">Nonlinear systems</a></li>
+</ul>
 <!--
 ### Mon, Feb 12
 
