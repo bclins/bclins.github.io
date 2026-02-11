@@ -579,42 +579,62 @@ $$p+5n+10d+25q = 1000$$
 $$d = 2q$$
 where $p,n,d,q$ are the numbers of pennies, nickles, dimes, and quarters respectively. It is convenient to use matrices to simplify these equations:
 $$\begin{pmatrix} 1 & 1 & 1 & 1  \\ 1 & 5 & 10 & 25  \\ 0 & 0 & 1 & -2 \end{pmatrix} \, \begin{pmatrix} p \\ n \\ d \\ q \end{pmatrix} = \begin{pmatrix} 80 \\ 1000 \\ 0 \end{pmatrix}.$$
-Here we have a matrix equation of the form $Ax = b$ where $A \in \R^{3 \times 4}$, $x \in \R^4$ is the unknown vector, and $b \in \R^3$. Then you can solve the problem by row-reducing the augmented matrix
+Here we have a matrix equation of the form $A\mathbf{x} = \mathbf{b}$ where $A \in \R^{3 \times 4}$, $\mathbf{x} \in \R^4$ is the unknown vector, and $\mathbf{b} \in \R^3$. Then you can solve the problem by row-reducing the augmented matrix
 
 $$\left( \begin{array}{cccc|c} 1 & 1 & 1 & 1 & 80 \\ 1 & 5 & 10 & 25 & 1000 \\ 0 & 0 & 1 & -2 & 0\end{array}\right)$$
 
 which can be put into **echelon form**
 
-$$\left( \begin{array}{cccc|c} 1 & 1 & 1 & 1 & 80 \\ 0 & 4 & 9 & 24 & 920 \\ 0 & 0 & 1 & -2 & 0\end{array}\right)$$
+$$\left( \begin{array}{cccc|c} 1 & 1 & 1 & 1 & 80 \\ 0 & 4 & 9 & 24 & 920 \\ 0 & 0 & 1 & -2 & 0\end{array}\right).$$
 
-Then the variables $p, n$, and $d$ are **pivot variables**, and the last variable $q$ is a **free variable**. Each pivot variable depends on the value(s) of the free variables.  A solution of a system of equations is a formula for the pivot variables as functions of the free variables.   
+The variables $p, n$, and $d$ are **pivot variables**, and the last variable $q$ is a **free variable**. Once you pick values for the free variable(s), you can solve for the pivot variables one at a time using **back substitution**.  We did this using Python:
 
-Recall the following terminology from linear algebra. For any matrix $A \in \R^{m \times n}$ (i.e., that has real number entries with $m$ rows and $n$ columns):
+```python
+q = 20 
+d = 2*q
+n = (920 - 9*d - 24*q) / 4
+p = 80 - n - d - q
+print(p, n, q)
 
-* The **rank** of $A$ is the number of pivots.  It is also the dimension of the column space since the columns of $A$ with pivots are linearly independent and form a basis for the column space. 
+# Only q = 20 makes sense, otherwise either p or n will be negative.
+```
 
-* The **null space** of $A$ is the set $\{x \in \R^n \, : \, Ax = 0\}$.
+After that we reviewed some more concepts and terminology from linear algebra.  The most important thing to understand is that you can think of matrix-vector multiplication as a **linear combination** of the columns of the matrix:
+
+$$A \mathbf{x} = \begin{pmatrix} 1 & 1 & 1 & 1  \\ 1 & 5 & 10 & 25  \\ 0 & 0 & 1 & -2 \end{pmatrix} \, \begin{pmatrix} p \\ n \\ d \\ q \end{pmatrix} = \underbrace{\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}p +  \begin{pmatrix} 1 \\ 5 \\ 0 \end{pmatrix}n +  \begin{pmatrix} 1 \\ 10 \\ 1 \end{pmatrix}d +  \begin{pmatrix} 1 \\ 25 \\ -2 \end{pmatrix}q}_{A \mathbf{x} \text{ is a linear combination of the columns of } A}.$$
+
+
+For any matrix $A \in \R^{m \times n}$:
+
+* The **column space** of $A$ is the set of all possible linear combinations of the columns.  It is also the **range** of $A$ as a **linear transformation** from $\R^n$ into $\R^m$. 
+
+* The **rank** of $A$ is the dimension of the column space.  It is also the number of pivots, since the pivot columns are a **basis** for the column space. 
+
+* The **null space** of $A$ is the set $\{\mathbf{x} \in \R^n \, : \, A \mathbf{x} = \mathbf{0}\}$.
 
 * The **nullity** of $A$ is the number of free variables which is the same as the dimension of the null space of $A$. 
 
+<!--
 <div class="Theorem"> 
-**Rank + Nullity Theorem.** Let $A \in \R^{m \times n}$.  Then the rank of $A$ plus the nullity of $A$ must equal $n$. 
+**Rank + Nullity Theorem.** Let $A \in \R^{m \times n}$.  Then $\on{rank}(A) + \on{nullity}(A) = n$. 
 </div>
+-->
 
-A matrix equation $Ax = b$ has a solution if and only if $b$ is in the column space of $A$.  If $b$ is in the column space, then there will be either one unique solution if there are no free variables (i.e., the nullity of $A$ is zero) or there will be infinitely many solutions if there are free variables. 
+A matrix equation $A\mathbf{x} = \mathbf{b}$ has a solution if and only if $\mathbf{b}$ is in the column space of $A$.  If $\mathbf{b}$ is in the column space, then there will be either one unique solution if there are no free variables (i.e., the nullity of $A$ is zero) or there will be infinitely many solutions if there are free variables. 
 
-If $A \in \R^{n \times n}$ (i.e., $A$ is a square matrix) and the rank of $A$ is $n$, then $A$ is **invertible** which means that there is a matrix $A^{-1}$ such that $A A^{-1} = A^{-1} A = I$ where $I$ is the **identity matrix**
+If $A \in \R^{n \times n}$ (i.e., $A$ is a square matrix) and the rank of $A$ is $n$, then $A$ is **invertible** which means that there is a matrix $A^{-1}$ such that $A A^{-1} = A^{-1} A = I$ where $I$ is the **identity matrix** which is 
 $$I = \begin{pmatrix} 1 & 0 & \ldots & 0 \\ 0 & 1 & \ldots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \ldots & 1 \end{pmatrix}.$$  
-You can use row-reduction to find the inverse of an invertible matrix by row reducing the augmented matrix $\left( \begin{array}{c|c} A & I \end{array} \right)$ until you get $\left( \begin{array}{c|c} I & A^{-1} \end{array} \right)$. 
+You can use row-reduction to find the inverse of an invertible matrix by row reducing the augmented matrix $\left[ \begin{array}{c|c} A & I \end{array} \right]$ until you get $\left[ \begin{array}{c|c} I & A^{-1} \end{array} \right]$. We did this example in class:
 
-2. Use row-reduction to find the inverse of $A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix}$. (<https://youtu.be/cJg2AuSFdjw>)
+2. Find the inverse of $A = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 1 & 3 \\ 0 & 0 & 1 \end{pmatrix}$. 
 
-3. Use the inverse to solve $\begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} x = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$. 
+Here is another example that we did not do in class:
 
-In practice, inverse matrices are rarely used to solve systems of linear equations for a couple of reasons. 
+3. Use row-reduction to find the inverse of $A = \begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix}$. (<https://youtu.be/cJg2AuSFdjw>)
 
-1. Most matrices aren't invertible.
-2. Finding the inverse is at least as hard computationally as row reduction, so you might as well just use row reduction.  
+<!--
+4. Use the inverse to solve $\begin{pmatrix} 1 & 3 \\ 2 & 5 \end{pmatrix} x = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$. 
+-->
 
 <!--
 ### Wed, Feb 14
