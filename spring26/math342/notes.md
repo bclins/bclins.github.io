@@ -530,13 +530,7 @@ Fri, Feb 13 | LU decomposition
 
 ### Mon, Feb 9
 
-Today we talked about how to solve systems of nonlinear equations with Newton's method.  We started with a motivating example:
-
-1. The [LORAN system](https://en.wikipedia.org/wiki/LORAN) (LOng-RAnge Navigation system) used pairs of radio transmitters that sent out synchronized pulses so that ships and planes could pin down their locations (like an old-fashioned GPS system).  By measuring the time gap between paired signals, you would be able to figure the difference in the distance to the two transmitters.  The set of all points with that particular difference is a hyperbola.  If you could simultaneously solve two hyperbola equations for $x$ and $y$, you could find your longitude and latitude. 
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hyperbolas.svg/500px-Hyperbolas.svg.png" width = 300></img>
-</center>
+Today we talked about how to solve systems of nonlinear equations with Newton's method. As a motivating example, we talked about how this could be used in navigation, for example in the [LORAN system](https://en.wikipedia.org/wiki/LORAN).
 
 To solve a vector-valued system $\mathbf{F}(\mathbf{x}) = \mathbf{0}$, you can iterate the formula
 $$\mathbf{x}_{n+1} = \mathbf{x}_n - \mathbf{J}(\mathbf{x}_n)^{-1} \mathbf{F}(\mathbf{x_n})$$
@@ -573,19 +567,9 @@ for i in range(10):
 
 * **Workshop:** [Nonlinear systems](Workshops/NonlinearSystems.pdf)
 
-<!--
-### Mon, Feb 12
+### Wed, Feb 11
 
-Today we talked about systems of linear equations and linear algebra. Before we got to that, we looked at one more cool thing about Newton's method.  It also works for to find complex number roots if you use complex numbers.  We talked about the polynomial $x^3 - 1 = (x-1)(x^2+x+1)$ which has three roots: $x = 1$ and $x = \dfrac{-1 \pm i \sqrt{3}}{2}$. We talked about which complex numbers end up converging to which root as you iterate Newton's method.  You get a beautiful fractal pattern:
-
-<center>
-<figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Julia_set_for_the_rational_function.png" width=300></img>
-<figcaption>Basins of attraction for the roots of $x^3-1$.</figcaption>
-</figure>
-</center>
-
-After that we started a review of row reduction from linear algebra.
+Today we talked about systems of linear equations and linear algebra. 
 
 1. Suppose you have a jar full of pennies, nickles, dimes, and quarters.  There are 80 coins in the jar, and the total value of the coins is $10.00.  If there are twice as many dimes as quarters, then how many of each type of coin are in the jar?  
 
@@ -613,10 +597,6 @@ Recall the following terminology from linear algebra. For any matrix $A \in \R^{
 
 * The **nullity** of $A$ is the number of free variables which is the same as the dimension of the null space of $A$. 
 
-<!--Recall that the number of pivots in a matrix is called the **rank** of the matrix, and does not change when you row reduce. The rank is also the dimension of the **column space** $\on{Col}(A)$ which is the span of the columns of $A$.  The number of free variables of a matrix $A \in \R^{m \times n}$ is the dimension of the **null space** $\on{Null} (A) = \{x \in \R^n : Ax = 0 \}$. The dimension of the null space is sometimes called the **nullity** of the matrix.  Since every column of a matrix contains a pivot or corresponds to a free variable, we have the following important (but simple) theorem.-->
-
-<!--
-
 <div class="Theorem"> 
 **Rank + Nullity Theorem.** Let $A \in \R^{m \times n}$.  Then the rank of $A$ plus the nullity of $A$ must equal $n$. 
 </div>
@@ -636,6 +616,7 @@ In practice, inverse matrices are rarely used to solve systems of linear equatio
 1. Most matrices aren't invertible.
 2. Finding the inverse is at least as hard computationally as row reduction, so you might as well just use row reduction.  
 
+<!--
 ### Wed, Feb 14
 
 Today we talked about LU decomposition.  We defined the LU decomposition as follows.  The **LU decomposition** of a matrix $A \in \R^{m \times n}$ is a pair of matrices $L \in \R^{m \times m}$ and $U \in \R^{m \times n}$ such that $A = LU$ and $U$ is in echelon form and $L$ is a lower triangular matrix with 1's on the main diagonal, 0's above the main diagonal, and entries $L_{ij}$ in row $i$, column $j$ that are equal to the multiple of row $i$ that you *subtracted* from row $j$ as you row reduced $A$ to $U$. 

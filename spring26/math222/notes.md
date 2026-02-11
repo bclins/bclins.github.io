@@ -359,6 +359,20 @@ Notice that the `prop.test()` confidence interval is not the same as what we got
 $$p - \hat{p} = \pm z^* \sqrt{\frac{p(1-p)}{n}}.$$
 If you add in the continuity correction, this pretty much guarantees that there is at least a 95% chance (or whatever other confidence level you want) that the interval contains the true population parameter.  The Wilson method confidence intervals are fairly trustworthy even with relatively small samples and small numbers of successes/failures.  
 
+### Wed, Feb 11
+
+Today we went over the [midterm 1 review problems](midterm1review.pdf) (the [solutions](midterm1reviewSolutions.pdf) are also available now).  We also did some additional practice problems including these.
+
+1. If you draw a random card from a deck of 52 playing cards, what is the probability that you draw an ace or a heart?   
+
+2. Suppose you need knee surgery. There is an 11% that the surgery fails. There is a 4% chance of getting an infection. And there is a 3% chance of both infection and the surgery failing.  What is the probability that the surgery succeeds without infection?  
+
+3. In the Wimbledon tennis tournament, serving players are more likely to win a point. A server has two chances to serve the ball. There is a 59% chance that the first serve is in, and if it is, then the server has a 73% chance of winning the point.  If the first serve is out, then they have an 86% of getting the second serve in, and in that case they have a 59% chance of winning the point. But if the second serve is out, then the server automatically loses the point.  
+
+    a. Make a tree diagram for this situation.
+    b. Find the probability that the serving player wins the point.
+    c. Find the conditional probability that 1st serve was in, if the server wins the point.
+
 - - - 
 
 ### Week 6 Notes
@@ -368,6 +382,7 @@ Day  | Section  | Topic
 Mon, Feb 16 | [5.3][5.3] | Hypothesis tests for a proportion
 Wed, Feb 18 | [6.2][6.2] | Difference in two proportions 
 Fri, Feb 20 | [6.2][6.2] | Difference in two proportions - con'd 
+
               
 
 - - - 
