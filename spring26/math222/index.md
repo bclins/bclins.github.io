@@ -15,13 +15,12 @@ header-includes: |
 
 ## Math 222 - Spring 2026
 
-<!--
 <ul class="nav">
-  <li>[Class Notes](notes.html)</li>
-  <li>[Schedule & Syllabus](index.html)</li>
+  <li>[Examples](examples.html)</li>
+  <li>[Index](index.html)</li>
+  <li>[Notes](notes.html)</li>
   <li>[Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
 </ul>
--->
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
 * **Office Hours:** See my [weekly schedule](https://bclins.github.io/index.html#weekly-schedule), and by appointment

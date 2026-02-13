@@ -146,7 +146,7 @@ $$\mathsf{qnorm}(0.9, 64.3, 2.7)$$
 
 \part What percent of men are between 68 and 72 inches tall? Use the \verb|pnorm(x, mean, sd)| function to express your answer.  
 \begin{solution}
-$$\mathsf{pnorm}(68, 70, 3) - \mathsf{pnorm}(72, 70, 3)$$
+$$\mathsf{pnorm}(72, 70, 3) - \mathsf{pnorm}(68, 70, 3)$$
 \end{solution}
 \vfill
 
@@ -273,7 +273,7 @@ It might not be reasonable since if one kid gets sick, that increases the odds o
 \part If you play roulette 100 times, and bet on black every time, what is the probability that you win at least 50 times using the normal approximation? Use the \verb|pnorm(x, mean, sd)| function to express your answer.  
 \begin{solution}
 The mean is $np = 47.37$ and the standard deviation is $\sqrt{np(1-p)} = 4.99$.  So the normal approximation would be:
-\verb|1 - pnorm(2.5, 47.37, 4.99)|
+\verb|1 - pnorm(49.5, 47.37, 4.99)|
 \end{solution}
 \vfill
 \end{parts}
