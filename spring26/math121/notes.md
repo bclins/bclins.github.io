@@ -350,8 +350,7 @@ Mon, Feb 16 | [1.4][1.4] | Randomized controlled experiments
 Wed, Feb 18 | [3.1][3.1] | Defining probability
 Fri, Feb 20 | [3.1][3.1] | Multiplication and addition rules
 
-<!--
-### Mon, Sep 29
+### Mon, Feb 16
 
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
@@ -359,20 +358,21 @@ One of the hardest problems in statistics is to prove causation. Here is a diagr
 <img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:60%"></img>
 </center>
 
-The explanatory variable *might* be the cause of a change in the response variable. But we have to watch out for other variables that aren't part of the study called **lurking variables**.  
+The explanatory variable *might* be the cause of a change in the response variable. But we have to watch out for other variables that aren't part of the study called **lurking variables**. When researchers take a variable into account in a study, we say it is **controlled**.   
 
-A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.
+<!--A lurking variable that might be associated with both the explanatory and response variable is called a **confounding variable**.-->
 
 We say that **correlation is not causation** because you can't assume that there is a cause and effect relationship between two variables just because they are strongly associated.  The association might be caused by lurking variables or the causal relationship might go in the opposite direction of what you expect.  
 
 <div class="Theorem">
-**Experiments versus Observational Studies**
+#### Experiments versus Observational Studies
 
-An **experiment** is a study where the individuals are placed into different **treatment groups** by the researchers. An **observational study** is one where the researchers do not place the individuals into different treatment groups.  
+An **experiment** is a study where individuals are put into different **treatment groups**. An experiment is **randomized** if the individuals are randomly assigned to the treatment groups. An **observational study** is one where the researchers do not place the individuals into different treatment groups.  
 
-A **randomized controlled experiment** is one where the individuals are randomly assigned to treatment groups.  
+#### Proving Cause and Effect
 
-**Important concept:** Random assignment automatically controls all lurking variables, which let's you establish cause and effect.  
+* Observational studies *cannot establish causation* because they can't control all possible lurking variables. 
+* Randomized experiments *can establish causation* because random assignment automatically controls all lurking variables!
 </div>
 
 
@@ -407,6 +407,7 @@ Here is one more example we didn't have time for:
     
 We finished by talking about **anecdotal evidence**. 
 
+<!--
 ### Wed, Oct 1
 
 Today we introduced **probability models** which always have two parts:

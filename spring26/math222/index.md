@@ -43,7 +43,7 @@ Week | Topic                      | Notes | Projects
 3  | Probability and random variables               | [Week 03](notes.html#week-3-notes)  | [Project 1](Projects/project1.pdf)
 4  | Probability distributions                      | [Week 04](notes.html#week-4-notes)  |
 5  | Inference for proportions, **Midterm 1**       | [Week 05](notes.html#week-5-notes)  |
-6  | Comparing proportions                          | [Week 06](notes.html#week-6-notes)  |
+6  | Comparing proportions                          | [Week 06](notes.html#week-6-notes)  | [Project 2](Projects/project2.pdf) ([Rmd](Projects/project2.Rmd))
 7  | Inference about means                          | [Week 07](notes.html#week-7-notes)  |
 8  | Analysis of variance                           | [Week 08](notes.html#week-8-notes)  |
 9  | More ANOVA, **Midterm 2**                      | [Week 09](notes.html#week-9-notes)  |

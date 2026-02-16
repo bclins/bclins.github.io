@@ -885,6 +885,68 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-feb-18">Mon, Feb 18</h3>
+<p>Today we talked about <strong>hypothesis testing</strong>,
+specifically testing hypotheses about a population proportion. We looked
+at three examples.</p>
+<ul>
+<li><strong>Video:</strong> <a
+href="https://youtu.be/HBW5vdhr_PA?t=79">Helper, hinderer study</a></li>
+<li><strong>Picture:</strong> <a
+href="http://people.hsc.edu/faculty-staff/blins/classes/spring17/math222/examples/BobTim.png">Bob
+vs. Tim</a></li>
+<li><strong>Picture:</strong> <a
+href="https://en.wikipedia.org/wiki/Zener_cards">Zener cards</a></li>
+</ul>
+<ol type="1">
+<li><p>In the helper versus hinderer student, 14 out of 16 infants chose
+the helper toy. Could this be a random fluke? To find out we can do a
+hypothesis test for proportions.</p>
+<ol type="a">
+<li>What is the parameter of interest?</li>
+<li>What are the correct null &amp; alternative hypotheses about that
+parameter?</li>
+<li>What output do you get from the <code>prop.test()</code> function in
+this situation?</li>
+<li>What does the output mean?</li>
+</ol></li>
+</ol>
+<p>When you do a hypothesis test, typically you choose a
+<strong>significance level</strong> α in advance, and then you calculate
+a p-value. A <strong>p-value</strong> is the probability of getting a
+result at least as extreme as the statistic, if the null hypothesis is
+true:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">p-value</mtext><mo>=</mo><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mtext mathvariant="normal">Result at least as extreme </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">|</mo><mspace width="0.222em"></mspace><msub><mi>H</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{p-value} = P(\text{Result at least as extreme } | ~ H_0).</annotation></semantics></math>
+If the p-value is below the significance level, then you should reject
+the null hypothesis. The following things are all equivalent:</p>
+<ol type="1">
+<li>The results are statistically significant.</li>
+<li>The p-value is below the significance level.</li>
+<li>Reject the null hypothesis.</li>
+<li>The results are probably not a random fluke.</li>
+</ol>
+<p>Conversely, if the results are not statistically significant, then we
+don’t reject the null, and we should be aware that the results might be
+a random fluke. Be careful, a common misunderstanding is to think that
+the p-value is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>H</mi><mn>0</mn></msub><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">|</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> results as extereme as ours</mtext></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(H_0 ~ | \text{ results as extereme as ours})</annotation></semantics></math>.
+The p-value does not directly tell you the probability that the null
+hypothesis is true, it only indirectly suggests that the null might not
+be true.</p>
+<ol start="2" type="1">
+<li><p>In another study, researchers presented 100 college students the
+images of two men (see the link above) and asked them to guess which was
+named Tim and which was named Bob. It turned out that 67 students
+guessed that Tim was the man with the goatee.</p></li>
+<li><p>If someone gets 10 out of 25 guesses about what Zener card
+someone is looking at, is this strong evidence that they are psychic? Do
+a hypothesis test to find out.</p></li>
+</ol>
+<p>The null hypothesis in the last example is that the person is not
+psychic, so they only have a 1 out of 5 chance of guessing right. Here
+is how you test this using the <code>prop.test()</code> function in
+R.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="at">p =</span> <span class="fl">0.2</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>

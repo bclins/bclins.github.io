@@ -382,7 +382,43 @@ Mon, Feb 16 | [5.3][5.3] | Hypothesis tests for a proportion
 Wed, Feb 18 | [6.2][6.2] | Difference in two proportions 
 Fri, Feb 20 | [6.2][6.2] | Difference in two proportions - con'd 
 
-              
+### Mon, Feb 18
+
+Today we talked about **hypothesis testing**, specifically testing hypotheses about a population proportion.  We looked at three examples. 
+
+* **Video:** [Helper, hinderer study](https://youtu.be/HBW5vdhr_PA?t=79)
+* **Picture:** [Bob vs. Tim](http://people.hsc.edu/faculty-staff/blins/classes/spring17/math222/examples/BobTim.png)
+* **Picture:** [Zener cards](https://en.wikipedia.org/wiki/Zener_cards)
+
+1. In the helper versus hinderer student, 14 out of 16 infants chose the helper toy. Could this be a random fluke?  To find out we can do a hypothesis test for proportions.  
+
+    a. What is the parameter of interest?
+    b. What are the correct null & alternative hypotheses about that parameter?
+    c. What output do you get from the `prop.test()` function in this situation?
+    d. What does the output mean?
+
+
+When you do a hypothesis test, typically you choose a **significance level** α in advance, and then you calculate a p-value. A **p-value** is the probability of getting a result at least as extreme as the statistic, if the null hypothesis is true:
+$$\text{p-value} = P(\text{Result at least as extreme } | ~ H_0).$$
+ If the p-value is below the significance level, then you should reject the null hypothesis.  The following things are all equivalent:
+
+1. The results are statistically significant.
+2. The p-value is below the significance level.
+3. Reject the null hypothesis. 
+4. The results are probably not a random fluke.  
+
+Conversely, if the results are not statistically significant, then we don't reject the null, and we should be aware that the results might be a random fluke.  Be careful, a common misunderstanding is to think that the p-value is $P(H_0 ~ | \text{ results as extereme as ours})$. The p-value does not directly tell you the probability that the null hypothesis is true, it only indirectly suggests that the null might not be true.
+
+2. In another study, researchers presented 100 college students the images of two men (see the link above) and asked them to guess which was named Tim and which was named Bob.  It turned out that 67 students guessed that Tim was the man with the goatee. 
+
+3. If someone gets 10 out of 25 guesses about what Zener card someone is looking at, is this strong evidence that they are psychic? Do a hypothesis test to find out. 
+
+The null hypothesis in the last example is that the person is not psychic, so they only have a 1 out of 5 chance of guessing right.  Here is how you test this using the `prop.test()` function in R. 
+
+```r
+prop.test(10, 25, p = 0.2, alternative = "greater")
+```
+
 
 - - - 
 

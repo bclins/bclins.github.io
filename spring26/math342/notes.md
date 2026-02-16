@@ -656,64 +656,63 @@ Here's another LU decomposition example if you want more practice.
 
 4. Decompose $A = \begin{pmatrix} 2 & 4 & 3 & 5 \\ -4 & -7 & -5 & -8 \\ 6 & 8 & 2 & 9 \\ 4 & 9 & -2 & 14 \end{pmatrix}$. (<https://youtu.be/BFYFkn-eOQk>)
 
+- - - 
+
+### Week 6 Notes
+
+Day  | Topic
+:-----:|:-----------------------
+Mon, Feb 16 | Matrix norms and conditioning
+Wed, Feb 18 | Review
+Fri, Feb 20 | **Midterm 1** 
+
+### Mon, Feb 16
+
+
+
+1. Let $A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$, let $\mathbf{y} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$, and let $\mathbf{z} =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}$. Solve $A\mathbf{x} = \mathbf{y}$ and $A\mathbf{x} = \mathbf{z}$. 
+
+    Hint: $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$. 
+
+Notice that even though $\mathbf{y}$ and $\mathbf{z}$ are very close, the two solutions are not close at all.  When the solutions of a linear system $A\mathbf{x} = \mathbf{b}$ are very sensitive to small changes in $b$, we say that the matrix $A$ is **ill-conditioned**.
+
+
 <!--
-### Fri, Feb 16
-
-
-Today we talked about what it means for a linear system to be **ill-conditioned**.  This is when a small change in the vector $b$ can produce a large change in the solution vector $x$ for a linear system $Ax=b$.  
-
-Consider the following matrix:
-
-$$A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$$
-
-Let $y = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$ and $z =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}$.
-
-1. Solve $Ax = y$ and $Ax = z$. Hint: $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$. Notice that even though $y$ and $z$ are very close, the two solutions are not close at all.  A matrix $A$ with the property that solutions of $Ax = b$ are very sensitive to small changes in $b$ is called **ill-conditioned**.
-
 Consider the matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which has $LU$ decomposition 
 $$B = LU = \begin{pmatrix} 1 & 0 \\ 1000 & 1 \end{pmatrix} \,  \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}.$$  
 Although $B$ is not ill-conditioned, you have to be careful using row reduction to solve equations with this matrix because both $L$ and $U$ in the LU-decomposition for $B$ are ill-conditioned.
 
 2. Use the LU-decomposition to solve $Bx = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
 
-<!--To solve the system, 
 
 1. First, solve $Ly = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ to get $y = \begin{pmatrix} 1 \\ -998 \end{pmatrix}$. 
 
 2. Then, solve $Ux = y$.  You should get $x = \begin{pmatrix} 1.001001 \\ 0.998999 \end{pmatrix}$ by solving the system 
 $$0.001x_1 + x_2 = 1,$$
 $$-999 x_2 = -998.$$
-If you solve this system, it is easy to make a rounding mistake and get $x_2 = 1$ instead of $\frac{998}{999}$. If that happens, then you'll get $x_1 = 0$ instead of its actual value.-->
+If you solve this system, it is easy to make a rounding mistake and get $x_2 = 1$ instead of $\frac{998}{999}$. If that happens, then you'll get $x_1 = 0$ instead of its actual value.
 
-<!--
 3. The inverse of the matrix $L$ in the LU decomposition above is 
 $$L^{-1} = \begin{pmatrix} 1 & 0 \\ -1000 & 1 \end{pmatrix}.$$
 Show that $L$ is ill-conditioned by finding a vector $y'$ close the $y = \begin{pmatrix} 1 \\ 2\end{pmatrix}$, but such that the corresponding solutions $x$ and $x'$ to the matrix equations $Lx = y$ and $Lx' = y'$ are not close. 
 
 
 
-<!--
-3. When you row-reduce $\ds \left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 1 & 1 & 2 \end{array} \right)$ without swapping rows, you get $\ds \left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 0 & -999 & -998 \end{array} \right)$.  Let $R = \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}$. Show that $R$ is ill-conditioned by comparing the solutions of these two systems: 
+3. When you row-reduce $\left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 1 & 1 & 2 \end{array} \right)$ without swapping rows, you get $\left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 0 & -999 & -998 \end{array} \right)$.  Let $R = \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}$. Show that $R$ is ill-conditioned by comparing the solutions of these two systems: 
 $$Rx = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \text{ and } Rx = \begin{pmatrix} 1.1 \\ 1 \end{pmatrix}.$$
 
 This can be a problem if there is any rounding error in the extra column after row reduction.  
 -->
 
-<!--It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, always choose the one with the largest absolute value.  
-
-In the example above, since both entries in the first column of $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ are positive, either could be the pivot.  To use **partial pivoting**, swap rows so that the pivot is the entry in column one with the larger absolute value, and the do the usual row reduction.  
-
-4. Show that when you row reduce $\begin{pmatrix} 1 & 1 \\ 0.001 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting matrix is not ill-posed.  <span style="background-color:yellow">Hmmm... this is tricky because you haven't introduced the condition number yet...</span>
--->
-
-<!--
 ### Norms of Vectors
 
-A **norm** is a function $\|\cdot\|$ from a vector space $V$ to $[0,\infty)$ with the following properties:
+<div class="Theorem">
+**Definition.** A **norm** is a function $\|\cdot\|$ from a vector space $V$ to $[0,\infty)$ with the following properties:
 
-1. $\|x\| = 0$ if and only if $x=0$.
-2. $\|c x \| = |c| \|x\|$ for all $x \in V$ and $c \in \R$.  
-3. $\|x+y\| \le \|x\| + \|y\|$ for all $x, y \in V$.  
+1. **Definiteness.** $\|x\| = 0$ if and only if $x=0$.
+2. **Homogeneity.** $\|c x \| = |c| \|x\|$ for all $x \in V$ and $c \in \R$.  
+3. **Triangle Inequality.** $\|x+y\| \le \|x\| + \|y\|$ for all $x, y \in V$.  
+</div>
 
 Intuitively a norm measures the length of a vector.  But there are different norms and they measure length in different ways.  The three most important norms on the vector space $\R^n$ are:
 
@@ -732,41 +731,82 @@ $$\|x\|_p = \sqrt[p]{|x_1|^p + |x_2|^p + \ldots + |x_n|^p}.$$
 
 We used Desmos to graph the set of vectors in $\R^2$ with $p$-norm equal to one, then we could see how those norms change as $p$ varies between 1 and $\infty$. 
 
-<center>
-<iframe src="https://www.desmos.com/calculator/ridobsezmp?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
-</center>
-
 ### Norms of Matrices
 
-The set of all matrices in $\R^{m \times n}$ is a vector space. So it makes sense to talk about the norm of a matrix.  There are many ways to define norms for matrices, but the most important for us are **operator norms** (also known as **induced norms**).  For a matrix $A \in \R^{m \times n}$, the **induced $p$-norm** is 
+The set of all matrices in $\R^{m \times n}$ is a vector space. So it makes sense to talk about the norm of a matrix.  There are many ways to define norms for matrices, but the most important for us are the **induced norms** (also known as **operator norms**).  For a matrix $A \in \R^{m \times n}$, the **induced $p$-norm** is 
 $$\|A\|_p = \max \{\|Ax\|_p : x \in \R^n, \|x\|=1\}.$$  
 Two important special cases are 
 
 1. When $p=2$, the induced norm $\|A\|_2$ is the square root of the largest eigenvalue of $A^T A$.  
 2. When $p=\infty$, the induced norm $\|A\|_\infty$ is the largest 1-norm of the rows of $A$.
 
+Here is a quick exercise:
+
+2. Find $\|A\|_\infty$ for the matrix $A = \begin{pmatrix} 1 & 1 & 1 & 1 \\ 2 & 2 & 5 & 3 \\ -1 & -1 & 14 & 4 \end{pmatrix}$. 
+
 ### Condition Number
 
-For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A$ is $\kappa(A) = \|A\| \, \|A^{-1}\|$ (using any induced norm).  
+For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A$ is $\kappa(A) = \|A\| \, \|A^{-1}\|$. You can use any induced norm to define $\kappa(A)$, but our default will be the induced $\infty$-norm since it is the only one that is easy to calculate by hand.
+
+3. Find the condition number $\kappa(A)$ for the matrix $A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$ with $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$. 
+
+If the condition number is large, then the matrix is ill-conditioned.  When we try to solve an ill-conditioned linear system, small errors in either $A$ or $\mathbf{b}$ could become large errors in our calculated solution. 
+
+Just like with root finding, we can talk about forward and backward error when we try to solve a linear system $A \mathbf{x} = \mathbf{b}$. The table below defines the absolute and relative forward and backwards errors.  In the table, $\mathbf{x}$ is the exact solution to the system $A \mathbf{x} = \mathbf{b}$, and $\mathbf{x}_a$ is an approximation of $\mathbf{x}$. 
+
+<center>
+<table class="bordered">
+<tr><td></td><td>Forward Error</td><td>Backward Error</td></tr>
+<tr><td>Absolute</td><td>$\|\mathbf{x}_a - \mathbf{x}\|$</td><td>$\| A \mathbf{x_a} - \mathbf{b} \|$</td></tr>
+<tr><td>Relative</td><td>$\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|}$</td><td>$\dfrac{\|A\mathbf{x}_a - \mathbf{b}\|}{\|\mathbf{b}\|}$</td></tr>
+</table>
+</center>
+
+The following result shows how the condition number lets us estimate the relative forward error using the relative backward error.
+
+<div class="Theorem">
+**Theorem.** If $A$ is an invertible matrix with condition number $\kappa(A)$, and $\mathbf{b} \ne 0$, then 
+$$\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|} \le \kappa(A) \dfrac{\|A\mathbf{x}_a - \mathbf{b}\|}{\|\mathbf{b}\|}.$$
+</div>
+
+*Proof.* By the definition of the induced norm, 
+$$\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|} = \dfrac{\|A^{-1} (A\mathbf{x}_a - \mathbf{b}) \|}{\|\mathbf{x}\|} \le \|A^{-1}\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{x}\|}.$$
+Since $\mathbf{b} = A \mathbf{x}$, $\|\mathbf{b}\| \le \|A \| \|\mathbf{x}\|$, so
+$$ \|A^{-1}\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{x}\|} \le  \|A^{-1}\| \|A\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{b}\|} = \kappa(A) \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{b}\|} $$
+which proves the statement. □
+
+The following is a consequence of this theorem.
+
+**Rule of thumb.** If the entries of $A$ and $\mathbf{b}$ are both accurate to $n$-significant digits and the condition number of $A$ is $\kappa(A) = 10^k$, then the solution of the linear system $A\mathbf{x} = \mathbf{b}$ will be accurate to $n-k$ significant digits. 
 
 
-**Rule of thumb.** If the entries of $A$ and $b$ are both accurate to $n$-significant digits and the condition number of $A$ is $\kappa(A) = 10^k$, then the solution of the linear system $Ax = b$ will be accurate to $n-k$ significant digits. 
+<!--
+### Wed, Feb 21
 
+Today we reviewed for the midterm exam. We reviewed the things you need to memorize. We also talked about the following problems. 
+
+1. Find the LU decomposition of $\begin{pmatrix} 1 & 0 & 3 \\ 4 & 2 & 9 \\ & -2 & -6 & 0 \end{pmatrix}$.
+
+2. Find and classify the fixed points of $f(x) = \dfrac{x^3}{8} + 1$. This was a little hard to solve, because it isn't easy to factor the polynomial $x^3 - 8x + 8$.  But it does have computable roots $2$ and $1 \pm \sqrt{5}$.  
+
+3. How would you use secant method to find the one negative root of $x^3 - 8x + 8$?  What would make good choices for $x_0$ and $x_1$?  What is $x_2$ for those choices? 
+
+4. If $a = 7.911 \times 10^{-17}$ and $b = 5.032 \times 10^{-15}$, then how many significant digits do the following have?
+    a. $a - b$.
+    b. $a/b$. 
 -->
 
 - - - 
 
-### Week 6 Notes
 
-
-
-
+### Week 7 Notes
 
 Day  | Topic
 :-----:|:-----------------------
-Mon, Feb 16 | LU decomposition with pivoting
-Wed, Feb 18 | Review
-Fri, Feb 20 | **Midterm 1** 
+Mon, Feb 23 | LU decomposition with pivoting
+Wed, Feb 25 | Inner-products and orthogonality
+Fri, Feb 27 | Unitary and Hermitian matrices 
+
 
 <!--
 ### Mon, Feb 19
@@ -807,35 +847,6 @@ Find the LU-decomposition with partial pivoting for these matrices
 Didn't have time for this one:
 4. Show that when you row reduce $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting LU matrices are not ill-posed.  
 -->
-
-<!--
-### Wed, Feb 21
-
-Today we reviewed for the midterm exam. We reviewed the things you need to memorize. We also talked about the following problems. 
-
-1. Find the LU decomposition of $\begin{pmatrix} 1 & 0 & 3 \\ 4 & 2 & 9 \\ & -2 & -6 & 0 \end{pmatrix}$.
-
-2. Find and classify the fixed points of $f(x) = \dfrac{x^3}{8} + 1$. This was a little hard to solve, because it isn't easy to factor the polynomial $x^3 - 8x + 8$.  But it does have computable roots $2$ and $1 \pm \sqrt{5}$.  
-
-3. How would you use secant method to find the one negative root of $x^3 - 8x + 8$?  What would make good choices for $x_0$ and $x_1$?  What is $x_2$ for those choices? 
-
-4. If $a = 7.911 \times 10^{-17}$ and $b = 5.032 \times 10^{-15}$, then how many significant digits do the following have?
-    a. $a - b$.
-    b. $a/b$. 
--->
-
-- - - 
-
-
-### Week 7 Notes
-
-Day  | Topic
-:-----:|:-----------------------
-Mon, Feb 23 | Matrix norms and conditioning
-Wed, Feb 25 | Inner-products and orthogonality
-Fri, Feb 27 | Unitary and Hermitian matrices 
-
-
 
 
 

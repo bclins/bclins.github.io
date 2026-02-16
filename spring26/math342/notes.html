@@ -1244,100 +1244,6 @@ practice.</p>
 (<a href="https://youtu.be/BFYFkn-eOQk"
 class="uri">https://youtu.be/BFYFkn-eOQk</a>)</li>
 </ol>
-<!--
-### Fri, Feb 16
-
-
-Today we talked about what it means for a linear system to be **ill-conditioned**.  This is when a small change in the vector $b$ can produce a large change in the solution vector $x$ for a linear system $Ax=b$.  
-
-Consider the following matrix:
-
-$$A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$$
-
-Let $y = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$ and $z =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}$.
-
-1. Solve $Ax = y$ and $Ax = z$. Hint: $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$. Notice that even though $y$ and $z$ are very close, the two solutions are not close at all.  A matrix $A$ with the property that solutions of $Ax = b$ are very sensitive to small changes in $b$ is called **ill-conditioned**.
-
-Consider the matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which has $LU$ decomposition 
-$$B = LU = \begin{pmatrix} 1 & 0 \\ 1000 & 1 \end{pmatrix} \,  \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}.$$  
-Although $B$ is not ill-conditioned, you have to be careful using row reduction to solve equations with this matrix because both $L$ and $U$ in the LU-decomposition for $B$ are ill-conditioned.
-
-2. Use the LU-decomposition to solve $Bx = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
-
-<!--To solve the system, 
-
-1. First, solve $Ly = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ to get $y = \begin{pmatrix} 1 \\ -998 \end{pmatrix}$. 
-
-2. Then, solve $Ux = y$.  You should get $x = \begin{pmatrix} 1.001001 \\ 0.998999 \end{pmatrix}$ by solving the system 
-$$0.001x_1 + x_2 = 1,$$
-$$-999 x_2 = -998.$$
-If you solve this system, it is easy to make a rounding mistake and get $x_2 = 1$ instead of $\frac{998}{999}$. If that happens, then you'll get $x_1 = 0$ instead of its actual value.-->
-<!--
-3. The inverse of the matrix $L$ in the LU decomposition above is 
-$$L^{-1} = \begin{pmatrix} 1 & 0 \\ -1000 & 1 \end{pmatrix}.$$
-Show that $L$ is ill-conditioned by finding a vector $y'$ close the $y = \begin{pmatrix} 1 \\ 2\end{pmatrix}$, but such that the corresponding solutions $x$ and $x'$ to the matrix equations $Lx = y$ and $Lx' = y'$ are not close. 
-
-
-
-<!--
-3. When you row-reduce $\ds \left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 1 & 1 & 2 \end{array} \right)$ without swapping rows, you get $\ds \left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 0 & -999 & -998 \end{array} \right)$.  Let $R = \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}$. Show that $R$ is ill-conditioned by comparing the solutions of these two systems: 
-$$Rx = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \text{ and } Rx = \begin{pmatrix} 1.1 \\ 1 \end{pmatrix}.$$
-
-This can be a problem if there is any rounding error in the extra column after row reduction.  
--->
-<!--It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, always choose the one with the largest absolute value.  
-
-In the example above, since both entries in the first column of $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ are positive, either could be the pivot.  To use **partial pivoting**, swap rows so that the pivot is the entry in column one with the larger absolute value, and the do the usual row reduction.  
-
-4. Show that when you row reduce $\begin{pmatrix} 1 & 1 \\ 0.001 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting matrix is not ill-posed.  <span style="background-color:yellow">Hmmm... this is tricky because you haven't introduced the condition number yet...</span>
--->
-<!--
-### Norms of Vectors
-
-A **norm** is a function $\|\cdot\|$ from a vector space $V$ to $[0,\infty)$ with the following properties:
-
-1. $\|x\| = 0$ if and only if $x=0$.
-2. $\|c x \| = |c| \|x\|$ for all $x \in V$ and $c \in \R$.  
-3. $\|x+y\| \le \|x\| + \|y\|$ for all $x, y \in V$.  
-
-Intuitively a norm measures the length of a vector.  But there are different norms and they measure length in different ways.  The three most important norms on the vector space $\R^n$ are:
-
-1. **The $2$-norm** (also known as the **Euclidean norm**) is the most commonly used, and it is exactly the formula for the length of a vector using the Pythagorean theorem. 
-$$\|x\|_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}.$$
-
-2. **The $1$-norm** (also known as the **Manhattan norm**) is
-$$\|x\|_1 = |x_1|+|x_2|+\ldots+|x_n|.$$
-This is the distance you would get if you had to navigate a city where the streets are arranged in a rectangular grid and you can't take diagonal paths.  
-
-3. **The $\infty$-norm** (also known as the **Maximum norm**) is 
-$$\|x\|_\infty = \max \{ |x_1|, |x_2|, \ldots, |x_n| \}.$$
-
-These are all special cases of **$p$-norms** which have the form
-$$\|x\|_p = \sqrt[p]{|x_1|^p + |x_2|^p + \ldots + |x_n|^p}.$$
-
-We used Desmos to graph the set of vectors in $\R^2$ with $p$-norm equal to one, then we could see how those norms change as $p$ varies between 1 and $\infty$. 
-
-<center>
-<iframe src="https://www.desmos.com/calculator/ridobsezmp?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
-</center>
-
-### Norms of Matrices
-
-The set of all matrices in $\R^{m \times n}$ is a vector space. So it makes sense to talk about the norm of a matrix.  There are many ways to define norms for matrices, but the most important for us are **operator norms** (also known as **induced norms**).  For a matrix $A \in \R^{m \times n}$, the **induced $p$-norm** is 
-$$\|A\|_p = \max \{\|Ax\|_p : x \in \R^n, \|x\|=1\}.$$  
-Two important special cases are 
-
-1. When $p=2$, the induced norm $\|A\|_2$ is the square root of the largest eigenvalue of $A^T A$.  
-2. When $p=\infty$, the induced norm $\|A\|_\infty$ is the largest 1-norm of the rows of $A$.
-
-### Condition Number
-
-For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A$ is $\kappa(A) = \|A\| \, \|A^{-1}\|$ (using any induced norm).  
-
-
-**Rule of thumb.** If the entries of $A$ and $b$ are both accurate to $n$-significant digits and the condition number of $A$ is $\kappa(A) = 10^k$, then the solution of the linear system $Ax = b$ will be accurate to $n-k$ significant digits. 
-
--->
 <hr />
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
@@ -1350,7 +1256,7 @@ For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Feb 16</td>
-<td style="text-align: left;">LU decomposition with pivoting</td>
+<td style="text-align: left;">Matrix norms and conditioning</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Feb 18</td>
@@ -1359,6 +1265,308 @@ For an invertible matrix $A \in \R^{n \times n}$, the **condition number** of $A
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 20</td>
 <td style="text-align: left;"><strong>Midterm 1</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mon-feb-16">Mon, Feb 16</h3>
+<ol type="1">
+<li><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1.001</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1.001 \end{pmatrix}</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐲</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{y} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}</annotation></semantics></math>,
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐳</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2.001</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{z} =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}</annotation></semantics></math>.
+Solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐲</mi></mrow><annotation encoding="application/x-tex">A\mathbf{x} = \mathbf{y}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐳</mi></mrow><annotation encoding="application/x-tex">A\mathbf{x} = \mathbf{z}</annotation></semantics></math>.</p>
+<p>Hint:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1001</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1000</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1000</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1000</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A^{-1} = \begin{pmatrix} 1001 &amp; -1000 \\ -1000 &amp; 1000 \end{pmatrix}</annotation></semantics></math>.</p></li>
+</ol>
+<p>Notice that even though
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐲</mi><annotation encoding="application/x-tex">\mathbf{y}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐳</mi><annotation encoding="application/x-tex">\mathbf{z}</annotation></semantics></math>
+are very close, the two solutions are not close at all. When the
+solutions of a linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A\mathbf{x} = \mathbf{b}</annotation></semantics></math>
+are very sensitive to small changes in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+we say that the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is <strong>ill-conditioned</strong>.</p>
+<!--
+Consider the matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which has $LU$ decomposition 
+$$B = LU = \begin{pmatrix} 1 & 0 \\ 1000 & 1 \end{pmatrix} \,  \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}.$$  
+Although $B$ is not ill-conditioned, you have to be careful using row reduction to solve equations with this matrix because both $L$ and $U$ in the LU-decomposition for $B$ are ill-conditioned.
+
+2. Use the LU-decomposition to solve $Bx = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
+
+
+1. First, solve $Ly = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ to get $y = \begin{pmatrix} 1 \\ -998 \end{pmatrix}$. 
+
+2. Then, solve $Ux = y$.  You should get $x = \begin{pmatrix} 1.001001 \\ 0.998999 \end{pmatrix}$ by solving the system 
+$$0.001x_1 + x_2 = 1,$$
+$$-999 x_2 = -998.$$
+If you solve this system, it is easy to make a rounding mistake and get $x_2 = 1$ instead of $\frac{998}{999}$. If that happens, then you'll get $x_1 = 0$ instead of its actual value.
+
+3. The inverse of the matrix $L$ in the LU decomposition above is 
+$$L^{-1} = \begin{pmatrix} 1 & 0 \\ -1000 & 1 \end{pmatrix}.$$
+Show that $L$ is ill-conditioned by finding a vector $y'$ close the $y = \begin{pmatrix} 1 \\ 2\end{pmatrix}$, but such that the corresponding solutions $x$ and $x'$ to the matrix equations $Lx = y$ and $Lx' = y'$ are not close. 
+
+
+
+3. When you row-reduce $\left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 1 & 1 & 2 \end{array} \right)$ without swapping rows, you get $\left( \begin{array}{cc|c} 0.001 & 1 & 1 \\ 0 & -999 & -998 \end{array} \right)$.  Let $R = \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}$. Show that $R$ is ill-conditioned by comparing the solutions of these two systems: 
+$$Rx = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \text{ and } Rx = \begin{pmatrix} 1.1 \\ 1 \end{pmatrix}.$$
+
+This can be a problem if there is any rounding error in the extra column after row reduction.  
+-->
+<h3 id="norms-of-vectors">Norms of Vectors</h3>
+<div class="Theorem">
+<p><strong>Definition.</strong> A <strong>norm</strong> is a function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>⋅</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|\cdot\|</annotation></semantics></math>
+from a vector space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,\infty)</annotation></semantics></math>
+with the following properties:</p>
+<ol type="1">
+<li><strong>Definiteness.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\|x\| = 0</annotation></semantics></math>
+if and only if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>.</li>
+<li><strong>Homogeneity.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>c</mi><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>c</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|c x \| = |c| \|x\|</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">x \in V</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">c \in \mathbb{R}</annotation></semantics></math>.<br />
+</li>
+<li><strong>Triangle Inequality.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>y</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|x+y\| \le \|x\| + \|y\|</annotation></semantics></math>
+for all
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">x, y \in V</annotation></semantics></math>.<br />
+</li>
+</ol>
+</div>
+<p>Intuitively a norm measures the length of a vector. But there are
+different norms and they measure length in different ways. The three
+most important norms on the vector space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>
+are:</p>
+<ol type="1">
+<li><p><strong>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>-norm</strong>
+(also known as the <strong>Euclidean norm</strong>) is the most commonly
+used, and it is exactly the formula for the length of a vector using the
+Pythagorean theorem.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>=</mo><msqrt><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>…</mi><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\|x\|_2 = \sqrt{x_1^2 + x_2^2 + \ldots + x_n^2}.</annotation></semantics></math></p></li>
+<li><p><strong>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>-norm</strong>
+(also known as the <strong>Manhattan norm</strong>) is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\|x\|_1 = |x_1|+|x_2|+\ldots+|x_n|.</annotation></semantics></math>
+This is the distance you would get if you had to navigate a city where
+the streets are arranged in a rectangular grid and you can’t take
+diagonal paths.</p></li>
+<li><p><strong>The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>-norm</strong>
+(also known as the <strong>Maximum norm</strong>) is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub><mo>=</mo><mo>max</mo><mo stretchy="false" form="prefix">{</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>,</mo><mi>…</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\|x\|_\infty = \max \{ |x_1|, |x_2|, \ldots, |x_n| \}.</annotation></semantics></math></p></li>
+</ol>
+<p>These are all special cases of
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>-norms</strong>
+which have the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>p</mi></msub><mo>=</mo><mroot><mrow><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>p</mi></msup><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>p</mi></msup><mo>+</mo><mi>…</mi><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">|</mo></mrow><mi>p</mi></msup></mrow><mi>p</mi></mroot><mi>.</mi></mrow><annotation encoding="application/x-tex">\|x\|_p = \sqrt[p]{|x_1|^p + |x_2|^p + \ldots + |x_n|^p}.</annotation></semantics></math></p>
+<p>We used Desmos to graph the set of vectors in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>-norm
+equal to one, then we could see how those norms change as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+varies between 1 and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>.</p>
+<h3 id="norms-of-matrices">Norms of Matrices</h3>
+<p>The set of all matrices in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb{R}^{m \times n}</annotation></semantics></math>
+is a vector space. So it makes sense to talk about the norm of a matrix.
+There are many ways to define norms for matrices, but the most important
+for us are the <strong>induced norms</strong> (also known as
+<strong>operator norms</strong>). For a matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">A \in \mathbb{R}^{m \times n}</annotation></semantics></math>,
+the <strong>induced
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>-norm</strong>
+is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>p</mi></msub><mo>=</mo><mo>max</mo><mo stretchy="false" form="prefix">{</mo><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mi>x</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>p</mi></msub><mo>:</mo><mi>x</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup><mo>,</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\|A\|_p = \max \{\|Ax\|_p : x \in \mathbb{R}^n, \|x\|=1\}.</annotation></semantics></math><br />
+Two important special cases are</p>
+<ol type="1">
+<li>When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">p=2</annotation></semantics></math>,
+the induced norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\|A\|_2</annotation></semantics></math>
+is the square root of the largest eigenvalue of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi></mrow><annotation encoding="application/x-tex">A^T A</annotation></semantics></math>.<br />
+</li>
+<li>When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">p=\infty</annotation></semantics></math>,
+the induced norm
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub></mrow><annotation encoding="application/x-tex">\|A\|_\infty</annotation></semantics></math>
+is the largest 1-norm of the rows of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</li>
+</ol>
+<p>Here is a quick exercise:</p>
+<ol start="2" type="1">
+<li>Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi></msub></mrow><annotation encoding="application/x-tex">\|A\|_\infty</annotation></semantics></math>
+for the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>14</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ 2 &amp; 2 &amp; 5 &amp; 3 \\ -1 &amp; -1 &amp; 14 &amp; 4 \end{pmatrix}</annotation></semantics></math>.</li>
+</ol>
+<h3 id="condition-number">Condition Number</h3>
+<p>For an invertible matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">A \in \mathbb{R}^{n \times n}</annotation></semantics></math>,
+the <strong>condition number</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mo stretchy="false" form="postfix">∥</mo><mspace width="0.167em"></mspace><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\kappa(A) = \|A\| \, \|A^{-1}\|</annotation></semantics></math>.
+You can use any induced norm to define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\kappa(A)</annotation></semantics></math>,
+but our default will be the induced
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>-norm
+since it is the only one that is easy to calculate by hand.</p>
+<ol start="3" type="1">
+<li>Find the condition number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\kappa(A)</annotation></semantics></math>
+for the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1.001</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1.001 \end{pmatrix}</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1001</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1000</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1000</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1000</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A^{-1} = \begin{pmatrix} 1001 &amp; -1000 \\ -1000 &amp; 1000 \end{pmatrix}</annotation></semantics></math>.</li>
+</ol>
+<p>If the condition number is large, then the matrix is ill-conditioned.
+When we try to solve an ill-conditioned linear system, small errors in
+either
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf{b}</annotation></semantics></math>
+could become large errors in our calculated solution.</p>
+<p>Just like with root finding, we can talk about forward and backward
+error when we try to solve a linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A \mathbf{x} = \mathbf{b}</annotation></semantics></math>.
+The table below defines the absolute and relative forward and backwards
+errors. In the table,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+is the exact solution to the system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A \mathbf{x} = \mathbf{b}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐱</mi><mi>a</mi></msub><annotation encoding="application/x-tex">\mathbf{x}_a</annotation></semantics></math>
+is an approximation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>.</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+Forward Error
+</td>
+<td>
+Backward Error
+</td>
+</tr>
+<tr>
+<td>
+Absolute
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|\mathbf{x}_a - \mathbf{x}\|</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>𝐚</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\| A \mathbf{x_a} - \mathbf{b} \|</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Relative
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><annotation encoding="application/x-tex">\dfrac{\|A\mathbf{x}_a - \mathbf{b}\|}{\|\mathbf{b}\|}</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>The following result shows how the condition number lets us estimate
+the relative forward error using the relative backward error.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is an invertible matrix with condition number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\kappa(A)</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐛</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathbf{b} \ne 0</annotation></semantics></math>,
+then
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>≤</mo><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|} \le \kappa(A) \dfrac{\|A\mathbf{x}_a - \mathbf{b}\|}{\|\mathbf{b}\|}.</annotation></semantics></math></p>
+</div>
+<p><em>Proof.</em> By the definition of the induced norm,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">∥</mo><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\dfrac{\|\mathbf{x}_a - \mathbf{x}\|}{\|\mathbf{x}\|} = \dfrac{\|A^{-1} (A\mathbf{x}_a - \mathbf{b}) \|}{\|\mathbf{x}\|} \le \|A^{-1}\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{x}\|}.</annotation></semantics></math>
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐛</mi><mo>=</mo><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">\mathbf{b} = A \mathbf{x}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow><annotation encoding="application/x-tex">\|\mathbf{b}\| \le \|A \| \|\mathbf{x}\|</annotation></semantics></math>,
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">∥</mo><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐱</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">∥</mo><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mo stretchy="false" form="postfix">∥</mo><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>=</mo><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mfrac displaystyle="true"><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><msub><mi>𝐱</mi><mi>a</mi></msub><mo>−</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>𝐛</mi><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex"> \|A^{-1}\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{x}\|} \le  \|A^{-1}\| \|A\| \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{b}\|} = \kappa(A) \dfrac{\|A \mathbf{x}_a - \mathbf{b} \|}{\|\mathbf{b}\|} </annotation></semantics></math>
+which proves the statement. □</p>
+<p>The following is a consequence of this theorem.</p>
+<p><strong>Rule of thumb.</strong> If the entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf{b}</annotation></semantics></math>
+are both accurate to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-significant
+digits and the condition number of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mn>10</mn><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\kappa(A) = 10^k</annotation></semantics></math>,
+then the solution of the linear system
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A\mathbf{x} = \mathbf{b}</annotation></semantics></math>
+will be accurate to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">n-k</annotation></semantics></math>
+significant digits.</p>
+<!--
+### Wed, Feb 21
+
+Today we reviewed for the midterm exam. We reviewed the things you need to memorize. We also talked about the following problems. 
+
+1. Find the LU decomposition of $\begin{pmatrix} 1 & 0 & 3 \\ 4 & 2 & 9 \\ & -2 & -6 & 0 \end{pmatrix}$.
+
+2. Find and classify the fixed points of $f(x) = \dfrac{x^3}{8} + 1$. This was a little hard to solve, because it isn't easy to factor the polynomial $x^3 - 8x + 8$.  But it does have computable roots $2$ and $1 \pm \sqrt{5}$.  
+
+3. How would you use secant method to find the one negative root of $x^3 - 8x + 8$?  What would make good choices for $x_0$ and $x_1$?  What is $x_2$ for those choices? 
+
+4. If $a = 7.911 \times 10^{-17}$ and $b = 5.032 \times 10^{-15}$, then how many significant digits do the following have?
+    a. $a - b$.
+    b. $a/b$. 
+-->
+<hr />
+<h3 id="week-7-notes">Week 7 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Feb 23</td>
+<td style="text-align: left;">LU decomposition with pivoting</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Feb 25</td>
+<td style="text-align: left;">Inner-products and orthogonality</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Feb 27</td>
+<td style="text-align: left;">Unitary and Hermitian matrices</td>
 </tr>
 </tbody>
 </table>
@@ -1400,45 +1608,6 @@ Find the LU-decomposition with partial pivoting for these matrices
 Didn't have time for this one:
 4. Show that when you row reduce $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting LU matrices are not ill-posed.  
 -->
-<!--
-### Wed, Feb 21
-
-Today we reviewed for the midterm exam. We reviewed the things you need to memorize. We also talked about the following problems. 
-
-1. Find the LU decomposition of $\begin{pmatrix} 1 & 0 & 3 \\ 4 & 2 & 9 \\ & -2 & -6 & 0 \end{pmatrix}$.
-
-2. Find and classify the fixed points of $f(x) = \dfrac{x^3}{8} + 1$. This was a little hard to solve, because it isn't easy to factor the polynomial $x^3 - 8x + 8$.  But it does have computable roots $2$ and $1 \pm \sqrt{5}$.  
-
-3. How would you use secant method to find the one negative root of $x^3 - 8x + 8$?  What would make good choices for $x_0$ and $x_1$?  What is $x_2$ for those choices? 
-
-4. If $a = 7.911 \times 10^{-17}$ and $b = 5.032 \times 10^{-15}$, then how many significant digits do the following have?
-    a. $a - b$.
-    b. $a/b$. 
--->
-<hr />
-<h3 id="week-7-notes">Week 7 Notes</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Day</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Mon, Feb 23</td>
-<td style="text-align: left;">Matrix norms and conditioning</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Feb 25</td>
-<td style="text-align: left;">Inner-products and orthogonality</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Feb 27</td>
-<td style="text-align: left;">Unitary and Hermitian matrices</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
