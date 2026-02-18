@@ -434,7 +434,7 @@ We talked about how to compare two proportions using confidence intervals and hy
 
 We created an R-markdown document to answer these questions in class. 
 
-* **Example:** [Nicotine Lozenges](Nicotine.html) ([source](Nicotine.Rmd))
+* **Example:** [Nicotine Lozenges](Examples/Nicotine.html) ([source](Examples/Nicotine.Rmd))
 
 After we did that example, I let everyone work on a similar example on their own: 
 

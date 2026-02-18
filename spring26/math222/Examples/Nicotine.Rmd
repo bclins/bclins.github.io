@@ -18,7 +18,7 @@ b. Make a stacked bar graph that shows the column percentages for the 2-way tabl
 
     ```{r} 
     column.percents = prop.table(results, margin = 2) # margin = 1 would be for row percentages
-    barplot(column.percents, legend.text = TRUE)
+    barplot(column.percents, legend = T, ylab = "Proportion")
     ```
 
 c. What are the correct null and alternative hypotheses for this situation?

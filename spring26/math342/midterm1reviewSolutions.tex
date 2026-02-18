@@ -29,8 +29,8 @@ $$x_1 = \tfrac{1}{3}a - \frac{(\tfrac{1}{3}a)^3 - a}{3(\frac{1}{3}a)^2} = \frac{
 
 \question The root of $x^3-2$ is $\sqrt[3]{2}$, which is located in the interval $[1,2]$.  If we use the bisection method to find this root, starting with the endpoints $a=1$ and $b=2$, then what is the worst case error in our estimate for the root after 10 steps?  
 \begin{solution}
-Each step in the bisection method reduces the error by a factor of 2.  Initially the solution could be anywhere in the interval $[1,2]$, so our initial error could be as big as 1 (since 1 is the length of the interval).  After 10 steps, the worst case error would be 
-$$\frac{1}{2^{10}} = \frac{1}{1024}.$$  
+Each step in the bisection method reduces the error by a factor of 2.  Initially the solution could be anywhere in the interval $[1,2]$, so our initial error could be as big as $\tfrac{1}{2}$ (since that is half the length of the interval).  After 10 steps, the worst case error would be 
+$$\frac{1}{2^{11}} = \frac{1}{2048}.$$  
 \end{solution}
 \vfill
 
@@ -166,6 +166,9 @@ $$x_{2} = 2 - \frac{-1}{2} = 2.5.$$
 x^2 - 4y^2 &= 1\\
 x^2 + xy &= 1
 \end{align*}
+\begin{solution}
+$$\mathbf{F}(\mathbf{x}) = \begin{bmatrix} x^2 - 4y^2 - 1 \\ x^2 + xy - 1 \end{bmatrix} ~~~~ \mathbf{J}(\mathbf{x}) = \begin{bmatrix} 2x & - 8y \\ 2x + y & x \end{bmatrix}.$$
+\end{solution}
 \vfill
 
 \question Draw a rough sketch of a cobweb diagram for the function $f(x) = -\tfrac{1}{2}x + 5$ starting with $x_0 = 1$. 
