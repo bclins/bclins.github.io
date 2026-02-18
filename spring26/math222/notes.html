@@ -947,6 +947,110 @@ psychic, so they only have a 1 out of 5 chance of guessing right. Here
 is how you test this using the <code>prop.test()</code> function in
 R.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="dv">10</span>, <span class="dv">25</span>, <span class="at">p =</span> <span class="fl">0.2</span>, <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span></code></pre></div>
+<h3 id="wed-feb-18">Wed, Feb 18</h3>
+<p>We talked about how to compare two proportions using confidence
+intervals and hypothesis testing. We started by talking about how the
+<code>prop.test()</code> function in R can accept a vector of successes
+and another vector of totals for more than one group. We used this to
+analyze the following study.</p>
+<ol type="1">
+<li><p>A 2002 study looked at whether nicotine lozenges could help
+smokers who want to quit. The subjects were randomly assigned to two
+treatment groups. One group got a nicotine lozenge to take when they had
+cravings, while the other group got a placebo lozenge. Of the 459
+subjects who got the nicotine lozenge, 82 successfully abstained from
+smoking, while only 44 out of the 458 subjects in the placebo did.</p>
+<ol type="a">
+<li>Make a 2-way table to show the results of this experiment.</li>
+<li>Make a stacked bar graph that shows the column percentagages for the
+2-way table.</li>
+<li>What are the correct null and alternative hypotheses for this
+situation?</li>
+<li>Find the p-value and explain what it means about nicotine
+lozenges.</li>
+<li>In the sample, how many times more likely were people in the
+nicotine lozenge group to quit smoking than people in the placebo
+group?</li>
+<li>What are we 95% confident will be in the confidence interval?</li>
+</ol></li>
+</ol>
+<p>We created an R-markdown document to answer these questions in
+class.</p>
+<ul>
+<li><strong>Example:</strong> <a href="Nicotine.html">Nicotine
+Lozenges</a> (<a href="Nicotine.Rmd">source</a>)</li>
+</ul>
+<p>After we did that example, I let everyone work on a similar example
+on their own:</p>
+<ol start="2" type="1">
+<li>The North Carolina State University Chemical Engineering department
+did a study to determine which factors affect student success in one of
+their introductory chemical engineering courses. One of the factors they
+looked at was whether students were from a rural area, or an
+urban/suburban area. Here is a two-way table showing the counts of the
+students who passed and failed the course.</li>
+</ol>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+Rural
+</td>
+<td>
+Urban/Suburban
+</td>
+</tr>
+<tr>
+<td>
+Passed
+</td>
+<td>
+30
+</td>
+<td>
+52
+</td>
+</tr>
+<tr>
+<td>
+Failed
+</td>
+<td>
+25
+</td>
+<td>
+13
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+55
+</td>
+<td>
+65
+</td>
+</tr>
+</table>
+</center>
+<p>Use R to visualize the results and carry out a hypothesis test to see
+if background make a significant difference in student pass rates.</p>
+<!--
+2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
+-->
+<!--
+After we did those two examples, we talked a little about the theory behind the two sample proportions test. 
+
+If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  If you have two random variables (like $\hat{p}_1$ and $\hat{p}_2$) that are approximately normal, then the difference is also approximately normal. 
+
+3. If $\hat{p}_1 \sim \on{Norm}\left(p_1, \sqrt{\frac{p_1(1-p_1)}{n_1}} \right)$ and $\hat{p}_2 \sim \on{Norm}\left(p_2, \sqrt{\frac{p_2(1-p_2)}{n_2}} \right)$, then describe the distribution of the difference $\hat{p}_1 - \hat{p}_2$.  What is its shape, center, and spread?  
+
+Using the result of the previous exercise, we derived the formulas for a large sample confidence interval for a difference in proportions and for a two sample hypothesis test for proportions. 
+-->
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>

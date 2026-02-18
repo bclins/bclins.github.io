@@ -1,0 +1,60 @@
+---
+title: Nicotine Lozenges
+output: html_document
+---
+
+A 2002 study looked at whether nicotine lozenges could help smokers who want to quit. The subjects were randomly assigned to two treatment groups. One group got a nicotine lozenge to take when they had cravings, while the other group got a placebo lozenge. Of the 459 subjects who got the nicotine lozenge, 82 successfully abstained from smoking, while only 44 out of the 458 subjects in the placebo did.
+
+a. Make a 2-way table to show the results of this experiment.
+
+    ```{r}
+    results <- matrix(c(82, 44, 377, 414), nrow = 2, byrow = TRUE)
+    colnames(results) = c("Nicotine lozenge", "Placebo")
+    rownames(results) = c("Abstained", "Didn't")
+    results
+    ```
+
+b. Make a stacked bar graph that shows the column percentages for the 2-way table. 
+
+    ```{r} 
+    column.percents = prop.table(results, margin = 2) # margin = 1 would be for row percentages
+    barplot(column.percents, legend.text = TRUE)
+    ```
+
+c. What are the correct null and alternative hypotheses for this situation?
+
+    * $H_0: p_1 = p_2$
+    * $H_A: p_1 > p_2$
+
+ 
+d. Find the p-value and explain what it means about nicotine lozenges. 
+
+    ```{r}
+    prop.test(c(82, 44), c(459, 458), alternative = "greater")
+    ```
+
+    The p-value is 0.0002032, which is very strong evidence that nicotine lozenges work better than a placebo to help people quit smoking. 
+
+e. In the sample, how many times more likely were people in the nicotine lozenge group to quit smoking than people in the placebo group?
+
+    The two sample proportions were $\hat{p}_1 = 17.9$% and $\hat{p}_2 = 9.6$%.  Therefore people taking the nicotine lozenge were $17.9 \, / \, 9.6 = 1.86$ times more likely to quit smoking. 
+
+f. What are we 95% confident will be in the confidence interval?
+
+    The confidence interval above is only for the 1-sided alternative where we assumed that nicotine lozenges would definitely not hurt peoples chances to quit smoking.  If we remove that assumption, we get a 2-sided confidence interval:
+
+    ```{r}
+    prop.test(c(82, 44), c(459, 458))
+    ```
+
+    Looking at the R output for the confidence interval, we are 95% confident that nicotine lozenges increase the percent of smokers who can quit by between 3.6% and 12.9%. 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

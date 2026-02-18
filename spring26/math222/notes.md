@@ -419,6 +419,52 @@ The null hypothesis in the last example is that the person is not psychic, so th
 prop.test(10, 25, p = 0.2, alternative = "greater")
 ```
 
+### Wed, Feb 18
+
+We talked about how to compare two proportions using confidence intervals and hypothesis testing. We started by talking about how the `prop.test()` function in R can accept a vector of successes and another vector of totals for more than one group.  We used this to analyze the following study. 
+
+1. A 2002 study looked at whether nicotine lozenges could help smokers who want to quit.  The subjects were randomly assigned to two treatment groups.  One group got a nicotine lozenge to take when they had cravings, while the other group got a placebo lozenge.  Of the 459 subjects who got the nicotine lozenge, 82 successfully abstained from smoking, while only 44 out of the 458 subjects in the placebo did.
+
+    a. Make a 2-way table to show the results of this experiment. 
+    b. Make a stacked bar graph that shows the column percentagages for the 2-way table. 
+    c. What are the correct null and alternative hypotheses for this situation?
+    d. Find the p-value and explain what it means about nicotine lozenges. 
+    e. In the sample, how many times more likely were people in the nicotine lozenge group to quit smoking than people in the placebo group?
+    f. What are we 95% confident will be in the confidence interval?
+
+We created an R-markdown document to answer these questions in class. 
+
+* **Example:** [Nicotine Lozenges](Nicotine.html) ([source](Nicotine.Rmd))
+
+After we did that example, I let everyone work on a similar example on their own: 
+
+2. The North Carolina State University Chemical Engineering department did a study to determine which factors affect student success in one of their introductory chemical engineering courses.  One of the factors they looked at was whether students were from a rural area, or an urban/suburban area.  Here is a two-way table showing the counts of the students who passed and failed the course. 
+
+<center>
+<table class="bordered">
+<tr><td></td><td>Rural</td><td>Urban/Suburban</td></tr>
+<tr><td>Passed</td><td>30</td><td>52</td></tr>
+<tr><td>Failed</td><td>25</td><td>13</td></tr>
+<tr><td>Total</td><td>55</td><td>65</td></tr>
+</table>
+</center>
+
+Use R to visualize the results and carry out a hypothesis test to see if background make a significant difference in student pass rates. 
+
+
+<!--
+2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
+-->
+
+<!--
+After we did those two examples, we talked a little about the theory behind the two sample proportions test. 
+
+If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  If you have two random variables (like $\hat{p}_1$ and $\hat{p}_2$) that are approximately normal, then the difference is also approximately normal. 
+
+3. If $\hat{p}_1 \sim \on{Norm}\left(p_1, \sqrt{\frac{p_1(1-p_1)}{n_1}} \right)$ and $\hat{p}_2 \sim \on{Norm}\left(p_2, \sqrt{\frac{p_2(1-p_2)}{n_2}} \right)$, then describe the distribution of the difference $\hat{p}_1 - \hat{p}_2$.  What is its shape, center, and spread?  
+
+Using the result of the previous exercise, we derived the formulas for a large sample confidence interval for a difference in proportions and for a two sample hypothesis test for proportions. 
+-->
 
 - - - 
 

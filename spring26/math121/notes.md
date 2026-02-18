@@ -407,8 +407,7 @@ Here is one more example we didn't have time for:
     
 We finished by talking about **anecdotal evidence**. 
 
-<!--
-### Wed, Oct 1
+### Wed, Feb 18
 
 Today we introduced **probability models** which always have two parts:
 
@@ -434,6 +433,7 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 * **Workshop**: [Probability models](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
+<!--
 ### Fri, Oct 3
 
 Today we talked about the **multiplication** and **addition rules** for probability.  We also talked about **independent events** and **conditional probability**.  We started with these examples. 

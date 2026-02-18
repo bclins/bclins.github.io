@@ -668,11 +668,7 @@ Fri, Feb 20 | **Midterm 1**
 
 ### Mon, Feb 16
 
-
-
-1. Let $A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$, let $\mathbf{y} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$, and let $\mathbf{z} =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}$. Solve $A\mathbf{x} = \mathbf{y}$ and $A\mathbf{x} = \mathbf{z}$. 
-
-    Hint: $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$. 
+1. Let $A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$. Let $\mathbf{y} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$ and $\mathbf{z} =  \begin{pmatrix} 2 \\ 2.001 \end{pmatrix}$. Use $A^{-1} = \begin{pmatrix} 1001 & -1000 \\ -1000 & 1000 \end{pmatrix}$ to solve $A\mathbf{x} = \mathbf{y}$ and $A\mathbf{x} = \mathbf{z}$. 
 
 Notice that even though $\mathbf{y}$ and $\mathbf{z}$ are very close, the two solutions are not close at all.  When the solutions of a linear system $A\mathbf{x} = \mathbf{b}$ are very sensitive to small changes in $b$, we say that the matrix $A$ is **ill-conditioned**.
 
