@@ -434,7 +434,7 @@ We talked about how to compare two proportions using confidence intervals and hy
 
 We created an R-markdown document to answer these questions in class. 
 
-* **Example:** [Nicotine Lozenges](Examples/Nicotine.html) ([source](Examples/Nicotine.Rmd))
+* **Example:** [Nicotine Lozenges](Examples/Nicotine.html) ([Rmd source](Examples/Nicotine.Rmd))
 
 After we did that example, I let everyone work on a similar example on their own: 
 
@@ -450,6 +450,12 @@ After we did that example, I let everyone work on a similar example on their own
 </center>
 
 Use R to visualize the results and carry out a hypothesis test to see if background make a significant difference in student pass rates. 
+
+* **Example:** [Factors affecting pass rates in chemical engineering](Examples/PassRates.html) ([Rmd source](Examples/PassRates.Rmd))
+
+<!--
+2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
+-->
 
 
 ### Fri, Feb 20
@@ -467,12 +473,7 @@ We started with this example that we did not have time for last time.
 </table>
 </center>
 
-Last time we talked about how to make a two-way table in R by constructing a matrix.  It it also possible to construct a two-way table using a data frame with data from a spreadsheet. 
-
-
-<!--
-2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
--->
+After that we talked briefly about the theory behind the two-sample test for proportions. 
 
 <div class="Theorem">
 **Theorem.** If $X$ and $Y$ are independent random variables that each have a normal distribution, then $X+Y$ also has a normal distribution.
@@ -480,7 +481,7 @@ Last time we talked about how to make a two-way table in R by constructing a mat
 
 If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  
 
-1. By the theorem above, the difference $\hat{p}_1 - \hat{p}_2$ should be approximately normal.  What is its mean and standard deviation?  
+2. By the theorem above, the difference $\hat{p}_1 - \hat{p}_2$ should be approximately normal.  What is its mean and standard deviation?  
 
 <div class="Theorem">
 **Two-Sample Hypothesis Test for Proportions.** 
@@ -507,15 +508,15 @@ $$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \f
 Works best if both samples contain at least 10 successes and 10 failures.
 </div>
 
-After that we looked at some quirks of the `prop.test()` command.  
+We also talked about **one-sided confidence intervals**, which you get automatically in R when you set the `alternative` option to either `"greater"` or `"less"`.  
 
-* For a 2-by-2 two-way table, $\chi^2 = z^2$ so the p-values are the same whether you use a $\chi^2$-test or a $z$-test.  
+We finished by introducing the **chi-squared statistic**
+$$\chi^2 = \sum \frac{(E_{ij} - O_{ij})^2}{E_{ij}}$$
+where 
+$$E_{ij} = \frac{(\text{Row } i \text{ total}) \cdot (\text{Column } j \text{ total})}{\text{Table total}}$$
+is the **expected count** in row $i$, column $j$ (assuming there is no association), and $O_{ij}$ is the **observed count** in row $i$, column $j$. 
 
-* If you test a 1-sided alternative hypothesis, then you are also given a 1-sided confidence interval. 
-
-We finished by introducing the chi-squared test for association with this example:
-
-* **Example**: [Chi-squared test for association](Examples/SelfImage.html) ([data](Examples/SelfImage.csv), [soure](Examples/SelfImage.Rmd))
+3. (Challenge problem). Use algebra to show the $\chi^2$ statistic for a 2-by-2 two-way table is the same as the square of the $z$-value from the two sample proportions test.  
 
 - - - 
 
@@ -528,6 +529,10 @@ Mon, Feb 23 | [6.3][6.3] | Chi-squared goodness of fit test
 Wed, Feb 25 | [6.4][6.4] | Chi-squared test for association
 Fri, Feb 27 | [7.1][7.1] | One-sample means with t-distribution
              
+<!--
+* **Example**: [Chi-squared test for association](Examples/SelfImage.html) ([data](Examples/SelfImage.csv), [source](Examples/SelfImage.Rmd))
+
+-->
 
 - - - 
 

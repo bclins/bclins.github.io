@@ -1,0 +1,49 @@
+---
+title: Two Sample Test for Proportions
+output: html_document
+---
+
+The North Carolina State University Chemical Engineering Department looked at factors that might affect the pass rates in one of their introductory classes.  Below is a two way table that shows the pass rates for students from rural areas, versus students from urban areas. 
+
+```{r}
+results <- matrix(c(30, 52, 25, 13), nrow = 2, byrow = TRUE)
+colnames(results) = c("Rural", "Urban/Suburban")
+rownames(results) = c("Pass", "Failed")
+results
+```
+
+To make a graph that compares the percent of students that passed in each group, you first need to make a table of column proportions. Then you can make a barplot for that table. 
+
+
+```{r}
+col.props <- prop.table(results, margin = 2) # Use margin = 1 for row proportions, 2 for column proportions. 
+barplot(col.props, ylab = "Proportion", legend = T)
+```
+
+### Hypothesis Test for Proportions
+
+We can use the R command `prop.test()` to test the following hypotheses. 
+
+* $H_0: p_\text{Rural} = p_\text{Urban}$  
+* $H_A: p_\text{Rural} \ne p_\text{Urban}$
+
+```{r}
+prop.test(c(30, 52), c(55, 65))
+```
+
+### Another Example
+
+Another factor they looked at was gender.  Here are the results for gender versus pass rate. 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

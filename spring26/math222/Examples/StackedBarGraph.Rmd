@@ -1,0 +1,38 @@
+---
+title: Stacked Bar Graphs
+---
+
+Here is the example from [PassRates.html](PassRates.html) showing how to make a stack bar graph showing the column proportions for a two-way table.
+
+```{r}
+results <- matrix(c(60, 23, 29, 11), nrow = 2, byrow = TRUE)
+colnames(results) = c("Male", "Female")
+rownames(results) = c("Pass", "Failed")
+results
+barplot(prop.table(results, margin = 2), col = cm.colors(2), ylab = "Proportion", legend = T)
+```
+
+Here is a ggplots version of the same graph.
+
+```{r}
+library("ggplot2")
+df_counts <- as.data.frame(as.table(results))
+colnames(df_counts) <- c("Group", "Category", "Count")
+
+ggplot(df_counts, aes(x = Category, y = Count, fill = Group)) +
+  geom_bar(stat = "identity", position = "fill") +
+  ylab("Proportion") +
+  theme_minimal()
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

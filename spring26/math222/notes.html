@@ -978,7 +978,7 @@ group?</li>
 class.</p>
 <ul>
 <li><strong>Example:</strong> <a href="Examples/Nicotine.html">Nicotine
-Lozenges</a> (<a href="Examples/Nicotine.Rmd">source</a>)</li>
+Lozenges</a> (<a href="Examples/Nicotine.Rmd">Rmd source</a>)</li>
 </ul>
 <p>After we did that example, I let everyone work on a similar example
 on their own:</p>
@@ -1039,6 +1039,14 @@ Total
 </center>
 <p>Use R to visualize the results and carry out a hypothesis test to see
 if background make a significant difference in student pass rates.</p>
+<ul>
+<li><strong>Example:</strong> <a href="Examples/PassRates.html">Factors
+affecting pass rates in chemical engineering</a> (<a
+href="Examples/PassRates.Rmd">Rmd source</a>)</li>
+</ul>
+<!--
+2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
+-->
 <h3 id="fri-feb-20">Fri, Feb 20</h3>
 <p>We started with this example that we did not have time for last
 time.</p>
@@ -1095,12 +1103,8 @@ Total
 </tr>
 </table>
 </center>
-<p>Last time we talked about how to make a two-way table in R by
-constructing a matrix. It it also possible to construct a two-way table
-using a data frame with data from a spreadsheet.</p>
-<!--
-2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
--->
+<p>After that we talked briefly about the theory behind the two-sample
+test for proportions.</p>
 <div class="Theorem">
 <p><strong>Theorem.</strong> If
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
@@ -1117,7 +1121,7 @@ sample proportions
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>2</mn></msub><annotation encoding="application/x-tex">\hat{p}_2</annotation></semantics></math>
 are each approximately normally distributed.</p>
-<ol type="1">
+<ol start="2" type="1">
 <li>By the theorem above, the difference
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{p}_1 - \hat{p}_2</annotation></semantics></math>
 should be approximately normal. What is its mean and standard
@@ -1153,26 +1157,31 @@ failures.</p>
 <p>Works best if both samples contain at least 10 successes and 10
 failures.</p>
 </div>
-<p>After that we looked at some quirks of the <code>prop.test()</code>
-command.</p>
-<ul>
-<li><p>For a 2-by-2 two-way table,
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2 = z^2</annotation></semantics></math>
-so the p-values are the same whether you use a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>-test
-or a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>-test.</p></li>
-<li><p>If you test a 1-sided alternative hypothesis, then you are also
-given a 1-sided confidence interval.</p></li>
-</ul>
-<p>We finished by introducing the chi-squared test for association with
-this example:</p>
-<ul>
-<li><strong>Example</strong>: <a
-href="Examples/SelfImage.html">Chi-squared test for association</a> (<a
-href="Examples/SelfImage.csv">data</a>, <a
-href="Examples/SelfImage.Rmd">soure</a>)</li>
-</ul>
+<p>We also talked about <strong>one-sided confidence intervals</strong>,
+which you get automatically in R when you set the
+<code>alternative</code> option to either <code>"greater"</code> or
+<code>"less"</code>.</p>
+<p>We finished by introducing the <strong>chi-squared statistic</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mo>∑</mo><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>E</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><msub><mi>O</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msub><mi>E</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\chi^2 = \sum \frac{(E_{ij} - O_{ij})^2}{E_{ij}}</annotation></semantics></math>
+where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mtext mathvariant="normal">Row </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> total</mtext></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mtext mathvariant="normal">Column </mtext><mspace width="0.333em"></mspace></mrow><mi>j</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> total</mtext></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mtext mathvariant="normal">Table total</mtext></mfrac></mrow><annotation encoding="application/x-tex">E_{ij} = \frac{(\text{Row } i \text{ total}) \cdot (\text{Column } j \text{ total})}{\text{Table total}}</annotation></semantics></math>
+is the <strong>expected count</strong> in row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+column
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+(assuming there is no association), and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>O</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">O_{ij}</annotation></semantics></math>
+is the <strong>observed count</strong> in row
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>,
+column
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.</p>
+<ol start="3" type="1">
+<li>(Challenge problem). Use algebra to show the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>
+statistic for a 2-by-2 two-way table is the same as the square of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>-value
+from the two sample proportions test.</li>
+</ol>
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>
@@ -1204,6 +1213,10 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<!--
+* **Example**: [Chi-squared test for association](Examples/SelfImage.html) ([data](Examples/SelfImage.csv), [source](Examples/SelfImage.Rmd))
+
+-->
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
