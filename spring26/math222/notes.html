@@ -1039,18 +1039,140 @@ Total
 </center>
 <p>Use R to visualize the results and carry out a hypothesis test to see
 if background make a significant difference in student pass rates.</p>
+<h3 id="fri-feb-20">Fri, Feb 20</h3>
+<p>We started with this example that we did not have time for last
+time.</p>
+<ol type="1">
+<li>One of the other factors that the North Carolina State University
+Chemical Engineering department looked at was gender. Here is a two-way
+table showing the gender of students versus whether or not they passed
+the introductory chemical engineering course.</li>
+</ol>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+Male
+</td>
+<td>
+Female
+</td>
+</tr>
+<tr>
+<td>
+Passed
+</td>
+<td>
+60
+</td>
+<td>
+23
+</td>
+</tr>
+<tr>
+<td>
+Failed
+</td>
+<td>
+29
+</td>
+<td>
+11
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+89
+</td>
+<td>
+34
+</td>
+</tr>
+</table>
+</center>
+<p>Last time we talked about how to make a two-way table in R by
+constructing a matrix. It it also possible to construct a two-way table
+using a data frame with data from a spreadsheet.</p>
 <!--
 2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
 -->
-<!--
-After we did those two examples, we talked a little about the theory behind the two sample proportions test. 
-
-If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  If you have two random variables (like $\hat{p}_1$ and $\hat{p}_2$) that are approximately normal, then the difference is also approximately normal. 
-
-3. If $\hat{p}_1 \sim \on{Norm}\left(p_1, \sqrt{\frac{p_1(1-p_1)}{n_1}} \right)$ and $\hat{p}_2 \sim \on{Norm}\left(p_2, \sqrt{\frac{p_2(1-p_2)}{n_2}} \right)$, then describe the distribution of the difference $\hat{p}_1 - \hat{p}_2$.  What is its shape, center, and spread?  
-
-Using the result of the previous exercise, we derived the formulas for a large sample confidence interval for a difference in proportions and for a two sample hypothesis test for proportions. 
--->
+<div class="Theorem">
+<p><strong>Theorem.</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
+are independent random variables that each have a normal distribution,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>+</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X+Y</annotation></semantics></math>
+also has a normal distribution.</p>
+</div>
+<p>If we take two simple random samples from two populations, the two
+sample proportions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>1</mn></msub><annotation encoding="application/x-tex">\hat{p}_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>2</mn></msub><annotation encoding="application/x-tex">\hat{p}_2</annotation></semantics></math>
+are each approximately normally distributed.</p>
+<ol type="1">
+<li>By the theorem above, the difference
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{p}_1 - \hat{p}_2</annotation></semantics></math>
+should be approximately normal. What is its mean and standard
+deviation?</li>
+</ol>
+<div class="Theorem">
+<p><strong>Two-Sample Hypothesis Test for Proportions.</strong></p>
+<center>
+<table>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>=</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>≠</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lr} H_0: &amp; p_A = p_B \\ H_A: &amp; p_A \ne p_B \end{array}</annotation></semantics></math>
+</td>
+<td>
+           
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub></mrow><msqrt><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msub><mi>N</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>N</mi><mi>B</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is the <strong>pooled proportion</strong>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> Total number of successes in both samples </mtext><mspace width="0.333em"></mspace></mrow><mrow><msub><mi>N</mi><mi>A</mi></msub><mo>+</mo><msub><mi>N</mi><mi>B</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.</annotation></semantics></math></p>
+<p>Works best if both samples have at least 5 successes &amp; 5
+failures.</p>
+</div>
+<div class="Theorem">
+<p><strong>Two-sample Confidence Interval for Proportions.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>±</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mrow><mfrac><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msub><mi>N</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msub><mi>N</mi><mi>B</mi></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.</annotation></semantics></math></p>
+<p>Works best if both samples contain at least 10 successes and 10
+failures.</p>
+</div>
+<p>After that we looked at some quirks of the <code>prop.test()</code>
+command.</p>
+<ul>
+<li><p>For a 2-by-2 two-way table,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><msup><mi>z</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2 = z^2</annotation></semantics></math>
+so the p-values are the same whether you use a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>χ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math>-test
+or a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>-test.</p></li>
+<li><p>If you test a 1-sided alternative hypothesis, then you are also
+given a 1-sided confidence interval.</p></li>
+</ul>
+<p>We finished by introducing the chi-squared test for association with
+this example:</p>
+<ul>
+<li><strong>Example</strong>: <a
+href="Examples/SelfImage.html">Chi-squared test for association</a> (<a
+href="Examples/SelfImage.csv">data</a>, <a
+href="Examples/SelfImage.Rmd">soure</a>)</li>
+</ul>
 <hr />
 <h3 id="week-7-notes">Week 7 Notes</h3>
 <table>

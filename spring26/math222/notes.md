@@ -452,19 +452,70 @@ After we did that example, I let everyone work on a similar example on their own
 Use R to visualize the results and carry out a hypothesis test to see if background make a significant difference in student pass rates. 
 
 
+### Fri, Feb 20
+
+We started with this example that we did not have time for last time. 
+
+1. One of the other factors that the North Carolina State University Chemical Engineering department looked at was gender.  Here is a two-way table showing the gender of students versus whether or not they passed the introductory chemical engineering course. 
+
+<center>
+<table class="bordered">
+<tr><td></td><td>Male</td><td>Female</td></tr>
+<tr><td>Passed</td><td>60</td><td>23</td></tr>
+<tr><td>Failed</td><td>29</td><td>11</td></tr>
+<tr><td>Total</td><td>89</td><td>34</td></tr>
+</table>
+</center>
+
+Last time we talked about how to make a two-way table in R by constructing a matrix.  It it also possible to construct a two-way table using a data frame with data from a spreadsheet. 
+
+
 <!--
 2. A study in 2001 interviewed 2253 men and 2629 women between the ages of 19 and 25 years old.  It found that 986 of the men and 923 of the women still lived at home with their parents.  Do a 2-sample proportions test for this data.  Is there are significant difference between the proportions of young men and women who live at home with their parents?  How big of a difference does gender make? 
 -->
 
-<!--
-After we did those two examples, we talked a little about the theory behind the two sample proportions test. 
+<div class="Theorem">
+**Theorem.** If $X$ and $Y$ are independent random variables that each have a normal distribution, then $X+Y$ also has a normal distribution.
+</div>
 
-If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  If you have two random variables (like $\hat{p}_1$ and $\hat{p}_2$) that are approximately normal, then the difference is also approximately normal. 
+If we take two simple random samples from two populations, the two sample proportions $\hat{p}_1$ and $\hat{p}_2$ are each approximately normally distributed.  
 
-3. If $\hat{p}_1 \sim \on{Norm}\left(p_1, \sqrt{\frac{p_1(1-p_1)}{n_1}} \right)$ and $\hat{p}_2 \sim \on{Norm}\left(p_2, \sqrt{\frac{p_2(1-p_2)}{n_2}} \right)$, then describe the distribution of the difference $\hat{p}_1 - \hat{p}_2$.  What is its shape, center, and spread?  
+1. By the theorem above, the difference $\hat{p}_1 - \hat{p}_2$ should be approximately normal.  What is its mean and standard deviation?  
 
-Using the result of the previous exercise, we derived the formulas for a large sample confidence interval for a difference in proportions and for a two sample hypothesis test for proportions. 
--->
+<div class="Theorem">
+**Two-Sample Hypothesis Test for Proportions.** 
+
+<center>
+<table>
+<tr>
+<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$</td>
+</tr>
+</table>
+</center>
+
+where $\hat{p}$ is the **pooled proportion**:
+$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
+
+Works best if both samples have at least 5 successes & 5 failures. 
+</div>
+
+<div class="Theorem">
+**Two-sample Confidence Interval for Proportions.**
+
+$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
+
+Works best if both samples contain at least 10 successes and 10 failures.
+</div>
+
+After that we looked at some quirks of the `prop.test()` command.  
+
+* For a 2-by-2 two-way table, $\chi^2 = z^2$ so the p-values are the same whether you use a $\chi^2$-test or a $z$-test.  
+
+* If you test a 1-sided alternative hypothesis, then you are also given a 1-sided confidence interval. 
+
+We finished by introducing the chi-squared test for association with this example:
+
+* **Example**: [Chi-squared test for association](Examples/SelfImage.html) ([data](Examples/SelfImage.csv), [soure](Examples/SelfImage.Rmd))
 
 - - - 
 

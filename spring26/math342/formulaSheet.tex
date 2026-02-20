@@ -1,0 +1,76 @@
+\documentclass[10pt]{exam}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{soul}
+\usepackage{tikz}
+
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Formula Sheet} 
+
+\hrule 
+\bigskip
+
+\subsubsection*{Quadratic Formula} 
+$$\ds ax^2+bx+c = 0 \text{ when }  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+
+\noindent
+\subsubsection*{Taylor Polynomial}
+$$P_n(x) = \sum_{k = 0}^n \frac{f^{(k)}(c)}{k!} (x - c)^k$$
+
+\subsubsection*{Taylor's Remainder Formula}
+$$f(x) - P_n(x) = \frac{f^{(n+1)}(z)}{(n+1)!} (x-c)^{n+1} \text{ for some } z \text{ between } x ~\&~ c$$
+
+
+
+\subsubsection*{Important Maclaurin Series}
+\renewcommand{\arraystretch}{3.0} % Default value: 1
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Function & Maclaurin Series & Radius of Convergence \\
+\hline
+$e^x$ & $\ds \sum_{k=0}^{\infty} \frac{x^k}{k!}$ & $R= \infty$ \\ \hline
+$\sin x$ & $\ds \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1}}{(2k+1)!}$ & $R= \infty$ \\ \hline
+$\cos x$ & $\ds \sum_{k=0}^\infty \frac{(-1)^k x^{2k}}{(2k)!}$ & $R= \infty$ \\ \hline
+%$ \arctan x & \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1}}{2k+1}$ & $R= 1$\\[0.2in]
+%$ \ln(1+x) & \sum_{k=0}^\infty \frac{(-1)^k x^{k+1}}{k+1}$ & $R= 1$\\[0.2in]
+$ \dfrac{1}{1-x}$ & $\ds \sum_{k=0}^\infty x^k$ & $R = 1$ \\ \hline
+\end{tabular}
+\end{center}
+
+%\textbf{Linear Approximation} ~
+%\begin{itemize}
+%\item $\ds L(x) = f(a) + f'(a)(x-a)$
+%\end{itemize}
+
+
+%\textbf{Summation Formulas} ~
+%\begin{itemize}
+%\item $\ds \sum_{i = 1}^n i = \frac{n(n+1)}{2}$
+%\item $\ds \sum_{i = 1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+%\end{itemize}
+
+
+\subsubsection*{Newton's Method}
+$$x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}$$
+
+\subsubsection*{Secant Method}
+$$x_{n+1} = x_n - \dfrac{f(x_n) (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}$$
+
+
+\subsubsection*{Newton's Method for Systems} ~
+$$\mathbf{x}_{n+1} = \mathbf{x}_n - \mathbf{J}(\mathbf{x}_n)^{-1} \mathbf{F}(\mathbf{x}_n)$$
+
+\subsubsection*{Condition Number} ~
+$$\kappa(A) = \| A \| \, \|A^{-1} \|$$
+
+
+\end{document}
+
+
+\end{document}

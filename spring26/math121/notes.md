@@ -433,8 +433,7 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 * **Workshop**: [Probability models](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
-<!--
-### Fri, Oct 3
+### Fri, Feb 20
 
 Today we talked about the **multiplication** and **addition rules** for probability.  We also talked about **independent events** and **conditional probability**.  We started with these examples. 
 
@@ -449,7 +448,6 @@ Then we did this workshop:
 
 * **Workshop:** [Basic probability rules](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ConditionalProbability.pdf)
 
--->    
 
 - - - 
 
