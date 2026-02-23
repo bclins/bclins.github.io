@@ -1223,13 +1223,129 @@ href="Examples/SelfImage2.html">Chi-squared test for association</a> (<a
 href="Examples/SelfImage.csv">data</a>, <a
 href="Examples/SelfImage2.Rmd">source</a>)</li>
 </ul>
-<p>While doing that example, we talked about some other R
-techniques:</p>
-<ul>
-<li>Converting a data.frame to a two-way table</li>
-<li>Mosaic plots and other ways to plot 2 categorical variables.</li>
-</ul>
-<p>We also talked about limitations of the chi-squared test.</p>
+<p>We talked about the difference between <strong>long tables</strong>
+(also known as <strong>tidy tables</strong>) where each row represents
+one individual and each column represents a variable, versus
+<strong>two-way tables</strong> (also known as <strong>contingency
+tables</strong>) where the rows and columns represent categories for two
+categorical variables and the numbers in the table are the counts.</p>
+<p>You can easily convert a long table stored as a data frame in R to a
+two-way table using the <code>table()</code> function. You can transpose
+a two-way table (swap the rows &amp; columns) using the function
+<code>t()</code>.</p>
+<p>We also talked about <strong>mosaic plots</strong> as an alternative
+to stacked bar graphs for showing the relationship between two
+categorical variables.</p>
+<h4 id="assumptions-for-chi-squared-test-of-association">Assumptions for
+Chi-Squared Test of Association</h4>
+<ol type="1">
+<li><strong>Independence.</strong> Data should come from a simple random
+sample from the population and each individual should only count once in
+the two-way table.<br />
+</li>
+<li><strong>Sample size.</strong> Each cell in the two-way table should
+have an expected count of at least 5.</li>
+</ol>
+<p>We did this example:</p>
+<ol type="1">
+<li><p>Suppose that a random sample of 100 people in a city are asked if
+they think the fire department is doing a satisfactory job. Shortly
+after the survey, there is a large fire in the city. If the same 100
+people are asked their opinions again, you might get results like
+this:</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+<p>Satisfactory</p>
+</td>
+<td>
+<p>Unsatisfactory</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Before</p>
+</td>
+<td>
+<p>80</p>
+</td>
+<td>
+<p>20</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>After</p>
+</td>
+<td>
+<p>72</p>
+</td>
+<td>
+<p>28</p>
+</td>
+</tr>
+</table>
+</center>
+<p>For this table,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>1.754</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 1.754</annotation></semantics></math>
+with a p-value of 18.5%. Why should you not trust this p-value?</p></li>
+<li><p>The right way to look at this data is to include each person
+once. Each individual person has their before opinion and their after
+opinion recorded, so we could make a two-way table for those two
+variables:</p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+<p>Satisfactory Before</p>
+</td>
+<td>
+<p>Unsatisfactory Before</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Satisfactory After</p>
+</td>
+<td>
+<p>70</p>
+</td>
+<td>
+<p>2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Unsatisfactory After</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>18</p>
+</td>
+</tr>
+</table>
+</center>
+<ol type="a">
+<li>Now
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>47.7</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 47.7</annotation></semantics></math>
+with a p-value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.0</mn><mo>×</mo><msup><mn>10</mn><mn>12</mn></msup></mrow><annotation encoding="application/x-tex">5.0 \times 10^{12}</annotation></semantics></math>.
+This is very strong evidence that there is an association between which
+two variables?<br />
+</li>
+<li>Should we be worried that there are only 2 people in the top right
+cell? Why won’t that be a problem for the chi-squared test?</li>
+</ol></li>
+</ol>
+<p>We ran out of time at the end, but I gave the following handout as
+extra practice to think about the chi-squared test for association.</p>
 <ul>
 <li><strong>Workshop:</strong> <a
 href="Examples/ChisqCaveats.pdf">Chi-squared caveats</a></li>

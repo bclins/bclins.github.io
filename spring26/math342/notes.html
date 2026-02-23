@@ -1611,27 +1611,22 @@ class="sourceCode octave"><code class="sourceCode octave"><span id="cb8-1"><a hr
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">cond</span>(L)</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">cond</span>(U)</span></code></pre></div>
 </details></li>
-<li><p>Use the LU-decomposition to solve
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>𝐱</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.</annotation></semantics></math></p></li>
 </ol>
 <p>It is possible to avoid this problem using the <strong>method of
-partial pivoting</strong>. The idea is simple: when more than one entry
-could be the pivot for a column, swap rows to get the one with the
-largest absolute value.</p>
-<p>To keep track of the row swaps as you use the method of partial
-pivoting, start with a copy of the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-identity matrix (where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-is the number of rows). Every time you swap rows of the matrix you are
-row-reducing, also swap the same rows in your copy of the identity
-matrix. At the end, the identity matrix will have become a
-<strong>permutation matrix</strong>
+partial pivoting</strong>. The idea is that there is a permutation
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
-and the <strong>LU-decomposition with partial pivoting</strong> is the
-matrix product
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mo>=</mo><mi>L</mi><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">PA = LU.</annotation></semantics></math>
-The fixes two problems:</p>
+such that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mo>=</mo><mi>L</mi><mi>U</mi></mrow><annotation encoding="application/x-tex">PA = LU</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is a permutation matrix such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">PA</annotation></semantics></math>
+has a nice LU-decomposition. The formula
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mo>=</mo><mi>L</mi><mi>U</mi></mrow><annotation encoding="application/x-tex">PA = LU</annotation></semantics></math>
+is known as the <strong>PLU-decomposition</strong> or sometimes the
+<strong>LUP-decomposition</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.
+This method fixes two problems:</p>
 <ul>
 <li>When there are zero entries where pivots should be, you can’t do a
 regular LU-decomposition.</li>
@@ -1640,6 +1635,23 @@ ill-conditioned, even if
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
 isn’t. The method of partial pivots avoids that problem.</li>
 </ul>
+<p>The algorithm to find the PLU-decomposition is almost the same as the
+LU decomposition, except you also swap rows so that the largest
+available entry in a column (in absolute value) becomes the pivot at
+each step. When you swap two rows of the echelon form matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>,
+you also have to swap the same rows of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+and the same rows in <strong>the completed columns</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+(leave the unfinished columns alone). The permutation matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+is the matrix you get by swapping the same rows of the identity matrix
+as you swapped while you found the PLU decomposition.</p>
+<p>In Octave, you can just use the following command to get the
+PLU-decomposition:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode octave"><code class="sourceCode octave"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[L<span class="op">,</span> U<span class="op">,</span> P] <span class="op">=</span> <span class="fu">lu</span>(A)</span></code></pre></div>
 <p>One nice thing to know about permutation matrices is that they are
 always invertible and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>P</mi><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">P^{-1} = P^T</annotation></semantics></math>
@@ -1651,22 +1663,25 @@ obtained by converting every row of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
 to a column of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mi>T</mi></msup><annotation encoding="application/x-tex">P^T</annotation></semantics></math>.</p>
-<p>Find the LU-decomposition with partial pivoting for these
-matrices</p>
-<ol start="3" type="1">
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 0 &amp; 1 &amp; 2 \\ 1 &amp; 1 &amp; 1 \end{pmatrix}</annotation></semantics></math></p></li>
-<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>7</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>9</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{pmatrix}</annotation></semantics></math>
-<!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$--></p></li>
+<!-- OK EXAMPLE: 3. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$ -->
+<!-- BAD EXAMPLE (I messed this one up in class, because you have to permute the completed columns of L as you go when you permute the rows...): 4. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ -->
+<!-- MAYBE EXAMPLE? 5. B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
+<ol start="2" type="1">
 <li><p>Show that when you use partial pivoting to row reduce
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0.001</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B = \begin{pmatrix} 0.001 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}</annotation></semantics></math>
 to echelon form, the resulting LU matrices are not
 ill-conditioned.</p></li>
-<li><p>Find the PA = LU-decomposition of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>12</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix}
-3 &amp; 8 &amp; 1 \\ 5 &amp; 2 &amp; 0 \\ 6 &amp; 1 &amp; 12
-\end{pmatrix}</annotation></semantics></math>. (<a
-href="https://youtu.be/knIy9FjgIxE"
-class="uri">https://youtu.be/knIy9FjgIxE</a>)</p></li>
+<li><p>Use the PLU-decomposition to solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>𝐱</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.</annotation></semantics></math></p></li>
+</ol>
+<p>Finding the PLU decomposition by hand is tedious, especially if you
+need to swap more than 2 rows, but here is a good video explanation of
+how it works:</p>
+<ol start="4" type="1">
+<li>Find the PLU decomposition for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 0 &amp; 1 &amp; 2 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 2 &amp; 1 &amp; 5 \\ 1 &amp; 2 &amp; 4 &amp; 3 &amp; 6 \end{pmatrix}</annotation></semantics></math>.
+(<a href="https://youtu.be/E3cCRcdFGmE"
+class="uri">https://youtu.be/E3cCRcdFGmE</a>)</li>
 </ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>

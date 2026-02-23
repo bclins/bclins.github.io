@@ -536,12 +536,46 @@ You can use the **chi-squared test for association** to see if there is a signif
 * **Example**: [Chi-squared test for association](Examples/SelfImage2.html) ([data](Examples/SelfImage.csv), [source](Examples/SelfImage2.Rmd))
 
 
-While doing that example, we talked about some other R techniques:
+We talked about the difference between **long tables** (also known as **tidy tables**) where each row represents one individual and each column represents a variable, versus **two-way tables** (also known as **contingency tables**) where the rows and columns represent categories for two categorical variables and the numbers in the table are the counts. 
 
-* Converting a data.frame to a two-way table
-* Mosaic plots and other ways to plot 2 categorical variables. 
+You can easily convert a long table stored as a data frame in R to a two-way table using the `table()` function. You can transpose a two-way table (swap the rows & columns) using the function `t()`.   
 
-We also talked about limitations of the chi-squared test.
+We also talked about **mosaic plots** as an alternative to stacked bar graphs for showing the relationship between two categorical variables. 
+
+#### Assumptions for Chi-Squared Test of Association
+
+1. **Independence.** Data should come from a simple random sample from the population and each individual should only count once in the two-way table.  
+2. **Sample size.** Each cell in the two-way table should have an expected count of at least 5.  
+
+We did this example:
+
+1. Suppose that a random sample of 100 people in a city are asked if they think the fire department is doing a satisfactory job. Shortly after the survey, there is a large fire in the city.  If the same 100 people are asked their opinions again, you might get results like this:
+
+    <center>
+    <table class="bordered">
+    <tr><td></td><td>Satisfactory</td><td>Unsatisfactory</td></tr>
+    <tr><td>Before</td><td>80</td><td>20</td></tr>
+    <tr><td>After</td><td>72</td><td>28</td></tr>
+    </table>
+    </center>
+
+    For this table, $\chi^2 = 1.754$ with a p-value of 18.5%.  Why should you not trust this p-value?
+
+2. The right way to look at this data is to include each person once.  Each individual person has their before opinion and their after opinion recorded, so we could make a two-way table for those two variables:
+
+    <center>
+    <table class="bordered">
+    <tr><td></td><td>Satisfactory Before</td><td>Unsatisfactory Before</td></tr>
+    <tr><td>Satisfactory After</td><td>70</td><td>2</td></tr>
+    <tr><td>Unsatisfactory After</td><td>10</td><td>18</td></tr>
+    </table>
+    </center>
+
+    a. Now $\chi^2 = 47.7$ with a p-value of $5.0 \times 10^{12}$.  This is very strong evidence that there is an association between which two variables?  
+    b. Should we be worried that there are only 2 people in the top right cell?  Why won't that be a problem for the chi-squared test?  
+
+
+We ran out of time at the end, but I gave the following handout as extra practice to think about the chi-squared test for association.
 
 * **Workshop:** [Chi-squared caveats](Examples/ChisqCaveats.pdf)
 

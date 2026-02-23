@@ -825,30 +825,35 @@ In Matlab/Octave, you can use the `norm(A, inf)` function to find the induced $\
     ```
     </details>
 
-2. Use the LU-decomposition to solve $B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
-
-It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, swap rows to get the one with the largest absolute value.  
-
-To keep track of the row swaps as you use the method of partial pivoting, start with a copy of the $n$-by-$n$ identity matrix (where $n$ is the number of rows). Every time you swap rows of the matrix you are row-reducing, also swap the same rows in your copy of the identity matrix. At the end, the identity matrix will have become a **permutation matrix** $P$ and the **LU-decomposition with partial pivoting** is the matrix product
-$$PA = LU.$$
-The fixes two problems:
+It is possible to avoid this problem using the **method of partial pivoting**.  The idea is that there is a permutation $P$ such that 
+$$PA = LU$$
+where $P$ is a permutation matrix such that $PA$ has a nice LU-decomposition. The formula $PA = LU$ is known as the **PLU-decomposition** or sometimes the **LUP-decomposition** of $A$. This method fixes two problems:
 
 * When there are zero entries where pivots should be, you can't do a regular LU-decomposition.
 * When you do an LU-decomposition, the matrices L and U might be ill-conditioned, even if $A$ isn't. The method of partial pivots avoids that problem. 
 
+The algorithm to find the PLU-decomposition is almost the same as the LU decomposition, except you also swap rows so that the largest available entry in a column (in absolute value) becomes the pivot at each step. When you swap two rows of the echelon form matrix $U$, you also have to swap the same rows of $A$ and the same rows in **the completed columns** of $L$ (leave the unfinished columns alone).  The permutation matrix $P$ is the matrix you get by swapping the same rows of the identity matrix as you swapped while you found the PLU decomposition. 
+
+In Octave, you can just use the following command to get the PLU-decomposition:
+
+```octave
+[L, U, P] = lu(A)
+```
+
 One nice thing to know about permutation matrices is that they are always invertible and $P^{-1} = P^T$ where $P^T$ is the **transpose** of $P$ obtained by converting every row of $P$ to a column of $P^T$.  
 
-Find the LU-decomposition with partial pivoting for these matrices
- 
-3. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$
+<!-- OK EXAMPLE: 3. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$ -->
+<!-- BAD EXAMPLE (I messed this one up in class, because you have to permute the completed columns of L as you go when you permute the rows...): 4. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ -->
+<!-- MAYBE EXAMPLE? 5. B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
 
-4. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ <!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
+2. Show that when you use partial pivoting to row reduce $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form, the resulting LU matrices are not ill-conditioned.  
 
-5. Show that when you use partial pivoting to row reduce $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form, the resulting LU matrices are not ill-conditioned.  
+3. Use the PLU-decomposition to solve $B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
 
-6. Find the PA = LU-decomposition of $A = \begin{pmatrix} 
-3 & 8 & 1 \\ 5 & 2 & 0 \\ 6 & 1 & 12 
-\end{pmatrix}$. (<https://youtu.be/knIy9FjgIxE>)
+Finding the PLU decomposition by hand is tedious, especially if you need to swap more than 2 rows, but here is a good video explanation of how it works:
+
+4. Find the PLU decomposition for $A = \begin{pmatrix} 0 & 1 & 2 & 1 & 2 \\ 1 & 0 & 0 & 0 & 1 \\ 2 & 1 & 2 & 1 & 5 \\ 1 & 2 & 4 & 3 & 6 \end{pmatrix}$. (<https://youtu.be/E3cCRcdFGmE>)
+
 
 
 
