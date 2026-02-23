@@ -1570,44 +1570,104 @@ Today we reviewed for the midterm exam. We reviewed the things you need to memor
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Feb 19
-
-<div class="Theorem">
-**Theorem.** If $A \in \R^{n \times n}$ is invertible, then the relative error in the solution of the system $A x = b$ is bounded by
-$$\frac{\|x-x'\|}{\|x\|} \le \kappa(A) \frac{\|b-b'\|}{\|b\|}.$$
-</div>
-
-*Proof.* Using the properties of the induced norm, 
-$$\|b\| = \|A x \| \le \|A\| \, \|x\| \text{ and } \|x-x'\| = \|A^{-1}(b-b')\| \le \|A^{-1}\| \, \|b-b'\|,$$
-so putting both together gives 
-$$\|b\| \|x-x'\| \le \|A\| \, \|A^{-1}\| \, \|x\| \, \|b-b'\|.$$  
-This leads directly to the inequality above when you separate the factors with $x$ from those with $b$. □
-
-This explains why the number of significant digits in the solution to $A x = b$ may have up to $k$ fewer significant digits than the entries of $A$ and $b$ when the condition number $\kappa(A) = 10^k$. 
-
-1. Let $A = \begin{pmatrix} 1.000 & 1.001 \\ 1.000 & 1.000 \end{pmatrix}$ and $b = \begin{pmatrix} 2.000 \\ 2.001 \end{pmatrix}$.  How many significant digits does the solution to $Ax = b$ have? 
-
-Last time we saw an example of a matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which is not ill-conditioned by itself.  However, both $L$ and $U$ in its LU-decomposition were ill-conditioned. It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, always choose the one with the largest absolute value.  
-
-You keep track of the row swaps as you use the method of partial pivoting, always apply the same row swaps to a copy of the identity matrix. At the end, you will have a **permutation matrix** $P$ and the **LU-decomposition with partial pivoting** is
-$$PA = LU.$$
-The fixes two problems:
-
-* When there are zero entries where pivots should be, you can't do a regular LU-decomposition.
-* When you do an LU-decomposition, the matrices L and U might be ill-conditioned, even if $A$ isn't. The method of partial pivots avoids that problem. 
-
-One nice thing to know about permutation matrices is that they are always invertible and $P^{-1} = P^T$ where $P^T$ is the **transpose** of $P$ obtained by converting every row of $P$ to a column of $P^T$.  
-
-Find the LU-decomposition with partial pivoting for these matrices
- 
-2. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$
-
-3. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ <!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
-<!--
-Didn't have time for this one:
-4. Show that when you row reduce $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting LU matrices are not ill-posed.  
--->
+<h3 id="mon-feb-23">Mon, Feb 23</h3>
+<p>Consider the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0.001</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B = \begin{pmatrix} 0.001 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}</annotation></semantics></math>
+which has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>U</mi></mrow><annotation encoding="application/x-tex">LU</annotation></semantics></math>
+decomposition
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mi>L</mi><mi>U</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1000</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0.001</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>999</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">B = LU = \begin{pmatrix} 1 &amp; 0 \\ 1000 &amp; 1 \end{pmatrix} \,  \begin{pmatrix} 0.001 &amp; 1 \\ 0 &amp; -999 \end{pmatrix}.</annotation></semantics></math><br />
+Although
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is not ill-conditioned, you have to be careful using row reduction to
+solve equations with this matrix because both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+in the LU-decomposition for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are ill-conditioned.</p>
+<p>In Matlab/Octave, you can use the <code>norm(A, inf)</code> function
+to find the induced
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>-norm
+of matrix. The function <code>norm(A)</code> computes the induced 2-norm
+by default. You can also compute the condition number of a matrix using
+<code>cond(A)</code> or <code>cond(A, inf)</code>.</p>
+<ol type="1">
+<li><p>Use <a
+href="https://sagecell.sagemath.org/?lang=octave">Octave</a> to find the
+condition numbers for the matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>U</mi><annotation encoding="application/x-tex">U</annotation></semantics></math>
+above.</p>
+<details>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode octave"><code class="sourceCode octave"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> B  <span class="op">=</span> [<span class="fl">0.001</span> <span class="fl">1</span><span class="op">;</span> <span class="fl">1</span> <span class="fl">1</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> L <span class="op">=</span> [<span class="fl">1</span> <span class="fl">0</span><span class="op">;</span> <span class="fl">1000</span> <span class="fl">1</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> U <span class="op">=</span> [<span class="fl">0.001</span> <span class="fl">1</span><span class="op">;</span> <span class="fl">0</span> <span class="op">-</span><span class="fl">999</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">cond</span>(B)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">cond</span>(L)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">cond</span>(U)</span></code></pre></div>
+</details></li>
+<li><p>Use the LU-decomposition to solve
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>𝐱</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.</annotation></semantics></math></p></li>
+</ol>
+<p>It is possible to avoid this problem using the <strong>method of
+partial pivoting</strong>. The idea is simple: when more than one entry
+could be the pivot for a column, swap rows to get the one with the
+largest absolute value.</p>
+<p>To keep track of the row swaps as you use the method of partial
+pivoting, start with a copy of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+identity matrix (where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is the number of rows). Every time you swap rows of the matrix you are
+row-reducing, also swap the same rows in your copy of the identity
+matrix. At the end, the identity matrix will have become a
+<strong>permutation matrix</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+and the <strong>LU-decomposition with partial pivoting</strong> is the
+matrix product
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>A</mi><mo>=</mo><mi>L</mi><mi>U</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">PA = LU.</annotation></semantics></math>
+The fixes two problems:</p>
+<ul>
+<li>When there are zero entries where pivots should be, you can’t do a
+regular LU-decomposition.</li>
+<li>When you do an LU-decomposition, the matrices L and U might be
+ill-conditioned, even if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+isn’t. The method of partial pivots avoids that problem.</li>
+</ul>
+<p>One nice thing to know about permutation matrices is that they are
+always invertible and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>P</mi><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">P^{-1} = P^T</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mi>T</mi></msup><annotation encoding="application/x-tex">P^T</annotation></semantics></math>
+is the <strong>transpose</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+obtained by converting every row of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+to a column of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>P</mi><mi>T</mi></msup><annotation encoding="application/x-tex">P^T</annotation></semantics></math>.</p>
+<p>Find the LU-decomposition with partial pivoting for these
+matrices</p>
+<ol start="3" type="1">
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 0 &amp; 1 &amp; 2 \\ 1 &amp; 1 &amp; 1 \end{pmatrix}</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>4</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>7</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>9</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{pmatrix}</annotation></semantics></math>
+<!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$--></p></li>
+<li><p>Show that when you use partial pivoting to row reduce
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0.001</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B = \begin{pmatrix} 0.001 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}</annotation></semantics></math>
+to echelon form, the resulting LU matrices are not
+ill-conditioned.</p></li>
+<li><p>Find the PA = LU-decomposition of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>8</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>12</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">A = \begin{pmatrix}
+3 &amp; 8 &amp; 1 \\ 5 &amp; 2 &amp; 0 \\ 6 &amp; 1 &amp; 12
+\end{pmatrix}</annotation></semantics></math>. (<a
+href="https://youtu.be/knIy9FjgIxE"
+class="uri">https://youtu.be/knIy9FjgIxE</a>)</p></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>

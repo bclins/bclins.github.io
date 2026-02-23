@@ -788,10 +788,13 @@ models</a></li>
 <strong>independent events</strong> and <strong>conditional
 probability</strong>. We started with these examples.</p>
 <ol type="1">
-<li><p>If you roll two six-sided dice, the results are independent. What
-is the probability that both dice land on a six?</p></li>
-<li><p>Suppose you shuffle a deck of 52 playing cards and then draw two
-cards from the top. Find</p>
+<li>If you roll two six-sided dice, the results are independent. What is
+the probability that both dice land on a six?</li>
+</ol>
+<!-- NOTE TO FUTURE SELF: THIS WORKSHOP WAS A BIT AMBITIOUS (BACK HALF), AND YOU NEED TO CAREFULLY CONSIDER HOW TO PRESENT CONDITIONAL PROBABILITY. -->
+<ol start="2" type="1">
+<li>Suppose you shuffle a deck of 52 playing cards and then draw two
+cards from the top. Find
 <ol type="a">
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">First card is an ace</mtext><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(\text{First card is an ace})</annotation></semantics></math></li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mtext mathvariant="normal">Second card is an ace </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">|</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> first is an ace</mtext></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(\text{Second card is an ace } | \text{ first is an ace})</annotation></semantics></math></li>
@@ -836,32 +839,48 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Oct 6
-
-Today we talked about **weighted averages**. To find a weighted average:
-
-1. Multiply each number by its weight.
-2. Add the results.
-
-We did this workshop.
-
-* **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
-
-Before that, we did some examples. 
-
-1. Calculate the final grade of a student who gets an 80 quiz average, 72 midterm average, 95 project average, and an 89 on the final exam. 
-
-2. Eleven nursing students graduated from a nursing program.  Four students completed the program in 3 years, four took 4 years, two took 5 years, and one student took 6 years to graduate.  Express the average time to complete the program as a weighted average. 
-
-
-The **expected value** (also known as the **theoretical average**) is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
-
-3. In roulette there is a wheel with 38 slots. There are 18 red slot, 18 black slots and 2 green slots.  When you spin the wheel, you can bet that the ball will land on a black slot.  If you bet $1, and the ball lands on black, then you win $2, otherwise you win nothing.  What is the expected value for this bet? 
-
+<h3 id="mon-feb-23">Mon, Feb 23</h3>
+<p>Today we talked about <strong>weighted averages</strong>. To find a
+weighted average:</p>
+<ol type="1">
+<li>Multiply each number by its weight.</li>
+<li>Add the results.</li>
+</ol>
+<p>We did this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf">Expected
+value &amp; weighted averages</a></li>
+</ul>
+<p>Before that, we did some examples.</p>
+<ol type="1">
+<li><p>Calculate the final grade of a student who gets an 80 quiz
+average, 72 midterm average, 95 project average, and an 89 on the final
+exam.</p></li>
+<li><p>Eleven nursing students graduated from a nursing program. Four
+students completed the program in 3 years, four took 4 years, two took 5
+years, and one student took 6 years to graduate. Express the average
+time to complete the program as a weighted average.</p></li>
+</ol>
+<p>The <strong>expected value</strong> (also known as the
+<strong>theoretical average</strong>) is the weighted average of the
+outcomes in a probability model, using the probabilities as the
+weights.</p>
+<ol start="3" type="1">
+<li>In roulette there is a wheel with 38 slots. There are 18 red slot,
+18 black slots and 2 green slots. When you spin the wheel, you can bet
+that the ball will land on a black slot. If you bet $1, and the ball
+lands on black, then you win $2, otherwise you win nothing. What is the
+expected value for this bet?</li>
+</ol>
 <div class="Theorem">
-**The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
+<p><strong>The Law of Large Numbers.</strong> When you repeat a random
+experiment many times, the sample mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+tends to get closer to the theoretical average
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</p>
 </div>
+<!--
 
 ### Wed, Oct 8
 

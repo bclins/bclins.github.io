@@ -1,0 +1,90 @@
+---
+title: Categorical Data in R
+output: html_document
+---
+
+### Creating Two-Way Tables
+
+Is there an association between gender and self-image?  The 2003-2004 National Health & Nuitrition Exam Survey (NHANES) asked participants to describe their own self-image regarding weight. The options were Underweight, About Right, and Overweight. 
+
+One way to get the data is to load it from a comma separated values (csv) file into an R data frame and then convert it to a two-way table using the `table()` function.
+
+```{r}
+self.image.df <- read.csv("https://bclins.github.io/spring26/math222/Examples/SelfImage.csv")
+summary(self.image.df)
+self.image <- table(self.image.df)
+self.image
+```
+
+The other way is to manually enter the data as a matrix: 
+
+```{R}
+self.image.matrix <- matrix(c(116,274,1175,1469,1730,1112),ncol=2,byrow=T)
+colnames(self.image.matrix)=c('Female','Male')
+rownames(self.image.matrix)=c('Underweight','About Right','Overweight')
+self.image2 <- as.table(self.image.matrix)
+self.image2
+```
+
+Notice that the two tables aren't the same because they have swapped rows and columns.  That's easy to fix using the `t()` function which transposes the table (swaps the rows and columns). 
+
+```{r}
+self.image <- t(self.image)
+self.image
+```
+
+### Visualizing Two Categorical Variables
+
+You can make either a bar graph or a mosaic plot for this data, and each can be oriented two ways:
+
+#### Stacked Bar Graph
+
+```{r}
+barplot(self.image, col = topo.colors(3), legend=T)
+barplot(t(self.image), col = terrain.colors(3), legend=T)
+```
+
+#### Stacked Bar Graph Showing Proportions
+
+```{r}
+barplot(prop.table(self.image, margin = 2), col = rainbow(3), legend=T)
+barplot(prop.table(t(self.image), margin = 2), col = cm.colors(3), legend=T)
+```
+
+#### Mosaic Plots
+
+```{r}
+mosaicplot(self.image, col = T, legend=T)
+mosaicplot(t(self.image), col = cm.colors(3), legend=T)
+```
+
+### Chi-Squared Test
+
+In order to test the hypotheses:
+
+* $H_0$: Gender and self-image are independent in the population.
+* $H_A$: Gender and self-image are associated.
+
+We use the R command `chisq.test()`. 
+
+
+```{r}
+prop.test(self.image) # prop.test only works for a table with two columns.  
+chisq.test(self.image)
+```
+
+As you can see, the results are very significant, so we can safely conclude that there is a real association between gender and self-image in the population.  It appears that women are significantly more likely to view themselves as overweight. 
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

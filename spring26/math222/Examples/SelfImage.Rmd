@@ -3,7 +3,7 @@ title: Chi-squared Test for Association
 output: html_document
 ---
 
-Is there an association between gender and self-image?  The 2003-2004 National Health & Nuitrition Exam Survey (NHANES) asked participants to describe their own self-image regarding weight. The options were Underweight, About Right, and Overweight.  Here is the data, separated by gender.   
+Is there an association between gender and self-image?  The 2003-2004 National Health & Nuitrition Exam Survey (NHANES) asked participants to describe their own self-image regarding weight. The options were Underweight, About Right, and Overweight.  Here is the data, separated by gender. 
 
 ```{R}
 selfImage = matrix(c(116,274,1175,1469,1730,1112),ncol=2,byrow=T)
@@ -22,7 +22,7 @@ mosaicplot(t(selfImage),color=T,las=1,main="Self-Image vs. Gender")
 mosaicplot(selfImage,color=T,las=1,main="Gender vs. Self-Image")
 ```
 
-You'll have to decide which of these plots looks the best.  
+You'll have to decide which of these plots looks the best. 
 
 ### $\chi^2$-Test
 
@@ -31,7 +31,7 @@ In order to test the hypotheses:
 * $H_0$: Gender and self-image are independent in the population.
 * $H_A$: Gender and self-image are associated.
 
-We use the R command `chisq.test()`.  
+We use the R command `chisq.test()`. 
 
 
 ```{R}

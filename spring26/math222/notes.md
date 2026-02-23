@@ -20,9 +20,9 @@ header-includes: |
 
 <ul class="nav">
   <li>[Examples](examples.html)</li>
-  <li>[Index](index.html)</li>
+  <li>[Main](index.html)</li>
   <li>[Notes](notes.html)</li>
-  <li>[Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
+  <li>[Tools](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
 </ul>
 
 
@@ -525,14 +525,25 @@ is the **expected count** in row $i$, column $j$ (assuming there is no associati
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Feb 23 | [6.3][6.3] | Chi-squared goodness of fit test
-Wed, Feb 25 | [6.4][6.4] | Chi-squared test for association
+Mon, Feb 23 | [6.4][6.4] | Chi-squared test for association
+Wed, Feb 25 | [6.3][6.3] | Chi-squared goodness of fit test
 Fri, Feb 27 | [7.1][7.1] | One-sample means with t-distribution
              
-<!--
-* **Example**: [Chi-squared test for association](Examples/SelfImage.html) ([data](Examples/SelfImage.csv), [source](Examples/SelfImage.Rmd))
+### Mon, Feb 22
 
--->
+You can use the **chi-squared test for association** to see if there is a significant association between two categorical variables. We did this example using R.  
+
+* **Example**: [Chi-squared test for association](Examples/SelfImage2.html) ([data](Examples/SelfImage.csv), [source](Examples/SelfImage2.Rmd))
+
+
+While doing that example, we talked about some other R techniques:
+
+* Converting a data.frame to a two-way table
+* Mosaic plots and other ways to plot 2 categorical variables. 
+
+We also talked about limitations of the chi-squared test.
+
+* **Workshop:** [Chi-squared caveats](Examples/ChisqCaveats.pdf)
 
 - - - 
 

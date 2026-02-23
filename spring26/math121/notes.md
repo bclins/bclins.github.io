@@ -439,6 +439,8 @@ Today we talked about the **multiplication** and **addition rules** for probabil
 
 1. If you roll two six-sided dice, the results are independent.  What is the probability that both dice land on a six?
 
+<!-- NOTE TO FUTURE SELF: THIS WORKSHOP WAS A BIT AMBITIOUS (BACK HALF), AND YOU NEED TO CAREFULLY CONSIDER HOW TO PRESENT CONDITIONAL PROBABILITY. -->
+
 2. Suppose you shuffle a deck of 52 playing cards and then draw two cards from the top. Find
     a. $P(\text{First card is an ace})$
     a. $P(\text{Second card is an ace } | \text{ first is an ace})$
@@ -447,6 +449,8 @@ Today we talked about the **multiplication** and **addition rules** for probabil
 Then we did this workshop:
 
 * **Workshop:** [Basic probability rules](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ConditionalProbability.pdf)
+
+
 
 
 - - - 
@@ -459,8 +463,7 @@ Mon, Feb 23 | [3.4][3.4] | Weighted averages & expected value
 Wed, Feb 25 | [3.4][3.4] | Random variables
 Fri, Feb 27 | [7.1][7.1] | Sampling distributions
 
-<!--
-### Mon, Oct 6
+### Mon, Feb 23
 
 Today we talked about **weighted averages**. To find a weighted average:
 
@@ -485,6 +488,8 @@ The **expected value** (also known as the **theoretical average**) is the weight
 <div class="Theorem">
 **The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
 </div>
+
+<!--
 
 ### Wed, Oct 8
 

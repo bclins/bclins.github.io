@@ -804,27 +804,32 @@ Wed, Feb 25 | Inner-products and orthogonality
 Fri, Feb 27 | Unitary and Hermitian matrices 
 
 
-<!--
-### Mon, Feb 19
+### Mon, Feb 23
 
-<div class="Theorem">
-**Theorem.** If $A \in \R^{n \times n}$ is invertible, then the relative error in the solution of the system $A x = b$ is bounded by
-$$\frac{\|x-x'\|}{\|x\|} \le \kappa(A) \frac{\|b-b'\|}{\|b\|}.$$
-</div>
+Consider the matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which has $LU$ decomposition 
+$$B = LU = \begin{pmatrix} 1 & 0 \\ 1000 & 1 \end{pmatrix} \,  \begin{pmatrix} 0.001 & 1 \\ 0 & -999 \end{pmatrix}.$$  
+Although $B$ is not ill-conditioned, you have to be careful using row reduction to solve equations with this matrix because both $L$ and $U$ in the LU-decomposition for $B$ are ill-conditioned.
 
-*Proof.* Using the properties of the induced norm, 
-$$\|b\| = \|A x \| \le \|A\| \, \|x\| \text{ and } \|x-x'\| = \|A^{-1}(b-b')\| \le \|A^{-1}\| \, \|b-b'\|,$$
-so putting both together gives 
-$$\|b\| \|x-x'\| \le \|A\| \, \|A^{-1}\| \, \|x\| \, \|b-b'\|.$$  
-This leads directly to the inequality above when you separate the factors with $x$ from those with $b$. □
+In Matlab/Octave, you can use the `norm(A, inf)` function to find the induced $\infty$-norm of matrix. The function `norm(A)` computes the induced 2-norm by default.  You can also compute the condition number of a matrix using `cond(A)` or `cond(A, inf)`.  
 
-This explains why the number of significant digits in the solution to $A x = b$ may have up to $k$ fewer significant digits than the entries of $A$ and $b$ when the condition number $\kappa(A) = 10^k$. 
+1. Use [Octave](https://sagecell.sagemath.org/?lang=octave) to find the condition numbers for the matrices $B$, $L$, and $U$ above. 
 
-1. Let $A = \begin{pmatrix} 1.000 & 1.001 \\ 1.000 & 1.000 \end{pmatrix}$ and $b = \begin{pmatrix} 2.000 \\ 2.001 \end{pmatrix}$.  How many significant digits does the solution to $Ax = b$ have? 
+    <details>
+    ```octave
+    B  = [0.001 1; 1 1]
+    L = [1 0; 1000 1]
+    U = [0.001 1; 0 -999]
+    cond(B)
+    cond(L)
+    cond(U)
+    ```
+    </details>
 
-Last time we saw an example of a matrix $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ which is not ill-conditioned by itself.  However, both $L$ and $U$ in its LU-decomposition were ill-conditioned. It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, always choose the one with the largest absolute value.  
+2. Use the LU-decomposition to solve $B\mathbf{x} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}.$
 
-You keep track of the row swaps as you use the method of partial pivoting, always apply the same row swaps to a copy of the identity matrix. At the end, you will have a **permutation matrix** $P$ and the **LU-decomposition with partial pivoting** is
+It is possible to avoid this problem using the **method of partial pivoting**.  The idea is simple: when more than one entry could be the pivot for a column, swap rows to get the one with the largest absolute value.  
+
+To keep track of the row swaps as you use the method of partial pivoting, start with a copy of the $n$-by-$n$ identity matrix (where $n$ is the number of rows). Every time you swap rows of the matrix you are row-reducing, also swap the same rows in your copy of the identity matrix. At the end, the identity matrix will have become a **permutation matrix** $P$ and the **LU-decomposition with partial pivoting** is the matrix product
 $$PA = LU.$$
 The fixes two problems:
 
@@ -835,16 +840,15 @@ One nice thing to know about permutation matrices is that they are always invert
 
 Find the LU-decomposition with partial pivoting for these matrices
  
-2. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$
+3. $A = \begin{pmatrix} 0 & 1 & 2 \\ 1 & 1 & 1 \end{pmatrix}$
 
-3. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ <!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
+4. $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ <!--$B= \begin{pmatrix} -2 & 8 & 2 \\ 2 & 1 & 4 \\ 4 & 2 & 0 \end{pmatrix}$-->
 
-<!--
-Didn't have time for this one:
-4. Show that when you row reduce $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form using partial pivoting, the resulting LU matrices are not ill-posed.  
--->
+5. Show that when you use partial pivoting to row reduce $B = \begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix}$ to echelon form, the resulting LU matrices are not ill-conditioned.  
 
-
+6. Find the PA = LU-decomposition of $A = \begin{pmatrix} 
+3 & 8 & 1 \\ 5 & 2 & 0 \\ 6 & 1 & 12 
+\end{pmatrix}$. (<https://youtu.be/knIy9FjgIxE>)
 
 
 

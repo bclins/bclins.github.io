@@ -17,9 +17,9 @@ header-includes: |
 
 <ul class="nav">
   <li>[Examples](examples.html)</li>
-  <li>[Index](index.html)</li>
+  <li>[Main](index.html)</li>
   <li>[Notes](notes.html)</li>
-  <li>[Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
+  <li>[Tools](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
 </ul>
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
