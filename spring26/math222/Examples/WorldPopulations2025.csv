@@ -1,0 +1,240 @@
+Country,Population,Leading Digit
+India,1417492000,1
+China,1404890000,1
+United States,341784857,3
+Indonesia,284438782,2
+Pakistan,241499431,2
+Nigeria,223800000,2
+Brazil,213421037,2
+Bangladesh,169828911,1
+Russia,146028325,1
+Mexico,130760049,1
+Japan,122950000,1
+Philippines,114123600,1
+Democratic Republic of the Congo,112832000,1
+Ethiopia,111652998,1
+Egypt,107868296,1
+Vietnam,102300000,1
+Iran,86563000,8
+Turkey,86092168,8
+Germany,83497147,8
+United Kingdom,69487000,6
+France,69081996,6
+Tanzania,68153004,6
+Thailand,65826149,6
+South Africa,63100945,6
+Italy,58956824,5
+Kenya,53330978,5
+Colombia,53057212,5
+Sudan,51662000,5
+Myanmar,51375327,5
+South Korea,51117378,5
+Spain,49570725,4
+Algeria,47400000,4
+Argentina,46387098,4
+Iraq,46118793,4
+Uganda,45905417,4
+Afghanistan,43844000,4
+Canada,41575585,4
+Uzbekistan,38236704,3
+Poland,37351000,3
+Morocco,36828330,3
+Angola,36604681,3
+Saudi Arabia,35300280,3
+Peru,34350244,3
+Malaysia,34281100,3
+Mozambique,34090466,3
+Ghana,33742380,3
+Yemen,32684503,3
+Madagascar,31727042,3
+Ivory Coast,31719275,3
+Nepal,29911840,2
+Cameroon,29442327,2
+Ukraine,28700000,2
+Venezuela,28517000,2
+Australia,27614400,2
+Niger,27522750,2
+North Korea,25950000,2
+Syria,25620427,2
+Burkina Faso,24070553,2
+Taiwan,23289045,2
+Mali,22395489,2
+Sri Lanka,21781800,2
+Malawi,20734262,2
+Kazakhstan,20495975,2
+Chile,20206953,2
+Zambia,19693423,1
+Somalia,19655000,1
+Chad,19340757,1
+Romania,19036031,1
+Senegal,18593258,1
+Netherlands,18131238,1
+Ecuador,18103660,1
+Guatemala,18079810,1
+Cambodia,17577760,1
+Zimbabwe,17073087,1
+South Sudan,15786898,1
+Guinea,14363931,1
+Rwanda,14104969,1
+Benin,13224860,1
+Burundi,12332788,1
+Tunisia,11972169,1
+Belgium,11928761,1
+Haiti,11867032,1
+Jordan,11734000,1
+Bolivia,11365333,1
+United Arab Emirates,11294243,1
+Czech Republic,10897178,1
+Dominican Republic,10771504,1
+Portugal,10749635,1
+Sweden,10605529,1
+Tajikistan,10499000,1
+Greece,10372335,1
+Azerbaijan,10259701,1
+Papua New Guinea,10185363,1
+Israel,10176900,1
+Honduras,9892632,9
+Cuba,9748007,9
+Hungary,9489000,9
+Austria,9219113,9
+Belarus,9109280,9
+Switzerland,9104063,9
+Sierra Leone,9077691,9
+Togo,8095498,8
+Laos,7647000,7
+Hong Kong (China),7527500,7
+Libya,7459000,7
+Kyrgyzstan,7281800,7
+Turkmenistan,7057841,7
+Nicaragua,6874748,6
+Serbia,6567783,6
+Central African Republic,6470307,6
+Bulgaria,6437360,6
+Republic of the Congo,6142180,6
+Singapore,6110200,6
+Paraguay,6109644,6
+El Salvador,6029976,6
+Denmark,6025603,6
+Finland,5656900,5
+Norway,5618354,5
+Lebanon,5490000,5
+Palestine,5483450,5
+Ireland,5458600,5
+Slovakia,5413191,5
+Oman,5359557,5
+New Zealand,5342000,5
+Liberia,5248621,5
+Costa Rica,5191824,5
+Mauritania,4927532,4
+Kuwait,4881254,4
+Panama,4064780,4
+Croatia,3866233,3
+Georgia,3704500,3
+Eritrea,3607000,3
+Mongolia,3544835,3
+Uruguay,3485931,3
+Bosnia and Herzegovina,3412000,3
+Qatar,3214609,3
+Puerto Rico (US),3184195,3
+Armenia,3076200,3
+Namibia,3022401,3
+Lithuania,2897009,2
+Jamaica,2774538,2
+Gabon,2469296,2
+Gambia,2422712,2
+Moldova,2381300,2
+Albania,2363314,2
+Botswana,2359609,2
+Slovenia,2133852,2
+Lesotho,2116427,2
+Guinea-Bissau,1852784,1
+Latvia,1823500,1
+North Macedonia,1822612,1
+Equatorial Guinea,1668768,1
+Bahrain,1594654,1
+Kosovo,1585566,1
+Timor-Leste,1391221,1
+Trinidad and Tobago,1367764,1
+Estonia,1362954,1
+Mauritius,1243741,1
+Eswatini,1235549,1
+Djibouti,1066809,1
+Cyprus,983000,9
+Guyana,956044,9
+Comoros,919901,9
+Fiji,902623,9
+Bhutan,784043,7
+Solomon Islands,750325,7
+Macau (China),686600,6
+Luxembourg,681973,6
+Montenegro,623327,6
+Suriname,616500,6
+Western Sahara (disputed),600904,6
+Malta,574250,5
+Maldives,515132,5
+Cape Verde,491233,4
+Northern Cyprus,476214,4
+Brunei,455500,4
+Belize,417634,4
+Bahamas,398165,3
+Iceland,394530,3
+Transnistria,367776,3
+Vanuatu,321409,3
+French Polynesia (France),279500,2
+Barbados,267800,2
+New Caledonia (France),264596,2
+Abkhazia,244236,2
+São Tomé and Príncipe,209607,2
+Samoa,205557,2
+Saint Lucia,184100,1
+Curaçao (Netherlands),156115,1
+Guam (US),153836,1
+Seychelles,122729,1
+Kiribati,120740,1
+Saint Vincent and the Grenadines,110872,1
+Aruba (Netherlands),109435,1
+Grenada,109021,1
+Micronesia,105564,1
+Antigua and Barbuda,103603,1
+Jersey (UK),103267,1
+Tonga,100179,1
+Andorra,89058,8
+Cayman Islands (UK),88833,8
+U.S. Virgin Islands (US),87146,8
+Isle of Man (UK),84975,8
+Dominica,71946,7
+Guernsey (UK),64781,6
+Bermuda (UK),64055,6
+Greenland (Denmark),56740,5
+South Ossetia,56520,5
+Faroe Islands (Denmark),54981,5
+Saint Kitts and Nevis,51320,5
+Turks and Caicos Islands (UK),50828,5
+American Samoa (US),49710,4
+Northern Mariana Islands (US),47329,4
+Marshall Islands,42418,4
+Sint Maarten (Netherlands),41349,4
+Liechtenstein,41024,4
+British Virgin Islands (UK),39471,3
+Monaco,38423,3
+Gibraltar (UK),38196,3
+San Marino,34172,3
+Saint Martin (France),31496,3
+Palau,16733,1
+Anguilla (UK),16010,1
+Cook Islands (New Zealand),15040,1
+Nauru,11680,1
+Wallis and Futuna (France),11620,1
+Tuvalu,10643,1
+Saint Barthélemy (France),10562,1
+Saint Pierre and Miquelon (France),5819,5
+Saint Helena Ascension and Tristan da Cunha (UK),5651,5
+Montserrat (UK),4386,4
+Falkland Islands (UK),3662,3
+Tokelau (New Zealand),2608,2
+Norfolk Island (Australia),2188,2
+Christmas Island (Australia),1692,1
+Niue (New Zealand),1681,1
+Vatican City,882,8
+Cocos (Keeling) Islands (Australia),593,5
+Pitcairn Islands (UK) ,35,3

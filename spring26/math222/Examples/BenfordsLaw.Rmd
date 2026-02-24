@@ -1,0 +1,23 @@
+---
+title: World Populations and Benford's Law
+output: html_document
+---
+
+Benford's Law says that in a large set of numbers that are spread uniformly over several orders of
+magnitude, numbers that start with a 1 or a 2 should be more common than numbers that start
+with an 8 or a 9. In fact, Benford's law gives says that the distribution of leading digits should
+follow this probability model.
+
+| Leading Digit | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Proportion | 0.301 | 0.176 | 0.125 | 0.097 | 0.079 | 0.067 | 0.058 | 0.051 | 0.046 |
+
+```{r}
+df <- read.csv("https://bclins.github.io/spring26/math222/Examples/WorldPopulations2025.csv")
+leading.digits <- table(df$Leading.Digit)
+```
+
+1. Make a barplot showing the distribution of leading digits for the population sizes for all the countries. Make a second bar plot for the predicted proportions of leading digits according to Benford's law.  Do the two graphs look similar?  Does it look like populations follow Benford's law.  
+
+
+2. Use R to carry-out a chi-square goodness of fit test.  For the test, you should compare 
