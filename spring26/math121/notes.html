@@ -881,29 +881,36 @@ tends to get closer to the theoretical average
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</p>
 </div>
 <h3 id="wed-feb-25">Wed, Feb 25</h3>
-<p>A <strong>probability distribution</strong> is another name for a
-probability model, particularly one where the outcomes are numbers. We
-often use capital letters like
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
-or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>
-as <strong>random variables</strong> which represent the possible
-outcome of a random experiment that follows a probability distribution.
-A random variable has:</p>
-<ul>
-<li>A theoretical average, denoted
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(X)</annotation></semantics></math>
-or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mi>X</mi></msub><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math>.</li>
-<li>A theoretical standard deviation
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mi>X</mi></msub><annotation encoding="application/x-tex">\sigma_X</annotation></semantics></math>.</li>
-</ul>
+<p>We started with this warm-up problem.</p>
 <ol type="1">
-<li>Find
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>Y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E(Y)</annotation></semantics></math>
-where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mtext mathvariant="normal">result of rolling a 6-sided die</mtext></mrow><annotation encoding="application/x-tex">Y = \text{result of rolling a 6-sided die}</annotation></semantics></math>.</li>
+<li>Last time we calculated the expected value if you play roulette and
+bet $1 on a color like black. If you bet $1 on a number, like 7, then
+you only have a 1/38 chance of winning, but you get $36 if you win. Find
+the expected value for this bet.</li>
 </ol>
+<p>After that we introduced the <strong>binomial distribution</strong>
+which is the distribution of the possible number of successes if you do
+N independent random trials that each have a probability p of a
+success.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">Binomial
+distribution</a></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Suppose you play 100 games of roulette and bet on 7 every time.
+Use the <a
+href="https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html">binomial
+distribution app</a> to find the probability that you win more money
+than you lose.</p></li>
+<li><p>What about playing 100 games and betting on black every time?
+Which is a better strategy?</p></li>
+</ol>
+<p>The binomial distribution is an example of a <strong>discrete
+distribution</strong> which means that there are only finitely many
+possible outcomes between any two values. The normal distribution is an
+example of a <strong>continuous distribution</strong> which can have an
+infinite range of possible outcomes between two values.</p>
 <p>Every probability distribution can be described by three things:</p>
 <ul>
 <li><strong>Shape</strong> - is it shaped like a bell, or skewed, or
@@ -914,54 +921,33 @@ something even more complicated?</li>
 <li><strong>Spread</strong> - the theoretical standard deviation
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></li>
 </ul>
-<ol start="2" type="1">
-<li>If you play roulette and bet on one number (like 7), you have a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="false"><mn>1</mn><mn>38</mn></mfrac><annotation encoding="application/x-tex">\tfrac{1}{38}</annotation></semantics></math>
-chance of winning and you win $36 for every one dollar you bet.
-<ol type="a">
-<li>Find the expected value for a $1 bet.</li>
-<li>Draw the probability histogram. Describe the shape of the
-distribution.</li>
-</ol></li>
-</ol>
-<p>It turns out that betting on 7 has the same expected value as betting
-on black, but the standard deviations are not the same
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>$</mi><mn>0.9986</mn></mrow><annotation encoding="application/x-tex">\sigma = \$0.9986</annotation></semantics></math>
-for betting on a number versus
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mi>$</mi><mn>5.763</mn></mrow><annotation encoding="application/x-tex">\sigma = \$5.763</annotation></semantics></math>
-if you bet on black).</p>
-<p>We talked about the difference between <strong>continuous
-distributions</strong> where there is an infinite range of outcomes
-between any two possibilities, and <strong>discrete
-distributions</strong> which only have finitely many outcomes between
-any two possibilities. The normal distribution is continuous, rolling a
-six-sided die is discrete.</p>
-<p>An important discrete probability distribution is the
-<strong>binomial distribution</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Binom</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Binom}(N,p)</annotation></semantics></math>
-which counts the total number of successes when you flip a fair or
-unfair coin
+<p>We usually won’t calculate the theoretical standard deviation of a
+probability model by hand. But, there are nice formulas for the
+theoretical mean and standard deviation of a binomial distribution.</p>
+<div class="Theorem">
+<p><strong>Binomial distribution.</strong> The total number of successes
+in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
-times. The number
+independent trials with a fixed probability
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
-is the probability of a success on each flip.</p>
-<ul>
-<li><strong>Example:</strong> <a
-href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">Binomial
-distribution</a></li>
-<li><strong>Example:</strong> <a
-href="https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html">Dice
-probabilities</a></li>
-</ul>
-<ol start="3" type="1">
-<li><p>Suppose you play 100 games of roulette and bet on 7 every time.
-Use the <a
-href="https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html">binomial
-distribution app</a> to find the probability that you win more money
-than you lose.</p></li>
-<li><p>What about playing 100 games and betting on black every time?
-Which is a better strategy?</p></li>
+of a success on each trial has a binomial distribution with</p>
+<ol type="1">
+<li><strong>Theoretical mean.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mi>N</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\mu = N p</annotation></semantics></math></li>
+<li><strong>Theoretical standard deviation.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mi>N</mi><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sigma = \sqrt{N p (1-p)}</annotation></semantics></math></li>
 </ol>
+<p>If both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>p</mi><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">Np \ge 10</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">N(1-p) \ge 10</annotation></semantics></math>
+(i.e., there are at least 10 possible outcomes above and below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>),
+then the binomial distribution is approximately normal.</p>
+</div>
+<!--
+* **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
+-->
 <p>We finished by talking about the trade-off between risk
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>)
 versus expected returns

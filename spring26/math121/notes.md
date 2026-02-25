@@ -492,12 +492,19 @@ The **expected value** (also known as the **theoretical average**) is the weight
 
 ### Wed, Feb 25
 
-A **probability distribution** is another name for a probability model, particularly one where the outcomes are numbers. We often use capital letters like $X$ or $Y$ as **random variables** which represent the possible outcome of a random experiment that follows a probability distribution. A random variable has:  
+We started with this warm-up problem. 
 
-* A theoretical average, denoted $E(X)$ or $\mu_X$. 
-* A theoretical standard deviation $\sigma_X$. 
+1. Last time we calculated the expected value if you play roulette and bet $1 on a color like black. If you bet $1 on a number, like 7, then you only have a 1/38 chance of winning, but you get $36 if you win. Find the expected value for this bet. 
 
-1. Find $E(Y)$ where $Y = \text{result of rolling a 6-sided die}$. 
+After that we introduced the **binomial distribution** which is the distribution of the possible number of successes if you do N independent random trials that each have a probability p of a success.  
+
+* **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
+
+2. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
+
+3. What about playing 100 games and betting on black every time?  Which is a better strategy? 
+
+The binomial distribution is an example of a **discrete distribution** which means that there are only finitely many possible outcomes between any two values.  The normal distribution is an example of a **continuous distribution** which can have an infinite range of possible outcomes between two values. 
 
 Every probability distribution can be described by three things:
 
@@ -505,23 +512,21 @@ Every probability distribution can be described by three things:
 * **Center** - the theoretical average $\mu$ (i.e., the expected value)
 * **Spread** - the theoretical standard deviation $\sigma$
 
-2. If you play roulette and bet on one number (like 7), you have a $\tfrac{1}{38}$ chance of winning and you win \$36 for every one dollar you bet.  
-    a. Find the expected value for a \$1 bet. 
-    b. Draw the probability histogram.  Describe the shape of the distribution. 
+We usually won't calculate the theoretical standard deviation of a probability model by hand. But, there are nice formulas for the theoretical mean and standard deviation of a binomial distribution.
 
-It turns out that betting on 7 has the same expected value as betting on black, but the standard deviations are not the same ($\sigma = \$0.9986$ for betting on a number versus $\sigma = \$5.763$ if you bet on black). 
+<div class="Theorem">
+**Binomial distribution.** The total number of successes in $N$ independent trials with a fixed probability $p$ of a success on each trial has a binomial distribution with 
 
-We talked about the difference between **continuous distributions** where there is an infinite range of outcomes between any two possibilities, and **discrete distributions** which only have finitely many outcomes between any two possibilities.  The normal distribution is continuous, rolling a six-sided die is discrete. 
+1. **Theoretical mean.** $\mu = N p$
+2. **Theoretical standard deviation.** $\sigma = \sqrt{N p (1-p)}$
 
-An important discrete probability distribution is the **binomial distribution** $\on{Binom}(N,p)$ which counts the total number of successes when you flip a fair or unfair coin $N$ times.  The number $p$ is the probability of a success on each flip.  
+If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible outcomes above and below $\mu$), then the binomial distribution is approximately normal. 
+</div>
 
-* **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
+<!--
 * **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
+-->
 
-
-3. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
-
-4. What about playing 100 games and betting on black every time?  Which is a better strategy? 
 
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 

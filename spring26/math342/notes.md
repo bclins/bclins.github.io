@@ -857,7 +857,7 @@ Finding the PLU decomposition by hand is tedious, especially if you need to swap
 
 ### Wed, Feb 25
 
-The **inner product** of two vectors $\mathbf{x}, \mathbf{y}$ in $\R^n$ is $x^T y$. We proved some important facts about inner products and got some practice with matrix algebra in the following workshop:
+The **inner product** of two vectors $\mathbf{x}, \mathbf{y}$ in $\R^n$ is $\mathbf{x}^T \mathbf{y}$. We proved some important facts about inner products and got some practice with matrix algebra in the following workshop:
 
 * **Workshop**: [Inner products & orthogonality](Workshops/InnerProducts.pdf)
 
