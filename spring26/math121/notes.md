@@ -489,14 +489,13 @@ The **expected value** (also known as the **theoretical average**) is the weight
 **The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
 </div>
 
-<!--
 
-### Wed, Oct 8
+### Wed, Feb 25
 
-Today we talked about **probability distributions**.  A probability distribution is a probability model where the outcomes are numbers. We often use capital letters like $X$ and $Y$ as **random variables**. A random variable represents the possible outcome of a random experiment that follows a probability distribution. A random variable has:  
+A **probability distribution** is another name for a probability model, particularly one where the outcomes are numbers. We often use capital letters like $X$ or $Y$ as **random variables** which represent the possible outcome of a random experiment that follows a probability distribution. A random variable has:  
 
-* A theoretical average $E(X) = \mu_X$. 
-* A theoretical standard deviation $\on{SD}(X) = \sigma_X$. 
+* A theoretical average, denoted $E(X)$ or $\mu_X$. 
+* A theoretical standard deviation $\sigma_X$. 
 
 1. Find $E(Y)$ where $Y = \text{result of rolling a 6-sided die}$. 
 
@@ -514,7 +513,10 @@ It turns out that betting on 7 has the same expected value as betting on black, 
 
 We talked about the difference between **continuous distributions** where there is an infinite range of outcomes between any two possibilities, and **discrete distributions** which only have finitely many outcomes between any two possibilities.  The normal distribution is continuous, rolling a six-sided die is discrete. 
 
-An important discrete probability distribution is the **binomial distribution** $\on{Bin}(N,p)$ which counts the total number of successes when you flip a fair or unfair coin $N$ times.  The number $p$ is the probability of a success on each flip.  
+An important discrete probability distribution is the **binomial distribution** $\on{Binom}(N,p)$ which counts the total number of successes when you flip a fair or unfair coin $N$ times.  The number $p$ is the probability of a success on each flip.  
+
+* **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
+* **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
 
 
 3. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
@@ -524,7 +526,7 @@ An important discrete probability distribution is the **binomial distribution** 
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 
 
-
+<!--
 ### Fri, Oct 10
  
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
