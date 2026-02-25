@@ -579,6 +579,12 @@ We ran out of time at the end, but I gave the following handout as extra practic
 
 * **Workshop:** [Chi-squared caveats](Examples/ChisqCaveats.pdf)
 
+### Wed, Feb 25
+
+Today we introduced the **chi-squared goodness of fit test**.  It is a lot like the chi-squared test for association, except instead of having two categorical variables, you just have one and you are testing to see whether the proportions in each category from the sample match some model for what the population should be.  
+
+* **Workshop:** [Chi-squared goodness of fit test](Examples/BenfordsLaw.html) ([Rmd source](Examples/BenfordsLaw.Rmd)) 
+
 - - - 
 
 ### Week 8 Notes

@@ -1,23 +1,63 @@
 ---
-title: World Populations and Benford's Law
+title: Chi-Squared Goodness of Fit Test
 output: html_document
 ---
+
+### Example 1 - Benford's Law
 
 Benford's Law says that in a large set of numbers that are spread uniformly over several orders of
 magnitude, numbers that start with a 1 or a 2 should be more common than numbers that start
 with an 8 or a 9. In fact, Benford's law gives says that the distribution of leading digits should
-follow this probability model.
+follow this probability model:
 
 | Leading Digit | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Proportion | 0.301 | 0.176 | 0.125 | 0.097 | 0.079 | 0.067 | 0.058 | 0.051 | 0.046 |
+
+The predicted proportions in Benford's law come from the formula 
+$$P(\text{Leading digit} = k) = \log_{10}(k+1) - \log_{10}(k)$$
+for each $k$ from 1 to 9. Here a graph showing the trend. 
+
+```{r}
+p <- log10(2:10) - log10(1:9)
+barplot(p, names.arg = 1:9, main="Benford's Law", xlab = "Leading Digit", ylab = "Predicted Proportion")
+```
+
+Below, the data frame `df` contains data from 2025 with the populations of all the countries in the world. The `leading.digits` variable contains a table with the counts for each leading digit. Use this data to answer the questions below. 
 
 ```{r}
 df <- read.csv("https://bclins.github.io/spring26/math222/Examples/WorldPopulations2025.csv")
 leading.digits <- table(df$Leading.Digit)
 ```
 
-1. Make a barplot showing the distribution of leading digits for the population sizes for all the countries. Make a second bar plot for the predicted proportions of leading digits according to Benford's law.  Do the two graphs look similar?  Does it look like populations follow Benford's law.  
+1. **Plot the Leading Digits.** Make a bar plot showing the distribution of leading digits for the population sizes for all the countries. 
+
+The **Chi-Squared Goodness of Fit Test** can be used to check if the values of a single categorical variable are significantly different than the predicted proportions from a model. We always test the same two hypotheses:
+
+* $H_0:$ The population proportions are equal to the predicted values.
+* $H_A:$ The population proportions are not equal to the predicted values.
+
+2. **Test Goodness of Fit.** Use R to carry-out a chi-square goodness of fit test.  For the test, you should use the following command:
+
+    ```{r, eval=F} 
+    chisq.test(leading.digits, p = log10(2:10) - log10(1:9))
+    ```
+    
+    What is the result?  Does the p-value mean that world populations do or don't appear to follow Benford's law?  
+
+### Example 2 - M&M Colors
+
+3. **M&M Colors**. In 2008, Mars Inc. published the distribution of colors they used for M&M candies. At that time, they were 24% blue, 20% orange, 16% green, 14% yellow, 13% red, 13% brown.  Since then, the color distribution may have changed, and Mars no longer publishes the distribution on their website.  If we bought a bag of M&Ms and counted 13 blue, 7 orange, 4 green, 7 yellow, 13 brown, and 9 red, would that be significant evidence that the distribution of colors for M&Ms has changed since 2008?  Do a chi-squared goodness of fit test to find out.   
 
 
-2. Use R to carry-out a chi-square goodness of fit test.  For the test, you should compare 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
