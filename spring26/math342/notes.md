@@ -15,6 +15,7 @@ header-includes: |
 
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 
 ## Math 342 - Spring 2026
 
@@ -801,7 +802,7 @@ Day  | Topic
 :-----:|:-----------------------
 Mon, Feb 23 | LU decomposition with pivoting
 Wed, Feb 25 | Inner-products and orthogonality
-Fri, Feb 27 | Unitary and Hermitian matrices 
+Fri, Feb 27 | Orthogonal sets & matrices
 
 
 ### Mon, Feb 23
@@ -863,10 +864,15 @@ The **inner product** of two vectors $\mathbf{x}, \mathbf{y}$ in $\R^n$ is $\mat
 
 ### Fri, Feb 27
 
-In exercise 2 from the workshop last time, we needed the property that $(\mathbf{x} + \mathbf{y})^T = \mathbf{x}^T + \mathbf{y}^T$.  This is a special case of the addition rule for transposes of matrices.  There is also a multiplication for transposes which applies whenever you can multiply two matrices:
+In exercise 2 from the workshop last time, we needed the property that $(\mathbf{x} + \mathbf{y})^T = \mathbf{x}^T + \mathbf{y}^T$.  This is a special case of one of the **rules for transposes**:
 
-1. $(A + B)^T = A^T + B^T$.  
-2. $(AB)^T = B^T A^T.$
+* $(A + B)^T = A^T + B^T$.  
+* $(AB)^T = B^T A^T.$
+
+Today we talked about two special types of matrices. 
+
+* A **symmetric matrix** is a matrix in $\R^{n \times n}$ such that $A^T = A$.
+* An **orthogonal matrix** is a matrix in $\R^{n \times n}$ such that $A^T A = I$. 
 
 A set of vectors $S = \{\mathbf{v}_1, \ldots, \mathbf{v}_d\}$ is an **orthogonal set** if every vector in $S$ is orthogonal to every other vector in $S$.  An orthogonal set where every vector also has length equal to 1 is called an **orthonormal set**.  
 
@@ -892,6 +898,20 @@ Hint: Observe that $(A\mathbf{x})^T \mathbf{y} = \mathbf{x}^T (A\mathbf{y})$.
 
 It turns out that symmetric matrices can only have real eigenvalues and they always have an orthonormal basis of eigenvectors.  
 
+Since we had a little extra time, we finished by talking about the **conjugate transpose** of a complex matrix.  For any matrix $A$ in $\C^{m \times n}$, the conjugate transpose is $A^* = (\bar{A})^T$.  It combines taking the transpose of $A$ with computing the complex conjugate of every entry.  Recall that the **complex conjugate** of a complex number $\overline{a+ib} = a - ib$. For matrices with real number entries, $A^*$ and $A^T$ are the same thing. In Matlab/Octave you use an apostrophe to get the conjugate transpose:
+
+```octave
+A = [1 2i; 3 4i]
+A'
+```
+
+The conjugate transpose mostly has the same properties as the transpose:
+
+* $(A + B)^* = A^* + B^*$
+* $(AB)^* = B^* A^*$
+
+One very important exception is when you work with inner-products of complex vectors.  The **complex inner-product** of $\mathbf{x}, \mathbf{y}$ in $\C^n$ is $\mathbf{x}^* \mathbf{y}$.  But unlike regular inner-products, order matters for complex inner-products because 
+$$\mathbf{y}^* \mathbf{x} = \overline{\mathbf{x}^* \mathbf{y}}.$$
 
 - - - 
 

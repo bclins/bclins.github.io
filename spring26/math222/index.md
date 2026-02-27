@@ -45,7 +45,7 @@ Week | Topic                      | Notes | Projects
 5  | Inference for proportions, **Midterm 1**       | [Week 05](notes.html#week-5-notes)  |
 6  | Comparing proportions                          | [Week 06](notes.html#week-6-notes)  | [Project 2](Projects/project2.pdf) ([Rmd](Projects/project2.Rmd))
 7  | Inference about means                          | [Week 07](notes.html#week-7-notes)  |
-8  | Analysis of variance                           | [Week 08](notes.html#week-8-notes)  |
+8  | Analysis of variance                           | [Week 08](notes.html#week-8-notes)  | [Project 3](Projects/project3.pdf)
 9  | More ANOVA, **Midterm 2**                      | [Week 09](notes.html#week-9-notes)  |
 10 | Least squares regression                       | [Week 10](notes.html#week-10-notes) | 
 11 | Logistic regression                            | [Week 11](notes.html#week-11-notes) | 

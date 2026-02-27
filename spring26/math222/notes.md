@@ -626,10 +626,6 @@ If you have a small sample ($n < 30$), then you should be careful about trusting
 
 3. The two t-tests we did above both had significant p-values.  The first was $5.4 \times 10^{-4}$ and the second was $2.0 \times 10^{-5}$.  Thinking about the assumptions above, which p-value is probably stronger evidence?  
 
-We finished by tabling about using **quantile-quantile plots** to check normality.  
-
-* **Example:** [Checking normality with qqplots](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html)
-
 - - - 
 
 ### Week 8 Notes
@@ -640,6 +636,18 @@ Mon, Mar 2 | [7.2][7.2] | Paired data
 Wed, Mar 4 | [7.3][7.3] | Difference of two means
 Fri, Mar 6 | [7.4][7.4] | Power calculations
             
+
+<!--
+### Mon, Mar 2
+
+We started by talking about using **quantile-quantile plots** to check normality.  
+
+* **Example:** [Checking normality with qqplots](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html)
+
+Then we talked about using the t-test with paired data. 
+
+* **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
+-->
 
 - - - 
 

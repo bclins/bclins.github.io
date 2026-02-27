@@ -1566,7 +1566,7 @@ Today we reviewed for the midterm exam. We reviewed the things you need to memor
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Feb 27</td>
-<td style="text-align: left;">Unitary and Hermitian matrices</td>
+<td style="text-align: left;">Orthogonal sets &amp; matrices</td>
 </tr>
 </tbody>
 </table>
@@ -1701,14 +1701,24 @@ orthogonality</a></li>
 <p>In exercise 2 from the workshop last time, we needed the property
 that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>𝐱</mi><mo>+</mo><mi>𝐲</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>=</mo><msup><mi>𝐱</mi><mi>T</mi></msup><mo>+</mo><msup><mi>𝐲</mi><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">(\mathbf{x} + \mathbf{y})^T = \mathbf{x}^T + \mathbf{y}^T</annotation></semantics></math>.
-This is a special case of the addition rule for transposes of matrices.
-There is also a multiplication for transposes which applies whenever you
-can multiply two matrices:</p>
-<ol type="1">
+This is a special case of one of the <strong>rules for
+transposes</strong>:</p>
+<ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>=</mo><msup><mi>A</mi><mi>T</mi></msup><mo>+</mo><msup><mi>B</mi><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">(A + B)^T = A^T + B^T</annotation></semantics></math>.<br />
 </li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup><mo>=</mo><msup><mi>B</mi><mi>T</mi></msup><msup><mi>A</mi><mi>T</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">(AB)^T = B^T A^T.</annotation></semantics></math></li>
-</ol>
+</ul>
+<p>Today we talked about two special types of matrices.</p>
+<ul>
+<li>A <strong>symmetric matrix</strong> is a matrix in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb{R}^{n \times n}</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mo>=</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">A^T = A</annotation></semantics></math>.</li>
+<li>An <strong>orthogonal matrix</strong> is a matrix in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb{R}^{n \times n}</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">A^T A = I</annotation></semantics></math>.</li>
+</ul>
 <p>A set of vectors
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>𝐯</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>𝐯</mi><mi>d</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">S = \{\mathbf{v}_1, \ldots, \mathbf{v}_d\}</annotation></semantics></math>
 is an <strong>orthogonal set</strong> if every vector in
@@ -1793,6 +1803,43 @@ Hint: Observe that
 </ol>
 <p>It turns out that symmetric matrices can only have real eigenvalues
 and they always have an orthonormal basis of eigenvectors.</p>
+<p>Since we had a little extra time, we finished by talking about the
+<strong>conjugate transpose</strong> of a complex matrix. For any matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℂ</mi><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow></msup><annotation encoding="application/x-tex">\mathbb{C}^{m \times n}</annotation></semantics></math>,
+the conjugate transpose is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>*</mo></msup><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>A</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mi>T</mi></msup></mrow><annotation encoding="application/x-tex">A^* = (\bar{A})^T</annotation></semantics></math>.
+It combines taking the transpose of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+with computing the complex conjugate of every entry. Recall that the
+<strong>complex conjugate</strong> of a complex number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></mrow><mo accent="true">¯</mo></mover><mo>=</mo><mi>a</mi><mo>−</mo><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\overline{a+ib} = a - ib</annotation></semantics></math>.
+For matrices with real number entries,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mo>*</mo></msup><annotation encoding="application/x-tex">A^*</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>T</mi></msup><annotation encoding="application/x-tex">A^T</annotation></semantics></math>
+are the same thing. In Matlab/Octave you use an apostrophe to get the
+conjugate transpose:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode octave"><code class="sourceCode octave"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [<span class="fl">1</span> <span class="fl">2i</span><span class="op">;</span> <span class="fl">3</span> <span class="fl">4i</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>A<span class="op">&#39;</span></span></code></pre></div>
+<p>The conjugate transpose mostly has the same properties as the
+transpose:</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>*</mo></msup><mo>=</mo><msup><mi>A</mi><mo>*</mo></msup><mo>+</mo><msup><mi>B</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">(A + B)^* = A^* + B^*</annotation></semantics></math></li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mi>B</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>*</mo></msup><mo>=</mo><msup><mi>B</mi><mo>*</mo></msup><msup><mi>A</mi><mo>*</mo></msup></mrow><annotation encoding="application/x-tex">(AB)^* = B^* A^*</annotation></semantics></math></li>
+</ul>
+<p>One very important exception is when you work with inner-products of
+complex vectors. The <strong>complex inner-product</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐱</mi><mo>,</mo><mi>𝐲</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}, \mathbf{y}</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℂ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{C}^n</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>𝐱</mi><mo>*</mo></msup><mi>𝐲</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}^* \mathbf{y}</annotation></semantics></math>.
+But unlike regular inner-products, order matters for complex
+inner-products because
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>𝐲</mi><mo>*</mo></msup><mi>𝐱</mi><mo>=</mo><mover><mrow><msup><mi>𝐱</mi><mo>*</mo></msup><mi>𝐲</mi></mrow><mo accent="true">¯</mo></mover><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{y}^* \mathbf{x} = \overline{\mathbf{x}^* \mathbf{y}}.</annotation></semantics></math></p>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>

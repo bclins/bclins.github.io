@@ -1,0 +1,59 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+\subsection*{Math 222 - Project 3 \hfill Due Friday, March 20}
+
+\begin{questions}
+
+\question In 1986, researchers conducted a field study to investigate how drivers react when the car in front of them does not move after a traffic light turns green. The study was conducted at a busy intersection in Munich, West Germany, on two afternoons (Sunday and Monday).  The experimenters sat in a Volkswagen Jetta (the ``blocking car") and did not accelerate after the traffic light turned green. They timed how long (in seconds) before the blocked car driver reacted 
+(either by honking or flashing headlights).   
+Some values were not included because the blocked driver never honked within the time limit of the experiment. You can load the data with the command:
+\begin{center}
+\footnotesize
+\verb|honkingData = read.csv("https://people.hsc.edu/faculty-staff/blins/StatsExamples/honking.txt")|
+\end{center}
+
+\begin{parts}
+\item Explore the distribution of the results of this data.  Include some charts of the data, and explain your findings. Be sure to describe the shape (skew, normality, etc.) of the data, and point out any outliers.  You might also want to speculate about why different people may have reacted differently to the blocking car.  
+
+\item Which is larger, the mean or the median response time?  Why is it larger?  
+
+\item Make a 90\% t-distribution confidence interval for the mean response time.  Explain clearly what population this confidence interval might apply to.  
+
+\item Are the conditions for using a t-distribution confidence interval satisfied by this data?  Explain why or why not.  
+\end{parts}
+
+\question The file \href{https://people.hsc.edu/faculty-staff/blins/StatsExamples/SuperBowl.txt}{SuperBowl.txt} contains data about the winner and scores from every year since Super Bowl I.  Use the command:
+\begin{center}
+\footnotesize
+\verb|superbowl = read.csv("https://people.hsc.edu/faculty-staff/blins/StatsExamples/SuperBowl.txt")|
+\end{center}
+to work with the data. 
+
+\begin{parts}
+\item Make a histogram and a boxplot for the differences in scores between the winning team and the losing team for each year (the \textit{margin of victory}.  Briefly give a summary of the shape, center and other features of this distribution.
+
+\item Are there any outliers?  What years, if any, were outliers?  
+
+\item Does this data look roughly normal? Make a normal quantile plot and comment on what you see. 
+
+
+\item Even though the data is clearly not normal, make a 95\% prediction interval for the difference between the scores of the winning and losing teams in future superbowls. Explain what your interval means in words.   \textit{Warning: Unlike confidence intervals, prediction intervals are not robust against departures from normality, so take the results of this interval with a large grain of salt. }
+\end{parts}
+
+
+\question In a 1993 paper, researchers studied a sample of people who claimed to have had an intense experience with an unidentified flying object (UFO).  One of the many variables they considered was the IQ of the subjects.  Suppose you want to test whether or not the average IQ of those who have had such a UFO experience is higher than 100, so you want to test:
+\begin{itemize}
+\item $H_0: \mu = 100$, versus
+\item $H_A: \mu \ne 100$.  
+\end{itemize}
+The sample mean of the 25 people in the study was 101.6 with a standard deviation of 8.9. The resulting $t$-value is only 0.899 which is not statistically significant (the p-value is 38.8\%).
+
+Should the researchers have been surprised that their results weren't significant?  What if they wanted to be able to detect a difference of 5 IQ points?  Compute the statistical power of the test that the researchers carried out.  Explain each step along the way.  Be sure to clearly describe both the null model for the $t$-values and the alternative model. Recall that the alternative model will have a \textbf{non-central t-distribution} with non-centrality parameter:
+$$ \delta = \frac{\mu_A - \mu_0}{\sigma/\sqrt{N}}.$$
+You can use the sample data to approximate $\sigma$ in this formula. 
+\end{questions}
+\end{document}
