@@ -33,7 +33,7 @@ header-includes: |
 
 ### Inference with R
 
-* Confidence intervals for proportions ([Rmd](pConfidenceIntervals.Rmd), [html](pConfidenceIntervals.html))
+* Confidence intervals for proportions ([Rmd](Examples/pConfidenceIntervals.Rmd), [html](Examples/pConfidenceIntervals.html))
 * [Inference for two proportions](Examples/Nicotine.html) ([source](Examples/Nicotine.Rmd))
 
 <br>

@@ -585,6 +585,51 @@ Today we introduced the **chi-squared goodness of fit test**.  It is a lot like 
 
 * **Workshop:** [Chi-squared goodness of fit test](Examples/BenfordsLaw.html) ([Rmd source](Examples/BenfordsLaw.Rmd)) 
 
+
+### Fri, Feb 27
+
+We started with this question:
+
+1. Are Hampden-Sydney students significantly taller than average for men in the USA?  It is known that the average height of adult men in the United States is 70 inches with a standard deviation of 3 inches.  
+
+We tested the hypotheses:
+
+* $H_0: \mu_{HSC} = 70$
+* $H_A: \mu_{HSC} \ne 70$. 
+
+We started by trying to find a z-value using 
+$$z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}}$$
+but since we do not know the correct standard deviation for the population of all HSC students, we need to switch to using t-values: 
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}.$$
+
+```r
+students <- read.csv("https://bclins.github.io/spring26/math222/Examples/StudentData.csv")
+t.test(students$Height, mean = 70)
+```
+
+The t-distribution was discovered by William Gossett while he worked for the Guinness brewing company.  
+
+2. Scientists studying the Earth's atmosphere found amber resin that formed 95 to 75 million years ago when dinosaurs lived. They measured the percent of nitrogen trapped in air bubbles in the resin and found the following results: `c(63.4, 65, 64.4, 63.3, 54.8, 64.5, 60.8, 49.1, 51)`.  Is this strong evidence that nitrogen levels back then were significantly different than they are now?  Currently nitrogen is 78.1% of the Earth's atmosphere.
+
+    ```r
+    nitrogen <- c(63.4, 65, 64.4, 63.3, 54.8, 64.5, 60.8, 49.1, 51)
+    t.test(nitrogen, mu = 78.1)
+    ```
+
+#### Assumptions for the t-Test  
+
+1. No bias - Ideally the data should come from a SRS from the whole population.
+2. Independence - Population should be much larger than the sample. 
+3. Population has a normal distribution - This assumption is less important if the sample size is large.  
+
+If you have a small sample ($n < 30$), then you should be careful about trusting the t-distribution methods unless you are sure that the population really has a normal distribution. 
+
+3. The two t-tests we did above both had significant p-values.  The first was $5.4 \times 10^{-4}$ and the second was $2.0 \times 10^{-5}$.  Thinking about the assumptions above, which p-value is probably stronger evidence?  
+
+We finished by tabling about using **quantile-quantile plots** to check normality.  
+
+* **Example:** [Checking normality with qqplots](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html)
+
 - - - 
 
 ### Week 8 Notes

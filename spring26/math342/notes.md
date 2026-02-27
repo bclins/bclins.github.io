@@ -861,6 +861,38 @@ The **inner product** of two vectors $\mathbf{x}, \mathbf{y}$ in $\R^n$ is $\mat
 
 * **Workshop**: [Inner products & orthogonality](Workshops/InnerProducts.pdf)
 
+### Fri, Feb 27
+
+In exercise 2 from the workshop last time, we needed the property that $(\mathbf{x} + \mathbf{y})^T = \mathbf{x}^T + \mathbf{y}^T$.  This is a special case of the addition rule for transposes of matrices.  There is also a multiplication for transposes which applies whenever you can multiply two matrices:
+
+1. $(A + B)^T = A^T + B^T$.  
+2. $(AB)^T = B^T A^T.$
+
+A set of vectors $S = \{\mathbf{v}_1, \ldots, \mathbf{v}_d\}$ is an **orthogonal set** if every vector in $S$ is orthogonal to every other vector in $S$.  An orthogonal set where every vector also has length equal to 1 is called an **orthonormal set**.  
+
+1. Suppose that we have an orthonormal set in $\R^2$ that contains two vectors $\mathbf{x}$ and $\mathbf{y}$. If $\mathbf{x} = \begin{pmatrix} \cos \theta \\ \sin \theta \end{pmatrix}$ for some angle $\theta$, then there are only two possible vectors that $\mathbf{y}$ could be.  What are they?  Hint: Draw a picture!
+
+2. If a matrix $U$ in $\R^{m \times n}$ has orthonormal columns, then $U^T U$ is the n-by-n identity matrix.  Use this fact to prove that $U$ preserves inner-products.  That is 
+$$(U\mathbf{x})^T (U \mathbf{y}) = \mathbf{x}^T \mathbf{y}$$
+for any vectors $\mathbf{x}, \mathbf{y}$ in $\R^n$.  
+
+3. If $U$ has orthonormal columns, then show that $U$ preserves lengths, that is, $\|U\mathbf{x}\| = \|\mathbf{x}\|$ for all $\mathbf{x}$ in $\R^n$. 
+
+A square matrix with orthonormal columns is called an **orthogonal matrix**.  
+
+4. Show that every 2-by-2 orthogonal matrix must be either 
+$$\begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} \text{    or    } \begin{pmatrix} \cos \theta & \sin \theta \\ \sin \theta & -\cos \theta \end{pmatrix}.$$
+
+The first possibility represents all possible rotations of $\R^2$.  The second represents all possible reflections.  Those are the only length-preserving linear transformations of the plane!
+
+We finished by talking about **symmetric matrices**.  A matrix $A$ in $\R^{n \times n}$ is symmetric if $A^T = A$.  
+
+5. Suppose that $\mathbf{x}$ and $\mathbf{y}$ are eigenvectors of a symmetric matrix $A$ that correspond to two different eigenvalues $\lambda$ and $\mu$ respectively.  Prove that $\mathbf{x}$ is orthogonal to $\mathbf{y}$.  
+Hint: Observe that $(A\mathbf{x})^T \mathbf{y} = \mathbf{x}^T (A\mathbf{y})$.  
+
+It turns out that symmetric matrices can only have real eigenvalues and they always have an orthonormal basis of eigenvectors.  
+
+
 - - - 
 
 ### Week 8 Notes

@@ -531,8 +531,7 @@ If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible ou
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 
 
-<!--
-### Fri, Oct 10
+### Fri, Feb 27
  
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
 
@@ -556,7 +555,6 @@ Examples of sampling distributions.
 
 1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If a commuter plan is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than $4{,}000$ lbs?  Hint: This is the same as finding $P(\bar{x} > 181.8)$
 
--->
 
 - - - 
 
