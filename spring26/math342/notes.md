@@ -913,6 +913,9 @@ The conjugate transpose mostly has the same properties as the transpose:
 One very important exception is when you work with inner-products of complex vectors.  The **complex inner-product** of $\mathbf{x}, \mathbf{y}$ in $\C^n$ is $\mathbf{x}^* \mathbf{y}$.  But unlike regular inner-products, order matters for complex inner-products because 
 $$\mathbf{y}^* \mathbf{x} = \overline{\mathbf{x}^* \mathbf{y}}.$$
 
+
+
+
 - - - 
 
 ### Week 8 Notes
@@ -923,6 +926,49 @@ Mon, Mar 2 | Gram-Schmidt algorithm
 Wed, Mar 4 | QR decomposition 
 Fri, Mar 6 | Orthogonal projections  
              
+### Mon, Mar 2
+
+Last week we introduced the orthogonal complement of a set.  The following are important properties of the orthogonal complement. 
+
+* For any set $W \in \R^n$, the orthogonal complement $W^\perp$ is a subspace.  
+* If $V$ is a subspace, then $(V^\perp)^\perp = V$.  The two subspaces $V$ and $V^\perp$ are called **complementary subspaces.** 
+* If $V$ is a subspace of $\R^n$, then $\on{dim}V + \on{dim}V^\perp = n$.  
+* If $W$ is not a subspace, then $(W^\perp)^\perp$ is the span of $W$, which is the smallest subspace that contains $W$.  
+
+<div class="Theorem"> 
+**The Fundamental Theorem of Linear Algebra.** Let $A$ be a real $m$-by-$n$ matrix.  Then
+
+* The column space of $A$ is the orthogonal complement of the null space of $A^T$. 
+* The row space of $A$ is the orthogonal complement of the null space of $A$. 
+</div>
+
+<div class="Theorem">
+**Gram-Schmidt Algorithm.** Converts a basis $\mathbf{v}_1, \ldots, \mathbf{v}_p$ into an orthogonal basis $\mathbf{u}_1, \ldots, \mathbf{u}_p$ for the same subspace.  
+
+Start with $\mathbf{u}_1 = \mathbf{v}_1$. Then for each $k$ from 2 to $p$, find $\mathbf{u}_{k}$ using these steps:
+
+1. Find the **orthogonal projection** of $\mathbf{v}_{k}$ onto the span of $\mathbf{u}_1, \ldots, \mathbf{u}_{k-1}$: 
+$$\on{Proj} \mathbf{v}_{k} = \left(\frac{\mathbf{v}_{k+1} \cdot \mathbf{u}_1}{\mathbf{u}_1 \cdot \mathbf{u}_1}\right) \mathbf{u}_1 + \left(\frac{\mathbf{v}_{k} \cdot \mathbf{u}_2}{\mathbf{u}_2 \cdot \mathbf{u}_2}\right) \mathbf{u}_2 + \ldots + \left(\frac{\mathbf{v}_{k} \cdot \mathbf{u}_{k-1}}{\mathbf{u}_{k-1} \cdot \mathbf{u}_{k-1}}\right) \mathbf{u}_{k-1}.$$
+2. Subtract the orthogonal projection from $\mathbf{v}_{k}$:
+$$\mathbf{u}_{k} = \mathbf{v}_{k} - \on{Proj} \mathbf{v}_{k}.$$
+
+If you want an orthonormal basis, then just normalize by dividing each $\mathbf{u}_i$ by its length. 
+</div>
+
+
+1. Apply Gram-Schmidt to $\mathbf{x}_1 = \begin{pmatrix} 3 \\ 6 \\ 0 \end{pmatrix}$, $\mathbf{x}_2 = \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}.$ (<https://youtu.be/Rz3O6hJ9xZQ>)
+
+2. Apply Gram-Schmidt to $\mathbf{x}_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \mathbf{x}_2 = \begin{pmatrix} -3 \\ -4 \\ 1 \end{pmatrix}$.  
+
+3. The vector $\mathbf{y} = \begin{pmatrix} 1 \\ 0 \\ 5 \end{pmatrix}$ is in the subspace $W$ spanned by $\mathbf{x}_1$ and $\mathbf{x}_2$ from the previous problem.  Find the coordinates of $y$ with respect to the orthogonal basis for $W$ that you found the previous problem. 
+
+4. Apply Gram-Schmidt to $\mathbf{v}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}$, $\mathbf{v}_2 = \begin{pmatrix} -2 \\ 1 \\ 2 \end{pmatrix}$, $\mathbf{v}_3 = \begin{pmatrix} 18 \\ 0 \\ 0 \end{pmatrix}$. (<https://youtu.be/Aslf3KGq2UE>)
+
+5. Find an orthonormal basis for the plane $x_1 + x_2 + x_3 = 0$ in $\R^3$.  Hint: find any two (linearly independent) vectors in the plane, then apply Gram-Schmidt. 
+
+
+<!-- MIT QR decomposition example $A = \begin{pmatrix} 1 & 2 & 4 \\ 0 & 0 & 5 \\ 0 & 3 & 6 \end{pmatrix}$.  (<https://youtu.be/HEQuN0QELSQ>) -->
+
 
 - - - 
 

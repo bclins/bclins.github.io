@@ -1864,6 +1864,123 @@ inner-products because
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-2">Mon, Mar 2</h3>
+<p>Last week we introduced the orthogonal complement of a set. The
+following are important properties of the orthogonal complement.</p>
+<ul>
+<li>For any set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">W \in \mathbb{R}^n</annotation></semantics></math>,
+the orthogonal complement
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>W</mi><mo>⊥</mo></msup><annotation encoding="application/x-tex">W^\perp</annotation></semantics></math>
+is a subspace.<br />
+</li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+is a subspace, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>V</mi><mo>⊥</mo></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊥</mo></msup><mo>=</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">(V^\perp)^\perp = V</annotation></semantics></math>.
+The two subspaces
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>V</mi><mo>⊥</mo></msup><annotation encoding="application/x-tex">V^\perp</annotation></semantics></math>
+are called <strong>complementary subspaces.</strong></li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>
+is a subspace of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>dim</mo><mi>V</mi><mo>+</mo><mo>dim</mo><msup><mi>V</mi><mo>⊥</mo></msup><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\operatorname{dim}V + \operatorname{dim}V^\perp = n</annotation></semantics></math>.<br />
+</li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+is not a subspace, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>W</mi><mo>⊥</mo></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊥</mo></msup><annotation encoding="application/x-tex">(W^\perp)^\perp</annotation></semantics></math>
+is the span of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>,
+which is the smallest subspace that contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>.</li>
+</ul>
+<div class="Theorem">
+<p><strong>The Fundamental Theorem of Linear Algebra.</strong> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+be a real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>-by-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+matrix. Then</p>
+<ul>
+<li>The column space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is the orthogonal complement of the null space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>T</mi></msup><annotation encoding="application/x-tex">A^T</annotation></semantics></math>.</li>
+<li>The row space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is the orthogonal complement of the null space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>.</li>
+</ul>
+</div>
+<div class="Theorem">
+<p><strong>Gram-Schmidt Algorithm.</strong> Converts a basis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>𝐯</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{v}_1, \ldots, \mathbf{v}_p</annotation></semantics></math>
+into an orthogonal basis
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐮</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>𝐮</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{u}_1, \ldots, \mathbf{u}_p</annotation></semantics></math>
+for the same subspace.</p>
+<p>Start with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐮</mi><mn>1</mn></msub><mo>=</mo><msub><mi>𝐯</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{u}_1 = \mathbf{v}_1</annotation></semantics></math>.
+Then for each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+from 2 to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>,
+find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐮</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\mathbf{u}_{k}</annotation></semantics></math>
+using these steps:</p>
+<ol type="1">
+<li>Find the <strong>orthogonal projection</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐯</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\mathbf{v}_{k}</annotation></semantics></math>
+onto the span of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐮</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>𝐮</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\mathbf{u}_1, \ldots, \mathbf{u}_{k-1}</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Proj</mo><msub><mi>𝐯</mi><mi>k</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>𝐯</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⋅</mo><msub><mi>𝐮</mi><mn>1</mn></msub></mrow><mrow><msub><mi>𝐮</mi><mn>1</mn></msub><mo>⋅</mo><msub><mi>𝐮</mi><mn>1</mn></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>𝐮</mi><mn>1</mn></msub><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>𝐯</mi><mi>k</mi></msub><mo>⋅</mo><msub><mi>𝐮</mi><mn>2</mn></msub></mrow><mrow><msub><mi>𝐮</mi><mn>2</mn></msub><mo>⋅</mo><msub><mi>𝐮</mi><mn>2</mn></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>𝐮</mi><mn>2</mn></msub><mo>+</mo><mi>…</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><msub><mi>𝐯</mi><mi>k</mi></msub><mo>⋅</mo><msub><mi>𝐮</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>𝐮</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⋅</mo><msub><mi>𝐮</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>𝐮</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{Proj} \mathbf{v}_{k} = \left(\frac{\mathbf{v}_{k+1} \cdot \mathbf{u}_1}{\mathbf{u}_1 \cdot \mathbf{u}_1}\right) \mathbf{u}_1 + \left(\frac{\mathbf{v}_{k} \cdot \mathbf{u}_2}{\mathbf{u}_2 \cdot \mathbf{u}_2}\right) \mathbf{u}_2 + \ldots + \left(\frac{\mathbf{v}_{k} \cdot \mathbf{u}_{k-1}}{\mathbf{u}_{k-1} \cdot \mathbf{u}_{k-1}}\right) \mathbf{u}_{k-1}.</annotation></semantics></math></li>
+<li>Subtract the orthogonal projection from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐯</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\mathbf{v}_{k}</annotation></semantics></math>:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐮</mi><mi>k</mi></msub><mo>=</mo><msub><mi>𝐯</mi><mi>k</mi></msub><mo>−</mo><mo>Proj</mo><msub><mi>𝐯</mi><mi>k</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{u}_{k} = \mathbf{v}_{k} - \operatorname{Proj} \mathbf{v}_{k}.</annotation></semantics></math></li>
+</ol>
+<p>If you want an orthonormal basis, then just normalize by dividing
+each
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐮</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\mathbf{u}_i</annotation></semantics></math>
+by its length.</p>
+</div>
+<ol type="1">
+<li><p>Apply Gram-Schmidt to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}_1 = \begin{pmatrix} 3 \\ 6 \\ 0 \end{pmatrix}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}_2 = \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}.</annotation></semantics></math>
+(<a href="https://youtu.be/Rz3O6hJ9xZQ"
+class="uri">https://youtu.be/Rz3O6hJ9xZQ</a>)</p></li>
+<li><p>Apply Gram-Schmidt to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐱</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><msub><mi>𝐱</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>3</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>4</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{x}_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \mathbf{x}_2 = \begin{pmatrix} -3 \\ -4 \\ 1 \end{pmatrix}</annotation></semantics></math>.</p></li>
+<li><p>The vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐲</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>5</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{y} = \begin{pmatrix} 1 \\ 0 \\ 5 \end{pmatrix}</annotation></semantics></math>
+is in the subspace
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+spanned by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐱</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mathbf{x}_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐱</mi><mn>2</mn></msub><annotation encoding="application/x-tex">\mathbf{x}_2</annotation></semantics></math>
+from the previous problem. Find the coordinates of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+with respect to the orthogonal basis for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>
+that you found the previous problem.</p></li>
+<li><p>Apply Gram-Schmidt to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>1</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{v}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>2</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{v}_2 = \begin{pmatrix} -2 \\ 1 \\ 2 \end{pmatrix}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝐯</mi><mn>3</mn></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>18</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{v}_3 = \begin{pmatrix} 18 \\ 0 \\ 0 \end{pmatrix}</annotation></semantics></math>.
+(<a href="https://youtu.be/Aslf3KGq2UE"
+class="uri">https://youtu.be/Aslf3KGq2UE</a>)</p></li>
+<li><p>Find an orthonormal basis for the plane
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_1 + x_2 + x_3 = 0</annotation></semantics></math>
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>3</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^3</annotation></semantics></math>.
+Hint: find any two (linearly independent) vectors in the plane, then
+apply Gram-Schmidt.</p></li>
+</ol>
+<!-- MIT QR decomposition example $A = \begin{pmatrix} 1 & 2 & 4 \\ 0 & 0 & 5 \\ 0 & 3 & 6 \end{pmatrix}$.  (<https://youtu.be/HEQuN0QELSQ>) -->
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>

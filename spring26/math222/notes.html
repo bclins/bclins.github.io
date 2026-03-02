@@ -1452,12 +1452,22 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <h3 id="mon-mar-2">Mon, Mar 2</h3>
 <p>We started by talking about using <strong>quantile-quantile
 plots</strong> to check normality.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exo <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/exoplanets.csv&#39;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rain <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv&#39;</span>)</span></code></pre></div>
 <ul>
 <li><strong>Example:</strong> <a
 href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html">Checking
 normality with qqplots</a></li>
 </ul>
-<p>Then we talked about using the t-test with paired data.</p>
+<p>Then we talked about using the t-test with paired data. We started
+with this data set which shows the size in cubic centimeters of the left
+hippocampus region of the brain (measured using MRI) of pairs of twins.
+Each pair of twins had one who was diagnosed with schizophrenia and one
+who was unaffected by schizophrenia. So we want to know if the size of
+the hippocampus is significantly different in twins with
+schizophrenia.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>brain <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;https://www.rossmanchance.com/iscam2/data/hippocampus.txt&#39;</span>)</span></code></pre></div>
+<p>After that, we did two other matched paired examples in class:</p>
 <ul>
 <li><strong>Example:</strong> <a
 href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html">Matched

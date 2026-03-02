@@ -637,17 +637,31 @@ Wed, Mar 4 | [7.3][7.3] | Difference of two means
 Fri, Mar 6 | [7.4][7.4] | Power calculations
             
 
-<!--
 ### Mon, Mar 2
 
 We started by talking about using **quantile-quantile plots** to check normality.  
 
+```r
+exo = read.csv('http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/exoplanets.csv')
+rain = read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv')
+```
+
+
 * **Example:** [Checking normality with qqplots](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html)
 
-Then we talked about using the t-test with paired data. 
+
+Then we talked about using the t-test with paired data. We started with this data set which shows the size in cubic centimeters of the left hippocampus region of the brain (measured using MRI) of pairs of twins.  Each pair of twins had one who was diagnosed with schizophrenia and one who was unaffected by schizophrenia.  So we want to know if the size of the hippocampus is significantly different in twins with schizophrenia.  
+
+```r
+brain = read.csv('https://www.rossmanchance.com/iscam2/data/hippocampus.txt')
+```
+
+After that, we did two other matched paired examples in class:
 
 * **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
--->
+
+
+
 
 - - - 
 
