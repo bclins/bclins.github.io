@@ -928,12 +928,12 @@ Fri, Mar 6 | Orthogonal projections
              
 ### Mon, Mar 2
 
-Last week we introduced the orthogonal complement of a set.  The following are important properties of the orthogonal complement. 
+Last week we introduced the orthogonal complement $W^\perp$ of a set $W$ in $\R^n$. You should know that:
 
-* For any set $W \in \R^n$, the orthogonal complement $W^\perp$ is a subspace.  
-* If $V$ is a subspace, then $(V^\perp)^\perp = V$.  The two subspaces $V$ and $V^\perp$ are called **complementary subspaces.** 
-* If $V$ is a subspace of $\R^n$, then $\on{dim}V + \on{dim}V^\perp = n$.  
-* If $W$ is not a subspace, then $(W^\perp)^\perp$ is the span of $W$, which is the smallest subspace that contains $W$.  
+* $W^\perp$ is a subspace of $\R^n$.
+* $(W^\perp)^\perp = \on{span} W$.
+* If $V$ is a subspace of $\R^n$, then $V$ and $V^\perp$ are called **complementary subspaces** and
+$$\on{dim}V + \on{dim}V^\perp = n.$$  
 
 <div class="Theorem"> 
 **The Fundamental Theorem of Linear Algebra.** Let $A$ be a real $m$-by-$n$ matrix.  Then
@@ -941,6 +941,18 @@ Last week we introduced the orthogonal complement of a set.  The following are i
 * The column space of $A$ is the orthogonal complement of the null space of $A^T$. 
 * The row space of $A$ is the orthogonal complement of the null space of $A$. 
 </div>
+
+1. We looked at the problem of finding $\left\{ \begin{pmatrix} 1 \\ 1\\ 1 \end{pmatrix} \right\}^\perp$ in the context of the fundamental theorem of linear algebra.  The orthogonal complement is the nullspace of the matrix $\begin{pmatrix} 1 & 1 & 1 \end{pmatrix}$.  
+    a. What is the dimension of the nullspace?
+    b. What is a basis for the null space? 
+
+After that we talked about why orthogonal bases are better.  We used this example:
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Free_body.svg" width=240></img>
+</center>
+
+Since the two components of the force of gravity are orthogonal, it is easy find the right coefficients for the force of gravity in the angled basis.  
 
 <div class="Theorem">
 **Gram-Schmidt Algorithm.** Converts a basis $\mathbf{v}_1, \ldots, \mathbf{v}_p$ into an orthogonal basis $\mathbf{u}_1, \ldots, \mathbf{u}_p$ for the same subspace.  
@@ -958,6 +970,11 @@ If you want an orthonormal basis, then just normalize by dividing each $\mathbf{
 
 1. Apply Gram-Schmidt to $\mathbf{x}_1 = \begin{pmatrix} 3 \\ 6 \\ 0 \end{pmatrix}$, $\mathbf{x}_2 = \begin{pmatrix} 1 \\ 2 \\ 2 \end{pmatrix}.$ (<https://youtu.be/Rz3O6hJ9xZQ>)
 
+2. Apply Gram-Schmidt to $\mathbf{x}_1 = \begin{pmatrix} 1\\ 1\\ 1\\ 1\end{pmatrix}$, $\mathbf{x}_2 = \begin{pmatrix} 0\\ 1\\ 1\\ 1\end{pmatrix}$, $\mathbf{x}_3 = \begin{pmatrix} 0\\ 0\\ 1\\ 1\end{pmatrix}$. (<https://youtu.be/Rz3O6hJ9xZQ?t=350>)
+
+* **Example:** [Desmos graph of the first example](https://www.desmos.com/3d/cmphkrcm8g).
+
+<!--
 2. Apply Gram-Schmidt to $\mathbf{x}_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \mathbf{x}_2 = \begin{pmatrix} -3 \\ -4 \\ 1 \end{pmatrix}$.  
 
 3. The vector $\mathbf{y} = \begin{pmatrix} 1 \\ 0 \\ 5 \end{pmatrix}$ is in the subspace $W$ spanned by $\mathbf{x}_1$ and $\mathbf{x}_2$ from the previous problem.  Find the coordinates of $y$ with respect to the orthogonal basis for $W$ that you found the previous problem. 
@@ -965,7 +982,7 @@ If you want an orthonormal basis, then just normalize by dividing each $\mathbf{
 4. Apply Gram-Schmidt to $\mathbf{v}_1 = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}$, $\mathbf{v}_2 = \begin{pmatrix} -2 \\ 1 \\ 2 \end{pmatrix}$, $\mathbf{v}_3 = \begin{pmatrix} 18 \\ 0 \\ 0 \end{pmatrix}$. (<https://youtu.be/Aslf3KGq2UE>)
 
 5. Find an orthonormal basis for the plane $x_1 + x_2 + x_3 = 0$ in $\R^3$.  Hint: find any two (linearly independent) vectors in the plane, then apply Gram-Schmidt. 
-
+-->
 
 <!-- MIT QR decomposition example $A = \begin{pmatrix} 1 & 2 & 4 \\ 0 & 0 & 5 \\ 0 & 3 & 6 \end{pmatrix}$.  (<https://youtu.be/HEQuN0QELSQ>) -->
 

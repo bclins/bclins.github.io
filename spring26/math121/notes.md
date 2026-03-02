@@ -566,8 +566,7 @@ Mon, Mar 2 | [5.1][5.1] | Sampling distributions for proportions
 Wed, Mar 4 | [5.2][5.2] | Confidence intervals for a proportion
 Fri, Mar 6 | [5.2][5.2] | Confidence intervals for a proportion - con'd 
 
-<!--
-### Wed, Oct 15
+### Mon, Mar 2
 
 We started with this warm-up problem which is a review of the things we talked about last week. 
 
@@ -593,20 +592,23 @@ $$\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.$$
 
 We did the following exercises in class. 
 
-1. In my morning class, 18 out of 28 students were born in VA.  Is $\frac{18}{28}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  (In my afternoon class, the proportion was 10 out of 19.)
+1. This semester, 7 out of 25 students in my statistics class were born in VA.  Is $\frac{7}{25}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
 
-1. In the United States about 7.2% of people have type O-negative blood, so they are universal donors.  Is 7.2% a parameter ($p$) or a statistic ($\hat{p}$)? 
+2. In the United States about 7.2% of people have type O-negative blood, so they are universal donors.  Is 7.2% a parameter ($p$) or a statistic ($\hat{p}$)? 
 
-1. If a hospital has $N = 900$ patients, describe the sampling distribution for the proportion of patients who are universal donors. 
+3. If a hospital has $N = 900$ patients, describe the sampling distribution for the proportion of patients who are universal donors. 
 
-1. Find the probability that $P(\hat{p}_{\text{universal donor}} > 8\%)$. 
+4. Find the probability that $P(\hat{p}_{\text{universal donor}} > 8\%)$. 
 
+<!--
 2. Assuming that the true proportion of all HSC students that were born in VA is 50%, describe the sampling distribution for $\hat{p}_\text{VA}$ in a random sample of $N = 25$ students. 
+-->
 
-3. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
+5. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
-4. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+6. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 
+<!--
 ### Fri, Oct 17
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:

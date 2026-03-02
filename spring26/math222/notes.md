@@ -641,25 +641,53 @@ Fri, Mar 6 | [7.4][7.4] | Power calculations
 
 We started by talking about using **quantile-quantile plots** to check normality.  
 
-```r
-exo = read.csv('http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/exoplanets.csv')
-rain = read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv')
-```
-
-
 * **Example:** [Checking normality with qqplots](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html)
 
+We talked about how to tell the difference between left-skewed and right-skewed distributions on a qqplot.  You can also use a qqplot to tell if a distribution has tails that are too fat to be normal.
+
+After that, we introduced **prediction intervals**.  A 95% t-distribution confidence interval is supposed to contain the population mean, but it does not contain 95% of the individuals, nor does it have a 95% chance to contain a future observation.  But you can make an interval that contains 95% of future observations by using a prediction interval. 
+
+<div class="Theorem">
+**Prediction Interval for a Quantitative Variable.**
+
+$$\bar{x} \pm t^* \sqrt{s^2 + \dfrac{s^2}{N}}.$$
+
+**Caution:** Unlike confidence intervals, these are not robust if the population is not normal, even if the sample size is large! 
+</div>
+
+We used R to find a 95% prediction interval for next year's rainfall here in Farmville. 
+
+```r
+rain <- read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv')
+xbar <- mean(rain$total)
+s <- sd(rain$total)
+N <- 81
+tstar <- qt(0.975, df = 80)
+upper <- xbar + tstar * sqrt(s^2 + s^2 / N)
+lower <- xbar - tstar * sqrt(s^2 + s^2 / N)
+```
+
+We introduced the `qt()` function which is similar to the `qnorm()` function, except it is for the t-distribution. 
 
 Then we talked about using the t-test with paired data. We started with this data set which shows the size in cubic centimeters of the left hippocampus region of the brain (measured using MRI) of pairs of twins.  Each pair of twins had one who was diagnosed with schizophrenia and one who was unaffected by schizophrenia.  So we want to know if the size of the hippocampus is significantly different in twins with schizophrenia.  
 
 ```r
-brain = read.csv('https://www.rossmanchance.com/iscam2/data/hippocampus.txt')
+brain = read.csv('https://www.rossmanchance.com/iscam2/data/hippocampus.txt', sep = "\t")
 ```
 
+Notice the optional argument `sep = "\t"` which we had to use since the data file was stored as **tab-separated values**, not comma-separated values.  Since the twins come in matched pairs, we test the differences:
+
+```r
+t.test(brain$unaffected - brain$affected)
+```
+
+
+
+<!--
 After that, we did two other matched paired examples in class:
 
 * **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
-
+-->
 
 
 

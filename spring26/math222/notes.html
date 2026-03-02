@@ -1452,13 +1452,38 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <h3 id="mon-mar-2">Mon, Mar 2</h3>
 <p>We started by talking about using <strong>quantile-quantile
 plots</strong> to check normality.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exo <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/exoplanets.csv&#39;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rain <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv&#39;</span>)</span></code></pre></div>
 <ul>
 <li><strong>Example:</strong> <a
 href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/qqplots.html">Checking
 normality with qqplots</a></li>
 </ul>
+<p>We talked about how to tell the difference between left-skewed and
+right-skewed distributions on a qqplot. You can also use a qqplot to
+tell if a distribution has tails that are too fat to be normal.</p>
+<p>After that, we introduced <strong>prediction intervals</strong>. A
+95% t-distribution confidence interval is supposed to contain the
+population mean, but it does not contain 95% of the individuals, nor
+does it have a 95% chance to contain a future observation. But you can
+make an interval that contains 95% of future observations by using a
+prediction interval.</p>
+<div class="Theorem">
+<p><strong>Prediction Interval for a Quantitative Variable.</strong></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><msqrt><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mfrac displaystyle="true"><msup><mi>s</mi><mn>2</mn></msup><mi>N</mi></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\bar{x} \pm t^* \sqrt{s^2 + \dfrac{s^2}{N}}.</annotation></semantics></math></p>
+<p><strong>Caution:</strong> Unlike confidence intervals, these are not
+robust if the population is not normal, even if the sample size is
+large!</p>
+</div>
+<p>We used R to find a 95% prediction interval for next year’s rainfall
+here in Farmville.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rain <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv&#39;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(rain<span class="sc">$</span>total)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">sd</span>(rain<span class="sc">$</span>total)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">81</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tstar <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="dv">80</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>upper <span class="ot">&lt;-</span> xbar <span class="sc">+</span> tstar <span class="sc">*</span> <span class="fu">sqrt</span>(s<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> s<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> N)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">&lt;-</span> xbar <span class="sc">-</span> tstar <span class="sc">*</span> <span class="fu">sqrt</span>(s<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> s<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> N)</span></code></pre></div>
+<p>We introduced the <code>qt()</code> function which is similar to the
+<code>qnorm()</code> function, except it is for the t-distribution.</p>
 <p>Then we talked about using the t-test with paired data. We started
 with this data set which shows the size in cubic centimeters of the left
 hippocampus region of the brain (measured using MRI) of pairs of twins.
@@ -1466,13 +1491,17 @@ Each pair of twins had one who was diagnosed with schizophrenia and one
 who was unaffected by schizophrenia. So we want to know if the size of
 the hippocampus is significantly different in twins with
 schizophrenia.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>brain <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;https://www.rossmanchance.com/iscam2/data/hippocampus.txt&#39;</span>)</span></code></pre></div>
-<p>After that, we did two other matched paired examples in class:</p>
-<ul>
-<li><strong>Example:</strong> <a
-href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html">Matched
-pairs examples</a></li>
-</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>brain <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&#39;https://www.rossmanchance.com/iscam2/data/hippocampus.txt&#39;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span></code></pre></div>
+<p>Notice the optional argument <code>sep = "\t"</code> which we had to
+use since the data file was stored as <strong>tab-separated
+values</strong>, not comma-separated values. Since the twins come in
+matched pairs, we test the differences:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(brain<span class="sc">$</span>unaffected <span class="sc">-</span> brain<span class="sc">$</span>affected)</span></code></pre></div>
+<!--
+After that, we did two other matched paired examples in class:
+
+* **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
+-->
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
