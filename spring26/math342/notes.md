@@ -986,6 +986,47 @@ If you want an orthonormal basis, then just normalize by dividing each $\mathbf{
 
 <!-- MIT QR decomposition example $A = \begin{pmatrix} 1 & 2 & 4 \\ 0 & 0 & 5 \\ 0 & 3 & 6 \end{pmatrix}$.  (<https://youtu.be/HEQuN0QELSQ>) -->
 
+### Wed, Mar 4
+
+We started with these two warm-up problems. 
+
+1. Find the orthogonal projection of $\mathbf{y} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ onto the line spanned by $\mathbf{x} = \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}$.  Then find two orthogonal vectors $\mathbf{a}$ and $\mathbf{b}$ such that $\mathbf{a}$ lies in the span of $\mathbf{x}$ and $\mathbf{a} + \mathbf{b} = \mathbf{y}$.  
+
+2. Find the orthogonal projection of $\mathbf{z} = \begin{pmatrix} 6 \\ -3 \\ 0 \end{pmatrix}$ onto the plane spanned by $\mathbf{x}$ and $\mathbf{y}$.  
+
+In order to calculate the second orthogonal projection, we used the following formula:
+
+<div class="Theorem">
+**Orthogonal Projection onto a Subspace.** If $V$ is a subspace of $\R^n$ with an orthogonal basis $\mathbf{v}_1, \ldots, \mathbf{v}_d$, then 
+$$\on{Proj}_V(\mathbf{x}) = \sum_{k = 1}^d \left( \frac{\mathbf{x} \cdot \mathbf{v}_k }{\mathbf{v}_k \cdot \mathbf{v}_k} \right) \mathbf{v}_k.$$
+</div>
+
+Notice that this formula is even simpler if the basis is orthonormal.  Why is that? 
+
+<div class="Theorem"> 
+**QR Decomposition.** If $A$ is a matrix in $\R^{m \times n}$, then there is a matrix $Q$ with orthonormal columns and an upper triangular matrix $R$ such that $A = QR$. 
+
+* If $A$ is square ($m = n$), then $Q$ and $R$ are both in $\R^{n \times n}$. 
+* If $A$ is tall and skinny ($m > n$), then $Q \in \R^{m \times n}$ and $R \in \R^{n \times n}$.
+* If $A$ is short and fat ($m < n$), then $Q \in \R^{m \times m}$ and $R \in \R^{m \times n}$.
+
+You can find the QR decomposition by applying Gram-Schmidt to the columns of $A$ and normalizing to get the columns of $Q$.  Then compute $R = Q^T A$.  
+</div>
+
+We did the following examples.
+
+3. Use Octave to find the QR decomposition for $A = \begin{pmatrix} 1 & 1 & 6 \\ 0 & 2 & -3 \\ -1 & 3 & 0 \end{pmatrix}$.
+
+    ```matlab
+    A = [1 1 6; 0 2 -3; -1 3 0];
+    [Q, R] = qr(A)
+    ```
+
+4. Find the QR decomposition for $B = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$. 
+
+Here is a video example with a tall-skinny matrix $A$ that we did not do in class. 
+
+5. Find the QR decomposition for $A = \begin{pmatrix} 2 & 3 \\ 2 & 4 \\ 1 & 1 \end{pmatrix}$. (<https://youtu.be/J41Ypt6Mftc>)
 
 - - - 
 

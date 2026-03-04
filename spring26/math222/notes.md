@@ -691,7 +691,6 @@ For two-sample t-tests, we use [Welch's t-test](https://en.wikipedia.org/wiki/We
 $$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 will approximately follow a t-distribution (under very mild normality & independence assumptions).  The formula for the degrees of freedom is a bit complicated, but R will calculate it for you automatically. 
 
-* **Workshop:** [Garcinia Cambogia](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
 
 - - - 

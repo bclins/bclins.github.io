@@ -610,17 +610,20 @@ We did the following exercises in class.
 
 ### Wed, Mar 4
 
+<!--
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
 * [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
+-->
 
-Then we talked about the following simple idea: there is a 95% chance that $\hat{p}$ is within 2 standard deviations of the true population proportion $p$. So if we want to estimate what the true $p$ is, we can use a **95% confidence interval**:
-$$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
+Today we talked about confidence intervals for proportions. These are based on a simple idea: there is a 95% chance that the sample proportion $\hat{p}$ is no more than 2 standard deviations away from the true population proportion $p$.
 
 <div class = "Theorem"> 
 **Confidence Interval for a Proportion.** To estimate a population proportion, use 
 
 $$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
+
+Works best if there are at least 15 "successes" and 15 "failures" in the sample.
 </div> 
 
 The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
@@ -649,11 +652,19 @@ The variable $z^*$ is called the **critical z-value** is determined by the desir
 </center>
 
 
-The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is 2 times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
+The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is a critical z-value times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
 
 1. In our class 7 out of 25 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
-2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
+2. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the 90% confidence interval for the proportion of Americans who always feel rushed. 
+
+3. What are we 90% sure is true about the confidence interval we found? Only one of the following is the correct answer. Which is it?
+    a. 90% of Americans are in the interval.
+    b. 90% of future samples will have results in the interval.
+    c. 90% sure that the population proportion is in the interval.
+    d. 90% sure that the sample proportion is in the interval. 
+
+4. ([Subsection 5.2.4 from OpenIntro Stats](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.2.4)) In 2014 an American Doctor who had been working in Africa was diagnosed with Ebola.  He was flown back to New York city to be treated.  This was controversial at the time because Ebola is a very contagious and dangerous disease.  A Marist poll of 1042 NY adults found that 82% would support a mandatory 3-week quarantine for anyone who has had contact with an Ebola patient.  What is the margin of error for this poll?
 
 <!--
 ### Fri, Mar 6
@@ -702,13 +713,8 @@ This formula works well as long as two assumptions are true:
 
 Examples.
 
-1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
+2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
-2. What are we 90% sure is true about the confidence interval we found? Only one of the following is the correct answer. Which is it?
-    a. 90% of Americans are in the interval.
-    b. 90% of future samples will have results in the interval.
-    c. 90% sure that the population proportion is in the interval.
-    d. 90% sure that the sample proportion is in the interval. 
 
 3. About half of HSC students were born in Virginia. Given this fact, approximately how large of a sample of HSC students would you need to get a margin of error for a 95% confidence interval under 10%?  
 <!--

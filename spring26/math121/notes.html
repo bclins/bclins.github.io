@@ -1129,28 +1129,23 @@ or
 to represent it?</p></li>
 </ol>
 <h3 id="wed-mar-4">Wed, Mar 4</h3>
-<p>Last time we saw that
+<!--
+Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
+
+* [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
+-->
+<p>Today we talked about confidence intervals for proportions. These are
+based on a simple idea: there is a 95% chance that the sample proportion
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
-is a random variable with a sampling distribution. We started today with
-this exercise from the book:</p>
-<ul>
-<li><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4">Exercise
-5.4</a></li>
-</ul>
-<p>Then we talked about the following simple idea: there is a 95% chance
-that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
-is within 2 standard deviations of the true population proportion
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
-So if we want to estimate what the true
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
-is, we can use a <strong>95% confidence interval</strong>:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><mn>2</mn><msqrt><mfrac><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.</annotation></semantics></math></p>
+is no more than 2 standard deviations away from the true population
+proportion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
 <div class="Theorem">
 <p><strong>Confidence Interval for a Proportion.</strong> To estimate a
 population proportion, use</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>±</mo><msup><mi>z</mi><mo>*</mo></msup><msqrt><mfrac displaystyle="true"><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.</annotation></semantics></math></p>
+<p>Works best if there are at least 15 “successes” and 15 “failures” in
+the sample.</p>
 </div>
 <p>The variable
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>z</mi><mo>*</mo></msup><annotation encoding="application/x-tex">z^*</annotation></semantics></math>
@@ -1203,8 +1198,8 @@ Critical z-value
 estimate</strong> (or <strong>point estimate</strong>) before the
 plus/minus symbol, and a <strong>margin of error</strong> after the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
-symbol. The formula for the margin of error is 2 times the
-<strong>standard error</strong> which is an approximation of
+symbol. The formula for the margin of error is a critical z-value times
+the <strong>standard error</strong> which is an approximation of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
 using
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
@@ -1214,10 +1209,26 @@ instead of
 <li><p>In our class 7 out of 25 students were born in VA. Use the 95%
 confidence interval formula to estimate the percent of all HSC students
 that were born in VA.</p></li>
-<li><p>A 2017 Gallop survey of 1,011 American adults found that 38%
-believe that God created man in his present form. Find the margin of
-error for a 95% confidence interval to estimate the percent of all
-Americans who share this belief.</p></li>
+<li><p>In 2004 the General Social Survey found 304 out 977 Americans
+always felt rushed. Find the 90% confidence interval for the proportion
+of Americans who always feel rushed.</p></li>
+<li><p>What are we 90% sure is true about the confidence interval we
+found? Only one of the following is the correct answer. Which is it?</p>
+<ol type="a">
+<li>90% of Americans are in the interval.</li>
+<li>90% of future samples will have results in the interval.</li>
+<li>90% sure that the population proportion is in the interval.</li>
+<li>90% sure that the sample proportion is in the interval.</li>
+</ol></li>
+<li><p>(<a
+href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.2.4">Subsection
+5.2.4 from OpenIntro Stats</a>) In 2014 an American Doctor who had been
+working in Africa was diagnosed with Ebola. He was flown back to New
+York city to be treated. This was controversial at the time because
+Ebola is a very contagious and dangerous disease. A Marist poll of 1042
+NY adults found that 82% would support a mandatory 3-week quarantine for
+anyone who has had contact with an Ebola patient. What is the margin of
+error for this poll?</p></li>
 </ol>
 <!--
 ### Fri, Mar 6
@@ -1266,13 +1277,8 @@ This formula works well as long as two assumptions are true:
 
 Examples.
 
-1. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the margin of error for a 90% confidence interval with this data. 
+2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
-2. What are we 90% sure is true about the confidence interval we found? Only one of the following is the correct answer. Which is it?
-    a. 90% of Americans are in the interval.
-    b. 90% of future samples will have results in the interval.
-    c. 90% sure that the population proportion is in the interval.
-    d. 90% sure that the sample proportion is in the interval. 
 
 3. About half of HSC students were born in Virginia. Given this fact, approximately how large of a sample of HSC students would you need to get a margin of error for a 95% confidence interval under 10%?  
 <!--
