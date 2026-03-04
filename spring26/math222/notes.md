@@ -681,14 +681,17 @@ Notice the optional argument `sep = "\t"` which we had to use since the data fil
 t.test(brain$unaffected - brain$affected)
 ```
 
+### Wed, Mar 4
 
+Today we worked on the following examples in class:
 
-<!--
-After that, we did two other matched paired examples in class:
+* **Example:** [Comparing two means](Examples/ComparingMeans.html) ([Rmd source](Examples/ComparingMeans.Rmd))
 
-* **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
--->
+For two-sample t-tests, we use [Welch's t-test](https://en.wikipedia.org/wiki/Welch's_t-test) which is a very robust method.  It uses the fact that if you sample from two populations with equal means, then the two-sample t-value:
+$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+will approximately follow a t-distribution (under very mild normality & independence assumptions).  The formula for the degrees of freedom is a bit complicated, but R will calculate it for you automatically. 
 
+* **Workshop:** [Garcinia Cambogia](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
 
 - - - 

@@ -77,9 +77,7 @@ you see in the graph.
 c. Carry out a $\chi^2$-test for association to see if the relationship between light at night and 
 near-sightedness is statistically significant. 
 
-d. Make a 95\% confidence interval for the difference in the difference in the proportion of 
-near-sighted kids between kids who sleep in darkness versus kids who sleep with some kind of light at 
-night. Write a sentence or two to explain what your confidence interval means.
+d. Make a 95% confidence interval for the difference in the proportions of kids who are near-sighted between the kids who sleep in darkness versus those who sleep with some kind of light at night. Write a sentence or two to explain what your confidence interval means.
 
 <br>
 <br>

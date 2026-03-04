@@ -608,8 +608,7 @@ We did the following exercises in class.
 
 6. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
 
-<!--
-### Fri, Oct 17
+### Wed, Mar 4
 
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
@@ -618,26 +617,46 @@ Last time we saw that $\hat{p}$ is a random variable with a sampling distributio
 Then we talked about the following simple idea: there is a 95% chance that $\hat{p}$ is within 2 standard deviations of the true population proportion $p$. So if we want to estimate what the true $p$ is, we can use a **95% confidence interval**:
 $$\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1- \hat{p}}{N}}.$$
 
+<div class = "Theorem"> 
+**Confidence Interval for a Proportion.** To estimate a population proportion, use 
+
+$$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
+</div> 
+
+The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
+
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: left;">Confidence Level</th>
+<th style="text-align: center;">90%</th>
+<th style="text-align: center;">95%</th>
+<th style="text-align: center;">99%</th>
+<th style="text-align: center;">99.9%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Critical z-value ($z^*$)</td>
+<td style="text-align: center;">1.645</td>
+<td style="text-align: center;">1.96</td>
+<td style="text-align: center;">2.576</td>
+<td style="text-align: center;">3.291</td>
+</tr>
+</tbody>
+</table>
+</center>
+
+
 The confidence interval formula has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  The formula for the margin of error is 2 times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$.  
 
-1. In our class 13 out of 24 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
+1. In our class 7 out of 25 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
 2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
--->
-
-- - - 
-
-### Week 9 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Mar 16 |  [5.3][5.3] | Hypothesis testing for a proportion 
-Wed, Mar 18 |            | Review  
-Fri, Mar 20 |            | **Midterm 2**
-
 <!--
-### Mon, Oct 20
+### Fri, Mar 6
 
 Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
 
@@ -695,6 +714,17 @@ Examples.
 <!--
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 -->
+
+- - - 
+
+### Week 9 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Mar 16 |  [5.3][5.3] | Hypothesis testing for a proportion 
+Wed, Mar 18 |            | Review  
+Fri, Mar 20 |            | **Midterm 2**
+
 
 <!--
 4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)

@@ -1,0 +1,60 @@
+---
+title: Comparing Two Means
+output: 
+  html_document: 
+    theme: readable
+    highlight: tango
+---
+
+### Example 1: Do Women Talk More Than Men? 
+
+Researchers equiped male and female college students with a small device that secretly recorded sounds for a random 30 seconds during each 12.5 minute period over 2 days. By counting the words each subject spoke while being recorded, the researchers were able to estimate how many words each subject spoke per day.
+
+```{r}
+talking <- read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/talking.csv")
+men <- subset(talking,Sex=="M")$Words
+women <- subset(talking,Sex=="F")$Words
+boxplot(men,women,names = c("Men","Women"),horizontal = T,col='gray',xlab="Estimated Words per Day")
+```
+
+1. From the box and whisker plot above, it looks like there might be a difference between the average number or words spoken by male versus female college students.  Use the command below to do a two-sample t-test to see if the difference is significant. 
+
+    ```{r, eval=F}
+    t.test(men, women)
+    ```
+
+2. What are the hypotheses for this hypothesis test? 
+
+3. Find a 90% confidence interval for the difference in average number of words spoken by women versus men. 
+
+4. Why can't you use a matched pairs test with this data? 
+
+### Example 2: Marriage Ages
+
+```{r}
+marriages <- read.csv("http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.txt")
+head(marriages)
+```
+
+The data frame `marriages` contains data from 24 couples that were married in Cumberland county Pennsylvania one month. Assume for now that these couples are representative of couples throughout the United States.  
+
+1. On average, who is older, the husband or the wife?  What is the average age gap?
+
+2. Make a histogram to show the distribution of the age gap.  Would you say it is roughly normal?  
+
+3. Are husbands significantly older than their wives, on average?  Use the `t.test()` function to find out.
+
+4. What are the correct null and alternative hypotheses for this situation?
+
+5. Use the formula $\displaystyle \bar{x} \pm t^* \sqrt{s^2 + \frac{s^2}{N}}$ to make a prediction interval for the age difference of 80% of all couples.  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1497,11 +1497,27 @@ use since the data file was stored as <strong>tab-separated
 values</strong>, not comma-separated values. Since the twins come in
 matched pairs, we test the differences:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(brain<span class="sc">$</span>unaffected <span class="sc">-</span> brain<span class="sc">$</span>affected)</span></code></pre></div>
-<!--
-After that, we did two other matched paired examples in class:
-
-* **Example:** [Matched pairs examples](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/MatchedPairs.html)
--->
+<h3 id="wed-mar-4">Wed, Mar 4</h3>
+<p>Today we worked on the following examples in class:</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/ComparingMeans.html">Comparing two means</a> (<a
+href="Examples/ComparingMeans.Rmd">Rmd source</a>)</li>
+</ul>
+<p>For two-sample t-tests, we use <a
+href="https://en.wikipedia.org/wiki/Welch&#39;s_t-test">Welch’s
+t-test</a> which is a very robust method. It uses the fact that if you
+sample from two populations with equal means, then the two-sample
+t-value:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub></mrow><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}</annotation></semantics></math>
+will approximately follow a t-distribution (under very mild normality
+&amp; independence assumptions). The formula for the degrees of freedom
+is a bit complicated, but R will calculate it for you automatically.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf">Garcinia
+Cambogia</a></li>
+</ul>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
