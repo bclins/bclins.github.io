@@ -1513,6 +1513,105 @@ t-value:
 will approximately follow a t-distribution (under very mild normality
 &amp; independence assumptions). The formula for the degrees of freedom
 is a bit complicated, but R will calculate it for you automatically.</p>
+<h3 id="fri-mar-6">Fri, Mar 6</h3>
+<p>Today we talked about statistical power, significance levels, and
+Type I versus II errors. Traditionally when people do a hypothesis test,
+they have a <strong>significance level</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+in mind. If the results have a p-value below the significance level,
+then the researchers can feel justified rejecting the null hypothesis.
+But there are two potential problems with this type of significance
+test.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+is true
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mi>A</mi></msub><annotation encoding="application/x-tex">H_A</annotation></semantics></math>
+is true
+</th>
+</tr>
+<tr>
+<th>
+p-value below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+</th>
+<td>
+Type I error (false positive)
+</td>
+<td>
+Reject
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<th>
+p-value above
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+</th>
+<td>
+Don’t reject
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>
+</td>
+<td>
+Type II error (false negative)
+</td>
+</tr>
+</table>
+</center>
+<p>If the null hypothesis is true, then the probability of a Type I
+error is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1- \alpha</annotation></semantics></math>.
+In order to talk about the probability of a Type II error, we need to
+make some extra assumptions about the situation, including picking a
+specific value for the parameter of interest.</p>
+<div class="Theorem">
+<p><strong>Definition.</strong> The <strong>power</strong> of a
+statistical study is the probability of correctly rejecting the null
+hypothesis if a specific alternative hypothesis is true.</p>
+</div>
+<p>If you are going to the trouble to design an experiment or
+observational study, you should probably do a quick power calculation
+before you start, otherwise you might just be wasting your time. We did
+these examples:</p>
+<ol type="1">
+<li><p>A 1998 study looked at the herbal supplement Garcinia Cambogia to
+see if it can help people lose weight. Here is the abstract from the
+study:</p>
+<blockquote>
+<p>A total of 135 subjects were randomized to either active
+hydroxycitric acid [The active ingredient in G. Cambogia] (n = 66) or
+placebo (n = 69); 42 (64%) in the active hydroxycitric acid group and 42
+(61%) in the placebo group completed 12 weeks of treatment. Patients in
+both groups lost a significant amount of weight during the 12-week
+treatment period; however, between-group weight loss differences were
+not statistically significant (mean [SD], 3.2 [3.3] kg vs 4.1 [3.9] kg;
+P = 0.14).</p>
+</blockquote>
+<p>If we wanted to perform a follow-up study to see if G. Cambogia can
+increase weight loss by at least 1 kg (over a placebo) and if we assume
+that the standard deviation in weight loss for each group will be around
+4 kg, then how large should our groups be in order to get a power of at
+least 80%? What if we want 90% power?</p></li>
+<li><p>The Columbus Times-Dispatch wrote an article about a matched
+pairs experiment to see if footballs filled with helium go farther than
+footballs filled with regular air when you kick them. They had a novice
+kicker kick 39 pairs of footballs, one fill with helium and one with
+air. Their results were inconclusive. They found that the helium filled
+footballs went 0.46 yards farther on average, with a standard deviation
+of 6.87 yards, but the results were not statistically
+significant.</p></li>
+</ol>
+<ul>
+<li><strong>Example</strong>: <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.txt">Helium
+filled footballs data</a></li>
+</ul>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>

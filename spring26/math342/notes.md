@@ -1028,6 +1028,46 @@ Here is a video example with a tall-skinny matrix $A$ that we did not do in clas
 
 5. Find the QR decomposition for $A = \begin{pmatrix} 2 & 3 \\ 2 & 4 \\ 1 & 1 \end{pmatrix}$. (<https://youtu.be/J41Ypt6Mftc>)
 
+### Fri, Mar 6
+
+Today we introduced the idea of **floating point operations** (FLOPs).  Every time a computer needs to add, subtract, multiply or divide two floating point numbers, we count that as one flop.  We also count every square root computation as one flop.  This is a theoretical estimate of how long it takes the computer to calculate the operation.  
+
+* **Workshop**: [Floating point operations](Workshops/FloatingPoint.pdf)
+
+After we got started with that workshop, we stopped to talk about computational issues with the Gram-Schmidt algorithm.  We analyzed the following Octave code to perform the Gram-Schmidt algorithm. 
+
+```octave
+function Q = cgs(A)
+    % Returns a matrix Q with orthonormal columns by applying 
+    % the classical Gram-Schmidt algorithm to the columns of A. 
+    
+    [m,n] = size(A);
+    Q = zeros(m,n);
+    for i = 1:n
+        v = A(:,i);
+        for k = 1:i-1
+            v = v - (Q(:,k)' * A(:,i)) * Q(:,k);
+        end
+        Q(:,i) = v / norm(v);
+    end
+end
+```
+
+* **Example:** [Octave classical Gram-Schmidt algorithm](https://sagecell.sagemath.org/?z=eJxNkT1vgzAYhHck_sMtUSAKbShSh6AOTJ1pxyiDQwxYwXZkDC359X0xWKkHf5yfO53selCVFVqhxAeqpo-KOAxAY4MvbgejejBIZo34JeRH2Bba2FYrbSTrUOlukMRcJrD7vZuEauD9tuWoOtb3oiLy0zCZfFetFFcL1jXaUJaE1Qu35ugaxcuasMwnuVdn6taLB6dy-aLObR_c6D6iay_W2kDQRXpUizCPkYQiOu6Fpzx5c6RI0qfs-REJopJMt3iL3WqPabdo_4K4uj4PpeOc_xXzA0WjZx3npjBQRGRhUNDSiu4Suf6b-XhKkeI9xwFvSLIcSYoMh3MYPD-HUJdcbnclteQTJ3_8B0kqcH4=&lang=octave&interacts=eJyLjgUAARUAuQ==)
+
+We calculated that this algorithm requires $2mn^2 + mn - \tfrac{1}{2}n^2 + \tfrac{1}{2}n$ flops for a matrix with $m$ rows and $n$ columns.  Typically we only focus on the leading term, so we say that asymptotically the algorithm requires $2mn^2$ flops.  
+
+Unfortunately the Gram-Schmidt algorithm is **numerically unstable**.  One way to show this is to start with an large ill-conditioned matrix $A$, and then compute $Q$ using the algorithm.  The columns of $Q$ usually won't be orthogonal, which is a problem.  We used the Hilbert matrix with $(i,j)$ entry equal to $\tfrac{1}{i+j-1}$ to show this. 
+
+```octave
+n = 3
+A = hilb(n);
+Q = cgs(A);
+norm(Q'*Q - eye(n))
+```
+
+
+
 - - - 
 
 ### Week 9 Notes

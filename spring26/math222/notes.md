@@ -691,7 +691,39 @@ For two-sample t-tests, we use [Welch's t-test](https://en.wikipedia.org/wiki/We
 $$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 will approximately follow a t-distribution (under very mild normality & independence assumptions).  The formula for the degrees of freedom is a bit complicated, but R will calculate it for you automatically. 
 
+### Fri, Mar 6
 
+Today we talked about statistical power, significance levels, and Type I versus II errors.  Traditionally when people do a hypothesis test, they have a **significance level** $\alpha$ in mind.  If the results have a p-value below the significance level, then the researchers can feel justified rejecting the null hypothesis.  But there are two potential problems with this type of significance test. 
+
+<center>
+<table class="bordered">
+<tr><th></th><th>$H_0$ is true</th><th>$H_A$ is true</th></tr>
+<tr><th>p-value below $\alpha$</th><td>Type I error (false positive)</td><td>Reject $H_0$</td></tr>
+<tr><th>p-value above $\alpha$</th><td>Don't reject $H_0$</td><td>Type II error (false negative)</td></tr>
+</table>
+</center>
+
+If the null hypothesis is true, then the probability of a Type I error is $1- \alpha$.  In order to talk about the probability of a Type II error, we need to make some extra assumptions about the situation, including picking a specific value for the parameter of interest.  
+
+<div class="Theorem">
+**Definition.** The **power** of a statistical study is the probability of correctly rejecting the null hypothesis if a specific alternative hypothesis is true. 
+</div>
+
+If you are going to the trouble to design an experiment or observational study, you should probably do a quick power calculation before you start, otherwise you might just be wasting your time.  We did these examples:
+
+1. A 1998 study looked at the herbal supplement Garcinia Cambogia to see if it can help people lose weight.  Here is the abstract from the study:
+
+    > A total of 135 subjects were randomized to either active hydroxycitric acid [The active ingredient
+in G. Cambogia] (n = 66) or placebo (n = 69); 42 (64%) in the active hydroxycitric acid group and
+42 (61%) in the placebo group completed 12 weeks of treatment. Patients in both groups lost a
+significant amount of weight during the 12-week treatment period; however, between-group weight
+loss differences were not statistically significant (mean [SD], 3.2 [3.3] kg vs 4.1 [3.9] kg; P = 0.14).  
+
+    If we wanted to perform a follow-up study to see if G. Cambogia can increase weight loss by at least 1 kg (over a placebo) and if we assume that the standard deviation in weight loss for each group will be around 4 kg, then how large should our groups be in order to get a power of at least 80%?  What if we want 90% power?  
+
+2. The Columbus Times-Dispatch wrote an article about a matched pairs experiment to see if footballs filled with helium go farther than footballs filled with regular air when you kick them.  They had a novice kicker kick 39 pairs of footballs, one fill with helium and one with air.  Their results were inconclusive.  They found that the helium filled footballs went 0.46 yards farther on average, with a standard deviation of 6.87 yards, but the results were not statistically significant. 
+
+* **Example**: [Helium filled footballs data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.txt)
 
 - - - 
 

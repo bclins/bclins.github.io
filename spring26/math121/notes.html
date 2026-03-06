@@ -1194,17 +1194,19 @@ Critical z-value
 </tbody>
 </table>
 </center>
-<p>The confidence interval formula has two parts: a <strong>best guess
-estimate</strong> (or <strong>point estimate</strong>) before the
-plus/minus symbol, and a <strong>margin of error</strong> after the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
-symbol. The formula for the margin of error is a critical z-value times
-the <strong>standard error</strong> which is an approximation of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><annotation encoding="application/x-tex">\sigma_{\hat{p}}</annotation></semantics></math>
-using
+<p>In order to trust a confidence interval, you need these two
+assumptions to hold:</p>
+<ol type="1">
+<li><p><strong>No Bias.</strong> The data should come from a simple
+random sample to avoid bias.</p></li>
+<li><p><strong>Normality.</strong> The sample size must be large enough
+for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
-instead of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
+to be normally distributed. A rule of thumb (<strong>the success-failure
+condition</strong>) is that you should have at least 15 “successes” and
+15 “failures” in the sample.</p></li>
+</ol>
+<p>We did the following examples in class.</p>
 <ol type="1">
 <li><p>In our class 7 out of 25 students were born in VA. Use the 95%
 confidence interval formula to estimate the percent of all HSC students
@@ -1220,7 +1222,16 @@ found? Only one of the following is the correct answer. Which is it?</p>
 <li>90% sure that the population proportion is in the interval.</li>
 <li>90% sure that the sample proportion is in the interval.</li>
 </ol></li>
-<li><p>(<a
+</ol>
+<p>A confidence interval has two parts: a <strong>best guess
+estimate</strong> (or <strong>point estimate</strong>) before the
+plus/minus symbol, and a <strong>margin of error</strong> after the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>±</mi><annotation encoding="application/x-tex">\pm</annotation></semantics></math>
+symbol.
+<!--The formula for the margin of error is a critical z-value times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$. 
+--></p>
+<ol start="4" type="1">
+<li>(<a
 href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.2.4">Subsection
 5.2.4 from OpenIntro Stats</a>) In 2014 an American Doctor who had been
 working in Africa was diagnosed with Ebola. He was flown back to New
@@ -1228,59 +1239,29 @@ York city to be treated. This was controversial at the time because
 Ebola is a very contagious and dangerous disease. A Marist poll of 1042
 NY adults found that 82% would support a mandatory 3-week quarantine for
 anyone who has had contact with an Ebola patient. What is the margin of
-error for this poll?</p></li>
+error for this poll?</li>
 </ol>
-<!--
-### Fri, Mar 6
-
-Last time we only looked at 95% confidence intervals, but you can adjust the **confidence level** by using the following formula.
-
-<div class = "Theorem"> 
-**Confidence Interval for a Proportion.** To estimate a population proportion, use 
-
-$$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
-</div> 
-
-The variable $z^*$ is called the **critical z-value** is determined by the desired confidence level. Here are some common choices.
-
-<center>
-<table class="bordered">
-<thead>
-<tr>
-<th style="text-align: left;">Confidence Level</th>
-<th style="text-align: center;">90%</th>
-<th style="text-align: center;">95%</th>
-<th style="text-align: center;">99%</th>
-<th style="text-align: center;">99.9%</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Critical z-value ($z^*$)</td>
-<td style="text-align: center;">1.645</td>
-<td style="text-align: center;">1.96</td>
-<td style="text-align: center;">2.576</td>
-<td style="text-align: center;">3.291</td>
-</tr>
-</tbody>
-</table>
-</center>
-
-This formula works well as long as two assumptions are true:
-
-1. **No Bias.** The data should come from a simple random sample to avoid bias.
-
-2. **Normality.** The sample size must be large enough for $\hat{p}$ to be normally distributed.  A rule of thumb (**the success-failure condition**) is that you should have at least 15 "successes" and 15 "failures" in the sample.
-
-
-</div>
-
-Examples.
-
-2. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find the margin of error for a 95% confidence interval to estimate the percent of all Americans who share this belief. 
-
-
-3. About half of HSC students were born in Virginia. Given this fact, approximately how large of a sample of HSC students would you need to get a margin of error for a 95% confidence interval under 10%?  
+<h3 id="fri-mar-6">Fri, Mar 6</h3>
+<p>Last time we introduced confidence intervals for proportions. Today
+we did some more examples related to confidence intervals.</p>
+<ol type="1">
+<li><p>A 2017 Gallop survey of 1,011 American adults found that 38%
+believe that God created man in his present form. Find a 95% confidence
+interval to estimate the percent of all Americans who share this
+belief.</p></li>
+<li><p>About one third of American households have a pet cat. How large
+of a sample would be need if you wanted to make a 95% confidence
+interval with a margin of error less than 1% for the percent of
+households with a pet cat?</p></li>
+<li><p>One of our first examples of sampling was the <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf">Literary
+Digest magazine poll</a> from the 1936 presidential election. They had a
+huge sample with 2.4 million responses. In that sample, 62% supported
+Alfred Landon (R) over FDR (D). What is the margin of error for a 99%
+confidence interval with this data?</p></li>
+<li><p>How is it possible that the margin of error could be so small if
+the poll was so wrong?</p></li>
+</ol>
 <!--
 3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 -->

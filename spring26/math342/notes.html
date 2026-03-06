@@ -2086,6 +2086,69 @@ that we did not do in class.</p>
 (<a href="https://youtu.be/J41Ypt6Mftc"
 class="uri">https://youtu.be/J41Ypt6Mftc</a>)</li>
 </ol>
+<h3 id="fri-mar-6">Fri, Mar 6</h3>
+<p>Today we introduced the idea of <strong>floating point
+operations</strong> (FLOPs). Every time a computer needs to add,
+subtract, multiply or divide two floating point numbers, we count that
+as one flop. We also count every square root computation as one flop.
+This is a theoretical estimate of how long it takes the computer to
+calculate the operation.</p>
+<ul>
+<li><strong>Workshop</strong>: <a
+href="Workshops/FloatingPoint.pdf">Floating point operations</a></li>
+</ul>
+<p>After we got started with that workshop, we stopped to talk about
+computational issues with the Gram-Schmidt algorithm. We analyzed the
+following Octave code to perform the Gram-Schmidt algorithm.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode octave"><code class="sourceCode octave"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span> Q <span class="op">=</span> <span class="fu">cgs</span>(A)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Returns a matrix Q with orthonormal columns by applying </span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">% the classical Gram-Schmidt algorithm to the columns of A. </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    [m<span class="op">,</span>n] <span class="op">=</span> <span class="fu">size</span>(A)<span class="op">;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    Q <span class="op">=</span> <span class="fu">zeros</span>(m<span class="op">,</span>n)<span class="op">;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="fu">i</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span>n</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        v <span class="op">=</span> A(<span class="op">:,</span><span class="fu">i</span>)<span class="op">;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu">i</span><span class="op">-</span><span class="fl">1</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            v <span class="op">=</span> v <span class="op">-</span> (Q(<span class="op">:,</span>k)<span class="op">&#39;</span> <span class="op">*</span> A(<span class="op">:,</span><span class="fu">i</span>)) <span class="op">*</span> Q(<span class="op">:,</span>k)<span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        Q(<span class="op">:,</span><span class="fu">i</span>) <span class="op">=</span> v <span class="op">/</span> <span class="fu">norm</span>(v)<span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<ul>
+<li><strong>Example:</strong> <a
+href="https://sagecell.sagemath.org/?z=eJxNkT1vgzAYhHck_sMtUSAKbShSh6AOTJ1pxyiDQwxYwXZkDC359X0xWKkHf5yfO53selCVFVqhxAeqpo-KOAxAY4MvbgejejBIZo34JeRH2Bba2FYrbSTrUOlukMRcJrD7vZuEauD9tuWoOtb3oiLy0zCZfFetFFcL1jXaUJaE1Qu35ugaxcuasMwnuVdn6taLB6dy-aLObR_c6D6iay_W2kDQRXpUizCPkYQiOu6Fpzx5c6RI0qfs-REJopJMt3iL3WqPabdo_4K4uj4PpeOc_xXzA0WjZx3npjBQRGRhUNDSiu4Suf6b-XhKkeI9xwFvSLIcSYoMh3MYPD-HUJdcbnclteQTJ3_8B0kqcH4=&amp;lang=octave&amp;interacts=eJyLjgUAARUAuQ==">Octave
+classical Gram-Schmidt algorithm</a></li>
+</ul>
+<p>We calculated that this algorithm requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mi>m</mi><mi>n</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>n</mi></mrow><annotation encoding="application/x-tex">2mn^2 + mn - \tfrac{1}{2}n^2 + \tfrac{1}{2}n</annotation></semantics></math>
+flops for a matrix with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+rows and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+columns. Typically we only focus on the leading term, so we say that
+asymptotically the algorithm requires
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>m</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2mn^2</annotation></semantics></math>
+flops.</p>
+<p>Unfortunately the Gram-Schmidt algorithm is <strong>numerically
+unstable</strong>. One way to show this is to start with an large
+ill-conditioned matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>,
+and then compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+using the algorithm. The columns of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>
+usually won’t be orthogonal, which is a problem. We used the Hilbert
+matrix with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math>
+entry equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="false"><mn>1</mn><mrow><mi>i</mi><mo>+</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mfrac><annotation encoding="application/x-tex">\tfrac{1}{i+j-1}</annotation></semantics></math>
+to show this.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode octave"><code class="sourceCode octave"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="fl">3</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fu">hilb</span>(n)<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> <span class="fu">cgs</span>(A)<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">norm</span>(Q<span class="op">&#39;*</span>Q <span class="op">-</span> <span class="fu">eye</span>(n))</span></code></pre></div>
 <hr />
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
