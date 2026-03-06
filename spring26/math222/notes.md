@@ -721,6 +721,23 @@ loss differences were not statistically significant (mean [SD], 3.2 [3.3] kg vs 
 
     If we wanted to perform a follow-up study to see if G. Cambogia can increase weight loss by at least 1 kg (over a placebo) and if we assume that the standard deviation in weight loss for each group will be around 4 kg, then how large should our groups be in order to get a power of at least 80%?  What if we want 90% power?  
 
+In the previous example, we were doing a two-sample hypothesis test for means. In that case, the null model says that the difference in sample means $\bar{x}_1 - \bar{x}_2$ should have a normal distribution with mean $0$ and standard deviation 
+$$\sigma_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}.$$
+We picked an effect size that we would like to detect to be $\mu_1 - \mu_2 = 1$ kg.  And we talked about why it is safer to round standard deviations up when you are picking plausible values for $\sigma_1$ and $\sigma_2$ in a power calculation, so we picked $\sigma_1 = \sigma_2 = 4$ kg.  Then we used the following code to find the power:
+
+```r
+n = 100 # We assumed both treatment groups would be same size
+sigma_1 = 4
+sigma_2 = 4 
+sigma = sqrt(sigma_1^2/n + sigma_2^2/n)
+threshold = qnorm(0.95, mean = 0, sd = sigma)
+power = 1 - pnorm(threshold, mean = 1, sd = sigma)
+power # The power with n = 100 is only about 54.9%.  
+```
+
+By testing different sample sizes, you can find an n large enough to get a power of 80% or higher. We didn't have time for the following example, but it is good practice if you want a power calculation for a 1-sample hypothesis test.  For a 1-sample test for means, the null and alternative models will both be normal distributions with standard deviation 
+$$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}.$$
+
 2. The Columbus Times-Dispatch wrote an article about a matched pairs experiment to see if footballs filled with helium go farther than footballs filled with regular air when you kick them.  They had a novice kicker kick 39 pairs of footballs, one fill with helium and one with air.  Their results were inconclusive.  They found that the helium filled footballs went 0.46 yards farther on average, with a standard deviation of 6.87 yards, but the results were not statistically significant. 
 
 * **Example**: [Helium filled footballs data](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.txt)
