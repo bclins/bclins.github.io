@@ -709,6 +709,11 @@ If the null hypothesis is true, then the probability of a Type I error is $1- \a
 **Definition.** The **power** of a statistical study is the probability of correctly rejecting the null hypothesis if a specific alternative hypothesis is true. 
 </div>
 
+<center> 
+<img src="Examples/StatisticalPower.png" width = 600></img>
+</center>
+
+
 If you are going to the trouble to design an experiment or observational study, you should probably do a quick power calculation before you start, otherwise you might just be wasting your time.  We did these examples:
 
 1. A 1998 study looked at the herbal supplement Garcinia Cambogia to see if it can help people lose weight.  Here is the abstract from the study:
@@ -723,6 +728,8 @@ loss differences were not statistically significant (mean [SD], 3.2 [3.3] kg vs 
 
 In the previous example, we were doing a two-sample hypothesis test for means. In that case, the null model says that the difference in sample means $\bar{x}_1 - \bar{x}_2$ should have a normal distribution with mean $0$ and standard deviation 
 $$\sigma_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}.$$
+
+
 We picked an effect size that we would like to detect to be $\mu_1 - \mu_2 = 1$ kg.  And we talked about why it is safer to round standard deviations up when you are picking plausible values for $\sigma_1$ and $\sigma_2$ in a power calculation, so we picked $\sigma_1 = \sigma_2 = 4$ kg.  Then we used the following code to find the power:
 
 ```r
