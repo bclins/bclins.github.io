@@ -1661,9 +1661,8 @@ filled footballs data</a></li>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 16</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.5">7.5</a></td>
-<td style="text-align: left;">Comparing many means with ANOVA</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Transforming data</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 18</td>
@@ -1677,6 +1676,79 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-16">Mon, Mar 16</h3>
+<p>Today we talked about using functions to transform quantitative
+data.</p>
+<ul>
+<li>For data that is skewed left, the most common transformations are
+the exponential function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mi>x</mi></msup><annotation encoding="application/x-tex">e^x</annotation></semantics></math>
+or power functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>p</mi></msup><annotation encoding="application/x-tex">x^p</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p &gt; 1</annotation></semantics></math>.</li>
+<li>For data that is skewed right, the most common transformations are
+the natural logarithm function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>ln</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">\ln x</annotation></semantics></math>
+or power functions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mi>p</mi></msup><annotation encoding="application/x-tex">x^p</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>p</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; p &lt; 1</annotation></semantics></math>.</li>
+</ul>
+<p>We looked at these examples:</p>
+<ul>
+<li><strong>Example</strong>: <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/turbidity.html">Log
+transform: turbidity</a></li>
+<li><strong>Example</strong>: <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/CloudSeeding.html">Log
+transform: cloud seeding</a></li>
+<li><strong>Example</strong>: <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/textbooks.html">Choosing
+the right transform: textbook prices</a></li>
+</ul>
+<p>You have to be careful when using t-distribution methods on
+transformed data. The t-methods will tell you about the average of the
+transformed data which won’t be the same as the transformed average of
+the original data. Here are ways you can deal with this problem:</p>
+<ul>
+<li><p>If the transformed data has a normal distribution, then the
+average equals the median. As long as the transformation is monotone,
+then medians commute with monotone transforms, which means that the
+median of the transformed data is the transformation applied to the
+original median.</p></li>
+<li><p>Logarithms convert multiplication to addition. This has these
+consequences:</p>
+<ul>
+<li>The average of log-transformed data corresponds to the geometric
+mean of the original data.<br />
+</li>
+<li>A confidence interval for log-transformed data will give you
+multiplicative bounds for the original data.</li>
+<li>The difference between the medians of two sets of log-transformed
+data corresponds to ratio of the medians of the original data.</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>Suppose that we are 95% confidence that the parameter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\log \mu</annotation></semantics></math>
+is in the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><mo>±</mo><mn>1.2</mn></mrow><annotation encoding="application/x-tex">2.5 \pm 1.2</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+will be between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mn>2.5</mn><mo>±</mo><mn>1.2</mn></mrow></msup><annotation encoding="application/x-tex">e^{2.5 \pm 1.2}</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>2.5</mn></msup><mo>=</mo><mn>12.2</mn></mrow><annotation encoding="application/x-tex">e^{2.5} = 12.2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>1.2</mn></msup><mo>=</mo><mn>3.32</mn></mrow><annotation encoding="application/x-tex">e^{1.2} = 3.32</annotation></semantics></math>,
+we can say with 95% confidence that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+is between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12.2</mn><mi>/</mi><mn>3.32</mn></mrow><annotation encoding="application/x-tex">12.2 / 3.32</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12.2</mn><mo>⋅</mo><mn>3.32</mn></mrow><annotation encoding="application/x-tex">12.2 \cdot 3.32</annotation></semantics></math>.</li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
@@ -1692,19 +1764,19 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <td style="text-align: center;">Mon, Mar 23</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.5">7.5</a></td>
-<td style="text-align: left;">ANOVA - con’d</td>
+<td style="text-align: left;">Comparing many means with ANOVA</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Mar 25</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2">8.2</a></td>
-<td style="text-align: left;">Least squares regression</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.5">7.5</a></td>
+<td style="text-align: left;">ANOVA - con’d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 27</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
-<td style="text-align: left;">Introduction to multiple regression</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2">8.2</a></td>
+<td style="text-align: left;">Least squares regression</td>
 </tr>
 </tbody>
 </table>
@@ -1722,20 +1794,20 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 30</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
-<td style="text-align: left;">Model selection</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
+<td style="text-align: left;">Introduction to multiple regression</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 1</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
-<td style="text-align: left;">Checking model conditions</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
+<td style="text-align: left;">Model selection</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 3</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
-<td style="text-align: left;">Checking model conditions - con’d</td>
+<td style="text-align: left;">Checking model conditions</td>
 </tr>
 </tbody>
 </table>

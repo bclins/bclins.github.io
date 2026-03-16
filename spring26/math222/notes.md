@@ -755,20 +755,47 @@ $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}.$$
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 16 | [7.5][7.5] | Comparing many means with ANOVA
+Mon, Mar 16 |            | Transforming data
 Wed, Mar 18 |            | Review  
 Fri, Mar 20 |            | **Midterm 2**
 
+### Mon, Mar 16
+
+Today we talked about using functions to transform quantitative data.  
+
+* For data that is skewed left, the most common transformations are the exponential function $e^x$ or power functions $x^p$ with $p > 1$.
+* For data that is skewed right, the most common transformations are the natural logarithm function $\ln x$ or power functions $x^p$ with $0 < p < 1$.
+
+We looked at these examples:
+
+* **Example**: [Log transform: turbidity](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/turbidity.html)
+* **Example**: [Log transform: cloud seeding](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/CloudSeeding.html)
+* **Example**: [Choosing the right transform: textbook prices](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/textbooks.html)
+
+You have to be careful when using t-distribution methods on transformed data.  The t-methods will tell you about the average of the transformed data which won't be the same as the transformed average of the original data.  Here are ways you can deal with this problem:
+
+* If the transformed data has a normal distribution, then the average equals the median.  As long as the transformation is monotone, then medians commute with monotone transforms, which means that the median of the transformed data is the transformation applied to the original median. 
+
+* Logarithms convert multiplication to addition. This has these consequences:
+    - The average of log-transformed data corresponds to the geometric mean of the original data.  
+    - A confidence interval for log-transformed data will give you multiplicative bounds for the original data. 
+    - The difference between the medians of two sets of log-transformed data corresponds to ratio of the medians of the original data.  
+
+1. Suppose that we are 95% confidence that the parameter $\log \mu$ is in the interval $2.5 \pm 1.2$.  Then $\mu$ will be between $e^{2.5 \pm 1.2}$.  Since $e^{2.5} = 12.2$ and $e^{1.2} = 3.32$, we can say with 95% confidence that $\mu$ is between $12.2 / 3.32$ and $12.2 \cdot 3.32$. 
+
+
+
 
 - - - 
+
 
 ### Week 10 Notes
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 23 | [7.5][7.5] | ANOVA - con'd
-Wed, Mar 25 | [8.2][8.2] | Least squares regression
-Fri, Mar 27 | [9.1][9.1] | Introduction to multiple regression
+Mon, Mar 23 | [7.5][7.5] | Comparing many means with ANOVA
+Wed, Mar 25 | [7.5][7.5] | ANOVA - con'd
+Fri, Mar 27 | [8.2][8.2] | Least squares regression
 
 
 - - - 
@@ -777,9 +804,9 @@ Fri, Mar 27 | [9.1][9.1] | Introduction to multiple regression
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 30 | [9.2][9.2] | Model selection
-Wed, Apr 1  | [9.3][9.3] | Checking model conditions
-Fri, Apr 3  | [9.3][9.3] | Checking model conditions - con'd
+Mon, Mar 30 | [9.1][9.1] | Introduction to multiple regression 
+Wed, Apr 1  | [9.2][9.2] | Model selection
+Fri, Apr 3  | [9.3][9.3] | Checking model conditions
 
 
 - - - 
