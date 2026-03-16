@@ -706,6 +706,69 @@ Mon, Mar 16 |  [5.3][5.3] | Hypothesis testing for a proportion
 Wed, Mar 18 |            | Review  
 Fri, Mar 20 |            | **Midterm 2**
 
+### Mon, Mar 16
+
+Today we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
+
+1. Once I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different Zenner cards (see below) that I couldn't see.  If I were just guessing, I would only have a 20\% chance (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
+
+<center>
+<figure>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/2/29/Zener_cards_%28color%29.svg" width=400 title="Zenner cards"></img>
+<figcaption>Zenner cards (Source: Wikipedia)</figcaption>
+</figure>
+</center>
+
+Every hypothesis test starts with two possibilities: 
+
+* **Null Hypothesis ($H_0$)** - is a specific claim about the parameter. 
+* **Alternative Hypothesis ($H_A$)** - is what must be true if the null hypothesis is false. 
+
+Here are the steps to do a hypothesis test for a single proportion:
+
+1. **State the hypotheses.** These will pretty much always look like 
+    - $H_0 ~:~ p = p_0$
+    - $H_A ~:~ p \ne p_0$ \
+where $p_0$ is a specific number that makes sense in the context of the situation.
+
+2. **Calculate the test statistic.** Using the formula 
+$$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
+
+3. **Find the p-value.** The p-value is *the probability of getting a result at least as extreme as the test statistic if the null hypothesis is true.*
+
+4. **Explain what it means.** A low p-value is evidence that we should reject the null hypotheses.  Small p-values are unlikely to happen by random chance alone.  On the other hand, a p-value over 5% is inconclusive; the results might be a random fluke and we should not reject $H_0$. 
+
+<center>
+<table class="bordered">
+<thead>
+<tr>
+<th style="text-align: center;">p-value</th>
+<th style="text-align: center;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Over 5%</td>
+<td style="text-align: center;">Weak evidence (inconclusive)</td>
+</tr>
+<tr>
+<td style="text-align: center;">1% to 5%</td>
+<td style="text-align: center;">Moderate evidence</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1% to 1%</td>
+<td style="text-align: center;">Strong evidence</td>
+</tr>
+<tr>
+<td style="text-align: center;">Under 0.1%</td>
+<td style="text-align: center;">Very strong evidence</td>
+</tr>
+</tbody>
+</table>
+</center>
+
+2. This year 7 out of 25 (28%) of the students in our statistics class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
+
 
 <!--
 4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)

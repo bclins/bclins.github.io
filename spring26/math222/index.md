@@ -31,8 +31,9 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on **Friday, Feb 13**. 
-* Midterm 1 materials: [review problems](midterm1review.pdf)<!--, [solutions](https://bclins.github.io/fall25/math121/midterm1reviewSolutions.pdf)-->, [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)
+* Midterm 2 will be on **Friday, Mar 20**. 
+* Midterm 2 materials: [review problems](midterm2review.pdf)<!--, [solutions](https://bclins.github.io/fall25/math121/midterm1reviewSolutions.pdf)-->
+* Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)
 
 ### Tentative Schedule
 

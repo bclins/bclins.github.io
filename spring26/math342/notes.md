@@ -1078,6 +1078,33 @@ Mon, Mar 16 | Least squares problems
 Wed, Mar 18 | Least squares problems - con'd 
 Fri, Mar 20 | Orthogonal functions 
               
+Many linear systems $A \mathbf{x} = \mathbf{b}$ are over-determined, meaning that there is no solution.  This is particularly true for tall-skinny matrices $A$ where the system has lots of equations but not a lot of variables.  Instead, we can try to find a vector $\mathbf{x}$ such that $A \mathbf{x}$ gets the closest to $\mathbf{b}$ in the 2-norm.  This is called the **least squares solution.** 
+
+<center>
+<img src="orthogonalProjection.png" width = 360></img>
+</center>
+
+By the Fundamental Theorem of Linear Algebra, the orthogonal complement of the column space of $A$ is the null space of $A^T$, so we must have 
+$$A^T(A \mathbf{x}-\mathbf{b}) = 0.$$
+Rearranging terms, we get the **normal equation** for linear regression:
+$$A^T A \mathbf{x} = A^T \mathbf{b}.$$
+
+It we can solve this system, then we'll have the least squares solution.  To get a feeling for least squares problems, we did this workshop:
+
+* **Workshop**: [Least squares introduction](Workshops/RegressionIntro2.pdf)
+
+If $A$ is ill-conditioned, then the condition number of $A^TA$ tends to be even worse, so using the normal equations directly to solve a least squares problem is usually not a good idea numerically. Instead, it is better to use the QR-decomposition $A = QR$ where $Q \in \R^{m \times n}$ has orthonormal columns and $R \in \R^{n \times n}$ is upper triangular.  
+
+1. Show that $A^T A = R^T R$.  
+
+With the QR decomposition, the normal equation becomes
+$$R^T R \mathbf{x} = R^T Q^T \mathbf{b}.$$
+
+2. If $\on{rank} R = k$, explain why a vector $\mathbf{v}$ is in the nullspace of $R^T$ if and only if the first $k$ entries of $\mathbf{v}$ are zero.  
+
+3. Explain why $\mathbf{x}$ is a least squares solution of $A\mathbf{x} = \mathbf{b}$ if and only if the first $k$ entries of $R\mathbf{x}$ equal the first $k$ entries of $Q^T \mathbf{b}$.  
+
+
 - - - 
 
 ### Week 10 Notes

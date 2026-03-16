@@ -2173,6 +2173,85 @@ class="sourceCode octave"><code class="sourceCode octave"><span id="cb13-1"><a h
 </tr>
 </tbody>
 </table>
+<p>Many linear systems
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A \mathbf{x} = \mathbf{b}</annotation></semantics></math>
+are over-determined, meaning that there is no solution. This is
+particularly true for tall-skinny matrices
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+where the system has lots of equations but not a lot of variables.
+Instead, we can try to find a vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">A \mathbf{x}</annotation></semantics></math>
+gets the closest to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐛</mi><annotation encoding="application/x-tex">\mathbf{b}</annotation></semantics></math>
+in the 2-norm. This is called the <strong>least squares
+solution.</strong></p>
+<center>
+<img src="orthogonalProjection.png" width = 360></img>
+</center>
+<p>By the Fundamental Theorem of Linear Algebra, the orthogonal
+complement of the column space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is the null space of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>T</mi></msup><annotation encoding="application/x-tex">A^T</annotation></semantics></math>,
+so we must have
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mi>𝐱</mi><mo>−</mo><mi>𝐛</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">A^T(A \mathbf{x}-\mathbf{b}) = 0.</annotation></semantics></math>
+Rearranging terms, we get the <strong>normal equation</strong> for
+linear regression:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi><mi>𝐱</mi><mo>=</mo><msup><mi>A</mi><mi>T</mi></msup><mi>𝐛</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">A^T A \mathbf{x} = A^T \mathbf{b}.</annotation></semantics></math></p>
+<p>It we can solve this system, then we’ll have the least squares
+solution. To get a feeling for least squares problems, we did this
+workshop:</p>
+<ul>
+<li><strong>Workshop</strong>: <a
+href="Workshops/RegressionIntro2.pdf">Least squares
+introduction</a></li>
+</ul>
+<p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is ill-conditioned, then the condition number of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi></mrow><annotation encoding="application/x-tex">A^TA</annotation></semantics></math>
+tends to be even worse, so using the normal equations directly to solve
+a least squares problem is usually not a good idea numerically. Instead,
+it is better to use the QR-decomposition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mi>Q</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">A = QR</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Q \in \mathbb{R}^{m \times n}</annotation></semantics></math>
+has orthonormal columns and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">R \in \mathbb{R}^{n \times n}</annotation></semantics></math>
+is upper triangular.</p>
+<ol type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi><mo>=</mo><msup><mi>R</mi><mi>T</mi></msup><mi>R</mi></mrow><annotation encoding="application/x-tex">A^T A = R^T R</annotation></semantics></math>.</li>
+</ol>
+<p>With the QR decomposition, the normal equation becomes
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mi>T</mi></msup><mi>R</mi><mi>𝐱</mi><mo>=</mo><msup><mi>R</mi><mi>T</mi></msup><msup><mi>Q</mi><mi>T</mi></msup><mi>𝐛</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">R^T R \mathbf{x} = R^T Q^T \mathbf{b}.</annotation></semantics></math></p>
+<ol start="2" type="1">
+<li><p>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>rank</mo><mi>R</mi><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\operatorname{rank} R = k</annotation></semantics></math>,
+explain why a vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐯</mi><annotation encoding="application/x-tex">\mathbf{v}</annotation></semantics></math>
+is in the nullspace of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mi>T</mi></msup><annotation encoding="application/x-tex">R^T</annotation></semantics></math>
+if and only if the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐯</mi><annotation encoding="application/x-tex">\mathbf{v}</annotation></semantics></math>
+are zero.</p></li>
+<li><p>Explain why
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐱</mi><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math>
+is a least squares solution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>𝐱</mi><mo>=</mo><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">A\mathbf{x} = \mathbf{b}</annotation></semantics></math>
+if and only if the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>𝐱</mi></mrow><annotation encoding="application/x-tex">R\mathbf{x}</annotation></semantics></math>
+equal the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+entries of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>T</mi></msup><mi>𝐛</mi></mrow><annotation encoding="application/x-tex">Q^T \mathbf{b}</annotation></semantics></math>.</p></li>
+</ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
