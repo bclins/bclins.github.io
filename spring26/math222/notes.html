@@ -1717,8 +1717,8 @@ average equals the median. As long as the transformation is monotone,
 then medians commute with monotone transforms, which means that the
 median of the transformed data is the transformation applied to the
 original median.</p></li>
-<li><p>Logarithms convert multiplication to addition. This has these
-consequences:</p>
+<li><p>Logarithms convert multiplication to addition. This has some
+important consequences:</p>
 <ul>
 <li>The average of log-transformed data corresponds to the geometric
 mean of the original data.<br />
@@ -1730,24 +1730,43 @@ data corresponds to ratio of the medians of the original data.</li>
 </ul></li>
 </ul>
 <ol type="1">
-<li>Suppose that we are 95% confidence that the parameter
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\log \mu</annotation></semantics></math>
-is in the interval
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2.5</mn><mo>±</mo><mn>1.2</mn></mrow><annotation encoding="application/x-tex">2.5 \pm 1.2</annotation></semantics></math>.
-Then
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
-will be between
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mn>2.5</mn><mo>±</mo><mn>1.2</mn></mrow></msup><annotation encoding="application/x-tex">e^{2.5 \pm 1.2}</annotation></semantics></math>.
-Since
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>2.5</mn></msup><mo>=</mo><mn>12.2</mn></mrow><annotation encoding="application/x-tex">e^{2.5} = 12.2</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>1.2</mn></msup><mo>=</mo><mn>3.32</mn></mrow><annotation encoding="application/x-tex">e^{1.2} = 3.32</annotation></semantics></math>,
-we can say with 95% confidence that
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
-is between
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12.2</mn><mi>/</mi><mn>3.32</mn></mrow><annotation encoding="application/x-tex">12.2 / 3.32</annotation></semantics></math>
-and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>12.2</mn><mo>⋅</mo><mn>3.32</mn></mrow><annotation encoding="application/x-tex">12.2 \cdot 3.32</annotation></semantics></math>.</li>
+<li><p>The 95% t-distribution confidence interval for the average of the
+log-transformed turbidity data was 4.20 to 4.40. In other words, we are
+95% confident that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.20</mn><mo>≤</mo><msub><mi>μ</mi><mtext mathvariant="normal">log turbidity</mtext></msub><mo>≤</mo><mn>4.40</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">4.20 \le \mu_\text{log turbidity} \le 4.40.</annotation></semantics></math>
+To <strong>back transform</strong> that confidence interval to say
+something meaningful about the original data, you (i) assume that the
+mean and the median are the same for the log turbidity in the
+population, and (ii) use the fact that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>median</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">log turbidity</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">median turbidity</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\operatorname{median}(\text{log turbidity}) = \log( \text{median turbidity}).</annotation></semantics></math>
+Therefore we are 95% confident that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.20</mn><mo>≤</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">population median turbidity</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mn>4.40</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">4.20 \le \log(\text{population median turbidity}) \le 4.40.</annotation></semantics></math>
+and now we can apply the exponential function to all three sides of this
+inequality to get
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mn>4.20</mn></msup><mo>≤</mo><mtext mathvariant="normal">population median turbidity</mtext><mo>≤</mo><msup><mi>e</mi><mn>4.40</mn></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">e^{4.20} \le \text{population median turbidity} \le e^{4.40}.</annotation></semantics></math></p></li>
+<li><p>We made a confidence interval for the difference in the means of
+the log-rainfall in the cloud seeding example. We were 95% confident
+that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.24</mn><mo>≤</mo><msub><mi>μ</mi><mtext mathvariant="normal">log seeded</mtext></msub><mo>−</mo><msub><mi>μ</mi><mtext mathvariant="normal">log unseeded</mtext></msub><mo>≤</mo><mn>2.0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">0.24 \le \mu_{\text{log seeded}} - \mu_\text{log unseeded} \le 2.0.</annotation></semantics></math>
+Once again, we can back transform to get a useful claim about the median
+rainfall for seeded versus unseeded clouds, although you do have to make
+the following strong assumption: that log-rainfall has a symmetric
+distribution in the population for both seeded and unseeded clouds.
+Assuming that, we have
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.24</mn><mo>≤</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">median seeded</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">median unseeded</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mn>2.0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">0.24 \le \log(\text{median seeded}) - \log(\text{median unseeded}) \le 2.0.</annotation></semantics></math>
+which is equivalent to
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.24</mn><mo>≤</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="true"><mtext mathvariant="normal">median seeded</mtext><mtext mathvariant="normal">median unseeded</mtext></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mn>2.0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">0.24 \le \log\left(\dfrac{\text{median seeded}}{\text{median unseeded}} \right) \le 2.0.</annotation></semantics></math>
+Taking the exponential function of both sides, we found that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.27</mn><mo>≤</mo><mfrac displaystyle="true"><mtext mathvariant="normal">median seeded</mtext><mtext mathvariant="normal">median unseeded</mtext></mfrac><mo>≤</mo><mn>7.4</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">1.27 \le \dfrac{\text{median seeded}}{\text{median unseeded}} \le 7.4.</annotation></semantics></math>
+In other words, the population median rainfall is between 1.27 and 7.4
+<em>times higher</em> in seeded than in unseeded clouds.</p></li>
+<li><p>We looked at the textbook prices example to talk about situations
+where you might use a power transform instead of a log-transform. One
+popular method is the <a
+href="https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation">Box-Cox
+transformation</a>. <!--
+1. Suppose that we are 95% confidence that the parameter $\log \mu$ is in the interval $2.5 \pm 1.2$.  Then $\mu$ will be between $e^{2.5 \pm 1.2}$.  Since $e^{2.5} = 12.2$ and $e^{1.2} = 3.32$, we can say with 95% confidence that $\mu$ is between $12.2 / 3.32$ and $12.2 \cdot 3.32$. 
+--></p></li>
 </ol>
 <hr />
 <h3 id="week-10-notes">Week 10 Notes</h3>

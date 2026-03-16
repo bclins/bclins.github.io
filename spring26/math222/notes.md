@@ -776,13 +776,34 @@ You have to be careful when using t-distribution methods on transformed data.  T
 
 * If the transformed data has a normal distribution, then the average equals the median.  As long as the transformation is monotone, then medians commute with monotone transforms, which means that the median of the transformed data is the transformation applied to the original median. 
 
-* Logarithms convert multiplication to addition. This has these consequences:
+* Logarithms convert multiplication to addition. This has some important consequences:
     - The average of log-transformed data corresponds to the geometric mean of the original data.  
     - A confidence interval for log-transformed data will give you multiplicative bounds for the original data. 
     - The difference between the medians of two sets of log-transformed data corresponds to ratio of the medians of the original data.  
 
-1. Suppose that we are 95% confidence that the parameter $\log \mu$ is in the interval $2.5 \pm 1.2$.  Then $\mu$ will be between $e^{2.5 \pm 1.2}$.  Since $e^{2.5} = 12.2$ and $e^{1.2} = 3.32$, we can say with 95% confidence that $\mu$ is between $12.2 / 3.32$ and $12.2 \cdot 3.32$. 
+1. The 95% t-distribution confidence interval for the average of the log-transformed turbidity data was 4.20 to 4.40.  In other words, we are 95% confident that 
+$$4.20 \le \mu_\text{log turbidity} \le 4.40.$$
+To **back transform** that confidence interval to say something meaningful about the original data, you (i) assume that the mean and the median are the same for the log turbidity in the population, and (ii) use the fact that 
+$$\on{median}(\text{log turbidity}) = \log( \text{median turbidity}).$$
+Therefore we are 95% confident that 
+$$4.20 \le \log(\text{population median turbidity}) \le 4.40.$$
+and now we can apply the exponential function to all three sides of this inequality to get 
+$$e^{4.20} \le \text{population median turbidity} \le e^{4.40}.$$
 
+2. We made a confidence interval for the difference in the means of the log-rainfall in the cloud seeding example.  We were 95% confident that 
+$$0.24 \le \mu_{\text{log seeded}} - \mu_\text{log unseeded} \le 2.0.$$
+Once again, we can back transform to get a useful claim about the median rainfall for seeded versus unseeded clouds, although you do have to make the following strong assumption: that log-rainfall has a symmetric distribution in the population for both seeded and unseeded clouds.  Assuming that, we have 
+$$0.24 \le \log(\text{median seeded}) - \log(\text{median unseeded}) \le 2.0.$$
+which is equivalent to 
+$$0.24 \le \log\left(\dfrac{\text{median seeded}}{\text{median unseeded}} \right) \le 2.0.$$
+Taking the exponential function of both sides, we found that 
+$$1.27 \le \dfrac{\text{median seeded}}{\text{median unseeded}} \le 7.4.$$
+In other words, the population median rainfall is between 1.27 and 7.4 *times higher* in seeded than in unseeded clouds.  
+
+3. We looked at the textbook prices example to talk about situations where you might use a power transform instead of a log-transform.  One popular method is the [Box-Cox transformation](https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation). 
+<!--
+1. Suppose that we are 95% confidence that the parameter $\log \mu$ is in the interval $2.5 \pm 1.2$.  Then $\mu$ will be between $e^{2.5 \pm 1.2}$.  Since $e^{2.5} = 12.2$ and $e^{1.2} = 3.32$, we can say with 95% confidence that $\mu$ is between $12.2 / 3.32$ and $12.2 \cdot 3.32$. 
+-->
 
 
 

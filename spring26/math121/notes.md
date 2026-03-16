@@ -708,6 +708,9 @@ Fri, Mar 20 |            | **Midterm 2**
 
 ### Mon, Mar 16
 
+Class was canceled today due to weather.  Don't forget to do the [midterm 2 review problems](https://bclins.github.io/fall25/math121/midterm2review.pdf) before class on Wednesday.  
+
+<!--
 Today we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
 
 1. Once I took a test to see if I had psychic powers.  In the test, I had 25 chances to guess which one of five symbols was on 25 different Zenner cards (see below) that I couldn't see.  If I were just guessing, I would only have a 20\% chance (1 out of 5) of guessing right.  But I actually got 10 out of 25 guesses correct.  How strong is this evidence that I am psychic?  
@@ -767,7 +770,7 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 </table>
 </center>
 
-2. This year 7 out of 25 (28%) of the students in our statistics class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
+2. This year 7 out of 25 (28%) of the students in our statistics class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. -->
 
 
 <!--

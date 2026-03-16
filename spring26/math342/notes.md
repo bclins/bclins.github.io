@@ -1078,6 +1078,19 @@ Mon, Mar 16 | Least squares problems
 Wed, Mar 18 | Least squares problems - con'd 
 Fri, Mar 20 | Orthogonal functions 
               
+### Mon, Mar 16
+
+Class was canceled today because of the weather.  But I sent everyone this workshop to try on your own.  
+
+* **Workshop**: [Least squares introduction](Workshops/RegressionIntro2.pdf)
+
+Don't forget that you can use the [SageMathCell](https://sagecell.sagemath.org/?lang=octave) to do Octave calculations.  Also the command to get the transpose of a matrix `A` in Octave is `A'` and the inverse is `inv(A)`. 
+
+Since I wasn't able to explain the technique in class, here is a video with an example similar to the ones in the workshop. 
+
+* **Video**: <https://youtu.be/-bgrezOT0VQ>
+
+<!--
 Many linear systems $A \mathbf{x} = \mathbf{b}$ are over-determined, meaning that there is no solution.  This is particularly true for tall-skinny matrices $A$ where the system has lots of equations but not a lot of variables.  Instead, we can try to find a vector $\mathbf{x}$ such that $A \mathbf{x}$ gets the closest to $\mathbf{b}$ in the 2-norm.  This is called the **least squares solution.** 
 
 <center>
@@ -1103,7 +1116,7 @@ $$R^T R \mathbf{x} = R^T Q^T \mathbf{b}.$$
 2. If $\on{rank} R = k$, explain why a vector $\mathbf{v}$ is in the nullspace of $R^T$ if and only if the first $k$ entries of $\mathbf{v}$ are zero.  
 
 3. Explain why $\mathbf{x}$ is a least squares solution of $A\mathbf{x} = \mathbf{b}$ if and only if the first $k$ entries of $R\mathbf{x}$ equal the first $k$ entries of $Q^T \mathbf{b}$.  
-
+-->
 
 - - - 
 
