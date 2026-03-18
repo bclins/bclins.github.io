@@ -801,9 +801,12 @@ $$1.27 \le \dfrac{\text{median seeded}}{\text{median unseeded}} \le 7.4.$$
 In other words, the population median rainfall is between 1.27 and 7.4 *times higher* in seeded than in unseeded clouds.  
 
 3. We looked at the textbook prices example to talk about situations where you might use a power transform instead of a log-transform.  One popular method is the [Box-Cox transformation](https://en.wikipedia.org/wiki/Power_transform#Box%E2%80%93Cox_transformation). 
-<!--
-1. Suppose that we are 95% confidence that the parameter $\log \mu$ is in the interval $2.5 \pm 1.2$.  Then $\mu$ will be between $e^{2.5 \pm 1.2}$.  Since $e^{2.5} = 12.2$ and $e^{1.2} = 3.32$, we can say with 95% confidence that $\mu$ is between $12.2 / 3.32$ and $12.2 \cdot 3.32$. 
--->
+
+### Wed, Mar 18
+
+
+
+* **Workshop:** [Choosing the right inference method](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 
 
 
