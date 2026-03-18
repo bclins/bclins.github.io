@@ -48,6 +48,9 @@ The data frame `marriages` contains data from 24 couples that were married in Cu
 
 5. Use the formula $\displaystyle \bar{x} \pm t^* \sqrt{s^2 + \frac{s^2}{N}}$ to make a prediction interval for the age difference of 80% of all couples.  
 
+
+
+
 <br>
 <br>
 <br>
