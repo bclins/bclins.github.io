@@ -1118,6 +1118,71 @@ $$R^T R \mathbf{x} = R^T Q^T \mathbf{b}.$$
 3. Explain why $\mathbf{x}$ is a least squares solution of $A\mathbf{x} = \mathbf{b}$ if and only if the first $k$ entries of $R\mathbf{x}$ equal the first $k$ entries of $Q^T \mathbf{b}$.  
 -->
 
+### Wed, Mar 18 
+
+Today we talked some more about least squares regression. We started with this example. 
+
+1. There has been a steady long term decline in the number of people killed by lightning every year in the United States.  The data for the years 1950 to 2020 is shown in the Octave code below.  Use Octave to solve for the coefficients of the best fit trend line $\hat{y} = b_0 + b_1 x$. 
+
+    <figure>
+    ```octave
+    A = [1950,219;1951,248;1952,212;1953,145;1954,220;1955,181;1956,149;1957,180;1958,104;1959,183;1960,129;1961,149;1962,153;1963,165;1964,129;1965,149;1966,110;1967,88;1968,129;1969,131;1970,122;1971,122;1972,94;1973,124;1974,112;1975,124;1976,81;1977,116;1978,98;1979,87;1980,94;1981,87;1982,100;1983,93;1984,91;1985,85;1986,78;1987,99;1988,82;1989,75;1990,74;1991,73;1992,41;1993,43;1994,69;1995,85;1996,53;1997,42;1998,44;1999,46;2000,51;2001,44;2002,51;2003,43;2004,31;2005,38;2006,47;2007,46;2008,28;2009,34;2010,29;2011,26;2012,29;2013,23;2014,26;2015,28;2016,40;2017,16;2018,21;2019,20;2020,17];
+    plot(A(:,1), A(:,2), '.')
+    title("Lightning Fatalities per Year")
+    ```
+    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJw1kc1qHEEMhO-BvMPgi3ehCC31jyQvOfiSU14ghBz2sDgDi2OceX-sas-cqvT3STP9vHxffkv0ApW4pBFocxrNjNJUSOs0DaqFpkNcaEaW5pRlZpYcUhpNZKamGQWi7BmyNw-F9FlK8iB5tKOnHz1JFgKHwXnO8KMlwZXLjWAeaHIYRXC3JVenSe78ButHZmBebnmwDBpHkG8Bt1QvnwyXPc5jCw_xiuDR3hAkeIfzdh8wAtwQvM8dzpUeMNajwAgMgXE-FI3zUdFm3DA4FzsvBubPCUMjJxxtzgfauGgpBV2ownyq7vHkpTbUGXdUpw40o9o-79CZD1TOS758UPPhWRfd4wolT9qe759zkrxCzT8488njPgko85rPYn8uX78sb_d_2-n59AQ5Y6Fq6uO3x3PWtnW7304PP9eXv9vr-vqy_Lhu1_u6rbf_y9vtffl1u74_nD8AMeyNnw==&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+    <figure>
+
+In the last example we used the normal equations $X^T X \mathbf{b} = X^T \mathbf{y}$ to find $\mathbf{b}$.  
+Unfortunately, in regression problems, the matrix $X^T X$ tends to be very ill-conditioned, so using the normal equations to solve a least squares problem directly is usually not a good idea numerically. Instead, it is better to use the QR-decomposition $X = QR$ where $Q \in \R^{m \times n}$ has orthonormal columns and $R \in \R^{n \times n}$ is upper triangular.  
+
+2. Show that $X^T X = R^T R$.  
+
+With the QR decomposition, the normal equation becomes
+$$R^T R \mathbf{b} = R^T Q^T \mathbf{y}.$$
+We don't actually need to solve this equation, we just need to find $\mathbf{b}$ so that $R\mathbf{b}$ equals $Q^T \mathbf{y}$ in all of the rows where $R$ is not zero.  
+
+3. Show that $R \mathbf{b} - Q^T \mathbf{y}$ is in the nullspace of $R^T$ if and only if $R \mathbf{b}$ equals $Q^T \mathbf{y}$ in every row where $R$ has a pivot.  
+
+
+Linear algebra packages on computers implement this approach to solve linear regression problems quickly and with very little relative error.  In Matlab/Octave you can use the backslash operator to find the least squares solution to $X \mathbf{b} \approx \mathbf{y}$.  
+
+```octave
+# Least squares solution 
+X \ y
+```
+
+<!--
+2. If $\on{rank} R = k$, explain why a vector $\mathbf{v}$ is in the nullspace of $R^T$ if and only if the first $k$ entries of $\mathbf{v}$ are zero.  
+
+3. Explain why $\mathbf{x}$ is a least squares solution of $A\mathbf{x} = \mathbf{b}$ if and only if the first $k$ entries of $R\mathbf{x}$ equal the first $k$ entries of $Q^T \mathbf{b}$.  
+-->
+
+
+You can use least squares regression to find the best coefficients for any model, even nonlinear models, as long as the model is a linear function of the coefficients.  For example, if you wanted to model daily high temperatures in Farmville, VA as a function of the day of the year (from 1 to 365), you could use a function like this:
+
+$$\hat{y} = b_0 + b_1 x + b_2 \cos\left( \dfrac{2\pi x}{365} \right) + b_3 \sin \left( \dfrac{2\pi x}{365} \right).$$
+
+4. Use the Octave code below to create a matrix $X$ with columns corresponding to the four terms of the formula above. Then use the backslash operator to solve for the coefficient vector $\mathbf{b}$. 
+
+    <figure>
+    ```octave
+    B = [1,64;2,64;3,50;4,53;5,52;6,59;7,58;8,41;9,65;10,49;11,42;12,42;13,35;14,32;15,36;16,50;17,51;18,39;19,56;20,54;21,54;22,35;23,35;24,59;25,67;26,45;27,46;28,46;29,40;30,40;31,42;32,39;33,34;34,51;35,63;36,69;37,76;38,71;39,68;40,63;41,42;42,43;43,41;44,37;45,53;46,62;47,45;48,41;49,45;50,38;51,54;52,34;53,60;54,47;55,41;56,63;57,61;58,63;59,48;60,54;61,39;62,54;63,53;64,48;65,44;66,42;67,44;68,43;69,39;70,63;71,60;72,58;73,63;74,74;75,68;76,57;77,56;78,52;79,53;80,56;81,50;82,56;83,60;84,59;85,66;86,57;87,56;88,65;89,75;90,74;91,64;92,50;93,41;94,74;95,74;96,66;97,71;98,78;99,80;100,74;101,76;102,76;103,69;104,67;105,72;106,60;107,71;108,83;109,83;110,73;111,65;112,67;113,73;114,83;115,83;116,82;117,72;118,74;119,83;120,62;121,85;122,86;123,86;124,83;125,83;126,75;127,76;128,79;129,81;130,80;131,77;132,73;133,76;134,66;135,63;136,71;137,78;138,84;139,88;140,92;141,86;142,80;143,78;144,84;145,92;146,88;147,95;148,85;149,92;150,92;151,97;152,84;153,84;154,84;155,78;156,77;157,80;158,87;159,72;160,73;161,77;162,81;163,78;164,76;165,78;166,76;167,82;168,88;169,90;170,86;171,84;172,88;173,82;174,78;175,85;176,90;177,85;178,87;179,92;180,88;181,93;182,93;183,88;184,91;185,93;186,92;187,88;188,87;189,93;190,86;191,85;192,89;193,89;194,91;195,90;196,95;197,93;198,93;199,95;200,92;201,94;202,96;203,100;204,90;205,72;206,82;207,84;208,91;209,90;210,95;211,91;212,93;213,90;214,88;215,86;216,91;217,94;218,84;219,93;220,88;221,91;222,92;223,89;224,91;225,91;226,91;227,93;228,83;229,98;230,93;231,97;232,94;233,95;234,92;235,95;236,85;237,76;238,75;239,74;240,79;241,85;242,85;243,90;244,92;245,90;246,90;247,90;248,94;249,81;250,86;251,91;252,92;253,87;254,89;255,94;256,97;257,83;258,82;259,88;260,92;261,77;262,79;263,75;264,79;265,90;266,95;267,92;268,86;269,85;270,94;271,88;272,93;273,94;274,79;275,90;276,96;277,99;278,83;279,63;280,74;281,81;282,66;283,74;284,75;285,77;286,78;287,64;288,76;289,78;290,64;291,64;292,66;293,66;294,57;295,66;296,65;297,67;298,70;299,68;300,74;301,83;302,72;303,66;304,67;305,79;306,57;307,56;308,59;309,63;310,70;311,63;312,66;313,47;314,46;315,67;316,71;317,53;318,38;319,43;320,50;321,48;322,48;323,47;324,54;325,58;326,55;327,59;328,42;329,57;330,59;331,64;332,59;333,55;334,57;335,43;336,44;337,47;338,56;339,55;340,55;341,56;342,48;343,51;344,49;345,61;346,49;347,42;348,38;349,58;350,58;351,47;352,56;353,47;354,40;355,48;356,45;357,48;358,52;359,50;360,55;361,63;362,61;363,68;364,65;365,71];
+    plot(B(:,1), B(:,2), '.')
+    title("Farmville 2019 High Temperatures")
+    ```
+    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJwllrFuXjcMhfcAeQcjS2xAKCRSIqUKXTIUfYBuRYcMRmPAQQPX7fP3nMPl5xWvSB5K35X-Lw-_PPwxWsxr_PG2-p1t-V1t2Y22zs229t1tjntarDt6m-eO0abdYfr15vDP5nhezeOOYJ6ByHHHbo75p6241ttCpaFfY5Qp1iYL2WqR16JNeLJNzN_6PW32612_quvGnI5YSJ6s4oj169EC_mwZ13dL-KF539n5dip2QjOenQ1NaM47FxueiMXbZPWpdufh8-rN913SvIwVl7fod802867FmSuYf2ULPG89I3bfUL8xqDZMz85aMfUWsfAEVUXqeVNbHM5Pac7BWmncg3R5Zst5c7GvxDrnzeTa5uaO5WH-3enZg7uwTc_SvLXOG7HwKHYrdm_u7D4t1z2d-Y-YOMYMR2t1VPcs_QYznOQKH6zzvue0jR3vCh59cAdGtzLOXRl9cntHRwZw0oOCRleO0XfbDnNkgFjSDPEGyBgHyuScNWWVibaRDKQxJ1Bj9VFZAFsQ0dE2sgC3DS3gTaayWGUBcskp4mYAuoRcULehDNixMXCXEAHwKALkcSbQCxqxNwAfWyF9GwYdQQv42xgBwAMtIJDVgSBzgkHOBIScCQo1JSog2-E3tSUeJPLdqixg8UALYGQcaJSpLOCROQEk5YJIFgKSm6OjVYpa3aiOgCXbjNICMNlYVBagqVFqkQEnlYHOw2-7qxXwybIAlO9AKGcSUY6WxANSBWSNSktWRwCVcSD1QBJQlfFyznZ4fKxyRgVkvassIJbvTmk5tdOAdvPA8TKVBdxSBMDlsoJcxe0yh07rWl0DuwenE9g9PLC8AWrYyXgreK0LOwO8m1M3S1jXwhjgZTbAS-dQSwZ49W5SvRFe5Aa8mpIqOASMDbVkpoUxqyyAl9JMLZnNcq4ylcWy4vQhGeA9CAe8dLqAMcDLQoCXAgEvcwJejYJrZ3V0Gs9Ojg6_JwO8-CBsanmN8NJUR7OyzFWjKJNltupNfUi2tEm2qqNVHRFeKCO8PP-XAgAv5RJeiCe8nKkPyaI2qeA1wEtlhBeSCC9HpSW01QZ4FbBVHfBSPOBlIcKLnFl7BHjlrCxZWQgv4gDvobNWF_Dig7etw84AL_sDvMEby8s5JQnwUifgxQdhgJcXLeDlIvO4hRPw0lkHrp3KAnhlJs9oO6tGwfPQAC-vSZ67EHh0wXkdvA54IdB58OKW7MridfA62cXl2HXue9fB72B30amOnAcv79hRI2lxsIuLzsHu5EiXtA8dds4rnjM370gHu7i-nLc8soBdXHIOdmUqC2966AS7i05oWTApEbztebcfCQS7dLrWxcGuRq4AnzVlqR7YnZySqgB22RjY5UywKzPknKUF7PIvA9jFPxkHu8FR1CglYlZHYJc6wa7MUIWlG9VXdcT_AeiWfwQ4Rf9eHOxqpDvZwS4XJEpL1OqCXZYFu9w_sBt8hz0af96PH368_v3--OXx5zae2gOtwX7-6fPTxw_vL--vz4-ffv369v2_l9fX5wccWefht5e_vj38_vz9x_Pb1_d_357_-fT0P_YvCEk=&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+    <figure>
+
+
+We didn't have time to do an example of this in class, but here is another nice idea. 
+For models that aren't linear functions of the parameters, you can often change them into a linear model by applying a log-transform.  For example, an exponential model 
+$$\hat{y} = C e^{r x}$$
+can be turned into a linear model after we take the (natural) logarithm of both sides:
+$$\log(\hat{y}) = \log C + r x.$$
+
+5. Find the coefficients $C$ and $r$ for an exponential model for the decline in lightning fatalities since 1950. 
+
 - - - 
 
 ### Week 10 Notes

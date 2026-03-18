@@ -804,7 +804,7 @@ In other words, the population median rainfall is between 1.27 and 7.4 *times hi
 
 ### Wed, Mar 18
 
-
+We talked about the [midterm 2 review problems](midterm2review.pdf) and about the power computation on problem 3 from [project 3](Projects/project3.pdf). We also talked about how to choose the best inference method. 
 
 * **Workshop:** [Choosing the right inference method](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
 

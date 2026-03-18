@@ -710,6 +710,20 @@ Fri, Mar 20 |            | **Midterm 2**
 
 Class was canceled today due to weather.  Don't forget to do the [midterm 2 review problems](https://bclins.github.io/fall25/math121/midterm2review.pdf) before class on Wednesday.  
 
+### Wed, Mar 18
+
+We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online now too. We also talked about the sampling distributions question from the last quiz. 
+
+We also did the following extra problem about conditional probability. 
+
+1. Suppose that half of the voters in one county are women.  There are two candidates running, a Democrat and a Republican.  60% of the women support the Democrat, but only 35% of the men in the county do.  Assume that every voter supports one of the two candidates. Find the following probabilities.
+
+    a. P(Support Republican | Voter is male)
+    b. P(Support Republican | Voter is female)
+    c. P(Support Republican and voter is male)
+    d. P(Support Republican and voter is female)
+    e. P(Support Republican)
+
 <!--
 Today we introduced **hypothesis testing**. This is a tool for answering yes/no questions about a population parameter.  We started with this example:
 
@@ -776,19 +790,6 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 <!--
 4. [Case Study 5.2.4](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=185)
 
-### Wed, Oct 22
-
-We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online now too. 
-
-We also did the following extra problem about conditional probability. 
-
-1. Suppose that half of the voters in one county are women.  There are two candidates running, a Democrat and a Republican.  60% of the women support the Democrat, but only 35% of the men in the county do.  Assume that every voter supports one of the two candidates. Find the following probabilities.
-
-    a. P(Support Republican | Voter is male)
-    b. P(Support Republican | Voter is female)
-    c. P(Support Republican and voter is male)
-    d. P(Support Republican and voter is female)
-    e. P(Support Republican)
 
 
 <!-- 
