@@ -16,6 +16,7 @@ header-includes: |
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\inner}[1]{\langle {#1} \rangle}
 
 ## Math 342 - Spring 2026
 
@@ -1076,7 +1077,7 @@ Day  | Topic
 :-----:|:-----------------------
 Mon, Mar 16 | Least squares problems 
 Wed, Mar 18 | Least squares problems - con'd 
-Fri, Mar 20 | Orthogonal functions 
+Fri, Mar 20 | Continuous least squares
               
 ### Mon, Mar 16
 
@@ -1187,15 +1188,67 @@ $$\log(\hat{y}) = \log C + r x.$$
 
 5. Find the coefficients $C$ and $r$ for an exponential model for the decline in lightning fatalities since 1950. 
 
+### Fri, Mar 20
+
+In discrete least squares problems, you want to minimize the sum of squared deviations over a finite set. In **continuous least squares** problems, you want to find a polynomial or other kind of function $p(x)$ that minimizes the integral of the squared distances between $p(x)$ and some target function $f(x)$ on a continuous interval $[a,b]$:
+$$\int_a^b (p(x) - f(x))^2 \, dx.$$
+
+Before we derived the normal equations for continuous least squares regression, we started with a brief introduction to functional analysis (which is like linear algebra when the vectors are functions). 
+
+<div class="Theorem">
+**Definition.** An **inner-product space** is a vector space $V$ with an **inner-product** $\langle x,y \rangle$ which is a real-valued function such that for all $x,y, z \in V$ and $c \in \R$
+
+1. $\inner{x,y} = \inner{y,x}$,
+2. $\inner{x,x} \ge 0$ and $\inner{x,x} = 0$ if and only if $x = 0$,
+3. $\inner{cx,y} = c \inner{x,y}$,
+4. $\inner{x+y,z} = \inner{x,z} + \inner{y,z}$.
+
+The norm of a vector in an inner-product space is $\|x\| = \inner{x,x}^{1/2}$.
+</div>
+
+Examples of inner-product spaces include
+
+* $\R^n$ with the dot product. 
+* $L^2[a,b]$ which is the space of all functions $f:[a,b] \rightarrow \R$ such that $\int_a^b (f(x))^2 \, dx$ exists (and is finite). The inner-product on $L^2[a,b]$ is
+$$\inner{f,g} = \int_a^b f(x) g(x) \, dx.$$
+
+To solve a continuous least squares regression problem we need to find the **orthogonal projection** of a function $f \in L^2[a,b]$ onto a subspace. 
+
+<center>
+<img src="orthogonalProjection2.png" width=420/>
+</center>
+
+It helps if you have an orthogonal basis for the subspace.  Then you can use this formula:
+
+<div class="Theorem">
+**Orthogonal Projection Onto a Subspace with an Orthogonal Basis**
+
+Suppose that $\phi_1, \ldots, \phi_n$ is an orthogonal basis for a subspace $V$ in an inner-product space.  Then the orthogonal projection of $f$ onto $V$ is 
+$$\on{Proj}_V(f) = \sum_{k = 1}^n \frac{\inner{f, \phi_k}}{\inner{\phi_k, \phi_k}} \phi_k.$$
+</div>
+
+1. The polynomials $1, x, x^2$ are a basis for the 2nd degree polynomials in $L^2[-1,1]$.  Use the Gram-Schmidt process to find an orthogonal basis.   Hint: first calculate the following inner-products in $L^2[-1,1]$:
+    a. $\inner{1, 1}$
+    a. $\inner{x, 1}$
+    a. $\inner{x^2, 1}$
+    a. $\inner{x, x}$
+    a. $\inner{x^2, x}$
+
+    Is there a pattern for when the inner-products are zero?
+
+The solution to the last problem is a special orthogonal basis called the **Legendre polynomials**.  If you continue the Gram-Schmidt process, you can find Legendre polynomials of any degree. 
+
+2. Use the Legendre polynomials to find the orthogonal projection of the function $f(x) = e^x$ onto the 2nd degree polynomials in $L^2[-1,1]$. 
+
 - - - 
 
 ### Week 10 Notes
 
 Day  | Topic
 :-----:|:-----------------------
-Mon, Mar 23 | Continuous least squares
+Mon, Mar 23 | Orthogonal functions
 Wed, Mar 25 | Fourier series
-Fri, Mar 27 | Fourier series - con'd 
+Fri, Mar 27 | Polynomial interpolation
 
 
 - - - 
@@ -1204,9 +1257,9 @@ Fri, Mar 27 | Fourier series - con'd
 
 Day  | Topic
 :-----:|:-----------------------
-Mon, Mar 30 | Numerical integration         
-Wed, Apr 1  | Newton-Cotes methods
-Fri, Apr 3  | Error in Newton-Cotes methods
+Mon, Mar 30 | Newton polynomials 
+Wed, Apr 1  | Divided differences
+Fri, Apr 3  | Interpolation error
 
 
 - - - 
@@ -1215,7 +1268,7 @@ Fri, Apr 3  | Error in Newton-Cotes methods
 
 Day  | Topic
 :-----:|:-----------------------
-Mon, Apr 6  | Numerical differentiation
+Mon, Apr 6  | Interpolation error - con'd  
 Wed, Apr 8  | Review
 Fri, Apr 10 | **Midterm 2**
 
@@ -1226,9 +1279,9 @@ Fri, Apr 10 | **Midterm 2**
 
 Day  | Topic
 :-----:|:-----------------------
-Mon, Apr 13 | Eigenvectors and eigenvalues 
-Wed, Apr 15 | Power iteration 
-Fri, Apr 17 | Schur triangular decomposition
+Mon, Apr 13 | Numerical integration         
+Wed, Apr 15 | Newton-Cotes methods
+Fri, Apr 17 | Error in Newton-Cotes methods
 
 
 - - - 
@@ -1237,9 +1290,9 @@ Fri, Apr 17 | Schur triangular decomposition
 
 Day  | Topic
 :---:|:---------
-Mon, Apr 20 | QR algorithm
-Wed, Apr 22 | Singular value decomposition
-Fri, Apr 24 | Applications of the SVD
+Mon, Apr 20 | Numerical differentiation
+Wed, Apr 22 | Numerical solutions of ODEs
+Fri, Apr 24 | Runge-Kutta methods
 Mon, Apr 27 | Last day, recap & review
 
 

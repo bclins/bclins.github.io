@@ -1807,6 +1807,220 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-23">Mon, Mar 23</h3>
+<p>If you are measuring a quantitative response variable for more than
+two groups, then <strong>analysis of variance (ANOVA)</strong> can let
+you test whether whether the means are significantly different in the
+different groups. Before you get started, it helps to look at
+side-by-side boxplots to see if there looks like there might be a
+difference.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/batting.html">One-way
+ANOVA: Baseball positions at bat</a></li>
+</ul>
+<ol type="1">
+<li><p>In the example above, what are the explanatory &amp; response
+variables?</p></li>
+<li><p>From the graph of the side-by-side boxplots, does it look like
+one group of baseball players might be better than others at
+bat?</p></li>
+</ol>
+<section id="analysis-of-variance-anova" class="Theorem">
+<h4>Analysis of Variance (ANOVA)</h4>
+<p>One-way ANOVA is based on the following model. We have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+groups, and we assume that each group has a normally distribution in the
+population with the same standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>,
+but possibly different means
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>μ</mi><mi>I</mi></msub></mrow><annotation encoding="application/x-tex">\mu_1, \ldots, \mu_I</annotation></semantics></math>.
+Within this model, we test</p>
+<ul>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><msub><mi>μ</mi><mn>1</mn></msub><mo>=</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>=</mo><mi>…</mi><mo>=</mo><msub><mi>μ</mi><mi>I</mi></msub></mrow><annotation encoding="application/x-tex">H_0: \mu_1 = \mu_2 = \ldots = \mu_I</annotation></semantics></math>
+(i.e., the group means are all the same)</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_A:</annotation></semantics></math>
+the group means are not all the same.</li>
+</ul>
+<p>If we take a total of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+independent observations from the population, we can calculate an
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>-value
+for the data and use the <strong>F-distribution</strong> to find a
+p-value for this hypothesis test.</p>
+</section>
+<p>In order to calculate the F-value, we use a tool called an
+<strong>ANOVA table</strong>. The ANOVA table keeps track of different
+sources of variance in our data. We get two different types of
+variance:</p>
+<ul>
+<li>Differences between the group averages.</li>
+<li>Variability within the groups.</li>
+</ul>
+An ANOVA table has these parts
+<center>
+<table class="bordered">
+<tr>
+<td>
+Source
+</td>
+<td>
+Degrees of Freedom
+</td>
+<td>
+Sum of Squares
+</td>
+<td>
+Mean Square
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td>
+Groups
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">I-1</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>n</mi><mi>i</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_i n_i(\bar{x}_i-\bar{x})^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SSG</mo><mi>/</mi><mo>DFG</mo></mrow><annotation encoding="application/x-tex">\operatorname{SSG}/\operatorname{DFG}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo>MSG</mo><mi>/</mi><mo>MSE</mo></mrow><annotation encoding="application/x-tex">F = \operatorname{MSG}/\operatorname{MSE}</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Error
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">N-I</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>n</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>s</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sum_i (n_i-1) s_i^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SSE</mo><mi>/</mi><mo>DFE</mo></mrow><annotation encoding="application/x-tex">\operatorname{SSE}/\operatorname{DFE}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{ij} (x_{ij}-\bar{x})^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SST</mo><mi>/</mi><mo>DFT</mo></mrow><annotation encoding="application/x-tex">\operatorname{SST}/\operatorname{DFT}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</center>
+<p>where MS stands for mean square, SS stands for sum of squares, and DF
+stands for degrees of freedom for either the Group (G), the Error (E),
+or the total (T).</p>
+<p>To explain the parts of the table we talked about the formula for the
+<strong>sample variance</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mo>∑</mo><mfrac displaystyle="true"><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">s^2 = \sum \dfrac{(x_i - \bar{x})^2}{n - 1}.</annotation></semantics></math>
+So for any sample, the sum of squared deviations
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum (x_i - \bar{x})^2</annotation></semantics></math>
+is equal to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(n-1) s^2</annotation></semantics></math>.
+The idea for ANOVA is that you can break up the total sum of squares
+into the sum of squares for the groups (SSG) and the sum of squared
+error (SSE). Then when you divide these by their degrees of freedom and
+then take the ratio of the two results, you’ll get an F statistic that
+should follow an F-distribution .</p>
+<ol start="3" type="1">
+<li>Here is a table that summarizes the number of players and the mean
+and standard deviation for each group in our sample. Use it to fill in
+an ANOVA table.</li>
+</ol>
+<center>
+<table class="bordered">
+<tr>
+<td>
+Position
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Catcher
+</td>
+<td>
+39
+</td>
+<td>
+322.6
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Designated Hitter
+</td>
+<td>
+14
+</td>
+<td>
+347.8
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+In Field
+</td>
+<td>
+154
+</td>
+<td>
+331.5
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Out Field
+</td>
+<td>
+120
+</td>
+<td>
+334.3
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <table>

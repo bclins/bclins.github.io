@@ -821,6 +821,60 @@ Mon, Mar 23 | [7.5][7.5] | Comparing many means with ANOVA
 Wed, Mar 25 | [7.5][7.5] | ANOVA - con'd
 Fri, Mar 27 | [8.2][8.2] | Least squares regression
 
+### Mon, Mar 23
+
+If you are measuring a quantitative response variable for more than two groups, then **analysis of variance (ANOVA)** can let you test whether whether the means are significantly different in the different groups.  Before you get started, it helps to look at side-by-side boxplots to see if there looks like there might be a difference.  
+
+* **Example:** [One-way ANOVA: Baseball positions at bat](https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/batting.html)
+
+1. In the example above, what are the explanatory & response variables?  
+
+2. From the graph of the side-by-side boxplots, does it look like one group of baseball players might be better than others at bat?  
+
+<div class="Theorem">
+#### Analysis of Variance (ANOVA)
+
+One-way ANOVA is based on the following model.  We have $I$ groups, and we assume that each group has a normally distribution in the  population with the same standard deviation $\sigma$, but possibly different means $\mu_1, \ldots, \mu_I$.  Within this model, we test
+
+* $H_0: \mu_1 = \mu_2 = \ldots = \mu_I$ (i.e., the group means are all the same)
+* $H_A:$ the group means are not all the same.
+
+If we take a total of $N$ independent observations from the population, we can calculate an $F$-value for the data and use the **F-distribution** to find a p-value for this hypothesis test. 
+</div>
+
+In order to calculate the F-value, we use a tool called an **ANOVA table**.  The ANOVA table keeps track of different sources of variance in our data.  We get two different types of variance:
+
+* Differences between the group averages.
+* Variability within the groups.  
+
+An ANOVA table has these parts
+<center>
+<table class="bordered">
+<tr><td>Source </td><td> Degrees of Freedom </td><td> Sum of Squares </td><td> Mean Square </td><td> F</td></tr>
+<tr><td>Groups </td><td> $I-1$ </td><td> $\sum_i n_i(\bar{x}_i-\bar{x})^2$ </td><td> $\on{SSG}/\on{DFG}$ </td><td> $F = \on{MSG}/\on{MSE}$</td></tr>
+<tr><td>Error </td><td> $N-I$ </td><td> $\sum_i (n_i-1) s_i^2$ </td><td> $\on{SSE}/\on{DFE}$ </td><td> </td></tr>
+<tr><td>Total </td><td> $N-1$ </td><td> $\sum_{ij} (x_{ij}-\bar{x})^2$ </td><td> $\on{SST}/\on{DFT}$ </td><td> </td></tr>
+</table>
+</center>
+where MS stands for mean square, SS stands for sum of squares, and DF stands for degrees of freedom for either the Group (G), the Error (E), or the total (T).
+
+To explain the parts of the table we talked about the formula for the **sample variance**
+$$s^2 = \sum \dfrac{(x_i - \bar{x})^2}{n - 1}.$$
+So for any sample, the sum of squared deviations $\sum (x_i - \bar{x})^2$ is equal to $(n-1) s^2$. 
+The idea for ANOVA is that you can break up the total sum of squares into the sum of squares for the groups (SSG) and the sum of squared error (SSE).  Then when you divide these by their degrees of freedom and then take the ratio of the two results, you'll get an F statistic that should follow an F-distribution .  
+
+3. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our sample.  Use it to fill in an ANOVA table. 
+
+<center>
+<table class="bordered">
+<tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><td>Catcher </td><td>39</td><td>322.6</td><td></td></tr>
+<tr><td>Designated Hitter </td><td>14</td><td>347.8</td><td>$s$</td></tr>
+<tr><td>In Field </td><td>154</td><td>331.5</td><td>$s$</td></tr>
+<tr><td>Out Field </td><td>120</td><td>334.3</td><td>$s$</td></tr>
+</table>
+</center>
+
 
 - - - 
 
