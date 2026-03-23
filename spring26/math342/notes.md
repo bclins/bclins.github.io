@@ -1272,7 +1272,7 @@ Then we talked about some shortcuts that mathematicians uses when dealing with i
 
 4. Explain why the inner-product of an odd function with an even function must be zero in $L^2[-1, 1]$. 
 
-The Legendre polynomials on the interval $[-1,1]$ aren't the only example of an orthogonal set of functions.  Probably the most important example of an orthogonal set of functions is the set 
+The Legendre polynomials on the interval $[-1,1]$ aren't the only example of an orthogonal set of functions.  Probably the most important example of an orthogonal set of functions is the **Fourier basis** 
 $$\{\cos(n \pi x), \sin( n \pi  x) : n \in \N \} \cup \left\{ \frac{1}{\sqrt{2}} \right\}.$$
 on the interval $[-1,1]$.  Any function in $L^2[-1,1]$ can be approximated by using continuous least squares with these trig functions. Since there are an infinite number of functions in this orthonormal set, we usually stop the approximation when we reach a high enough frequency $n$.  
 
@@ -1289,7 +1289,9 @@ for every positive integer $n$?
     \sin(\alpha) \sin(\beta) &= \tfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha + \beta)] 
     \end{align*}
 
-
+7. Use [Desmos](www.desmos.com) with the orthogonal projection formula 
+$$\on{Proj}(f) = \sum_{k = 1}^n \frac{\inner{\phi_k, f}}{\inner{\phi_k, \phi_k}} \phi_k$$
+to find the projection of $f(x) = e^x$ onto the span of the Fourier basis (up to a frequency of $n = 10$). 
 
 
 

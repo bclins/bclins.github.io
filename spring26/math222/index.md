@@ -31,7 +31,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on **Friday, Mar 20**. 
+* **Midterm 2 corrections are due Friday, Mar 27**. 
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf),  [review solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)
 

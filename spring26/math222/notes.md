@@ -867,19 +867,6 @@ $$\sum_{ij} (x_{ij} - \bar{x})^2 = \underbrace{\sum_{i = 1}^I n_i (\bar{x}_i - \
 
 Then when you divide these by their degrees of freedom and then take the ratio of the two results, you'll get an F statistic that should follow an F-distribution .  
 
-3. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our sample.  Use it to fill in an ANOVA table. 
-
-<center>
-<table class="bordered">
-<tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Catcher </td><td>39</td><td>0.323</td><td>0.045</td></tr>
-<tr><td>Designated Hitter </td><td>14</td><td>0.348</td><td>0.036</td></tr>
-<tr><td>In Field </td><td>154</td><td>0.332</td><td>0.037</td></tr>
-<tr><td>Out Field </td><td>120</td><td>0.334</td><td>0.029</td></tr>
-<tr><td>All Positions</td><td>327</td><td>0.332</td><td>0.036</td></tr>
-</table>
-</center>
-
 4. Suppose that 11 nursing students just graduated.  The number of years it took to complete the program for each student is listed below.  
 
     ```
@@ -910,6 +897,22 @@ Then when you divide these by their degrees of freedom and then take the ratio o
 
 6. Make an ANOVA table for the three groups above.  Use the table to find the mean squares for the groups and the mean squared error.  Then divide them to find the F-statistic. 
 
+<!--
+### Wed, Mar 25
+
+1. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our example from Monday.  Use it to fill in an ANOVA table. 
+
+<center>
+<table class="bordered">
+<tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><td>Catcher </td><td>39</td><td>0.323</td><td>0.045</td></tr>
+<tr><td>Designated Hitter </td><td>14</td><td>0.348</td><td>0.036</td></tr>
+<tr><td>In Field </td><td>154</td><td>0.332</td><td>0.037</td></tr>
+<tr><td>Out Field </td><td>120</td><td>0.334</td><td>0.029</td></tr>
+<tr><td>All Positions</td><td>327</td><td>0.332</td><td>0.036</td></tr>
+</table>
+</center>
+-->
 
 - - - 
 

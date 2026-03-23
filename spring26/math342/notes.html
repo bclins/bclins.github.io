@@ -2434,7 +2434,7 @@ calculate the following inner-products in
 Is there a pattern for when the inner-products are zero?</li>
 </ol>
 <p>The solution to the last problem is a special orthogonal basis called
-the <strong>Legendre polynomials</strong>. If you continue the
+the (monic) <strong>Legendre polynomials</strong>. If you continue the
 Gram-Schmidt process, you can find Legendre polynomials of any
 degree.</p>
 <ol start="2" type="1">
@@ -2513,7 +2513,8 @@ function must be zero in
 <p>The Legendre polynomials on the interval
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math>
 aren’t the only example of an orthogonal set of functions. Probably the
-most important example of an orthogonal set of functions is the set
+most important example of an orthogonal set of functions is the
+<strong>Fourier basis</strong>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>π</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mo>sin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mi>π</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>:</mo><mi>n</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo><mo>∪</mo><mrow><mo stretchy="true" form="prefix">{</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo stretchy="true" form="postfix">}</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\{\cos(n \pi x), \sin( n \pi  x) : n \in \mathbb{N}\} \cup \left\{ \frac{1}{\sqrt{2}} \right\}.</annotation></semantics></math>
 on the interval
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math>.
@@ -2546,6 +2547,13 @@ are all orthogonal to each other.</p>
  \sin(\alpha) \cos(\beta) &amp;= \tfrac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha - \beta)] \\
  \sin(\alpha) \sin(\beta) &amp;= \tfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha + \beta)] 
  \end{align*}</annotation></semantics></math></p></li>
+<li><p>Use <a href="www.desmos.com">Desmos</a> with the orthogonal
+projection formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Proj</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><mrow><mo stretchy="false" form="prefix">⟨</mo><mrow><msub><mi>ϕ</mi><mi>k</mi></msub><mo>,</mo><mi>f</mi></mrow><mo stretchy="false" form="postfix">⟩</mo></mrow><mrow><mo stretchy="false" form="prefix">⟨</mo><mrow><msub><mi>ϕ</mi><mi>k</mi></msub><mo>,</mo><msub><mi>ϕ</mi><mi>k</mi></msub></mrow><mo stretchy="false" form="postfix">⟩</mo></mrow></mfrac><msub><mi>ϕ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\operatorname{Proj}(f) = \sum_{k = 1}^n \frac{\langle {\phi_k, f} \rangle}{\langle {\phi_k, \phi_k} \rangle} \phi_k</annotation></semantics></math>
+to find the projection of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><annotation encoding="application/x-tex">f(x) = e^x</annotation></semantics></math>
+onto the span of the Fourier basis (up to a frequency of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">n = 10</annotation></semantics></math>).</p></li>
 </ol>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
