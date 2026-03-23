@@ -861,19 +861,54 @@ where MS stands for mean square, SS stands for sum of squares, and DF stands for
 To explain the parts of the table we talked about the formula for the **sample variance**
 $$s^2 = \sum \dfrac{(x_i - \bar{x})^2}{n - 1}.$$
 So for any sample, the sum of squared deviations $\sum (x_i - \bar{x})^2$ is equal to $(n-1) s^2$. 
-The idea for ANOVA is that you can break up the total sum of squares into the sum of squares for the groups (SSG) and the sum of squared error (SSE).  Then when you divide these by their degrees of freedom and then take the ratio of the two results, you'll get an F statistic that should follow an F-distribution .  
+The idea for ANOVA is that you can break up the total sum of squares into the sum of squares for the groups (SSG) and the sum of squared error (SSE).  
+$$\sum_{ij} (x_{ij} - \bar{x})^2 = \underbrace{\sum_{i = 1}^I n_i (\bar{x}_i - \bar{x})^2}_{\text{Between Group Differences}} + \underbrace{\sum_{i = 1}^I \sum_{j = 1}^{n_i} (x_{ij} - \bar{x}_i)^2}_{\text{Within Group Differences}}$$
+
+
+Then when you divide these by their degrees of freedom and then take the ratio of the two results, you'll get an F statistic that should follow an F-distribution .  
 
 3. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our sample.  Use it to fill in an ANOVA table. 
 
 <center>
 <table class="bordered">
 <tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
-<tr><td>Catcher </td><td>39</td><td>322.6</td><td></td></tr>
-<tr><td>Designated Hitter </td><td>14</td><td>347.8</td><td>$s$</td></tr>
-<tr><td>In Field </td><td>154</td><td>331.5</td><td>$s$</td></tr>
-<tr><td>Out Field </td><td>120</td><td>334.3</td><td>$s$</td></tr>
+<tr><td>Catcher </td><td>39</td><td>0.323</td><td>0.045</td></tr>
+<tr><td>Designated Hitter </td><td>14</td><td>0.348</td><td>0.036</td></tr>
+<tr><td>In Field </td><td>154</td><td>0.332</td><td>0.037</td></tr>
+<tr><td>Out Field </td><td>120</td><td>0.334</td><td>0.029</td></tr>
+<tr><td>All Positions</td><td>327</td><td>0.332</td><td>0.036</td></tr>
 </table>
 </center>
+
+4. Suppose that 11 nursing students just graduated.  The number of years it took to complete the program for each student is listed below.  
+
+    ```
+        3   3   3   3   4   4   4   4   5   5   6
+    ```
+
+    Find the sample mean and the sample standard deviation for this data. 
+
+5. Suppose that the nursing students were split into three groups.  The time it took the students in each group to graduate is listed below:
+
+    ```
+        Group 1:    3   3   3   3   4    (Average: 3.2, Variance: 0.2)
+        Group 2:    4   4   4   5        (Average: 4.25, Variance: 0.25)
+        Group 3:    5   6                (Average 5.5, Variance: 0.5) 
+    ```
+
+    Calculate the sample standard deviations for each group. 
+
+
+<!--
+    ```
+        Group 1:    3   3   3   4    (Average: 3.25)
+        Group 2:    4   4   5        (Average: 4.333)
+        Group 3:    3   4   5   6    (Average 4.5) 
+    ```
+-->
+
+
+6. Make an ANOVA table for the three groups above.  Use the table to find the mean squares for the groups and the mean squared error.  Then divide them to find the F-statistic. 
 
 
 - - - 

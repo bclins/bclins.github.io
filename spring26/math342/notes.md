@@ -16,6 +16,7 @@ header-includes: |
 \newcommand{\on}{\operatorname}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\inner}[1]{\langle {#1} \rangle}
 
 ## Math 342 - Spring 2026
@@ -1236,9 +1237,11 @@ $$\on{Proj}_V(f) = \sum_{k = 1}^n \frac{\inner{f, \phi_k}}{\inner{\phi_k, \phi_k
 
     Is there a pattern for when the inner-products are zero?
 
-The solution to the last problem is a special orthogonal basis called the **Legendre polynomials**.  If you continue the Gram-Schmidt process, you can find Legendre polynomials of any degree. 
+The solution to the last problem is a special orthogonal basis called the (monic) **Legendre polynomials**.  If you continue the Gram-Schmidt process, you can find Legendre polynomials of any degree. 
 
 2. Use the Legendre polynomials to find the orthogonal projection of the function $f(x) = e^x$ onto the 2nd degree polynomials in $L^2[-1,1]$. 
+
+
 
 - - - 
 
@@ -1249,6 +1252,45 @@ Day  | Topic
 Mon, Mar 23 | Orthogonal functions
 Wed, Mar 25 | Fourier series
 Fri, Mar 27 | Polynomial interpolation
+
+### Mon, Mar 23
+
+We started with this example that we didn't have time to finish in class last time:
+
+1. Use the Legendre polynomials to find the orthogonal projection of the function $f(x) = e^x$ onto the 2nd degree polynomials in $L^2[-1,1]$. 
+
+Then we talked about some shortcuts that mathematicians uses when dealing with integrals.
+
+* A function $f(x)$ is **even** if $f(-x) = f(x)$ for all $x$ in the domain. 
+* A function $f(x)$ is **odd** if $f(-x) = -f(x)$ for all $x$ in the domain. 
+
+1. If $f(x)$ is odd, then what is $\int_{-1}^1 f(x) \, dx$?  
+
+2. When is a polynomial an odd function?  When is a polynomial an even function?  
+
+3. What happens when you multiply two even functions?  What about two odd functions?  What happens if you multiply an even function with an odd function? 
+
+4. Explain why the inner-product of an odd function with an even function must be zero in $L^2[-1, 1]$. 
+
+The Legendre polynomials on the interval $[-1,1]$ aren't the only example of an orthogonal set of functions.  Probably the most important example of an orthogonal set of functions is the set 
+$$\{\cos(n \pi x), \sin( n \pi  x) : n \in \N \} \cup \left\{ \frac{1}{\sqrt{2}} \right\}.$$
+on the interval $[-1,1]$.  Any function in $L^2[-1,1]$ can be approximated by using continuous least squares with these trig functions. Since there are an infinite number of functions in this orthonormal set, we usually stop the approximation when we reach a high enough frequency $n$.  
+
+5. Look at the graphs of $\sin (n \pi x)$ and $\cos( n \pi x)$ for different values of $n$.  Why is 
+$$\int_{-1}^1 \cos (n \pi x) \, dx = \int_{-1}^1 \sin (n \pi x) \, dx = 0$$
+for every positive integer $n$? 
+
+6. Use the trig product formulas below to explain why the functions $\cos(n \pi x)$ and $\sin(n \pi x)$ are all orthogonal to each other. 
+
+    \begin{align*}
+    \cos(\alpha) \cos(\beta) &= \tfrac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha - \beta)] \\
+    \cos(\alpha) \sin(\beta) &= \tfrac{1}{2}[\sin(\alpha+\beta)+\sin(\beta - \alpha)] \\
+    \sin(\alpha) \cos(\beta) &= \tfrac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha - \beta)] \\
+    \sin(\alpha) \sin(\beta) &= \tfrac{1}{2}[\cos(\alpha-\beta)-\cos(\alpha + \beta)] 
+    \end{align*}
+
+
+
 
 
 - - - 
