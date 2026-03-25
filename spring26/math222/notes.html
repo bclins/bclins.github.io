@@ -1972,11 +1972,27 @@ below:</p>
 find the mean squares for the groups and the mean squared error. Then
 divide them to find the F-statistic.</li>
 </ol>
+<h3 id="wed-mar-25">Wed, Mar 25</h3>
+<p>We started with this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Examples/ANOVA.pdf">ANOVA</a></li>
+</ul>
+<p>We finished by talking about the conditions for doing an ANOVA
+F-test.</p>
+<ul>
+<li><strong>Independence</strong> - Ideally, your sample should be a SRS
+of less than 10% of the population.</li>
+<li><strong>Normality</strong> - Check histograms or qqplots for each
+group (less important if the sample sizes are large).</li>
+<li><strong>Constant Variance</strong> - If the largest sample standard
+deviation is no more than twice the smallest sample standard deviation,
+that is a good sign.</li>
+</ul>
+<p>You can use the <code>aggregate(y ~ x, data = df, FUN = sd)</code>
+function in R to get a table of all of the sample standard deviations
+for each group to check the last condition.</p>
 <!--
-### Wed, Mar 25
-
-1. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our example from Monday.  Use it to fill in an ANOVA table. 
-
 <center>
 <table class="bordered">
 <tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>

@@ -1293,7 +1293,9 @@ for every positive integer $n$?
 $$\on{Proj}(f) = \sum_{k = 1}^n \frac{\inner{\phi_k, f}}{\inner{\phi_k, \phi_k}} \phi_k$$
 to find the projection of $f(x) = e^x$ onto the span of the Fourier basis (up to a frequency of $n = 10$). 
 
+### Wed, Mar 25
 
+* **Workshop**: [Fourier series](Workshops/FourierSeries.pdf)
 
 - - - 
 

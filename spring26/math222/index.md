@@ -48,7 +48,7 @@ Week | Topic                      | Notes | Projects
 7  | Inference about means                          | [Week 07](notes.html#week-7-notes)  |
 8  | Analysis of variance                           | [Week 08](notes.html#week-8-notes)  | [Project 3](Projects/project3.pdf)
 9  | More ANOVA, **Midterm 2**                      | [Week 09](notes.html#week-9-notes)  |
-10 | Least squares regression                       | [Week 10](notes.html#week-10-notes) | 
+10 | Least squares regression                       | [Week 10](notes.html#week-10-notes) | [Project 4](Projects/project4.pdf)
 11 | Logistic regression                            | [Week 11](notes.html#week-11-notes) | 
 12 | Simulation methods                             | [Week 12](notes.html#week-12-notes) |
 13 | Bayesian statistics, **Midterm 3**             | [Week 13](notes.html#week-13-notes) |

@@ -1,0 +1,48 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{soul}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\Var}{\operatorname{Var}}
+
+\begin{document}
+\subsection*{Midterm 3 Review \hfill Math 222}
+
+\textit{These are problems similar to the ones that might be on midterm 3. Be sure to also review class workshops and problems from the textbook.}
+
+\begin{questions}
+\question A 2003 study (North, Shilcock, \& Hargreaves) looked at whether background music in a restaurant affected the amount of money that diners spent on their meals. The researchers asked a restaurant to alternate classical music, popular music, and silence on successive nights over 18 days. The following summary statistics were reported:
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+~ & Classical Music & Pop Music & No Music \\ \hline
+Mean & \pounds24.13 & £21.91 & £21.70 \\ 
+SD & £2.243 & £2.627 & £3.332 \\ 
+Sample size & 120 & 142 & 131 \\ \hline
+\end{tabular}
+\end{center}
+\begin{parts}
+\part There were a total of 393 customers at the restaurant.  What was the overall average amount of money spent by these customers? 
+
+\part Use a calculator to find the SSG and SSE for this data, and then make an ANOVA table for this data including the F-statistic.   
+
+\part Use the R command \verb|1 - pf(x, df1, df2)| to write down an expression for the p-value in this situation. 
+
+\part What additional information would you need before you can safely draw conclusions from this p-value?
+
+\part Why might the independence assumption not be satisfied in this example? 
+
+\end{parts}
+
+\question OpenIntro (\url{https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.39}) is a good exercise.
+
+\end{questions}
+
+
+\end{document}

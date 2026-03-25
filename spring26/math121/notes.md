@@ -828,8 +828,7 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 
 2. This year 7 out of 25 (28%) of the students in our statistics class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
-<!--
-### Wed, Oct 29
+### Wed, Mar 25
 
 On Monday we introduced hypothesis testing:
 
@@ -843,8 +842,6 @@ On Monday we introduced hypothesis testing:
 </table>
 </center>
 
-<!--Needs a large enough sample so that the expected number of successes $p_0 N$ and the expected number of failures $(1-p_0)N$ are both at least 10.-->
-<!--
 </div>
 
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
@@ -868,8 +865,8 @@ We talked about how the null hypotheses must give a *specific* value for the par
 4. Results are probably not a random fluke.
 </div>
 
-<!--Notice that all of the items on the list above are statistics jargon except the last. -->
-<!--
+Notice that all of the items on the list above are statistics jargon except the last. -->
+
 **Watch out:** When the evidence is weak, we don't accept the null hypothesis.  We just say the results are inconclusive and we fail to reject the null hypothesis.
 
 We finished with these exercises from the book.
@@ -884,6 +881,7 @@ The only difference is when you calculate the p-value, you use two tails of the 
 
 3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
+<!--
 ### Fri, Oct 31
 
 One thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  

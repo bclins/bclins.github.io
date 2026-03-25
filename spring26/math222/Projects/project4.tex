@@ -1,0 +1,67 @@
+\documentclass[11pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{color, soul}
+
+\begin{document}
+\subsection*{Math 222 - Project 4 \hfill Due Friday, April 3}
+
+\begin{questions}
+
+\question The file 
+{\footnotesize
+\url{https://bclins.github.io/spring26/math222/CalculusGrades.csv}
+}
+contains grade data from my calculus classes (Math 141, 142, and 242) from 2013 to 2020.  
+
+\begin{parts}
+\item Make side-by-side boxplots to show the grade distribution for each of the three courses. 
+\item Which course looks like it has the highest grades?  Which has the lowest grades? 
+\item Use one-way ANOVA to see if there is significant evidence of a difference in average grades for the three calculus courses.  Clearly explain your conclusions.
+\part Careful analyze whether the conditions for an ANOVA F-test are satisfied.  Include any additional graphs and tables that you need, and clearly explain your findings. 
+\part What are the results if you just use a two-sample t-test to compare MATH 141 grades versus MATH 242?  Is there a significant difference?  Is that a big deal?  Explain. 
+\end{parts}
+
+\question The link {\footnotesize
+\url{http://people.hsc.edu/faculty-staff/blins/classes/spring17/math222/data/bat10.txt}}
+contains data from 327 Major League baseball players from one season.  The variable \verb|HR| is the number of home runs hit by each player. 
+\begin{parts}
+\part Make a graph to visualize how the number of home runs differs for the four different types of position (catchers, designated hitters, in-field, and out-field). 
+\part Does it appear that there are significant differences in the average number of home runs for the different positions? Do an ANOVA test and explain your results. 
+\part Use the Tukey's Honest Significant Differences command in R to make confidence intervals for the differences between the average number of home runs for each pair of positions.  Which pairs of positions are clearly better?  How much better are they?  
+\part Careful analyze whether the conditions for an ANOVA F-test are satisfied.  Include any additional graphs and tables that you need, and clearly explain your findings. 
+\end{parts}
+
+
+%\question Dansinger, Griffith, Gleason et al. (2005) report on a randomized, comparative experiment in which 160
+%subjects were randomly assigned to one of four popular diet plans: Atkins, Ornish, Weight Watchers,
+%and Zone (40 subjects per diet). These subjects were recruited through newspaper and television
+%advertisements in the greater Boston area; all were overweight or obese with body mass index values
+%between 27 and 42. Among the variables measured were
+%\begin{itemize}
+%\item Which diet the subject was assigned to
+%\item Whether or not the subject completed the twelve-month study
+%\item The subject’s weight loss after two months, six months, and twelve months (in kilograms, with a negative value indicating weight gain)
+%\item The degree to which the subject adhered to the assigned diet, taken as the average of 12 monthly
+%ratings, each on a 1-10 scale (with 1 indicating complete non-adherence and 10 indicating full
+%adherence)
+%\end{itemize}
+%Data for the 93 subjects who completed the 12-month study are in the file \href{http://people.hsc.edu/faculty-staff/blins/classes/spring16/math222/data/ComparingDiets.csv}{ComparingDiets.csv}.
+%Some of the questions that the researchers studied are:
+%\begin{parts}
+%\item Do the average weight losses after 12 months differ significantly across the four diet plans?
+%\item Is there a significant difference in the completion/dropout rates across the four diet plans?
+%\item \hl{Is there a significant positive association between a subject’s adherence level and his/her amount of weight loss?}
+%\item Is there strong evidence that dieters actually tend to lose weight on one of these popular diet plans?
+%\end{parts}
+%For each of these research questions, first identify the explanatory variable and the response variable,
+%and classify each as categorical or quantitative. Then use graphical and numerical summaries to
+%investigate the question, and summarize your findings. Next, identify the inference technique that can
+%be used to address the question, and apply that technique. Be sure to include all aspects of the
+%procedure, including a check of its technical conditions. Finally, summarize your conclusions for each
+%question. Write a paragraph summarizing your findings from these four analyses. [Hint: To determine
+%the completion rate for each diet, count how many of the 93 subjects who completed the study are in
+%each diet group and compare those counts to the 40 that were originally assigned to each diet.]
+\end{questions}
+\end{document}

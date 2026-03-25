@@ -897,11 +897,21 @@ Then when you divide these by their degrees of freedom and then take the ratio o
 
 6. Make an ANOVA table for the three groups above.  Use the table to find the mean squares for the groups and the mean squared error.  Then divide them to find the F-statistic. 
 
-<!--
 ### Wed, Mar 25
 
-1. Here is a table that summarizes the number of players and the mean and standard deviation for each group in our example from Monday.  Use it to fill in an ANOVA table. 
+We started with this workshop. 
 
+* **Workshop:** [ANOVA](Examples/ANOVA.pdf)
+
+We finished by talking about the conditions for doing an ANOVA F-test.  
+
+* **Independence** - Ideally, your sample should be a SRS of less than 10% of the population.
+* **Normality** - Check histograms or qqplots for each group (less important if the sample sizes are large).
+* **Constant Variance** - If the largest sample standard deviation is no more than twice the smallest sample standard deviation, that is a good sign.
+
+You can use the `aggregate(y ~ x, data = df, FUN = sd)` function in R to get a table of all of the sample standard deviations for each group to check the last condition. 
+
+<!--
 <center>
 <table class="bordered">
 <tr><td>Position </td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
@@ -923,6 +933,7 @@ Day  | Section  | Topic
 Mon, Mar 30 | [9.1][9.1] | Introduction to multiple regression 
 Wed, Apr 1  | [9.2][9.2] | Model selection
 Fri, Apr 3  | [9.3][9.3] | Checking model conditions
+
 
 
 - - - 
