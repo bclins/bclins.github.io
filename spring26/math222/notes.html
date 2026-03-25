@@ -1802,8 +1802,8 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <tr class="odd">
 <td style="text-align: center;">Fri, Mar 27</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2">8.2</a></td>
-<td style="text-align: left;">Least squares regression</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.5.6">7.5.6</a></td>
+<td style="text-align: left;">Multiple comparisons</td>
 </tr>
 </tbody>
 </table>
@@ -1978,8 +1978,7 @@ divide them to find the F-statistic.</li>
 <li><strong>Workshop:</strong> <a
 href="Examples/ANOVA.pdf">ANOVA</a></li>
 </ul>
-<p>We finished by talking about the conditions for doing an ANOVA
-F-test.</p>
+<p>In order to trust ANOVA, you need to check these conditions.</p>
 <ul>
 <li><strong>Independence</strong> - Ideally, your sample should be a SRS
 of less than 10% of the population.</li>
@@ -1992,6 +1991,25 @@ that is a good sign.</li>
 <p>You can use the <code>aggregate(y ~ x, data = df, FUN = sd)</code>
 function in R to get a table of all of the sample standard deviations
 for each group to check the last condition.</p>
+<ol type="1">
+<li>Assuming that the conditions above are satisfied, which entry of the
+ANOVA table would be the best to estimate the one constant population
+variance
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math>)
+that the groups all share?</li>
+</ol>
+<p>After you get a statistically significant F-value in an ANOVA test,
+you can start to dig deeper in your data to see if there are
+statistically significant differences between pairs of groups. But there
+are a couple things to keep in mind. First, in the ANOVA framework, the
+Mean Squared Error (MSE) is the best estimator for the variance of each
+group. So when you calculate a t-value to compare two groups, you use:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>j</mi></msub></mrow><msqrt><mrow><mfrac><mtext mathvariant="normal">MSE</mtext><msub><mi>n</mi><mi>i</mi></msub></mfrac><mo>+</mo><mfrac><mtext mathvariant="normal">MSE</mtext><msub><mi>n</mi><mi>j</mi></msub></mfrac></mrow></msqrt></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>j</mi></msub></mrow><msqrt><mrow><mtext mathvariant="normal">MSE</mtext><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>i</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>j</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">t = \dfrac{\bar{x}_i - \bar{x}_j}{\sqrt{\frac{\text{MSE}}{n_i} + \frac{\text{MSE}}{n_j}}} = \dfrac{\bar{x}_i - \bar{x}_j}{\sqrt{\text{MSE} \left( \frac{1}{n_i} + \frac{1}{n_j} \right)}}</annotation></semantics></math>
+instead of the usual two-sample t-value. Keep in mind that this will
+have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">DFE</mtext><mo>=</mo><mi>N</mi><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">\text{DFE} = N - I</annotation></semantics></math>
+degrees of freedom, instead of the more complicated degrees of freedom
+when you don’t have equal variances.</p>
 <!--
 <center>
 <table class="bordered">
@@ -2018,25 +2036,56 @@ for each group to check the last condition.</p>
 <tr class="odd">
 <td style="text-align: center;">Mon, Mar 30</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
-<td style="text-align: left;">Introduction to multiple regression</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2">8.2</a></td>
+<td style="text-align: left;">Least squares regression</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 1</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
-<td style="text-align: left;">Model selection</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
+<td style="text-align: left;">Introduction to multiple regression</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 3</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
-<td style="text-align: left;">Checking model conditions</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
+<td style="text-align: left;">Model selection</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Apr 6</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
+<td style="text-align: left;">Checking model conditions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Apr 8</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
+<td style="text-align: left;">Introduction to logistic regression</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Apr 10</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
+<td style="text-align: left;">Logistic regression - con’d</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
 <colgroup>
 <col style="width: 19%" />
@@ -2052,40 +2101,9 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Mon, Apr 6</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
-<td style="text-align: left;">Introduction to logistic regression</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Wed, Apr 8</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
-<td style="text-align: left;">Logistic regression - con’d</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Fri, Apr 10</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Hypothesis testing with randomization</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="week-13-notes">Week 13 Notes</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Day</th>
-<th style="text-align: center;">Section</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 <td style="text-align: center;">Mon, Apr 13</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Confidence intervals with
-bootstrapping</td>
+<td style="text-align: left;">Hypothesis testing with randomization</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 15</td>
@@ -2113,17 +2131,18 @@ bootstrapping</td>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 20</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Introduction to Bayesian methods</td>
+<td style="text-align: left;">Confidence intervals with
+bootstrapping</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 22</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Credible intervals for proportions</td>
+<td style="text-align: left;">Introduction to Bayesian methods</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 24</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Bayesian inference</td>
+<td style="text-align: left;">Credible intervals for proportions</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Mon, Apr 27</td>

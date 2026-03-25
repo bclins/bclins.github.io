@@ -865,7 +865,7 @@ We talked about how the null hypotheses must give a *specific* value for the par
 4. Results are probably not a random fluke.
 </div>
 
-Notice that all of the items on the list above are statistics jargon except the last. -->
+Notice that all of the items on the list above are statistics jargon except the last.
 
 **Watch out:** When the evidence is weak, we don't accept the null hypothesis.  We just say the results are inconclusive and we fail to reject the null hypothesis.
 

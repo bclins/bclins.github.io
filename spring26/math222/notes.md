@@ -819,7 +819,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Mar 23 | [7.5][7.5] | Comparing many means with ANOVA
 Wed, Mar 25 | [7.5][7.5] | ANOVA - con'd
-Fri, Mar 27 | [8.2][8.2] | Least squares regression
+Fri, Mar 27 | [7.5.6][7.5.6] | Multiple comparisons
 
 ### Mon, Mar 23
 
@@ -903,13 +903,19 @@ We started with this workshop.
 
 * **Workshop:** [ANOVA](Examples/ANOVA.pdf)
 
-We finished by talking about the conditions for doing an ANOVA F-test.  
+In order to trust ANOVA, you need to check these conditions.
 
 * **Independence** - Ideally, your sample should be a SRS of less than 10% of the population.
 * **Normality** - Check histograms or qqplots for each group (less important if the sample sizes are large).
 * **Constant Variance** - If the largest sample standard deviation is no more than twice the smallest sample standard deviation, that is a good sign.
 
 You can use the `aggregate(y ~ x, data = df, FUN = sd)` function in R to get a table of all of the sample standard deviations for each group to check the last condition. 
+
+1. Assuming that the conditions above are satisfied, which entry of the ANOVA table would be the best to estimate the one constant population variance ($\sigma^2$) that the groups all share?  
+
+After you get a statistically significant F-value in an ANOVA test, you can start to dig deeper in your data to see if there are statistically significant differences between pairs of groups.  But there are a couple things to keep in mind.  First, in the ANOVA framework, the Mean Squared Error (MSE) is the best estimator for the variance of each group.  So when you calculate a t-value to compare two groups, you use:
+$$t = \dfrac{\bar{x}_i - \bar{x}_j}{\sqrt{\frac{\text{MSE}}{n_i} + \frac{\text{MSE}}{n_j}}} = \dfrac{\bar{x}_i - \bar{x}_j}{\sqrt{\text{MSE} \left( \frac{1}{n_i} + \frac{1}{n_j} \right)}}$$
+instead of the usual two-sample t-value.  Keep in mind that this will have $\text{DFE} = N - I$  degrees of freedom, instead of the more complicated degrees of freedom when you don't have equal variances.  
 
 <!--
 <center>
@@ -930,9 +936,9 @@ You can use the `aggregate(y ~ x, data = df, FUN = sd)` function in R to get a t
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Mar 30 | [9.1][9.1] | Introduction to multiple regression 
-Wed, Apr 1  | [9.2][9.2] | Model selection
-Fri, Apr 3  | [9.3][9.3] | Checking model conditions
+Mon, Mar 30 | [8.2][8.2] | Least squares regression
+Wed, Apr 1  | [9.1][9.1] | Introduction to multiple regression 
+Fri, Apr 3  | [9.2][9.2] | Model selection
 
 
 
@@ -942,9 +948,9 @@ Fri, Apr 3  | [9.3][9.3] | Checking model conditions
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 6  |  [9.5][9.5] | Introduction to logistic regression
-Wed, Apr 8  |  [9.5][9.5] | Logistic regression - con'd     
-Fri, Apr 10 |       | Hypothesis testing with randomization                 
+Mon, Apr 6  |  [9.3][9.3] | Checking model conditions
+Wed, Apr 8  |  [9.5][9.5] | Introduction to logistic regression
+Fri, Apr 10 |  [9.5][9.5] | Logistic regression - con'd    
 
 
 - - - 
@@ -953,7 +959,7 @@ Fri, Apr 10 |       | Hypothesis testing with randomization
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 13 |            | Confidence intervals with bootstrapping
+Mon, Apr 13 |            | Hypothesis testing with randomization                 
 Wed, Apr 15 |            | Review
 Fri, Apr 17 |            | **Midterm 3**
 
@@ -964,10 +970,10 @@ Fri, Apr 17 |            | **Midterm 3**
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 20 |    | Introduction to Bayesian methods
-Wed, Apr 22 |    | Credible intervals for proportions
-Fri, Apr 24 |    | Bayesian inference 
-Mon, Apr 27 |  | Last day, recap & review
+Mon, Apr 20 |    | Confidence intervals with bootstrapping
+Wed, Apr 22 |    | Introduction to Bayesian methods
+Fri, Apr 24 |    | Credible intervals for proportions
+Mon, Apr 27 |    | Last day, recap & review
 
 
 - - - 
@@ -1009,6 +1015,7 @@ Mon, Apr 27 |  | Last day, recap & review
 [7.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.3>
 [7.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.4>
 [7.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.5>
+[7.5.6]: <https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.5.6>
 [8.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.1>
 [8.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.8.1.4>
 [8.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2>
