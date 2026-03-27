@@ -42,6 +42,7 @@ header-includes: |
 * [Two sample t-test](https://bclins.github.io/spring26/math222/Examples/ComparingMeans.html)
 * [Log transform of quantitative data](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/turbidity.html)
 * [One-way ANOVA](https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/batting.html)
+* [ANOVA: Pairwise Comparisons](https://bclins.github.io/spring26/math222/Examples/PairwiseComparisons.html)
 
 
 <br>

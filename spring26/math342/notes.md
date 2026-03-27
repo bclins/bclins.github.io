@@ -1133,7 +1133,7 @@ Today we talked some more about least squares regression. We started with this e
     plot(years, deaths, '.')
     title("Lightning Fatalities per Year")
     ```
-    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJxFkLFqAzEMhvdA3sFkuQRCsWT5LOWna6e-QCkdDnokB0caEi95-8h3QwdJn_QjyfJzHO6P8B7Icjxx5Nhhu_kdh3pp1W8mA4uCiUGSwRxBSs7m0TmKxwRiW2vZuc__OUWormnyNubFzLvYrU312AZSD1NoaZp7ihGWYATNKAozKKM4C0qCECSht6b6SmGIQHpkapAX1fclhZRWZ0US-Cu4X3xawFU_wYHQ7io_fvtt_qv7Z_uVY1j_4Ri6t-6w3dSpzuN-9zmdL_U6Xc_hY6jDPNVpfITbeA9f3rQ7vADwBFCR&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJxFkLFqAzEMhvdA3sFkuQRCsWT5LOWna6e-QCkdDnokB0caEi95-8h3QwdJn_QjyfJzHO6P8B7Icjxx5Nhhu_kdh3pp1W8mA4uCiUGSwRxBSs7m0TmKxwRiW2vZuc__OUWormnyNubFzLvYrU312AZSD1NoaZp7ihGWYATNKAozKKM4C0qCECSht6b6SmGIQHpkapAX1fclhZRWZ0US-Cu4X3xawFU_wYHQ7io_fvtt_qv7Z_uVY1j_4Ri6t-6w3dSpzuN-9zmdL_U6Xc_hY6jDPNVpfITbeA9f3rQ7vADwBFCR&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell link</a></figcaption>
     <figure>
 
 In the last example we used the normal equations $X^T X \mathbf{b} = X^T \mathbf{y}$ to find $\mathbf{b}$.  
@@ -1177,7 +1177,7 @@ $$\hat{y} = b_0 + b_1 x + b_2 \cos\left( \dfrac{2\pi x}{365} \right) + b_3 \sin 
     plot(days, temps, '.')
     title("Farmville 2019 High Temperatures")
     ```
-    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJxNVMtqXDEM3RfyD5dsJoFQ_JBluyLb0A_ornQxkEszMKFhMi3076NzbNOCuNjS0dHjSn4-_n3fHrf4JWs52M2n6_76BsV3FXMpwUq2kqx0K80kmhaTbpIguVj2rxIWLTvGzwKBqcBLq4m7KCVQEpBZ4KLZtFtVq35uuII5I1CuCK2J7hHf3MjsiTlJZTIO4FeGqTM6ryKkErC5HsiAEvxQBbFKZbaJBY4SlBgH67R6sbUQz1Z4RD_jyoRrsxaoUYiy2JpA4taWITWDBPo8NS0B416N1bViTSkDX8jWrUWS0xHkysxHUPdt1hO9wtTg6soCQj9DKpEUxziVgxszBGdFCOh1fttgCKRlCKTaSBiYZ11RMgSHyDOVsGb6OrJDYA1IaeD7SMxTVYshwOapIKr8Bx2MgYzKKwv4Fy8t6jjB3rU-cqpkH2HYCNTG_4eGllkJrGGJsNG6mCvJhb3LqyOJv6GTqq880yy1y-qILKuzdf5djprzY1yE7hUNVZlNHzumOgdOdc1KwICOEcE8KZV9jSynGZgMEzZhACJG2ZfEJx7D2iiVK-Hjzm30lQBJ50B3Kiv3TYhUagoO2KiIVdc4Fx7rRxlIxB1RCsGJK1TWTjYuT_zhb8rb-df17tkfmoeNz8vDdvh8uPe35nQ973e3T8fL65_T-bxvKcS-fT39fNm-OW6_HK-_L_v77f0HE6gJNQ==&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+    <figcaption style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJxNVMtqXDEM3RfyD5dsJoFQ_JBluyLb0A_ornQxkEszMKFhMi3076NzbNOCuNjS0dHjSn4-_n3fHrf4JWs52M2n6_76BsV3FXMpwUq2kqx0K80kmhaTbpIguVj2rxIWLTvGzwKBqcBLq4m7KCVQEpBZ4KLZtFtVq35uuII5I1CuCK2J7hHf3MjsiTlJZTIO4FeGqTM6ryKkErC5HsiAEvxQBbFKZbaJBY4SlBgH67R6sbUQz1Z4RD_jyoRrsxaoUYiy2JpA4taWITWDBPo8NS0B416N1bViTSkDX8jWrUWS0xHkysxHUPdt1hO9wtTg6soCQj9DKpEUxziVgxszBGdFCOh1fttgCKRlCKTaSBiYZ11RMgSHyDOVsGb6OrJDYA1IaeD7SMxTVYshwOapIKr8Bx2MgYzKKwv4Fy8t6jjB3rU-cqpkH2HYCNTG_4eGllkJrGGJsNG6mCvJhb3LqyOJv6GTqq880yy1y-qILKuzdf5djprzY1yE7hUNVZlNHzumOgdOdc1KwICOEcE8KZV9jSynGZgMEzZhACJG2ZfEJx7D2iiVK-Hjzm30lQBJ50B3Kiv3TYhUagoO2KiIVdc4Fx7rRxlIxB1RCsGJK1TWTjYuT_zhb8rb-df17tkfmoeNz8vDdvh8uPe35nQ973e3T8fL65_T-bxvKcS-fT39fNm-OW6_HK-_L_v77f0HE6gJNQ==&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell link</a></figcaption>
     <figure>
 
 
@@ -1304,24 +1304,28 @@ Today we started talking about **polynomial interpolation**. An **interpolating 
 <center>
 <figure style="display:table">
 <iframe src="https://www.desmos.com/calculator/jad4nrxwt1?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
-<figcaption style="text-align:left"><a href="https://www.desmos.com/calculator/jad4nrxwt1">Desmos link</a></figcaption>
+<figcaption style="text-align:right"><a href="https://www.desmos.com/calculator/jad4nrxwt1">Desmos link</a></figcaption>
 </figure>
 </center>
 
 In interpolation, the x-values are called **nodes** and the y-values are called **values**.
 
+<div class="Theorem">
+**Theorem.** For any set of $n+1$ different nodes and $n+1$ values, there is a unique $n$-th degree interpolating polynomial $p(x)$ that hits those values at those nodes. 
+</div>
+
 In order to find the interpolating polynomial, we used [Vandermonde matrices](https://en.wikipedia.org/wiki/Vandermonde_matrix) again.
-For any set of fixed $x$-values, $x_0, x_1, \ldots, x_n$, the **Vandermonde matrix** for those values is the matrix $V \in \R^{(n+1) \times (n+1)}$ such that the entry $V_{ij}$ in row $i$ and column $j$ is $x_i^j.$
+For any set of fixed nodes $x_0, x_1, \ldots, x_n$, the **Vandermonde matrix** for those nodes is the matrix $V \in \R^{(n+1) \times (n+1)}$ such that the entry $V_{ij}$ in row $i$ and column $j$ is $x_i^j.$
 In other words, $V$ looks like 
 $$V = \begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
 \end{pmatrix}$$
 Notice that when working with Vandermonde matrices, we always start counting the rows and columns with $i,j = 0$. 
 
-Using the Vandermonde matrix $V$, we can find an $n$-th degree polynomial 
-$$p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n$$
-that passes through the points $(x_0,y_0), (x_1,y_1), \ldots (x_n,y_n)$ by solving the system $Va = y$ where $a = (a_0, a_1, \ldots, a_n)$ is the vector of coefficients and $y = (y_0, y_1, \ldots y_n)$ is the vector with $y$-values corresponding to each $x_i$. That is, we want to solve the following system of linear equations:
+Using the Vandermonde matrix $V$, we can find an $n$-th degree interpolating polynomial 
+$$p(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_n x^n$$
+by solving the system $V\mathbf{b} = \mathbf{y}$ where $\mathbf{b} = (b_0, b_1, \ldots, b_n)$ is the vector of coefficients and $\mathbf{y} = (y_0, y_1, \ldots y_n)$ is the vector of $y$-values corresponding to each node $x_i$. That is, we want to solve the following system of linear equations:
 $$\begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
-\end{pmatrix} \begin{pmatrix} a_0 \\ a_1 \\ \vdots \\ a_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.$$
+\end{pmatrix} \begin{pmatrix} b_0 \\ b_1 \\ \vdots \\ b_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.$$
 
 
 Here is Octave code to get the Vandermonde matrix and solve for the coefficients of the interpolating polynomial. 
@@ -1330,9 +1334,9 @@ Here is Octave code to get the Vandermonde matrix and solve for the coefficients
 ```octave
 V = fliplr(vander([-1,0,1,5]))
 y = [-4; 3; 0; 8]
-a = V \ y 
+b = V \ y 
 ```
-<figcaption  style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJwLU7BVSMvJLMgp0ihLzEtJLdKI1jXUMdAx1DGN1dTk5aoEykfrmlgrGFsrGFgrWMTyciUChcIUYhQqFZQVEhUyixWiQZKG1gq6pkAqFgBvshOh&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+<figcaption  style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJwLU7BVSMvJLMgp0ihLzEtJLdKI1jXUMdAx1DGN1dTk5aoEykfrmlgrGFsrGFgrWMTyciUBhcIUYhQqAfFSDuI=&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell link</a></figcaption>
 </figure>
 
 Therefore the solution is 
@@ -1347,19 +1351,40 @@ After that example, we did the following examples in class.
 
 So far, we have found interpolating polynomials that are linear combinations of the **standard monomial basis** $\{1, x, x^2, \ldots, x^n\}$ for the space of all $n$-th degree polynomials.  There are other bases we could choose.  
 
+<div class="Theorem">
 For any given set of nodes $\{x_0, x_1, \ldots, x_n\}$, the **Lagrange polynomials** are
 $$L_k(x) = \frac{\prod_{i = 0, i \ne k}^n (x - x_i)}{\prod_{i = 0, i \ne k}^n (x_k - x_i)}, \text{ for each } k = 0, \ldots, n.$$
+</div>
+
 The defining feature of the Lagrange polynomials is that 
 $$L_k(x_i) = \begin{cases} 1 & \text{ if } i = k \\ 0 & \text{ otherwise.} \end{cases}$$
-From this we saw that the interpolating polynomial passing through $(x_0,y_0), (x_1, y_1), \ldots, (x_n, y_n)$ is
-$$y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).$$
+<center>
+<figure>
+<img src = "LagrangeL2.png" width = 520></img>
+<figcaption><b>Figure:</b> The Lagrange polynomial $L_2(x)$ with nodes $x = 0, \ldots, 5$. </figcaption>
+</center>
 
-1. Find the Lagrange polynomials for the nodes $x_0 = -1, x_1 = 0, x_2 = 1, x_3 = 5$.
+<div class="Theorem">
+#### Lagrange Polynomial Interpolation Formula
 
-2. Use those Lagrange polynomials to find the interpolating polynomial that passes through $(-1,-4), (0,3), (1,0), (5,8)$. 
+The interpolating polynomial passing through $(x_0,y_0), (x_1, y_1), \ldots, (x_n, y_n)$ is
+$$p(x) = y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).$$
+</div>
 
-3. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
 
+3. Find the Lagrange polynomials for the nodes $x_0 = -1, x_1 = 0, x_2 = 1, x_3 = 5$.
+
+4. Express the interpolating polynomial for the points $(-1,-4), (0,3), (1,0), (5,8)$ using those Lagrange polynomials. 
+
+<!--
+4. Use those Lagrange polynomials to find the interpolating polynomial that passes through $(-1,-4), (0,3), (1,0), (5,8)$. 
+
+5. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
+-->
+
+Here's an example with a video that is similar to the one we did in class:
+
+6. Find a 2nd degree polynomial that goes through the points $(1,2)$, $(2,3)$ and $(4,11)$. (<https://youtu.be/B67wkZ3DWc0>)
 
 <!--
 ### Fri, Mar 27 

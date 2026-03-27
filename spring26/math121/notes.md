@@ -906,13 +906,13 @@ After that, we introduced:
 
 <table>
 <tr>
-<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$</td>
+<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</td>
 </tr>
 </table>
 </center>
 
 where $\hat{p}$ is the **pooled proportion**:
-$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
+$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}.$$
 </div>
 
 As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  

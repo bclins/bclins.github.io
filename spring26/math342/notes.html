@@ -2236,7 +2236,7 @@ class="sourceCode octave"><code class="sourceCode octave"><span id="cb14-1"><a h
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">title</span>(<span class="st">&quot;Lightning Fatalities per Year&quot;</span>)</span></code></pre></div>
 <figcaption style="text-align:right">
 <p><a href="https://sagecell.sagemath.org/?z=eJxFkLFqAzEMhvdA3sFkuQRCsWT5LOWna6e-QCkdDnokB0caEi95-8h3QwdJn_QjyfJzHO6P8B7Icjxx5Nhhu_kdh3pp1W8mA4uCiUGSwRxBSs7m0TmKxwRiW2vZuc__OUWormnyNubFzLvYrU312AZSD1NoaZp7ihGWYATNKAozKKM4C0qCECSht6b6SmGIQHpkapAX1fclhZRWZ0US-Cu4X3xawFU_wYHQ7io_fvtt_qv7Z_uVY1j_4Ri6t-6w3dSpzuN-9zmdL_U6Xc_hY6jDPNVpfITbeA9f3rQ7vADwBFCR&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell
-Link</a></p>
+link</a></p>
 </figcaption>
 <figure></li>
 </ol>
@@ -2320,7 +2320,7 @@ class="sourceCode octave"><code class="sourceCode octave"><span id="cb16-1"><a h
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">title</span>(<span class="st">&quot;Farmville 2019 High Temperatures&quot;</span>)</span></code></pre></div>
 <figcaption style="text-align:right">
 <p><a href="https://sagecell.sagemath.org/?z=eJxNVMtqXDEM3RfyD5dsJoFQ_JBluyLb0A_ornQxkEszMKFhMi3076NzbNOCuNjS0dHjSn4-_n3fHrf4JWs52M2n6_76BsV3FXMpwUq2kqx0K80kmhaTbpIguVj2rxIWLTvGzwKBqcBLq4m7KCVQEpBZ4KLZtFtVq35uuII5I1CuCK2J7hHf3MjsiTlJZTIO4FeGqTM6ryKkErC5HsiAEvxQBbFKZbaJBY4SlBgH67R6sbUQz1Z4RD_jyoRrsxaoUYiy2JpA4taWITWDBPo8NS0B416N1bViTSkDX8jWrUWS0xHkysxHUPdt1hO9wtTg6soCQj9DKpEUxziVgxszBGdFCOh1fttgCKRlCKTaSBiYZ11RMgSHyDOVsGb6OrJDYA1IaeD7SMxTVYshwOapIKr8Bx2MgYzKKwv4Fy8t6jjB3rU-cqpkH2HYCNTG_4eGllkJrGGJsNG6mCvJhb3LqyOJv6GTqq880yy1y-qILKuzdf5djprzY1yE7hUNVZlNHzumOgdOdc1KwICOEcE8KZV9jSynGZgMEzZhACJG2ZfEJx7D2iiVK-Hjzm30lQBJ50B3Kiv3TYhUagoO2KiIVdc4Fx7rRxlIxB1RCsGJK1TWTjYuT_zhb8rb-df17tkfmoeNz8vDdvh8uPe35nQ973e3T8fL65_T-bxvKcS-fT39fNm-OW6_HK-_L_v77f0HE6gJNQ==&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell
-Link</a></p>
+link</a></p>
 </figcaption>
 <figure></li>
 </ol>
@@ -2574,19 +2574,29 @@ and
 <figure style="display:table">
 <iframe src="https://www.desmos.com/calculator/jad4nrxwt1?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder="0">
 </iframe>
-<figcaption style="text-align:left">
+<figcaption style="text-align:right">
 <a href="https://www.desmos.com/calculator/jad4nrxwt1">Desmos link</a>
 </figcaption>
 </figure>
 </center>
 <p>In interpolation, the x-values are called <strong>nodes</strong> and
 the y-values are called <strong>values</strong>.</p>
+<div class="Theorem">
+<p><strong>Theorem.</strong> For any set of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math>
+different nodes and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math>
+values, there is a unique
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th
+degree interpolating polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">p(x)</annotation></semantics></math>
+that hits those values at those nodes.</p>
+</div>
 <p>In order to find the interpolating polynomial, we used <a
 href="https://en.wikipedia.org/wiki/Vandermonde_matrix">Vandermonde
-matrices</a> again. For any set of fixed
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values,
+matrices</a> again. For any set of fixed nodes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, x_1, \ldots, x_n</annotation></semantics></math>,
-the <strong>Vandermonde matrix</strong> for those values is the matrix
+the <strong>Vandermonde matrix</strong> for those nodes is the matrix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">V \in \mathbb{R}^{(n+1) \times (n+1)}</annotation></semantics></math>
 such that the entry
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>V</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">V_{ij}</annotation></semantics></math>
@@ -2608,33 +2618,31 @@ with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>,
 we can find an
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th
-degree polynomial
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n</annotation></semantics></math>
-that passes through the points
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>…</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(x_0,y_0), (x_1,y_1), \ldots (x_n,y_n)</annotation></semantics></math>
+degree interpolating polynomial
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>b</mi><mi>n</mi></msub><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">p(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_n x^n</annotation></semantics></math>
 by solving the system
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mi>a</mi><mo>=</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">Va = y</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mi>𝐛</mi><mo>=</mo><mi>𝐲</mi></mrow><annotation encoding="application/x-tex">V\mathbf{b} = \mathbf{y}</annotation></semantics></math>
 where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mn>0</mn></msub><mo>,</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>a</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a = (a_0, a_1, \ldots, a_n)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐛</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>b</mi><mn>0</mn></msub><mo>,</mo><msub><mi>b</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>b</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{b} = (b_0, b_1, \ldots, b_n)</annotation></semantics></math>
 is the vector of coefficients and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = (y_0, y_1, \ldots y_n)</annotation></semantics></math>
-is the vector with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐲</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{y} = (y_0, y_1, \ldots y_n)</annotation></semantics></math>
+is the vector of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
-corresponding to each
+corresponding to each node
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>.
 That is, we want to solve the following system of linear equations:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>0</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>0</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>0</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>1</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>2</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mi>n</mi></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mi>n</mi><mi>n</mi></msubsup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>a</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp;  x_0 &amp; x_0^2 &amp; \ldots &amp; x_0^n \\ 1 &amp; x_1 &amp; x_1^2 &amp; \ldots &amp; x_1^n \\  1 &amp; x_2 &amp; x_2^2 &amp; \ldots &amp; x_2^n \\  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_n &amp; x_n^2 &amp; \ldots &amp; x_n^n 
-\end{pmatrix} \begin{pmatrix} a_0 \\ a_1 \\ \vdots \\ a_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>0</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>0</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>0</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>1</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>1</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mn>2</mn></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mn>2</mn><mi>n</mi></msubsup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd><mtd columnalign="center" style="text-align: center"><mo>⋱</mo></mtd><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><msub><mi>x</mi><mi>n</mi></msub></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></mtd><mtd columnalign="center" style="text-align: center"><mi>…</mi></mtd><mtd columnalign="center" style="text-align: center"><msubsup><mi>x</mi><mi>n</mi><mi>n</mi></msubsup></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>b</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>b</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>0</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>⋮</mi></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msub><mi>y</mi><mi>n</mi></msub></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp;  x_0 &amp; x_0^2 &amp; \ldots &amp; x_0^n \\ 1 &amp; x_1 &amp; x_1^2 &amp; \ldots &amp; x_1^n \\  1 &amp; x_2 &amp; x_2^2 &amp; \ldots &amp; x_2^n \\  \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_n &amp; x_n^2 &amp; \ldots &amp; x_n^n 
+\end{pmatrix} \begin{pmatrix} b_0 \\ b_1 \\ \vdots \\ b_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.</annotation></semantics></math></p>
 <p>Here is Octave code to get the Vandermonde matrix and solve for the
 coefficients of the interpolating polynomial.</p>
 <figure>
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode octave"><code class="sourceCode octave"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> <span class="fu">fliplr</span>(<span class="fu">vander</span>([<span class="op">-</span><span class="fl">1</span><span class="op">,</span><span class="fl">0</span><span class="op">,</span><span class="fl">1</span><span class="op">,</span><span class="fl">5</span>]))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="op">-</span><span class="fl">4</span><span class="op">;</span> <span class="fl">3</span><span class="op">;</span> <span class="fl">0</span><span class="op">;</span> <span class="fl">8</span>]</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> V <span class="op">\</span> y </span></code></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> V <span class="op">\</span> y </span></code></pre></div>
 <figcaption style="text-align:right">
-<a href="https://sagecell.sagemath.org/?z=eJwLU7BVSMvJLMgp0ihLzEtJLdKI1jXUMdAx1DGN1dTk5aoEykfrmlgrGFsrGFgrWMTyciUChcIUYhQqFZQVEhUyixWiQZKG1gq6pkAqFgBvshOh&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell
-Link</a>
+<a href="https://sagecell.sagemath.org/?z=eJwLU7BVSMvJLMgp0ihLzEtJLdKI1jXUMdAx1DGN1dTk5aoEykfrmlgrGFsrGFgrWMTyciUBhcIUYhQqAfFSDuI=&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell
+link</a>
 </figcaption>
 </figure>
 <p>Therefore the solution is
@@ -2660,25 +2668,53 @@ combinations of the <strong>standard monomial basis</strong>
 for the space of all
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>-th
 degree polynomials. There are other bases we could choose.</p>
+<div class="Theorem">
 <p>For any given set of nodes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x_0, x_1, \ldots, x_n\}</annotation></semantics></math>,
 the <strong>Lagrange polynomials</strong> are
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>≠</mo><mi>k</mi></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>≠</mo><mi>k</mi></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> for each </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">L_k(x) = \frac{\prod_{i = 0, i \ne k}^n (x - x_i)}{\prod_{i = 0, i \ne k}^n (x_k - x_i)}, \text{ for each } k = 0, \ldots, n.</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>≠</mo><mi>k</mi></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><munderover><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>i</mi><mo>≠</mo><mi>k</mi></mrow><mi>n</mi></munderover><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> for each </mtext><mspace width="0.333em"></mspace></mrow><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">L_k(x) = \frac{\prod_{i = 0, i \ne k}^n (x - x_i)}{\prod_{i = 0, i \ne k}^n (x_k - x_i)}, \text{ for each } k = 0, \ldots, n.</annotation></semantics></math></p>
+</div>
 The defining feature of the Lagrange polynomials is that
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mi>i</mi><mo>=</mo><mi>k</mi></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">L_k(x_i) = \begin{cases} 1 &amp; \text{ if } i = k \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math>
-From this we saw that the interpolating polynomial passing through
+<center>
+<figure>
+<img src = "LagrangeL2.png" width = 520></img>
+<figcaption>
+<b>Figure:</b> The Lagrange polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L_2(x)</annotation></semantics></math>
+with nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x = 0, \ldots, 5</annotation></semantics></math>.
+</figcaption>
+</center>
+<section id="lagrange-polynomial-interpolation-formula" class="Theorem">
+<h4>Lagrange Polynomial Interpolation Formula</h4>
+<p>The interpolating polynomial passing through
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mi>…</mi><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>,</mo><msub><mi>y</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(x_0,y_0), (x_1, y_1), \ldots, (x_n, y_n)</annotation></semantics></math>
 is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>0</mn></msub><msub><mi>L</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>L</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>y</mi><mi>n</mi></msub><msub><mi>L</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).</annotation></semantics></math></p>
-<ol type="1">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub><msub><mi>L</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><msub><mi>y</mi><mn>1</mn></msub><msub><mi>L</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>y</mi><mi>n</mi></msub><msub><mi>L</mi><mi>n</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">p(x) = y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).</annotation></semantics></math></p>
+</section>
+<ol start="3" type="1">
 <li><p>Find the Lagrange polynomials for the nodes
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mi>−</mi><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x_0 = -1, x_1 = 0, x_2 = 1, x_3 = 5</annotation></semantics></math>.</p></li>
-<li><p>Use those Lagrange polynomials to find the interpolating
-polynomial that passes through
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>−</mi><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(-1,-4), (0,3), (1,0), (5,8)</annotation></semantics></math>.</p></li>
-<li><p>Express the interpolating polynomial that passes through
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>−</mi><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>6</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(-1,-6), (1,0), (2,6)</annotation></semantics></math>
-as a linear combination of Lagrange polynomials.</p></li>
+<li><p>Express the interpolating polynomial for the points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>−</mi><mn>1</mn><mo>,</mo><mi>−</mi><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>5</mn><mo>,</mo><mn>8</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(-1,-4), (0,3), (1,0), (5,8)</annotation></semantics></math>
+using those Lagrange polynomials.</p></li>
+</ol>
+<!--
+4. Use those Lagrange polynomials to find the interpolating polynomial that passes through $(-1,-4), (0,3), (1,0), (5,8)$. 
+
+5. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
+-->
+<p>Here’s an example with a video that is similar to the one we did in
+class:</p>
+<ol start="6" type="1">
+<li>Find a 2nd degree polynomial that goes through the points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,2)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2,3)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo>,</mo><mn>11</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(4,11)</annotation></semantics></math>.
+(<a href="https://youtu.be/B67wkZ3DWc0"
+class="uri">https://youtu.be/B67wkZ3DWc0</a>)</li>
 </ol>
 <!--
 ### Fri, Mar 27 
