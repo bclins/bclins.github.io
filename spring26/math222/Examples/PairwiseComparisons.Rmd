@@ -23,9 +23,14 @@ We saw last time that all three dandruff treatments were significantly more effe
 dandruff <- read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/dandruff.txt")
 treatment <- subset(dandruff, dandruff$treat != "Placebo")
 boxplot(flaking ~ treat, data = treatment)
+counts <- aggregate(flaking ~ treat, data = dandruff, FUN = length)
+means <- aggregate(flaking ~ treat, data = dandruff, FUN = mean)
+stdevs <- aggregate(flaking ~ treat, data = dandruff, FUN = sd)
+groups <- data.frame(treat = counts$treat, n = counts$flaking, mean = means$flaking, sd = stdevs$flaking)
+groups
 ```
 
-From the graph above, it looks like ketoconazole shampoo might be more effective than the other two options. 
+From the graph & table above, it looks like ketoconazole shampoo might be more effective than the other two options. 
 
 ```{r}
 results <- aov(flaking ~ treat, data = treatment)
@@ -39,13 +44,6 @@ The ANOVA F-test confirms that there are significant differences between the ave
 If we want to compare Keto vs. PyrI, and Keto vs. PyrII, and PyrI vs. PyrII at the $\alpha = 0.05$ significance level, then the Bonferroni correction suggests we should aim for a significance level of $\alpha* = 0.05 / 3 = 1.667\%$ on each test, and we should make a confidence intervals at the $1 - \alpha^* = 98.333\%$ confidence level. Here are the statistics for each group:
 
 
-```{r}
-counts <- aggregate(flaking ~ treat, data = dandruff, FUN = length)
-means <- aggregate(flaking ~ treat, data = dandruff, FUN = mean)
-stdevs <- aggregate(flaking ~ treat, data = dandruff, FUN = sd)
-groups <- data.frame(treat = counts$treat, n = counts$flaking, mean = means$flaking, sd = stdevs$flaking)
-groups
-```
 Here is the t-value and corresponding p-value to compare Keto versus PyrI.
 
 ```{r}
