@@ -881,8 +881,7 @@ The only difference is when you calculate the p-value, you use two tails of the 
 
 3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
-<!--
-### Fri, Oct 31
+### Fri, Mar 27
 
 One thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
 
@@ -916,10 +915,8 @@ where $\hat{p}$ is the **pooled proportion**:
 $$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
 </div>
 
-<!--
 As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
--->
-<!--
+
 We rushed a bit at the end to squeeze in this example.  
 
 1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?

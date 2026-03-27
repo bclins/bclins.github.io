@@ -2022,6 +2022,41 @@ when you don’t have equal variances.</p>
 </table>
 </center>
 -->
+<h3 id="fri-mar-27">Fri, Mar 27</h3>
+<p>Today we talked about how to follow-up an ANOVA F-test with pairwise
+comparisons of each pair of groups.</p>
+<section id="pairwise-comparisons" class="Theorem">
+<h4>Pairwise Comparisons</h4>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math>
+groups, there are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mi>I</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>I</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>I</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\binom{I}{2} = \tfrac{1}{2}I(I-1)</annotation></semantics></math>
+comparisons that are possible. You can do a t-test and/or a t-confidence
+interval for each pair. Use these formulas:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>B</mi></msub></mrow><mrow><msub><mi>s</mi><mi>p</mi></msub><msqrt><mrow><mfrac><mn>1</mn><msub><mi>n</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>B</mi></msub></mfrac></mrow></msqrt></mrow></mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>B</mi></msub><mo>±</mo><msup><mi>t</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><msub><mi>s</mi><mi>p</mi></msub><msqrt><mrow><mfrac><mn>1</mn><msub><mi>n</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>B</mi></msub></mfrac></mrow></msqrt></mrow><annotation encoding="application/x-tex">t = \dfrac{\bar{x}_A - \bar{x}_B}{s_p \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}} \text{ and } \bar{x}_A - \bar{x}_B \pm t^{**} s_p \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>p</mi></msub><mo>=</mo><msqrt><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">s_p = \sqrt{MSE}</annotation></semantics></math>
+is the <strong>pooled standard deviation</strong>.</p>
+<p>Since you are testing several different pairs, you need to adjust the
+significance level
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
+and critical t-values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mrow><mi>*</mi><mo>*</mo></mrow></msup><annotation encoding="application/x-tex">t^{**}</annotation></semantics></math>
+in your formulas to get roughly the correct probability of a Type I
+error. The easiest way to do this is the <strong>Bonferroni
+correction</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>α</mi><mo>*</mo></msup><mo>=</mo><mfrac><mi>α</mi><mrow><mi>#</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> of comparisons</mtext></mrow></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\alpha^* = \frac{\alpha}{\# \text{ of comparisons}}.</annotation></semantics></math></p>
+</section>
+<p>If you are using R, then an alternative to the Bonferroni correction
+is to use <strong>Tukey’s Honest Significant Differences</strong>. This
+is a more complicated adjustment to the significant level
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+but the command <code>TukeyHSD(yourAOV, conf.level=0.95)</code> will
+calculate everything for you.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/PairwiseComparisons.html">Pairwise comparisons</a></li>
+</ul>
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <table>

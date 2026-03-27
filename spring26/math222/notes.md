@@ -930,6 +930,28 @@ instead of the usual two-sample t-value.  Keep in mind that this will have $\tex
 </center>
 -->
 
+### Fri, Mar 27
+
+Today we talked about how to follow-up an ANOVA F-test with pairwise comparisons of each pair of groups. 
+
+<div class="Theorem">
+#### Pairwise Comparisons
+
+For $I$ groups, there are $\binom{I}{2} = \tfrac{1}{2}I(I-1)$ comparisons that are possible. You can do a t-test and/or a t-confidence interval for each pair. Use these formulas:
+
+$$t = \dfrac{\bar{x}_A - \bar{x}_B}{s_p \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}} \text{ and } \bar{x}_A - \bar{x}_B \pm t^{**} s_p \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}$$
+
+where $s_p = \sqrt{MSE}$ is the **pooled standard deviation**.  
+
+Since you are testing several different pairs, you need to adjust the significance level $\alpha$ and critical t-values $t^{**}$ in your formulas to get roughly the correct probability of a Type I error. The easiest way to do this is the **Bonferroni correction**
+$$\alpha^* = \frac{\alpha}{\# \text{ of comparisons}}.$$
+
+</div>
+
+If you are using R, then an alternative to the Bonferroni correction is to use **Tukey's Honest Significant Differences**.  This is a more complicated adjustment to the significant level $\alpha$, but the command `TukeyHSD(yourAOV, conf.level=0.95)` will calculate everything for you. 
+
+* **Example:** [Pairwise comparisons](Examples/PairwiseComparisons.html)
+
 - - - 
 
 ### Week 11 Notes

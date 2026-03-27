@@ -1297,6 +1297,139 @@ to find the projection of $f(x) = e^x$ onto the span of the Fourier basis (up to
 
 * **Workshop**: [Fourier series](Workshops/FourierSeries.pdf)
 
+### Fri, Mar 27 
+
+Today we started talking about **polynomial interpolation**. An **interpolating polynomial** is a polynomial that passes through a set of points in the coordinate plane.  We started with an example using these four points: $(-1,-4)$, $(0,3)$, $(1,0)$, and $(5,8)$. 
+
+<center>
+<figure style="display:table">
+<iframe src="https://www.desmos.com/calculator/jad4nrxwt1?embed" width="300" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<figcaption style="text-align:left"><a href="https://www.desmos.com/calculator/jad4nrxwt1">Desmos link</a></figcaption>
+</figure>
+</center>
+
+In interpolation, the x-values are called **nodes** and the y-values are called **values**.
+
+In order to find the interpolating polynomial, we used [Vandermonde matrices](https://en.wikipedia.org/wiki/Vandermonde_matrix) again.
+For any set of fixed $x$-values, $x_0, x_1, \ldots, x_n$, the **Vandermonde matrix** for those values is the matrix $V \in \R^{(n+1) \times (n+1)}$ such that the entry $V_{ij}$ in row $i$ and column $j$ is $x_i^j.$
+In other words, $V$ looks like 
+$$V = \begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
+\end{pmatrix}$$
+Notice that when working with Vandermonde matrices, we always start counting the rows and columns with $i,j = 0$. 
+
+Using the Vandermonde matrix $V$, we can find an $n$-th degree polynomial 
+$$p(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n$$
+that passes through the points $(x_0,y_0), (x_1,y_1), \ldots (x_n,y_n)$ by solving the system $Va = y$ where $a = (a_0, a_1, \ldots, a_n)$ is the vector of coefficients and $y = (y_0, y_1, \ldots y_n)$ is the vector with $y$-values corresponding to each $x_i$. That is, we want to solve the following system of linear equations:
+$$\begin{pmatrix} 1 &  x_0 & x_0^2 & \ldots & x_0^n \\ 1 & x_1 & x_1^2 & \ldots & x_1^n \\  1 & x_2 & x_2^2 & \ldots & x_2^n \\  \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_n & x_n^2 & \ldots & x_n^n 
+\end{pmatrix} \begin{pmatrix} a_0 \\ a_1 \\ \vdots \\ a_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}.$$
+
+
+Here is Octave code to get the Vandermonde matrix and solve for the coefficients of the interpolating polynomial. 
+
+<figure>
+```octave
+V = fliplr(vander([-1,0,1,5]))
+y = [-4; 3; 0; 8]
+a = V \ y 
+```
+<figcaption  style="text-align:right"><a href="https://sagecell.sagemath.org/?z=eJwLU7BVSMvJLMgp0ihLzEtJLdKI1jXUMdAx1DGN1dTk5aoEykfrmlgrGFsrGFgrWMTyciUChcIUYhQqFZQVEhUyixWiQZKG1gq6pkAqFgBvshOh&lang=octave&interacts=eJyLjgUAARUAuQ==">SageCell Link</a></figcaption>
+</figure>
+
+Therefore the solution is 
+$$p(x) = 3 + x - 5x^2 + x^3$$
+
+After that example, we did the following examples in class. 
+
+1. Find an interpolating polynomial for these points: $(0,0)$, $(1,4)$, $(-1,0)$, and $(2,15).$ 
+
+2. Find a 4th degree polynomial that passes through $(0,1)$, $(1,5)$, $(2, 31)$, $(3, 121)$, $(4, 341).$
+
+
+So far, we have found interpolating polynomials that are linear combinations of the **standard monomial basis** $\{1, x, x^2, \ldots, x^n\}$ for the space of all $n$-th degree polynomials.  There are other bases we could choose.  
+
+For any given set of nodes $\{x_0, x_1, \ldots, x_n\}$, the **Lagrange polynomials** are
+$$L_k(x) = \frac{\prod_{i = 0, i \ne k}^n (x - x_i)}{\prod_{i = 0, i \ne k}^n (x_k - x_i)}, \text{ for each } k = 0, \ldots, n.$$
+The defining feature of the Lagrange polynomials is that 
+$$L_k(x_i) = \begin{cases} 1 & \text{ if } i = k \\ 0 & \text{ otherwise.} \end{cases}$$
+From this we saw that the interpolating polynomial passing through $(x_0,y_0), (x_1, y_1), \ldots, (x_n, y_n)$ is
+$$y_0 L_0(x) + y_1 L_1(x) + \ldots + y_n L_n(x).$$
+
+1. Find the Lagrange polynomials for the nodes $x_0 = -1, x_1 = 0, x_2 = 1, x_3 = 5$.
+
+2. Use those Lagrange polynomials to find the interpolating polynomial that passes through $(-1,-4), (0,3), (1,0), (5,8)$. 
+
+3. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
+
+
+<!--
+### Fri, Mar 27 
+
+One of the most important bases for interpolation is the **Newton polynomials** which are 
+
+$$N_k(x) = \begin{cases} 1 & \text{ if } k = 0 \\ \prod_{i = 0}^{k-1} (x- x_i) & \text{ if } k = 1, \ldots, n. \end{cases}$$
+
+You can express an interpolating polynomial as a linear combination of Newton polynomials by solving the linear system 
+
+$$\begin{pmatrix} 
+N_0(x_0) & N_1(x_0) & N_2(x_0) & \ldots & N_n(x_0) \\
+N_0(x_1) & N_1(x_1) & N_2(x_1) & \ldots & N_n(x_1) \\
+N_0(x_2) & N_1(x_2) & N_2(x_2) & \ldots & N_n(x_2) \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+N_0(x_n) & N_1(x_n) & N_2(x_n) & \ldots & N_n(x_n) \\
+\end{pmatrix} \begin{pmatrix} c_0 \\ c_1 \\ \vdots \\ c_n \end{pmatrix} = \begin{pmatrix} y_0 \\ y_1 \\ \vdots \\ y_n \end{pmatrix}$$
+to find coefficients such that the interpolating polynomial 
+$$c_0 N_0(x) + c_1 N_1(x) + \ldots + c_n N_n(x)$$
+passes through each point $(x_i, y_i)$. 
+
+4. Solve the linear system above to find the interpolating polynomial through $(-1,-4), (0,3), (1,0), (5,8)$ expressed in terms of the Newton basis.
+
+### Fri, Mar 1
+
+Today we talked about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  
+
+For a function $f$ and a set of $n+1$ distinct $x$-values, $x_0, \ldots, x_n$, the **divided differences** are defined recursively by the following formula 
+
+$$f[x_j, \ldots, x_k] = \begin{cases}
+\dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j} & \text{ if } k > j, \\ 
+f(x_j) & \text{ if }k = j.\end{cases}$$
+
+We did these examples. 
+
+1. Make a divided differences table for the points $(-1,-4), (0,3), (1,0), (5,8)$, and use it to find the interpolating polynomial (in Newton form). 
+
+2. Use the $x$-values $-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$ to make an interpolating polynomial for $f(x) = \cos x.$
+<details>
+<summary>Solution</summary>
+The table of divided differences is:
+<table class="bordered">
+<tr><td>$x$</td><td>$f(x)$</td><td> DD1</td><td> DD2</td><td> DD3</td><td> DD4</td></tr>
+<tr><td>$-\pi$</td><td style="color:blue">$-1$</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td style="color:blue">$\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
+<tr><td>$-\frac{\pi}{2}$</td><td>$0$</td><td></td><td style="color:blue">$0$</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>$\frac{2}{\pi}$</td><td></td><td style="color:blue">$-\frac{8}{3\pi^3}$</td><td></td></tr>
+<tr><td>$0$</td><td>$1$</td><td></td><td>$-\frac{4}{\pi^2}$</td><td></td><td style="color:blue">$\frac{8}{3\pi^4}$</td></tr>
+<tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td>$\frac{8}{3\pi^3}$</td><td></td></tr>
+<tr><td>$\frac{\pi}{2}$</td><td>$0$</td><td></td><td>$0$</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
+<tr><td>$\pi$</td><td>$-1$</td><td></td><td></td><td></td><td></td></tr>
+</table>
+So the Newton form of the interpolating polynomial is 
+$$-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).$$
+Notice that the coefficients are just the numbers (in blue) at the top of each column in the divided differences table. 
+</details>
+
+Here are some videos with additional examples:
+
+* <https://youtu.be/hcsBjizQ9X8>
+* <https://youtu.be/gBEW7cfPvgQ>
+
+After those examples, we did this workshop in class:
+
+* **Workshop:** [Divided differences](Workshops/DividedDifferences.pdf)
+-->
+
+
+
 - - - 
 
 ### Week 11 Notes

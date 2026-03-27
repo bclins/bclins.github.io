@@ -1,0 +1,91 @@
+---
+title: Pairwise Comparisons
+output: 
+  html_document: 
+    theme: readable
+    highlight: tango
+---
+
+### Example: Dandruff Shampoo
+
+A study looked at the following treatments for dandruff: 
+
+* 1% pyrithione zinc shampoo (PyrI), 
+* 1% pyrithione zinc shampoo with instructions to shampoo two times (PyrII), 
+* 2% ketoconazole shampoo (Keto), 
+* a placebo shampoo (Placebo). 
+
+Subjects were randomized to each group, and initially each group had 112 volunteers, except the placebo group which was only assigned 28. Each volunteer was examined for dandruff flakes before and after six weeks of treatment. Dandruff flaking was measured on a scale from 0 to 80. Initially, there were no significant differences between the groups. During the clinical trial, 3 dropped out from the PyrII group and 6 from the Keto group. No patients dropped out of the other two groups.
+
+We saw last time that all three dandruff treatments were significantly more effective than the placebo.  But how do the three treatment groups compare against each other? 
+
+```{r}
+dandruff <- read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/data/dandruff.txt")
+treatment <- subset(dandruff, dandruff$treat != "Placebo")
+boxplot(flaking ~ treat, data = treatment)
+```
+
+From the graph above, it looks like ketoconazole shampoo might be more effective than the other two options. 
+
+```{r}
+results <- aov(flaking ~ treat, data = treatment)
+summary(results)
+```
+
+The ANOVA F-test confirms that there are significant differences between the averages of the three groups. 
+
+### Bonferroni Correction
+
+If we want to compare Keto vs. PyrI, and Keto vs. PyrII, and PyrI vs. PyrII at the $\alpha = 0.05$ significance level, then the Bonferroni correction suggests we should aim for a significance level of $\alpha* = 0.05 / 3 = 1.667\%$ on each test, and we should make a confidence intervals at the $1 - \alpha^* = 98.333\%$ confidence level. Here are the statistics for each group:
+
+
+```{r}
+counts <- aggregate(flaking ~ treat, data = dandruff, FUN = length)
+means <- aggregate(flaking ~ treat, data = dandruff, FUN = mean)
+stdevs <- aggregate(flaking ~ treat, data = dandruff, FUN = sd)
+groups <- data.frame(treat = counts$treat, n = counts$flaking, mean = means$flaking, sd = stdevs$flaking)
+groups
+```
+Here is the t-value and corresponding p-value to compare Keto versus PyrI.
+
+```{r}
+mse <- anova(results)["Residuals", "Mean Sq"]
+dfe <- anova(results)["Residuals", "Df"]
+meanA = groups$mean[1] # Keto
+meanB = groups$mean[3] # PyrI
+nA = groups$n[1]
+nB = groups$n[3]
+t = (meanA - meanB) / sqrt(mse * (1 / nA + 1 / nB))
+p = 2 * (1 - pt(abs(t), dfe)) 
+```
+
+
+A t-test to compare Keto vs. PyrI has t-value `r t` with corresponding two-sided p-value `r p`. That is statistically significant, even at the $\alpha^* = 1.6667\%$ level. 
+
+```{r}
+alpha = 0.05 / 3
+tstar = qt(1 - alpha / 2, dfe)
+upper = meanA - meanB + tstar * sqrt(mse * (1 / nA + 1 / nB))
+lower = meanA - meanB - tstar * sqrt(mse * (1 / nA + 1 / nB))
+```
+
+Using the Bonferroni correction, we can be 95% confidence that using ketoconazole shampoo will produce between `r lower` and `r upper` fewer flakes than pyrithione 1% shampoo. 
+
+### Tukey's Honest Significant Differences
+
+Calculating pairwise differences in R is tedious to do by programming the details yourself. A convenient option is the following function:
+
+```{r}
+TukeyHSD(results, conf.level = 0.95)
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
