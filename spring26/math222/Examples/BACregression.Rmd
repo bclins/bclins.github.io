@@ -1,0 +1,110 @@
+---
+title: Least Squares Regression 
+---
+
+### Example: Beers versus BAC
+
+
+```{r}
+df <- read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.csv')
+# First six rows
+head(df)
+# Number of rows and columns
+dim(df)
+# Averages
+apply(df, MARGIN = 2, FUN = mean) # Applies the function mean() to the columns. MARGIN = 1 would apply the function to the rows instead.
+# Standard deviations
+apply(df, MARGIN = 2, FUN = sd)
+```
+
+### Scatterplots
+
+It is very easy to make scatterplots in R.  
+
+```{r}
+plot(df$beers, df$bac, xlab = "Beers", ylab = "BAC", pch = 16)
+```
+
+### Correlation
+
+The `cor()` function calculates the correlation between two different vectors of data.  
+
+```{r}
+cor(df$beers, df$bac)
+```
+
+### Linear Regression
+
+The command `lm()` will construct a least squares linear regression model for predicting one variable based on another. Here `lm` stands for **linear model**. The syntax is a little different than other commands.  Here is an example of how to use it.
+
+```{r}
+myLM <- lm(bac ~ beers, data = df)
+myLM
+```
+
+Notice that the linear model contains the slope and the y-intercept for the least squares regression line.  The slope is the coefficient on the Midterm1 grade, so it is the number 0.5797.  This means: *for every 1 point higher a student gets on midterm 1, their midterm 2 grade tends to be 0.5797 points higher, on average.*
+
+### Plotting Trendlines
+
+You can add the trendline to the scatterplot with the command `abline()`.
+
+```{r}
+plot(df$beers, df$bac, xlab="Beers", ylab="BAC", pch = 16)
+abline(myLM) # Adds the trendline to the scatterplot
+```
+
+### Making Predictions
+
+If you want to predict a y-value based on a particular x-value, use the `predict()` function. The arguments of `predict()` are a linear model and a data frame with a header that has the same name as the x-variable in the linear model. In this example, the second argument is a simple data frame with two values for Midterm 1, one student who gets a 50 and another student who gets a 100.  
+
+```{r}
+predict(myLM, data.frame(beers = c(2,8)))
+```
+
+Based on the results, it looks like someone who drinks 2 beers will have an average BAC of about 0.023, while someone who drinks 8 beers will have an average BAC of 0.131.
+
+
+### Checking Inference Conditions with Residual Plots
+
+The function `resid()` takes a linear model (like `myLM`) and returns the residuals.  You can use this to plot the residuals against the x-values which is often useful if you want to assess whether data really follows a linear model and whether the conditions for statistical inference are met.  
+
+```{r}
+plot(df$beers, resid(myLM)) 
+abline(0,0) # Add line with slope = 0 and y-intercept = 0 to the residual plot
+```
+
+It looks like the residuals have a similar variance throughout, although it is hard to tell with a small sample size like this. But if you look at a qqplot, you can see that the residuals are not normally distributed. 
+
+```{r}
+qqnorm(resid(myLM))
+qqline(resid(myLM))
+```
+
+That's might be an issue since the sample size is small ($n = 16$). 
+
+### Other Information
+
+A linear model in R contains a lot of useful information that can be accessed using the `summary()` function. This information will be particularly useful when we apply statistical inference techniques to linear regression.
+
+```{r}
+summary(myLM)
+```
+
+You can get an ANOVA table for a linear model using the `anova()` function. 
+
+```{r}
+anova(myLM)
+```
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

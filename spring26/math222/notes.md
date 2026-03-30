@@ -962,6 +962,92 @@ Mon, Mar 30 | [8.2][8.2] | Least squares regression
 Wed, Apr 1  | [9.1][9.1] | Introduction to multiple regression 
 Fri, Apr 3  | [9.2][9.2] | Model selection
 
+### Mon, Mar 30
+
+Today we started talking about **least squares regression**. 
+
+* **Example:** [Linear regression: Statistics midterm grades](Examples/MidtermsRegression.html) ([Rmd source](Examples/MidtermsRegression.Rmd))
+* **Example:** [Linear regression: Beers versus BAC](Examples/BACregression.html) ([Rmd source](Examples/BACregression.Rmd))
+
+<div class="Theorem">
+#### Least Squares Regression Line
+$$\hat{y} = b_0 + b_1 x$$
+where
+
+* $b_1 = R \dfrac{s_y}{s_x}$ is the **slope** and
+
+* $b_0 = \bar{y} - b_1 \bar{x}$ is the $y$-**intercept**.
+</div>
+
+#### Inference about Linear Regression
+
+We can use least squares regression to do statistical inference about the relationship between two quantitative variables. Inference for linear regression is based on the following assumptions:
+
+* **Linearity.** There is a linear relationship between the explanatory variable $x$ and the population means of the response variable $y$.  
+
+* **Normal Residuals.** The residuals are normally distributed. 
+
+* **Constant Variance.** The standard deviation of the residuals $\sigma$ is the same for every $x$.
+
+* **Independence.** The residuals from different observations are independent of each other.
+
+<center>
+<figure>
+<img src="Examples/regressionPic.png" width=560></img>
+<figcaption style="text-align:right">Source: [Natural Resources Biometrics](https://stats.libretexts.org/Bookshelves/Applied_Statistics/Natural_Resources_Biometrics_%28Kiernan%29) by Diane Kiernan</figcaption>
+</figure>
+</center>
+
+Once again, we can use analysis of variance. The ANOVA table for least squares regression looks like
+<!--
+Here's the theory.  The total sum of squares for the y-values is $$\sum_{i = 1}^n (y_i - \bar{y})^2 = \sum_{i = 1}^n (y_i - \hat{y}_i)^2 + \sum_{i = 1}^n (\hat{y}_i - \bar{y})^2.$$
+-->
+
+<center>
+<table class="bordered">
+<tr><td>Source </td><td> Degrees of Freedom </td><td> Sum of Squares </td><td> Mean Square </td><td> F</td></tr>
+<tr><td>Model</td><td> $1$ </td><td> $\sum_{i=1}^n (\hat{y}_i-\bar{y})^2$ </td><td> $\on{SSM}/\on{DFM}$ </td><td> $F = \on{MSM}/\on{MSR}$</td></tr>
+<tr><td>Residuals</td><td> $n-2$ </td><td>$\sum_{i=1}^n (\hat{y}_i - y_i)^2$ </td><td> $\on{SSR}/\on{DFR}$ </td><td> </td></tr>
+<tr><td>Total </td><td> $n-1$ </td><td>$\sum_{i=1}^n (y_i - \bar{y})^2$ </td><td> $\on{SST}/\on{DFT}$ </td><td> </td></tr>
+</table>
+</center>
+
+The best estimate for the common standard deviation of the residuals $\sigma$ is the called the **residual standard error** and it is denoted by $s$. It is the square root of the mean squared residuals:
+$$s^2 = MSR = \frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n-2}.$$
+
+
+
+Another useful quantity that you can derive from the ANOVA table is the **coefficient of determination** 
+$$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}.$$  
+It represents the percent of the variability in $y$ that follows the model.  The rest, $1-R^2$, is the percent of the variability of $y$ that does not follow the model. 
+
+1. Suppose that you know $n$, $s_x$, $s_y$, and the correlation coefficient $R$.  Is that enough to fill in a whole ANOVA table?  
+
+Using the residual standard error, you can make confidence intervals for several parameters related to least squares regression.
+
+<div class = "Theorem">
+#### Linear Regression Confidence Intervals
+
+$$\text{estimate} \pm t^* SE_\text{parameter}$$
+
+where $t^*$ has $n-2$ degrees of freedom (same as the $DFR$ in the ANOVA table), and $SE_\text{parameter}$ is the standard error of the parameter of interest.  Here are two important examples
+
+$$SE_\text{slope} = \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}} ~~~~ \text{ and } ~~~~ SE_{\text{mean }y\text{ at }x^*} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$
+<!--$$SE_\text{slope} = \dfrac{s}{s_x \sqrt{n-1}} ~~~~ \text{ and } ~~~~ SE_{\text{mean-}y\text{-at-}x^*} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s_x^2 (n -1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$-->
+
+</div>
+
+We used the R output from the [Midterms Regression example](Examples/MidtermsRegression.html) to answer the following questions. 
+
+2. Find a 95% confidence interval for the slope of the regression line in this example. 
+
+3. Find a 95% confidence interval for the average midterm 2 grade of students who get a 90 on midterm 1.  
+
+<!--
+### Wed, Apr 1
+
+* **Workshop:** [Running Age and 5K Times](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/runningAge.pdf)
+-->
 
 
 - - - 

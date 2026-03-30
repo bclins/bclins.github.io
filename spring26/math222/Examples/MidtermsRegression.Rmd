@@ -1,0 +1,110 @@
+---
+title: Least Squares Regression 
+---
+
+### Example: Statistics Midterm Grades
+
+Not surprisingly, there is a strong correlation between a student's grades on different midterm exams.  Here is data from my sections of statistics from 2013-2015.  
+
+```{r}
+exams <- read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/midtermRegressionS13_F15.csv')
+# First six rows
+head(exams)
+# Number of rows and columns
+dim(exams)
+# Midterm averages
+apply(exams, MARGIN = 2, FUN = mean) # Applies the function mean() to the columns. MARGIN = 1 would apply the function to the rows instead.
+# Standard deviations
+apply(exams, MARGIN = 2, FUN = sd)
+```
+
+### Scatterplots
+
+It is very easy to make scatterplots in R.  
+
+```{r}
+plot(exams$Midterm1, exams$Midterm2, xlab = "Midterm 1 grade", ylab = "Midterm 2 grade", pch = 16)
+```
+
+### Correlation
+
+The `cor()` function calculates the correlation between two different vectors of data.  
+
+```{r}
+cor(exams$Midterm1, exams$Midterm2)
+```
+
+### Linear Regression
+
+The command `lm()` will construct a least squares linear regression model for predicting one variable based on another. Here `lm` stands for **linear model**. The syntax is a little different than other commands.  Here is an example of how to use it.
+
+```{r}
+myLM <- lm(Midterm2 ~ Midterm1, data = exams)
+myLM
+```
+
+Notice that the linear model contains the slope and the y-intercept for the least squares regression line.  The slope is the coefficient on the Midterm1 grade, so it is the number 0.5797.  This means: *for every 1 point higher a student gets on midterm 1, their midterm 2 grade tends to be 0.5797 points higher, on average.*
+
+### Plotting Trendlines
+
+You can add the trendline to the scatterplot with the command `abline()`.
+
+```{r}
+plot(exams$Midterm1, exams$Midterm2, xlab="Midterm 1 grade", ylab="Midterm 2 grade", pch = 16)
+abline(myLM) # Adds the trendline to the scatterplot
+```
+
+### Making Predictions
+
+If you want to predict a y-value based on a particular x-value, use the `predict()` function. The arguments of `predict()` are a linear model and a data frame with a header that has the same name as the x-variable in the linear model. In this example, the second argument is a simple data frame with two values for Midterm 1, one student who gets a 50 and another student who gets a 100.  
+
+```{r}
+predict(myLM, data.frame(Midterm1 = c(50,100)))
+```
+
+Based on the results, it looks like students who get a 50 on midterm 1 will have an average grade of about 58.6 on midterm 2. On the other hand, students with a perfect score on midterm 1 will only have an average grade of 87.6 on midterm 2.  This phenomenon is known as **regression to the mean**: *the predicted outcomes in a linear regression model tend to be less extreme than then inputs.*   
+
+### Checking Inference Conditions with Residual Plots
+
+The function `resid()` takes a linear model (like `myLM`) and returns the residuals.  You can use this to plot the residuals against the x-values which is often useful if you want to assess whether data really follows a linear model and whether the conditions for statistical inference are met.  
+
+```{r}
+plot(exams$Midterm1, resid(myLM)) 
+abline(0,0) # Add line with slope = 0 and y-intercept = 0 to the residual plot
+```
+
+It looks like the residuals have a similar variance throughout. But if you look at a qqplot, you can see that the residuals are not normally distributed. 
+
+```{r}
+qqnorm(resid(myLM))
+qqline(resid(myLM))
+```
+
+That's probably not a big issue since the sample size is large ($n = 180$). 
+
+### Other Information
+
+A linear model in R contains a lot of useful information that can be accessed using the `summary()` function. This information will be particularly useful when we apply statistical inference techniques to linear regression.
+
+```{r}
+summary(myLM)
+```
+
+You can get an ANOVA table for a linear model using the `anova()` function. 
+
+```{r}
+anova(myLM)
+```
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

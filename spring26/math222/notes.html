@@ -2088,6 +2088,193 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-mar-30">Mon, Mar 30</h3>
+<p>Today we started talking about <strong>least squares
+regression</strong>.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/MidtermsRegression.html">Linear regression: Statistics
+midterm grades</a> (<a href="Examples/MidtermsRegression.Rmd">Rmd
+source</a>)</li>
+<li><strong>Example:</strong> <a
+href="Examples/BACregression.html">Linear regression: Beers versus
+BAC</a> (<a href="Examples/BACregression.Rmd">Rmd source</a>)</li>
+</ul>
+<section id="least-squares-regression-line" class="Theorem">
+<h4>Least Squares Regression Line</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat{y} = b_0 + b_1 x</annotation></semantics></math>
+where</p>
+<ul>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>R</mi><mfrac displaystyle="true"><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">b_1 = R \dfrac{s_y}{s_x}</annotation></semantics></math>
+is the <strong>slope</strong> and</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mn>0</mn></msub><mo>=</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>−</mo><msub><mi>b</mi><mn>1</mn></msub><mover><mi>x</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">b_0 = \bar{y} - b_1 \bar{x}</annotation></semantics></math>
+is the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-<strong>intercept</strong>.</p></li>
+</ul>
+</section>
+<h4 id="inference-about-linear-regression">Inference about Linear
+Regression</h4>
+<p>We can use least squares regression to do statistical inference about
+the relationship between two quantitative variables. Inference for
+linear regression is based on the following assumptions:</p>
+<ul>
+<li><p><strong>Linearity.</strong> There is a linear relationship
+between the explanatory variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and the population means of the response variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p></li>
+<li><p><strong>Normal Residuals.</strong> The residuals are normally
+distributed.</p></li>
+<li><p><strong>Constant Variance.</strong> The standard deviation of the
+residuals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+is the same for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</p></li>
+<li><p><strong>Independence.</strong> The residuals from different
+observations are independent of each other.</p></li>
+</ul>
+<center>
+<figure>
+<img src="Examples/regressionPic.png" width=560></img>
+<figcaption style="text-align:right">
+Source: <a
+href="https://stats.libretexts.org/Bookshelves/Applied_Statistics/Natural_Resources_Biometrics_%28Kiernan%29">Natural
+Resources Biometrics</a> by Diane Kiernan
+</figcaption>
+</figure>
+</center>
+<p>Once again, we can use analysis of variance. The ANOVA table for
+least squares regression looks like <!--
+Here's the theory.  The total sum of squares for the y-values is $$\sum_{i = 1}^n (y_i - \bar{y})^2 = \sum_{i = 1}^n (y_i - \hat{y}_i)^2 + \sum_{i = 1}^n (\hat{y}_i - \bar{y})^2.$$
+--></p>
+<center>
+<table class="bordered">
+<tr>
+<td>
+Source
+</td>
+<td>
+Degrees of Freedom
+</td>
+<td>
+Sum of Squares
+</td>
+<td>
+Mean Square
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td>
+Model
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n (\hat{y}_i-\bar{y})^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SSM</mo><mi>/</mi><mo>DFM</mo></mrow><annotation encoding="application/x-tex">\operatorname{SSM}/\operatorname{DFM}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mo>MSM</mo><mi>/</mi><mo>MSR</mo></mrow><annotation encoding="application/x-tex">F = \operatorname{MSM}/\operatorname{MSR}</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Residuals
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n (\hat{y}_i - y_i)^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SSR</mo><mi>/</mi><mo>DFR</mo></mrow><annotation encoding="application/x-tex">\operatorname{SSR}/\operatorname{DFR}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n (y_i - \bar{y})^2</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>SST</mo><mi>/</mi><mo>DFT</mo></mrow><annotation encoding="application/x-tex">\operatorname{SST}/\operatorname{DFT}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</center>
+<p>The best estimate for the common standard deviation of the residuals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+is the called the <strong>residual standard error</strong> and it is
+denoted by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>.
+It is the square root of the mean squared residuals:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>M</mi><mi>S</mi><mi>R</mi><mo>=</mo><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">s^2 = MSR = \frac{\sum_{i = 1}^n (y_i - \hat{y}_i)^2}{n-2}.</annotation></semantics></math></p>
+<p>Another useful quantity that you can derive from the ANOVA table is
+the <strong>coefficient of determination</strong>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mi>S</mi><mi>S</mi><mi>M</mi></mrow><mrow><mi>S</mi><mi>S</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>S</mi><mi>S</mi><mi>R</mi></mrow><mrow><mi>S</mi><mi>S</mi><mi>T</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}.</annotation></semantics></math><br />
+It represents the percent of the variability in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+that follows the model. The rest,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1-R^2</annotation></semantics></math>,
+is the percent of the variability of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+that does not follow the model.</p>
+<ol type="1">
+<li>Suppose that you know
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>x</mi></msub><annotation encoding="application/x-tex">s_x</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mi>y</mi></msub><annotation encoding="application/x-tex">s_y</annotation></semantics></math>,
+and the correlation coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math>.
+Is that enough to fill in a whole ANOVA table?</li>
+</ol>
+<p>Using the residual standard error, you can make confidence intervals
+for several parameters related to least squares regression.</p>
+<section id="linear-regression-confidence-intervals" class="Theorem">
+<h4>Linear Regression Confidence Intervals</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">estimate</mtext><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">parameter</mtext></msub></mrow><annotation encoding="application/x-tex">\text{estimate} \pm t^* SE_\text{parameter}</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>*</mo></msup><annotation encoding="application/x-tex">t^*</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math>
+degrees of freedom (same as the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mi>F</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">DFR</annotation></semantics></math>
+in the ANOVA table), and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">parameter</mtext></msub></mrow><annotation encoding="application/x-tex">SE_\text{parameter}</annotation></semantics></math>
+is the standard error of the parameter of interest. Here are two
+important examples</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">slope</mtext></msub><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mi>b</mi><mn>1</mn></msub><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup></mrow></msqrt></mrow><mrow><mi>R</mi><msqrt><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msqrt></mrow></mfrac><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>S</mi><msub><mi>E</mi><mrow><mrow><mtext mathvariant="normal">mean </mtext><mspace width="0.333em"></mspace></mrow><mi>y</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> at </mtext><mspace width="0.333em"></mspace></mrow><msup><mi>x</mi><mo>*</mo></msup></mrow></msub><mo>=</mo><msqrt><mrow><mfrac><msup><mi>s</mi><mn>2</mn></msup><mi>n</mi></mfrac><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>S</mi><msubsup><mi>E</mi><mtext mathvariant="normal">slope</mtext><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">SE_\text{slope} = \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}} ~~~~ \text{ and } ~~~~ SE_{\text{mean }y\text{ at }x^*} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.</annotation></semantics></math>
+<!--$$SE_\text{slope} = \dfrac{s}{s_x \sqrt{n-1}} ~~~~ \text{ and } ~~~~ SE_{\text{mean-}y\text{-at-}x^*} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s_x^2 (n -1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$--></p>
+</section>
+<p>We used the R output from the <a
+href="Examples/MidtermsRegression.html">Midterms Regression example</a>
+to answer the following questions.</p>
+<ol start="2" type="1">
+<li><p>Find a 95% confidence interval for the slope of the regression
+line in this example.</p></li>
+<li><p>Find a 95% confidence interval for the average midterm 2 grade of
+students who get a 90 on midterm 1.</p></li>
+</ol>
+<!--
+### Wed, Apr 1
+
+* **Workshop:** [Running Age and 5K Times](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/runningAge.pdf)
+-->
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
