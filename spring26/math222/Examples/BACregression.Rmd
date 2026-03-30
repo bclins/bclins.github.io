@@ -12,7 +12,7 @@ head(df)
 # Number of rows and columns
 dim(df)
 # Averages
-apply(df, MARGIN = 2, FUN = mean) # Applies the function mean() to the columns. MARGIN = 1 would apply the function to the rows instead.
+apply(df, MARGIN = 2, FUN = mean) # Applies the function mean() to the columns. MARGIN = 1 would apply to rows.
 # Standard deviations
 apply(df, MARGIN = 2, FUN = sd)
 ```
@@ -42,7 +42,7 @@ myLM <- lm(bac ~ beers, data = df)
 myLM
 ```
 
-Notice that the linear model contains the slope and the y-intercept for the least squares regression line.  The slope is the coefficient on the Midterm1 grade, so it is the number 0.5797.  This means: *for every 1 point higher a student gets on midterm 1, their midterm 2 grade tends to be 0.5797 points higher, on average.*
+Notice that the linear model contains the slope and the y-intercept for the least squares regression line.  The slope is the coefficient on the `beers` variable, so it is the number 0.01796. The units for the slope are BAC points per beer.  The slope tells us that: *for every 1 extra beer someone drinks, their BAC tends to increase by 0.0176, on average.*
 
 ### Plotting Trendlines
 
@@ -55,7 +55,7 @@ abline(myLM) # Adds the trendline to the scatterplot
 
 ### Making Predictions
 
-If you want to predict a y-value based on a particular x-value, use the `predict()` function. The arguments of `predict()` are a linear model and a data frame with a header that has the same name as the x-variable in the linear model. In this example, the second argument is a simple data frame with two values for Midterm 1, one student who gets a 50 and another student who gets a 100.  
+If you want to predict a y-value based on a particular x-value, use the `predict()` function. The arguments of `predict()` are a linear model and a data frame with a header that has the same name as the x-variable in the linear model. In this example, the second argument is a simple data frame with two values for `beers`, one person who drinks 2 beers and another who drinks 8. 
 
 ```{r}
 predict(myLM, data.frame(beers = c(2,8)))
@@ -80,7 +80,7 @@ qqnorm(resid(myLM))
 qqline(resid(myLM))
 ```
 
-That's might be an issue since the sample size is small ($n = 16$). 
+That's might affect the reliability of any confidence intervals we make later since the sample size is small ($n = 16$). 
 
 ### Other Information
 

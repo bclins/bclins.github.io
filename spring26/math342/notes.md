@@ -19,6 +19,20 @@ header-includes: |
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\inner}[1]{\langle {#1} \rangle}
 
+<style>
+.DD {
+    text-align:center;
+}
+.DD th {
+    color: black;
+    border-bottom: 1px solid black;
+}
+.DD td {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+</style>
+
 ## Math 342 - Spring 2026
 
 <!--
@@ -1492,7 +1506,7 @@ $$c_0 N_0(x) + c_1 N_1(x) + \ldots + c_n N_n(x)$$
 passes through each point $(x_i, y_i)$. Since the matrix on the left is lower triangular, this can be solved efficiently using back substitution.  
 
 
-2. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Lagrange polynomials.
+2. Express the interpolating polynomial that passes through $(-1,-6), (1,0), (2,6)$ as a linear combination of Newton polynomials.
 
 
 We finished by talking about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  
@@ -1506,15 +1520,37 @@ $$f[x_j, \ldots, x_k] = \dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}
 
 
 
-We did these examples. 
+We did this example in class. 
 
 3. Make a divided differences table for the points $(-1,-4), (0,3), (1,0), (5,8)$, and use it to find the interpolating polynomial (in Newton form). 
 
-4. Use the $x$-values $-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$ to make an interpolating polynomial for $f(x) = \cos x.$
-<details>
-The table of divided differences is:
+
+
+Here are some additional examples with videos:
+
+4. Use a table of divided differences to find the interpolating polynomial for a function $f(x)$ with the values shown in the table below. (<https://youtu.be/hcsBjizQ9X8>)
+<center>
 <table class="bordered">
-<tr><td>$x$</td><td>$f(x)$</td><td> DD1</td><td> DD2</td><td> DD3</td><td> DD4</td></tr>
+<tr><td>$x$</td><td>$-5$</td><td>$-1$</td><td>$0$</td><td>$2$</td></tr>
+<tr><td>$f(x)$</td><td>$-2$</td><td>$6$</td><td>$1$</td><td>$3$</td></tr>
+</table>
+</center>
+
+
+5. Use a table of divided differences to find the interpolating polynomial for the points $(0,1), (1,4), (2, 9), (3, 16)$ (<https://youtu.be/gBEW7cfPvgQ>)
+
+
+<!--
+### Wed, Apr 1
+
+We started with this example.
+
+1. Use the $x$-values $-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$ to make an interpolating polynomial for $f(x) = \cos x.$
+
+The table of divided differences in the example above is:
+<center>
+<table class="DD" >
+<tr><th>$x$</th><th>$f(x)$</th><th>$\text{DD1}$</th><th>$\text{DD2}$</th><th>$\text{DD3}$</th><th>$\text{DD4}$</th></tr>
 <tr><td>$-\pi$</td><td style="color:blue">$-1$</td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td style="color:blue">$\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
 <tr><td>$-\frac{\pi}{2}$</td><td>$0$</td><td></td><td style="color:blue">$0$</td><td></td><td></td></tr>
@@ -1525,26 +1561,12 @@ The table of divided differences is:
 <tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
 <tr><td>$\pi$</td><td>$-1$</td><td></td><td></td><td></td><td></td></tr>
 </table>
+</center>
 So the Newton form of the interpolating polynomial is 
 $$-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).$$
 Notice that the coefficients are just the numbers (in blue) at the top of each column in the divided differences table. 
-</details>
 
-Here are some additional examples with videos:
-
-5. Use a table of divided differences to find the interpolating polynomial for a function $f(x)$ with the values shown in the table below. (<https://youtu.be/hcsBjizQ9X8>)
-<center>
-<table class="bordered">
-<tr><td>$x$</td><td>$-5$</td><td>$-1$</td><td>$0$</td><td>$2$</td></tr>
-<tr><td>$f(x)$</td><td>$-2$</td><td>$6$</td><td>$1$</td><td>$3$</td></tr>
-</table>
-</center>
-
-
-6. Use a table of divided differences to find the interpolating polynomial for the points $(0,1), (1,4), (2, 9), (3, 16)$ (<https://youtu.be/gBEW7cfPvgQ>)
-
-<!--
-After those examples, we did this workshop in class:
+After that, we did this workshop in class:
 
 * **Workshop:** [Divided differences](Workshops/DividedDifferences.pdf)
 -->

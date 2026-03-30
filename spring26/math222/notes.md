@@ -1021,9 +1021,19 @@ Another useful quantity that you can derive from the ANOVA table is the **coeffi
 $$R^2 = \frac{SSM}{SST} = 1 - \frac{SSR}{SST}.$$  
 It represents the percent of the variability in $y$ that follows the model.  The rest, $1-R^2$, is the percent of the variability of $y$ that does not follow the model. 
 
-1. Suppose that you know $n$, $s_x$, $s_y$, and the correlation coefficient $R$.  Is that enough to fill in a whole ANOVA table?  
+Finally, the mean square total is the same as the variance of $y$, so 
+$$MST = s_y^2.$$ 
 
-Using the residual standard error, you can make confidence intervals for several parameters related to least squares regression.
+If you know $n$, $s_y$, and $R$, then you have enough information to fill in the whole ANOVA table.  We did this example in class. 
+
+1. In the [Beers versus BAC](Examples/BACregression.html) example, $n = 16$, $s_y = 0.04414$, and $R^2 = 0.80$.  Use this to fill in a complete ANOVA table.  
+
+
+
+<!--
+### Wed, Apr 1
+
+Using the residual standard error $s = \sqrt{MSR}$, you can make confidence intervals for several parameters related to least squares regression.
 
 <div class = "Theorem">
 #### Linear Regression Confidence Intervals
@@ -1033,8 +1043,6 @@ $$\text{estimate} \pm t^* SE_\text{parameter}$$
 where $t^*$ has $n-2$ degrees of freedom (same as the $DFR$ in the ANOVA table), and $SE_\text{parameter}$ is the standard error of the parameter of interest.  Here are two important examples
 
 $$SE_\text{slope} = \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}} ~~~~ \text{ and } ~~~~ SE_{\text{mean }y\text{ at }x^*} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$
-<!--$$SE_\text{slope} = \dfrac{s}{s_x \sqrt{n-1}} ~~~~ \text{ and } ~~~~ SE_{\text{mean-}y\text{-at-}x^*} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s_x^2 (n -1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$-->
-
 </div>
 
 We used the R output from the [Midterms Regression example](Examples/MidtermsRegression.html) to answer the following questions. 
@@ -1042,9 +1050,6 @@ We used the R output from the [Midterms Regression example](Examples/MidtermsReg
 2. Find a 95% confidence interval for the slope of the regression line in this example. 
 
 3. Find a 95% confidence interval for the average midterm 2 grade of students who get a 90 on midterm 1.  
-
-<!--
-### Wed, Apr 1
 
 * **Workshop:** [Running Age and 5K Times](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/runningAge.pdf)
 -->

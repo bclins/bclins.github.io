@@ -913,35 +913,20 @@ After that, we introduced:
 
 where $\hat{p}$ is the **pooled proportion**:
 $$\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}.$$
-</div>
 
-As with one-sample hypothesis tests, we need a big enough sample for the normality assumption to hold, and you need the samples to not be biased.  A rule of thumb for the sample size is that you should have at least 5 successes and failures for each group.  
+This test requires at least 5 successes and 5 failures in each group to be trustworthy.
+</div>
 
 We rushed a bit at the end to squeeze in this example.  
 
 1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
 
-
-<!--
-
-In both examples we used the following theory.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
+We didn't have time to talk about the theory behind the two sample test for proportions but here is a little about that if you are interested.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
 
 * **Shape:** Approximately normal.
 * **Center:** Equal to the true population gap $p_A - p_B$.
 * **Spread:** The standard deviation is 
 $$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
-
-From this theory we talked about how to test the following hypotheses:
-
-* $H_0 ~:~ p_A = p_B$
-* $H_A ~:~ p_A \ne p_B$ 
-
-using the test statistic:
-$$z = \frac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p}(1- \hat{p})\left(\frac{1}{N_A} + \frac{1}{N_B}\right)}}$$
-where $\hat{p}$ is the **pooled proportion**:
-$$\hat{p} = \frac{\text{ Total number of successes in both groups }}{\text{ Combined sample size }}.$$
--->
-
 
 - - - 
 
@@ -953,35 +938,18 @@ Mon, Mar 30 | [6.2.3][6.2.3] | Difference of two proportions (confidence interva
 Wed, Apr 1  | [7.1][7.1]     | Introducing the t-distribution
 Fri, Apr 3  | [7.1.4][7.1.4] | One sample t-confidence intervals
 
-<!--
 
-### Mon, Nov 3
+### Mon, Mar 20
 
-We started by reviewing what we introduced last time. 
 
-<div class="Theorem">
-**Two-Sample Hypothesis Test for Proportions.** 
+We started with another 2-sample hypothesis test. 
 
-<center>
-<table>
-<tr>
-<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{N_A} + \frac{1}{N_B} \right)}}.$</td>
-</tr>
-</table>
-</center>
+1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
-where $\hat{p}$ is the **pooled proportion**:
-$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{N_A + N_B}.$$
-</div>
-
-As with any statistical inference method, this technique is based on two key assumptions:
+As with any statistical inference method, the 2-sample test for proportions is based on two key assumptions:
 
 * **No Bias**: Data should come from a simple random sample.
 * **Normality:** Should have at least 5 successes and failures for each group.  
-
-We used the 2-sample hypothesis test on this example. 
-
-1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
 If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
 
@@ -995,13 +963,11 @@ Works best if both samples contain at least 10 successes and 10 failures.
 
 Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
 
-Two sample confidence intervals for proportions are a little less robust than hypothesis tests.  It is recommended that you should have at least 10 successes & 10 failures in each group before you put much trust in the interval.   
 
-We started with this example:
-
-1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
+2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
+<!--
 ### Wed, Nov 5
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
