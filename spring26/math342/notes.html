@@ -2866,20 +2866,22 @@ href="https://en.wikipedia.org/wiki/Divided_differences">method of
 divided differences</a>, which lets us find the coefficients of an
 interpolating polynomial expressed using the Newton basis.</p>
 <div class="Theorem">
-<p><strong>Definition.</strong> For a function
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
-and a set of
+<p><strong>Definition.</strong> For a set of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math>
 distinct nodes
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_0, \ldots, x_n</annotation></semantics></math>
+and corresponding y-values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y_i = f(x_i)</annotation></semantics></math>,
 the <strong>divided differences</strong> are defined recursively for any
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&lt;</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">j &lt; k</annotation></semantics></math>
 in
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0, 1, \ldots, n\}</annotation></semantics></math>
 by
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f[x_k] = f(x_k)</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>y</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> for each </mtext><mspace width="0.333em"></mspace></mrow><mi>j</mi><mo>=</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">[y_j] = f[x_j] = f(x_j) \text{ for each } j = 0, \ldots, n</annotation></semantics></math>
 and
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">f[x_j, \ldots, x_k] = \dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j}.</annotation></semantics></math></p>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>y</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>y</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>x</mi><mi>j</mi></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">[y_j, \ldots, y_k] = f[x_j, \ldots, x_k] = \dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j}</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>j</mi><mo>&lt;</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">0 \le j &lt; k \le n</annotation></semantics></math>.</p>
 </div>
 <p>We did this example in class.</p>
 <ol start="3" type="1">
@@ -2939,36 +2941,199 @@ polynomial for the points
 (<a href="https://youtu.be/gBEW7cfPvgQ"
 class="uri">https://youtu.be/gBEW7cfPvgQ</a>)</li>
 </ol>
-<!--
-### Wed, Apr 1
-
-We started with this example.
-
-1. Use the $x$-values $-\pi$, $-\pi/2$, $0$, $\pi/2$, $\pi$ to make an interpolating polynomial for $f(x) = \cos x.$
-
+<h3 id="wed-apr-1">Wed, Apr 1</h3>
+<p>We started with this example.</p>
+<ol type="1">
+<li>Use the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">-\pi</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>π</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-\pi/2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+to make an interpolating polynomial for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>cos</mo><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">f(x) = \cos x.</annotation></semantics></math></li>
+</ol>
 The table of divided differences in the example above is:
 <center>
-<table class="DD" >
-<tr><th>$x$</th><th>$f(x)$</th><th>$\text{DD1}$</th><th>$\text{DD2}$</th><th>$\text{DD3}$</th><th>$\text{DD4}$</th></tr>
-<tr><td>$-\pi$</td><td style="color:blue">$-1$</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td style="color:blue">$\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
-<tr><td>$-\frac{\pi}{2}$</td><td>$0$</td><td></td><td style="color:blue">$0$</td><td></td><td></td></tr>
-<tr><td></td><td></td><td>$\frac{2}{\pi}$</td><td></td><td style="color:blue">$-\frac{8}{3\pi^3}$</td><td></td></tr>
-<tr><td>$0$</td><td>$1$</td><td></td><td>$-\frac{4}{\pi^2}$</td><td></td><td style="color:blue">$\frac{8}{3\pi^4}$</td></tr>
-<tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td>$\frac{8}{3\pi^3}$</td><td></td></tr>
-<tr><td>$\frac{\pi}{2}$</td><td>$0$</td><td></td><td>$0$</td><td></td><td></td></tr>
-<tr><td></td><td></td><td>$-\frac{2}{\pi}$</td><td></td><td></td><td></td></tr>
-<tr><td>$\pi$</td><td>$-1$</td><td></td><td></td><td></td><td></td></tr>
+<table class="DD">
+<tr>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">DD1</mtext><annotation encoding="application/x-tex">\text{DD1}</annotation></semantics></math>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">DD2</mtext><annotation encoding="application/x-tex">\text{DD2}</annotation></semantics></math>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">DD3</mtext><annotation encoding="application/x-tex">\text{DD3}</annotation></semantics></math>
+</th>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtext mathvariant="normal">DD4</mtext><annotation encoding="application/x-tex">\text{DD4}</annotation></semantics></math>
+</th>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">-\pi</annotation></semantics></math>
+</td>
+<td style="color:blue">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>2</mn><mi>π</mi></mfrac><annotation encoding="application/x-tex">\frac{2}{\pi}</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">-\frac{\pi}{2}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>2</mn><mi>π</mi></mfrac><annotation encoding="application/x-tex">\frac{2}{\pi}</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">-\frac{8}{3\pi^3}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>4</mn><msup><mi>π</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">-\frac{4}{\pi^2}</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td style="color:blue">
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>4</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\frac{8}{3\pi^4}</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>2</mn><mi>π</mi></mfrac></mrow><annotation encoding="application/x-tex">-\frac{2}{\pi}</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac><annotation encoding="application/x-tex">\frac{8}{3\pi^3}</annotation></semantics></math>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mi>π</mi><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{\pi}{2}</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>2</mn><mi>π</mi></mfrac></mrow><annotation encoding="application/x-tex">-\frac{2}{\pi}</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
 </table>
 </center>
-So the Newton form of the interpolating polynomial is 
-$$-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).$$
-Notice that the coefficients are just the numbers (in blue) at the top of each column in the divided differences table. 
-
-After that, we did this workshop in class:
-
-* **Workshop:** [Divided differences](Workshops/DividedDifferences.pdf)
--->
+<p>So the Newton form of the interpolating polynomial is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mo>+</mo><mfrac><mn>2</mn><mi>π</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>3</mn></msup></mrow></mfrac><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mfrac><mn>8</mn><mrow><mn>3</mn><msup><mi>π</mi><mn>4</mn></msup></mrow></mfrac><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mfrac displaystyle="false"><mi>π</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">-1 + \frac{2}{\pi} (x + \pi) - \frac{8}{3\pi^3} x (x + \pi) (x+ \tfrac{\pi}{2}) + \frac{8}{3\pi^4} x (x+\pi) (x + \tfrac{\pi}{2}) (x - \tfrac{\pi}{2}).</annotation></semantics></math>
+Notice that the coefficients are just the numbers (in blue) at the top
+of each column in the divided differences table.</p>
+<p>After that, we did this workshop in class:</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/DividedDifferences.pdf">Divided differences</a></li>
+</ul>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>

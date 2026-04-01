@@ -2077,14 +2077,14 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 1</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
-<td style="text-align: left;">Introduction to multiple regression</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.4">8.4</a></td>
+<td style="text-align: left;">Inference for linear regression</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 3</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
-<td style="text-align: left;">Model selection</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1">9.1</a></td>
+<td style="text-align: left;">Introduction to multiple regression</td>
 </tr>
 </tbody>
 </table>
@@ -2254,29 +2254,41 @@ and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.80</mn></mrow><annotation encoding="application/x-tex">R^2 = 0.80</annotation></semantics></math>.
 Use this to fill in a complete ANOVA table.</li>
 </ol>
-<!--
-### Wed, Apr 1
-
-Using the residual standard error $s = \sqrt{MSR}$, you can make confidence intervals for several parameters related to least squares regression.
-
-<div class = "Theorem">
-#### Linear Regression Confidence Intervals
-
-$$\text{estimate} \pm t^* SE_\text{parameter}$$
-
-where $t^*$ has $n-2$ degrees of freedom (same as the $DFR$ in the ANOVA table), and $SE_\text{parameter}$ is the standard error of the parameter of interest.  Here are two important examples
-
-$$SE_\text{slope} = \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}} ~~~~ \text{ and } ~~~~ SE_{\text{mean }y\text{ at }x^*} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$
-</div>
-
-We used the R output from the [Midterms Regression example](Examples/MidtermsRegression.html) to answer the following questions. 
-
-2. Find a 95% confidence interval for the slope of the regression line in this example. 
-
-3. Find a 95% confidence interval for the average midterm 2 grade of students who get a 90 on midterm 1.  
-
-* **Workshop:** [Running Age and 5K Times](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/runningAge.pdf)
--->
+<h3 id="wed-apr-1">Wed, Apr 1</h3>
+<p>Using the residual standard error
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><msqrt><mrow><mi>M</mi><mi>S</mi><mi>R</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">s = \sqrt{MSR}</annotation></semantics></math>,
+you can make confidence intervals for several parameters related to
+least squares regression.</p>
+<section id="linear-regression-confidence-intervals" class="Theorem">
+<h4>Linear Regression Confidence Intervals</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">estimate</mtext><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">parameter</mtext></msub></mrow><annotation encoding="application/x-tex">\text{estimate} \pm t^* SE_\text{parameter}</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>*</mo></msup><annotation encoding="application/x-tex">t^*</annotation></semantics></math>
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math>
+degrees of freedom (same as the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mi>F</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">DFR</annotation></semantics></math>
+in the ANOVA table), and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">parameter</mtext></msub></mrow><annotation encoding="application/x-tex">SE_\text{parameter}</annotation></semantics></math>
+is the standard error of the parameter of interest. Here are two
+important examples</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msub><mi>E</mi><mtext mathvariant="normal">slope</mtext></msub><mo>=</mo><mfrac displaystyle="true"><mi>s</mi><mrow><msub><mi>s</mi><mi>x</mi></msub><msqrt><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mfrac><mo>=</mo><mfrac displaystyle="true"><mrow><msub><mi>b</mi><mn>1</mn></msub><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup></mrow></msqrt></mrow><mrow><mi>R</mi><msqrt><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">SE_\text{slope} = \dfrac{s}{s_x \sqrt{n-1}} =  \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}}</annotation></semantics></math>
+and
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><msub><mi>E</mi><mrow><mrow><mtext mathvariant="normal">mean </mtext><mspace width="0.333em"></mspace></mrow><mi>y</mi><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> at </mtext><mspace width="0.333em"></mspace></mrow><msup><mi>x</mi><mo>*</mo></msup></mrow></msub><mo>=</mo><mi>s</mi><msqrt><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><msubsup><mi>s</mi><mi>x</mi><mn>2</mn></msubsup><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow></msqrt><mo>=</mo><msqrt><mrow><mfrac><msup><mi>s</mi><mn>2</mn></msup><mi>n</mi></mfrac><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mi>S</mi><msubsup><mi>E</mi><mtext mathvariant="normal">slope</mtext><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">SE_{\text{mean }y\text{ at }x^*} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s^2_x (n-1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.</annotation></semantics></math></p>
+</section>
+<p>We used the R output from the <a
+href="Examples/MidtermsRegression.html">Midterms Regression example</a>
+to answer the following questions.</p>
+<ol start="2" type="1">
+<li><p>Find a 95% confidence interval for the slope of the regression
+line in this example.</p></li>
+<li><p>Find a 95% confidence interval for the average midterm 2 grade of
+students who get a 90 on midterm 1.</p></li>
+</ol>
+<ul>
+<li><strong>Workshop:</strong> <a href="Examples/runningAge.pdf">Running
+Age and 5K Times</a></li>
+</ul>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
@@ -2291,31 +2303,26 @@ We used the R output from the [Midterms Regression example](Examples/MidtermsReg
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 6</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
-<td style="text-align: left;">Checking model conditions</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2">9.2</a></td>
+<td style="text-align: left;">Model selection</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 8</td>
 <td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
-<td style="text-align: left;">Introduction to logistic regression</td>
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3">9.3</a></td>
+<td style="text-align: left;">Checking model conditions</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 10</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
-<td style="text-align: left;">Logistic regression - con’d</td>
+<td style="text-align: left;">Introduction to logistic regression</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2326,8 +2333,9 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 13</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Hypothesis testing with randomization</td>
+<td style="text-align: center;"><a
+href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5">9.5</a></td>
+<td style="text-align: left;">Logistic regression - con’d</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 15</td>
@@ -2344,6 +2352,11 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Day</th>
@@ -2355,18 +2368,18 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <tr class="odd">
 <td style="text-align: center;">Mon, Apr 20</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Confidence intervals with
-bootstrapping</td>
+<td style="text-align: left;">Hypothesis testing with randomization</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Wed, Apr 22</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Introduction to Bayesian methods</td>
+<td style="text-align: left;">Confidence intervals with
+bootstrapping</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Fri, Apr 24</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Credible intervals for proportions</td>
+<td style="text-align: left;">Introduction to Bayesian methods</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Mon, Apr 27</td>

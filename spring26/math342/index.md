@@ -23,7 +23,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 1 will be on **Friday, Feb 20**.
+* Midterm 2 will be on **Friday, April 10**.
 * Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 
 

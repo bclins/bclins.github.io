@@ -959,8 +959,8 @@ If you are using R, then an alternative to the Bonferroni correction is to use *
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Mar 30 | [8.2][8.2] | Least squares regression
-Wed, Apr 1  | [9.1][9.1] | Introduction to multiple regression 
-Fri, Apr 3  | [9.2][9.2] | Model selection
+Wed, Apr 1  | [8.4][8.4] | Inference for linear regression
+Fri, Apr 3  | [9.1][9.1] | Introduction to multiple regression 
 
 ### Mon, Mar 30
 
@@ -1030,7 +1030,6 @@ If you know $n$, $s_y$, and $R$, then you have enough information to fill in the
 
 
 
-<!--
 ### Wed, Apr 1
 
 Using the residual standard error $s = \sqrt{MSR}$, you can make confidence intervals for several parameters related to least squares regression.
@@ -1042,7 +1041,9 @@ $$\text{estimate} \pm t^* SE_\text{parameter}$$
 
 where $t^*$ has $n-2$ degrees of freedom (same as the $DFR$ in the ANOVA table), and $SE_\text{parameter}$ is the standard error of the parameter of interest.  Here are two important examples
 
-$$SE_\text{slope} = \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}} ~~~~ \text{ and } ~~~~ SE_{\text{mean }y\text{ at }x^*} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$
+$$SE_\text{slope} = \dfrac{s}{s_x \sqrt{n-1}} =  \dfrac{b_1 \sqrt{1-R^2}}{R \sqrt{n-2}}$$ 
+and 
+$$SE_{\text{mean }y\text{ at }x^*} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s^2_x (n-1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_\text{slope}^2}.$$
 </div>
 
 We used the R output from the [Midterms Regression example](Examples/MidtermsRegression.html) to answer the following questions. 
@@ -1051,8 +1052,7 @@ We used the R output from the [Midterms Regression example](Examples/MidtermsReg
 
 3. Find a 95% confidence interval for the average midterm 2 grade of students who get a 90 on midterm 1.  
 
-* **Workshop:** [Running Age and 5K Times](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/examples/runningAge.pdf)
--->
+* **Workshop:** [Running Age and 5K Times](Examples/runningAge.pdf)
 
 
 - - - 
@@ -1061,9 +1061,9 @@ We used the R output from the [Midterms Regression example](Examples/MidtermsReg
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 6  |  [9.3][9.3] | Checking model conditions
-Wed, Apr 8  |  [9.5][9.5] | Introduction to logistic regression
-Fri, Apr 10 |  [9.5][9.5] | Logistic regression - con'd    
+Mon, Apr 6  |  [9.2][9.2] | Model selection
+Wed, Apr 8  |  [9.3][9.3] | Checking model conditions
+Fri, Apr 10 |  [9.5][9.5] | Introduction to logistic regression
 
 
 - - - 
@@ -1072,7 +1072,7 @@ Fri, Apr 10 |  [9.5][9.5] | Logistic regression - con'd
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Apr 13 |            | Hypothesis testing with randomization                 
+Mon, Apr 13 |   [9.5][9.5] | Logistic regression - con'd    
 Wed, Apr 15 |            | Review
 Fri, Apr 17 |            | **Midterm 3**
 
@@ -1083,9 +1083,9 @@ Fri, Apr 17 |            | **Midterm 3**
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 20 |    | Confidence intervals with bootstrapping
-Wed, Apr 22 |    | Introduction to Bayesian methods
-Fri, Apr 24 |    | Credible intervals for proportions
+Mon, Apr 20 |    | Hypothesis testing with randomization                 
+Wed, Apr 22 |    | Confidence intervals with bootstrapping  
+Fri, Apr 24 |    | Introduction to Bayesian methods
 Mon, Apr 27 |    | Last day, recap & review
 
 

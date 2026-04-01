@@ -1512,10 +1512,11 @@ passes through each point $(x_i, y_i)$. Since the matrix on the left is lower tr
 We finished by talking about the [method of divided differences](https://en.wikipedia.org/wiki/Divided_differences), which lets us find the coefficients of an interpolating polynomial expressed using the Newton basis.  
 
 <div class="Theorem">
-**Definition.** For a function $f$ and a set of $n+1$ distinct nodes $x_0, \ldots, x_n$, the **divided differences** are defined recursively for any $j < k$ in $\{0, 1, \ldots, n\}$ by 
-$$f[x_k] = f(x_k)$$
+**Definition.** For a set of $n+1$ distinct nodes $x_0, \ldots, x_n$ and corresponding y-values $y_i = f(x_i)$, the **divided differences** are defined recursively for any $j < k$ in $\{0, 1, \ldots, n\}$ by 
+$$[y_j] = f[x_j] = f(x_j) \text{ for each } j = 0, \ldots, n$$
 and
-$$f[x_j, \ldots, x_k] = \dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j}.$$
+$$[y_j, \ldots, y_k] = f[x_j, \ldots, x_k] = \dfrac{f[x_{j+1}, \ldots, x_k] - f[x_j,\ldots, x_{k-1}]}{x_k - x_j}$$
+for every $0 \le j < k \le n$. 
 </div>
 
 
@@ -1540,7 +1541,6 @@ Here are some additional examples with videos:
 5. Use a table of divided differences to find the interpolating polynomial for the points $(0,1), (1,4), (2, 9), (3, 16)$ (<https://youtu.be/gBEW7cfPvgQ>)
 
 
-<!--
 ### Wed, Apr 1
 
 We started with this example.
@@ -1569,7 +1569,7 @@ Notice that the coefficients are just the numbers (in blue) at the top of each c
 After that, we did this workshop in class:
 
 * **Workshop:** [Divided differences](Workshops/DividedDifferences.pdf)
--->
+
 
 
 - - - 
