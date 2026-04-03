@@ -1581,6 +1581,11 @@ Often the interpolating polynomial $P_n$ is constructed for a function $f$ so th
 Here are some important results about these approximations.
 -->
 
+Last time, we looked at two examples of interpolating polynomials, one for $\cos x$ at the nodes $\{-\pi, -\tfrac{\pi}{2}, 0, \tfrac{\pi}{2}, \pi \}$ and the other for $10^x$ at the nodes $\{-1, 0, 1, 2\}$. Unfortunately, the later example is a bad approximation of $10^x$.  Why is that?
+
+* **Example:** [Desmos graph of interpolating polynomial for $10^x$](https://www.desmos.com/calculator/a4ujl2puhj)
+
+
 <div class="Theorem">
 **Mean Value Theorem for Divided Differences.** Let $x_0, \ldots, x_n$ be distinct nodes in $[a,b]$ and let $f \in C^{n}[a,b]$. Then there exists a number $\xi$ between the values of $x_0, \ldots, x_n$ such that 
 $$f[x_0, \ldots, x_n] = \frac{ f^{(n)}(\xi) }{n!}.$$
@@ -1598,9 +1603,12 @@ $$P_{n+1}(x) - P_n(x) = f[x_0,\ldots,x_n,x](x-x_0)\cdots (x-x_n).$$
 So by the MVT for Divided Differences, there exists $\xi$ between $x$ and $x_0, \ldots, x_n$ such that 
 $$f(x)-P_n(x) = P_{n+1}(x)-P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-x_0) \cdots (x-x_n). ~ □$$
 
-We finished with the following example. 
+We finished with the following examples. 
 
-2. Estimate the error in using $P_2(x) = 1 + 9 x + \tfrac{81}{2}x(x-1)$ to approximate $f(x) = 10^x$ at $x = 0.5.$  
+
+1. Estimate the error in using the fourth degree interpolating polynomial at the nodes $\{-\pi,-\tfrac{\pi}{2},0,\tfrac{\pi}{2},\pi\}$ to approximate $f(x) = \cos x$ at $x = 1.$  
+
+1. Estimate the error in using the third degree interpolating polynomial at the nodes $\{-1,0,1,2\}$ to approximate $f(x) = 10^x$ at any $x \le 2$.  
 
 
 <!--

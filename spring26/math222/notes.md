@@ -1084,10 +1084,12 @@ We assume that the individual responses $y_i$ are independent of each other, and
 
 * **Independence.** The residuals from different observations are independent of each other.
 
-We looked at these examples.
+We looked at this example.
 
 * **Example:** [Multilinear regression: 5K times versus age and gender](http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/runningAge2.html)
+<!--
 * **Example:** [Multilinear regression: Baby birthweights](https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/BabiesBirthweight.html)
+-->
 
 - - - 
 
