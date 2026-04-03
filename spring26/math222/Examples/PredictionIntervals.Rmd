@@ -1,0 +1,31 @@
+---
+title: Linear Regression Confidence & Prediction Intervals
+---
+
+### Example: Midterm Grades
+
+In the file [MidtermsRegression.html](MidtermsRegression.html), we looked at the relationship between midterm 1 and midterm 2 grades for students in introductory statistics. 
+
+```{r}
+exams <- read.csv('http://people.hsc.edu/faculty-staff/blins/StatsExamples/midtermRegressionS13_F15.csv')
+myLM <- lm(Midterm2 ~ Midterm1, data = exams)
+```
+
+### Prediction intervals for y-values
+
+```{r}
+predict(myLM, data.frame(Midterm1 = c(50,75,100)), interval = "prediction", level = 0.95)
+```
+
+
+### Confidence intervals for y-values
+
+```{r}
+predict(myLM, data.frame(Midterm1 = c(50,75,100)), interval = "confidence", level = 0.95)
+```
+
+### Confidence intervals for other parameters
+
+```{r}
+confint(myLM, level = 0.95)
+```

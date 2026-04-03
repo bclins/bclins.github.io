@@ -22,7 +22,7 @@ Professor of Mathematics \
 [Hampden-Sydney College](https://www.hsc.edu)
 
 Office: Pauley 301 \
-E-mail: <img src="address.png"  style="vertical-align:bottom"/>
+E-mail: <a href="mailto:%62lins%40hsc%2Eedu">&#98;lins&#64;hsc&#46;edu</a> <!--<img src="address.png"  style="vertical-align:bottom"/>-->
 
 [About](about.html) | [Research](research.html) | [Teaching](index.html) 
 

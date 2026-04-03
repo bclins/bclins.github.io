@@ -45,6 +45,7 @@ header-includes: |
 * [ANOVA: Pairwise Comparisons](https://bclins.github.io/spring26/math222/Examples/PairwiseComparisons.html)
 * [Linear regression: Beers versus BAC](Examples/BACregression.html)
 * [Linear regression: Midterm exams](Examples/MidtermsRegression.html)
+* [Linear regression confidence & prediction intervals](Examples/PredictionIntervals.html)
 
 
 <br>

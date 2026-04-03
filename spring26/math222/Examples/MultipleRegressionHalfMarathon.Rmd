@@ -1,0 +1,19 @@
+---
+title: Multiple Regression
+---
+
+### Example: 2018 High Bridge Half-Marathon
+
+```{r}
+results <- read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/highbridge2018.csv")
+head(results)
+```
+
+How do gender and age affect race times? 
+
+```{r}
+myLM <- lm(minutes ~ age + gender, data = results)
+summary(myLM)
+```
+
+

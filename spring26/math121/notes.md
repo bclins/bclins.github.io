@@ -967,7 +967,6 @@ Because the formulas for two-sample confidence intervals and hypothesis tests ar
 2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
-<!--
 ### Wed, Nov 5
 
 * **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
@@ -975,15 +974,8 @@ Because the formulas for two-sample confidence intervals and hypothesis tests ar
 
 ### Fri, Nov 7
 
-<!--
-We reviewed **statistical inference** which is the process of using sample statistics to say something about population parameters.  There are two main techniques:
 
-*  Hypothesis testing - Answers a yes/no question about a parameter
-* Confidence interval - Estimates the value of a parameter
--->
-<!--
-
-We have been focused on inference about proportions of a categorical variable.  Today we started talked about how to do inference about a quantitative variable like height. This semester, my two sections of statistics have an average height of 70.94 inches with a standard deviation of 2.90 inches.  This is data from 47 students. This suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
+Today we started talking about how to do inference about a quantitative variable like height. This semester, our section of statistics has an average height of 71.92 inches with a standard deviation of 3.12 inches.  This is data from 25 students. This suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
 
 * $H_0: \mu_{HS} = 70$
 * $H_A: \mu_{HS} \ne 70$
@@ -992,10 +984,9 @@ To test these, we reviewed what we know about the sampling distribution for $\ba
 $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.$$
 Unfortunately, we don't know the population standard deviation $\sigma$ for all HSC students.  We only know the sample standard deviation.  If we use that instead of $\sigma$, then we get a **t-value**:
 $$t =  \frac{\bar{x} - \mu_0}{s / \sqrt{n}}.$$
-which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). <!--When you do a hypothesis test for one mean or a confidence interval for one mean, 
+which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://mabognar.github.io/apps/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). <!--When you do a hypothesis test for one mean or a confidence interval for one mean, 
 $$\text{degrees of freedom} = n - 1.$$-->
 
-<!--
 <div class="Theorem">
 **One-Sample Hypothesis Test for Means.** 
 
@@ -1018,7 +1009,6 @@ We finished with this example:
     $$N = 10, ~~~~~ s = 76{,}550, ~~~~~ \bar{x} = 161{,}900.$$
     Carry out a hypothesis test with this data  to answer the question. 
 
--->
 
 - - - 
 

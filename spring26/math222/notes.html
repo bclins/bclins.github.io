@@ -2289,6 +2289,76 @@ students who get a 90 on midterm 1.</p></li>
 <li><strong>Workshop:</strong> <a href="Examples/runningAge.pdf">Running
 Age and 5K Times</a></li>
 </ul>
+<h3 id="fri-apr-3">Fri, Apr 3</h3>
+<p>We started by going over some of the problems from the <a
+href="Examples/runningAge.pdf">Wednesday workshop</a>. After that, we
+talked about prediction intervals in least squares regression:</p>
+<section id="prediction-intervals-in-linear-regression" class="Theorem">
+<h4>Prediction Intervals in Linear Regression</h4>
+<p>To predict the y-value for a specific individual, use a
+<strong>prediction interval</strong> of the form</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><msqrt><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>+</mo><mfrac><msup><mi>s</mi><mn>2</mn></msup><mi>n</mi></mfrac><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mo>*</mo></msup><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mi>S</mi><msubsup><mi>E</mi><mtext mathvariant="normal">slope</mtext><mn>2</mn></msubsup></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{y} \pm t^* \sqrt{s^2 + \frac{s^2}{n} + (x^* - \bar{x}) SE_\text{slope}^2}.</annotation></semantics></math></p>
+<p>where the critical
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>*</mo></msup><annotation encoding="application/x-tex">t^*</annotation></semantics></math>-value
+has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math>
+degrees of freedom.</p>
+</section>
+<p>In R you can use the <code>predict</code> function with the optional
+argument <code>interval = "prediction"</code> to make prediction
+intervals.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/PredictionIntervals.html">Linear Regression Confidence
+&amp; Prediction Intervals</a></li>
+</ul>
+<p>After that we started talking about multiple linear regression where
+the model for predicting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+has more than one explanatory variable. The general multiple linear
+regression model assumes that the mean response
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mi>y</mi></msub><annotation encoding="application/x-tex">\mu_y</annotation></semantics></math>
+is a(n) (affine) linear function of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+explanatory variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>,
+,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>p</mi></msub><annotation encoding="application/x-tex">x_p</annotation></semantics></math>.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mi>y</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>β</mi><mi>p</mi></msub><msub><mi>x</mi><mi>p</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex"> \mu_y  = \beta_0 + \beta_1 x_1 + \ldots + \beta_p x_p.</annotation></semantics></math>
+We assume that the individual responses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>y</mi><mi>i</mi></msub><annotation encoding="application/x-tex">y_i</annotation></semantics></math>
+are independent of each other, and the deviations
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>y</mi></msub></mrow><annotation encoding="application/x-tex">y_i - \mu_y</annotation></semantics></math>
+are normally distributed with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+and a constant standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.
+So we have the same assumptions as simple linear regression:</p>
+<ul>
+<li><p><strong>Linearity.</strong> There is a linear relationship
+between the explanatory variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">x_1, \ldots, x_p</annotation></semantics></math>
+and the population means of the response variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>.</p></li>
+<li><p><strong>Normal Residuals.</strong> The residuals are normally
+distributed.</p></li>
+<li><p><strong>Constant Variance.</strong> The standard deviation of the
+residuals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+is the same for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</p></li>
+<li><p><strong>Independence.</strong> The residuals from different
+observations are independent of each other.</p></li>
+</ul>
+<p>We looked at these examples.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/runningAge2.html">Multilinear
+regression: 5K times versus age and gender</a></li>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/BabiesBirthweight.html">Multilinear
+regression: Baby birthweights</a></li>
+</ul>
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>

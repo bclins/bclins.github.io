@@ -1054,6 +1054,40 @@ We used the R output from the [Midterms Regression example](Examples/MidtermsReg
 
 * **Workshop:** [Running Age and 5K Times](Examples/runningAge.pdf)
 
+### Fri, Apr 3
+
+We started by going over some of the problems from the [Wednesday workshop](Examples/runningAge.pdf).  After that, we talked about prediction intervals in least squares regression:
+
+<div class = "Theorem">
+#### Prediction Intervals in Linear Regression
+
+To predict the y-value for a specific individual, use a **prediction interval** of the form
+
+$$\hat{y} \pm t^* \sqrt{s^2 + \frac{s^2}{n} + (x^* - \bar{x}) SE_\text{slope}^2}.$$
+
+where the critical $t^*$-value has $n-2$ degrees of freedom.
+</div>
+
+In R you can use the `predict` function with the optional argument `interval = "prediction"` to make prediction intervals. 
+
+* **Example:** [Linear Regression Confidence & Prediction Intervals](Examples/PredictionIntervals.html)
+
+After that we started talking about multiple linear regression where the model for predicting $y$ has more than one explanatory variable.  The general multiple linear regression model assumes that the mean response $\mu_y$ is a(n) (affine) linear function of $p$ explanatory variables $x_1$, \ldots, $x_p$. 
+$$ \mu_y  = \beta_0 + \beta_1 x_1 + \ldots + \beta_p x_p.$$
+We assume that the individual responses $y_i$ are independent of each other, and the deviations $y_i - \mu_y$ are normally distributed with mean $0$ and a constant standard deviation $\sigma$.  So we have the same assumptions as simple linear regression:
+
+* **Linearity.** There is a linear relationship between the explanatory variables $x_1, \ldots, x_p$ and the population means of the response variable $y$.  
+
+* **Normal Residuals.** The residuals are normally distributed. 
+
+* **Constant Variance.** The standard deviation of the residuals $\sigma$ is the same for every $x$.
+
+* **Independence.** The residuals from different observations are independent of each other.
+
+We looked at these examples.
+
+* **Example:** [Multilinear regression: 5K times versus age and gender](http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/runningAge2.html)
+* **Example:** [Multilinear regression: Baby birthweights](https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/BabiesBirthweight.html)
 
 - - - 
 
