@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-* [Project 1](Project1.pdf) is due **Friday, April 3**
+* [Project 2](Project2.pdf) is due **Friday, April 10**
 * Midterm 2 materials: [review problems](https://bclins.github.io/fall25/math121/midterm2review.pdf),  [solutions](https://bclins.github.io/fall25/math121/midterm2reviewSolutions.pdf), [formula sheet](https://bclins.github.io/fall25/math121/midterm2formulas.pdf)
 * Midterm 1 materials: [review problems](https://bclins.github.io/fall25/math121/midterm1review.pdf),  [solutions](https://bclins.github.io/fall25/math121/midterm1reviewSolutions.pdf)
 * Statistics tutoring is available in Pauley 105 on Mondays and Wednesdays 8-10pm. 

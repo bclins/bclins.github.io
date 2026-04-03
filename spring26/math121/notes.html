@@ -1509,6 +1509,8 @@ the p-value, and explain what it means.</li>
 </tr>
 </table>
 </center>
+<p>This works best if you have at least 10 expected “successes” and 10
+expected “failures”.</p>
 </div>
 <p>When we do a hypothesis test, we need to make sure that the
 <strong>assumptions of a hypothesis test</strong> are satisfied. There
@@ -1840,11 +1842,13 @@ $$\text{degrees of freedom} = n - 1.$$--></p>
 </tr>
 </table>
 </center>
-<p>This
+<p>The
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>-value
 has
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>
 <strong>degrees of freedom</strong>.</p>
+<p>This test works best if the sample size is large (at least 30) or
+there is very little skew and no outliers in the sample.</p>
 </div>
 <p>We briefly talked about why this is. Then we used the app to find a
 p-value for our class data and see whether or not we have strong
@@ -1853,11 +1857,12 @@ USA. The logic of p-values is exactly the same for a t-test as it is for
 a hypothesis test with the normal distribution.</p>
 <p>We finished with this example:</p>
 <ol type="1">
-<li>In 2017, the median home price in the USA was 254,900. Is there
-strong evidence that the average home price in Farmville, VA is lower
-than this number? Here is data from a random sample of 10 homes that
-sold in Farmville in 2017:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>10</mn><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>s</mi><mo>=</mo><mn>76</mn><mo>,</mo><mn>550</mn><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>161</mn><mo>,</mo><mn>900</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">N = 10, ~~~~~ s = 76{,}550, ~~~~~ \bar{x} = 161{,}900.</annotation></semantics></math>
+<li>In 2017, the median home price in the USA was
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>$</mi><mn>254</mn><mo>,</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">\$254{,}900</annotation></semantics></math>.
+Is there strong evidence that the average home price in Farmville, VA is
+lower than this number? Here is data from a random sample of 10 homes
+that sold in Farmville in 2017:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>10</mn><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>s</mi><mo>=</mo><mi>$</mi><mn>76</mn><mo>,</mo><mn>550</mn><mo>,</mo><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>$</mi><mn>161</mn><mo>,</mo><mn>900</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">n = 10, ~~~~~ s = \$76{,}550, ~~~~~ \bar{x} = \$161{,}900.</annotation></semantics></math>
 Carry out a hypothesis test with this data to answer the question.</li>
 </ol>
 <hr />

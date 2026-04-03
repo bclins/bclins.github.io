@@ -842,6 +842,7 @@ On Monday we introduced hypothesis testing:
 </table>
 </center>
 
+This works best if you have at least 10 expected "successes" and 10 expected "failures".
 </div>
 
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
@@ -998,15 +999,17 @@ $$\text{degrees of freedom} = n - 1.$$-->
 </table>
 </center>
 
-This $t$-value has $n-1$ **degrees of freedom**. 
+The $t$-value has $n-1$ **degrees of freedom**. 
+
+This test works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample.
 </div>
 
 We briefly talked about why this is.  Then we used the app to find a p-value for our class data and see whether or not we have strong evidence that HSC students are taller on average than other men in the USA. The logic of p-values is exactly the same for a t-test as it is for a hypothesis test with the normal distribution.
 
 We finished with this example:
 
-1. In 2017, the median home price in the USA was 254,900.  Is there strong evidence that the average home price in Farmville, VA is lower than this number?  Here is data from a random sample of 10 homes that sold in Farmville in 2017: 
-    $$N = 10, ~~~~~ s = 76{,}550, ~~~~~ \bar{x} = 161{,}900.$$
+1. In 2017, the median home price in the USA was $\$254{,}900$.  Is there strong evidence that the average home price in Farmville, VA is lower than this number?  Here is data from a random sample of 10 homes that sold in Farmville in 2017: 
+    $$n = 10, ~~~~~ s = \$76{,}550, ~~~~~ \bar{x} = \$161{,}900.$$
     Carry out a hypothesis test with this data  to answer the question. 
 
 
