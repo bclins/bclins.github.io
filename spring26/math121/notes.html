@@ -1896,45 +1896,68 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Nov 10
-
+<h3 id="mon-apr-6">Mon, Apr 6</h3>
 <div class="Theorem">
-**t-Distribution Confidence Interval.** To estimate a population mean $\mu$ use
-
-$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}.$$
+<p><strong>t-Distribution Confidence Interval.</strong> To estimate a
+population mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+use</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><mfrac><mi>s</mi><msqrt><mi>n</mi></msqrt></mfrac></mrow><annotation encoding="application/x-tex">\bar{x} \pm t^* \frac{s}{\sqrt{n}}</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>*</mo></msup><annotation encoding="application/x-tex">t^*</annotation></semantics></math>
+is the <strong>critical t-value</strong> which has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math>
+<strong>degrees of freedom</strong>.</p>
+<p>This works best if the sample size is large (at least 30) or there is
+very little skew and no outliers in the sample.</p>
 </div>
-
-In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table.  Use $n - 1$ degrees of freedom.
-
-* **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
-
-We talked about how to use the table to find $t$-values.  Then we did the following example. 
-
-1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
-to make a 95\% confidence interval for the average height of all HSC students. 
-
-Here is another example that we didn't have time for.
-
-2. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
-to make a 90\% confidence interval for the average weight of all HSC students. 
-
-We also did this workshop.
-
-* **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
-
-t-distribution methods require the following assumptions:
-
-1. **No Bias.** Data should be a simple random sample from the population.
-
-2. **Normality.** The sampling distribution for $\bar{x}$ should be normal. This tends to be true if the sample size is big.  Here is a quick rule of thumb:
-
-    * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
-    * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
-
+<p>The easiest way to find the critical t-value is to use a table:</p>
+<ul>
+<li><strong>Table:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf">t-distribution
+table</a></li>
+</ul>
+<p>We talked about how to use the table to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math>-values.
+Then we did the following example.</p>
+<ol type="1">
+<li>Use the <a href="ClassData.xlsx">class data</a> to make a 95%
+confidence interval for the average height of all HSC students.</li>
+</ol>
+<p>Here is another example that we didn’t have time for.</p>
+<ol start="2" type="1">
+<li>Use the class data <a href="ClassData.xlsx">class data</a> to make a
+90% confidence interval for the average weight of all HSC students.</li>
+</ol>
+<p>We also did this workshop.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf">Quarters</a></li>
+</ul>
+<p>t-distribution methods (both confidence intervals &amp; hypothesis
+tests) require the following assumptions:</p>
+<ol type="1">
+<li><p><strong>No Bias.</strong> Data should be a simple random sample
+from the population.</p></li>
+<li><p><strong>Normality.</strong> The sampling distribution for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+should be normal. This tends to be true if the sample size is big. Here
+is a quick rule of thumb:</p>
+<ul>
+<li><strong>Large samples</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">N \ge 30</annotation></semantics></math>,
+then the normality assumption is probably reasonable as long as the data
+isn’t extremely skewed or has large outliers.<br />
+</li>
+<li><strong>Small samples</strong> If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&lt;</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">N &lt; 30</annotation></semantics></math>,
+then even a little skew or outliers could mess up the p-values or
+confidence levels you get from the t-distribution formulas.</li>
+</ul></li>
+</ol>
+<!-- 
 ### Wed, Nov 12
 
-<!-- 
 One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  -->
 <!--
 We talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:

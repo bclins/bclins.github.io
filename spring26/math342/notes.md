@@ -1611,31 +1611,6 @@ We finished with the following examples.
 1. Estimate the error in using the third degree interpolating polynomial at the nodes $\{-1,0,1,2\}$ to approximate $f(x) = 10^x$ at any $x \le 2$.  
 
 
-<!--
-Today we looked at some interpolation examples in more detail.  We used Python to implement the Vandermonde matrix and the divided difference methods for finding interpolating polynomials. Then we use the following Python notebook to look at some of the issues that arise with interpolation.  
-
-* **Example:** [Interpolation with Python](https://colab.research.google.com/drive/1tGxmhlDhoyFOrNH25qaMHRlO052wIAb4?usp=sharing)
-
-In the notebook, we looked at the following two examples which both raise important issues. 
-
-1. $\sin x$ on $[0, 10\pi]$.  This example illustrates what goes wrong when you use the Vandermonde matrix approach.  As the number of nodes grows past 20, the Vandermonde matrix is ill-conditioned, so it gives an incorrect interpolating polynomial. Because large Vandermonde matrices tend to be ill-conditioned, using the method of divided differences with the Newton basis for interpolation is usually preferred.  
-
-2. $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$. This function is a version of Runge's function (also known as the Witch of Agnesi).  
-
-When you use equally spaced nodes interpolate the function $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$, the error gets worse as the number of nodes increases, particularly near the endpoints of the interval.  This problem is called **Runge's phenomenon**.  
-
-It is possible to avoid the error from Runge's phenomenon.  The key is to use a carefully chosen set of nodes that are not equally spaced.  The best nodes to use are the roots of the **Chebyshev polynomials** which (surprisingly!) are equal to the following trigonometric functions on the interval $[-1,1]$:
-$$T_{n+1}(x) = \cos ((n+1) \arccos x).$$ 
-The roots of the $(n+1)$th degree Chebyshev polynomials are:
-$$x_k = \cos\left( \frac{(2k+1) \pi}{2(n+1)} \right), ~ k = 0, \ldots, n.$$
-
-
-### Fri, Mar 8
-
-Today we wrapped up our discussion of polynomial interpolation with this workshop.
-
-* **Workshop:** [Polynomial interpolation](Workshops/interpolation.pdf)
--->
 
 - - - 
 
@@ -1647,6 +1622,57 @@ Mon, Apr 6  | Interpolation error - con'd
 Wed, Apr 8  | Review
 Fri, Apr 10 | **Midterm 2**
 
+### Mon, Apr 6
+
+Last time we saw that the interpolation error satisfies:
+
+$$|f(x) - p_n(x)| \le \max \frac{|f^{(n+1)}(\xi)|}{(n+1)!} |x - x_0| \, |x - x_1| \, \cdots \, |x - x_n|.$$
+
+Intuitively, it seems like the error should get smaller if you add more nodes.  But that isn't always true.  A famous example is the function $f(x) = \dfrac{1}{1+25x^2}$ on the interval $[-1,1]$.  If you choose $n+1$ equally spaced nodes, then the error for the interpolating polynomials gets worse and worse as you add more nodes. 
+
+<center>
+<figure>
+<img src = "runge-uniform.gif"></img>
+<figcaption style="text-align:right">Source: <a href="https://www.mscroggs.co.uk/blog/57">Matthew Scrogg's blog</a></figcaption>
+</figure>
+</center>
+
+
+This is known as [**Runge's phenomena**](https://en.wikipedia.org/wiki/Runge%27s_phenomenon).
+
+
+
+Today we looked at some interpolation examples in more detail.  <!--We used Python to implement the Vandermonde matrix and the divided difference methods for finding interpolating polynomials. Then we use the following Python notebook to look at some of the issues that arise with interpolation.  
+
+* **Example:** [Interpolation with Python](https://colab.research.google.com/drive/1tGxmhlDhoyFOrNH25qaMHRlO052wIAb4?usp=sharing)
+
+In the notebook, we looked at the following two examples which both raise important issues. 
+
+1. $\sin x$ on $[0, 10\pi]$.  This example illustrates what goes wrong when you use the Vandermonde matrix approach.  As the number of nodes grows past 20, the Vandermonde matrix is ill-conditioned, so it gives an incorrect interpolating polynomial. Because large Vandermonde matrices tend to be ill-conditioned, using the method of divided differences with the Newton basis for interpolation is usually preferred.  -->
+
+2. $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$. This function is a version of Runge's function (also known as the Witch of Agnesi).  
+
+When you use equally spaced nodes interpolate the function $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$, the error gets worse as the number of nodes increases, particularly near the endpoints of the interval.  This problem is called **Runge's phenomenon**.  
+
+It is possible to avoid the error from Runge's phenomenon.  The key is to use a carefully chosen set of nodes that are not equally spaced.  The best nodes to use are the roots of the [Chebyshev polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomial) which (surprisingly!) are equal to the following trigonometric functions on the interval $[-1,1]$:
+
+$$T_{n+1}(x) = \cos ((n+1) \arccos x).$$ 
+The roots of the $(n+1)$th degree Chebyshev polynomials are:
+$$x_k = \cos\left( \frac{(2k+1) \pi}{2(n+1)} \right), ~ k = 0, \ldots, n.$$
+
+The figure below shows how Runge's phenomenon goes away when you use the roots of the Chebyshev polynomials instead of equally spaced nodes.  
+
+<center>
+<figure>
+<img src = "runge-chebyshev.gif"></img>
+<figcaption style="text-align:right">Source: <a href="https://www.mscroggs.co.uk/blog/57">Matthew Scrogg's blog</a></figcaption>
+</figure>
+</center>
+
+
+We wrapped up our discussion of polynomial interpolation with this workshop.
+
+* **Workshop:** [Polynomial interpolation](Workshops/interpolation.pdf)
 
 - - - 
 

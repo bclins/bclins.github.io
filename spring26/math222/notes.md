@@ -1101,6 +1101,10 @@ Mon, Apr 6  |  [9.2][9.2] | Model selection
 Wed, Apr 8  |  [9.3][9.3] | Checking model conditions
 Fri, Apr 10 |  [9.5][9.5] | Introduction to logistic regression
 
+### Mon, Apr 6
+
+* **Slides**: [Multiple regression examples](Examples/MultipleRegressionSlides.html)
+
 
 - - - 
 

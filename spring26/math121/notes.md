@@ -1023,34 +1023,35 @@ Mon, Apr 6  | [7.2][7.2] | Paired data
 Wed, Apr 8  | [7.3][7.3] | Difference of two means  
 Fri, Apr 10 | [7.3][7.3] | Difference of two means - con'd
 
-<!--
-### Mon, Nov 10
+### Mon, Apr 6
 
 <div class="Theorem">
 **t-Distribution Confidence Interval.** To estimate a population mean $\mu$ use
 
-$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}.$$
+$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}$$
+
+where $t^*$ is the **critical t-value** which has $n-1$ **degrees of freedom**. 
+
+This works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample.
 </div>
 
-In order to use this formula, you need to find the **critical t-value** $t^*$ for the confidence level you want.  The easiest way is to look up the $t^*$ value on a table.  Use $n - 1$ degrees of freedom.
+The easiest way to find the critical t-value is to use a table:
 
 * **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
 
 We talked about how to use the table to find $t$-values.  Then we did the following example. 
 
-1. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
-to make a 95\% confidence interval for the average height of all HSC students. 
+1. Use the [class data](ClassData.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
 
 Here is another example that we didn't have time for.
 
-2. Use the class data ([section 04](ClassDataFall25section04.xlsx), [section 05](ClassDataFall25section05.xlsx))
-to make a 90\% confidence interval for the average weight of all HSC students. 
+2. Use the class data [class data](ClassData.xlsx) to make a 90\% confidence interval for the average weight of all HSC students. 
 
 We also did this workshop.
 
 * **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
 
-t-distribution methods require the following assumptions:
+t-distribution methods (both confidence intervals & hypothesis tests) require the following assumptions:
 
 1. **No Bias.** Data should be a simple random sample from the population.
 
@@ -1059,9 +1060,10 @@ t-distribution methods require the following assumptions:
     * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
     * **Small samples** If $N < 30$, then even a little skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
 
-### Wed, Nov 12
 
 <!-- 
+### Wed, Nov 12
+
 One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says.  -->
 
 <!--
