@@ -88,6 +88,9 @@ ggplot(evals_data, aes(x = age, y = score, color = gender)) +
   geom_parallel_slopes(se = FALSE)
 ```
 
+<br>
+<br>
+
 ## Linear models with interaction
 
 A better linear model might have different slopes for men versus women.  You can get models like that by adding an **iteraction term**:
@@ -102,6 +105,8 @@ ggplot(evals_data, aes(x = age, y = score, color = gender)) +
   geom_smooth(method = "lm", se = FALSE)
 ```
 
+<br>
+<br>
 
 ## Interaction model
 
@@ -114,6 +119,8 @@ interaction_lm
 
 1. Based on the output above, what is the slope for male instructors?  What is the slope for female instructors?
 
+<br>
+<br>
 
 ## Example: Babies birth weights
 
@@ -172,6 +179,10 @@ babies |>
     lm(bwt ~ gestation + parity + smoke, data = _) 
 ```
 
+<br>
+<br>
+
+
 ## ANOVA with multilinear regression
 
 You can make an ANOVA table for multilinear regression, but it doesn't contain much information that wasn't in the summary of the linear model.
@@ -197,6 +208,9 @@ plot(babies$parity, babies$bwt, xlab="Parity", ylab='Birth weight (in ounces)')
 plot(babies$smoke, babies$bwt, xlab="Smoker", ylab='Birth weight (in ounces)')
 ```
 
+<br>
+<br>
+
 ## What does `plot(data_frame)` do?
 
 If you plot a data frame, then you get a matrix of pairwise plots between every pair of variables in the data frame.  That can help check that there is a linear relationship between the variables. 
@@ -204,6 +218,8 @@ If you plot a data frame, then you get a matrix of pairwise plots between every 
 ```{r}
 plot(babies)
 ```
+
+
 
 
 ## Checking the residuals
@@ -257,6 +273,9 @@ would include both the main effects and also the interaction terms for all three
 $$\mu_y = \beta_0 + \underbrace{\beta_{1} x_1 + \beta_2 x_2 + \beta_3 x_3}_\text{main effects} + \underbrace{\beta_{12} x_1 x_2 + \beta_{13} x_1 x_3 + \beta_{23} x_2 x_3}_\text{interaction terms}.$$
 
 Including interaction terms between two quantitative variables makes the model nonlinear in the explanatory variables.  That isn't necessarily a bad things, but it adds complexity. 
+
+<br>
+<br>
 
 ## Practice
 
