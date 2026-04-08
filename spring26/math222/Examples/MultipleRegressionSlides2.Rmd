@@ -1,0 +1,166 @@
+---
+title: "Multiple Regression: Model Selection"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
+## Introduction
+
+When we choose a model, we have two goals: 
+
+* **Predictive power** How precise and accurate are the predictions?
+* **Parsimony** How simple is the model?
+
+These seem like they would be conflicting goals, but sometimes simple models can have a lot predictive power.
+
+## Reasons to remove variables
+
+To make our models parsimonious, we remove variables. Here are reasons to remove variables:
+
+* **Overfitting** - including lots of variables can lead to **overfitting**, i.e., modeling the noise from the sample, not the underlying trend. 
+
+
+* **Insignificant variables** - some variables might not have a statistically significant effect on the response, so it usually doesn't make sense to include them in the model.
+
+* **Multicolinearity** - sometimes two input variables are highly correlated, and including them both in the model is redundant.  
+
+## Measuring predictive power
+
+In multilinear regression, we often have variables that aren't statistically significant contributors to the model. We typically want to remove these variables. 
+
+Recall that 
+$$R^2 = \frac{SSM}{SST} \text{ and } 1 - R^2 = \frac{SSE}{SST}.$$
+
+One way to measure the predictive power of a model is to use the **adjusted $R^2$** which is defined by
+
+$$R^2_\text{adj} = 1 - \frac{MSE}{MST}.$$
+
+
+
+## Example: Babies birth weights
+
+```{r}
+babies <- read.csv('http://people.hsc.edu/faculty-staff/blins/classes/spring17/math222/data/babies.csv')
+dim(babies)
+```
+
+The `babies` data frame contains data on baby birth weights. The variables are:
+
+* bwt - birth weight (in ounces)
+* gestation - length of the pregnancy (in days)
+* parity - 1 if baby was first born, 0 otherwise
+* age - mother's age (in years)
+* height - mother's height (in inches)
+* weight - mother's weight (in lbs.)
+* smoke - 1 if the mother is a smoker, 0 otherwise
+
+
+## The linear model
+
+Recall from last time that 62 rows out of 1236 were incomplete, so we won't include those in the linear model. 
+
+```{r}
+babies_lm <- babies |>
+    na.omit() |>
+    lm(bwt ~ gestation + parity + age + height + weight + smoke, data = _)  
+babies_lm
+```
+
+
+<br>
+<br>
+
+## Which variables to include?
+
+Ideally, you would every subset of variables and see which subset produces the largest $R^2_\text{adj}$.  That is time consuming, even on a computer, when there are a large number of variables.  So our textbook suggests two alternatives:
+
+* **Forward selection** - add variables to the model one-at-a-time, always picking the variable that increases $R^2_\text{adj}$ the most.  Stop when you cannot increase $R^2_\text{adj}$ any more. 
+* **Backward selection** - start with the full model, and remove variables one-at-a-itme, always removing the variable that increases $R^2_\text{adj}$ the most.  Stop when you cannot increase $R^2_\text{adj}$ any more. 
+
+<br>
+<br>
+
+
+## Practice 
+
+```{r}
+babies <- read.csv('http://people.hsc.edu/faculty-staff/blins/classes/spring17/math222/data/babies.csv') |>
+    na.omit()
+babies_lm <- lm(bwt ~ gestation + parity + age + height + weight + smoke, data = babies) 
+adj.R.sq0 = summary(babies_lm)$adj.r.squared
+```
+
+So the initial $R^2_\text{adj} = `r adj.R.sq0`$.
+
+1. Starting with the code above, which variable (if any) should you remove first to increase $R^2_\text{adj}$ the most? 
+
+```{r}
+new_lm <- lm(bwt ~ gestation + parity + height + weight + smoke, data = babies) 
+summary(new_lm)$adj.r.squared
+```
+
+## Alternative approach
+
+If all we care about is predictive power, then maximizing $R^2_\text{adj}$ is a good strategy.  But if we want to better understand which variables really matter, then we might want to focus on the p-values for each variable in the model instead. 
+
+```{r}
+summary(new_lm)
+```
+
+<br>
+<br>
+
+## Another Example
+
+Our textbook has a case study about Ebay auctions of Mario Kart for the Nintendo Wii. The outcome
+variable of interest is the total price (`price`) of an auction, which is the highest bid plus the shipping
+cost. Among the other variables are the following:
+
+* `cond_new`: Indicator variable for if the game is new (1) or used (0).
+* `stock_photo`: Indicator variable for if the auction’s main photo is a stock photo.
+* `duration`: The length of the auction, in days, taking values from 1 to 10.
+* `wheels`: The number of Wii wheels included with the auction. A Wii wheel
+is an optional steering wheel accessory that holds the Wii controller.
+
+
+## Forward selection
+
+2. Use forward selection to decide which of the variables `cond_new`, `stock_photo`, `duration`, or `wheels` to add to the model first. Then keep adding variables until you can't increase $R^2_\text{adj}$ any more. 
+
+```{r}
+mario <- read.csv("mariokart.csv")
+mario_lm <- lm(price ~ cond_new + stock_photo + wheels, data = mario)
+summary(mario_lm)$adj.r.squared
+```
+
+3. How much would you predict for the total price for the Mario Kart game if it was used, used a stock
+photo, and included two wheels and put up for auction during the time period that the Mario Kart
+data were collected?  Make a 90% prediction interval.
+
+4. Make a plot of the `mario` data frame and use it to check to see if the linearity assumptions appears valid.
+
+5. Make a plot of the `mario_lm` and use it to assess whether the constant variance and normal residuals assumptions hold. 
+
+## Checking linearity
+
+We need to check that there is a roughly linear relationship between each of the explanatory variables and the response variable. This also lets you see how the residuals depend on each explanatory variable.
+
+
+```{r}
+plot(mario)
+```
+
+<br>
+<br>
+
+## Checking variance & residuals
+
+```{r}
+plot(mario_lm, which = 1:2)
+```
+
+
+

@@ -165,7 +165,7 @@ summary(babies_lm)
 
 ## Selecting variables
 
-You can use the `select()` function to select the variables you want to include in a data frame or tibble. 
+You can use the `select()` function from the `dplyr` library to select the variables you want to include in a data frame or tibble. 
 
 ```{r}
 head(select(babies, bwt, gestation, parity, smoke))

@@ -1105,6 +1105,9 @@ Fri, Apr 10 |  [9.5][9.5] | Introduction to logistic regression
 
 * **Slides**: [Multiple regression examples](Examples/MultipleRegressionSlides.html)
 
+### Wed, Apr 8
+
+* **Slides**: [Multiple regression: Model selection](Examples/MultipleRegressionSlides2.html)
 
 - - - 
 
