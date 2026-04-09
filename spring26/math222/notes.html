@@ -2401,6 +2401,51 @@ examples</a></li>
 href="Examples/MultipleRegressionSlides2.html">Multiple regression:
 Model selection</a></li>
 </ul>
+<h3 id="fri-apr-10">Fri, Apr 10</h3>
+<p>Today we introduced <strong>logistic regression</strong>. In a
+logistic regression model, you have a binary response variable, and you
+assume that the probability of a “success” is a function of one or more
+quantitative explanatory variables. The simplest logistic regression
+models assume that the <strong>log-odds</strong> of a success are a
+linear function of the explanatory variables, that is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>p</mi><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mi>…</mi><mo>+</mo><msub><mi>β</mi><mi>p</mi></msub><msub><mi>x</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\log \left( \frac{p}{1-p} \right) = \beta_0 + \beta_1 x_1 + \ldots + \beta_p x_p</annotation></semantics></math></p>
+<ol type="1">
+<li>If you know that an outcome has 2 to 1 odds, what is its
+probability? What is the formula to convert odds into probability?</li>
+</ol>
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/calculusSuccess.html">Logistic regression: predicting
+success in calculus</a></li>
+</ul>
+<p>In the example above, we got the logistic regression model
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">odds of passing</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><mn>12.5356805</mn><mo>+</mo><mn>1.6165745</mn><mtext mathvariant="normal">hs_gpa</mtext><mo>+</mo><mn>0.0067637</mn><mtext mathvariant="normal">sat</mtext><mi>.</mi></mrow><annotation encoding="application/x-tex">\log(\text{odds of passing})= -12.5356805 + 1.6165745 \text{hs_gpa} + 0.0067637\text{sat}.</annotation></semantics></math></p>
+<p>If we apply the exponential function to this expression, we get the
+following formula:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">odds of passing</mtext><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>12.5356805</mn></mrow></msup><mspace width="0.167em"></mspace><msup><mi>e</mi><mrow><mn>1.6165745</mn><mtext mathvariant="normal">hs_gpa</mtext></mrow></msup><mspace width="0.167em"></mspace><msup><mi>e</mi><mrow><mn>0.0067637</mn><mtext mathvariant="normal">sat</mtext></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">\text{odds of passing}= e^{-12.5356805} \,  e^{1.6165745 \text{hs_gpa}} \, e^{ 0.0067637\text{sat}}.</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>3.596</mn><mo>×</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>6</mn></mrow></msup><mo>⋅</mo><msup><mn>5.036</mn><mtext mathvariant="normal">hs_gpa</mtext></msup><mo>⋅</mo><msup><mn>1.007</mn><mtext mathvariant="normal">sat</mtext></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">= 3.596 \times 10^{-6} \cdot 5.036^{\text{hs_gpa}} \cdot 1.007^{\text{sat}}.</annotation></semantics></math>
+This means that for every 1 point someone’s high school GPA goes up,
+their predicted odds of passing calculus increases by a factor of 5.036.
+Every extra point on the SATs increases the log-odds by 1.007.</p>
+<p>A special case of logistic regression happens when your explanatory
+variable is also a binary categorical variable. Here is an example.</p>
+<ol start="2" type="1">
+<li><p>A study in the early 1990s looked at whether the anti-retroviral
+drug AZT is effective at preventing HIV-positive pregnant women from
+passing the HIV virus on to their children. In the study, 13 out of 180
+babies whose mothers were given AZT while pregnant tested postive for
+HIV, compared with 40 out of 183 babies whose mothers got a placebo.</p>
+<ol type="a">
+<li>What are the odds of a baby getting HIV if their mom was in the
+placebo group?</li>
+<li>What are the odds of a baby getting HIV if their mom was in the AZT
+group?</li>
+<li>What is the <strong>odds ratio</strong>, that is, how many times
+higher are the odds in the placebo group than in the AZT group.</li>
+</ol></li>
+</ol>
+<p>We finished by expressing the data above as a logistic regression
+model.</p>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>

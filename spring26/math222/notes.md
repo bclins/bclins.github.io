@@ -1109,6 +1109,36 @@ Fri, Apr 10 |  [9.5][9.5] | Introduction to logistic regression
 
 * **Slides**: [Multiple regression: Model selection](Examples/MultipleRegressionSlides2.html)
 
+### Fri, Apr 10
+
+Today we introduced **logistic regression**.  In a logistic regression model, you have a binary response variable, and you assume that the probability of a "success" is a function of one or more quantitative explanatory variables.  The simplest logistic regression models assume that the **log-odds** of a success are a linear function of the explanatory variables, that is:
+
+$$\log \left( \frac{p}{1-p} \right) = \beta_0 + \beta_1 x_1 + \ldots + \beta_p x_p$$
+
+1. If you know that an outcome has 2 to 1 odds, what is its probability?  What is the formula to convert odds into probability?  
+
+* **Example:** [Logistic regression: predicting success in calculus](Examples/calculusSuccess.html)
+
+In the example above, we got the logistic regression model 
+$$\log(\text{odds of passing})= -12.5356805 + 1.6165745 \text{hs_gpa} + 0.0067637\text{sat}.$$
+
+If we apply the exponential function to this expression, we get the following formula:
+$$\text{odds of passing}= e^{-12.5356805} \,  e^{1.6165745 \text{hs_gpa}} \, e^{ 0.0067637\text{sat}}.$$
+$$= 3.596 \times 10^{-6} \cdot 5.036^{\text{hs_gpa}} \cdot 1.007^{\text{sat}}.$$
+This means that for every 1 point someone's high school GPA goes up, their predicted odds of passing calculus increases by a factor of 5.036.  Every extra point on the SATs increases the log-odds by 1.007.  
+
+
+A special case of logistic regression happens when your explanatory variable is also a binary categorical variable.  Here is an example. 
+
+2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children. In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo. 
+
+    a. What are the odds of a baby getting HIV if their mom was in the placebo group?
+    b. What are the odds of a baby getting HIV if their mom was in the AZT group?
+    c. What is the **odds ratio**, that is, how many times higher are the odds in the placebo group than in the AZT group.   
+
+We finished by expressing the data above as a logistic regression model. We also talked about the difference between the odds ratio and the **relative risk**.  The relative risk is how many times higher the probability of getting HIV is in the placebo group than in the AZT group.  
+
+
 - - - 
 
 ### Week 13 Notes

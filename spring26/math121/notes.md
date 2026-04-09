@@ -1061,7 +1061,6 @@ t-distribution methods (both confidence intervals & hypothesis tests) require th
 
 ### Wed, Apr 8
 
-One interesting mistake came up in a couple of the Project 1 write-ups.  The confidence interval for the difference in survival rates for the two groups of monkeys ranges from 3% lower with calorie restriction to 35% higher.  Several people said that because most of the interval is positive, that means we can conclude that calorie restriction *probably* increases survival rates.  That is actually not true!  The mathematics that lets us make a confidence interval don't tell us anything about where the true parameter falls within the interval. So we have to be very careful about using a confidence interval or hypothesis test to say more than what it actually says. 
 
 We talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
 
@@ -1076,13 +1075,14 @@ We talked about comparing the averages of two correlated variables.  You can use
 
 2. Are the necessary assumptions for a t-test and a t-confidence interval satisfied in the previous example? 
 
-3. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx).
+3. Make a confidence interval for the average age gap between husbands and wives.  It turns out that the 95% confidence interval tells us that husbands are from $-0.125$ to $3.975$ years older on average.  Since this interval extends farther on one side than the other, we might be tempted to argument that men really are older on average, but you can't make this argument based on the confidence interval.  
+
+4. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx).
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
-<!--
 
-### Fri, Nov 14
+### Fri, Apr 10
 
 Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
 
@@ -1106,6 +1106,8 @@ This picture suggests that there might be a difference between men & women, but 
 </center>
 
 You can use the smaller sample size minus one as the degrees of freedom. 
+
+Works best if the combined sample size $n_1 + n_2$ is at least 30, or if there are no outliers and little skew in the data. 
 </div>
 
 When you do a two sample t-test (or a 2-sample t-confidence interval), there is a complicated formula for the right degrees of freedom.  But an easy safe approximation is this:
@@ -1137,7 +1139,6 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
 
--->
 
 - - - 
 

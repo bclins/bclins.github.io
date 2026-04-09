@@ -16,31 +16,401 @@
 \textit{These are problems similar to the ones that might be on midterm 3. Be sure to also review class workshops and problems from the textbook.}
 
 \begin{questions}
-\question A 2003 study (North, Shilcock, \& Hargreaves) looked at whether background music in a restaurant affected the amount of money that diners spent on their meals. The researchers asked a restaurant to alternate classical music, popular music, and silence on successive nights over 18 days. The following summary statistics were reported:
+\question In each case, state the specific statistical procedure that is appropriate for the given situation. Be specific: identify the response variable and the explanatory variable(s). If there are any categorical variables present, state how many levels each categorical variable has.
+\begin{parts}
+\part You want to study whether men and women get different average amounts of sleep at night. 
+\begin{solution}
+Two-sample t-test.  The explanatory variable is gender, and the response variable is hours of sleep at night.
+\end{solution}
+\vfill
 
+\part You want to predict life satisfaction based on several factors, including income, regional cost of living, commuting time, and number of children.  
+\begin{solution}
+ This is multiple regression.  The response variable is life satisfaction, and the explanatory variables are income, cost of living, commuting time, and number of children.  
+\end{solution}
+\vfill
+
+\part You want to determine if there are significant differences between the cost of housing in three different cities.  
+\begin{solution}
+ This is 1-way ANOVA.  The response variable is cost of housing. The explanatory variable is the city (3 levels).
+\end{solution}
+\end{parts}
+\vfill
+
+\question Suppose you are performing one-way ANOVA to test for a difference in means for 4 groups.  Each group contains 10 individuals that are randomly selected from a large population.  Before conducting the test, you conduct a quick power computation for a specific alternative hypothesis where $\mu_1 = 10$, $\mu_2 = 11$, $\mu_3 = 12$ and $\mu_4 = 13$.  You need to estimate $\sigma$ for the computation, and so you choose $\sigma = 3$, which seems reasonable.  Would the power be larger, smaller, or about the same if the true $\sigma$ was actually larger than $3$?  
+\begin{solution}
+ The power would be larger if the variance were smaller. 
+\end{solution}
+\vfill
+\newpage
+
+
+
+\question The scatterplot below shows the relationship between size (in square feet) and price (in thousands of dollars) of a random sample of 20 houses sold recently in Arroyo Grande, CA.  
 \begin{center}
-\begin{tabular}{|l|c|c|c|}
+\includegraphics[scale=0.5]{../../../Semesters12-19/Spring16/Math222/houses.png}
+\end{center}
+
+Below is a summary of the least squares regression model for this scatterplot.  
+
+\begin{verbatim}
+    Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+    (Intercept) 265.22212   42.64202   6.220 7.21e-06 ***
+    myData$Size   0.16859    0.03188   5.288 5.00e-05 ***
+    ---
+    Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+    Residual standard error: 51.31 on 18 degrees of freedom
+    Multiple R-squared:  0.6084,	Adjusted R-squared:  0.5866 
+\end{verbatim}
+
+
+\begin{parts}
+\part Is the trend statistically significant? How can you tell?
+\begin{solution}
+The trend is significant because the p-value for the slope is 5.00 times $10^{-5}$.\end{solution}
+\vfill
+
+\part If $SE_{\hat{\mu}} = 55.18$, find a 95\% confidence interval for the mean home price of a 1200 square foot house.  
+\begin{solution}
+The confidence interval for $\hat{\mu}$ is $\hat{y} \pm t^* SE_{\hat{\mu}}$
+ where $t^*$ has $N-2 = 18$ 
+ degrees of freedom. Use the t-distribution chart, $t^* = 2.101$.  
+ Also, $\hat{y} =  265.22+0.16859(1200) = 467.5$. So the confidence interval is: $467.5 \pm 115.9$ or equivalently: 351.6 to 583.4 thousand dollars
+\end{solution}
+\vfill
+
+\part Find a 95\% prediction interval for the price of a 1200 square foot house (recall that $SE_{\hat{y}}^2 = SE_{\hat{\mu}}^2 + s^2$ where $s$ is the residual standard error).
+\begin{solution}
+The standard error in $\hat{y}$ is $\sqrt{55.18^2+s^2}$ where $s^2$ is the variance of the residuals and is equal to the square of the residual standard error which is 51.31 in the chart above.  So $SE_{\hat{y}} = \sqrt{55.18^2+51.31^2} = 75.35$.  Then $\hat{y} \pm t^* SE_{\hat{y}}$ is $467.5 \pm 158.3$ which is from 309.2 to 625.8 thousand dollars.
+\end{solution}
+\vfill
+
+\newpage
+\part Use the fact that $R^2 = 0.6084$ and $s_y = \$79{,}801.5$ and $n = 20$ houses to fill in the following ANOVA table for this example.  
+
+\renewcommand{\arraystretch}{1.8}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-~ & Classical Music & Pop Music & No Music \\ \hline
-Mean & \pounds24.13 & £21.91 & £21.70 \\ 
-SD & £2.243 & £2.627 & £3.332 \\ 
-Sample size & 120 & 142 & 131 \\ \hline
+~ & DF & SS & MS & F   \\ \hline
+Size & \hspace*{0.7in} & \hspace*{0.7in} & \hspace*{0.7in} & \hspace*{0.7in} \\ \hline
+Residuals &  &  &  &    \\ \hline 
+Total  &  &  &  &    \\ 
+\hline
 \end{tabular}
 \end{center}
-\begin{parts}
-\part There were a total of 393 customers at the restaurant.  What was the overall average amount of money spent by these customers? 
 
-\part Use a calculator to find the SSG and SSE for this data, and then make an ANOVA table for this data including the F-statistic.   
+\begin{solution}
 
-\part Use the R command \verb|1 - pf(x, df1, df2)| to write down an expression for the p-value in this situation. 
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+~ & DF & SS & MS & F   \\ \hline
+Size & ~~~~ 1 ~~~~ & $7.36 \times 10^{10}$ & $7.36 \times 10^{10}$ & 27.97 \\ \hline
+Residuals & 18 & $4.74 \times 10^{10}$ & $2.63 \times 10^9$ &    \\ \hline 
+Total  & 19 & $1.21 \times 10^{11}$ & $6.368 \times 10^9$  &    \\ 
 
-\part What additional information would you need before you can safely draw conclusions from this p-value?
+\hline
+\end{tabular}
 
-\part Why might the independence assumption not be satisfied in this example? 
+\end{solution}
+
+\vfill
 
 \end{parts}
 
-\question OpenIntro (\url{https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.39}) is a good exercise.
+
+\question This example is based on data from 78 seventh-grade students in a rural midwestern school. The researcher was interested in the relationship between the students' ``self-concept" and their academic performance. The data included each student's grade point average (GPA) on a ten-point scale, score on a standard IQ test, and gender, taken from school records. Gender is coded as 1 for female and 2 for male. The final variable is each student's score on the Piers-Harris Children's Self-Concept Scale, a psychological test administered by the researcher. Below is a summary of the multiple linear regression model for this data in R. 
+
+
+{\small
+\begin{verbatim}
+Call:
+lm(formula = gpa ~ iq + gender + concept, data = myData)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.5769 -0.7493  0.1984  0.9577  2.4089 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -2.83463    1.28584  -2.205 0.030641 *  
+iq           0.08079    0.01336   6.045 5.78e-08 ***
+gender      -0.82214    0.31354  -2.622 0.010630 *  
+concept      0.05048    0.01396   3.616 0.000548 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.323 on 73 degrees of freedom
+  (1 observation deleted due to missingness)
+Multiple R-squared:  0.561,	Adjusted R-squared:  0.543 
+F-statistic:  31.1 on 3 and 73 DF,  p-value: 4.643e-13
+\end{verbatim}}
+
+
+\begin{parts}
+\part What is the formula for predicting GPA from IQ, Gender, and Self-Concept using this regression model?  
+\begin{solution}
+$$\text{GPA} = -2.83463 + 0.08079\, \text{IQ} - 0.82214\, \text{Gender} + 0.05048\, \text{Self-Concept}$$ 
+\end{solution}
+\vfill
+
+\part What percent of the variability in GPA is explained by this model?  
+\begin{solution}
+The $R^2 = 56.1\%$.  
+\end{solution}
+
+\vfill
+
+\part Estimate the GPA of a male student who has an IQ of 110, and a self-concept score of 60.
+\begin{solution}
+$$\widehat{\text{GPA}} = 7.437$$
+\end{solution}
+\vfill
+
+%\part What is the margin of error for a confidence interval for the average GPA of male students with an IQ of 110, and a self-concept score of 60. 
+%\vfill
+
+\end{parts}
+
+
+
+
+\newpage
+
+
+%\question Which of the following is \underline{not} an advantage of the Kruskal-Wallis test over one-way ANOVA?
+%\begin{choices}
+%\item Kruskal-Wallis only depends on the ranks of the data, so it is robust against outliers.  
+%\item Kruskal-Wallis does not rely on assumptions about the probability distribution of the residuals.
+%\item 
+%\end{choices}
+
+\question Do people from different cultures experience
+emotions differently? One study designed to
+examine this question collected data from 410
+college students from five different cultures. 9 The
+participants were asked to record, on a 1 (never)
+to 7 (always) scale, how much of the time they
+typically felt eight specific emotions. These were
+averaged to produce the global emotion score
+for each participant. Here is a summary of this
+measure: 
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+Culture & $n$ & $\bar{x}$ & $SD$ \\
+\hline
+European American  &  46 & 4.39 & 1.06 \\
+Asian American & 33 & 4.35 & 1.18  \\
+Japanese & 91 & 4.72 & 1.13   \\
+Indian & 160 &  4.34 & 1.26 \\
+Hispanic American & 80 & 5.04 & 1.16 \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{parts}
+\part Complete the ANOVA table below for these results by filling in the five missing entries:
+
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+~ & $Df$ & $SS$ & $MS$ & $F$ \\ \hline
+Culture  & \hspace*{0.7in} &  31.268  & \hspace*{0.7in} & \hspace*{0.7in}   \\ \hline
+Residuals &  & \hspace*{0.7in} & 1.4044 & n/a\\  \hline
+Total & 409 & 600.04 & 1.4671 & n/a \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{solution}
+The filled in ANOVA table is:
+ \begin{center}
+\begin{tabular}{lcccc}
+\hline
+~ & $Df$ & $SS$ & $MS$ & $F$ \\
+\hline
+Culture  & 4 &  31.268  & 7.817 & 5.566  \\
+Residuals & 405 & 568.772 & 1.4044 & n/a\\  \hline
+Total & 409 & 600.04 & 1.4671 & n/a \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+\bigskip
+
+\item What are the null and alternative hypotheses for this ANOVA test?  
+\begin{solution}
+$$H_0 : \text{ The mean is the same for all cultures.}$$
+$$H_A : \text{ There are differences in the means.}$$
+\end{solution}
+\vfill
+
+
+
+\item It turns out that the $p$-value for the F-statistic above is $2.27 \times 10^{-4}$.  What does that mean in this situation?
+\begin{solution}
+We should reject the null hypothesis and conclude that there are statistically significant differences in the means.  
+\end{solution}
+\vfill
+
+\item Why is it reasonable to assume that each group has the same population standard deviation in this example? 
+\begin{solution}
+Because the sample standard deviations for each group are all very similar (all within a factor of 2).
+\end{solution}
+\vfill
+
+\item What number is the best estimate for the common standard deviation for each group?
+\begin{solution}
+The pooled standard deviation in ANOVA is $s_p = \sqrt{MSE}$.  Here $s_p = 1.185$.
+\end{solution}
+\vfill
+
+
+\item Why don't we need to worry very much about whether the assumption of normality is met for this data? 
+\begin{solution}
+The sample sizes are so large (the smallest is group has 30 people), so normality will not be a big concern.
+\end{solution}
+\vfill
+
+\newpage
+\item Recall that the confidence interval for the difference between the means of two groups is $\ds \bar{x}_A - \bar{x}_B \pm t^{**} s_p \sqrt{\frac{1}{n_A} + \frac{1}{n_B}}$, where $t^{**}$ is the adjusted critical value with the Bonferroni correction.  According to the Bonferroni method, what adjusted confidence level should we use to be 95\% certain that we capture the true difference in population mean given that there are 10 possible pairs of groups to compare? \textit{You don't need to compute the confidence interval.}  
+\begin{solution}
+There are $10$ different pairwise comparisons to consider. Therefore we need to use a 1 - 0.05/10 = 0.995 = 99.5\% confidence level for each confidence interval.   
+\end{solution}
+\vfill
+\vfill
+
+\end{parts}
+
+\question Determine whether each statement below is True or False.   
+\begin{parts}
+\item In one way ANOVA the response variable is categorical and the explanatory variable is quantitative.  
+\begin{solution}
+False. The response variable is quantitative and  the explanatory variable is  categorical.
+\end{solution}
+\vfill
+
+
+\item Linear regression assumes that the residuals are normally distributed.  
+\begin{solution}
+True.
+\end{solution}
+\vfill
+
+\item One of the assumptions made in the application of the one-way ANOVA F test is homogeneity of variance (i.e., the variances for all populations are assumed to be the same).
+\begin{solution}
+True.
+\end{solution}
+\vfill
+
+
+\item If the data in each group is strongly right skewed, it is okay to do an ANOVA F-test as long as the sample sizes are large.  
+\begin{solution}
+True.
+\end{solution}
+\vfill
+
+
+\item When testing differences between population means using the One-Way Analysis of Variance (ANOVA) statistical method, the region of rejection is always in the left tail of the F distribution. 
+\begin{solution}
+False. The rejection region is the right tail of the F-distribution.
+\end{solution}
+\vfill
+
+
+\item In multilinear regression models, removing variables always decreases the adjusted $R^2$.
+\begin{solution}
+False.
+\end{solution}
+
+\vfill
+
+
+\item If the null hypothesis is rejected when conducting a one-way ANOVA F-test, then there are statistically significant differences between all pairs of means.
+\begin{solution}
+False. Not all pairs have to have significant differences.
+\end{solution}
+\vfill
+\end{parts}
+
+\newpage
+%\question (\href{https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.39}{Exercise 7.39 from OpenIntro}) Caffeine is the world's most widely used stimulant, with approximately 80\% consumed in the form of coffee. Participants in a study investigating the relationship between coffee consumption and exercise were asked to report the number of hours they spent per week on moderate (e.g., brisk walking) and vigorous (e.g., strenuous sports and jogging) exercise. Based on these data the researchers estimated the total hours of metabolic equivalent tasks (MET) per week, a value always greater than 0. The table below gives summary statistics of MET for women in this study based on the amount of coffee consumed.
+%
+%
+%\begin{tabular}{l|ccccc|c}
+%\hline
+% ~ & $\le$1 cup/week & 2-6 cups/week & 1 cup/day & 2-3 cups/day & $\ge$4 cups/day & Total \\ \hline
+%Mean & 18.7 & 19.6 &  19.3  & 18.9  &  17.5  & \\ 
+%SD  &  21.1  &  25.5  & 22.5 &  22.0 &  22.0  & \\ 
+%$n$  & 12{,}215 & 6{,}617 & 17{,}234 & 12{,}290 & 2{,}383 & 50{,}739 \\ 
+%\hline
+%\end{tabular}
+%
+%\begin{parts}
+%\part Write the hypotheses for evaluating if the average physical activity level varies among the different levels of coffee consumption.
+%\begin{solution}
+%\begin{itemize}
+%\item $H_0$: average MET is the same regardless of how much coffee women drink.
+%\item $H_A$: average MET is not the same for different levels of coffee consumption.
+%\end{itemize}
+%\end{solution}
+%\vfill
+%
+%\part Check conditions and describe any assumptions you must make to proceed with the test.
+%\begin{solution}
+%We need to check these assumptions:
+%\begin{itemize}
+%\item Normality won't be an issue because the sample sizes are huge.
+%\item Constant variance is fine, the largest standard deviation is 25.5 which is only 1.21 times larger than the smallest.
+%\item Independence (and sample bias) might be an issue.  It doesn't say how the individuals were selected to participate in the study. If it was based on a random sample, then we are probably fine, but it doesn't say that.  
+%\end{itemize}
+%
+%\end{solution}
+%
+%\vfill
+%
+%\part Below is part of the output associated with this test. Fill in the empty cells.
+%\vfill
+%
+%\renewcommand{\arraystretch}{1.8}
+%\begin{center}
+%\begin{tabular}{|l|c|c|c|c|c|}
+%\hline
+%~ & DF & SS & MS & F & Pr($>$F) \\ \hline
+%coffee & \hspace*{0.5in} & \hspace*{0.5in} & \hspace*{0.5in} & \hspace*{0.5in} & 0.0003 \\ \hline
+%Residuals &  & 25{,}564{,}819 &  &  & \hspace*{0.5in} \\ \hline 
+%Total  &  & 25{,}575{,}327 &  &  &  \\ 
+%\hline
+%\end{tabular}
+%\end{center}
+%
+%\begin{solution}
+%The ANOVA table is:
+%\begin{center}
+%\begin{tabular}{|l|c|c|c|c|c|}
+%\hline
+%~ & DF & SS & MS & F & Pr($>$F) \\ \hline
+%coffee &  ~~~~ 4 ~~~~ & 10{,}508 & ~~~2{,}627~~~ & ~~~5.21~~~ & 0.0003 \\ \hline
+%Residuals & 50{,}734 & 25{,}564{,}819 & 503.9 &  & \hspace*{0.5in} \\ \hline 
+%Total  & 50{,}738 & 25{,}575{,}327 & 50,734 & 504.1 &  \\ 
+%\hline
+%\end{tabular}
+%\\ 
+%~
+%\end{center}
+%\end{solution}
+%\bigskip
+%
+%
+%\part What is the conclusion of the test?
+%\begin{solution}
+%The p-value is low, so it appears that groups with different levels of coffee consumption do have significantly different average METs. 
+%\end{solution}
+%\vfill
+%\end{parts}
+
+
 
 \end{questions}
 
