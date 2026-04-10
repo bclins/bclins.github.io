@@ -336,10 +336,25 @@ False. Not all pairs have to have significant differences.
 
 \newpage
 
-\question Esophageal cancer can spread to the lymph nodes, and the larger the tumor is, the more likely it is to spread.  A logistic regression model for the odds that the cancer has spread based on a sample of 31 patients is given below. 
-$$\log(\text{odds}) = -2.086 + 0.5117 (\text{size})$$
-where the explanatory variable is the size of the tumor in centimeters. 
+\question Esophageal cancer can spread to the lymph nodes, and the larger the tumor is, the more likely it is to spread.  Below is the R output for a logistic regression model based on a sample of 31 cancer patients. The explanatory variable is the size of the tumor in centimeters and the response variable is whether or not the cancer has spread to the lymph nodes.
+
+\begin{verbatim}
+## Call:  glm(formula = spread ~ size, family = "binomial", data = cancer)
+## 
+## Coefficients:
+## (Intercept)         size  
+##      -2.086       0.5117  
+\end{verbatim}
+
+
 \begin{parts}
+\part What is the formula for the log-odds in the model described above?
+\begin{solution}
+$$\log(\text{odds}) = -2.086 + 0.5117 (\text{size})$$
+
+\end{solution}
+\vfill
+
 \part What are the odds that the cancer has spread to the lymph nodes if a patient has a 6 cm tumor?
 \begin{solution}
 The odds are $\exp(-2.086 + 0.5117(6)) = 2.676$. 
