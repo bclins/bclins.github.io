@@ -335,6 +335,29 @@ False. Not all pairs have to have significant differences.
 \end{parts}
 
 \newpage
+
+\question Esophageal cancer can spread to the lymph nodes, and the larger the tumor is, the more likely it is to spread.  A logistic regression model for the odds that the cancer has spread based on a sample of 31 patients is given below. 
+$$\log(\text{odds}) = -2.086 + 0.5117 (\text{size})$$
+where the explanatory variable is the size of the tumor in centimeters. 
+\begin{parts}
+\part What are the odds that the cancer has spread to the lymph nodes if a patient has a 6 cm tumor?
+\begin{solution}
+The odds are $\exp(-2.086 + 0.5117(6)) = 2.676$. 
+\end{solution}
+\vfill
+
+\part What is the probability that the cancer has spread to the lymph nodes if a patient has a 6 cm tumor?
+\begin{solution}
+The probability is $\dfrac{2.676}{2.676 + 1} = 72.8\%$. 
+\end{solution}
+\vfill
+
+\part How many times higher are the odds of the cancer spreading for every extra centimeter of tumor? 
+\begin{solution}
+The odds-ratio for each extra centimeter is $\exp(0.5117) = 1.668$, so the odds of the cancer spreading is 1.668 times higher for every extra centimeter. 
+\end{solution}
+\vfill
+\end{parts}
 %\question (\href{https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.7.39}{Exercise 7.39 from OpenIntro}) Caffeine is the world's most widely used stimulant, with approximately 80\% consumed in the form of coffee. Participants in a study investigating the relationship between coffee consumption and exercise were asked to report the number of hours they spent per week on moderate (e.g., brisk walking) and vigorous (e.g., strenuous sports and jogging) exercise. Based on these data the researchers estimated the total hours of metabolic equivalent tasks (MET) per week, a value always greater than 0. The table below gives summary statistics of MET for women in this study based on the amount of coffee consumed.
 %
 %

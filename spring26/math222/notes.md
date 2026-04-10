@@ -1125,7 +1125,7 @@ $$\log(\text{odds of passing})= -12.5356805 + 1.6165745 \text{hs_gpa} + 0.006763
 If we apply the exponential function to this expression, we get the following formula:
 $$\text{odds of passing}= e^{-12.5356805} \,  e^{1.6165745 \text{hs_gpa}} \, e^{ 0.0067637\text{sat}}.$$
 $$= 3.596 \times 10^{-6} \cdot 5.036^{\text{hs_gpa}} \cdot 1.007^{\text{sat}}.$$
-This means that for every 1 point someone's high school GPA goes up, their predicted odds of passing calculus increases by a factor of 5.036.  Every extra point on the SATs increases the log-odds by 1.007.  
+This means that for every 1 point someone's high school GPA goes up, their predicted odds of passing calculus increases by a factor of 5.036.  Every extra point on the SATs increases the odds by a factor of 1.007.  
 
 
 A special case of logistic regression happens when your explanatory variable is also a binary categorical variable.  Here is an example. 
