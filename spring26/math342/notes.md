@@ -1690,11 +1690,21 @@ Fri, Apr 17 | Error in Newton-Cotes methods
 
 Today we introduced numerical integration.  We reviewed the **Riemann sum definition** of the definite integral
 $$\int_a^b f(x) \, dx = \lim_{n \rightarrow \infty} \sum_{k = 1}^\infty f(x_k) \Delta x$$
-where $n$ is the number of rectangles, $\Delta x = (b-a)/n$, and $x_k = a + k \Delta x$ is the right endpoint of each rectangle. Then we talked about the following methods for approximating integrals:
+where $n$ is the number of rectangles, $\Delta x = (b-a)/n$, and $x_k = a + k \Delta x$ is the right endpoint of each rectangle. 
 
-* Riemann sums - Approximate using rectangles
-* Trapezoid rule - Approximate using trapezoids
-* Simpson's method - Approximate using parabolas
+An alternative to breaking an interval $[a, b]$ into a large number of pieces would be to find an interpolating polynomial for $f(x)$ and then integrate the polynomial to approximate the integral of $f$. This is the idea behind the [**Newton-Cotes formulas**](https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas) for integration.  We looked at three examples of Newton-Cotes formulas.
+
+<center>
+<table class="bordered">
+<tr><th>Method   </th><th>Degree</th><th>Nodes</th><th>Formula</th></tr>
+<tr><td>Midpoint </td><td>0</td><td>$x_0 = m$</td><td>$hf(m)$</td></tr>
+<tr><td>Trapezoid</td><td>1</td><td>$x_0 = a, x_1 = b$</td><td>$\frac{h}{2}(f(a)+f(b))$</td></tr>
+<tr><td>Simpson's</td><td>2</td><td>$x_0 = a, x_1 = m, x_2 = b$</td><td>$\frac{h}{6}\left(f(a)+4f(m)+f(b)\right)$</td></tr>
+</table>
+</center>
+where $h = b - a$ is the length of the interval and $m = \frac{a+b}{2}$ is the midpoint of $a$ and $b$.
+
+You could derive higher degree Newton-Cotes formulas, but in practice, it is a better idea to combine the Newton-Cotes formulas with the idea of splitting an interval into many small subintervals.  This leads to the **composite Newton-Cotes methods**.
 
 We derived the formulas for the **composite trapezoid rule** 
 
@@ -1710,21 +1720,18 @@ where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an exam
 def simpson(f, a, b, n):
     h = (b - a) / n
     total = f(a) + f(b)
-    total += sum([4 * f(a + (k + 0.5) * h) for k in range(n)])
-    total += sum([2 * f(a + k * h) for k in range(1, n)])
+    total += 4 * sum([f(a + (k + 0.5) * h) for k in range(n)])
+    total += 2 * sum([f(a + k * h) for k in range(1, n)])
     return total * h / 6
 ```
 
-We looked at this example in class:
-
-
-We did the following exercises in class. 
+We started the following exercises in class. 
 
 1. Write a Python function to apply the trapezoid rule to a function. 
 
 2. Approximate the area under $f(x) = \sin x$ from $x = 0$ to $x = \pi$ using both Simpson's method and the trapezoid rule with $n = 100$ rectangles.  Find the relative error for each.
 
-3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. 
+<!--3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. -->
 
 <!--
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 

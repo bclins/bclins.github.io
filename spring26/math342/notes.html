@@ -3399,13 +3399,90 @@ is the number of rectangles,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mi>x</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\Delta x = (b-a)/n</annotation></semantics></math>,
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mo>=</mo><mi>a</mi><mo>+</mo><mi>k</mi><mi>Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">x_k = a + k \Delta x</annotation></semantics></math>
-is the right endpoint of each rectangle. Then we talked about the
-following methods for approximating integrals:</p>
-<ul>
-<li>Riemann sums - Approximate using rectangles</li>
-<li>Trapezoid rule - Approximate using trapezoids</li>
-<li>Simpson’s method - Approximate using parabolas</li>
-</ul>
+is the right endpoint of each rectangle.</p>
+<p>An alternative to breaking an interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math>
+into a large number of pieces would be to find an interpolating
+polynomial for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+and then integrate the polynomial to approximate the integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>.
+This is the idea behind the <a
+href="https://en.wikipedia.org/wiki/Newton%E2%80%93Cotes_formulas"><strong>Newton-Cotes
+formulas</strong></a> for integration. We looked at three examples of
+Newton-Cotes formulas.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Method
+</th>
+<th>
+Degree
+</th>
+<th>
+Nodes
+</th>
+<th>
+Formula
+</th>
+</tr>
+<tr>
+<td>
+Midpoint
+</td>
+<td>
+0
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">x_0 = m</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">hf(m)</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Trapezoid
+</td>
+<td>
+1
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mi>a</mi><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">x_0 = a, x_1 = b</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>h</mi><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\frac{h}{2}(f(a)+f(b))</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Simpson’s
+</td>
+<td>
+2
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mi>a</mi><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mi>m</mi><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">x_0 = a, x_1 = m, x_2 = b</annotation></semantics></math>
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>h</mi><mn>6</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>4</mn><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\frac{h}{6}\left(f(a)+4f(m)+f(b)\right)</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>b</mi><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">h = b - a</annotation></semantics></math>
+is the length of the interval and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mfrac><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">m = \frac{a+b}{2}</annotation></semantics></math>
+is the midpoint of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>.</p>
+<p>You could derive higher degree Newton-Cotes formulas, but in
+practice, it is a better idea to combine the Newton-Cotes formulas with
+the idea of splitting an interval into many small subintervals. This
+leads to the <strong>composite Newton-Cotes methods</strong>.</p>
 <p>We derived the formulas for the <strong>composite trapezoid
 rule</strong></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>≈</mo><mfrac><mi>h</mi><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>2</mn><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>…</mi><mo>+</mo><mn>2</mn><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex"> \int_a^b f(x) \, dx \approx \frac{h}{2} (f(x_0) + 2 f(x_1) + 2 f(x_2) + \ldots + 2 f(x_{n-1}) + f(x_n)),</annotation></semantics></math></p>
@@ -3421,11 +3498,10 @@ the composite Simpson’s rule:</p>
 class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simpson(f, a, b, n):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> (b <span class="op">-</span> a) <span class="op">/</span> n</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> f(a) <span class="op">+</span> f(b)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> <span class="bu">sum</span>([<span class="dv">4</span> <span class="op">*</span> f(a <span class="op">+</span> (k <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> <span class="bu">sum</span>([<span class="dv">2</span> <span class="op">*</span> f(a <span class="op">+</span> k <span class="op">*</span> h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n)])</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> <span class="dv">4</span> <span class="op">*</span> <span class="bu">sum</span>([f(a <span class="op">+</span> (k <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">sum</span>([f(a <span class="op">+</span> k <span class="op">*</span> h) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n)])</span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total <span class="op">*</span> h <span class="op">/</span> <span class="dv">6</span></span></code></pre></div>
-<p>We looked at this example in class:</p>
-<p>We did the following exercises in class.</p>
+<p>We started the following exercises in class.</p>
 <ol type="1">
 <li><p>Write a Python function to apply the trapezoid rule to a
 function.</p></li>
@@ -3438,11 +3514,8 @@ to
 using both Simpson’s method and the trapezoid rule with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math>
 rectangles. Find the relative error for each.</p></li>
-<li><p>Same for
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac displaystyle="true"><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(x) = \dfrac{1}{1+x^2}</annotation></semantics></math>
-on
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>−</mi><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-1,1]</annotation></semantics></math>.</p></li>
 </ol>
+<!--3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. -->
 <!--
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
 -->
