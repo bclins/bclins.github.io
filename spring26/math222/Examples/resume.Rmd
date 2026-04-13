@@ -20,7 +20,7 @@ The data includes the following variables.
 
 
 ```{r}
-resume <- read.csv('resume.csv')
+resume <- read.csv('https://bclins.github.io/spring26/math222/Examples/resume.csv')
 # First six rows
 head(resume)
 # Number of rows and columns
