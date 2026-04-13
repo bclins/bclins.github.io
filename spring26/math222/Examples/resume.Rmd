@@ -1,0 +1,49 @@
+---
+title: Multiple logistic regression
+---
+
+### Example: Resume data
+
+Our textbook has an example with data from a [2004 study](http://www.openintro.org/redirect.php?go=resume-data-2004&referrer=os4_pdf) about whether fictitious job candidates with very Black sounding names (like Lakisha or Jamal) were less likely to get callbacks than candidates with White sounding names (like Emily or Greg) but otherwise identical resumes. 
+
+The data includes the following variables. 
+
+* `callback` - Specifies whether the employer called the applicant following submission of the application for the job.
+* `job_city` - City where the job was located: Boston or Chicago.
+* `college_degree` - An indicator for whether the resume listed a college degree.
+* `years_experience` - Number of years of experience listed on the resume.
+* `honors` - Indicator for the resume listing some sort of honors, e.g. employee of the month.
+* `military` - Indicator for if the resume listed any military experience.
+* `email_address` - Indicator for if the resume listed an email address for the applicant.
+* `race` - Race of the applicant, implied by their first name listed on the resume.
+* `sex` - Sex of the applicant (limited to only male and female in this study), implied by the first name listed on the resume.
+
+
+```{r}
+resume <- read.csv('resume.csv')
+# First six rows
+head(resume)
+# Number of rows and columns
+dim(resume)
+```
+
+```{r}
+
+model <- glm(callback ~ job_city + college_degree + years_experience + honors + military + email_address + race + sex, data = resume, family = 'binomial')
+summary(model)
+```
+
+Just like with multiple linear regression, it is a good idea to carefully select which variables to include.  Unlike linear regression where we can use the $R^2_\text{adj}$ to judge which models are better, in logistic regression we can use the [**Akaike information criterion**](https://en.wikipedia.org/wiki/Akaike_information_criterion) (AIC) to judge whether a model is both parsimonious and has good predictive power.  For AIC, lower numbers are better.
+
+1. Use backwards selection to find a model with the *lowest* AIC.  
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

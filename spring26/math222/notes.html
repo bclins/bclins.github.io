@@ -2479,6 +2479,149 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tr>
 </tbody>
 </table>
+<h3 id="mon-apr-13">Mon, Apr 13</h3>
+Here is data from a large group of teenagers that looked at whether they
+get at least 7 hours of sleep on an average school night.
+<center>
+<table class="bordered">
+<tr>
+<td>
+Age
+</td>
+<td>
+14
+</td>
+<td>
+15
+</td>
+<td>
+16
+</td>
+<td>
+17
+</td>
+<td>
+18
+</td>
+</tr>
+<tr>
+<td>
+No
+</td>
+<td>
+12
+</td>
+<td>
+35
+</td>
+<td>
+37
+</td>
+<td>
+39
+</td>
+<td>
+27
+</td>
+</tr>
+<tr>
+<td>
+Yes
+</td>
+<td>
+34
+</td>
+<td>
+79
+</td>
+<td>
+77
+</td>
+<td>
+65
+</td>
+<td>
+41
+</td>
+</tr>
+<tr>
+<td>
+Total
+</td>
+<td>
+46
+</td>
+<td>
+114
+</td>
+<td>
+114
+</td>
+<td>
+104
+</td>
+<td>
+68
+</td>
+</tr>
+<tr>
+<td>
+p(Yes)
+</td>
+<td>
+0.74
+</td>
+<td>
+0.69
+</td>
+<td>
+0.68
+</td>
+<td>
+0.63
+</td>
+<td>
+0.60
+</td>
+</tr>
+</table>
+</center>
+<p>You can plot this data in R using the command:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span><span class="sc">:</span><span class="dv">18</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>proportions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.74</span>, <span class="fl">0.69</span>, <span class="fl">0.68</span>, <span class="fl">0.63</span>, <span class="fl">0.60</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ages, proportions, <span class="at">pch =</span> <span class="dv">16</span>)</span></code></pre></div>
+<p>Why don’t we just use linear regression in situations like this? Here
+are a couple of reasons:</p>
+<ul>
+<li>We don’t always have a mix of yes &amp; no answers for every
+x-value, so we won’t always have meaningful proportions for each
+x-value.</li>
+<li>Even if we do have meaningful proportions, the regression line won’t
+make sense when it predicts y-values outside of the interval from 0 to
+1.</li>
+</ul>
+<section id="conditions-for-logistic-regression" class="Theorem">
+<h4>Conditions for Logistic regression</h4>
+<p>Logistic regression depends on these assumptions.</p>
+<ol type="1">
+<li><p><strong>Linearity.</strong> The log-odds depend linearly on the
+explanatory variables.</p></li>
+<li><p><strong>Independence.</strong> Each observation should be
+independent of the others.</p></li>
+</ol>
+<p>Logistic regression relies on methods like gradient descent to find
+the maximum likelihood estimate for the coefficients of the model. For
+these methods to produce reliable results, we also need a reasonably
+large sample size. Some books recommend at least 10 successes &amp; 10
+failures per explanatory variable in the model.</p>
+</section>
+<p>We finished by looking at the <a
+href="https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.9.5.1">resume
+data example</a> from the book.</p>
+<ul>
+<li><strong>Example:</strong> <a href="Examples/resume.html">Multiple
+logistic regression: Resume data</a></li>
+</ul>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>

@@ -1149,6 +1149,48 @@ Mon, Apr 13 |   [9.5][9.5] | Logistic regression - con'd
 Wed, Apr 15 |            | Review
 Fri, Apr 17 |            | **Midterm 3**
 
+### Mon, Apr 13
+
+Here is data from a large group of teenagers that looked at whether they get at least 7 hours of sleep on an average school night.
+<center>
+<table class="bordered">
+<tr><td>Age</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+<tr><td>No</td><td>12</td><td>35</td><td>37</td><td>39</td><td>27</td></tr>
+<tr><td>Yes</td><td>34</td><td>79</td><td>77</td><td>65</td><td>41</td></tr>
+<tr><td>Total</td><td>46</td><td>114</td><td>114</td><td>104</td><td>68</td></tr>
+<tr><td>p(Yes)</td><td>0.74</td><td>0.69</td><td>0.68</td><td>0.63</td><td>0.60</td></tr>
+</table>
+</center>
+
+You can plot this data in R using the command:
+```r
+ages <- c(14:18)
+proportions <- c(0.74, 0.69, 0.68, 0.63, 0.60)
+plot(ages, proportions, pch = 16)
+```
+
+Why don't we just use linear regression in situations like this?  Here are a couple of reasons:
+
+* We don't always have a mix of yes & no answers for every x-value, so we won't always have meaningful proportions for each x-value.
+* Even if we do have meaningful proportions, the regression line won't make sense when it predicts y-values outside of the interval from 0 to 1. 
+
+<div class="Theorem">
+#### Conditions for Logistic regression
+
+Logistic regression depends on these assumptions. 
+
+1. **Linearity.** The log-odds depend linearly on the explanatory variables.
+
+2. **Independence.** Each observation should be independent of the others.
+
+Logistic regression relies on methods like gradient descent to find the maximum likelihood estimate for the coefficients of the model.  For these methods to produce reliable results, we also need a reasonably large sample size. Some books recommend at least 10 successes & 10 failures per explanatory variable in the model. 
+</div>
+
+We finished by looking at the [resume data example](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.9.5.1) from the book.  
+
+* **Example:** [Multiple logistic regression: Resume data](Examples/resume.html)
+
+
 
 - - - 
 

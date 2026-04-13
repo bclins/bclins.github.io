@@ -1686,6 +1686,101 @@ Mon, Apr 13 | Numerical integration
 Wed, Apr 15 | Newton-Cotes methods
 Fri, Apr 17 | Error in Newton-Cotes methods
 
+### Mon, Apr 13
+
+Today we introduced numerical integration.  We reviewed the **Riemann sum definition** of the definite integral
+$$\int_a^b f(x) \, dx = \lim_{n \rightarrow \infty} \sum_{k = 1}^\infty f(x_k) \Delta x$$
+where $n$ is the number of rectangles, $\Delta x = (b-a)/n$, and $x_k = a + k \Delta x$ is the right endpoint of each rectangle. Then we talked about the following methods for approximating integrals:
+
+* Riemann sums - Approximate using rectangles
+* Trapezoid rule - Approximate using trapezoids
+* Simpson's method - Approximate using parabolas
+
+We derived the formulas for the **composite trapezoid rule** 
+
+$$ \int_a^b f(x) \, dx \approx \frac{h}{2} (f(x_0) + 2 f(x_1) + 2 f(x_2) + \ldots + 2 f(x_{n-1}) + f(x_n)),$$
+
+and the **composite Simpson's rule** 
+
+$$\int_a^b f(x)\,dx \approx \frac{h}{6}(f(x_0) + 4f(x_{0.5}) + 2f(x_1) + 4 f(x_{1.5}) + 2 f(x_2) + \ldots + 4f(x_{n-0.5}) + f(x_n)),$$
+
+where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an example of a Python function that computes the composite Simpson's rule:
+
+```python
+def simpson(f, a, b, n):
+    h = (b - a) / n
+    total = f(a) + f(b)
+    total += sum([4 * f(a + (k + 0.5) * h) for k in range(n)])
+    total += sum([2 * f(a + k * h) for k in range(1, n)])
+    return total * h / 6
+```
+
+We looked at this example in class:
+
+
+We did the following exercises in class. 
+
+1. Write a Python function to apply the trapezoid rule to a function. 
+
+2. Approximate the area under $f(x) = \sin x$ from $x = 0$ to $x = \pi$ using both Simpson's method and the trapezoid rule with $n = 100$ rectangles.  Find the relative error for each.
+
+3. Same for $f(x) = \dfrac{1}{1+x^2}$ on $[-1,1]$. 
+
+<!--
+4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
+-->
+
+<!--
+### Wed, Apr 15
+
+Today we did the following workshop about numerical integration.
+
+* **Workshop:** [Numerical integration](Workshops/Integration.pdf)
+
+Here are some tips for the workshop. 
+
+1. You might want to review the [Taylor series workshop](Workshops/TaylorSeries.pdf) we did all the way back on January 22. 
+
+2. Because the function $f(x) = \dfrac{\sin x}{x}$ is undefined at $x=0$, you will get an error if you ask Python to evaluate the function there (for example, in problem 4).  To avoid that problem, you can use this code to define $f(x)$:
+
+```python
+from math import *
+
+f = lambda x: sin(x)/x if x != 0 else 1
+```
+
+3. You'll have to write your own code to compute the trapezoid rule.  But you can look at the code from class Monday to see how I coded Simpson's method which is similar.  
+
+### Fri, Apr 17
+
+Today we talked about the error in Newton-Cotes integration methods.  An integration method has **degree of precision** $n$ if it is perfectly accurate for all polynomials up to degree $n$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
+
+<div class="Theorem">
+**Theorem.** Simpson's method has degree of precision 3.
+</div>
+
+We proved this theorem in class by observing that if $f(x)$ is a third degree polynomial and $P_2(x)$ is a second degree interpolating polynomial for $f$ at the nodes $a$, $b$, and $m = \frac{a+b}{2},$ then 
+$$f(x) = P_2(x) + c_3 (x-a)(x-m)(x-b)$$
+where $c_3$ is the third divided difference $f[a,m,b]$. Then we used u-substitution to show that
+$$\int_a^b (x-a)(x-m)(x-b) \, dx = 0.$$  
+Since Simpson's method is just the integral of $P_2(x)$ and the extra term integrates to zero, it follows that Simpson's method is exact for 3rd degree polynomials. 
+
+For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  Here are the error formulas:
+
+* **Composite Trapezoid Rule Error.** 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
+
+* **Composite Simpson's Rule Error.** 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880 n^4}.$$
+
+We didn't prove the Simpson's rule error formula in class, but we did prove the error formula for the trapezoid rule and the proof for Simpson's rule is similar.  We finished by applying these rules to the following questions:
+
+1. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+2. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+3. If you double $n$, how much does the error tend to decrease in the trapezoid rule?  What about in the Simpon's rule?
+-->
 
 - - - 
 

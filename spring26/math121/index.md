@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-* [Project 2](Project2.pdf) is due **Friday, April 10**
+* [Project 3](Project3.pdf) is due **Friday, April 17**
 * Midterm 3 will be on **Friday, April 17**
 * Midterm 3 materials: [review problems](https://bclins.github.io/fall25/math121/midterm3review.pdf), [formula sheet](https://bclins.github.io/fall25/math121/finalformulas.pdf)
 * Midterm 2 materials: [review problems](https://bclins.github.io/fall25/math121/midterm2review.pdf),  [solutions](https://bclins.github.io/fall25/math121/midterm2reviewSolutions.pdf), [formula sheet](https://bclins.github.io/fall25/math121/midterm2formulas.pdf)

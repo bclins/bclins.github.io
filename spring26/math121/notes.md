@@ -1150,8 +1150,7 @@ Mon, Apr 13 |  [7.4][7.4] | Statistical power
 Wed, Apr 15 |            | Review
 Fri, Apr 17 |            | **Midterm 3**
 
-<!--
-### Mon, Nov 17
+### Mon, Apr 13
 
 Today we introduced the 2-sample confidence interval for means. 
 
@@ -1163,6 +1162,8 @@ Use this to estimate the gap between two population means.
 $$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
 
 You can use the smaller sample size minus one as the degrees of freedom to find $t^*$. 
+
+Works best if the combined sample size is large ($n_1 + n_2 \ge 30$) or there is very little skew and no outliers in either sample.
 </div>
 
 These formulas (both the two-sample t-test and t-confidence interval) are based on the same key assumptions. 
@@ -1179,7 +1180,7 @@ After that, we did this workshop in class.
 
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
-
+<!--
 ### Wed, Nov 19
 
 Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
