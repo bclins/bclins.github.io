@@ -32,7 +32,7 @@ header-includes: |
 ### Announcements
 
 * Midterm 3 will be on **Friday, April 17**
-* Midterm 3 materials: [review problems](midterm3review.pdf)
+* Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](midterm3formulas.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf),  [review solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)
 

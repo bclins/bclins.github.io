@@ -1634,7 +1634,7 @@ In the Colab notebook, we looked at the following two examples which both raise 
 
 2. $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$. This function is a version of Runge's function (also known as the Witch of Agnesi).  
 
-When you use equally spaced nodes interpolate the function $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$, the error gets worse as the number of nodes increases, particularly near the endpoints of the interval.  This problem is called [**Runge's phenomenon**](https://en.wikipedia.org/wiki/Runge%27s_phenomenon).  
+When you use equally spaced nodes interpolate the function $f(x) = \dfrac{1}{1+25x^2}$ on $[-1,1]$, the error gets worse as the number of nodes increases, particularly near the endpoints of the interval.  This problem is called [**Runge's phenomenon**](https://en.wikipedia.org/wiki/Runge%27s_phenomenon) (see the image below on the left).  
 
 <!--
 Last time we saw that the interpolation error satisfies:
@@ -1646,30 +1646,24 @@ Intuitively, it seems like the error should get smaller if you add more nodes.  
 
 <center>
 <figure>
-<img src = "runge-uniform.gif"></img>
+<table>
+<tr>
+<td><img src = "runge-uniform.gif"></img></td>
+<td><img src = "runge-chebyshev.gif"></img></td>
+</tr>
+</table>
 <figcaption style="text-align:right">Source: <a href="https://www.mscroggs.co.uk/blog/57">Matthew Scrogg's blog</a></figcaption>
 </figure>
 </center>
 
 
-
-
-
-
-It is possible to avoid the error from Runge's phenomenon.  The key is to use a carefully chosen set of nodes that are not equally spaced.  The best nodes to use are the roots of the [Chebyshev polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomial) which (surprisingly!) are equal to the following trigonometric functions on the interval $[-1,1]$:
+The picture on the right shows that it is possible to avoid the error from Runge's phenomenon.  The key is to use a carefully chosen set of nodes that are not equally spaced.  The best nodes to use are the roots of the [Chebyshev polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomial) which (surprisingly!) are equal to the following trigonometric functions on the interval $[-1,1]$:
 
 $$T_{n+1}(x) = \cos ((n+1) \arccos x).$$ 
 The roots of the $(n+1)$th degree Chebyshev polynomials are:
 $$x_k = \cos\left( \frac{(2k+1) \pi}{2(n+1)} \right), ~ k = 0, \ldots, n.$$
 
-The figure below shows how Runge's phenomenon goes away when you use the roots of the Chebyshev polynomials instead of equally spaced nodes.  
 
-<center>
-<figure>
-<img src = "runge-chebyshev.gif"></img>
-<figcaption style="text-align:right">Source: <a href="https://www.mscroggs.co.uk/blog/57">Matthew Scrogg's blog</a></figcaption>
-</figure>
-</center>
 
 
 We wrapped up our discussion of polynomial interpolation with this workshop.
@@ -1720,8 +1714,8 @@ where $h = \frac{b-a}{n}$ and $x_k = a + k h$ in both formulas.  Here is an exam
 def simpson(f, a, b, n):
     h = (b - a) / n
     total = f(a) + f(b)
-    total += 4 * sum([f(a + (k + 0.5) * h) for k in range(n)])
-    total += 2 * sum([f(a + k * h) for k in range(1, n)])
+    total += 4 * sum(f(a + (k + 0.5) * h) for k in range(n))
+    total += 2 * sum(f(a + k * h) for k in range(1, n))
     return total * h / 6
 ```
 
@@ -1737,8 +1731,61 @@ We started the following exercises in class.
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
 -->
 
-<!--
 ### Wed, Apr 15
+
+Today we talked about the error in Newton-Cotes integration methods.  An integration method has **degree of precision** $n$ if it is perfectly accurate for all polynomials up to degree $n$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
+
+<div class="Theorem">
+**Theorem.** Simpson's method has degree of precision 3.
+</div>
+
+We proved this theorem in class by observing that if $f(x)$ is a third degree polynomial and $P_2(x)$ is a second degree interpolating polynomial for $f$ at the nodes $a$, $b$, and $m = \frac{a+b}{2},$ then 
+$$f(x) = P_2(x) + c_3 (x-a)(x-m)(x-b)$$
+where $c_3$ is the third divided difference $f[a,m,b,z]$ where $z$ is any other node. 
+
+1. Use the substitution $u = x-m$ to show that
+$$\int_a^b (x-a)(x-m)(x-b) \, dx = 0.$$  
+
+Since Simpson's method is just the integral of $P_2(x)$ and the extra term integrates to zero, it follows that Simpson's method is exact for 3rd degree polynomials. 
+
+For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  Here are the error formulas:
+
+<div class = "Theorem">
+#### Composite Trapezoid Method Error
+
+Let $f \in C^2[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with a $n$ subintervals satisfies
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
+</div>
+
+*Proof.* When $n = 1$, the interpolation error formula tells us that 
+$$|f(x) - P_1(x)| \le \max_{a \le \xi \le b} \frac{|f''(\xi)|}{2}|(x-a)(x-b)|.$$
+The area under $|(x-a)(x-b)|$ is $\frac{(b-a)^3}{6}$ so 
+$$|\text{Error}| \le \int_a^b | f(x) - P_1(x)| \, dx \le \frac{|f''(\xi)|(b-a)^3}{12}.$$
+
+When $n > 1$, you can apply the $n=1$ case to each subinterval. Each subinterval has a width of $\frac{b-a}{n}$, so an upper bound for the error on the subinterval is
+$$\frac{|f''(\xi)|(b-a)^3}{12n^3}$$
+Since there are $n$ subintervals, the worst case total error is
+$$|\text{Error}| \le \int_a^b | f(x) - P_1(x)| \, dx \le \frac{|f''(\xi)|(b-a)^3}{12n^2}. □$$
+
+
+<div class = "Theorem">
+#### Composite Simpson's Method Error
+
+Let $f \in C^4[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with $n$ subintervals is 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880n^4}.$$
+</div>
+
+
+We didn't prove the Simpson's rule error formula, but the proof is similar to the one for the trapezoid rule.  We finished by applying these rules to the following questions:
+
+1. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+2. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
+
+3. If you double $n$, how much does the error tend to decrease in the trapezoid rule?  What about in the Simpson's rule?
+
+<!--
+### Fri, Apr 17
 
 Today we did the following workshop about numerical integration.
 
@@ -1750,44 +1797,16 @@ Here are some tips for the workshop.
 
 2. Because the function $f(x) = \dfrac{\sin x}{x}$ is undefined at $x=0$, you will get an error if you ask Python to evaluate the function there (for example, in problem 4).  To avoid that problem, you can use this code to define $f(x)$:
 
-```python
-from math import *
+    ```python
+    from math import *
 
-f = lambda x: sin(x)/x if x != 0 else 1
-```
+    f = lambda x: sin(x)/x if x != 0 else 1
+    ```
 
 3. You'll have to write your own code to compute the trapezoid rule.  But you can look at the code from class Monday to see how I coded Simpson's method which is similar.  
-
-### Fri, Apr 17
-
-Today we talked about the error in Newton-Cotes integration methods.  An integration method has **degree of precision** $n$ if it is perfectly accurate for all polynomials up to degree $n$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
-
-<div class="Theorem">
-**Theorem.** Simpson's method has degree of precision 3.
-</div>
-
-We proved this theorem in class by observing that if $f(x)$ is a third degree polynomial and $P_2(x)$ is a second degree interpolating polynomial for $f$ at the nodes $a$, $b$, and $m = \frac{a+b}{2},$ then 
-$$f(x) = P_2(x) + c_3 (x-a)(x-m)(x-b)$$
-where $c_3$ is the third divided difference $f[a,m,b]$. Then we used u-substitution to show that
-$$\int_a^b (x-a)(x-m)(x-b) \, dx = 0.$$  
-Since Simpson's method is just the integral of $P_2(x)$ and the extra term integrates to zero, it follows that Simpson's method is exact for 3rd degree polynomials. 
-
-For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  Here are the error formulas:
-
-* **Composite Trapezoid Rule Error.** 
-$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
-
-* **Composite Simpson's Rule Error.** 
-$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880 n^4}.$$
-
-We didn't prove the Simpson's rule error formula in class, but we did prove the error formula for the trapezoid rule and the proof for Simpson's rule is similar.  We finished by applying these rules to the following questions:
-
-1. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
-
-2. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
-
-3. If you double $n$, how much does the error tend to decrease in the trapezoid rule?  What about in the Simpon's rule?
 -->
+
+
 
 - - - 
 
