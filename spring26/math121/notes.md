@@ -1180,8 +1180,7 @@ After that, we did this workshop in class.
 
 * **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
-<!--
-### Wed, Nov 19
+### Wed, Apr 15
 
 Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
 

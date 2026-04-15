@@ -2622,6 +2622,54 @@ data example</a> from the book.</p>
 <li><strong>Example:</strong> <a href="Examples/resume.html">Multiple
 logistic regression: Resume data</a></li>
 </ul>
+<h3 id="wed-apr-15">Wed, Apr 15</h3>
+<p>Today we talked about the <a href="midterm3review.pdf">midterm 3
+review problems</a> and the <a href="midterm3formulas.pdf">formula
+sheet</a>. We also did the following additional examples.</p>
+<ol type="1">
+<li><p>A study looked at how coral growth is affected by sea surface
+temperatures. The study measured coral growth in millimeters and average
+sea surface temperatures in degrees Celsius at 7 locations. The average
+temperature
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>30.3</mn></mrow><annotation encoding="application/x-tex">\bar{x} = 30.3</annotation></semantics></math>
+°C, and the average growth was
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>2.6</mn></mrow><annotation encoding="application/x-tex">\bar{y} = 2.6</annotation></semantics></math>
+mm. The standard deviations were
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>x</mi></msub><mo>=</mo><mn>0.43</mn></mrow><annotation encoding="application/x-tex">s_x = 0.43</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mi>y</mi></msub><mo>=</mo><mn>0.15</mn></mrow><annotation encoding="application/x-tex">s_y = 0.15</annotation></semantics></math>.
+The correlation coefficient was
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>−</mi><mn>0.86</mn></mrow><annotation encoding="application/x-tex">R = -0.86</annotation></semantics></math>.</p>
+<ol type="a">
+<li><p>Find a formula for the least squares regression line to predict
+average growth based on temperature.</p></li>
+<li><p>Make an ANOVA table for this situation.</p></li>
+<li><p>What is the corresponding p-value for the F statistic in the
+ANOVA table?</p></li>
+<li><p>What is the standard error of the residuals?</p></li>
+</ol></li>
+</ol>
+<!--
+```r
+coral <- data.frame(
+    temp = c(29.68, 29.87, 30.16, 30.22, 30.48, 30.65, 30.90),
+    growth = c(2.63, 2.58, 2.68, 2.60, 2.48, 2.38, 2.26)
+)
+plot(coral$temp, coral$growth)
+```
+-->
+<ol start="2" type="1">
+<li><p>The following model predicts the log-odds of getting into a
+medical school based on a student’s GPA and MCAT scores (for the old
+version of the MCAT exam where scores range from 15 to 45).<br />
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">odds</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>−</mi><mn>22.4</mn><mo>+</mo><mn>4.7</mn><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">SAT</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mn>0.16</mn><mrow><mo stretchy="true" form="prefix">(</mo><mtext mathvariant="normal">MCAT</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\log(\text{odds}) = -22.4 + 4.7 (\text{SAT}) + 0.16(\text{MCAT}).</annotation></semantics></math></p>
+<ol type="a">
+<li><p>What is the probability that a student with 3.5 GPA and a 40 on
+the MCAT exam will get accepted?</p></li>
+<li><p>How much would the odds increase if a student improves their MCAT
+score by 5 points?</p></li>
+</ol></li>
+</ol>
 <hr />
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>

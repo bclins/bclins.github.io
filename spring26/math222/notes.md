@@ -1190,7 +1190,37 @@ We finished by looking at the [resume data example](https://people.hsc.edu/facul
 
 * **Example:** [Multiple logistic regression: Resume data](Examples/resume.html)
 
+### Wed, Apr 15
 
+Today we talked about the [midterm 3 review problems](midterm3review.pdf) and the [formula sheet](midterm3formulas.pdf).  We also did the following additional examples. 
+
+1. A study looked at how coral growth is affected by sea surface temperatures.  The study measured coral growth in millimeters and average sea surface temperatures in degrees Celsius at 7 locations.  The average temperature $\bar{x} = 30.3$ °C, and the average growth was $\bar{y} = 2.6$ mm.  The standard deviations were $s_x = 0.43$ and $s_y = 0.15$.  The correlation coefficient was $R = -0.86$.  
+
+    a. Find a formula for the least squares regression line to predict average growth based on temperature. 
+
+    b. Make an ANOVA table for this situation.  
+
+    c. What is the corresponding p-value for the F statistic in the ANOVA table? 
+
+    d. What is the standard error of the residuals?
+
+<!--
+```r
+coral <- data.frame(
+    temp = c(29.68, 29.87, 30.16, 30.22, 30.48, 30.65, 30.90),
+    growth = c(2.63, 2.58, 2.68, 2.60, 2.48, 2.38, 2.26)
+)
+plot(coral$temp, coral$growth)
+```
+-->
+
+
+2. The following model predicts the log-odds of getting into a medical school based on a student's GPA and MCAT scores (for the old version of the MCAT exam where scores range from 15 to 45).  
+$$\log(\text{odds}) = -22.4 + 4.7 (\text{SAT}) + 0.16(\text{MCAT}).$$
+
+    a. What is the probability that a student with 3.5 GPA and a 40 on the MCAT exam will get accepted?  
+
+    b. How much would the odds increase if a student improves their MCAT score by 5 points? 
 
 - - - 
 
