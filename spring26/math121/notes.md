@@ -1182,14 +1182,15 @@ After that, we did this workshop in class.
 
 ### Wed, Apr 15
 
-Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
+Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](https://bclins.github.io/fall25/math121/choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
 
 * Do you have one or two samples?
 * Are you trying to *estimate how big* a parameter is (confidence interval) or *answer a yes/no question* about whether the results are significant (hypothesis test)?  
 * Are you interested in averages of a quantitative variable (means) or percentages of a categorical variable (proportions)?   
 
-The answer to these three questions will guide you to the [right formula](finalformulas.pdf) to use. We applied these questions to the following examples in class:
+The answer to these three questions will guide you to the [right formula](https://bclins.github.io/fall25/math121/finalformulas.pdf) to use. 
 
+<!--
 We also reviewed how to find p-values using the app and how to use the t-distribution table (including how to find critical z-values in addition to t-values). 
 
 One question that will definitely be on the midterm is this: *what is the exact definition of a p-value*?  To answer this question you need to memorize:

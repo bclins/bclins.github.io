@@ -3518,11 +3518,72 @@ rectangles. Find the relative error for each.</p></li>
 4. Now consider $\int_{-\pi/2}^{\pi/2} \dfrac{\sin x}{x} \, dx$.  This function does not have an antiderivative that can be computed directly.  But you can still get very accurate approximations for the area under the curve. 
 -->
 <h3 id="wed-apr-15">Wed, Apr 15</h3>
-<p>Today we talked about the error in Newton-Cotes integration methods.
-An integration method has <strong>degree of precision</strong>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+<p>Today we talked about the error in composite Newton-Cotes integration
+methods.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Method
+</th>
+<th>
+Degree
+</th>
+<th>
+Degree of Precision
+</th>
+<th>
+Absolute Error Upper Bound
+</th>
+</tr>
+<tr>
+<td>
+Midpoint
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></msub><mfrac displaystyle="true"><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><mrow><mn>24</mn><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\max_{a \le \xi \le b} \dfrac{|f^{(2)}(\xi)| (b-a)^3}{24n^2}</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Trapezoid
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></msub><mfrac displaystyle="true"><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><mrow><mn>12</mn><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\max_{a \le \xi \le b} \dfrac{|f^{(2)}(\xi)| (b-a)^3}{12n^2}</annotation></semantics></math>
+</td>
+</tr>
+<tr>
+<td>
+Simpson’s
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></msub><mfrac displaystyle="true"><mrow><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>5</mn></msup></mrow><mrow><mn>2880</mn><msup><mi>n</mi><mn>4</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\max_{a \le \xi \le b} \dfrac{|f^{(4)}(\xi)| (b-a)^5}{2880n^4}</annotation></semantics></math>
+</td>
+</tr>
+</table>
+</center>
+<p>An integration method has <strong>degree of precision</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
 if it is perfectly accurate for all polynomials up to degree
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
 It is easy to see that the trapezoid method has degree of precision 1.
 Surprisingly, Simpson’s method has degree of precision 3.</p>
 <div class="Theorem">
@@ -3562,19 +3623,15 @@ is exact for 3rd degree polynomials.</p>
 <p>For most other functions, Simpson’s method will not be perfect.
 Instead, we can use the error formulas for polynomial interpolation to
 estimate the error when using the composite trapezoid and Simpson’s
-methods. Here are the error formulas:</p>
-<section id="composite-trapezoid-method-error" class="Theorem">
-<h4>Composite Trapezoid Method Error</h4>
-<p>Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f \in C^2[a, b]</annotation></semantics></math>.
-The absolute error in estimating
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x) \, dx</annotation></semantics></math>
-with a
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-subintervals satisfies
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">Error</mtext><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><munder><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup><mrow><mn>12</mn><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.</annotation></semantics></math></p>
-</section>
-<p><em>Proof.</em> When
+methods.</p>
+<!-- <div class = "Theorem">
+#### Composite Trapezoid Method Error
+
+Let $f \in C^2[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with a $n$ subintervals satisfies
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
+</div>
+-->
+<p><em>Proof of Trapezoid method error formula.</em> When
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n = 1</annotation></semantics></math>,
 the interpolation error formula tells us that
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><munder><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></munder><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">|f(x) - P_1(x)| \le \max_{a \le \xi \le b} \frac{|f&#39;&#39;(\xi)|}{2}|(x-a)(x-b)|.</annotation></semantics></math>
@@ -3596,20 +3653,69 @@ Since there are
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 subintervals, the worst case total error is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">Error</mtext><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>≤</mo><mfrac><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>3</mn></msup></mrow><mrow><mn>12</mn><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mi>.</mi><mi>□</mi></mrow><annotation encoding="application/x-tex">|\text{Error}| \le \int_a^b | f(x) - P_1(x)| \, dx \le \frac{|f&#39;&#39;(\xi)|(b-a)^3}{12n^2}. □</annotation></semantics></math></p>
-<section id="composite-simpsons-method-error" class="Theorem">
-<h4>Composite Simpson’s Method Error</h4>
-<p>Let
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>C</mi><mn>4</mn></msup><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f \in C^4[a, b]</annotation></semantics></math>.
-The absolute error in estimating
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x) \, dx</annotation></semantics></math>
-with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-subintervals is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">Error</mtext><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><munder><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>5</mn></msup><mrow><mn>2880</mn><msup><mi>n</mi><mn>4</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880n^4}.</annotation></semantics></math></p>
-</section>
-<p>We didn’t prove the Simpson’s rule error formula, but the proof is
-similar to the one for the trapezoid rule. We finished by applying these
-rules to the following questions:</p>
+<p>We didn’t cover proofs for the other two error formulas in class, but
+here are some of the details.</p>
+<details>
+<p>These are mostly so that I can remember how this works in the
+future!</p>
+<p><em>Proof of Midpoint method error formula
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n =1</annotation></semantics></math>
+case).</em> By Taylor’s theorem,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><munder><munder><mrow><mo stretchy="true" form="prefix">(</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>+</mo><mi>f</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo accent="true">⏟</mo></munder><mrow><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></munder><mo>=</mo><mfrac><mrow><mi>f</mi><mi>″</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x) - \underbrace{(f(m) + f&#39;(m)(x-m))}_{P_1(x)}  =  \frac{f&#39;&#39;(\xi)}{2} (x - m)^2</annotation></semantics></math>
+for some
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>
+between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.</p>
+<p>Since the integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(m)</annotation></semantics></math>
+is the same as the integral of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P_1(x)</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math>,
+you can say that
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">Error</mtext><mo stretchy="true" form="postfix">|</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>≤</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo>≤</mo><munder><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></munder><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mn>2</mn></mfrac><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">|\text{Error}| = |\int_a^b f(x) - P_1(x) \,dx| \le \int_a^b |f(x) - P_1(x)| \, dx \le \max_{a \le \xi \le b} \frac{|f^{(2)}(\xi)|}{2} \int_a^b (x-m)^2 \, dx.</annotation></semantics></math>
+Compute the integral to complete the proof. □</p>
+<em>Proof of Simpson’s method error formula
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>
+case).</em> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>2</mn></msub><annotation encoding="application/x-tex">P_2</annotation></semantics></math>
+be the 2nd degree interpolating polynomial for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+at nodes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mi>a</mi><mo>,</mo><mi>m</mi><mo>,</mo><mi>b</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{a, m, b\}</annotation></semantics></math>
+and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>3</mn></msub><annotation encoding="application/x-tex">P_3</annotation></semantics></math>
+be any 3rd degree interpolating polynomial obtained by adding any one
+additional node to the list. Observe that the integrals of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>2</mn></msub><annotation encoding="application/x-tex">P_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>3</mn></msub><annotation encoding="application/x-tex">P_3</annotation></semantics></math>
+are the same on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math>
+since the degree of precision for Simpson’s method is 3. By the
+interpolation error formula, the error is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mrow><mo stretchy="true" form="prefix">|</mo><mtext mathvariant="normal">Error</mtext><mo stretchy="true" form="postfix">|</mo></mrow></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">|</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mo stretchy="true" form="postfix">|</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>≤</mo><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><msub><mi>P</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>≤</mo><munder><mo>max</mo><mrow><mi>a</mi><mo>≤</mo><mi>ξ</mi><mo>≤</mo><mi>b</mi></mrow></munder><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><msup><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mo stretchy="true" form="postfix">)</mo></mrow></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mn>4</mn><mi>!</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mo stretchy="true" form="prefix">|</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>m</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>b</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mspace width="0.167em"></mspace><mi>d</mi><mi>x</mi><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+|\text{Error}| &amp;= |\int_a^b f(x) - P_3(x) \,dx| \\ 
+&amp;\le \int_a^b |f(x) - P_3(x)| \, dx \\ 
+&amp;\le \max_{a \le \xi \le b} \frac{|f^{(4)}(\xi)|}{4!} \int_a^b |(x-a)(x-m)(x-b)(x-z)| \, dx.
+\end{align*}</annotation></semantics></math> We are free to choose any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>
+we want and the most convenient choice is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">z = m</annotation></semantics></math>.
+Then you get an integral that is relatively easy to compute and gives
+error estimate we want. □
+</details>
+<!--
+<div class = "Theorem">
+#### Composite Simpson's Method Error
+
+Let $f \in C^4[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with $n$ subintervals is 
+$$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880n^4}.$$
+</div>
+-->
+<p>We finished by applying these rules to the following questions:</p>
 <ol type="1">
 <li><p>How big does
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>

@@ -1733,7 +1733,18 @@ We started the following exercises in class.
 
 ### Wed, Apr 15
 
-Today we talked about the error in Newton-Cotes integration methods.  An integration method has **degree of precision** $n$ if it is perfectly accurate for all polynomials up to degree $n$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
+Today we talked about the error in composite Newton-Cotes integration methods. 
+
+<center>
+<table class="bordered">
+<tr><th>Method   </th><th>Degree</th><th>Degree of Precision</th><th>Absolute Error Upper Bound</th></tr>
+<tr><td>Midpoint </td><td>0</td><td>1</td><td>$\max_{a \le \xi \le b} \dfrac{|f^{(2)}(\xi)| (b-a)^3}{24n^2}$</td></tr>
+<tr><td>Trapezoid</td><td>1</td><td>1</td><td>$\max_{a \le \xi \le b} \dfrac{|f^{(2)}(\xi)| (b-a)^3}{12n^2}$</td></tr>
+<tr><td>Simpson's</td><td>2</td><td>3</td><td>$\max_{a \le \xi \le b} \dfrac{|f^{(4)}(\xi)| (b-a)^5}{2880n^4}$</td></tr>
+</table>
+</center>
+
+An integration method has **degree of precision** $k$ if it is perfectly accurate for all polynomials up to degree $k$. It is easy to see that the trapezoid method has degree of precision 1.  Surprisingly, Simpson's method has degree of precision 3.  
 
 <div class="Theorem">
 **Theorem.** Simpson's method has degree of precision 3.
@@ -1748,16 +1759,17 @@ $$\int_a^b (x-a)(x-m)(x-b) \, dx = 0.$$
 
 Since Simpson's method is just the integral of $P_2(x)$ and the extra term integrates to zero, it follows that Simpson's method is exact for 3rd degree polynomials. 
 
-For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  Here are the error formulas:
+For most other functions, Simpson's method will not be perfect. Instead, we can use the error formulas for polynomial interpolation to estimate the error when using the composite trapezoid and Simpson's methods.  
 
-<div class = "Theorem">
+<!-- <div class = "Theorem">
 #### Composite Trapezoid Method Error
 
 Let $f \in C^2[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with a $n$ subintervals satisfies
 $$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
 </div>
+-->
 
-*Proof.* When $n = 1$, the interpolation error formula tells us that 
+*Proof of Trapezoid method error formula.* When $n = 1$, the interpolation error formula tells us that 
 $$|f(x) - P_1(x)| \le \max_{a \le \xi \le b} \frac{|f''(\xi)|}{2}|(x-a)(x-b)|.$$
 The area under $|(x-a)(x-b)|$ is $\frac{(b-a)^3}{6}$ so 
 $$|\text{Error}| \le \int_a^b | f(x) - P_1(x)| \, dx \le \frac{|f''(\xi)|(b-a)^3}{12}.$$
@@ -1767,16 +1779,39 @@ $$\frac{|f''(\xi)|(b-a)^3}{12n^3}$$
 Since there are $n$ subintervals, the worst case total error is
 $$|\text{Error}| \le \int_a^b | f(x) - P_1(x)| \, dx \le \frac{|f''(\xi)|(b-a)^3}{12n^2}. □$$
 
+We didn't cover proofs for the other two error formulas in class, but here are some of the details. 
 
+<details>
+These are mostly so that I can remember how this works in the future!
+
+*Proof of Midpoint method error formula ($n =1$ case).* By Taylor's theorem, 
+$$f(x) - \underbrace{(f(m) + f'(m)(x-m))}_{P_1(x)}  =  \frac{f''(\xi)}{2} (x - m)^2$$ 
+for some $\xi$ between $m$ and $x$.  
+
+Since the integral of $f(m)$ is the same as the integral of $P_1(x)$ on $[a,b]$, you can say that 
+$$|\text{Error}| = |\int_a^b f(x) - P_1(x) \,dx| \le \int_a^b |f(x) - P_1(x)| \, dx \le \max_{a \le \xi \le b} \frac{|f^{(2)}(\xi)|}{2} \int_a^b (x-m)^2 \, dx.$$
+Compute the integral to complete the proof. □
+
+*Proof of Simpson's method error formula ($n=1$ case).* Let $P_2$ be the 2nd degree interpolating polynomial for $f$ at nodes $\{a, m, b\}$ and let $P_3$ be any 3rd degree interpolating polynomial obtained by adding any one additional node to the list. Observe that the integrals of $P_2$ and $P_3$ are the same on $[a, b]$ since the degree of precision for Simpson's method is 3.  By the interpolation error formula, the error is 
+\begin{align*}
+|\text{Error}| &= |\int_a^b f(x) - P_3(x) \,dx| \\ 
+&\le \int_a^b |f(x) - P_3(x)| \, dx \\ 
+&\le \max_{a \le \xi \le b} \frac{|f^{(4)}(\xi)|}{4!} \int_a^b |(x-a)(x-m)(x-b)(x-z)| \, dx.
+\end{align*}
+We are free to choose any $z$ we want and the most convenient choice is $z = m$.  Then you get an integral that is relatively easy to compute and gives error estimate we want. □
+</details>
+
+
+<!--
 <div class = "Theorem">
 #### Composite Simpson's Method Error
 
 Let $f \in C^4[a, b]$.  The absolute error in estimating $\int_a^b f(x) \, dx$ with $n$ subintervals is 
 $$|\text{Error}| \le \max_{a\le \xi \le b} |f^{(4)}(\xi)| \frac{(b-a)^5}{2880n^4}.$$
 </div>
+-->
 
-
-We didn't prove the Simpson's rule error formula, but the proof is similar to the one for the trapezoid rule.  We finished by applying these rules to the following questions:
+We finished by applying these rules to the following questions:
 
 1. How big does $n$ need to be in the composite trapezoid rule to estimate $\int_1^2 \dfrac{1}{x} \, dx$ with an error of less than $10^{-12}$? 
 
