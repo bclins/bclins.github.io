@@ -1228,10 +1228,27 @@ $$\log(\text{odds}) = -22.4 + 4.7 (\text{SAT}) + 0.16(\text{MCAT}).$$
 
 Day  | Section  | Topic
 :---:|:---:|:---------
-Mon, Apr 20 |    | Hypothesis testing with randomization                 
-Wed, Apr 22 |    | Confidence intervals with bootstrapping  
+Mon, Apr 20 |    | Confidence intervals with bootstrapping  
+Wed, Apr 22 |    | Hypothesis testing with randomization               
 Fri, Apr 24 |    | Introduction to Bayesian methods
 Mon, Apr 27 |    | Last day, recap & review
+
+<!--
+### Mon, Apr 20
+
+Today we introduced **bootstrapping**.  This is a technique for working with statistics when you don't have a good theoretical model for what the shape of the distribution of the statistic should be.  You can apply the bootstrapping method to almost any statistic.   
+
+The idea behind bootstrapping is to re-sample from the sample data to generate a model for the shape of the sampling distribution of the statistic of interest.  Bootstrapping is one of several [resampling methods](https://en.wikipedia.org/wiki/Resampling_(statistics)) used in statistics. 
+
+<div class="Theorem">
+**Definition.** For a sample of $n$ observations, a **bootstrap sample** is a simulated sample of size $n$ chosen with replacement from the original $n$ observations.  A **bootstrap statistic** is a statistic calculated from a bootstrap sample.  A **bootstrap distribution** is the distribution of a large number of bootstrap statistics all taken from the same original data. 
+</div>
+
+* **Example:** [Bootstrapping: Standard deviation of Farmville annual rainfall](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/rainfallBootstrap.html)
+-->
+
+
+
 
 
 - - - 

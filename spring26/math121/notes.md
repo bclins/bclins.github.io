@@ -1191,16 +1191,6 @@ Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We a
 The answer to these three questions will guide you to the [right formula](https://bclins.github.io/fall25/math121/finalformulas.pdf) to use. 
 
 <!--
-We also reviewed how to find p-values using the app and how to use the t-distribution table (including how to find critical z-values in addition to t-values). 
-
-One question that will definitely be on the midterm is this: *what is the exact definition of a p-value*?  To answer this question you need to memorize:
-
-<div class="Theorem">
-A **p-value** is the probability of getting a result at least as extreme as the observed data, if the null hypothesis is true. 
-</div>  
-<!-- I used to say: 'as the results that happened'... but it is clearer to say 'as the observed data' or even 'as the sample'.  -->
-
-<!--
 ### Mon, Nov 24
 
 Today we talked about **statistical power**. 
@@ -1226,9 +1216,8 @@ Wed, Apr 22 | [6.4][6.4] | Testing association with chi-squared
 Fri, Apr 24 |            | Choosing the right technique         
 Mon, Apr 27 |  | Last day, recap & review
 
-
 <!--
-### Mon, Dec 1
+### Mon, Apr 20
 
 This week we are going to introduce one more inference technique known as the **chi-squared test for association**.  The $\chi^2$ statistic let's you measure if an association between two categorical variables is statistically significant.  Before we talked about the statistic, we looked at **two-way tables**.  We talked about how to find row and column percentages in a two-way table.  
 
@@ -1277,7 +1266,8 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
 
     This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
 
-### Wed, Dec 3
+<!--
+### Wed, Apr 22
 
 Today we talked some more about the $\chi^2$-test for association.  We mentioned that the $\chi^2$-distribution has these features:
 
@@ -1307,9 +1297,19 @@ We did the following example where the $\chi^2$-test is inconclusive:
 
 * **Workshop:** [Chi-squared test](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf)
 
-### Fri, Dec 5
+### Fri, Apr 24
 
-Class was canceled because of snow. 
+Today we talked about **statistical power**. 
+
+
+<div class="Theorem">
+**Definition.** A study is **statistically powerful** if the sample size is large enough so that random error probably won't cause a Type II error.  You can tell if test is powerful by estimating the margin of error of a confidence interval with plausible data and making sure it is smaller than the **effect size** you hope to find.  
+</div>
+
+We did this workshop in class:
+
+* **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
+
 
 ### Mon, Dec 8
 

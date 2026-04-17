@@ -1819,28 +1819,11 @@ We finished by applying these rules to the following questions:
 
 3. If you double $n$, how much does the error tend to decrease in the trapezoid rule?  What about in the Simpson's rule?
 
-<!--
 ### Fri, Apr 17
 
 Today we did the following workshop about numerical integration.
 
 * **Workshop:** [Numerical integration](Workshops/Integration.pdf)
-
-Here are some tips for the workshop. 
-
-1. You might want to review the [Taylor series workshop](Workshops/TaylorSeries.pdf) we did all the way back on January 22. 
-
-2. Because the function $f(x) = \dfrac{\sin x}{x}$ is undefined at $x=0$, you will get an error if you ask Python to evaluate the function there (for example, in problem 4).  To avoid that problem, you can use this code to define $f(x)$:
-
-    ```python
-    from math import *
-
-    f = lambda x: sin(x)/x if x != 0 else 1
-    ```
-
-3. You'll have to write your own code to compute the trapezoid rule.  But you can look at the code from class Monday to see how I coded Simpson's method which is similar.  
--->
-
 
 
 - - - 
@@ -1854,56 +1837,199 @@ Wed, Apr 22 | Numerical solutions of ODEs
 Fri, Apr 24 | Runge-Kutta methods
 Mon, Apr 27 | Last day, recap & review
 
+<!--
+### Mon, Apr 20
+
+Today we talked about **numerical differentiation** and why it is **numerically unstable** which means that we can't use a single numerical technique to get better and better approximations. 
+
+Recall that computers represent floating point numbers in binary in the following form:
+$$\pm 1.\underbrace{b_1 \, b_2 \, b_3 \,  \cdots  \, b_{52}}_{\text{Binary mantissa}} \times 2^{\text{Exponent}}.$$ 
+When a computer computes a function, it will almost always have to round the result since there is no where to put the information after the last binary decimal point. So it will have a relative error of about $2^{-53} \approx 1.11 \times 10^{-16}$. This number is called the **machine epsilon** (and denoted $\epsilon$).  It is the reason that numerical differentiation techniques are numerically unstable.  
+
+When you compute the difference quotient 
+$$\frac{f(x+h) - f(x)}{h}$$
+to approximate $f'(x)$, the error should be 
+$$ \left| \frac{f(x+h) - f(x)}{h} - f'(x)\right| = \left| \frac{f''(\xi)}{2} h \right|,$$
+for some $\xi$ between $x$ and $x+h$ by the Taylor remainder theorem.  But that error formula assumes that $f(x+h)$ and $f(x)$ are being calculated precisely.  In fact, they are going to have rounding errors and so will only be accurate to approximately $\epsilon f(x)$ where $\epsilon$ is machine epsilon.  Adding that factor, you get a combined error of roughly
+$$ \underbrace{\left| \frac{\epsilon  f(x)}{h} \right|}_{\text{rounding error}} + \underbrace{\left| \frac{f''(\xi) h}{2} \right|}_{\text{approximation error}}.$$
+That explains why the error initially decreases, but then starts to increase as $h$ get's smaller.  We graphed the logarithm of the relative error in using the difference quotient to approximate the derivative of $f(x) = 10^x$ as a function of $k$ when $h = 10^{-k}$.  To graph it, we introduced the pyplot library in Python:
+
+```python
+import matplotlib.pyplot as plt
+from math import *
+
+f = lambda x: 10**x
+rel_error = lambda h: abs((f(0+h)-f(0))/h - log(10))/log(10)
+
+xs = [k/10 for k in range(180)]
+ys = [log(rel_error(10**(-x)))/log(10) for x in xs]
+
+plt.plot(xs,log_rel_errors)
+```
+
+<center>
+<img src="https://bclins.github.io/spring24/math342/derivativeError.png" width=500></img>
+<figcaption>Shows the base-10 logarithm of the relative error on y-axis and the exponent $k$ for $h = 10^{-k}$ on the x-axis.</figcaption>
+</center>
+
+We finished by getting started on this workshop:
+
+* **Workshop:** [Numerical differentiation](Workshops/NumericalDifferentiation.pdf)
+
+
+### Wed, Apr 22
+
+The simplest method for finding an approximate solution to a differential equation is Euler's method. 
+
+<div class="Theorem">
+#### Euler's Method Algorithm
+
+To find an approximate solution to the initial value problem 
+$$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
+on the interval $[a,b]$,
+
+1. Choose a step size $h$ and initialize $t = a$ and $y = y_0$.
+2. While $t < b$ do 
+    a. Update $y$ by adding $f(t,y) \cdot h$.
+    b. Update $t$ by adding $h$.
+</div>
+
+We started by doing this example by hand:
+
+1. $\dfrac{dy}{dt} = y - t^2 + 1$ on $[-1,3]$ with initial condition $y(-1) = 0$ and step size $h = 1$. 
+
+Then we implemented the algorithm in Python to get a more accurate solution.
+
+```python
+from math import *
+import matplotlib.pyplot as plt
+
+def EulersMethod(f,a,b,h,y0):
+    # Returns two lists, one of t-values and the other of y-values. 
+    t, y = a, y0
+    ts, ys = [a], [y0]
+    while t < b:
+      y += f(t,y)*h
+      t += h
+      ts.append(t)
+      ys.append(y)
+    return ts, ys
+
+f = lambda t,y: y-t**2 + 1
+
+# h = 1
+ts, ys = EulersMethod(f,-1,3,1,0)
+plt.plot(ts,ys)
+# h = 0.1
+ts, ys = EulersMethod(f,-1,3,0.1,0)
+plt.plot(ts,ys)
+# h = 0.01
+ts, ys = EulersMethod(f,-1,3,0.01,0)
+plt.plot(ts,ys)
+plt.show()
+```
+
+([SageCell link](https://sagecell.sagemath.org/?z=eJyFkDFvgzAQhXck_sOTsgBxkNNuUTJ27NI1ymCEkZEMtvBR5H_fc0OoVKmNB_v83d3z83WTGzAoMugH7yZClWdrxNRbR7Zvah9TBBXgLeVZnrW6w9ts9RTeNRnXFp1QohFGRFme8gy8dvjQNE9jAC0Otg8UBNyo4TrQ4VPZWQeosQUZZrxNKRPXTI27CglEXKD4kCthmRiYXdVN4Brl7c4X01sNwhnN6gDcur-gK0jEsjIPSAn-3EKtvNdjW1C5tW0srmz6_sr6dhpAxwasGppWscV4Yt9UVS_Y45iyOxjOc7iZ_TWsw1G8iqOQLM8TrdN0C66NoXw0y_pZO1f8LyCfK8g_JBIIxi1F-QUElJet&lang=python&interacts=eJyLjgUAARUAuQ==))
+
+2. Suppose we have a growing population, but with a seasonal limit on the population size.  The model for the population $y$ is 
+$$\frac{dy}{dt} = 0.1 y (10 + 2 \cos(2 \pi t) - y), ~~~~ y(0) = 1.$$ 
+Explain why the initial value problem has a unique solution with any initial condition.  
+
+To analyze the population example we used this Python code:
+
+```python
+f = lambda t,y: 0.1*y*(10+2*cos(2*pi*t)-y)
+# h = 1 
+ts, ys = EulersMethod(f,0,10,1,1)
+plt.plot(ts,ys)
+# h = 0.1 
+ts, ys = EulersMethod(f,0,10,0.1,1)
+plt.plot(ts,ys)
+# h = 0.01
+ts, ys = EulersMethod(f,0,10,0.001,1)
+plt.plot(ts,ys)
+plt.show()
+```
+
+([SageCell link](https://sagecell.sagemath.org/?z=eJyFkMFuwyAMhu-R8g6_1AtJaUR6rNbjjrvsWvVAFiIikYCCu4q3n1nTTpq0FSEwn-3fxsPiJ0yaLMYp-IVQl8VqMQ3Okxu7JqRsQUcER2VRFr0Z8HpxZolvhqzvxSC17KSVSVWHsgCvDd4NXZY5gq4ebowUJfxs4AfQ7lO7i4nQcw-yzPhYsietngY3FZJIOELzpVbCMikyO-mzxCmp841f7egMCC_o1g7AqdsjBkEyVbW9Q8rw5xUbHYKZe0HVI-3B0sqW76-stfMABm7A6anrNbeYDlBNW6datGq7rz98FPs6jDVVuyxQFhtYjm_5T4_uf01PyZa3bDmcR9zkcQuOTbG6Z3OFZ_kc8r-Cap8qKPWHRgbR-quovgBKFJyI&lang=python&interacts=eJyLjgUAARUAuQ==))
+
+3. We finished by using Euler's method to estimate the number $e$ by approximating the solution of the IVP
+$$\dfrac{dy}{dt} = y, ~~~ y(0) = 1$$
+on the interval $[0,1]$. 
+
+### Fri, Apr 26
+
+We started with this question:
+
+1. If you take one step of Euler's method starting at a point $(t,y)$ with a differential equation
+$$\dfrac{dy}{dt} = f(t,y)$$
+use the Taylor series remainder formula to estimate the difference between the Euler's method approximation 
+$$y(t) + \underbrace{f(t,y)}_{y'(t)} \cdot h$$
+and the actual value of $y(t+h)$. 
+
+Here is an image that shows this error. 
+<center>
+<figure>
+<img src="https://www.brianheinold.net/numerical/images/numerical_notes_diffeq5.png"></img>
+<figcaption style="text-align:center">Source: [An Intuitive Guide to Numerical Methods](https://www.brianheinold.net/numerical/numerical_book.html) by Brian Heinold</figcaption>
+<figure>
+</center>
+
+Over many steps, the error from using Euler's method tends to grow.  It is possible to prove the following upper bound for the error in Euler's method over the whole interval $[a,b]$:
+
+$$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
+where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
+
+To get a method with less error, would could try to incorporate the 2nd derivative of $y(t)$ into each step.  Note that 
+$$\dfrac{d^2}{dt^2} y(t) = \dfrac{d}{dt} f(t,y) = f_t(t,y) + f_y(t,y) f(t,y)$$
+by the chain rule for multivariable functions.  In practice it isn't always easy to compute the partial derivatives of $f$, so the 
+Runge-Kutta method looks for relatively simple formulas involving $f(t,y)$ that approximate this expression above without calculating the partial derivatives.  The **2nd order Runge-Kutta method** known as the **midpoint method** has this formula
+
+$$y(t_{i+1}) \approx y(t_i) + f(t_i + \tfrac{1}{2}h ,y(t_i) + \tfrac{1}{2}h f(t_i,y_i)) h.$$
+
+<div class="Theorem">
+**Second Order Runge-Kutta Algorithm.** To approximate a solution to the IVP
+$$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
+on the interval $[a,b]$,
+
+1. Choose a step size $h$ and initialize $t=a$ and $y = y_0$. 
+2. While $t < b$ do
+    a. $y = y + f(t+h/2, y + h/2 \cdot f(t,y))h$
+    b. $t = t+h$
+</div>
+
+We implemented the algorithm for this Runge-Kutta method in Python and used it to approximate the solution of this IVP:
+
+2. $\dfrac{dy}{dt} = t e^{3t} - 2y$ on $[0,1]$ with initial condition $y(0)=0$.  
+2. $\dfrac{dy}{dt} = y-t^2 +1$ on $[-1,3]$ with initial condition $y(-1)=0$.
+
+We also compared our result with the Euler's method approximate solutions for $h = 1, 0.1,$ and $0.01$. We saw that the midpoint method was much more accurate. My version of the code for this algorithm is below.
+
+```python
+def MidpointMethod(f,a,b,h,y0):
+    # Return two lists, one of y-values and the other of t-values
+    t, y = a, y0
+    ts, ys = [a], [y0]
+    while t < b:
+      y += f(t+h/2,y+h/2*f(t,y))*h
+      t += h
+      ts.append(t)
+      ys.append(y)
+    return ts, ys
+```
+
+### Fri, Apr 26
+
+Today we introduced the **4th order Runge-Kutta (RK4)** method and we did this workshop:
+
+* **Workshop:** [Runge-Kutta method](Workshops/RungeKutta.pdf)
+
+-->
 
 - - - 
 
 
 
-[1.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.2>
-[1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.3>
-[1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.4>
-[2.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.1>
-[2.1.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.1>
-[2.1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.3>
-[2.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.4>
-[2.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.5>
-[2.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.2>
-[2.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.3>
-[3.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.1>
-[3.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.2>
-[3.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.4>
-[3.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.5>
-[4.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.4.1>
-[4.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.4.1.4>
-[4.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.4.1.5>
-[4.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.4.3>
-[5.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.1>
-[5.1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.1.3>
-[5.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.2>
-[5.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.3>
-[5.3.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.3.3>
-[6.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.1>
-[6.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.2>
-[6.2.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.6.2.3>
-[6.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.3>
-[6.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.4>
-[7.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.1>
-[7.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.1.4>
-[7.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.1.5>
-[7.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.2>
-[7.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.3>
-[7.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.4>
-[7.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.5>
-[8.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.1>
-[8.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.8.1.4>
-[8.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2>
-[8.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.4>
-[9.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.1>
-[9.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.2>
-[9.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.3>
-[9.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.4>
-[9.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.9.5>
-[Wk01]: <>
 
 <br>
 <br>

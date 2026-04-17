@@ -31,7 +31,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 3 will be on **Friday, April 17**
+* [Project 5](Projects/project5.pdf) is due on **Friday, April 24**
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](midterm3formulas.pdf),  [review solutions](midterm3reviewSolutions.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf),  [review solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)
@@ -52,7 +52,7 @@ Week | Topic                      | Notes | Projects
 10 | Least squares regression                       | [Week 10](notes.html#week-10-notes) | [Project 4](Projects/project4.pdf)
 11 | Logistic regression                            | [Week 11](notes.html#week-11-notes) | 
 12 | Simulation methods                             | [Week 12](notes.html#week-12-notes) |
-13 | Bayesian statistics, **Midterm 3**             | [Week 13](notes.html#week-13-notes) |
+13 | Bayesian statistics, **Midterm 3**             | [Week 13](notes.html#week-13-notes) | [Project 5](Projects/project5.pdf)
 14 | Bayesian methods                               | [Week 14](notes.html#week-14-notes) |
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
