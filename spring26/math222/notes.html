@@ -2709,19 +2709,75 @@ bootstrapping</td>
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Apr 20
-
-Today we introduced **bootstrapping**.  This is a technique for working with statistics when you don't have a good theoretical model for what the shape of the distribution of the statistic should be.  You can apply the bootstrapping method to almost any statistic.   
-
-The idea behind bootstrapping is to re-sample from the sample data to generate a model for the shape of the sampling distribution of the statistic of interest.  Bootstrapping is one of several [resampling methods](https://en.wikipedia.org/wiki/Resampling_(statistics)) used in statistics. 
-
+<h3 id="mon-apr-20">Mon, Apr 20</h3>
+<p>Today we introduced <strong>bootstrapping</strong>. This is a
+technique for working with statistics when you don’t have a good
+theoretical model for what the shape of the distribution of the
+statistic should be. You can apply the bootstrapping method to almost
+any statistic.</p>
+<p>The idea behind bootstrapping is to re-sample from the sample data to
+generate a model for the shape of the sampling distribution of the
+statistic of interest. Bootstrapping is one of several <a
+href="https://en.wikipedia.org/wiki/Resampling_(statistics)">resampling
+methods</a> used in statistics.</p>
 <div class="Theorem">
-**Definition.** For a sample of $n$ observations, a **bootstrap sample** is a simulated sample of size $n$ chosen with replacement from the original $n$ observations.  A **bootstrap statistic** is a statistic calculated from a bootstrap sample.  A **bootstrap distribution** is the distribution of a large number of bootstrap statistics all taken from the same original data. 
+<p><strong>Definition.</strong> For a sample of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+observations, a <strong>bootstrap sample</strong> is a simulated sample
+of size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+chosen with replacement from the original
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+observations. A <strong>bootstrap statistic</strong> is a statistic
+calculated from a bootstrap sample. A <strong>bootstrap
+distribution</strong> is the distribution of a large number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+of bootstrap statistics all taken from the same original data.</p>
 </div>
-
-* **Example:** [Bootstrapping: Standard deviation of Farmville annual rainfall](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/rainfallBootstrap.html)
--->
+<ul>
+<li><strong>Example:</strong> <a
+href="Examples/bootstrapRainfall.html">Bootstrapping: Standard deviation
+of Farmville annual rainfall</a></li>
+</ul>
+<p>There are several methods for making confidence intervals with
+bootstrapping, but we will only cover the simplest method.</p>
+<section id="bootstrap-confidence-intervals-percentile-method"
+class="Theorem">
+<h4>Bootstrap confidence intervals (percentile method)</h4>
+<p>Generate a bootstrap distribution with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+different re-sampled bootstrap statistics. Then the
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1-\alpha)</annotation></semantics></math>-confidence
+interval</strong> runs from the value at the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mi>α</mi><mn>2</mn></mfrac><annotation encoding="application/x-tex">\frac{\alpha}{2}</annotation></semantics></math>
+percentile in the bootstrap distribution up to the value at the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mfrac><mi>α</mi><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1-\frac{\alpha}{2})</annotation></semantics></math>
+percentile.</p>
+<p>Usually we pick
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+around 5,000 or 10,000.</p>
+</section>
+<p>In R, you can use the <code>quantile()</code> function to find the
+endpoints of the confidence interval. For example, for a 95% confidence
+interval from a bootstrap distribution called <code>boot.dist</code>,
+you would use:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(boot.dist, <span class="fl">0.025</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(boot.dist, <span class="fl">0.975</span>)</span></code></pre></div>
+<p>Bootstrapping usually works well as long as the following assumptions
+hold:</p>
+<ol type="1">
+<li><strong>Independence.</strong> Observations are independent.</li>
+<li><strong>Large sample.</strong> Need enough data (at least
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n \ge 30</annotation></semantics></math>)
+to trust that the bootstrap distribution is a realistic model of the
+population distribution.</li>
+</ol>
+<p>We finished by doing this practice example.</p>
+<ul>
+<li><strong>Practice:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/marriageBootstrap.html">Bootstrapping:
+Correlation between spouses ages</a></li>
+</ul>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

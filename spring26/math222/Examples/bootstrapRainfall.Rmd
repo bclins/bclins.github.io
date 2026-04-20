@@ -1,0 +1,49 @@
+---
+title: Bootstrap Method
+---
+
+### Example: Standard deviation of annual rainfall in Farmville
+
+The data below contains the monthly and annual rainfall totals for Farmville, VA from 1931 until 2011. 
+
+```{r}
+rainfall <- read.csv("http://people.hsc.edu/faculty-staff/blins/StatsExamples/rainfall.csv")
+hist(rainfall$total, col = "gray", main = "Annual Rainfall Totals", xlab = "Inches")
+```
+
+Suppose we wanted to know how variable rainfall totals are. The right way to compute standard deviation from a sample is to use the sample standard deviation:
+$$s = \sqrt{\frac{\sum_{i = 1}^n (x_i - \bar{x})^2}{N-1}}$$
+The standard deviation of the annual rainfall totals is `r round(sd(rainfall$total), 4)` inches per year. That is only a *point estimate*. We might like to make a confidence interval for the parameter $σ_\text{rainfall}$, that is, the true population standard deviation for Farmville annual rainfall amounts. Since we don’t know how to make confidence intervals for standard deviations, we can use a bootstrap distribution.
+
+```{r}
+n <- length(rainfall)
+B <- 5000 
+boot.dist <- c()
+for (i in 1:B) {
+  boot.sample <- sample(rainfall$total, n, replace=T)
+  boot.stat <- sd(boot.sample)
+  boot.dist <- c(boot.dist, boot.stat)
+}
+hist(boot.dist, col='gray', main='Bootstrap Distribution for s', xlab='Inches')
+```
+
+Once you have the bootstrap distribution, you can make a $(1- \alpha)$-confidence interval for the standard deviation by finding the values of the bootstrap distribution at the percentiles $\alpha/2$ and $(1 - \alpha/2)$. For a 95% confidence interval, we would compute:
+
+```{r}
+quantile(boot.dist, 0.025)
+quantile(boot.dist, 0.975)
+```
+
+So we can be 95% sure that the true value of $\sigma_\text{rainfall}$ falls between `r round(quantile(boot.dist, 0.025), 3)` and `r round(quantile(boot.dist, 0.975), 3)`. 
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
