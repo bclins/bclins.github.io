@@ -1259,8 +1259,7 @@ Usually we pick $B$ around 5,000 or 10,000.
 In R, you can use the `quantile()` function to find the endpoints of the confidence interval.  For example, for a 95% confidence interval from a bootstrap distribution called `boot.dist`, you would use:
 
 ```r
-quantile(boot.dist, 0.025)
-quantile(boot.dist, 0.975)
+quantile(boot.dist, c(0.025, 0.975))
 ```
 
 Bootstrapping usually works well as long as the following assumptions hold:
@@ -1270,7 +1269,7 @@ Bootstrapping usually works well as long as the following assumptions hold:
 
 We finished by doing this practice example. 
 
-* **Practice:** [Bootstrapping: Correlation between spouses ages](https://people.hsc.edu/faculty-staff/blins/classes/spring19/math222/Examples/marriageBootstrap.html)
+* **Practice:** [Bootstrapping: Correlation between spouses ages](Examples/bootstrapSpouses.html)
 
 
 - - - 

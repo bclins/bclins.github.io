@@ -1216,7 +1216,6 @@ Wed, Apr 22 | [6.4][6.4] | Testing association with chi-squared
 Fri, Apr 24 |            | Choosing the right technique         
 Mon, Apr 27 |  | Last day, recap & review
 
-<!--
 ### Mon, Apr 20
 
 This week we are going to introduce one more inference technique known as the **chi-squared test for association**.  The $\chi^2$ statistic let's you measure if an association between two categorical variables is statistically significant.  Before we talked about the statistic, we looked at **two-way tables**.  We talked about how to find row and column percentages in a two-way table.  

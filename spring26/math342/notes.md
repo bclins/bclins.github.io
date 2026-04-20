@@ -1837,7 +1837,6 @@ Wed, Apr 22 | Numerical solutions of ODEs
 Fri, Apr 24 | Runge-Kutta methods
 Mon, Apr 27 | Last day, recap & review
 
-<!--
 ### Mon, Apr 20
 
 Today we talked about **numerical differentiation** and why it is **numerically unstable** which means that we can't use a single numerical technique to get better and better approximations. 
@@ -1852,30 +1851,42 @@ to approximate $f'(x)$, the error should be
 $$ \left| \frac{f(x+h) - f(x)}{h} - f'(x)\right| = \left| \frac{f''(\xi)}{2} h \right|,$$
 for some $\xi$ between $x$ and $x+h$ by the Taylor remainder theorem.  But that error formula assumes that $f(x+h)$ and $f(x)$ are being calculated precisely.  In fact, they are going to have rounding errors and so will only be accurate to approximately $\epsilon f(x)$ where $\epsilon$ is machine epsilon.  Adding that factor, you get a combined error of roughly
 $$ \underbrace{\left| \frac{\epsilon  f(x)}{h} \right|}_{\text{rounding error}} + \underbrace{\left| \frac{f''(\xi) h}{2} \right|}_{\text{approximation error}}.$$
-That explains why the error initially decreases, but then starts to increase as $h$ get's smaller.  We graphed the logarithm of the relative error in using the difference quotient to approximate the derivative of $f(x) = 10^x$ as a function of $k$ when $h = 10^{-k}$.  To graph it, we introduced the pyplot library in Python:
+That explains why the error initially decreases, but then starts to increase as $h$ get's smaller.  We graphed the logarithm of the relative error in using the difference quotient to approximate the derivative of $f(x) = x^2$ at $x = 1$ as a function of $k$ when $h = 10^{-k}$.  To graph it, we introduced the pyplot library in Python:
 
 ```python
 import matplotlib.pyplot as plt
 from math import *
 
-f = lambda x: 10**x
-rel_error = lambda h: abs((f(0+h)-f(0))/h - log(10))/log(10)
+f = lambda x: x ** 2
+Df = lambda x: 2*x
+x = 1
 
-xs = [k/10 for k in range(180)]
-ys = [log(rel_error(10**(-x)))/log(10) for x in xs]
+def abs_error(f, Df, x, h):
+    diff_quotient = (f(x + h) - f(x)) / h
+    return abs(diff_quotient - Df(x))
 
-plt.plot(xs,log_rel_errors)
+xs = [k / 10 for k in range(180)] 
+ys = [log10(abs_error(f, Df, x, 10 ** (-k))) for k in xs]
+
+plt.plot(xs, ys)
+plt.ylabel("Base-10 logarithm of absolute error")
+plt.xlabel("Exponent in h = 10^(-k)")
+plt.show()
 ```
 
 <center>
-<img src="https://bclins.github.io/spring24/math342/derivativeError.png" width=500></img>
-<figcaption>Shows the base-10 logarithm of the relative error on y-axis and the exponent $k$ for $h = 10^{-k}$ on the x-axis.</figcaption>
+<figure>
+<img src="derivativeError.png" width=500></img>
+<figcaption style="text-align:right">[SageCell link](https://sagecell.sagemath.org/?z=eJxtUN1qwyAYvQ_kHQ690izpkl6Nwm5G9xSjK4ZqIzExU8PM2-8z6QaFCYKc7_z4HT1M1gUMIkzGBqPb_bSkF4THZEKeKWeHNO6gN2qRZ4TiFUYM7VUgHhFRFDjk2ekRPhQxzyJBTZJcpYJo_UU6Zx1TJU50Y4mOH_MMdK5aqcvXbIOWYyAVUyziieaoQE_O8YxuozoZZjcmO_aoqsg1UVNg9GTy0ZOqqaGsQw89wonxJlnzUvMz8mxZOcbempr99zlS0mqs6jnF_3lEf04B1M8-dcWiL7F4viGLEa00bPcmvKxIT-bC6dANsGsB1sxBYg3a3SXxLnmPkx3TGpTRpd7qzxT9S_Od_Wb8BzN-f7I=&lang=python&interacts=eJyLjgUAARUAuQ==)</figcaption>
+</figure>
 </center>
 
-We finished by getting started on this workshop:
 
-* **Workshop:** [Numerical differentiation](Workshops/NumericalDifferentiation.pdf)
+1. The **centered difference quotient**
+$$f'(x) \approx \dfrac{f(x+h)-f(x-h)}{2h}$$ 
+is a more accurate approximation of the derivative. Make a graph of the base-10 logarithm of the relative error with this approximation for $f(x) = \sin x$ at $x = \tfrac{\pi}{3}$ with $h = 10^{-k}$, as a function of $k$. Compare the relative errors of the difference quotient versus the centered difference quotient.  What $k$ (roughly) minimizes the relative error for the centered difference quotient?  How much more accurate is it than the best results you get with the regular difference quotient?
 
+<!--
 
 ### Wed, Apr 22
 

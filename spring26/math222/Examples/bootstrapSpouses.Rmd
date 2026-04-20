@@ -1,0 +1,37 @@
+---
+title: Bootstrap Method Practice
+---
+
+### Example: Correlation between spouses ages
+
+```{r}
+marriages = read.csv("http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.txt")
+head(marriages)
+```
+
+The data frame `marriages` contains data from 24 couples that were married in Cumberland county Pennsylvania one month. Assume for now that these couples are representative of couples throughout the United States.
+
+1. Use the `plot()` function to make a scatterplot that shows the correlation between the ages of husbands and wives.
+
+2. Find the correlation using the `cor()` function.
+
+3. Of course, the correlation you found is a sample statistic, not the true population parameter for all married couples in the United States. Make a bootstrap distribution for the correlation.  In order to make a bootstrap distribution, you need to be able to create a boostrap sample from the rows of a data frame.  Here is one way to do this in R:
+
+    ```{r}
+    n <- nrow(marriages)
+    random.rows <- sample(c(1:n), n, replace = T)
+    boot.sample <- marriages[random.rows, ]
+    ```
+
+4. Using the bootstrap percentile method, find a 95% confidence interval for the correlation between the ages of husbands and wives in the United States.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
