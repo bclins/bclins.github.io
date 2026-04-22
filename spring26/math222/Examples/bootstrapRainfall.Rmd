@@ -30,8 +30,7 @@ hist(boot.dist, col='gray', main='Bootstrap Distribution for s', xlab='Inches')
 Once you have the bootstrap distribution, you can make a $(1- \alpha)$-confidence interval for the standard deviation by finding the values of the bootstrap distribution at the percentiles $\alpha/2$ and $(1 - \alpha/2)$. For a 95% confidence interval, we would compute:
 
 ```{r}
-quantile(boot.dist, 0.025)
-quantile(boot.dist, 0.975)
+quantile(boot.dist, c(0.025, 0.975))
 ```
 
 So we can be 95% sure that the true value of $\sigma_\text{rainfall}$ falls between `r round(quantile(boot.dist, 0.025), 3)` and `r round(quantile(boot.dist, 0.975), 3)`. 

@@ -65,6 +65,9 @@ header-includes: |
 
 * [Logistic regression: Predicting calculus success](Examples/calculusSuccess.html)
 
+* [Bootstrapping: Standard deviation of Farmville annual rainfall](https://bclins.github.io/spring26/math222/Examples/bootstrapRainfall.html)
+
+
 <br>
 <br>
 <br>

@@ -2832,24 +2832,29 @@ as fixed, then
 is the <strong>likelihood function</strong> for the parameter
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</li>
 </ul>
+<p>Recall that for the binomial distribution, the pmf is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mi>!</mi></mrow><mrow><mi>k</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mi>p</mi><mi>k</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">f(k) = \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k}.</annotation></semantics></math>
+You can calculate this in R using the command
+<code>dbinom(k, n, p)</code>.</p>
+<p>The pdf for the normal distribution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><msqrt><mrow><mn>2</mn><mi>π</mi><msup><mi>σ</mi><mn>2</mn></msup></mrow></msqrt></mfrac><msup><mi>e</mi><mfrac><mrow><mi>−</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>μ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac></msup><mo>,</mo></mrow><annotation encoding="application/x-tex">f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{\frac{-(x-\mu)^2}{2\sigma^2}},</annotation></semantics></math>
+which can be computed with <code>dnorm(x, mu, sigma)</code> in R.</p>
 <ol type="1">
 <li><p>Men in the USA have an average height of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>70</mn><annotation encoding="application/x-tex">70</annotation></semantics></math>
 inches with a standard deviation of about 3 inches. The average height
-for women is about 64 inches with a standard deviation of 2.5 inches. If
-you randomly select an adult and they are 68 inches tall, what is the
+for women is about 64.5 inches with a standard deviation of 2.5 inches.
+If you randomly select an adult and they are 68 inches tall, what is the
 likelihood function?</p></li>
 <li><p>Suppose I have a bag with three dice, one regular die with the
-number 1 to 6, one 10-sided with the numbers 1 to 10, and one 20-sided
+numbers 1 to 6, one 12-sided with the numbers 1 to 12, and one 20-sided
 with the numbers 1 to 20. What is the likelihood function if I pick one
-die at random and then roll a 5?</p></li>
+die at random and then roll it three times getting 4, 1, 5?</p></li>
 <li><p>Suppose you have a coin that lands on heads with probability
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
 What is the likelihood function for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
-if you flip the coin three times and get 2 heads and 1 tail? Hint:
-Recall the binomial distribution probability formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mi>!</mi></mrow><mrow><mi>k</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mi>p</mi><mi>k</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">P(X = k) = \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k}.</annotation></semantics></math></p></li>
+if you flip the coin three times and get 2 heads and 1 tail?</p></li>
 </ol>
 <section id="bayesian-inference" class="Theorem">
 <h4>Bayesian Inference</h4>
@@ -2860,8 +2865,8 @@ Recall the binomial distribution probability formula
 model for them being male? If they are 68 inches tall, what is the
 posterior model?</p></li>
 <li><p>If you pick one die at random from the three dice above, what is
-the prior model for the number of sides? What is the posterior model if
-you roll a 5?</p></li>
+the prior model for the number of sides? What is the posterior model
+based on rolling 4, 1, 5 with the die?</p></li>
 </ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>

@@ -1889,8 +1889,15 @@ is a more accurate approximation of the derivative. Make a graph of the base-10 
 
 ### Wed, Apr 22
 
-Today we started talking about numerical solutions to differential equations.  
-The simplest method for finding an approximate solution to a differential equation is Euler's method. 
+Today we started talking about numerical solutions to differential equations.  A **first-order differential equation** is an equation 
+$$\frac{dy}{dt} = f(t, y).$$
+As long as the function $f$ is continuous and has a continuous partial derivative $f_y$ in a rectangle $a < t < b$ and $c < y < d$, then for any point $(t_0, y_0)$ inside the rectangle, there is guaranteed to be a differentiable function $y(t)$ that satisfies the differential equation and passes through $(t_0, y_0)$. 
+
+You can graph a first-order differential equation by making a **slope field**. 
+
+* **Example:** [Python: slope field](https://sagecell.sagemath.org/?z=eJxtjk1OwzAUhPeWfIdR2TipW0iBDVJ33IATOIlDLPmv9gvg2-OmEd2wezOj-d5MKTj4xcUC42JIhJaz7XKKog1kTX-M5XpBZURLnHH2gHc9Ga9Bs8a0-IFM8JxNOMMq148KJFHeUHAAte0Je3S33ocNsVaMtiNn5IyXIKd-avHQSTxzVlavbN6rxAtngmRpqnQ6z5_JjMIan6MatLgTJE5PjcRfcuesScNZ3X68LOZLJ3FdJ9E95ksi0e2n9UHdWQFde1P_ZUOwIZ13vV30bgPmOXyL5hfmU2J7&lang=python&interacts=eJyLjgUAARUAuQ==)
+
+A very simple algorithm to approximate a solution to a differential equation is **Euler's method**. 
 
 <div class="Theorem">
 #### Euler's Method Algorithm
@@ -1990,6 +1997,7 @@ Over many steps, the error from using Euler's method tends to grow.  It is possi
 $$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
 where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
 
+<!--
 ### Fri, Apr 26
 
 We started with this question:
