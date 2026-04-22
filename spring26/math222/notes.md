@@ -1271,6 +1271,39 @@ We finished by doing this practice example.
 
 * **Practice:** [Bootstrapping: Correlation between spouses ages](Examples/bootstrapSpouses.html)
 
+### Wed, Apr 22
+
+We started with another example of bootstrapping:
+
+* **Practice**: [Bootstrapping: Heroin treatment times](https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/HeroinTreatment.html)
+
+After that, we started a brief introduction to Bayesian statistics.  Recall that a random variable $X$ has either a probability mass function (pmf) if it is discrete or a probability density function (pdf) if it is continuous.  In both cases, the function depends on the probability distribution of $X$, and that might have one or more parameters.  For example, the parameters of the normal distribution are its mean $\mu$ and standard deviation $\sigma$.  The parameters of a binomial distribution are the number of trials $n$ and the probability of a success $p$.  
+
+When you write down the pmf/pdf of a random variable $X$, it will have the form
+$$f(x, \theta)$$ 
+where $x$ is a possible outcome for $X$ and $\theta$ is the value of the parameter(s) (notice that both $x$ and $\theta$ might be vectors representing more than one outcome/parameter. We can interpret the function $f$ two ways:
+
+* If we think of $\theta$ as a fixed constant, then $f$ is the pmf or pdf for $X$. 
+* If we think of $x$ as fixed, then $f$ is the **likelihood function** for the parameter $\theta$.   
+
+1. Men in the USA have an average height of $70$ inches with a standard deviation of about 3 inches. The average height for women is about 64 inches with a standard deviation of 2.5 inches.  If you randomly select an adult and they are 68 inches tall, what is the likelihood function?  
+
+2. Suppose I have a bag with three dice, one regular die with the number 1 to 6, one 10-sided with the numbers 1 to 10, and one 20-sided with the numbers 1 to 20.  What is the likelihood function if I pick one die at random and then roll a 5? 
+
+3. Suppose you have a coin that lands on heads with probability $p$. What is the likelihood function for $p$ if you flip the coin three times and get 2 heads and 1 tail?  Hint: Recall the binomial distribution probability formula
+$$P(X = k) = \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k}.$$
+
+
+<div class="Theorem">
+#### Bayesian Inference
+
+$$\text{Posterior} \propto \text{Likelihood} \cdot \text{Prior}$$
+</div>
+
+4. If you pick a random adult, what is a good prior probability model for them being male?  If they are 68 inches tall, what is the posterior model? 
+
+5. If you pick one die at random from the three dice above, what is the prior model for the number of sides?  What is the posterior model if you roll a 5? 
+
 
 - - - 
 

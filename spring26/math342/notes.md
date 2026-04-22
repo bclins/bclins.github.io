@@ -1886,10 +1886,10 @@ plt.show()
 $$f'(x) \approx \dfrac{f(x+h)-f(x-h)}{2h}$$ 
 is a more accurate approximation of the derivative. Make a graph of the base-10 logarithm of the relative error with this approximation for $f(x) = \sin x$ at $x = \tfrac{\pi}{3}$ with $h = 10^{-k}$, as a function of $k$. Compare the relative errors of the difference quotient versus the centered difference quotient.  What $k$ (roughly) minimizes the relative error for the centered difference quotient?  How much more accurate is it than the best results you get with the regular difference quotient?
 
-<!--
 
 ### Wed, Apr 22
 
+Today we started talking about numerical solutions to differential equations.  
 The simplest method for finding an approximate solution to a differential equation is Euler's method. 
 
 <div class="Theorem">
@@ -1899,74 +1899,96 @@ To find an approximate solution to the initial value problem
 $$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
 on the interval $[a,b]$,
 
-1. Choose a step size $h$ and initialize $t = a$ and $y = y_0$.
-2. While $t < b$ do 
+1. Choose a number of steps $n$ and initialize $t = a$, $y = y_0$ and $h = \frac{b-a}{n}$.
+2. For $i$ from 1 to $n$ do:
     a. Update $y$ by adding $f(t,y) \cdot h$.
     b. Update $t$ by adding $h$.
 </div>
 
 We started by doing this example by hand:
 
-1. $\dfrac{dy}{dt} = y - t^2 + 1$ on $[-1,3]$ with initial condition $y(-1) = 0$ and step size $h = 1$. 
+1. $\dfrac{dy}{dt} = y - t^2 + 1$ on $[-1,3]$ with initial condition $y(-1) = 0$ and $n = 2$ steps. 
 
 Then we implemented the algorithm in Python to get a more accurate solution.
-
+<figure>
 ```python
 from math import *
 import matplotlib.pyplot as plt
 
-def EulersMethod(f,a,b,h,y0):
+def EulersMethod(f, a, b, n, y0):
     # Returns two lists, one of t-values and the other of y-values. 
     t, y = a, y0
     ts, ys = [a], [y0]
-    while t < b:
-      y += f(t,y)*h
-      t += h
-      ts.append(t)
-      ys.append(y)
+    h = (b - a) / n
+    for i in range(n):
+        y += f(t, y) * h
+        t += h
+        ts.append(t)
+        ys.append(y)
     return ts, ys
 
-f = lambda t,y: y-t**2 + 1
+f = lambda t, y: y - t**2 + 1
 
-# h = 1
-ts, ys = EulersMethod(f,-1,3,1,0)
-plt.plot(ts,ys)
-# h = 0.1
-ts, ys = EulersMethod(f,-1,3,0.1,0)
-plt.plot(ts,ys)
-# h = 0.01
-ts, ys = EulersMethod(f,-1,3,0.01,0)
-plt.plot(ts,ys)
+# n = 4
+ts, ys = EulersMethod(f, -1, 3, 4, 0)
+plt.plot(ts, ys)
+# n = 40
+ts, ys = EulersMethod(f, -1, 3, 40, 0)
+plt.plot(ts, ys)
+# n = 400
+ts, ys = EulersMethod(f, -1, 3, 400, 0)
+plt.plot(ts, ys)
 plt.show()
 ```
-
-([SageCell link](https://sagecell.sagemath.org/?z=eJyFkDFvgzAQhXck_sOTsgBxkNNuUTJ27NI1ymCEkZEMtvBR5H_fc0OoVKmNB_v83d3z83WTGzAoMugH7yZClWdrxNRbR7Zvah9TBBXgLeVZnrW6w9ts9RTeNRnXFp1QohFGRFme8gy8dvjQNE9jAC0Otg8UBNyo4TrQ4VPZWQeosQUZZrxNKRPXTI27CglEXKD4kCthmRiYXdVN4Brl7c4X01sNwhnN6gDcur-gK0jEsjIPSAn-3EKtvNdjW1C5tW0srmz6_sr6dhpAxwasGppWscV4Yt9UVS_Y45iyOxjOc7iZ_TWsw1G8iqOQLM8TrdN0C66NoXw0y_pZO1f8LyCfK8g_JBIIxi1F-QUElJet&lang=python&interacts=eJyLjgUAARUAuQ==))
+<figcaption style="text-align:right">
+[SageCell link](https://sagecell.sagemath.org/?z=eJyNkbFqwzAQhneD3-GHLLIju07aKZCxY5euIYOM5dogS0a6NOjte0rcNBRKo8HI352-u5N67yZMigaM0-w8ocyzZcd0No7M2NZzTDuogNlQnuVZp3u8noz24U3T4DrRSyiJVsJKxKbY5Rl4rfCu6eRtAJ0dzBgoSDir4XpQ9anMSQco24EGZvzxKRKXSI2rhViJffLHZiGsiYHZQR0lDrE5XvnASLSooAo8wV5h7zxGjBZe2Q8t7HdzaUWs9-hFqlCgxPAToRS5_w-1mmdtO0HF3fkbjQv1l4GXDtNV9dyTUVPbqcsgO65ZgcpyizU2KWEFyynbPLtN9ftmq43Es8SLRMNV-Anq9ByC82MoboLmAUPzj-Ihx1-SBMLgzqL4AkfhoNs=&lang=python&interacts=eJyLjgUAARUAuQ==)
+</figcaption>
+</figure>
 
 2. Suppose we have a growing population, but with a seasonal limit on the population size.  The model for the population $y$ is 
 $$\frac{dy}{dt} = 0.1 y (10 + 2 \cos(2 \pi t) - y), ~~~~ y(0) = 1.$$ 
-Explain why the initial value problem has a unique solution with any initial condition.  
 
-To analyze the population example we used this Python code:
+    <figure>
+    ```python
+    f = lambda t, y: 0.1 * y * (10 + 2 * cos(2 * pi * t) - y)
+    # n = 10 
+    ts, ys = EulersMethod(f, 0, 10, 10, 1)
+    plt.plot(ts,ys)
+    # n = 100
+    ts, ys = EulersMethod(f, 0, 10, 100, 1)
+    plt.plot(ts,ys)
+    # n = 1000
+    ts, ys = EulersMethod(f, 0, 10, 1000, 1)
+    plt.plot(ts,ys)
+    plt.show()
+    ```
+    <figcaption style="text-align:right">[SageCell link](https://sagecell.sagemath.org/?z=eJyFkMFuwyAMhu-R8g6_1AtJaUR6rNbjjrvsWvVAFiIikYCCu4q3n1nTTpq0FSEwn-3fxsPiJ0yaLMYp-IVQl8VqMQ3Okxu7JqRsQUcER2VRFr0Z8HpxZolvhqzvxSC17KSVSVWHsgCvDd4NXZY5gq4ebowUJfxs4AfQ7lO7i4nQcw-yzPhYsietngY3FZJIOELzpVbCMikyO-mzxCmp841f7egMCC_o1g7AqdsjBkEyVbW9Q8rw5xUbHYKZe0HVI-3B0sqW76-stfMABm7A6anrNbeYDlBNW6datGq7rz98FPs6jDVVuyxQFhtYjm_5T4_uf01PyZa3bDmcR9zkcQuOTbG6Z3OFZ_kc8r-Cap8qKPWHRgbR-quovgBKFJyI&lang=python&interacts=eJyLjgUAARUAuQ==)</figcaption>
+    </figure>
 
-```python
-f = lambda t,y: 0.1*y*(10+2*cos(2*pi*t)-y)
-# h = 1 
-ts, ys = EulersMethod(f,0,10,1,1)
-plt.plot(ts,ys)
-# h = 0.1 
-ts, ys = EulersMethod(f,0,10,0.1,1)
-plt.plot(ts,ys)
-# h = 0.01
-ts, ys = EulersMethod(f,0,10,0.001,1)
-plt.plot(ts,ys)
-plt.show()
-```
 
-([SageCell link](https://sagecell.sagemath.org/?z=eJyFkMFuwyAMhu-R8g6_1AtJaUR6rNbjjrvsWvVAFiIikYCCu4q3n1nTTpq0FSEwn-3fxsPiJ0yaLMYp-IVQl8VqMQ3Okxu7JqRsQUcER2VRFr0Z8HpxZolvhqzvxSC17KSVSVWHsgCvDd4NXZY5gq4ebowUJfxs4AfQ7lO7i4nQcw-yzPhYsietngY3FZJIOELzpVbCMikyO-mzxCmp841f7egMCC_o1g7AqdsjBkEyVbW9Q8rw5xUbHYKZe0HVI-3B0sqW76-stfMABm7A6anrNbeYDlBNW6datGq7rz98FPs6jDVVuyxQFhtYjm_5T4_uf01PyZa3bDmcR9zkcQuOTbG6Z3OFZ_kc8r-Cap8qKPWHRgbR-quovgBKFJyI&lang=python&interacts=eJyLjgUAARUAuQ==))
-
-3. We finished by using Euler's method to estimate the number $e$ by approximating the solution of the IVP
-$$\dfrac{dy}{dt} = y, ~~~ y(0) = 1$$
+3. Use Euler's method to estimate the number $e$ by approximating the solution of the IVP
+$$\dfrac{dy}{dt} = y, \text{     } y(0) = 1$$ 
 on the interval $[0,1]$. 
+
+
+4. If you take one step of Euler's method starting at a point $(t,y)$ with a differential equation
+$$\dfrac{dy}{dt} = f(t,y)$$
+use the Taylor series remainder formula to estimate the difference between the Euler's method approximation 
+$$y(t) + \underbrace{f(t,y)}_{y'(t)} \cdot h$$
+and the actual value of $y(t+h)$. 
+
+Here is an image that shows this error. 
+<center>
+<figure>
+<img src="https://www.brianheinold.net/numerical/images/numerical_notes_diffeq5.png"></img>
+<figcaption style="text-align:center">Source: [An Intuitive Guide to Numerical Methods](https://www.brianheinold.net/numerical/numerical_book.html) by Brian Heinold</figcaption>
+<figure>
+</center>
+
+Over many steps, the error from using Euler's method tends to grow.  It is possible to prove the following upper bound for the error in Euler's method over the whole interval $[a,b]$:
+
+$$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
+where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
 
 ### Fri, Apr 26
 

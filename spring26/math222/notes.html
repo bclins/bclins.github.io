@@ -2777,6 +2777,92 @@ population distribution.</li>
 href="Examples/bootstrapSpouses.html">Bootstrapping: Correlation between
 spouses ages</a></li>
 </ul>
+<h3 id="wed-apr-22">Wed, Apr 22</h3>
+<p>We started with another example of bootstrapping:</p>
+<ul>
+<li><strong>Practice</strong>: <a
+href="https://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/HeroinTreatment.html">Bootstrapping:
+Heroin treatment times</a></li>
+</ul>
+<p>After that, we started a brief introduction to Bayesian statistics.
+Recall that a random variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+has either a probability mass function (pmf) if it is discrete or a
+probability density function (pdf) if it is continuous. In both cases,
+the function depends on the probability distribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+and that might have one or more parameters. For example, the parameters
+of the normal distribution are its mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+and standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.
+The parameters of a binomial distribution are the number of trials
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+and the probability of a success
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</p>
+<p>When you write down the pmf/pdf of a random variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+it will have the form
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>θ</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math>
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is a possible outcome for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+is the value of the parameter(s) (notice that both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+might be vectors representing more than one outcome/parameter. We can
+interpret the function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+two ways:</p>
+<ul>
+<li>If we think of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+as a fixed constant, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is the pmf or pdf for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.</li>
+<li>If we think of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+as fixed, then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+is the <strong>likelihood function</strong> for the parameter
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</li>
+</ul>
+<ol type="1">
+<li><p>Men in the USA have an average height of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>70</mn><annotation encoding="application/x-tex">70</annotation></semantics></math>
+inches with a standard deviation of about 3 inches. The average height
+for women is about 64 inches with a standard deviation of 2.5 inches. If
+you randomly select an adult and they are 68 inches tall, what is the
+likelihood function?</p></li>
+<li><p>Suppose I have a bag with three dice, one regular die with the
+number 1 to 6, one 10-sided with the numbers 1 to 10, and one 20-sided
+with the numbers 1 to 20. What is the likelihood function if I pick one
+die at random and then roll a 5?</p></li>
+<li><p>Suppose you have a coin that lands on heads with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.
+What is the likelihood function for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+if you flip the coin three times and get 2 heads and 1 tail? Hint:
+Recall the binomial distribution probability formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>=</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mi>!</mi></mrow><mrow><mi>k</mi><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mi>p</mi><mi>k</mi></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">P(X = k) = \frac{n!}{k!(n-k)!} p^k (1-p)^{n-k}.</annotation></semantics></math></p></li>
+</ol>
+<section id="bayesian-inference" class="Theorem">
+<h4>Bayesian Inference</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Posterior</mtext><mo>∝</mo><mtext mathvariant="normal">Likelihood</mtext><mo>⋅</mo><mtext mathvariant="normal">Prior</mtext></mrow><annotation encoding="application/x-tex">\text{Posterior} \propto \text{Likelihood} \cdot \text{Prior}</annotation></semantics></math></p>
+</section>
+<ol start="4" type="1">
+<li><p>If you pick a random adult, what is a good prior probability
+model for them being male? If they are 68 inches tall, what is the
+posterior model?</p></li>
+<li><p>If you pick one die at random from the three dice above, what is
+the prior model for the number of sides? What is the posterior model if
+you roll a 5?</p></li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

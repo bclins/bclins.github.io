@@ -1265,7 +1265,6 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
 
     This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
 
-<!--
 ### Wed, Apr 22
 
 Today we talked some more about the $\chi^2$-test for association.  We mentioned that the $\chi^2$-distribution has these features:
@@ -1296,6 +1295,7 @@ We did the following example where the $\chi^2$-test is inconclusive:
 
 * **Workshop:** [Chi-squared test](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf)
 
+<!--
 ### Fri, Apr 24
 
 Today we talked about **statistical power**. 
