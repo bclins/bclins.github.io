@@ -1997,75 +1997,34 @@ Over many steps, the error from using Euler's method tends to grow.  It is possi
 $$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
 where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
 
-<!--
 ### Fri, Apr 26
 
-We started with this question:
+**Runge-Kutta methods** are a family of methods to solve ODEs numerically.  Euler's method is a first order Runge-Kutta method, which means that the discretization error for Euler's method is $O(h^1)$ which means that the error is less than a constant times $h$ to the first power. 
 
-1. If you take one step of Euler's method starting at a point $(t,y)$ with a differential equation
-$$\dfrac{dy}{dt} = f(t,y)$$
-use the Taylor series remainder formula to estimate the difference between the Euler's method approximation 
-$$y(t) + \underbrace{f(t,y)}_{y'(t)} \cdot h$$
-and the actual value of $y(t+h)$. 
-
-Here is an image that shows this error. 
-<center>
-<figure>
-<img src="https://www.brianheinold.net/numerical/images/numerical_notes_diffeq5.png"></img>
-<figcaption style="text-align:center">Source: [An Intuitive Guide to Numerical Methods](https://www.brianheinold.net/numerical/numerical_book.html) by Brian Heinold</figcaption>
-<figure>
-</center>
-
-Over many steps, the error from using Euler's method tends to grow.  It is possible to prove the following upper bound for the error in Euler's method over the whole interval $[a,b]$:
-
-$$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
-where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
-
-To get a method with less error, would could try to incorporate the 2nd derivative of $y(t)$ into each step.  Note that 
-$$\dfrac{d^2}{dt^2} y(t) = \dfrac{d}{dt} f(t,y) = f_t(t,y) + f_y(t,y) f(t,y)$$
-by the chain rule for multivariable functions.  In practice it isn't always easy to compute the partial derivatives of $f$, so the 
-Runge-Kutta method looks for relatively simple formulas involving $f(t,y)$ that approximate this expression above without calculating the partial derivatives.  The **2nd order Runge-Kutta method** known as the **midpoint method** has this formula
-
-$$y(t_{i+1}) \approx y(t_i) + f(t_i + \tfrac{1}{2}h ,y(t_i) + \tfrac{1}{2}h f(t_i,y_i)) h.$$
+Better Runge-Kutta methods have higher order error bounds.  For example, RK4 is a popular method with fourth order error $O(h^4)$.  Another Runge-Kutta method is the **midpoint method** also known as RK2 which has second order error. 
 
 <div class="Theorem">
-**Second Order Runge-Kutta Algorithm.** To approximate a solution to the IVP
-$$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
-on the interval $[a,b]$,
+**Midpoint Method (RK2).** Algorithm to approximate the solution of the initial value problem $y'(t) = f(t, y)$ on the interval $[a, b]$ with initial condition $y(a) = y_0$.
 
-1. Choose a step size $h$ and initialize $t=a$ and $y = y_0$. 
-2. While $t < b$ do
-    a. $y = y + f(t+h/2, y + h/2 \cdot f(t,y))h$
-    b. $t = t+h$
+1. Choose a step size $h$ and initialize variables $t = a$ and $y = y_0$. 
+2. Repeat the following two steps while $t < b$:
+    a. Update $y = y + f(t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y))$,
+    b. Update $t = t + h$.
 </div>
 
-We implemented the algorithm for this Runge-Kutta method in Python and used it to approximate the solution of this IVP:
+<center>
+<figure>
+<img src="https://bclins.github.io/fall25/math243/RungeKutta4.png" width = 500></img>
+<figcaption>The RK4 method uses a weighted average of the slopes at 4 points.</figcaption>
+</figure>
+</center>
 
-2. $\dfrac{dy}{dt} = t e^{3t} - 2y$ on $[0,1]$ with initial condition $y(0)=0$.  
-2. $\dfrac{dy}{dt} = y-t^2 +1$ on $[-1,3]$ with initial condition $y(-1)=0$.
+In RK2 the slope used to calculate the next point from a point $P_1$ is the slope at the midpoint between $P_1$ and the Euler's method next step. In RK4, the slope used is a weighted average of the slopes at $P_1$, $P_2$, $P_3$, and $P_4$ shown in the diagram above. Specifically, it is 1/6 of the slopes at $P_1$ and $P_4$ plus 1/3 of the slopes at $P_2$ and $P_3$.  
 
-We also compared our result with the Euler's method approximate solutions for $h = 1, 0.1,$ and $0.01$. We saw that the midpoint method was much more accurate. My version of the code for this algorithm is below.
-
-```python
-def MidpointMethod(f,a,b,h,y0):
-    # Return two lists, one of y-values and the other of t-values
-    t, y = a, y0
-    ts, ys = [a], [y0]
-    while t < b:
-      y += f(t+h/2,y+h/2*f(t,y))*h
-      t += h
-      ts.append(t)
-      ys.append(y)
-    return ts, ys
-```
-
-### Fri, Apr 26
-
-Today we introduced the **4th order Runge-Kutta (RK4)** method and we did this workshop:
+There are even higher order Runge-Kutta methods, but there is a trade-off between increasing the order and increasing complexity. 
 
 * **Workshop:** [Runge-Kutta method](Workshops/RungeKutta.pdf)
 
--->
 
 - - - 
 

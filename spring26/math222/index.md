@@ -31,6 +31,7 @@ header-includes: |
 
 ### Announcements
 
+* Final exam materials: [review problems](finalreview.pdf)
 * [Project 5](Projects/project5.pdf) is due on **Friday, April 24**
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](midterm3formulas.pdf),  [review solutions](midterm3reviewSolutions.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf),  [review solutions](midterm2reviewSolutions.pdf)

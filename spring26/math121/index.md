@@ -30,6 +30,7 @@ header-includes: |
 
 ### Announcements
 
+* Final Exam materials: [review problems](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf), [major concepts](https://people.hsc.edu/faculty-staff/blins/StatsExamples/concepts.pdf), [formula sheet](https://bclins.github.io/fall25/math121/finalformulas.pdf).
 * [Project 4](Project4.pdf) is due **Friday, April 24**
 * Midterm 3 materials: [review problems](https://bclins.github.io/fall25/math121/midterm3review.pdf), [formula sheet](https://bclins.github.io/fall25/math121/finalformulas.pdf)
 * Midterm 2 materials: [review problems](https://bclins.github.io/fall25/math121/midterm2review.pdf),  [solutions](https://bclins.github.io/fall25/math121/midterm2reviewSolutions.pdf), [formula sheet](https://bclins.github.io/fall25/math121/midterm2formulas.pdf)

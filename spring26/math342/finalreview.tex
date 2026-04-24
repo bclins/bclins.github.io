@@ -1,0 +1,142 @@
+\documentclass[11pt,answers]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{color,comment,soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\inner}[1]{\langle {#1} \rangle}
+
+
+
+\begin{document}
+
+
+\subsection*{Final Exam \hfill Math 342}
+
+\textit{The final exam will be on \textbf{Thursday, April 30 at 9:00am}. The following problems are similar to ones you might see on the final exam.}
+
+
+\begin{questions}
+\question Let $f\left(x\right)\ =\ x^{3\ }+2x-8$.    
+\begin{parts}
+\part Apply Newton's method twice to $f(x)$ starting with $x_0 = 1$. What are $x_1$ and $x_2$? 
+\begin{solution}
+$$x_1 = 2 \text{ and } x_2 = \tfrac{12}{7}.$$
+\end{solution}
+\vfill
+
+\part If you were to continue applying Newton's method in this case, the sequence $x_k$ would converge to a number $x_\infty$. What is $f(x_\infty)$? 
+\begin{solution}
+The limit of Newton's method (if it converges) is a root of $f$, so $f(x_\infty) = 0$.  
+\end{solution}
+\vfill
+
+
+
+
+\question[16] Consider the four points $(-2,0), (0, 6), (1,18), (3,30)$.
+
+\begin{parts}
+\part Use the normal equations $X^T X b = X^T y$ to find the best fit second degree polynomial for those four points.  
+\begin{solution}
+$$1.55 + 0.15 x - 0.25 x^2$$
+\end{solution}
+\vfill
+
+\part Find the 3rd degree interpolating polynomial that passes through all four points.  
+\begin{solution}
+$$2 - \tfrac{1}{2} x - x^2 + \tfrac{1}{2}x^3$$
+\end{solution}
+\vfill
+
+\end{parts}
+\vfill
+\hrule
+
+\newpage
+
+\question[16] (i) Use the composite trapezoid rule with $n =100$ to approximate $\ds \int_{-1}^1 e^x \, dx$.  Then (ii) calculate the exact value of the integral and (iii) find the relative error in your approximation. 
+\begin{solution}
+\begin{verbatim}
+  (i)   2.350480733511539
+  (ii)  2.3504023872876028
+  (iii) 3.333311111330367e-05
+\end{verbatim}
+\end{solution}
+\vfill
+\hrule
+
+\question[12] Use Euler's method to approximate the solution of the initial value problem 
+$$\ds \frac{dy}{dt} = y\cos(t^2) \text{ on } [0,3] \text{ with initial condition } y(0) = 1.$$  
+Use $h=0.01$ and give me the value of $y(3)$ that you find.   
+\begin{solution}
+$$y(3) \approx 2.0217576394253616$$ % 2.003336793750593
+\end{solution}
+\vfill
+\hrule
+
+\question[8] Compute the LU-decomposition of $A = \begin{pmatrix} 1 & 0 & 0 \\ 1 & -1 & 1 \\ 1 & 2 & 4 \end{pmatrix}$. 
+\begin{solution}
+$$L = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & -2 & 1\end{pmatrix}, ~~~~ U = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 6\end{pmatrix}$$
+\end{solution}
+\vfill
+\hrule
+
+\newpage
+\question[8] The function $f(x) = \dfrac{x}{1+x^2}$ is odd on the interval $[-\pi,\pi]$, so its Fourier series only has nonzero coefficients on the sine terms.  The Fourier coefficient for $\sin x$ is 
+$$b_1 = \frac{\inner{\sin x, f(x)}}{\pi}.$$
+Pick any numerical integration method we covered and use it to calculate this Fourier coefficient.  Your answer should be accurate to at least 4 decimal places. 
+\begin{solution}
+According to Desmos, the answer is $0.5357$.
+\end{solution}
+\vfill
+\hrule
+
+\question[8] The polynomial $p_4(x) = 1 + x + \tfrac{x^2}{2} + \tfrac{x^3}{3!} + \tfrac{x^4}{4!}$ is the 4th degree Maclaurin polynomial for $e^x$.  Suppose you use $p_4(-2)$ to estimate the value of $e^{-2}$.  What is the worst case error in that approximation, according to Taylor's remainder theorem? 
+\begin{solution}
+The remainder is $\dfrac{e^\xi}{5!} 2^5 \le \dfrac{32}{120}$. 
+\end{solution}
+\vfill
+\hrule
+
+
+\question[12] The function $\ds f(x) = e^{-0.1x}$ has a fixed point near $x_0 = 1$.  Suppose you calculate $x_1 = f(x_0)$, then $x_2 = f(x_1)$, and then continue calculating $x_{n+1} = f(x_n)$ recursively. (i) How can you tell that this recursive process will converge? (ii) What is the fixed point, accurate to four decimal places? 
+\begin{solution}
+(i) It converges because $|f'(x)| = |0.1e^{-0.1x}| \le 0.1$ for all $x >0$.  \\
+(ii) Starting with $x_0=1$, I got the fixed point $0.9128$ after just four steps.
+\end{solution}
+\vfill
+\hrule
+
+\newpage
+\question[8] Recall the composite trapezoid rule:
+$$\int_a^b f(x) \, dx \approx \frac{h}{2}(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2 f(x_{n-1}) + f(x_n) ).$$
+If you could calculate the function $f$ exactly every time, then the error in the composite trapezoid rule would be:
+$$|\text{Error}| \le \max_{a \le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
+In reality, you typically cannot calculate the function $f$ exactly because of rounding errors.  
+\begin{parts}
+\part Assume that every time the function $f$ is computed there is an (absolute) error of up to $\delta \approx 10^{-16}$. Combine the error from the trapezoid method error formula with the rounding error when computing $f$ to get a more accurate error estimate for the composite trapezoid rule. Hint: You might need to use the triangle inequality:
+$$|a_1 + a_2 + \ldots + a_m| \le |a_1| + |a_2| + \ldots + |a_m|$$
+for any real numbers $a_1, \ldots, a_m$.
+\begin{solution}
+Each time you compute $f(x_k)$, you get an additional error of up to $\delta$.  The total after summing and multiplying by $\tfrac{h}{2}$ is 
+$$nh\delta = (b-a)\delta,$$ 
+in addition to the error formula above. 
+\end{solution} 
+
+\vfill
+\part What happens to the error in the limit as $n$ gets very large? Does it keep getting smaller or does it start getting bigger eventually? Explain.  
+\begin{solution}
+Although the theoretical error gets smaller, the error from rounding is constant in the worst case, so it might not go away.  In practice it will probably be a lot smaller than the worst case since the rounding errors will probably tend to cancel out. 
+\end{solution}
+\end{parts}
+\vfill
+\hrule
+
+\end{questions}
+
+\end{document}
+

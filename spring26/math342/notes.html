@@ -4044,75 +4044,77 @@ is machine epsilon. At first, the error decreases as
 gets smaller, but eventually the machine epsilon term (which comes from
 rounding errors) gets very large, so Euler’s method can be numerically
 unstable.</p>
-<!--
-### Fri, Apr 26
-
-We started with this question:
-
-1. If you take one step of Euler's method starting at a point $(t,y)$ with a differential equation
-$$\dfrac{dy}{dt} = f(t,y)$$
-use the Taylor series remainder formula to estimate the difference between the Euler's method approximation 
-$$y(t) + \underbrace{f(t,y)}_{y'(t)} \cdot h$$
-and the actual value of $y(t+h)$. 
-
-Here is an image that shows this error. 
+<h3 id="fri-apr-26">Fri, Apr 26</h3>
+<p><strong>Runge-Kutta methods</strong> are a family of methods to solve
+ODEs numerically. Euler’s method is a first order Runge-Kutta method,
+which means that the discretization error for Euler’s method is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>h</mi><mn>1</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(h^1)</annotation></semantics></math>
+which means that the error is less than a constant times
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+to the first power.</p>
+<p>Better Runge-Kutta methods have higher order error bounds. For
+example, RK4 is a popular method with fourth order error
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>h</mi><mn>4</mn></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(h^4)</annotation></semantics></math>.
+Another Runge-Kutta method is the <strong>midpoint method</strong> also
+known as RK2 which has second order error.</p>
+<div class="Theorem">
+<p><strong>Midpoint Method (RK2).</strong> Algorithm to approximate the
+solution of the initial value problem
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y&#39;(t) = f(t, y)</annotation></semantics></math>
+on the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math>
+with initial condition
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>a</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">y(a) = y_0</annotation></semantics></math>.</p>
+<ol type="1">
+<li>Choose a step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+and initialize variables
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">t = a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">y = y_0</annotation></semantics></math>.</li>
+<li>Repeat the following two steps while
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">t &lt; b</annotation></semantics></math>:
+<ol type="a">
+<li>Update
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>y</mi><mo>+</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>+</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>h</mi><mo>,</mo><mi>y</mi><mo>+</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mi>h</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">y = y + f(t + \tfrac{1}{2}h, y + \tfrac{1}{2} h f(t,y))</annotation></semantics></math>,</li>
+<li>Update
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mi>t</mi><mo>+</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">t = t + h</annotation></semantics></math>.</li>
+</ol></li>
+</ol>
+</div>
 <center>
 <figure>
-<img src="https://www.brianheinold.net/numerical/images/numerical_notes_diffeq5.png"></img>
-<figcaption style="text-align:center">Source: [An Intuitive Guide to Numerical Methods](https://www.brianheinold.net/numerical/numerical_book.html) by Brian Heinold</figcaption>
-<figure>
+<img src="https://bclins.github.io/fall25/math243/RungeKutta4.png" width = 500></img>
+<figcaption>
+The RK4 method uses a weighted average of the slopes at 4 points.
+</figcaption>
+</figure>
 </center>
-
-Over many steps, the error from using Euler's method tends to grow.  It is possible to prove the following upper bound for the error in Euler's method over the whole interval $[a,b]$:
-
-$$\text{Error} \le \frac{[e^{L(b-a)} - 1]}{L} \left(\frac{Mh}{2} + \frac{\delta}{h}\right)$$
-where $L = \max \left|\frac{\partial f(t,y)}{\partial y}\right|$, $M = \max |y''(t)|$, and $\delta$ is machine epsilon. At first, the error decreases as $h$ gets smaller, but eventually the machine epsilon term (which comes from rounding errors) gets very large, so Euler's method can be numerically unstable.  
-
-To get a method with less error, would could try to incorporate the 2nd derivative of $y(t)$ into each step.  Note that 
-$$\dfrac{d^2}{dt^2} y(t) = \dfrac{d}{dt} f(t,y) = f_t(t,y) + f_y(t,y) f(t,y)$$
-by the chain rule for multivariable functions.  In practice it isn't always easy to compute the partial derivatives of $f$, so the 
-Runge-Kutta method looks for relatively simple formulas involving $f(t,y)$ that approximate this expression above without calculating the partial derivatives.  The **2nd order Runge-Kutta method** known as the **midpoint method** has this formula
-
-$$y(t_{i+1}) \approx y(t_i) + f(t_i + \tfrac{1}{2}h ,y(t_i) + \tfrac{1}{2}h f(t_i,y_i)) h.$$
-
-<div class="Theorem">
-**Second Order Runge-Kutta Algorithm.** To approximate a solution to the IVP
-$$\dfrac{dy}{dt} = f(t,y), ~~~~ y(a) = y_0$$
-on the interval $[a,b]$,
-
-1. Choose a step size $h$ and initialize $t=a$ and $y = y_0$. 
-2. While $t < b$ do
-    a. $y = y + f(t+h/2, y + h/2 \cdot f(t,y))h$
-    b. $t = t+h$
-</div>
-
-We implemented the algorithm for this Runge-Kutta method in Python and used it to approximate the solution of this IVP:
-
-2. $\dfrac{dy}{dt} = t e^{3t} - 2y$ on $[0,1]$ with initial condition $y(0)=0$.  
-2. $\dfrac{dy}{dt} = y-t^2 +1$ on $[-1,3]$ with initial condition $y(-1)=0$.
-
-We also compared our result with the Euler's method approximate solutions for $h = 1, 0.1,$ and $0.01$. We saw that the midpoint method was much more accurate. My version of the code for this algorithm is below.
-
-```python
-def MidpointMethod(f,a,b,h,y0):
-    # Return two lists, one of y-values and the other of t-values
-    t, y = a, y0
-    ts, ys = [a], [y0]
-    while t < b:
-      y += f(t+h/2,y+h/2*f(t,y))*h
-      t += h
-      ts.append(t)
-      ys.append(y)
-    return ts, ys
-```
-
-### Fri, Apr 26
-
-Today we introduced the **4th order Runge-Kutta (RK4)** method and we did this workshop:
-
-* **Workshop:** [Runge-Kutta method](Workshops/RungeKutta.pdf)
-
--->
+<p>In RK2 the slope used to calculate the next point from a point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_1</annotation></semantics></math>
+is the slope at the midpoint between
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_1</annotation></semantics></math>
+and the Euler’s method next step. In RK4, the slope used is a weighted
+average of the slopes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>2</mn></msub><annotation encoding="application/x-tex">P_2</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>3</mn></msub><annotation encoding="application/x-tex">P_3</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>4</mn></msub><annotation encoding="application/x-tex">P_4</annotation></semantics></math>
+shown in the diagram above. Specifically, it is 1/6 of the slopes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>1</mn></msub><annotation encoding="application/x-tex">P_1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>4</mn></msub><annotation encoding="application/x-tex">P_4</annotation></semantics></math>
+plus 1/3 of the slopes at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>2</mn></msub><annotation encoding="application/x-tex">P_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>P</mi><mn>3</mn></msub><annotation encoding="application/x-tex">P_3</annotation></semantics></math>.</p>
+<p>There are even higher order Runge-Kutta methods, but there is a
+trade-off between increasing the order and increasing complexity.</p>
+<ul>
+<li><strong>Workshop:</strong> <a
+href="Workshops/RungeKutta.pdf">Runge-Kutta method</a></li>
+</ul>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

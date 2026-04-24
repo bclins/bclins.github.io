@@ -1311,6 +1311,61 @@ $$\text{Posterior} \propto \text{Likelihood} \cdot \text{Prior}$$
 
 5. If you pick one die at random from the three dice above, what is the prior model for the number of sides?  What is the posterior model based on rolling 4, 1, 5 with the die? 
 
+### Fri, Apr 24
+
+Today we introduced the **beta distribution** and used it to do Bayesian inference about a population proportion. 
+
+Last time we considered the likelihood function $L(p)$ for a coin that lands on heads with probability $p$ if you flip the coin 3 times and get 2 heads and 1 tail. 
+
+$$L(p) = 3 p^2 (1-p)$$
+
+When working with likelihood functions, constants in front don't really matter, so we can just write:
+
+$$L(p) \propto p^2(1 - p).$$
+
+If we have no idea what the value of $p$ is, we might start with a **uniform prior distribution** for $p$:
+
+$$\pi(p) = \begin{cases} 1 & \text{ if } 0 \le p \le 1 \\ 0 & \text{ otherwise.} \end{cases}$$
+
+The posterior distribution is 
+$$\pi(p \, | \, \text{two heads and one tail}) \propto \pi(p) \cdot L(p) = p^2(1-p).$$
+
+This is proportional to a **beta distribution**.
+
+<div class = "Theorem">
+#### Beta Distribution
+
+The **beta distribution** $\on{Beta}(\alpha, \beta)$ has a probability density function 
+$$f(x) = \begin{cases}  C x^{\alpha - 1} (1 - x)^{\beta - 1} & \text{ if } 0 \le x \le 1 \\
+0 & \text{ otherwise.} \end{cases}$$
+where the constant $C$ is whatever number guarantees that the total area underneath $f(x)$ is exactly one. 
+
+In R, you can use the following commands to work with a beta distribution. 
+
+- `dbeta(x, a, b)` - the y-value of the beta distribution PDF. 
+- `pbeta(x, a, b)` - the probability of getting a result less than `x`. 
+- `qbeta(p, a, b)` - the x-value at the p-th percentile
+- `rbeta(n, a, b)` - generates `n` random observations from the beta distribution. 
+
+</div>
+
+1. Which beta distribution corresponds to the posterior distribution for $p$ if we get two heads and one tail? 
+
+2. 34 out of my 72 intro statistics students this year were born in Virginia.  If you start with a uniform prior, then what is the posterior distribution for the proportion of all HSC students born in VA?  
+
+An alternative to the uniform prior that is popular for Bayesian inference about a proportion is the **Jefferys prior** $\on{Beta}(\tfrac{1}{2}, \tfrac{1}{2})$.  
+
+3. What posterior distribution would you get for the proportion of all HSC students born in VA if you started with the Jeffrys prior? 
+
+4. What is the general formula for the posterior distribution of a population proportion $p$ if your sample contains $n$ observations of which $k$ are successes?  How does the formula change if you use a Jeffrys prior instead of a uniform prior?  
+
+<div class = "Theorem">
+#### Credible Interval
+
+A **$(1 - \alpha)$-credible interval** for a parameter is an interval that has a probability of $(1- \alpha)$ of containing the parameter of interest based on the posterior distribution. The number $(1- \alpha)$ is called the **credance** for the interval.   
+</div>
+
+5. Using the `qbeta()` function in R, how would you find a 95% credible interval for the percent of all HSC students born in VA?  How much would the credible interval change if you used a Jeffrys prior instead of a uniform prior?  
 
 - - - 
 

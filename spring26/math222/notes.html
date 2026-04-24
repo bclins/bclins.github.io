@@ -2868,6 +2868,96 @@ posterior model?</p></li>
 the prior model for the number of sides? What is the posterior model
 based on rolling 4, 1, 5 with the die?</p></li>
 </ol>
+<h3 id="fri-apr-24">Fri, Apr 24</h3>
+<p>Today we introduced the <strong>beta distribution</strong> and used
+it to do Bayesian inference about a population proportion.</p>
+<p>Last time we considered the likelihood function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p)</annotation></semantics></math>
+for a coin that lands on heads with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+if you flip the coin 3 times and get 2 heads and 1 tail.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>3</mn><msup><mi>p</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L(p) = 3 p^2 (1-p)</annotation></semantics></math></p>
+<p>When working with likelihood functions, constants in front don’t
+really matter, so we can just write:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∝</mo><msup><mi>p</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">L(p) \propto p^2(1 - p).</annotation></semantics></math></p>
+<p>If we have no idea what the value of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+is, we might start with a <strong>uniform prior distribution</strong>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mn>0</mn><mo>≤</mo><mi>p</mi><mo>≤</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\pi(p) = \begin{cases} 1 &amp; \text{ if } 0 \le p \le 1 \\ 0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math></p>
+<p>The posterior distribution is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mspace width="0.167em"></mspace><mo stretchy="false" form="prefix">|</mo><mspace width="0.167em"></mspace><mtext mathvariant="normal">two heads and one tail</mtext><mo stretchy="true" form="postfix">)</mo></mrow><mo>∝</mo><mi>π</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⋅</mo><mi>L</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>p</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">\pi(p \, | \, \text{two heads and one tail}) \propto \pi(p) \cdot L(p) = p^2(1-p).</annotation></semantics></math></p>
+<p>This is proportional to a <strong>beta distribution</strong>.</p>
+<section id="beta-distribution" class="Theorem">
+<h4>Beta Distribution</h4>
+<p>The <strong>beta distribution</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Beta</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mo>,</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Beta}(\alpha, \beta)</annotation></semantics></math>
+has a probability density function
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mi>C</mi><msup><mi>x</mi><mrow><mi>α</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>β</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> if </mtext><mspace width="0.333em"></mspace></mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn></mtd><mtd columnalign="left" style="text-align: left"><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> otherwise.</mtext></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x) = \begin{cases}  C x^{\alpha - 1} (1 - x)^{\beta - 1} &amp; \text{ if } 0 \le x \le 1 \\
+0 &amp; \text{ otherwise.} \end{cases}</annotation></semantics></math>
+where the constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>
+is whatever number guarantees that the total area underneath
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+is exactly one.</p>
+<p>In R, you can use the following commands to work with a beta
+distribution.</p>
+<ul>
+<li><code>dbeta(x, a, b)</code> - the y-value of the beta distribution
+PDF.</li>
+<li><code>pbeta(x, a, b)</code> - the probability of getting a result
+less than <code>x</code>.</li>
+<li><code>qbeta(p, a, b)</code> - the x-value at the p-th
+percentile</li>
+<li><code>rbeta(n, a, b)</code> - generates <code>n</code> random
+observations from the beta distribution.</li>
+</ul>
+</section>
+<ol type="1">
+<li><p>Which beta distribution corresponds to the posterior distribution
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+if we get two heads and one tail?</p></li>
+<li><p>34 out of my 72 intro statistics students this year were born in
+Virginia. If you start with a uniform prior, then what is the posterior
+distribution for the proportion of all HSC students born in VA?</p></li>
+</ol>
+<p>An alternative to the uniform prior that is popular for Bayesian
+inference about a proportion is the <strong>Jefferys prior</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Beta</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{Beta}(\tfrac{1}{2}, \tfrac{1}{2})</annotation></semantics></math>.</p>
+<ol start="3" type="1">
+<li><p>What posterior distribution would you get for the proportion of
+all HSC students born in VA if you started with the Jeffrys
+prior?</p></li>
+<li><p>What is the general formula for the posterior distribution of a
+population proportion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+if your sample contains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+observations of which
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+are successes? How does the formula change if you use a Jeffrys prior
+instead of a uniform prior?</p></li>
+</ol>
+<section id="credible-interval" class="Theorem">
+<h4>Credible Interval</h4>
+<p>A
+<strong><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1 - \alpha)</annotation></semantics></math>-credible
+interval</strong> for a parameter is an interval that has a probability
+of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1- \alpha)</annotation></semantics></math>
+of containing the parameter of interest based on the posterior
+distribution. The number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1- \alpha)</annotation></semantics></math>
+is called the <strong>credance</strong> for the interval.</p>
+</section>
+<ol start="5" type="1">
+<li>Using the <code>qbeta()</code> function in R, how would you find a
+95% credible interval for the percent of all HSC students born in VA?
+How much would the credible interval change if you used a Jeffrys prior
+instead of a uniform prior?</li>
+</ol>
 <hr />
 <p><br> <br> <br> <br> <br> <br> <br> <br></p>
 </body>

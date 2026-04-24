@@ -1295,6 +1295,12 @@ We did the following example where the $\chi^2$-test is inconclusive:
 
 * **Workshop:** [Chi-squared test](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChiSqWorkshop.pdf)
 
+### Fri, Apr 24
+
+Today we talked some more about how to choose the right inference technique.  
+
+* **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
+
 <!--
 ### Fri, Apr 24
 

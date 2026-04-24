@@ -12,9 +12,9 @@ Researchers equiped male and female college students with a small device that se
 
 ```{r}
 talking <- read.csv("http://people.hsc.edu/faculty-staff/blins/classes/spring18/math222/examples/talking.csv")
-men <- subset(talking,Sex=="M")$Words
-women <- subset(talking,Sex=="F")$Words
-boxplot(men,women,names = c("Men","Women"),horizontal = T,col='gray',xlab="Estimated Words per Day")
+men <- subset(talking, Sex == "M")$Words
+women <- subset(talking, Sex == "F")$Words
+boxplot(men, women, names = c("Men","Women"), horizontal = T, col='gray', xlab="Estimated Words per Day")
 ```
 
 1. From the box and whisker plot above, it looks like there might be a difference between the average number or words spoken by male versus female college students.  Use the command below to do a two-sample t-test to see if the difference is significant. 
