@@ -1367,6 +1367,8 @@ A **$(1 - \alpha)$-credible interval** for a parameter is an interval that has a
 
 5. Using the `qbeta()` function in R, how would you find a 95% credible interval for the percent of all HSC students born in VA?  How much would the credible interval change if you used a Jeffrys prior instead of a uniform prior?  
 
+6. What is the probability that less than half of all HSC students were born in VA based on the posterior distribution?
+
 - - - 
 
 

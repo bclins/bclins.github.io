@@ -23,7 +23,8 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 will be on **Friday, April 10**.
+* The final exam will be on **Thursday, April 30 at 9:00am**.
+* Final exam materials: [review problems](finalreview.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [solutions](midterm1reviewSolutions.pdf)
 

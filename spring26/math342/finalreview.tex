@@ -1,4 +1,4 @@
-\documentclass[11pt,answers]{exam}
+\documentclass[11pt]{exam}
 \usepackage[empty]{fullpage}
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
@@ -14,7 +14,7 @@
 \begin{document}
 
 
-\subsection*{Final Exam \hfill Math 342}
+\subsection*{Numerical Analysis - Math 342 \hfill Final Exam Review}
 
 \textit{The final exam will be on \textbf{Thursday, April 30 at 9:00am}. The following problems are similar to ones you might see on the final exam.}
 
@@ -34,93 +34,109 @@ The limit of Newton's method (if it converges) is a root of $f$, so $f(x_\infty)
 \end{solution}
 \vfill
 
+\part If you start with $x_0 = 0$ and $x_1 = 1$, then what is $x_2$ according to the secant method?
+\begin{solution}
+
+\end{solution}
+\vfill
+\end{parts}
 
 
 
-\question[16] Consider the four points $(-2,0), (0, 6), (1,18), (3,30)$.
+\question Consider the four points $(-2,0), (0, 6), (1,18), (3,30)$.
 
 \begin{parts}
-\part Use the normal equations $X^T X b = X^T y$ to find the best fit second degree polynomial for those four points.  
+\part Write the interpolating polynomial using Lagrange polynomials. 
 \begin{solution}
-$$1.55 + 0.15 x - 0.25 x^2$$
 \end{solution}
 \vfill
 
-\part Find the 3rd degree interpolating polynomial that passes through all four points.  
+\part Make a table of divided differences for these four points.
 \begin{solution}
-$$2 - \tfrac{1}{2} x - x^2 + \tfrac{1}{2}x^3$$
 \end{solution}
+\vfill
+\vfill
+
+\part Write the interpolating polynomial using the Newton basis.
 \vfill
 
 \end{parts}
-\vfill
-\hrule
 
 \newpage
 
-\question[16] (i) Use the composite trapezoid rule with $n =100$ to approximate $\ds \int_{-1}^1 e^x \, dx$.  Then (ii) calculate the exact value of the integral and (iii) find the relative error in your approximation. 
+\question Use the Simpson's method error formula 
+$$|\text{Error}| \le \max_{a \le \xi \le b} \frac{|f^{(4)}(\xi)(b-a)^5}{2880 n^4}$$
+to find the minimum number of subintervals needed to guarantee that the you can approximate the integral $\int_0^2 e^{-x^2} \, dx$ with an absolute error less than $10^{-8}$. Hint: if $f(x) = e^{-x^2}$, then the maximum value of $|f^{(4)}(\xi)|$ is 12 on the interval $[0,2]$.  
+
+
 \begin{solution}
-\begin{verbatim}
-  (i)   2.350480733511539
-  (ii)  2.3504023872876028
-  (iii) 3.333311111330367e-05
-\end{verbatim}
 \end{solution}
 \vfill
-\hrule
 
-\question[12] Use Euler's method to approximate the solution of the initial value problem 
-$$\ds \frac{dy}{dt} = y\cos(t^2) \text{ on } [0,3] \text{ with initial condition } y(0) = 1.$$  
-Use $h=0.01$ and give me the value of $y(3)$ that you find.   
+\question Use Euler's method to approximate the solution of the initial value problem 
+$$\ds \frac{dy}{dx} = x - y^2 \text{ on } [0,3] \text{ with initial condition } y(0) = 1.$$  
+Use $n=3$ and fill in the table below.
+
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+~~~~$x$~~~~ & 0 &  \hspace*{0.8in} & \hspace*{0.8in} & \hspace*{0.8in} \\ \hline
+$y$ & \hspace*{0.8in}  & & & \\ \hline
+\end{tabular}
+\end{center}
+
 \begin{solution}
-$$y(3) \approx 2.0217576394253616$$ % 2.003336793750593
 \end{solution}
 \vfill
-\hrule
 
-\question[8] Compute the LU-decomposition of $A = \begin{pmatrix} 1 & 0 & 0 \\ 1 & -1 & 1 \\ 1 & 2 & 4 \end{pmatrix}$. 
+\question Compute the LU-decomposition of $A = \begin{pmatrix} 1 & 0 & 0 \\ 1 & -1 & 1 \\ 1 & 2 & 4 \end{pmatrix}$. 
 \begin{solution}
 $$L = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & -2 & 1\end{pmatrix}, ~~~~ U = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 6\end{pmatrix}$$
 \end{solution}
 \vfill
-\hrule
 
 \newpage
-\question[8] The function $f(x) = \dfrac{x}{1+x^2}$ is odd on the interval $[-\pi,\pi]$, so its Fourier series only has nonzero coefficients on the sine terms.  The Fourier coefficient for $\sin x$ is 
-$$b_1 = \frac{\inner{\sin x, f(x)}}{\pi}.$$
-Pick any numerical integration method we covered and use it to calculate this Fourier coefficient.  Your answer should be accurate to at least 4 decimal places. 
+\question The monic Legendre polynomials are an orthogonal family of polynomials on the interval $[-1,1]$.  The first three monic Legendre polynomials are $L_0(x) = 1$, $L_1(x) = x$, and $L_2(x) = x^2 - \tfrac{1}{3}$. The $L^2[-1,1]$ norms of these polynomials are given by $\|L_0\|^2 = 2$, $\|L_1\|^2 = \tfrac{2}{3}$, and $\|L_2\|^2 = \tfrac{8}{45}$.  
+\begin{parts}
+\part What is the $L^2[-1,1]$ norm of the function $f(x) = x^4$? 
 \begin{solution}
-According to Desmos, the answer is $0.5357$.
+$\|f\|^2 = \int_{-1}^1 f(x)^2 \,dx = \frac{2}{9}$, so $\|f\| = \frac{\sqrt{2}}{3}$. 
 \end{solution}
 \vfill
-\hrule
 
-\question[8] The polynomial $p_4(x) = 1 + x + \tfrac{x^2}{2} + \tfrac{x^3}{3!} + \tfrac{x^4}{4!}$ is the 4th degree Maclaurin polynomial for $e^x$.  Suppose you use $p_4(-2)$ to estimate the value of $e^{-2}$.  What is the worst case error in that approximation, according to Taylor's remainder theorem? 
+
+\part Find the orthogonal projection of the function $f(x) = x^4$ onto the span of the first three monic Legendre polynomials. 
+\begin{solution}
+\end{solution}
+\vfill
+\end{parts}
+
+\question The polynomial $p_4(x) = 1 + x + \tfrac{x^2}{2} + \tfrac{x^3}{3!} + \tfrac{x^4}{4!}$ is the 4th degree Maclaurin polynomial for $e^x$.  Suppose you use $p_4(-2)$ to estimate the value of $e^{-2}$.  What is the worst case error in that approximation, according to Taylor's remainder theorem? 
 \begin{solution}
 The remainder is $\dfrac{e^\xi}{5!} 2^5 \le \dfrac{32}{120}$. 
 \end{solution}
 \vfill
-\hrule
 
 
-\question[12] The function $\ds f(x) = e^{-0.1x}$ has a fixed point near $x_0 = 1$.  Suppose you calculate $x_1 = f(x_0)$, then $x_2 = f(x_1)$, and then continue calculating $x_{n+1} = f(x_n)$ recursively. (i) How can you tell that this recursive process will converge? (ii) What is the fixed point, accurate to four decimal places? 
+\question The function $\ds f(x) = e^{-0.1x}$ has a fixed point near $x_0 = 1$.  Suppose you calculate $x_1 = f(x_0)$, then $x_2 = f(x_1)$, and then continue calculating $x_{n+1} = f(x_n)$ recursively. (i) How can you tell that this recursive process will converge? (ii) What is the fixed point, accurate to four decimal places? 
 \begin{solution}
 (i) It converges because $|f'(x)| = |0.1e^{-0.1x}| \le 0.1$ for all $x >0$.  \\
 (ii) Starting with $x_0=1$, I got the fixed point $0.9128$ after just four steps.
 \end{solution}
 \vfill
-\hrule
 
 \newpage
-\question[8] Recall the composite trapezoid rule:
+\question Find two orthogonal vectors that have the same span as $\begin{bmatrix} 1 \\ 3 \\ 0  \end{bmatrix}$ and $\begin{bmatrix} 10 \\ -10 \\ 2  \end{bmatrix}$. 
+\vfill
+
+\question Recall the composite trapezoid rule:
 $$\int_a^b f(x) \, dx \approx \frac{h}{2}(f(x_0) + 2f(x_1) + 2f(x_2) + \ldots + 2 f(x_{n-1}) + f(x_n) ).$$
 If you could calculate the function $f$ exactly every time, then the error in the composite trapezoid rule would be:
 $$|\text{Error}| \le \max_{a \le \xi \le b} |f^{(2)}(\xi)| \frac{(b-a)^3}{12n^2}.$$
 In reality, you typically cannot calculate the function $f$ exactly because of rounding errors.  
 \begin{parts}
-\part Assume that every time the function $f$ is computed there is an (absolute) error of up to $\delta \approx 10^{-16}$. Combine the error from the trapezoid method error formula with the rounding error when computing $f$ to get a more accurate error estimate for the composite trapezoid rule. Hint: You might need to use the triangle inequality:
-$$|a_1 + a_2 + \ldots + a_m| \le |a_1| + |a_2| + \ldots + |a_m|$$
-for any real numbers $a_1, \ldots, a_m$.
+\part Assume that every time the function $f$ is computed there is an (absolute) error of up to $\delta \approx 10^{-16}$. What is the worst case total rounding error in the formula above? 
 \begin{solution}
 Each time you compute $f(x_k)$, you get an additional error of up to $\delta$.  The total after summing and multiplying by $\tfrac{h}{2}$ is 
 $$nh\delta = (b-a)\delta,$$ 
@@ -128,13 +144,15 @@ in addition to the error formula above.
 \end{solution} 
 
 \vfill
-\part What happens to the error in the limit as $n$ gets very large? Does it keep getting smaller or does it start getting bigger eventually? Explain.  
+\part What happens to the rounding error in the limit as $n$ gets very large? Does it keep getting smaller or does it start getting bigger eventually? Explain.  
 \begin{solution}
 Although the theoretical error gets smaller, the error from rounding is constant in the worst case, so it might not go away.  In practice it will probably be a lot smaller than the worst case since the rounding errors will probably tend to cancel out. 
 \end{solution}
 \end{parts}
 \vfill
-\hrule
+
+\question How many floating point operations are needed to multiply two $n$-by-$n$ matrices?  
+\vfill
 
 \end{questions}
 
