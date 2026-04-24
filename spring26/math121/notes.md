@@ -1263,7 +1263,7 @@ You can use the [χ² distribution app](https://homepage.divms.uiowa.edu/~mbogna
     </table>
     </center>
 
-    This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? 
+    This table has $\chi^2 = 15.6$.  Is this strong evidence that AZT works better than a placebo? G
 
 ### Wed, Apr 22
 
@@ -1300,6 +1300,9 @@ We did the following example where the $\chi^2$-test is inconclusive:
 Today we talked some more about how to choose the right inference technique.  
 
 * **Workshop:** [Choosing the right technique](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ChoosingRightTechnique2.pdf)
+
+
+* **Example:** [Flow chart: How to choose the right method](https://bclins.github.io/fall25/math121/choosingRightMethod.pdf)
 
 <!--
 ### Fri, Apr 24
