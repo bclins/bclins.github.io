@@ -1318,13 +1318,13 @@ We did this workshop in class:
 
 * **Workshop.** [Effect size & power](https://people.hsc.edu/faculty-staff/blins/StatsExamples/EffectSize.pdf)
 
+-->
 
-### Mon, Dec 8
+### Mon, Apr 27
 
 Today we went over answers to the [review questions for the final exam](https://people.hsc.edu/faculty-staff/blins/classes/spring23/math121/finalreview.pdf).
 
 
--->
 
 - - - 
 

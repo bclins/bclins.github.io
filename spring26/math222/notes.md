@@ -1369,6 +1369,19 @@ A **$(1 - \alpha)$-credible interval** for a parameter is an interval that has a
 
 6. What is the probability that less than half of all HSC students were born in VA based on the posterior distribution?
 
+### Mon, Apr 27
+
+Today we talked about the [final exam review problems](finalreview.pdf).  We also talked about the following things.
+
+1. We did a Bayesian example to estimate the percent of people with type O-negative blood based on a sample where 7 out of 100 people have type O-negative blood.  We used a Beta(1,1) prior, and we talked about why you might want to use a different prior. 
+
+2. We went over the chi-squared goodness of fit test and talked about how it is different from the chi-squared test for association.
+
+We also went over this summary of the different inference techniques we've covered this semester:
+
+* **Handout:** [Inference guide](https://people.hsc.edu/faculty-staff/blins/StatsExamples/inferenceGuide.pdf)
+
+
 - - - 
 
 

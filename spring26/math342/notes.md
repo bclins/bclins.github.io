@@ -2025,6 +2025,10 @@ There are even higher order Runge-Kutta methods, but there is a trade-off betwee
 
 * **Workshop:** [Runge-Kutta method](Workshops/RungeKutta.pdf)
 
+### Mon, Apr 27
+
+Today we talked about the [final exam review problems](finalreview.pdf).  We also talked about some other things to review such as root finding methods (know which are faster and slower) and methods for solving linear equations (including which are better/worse numerically).  
+
 
 - - - 
 
