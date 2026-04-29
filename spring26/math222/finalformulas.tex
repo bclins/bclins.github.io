@@ -1,0 +1,147 @@
+\documentclass[10pt]{exam}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{colortbl}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{tikz,pgfplots}
+\usepgfplotslibrary{statistics}
+\usepackage{color,comment,soul}
+\usepackage{pdfpages}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\Var}{\operatorname{Var}}
+
+\addpoints
+\vqword{Problem}
+\vpword{Maximum Points}
+\vsword{Your Score}
+\gradetablestretch{1.8}
+%\printanswers
+
+\begin{document}
+\graphicspath{{../../Semesters12-19/Spring18/Math222/}}
+
+\section*{Formula Sheet \hfill Math 222}
+
+\begin{multicols}{2}
+\begin{description}
+\item[Probability rules]
+$$P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)$$
+$$P(A \text{ and } B) = P(A) P(B|A)$$
+
+
+
+\item[Discrete expected value \& variance]
+$$E(X) = \mu = \sum p_k x_k$$
+$$\Var(X) = \sigma^2 = \sum p_k (x_k - \mu)^2$$
+
+\item[Expected value \& variance rules]
+
+\begin{align*}
+E(X+Y) &= E(X)+E(Y) \\
+\Var(X+Y) &= \Var(X)+\Var(Y)^* \\ 
+E(cX) &= cE(X) \\
+\Var(cX) &= c^2 \Var(X) 
+\end{align*}
+$^*$\textit{Only if $X$ and $Y$ are independent.}
+
+
+\item[General form of a confidence interval] 
+$$\text{estimate} \pm \text{margin of error}, \text{ where }$$
+$$\text{margin of error} = (\text{critical value}) \times SE_{\text{estimate}}$$
+
+\item[General form of a test statistic]
+$$ \frac{\text{statistic} - \text{hypothesized valued}}{SE_{\text{statistic}}}$$
+
+\item[Least squares regression line] ~
+$$\hat{y} = b_0+b_1 x, ~\text{  where  }~ b_1 = r \frac{s_y}{s_x} ~\text{  and  }~ b_0 = \bar{y} - b_1 \bar{x}$$
+
+
+\item[Chi-squared formulas] ~
+$$\ds \chi^2 = \sum \frac{(\textit{observed count}-\textit{expected count})^2}{\textit{expected count}}$$ 
+
+\item[Expected counts for 2-way tables] ~ 
+$$E_{ij} = \frac{\textit{row total} \times \textit{column total}}{\textit{table total}}$$ 
+\end{description}
+\end{multicols}
+
+
+%\item[Mean \& Variance of a Sample Mean]
+%$$E(\bar{x}) = \mu_{\bar{x}} = \mu$$
+%$$\Var(\bar{x}) = \sigma^2_{\bar{x}} = \frac{\sigma^2}{{n}}$$
+%\vfill
+%
+%\item[Mean \& Variance for the Binomial Distribution] If $X \sim \operatorname{Binom}(n,p)$, then
+%$$E(X) = \mu = np$$
+%$$\Var(X) = \sigma^2 = p(1-p)n$$
+%\vfill
+%
+%%\item[One Sample Inference for Means] ~
+%%$$\bar{x} \pm t^* \frac{s}{\sqrt{n}} \hspace*{0.5in} \ds t = \frac{\bar{x} - \mu}{s/\sqrt{n}}$$
+%%\begin{center}
+%%\begin{tabular}{|c|c|}
+%%\hline
+%%$\ds \bar{x} \pm t^* \frac{s}{\sqrt{n}}$ & $\ds t = \frac{\bar{x} - \mu}{s/\sqrt{n}}$ \\ \hline
+%%$\ds (\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} }$ & $\ds t = \frac{\bar{x}_1 - \bar{x}_2}{ \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} }$ \\ \hline
+%%\end{tabular}
+%%\end{center}
+%
+%
+%%
+%%\item[Two Sample Inference for Means]
+%%\[
+%%(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} } \hspace*{0.5in} t = \frac{\bar{x}_1 - \bar{x}_2}{ \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} }
+%%\]
+%%
+%%\item[One Sample Inference for Proportions]
+%%$$\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \hspace*{0.25in} z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$$
+%%
+%%
+%%\item[Two Sample Inference for Proportions]
+%%\[
+%%(\hat{p}_1 - \hat{p}_2)  \pm z^* \sqrt{ \frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2} } \hspace{0.25in} z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left( \frac{1}{n_1} + \frac{1}{n_2} \right)}}
+%%\]
+
+\begin{description}
+
+\item[Standard errors$^*$] ~
+\begin{center}
+\begin{tabular}{lcl} 
+$\ds SE_{\bar{x}} = \frac{s}{\sqrt{n}}$ & ~~~~ & $\ds SE_{\hat{p}} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ \\
+$\ds SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ &  & $\ds SE_{\hat{p}_1-\hat{p}_2} = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$ \\
+\end{tabular}
+\end{center}
+$^*$\textit{When testing a null hypothesis about proportions, it is better to use the hypothesized population proportion $p_0$ rather than $\hat{p}$ in the formula for standard error for one-sample tests, and it is better to used the pooled proportion $\hat{p}$ rather than either individual sample proportion $\hat{p}_1$ or $\hat{p}_2$ in the formula for standard error in two-sample tests. }
+
+
+
+
+\item[Inference about regression] 
+$$SE_{b_1} = \frac{s}{s_x \sqrt{n - 1}} = \frac{r \sqrt{n-2}}{1-r^2}$$ 
+$$SE_{\mu_y} = s \sqrt{\frac{1}{n} + \frac{(x^* - \bar{x})^2}{s_x^2 (n-1)}} = \sqrt{\frac{s^2}{n} + (x^* - \bar{x})^2 SE_{b_1}^2}.$$
+$$SE_{\hat{y}} = s \sqrt{1 + \frac{1}{n} + \frac{(x^* - \bar{x})^2}{s_x^2 (n-1)}} = \sqrt{s^2 + \frac{s^2}{n} + (x^* - \bar{x})^2 SE_{b_1}^2}.$$
+%$$SE_{\hat{y}} = s \sqrt{1 +  \frac{1}{N} + \frac{ b_1^2 (x-\bar{x})^2}{MSM}}$$ 
+%$$\ds t = \frac{b_1}{SE_{b_1}} = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}} = \sqrt{F} = \sqrt{\frac{MSM}{MSE}}$$
+where $s = \sqrt{MSE}$ is the standard error of the residuals. Use $dF = n - 2$ for simple linear regression.
+Recall that $r^2 = \frac{SSM}{SST}$ and $MST = s_y^2$. With that you can fill in the whole ANOVA table.\\
+
+
+\item[Inference in ANOVA] Use the pooled standard deviation $s_p = \sqrt{MSE}$ as the best guess for $\sigma$.   
+Recall also that $SSG = \sum_{i = 1}^I N_i (\bar{x}_i - \bar{x})^2$ and $SSE = \sum_{i = 1}^{I} (N_i-1) s_i^2$. \\
+%For a contrast $C=\sum_i a_i \bar{x}_i$ the standard error is $SE_C = s_p \sqrt{\sum \frac{a_i^2}{N_i} }$.
+
+%\begin{center}
+%\begin{tabular}{lcl}
+%Testing statistic  $H_0: \beta_1 = 0$ & & Residual standard error \\[0.2in] 
+%$\ds t = \frac{b_1}{SE_{b_1}} = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}$ & ~~~~ & $\ds s = \sqrt{\frac{\sum(y_i - \hat{y}_i)^2}{n-2}}$ \\[0.2in]
+%$\ds SE(b_0) = s \sqrt{\frac{1}{n}+\frac{\bar{x}^2}{\sum (x_i-\bar{x})^2}}$ & ~~~~ & $\ds SE(b_1) = \frac{s}{\sqrt{\sum(x_i-\bar{x})^2}}$ \\[0.2in]
+%$\ds SE(\hat{\mu}_y) = \sqrt{SE(b_0)^2 + (x^*)^2 SE(b_1)^2}$ &  & $\ds SE(\hat{y}) = \sqrt{SE(\hat{\mu}_y)^2+s^2} $ \\
+%\end{tabular}
+%\end{center}
+
+\end{description}
+
+\end{document}

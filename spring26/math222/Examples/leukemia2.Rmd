@@ -1,0 +1,12 @@
+---
+title: Leukemia 2
+---
+
+```{r}
+df = read.csv("leukemia2.csv")
+head(df)
+qqnorm(df$WBC)
+qqline(df$WBC)
+```
+
+

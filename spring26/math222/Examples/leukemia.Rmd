@@ -1,0 +1,38 @@
+---
+title: Leukemia data
+---
+
+Consider the following data published on n = 27 leukemia patients. The response variable `REMISS` is 1 if leukemia remission occurred, 0 otherwise.
+
+The predictor variables are cellularity of the marrow clot section (`CELL`), smear differential percentage of blasts (SMEAR), percentage of absolute marrow leukemia cell infiltrate (`INFIL`), percentage labeling index of the bone marrow leukemia cells (`LI`), absolute number of blasts in the peripheral blood (`BLAST`), and the highest temperature prior to start of treatment (`TEMP`).
+
+```{r}
+leukemia <- read.csv("leukemia.csv")
+mymodel <- glm(REMISS ~ CELL + INFIL + LI + BLAST + TEMP, data = leukemia, family = "binomial")
+summary(mymodel)
+```
+
+```
+## glm(formula = REMISS ~ CELL + INFIL + LI + BLAST + TEMP, family = "binomial", 
+##     data = leukemia)
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(>|z|)  
+## (Intercept)   77.523     69.650   1.113   0.2657  
+## CELL          10.582      9.335   1.134   0.2570  
+## INFIL          1.246      3.878   0.321   0.7480  
+## LI             4.286      2.517   1.703   0.0886 .
+## BLAST         -0.227      2.201  -0.103   0.9178  
+## TEMP         -94.013     74.867  -1.256   0.2092  
+```
+
+```{r}
+mymodel2 <- glm(REMISS ~ LI, data = leukemia, family = "binomial")
+summary(mymodel2) 
+```
+
+```{r}
+x <- log(rbeta(100, 1, 1))
+qqnorm(x)
+qqline(x)
+```

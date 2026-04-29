@@ -32,7 +32,7 @@ header-includes: |
 ### Announcements
 
 * The final exam will be on **Thursday, April 30 at 2:00pm**
-* Final exam materials: [review problems](finalreview.pdf)
+* Final exam materials: [review problems](finalreview.pdf), [formula sheet](finalformulas.pdf)
 * Midterm 3 materials: [review problems](midterm3review.pdf), [formula sheet](midterm3formulas.pdf),  [review solutions](midterm3reviewSolutions.pdf)
 * Midterm 2 materials: [review problems](midterm2review.pdf), [formula sheet](midterm2formulas.pdf),  [review solutions](midterm2reviewSolutions.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf), [formula sheet](midterm1formulas.pdf), [review solutions](midterm1reviewSolutions.pdf)

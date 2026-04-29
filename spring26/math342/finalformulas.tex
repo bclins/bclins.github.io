@@ -1,0 +1,112 @@
+\documentclass[10pt]{exam}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{soul}
+\usepackage{tikz}
+\usepackage{multicol}
+
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+\newcommand{\inner}[1]{\langle {#1} \rangle}
+
+
+\begin{document}
+\pagestyle{empty}
+\subsection*{Formula Sheet} 
+
+\hrule 
+
+
+
+\begin{multicols}{2}
+
+\subsubsection*{Quadratic formula} 
+$$\ds ax^2+bx+c = 0 \text{ when }  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+\subsubsection*{Taylor's theorem}
+$f(x) = P_n(x) + R_n(x)$ where
+\begin{align*}
+P_n(x) &= \sum_{k = 0}^n \frac{f^{(k)}(c)}{k!} (x - c)^k  \\ 
+R_n(x) &= \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-c)^{n+1}
+\end{align*}
+for some $\xi$ between $x$ and $c$.
+
+
+
+
+
+
+
+
+
+%\textbf{Linear Approximation} ~
+%\begin{itemize}
+%\item $\ds L(x) = f(a) + f'(a)(x-a)$
+%\end{itemize}
+
+
+%\textbf{Summation Formulas} ~
+%\begin{itemize}
+%\item $\ds \sum_{i = 1}^n i = \frac{n(n+1)}{2}$
+%\item $\ds \sum_{i = 1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+%\end{itemize}
+
+
+\subsubsection*{Important Maclaurin series}
+\begin{itemize}
+\item $e^x = \ds \sum_{k=0}^{\infty} \frac{x^k}{k!}$
+\item $\sin x = \ds \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1}}{(2k+1)!}$
+\item $\cos x = \ds \sum_{k=0}^\infty \frac{(-1)^k x^{2k}}{(2k)!}$
+\item $\dfrac{1}{1-x} = \ds \sum_{k=0}^\infty x^k$
+\end{itemize}
+
+\subsubsection*{Newton's method}
+$$x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}$$
+
+\subsubsection*{Secant method}
+$$x_{n+1} = x_n - \dfrac{f(x_n) (x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}$$
+
+
+\subsubsection*{Newton's method for systems} ~
+$$\mathbf{x}_{n+1} = \mathbf{x}_n - \mathbf{J}(\mathbf{x}_n)^{-1} \mathbf{F}(\mathbf{x}_n)$$
+
+\subsubsection*{Condition number} ~
+$$\kappa(A) = \| A \| \, \|A^{-1} \|$$
+
+
+\subsubsection*{Orthogonal projection onto line spanned by $\mathbf{y}$}
+
+$$\on{Proj}_\mathbf{y}(\mathbf{x}) = \frac{\inner{\mathbf{x}, \mathbf{y}} }{\inner{\mathbf{y}, \mathbf{y}}} \mathbf{y}$$
+
+\subsubsection*{Gram-Schmidt algorithm}
+
+$$\mathbf{v}_{k+1} = \mathbf{x}_{k+1} - \sum_{j = 0}^k \frac{\inner{\mathbf{x}_{k+1}, \mathbf{v}_j}}{\inner{\mathbf{v}_j, \mathbf{v}_j}}\mathbf{v}_j$$
+
+\subsubsection*{Lagrange polynomials}
+
+$$L_k(x) = \frac{\prod_{j = 0, ~ j \ne k}^n (x - x_j)}{\prod_{ j = 0, ~ j \ne k}^n (x_k - x_j)}$$
+
+\subsubsection*{Interpolation error}
+
+$$f(x) - P_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} \prod_{i = 0}^n (x-x_i)$$
+for some $\xi$ between $x$ and the $x_i$'s. 
+
+\subsubsection*{Composite midpoint method error}
+$$|\text{Error}| \le \max_{a \le \xi \le b} \frac{|f^{(2)}(\xi)| (b - a)^3}{24 n^2}$$
+
+\subsubsection*{Composite Simpson's method error}
+$$|\text{Error}| \le \max_{a \le \xi \le b} \frac{|f^{(4)}(\xi)| (b - a)^5}{2880 n^4}$$
+
+\subsubsection*{Euler's method}
+For $y' = f(t, y)$ and $h = (b-a) / n$, 
+\begin{align*}
+y_{k+1} &= y_k + hf(t_k , y_k) \\
+t_{k+1} &= t_k + h
+\end{align*}
+
+\end{multicols}
+\end{document}
+
+
+\end{document}
