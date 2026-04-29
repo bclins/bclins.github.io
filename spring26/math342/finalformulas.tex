@@ -24,6 +24,15 @@
 \subsubsection*{Quadratic formula} 
 $$\ds ax^2+bx+c = 0 \text{ when }  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
+
+\subsubsection*{Absolute error}
+$$|\text{approximate value} - \text{exact value} |$$
+
+
+\subsubsection*{Relative error}
+$$\frac{|\text{absolute error}|}{|\text{exact value}|}$$
+
+
 \subsubsection*{Taylor's theorem}
 $f(x) = P_n(x) + R_n(x)$ where
 \begin{align*}
@@ -31,12 +40,6 @@ P_n(x) &= \sum_{k = 0}^n \frac{f^{(k)}(c)}{k!} (x - c)^k  \\
 R_n(x) &= \frac{f^{(n+1)}(\xi)}{(n+1)!} (x-c)^{n+1}
 \end{align*}
 for some $\xi$ between $x$ and $c$.
-
-
-
-
-
-
 
 
 
@@ -82,6 +85,14 @@ $$\on{Proj}_\mathbf{y}(\mathbf{x}) = \frac{\inner{\mathbf{x}, \mathbf{y}} }{\inn
 \subsubsection*{Gram-Schmidt algorithm}
 
 $$\mathbf{v}_{k+1} = \mathbf{x}_{k+1} - \sum_{j = 0}^k \frac{\inner{\mathbf{x}_{k+1}, \mathbf{v}_j}}{\inner{\mathbf{v}_j, \mathbf{v}_j}}\mathbf{v}_j$$
+
+\subsubsection*{Fourier series}
+
+$$f(x) = \frac{a_0}{2} + \sum_{k = 1}^\infty (a_k \cos(k\pi x) + b_k \sin(k \pi x))$$
+where 
+\begin{align*}
+a_k = \int_{-1}^1 f(x) \cos(k\pi x) \, dx,  ~~~~ b_k = \int_{-1}^1 f(x) \sin(k\pi x) \, dx
+\end{align*}
 
 \subsubsection*{Lagrange polynomials}
 
