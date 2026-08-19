@@ -46,10 +46,10 @@ Week | Topic                      | Notes | Projects
 8  | Sampling distributions                         | [Week 08](notes.html#week-8-notes)  |
 9  | Confidence intervals, **Midterm 2**            | [Week 09](notes.html#week-9-notes)  |
 10 | Hypothesis testing                             | [Week 10](notes.html#week-10-notes) | [Project 1](Project1.pdf)
-11 | Comparing two proportions                      | [Week 11](notes.html#week-11-notes) | [Project 2](Project2.pdf)
-12 | Inference about means                          | [Week 12](notes.html#week-12-notes) | [Project 3](Project3.pdf)
+11 | Comparing two proportions                      | [Week 11](notes.html#week-11-notes) | 
+12 | Inference about means                          | [Week 12](notes.html#week-12-notes) | [Project 2](Project2.pdf)
 13 | Two sample t-methods, **Midterm 3**            | [Week 13](notes.html#week-13-notes) | 
-14 | Statistical power                              | [Week 14](notes.html#week-14-notes) | [Project 4](Project4.pdf)
+14 | Statistical power                              | [Week 14](notes.html#week-14-notes) | [Project 3](Project3.pdf)
 15 | Chi-squared test for association               | [Week 15](notes.html#week-15-notes) |
 
 The schedule above is tentative, and may be subject to change. Changes will be announced in class, and you are responsible for knowing about any changes even if you miss the class when they are announced. 
@@ -81,7 +81,7 @@ Every Friday (except when there is a midterm exam) there will be a 10-15 minute 
 
 ### Projects
 
-There will be four homework projects at the end of the semester.  These projects will require you to analyze real world data, make graphs, carry out relevant statistical tests, and explain your conclusions.  The projects must by typed using a computer and you can e-mail them to me when they are due. If you wish, you may work with a partner on the project. If you do work with a partner then you can both submit one file together, just be sure that both of your names are clearly listed on the file that you submit.  Aside from work with your partner, all work should be your own. Each project will be graded holistically using the following rubric:
+There will be homework projects at the end of the semester.  These projects will require you to analyze real world data, make graphs, carry out relevant statistical tests, and explain your conclusions.  The projects must by typed using a computer and you can e-mail them to me when they are due. If you wish, you may work with a partner on the project. If you do work with a partner then you can both submit one file together, just be sure that both of your names are clearly listed on the file that you submit.  Aside from work with your partner, all work should be your own. Each project will be graded holistically using the following rubric:
 
 * **Grade: A.** Every part of the assignment is complete and your work is clear and correct.  
 * **Grade: B.** Almost every part of the assignment is complete and your work is clear. There may be a few minor mistakes, but no major errors.  
