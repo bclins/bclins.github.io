@@ -33,15 +33,14 @@ E-mail: <a href="mailto:%62lins%40hsc%2Eedu">&#98;lins&#64;hsc&#46;edu</a> <!--<
 
 <!--- - --->
 
-### Spring 2026 Classes
+### Fall 2026 Classes
 
-* Math 121 - [Statistics](spring26/math121/index.html) 
-* Math 222 - [Statistical Methods](spring26/math222/index.html) 
-* Math 342 - [Numerical Analysis](spring26/math342/index.html) 
+* CS 261 - [Computer Science I](fall26/coms261/index.html)
+* Math 121 - [Statistics](fall26/math121/index.html) 
 
 ### Weekly Schedule
 
-<a href="spring26/schedule.pdf"><img src="spring26/schedule.png" width="475"/></a>
+<a href="fall26/schedule.pdf"><img src="fall26/schedule.png" width="475"/></a>
 
 
 ### Teaching Materials
