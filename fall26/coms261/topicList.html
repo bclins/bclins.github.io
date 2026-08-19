@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>topicList</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Mon, Aug 26</td>
+<td style="text-align: center;">[TP01][TP01], [C2]</td>
+<td style="text-align: left;">Introduction to Python &amp; Thonny</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Aug 28</td>
+<td style="text-align: center;">[TP02][TP02]</td>
+<td style="text-align: left;">Variables &amp; functions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Aug 29</td>
+<td style="text-align: center;">[TP02][TP02]</td>
+<td style="text-align: left;">Statements versus expressions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Aug 30</td>
+<td style="text-align: center;">[C2.6][C2.6]</td>
+<td style="text-align: left;">Binary &amp; floating-point numbers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Sep 2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Labor Day, no class</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Sep 4</td>
+<td style="text-align: center;">[TP03][TP03]</td>
+<td style="text-align: left;">Functions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Sep 5</td>
+<td style="text-align: center;">[TP03][TP03]</td>
+<td style="text-align: left;">For-loops</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Sep 6</td>
+<td style="text-align: center;">[TP04][TP04]</td>
+<td style="text-align: left;">Turtle graphics</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Sep 9</td>
+<td style="text-align: center;">[TP05][TP05]</td>
+<td style="text-align: left;">Conditional statements</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Sep 11</td>
+<td style="text-align: center;">[TP05][TP05]</td>
+<td style="text-align: left;">Boolean expressions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Sep 12</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Sep 13</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Sep 16</td>
+<td style="text-align: center;">[TP05][TP05]</td>
+<td style="text-align: left;">Integer division and modulus</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Sep 18</td>
+<td style="text-align: center;">[C11][C11]</td>
+<td style="text-align: left;">While-loops</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Sep 19</td>
+<td style="text-align: center;">[C11][C11]</td>
+<td style="text-align: left;">While-loops con’d</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Sep 20</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap05.html#recursion">TP05</a></td>
+<td style="text-align: left;">Recursion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Sep 23</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap06.html#recursion-with-return-values">TP06</a></td>
+<td style="text-align: left;">Recursion with return values</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Sep 25</td>
+<td style="text-align: center;"><a
+href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
+<td style="text-align: left;">Sequence types</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Sep 26</td>
+<td style="text-align: center;">[C10.1][C10.1]</td>
+<td style="text-align: left;">Lists</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Sep 27</td>
+<td style="text-align: center;">[TP09][TP09]</td>
+<td style="text-align: left;">Lists</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Sep 30</td>
+<td style="text-align: center;">[TP08][TP08]</td>
+<td style="text-align: left;">Strings</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Oct 2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Oct 3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Oct 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 1</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Oct 7</td>
+<td style="text-align: center;">[C10.3][C10.3]</td>
+<td style="text-align: left;">Mutability and immutability</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Oct 9</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list">TP07.2</a></td>
+<td style="text-align: left;">Reading files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Oct 10</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap07.html#reading-the-word-list">TP07.2</a></td>
+<td style="text-align: left;">Reading files</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Oct 11</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Common patterns in loops (map, filter,
+reduce)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Oct 14</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Fall break, no class</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Oct 16</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">More map, filter, &amp; reduce
+examples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Oct 17</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap18.html#list-comprehensions">TP18.5</a></td>
+<td style="text-align: left;">List comprehensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Oct 18</td>
+<td style="text-align: center;">[TP10][TP10]</td>
+<td style="text-align: left;">Dictionaries</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Oct 21</td>
+<td style="text-align: center;">[TP10][TP10]</td>
+<td style="text-align: left;">Dictionary Comprehensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Oct 23</td>
+<td style="text-align: center;">[C16][C16]</td>
+<td style="text-align: left;">Iterable types</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Oct 24</td>
+<td style="text-align: center;">[TP11][TP11]</td>
+<td style="text-align: left;">Tuples</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Oct 25</td>
+<td style="text-align: center;">[TP11][TP11]</td>
+<td style="text-align: left;">Tuples</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Oct 28</td>
+<td style="text-align: center;"><a
+href="https://allendowney.github.io/ThinkPython/chap18.html#sets">TP18.1</a></td>
+<td style="text-align: left;">Sets and set comprehensions</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Oct 30</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Search algorithms</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Oct 31</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Sorting</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Nov 1</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.11.13">C11.13</a></td>
+<td style="text-align: left;">Nested loops</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Nov 4</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2">C9.2</a></td>
+<td style="text-align: left;">Program structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Nov 6</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3">C9.3</a></td>
+<td style="text-align: left;">Function structure &amp; incremental
+development</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Nov 7</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3">C13.3</a></td>
+<td style="text-align: left;">Writing to a file</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Nov 8</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.13.3">C13.3</a></td>
+<td style="text-align: left;">Writing to a file - con’d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Nov 11</td>
+<td style="text-align: center;">[TP14][TP14]</td>
+<td style="text-align: left;">Introduction to classes</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Nov 13</td>
+<td style="text-align: center;">[TP15][TP15]</td>
+<td style="text-align: left;">Magic methods</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Nov 14</td>
+<td style="text-align: center;">[TP15][TP15]</td>
+<td style="text-align: left;">Static versus instance methods</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Nov 15</td>
+<td style="text-align: center;">[TP15][TP15]</td>
+<td style="text-align: left;">Calling magic methods</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Nov 18</td>
+<td style="text-align: center;">[TP16][TP16]</td>
+<td style="text-align: left;">Type conversion and casting</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Nov 20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Sequence and iterator types</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Thu, Nov 21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Review</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Fri, Nov 22</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Midterm 2</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Mon, Nov 25</td>
+<td style="text-align: center;">[TP17][TP17]</td>
+<td style="text-align: left;">Inheritance</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Wed, Nov 27</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Thanksgiving break, no class</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Nov 29</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Thanksgiving break, no class</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mon, Dec 2</td>
+<td style="text-align: center;">[TP17][TP17]</td>
+<td style="text-align: left;">Inheritance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Wed, Dec 4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Checkers</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Thu, Dec 5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Checkers - con’d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Fri, Dec 6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Google Colab</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Mon, Dec 9</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mon-dec-2">Mon, Dec 2</h3>
+<p>Last time we defined classes to represent rectangles and squares.</p>
+<ol type="1">
+<li>Add a method called <code>.translate(dx, dy)</code> that shifts the
+coordinates of a rectangle or square horizontally by <code>dx</code> and
+vertically by <code>dy</code>. Where should you put the method?</li>
+</ol>
+<p>There is nothing stopping us from defining a translate method
+differently for squares than for rectangles. For example, we could have
+the square’s version take a tuple containing a coordinate pair. Although
+Python would allow this, it is a bad idea because functions/methods that
+work for a superclass should still work for a subclass too. Subclasses
+can have additional features, but they shouldn’t lose old features and
+they should behave the way you expect members of the superclass to
+behave.</p>
+<!--
+Consider the following classes:
+
+```python
+class Deck:
+    def __init__(self):
+        self.card_list = []
+        for suit in "CDHS":
+            for rank in ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]:
+                self.card_list.append(suit+rank)    
+    def shuffle(self):
+        random.shuffle(self.card_list)
+    def pop_card(self):
+        return self.card_list.pop()
+    def replace_card(self, card):
+        self.card_list.append(card)
+
+class Hand(Deck):
+    def __init__(self, cards):
+        self.card_list = cards
+```
+-->
+<!--
+* You should cover the **Liskov substitution principle**.  You should always make sure that the subclass is usable everywhere that the superclass can be used.  Give an example where you break this rule by overriding a method.  Then describe the correct way to override a method so that the inputs are allowed to be supertypes of the old inputs and the outputs must be subtypes of the old output.  Maybe use scale and translate methods for squares & rectangles?  
+-->
+<p>One thing that you can do is create subclasses of standard classes,
+like dict:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Counter(<span class="bu">dict</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, iterator):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(Counter, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> iterator:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> item <span class="kw">in</span> <span class="va">self</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>[item] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                <span class="va">self</span>[item] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Counter([<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, val <span class="kw">in</span> x.items():</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, val) </span></code></pre></div>
+<!--
+See this comment <https://stackoverflow.com/questions/18405618/extending-built-in-python-dict-class> to understand the `super(Counter, self).__init__()` line.
+-->
+<h3 id="wed-dec-4">Wed, Dec 4</h3>
+<p>Today as an in-class activity we started creating a checker board
+class using Tkinter.</p>
+<center>
+<img src="checkers.png" width=401></img>
+</center>
+<p>Some tips to keep in mind:</p>
+<ol type="1">
+<li><p>It might help to have a global constant
+<code>SQUARE_SIZE</code>.</p></li>
+<li><p>If you add the row and column number, the light squares are even
+and the dark squares are odd.</p></li>
+<li><p>When you initialize the <code>Board</code> class, you should draw
+the squares on the board using</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>canvas.create_rectangle(left, top, right, bottom, fill <span class="op">=</span> color)</span></code></pre></div>
+<p>It might help to have two different colors <code>LIGHT_SQUARE</code>
+and <code>DARK_SQUARE</code> stored as constants.</p></li>
+<li><p>The <code>Board</code> class should also have checkers.</p></li>
+<li><p>Each checker should be a <code>Checker</code> object with a
+position (column and row) and a color. You should also pass the canvas
+object as a parameter so you can draw the checker when you initialize
+it. Use the function</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>canvas.create_oval(left, top, right, bottom, fill <span class="op">=</span> color)</span></code></pre></div>
+<p>It might help to have constants <code>DARK_CHECKER</code>,
+<code>LIGHT_CHECKER</code>, and <code>CHECKER_RADIUS</code>.</p></li>
+</ol>
+<h3 id="thu-dec-5">Thu, Dec 5</h3>
+<p>Today we talked about some ways to develop the checker board that we
+started yesterday. Then at the end of class, I showed briefly how to add
+interactivity to the program.</p>
+<p>To add the ability to move checkers, you can add these lines to the
+<code>__init__</code> method for the checkers:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;To make the checkers interactive, you&#39;ll need to store the return value of </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">    canvas.create_oval() as an attribute so you can change it when the user drags </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    the checkers. You&#39;ll also need to keep the canvas as an attribute as well.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.canvas <span class="op">=</span> canvas</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.oval <span class="op">=</span> canvas.create_oval(x <span class="op">-</span> r, y <span class="op">-</span> r, x <span class="op">+</span> r, y <span class="op">+</span> r, fill<span class="op">=</span>color)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  Attributes to keep track of how far the checker has moved</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_x <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.offset_y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bind mouse events to the checker object</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;ButtonPress-1&gt;&quot;</span>, <span class="va">self</span>.on_click)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;B1-Motion&gt;&quot;</span>, <span class="va">self</span>.on_drag)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    canvas.tag_bind(<span class="va">self</span>.oval, <span class="st">&quot;&lt;ButtonRelease-1&gt;&quot;</span>, <span class="va">self</span>.on_release)</span></code></pre></div>
+<p>Then you also need to add three methods to the <code>Checker</code>
+class:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_click(<span class="va">self</span>, event):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save the offset of the mouse click relative to the checker&#39;s top-left corner</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_x <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)[<span class="dv">0</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.offset_y <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)[<span class="dv">1</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_drag(<span class="va">self</span>, event):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the checker&#39;s position as the mouse moves</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> x2 <span class="op">-</span> x1</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        new_x1 <span class="op">=</span> event.x <span class="op">-</span> <span class="va">self</span>.offset_x</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        new_y1 <span class="op">=</span> event.y <span class="op">-</span> <span class="va">self</span>.offset_y</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval, new_x1, new_y1, new_x1 <span class="op">+</span> width, new_y1 <span class="op">+</span> width)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> on_release(<span class="va">self</span>, event):</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Snap checkers into center of nearest square when you release the mouse button</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        x1, y1, x2, y2 <span class="op">=</span> <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> (x2 <span class="op">-</span> x1) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Need to calculate the center of the nearest square to our checker</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> ((x1 <span class="op">+</span> x2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> ((y1 <span class="op">+</span> y2) <span class="op">//</span> (<span class="dv">2</span> <span class="op">*</span> SQUARE_SIZE) <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">*</span> SQUARE_SIZE</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.canvas.coords(<span class="va">self</span>.oval, x<span class="op">-</span>r, y<span class="op">-</span>r, x<span class="op">+</span>r, y<span class="op">+</span>r)</span></code></pre></div>
+<p>You can take a look at the final program here:</p>
+<ul>
+<li><strong>Example</strong>: <a href="checkers.py">checkers.py</a></li>
+</ul>
+<h3 id="fri-dec-6">Fri, Dec 6</h3>
+<p>Today we introduced <a href="">Google Colab</a> as an alternative to
+using an integrated development environment (IDE) like Thonny. We also
+introduced graphing by importing <code>matplotlib.pyplot</code>.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x): <span class="cf">return</span> cos(x) <span class="op">-</span> x <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [k <span class="op">/</span> <span class="dv">100</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)]</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [f(x) <span class="cf">for</span> x <span class="kw">in</span> xs]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, ys) <span class="op">+</span> plt.plot(xs, [<span class="dv">0</span> <span class="cf">for</span> x <span class="kw">in</span> xs])</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.show() </span></code></pre></div>
+<center>
+<img src="example_plot.png" width = 400></img>
+</center>
+<p>We did two exercises in class.</p>
+<ol type="1">
+<li><p>We revisited an old exercise from November 1st, where we had data
+about which classes a list of students had registered for.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>registration_data <span class="op">=</span> [</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Alice Adams&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 490&#39;</span>, <span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Phys 260&#39;</span>, <span class="st">&#39;Engl 450&#39;</span>, <span class="st">&#39;Math 260&#39;</span>]}, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Bob Brown&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Fren 301&#39;</span>, <span class="st">&#39;Germ 101&#39;</span>, <span class="st">&#39;Phys 450&#39;</span>]}, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Charlie Clark&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 490&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Hist 301&#39;</span>, <span class="st">&#39;Govt 301&#39;</span>]}, </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Daisy Davis&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Govt 201&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Math 201&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>]}, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Edward Evans&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>, <span class="st">&#39;Fren 260&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>]},</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Fiona Foster&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 330&#39;</span>, <span class="st">&#39;Hist 490&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>, <span class="st">&#39;Germ 490&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>]},</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;George Green&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Chem 301&#39;</span>, <span class="st">&#39;Govt 490&#39;</span>, <span class="st">&#39;Govt 102&#39;</span>]},</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Hannah Hill&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 490&#39;</span>, <span class="st">&#39;Fren 301&#39;</span>, <span class="st">&#39;Engl 260&#39;</span>, <span class="st">&#39;Engl 301&#39;</span>, <span class="st">&#39;Germ 450&#39;</span>]},</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Isaac Ives&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 330&#39;</span>, <span class="st">&#39;Econ 201&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>, <span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Math 260&#39;</span>]},</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Jessica Johnson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Econ 102&#39;</span>, <span class="st">&#39;Span 101&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Chem 490&#39;</span>]},</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Kevin King&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 330&#39;</span>, <span class="st">&#39;Span 260&#39;</span>, <span class="st">&#39;Biol 260&#39;</span>, <span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Math 102&#39;</span>]},</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Lily Lewis&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Span 301&#39;</span>, <span class="st">&#39;Biol 102&#39;</span>, <span class="st">&#39;Math 330&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Engl 101&#39;</span>]},</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Michael Miller&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Fren 102&#39;</span>, <span class="st">&#39;Fren 201&#39;</span>, <span class="st">&#39;Phys 102&#39;</span>, <span class="st">&#39;Math 102&#39;</span>]},</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Nora Nelson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Math 260&#39;</span>, <span class="st">&#39;Fren 101&#39;</span>, <span class="st">&#39;Biol 101&#39;</span>, <span class="st">&#39;Engl 301&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>]},</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Oliver Owens&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Fren 450&#39;</span>, <span class="st">&#39;Biol 260&#39;</span>, <span class="st">&#39;Engl 490&#39;</span>, <span class="st">&#39;Germ 330&#39;</span>]},</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Patricia Parker&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Phys 101&#39;</span>, <span class="st">&#39;Fren 201&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>, <span class="st">&#39;Germ 330&#39;</span>, <span class="st">&#39;Germ 102&#39;</span>]},</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Quinn Quinn&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 301&#39;</span>, <span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Biol 101&#39;</span>, <span class="st">&#39;Biol 201&#39;</span>, <span class="st">&#39;Span 101&#39;</span>]},</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Rachel Roberts&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 450&#39;</span>, <span class="st">&#39;Econ 301&#39;</span>, <span class="st">&#39;Chem 330&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Span 490&#39;</span>]},</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Samuel Smith&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 260&#39;</span>, <span class="st">&#39;Econ 101&#39;</span>, <span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Govt 301&#39;</span>, <span class="st">&#39;Math 450&#39;</span>]},</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Tina Taylor&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Govt 450&#39;</span>, <span class="st">&#39;Hist 101&#39;</span>, <span class="st">&#39;Span 201&#39;</span>, <span class="st">&#39;Fren 330&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>]},</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Ulysses Underwood&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Phys 101&#39;</span>, <span class="st">&#39;Engl 101&#39;</span>, <span class="st">&#39;Econ 260&#39;</span>, <span class="st">&#39;Chem 260&#39;</span>]},</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Vanessa Vincent&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Econ 201&#39;</span>, <span class="st">&#39;Span 101&#39;</span>, <span class="st">&#39;Engl 201&#39;</span>, <span class="st">&#39;Math 260&#39;</span>, <span class="st">&#39;Phys 301&#39;</span>]},</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;William Wilson&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Math 490&#39;</span>, <span class="st">&#39;Math 201&#39;</span>, <span class="st">&#39;Biol 102&#39;</span>, <span class="st">&#39;Germ 260&#39;</span>, <span class="st">&#39;Germ 102&#39;</span>]},</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Xavier Xander&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Germ 301&#39;</span>, <span class="st">&#39;Govt 101&#39;</span>, <span class="st">&#39;Govt 102&#39;</span>, <span class="st">&#39;Chem 490&#39;</span>, <span class="st">&#39;Hist 102&#39;</span>]}, </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Yolanda Young&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Hist 301&#39;</span>, <span class="st">&#39;Chem 102&#39;</span>, <span class="st">&#39;Govt 330&#39;</span>, <span class="st">&#39;Chem 101&#39;</span>, <span class="st">&#39;Econ 330&#39;</span>]},</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Zachary Zimmerman&#39;</span>, <span class="st">&#39;classes&#39;</span>: [<span class="st">&#39;Biol 330&#39;</span>, <span class="st">&#39;Chem 330&#39;</span>, <span class="st">&#39;Hist 201&#39;</span>, <span class="st">&#39;Phys 490&#39;</span>, <span class="st">&#39;Chem 260&#39;</span>]}</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>]   </span></code></pre></div>
+<p>Make a list (including repeats) of all classes the students have
+signed up for. Then use the <code>Counter</code> class from the
+<code>collections</code> library to create a <code>Counter</code> with
+keys equal to the different courses and values equal to the number of
+these students who have signed up for each course.</p></li>
+<li><p>Suppose we have imported <code>cos</code> from the
+<code>math</code> library. Consider the function</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x): <span class="cf">return</span> cos(x) <span class="op">-</span> x <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
+<p>Write a recursive function
+<code>find_roots(f, a, b, precision = 10**(-6))</code> that can find the
+root of the function <code>f</code>. Recall the algorithm (which we also
+discussed on Nov 6) has these steps:</p>
+<ol type="a">
+<li>Find the midpoint of <code>a</code> and <code>b</code>.<br />
+</li>
+<li>If <code>f(m) == 0</code> or <code>b</code> and <code>a</code> are
+really really close, then return <code>m</code>.</li>
+<li>If <code>f(a) * f(m) &lt; 0</code>, then the root must be between
+<code>a</code> and <code>m</code>, so use recursion.</li>
+<li>Otherwise the root must be between <code>m</code> and
+<code>b</code>, so use recursion.</li>
+</ol></li>
+</ol>
+<h3 id="mon-dec-9">Mon, Dec 9</h3>
+<p>Today we talked about a few of the problems from the <a
+href="practicefinal.pdf">final exam review</a>. It particular we talked
+about how to understand a recursive function by using a stack
+diagram.</p>
+<p>We also looked at this program:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> median(nums):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(nums) <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        nums.pop(<span class="dv">0</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        nums.pop()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(nums) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">sum</span>(nums) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nums[<span class="dv">0</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">12</span>]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(median(a))</span></code></pre></div>
+<ol type="1">
+<li><p>What is the value of the list <code>nums</code> each time the
+while-loop condition is checked?</p></li>
+<li><p>What does this program print when it is run?</p></li>
+<li><p>Describe two bad things about the way this median function is
+implemented.</p></li>
+</ol>
+</body>
+</html>
