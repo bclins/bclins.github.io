@@ -13,6 +13,7 @@ header-includes: |
   </style>
 ---
 
+
 ## COMS 261 - Fall 2026
 
 
@@ -26,13 +27,12 @@ Jump to: [COMS 261 homepage](index.html), [Week 1](#week-1-notes) , [Week 2](#we
 
 Date | Section | Topic
 :---:|:---:|:-----------------------------------
-Mon, Aug 24 | [TP01][TP01] | Introduction to Python & Thonny
-Wed, Aug 26 | [TP02][TP02] | Variables & functions
-Thu, Aug 27 | [TP02][TP02] | Statements versus expressions
+Mon, Aug 24 | [TP1][TP1] | Introduction to Python & Thonny
+Wed, Aug 26 | [TP2][TP2] | Variables & functions
+Thu, Aug 27 | [TP2][TP2] | Statements versus expressions
 Fri, Aug 28 |              | Binary & floating-point numbers
 
-<!--
-### Mon, Aug 26 
+### Mon, Aug 24 
 
 Today we introduced Python and the [Thonny IDE](https://thonny.org/) (Integrated Development Environment). 
 
@@ -60,6 +60,7 @@ print("The volume of the sphere is:", volume)
 
 ```
 
+<!--
 ### Wed, Aug 28 
 
 We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
@@ -204,10 +205,10 @@ where
 
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
-Mon, Aug 31 | [TP03][TP03] | Functions
-Wed, Sep 2  | [TP03][TP03] | For-loops
-Thu, Sep 3  | [TP04][TP04] | Turtle graphics
-Fri, Sep 4  | [TP05][TP05] | Conditional statements
+Mon, Aug 31 | [TP3][TP3] | Functions
+Wed, Sep 2  | [TP3][TP3] | For-loops
+Thu, Sep 3  | [TP4][TP4] | Turtle graphics
+Fri, Sep 4  | [TP5][TP5] | Conditional statements
 
 <!--
 ### Wed, Sep 4 
@@ -371,9 +372,9 @@ We finished with some excercises using these funtions.
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 7  |  | Labor day, no class
-Wed, Sep 9  | [TP05][TP05] | Boolean expressions
-Thu, Sep 10 | [TP05][TP05] | Boolean expressions con'd
-Fri, Sep 11 | [TP05][TP05] | Integer division and modulus 
+Wed, Sep 9  | [TP5][TP5] | Boolean expressions
+Thu, Sep 10 | [TP5][TP5] | Boolean expressions con'd
+Fri, Sep 11 | [TP5][TP5] | Integer division and modulus 
 
 <!--
 ### Mon, Sep 9
@@ -429,10 +430,10 @@ I sent out some tips and questions to think about when working on project 2:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 14 | [TP05][TP05] | Integer division and modulus
-Wed, Sep 16 | [C11][C11] | While-loops
-Thu, Sep 17 | [C11][C11] | While-loops con’d
-Fri, Sep 18 | TP05 | Recursion
+Mon, Sep 14 | [TP5][TP5] | Integer division and modulus
+Wed, Sep 16 | [TP7.3][TP7.3] | While-loops
+Thu, Sep 17 | [TP7.3][TP7.3] | While-loops con’d
+Fri, Sep 18 | [TP5][TP5] | Recursion
 
 <!--
 ### Mon, Sep 16
@@ -577,10 +578,10 @@ After that, we talked about **recursive functions** which are functions that cal
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 21 | [TP06][TP06] | Recursion with return values
+Mon, Sep 21 | [TP6][TP6] | Recursion with return values
 Wed, Sep 23 | docs | Sequence types
-Thu, Sep 24 | [TP09][TP09] | Lists
-Fri, Sep 25 | [TP09][TP09] | Lists con’d
+Thu, Sep 24 | [TP9][TP9] | Lists
+Fri, Sep 25 | [TP9][TP9] | Lists con’d
 
 <!--
 
@@ -682,8 +683,8 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 28 | [TP08][TP08] | Strings
-Wed, Sep 30 | [TP08][TP08] | Strings con'd
+Mon, Sep 28 | [TP8][TP8] | Strings
+Wed, Sep 30 | [TP8][TP8] | Strings con'd
 Thu, Oct 1  |  | Review 
 Fri, Oct 2  |  | **Midterm 1**
 
@@ -788,9 +789,9 @@ print(example_string[1])
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 5  |                | Mutability and immutability
-Wed, Oct 7  | TP07.2 | Reading files
-Thu, Oct 8  | TP07.2 | Reading files
-Fri, Oct 9  |  | Common patterns in loops (map, filter, reduce)
+Wed, Oct 7  | [TP14.2][TP14.2] | Reading files
+Thu, Oct 8  | [TP14.2][TP14.2] | Reading files
+Fri, Oct 9  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce)
 
 <!--
 ### Mon, Oct 7
@@ -1029,7 +1030,7 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 12 |  | Fall break, no class
 Wed, Oct 14 |  | More map, filter, & reduce examples
-Thu, Oct 15 | TP18.5 | List comprehensions
+Thu, Oct 15 | [TP19.2][TP19.2] | List comprehensions
 Fri, Oct 16 | [TP10][TP10] | Dictionaries
 
 <!--
@@ -2598,25 +2599,30 @@ print(median(a))
 
 - - - 
 
-[TP01]: <https://allendowney.github.io/ThinkPython/chap01.html>
-[TP02]: <https://allendowney.github.io/ThinkPython/chap02.html>
-[TP03]: <https://allendowney.github.io/ThinkPython/chap03.html>
-[TP04]: <https://allendowney.github.io/ThinkPython/chap04.html>
-[TP05]: <https://allendowney.github.io/ThinkPython/chap05.html>
-[TP06]: <https://allendowney.github.io/ThinkPython/chap06.html>
-[TP07]: <https://allendowney.github.io/ThinkPython/chap07.html>
-[TP08]: <https://allendowney.github.io/ThinkPython/chap08.html>
-[TP09]: <https://allendowney.github.io/ThinkPython/chap09.html>
-[TP10]: <https://allendowney.github.io/ThinkPython/chap10.html>
-[TP11]: <https://allendowney.github.io/ThinkPython/chap11.html>
-[TP12]: <https://allendowney.github.io/ThinkPython/chap12.html>
-[TP13]: <https://allendowney.github.io/ThinkPython/chap13.html>
-[TP14]: <https://allendowney.github.io/ThinkPython/chap14.html>
-[TP15]: <https://allendowney.github.io/ThinkPython/chap15.html>
-[TP16]: <https://allendowney.github.io/ThinkPython/chap16.html>
-[TP17]: <https://allendowney.github.io/ThinkPython/chap17.html>
-[TP18]: <https://allendowney.github.io/ThinkPython/chap18.html>
-[TP19]: <https://allendowney.github.io/ThinkPython/chap19.html>
+[TP1]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.1>
+[TP2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.2>
+[TP3]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.3>
+[TP4]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.4>
+[TP5]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5>
+[TP6]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6>
+[TP7]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.7>
+[TP7.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.2>
+[TP7.3]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.3>
+[TP8]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8>
+[TP9]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9>
+[TP10]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10>
+[TP10.7]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.7>
+[TP11]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11>
+[TP12]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.12>
+[TP13]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.13>
+[TP14]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.14>
+[TP14.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.14.2>
+[TP15]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.15>
+[TP16]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.16>
+[TP17]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.17>
+[TP18]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.18>
+[TP19]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.19>
+[TP19.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.2>
 
 
 [C2]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.2>

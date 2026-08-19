@@ -18,7 +18,8 @@ header-includes: |
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
 * **Office Hours:** See my [weekly schedule](https://bclins.github.io/index.html#weekly-schedule), and by appointment
 * **Office Location:** Pauley 301
-* **Free Textbook:** [Think Python](https://allendowney.github.io/ThinkPython/) by Allen Downey  
+* **Free Textbook:** [Think Python, 2nd edition](https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf) by Allen Downey  
+* **Course Syllabus:** [syllabus.pdf](syllabus.pdf)
 <!-- Additional resources 
 
 * [An Intro to Programming and CS with Python](https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf) by Clayton Cafiero
