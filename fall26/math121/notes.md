@@ -37,8 +37,7 @@ Wed, Aug 26 | [2.1.3][2.1.3] | Histograms & skew
 Fri, Aug 28 | [2.1.5][2.1.5] | Boxplots
 
 
-<!--
-### Mon, Jan 12
+### Mon, Aug 24
 
 Today we covered **data tables**, **individuals**, and **variables**. We also talked about the difference between **categorical** and **quantitative** variables.  
 
@@ -58,6 +57,8 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 > Rates are better because they are more precise and easier to understand.
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
+
+<!--
 
 ### Wed, Jan 14
 
