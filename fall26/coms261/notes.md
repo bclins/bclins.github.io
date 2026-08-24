@@ -38,39 +38,62 @@ Today we introduced Python and the [Thonny IDE](https://thonny.org/) (Integrated
 
 We learned how to use the **Python Shell** and how to write Python **scripts**.  We also covered the following:
 
-* **Operators** (like `+`, `-`, `*`, `/`)
+* **Operators** (like `+`, `-`, `*`, `/`, `**`)
 * **Types** (like `int`, `float`, and `str`)
 * **Variables**
 * **Comments** 
 
+1. Try out each of the operations `+`, `-`, `*`, `/`, `**` in the shell.
+
+2. Why doesn't the following command calculate $\sqrt{5}$?  How could you fix it? 
+
+    ```python 
+    5 ** 1 / 2
+    ```
+
 We talked about how operators follow an **order of operations**, and if operators have the same level of precedence, then they are computed left to right.  We also talked about how some operators don't work for all types.  For example, the `+` operator concatenates strings, but the `*` operator is not defined for strings. 
 
-We finished by writing a script to calculate the volume of a sphere.
 
-```python
-# A script to calculate the volume of a sphere.
+3. Write a script to calculate the volume of a sphere.
 
-PI = 3.14159 
+    <details>
+    ```python
+    # A script to calculate the volume of a sphere.
 
-radius = 4
+    PI = 3.14159 
+    radius = 4
+    volume = 4 / 3 * PI * radius ** 3
+    print("The volume of the sphere is:", volume)
+    ```
+    </details>
 
-volume = 4 / 3 * PI * radius ** 3
+#### Additional practice
 
-print("The volume of the sphere is:", volume)
+1. Which of the following Python commands work? Try them in the shell to find out. 
 
-```
+    * `n = 4`
+    * `4 = n`
+    * `x = y = 1`
+
+2. Write a program which uses two variables `miles` and `gals` and prints out the miles per gallon for a car on a tank of gas.  Your output should look something like 
+
+    > `You got 37.5 miles per gallon.` 
+
+    (depending on the values of your variables).  
 
 <!--
 ### Wed, Aug 28 
 
 We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
 
+
+
 * Variable names can only contain numbers, letters, and the underscore character `_`.
 * A variable name cannot start with a number.
 
 It is recommended to only use lower case letters only in most variable names (except when you want to indicate that the variable is constant and won't ever change, in which case `ALL_CAPS` is recommended). If a variable name has multiple words, then separate the words with an underscore character, like: `surface_area`. 
 
-We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.  <!--Forgot: round() 
+We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.   
 
 
 1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere. <!-- Forgot to include: with that radius rounded to 2 decimal places. 
@@ -89,6 +112,8 @@ We finished by talking about how to **import** functions from **modules**.  We i
 6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 
+
+<!--
 ### Thu, Aug 29
 
 Today we talked about some of the errors that came up in the quadratic formula programs from yesterday.  There are three categories of errors in Python.

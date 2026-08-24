@@ -156,41 +156,69 @@ write Python <strong>scripts</strong>. We also covered the
 following:</p>
 <ul>
 <li><strong>Operators</strong> (like <code>+</code>, <code>-</code>,
-<code>*</code>, <code>/</code>)</li>
+<code>*</code>, <code>/</code>, <code>**</code>)</li>
 <li><strong>Types</strong> (like <code>int</code>, <code>float</code>,
 and <code>str</code>)</li>
 <li><strong>Variables</strong></li>
 <li><strong>Comments</strong></li>
 </ul>
+<ol type="1">
+<li><p>Try out each of the operations <code>+</code>, <code>-</code>,
+<code>*</code>, <code>/</code>, <code>**</code> in the shell.</p></li>
+<li><p>Why doesn’t the following command calculate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mn>5</mn></msqrt><annotation encoding="application/x-tex">\sqrt{5}</annotation></semantics></math>?
+How could you fix it?</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">**</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">2</span></span></code></pre></div></li>
+</ol>
 <p>We talked about how operators follow an <strong>order of
 operations</strong>, and if operators have the same level of precedence,
 then they are computed left to right. We also talked about how some
 operators don’t work for all types. For example, the <code>+</code>
 operator concatenates strings, but the <code>*</code> operator is not
 defined for strings.</p>
-<p>We finished by writing a script to calculate the volume of a
-sphere.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A script to calculate the volume of a sphere.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>PI <span class="op">=</span> <span class="fl">3.14159</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>volume <span class="op">=</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">3</span> <span class="op">*</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">3</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The volume of the sphere is:&quot;</span>, volume)</span></code></pre></div>
+<ol start="3" type="1">
+<li><p>Write a script to calculate the volume of a sphere.</p>
+<details>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># A script to calculate the volume of a sphere.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> PI <span class="op">=</span> <span class="fl">3.14159</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> radius <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> volume <span class="op">=</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">3</span> <span class="op">*</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">3</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> <span class="bu">print</span>(<span class="st">&quot;The volume of the sphere is:&quot;</span>, volume)</span></code></pre></div>
+</details></li>
+</ol>
+<h4 id="additional-practice">Additional practice</h4>
+<ol type="1">
+<li><p>Which of the following Python commands work? Try them in the
+shell to find out.</p>
+<ul>
+<li><code>n = 4</code></li>
+<li><code>4 = n</code></li>
+<li><code>x = y = 1</code></li>
+</ul></li>
+<li><p>Write a program which uses two variables <code>miles</code> and
+<code>gals</code> and prints out the miles per gallon for a car on a
+tank of gas. Your output should look something like</p>
+<blockquote>
+<p><code>You got 37.5 miles per gallon.</code></p>
+</blockquote>
+<p>(depending on the values of your variables).</p></li>
+</ol>
 <!--
 ### Wed, Aug 28 
 
 We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
+
+
 
 * Variable names can only contain numbers, letters, and the underscore character `_`.
 * A variable name cannot start with a number.
 
 It is recommended to only use lower case letters only in most variable names (except when you want to indicate that the variable is constant and won't ever change, in which case `ALL_CAPS` is recommended). If a variable name has multiple words, then separate the words with an underscore character, like: `surface_area`. 
 
-We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.  <!--Forgot: round() 
+We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.   
 
 
 1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere. <!-- Forgot to include: with that radius rounded to 2 decimal places. 
@@ -209,6 +237,8 @@ We finished by talking about how to **import** functions from **modules**.  We i
 6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 
+
+<!--
 ### Thu, Aug 29
 
 Today we talked about some of the errors that came up in the quadratic formula programs from yesterday.  There are three categories of errors in Python.
