@@ -2348,9 +2348,9 @@ if __name__ == "__main__":
 Day  | Section  | Topic
 :---:|:---:|:---------
 Mon, Nov 30 |  | Inheritance
-Wed, Dec 2  |  | Checkers
-Thu, Dec 3  |  | Checkers - con’d
-Fri, Dec 4  |  | Google Colab
+Wed, Dec 2  |  | Practical exams
+Thu, Dec 3  |  | Practical exams
+Fri, Dec 4  |  | Practical exams
 Mon, Dec 7  |  | Review
 
 <!--
