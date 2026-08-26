@@ -101,14 +101,22 @@ We talked about the following built-in functions.
 * `abs`, `round`
 * `help`
 
-We talked how to **call** functions with **arguments**.  
+We talked how to **call** functions with **arguments**:  
+<center> 
+<span style="font:monospace;"><span style="color:blue; font-weight:bold;">function_name</span>(<span style="color:red; font-weight:bold;">arguments</span>)</span>
+</center>
 
 1. How many spaces can you put between a function and its arugment(s)? How many *should* you have? 
 
-1. Write a program to calculate miles per gallon and print the output rounded to 1 decimal place. 
+We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command `dir(math)` to list all of functions in the `math` module.  
 
-We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command 
-`dir(math)` to list all of functions in the `math` module.  
+2. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
+
+
+#### Additional practice
+
+1. Write a program to calculate miles per gallon and print the output rounded to 1 decimal place. 
 
 2. How could you tell if the sine and cosine function expect the input in degrees or radians?  Test your idea in the shell and see what the default is. 
 
@@ -118,9 +126,7 @@ We finished by talking about how to **import** functions from **modules**.  We i
 
 5. What does the `degrees()` function do? 
 
-6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
-
+6. How could you calculate $\sqrt{\pi}$ (i.e., the square root of pi) using the math library?
 
 <!--
 ### Thu, Aug 29
