@@ -206,38 +206,57 @@ tank of gas. Your output should look something like</p>
 </blockquote>
 <p>(depending on the values of your variables).</p></li>
 </ol>
-<!--
-### Wed, Aug 28 
-
-We talked about which variable names are allowed.  Some words cannot be used as a variable names because they are special Python **keywords**.  There are currently 35 keywords in Python 3.10 (which is the version we are using), and we'll cover most of them in this course.  Other rules for naming variables include:
-
-
-
-* Variable names can only contain numbers, letters, and the underscore character `_`.
-* A variable name cannot start with a number.
-
-It is recommended to only use lower case letters only in most variable names (except when you want to indicate that the variable is constant and won't ever change, in which case `ALL_CAPS` is recommended). If a variable name has multiple words, then separate the words with an underscore character, like: `surface_area`. 
-
-We also introduced some new functions including `input()`, and the type conversion functions `int()`, `float()`, and `str()`.   
-
-
-1. Write a script that prompts the user to input a radius.  Then calculate and print both the surface area and volume of a sphere. <!-- Forgot to include: with that radius rounded to 2 decimal places. 
-
-We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command 
-`dir(math)` to list all of functions in the `math` module.  
-
-2. How could you tell if the sine and cosine function expect the input in degrees or radians?  Test your idea in the shell and see what the default is. 
-
-3. What happens if you type `math.sin` without an input?
-
-4. What happens if you enter `help(math.sin)`?
-
-5. What does the `degrees()` function do? 
-
-6. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
-
-
+<h3 id="wed-aug-26">Wed, Aug 26</h3>
+<h4 id="variable-name-rules">Variable Name Rules</h4>
+<ul>
+<li>Variable names can only contain numbers, letters, and the underscore
+character <code>_</code>.</li>
+<li>A variable name cannot start with a number.</li>
+<li>You cannot use any of the <a href="PythonKeywords.html">35 special
+Python keywords</a> as a variable name.</li>
+</ul>
+<p>It is recommended to only use lower case letters only in most
+variable names (except when you want to indicate that the variable is
+constant and won’t ever change, in which case <code>ALL_CAPS</code> is
+recommended). If a variable name has multiple words, then separate the
+words with an underscore character, like: <code>surface_area</code>.</p>
+<h4 id="functions">Functions</h4>
+<p>We talked about the following built-in functions.</p>
+<ul>
+<li><code>print</code></li>
+<li><code>int</code>, <code>float</code>, <code>str</code> (type
+conversion functions)</li>
+<li><code>type</code></li>
+<li><code>abs</code>, <code>round</code></li>
+<li><code>help</code></li>
+</ul>
+<p>We talked how to <strong>call</strong> functions with
+<strong>arguments</strong>.</p>
+<ol type="1">
+<li><p>How many spaces can you put between a function and its
+arugment(s)? How many <em>should</em> you have?</p></li>
+<li><p>Write a program to calculate miles per gallon and print the
+output rounded to 1 decimal place.</p></li>
+</ol>
+<p>We finished by talking about how to <strong>import</strong> functions
+from <strong>modules</strong>. We imported the <code>math</code> module
+which contains functions familiar math functions like
+<code>sin()</code>, <code>cos()</code>, and <code>sqrt()</code>. You can
+use the command <code>dir(math)</code> to list all of functions in the
+<code>math</code> module.</p>
+<ol start="2" type="1">
+<li><p>How could you tell if the sine and cosine function expect the
+input in degrees or radians? Test your idea in the shell and see what
+the default is.</p></li>
+<li><p>What happens if you type <code>math.sin</code> without an
+input?</p></li>
+<li><p>What happens if you enter <code>help(math.sin)</code>?</p></li>
+<li><p>What does the <code>degrees()</code> function do?</p></li>
+<li><p>Write a program to calculate the roots of a quadratic polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a x^2 + bx + c</annotation></semantics></math>
+using the quadratic formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>−</mi><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.</annotation></semantics></math></p></li>
+</ol>
 <!--
 ### Thu, Aug 29
 

@@ -58,13 +58,12 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
-<!--
 
-### Wed, Jan 14
+### Wed, Aug 26
 
 We talked briefly about making bar charts for categorical data. 
 
-1. [Exercise 2.21](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eocesol.2.21)
+1. [Exercise 2.21](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.2.21)
 
 Then we introduced **stem & leaf plots (stemplots)** and **histograms** for quantitative data.  We started by making a stemplot and a histogram for the weights of the students in the class. We also talked about how to tell if data is **skewed left** or **skewed right**. 
 
@@ -79,7 +78,7 @@ Then we did this workshop:
 * **Workshop:** [Histograms & stemplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Histograms.pdf)
 
 
-!--If you need to make a histogram, I recommend using this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) on my website. 
+<!--If you need to make a histogram, I recommend using this [histogram plotter tool](https://people.hsc.edu/faculty-staff/blins/StatsTools/boxplotsHistograms.html) on my website. 
 
 We finished by reviewing the **mean** and the **median**.  
 
