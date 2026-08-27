@@ -18,7 +18,7 @@ header-includes: |
 
 
 <center>
-Jump to: [COMS 261 homepage](index.html), [Week 1](#week-1-notes) , [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes), [Week 15](#week-15-notes)
+Jump to: [COMS 261 homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes), [Week 15](#week-15-notes)
 </center>
 
 ### Week 1 Notes
@@ -103,12 +103,12 @@ We talked about the following built-in functions.
 
 We talked how to **call** functions with **arguments**:  
 <center> 
-<span style="font:monospace;"><span style="color:blue; font-weight:bold;">function_name</span>(<span style="color:red; font-weight:bold;">arguments</span>)</span>
+<span style="font:monospace;"><span style="color:blue; font-weight:bold;">function_name</span>(<span style="color:red; font-weight:bold;">argument1</span>, <span style="color:red; font-weight:bold;">argument2</span>, ...)</span>
 </center>
 
 1. How many spaces can you put between a function and its arugment(s)? How many *should* you have? 
 
-We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains functions familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command `dir(math)` to list all of functions in the `math` module.  
+We finished by talking about how to **import** functions from **modules**.  We imported the `math` module which contains familiar math functions like `sin()`, `cos()`, and `sqrt()`.  You can use the command `dir(math)` to list all of functions in the `math` module.  
 
 2. Write a program to calculate the roots of a quadratic polynomial $a x^2 + bx + c$ using the quadratic formula
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
@@ -128,18 +128,10 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 
 6. How could you calculate $\sqrt{\pi}$ (i.e., the square root of pi) using the math library?
 
-<!--
-### Thu, Aug 29
+### Thu, Aug 27
 
-Today we talked about some of the errors that came up in the quadratic formula programs from yesterday.  There are three categories of errors in Python.
+Today we talked about some of the isses that came up in the quadratic formula programs from yesterday.  
 
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
 
 #### Statements versus Expressions
 
@@ -151,7 +143,7 @@ The first error we looked at was this incorrect line of code:
 
 To explain this error, we talked about the difference between statements and expressions in Python.  
 
-* A **statement** is a piece of code that does something.  
+* A **statement** is a piece of code that executes a command.  
 * An **expression** is a piece of code that has a value.  
 
 Every expression is a statement, but not vice versa.  In Python, every valid line of code is a statement.
@@ -177,19 +169,72 @@ variable_name = # some expression
 
 You can always wrap an expression in parentheses, and it will still be an expression with the same value.  But, the reason the line of code `(x1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a))` is not correct is that an assignment statement is not an expression, and cannot be wrapped in parentheses.  
 
+#### Breaking Up Code
 
-#### Function Return Values
+It is a good idea to break code into small reusable pieces. We compared some different implementations of the quadratic formula from last time to see how we could make the code easier to read, and also easier to fix if something goes wrong. 
 
-Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  The `input()` function returns a string with whatever input the user types.  So you can use an assignment statement like 
+#### Conditional Statements (If-Then-Else Statements)
+
+We finished by introducing **if-then-else** statements in Python.  We ran into the problem that our quadratic formula program sometimes gives and error message if you try to take the square root of a negative number.  To fix this, we added an if-then statement to check that the number inside the square root is not negative before trying to calculate the two roots.  
 
 ```python
-a = input("Enter a value for the coefficient a. ")
+import math
+
+a = 1
+b = 2 
+c = 3
+
+if (b**2 - 4*a*c >= 0):
+    x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+    x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+    print("The roots are", x1, "and", x2)
+else:
+    print("There are no roots.")
 ```
 
-to prompt the user to input a number for `a`.  Be careful, the value that you get will be a string.  You have convert it to a number using the `int()` or `float()` functions before you can use it in a formula. 
+We finished with this challenge problem:
 
-### Fri, Aug 30
+1. Write a program that uses if-then-else statements to print the largest of three numbers, $a$, $b$, and $c$. You can assume that all three numbers are different (no repeat values). 
 
+<!--
+
+### Fri, Aug 28
+-->
+
+<!--
+#### Function Return Values
+
+Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  
+
+1. When you type
+
+    ```python
+    >>> print(4)
+    ```
+
+    into the shell, you see a 4 appear as the output.  When you run
+
+    ```python
+    >>> abs(4)
+    ```
+
+    you also see a 4 appear as output.  What is the difference between the two function calls?
+-->
+
+
+<!--
+There are three categories of errors in Python.
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+-->
+
+<!--
 Today we talked about binary numbers and how Python stores integers and floating point numbers under the hood.  We started by talking about how to convert base-2 numbers to base-10.  We did the following examples. 
 
 1. Convert $(110)_2$ to base-10.
@@ -234,8 +279,25 @@ where
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
 
+<!-- GOOD ALGORITHM EXAMPLE (Find the maximum of three numbers): 
 
+   Start
+     ↓
+Input A, B, C
+     ↓
+Is A > B?
+ ┌───┴───┐
+Yes     No
+ ↓       ↓
+Is A>C? Is B>C?
+ ↓       ↓
+...     ...
+     ↓
+Output largest
+     ↓
+    End
 
+-->
 
 - - -
 
