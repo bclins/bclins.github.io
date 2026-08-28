@@ -84,8 +84,9 @@ We finished by reviewing the **mean** and the **median**.
 
 
 
-<!--
-### Fri, Jan 16
+### Fri, Aug 28
+
+We introduced the **five number summary** and **box-and-whisker plots (boxplots)**. We started by reviewing the median.
 
 <div class="Theorem">
 #### Median versus Average
@@ -95,7 +96,7 @@ The median of $N$ numbers is located at position $\dfrac{N+1}{2}$.
 The median is not affected by skew, but the average is pulled in the direction of the skew. So the average will be bigger than the median when the data is skewed right, and smaller when the data is skewed left. 
 </div>
 
-We introduced the **five number summary** and **box-and-whisker plots (boxplots)**.  We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
+We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
 
 We started with this simple example:
 
@@ -107,7 +108,6 @@ We started with this simple example:
 
 * **Workshop:** [Boxplots](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Spread2.pdf)
 
--->
 
 - - -
 

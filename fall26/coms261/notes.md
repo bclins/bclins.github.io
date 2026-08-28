@@ -196,10 +196,88 @@ We finished with this challenge problem:
 
 1. Write a program that uses if-then-else statements to print the largest of three numbers, $a$, $b$, and $c$. You can assume that all three numbers are different (no repeat values). 
 
-<!--
 
 ### Fri, Aug 28
+
+#### Algorithms and Flow Charts
+
+Yesterday, we used a lot of different approaches to find the maximum of three distinct numbers.  As we saw, it can get challenging to keep track of the logic.  Engineers often use a **flow chart** to keep track of the steps in an **algorithm**. 
+
+Here is one possible flow chart for an algorithm to find the largest of three numbers:
+
+<center>
+<a href="threemax2.png"><img src="threemax2.png" width=260></img></a>
+</center>
+
+<!--
+Here is how I would translate that into Python.
+
+```python
+if a > b:
+    if a > c:
+        largest = a
+    else:
+        largest = c
+else:
+    if c > b:
+        largest = c
+    else:
+        largest = b
+print(largest)
+```
 -->
+
+#### Binary Numbers
+
+Computers store numbers & data in binary. We talked about how to write whole numbers in **base-2**.   
+
+1. Convert $(110)_2$ to base-10.
+
+1. Convert $(1111)_2$ to base-10.
+
+1. Convert $(10101)_2$ to base-10.
+
+1. Convert $(10.11)_2$ to base-10.
+
+After that we talked about how to convert base-10 integers to base-2.  That is a little bit harder, so we introduced the **algorithm** below which can be described using a **flow chart**:
+
+<center>
+<a href="https://bclins.github.io/fall24/cs261/decimal2binary.png"><img src="https://bclins.github.io/fall24/cs261/decimal2binary.png" width = 500></img></a>
+</center>
+
+5. Use the algorithm above to convert 35 to base-2. 
+
+6. Use the algorithm above to convert 13 to base-2. 
+
+After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  
+
+<center>
+<img src="https://s3.us-east-005.dream.io/secrettoeverybody/images/moneymakinggame.png" width=400></img>
+</center>
+
+
+Unlike a lot of programming languages, Python allows arbitrarily large integers.  This avoids **integer overflow** errors, but it can be slower for large integers.  
+
+#### Floating Point Numbers
+
+We also talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages (including Python) store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
+
+![](https://bclins.github.io/spring26/math342/IEEE_754.svg){ style="width: 700px" }
+
+Because there are only a limited number of bits to store floating point numbers, there is a limit to how large and how accurate they can get.  
+
+* **Limited accuracy.** Only accurate to about 15 decimal places (in scientific notation). 
+* **Limited size.** Maximum 64-bit float is $\approx 10^{308}$.
+
+7. Compare the output you get when you type `2**1024` versus `2.0**1024` in the Python shell. 
+
+8. Compare the output for `2.0**(-1024)` versus `2**(-1070)`.  Notice that you lose precision with small floating point numbers, but you don't get an error the way you do with large floats. 
+
+9. Why do you get an incorrect answer when you enter `0.1+0.1+0.1`?
+
+We finished with this workshop:
+
+* **Workshop:** [Binary numbers](BinaryNumbers.pdf)
 
 <!--
 #### Function Return Values
@@ -235,46 +313,6 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 -->
 
 <!--
-Today we talked about binary numbers and how Python stores integers and floating point numbers under the hood.  We started by talking about how to convert base-2 numbers to base-10.  We did the following examples. 
-
-1. Convert $(110)_2$ to base-10.
-
-1. Convert $(1111)_2$ to base-10.
-
-1. Convert $(10101)_2$ to base-10.
-
-1. Convert $(10.11)_2$ to base-10.
-
-After that we talked about how to convert base-10 integers to base-2.  That is a little bit harder, so we introduced the **algorithm** below which can be described using a **flow chart**:
-
-<center>
-<img src="decimal2binary.png" width = 500></img>
-</center>
-
-5. Use the algorithm above to convert 35 to base-2. 
-
-6. Use the algorithm above to convert 13 to base-2. 
-
-After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  Unlike a lot of programming languages, Python allows arbitrarily large integers.  This avoids **integer overflow** errors, but it can be slower for large integers.  
-
-We also talked about how computers store [floating point numbers](https://en.wikipedia.org/wiki/Floating_point).  Most modern programming languages (including Python) store floating point numbers using the [IEEE 754 standard](https://en.wikipedia.org/wiki/IEEE_754). 
-
-![](https://bclins.github.io/spring24/math342/floating_point_layout.svg){ style="width: 700px" }
-![](https://bclins.github.io/spring24/math342/floating_point_math.svg){style="width: 700px"}
-
-In the IEEE 754 standard, a 64-bit floating point number has the form 
-$$x = (-1)^s * (1.a_1 a_2 \ldots a_{52})_2 * 2^{e - 1023}$$
-where 
-
-* $s$ is the 1-bit sign,
-* $a_1 a_2 \ldots a_{52}$ is the 52-bit mantissa, and
-* $e$ is the 11-bit exponent which ranges from 0 to 2047. Only 1 to 2046 are used for regular floating point numbers, $e=0$ is reserved for zero and [subnormal numbers](https://en.wikipedia.org/wiki/Subnormal_number), and $e=2047$ is reserved for infinity and NaN ("not a number"). 
-
-7. Compare the output you get when you type `2**1024` versus `2.0**1024` in the Python shell. 
-
-8. Compare the output for `2.0**(-1024)` versus `2**(-1070)`.  Notice that you lose precision with small floating point numbers, but you don't get an error the way you do with large floats. 
-
-9. Why do you get an incorrect answer when you enter `0.1+0.1+0.1`?
 
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
@@ -445,7 +483,7 @@ def circle(radius):
     polygon(side_length, 50)
 ```
 
-We finished with some excercises using these funtions. 
+We finished with some exercises using these functions. 
 
 1. Draw a picture like this one. 
 
