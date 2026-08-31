@@ -383,10 +383,10 @@ write whole numbers in <strong>base-2</strong>.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>110</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1111</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(1111)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10101</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10101</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(0.1)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10.11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
@@ -399,18 +399,23 @@ That is a little bit harder, so we introduced the
 <center>
 <a href="https://bclins.github.io/fall24/cs261/decimal2binary.png"><img src="https://bclins.github.io/fall24/cs261/decimal2binary.png" width = 500></img></a>
 </center>
+<!--5. Use the algorithm above to convert 35 to base-2. -->
 <ol start="5" type="1">
-<li><p>Use the algorithm above to convert 35 to base-2.</p></li>
-<li><p>Use the algorithm above to convert 13 to base-2.</p></li>
+<li>Use the algorithm above to convert 13 to base-2.</li>
 </ol>
 <p>After we introduced binary numbers, we talked about
 <strong>bits</strong> and how many integers can be stored using
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
-bits. One example is that the maximum number of rupees (money) you could
-have in the original Zelda game was 255 because the data was stored
-using 8 bits.</p>
+bits.</p>
+<ol start="6" type="1">
+<li>How many 4-bit numbers are there?</li>
+</ol>
+<p>The maximum number of rupees (money) you could have in the original
+Zelda game was 255 because the data was stored using 8 bits.</p>
 <center>
+<a href="https://s3.us-east-005.dream.io/secrettoeverybody/images/moneymakinggame.png">
 <img src="https://s3.us-east-005.dream.io/secrettoeverybody/images/moneymakinggame.png" width=400></img>
+</a>
 </center>
 <p>Unlike a lot of programming languages, Python allows arbitrarily
 large integers. This avoids <strong>integer overflow</strong> errors,
@@ -447,59 +452,6 @@ large floats.</p></li>
 <li><strong>Workshop:</strong> <a href="BinaryNumbers.pdf">Binary
 numbers</a></li>
 </ul>
-<!--
-#### Function Return Values
-
-Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  
-
-1. When you type
-
-    ```python
-    >>> print(4)
-    ```
-
-    into the shell, you see a 4 appear as the output.  When you run
-
-    ```python
-    >>> abs(4)
-    ```
-
-    you also see a 4 appear as output.  What is the difference between the two function calls?
--->
-<!--
-There are three categories of errors in Python.
-
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
--->
-<!--
-
-<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
-<!-- Soon: Talk about binary and modular arithmetic -->
-<!-- GOOD ALGORITHM EXAMPLE (Find the maximum of three numbers): 
-
-   Start
-     ↓
-Input A, B, C
-     ↓
-Is A > B?
- ┌───┴───┐
-Yes     No
- ↓       ↓
-Is A>C? Is B>C?
- ↓       ↓
-...     ...
-     ↓
-Output largest
-     ↓
-    End
-
--->
 <hr />
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
@@ -537,63 +489,135 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-aug-31">Mon, Aug 31</h3>
+<h4 id="defining-functions">Defining Functions</h4>
 <!--
-### Wed, Sep 4 
+There are three categories of errors in Python.
 
-To create your own functions in Python, use the `def` keyword to define them:
+#### Types of Errors
 
-```python
-def hello():
-    print("Hello!")
-```
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
 
-Every function is a **function object**.  So `function` is a type just like `int`, `float`, and `str`.  When you refer to a function object in Python, there is a difference between the **name** of the function (which is `hello` in the previous example) and the way you **call** the function to get it to run by typing `hello()`. Here is another function example. 
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+-->
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
+<!-- Soon: Talk about binary and modular arithmetic -->
+<p>To create your own functions in Python, use the <code>def</code>
+keyword to define them:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<p>Every function is a <strong>function object</strong>. So
+<code>function</code> is a type just like <code>int</code>,
+<code>float</code>, and <code>str</code>. When you refer to a function
+object in Python, there is a difference between the
+<strong>name</strong> of the function (which is <code>hello</code> in
+the previous example) and the way you <strong>call</strong> the function
+to get it to run by typing <code>hello()</code>. Here is another
+function example.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_twice(string): <span class="co"># The first line is called the **header**</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(string) <span class="co"># All of the other lines are called the **body of the function**</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(string) <span class="co"># The code in the body must be indented</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Code that is not indented is not part of the function.  </span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>print_twice(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<p>This function has a <strong>parameter</strong> which is the variable
+called <code>string</code> in the parentheses. We you call this
+function, you need to include an <strong>argument</strong> which is a
+value for the parameter.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print_twice(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Hello</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Hello</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> print_twice(<span class="dv">5</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code></pre></div>
+<p>In this example, “Hello” and 5 are arguments. The variable called
+<code>string</code> in the function is a parameter. Weirdly, when we
+pass the argument 5 to the function, then the parameter called
+<code>string</code> stores the value 5 which is an integer not a string!
+But that is okay, because Python knows how to print integers.</p>
+<p>Functions can have as many parameters as needed. Try to make your own
+functions to do the following.</p>
+<ol type="1">
+<li><p>Define a function called <code>sum_of_squares</code> that adds up
+the squares of two numbers and prints the result.</p></li>
+<li><p>Define a function called <code>sphere_volume</code> that
+calculates the volume of a sphere and prints the result.</p></li>
+</ol>
+<h4 id="return-values">Return Values</h4>
+<p>Some functions return values and some functions don’t. For example,
+<code>math.sqrt(4)</code> returns the value <code>2.0</code>, so it can
+be used as an expression. But the function <code>print("Hello")</code>
+does not return a value.</p>
+<ol start="3" type="1">
+<li><p>What are the values of the variables <code>x</code> and
+<code>y</code> below?</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">print</span>(<span class="dv">4</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)</span></code></pre></div></li>
+</ol>
+<!--
+3. When you type
 
-```python
-def print_twice(string): # The first line is called the **header**
-    print(string) # All of the other lines are called the **body of the function**
-    print(string) # Notice that all of the lines of the body must be indented
-```
+    ```python
+    >>> print(4)
+    ```
 
-This function has a **parameter** which is the variable called `string` in the parentheses. We you call this function, you need to include an **argument** which is a value for the parameter.  
+    into the shell, you see a 4 appear as the output.  When you run
 
-```python
->>> print_twice("Hello")
-Hello
-Hello
->>> print_twice(5)
-5
-5
-```
+    ```python
+    >>> abs(4)
+    ```
 
-In this example, "Hello" and 5 are arguments.  The variable called `string` in the function is a parameter. Weirdly, when we pass the argument 5 to the function, then the parameter called `string` stores the value 5 which is an integer not a string!  But that is okay, because Python knows how to print integers.   
-
-Functions can have as many parameters as needed. Try to make your own functions to do the following. 
-
-1. Define a function called `sum_of_squares` that adds up the squares of two numbers. 
-
-2. Define a function called `sphere_volume` that calculates the volume of a sphere.  
-
-When you create a function, you should *always* include a docstring that briefly explains what the functions does.  A **docstring** is a comment that is written using triple quotes instead of the hash symbol. Here is an example.
-
-```python
-def circle_area(radius):
-    """Returns the area of a circle."""
-    PI = 3.14159
-    return PI * radius ** 2
-```
-
-The advantage of a docstring over a regular comment is that it can take up multiple lines. Python style guides recommend using docstrings even for one line descriptions of functions, since you might need to add more explanation later. 
-
-This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
-
-We finished with a function that calls another function in its body:
-
-```python
-def cylinder_volume(radius, height):
-    """Returns the volume of a cylinder."""
-    return circle_area(radius) * height
-```
+    you also see a 4 appear as output.  What is the difference between the two function calls?
+-->
+<p>To create a function that returns a value, use the return
+keyword.</p>
+<ol start="4" type="1">
+<li>Write a <code>multiply_by_2</code> function that returns twice its
+input.</li>
+</ol>
+<p>When you create a function, you should <em>always</em> include a
+docstring that briefly explains what the functions does. A
+<strong>docstring</strong> is a comment that is written using triple
+quotes instead of the hash symbol. Here is an example.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the area of a circle.&quot;&quot;&quot;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    PI <span class="op">=</span> <span class="fl">3.14159</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre></div>
+<p>The advantage of a docstring over a regular comment is that it can
+take up multiple lines. Python style guides recommend using docstrings
+even for one line descriptions of functions, since you might need to add
+more explanation later.</p>
+<p>This last example includes a local variable called <code>PI</code>.
+Any variable created in a function body is <strong>local</strong>, which
+means it can only be used inside the function. You won’t have access to
+local variables outside the function. Variables defined in a program
+that aren’t parameters or defined in the body of a function are
+<strong>global</strong> an can be accessed anywhere in a program.</p>
+<p>Here is a function that calls another function in its body:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cylinder_volume(radius, height):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the volume of a cylinder.&quot;&quot;&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle_area(radius) <span class="op">*</span> height</span></code></pre></div>
+<ol start="5" type="1">
+<li>Write a Python program with the following functions:
+<ul>
+<li>A function called <code>sales_tax</code> that returns the sales tax
+(5.3% in Virginia) for an item.<br />
+</li>
+<li>A function called <code>print_receipt</code> that prints three
+things: The base price of the item, the sales tax, and the total
+price.</li>
+</ul>
+Both functions should input the price of an item.</li>
+</ol>
+<!--
 
 ### Thu, Sep 5
 

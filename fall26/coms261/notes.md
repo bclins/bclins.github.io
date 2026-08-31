@@ -233,9 +233,9 @@ Computers store numbers & data in binary. We talked about how to write whole num
 
 1. Convert $(110)_2$ to base-10.
 
-1. Convert $(1111)_2$ to base-10.
-
 1. Convert $(10101)_2$ to base-10.
+
+1. Convert $(0.1)_2$ to base-10.
 
 1. Convert $(10.11)_2$ to base-10.
 
@@ -245,14 +245,21 @@ After that we talked about how to convert base-10 integers to base-2.  That is a
 <a href="https://bclins.github.io/fall24/cs261/decimal2binary.png"><img src="https://bclins.github.io/fall24/cs261/decimal2binary.png" width = 500></img></a>
 </center>
 
-5. Use the algorithm above to convert 35 to base-2. 
+<!--5. Use the algorithm above to convert 35 to base-2. -->
 
-6. Use the algorithm above to convert 13 to base-2. 
+5. Use the algorithm above to convert 13 to base-2. 
 
-After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  One example is that the maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  
+After we introduced binary numbers, we talked about **bits** and how many integers can be stored using $n$ bits.  
+
+6. How many 4-bit numbers are there?
+
+The maximum number of rupees (money) you could have in the original Zelda game was 255 because the data was stored using 8 bits.  
+
 
 <center>
+<a href="https://s3.us-east-005.dream.io/secrettoeverybody/images/moneymakinggame.png">
 <img src="https://s3.us-east-005.dream.io/secrettoeverybody/images/moneymakinggame.png" width=400></img>
+</a>
 </center>
 
 
@@ -279,63 +286,7 @@ We finished with this workshop:
 
 * **Workshop:** [Binary numbers](BinaryNumbers.pdf)
 
-<!--
-#### Function Return Values
 
-Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  
-
-1. When you type
-
-    ```python
-    >>> print(4)
-    ```
-
-    into the shell, you see a 4 appear as the output.  When you run
-
-    ```python
-    >>> abs(4)
-    ```
-
-    you also see a 4 appear as output.  What is the difference between the two function calls?
--->
-
-
-<!--
-There are three categories of errors in Python.
-
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
--->
-
-<!--
-
-<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
-<!-- Soon: Talk about binary and modular arithmetic --> 
-
-<!-- GOOD ALGORITHM EXAMPLE (Find the maximum of three numbers): 
-
-   Start
-     ↓
-Input A, B, C
-     ↓
-Is A > B?
- ┌───┴───┐
-Yes     No
- ↓       ↓
-Is A>C? Is B>C?
- ↓       ↓
-...     ...
-     ↓
-Output largest
-     ↓
-    End
-
--->
 
 - - -
 
@@ -350,8 +301,29 @@ Wed, Sep 2  | [TP3][TP3] | For-loops
 Thu, Sep 3  | [TP4][TP4] | Turtle graphics
 Fri, Sep 4  | [TP5][TP5] | Conditional statements
 
+
+### Mon, Aug 31
+
+#### Defining Functions
+
+
+
 <!--
-### Wed, Sep 4 
+There are three categories of errors in Python.
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+-->
+
+
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
+<!-- Soon: Talk about binary and modular arithmetic --> 
+
 
 To create your own functions in Python, use the `def` keyword to define them:
 
@@ -365,7 +337,10 @@ Every function is a **function object**.  So `function` is a type just like `int
 ```python
 def print_twice(string): # The first line is called the **header**
     print(string) # All of the other lines are called the **body of the function**
-    print(string) # Notice that all of the lines of the body must be indented
+    print(string) # The code in the body must be indented
+
+# Code that is not indented is not part of the function.  
+print_twice("Hello!")
 ```
 
 This function has a **parameter** which is the variable called `string` in the parentheses. We you call this function, you need to include an **argument** which is a value for the parameter.  
@@ -383,9 +358,40 @@ In this example, "Hello" and 5 are arguments.  The variable called `string` in t
 
 Functions can have as many parameters as needed. Try to make your own functions to do the following. 
 
-1. Define a function called `sum_of_squares` that adds up the squares of two numbers. 
+1. Define a function called `sum_of_squares` that adds up the squares of two numbers and prints the result. 
 
-2. Define a function called `sphere_volume` that calculates the volume of a sphere.  
+2. Define a function called `sphere_volume` that calculates the volume of a sphere and prints the result.  
+
+#### Return Values
+
+Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  
+
+3. What are the values of the variables `x` and `y` below?
+
+    ```python
+    x = print(4)
+    y = abs(-5)
+    ```
+
+<!--
+3. When you type
+
+    ```python
+    >>> print(4)
+    ```
+
+    into the shell, you see a 4 appear as the output.  When you run
+
+    ```python
+    >>> abs(4)
+    ```
+
+    you also see a 4 appear as output.  What is the difference between the two function calls?
+-->
+
+To create a function that returns a value, use the return keyword. 
+
+4. Write a `multiply_by_2` function that returns twice its input.  
 
 When you create a function, you should *always* include a docstring that briefly explains what the functions does.  A **docstring** is a comment that is written using triple quotes instead of the hash symbol. Here is an example.
 
@@ -400,13 +406,21 @@ The advantage of a docstring over a regular comment is that it can take up multi
 
 This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
 
-We finished with a function that calls another function in its body:
+Here is a function that calls another function in its body:
 
 ```python
 def cylinder_volume(radius, height):
     """Returns the volume of a cylinder."""
     return circle_area(radius) * height
 ```
+
+5. Write a Python program with the following functions:
+    * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
+    * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
+    
+    Both functions should input the price of an item. 
+
+<!--
 
 ### Thu, Sep 5
 

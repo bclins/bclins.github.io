@@ -96,7 +96,7 @@ The median of $N$ numbers is located at position $\dfrac{N+1}{2}$.
 The median is not affected by skew, but the average is pulled in the direction of the skew. So the average will be bigger than the median when the data is skewed right, and smaller when the data is skewed left. 
 </div>
 
-We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**. 
+We also talked about the **interquartile range (IQR)** and how to use the $1.5 \times \text{IQR}$ rule to determine if data is an **outlier**.  We also mentioned that a statistic is **robust** if it is not affected by skew and outliers. Both the median and the IQR are robust statistics.
 
 We started with this simple example:
 
@@ -119,10 +119,9 @@ Mon, Aug 31 | [2.1.4][2.1.4] | Standard deviation
 Wed, Sep 2  | [4.1][4.1]     | Normal distribution
 Fri, Sep 4  | [4.1.4][4.1.4] | Normal distribution computations
 
-<!-- 
-### Wed, Jan 21
+### Mon, Aug 31
 
-Today we talked about **robust** statistics such as the median and IQR that are not affected by outliers and skew. We also introduced the **standard deviation**.  We did this one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  
+We also introduced the **standard deviation**.  We did this one example of a standard deviation calculation by hand, but you won't ever have to do that again in this class.  
 
 1. 11 students just completed a nursing program.  Here is the number of years it took each student to complete the program.  Find the standard deviation of these numbers.
 
@@ -155,6 +154,7 @@ The **normal distribution** is a mathematical model for data with a histogram th
 
 The normal distribution is a theoretical model that doesn't have to perfectly match the data to be useful. We use Greek letters $\mu$ and $\sigma$ for the theoretical mean and standard deviation of the normal distribution to distinguish them from the sample mean $\bar{x}$ and standard deviation $s$ of our data which probably won't follow the theoretical model perfectly. 
 
+<!--
 ### Fri, Jan 23
 
 We talked about **z-values** and the [68-95-99.7 rule](http://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDistributionEmpiricalRule.pdf). 
