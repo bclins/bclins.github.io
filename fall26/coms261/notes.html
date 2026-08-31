@@ -572,33 +572,55 @@ circle instead of printing the area.</li>
 <li>Write a <code>multiply_by_2</code> function that returns twice its
 input.</li>
 </ol>
-<h3 id="wed-sep-2">Wed, Sep 2</h3>
-<p>Today we talked some more about functions. We introduced
-<strong>local variables</strong> and <strong>global
-variables</strong>.</p>
-<p>This last example includes a local variable called <code>PI</code>.
-Any variable created in a function body is <strong>local</strong>, which
-means it can only be used inside the function. You won’t have access to
-local variables outside the function. Variables defined in a program
-that aren’t parameters or defined in the body of a function are
-<strong>global</strong> an can be accessed anywhere in a program.</p>
-<p>Here is a function that calls another function in its body:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cylinder_volume(radius, height):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the volume of a cylinder.&quot;&quot;&quot;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle_area(radius) <span class="op">*</span> height</span></code></pre></div>
-<ol start="5" type="1">
-<li>Write a Python program with the following functions:
-<ul>
-<li>A function called <code>sales_tax</code> that returns the sales tax
-(5.3% in Virginia) for an item.<br />
-</li>
-<li>A function called <code>print_receipt</code> that prints three
-things: The base price of the item, the sales tax, and the total
-price.</li>
-</ul>
-Both functions should input the price of an item.</li>
-</ol>
+<!--
+3. When you type
+
+    ```python
+    >>> print(4)
+    ```
+
+    into the shell, you see a 4 appear as the output.  When you run
+
+    ```python
+    >>> abs(4)
+    ```
+
+    you also see a 4 appear as output.  What is the difference between the two function calls?
+-->
+<!--
+There are three categories of errors in Python.
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+-->
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
+<!-- Soon: Talk about binary and modular arithmetic -->
+<!--
+### Wed, Sep 2
+
+Today we talked some more about functions. We introduced  **local variables** and **global variables**. 
+
+This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
+
+Here is a function that calls another function in its body:
+
+```python
+def cylinder_volume(radius, height):
+    """Returns the volume of a cylinder."""
+    return circle_area(radius) * height
+```
+
+5. Write a Python program with the following functions:
+    * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
+    * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
+    
+    Both functions should input the price of an item. 
+
 <!--
 
 ### Thu, Sep 5

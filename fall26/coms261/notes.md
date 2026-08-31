@@ -381,6 +381,40 @@ To create a function that returns a value, use the return keyword.
 1. Write a `multiply_by_2` function that returns twice its input.  
 
 
+<!--
+3. When you type
+
+    ```python
+    >>> print(4)
+    ```
+
+    into the shell, you see a 4 appear as the output.  When you run
+
+    ```python
+    >>> abs(4)
+    ```
+
+    you also see a 4 appear as output.  What is the difference between the two function calls?
+-->
+
+<!--
+There are three categories of errors in Python.
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+-->
+
+
+<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
+<!-- Soon: Talk about binary and modular arithmetic --> 
+
+
+<!--
 ### Wed, Sep 2
 
 Today we talked some more about functions. We introduced  **local variables** and **global variables**. 
