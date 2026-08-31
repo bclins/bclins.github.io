@@ -21,8 +21,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -115,32 +116,32 @@ href="#week-14-notes">Week 14</a>, <a href="#week-15-notes">Week 15</a>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Date</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Aug 24</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.1">TP1</a></td>
 <td style="text-align: left;">Introduction to Python &amp; Thonny</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Aug 26</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.2">TP2</a></td>
 <td style="text-align: left;">Variables &amp; functions</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Aug 27</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.2">TP2</a></td>
 <td style="text-align: left;">Statements versus expressions</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Aug 28</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Binary &amp; floating-point numbers</td>
@@ -380,16 +381,16 @@ print(largest)
 write whole numbers in <strong>base-2</strong>.</p>
 <ol type="1">
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>110</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>110</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10101</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>10101</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(0.1)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0.1</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(0.1)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10.11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>10.11</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
 to base-10.</p></li>
 </ol>
 <p>After that we talked about how to convert base-10 integers to base-2.
@@ -456,32 +457,32 @@ numbers</a></li>
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Aug 31</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.3">TP3</a></td>
 <td style="text-align: left;">Functions</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Sep 2</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.3">TP3</a></td>
 <td style="text-align: left;">For-loops</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Sep 3</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.4">TP4</a></td>
 <td style="text-align: left;">Turtle graphics</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Sep 4</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
@@ -491,19 +492,6 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </table>
 <h3 id="mon-aug-31">Mon, Aug 31</h3>
 <h4 id="defining-functions">Defining Functions</h4>
-<!--
-There are three categories of errors in Python.
-
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
--->
-<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
-<!-- Soon: Talk about binary and modular arithmetic -->
 <p>To create your own functions in Python, use the <code>def</code>
 keyword to define them:</p>
 <div class="sourceCode" id="cb7"><pre
@@ -540,60 +528,54 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 pass the argument 5 to the function, then the parameter called
 <code>string</code> stores the value 5 which is an integer not a string!
 But that is okay, because Python knows how to print integers.</p>
+<p>When you create a function, you should <em>always</em> include a
+docstring that briefly explains what the functions does. A
+<strong>docstring</strong> is a comment that is written using triple
+quotes instead of the hash symbol. Here is an example.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hypot(a, b):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Calculates the hypoteneuse of a right triangle with legs a and b.&quot;&quot;&quot;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> math.sqrt(a <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> b <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(c)</span></code></pre></div>
+<p>The advantage of a docstring over a regular comment is that it can
+take up multiple lines. Python style guides recommend using docstrings
+even for one line descriptions of functions, since you might need to add
+more explanation later.</p>
 <p>Functions can have as many parameters as needed. Try to make your own
 functions to do the following.</p>
+<!--1. Define a function called `sum_of_squares` that adds up the squares of two numbers and prints the result. --
+
+2. Define a function called `sphere_volume` that calculates the volume of a sphere and prints the result.  -->
 <ol type="1">
-<li><p>Define a function called <code>sum_of_squares</code> that adds up
-the squares of two numbers and prints the result.</p></li>
-<li><p>Define a function called <code>sphere_volume</code> that
-calculates the volume of a sphere and prints the result.</p></li>
+<li>Calculate the area of a circle based on its radius.</li>
 </ol>
 <h4 id="return-values">Return Values</h4>
 <p>Some functions return values and some functions don’t. For example,
 <code>math.sqrt(4)</code> returns the value <code>2.0</code>, so it can
 be used as an expression. But the function <code>print("Hello")</code>
 does not return a value.</p>
-<ol start="3" type="1">
+<ol start="2" type="1">
 <li><p>What are the values of the variables <code>x</code> and
 <code>y</code> below?</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">print</span>(<span class="dv">4</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">print</span>(<span class="dv">4</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="bu">abs</span>(<span class="op">-</span><span class="dv">5</span>)</span></code></pre></div></li>
 </ol>
-<!--
-3. When you type
-
-    ```python
-    >>> print(4)
-    ```
-
-    into the shell, you see a 4 appear as the output.  When you run
-
-    ```python
-    >>> abs(4)
-    ```
-
-    you also see a 4 appear as output.  What is the difference between the two function calls?
--->
 <p>To create a function that returns a value, use the return
 keyword.</p>
-<ol start="4" type="1">
+<ol start="3" type="1">
+<li>Change the <code>circle_area</code> function to return the area of a
+circle instead of printing the area.</li>
+</ol>
+<h4 id="additional-practice-2">Additional Practice</h4>
+<ol type="1">
 <li>Write a <code>multiply_by_2</code> function that returns twice its
 input.</li>
 </ol>
-<p>When you create a function, you should <em>always</em> include a
-docstring that briefly explains what the functions does. A
-<strong>docstring</strong> is a comment that is written using triple
-quotes instead of the hash symbol. Here is an example.</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the area of a circle.&quot;&quot;&quot;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    PI <span class="op">=</span> <span class="fl">3.14159</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code></pre></div>
-<p>The advantage of a docstring over a regular comment is that it can
-take up multiple lines. Python style guides recommend using docstrings
-even for one line descriptions of functions, since you might need to add
-more explanation later.</p>
+<h3 id="wed-sep-2">Wed, Sep 2</h3>
+<p>Today we talked some more about functions. We introduced
+<strong>local variables</strong> and <strong>global
+variables</strong>.</p>
 <p>This last example includes a local variable called <code>PI</code>.
 Any variable created in a function body is <strong>local</strong>, which
 means it can only be used inside the function. You won’t have access to
@@ -714,31 +696,31 @@ We finished with some exercises using these functions.
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Sep 7</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Labor day, no class</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Sep 9</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
 <td style="text-align: left;">Boolean expressions</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Sep 10</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
 <td style="text-align: left;">Boolean expressions con’d</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Sep 11</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
@@ -795,32 +777,32 @@ I sent out some tips and questions to think about when working on project 2:
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Sep 14</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
 <td style="text-align: left;">Integer division and modulus</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Sep 16</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.3">TP7.3</a></td>
 <td style="text-align: left;">While-loops</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Sep 17</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.3">TP7.3</a></td>
 <td style="text-align: left;">While-loops con’d</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Sep 18</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
@@ -966,31 +948,31 @@ After that, we talked about **recursive functions** which are functions that cal
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Sep 21</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6">TP6</a></td>
 <td style="text-align: left;">Recursion with return values</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Sep 23</td>
 <td style="text-align: center;">docs</td>
 <td style="text-align: left;">Sequence types</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Sep 24</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
 <td style="text-align: left;">Lists</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Sep 25</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
@@ -1093,31 +1075,31 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Sep 28</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
 <td style="text-align: left;">Strings</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Sep 30</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
 <td style="text-align: left;">Strings con’d</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Oct 1</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Oct 2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><strong>Midterm 1</strong></td>
@@ -1222,31 +1204,31 @@ print(example_string[1])
 <col style="width: 66%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Oct 5</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Mutability and immutability</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Oct 7</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.14.2">TP14.2</a></td>
 <td style="text-align: left;">Reading files</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Oct 8</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.14.2">TP14.2</a></td>
 <td style="text-align: left;">Reading files</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Oct 9</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.7">TP10.7</a></td>
@@ -1483,31 +1465,31 @@ Neither book covers list comprehensions... but I think they are actually easier 
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Oct 12</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Fall break, no class</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Oct 14</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">More map, filter, &amp; reduce
 examples</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Oct 15</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.2">TP19.2</a></td>
 <td style="text-align: left;">List comprehensions</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Oct 16</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
@@ -1641,32 +1623,32 @@ Exercises.
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Oct 19</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
 <td style="text-align: left;">Dictionary Comprehensions</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Oct 21</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.16">C16</a></td>
 <td style="text-align: left;">Iterable types</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Oct 22</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11">TP11</a></td>
 <td style="text-align: left;">Tuples</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Oct 23</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11">TP11</a></td>
@@ -1939,29 +1921,29 @@ We didn't have time to include those in our program in class today, but they are
 <h3 id="week-10-notes">Week 10 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Oct 26</td>
 <td style="text-align: center;">TP18.1</td>
 <td style="text-align: left;">Sets and set comprehensions</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Oct 28</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Search algorithms</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Oct 29</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Sorting</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Oct 30</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Nested loops</td>
@@ -2161,30 +2143,30 @@ registration_data = [
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Nov 2</td>
 <td style="text-align: center;">C9.2</td>
 <td style="text-align: left;">Program structure</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Nov 4</td>
 <td style="text-align: center;">C9.3</td>
 <td style="text-align: left;">Function structure &amp; incremental
 development</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Nov 5</td>
 <td style="text-align: center;">C13.3</td>
 <td style="text-align: left;">Writing to a file</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Nov 6</td>
 <td style="text-align: center;">C13.3</td>
 <td style="text-align: left;">Writing to a file - con’d</td>
@@ -2407,32 +2389,32 @@ $$C = \tfrac{5}{9}(F - 32).$$
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Nov 9</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.14">TP14</a></td>
 <td style="text-align: left;">Introduction to classes</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Nov 11</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.15">TP15</a></td>
 <td style="text-align: left;">Magic methods</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Nov 12</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.15">TP15</a></td>
 <td style="text-align: left;">Static versus instance methods</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Nov 13</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.15">TP15</a></td>
@@ -2701,30 +2683,30 @@ We finished with the following in-class exercise.
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Nov 16</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.16">TP16</a></td>
 <td style="text-align: left;">Type conversion and casting</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Nov 18</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Sequence and iterator types</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Nov 19</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Nov 20</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><strong>Midterm 2</strong></td>
@@ -2839,30 +2821,30 @@ Today we went over the [midterm 2 review problems](practicemidterm2.pdf) (see [h
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Nov 23</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.17">TP17</a></td>
 <td style="text-align: left;">Inheritance</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Nov 25</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Nov 26</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Nov 27</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
@@ -2947,34 +2929,34 @@ if __name__ == "__main__":
 <h3 id="week-15-notes">Week 15 Notes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Nov 30</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Inheritance</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Wed, Dec 2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Thu, Dec 3</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: center;">Fri, Dec 4</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: center;">Mon, Dec 7</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>

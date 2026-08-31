@@ -2,6 +2,7 @@
 
 \usepackage{fancyvrb}
 \usepackage[empty]{fullpage}
+\usepackage{hyperref}
 
 \begin{document}
 \section*{Project 1 \hfill CS 261}
@@ -10,7 +11,7 @@
 
 \subsection*{Diamonds}
 
-For this project, you will write a function that can print a diamond made out of characters on the screen.  Your function should accept two arguments, one that determines the size of the diamond.  The other determines which character the diamond is made from.  When you are finished, your function should be able to print diamonds that look like these (and more):
+For this project, you will write a function that can print a diamond made out of characters on the screen.  Your function should have two parameters, one called \verb|size| determines the size of the diamond.  The other parameter called \verb|char| determines which character the diamond is made from.  When you are finished, your function should be able to print diamonds that look like these (and more):
 \begin{center}
 \begin{BVerbatim}
                                  !  
@@ -24,7 +25,7 @@ For this project, you will write a function that can print a diamond made out of
 \end{center}
 
 \noindent 
-Notice that a diamond has 1 character in the first row, 3 in the second, and so on, until it reaches the largest row.  The total number of rows in a diamond is always odd since there is one largest row in the middle. 
+These four examples are different sizes, from 1 (on the left) to 4 (on the right).  The command \verb|diamond(4, "!")| should generate the diamond on the right.
 
 \subsection*{Counting Characters}
 
@@ -44,6 +45,11 @@ In addition to printing diamonds, your function should also print the number of 
 
 \end{BVerbatim}
 
+\noindent
+Here is a link with some tips on how to get started: 
+\begin{center}
+\url{https://bclins.github.io/fall26/coms261/project1tips.pdf}
+\end{center}
 
 
 \end{document}

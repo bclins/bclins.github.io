@@ -308,21 +308,6 @@ Fri, Sep 4  | [TP5][TP5] | Conditional statements
 
 
 
-<!--
-There are three categories of errors in Python.
-
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
--->
-
-
-<!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
-<!-- Soon: Talk about binary and modular arithmetic --> 
 
 
 To create your own functions in Python, use the `def` keyword to define them:
@@ -356,53 +341,49 @@ Hello
 
 In this example, "Hello" and 5 are arguments.  The variable called `string` in the function is a parameter. Weirdly, when we pass the argument 5 to the function, then the parameter called `string` stores the value 5 which is an integer not a string!  But that is okay, because Python knows how to print integers.   
 
+
+When you create a function, you should *always* include a docstring that briefly explains what the functions does.  A **docstring** is a comment that is written using triple quotes instead of the hash symbol. Here is an example.
+
+```python
+def hypot(a, b):
+    """Calculates the hypoteneuse of a right triangle with legs a and b."""
+    c = math.sqrt(a ** 2 + b ** 2)
+    print(c)
+```
+
+The advantage of a docstring over a regular comment is that it can take up multiple lines. Python style guides recommend using docstrings even for one line descriptions of functions, since you might need to add more explanation later. 
+
 Functions can have as many parameters as needed. Try to make your own functions to do the following. 
 
-1. Define a function called `sum_of_squares` that adds up the squares of two numbers and prints the result. 
+<!--1. Define a function called `sum_of_squares` that adds up the squares of two numbers and prints the result. --
 
-2. Define a function called `sphere_volume` that calculates the volume of a sphere and prints the result.  
+2. Define a function called `sphere_volume` that calculates the volume of a sphere and prints the result.  -->
+
+1. Calculate the area of a circle based on its radius. 
 
 #### Return Values
 
 Some functions return values and some functions don't.  For example, `math.sqrt(4)` returns the value `2.0`, so it can be used as an expression.  But the function `print("Hello")` does not return a value.  
 
-3. What are the values of the variables `x` and `y` below?
+2. What are the values of the variables `x` and `y` below?
 
     ```python
     x = print(4)
     y = abs(-5)
     ```
 
-<!--
-3. When you type
-
-    ```python
-    >>> print(4)
-    ```
-
-    into the shell, you see a 4 appear as the output.  When you run
-
-    ```python
-    >>> abs(4)
-    ```
-
-    you also see a 4 appear as output.  What is the difference between the two function calls?
--->
-
 To create a function that returns a value, use the return keyword. 
 
-4. Write a `multiply_by_2` function that returns twice its input.  
+3. Change the `circle_area` function to return the area of a circle instead of printing the area. 
 
-When you create a function, you should *always* include a docstring that briefly explains what the functions does.  A **docstring** is a comment that is written using triple quotes instead of the hash symbol. Here is an example.
+#### Additional Practice
 
-```python
-def circle_area(radius):
-    """Returns the area of a circle."""
-    PI = 3.14159
-    return PI * radius ** 2
-```
+1. Write a `multiply_by_2` function that returns twice its input.  
 
-The advantage of a docstring over a regular comment is that it can take up multiple lines. Python style guides recommend using docstrings even for one line descriptions of functions, since you might need to add more explanation later. 
+
+### Wed, Sep 2
+
+Today we talked some more about functions. We introduced  **local variables** and **global variables**. 
 
 This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
 

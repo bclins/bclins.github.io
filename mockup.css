@@ -91,10 +91,19 @@ div.sourceCode {
 } */
 
 
+/* Pandoc no longer supports even/odd rows */
 .even {
     background-color: white;
 }
 .odd {
+    background-color: silver;
+}
+
+tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+tbody tr:nth-child(odd) {
     background-color: silver;
 }
 
