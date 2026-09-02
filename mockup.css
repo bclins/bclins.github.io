@@ -145,6 +145,9 @@ tbody tr:nth-child(odd) {
     border: 1px solid black;
     border-collapse: collapse;
 
+    & tr {
+        background-color: transparent;
+    }
 
     & th {
         text-align: center;

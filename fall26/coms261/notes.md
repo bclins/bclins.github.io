@@ -397,6 +397,73 @@ To create a function that returns a value, use the return keyword.
     you also see a 4 appear as output.  What is the difference between the two function calls?
 -->
 
+
+### Wed, Sep 2
+
+Today we talked some more about functions. We introduced  **local variables** and **global variables**. Compare these two programs. 
+
+
+<table>
+<tr style="background-color: transparent">
+<td>
+```python
+def circle_area(radius):
+    PI = 3.14
+    area = PI * radius ** 2
+    return area
+```
+</td><td>
+```python
+radius = 5
+PI = 3.14 
+area = PI * radius ** 2    
+```
+</td>
+</table>
+
+1. How would you print the area of a circle with radius 5 in the first program? What about in the second?  
+
+Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** and can be accessed anywhere in a program.  But if you try to change the value of a global variable inside of a function, it creates a new local variable inside the function instead!  
+
+Here is a function that calls another function in its body:
+
+```python
+def cylinder_volume(radius, height):
+    """Returns the volume of a cylinder."""
+    return circle_area(radius) * height
+```
+
+2. Write a Python program with the following functions:
+    * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
+    * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
+    
+    Both functions should input the price of an item. 
+
+We finished by introducing **recursive functions** which are functions that call themselves.  In order to make a recursive function that doesn't get stuck looping forever, you need to use an if-then statement with an **escape condition**. For example:
+
+```python
+def countdown(n):
+    """Print the numbers from n down to 1."""
+    if n > 0:
+        print(n)
+        countdown(n - 1)
+```
+
+3. What happens if you call `countdown` with a negative number as the argument? Why does that happen? 
+
+4. What happens if you call `countdown` with a large value like 1000?
+
+5. Write a recursive function to make triangles of different sizes like this:
+
+    ```
+    **        ***        ****         *****
+    *         **         ***          ****
+              *          **           ***
+                         *            ** 
+                                      *
+    ```
+
+
 <!--
 There are three categories of errors in Python.
 
@@ -413,27 +480,6 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
 
-
-<!--
-### Wed, Sep 2
-
-Today we talked some more about functions. We introduced  **local variables** and **global variables**. 
-
-This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
-
-Here is a function that calls another function in its body:
-
-```python
-def cylinder_volume(radius, height):
-    """Returns the volume of a cylinder."""
-    return circle_area(radius) * height
-```
-
-5. Write a Python program with the following functions:
-    * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
-    * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
-    
-    Both functions should input the price of an item. 
 
 <!--
 

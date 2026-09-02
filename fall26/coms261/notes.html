@@ -587,6 +587,79 @@ input.</li>
 
     you also see a 4 appear as output.  What is the difference between the two function calls?
 -->
+<h3 id="wed-sep-2">Wed, Sep 2</h3>
+<p>Today we talked some more about functions. We introduced
+<strong>local variables</strong> and <strong>global variables</strong>.
+Compare these two programs.</p>
+<table>
+<tr style="background-color: transparent">
+<td>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    PI <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> area</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>PI <span class="op">=</span> <span class="fl">3.14</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>    </span></code></pre></div>
+</td>
+</table>
+<ol type="1">
+<li>How would you print the area of a circle with radius 5 in the first
+program? What about in the second?</li>
+</ol>
+<p>Any variable created in a function body is <strong>local</strong>,
+which means it can only be used inside the function. You won’t have
+access to local variables outside the function. Variables defined in a
+program that aren’t parameters or defined in the body of a function are
+<strong>global</strong> and can be accessed anywhere in a program. But
+if you try to change the value of a global variable inside of a
+function, it creates a new local variable inside the function
+instead!</p>
+<p>Here is a function that calls another function in its body:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cylinder_volume(radius, height):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the volume of a cylinder.&quot;&quot;&quot;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle_area(radius) <span class="op">*</span> height</span></code></pre></div>
+<ol start="2" type="1">
+<li>Write a Python program with the following functions:
+<ul>
+<li>A function called <code>sales_tax</code> that returns the sales tax
+(5.3% in Virginia) for an item.<br />
+</li>
+<li>A function called <code>print_receipt</code> that prints three
+things: The base price of the item, the sales tax, and the total
+price.</li>
+</ul>
+Both functions should input the price of an item.</li>
+</ol>
+<p>We finished by introducing <strong>recursive functions</strong> which
+are functions that call themselves. In order to make a recursive
+function that doesn’t get stuck looping forever, you need to use an
+if-then statement with an <strong>escape condition</strong>. For
+example:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countdown(n):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Print the numbers from n down to 1.&quot;&quot;&quot;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(n)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        countdown(n <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<ol start="3" type="1">
+<li><p>What happens if you call <code>countdown</code> with a negative
+number as the argument? Why does that happen?</p></li>
+<li><p>What happens if you call <code>countdown</code> with a large
+value like 1000?</p></li>
+<li><p>Write a recursive function to make triangles of different sizes
+like this:</p>
+<pre><code>**        ***        ****         *****
+*         **         ***          ****
+          *          **           ***
+                     *            ** 
+                                  *</code></pre></li>
+</ol>
 <!--
 There are three categories of errors in Python.
 
@@ -600,27 +673,6 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 -->
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
-<!--
-### Wed, Sep 2
-
-Today we talked some more about functions. We introduced  **local variables** and **global variables**. 
-
-This last example includes a local variable called `PI`.  Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** an can be accessed anywhere in a program.  
-
-Here is a function that calls another function in its body:
-
-```python
-def cylinder_volume(radius, height):
-    """Returns the volume of a cylinder."""
-    return circle_area(radius) * height
-```
-
-5. Write a Python program with the following functions:
-    * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
-    * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
-    
-    Both functions should input the price of an item. 
-
 <!--
 
 ### Thu, Sep 5
