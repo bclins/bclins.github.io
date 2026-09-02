@@ -146,7 +146,7 @@ tbody tr:nth-child(odd) {
     border-collapse: collapse;
 
     & tr {
-        background-color: transparent;
+        background-color: transparent !important;
     }
 
     & th {
