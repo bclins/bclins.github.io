@@ -20,6 +20,7 @@ header-includes: |
 * **Office Location:** Pauley 301
 * **Free Textbook:** [Think Python, 2nd edition](https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf) by Allen Downey  
 * **Course Syllabus:** [syllabus.pdf](syllabus.pdf)
+
 <!-- Additional resources 
 
 * [An Intro to Programming and CS with Python](https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf) by Clayton Cafiero
@@ -40,7 +41,7 @@ This is an introductory course on computer science and algorithmic problem solvi
 Week | Topic                      | Notes | Projects
 :---:|:---------------------------|:-----:|:--------:
 1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  | 
-2  | Functions                            | [Week 02](notes.html#week-2-notes)  | 
+2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 1](project1.pdf)
 3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  | 
 4  | Recursion                            | [Week 04](notes.html#week-4-notes)  | 
 5  | More on functions                    | [Week 05](notes.html#week-5-notes)  | 

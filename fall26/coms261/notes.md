@@ -297,9 +297,9 @@ We finished with this workshop:
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Aug 31 | [TP3][TP3] | Functions
-Wed, Sep 2  | [TP3][TP3] | For-loops
-Thu, Sep 3  | [TP4][TP4] | Turtle graphics
-Fri, Sep 4  | [TP5][TP5] | Conditional statements
+Wed, Sep 2  | [TP3][TP3] | Local vs. global variables
+Thu, Sep 3  | [TP4][TP4] | For loops
+Fri, Sep 4  | [TP4][TP4] | Turtle graphics
 
 
 ### Mon, Aug 31
@@ -402,6 +402,7 @@ To create a function that returns a value, use the return keyword.
 
 Today we talked some more about functions. We introduced  **local variables** and **global variables**. Compare these two programs. 
 
+<center>
 
 <table>
 <tr style="background-color: transparent">
@@ -421,9 +422,11 @@ area = PI * radius ** 2
 </td>
 </table>
 
-1. How would you print the area of a circle with radius 5 in the first program? What about in the second?  
+</center>
 
 Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** and can be accessed anywhere in a program.  But if you try to change the value of a global variable inside of a function, it creates a new local variable inside the function instead!  
+
+**Important:** Avoid using global variables, except for constants.  
 
 Here is a function that calls another function in its body:
 
@@ -433,7 +436,7 @@ def cylinder_volume(radius, height):
     return circle_area(radius) * height
 ```
 
-2. Write a Python program with the following functions:
+1. Write a Python program with the following functions:
     * A function called `sales_tax` that returns the sales tax (5.3% in Virginia) for an item.  
     * A function called `print_receipt` that prints three things: The base price of the item, the sales tax, and the total price. 
     
@@ -449,11 +452,13 @@ def countdown(n):
         countdown(n - 1)
 ```
 
-3. What happens if you call `countdown` with a negative number as the argument? Why does that happen? 
+2. What happens if you call `countdown` with a negative number as the argument? Why does that happen? 
 
-4. What happens if you call `countdown` with a large value like 1000?
+3. What happens if you call `countdown` with a large value like 1000?
 
-5. Write a recursive function to make triangles of different sizes like this:
+#### Additional Practice
+
+1. Write a recursive function to make triangles of different sizes like this:
 
     ```
     **        ***        ****         *****
@@ -463,6 +468,72 @@ def countdown(n):
                                       *
     ```
 
+
+### Thu, Sep 3
+
+Today we introduced **for-loops**. We started with two example functions to demonstrate how they work. 
+
+```python
+def box(n):
+    """Prints an n-by-n square made of * symbols."""
+    for i in range(n):
+        print("*" * i)
+
+def countup(n):
+    """Print the first n positive numbers."""
+    for i in range(1,n+1):
+        print(i)
+```
+
+These examples use the **range** function.  (Try asking [ChatGPT](https://chatgpt.com/) or [Claude](https://claude.ai) to explain the Python range function).  
+
+
+Python is **zero-indexed** which means that by default it starts counting at zero.
+
+
+1. Write a function to print the positive odd numbers below n.  
+
+2. Write a function to print the first n perfect squares (i.e., 1, 4, 9, 16, etc.)
+
+3. Write a function to print a triangle with n rows like this:
+
+        *
+        **
+        ***
+        ****
+
+
+We finished by talking about **accumulator variables** in loops.  I showed this example.
+
+```python
+def sum_of_squares(n):
+    """Returns the sum of the first n perfect squares."""
+    total = 0 # total is an accumulator variable
+    for i in range(1,n+1):
+        total += i ** 2
+    return total
+```
+
+4. Write a function that adds up all of the odd numbers below n using an accumulator variable to keep track of the result. 
+
+#### Additional Practice
+
+
+1. Write a function to print an upside down triangle with n rows:
+
+        ****
+        ***
+        **
+        *
+
+2. Write a function to print a hollow n-by-n square, like this example when n is 4:
+
+        ****
+        *  *
+        *  *
+        ****
+
+3. Write a function that uses a for-loop with an accumulator variable to multiply the numbers 1, 2, ..., n. In other words, write a function to compute the factorial of n. 
 
 <!--
 There are three categories of errors in Python.
@@ -476,67 +547,11 @@ There are three categories of errors in Python.
 Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
 -->
 
-
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
 <!-- Soon: Talk about binary and modular arithmetic --> 
 
 
 <!--
-
-### Thu, Sep 5
-
-Today we introduced **for-loops**. We started with two example functions to demonstrate how they work. 
-
-```python
-def box(n):
-    """Prints an n-by-n square made of * symbols."""
-    for i in range(n):
-        print("*" * i)
-
-def print_numbers(n):
-    """Print the first n positive numbers."""
-    for i in range(1,n+1):
-        print(i)
-```
-
-Notice that the `range` function can accept up to three arguments (`start`, `stop`, and `step).  We talked about how Python is **zero-indexed**. For the `range` function, this means that be default it starts counting at zero, so it always stops before the value of the `stop` parameter. We did these exercises. 
-
-1. Write a function to print the first n perfect squares (i.e., 1, 4, 9, 16, etc.)
-
-2. Write a function to print a triangle with n rows like this:
-
-        *
-        **
-        ***
-        ****
-
-3. Write a function to print an upside down triangle with n rows:
-
-        ****
-        ***
-        **
-        *
-
-4. Write a function to print a hollow n-by-n square, like this example when n is 4:
-
-        ****
-        *  *
-        *  *
-        ****
-
-We finished by talking about **accumulator variables** in loops.  I showed this example.
-
-```python
-def sum_of_squares(n):
-    """Returns the sum of the first n perfect squares."""
-    total = 0 # total is an accumulator variable
-    for i in range(1,n+1):
-        total += i ** 2
-    return total
-```
-
-5. Write a function that uses a for-loop with an accumulator variable to multiply the numbers 1, 2, ..., n. In other words, write a function to compute the factorial of n. 
-
 ### Fri, Sep 6
 
 Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.  We started by creating a turtle object we called `fred` and then using `fred` to draw a square. We ended up creating several functions using `fred` to draw different kinds of shapes. 

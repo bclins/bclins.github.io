@@ -474,19 +474,19 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 <td style="text-align: center;">Wed, Sep 2</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.3">TP3</a></td>
-<td style="text-align: left;">For-loops</td>
+<td style="text-align: left;">Local vs. global variables</td>
 </tr>
 <tr>
 <td style="text-align: center;">Thu, Sep 3</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.4">TP4</a></td>
-<td style="text-align: left;">Turtle graphics</td>
+<td style="text-align: left;">For loops</td>
 </tr>
 <tr>
 <td style="text-align: center;">Fri, Sep 4</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
-<td style="text-align: left;">Conditional statements</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.4">TP4</a></td>
+<td style="text-align: left;">Turtle graphics</td>
 </tr>
 </tbody>
 </table>
@@ -591,6 +591,7 @@ input.</li>
 <p>Today we talked some more about functions. We introduced
 <strong>local variables</strong> and <strong>global variables</strong>.
 Compare these two programs.</p>
+<center>
 <table>
 <tr style="background-color: transparent">
 <td>
@@ -607,10 +608,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a h
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>    </span></code></pre></div>
 </td>
 </table>
-<ol type="1">
-<li>How would you print the area of a circle with radius 5 in the first
-program? What about in the second?</li>
-</ol>
+</center>
 <p>Any variable created in a function body is <strong>local</strong>,
 which means it can only be used inside the function. You won’t have
 access to local variables outside the function. Variables defined in a
@@ -619,12 +617,14 @@ program that aren’t parameters or defined in the body of a function are
 if you try to change the value of a global variable inside of a
 function, it creates a new local variable inside the function
 instead!</p>
+<p><strong>Important:</strong> Avoid using global variables, except for
+constants.</p>
 <p>Here is a function that calls another function in its body:</p>
 <div class="sourceCode" id="cb14"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cylinder_volume(radius, height):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the volume of a cylinder.&quot;&quot;&quot;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> circle_area(radius) <span class="op">*</span> height</span></code></pre></div>
-<ol start="2" type="1">
+<ol type="1">
 <li>Write a Python program with the following functions:
 <ul>
 <li>A function called <code>sales_tax</code> that returns the sales tax
@@ -647,11 +647,14 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(n)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        countdown(n <span class="op">-</span> <span class="dv">1</span>)</span></code></pre></div>
-<ol start="3" type="1">
+<ol start="2" type="1">
 <li><p>What happens if you call <code>countdown</code> with a negative
 number as the argument? Why does that happen?</p></li>
 <li><p>What happens if you call <code>countdown</code> with a large
 value like 1000?</p></li>
+</ol>
+<h4 id="additional-practice-3">Additional Practice</h4>
+<ol type="1">
 <li><p>Write a recursive function to make triangles of different sizes
 like this:</p>
 <pre><code>**        ***        ****         *****
@@ -659,6 +662,67 @@ like this:</p>
           *          **           ***
                      *            ** 
                                   *</code></pre></li>
+</ol>
+<h3 id="thu-sep-3">Thu, Sep 3</h3>
+<p>Today we introduced <strong>for-loops</strong>. We started with two
+example functions to demonstrate how they work.</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box(n):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Prints an n-by-n square made of * symbols.&quot;&quot;&quot;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;*&quot;</span> <span class="op">*</span> i)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countup(n):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Print the first n positive numbers.&quot;&quot;&quot;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div>
+<p>These examples use the <strong>range</strong> function. (Try asking
+<a href="https://chatgpt.com/">ChatGPT</a> or <a
+href="https://claude.ai">Claude</a> to explain the Python range
+function).</p>
+<p>Python is <strong>zero-indexed</strong> which means that by default
+it starts counting at zero.</p>
+<ol type="1">
+<li><p>Write a function to print the positive odd numbers below
+n. </p></li>
+<li><p>Write a function to print the first n perfect squares (i.e., 1,
+4, 9, 16, etc.)</p></li>
+<li><p>Write a function to print a triangle with n rows like this:</p>
+<pre><code> *
+ **
+ ***
+ ****</code></pre></li>
+</ol>
+<p>We finished by talking about <strong>accumulator variables</strong>
+in loops. I showed this example.</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the sum of the first n perfect squares.&quot;&quot;&quot;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span> <span class="co"># total is an accumulator variable</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> i <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre></div>
+<ol start="4" type="1">
+<li>Write a function that adds up all of the odd numbers below n using
+an accumulator variable to keep track of the result.</li>
+</ol>
+<h4 id="additional-practice-4">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function to print an upside down triangle with n
+rows:</p>
+<pre><code> ****
+ ***
+ **
+ *</code></pre></li>
+<li><p>Write a function to print a hollow n-by-n square, like this
+example when n is 4:</p>
+<pre><code> ****
+ *  *
+ *  *
+ ****</code></pre></li>
+<li><p>Write a function that uses a for-loop with an accumulator
+variable to multiply the numbers 1, 2, …, n. In other words, write a
+function to compute the factorial of n. </p></li>
 </ol>
 <!--
 There are three categories of errors in Python.
@@ -674,61 +738,6 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
 <!--
-
-### Thu, Sep 5
-
-Today we introduced **for-loops**. We started with two example functions to demonstrate how they work. 
-
-```python
-def box(n):
-    """Prints an n-by-n square made of * symbols."""
-    for i in range(n):
-        print("*" * i)
-
-def print_numbers(n):
-    """Print the first n positive numbers."""
-    for i in range(1,n+1):
-        print(i)
-```
-
-Notice that the `range` function can accept up to three arguments (`start`, `stop`, and `step).  We talked about how Python is **zero-indexed**. For the `range` function, this means that be default it starts counting at zero, so it always stops before the value of the `stop` parameter. We did these exercises. 
-
-1. Write a function to print the first n perfect squares (i.e., 1, 4, 9, 16, etc.)
-
-2. Write a function to print a triangle with n rows like this:
-
-        *
-        **
-        ***
-        ****
-
-3. Write a function to print an upside down triangle with n rows:
-
-        ****
-        ***
-        **
-        *
-
-4. Write a function to print a hollow n-by-n square, like this example when n is 4:
-
-        ****
-        *  *
-        *  *
-        ****
-
-We finished by talking about **accumulator variables** in loops.  I showed this example.
-
-```python
-def sum_of_squares(n):
-    """Returns the sum of the first n perfect squares."""
-    total = 0 # total is an accumulator variable
-    for i in range(1,n+1):
-        total += i ** 2
-    return total
-```
-
-5. Write a function that uses a for-loop with an accumulator variable to multiply the numbers 1, 2, ..., n. In other words, write a function to compute the factorial of n. 
-
 ### Fri, Sep 6
 
 Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.  We started by creating a turtle object we called `fred` and then using `fred` to draw a square. We ended up creating several functions using `fred` to draw different kinds of shapes. 
