@@ -506,15 +506,14 @@ Python is **zero-indexed** which means that by default it starts counting at zer
 We finished by talking about **accumulator variables** in loops.  I showed this example.
 
 ```python
-def sum_of_squares(n):
-    """Returns the sum of the first n perfect squares."""
+def add_odd_numbers(n):
+    """Returns the sum of the odd numbers less than n."""
     total = 0 # total is an accumulator variable
-    for i in range(1,n+1):
-        total += i ** 2
+    for odd in range(1, n, 2):
+        total = total + odd
     return total
 ```
 
-4. Write a function that adds up all of the odd numbers below n using an accumulator variable to keep track of the result. 
 
 #### Additional Practice
 
@@ -534,6 +533,9 @@ def sum_of_squares(n):
         ****
 
 3. Write a function that uses a for-loop with an accumulator variable to multiply the numbers 1, 2, ..., n. In other words, write a function to compute the factorial of n. 
+
+4. Write a function called `sum_of_squares` that adds up all of first n positive perfect squares. 
+
 
 <!--
 There are three categories of errors in Python.

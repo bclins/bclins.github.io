@@ -696,16 +696,12 @@ n. </p></li>
 <p>We finished by talking about <strong>accumulator variables</strong>
 in loops. I showed this example.</p>
 <div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_of_squares(n):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the sum of the first n perfect squares.&quot;&quot;&quot;</span></span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_odd_numbers(n):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the sum of the odd numbers less than n.&quot;&quot;&quot;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span> <span class="co"># total is an accumulator variable</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,n<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">+=</span> i <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> odd <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n, <span class="dv">2</span>):</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> odd</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span></code></pre></div>
-<ol start="4" type="1">
-<li>Write a function that adds up all of the odd numbers below n using
-an accumulator variable to keep track of the result.</li>
-</ol>
 <h4 id="additional-practice-4">Additional Practice</h4>
 <ol type="1">
 <li><p>Write a function to print an upside down triangle with n
@@ -723,6 +719,8 @@ example when n is 4:</p>
 <li><p>Write a function that uses a for-loop with an accumulator
 variable to multiply the numbers 1, 2, …, n. In other words, write a
 function to compute the factorial of n. </p></li>
+<li><p>Write a function called <code>sum_of_squares</code> that adds up
+all of first n positive perfect squares.</p></li>
 </ol>
 <!--
 There are three categories of errors in Python.
