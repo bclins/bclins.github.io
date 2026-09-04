@@ -473,6 +473,14 @@ def countdown(n):
 
 Today we introduced **for-loops**. We started with two example functions to demonstrate how they work. 
 
+<!--NOTE TO SELF:
+
+Most other online introductions to loops start with while loops first, then introduce for-loops as a simplification (since you don't need to initialize an index variable before the loop or update it during the loop).  
+
+Interestingly, ThinkPython doesn't not explain the range function at all, and only ever uses it with a single argument.   
+-->
+
+
 ```python
 def box(n):
     """Prints an n-by-n square made of * symbols."""
@@ -553,44 +561,45 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 <!-- Soon: Talk about binary and modular arithmetic --> 
 
 
-<!--
-### Fri, Sep 6
+### Fri, Sep 4
 
-Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.  We started by creating a turtle object we called `fred` and then using `fred` to draw a square. We ended up creating several functions using `fred` to draw different kinds of shapes. 
+Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.   
+
+1. Use the commands `forward(100)` and `left(90)` to draw a rectangle. 
+
+2. Write a function to draw a rectangle of any length and width. 
+
+3. Write a function to draw an equilateral triangle. 
+
+Here is an example using a for-loop to make a polygon with any number of sides.
 
 ```python
-import turtle
-
-fred = turtle.Turtle()
+from turtle import *
 
 def polygon(side_length, n):
     """Draw a polygon with n sides."""
     for i in range(n):
-        fred.forward(side_length)
-        fred.left(360 / n)
-
-def circle(radius):
-    """Draw a circle."""
-    side_length = 2 * 3.14159 * radius / 50
-    polygon(side_length, 50)
+        forward(side_length)
+        left(360 / n)
 ```
 
-We finished with some exercises using these functions. 
+Use for-loops to implement these examples: 
 
-1. Draw a picture like this one. 
+4. Use the `circle(radius)` function to draw a picture like this one. 
 
-<center>
-<img src="hawaiian.png" width=500></img>
-</center>
+    <center>
+    <img src="https://bclins.github.io/fall24/cs261/hawaiian.png" width=500></img>
+    </center>
 
-2. Write a function to draw a bullseye with n rings, like this:
+5. Write a function to draw a bullseye with n rings, like this:
 
-<center>
-<img src="bullseye.png" width=300></img>
-</center>
+    <center>
+    <img src="https://bclins.github.io/fall24/cs261/bullseye.png" width=300></img>
+    </center>
+
+    Hint: To get circles with the same center, you need to move the turtle from the center the edge of the circle without drawing a line.  Use the `penup()` function before moving to avoid drawing. Then use `pendown()` to resume drawing when you move. 
 
 
--->
 
 - - - 
 

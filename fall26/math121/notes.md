@@ -166,6 +166,26 @@ We also did these exercises before the workshop.
 
 2. The average high temperature in Anchorage, AK in January is 21 degrees Fahrenheit, with standard deviation 10. The average high temperature in Honolulu, HI in January is 80°F with σ = 8°F. In which city would it be more unusual to have a high temperature of 57°F in January?
 
+### Fri, Sep 4
+
+Today we used the [Probability Distributions app](https://mabognar.github.io/apps/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396)) to calculate normal distribution probabilities. 
+
+1. (**Percent below**) SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
+
+2. (**Percent above**) What percent of students get above a 560 verbal score on the SATs? 
+
+3. (**Percent to locations**) What SAT score is in the 90th percentile?
+
+4. (**Percent between**) What percent of years do we get between 40 and 50 inches of rain in Farmville?
+
+
+We also talked about the **probability shorthand notation**
+$$P(X < x)$$
+which literally means *"the probability that the outcome X is less than x"*.  Then we did this workshop. 
+
+* **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
+
+
 
 - - - 
 
@@ -180,29 +200,7 @@ Fri, Sep 11 | [8.2][8.2] | Least squares regression introduction
 
 
 <!--
-### Wed, Jan 27
-
-We introduced how to find percentages on a normal distribution for locations that aren't exactly one, two, or three standard deviations away from the mean. I strongly recommend downloading the [Probability Distributions app](https://homepage.divms.uiowa.edu/~mbognar/applets/normal.html) ([android version](https://play.google.com/store/apps/details?id=com.mbognar.probdist), [iOS version](https://itunes.apple.com/us/app/probability-distributions/id889106396))  for your phone. 
-
-
-We talked about how to use the app to solve the following types of problem:
-
-1. (**Percent below**) SAT verbal scores are roughly normally distributed with mean μ = 500, and σ = 100.  Estimate the percentile of a student with a 560 verbal score. 
-
-2. (**Percent above**) What percent of students get above a 560 verbal score on the SATs? 
-
-3. (**Percent between**) What percent of men are between 6 and 6 and a half feet tall?
-
-4. (**Percent to locations**) What is the height of a man in the 25th percentile?
-
-We also talked about the shorthand notation
-$$P(72 < X < 78)$$
-which literally means *"the probability that the outcome X is between 72 and 78"*.  Then we did this workshop. 
-
-* **Workshop:** [Normal distributions 2](https://people.hsc.edu/faculty-staff/blins/StatsExamples/NormalDist2.pdf)
-
-
-### Fri, Jan 30
+### Wed, Sep 9
 
 We introduced **scatterplots** and **correlation coefficients** with these examples:
 

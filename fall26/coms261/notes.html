@@ -666,6 +666,12 @@ like this:</p>
 <h3 id="thu-sep-3">Thu, Sep 3</h3>
 <p>Today we introduced <strong>for-loops</strong>. We started with two
 example functions to demonstrate how they work.</p>
+<!--NOTE TO SELF:
+
+Most other online introductions to loops start with while loops first, then introduce for-loops as a simplification (since you don't need to initialize an index variable before the loop or update it during the loop).  
+
+Interestingly, ThinkPython doesn't not explain the range function at all, and only ever uses it with a single argument.   
+-->
 <div class="sourceCode" id="cb17"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box(n):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Prints an n-by-n square made of * symbols.&quot;&quot;&quot;</span></span>
@@ -735,44 +741,44 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
 -->
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  -->
 <!-- Soon: Talk about binary and modular arithmetic -->
-<!--
-### Fri, Sep 6
-
-Today we played with [turtle graphics](https://en.wikipedia.org/wiki/Turtle_graphics) using the `turtle` module in Python.  We started by creating a turtle object we called `fred` and then using `fred` to draw a square. We ended up creating several functions using `fred` to draw different kinds of shapes. 
-
-```python
-import turtle
-
-fred = turtle.Turtle()
-
-def polygon(side_length, n):
-    """Draw a polygon with n sides."""
-    for i in range(n):
-        fred.forward(side_length)
-        fred.left(360 / n)
-
-def circle(radius):
-    """Draw a circle."""
-    side_length = 2 * 3.14159 * radius / 50
-    polygon(side_length, 50)
-```
-
-We finished with some exercises using these functions. 
-
-1. Draw a picture like this one. 
-
+<h3 id="fri-sep-4">Fri, Sep 4</h3>
+<p>Today we played with <a
+href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics</a>
+using the <code>turtle</code> module in Python.</p>
+<ol type="1">
+<li><p>Use the commands <code>forward(100)</code> and
+<code>left(90)</code> to draw a rectangle.</p></li>
+<li><p>Write a function to draw a rectangle of any length and
+width.</p></li>
+<li><p>Write a function to draw an equilateral triangle.</p></li>
+</ol>
+<p>Here is an example using a for-loop to make a polygon with any number
+of sides.</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> turtle <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polygon(side_length, n):</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Draw a polygon with n sides.&quot;&quot;&quot;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        forward(side_length)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        left(<span class="dv">360</span> <span class="op">/</span> n)</span></code></pre></div>
+<p>Use for-loops to implement these examples:</p>
+<ol start="4" type="1">
+<li><p>Use the <code>circle(radius)</code> function to draw a picture
+like this one.</p>
 <center>
-<img src="hawaiian.png" width=500></img>
-</center>
-
-2. Write a function to draw a bullseye with n rings, like this:
-
+<p><img src="https://bclins.github.io/fall24/cs261/hawaiian.png" width=500></img></p>
+</center></li>
+<li><p>Write a function to draw a bullseye with n rings, like this:</p>
 <center>
-<img src="bullseye.png" width=300></img>
+<p><img src="https://bclins.github.io/fall24/cs261/bullseye.png" width=300></img></p>
 </center>
-
-
--->
+<p>Hint: To get circles with the same center, you need to move the
+turtle from the center the edge of the circle without drawing a line.
+Use the <code>penup()</code> function before moving to avoid drawing.
+Then use <code>pendown()</code> to resume drawing when you
+move.</p></li>
+</ol>
 <hr />
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
