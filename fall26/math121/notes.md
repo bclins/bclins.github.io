@@ -199,7 +199,6 @@ Fri, Sep 11 | [8.2][8.2] | Least squares regression introduction
 
 
 
-<!--
 ### Wed, Sep 9
 
 We introduced **scatterplots** and **correlation coefficients** with these examples:
@@ -215,11 +214,19 @@ Important concept: correlation does not change if you change the units or apply 
 
 Another thing to know about the correlation coefficient is that it only measures the strength of a linear trend.  The correlation coefficient is not as useful when a scatterplot has a clearly visible nonlinear trend. 
 
-After we finished that, we talked about **explanatory & response variables** (see [section 1.2.4 in the book](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.1.2.4)). 
 
-2. An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children later in life. What are the variables? Which is explanatory and which is response?
+We finished by introducing the
 
-3. Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
+<div class="Theorem">
+#### Least Squares Regression Line
+
+$$y = m x + b$$
+
+where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
+</div>
+
+
+
 
 <!--
 Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 
@@ -382,6 +389,11 @@ An **experiment** is a study where individuals are put into different **treatmen
 
 
 We looked at these examples. 
+
+<!-- MORE EXAMPLES THAT I USED TO COVER EARLIER IN THE SEMESTER...
+2. An article in the journal *Pediatrics* found an association between the amount of acetaminophen (Tylenol) taken by pregnant mothers and ADHD symptoms in their children later in life. What are the variables? Which is explanatory and which is response?
+
+3. Does your favorite team have a home field advantage?  If you wanted to answer this question, you could track the following two variables for each game your team plays: Did your team win or lose, and was it a home game or away.  Which of these variables is explanatory and which is response?
 
 1. A study tried determine whether cellphones cause brain cancer.  The researchers interviewed 469 brain cancer patients about their cellphone use between 1994 and 1998.  They also interviewed 469 other hospital patients (without brain cancer) who had the same ages, genders, and races as the brain cancer patients.  
 

@@ -613,9 +613,150 @@ Use for-loops to implement these examples:
 Day  | Section  | Topic
 :---:|:---:|:-----------------------------------
 Mon, Sep 7  |  | Labor day, no class
-Wed, Sep 9  | [TP5][TP5] | Boolean expressions
-Thu, Sep 10 | [TP5][TP5] | Boolean expressions con'd
-Fri, Sep 11 | [TP5][TP5] | Integer division and modulus 
+Wed, Sep 9  | [TP7.3][TP7.3] | While-loops      
+Thu, Sep 10 | [TP7.3][TP7.3] | While-loops con’d
+Fri, Sep 11 | [TP5][TP5] | Boolean expressions 
+
+
+### Wed, Sep 9 
+
+Today we introduced **while-loops**.  A while-loop is an alternative to a for-loop that is often useful when you don't know how many steps you need to repeat.  We started with these examples:
+
+Example 1: Counter
+
+```python
+count = 0
+while count < 100:
+    count = count + 1
+    print(count)
+```
+
+1. How could you re-write this program with a for-loop?  Which is easier?
+
+Example 2: Password checker
+
+```python
+password = ""
+while password != "banana":
+    password = input("Enter the password. ")
+    if password == "banana":
+        print("Correct!")
+    else:
+        print("I'm sorry, that is not the correct password.")
+```
+
+#### In-Class Exercises. 
+
+1. Write a while loop to repeat a string until the total length is more than $n$. You'll need to use the `len` function which returns the length of a string. 
+
+2. Change the following function so that it uses a while-loop instead of a for-loop:
+
+    ```python
+    def countdown(n):
+        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
+        for i in range(n, 0, -1):
+            print(i)
+        print("Go!")
+    ```
+
+    <details>
+    ```python
+    def countdown(n):
+        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
+        while n > 0:
+            print(n)
+            n = n - 1
+        print("Go!")
+    ```
+    </details>
+
+
+3. Write a function called `get_valid_input()` that prompts the user to enter a number between 1 and 100.  If the user doesn't enter a valid number, have the program prompt the user again until they enter a valid input. 
+
+4. Write a `guessing_game` function.  It should have a while loop that runs until the user inputs the correct number.  If the user guesses the wrong number, tell them if they are too high or too low before their next guess. 
+
+<!--
+After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
+
+1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
+
+2. If `a > b > 0`, then `b > a % b`. 
+
+Here is the algorithm:
+
+<pre>
+    <b>Euclid's GCD Algorithm</b>
+    <b>Input:</b> Positive integers a and b
+    <b>Output:</b> Returns the GCD of a and b
+    <b>while</b> b is not 0 <b>do</b>
+        Find the remainder of a divided by b
+        Let a equal b
+        Let b equal the remainder 
+    <b>end</b>
+    The GCD is a
+</pre>
+-->
+
+<!--
+### Thu, Sep 10
+
+Today we talked about while-loops again.  We started with this example, which improves on the `get_valid_input()` function from yesterday and also introduces the idea of a `while True` loop.  
+
+```python 
+def get_valid_input():
+    while True:
+        n = int(input("Enter a positive even number: "))
+        if n > 0 and n % 2 == 0:
+            return n
+        else: 
+            print("That isn't a positive even number.  Try again.")
+            
+user_input = get_valid_input()
+print("You entered", user_input)
+```
+
+After that we implemented the [Babylonian algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
+
+```python
+def sqrt(a, accuracy = 10 ** (-12)):
+    """Uses the Babylonian algorithm to find the square root of a"""
+    x = a
+    while abs(x**2 - a) > accuracy:
+        x = (x + a/x) / 2
+    return x
+```
+
+When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
+
+### Fri, Sep 11 
+
+Today we did some more practice with while-loops.  
+
+1. Write a function that uses a while-loop to print all of the numbers from 1 to 100.  
+
+2. Write a while-loop to play a number guessing game.  Use the `random.randint(1,10)` function by importing the `random` library to generate a random integer from 1 to 10.  Then have the user guess the number until they get it right.  
+
+<!-- 3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. 
+
+After that, we talked about **recursive functions** which are functions that call themselves.  You can use recursive functions to repeat code in much the same way as loops.  We did the following examples.  
+
+3. Write a recursive version of the `countdown(n)` function.  
+
+    ```python
+    def countdown(n):
+        """Prints the numbers from n down to 1, then prints 'Go!'"""
+        print(n)
+        n -= 1
+        if n > 0:
+            countdown(n)
+        else:
+            print("Go!")
+    ```
+
+4. Re-write the number guessing game using a recursive function instead of a while-loop.
+
+5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. <!-- Note to self... it is much easier to write a recursive function to generate the first n Fibonacci numbers... -->
+
 
 <!--
 ### Mon, Sep 9
@@ -671,10 +812,16 @@ I sent out some tips and questions to think about when working on project 2:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 14 | [TP5][TP5] | Integer division and modulus
-Wed, Sep 16 | [TP7.3][TP7.3] | While-loops
-Thu, Sep 17 | [TP7.3][TP7.3] | While-loops con’d
+Mon, Sep 14 | [TP5][TP5] | Boolean expressions con'd
+Wed, Sep 16 | [TP5][TP5] | Integer division and modulus
+Thu, Sep 17 | [TP5][TP5] | Integer division and modulus
 Fri, Sep 18 | [TP5][TP5] | Recursion
+
+
+
+
+
+
 
 <!--
 ### Mon, Sep 16
@@ -699,117 +846,6 @@ def time_conversion(minutes):
 <!--
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
 
-### Wed, Sep 18 
-
-Today we introduced **while-loops**.  A while-loop is an alternative to a for-loop that is often useful when you don't know how many steps you need to repeat.  We did the following examples.  
-
-1. Use a while loop to find and print all [Fibonacci numbers]() less than $n$.  
-
-2. Write a while loop to repeat a string until the total length is more than $n$. 
-
-3. Change the following function so that it uses a while-loop instead of a for-loop:
-
-    ```python
-    def countdown(n):
-        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
-        for i in range(n, 0, -1):
-            print(i)
-        print("Go!")
-    ```
-
-    <details>
-    ```python
-    def countdown(n):
-        """Count down from an integer n, printing each number.  When you get to zero, print 'Go!'"""
-        while n > 0:
-            print(n)
-            n -= 1
-        print("Go!")
-    ```
-    </details>
-
-
-4. Write a function called `get_valid_input()` that prompts the user to enter an positive even integer.  If the user doesn't enter a positive even integer, have the program prompt the user again until they enter a valid input. 
-
-<!--
-After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
-
-1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
-
-2. If `a > b > 0`, then `b > a % b`. 
-
-Here is the algorithm:
-
-<pre>
-    <b>Euclid's GCD Algorithm</b>
-    <b>Input:</b> Positive integers a and b
-    <b>Output:</b> Returns the GCD of a and b
-    <b>while</b> b is not 0 <b>do</b>
-        Find the remainder of a divided by b
-        Let a equal b
-        Let b equal the remainder 
-    <b>end</b>
-    The GCD is a
-</pre>
-
-### Thu, Sep 19
-
-Today we talked about while-loops again.  We started with this example, which improves on the `get_valid_input()` function from yesterday and also introduces the idea of a `while True` loop.  
-
-```python 
-def get_valid_input():
-    while True:
-        n = int(input("Enter a positive even number: "))
-        if n > 0 and n % 2 == 0:
-            return n
-        else: 
-            print("That isn't a positive even number.  Try again.")
-            
-user_input = get_valid_input()
-print("You entered", user_input)
-```
-
-After that we implemented the [Babylonian algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
-
-```python
-def sqrt(a, accuracy = 10 ** (-12)):
-    """Uses the Babylonian algorithm to find the square root of a"""
-    x = a
-    while abs(x**2 - a) > accuracy:
-        x = (x + a/x) / 2
-    return x
-```
-
-When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
-
-### Fri, Sep 20 
-
-Today we did some more practice with while-loops.  
-
-1. Write a function that uses a while-loop to print all of the numbers from 1 to 100.  
-
-2. Write a while-loop to play a number guessing game.  Use the `random.randint(1,10)` function by importing the `random` library to generate a random integer from 1 to 10.  Then have the user guess the number until they get it right.  
-
-<!-- 3. Add a prize to the number guessing game, where you get $5 if you get it right the first time, and the $1 less each additional try. When they finish, you should print how much money the won. 
-
-After that, we talked about **recursive functions** which are functions that call themselves.  You can use recursive functions to repeat code in much the same way as loops.  We did the following examples.  
-
-3. Write a recursive version of the `countdown(n)` function.  
-
-    ```python
-    def countdown(n):
-        """Prints the numbers from n down to 1, then prints 'Go!'"""
-        print(n)
-        n -= 1
-        if n > 0:
-            countdown(n)
-        else:
-            print("Go!")
-    ```
-
-4. Re-write the number guessing game using a recursive function instead of a while-loop.
-
-5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. <!-- Note to self... it is much easier to write a recursive function to generate the first n Fibonacci numbers... -->
 
 - - - 
 
