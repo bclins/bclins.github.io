@@ -208,30 +208,28 @@ We introduced **scatterplots** and **correlation coefficients** with these examp
 * [Example R values](http://people.hsc.edu/faculty-staff/blins/StatsExamples/correlationExamples.pdf)
 * [Guess the correlation](https://www.geogebra.org/m/KE6JfuF9)
 
-1. What would the correlation between husband and wife ages be in a country where every man married a woman exactly 10 years older? What if every man married a woman exactly half his age?  
+1. What would the correlation between husband and wife ages be in a country where every man married a woman exactly twice his age?  
 
 Important concept: correlation does not change if you change the units or apply a simple linear transformation to the axes.  Correlation just measures the strength of the linear trend in the scatterplot.  
 
 Another thing to know about the correlation coefficient is that it only measures the strength of a linear trend.  The correlation coefficient is not as useful when a scatterplot has a clearly visible nonlinear trend. 
 
 
-We finished by introducing the
+We finished by introducing the **least squares regression line** which has these features: 
 
-<div class="Theorem">
-#### Least Squares Regression Line
+1. **Slope** $m = R \frac{s_y}{s_x}$
+2. **Point** $(\bar{x}, \bar{y})$
 
-$$y = m x + b$$
+The main applications of a least squares regression line are:
 
-where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
-</div>
+1. **Predict average y-values** for different x-values, and
+2. The **rate of change** is the slope.
 
 
 
 
 <!--
-Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 
-
-We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
+NOTE: I saved **explanatory** and **response** variables for later
 -->
 
 - - -
@@ -247,6 +245,16 @@ Fri, Sep 18 | [1.3][1.3] | Bias versus random error
 
 <!--
 ### Mon, Feb 2
+
+<div class="Theorem">
+#### Least Squares Regression Line
+
+$$y = m x + b$$
+
+where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
+</div>
+
+
 
 We talked about **least squares regression**.  The least squares regression line has these features:
 

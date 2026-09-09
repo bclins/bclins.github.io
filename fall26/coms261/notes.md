@@ -636,20 +636,30 @@ while count < 100:
 Example 2: Password checker
 
 ```python
-password = ""
+password = input("Enter the password. ")
+
 while password != "banana":
+    print("That's not the correct password.")
     password = input("Enter the password. ")
-    if password == "banana":
-        print("Correct!")
-    else:
-        print("I'm sorry, that is not the correct password.")
+
+print("Welcome, you entered the correct password!")
 ```
 
 #### In-Class Exercises. 
 
-1. Write a while loop to repeat a string until the total length is more than $n$. You'll need to use the `len` function which returns the length of a string. 
+1. Write a while-loop to print the odd numbers between 0 and n. 
 
-2. Change the following function so that it uses a while-loop instead of a for-loop:
+
+2. Write a `guessing_game` program.  It should have a while-loop that runs until the user inputs the correct number.  If the user guesses the wrong number, tell them if they are too high or too low before their next guess (following the flow-chart below).  Hint: Be sure to convert the user input from a string to an integer using the `int` function. 
+
+    <center>
+    <img src="guessing_game.png" width=360></img>
+    </center>
+
+#### Additional Practice
+
+
+1. Change the following function so that it uses a while-loop instead of a for-loop:
 
     ```python
     def countdown(n):
@@ -671,9 +681,8 @@ while password != "banana":
     </details>
 
 
-3. Write a function called `get_valid_input()` that prompts the user to enter a number between 1 and 100.  If the user doesn't enter a valid number, have the program prompt the user again until they enter a valid input. 
+2. Write a while-loop to repeat a string until the total length is more than $n$. You'll need to use the `len` function which returns the length of a string. 
 
-4. Write a `guessing_game` function.  It should have a while loop that runs until the user inputs the correct number.  If the user guesses the wrong number, tell them if they are too high or too low before their next guess. 
 
 <!--
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 

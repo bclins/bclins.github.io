@@ -831,20 +831,29 @@ easier?</li>
 </ol>
 <p>Example 2: Password checker</p>
 <div class="sourceCode" id="cb24"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>password <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> password <span class="op">!=</span> <span class="st">&quot;banana&quot;</span>:</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    password <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the password. &quot;</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> password <span class="op">==</span> <span class="st">&quot;banana&quot;</span>:</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Correct!&quot;</span>)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;I&#39;m sorry, that is not the correct password.&quot;</span>)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>password <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the password. &quot;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> password <span class="op">!=</span> <span class="st">&quot;banana&quot;</span>:</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;That&#39;s not the correct password.&quot;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    password <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter the password. &quot;</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome, you entered the correct password!&quot;</span>)</span></code></pre></div>
 <h4 id="in-class-exercises.">In-Class Exercises.</h4>
 <ol type="1">
-<li><p>Write a while loop to repeat a string until the total length is
-more than
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
-You’ll need to use the <code>len</code> function which returns the
-length of a string.</p></li>
+<li><p>Write a while-loop to print the odd numbers between 0 and
+n. </p></li>
+<li><p>Write a <code>guessing_game</code> program. It should have a
+while-loop that runs until the user inputs the correct number. If the
+user guesses the wrong number, tell them if they are too high or too low
+before their next guess (following the flow-chart below). Hint: Be sure
+to convert the user input from a string to an integer using the
+<code>int</code> function.</p>
+<center>
+<p><img src="guessing_game.png" width=360></img></p>
+</center></li>
+</ol>
+<h4 id="additional-practice-5">Additional Practice</h4>
+<ol type="1">
 <li><p>Change the following function so that it uses a while-loop
 instead of a for-loop:</p>
 <div class="sourceCode" id="cb25"><pre
@@ -862,14 +871,11 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a h
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         n <span class="op">=</span> n <span class="op">-</span> <span class="dv">1</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>     <span class="bu">print</span>(<span class="st">&quot;Go!&quot;</span>)</span></code></pre></div>
 </details></li>
-<li><p>Write a function called <code>get_valid_input()</code> that
-prompts the user to enter a number between 1 and 100. If the user
-doesn’t enter a valid number, have the program prompt the user again
-until they enter a valid input.</p></li>
-<li><p>Write a <code>guessing_game</code> function. It should have a
-while loop that runs until the user inputs the correct number. If the
-user guesses the wrong number, tell them if they are too high or too low
-before their next guess.</p></li>
+<li><p>Write a while-loop to repeat a string until the total length is
+more than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+You’ll need to use the <code>len</code> function which returns the
+length of a string.</p></li>
 </ol>
 <!--
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 

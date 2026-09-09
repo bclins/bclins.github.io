@@ -401,8 +401,7 @@ correlation</a></li>
 </ul>
 <ol type="1">
 <li>What would the correlation between husband and wife ages be in a
-country where every man married a woman exactly 10 years older? What if
-every man married a woman exactly half his age?</li>
+country where every man married a woman exactly twice his age?</li>
 </ol>
 <p>Important concept: correlation does not change if you change the
 units or apply a simple linear transformation to the axes. Correlation
@@ -411,20 +410,22 @@ just measures the strength of the linear trend in the scatterplot.</p>
 only measures the strength of a linear trend. The correlation
 coefficient is not as useful when a scatterplot has a clearly visible
 nonlinear trend.</p>
-<p>We finished by introducing the</p>
-<section id="least-squares-regression-line" class="Theorem">
-<h4>Least Squares Regression Line</h4>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = m x + b</annotation></semantics></math></p>
-<p>where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>R</mi><mfrac><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">m = R \frac{s_y}{s_x}</annotation></semantics></math>
-is the <strong>slope</strong> and
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>−</mo><mi>m</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">b = \bar{y} - m \bar{x}</annotation></semantics></math>
-is the <strong>y-Intercept</strong>.</p>
-</section>
+<p>We finished by introducing the <strong>least squares regression
+line</strong> which has these features:</p>
+<ol type="1">
+<li><strong>Slope</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>R</mi><mfrac><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">m = R \frac{s_y}{s_x}</annotation></semantics></math></li>
+<li><strong>Point</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar{x}, \bar{y})</annotation></semantics></math></li>
+</ol>
+<p>The main applications of a least squares regression line are:</p>
+<ol type="1">
+<li><strong>Predict average y-values</strong> for different x-values,
+and</li>
+<li>The <strong>rate of change</strong> is the slope.</li>
+</ol>
 <!--
-Even with the quiz, this was not enough material, but I chose not to cover explanatory vs. response variables, b/c I don't think that scatterplots is the best place to cover this... maybe next time, start regression immediately, then use the extra time to squeeze in a day about two-way tables & explanatory vs. response variables. 
-
-We finished by talking about **explanatory** and **response** variables and how *correlation doesn't mean causation*!
+NOTE: I saved **explanatory** and **response** variables for later
 -->
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
@@ -459,6 +460,16 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </table>
 <!--
 ### Mon, Feb 2
+
+<div class="Theorem">
+#### Least Squares Regression Line
+
+$$y = m x + b$$
+
+where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
+</div>
+
+
 
 We talked about **least squares regression**.  The least squares regression line has these features:
 
