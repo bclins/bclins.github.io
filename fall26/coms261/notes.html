@@ -842,11 +842,11 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a h
 <ol type="1">
 <li><p>Write a while-loop to print the odd numbers between 0 and
 n. </p></li>
-<li><p>Write a <code>guessing_game</code> program. It should have a
-while-loop that runs until the user inputs the correct number. If the
-user guesses the wrong number, tell them if they are too high or too low
-before their next guess (following the flow-chart below). Hint: Be sure
-to convert the user input from a string to an integer using the
+<li><p>Use the flow chart below to write a <code>guessing_game</code>
+program. It should have a while-loop that runs until the user inputs the
+correct number. If the user guesses the wrong number, tell them if they
+are too high or too low before their next guess. Hint: Be sure to
+convert the user input from a string to an integer using the
 <code>int</code> function.</p>
 <center>
 <p><img src="guessing_game.png" width=360></img></p>
@@ -877,31 +877,71 @@ more than
 You’ll need to use the <code>len</code> function which returns the
 length of a string.</p></li>
 </ol>
+<h3 id="thu-sep-10">Thu, Sep 10</h3>
+<p>Today we talked about while-loops again. We started with <a
+href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron&#39;s_method">Heron’s
+algorithm</a> for finding square roots.</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sqrt(a, accuracy <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">12</span>)):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Uses Heron&#39;s algorithm to find the square root of a.&quot;&quot;&quot;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> a</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> a) <span class="op">&gt;</span> accuracy:</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (x <span class="op">+</span> a<span class="op">/</span>x) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div>
+<p>We talked about why it is a bad idea to use <code>!=</code> and
+<code>==</code> with floating point numbers. We also talked about the
+difference between a single equal sign <code>=</code> which is the
+Python <strong>assignment operator</strong> versus a double equal sign
+<code>==</code> which is a Python <strong>comparison operator</strong>.
+Python has 6 comparison operators: (<code>==</code>, <code>!=</code>,
+<code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, and
+<code>&lt;=</code>).</p>
+<ol type="1">
+<li><p>What happens when you try to calculate the square root of 10 with
+the following function? Why doesn’t it work?</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sqrt2(a):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Uses Heron&#39;s algorithm to find the square root of a.&quot;&quot;&quot;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> a</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">!=</span> a:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (x <span class="op">+</span> a<span class="op">/</span>x) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div></li>
+</ol>
+<p>Next we looked at an example with an accumulator variable.</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;&gt; &quot;</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">==</span> <span class="st">&quot;quit&quot;</span>:</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> <span class="bu">float</span>(user_input)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;The current total is:&quot;</span>, total)</span></code></pre></div>
+<ol start="2" type="1">
+<li><p>Re-write this program using a loop without a break
+statement.</p></li>
+<li><p>Re-write this program as a function that returns the final total
+when the user enters “quit”. Note: the <code>return</code> keyword also
+breaks out of loops.</p></li>
+</ol>
+<h4 id="additional-practice-6">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a <code>factorial</code> function program. Recall that the
+factorial function inputs a positive integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+and returns the product of <code>1 * 2 * 3 * ... * n</code>.</p></li>
+<li><p>Write a program to add the fractions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n^2}</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">n = 1, 2, 3, \ldots</annotation></semantics></math>
+up to 100. Would it be better to use a while-loop or a
+for-loop?</p></li>
+<li><p>Write a program to add the fractions
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
+until the total is greater than 100. Would it be better to use a
+while-loop or a for-loop?</p></li>
+</ol>
 <!--
-After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
-
-1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
-
-2. If `a > b > 0`, then `b > a % b`. 
-
-Here is the algorithm:
-
-<pre>
-    <b>Euclid's GCD Algorithm</b>
-    <b>Input:</b> Positive integers a and b
-    <b>Output:</b> Returns the GCD of a and b
-    <b>while</b> b is not 0 <b>do</b>
-        Find the remainder of a divided by b
-        Let a equal b
-        Let b equal the remainder 
-    <b>end</b>
-    The GCD is a
-</pre>
--->
-<!--
-### Thu, Sep 10
-
-Today we talked about while-loops again.  We started with this example, which improves on the `get_valid_input()` function from yesterday and also introduces the idea of a `while True` loop.  
 
 ```python 
 def get_valid_input():
@@ -916,16 +956,6 @@ user_input = get_valid_input()
 print("You entered", user_input)
 ```
 
-After that we implemented the [Babylonian algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
-
-```python
-def sqrt(a, accuracy = 10 ** (-12)):
-    """Uses the Babylonian algorithm to find the square root of a"""
-    x = a
-    while abs(x**2 - a) > accuracy:
-        x = (x + a/x) / 2
-    return x
-```
 
 When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
 
@@ -1060,22 +1090,67 @@ def time_conversion(minutes):
 4. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
 
 <!--
+SAVE EUCLID'S ALGORITHM FOR AFTER WE LEARN MODULAR ARITHMETIC!
+
+After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
+
+1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
+
+2. If `a > b > 0`, then `b > a % b`. 
+
+Here is the algorithm:
+
+<pre>
+    <b>Euclid's GCD Algorithm</b>
+    <b>Input:</b> Positive integers a and b
+    <b>Output:</b> Returns the GCD of a and b
+    <b>while</b> b is not 0 <b>do</b>
+        Find the remainder of a divided by b
+        Let a equal b
+        Let b equal the remainder 
+    <b>end</b>
+    The GCD is a
+</pre>
+-->
+<!--
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
-
-
-- - - 
-
-### Week 5 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Sep 21 | [TP6][TP6] | Recursion with return values
-Wed, Sep 23 | docs | Sequence types
-Thu, Sep 24 | [TP9][TP9] | Lists
-Fri, Sep 25 | [TP9][TP9] | Lists con’d
-
+-->
+<hr />
+<h3 id="week-5-notes">Week 5 Notes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Mon, Sep 21</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6">TP6</a></td>
+<td style="text-align: left;">Recursion with return values</td>
+</tr>
+<tr>
+<td style="text-align: center;">Wed, Sep 23</td>
+<td style="text-align: center;">docs</td>
+<td style="text-align: left;">Sequence types</td>
+</tr>
+<tr>
+<td style="text-align: center;">Thu, Sep 24</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
+<td style="text-align: left;">Lists</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fri, Sep 25</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
+<td style="text-align: left;">Lists con’d</td>
+</tr>
+</tbody>
+</table>
 <!--
 
 ### Mon, Sep 23

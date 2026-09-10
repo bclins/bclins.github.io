@@ -16,7 +16,6 @@ header-includes: |
 
 ## COMS 261 - Fall 2026
 
-
 <center>
 Jump to: [COMS 261 homepage](index.html), [Week 1](#week-1-notes), [Week 2](#week-2-notes), [Week 3](#week-3-notes), [Week 4](#week-4-notes), [Week 5](#week-5-notes), [Week 6](#week-6-notes), [Week 7](#week-7-notes), [Week 8](#week-8-notes), [Week 9](#week-9-notes), [Week 10](#week-10-notes), [Week 11](#week-11-notes), [Week 12](#week-12-notes), [Week 13](#week-13-notes), [Week 14](#week-14-notes), [Week 15](#week-15-notes)
 </center>
@@ -650,7 +649,7 @@ print("Welcome, you entered the correct password!")
 1. Write a while-loop to print the odd numbers between 0 and n. 
 
 
-2. Write a `guessing_game` program.  It should have a while-loop that runs until the user inputs the correct number.  If the user guesses the wrong number, tell them if they are too high or too low before their next guess (following the flow-chart below).  Hint: Be sure to convert the user input from a string to an integer using the `int` function. 
+2. Use the flow chart below to write a `guessing_game` program.  It should have a while-loop that runs until the user inputs the correct number.  If the user guesses the wrong number, tell them if they are too high or too low before their next guess.  Hint: Be sure to convert the user input from a string to an integer using the `int` function. 
 
     <center>
     <img src="guessing_game.png" width=360></img>
@@ -684,32 +683,58 @@ print("Welcome, you entered the correct password!")
 2. Write a while-loop to repeat a string until the total length is more than $n$. You'll need to use the `len` function which returns the length of a string. 
 
 
-<!--
-After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
-
-1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
-
-2. If `a > b > 0`, then `b > a % b`. 
-
-Here is the algorithm:
-
-<pre>
-    <b>Euclid's GCD Algorithm</b>
-    <b>Input:</b> Positive integers a and b
-    <b>Output:</b> Returns the GCD of a and b
-    <b>while</b> b is not 0 <b>do</b>
-        Find the remainder of a divided by b
-        Let a equal b
-        Let b equal the remainder 
-    <b>end</b>
-    The GCD is a
-</pre>
--->
-
-<!--
 ### Thu, Sep 10
 
-Today we talked about while-loops again.  We started with this example, which improves on the `get_valid_input()` function from yesterday and also introduces the idea of a `while True` loop.  
+Today we talked about while-loops again.  We started with [Heron's algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
+
+```python
+def sqrt(a, accuracy = 10 ** (-12)):
+    """Uses Heron's algorithm to find the square root of a."""
+    x = a
+    while abs(x**2 - a) > accuracy:
+        x = (x + a/x) / 2
+    return x
+```
+
+We talked about why it is a bad idea to use `!=` and `==` with floating point numbers. We also talked about the difference between a single equal sign `=` which is the Python **assignment operator** versus a double equal sign `==` which is a Python **comparison operator**. Python has 6 comparison operators: (`==`, `!=`, `>`, `<`, `>=`, and `<=`). 
+
+1. What happens when you try to calculate the square root of 10 with the following function?  Why doesn't it work?
+
+    ```python
+    def sqrt2(a):
+        """Uses Heron's algorithm to find the square root of a."""
+        x = a
+        while x**2 != a:
+            x = (x + a/x) / 2
+        return x
+    ```
+
+Next we looked at an example with an accumulator variable. 
+
+```python
+total = 0
+while True:
+    user_input = input("> ")
+    if user_input == "quit":
+        break
+    else:
+        total = total + float(user_input)
+        print("The current total is:", total)
+```
+
+2. Re-write this program using a loop without a break statement. 
+
+3. Re-write this program as a function that returns the final total when the user enters "quit". Note: the `return` keyword also breaks out of loops.  
+
+#### Additional Practice
+
+1. Write a `factorial` function program.  Recall that the factorial function inputs a positive integer $n$ and returns the product of `1 * 2 * 3 * ... * n`. 
+
+2. Write a program to add the fractions $\dfrac{1}{n^2}$ for $n = 1, 2, 3, \ldots$ up to 100.  Would it be better to use a while-loop or a for-loop? 
+
+3. Write a program to add the fractions $\dfrac{1}{n}$ until the total is greater than 100.  Would it be better to use a while-loop or a for-loop? 
+
+<!--
 
 ```python 
 def get_valid_input():
@@ -724,16 +749,6 @@ user_input = get_valid_input()
 print("You entered", user_input)
 ```
 
-After that we implemented the [Babylonian algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
-
-```python
-def sqrt(a, accuracy = 10 ** (-12)):
-    """Uses the Babylonian algorithm to find the square root of a"""
-    x = a
-    while abs(x**2 - a) > accuracy:
-        x = (x + a/x) / 2
-    return x
-```
 
 When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
 
@@ -853,8 +868,33 @@ def time_conversion(minutes):
 4. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
 
 <!--
-5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+SAVE EUCLID'S ALGORITHM FOR AFTER WE LEARN MODULAR ARITHMETIC!
 
+After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
+
+1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
+
+2. If `a > b > 0`, then `b > a % b`. 
+
+Here is the algorithm:
+
+<pre>
+    <b>Euclid's GCD Algorithm</b>
+    <b>Input:</b> Positive integers a and b
+    <b>Output:</b> Returns the GCD of a and b
+    <b>while</b> b is not 0 <b>do</b>
+        Find the remainder of a divided by b
+        Let a equal b
+        Let b equal the remainder 
+    <b>end</b>
+    The GCD is a
+</pre>
+-->
+
+
+<!--
+5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+-->
 
 - - - 
 
