@@ -758,7 +758,13 @@ We also reviewed how the **Boolean operators** `and`, `or`, and `not` work.
 
 Then we did this workshop in class. 
 
-* **Workshop.** [Python operators](PythonOperators.pdf)
+* **Workshop:** [Python operators](PythonOperators.pdf)
+
+#### Additional Practice
+
+1.  Write a Python function `days` that inputs a number of minutes, and then prints how
+long that is in days and hours and leftover minutes. For example, `days(3005)` should print
+2 days, 2 hours, and 15 minutes.
 
 <!--
 

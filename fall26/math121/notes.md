@@ -243,18 +243,18 @@ We started by deriving the slope-intercept formula for a least squares regressio
 
 $$y = m x + b$$
 
-where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
+where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-intercept**. 
 </div>
 
 
-1. What is the slope and y-intercept to predict someone's weight based on their height?
+1. What are the slope and y-intercept to predict someone's weight based on their height?
 
 2. What are the units of the slope for predicting someone's weight from their height? 
 
 We also introduced the following concepts. 
 
 <div class="Theorem">
-**The coefficient of determination** $R^2$ represents the proportion of the variability of the $y$-values that follows the trend line.  The remaining $1-R^2$ represents the proportion of the variability that is above and below the trend line. 
+**The coefficient of determination.** $R^2$ represents the proportion of the variability of the $y$-values that follows the trend line.  The remaining $1-R^2$ represents the proportion of the variability that is above and below the trend line. 
 </div>
 
 <div class="Theorem">
@@ -271,8 +271,10 @@ with a coefficient of determination $R^2  = 0.371$.
     b. What is the predicted average midterm 2 grade for students who got a 50 on midterm 1? 
     c. What percent of the variability in midterm 2 grades is not predicted by midterm 1 grades?
 
+<!--
 * [Galton's regression to the mean diagram](https://upload.wikimedia.org/wikipedia/commons/b/b2/Galton%27s_correlation_diagram_1875.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original)
 
+-->
 
 - - -
 
