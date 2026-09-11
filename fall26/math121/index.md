@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet.
+* Student tutors are available Monday, Tuesday, & Thursday nights 8-10pm in Pauley 105.
 
 ### Tentative Schedule
 

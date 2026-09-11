@@ -220,31 +220,23 @@ We finished by introducing the **least squares regression line** which has these
 1. **Slope** $m = R \frac{s_y}{s_x}$
 2. **Point** $(\bar{x}, \bar{y})$
 
-The main applications of a least squares regression line are:
+The two main applications of a least squares regression line are:
 
-1. **Predict average y-values** for different x-values, and
-2. The **rate of change** is the slope.
+* To **make predictions** about average y-values at different x-values.
+* The slope is the **rate of change**.  
 
+It is important to be able to describe the units of the slope.  
 
+1. What are the units of the slope of the regression line for predicting BAC from the number of beers someone drinks?
 
 
 <!--
 NOTE: I saved **explanatory** and **response** variables for later
 -->
 
-- - -
+### Fri, Sep 11
 
-### Week 4 Notes
-
-Day  | Section  | Topic
-:---:|:---:|:-----------------------------------
-Mon, Sep 14 | [8.2][8.2] | Least squares regression practice 
-Wed, Sep 16 | [1.3][1.3] | Sampling: populations and samples
-Fri, Sep 18 | [1.3][1.3] | Bias versus random error
-
-
-<!--
-### Mon, Feb 2
+We started by deriving the slope-intercept formula for a least squares regression line.
 
 <div class="Theorem">
 #### Least Squares Regression Line
@@ -255,29 +247,7 @@ where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is 
 </div>
 
 
-
-We talked about **least squares regression**.  The least squares regression line has these features:
-
-1. **Slope** $m = R \frac{s_y}{s_x}$
-2. **Point** $(\bar{x}, \bar{y})$
-3. **y-Intercept** $b = \bar{y} - m \bar{x}$
-
-You won't have to calculate the correlation $R$ or the standard deviations $s_y$ and $s_x$, but you might have to use them to find the formula for a regression line. 
-
-We looked at these examples:
-
-* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
-* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
-* [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
-
-Keep in mind that regression lines have two important applications. 
-
-* **Make predictions** about average y-values at different x-values.
-* The slope is the **rate of change**.  
-
-It is important to be able to describe the units of the slope.  
-
-1. What are the units of the slope of the regression line for predicting BAC from the number of beers someone drinks?
+1. What is the slope and y-intercept to predict someone's weight based on their height?
 
 2. What are the units of the slope for predicting someone's weight from their height? 
 
@@ -291,7 +261,33 @@ We also introduced the following concepts.
 **Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
 </div>
 
-### Wed, Feb 4
+* [Midterm grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
+
+3. The regression line for predicting midterm 2 grades based on midterm 1 is:
+$$y = 0.58 x + 29.7.$$
+with a coefficient of determination $R^2  = 0.371$.   
+
+    a. What is the predicted average midterm 2 grade for students who got a 100 on midterm 1? 
+    b. What is the predicted average midterm 2 grade for students who got a 50 on midterm 1? 
+    c. What percent of the variability in midterm 2 grades is not predicted by midterm 1 grades?
+
+* [Galton's regression to the mean diagram](https://upload.wikimedia.org/wikipedia/commons/b/b2/Galton%27s_correlation_diagram_1875.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original)
+
+
+- - -
+
+### Week 4 Notes
+
+Day  | Section  | Topic
+:---:|:---:|:-----------------------------------
+Mon, Sep 14 | [8.2][8.2] | Least squares regression practice 
+Wed, Sep 16 | [1.3][1.3] | Sampling: populations and samples
+Fri, Sep 18 | [1.3][1.3] | Bias versus random error
+
+
+<!--
+
+### Mon, Sep 14
 
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 

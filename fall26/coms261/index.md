@@ -30,7 +30,7 @@ header-includes: |
 
 ### Announcements
 
-* No announcements yet.
+* Student tutors are available Monday & Thursday nights from 8 - 10pm in Pauley 100.
 
 ### Course Description 
 

@@ -687,21 +687,10 @@ print("Welcome, you entered the correct password!")
 
 Today we talked about while-loops again.  We started with [Heron's algorithm](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method) for finding square roots. 
 
-```python
-def sqrt(a, accuracy = 10 ** (-12)):
-    """Uses Heron's algorithm to find the square root of a."""
-    x = a
-    while abs(x**2 - a) > accuracy:
-        x = (x + a/x) / 2
-    return x
-```
-
-We talked about why it is a bad idea to use `!=` and `==` with floating point numbers. We also talked about the difference between a single equal sign `=` which is the Python **assignment operator** versus a double equal sign `==` which is a Python **comparison operator**. Python has 6 comparison operators: (`==`, `!=`, `>`, `<`, `>=`, and `<=`). 
-
-1. What happens when you try to calculate the square root of 10 with the following function?  Why doesn't it work?
+1. What happens when you compute `square_root(10)` with this function? Why doesn't it work?
 
     ```python
-    def sqrt2(a):
+    def square_root(a):
         """Uses Heron's algorithm to find the square root of a."""
         x = a
         while x**2 != a:
@@ -709,16 +698,31 @@ We talked about why it is a bad idea to use `!=` and `==` with floating point nu
         return x
     ```
 
+We talked about why it is a bad idea to use `!=` and `==` with floating point numbers. We also talked about the difference between a single equal sign `=` which is the Python **assignment operator** versus a double equal sign `==` which is a Python **comparison operator**. Python has 6 comparison operators: (`==`, `!=`, `>`, `<`, `>=`, and `<=`). 
+
+Here is a better way to write the square root function.  Notice the accuracy parameter has a **default value**.
+
+```python
+def square_root(a, accuracy = 10 ** (-12)):
+    """Uses Heron's algorithm to find the square root of a."""
+    x = a
+    while abs(x**2 - a) > accuracy:
+        x = (x + a/x) / 2
+    return x
+```
+
 Next we looked at an example with an accumulator variable. 
 
 ```python
+"""Keeps track of the running total of numbers entered by the user."""
+print("Enter integers to add. Enter the word done when you are finished.")
 total = 0
 while True:
     user_input = input("> ")
-    if user_input == "quit":
+    if user_input == "done":
         break
     else:
-        total = total + float(user_input)
+        total = total + int(user_input)
         print("The current total is:", total)
 ```
 
@@ -728,26 +732,36 @@ while True:
 
 #### Additional Practice
 
-1. Write a `factorial` function program.  Recall that the factorial function inputs a positive integer $n$ and returns the product of `1 * 2 * 3 * ... * n`. 
+1. Write a `factorial` function using a loop.  Recall that the factorial function inputs a positive integer $n$ and returns the product of `1 * 2 * 3 * ... * n`. 
 
-2. Write a program to add the fractions $\dfrac{1}{n^2}$ for $n = 1, 2, 3, \ldots$ up to 100.  Would it be better to use a while-loop or a for-loop? 
+2. Write a program to add the fractions $\dfrac{1}{n}$ for $n = 1, 2, 3, \ldots$ up to 100.  Would it be better to use a while-loop or a for-loop? 
 
 3. Write a program to add the fractions $\dfrac{1}{n}$ until the total is greater than 100.  Would it be better to use a while-loop or a for-loop? 
 
+### Fri, Sep 11
+
+Today we talked about **operators** in Python. We introduced the **modulus** (`%`) and **floor division** (`//`) operators with these examples:
+
+1. `23 // 5`
+
+2. `23 % 5`
+
+3. `-100 // 12`
+
+4. `-100 % 12`
+
+5. What day of the week will it be exactly one month from now on October 11 (without looking at a calendar)?
+ 
+We also reviewed how the **Boolean operators** `and`, `or`, and `not` work.  
+
+6. Evaluate the expression `(True and False) or not True`
+
+Then we did this workshop in class. 
+
+* **Workshop.** [Python operators](PythonOperators.pdf)
+
 <!--
 
-```python 
-def get_valid_input():
-    while True:
-        n = int(input("Enter a positive even number: "))
-        if n > 0 and n % 2 == 0:
-            return n
-        else: 
-            print("That isn't a positive even number.  Try again.")
-            
-user_input = get_valid_input()
-print("You entered", user_input)
-```
 
 
 When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
@@ -780,6 +794,21 @@ After that, we talked about **recursive functions** which are functions that cal
 4. Re-write the number guessing game using a recursive function instead of a while-loop.
 
 5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. <!-- Note to self... it is much easier to write a recursive function to generate the first n Fibonacci numbers... -->
+
+<!--
+```python 
+def get_valid_input():
+    while True:
+        n = int(input("Enter a positive even number: "))
+        if n > 0 and n % 2 == 0:
+            return n
+        else: 
+            print("That isn't a positive even number.  Try again.")
+            
+user_input = get_valid_input()
+print("You entered", user_input)
+```
+-->
 
 
 <!--

@@ -881,13 +881,17 @@ length of a string.</p></li>
 <p>Today we talked about while-loops again. We started with <a
 href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron&#39;s_method">Heron’s
 algorithm</a> for finding square roots.</p>
+<ol type="1">
+<li><p>What happens when you compute <code>square_root(10)</code> with
+this function? Why doesn’t it work?</p>
 <div class="sourceCode" id="cb27"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sqrt(a, accuracy <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">12</span>)):</span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square_root(a):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Uses Heron&#39;s algorithm to find the square root of a.&quot;&quot;&quot;</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> a</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> a) <span class="op">&gt;</span> accuracy:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">!=</span> a:</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (x <span class="op">+</span> a<span class="op">/</span>x) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div></li>
+</ol>
 <p>We talked about why it is a bad idea to use <code>!=</code> and
 <code>==</code> with floating point numbers. We also talked about the
 difference between a single equal sign <code>=</code> which is the
@@ -896,27 +900,27 @@ Python <strong>assignment operator</strong> versus a double equal sign
 Python has 6 comparison operators: (<code>==</code>, <code>!=</code>,
 <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, and
 <code>&lt;=</code>).</p>
-<ol type="1">
-<li><p>What happens when you try to calculate the square root of 10 with
-the following function? Why doesn’t it work?</p>
+<p>Here is a better way to write the square root function. Notice the
+accuracy parameter has a <strong>default value</strong>.</p>
 <div class="sourceCode" id="cb28"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sqrt2(a):</span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square_root(a, accuracy <span class="op">=</span> <span class="dv">10</span> <span class="op">**</span> (<span class="op">-</span><span class="dv">12</span>)):</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Uses Heron&#39;s algorithm to find the square root of a.&quot;&quot;&quot;</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> a</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">!=</span> a:</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">abs</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> a) <span class="op">&gt;</span> accuracy:</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (x <span class="op">+</span> a<span class="op">/</span>x) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div></li>
-</ol>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code></pre></div>
 <p>Next we looked at an example with an accumulator variable.</p>
 <div class="sourceCode" id="cb29"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;&gt; &quot;</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">==</span> <span class="st">&quot;quit&quot;</span>:</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> <span class="bu">float</span>(user_input)</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;The current total is:&quot;</span>, total)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;Keeps track of the running total of numbers entered by the user.&quot;&quot;&quot;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Enter integers to add. Enter the word done when you are finished.&quot;</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    user_input <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;&gt; &quot;</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> user_input <span class="op">==</span> <span class="st">&quot;done&quot;</span>:</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> <span class="bu">int</span>(user_input)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;The current total is:&quot;</span>, total)</span></code></pre></div>
 <ol start="2" type="1">
 <li><p>Re-write this program using a loop without a break
 statement.</p></li>
@@ -926,12 +930,12 @@ breaks out of loops.</p></li>
 </ol>
 <h4 id="additional-practice-6">Additional Practice</h4>
 <ol type="1">
-<li><p>Write a <code>factorial</code> function program. Recall that the
-factorial function inputs a positive integer
+<li><p>Write a <code>factorial</code> function using a loop. Recall that
+the factorial function inputs a positive integer
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 and returns the product of <code>1 * 2 * 3 * ... * n</code>.</p></li>
 <li><p>Write a program to add the fractions
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n^2}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
 for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">n = 1, 2, 3, \ldots</annotation></semantics></math>
 up to 100. Would it be better to use a while-loop or a
@@ -941,20 +945,32 @@ for-loop?</p></li>
 until the total is greater than 100. Would it be better to use a
 while-loop or a for-loop?</p></li>
 </ol>
+<h3 id="fri-sep-11">Fri, Sep 11</h3>
+<p>Today we talked about <strong>operators</strong> in Python. We
+introduced the <strong>modulus</strong> (<code>%</code>) and
+<strong>floor division</strong> (<code>//</code>) operators with these
+examples:</p>
+<ol type="1">
+<li><p><code>23 // 5</code></p></li>
+<li><p><code>23 % 5</code></p></li>
+<li><p><code>-100 // 12</code></p></li>
+<li><p><code>-100 % 12</code></p></li>
+<li><p>What day of the week will it be exactly one month from now on
+October 11 (without looking at a calendar)?</p></li>
+</ol>
+<p>We also reviewed how the <strong>Boolean operators</strong>
+<code>and</code>, <code>or</code>, and <code>not</code> work.</p>
+<ol start="6" type="1">
+<li>Evaluate the expression
+<code>(True and False) or not True</code></li>
+</ol>
+<p>Then we did this workshop in class.</p>
+<ul>
+<li><strong>Workshop.</strong> <a href="PythonOperators.pdf">Python
+operators</a></li>
+</ul>
 <!--
 
-```python 
-def get_valid_input():
-    while True:
-        n = int(input("Enter a positive even number: "))
-        if n > 0 and n % 2 == 0:
-            return n
-        else: 
-            print("That isn't a positive even number.  Try again.")
-            
-user_input = get_valid_input()
-print("You entered", user_input)
-```
 
 
 When we wrote this example, we talked about why you should not use `==` or `!=` on floating point numbers.  We also introduced the idea of **default parameters**. 
@@ -987,6 +1003,20 @@ After that, we talked about **recursive functions** which are functions that cal
 4. Re-write the number guessing game using a recursive function instead of a while-loop.
 
 5. **Challenge.** Write a recursive function to print the Fibonacci numbers less than $n$. <!-- Note to self... it is much easier to write a recursive function to generate the first n Fibonacci numbers... -->
+<!--
+```python 
+def get_valid_input():
+    while True:
+        n = int(input("Enter a positive even number: "))
+        if n > 0 and n % 2 == 0:
+            return n
+        else: 
+            print("That isn't a positive even number.  Try again.")
+            
+user_input = get_valid_input()
+print("You entered", user_input)
+```
+-->
 <!--
 ### Mon, Sep 9
 

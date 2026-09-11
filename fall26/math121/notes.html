@@ -418,15 +418,81 @@ line</strong> which has these features:</p>
 <li><strong>Point</strong>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\bar{x}, \bar{y})</annotation></semantics></math></li>
 </ol>
-<p>The main applications of a least squares regression line are:</p>
+<p>The two main applications of a least squares regression line are:</p>
+<ul>
+<li>To <strong>make predictions</strong> about average y-values at
+different x-values.</li>
+<li>The slope is the <strong>rate of change</strong>.</li>
+</ul>
+<p>It is important to be able to describe the units of the slope.</p>
 <ol type="1">
-<li><strong>Predict average y-values</strong> for different x-values,
-and</li>
-<li>The <strong>rate of change</strong> is the slope.</li>
+<li>What are the units of the slope of the regression line for
+predicting BAC from the number of beers someone drinks?</li>
 </ol>
 <!--
 NOTE: I saved **explanatory** and **response** variables for later
 -->
+<h3 id="fri-sep-11">Fri, Sep 11</h3>
+<p>We started by deriving the slope-intercept formula for a least
+squares regression line.</p>
+<section id="least-squares-regression-line" class="Theorem">
+<h4>Least Squares Regression Line</h4>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = m x + b</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>=</mo><mi>R</mi><mfrac><msub><mi>s</mi><mi>y</mi></msub><msub><mi>s</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">m = R \frac{s_y}{s_x}</annotation></semantics></math>
+is the <strong>slope</strong> and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mover><mi>y</mi><mo accent="true">‾</mo></mover><mo>−</mo><mi>m</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">b = \bar{y} - m \bar{x}</annotation></semantics></math>
+is the <strong>y-Intercept</strong>.</p>
+</section>
+<ol type="1">
+<li><p>What is the slope and y-intercept to predict someone’s weight
+based on their height?</p></li>
+<li><p>What are the units of the slope for predicting someone’s weight
+from their height?</p></li>
+</ol>
+<p>We also introduced the following concepts.</p>
+<div class="Theorem">
+<p><strong>The coefficient of determination</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>R</mi><mn>2</mn></msup><annotation encoding="application/x-tex">R^2</annotation></semantics></math>
+represents the proportion of the variability of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+that follows the trend line. The remaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1-R^2</annotation></semantics></math>
+represents the proportion of the variability that is above and below the
+trend line.</p>
+</div>
+<div class="Theorem">
+<p><strong>Regression to the mean.</strong> Extreme
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>-values
+tend to have less extreme predicted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>-values
+in a least squares regression model.</p>
+</div>
+<ul>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx">Midterm
+grades</a></li>
+</ul>
+<ol start="3" type="1">
+<li><p>The regression line for predicting midterm 2 grades based on
+midterm 1 is:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>0.58</mn><mi>x</mi><mo>+</mo><mn>29.7</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">y = 0.58 x + 29.7.</annotation></semantics></math>
+with a coefficient of determination
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup><mo>=</mo><mn>0.371</mn></mrow><annotation encoding="application/x-tex">R^2  = 0.371</annotation></semantics></math>.</p>
+<ol type="a">
+<li>What is the predicted average midterm 2 grade for students who got a
+100 on midterm 1?</li>
+<li>What is the predicted average midterm 2 grade for students who got a
+50 on midterm 1?</li>
+<li>What percent of the variability in midterm 2 grades is not predicted
+by midterm 1 grades?</li>
+</ol></li>
+</ol>
+<ul>
+<li><a
+href="https://upload.wikimedia.org/wikipedia/commons/b/b2/Galton%27s_correlation_diagram_1875.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=index&amp;utm_content=original">Galton’s
+regression to the mean diagram</a></li>
+</ul>
 <hr />
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
@@ -459,54 +525,8 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 </tbody>
 </table>
 <!--
-### Mon, Feb 2
 
-<div class="Theorem">
-#### Least Squares Regression Line
-
-$$y = m x + b$$
-
-where $m = R \frac{s_y}{s_x}$ is the **slope** and $b = \bar{y} - m \bar{x}$ is the **y-Intercept**. 
-</div>
-
-
-
-We talked about **least squares regression**.  The least squares regression line has these features:
-
-1. **Slope** $m = R \frac{s_y}{s_x}$
-2. **Point** $(\bar{x}, \bar{y})$
-3. **y-Intercept** $b = \bar{y} - m \bar{x}$
-
-You won't have to calculate the correlation $R$ or the standard deviations $s_y$ and $s_x$, but you might have to use them to find the formula for a regression line. 
-
-We looked at these examples:
-
-* [Blood Alcohol Content vs. Number of Beers](http://people.hsc.edu/faculty-staff/blins/StatsExamples/bac.xlsx)
-* [Marriage ages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls)
-* [Midterm exam grades](http://people.hsc.edu/faculty-staff/blins/StatsExamples/MidtermRegression.xlsx)
-
-Keep in mind that regression lines have two important applications. 
-
-* **Make predictions** about average y-values at different x-values.
-* The slope is the **rate of change**.  
-
-It is important to be able to describe the units of the slope.  
-
-1. What are the units of the slope of the regression line for predicting BAC from the number of beers someone drinks?
-
-2. What are the units of the slope for predicting someone's weight from their height? 
-
-We also introduced the following concepts. 
-
-<div class="Theorem">
-**The coefficient of determination** $R^2$ represents the proportion of the variability of the $y$-values that follows the trend line.  The remaining $1-R^2$ represents the proportion of the variability that is above and below the trend line. 
-</div>
-
-<div class="Theorem">
-**Regression to the mean.** Extreme $x$-values tend to have less extreme predicted $y$-values in a least squares regression model. 
-</div>
-
-### Wed, Feb 4
+### Mon, Sep 14
 
 * **Workshop**: [Lightning fatalities](http://people.hsc.edu/faculty-staff/blins/StatsExamples/LightningRegression.pdf)
 
