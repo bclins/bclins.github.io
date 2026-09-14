@@ -899,6 +899,9 @@ After that, we did these programming exercises involving modular arithmetic.
 
 1. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
 
+
+#### Additional Practice
+
 1. For any integer $n > 1$, the Collatz sequence is obtained by following this rule:
     - If $n$ is even, then the next number is $n$ divided by 2. 
     - If $n$ is odd, then the next number is $3n+1$.
@@ -906,37 +909,15 @@ After that, we did these programming exercises involving modular arithmetic.
 
     Write a function with a while-loop to print the Collatz sequence for any positive integer $n$. The [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) is a famous unsolved math problem which predicts that you will eventually reach 1 no matter which $n$ you start with.  
 
-#### Additional Practice
+2. Write a function called `collatz_length` that returns the length of a Collatz sequence starting at $n$ instead of printing the sequence. 
 
-1. Write a function called `collatz_length` that returns the length of a Collatz sequence starting at $n$ instead of printing the sequence. 
+3. Use the `collatz_length` function to find longest Collatz sequence for the numbers from 2 to 999.  
 
-2. Use the `collatz_length` function to find longest Collatz sequence for the numbers from 2 to 999.  
-
-3. Which number between 2 and 999 has the longest Collatz sequence? 
+4. Which number between 2 and 999 has the longest Collatz sequence? 
 
 
 <!--
-### Mon, Sep 16
-
-Today we talked about the **integer division** operator `//` and the **remainder** or **modulo** operator `%` in Python. We used them to do these exercises:
-
-1. Today is Monday, Sep 16.  What day of the week will Oct 16th be (without looking at a calendar)? What about Nov 16?  
-
-2. Write a program to convert any number of minutes into hours and minutes.  For example, 100 minutes is 1 hour and 40 minutes. We used this example to introduce [f-strings](https://peps.python.org/pep-0498/) to help print the answer.  
-
-```python 
-def time_conversion(minutes): 
-    hours = minutes // 60
-    minutes = minutes % 60
-    print(f"There are {hours} hours and {minutes} minutes.")
-```
-
-3. Improve the program to convert minutes into days, hours, and minutes.  For example, 1590 minutes should be 1 day, 2 hours, and 30 minutes. 
-
-4. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
-
-<!--
-SAVE EUCLID'S ALGORITHM FOR AFTER WE LEARN MODULAR ARITHMETIC!
+### Wed, Sep 16
 
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
 
@@ -948,7 +929,7 @@ Here is the algorithm:
 
 <pre>
     <b>Euclid's GCD Algorithm</b>
-    <b>Input:</b> Positive integers a and b
+    <b>Input:</b> Positive integers a and b with a > b > 0
     <b>Output:</b> Returns the GCD of a and b
     <b>while</b> b is not 0 <b>do</b>
         Find the remainder of a divided by b
@@ -957,10 +938,7 @@ Here is the algorithm:
     <b>end</b>
     The GCD is a
 </pre>
--->
 
-
-<!--
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
 -->
 
