@@ -763,7 +763,7 @@ Then we did this workshop in class.
 #### Additional Practice
 
 1.  Write a Python function `days` that inputs a number of minutes, and then prints how
-long that is in days and hours and leftover minutes. For example, `days(3005)` should print
+long that is in days and hours and leftover minutes. For example, `days(3015)` should print
 2 days, 2 hours, and 15 minutes.
 
 <!--
@@ -877,9 +877,42 @@ Thu, Sep 17 | [TP5][TP5] | Integer division and modulus
 Fri, Sep 18 | [TP5][TP5] | Recursion
 
 
+### Mon, Sep 14
 
+We started today by talking about how to **trace** a loop or a program. We did this example in class:
 
+```python
+n = 365
+total = 0
+while n > 0:
+    digit = n % 10
+    total = total + digit
+    n = n // 10
+print(total)
+```
 
+To trace a program, make a table with a column for every variable in the program.  Follow the program line by line, and update the values of the variables in the columns as you go.  
+
+* **Workshop:** [Tracing loops](TracingLoops.pdf)
+
+After that, we did these programming exercises involving modular arithmetic.
+
+1. Write a program to make change using the fewest coins possible for any amount of money less than \$1.00. For example, 63¢ could be 2 quarters, 1 dime, and 3 pennies.  
+
+1. For any integer $n > 1$, the Collatz sequence is obtained by following this rule:
+    - If $n$ is even, then the next number is $n$ divided by 2. 
+    - If $n$ is odd, then the next number is $3n+1$.
+    - Stop when you get to 1. 
+
+    Write a function with a while-loop to print the Collatz sequence for any positive integer $n$. The [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) is a famous unsolved math problem which predicts that you will eventually reach 1 no matter which $n$ you start with.  
+
+#### Additional Practice
+
+1. Write a function called `collatz_length` that returns the length of a Collatz sequence starting at $n$ instead of printing the sequence. 
+
+2. Use the `collatz_length` function to find longest Collatz sequence for the numbers from 2 to 999.  
+
+3. Which number between 2 and 999 has the longest Collatz sequence? 
 
 
 <!--

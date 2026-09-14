@@ -287,7 +287,6 @@ Wed, Sep 16 | [1.3][1.3] | Sampling: populations and samples
 Fri, Sep 18 | [1.3][1.3] | Bias versus random error
 
 
-<!--
 
 ### Mon, Sep 14
 
@@ -295,7 +294,6 @@ Fri, Sep 18 | [1.3][1.3] | Bias versus random error
 
 Before the workshop, we started with this warm-up exercise.
 
-<!--
 1. Suppose that the correlation between the heights of fathers and adult sons is $R = 0.5$.  Given that both fathers and sons have normally distributed heights with mean $70$ inches and standard deviation 3 inches, find an equation for the least squares regression line. 
 
 
@@ -305,6 +303,7 @@ $$\bar{x} = 28.5 \text{ cm}, ~\bar{y} = 67.75 \text{ in}, ~ s_x = 3.45 \text{ cm
     a. Find the slope of the regression line to predict height ($y$) based on footprint length ($x$). Include the units and briefly explain what it means.  
     b. If a footprint was 30 cm long, how tall would you predict the subject was? 
 
+<!--
 ### Fri, Feb 6
 
 We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 

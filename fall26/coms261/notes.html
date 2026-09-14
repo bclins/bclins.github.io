@@ -973,7 +973,7 @@ operators</a></li>
 <ol type="1">
 <li>Write a Python function <code>days</code> that inputs a number of
 minutes, and then prints how long that is in days and hours and leftover
-minutes. For example, <code>days(3005)</code> should print 2 days, 2
+minutes. For example, <code>days(3015)</code> should print 2 days, 2
 hours, and 15 minutes.</li>
 </ol>
 <!--
@@ -1106,6 +1106,65 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-sep-14">Mon, Sep 14</h3>
+<p>We started today by talking about how to <strong>trace</strong> a
+loop or a program. We did this example in class:</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">365</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    digit <span class="op">=</span> n <span class="op">%</span> <span class="dv">10</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> digit</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> n <span class="op">//</span> <span class="dv">10</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code></pre></div>
+<p>To trace a program, make a table with a column for every variable in
+the program. Follow the program line by line, and update the values of
+the variables in the columns as you go.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="TracingLoops.pdf">Tracing
+loops</a></li>
+</ul>
+<p>After that, we did these programming exercises involving modular
+arithmetic.</p>
+<ol type="1">
+<li><p>Write a program to make change using the fewest coins possible
+for any amount of money less than $1.00. For example, 63¢ could be 2
+quarters, 1 dime, and 3 pennies.</p></li>
+<li><p>For any integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n &gt; 1</annotation></semantics></math>,
+the Collatz sequence is obtained by following this rule:</p>
+<ul>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is even, then the next number is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+divided by 2.</li>
+<li>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+is odd, then the next number is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">3n+1</annotation></semantics></math>.</li>
+<li>Stop when you get to 1.</li>
+</ul>
+<p>Write a function with a while-loop to print the Collatz sequence for
+any positive integer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+The <a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz
+conjecture</a> is a famous unsolved math problem which predicts that you
+will eventually reach 1 no matter which
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+you start with.</p></li>
+</ol>
+<h4 id="additional-practice-8">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function called <code>collatz_length</code> that returns
+the length of a Collatz sequence starting at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+instead of printing the sequence.</p></li>
+<li><p>Use the <code>collatz_length</code> function to find longest
+Collatz sequence for the numbers from 2 to 999.</p></li>
+<li><p>Which number between 2 and 999 has the longest Collatz
+sequence?</p></li>
+</ol>
 <!--
 ### Mon, Sep 16
 
