@@ -304,8 +304,7 @@ $$\bar{x} = 28.5 \text{ cm}, ~\bar{y} = 67.75 \text{ in}, ~ s_x = 3.45 \text{ cm
     b. If a footprint was 30 cm long, how tall would you predict the subject was? 
 -->
 
-<!--
-### Fri, Feb 6
+### Wed, Sep 16
 
 We talked about the difference between **samples** and **populations**.  The central problem of statistics is to use sample **statistics** to answer questions about population **parameters**. 
 
@@ -331,7 +330,16 @@ We looked at this case study:
 3. The only sure way to avoid bias is a **simple random sample**.
 </div>
 
--->
+We finished with this practice problem:
+
+1. Suppose you want to determine the percent of grocery stores that carry a specific brand of pasta.  To find out, you visit a random selection of nearby grocery stores.  In this situation, identify the following:
+
+    a. The population
+    b. The sample
+    c. The variable(s) of interest 
+    d. The statistic
+    e. The parameter
+
 
 - - - 
 

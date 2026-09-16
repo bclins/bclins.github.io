@@ -916,9 +916,27 @@ After that, we did these programming exercises involving modular arithmetic.
 4. Which number between 2 and 999 has the longest Collatz sequence? 
 
 
-<!--
 ### Wed, Sep 16
 
+We began by reviewing the coins problem from last time.  Then we did these exercises in class.
+
+1. Write a function to print all positive integer divisors of $n$. For example, `divisors(12)` should print the numbers 1, 2, 3, 4, 6, 12. 
+
+
+1. Write a program to solve Brahmagupta's Egg Problem (from the 7th century):
+
+    > An old woman goes to market and a horse steps on her basket and crushes her eggs. The rider offers to pay for the damages and asks her how many eggs were in the basket. She does not remember the exact number, but when she had taken them out two at a time, there was one egg left. The same happened when she picked them out three, four, five, and six at a time, but when she took them seven at a time they came out even. What is the smallest number of eggs she could have had? 
+
+1. If a year is divisible by 4, then it is a leap year unless it is divisible by 100. If a year is divisible by 100, then it is not a leap year, unless it is divisible by 400. For example, 1900 was not a leap year, but 2000 was.  Write a function called `is_leap_year` that determines whether a given year is a leap year or not.   It should return a Boolean value (`True` or `False`). 
+
+#### Additional Practice
+
+1. Write a function that returns *how many* divisors $n$ has.  For example, `count_divisors(12)` should return 6.  
+
+1. How could you use the `count_divisors` function to print all of the prime numbers below 1000? Recall that a number is prime if its only divisors are 1 and itself.  
+
+
+<!--
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
 
 1. If `a` and `b` are both even, then `a % b` is also even.  More generally, if `a` and `b` have any common divisor `d`, then `a % b` is also divisible by `d`.   
@@ -927,9 +945,9 @@ After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/E
 
 Here is the algorithm:
 
-<pre>
+<pre style="font-size: 1.2em;">
     <b>Euclid's GCD Algorithm</b>
-    <b>Input:</b> Positive integers a and b with a > b > 0
+    <b>Input:</b> Positive integers a and b
     <b>Output:</b> Returns the GCD of a and b
     <b>while</b> b is not 0 <b>do</b>
         Find the remainder of a divided by b
