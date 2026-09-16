@@ -738,9 +738,22 @@ while True:
 
 3. Write a program to add the fractions $\dfrac{1}{n}$ until the total is greater than 100.  Would it be better to use a while-loop or a for-loop? 
 
+<!--
+4. Write a function called `print_big_V` that, when passed a size (in this example 5), prints the following pattern:
+
+```
+\        /
+ \      /
+  \    /
+   \  /
+    \/
+```
+-->
+
 ### Fri, Sep 11
 
-Today we talked about **operators** in Python. We introduced the **modulus** (`%`) and **floor division** (`//`) operators with these examples:
+Today we talked about Python **operators**. We introduced the **modulus** (`%`) and **floor division** (`//`) operators with these examples:
+
 
 1. `23 // 5`
 
@@ -871,9 +884,9 @@ I sent out some tips and questions to think about when working on project 2:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 14 | [TP5][TP5] | Boolean expressions con'd
+Mon, Sep 14 | [TP5][TP5] | Integer division and modulus
 Wed, Sep 16 | [TP5][TP5] | Integer division and modulus
-Thu, Sep 17 | [TP5][TP5] | Integer division and modulus
+Thu, Sep 17 | [TP5][TP5] | 
 Fri, Sep 18 | [TP5][TP5] | Recursion
 
 
@@ -927,7 +940,16 @@ We began by reviewing the coins problem from last time.  Then we did these exerc
 
     > An old woman goes to market and a horse steps on her basket and crushes her eggs. The rider offers to pay for the damages and asks her how many eggs were in the basket. She does not remember the exact number, but when she had taken them out two at a time, there was one egg left. The same happened when she picked them out three, four, five, and six at a time, but when she took them seven at a time they came out even. What is the smallest number of eggs she could have had? 
 
-1. If a year is divisible by 4, then it is a leap year unless it is divisible by 100. If a year is divisible by 100, then it is not a leap year, unless it is divisible by 400. For example, 1900 was not a leap year, but 2000 was.  Write a function called `is_leap_year` that determines whether a given year is a leap year or not.   It should return a Boolean value (`True` or `False`). 
+<!-- NOTE TO SELF: 
+I'm not sure Brahmagupta's problem is a great choice because the Boolean expression you get is so long, it eats up class time and adds the temptation to talk about functions like `any` and `all` which are not appropriate yet since we haven't talked about sequence types yet.
+
+There are simpler versions of this problem that would be better. Maybe Fibonacci's problem about soldiers lining up in rows.  
+    - When a group of soldiers line up in rows of 3, 1 soldier is left over.  
+    - When they line up in rows of 5, 2 soldiers are left over.
+    - When they line up in rows of 7, 3 soldiers are left over. 
+Find the smallest possible number of soldiers (Should get 52 soldiers). 
+-->
+
 
 #### Additional Practice
 
@@ -935,6 +957,7 @@ We began by reviewing the coins problem from last time.  Then we did these exerc
 
 1. How could you use the `count_divisors` function to print all of the prime numbers below 1000? Recall that a number is prime if its only divisors are 1 and itself.  
 
+1. A year is a leap year if it is divisible by 4 but not by 100, unless it is divisible by 400 in which case it is a leap year. For example, 1900 was not a leap year, but 2000 was.  Write a function called `is_leap_year` that determines whether a given year is a leap year or not.   It should return a Boolean value (`True` or `False`). 
 
 <!--
 After that, we talked about [Euclid's algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm) for finding the greatest common divisor (GCD) of two integers.  The algorithm is based on two simple observations. 
@@ -958,6 +981,8 @@ Here is the algorithm:
 </pre>
 
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+
+### Thu, Sep 17
 -->
 
 - - - 
