@@ -886,8 +886,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 14 | [TP5][TP5] | Integer division and modulus
 Wed, Sep 16 | [TP5][TP5] | Integer division and modulus
-Thu, Sep 17 | [TP5][TP5] | 
-Fri, Sep 18 | [TP5][TP5] | Recursion
+Thu, Sep 17 | [TP8][TP8] | Strings indices & slicing
+Fri, Sep 18 | [TP8][TP8] | String methods 
 
 
 ### Mon, Sep 14
@@ -981,9 +981,128 @@ Here is the algorithm:
 </pre>
 
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
+-->
 
 ### Thu, Sep 17
--->
+
+We started by talking about **Boolean valued functions**.  We did the example of determining whether a year is a leap year from the additional practice problems yesterday.  We ended up writing two versions of the `is_leap_year` function, one using if-then statements (including the **else-if** keyword `elif`):
+
+```python
+def is_leap_year(year):
+    """Returns True if year is a leap year, otherwise returns False."""
+    if year % 4 == 0 and year % 100 != 0:
+        return True
+    elif year % 400 == 0:
+        return True
+    else:
+        return False
+```
+
+Since the conditions we are checking are already Boolean expressions, we can skip if-then statements entirely and just return the value of a single Boolean expression:
+
+```python
+def is_leap_year(year):
+    """Returns True if year is a leap year, otherwise returns False."""
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+```
+
+You can decide for yourself which version of the `is_leap_year` function you prefer.  We finished our discussion of Boolean valued functions with the following exercise.
+
+1. Use the `is_leap_year` function in a loop to print the next 20 years, with an asterisk to mark leap years. 
+
+After that, we talked about Python strings. <!-- We already know how to create strings using quotation, combine strings using the `+` operator, and repeat strings using the `*` operator.  -->
+
+#### Selecting characters from a string
+
+```python
+# Some example strings
+fruit = "banana"
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+string = "The quick brown fox"
+```
+
+Each character in a string has an **index**. For example, the indices of `string` are shown below.
+
+<center>
+<table class="bordered">
+<tr><th>string</th><td>`T`</td><td>`h`</td><td>`e`</td><td></td><td>`q`</td><td>`u`</td><td>`i`</td><td>`c`</td><td>`k`</td><td></td><td>`b`</td><td>`r`</td><td>`o`</td><td>`w`</td><td>`n`</td><td></td><td>`f`</td><td>`o`</td><td>`x`</td></tr>
+<tr><th>index</th><td>`0`</td><td>`1`</td><td>`2`</td><td>`3`</td><td>`4`</td><td>`5`</td><td>`6`</td><td>`7`</td><td>`8`</td><td>`9`</td><td>`10`</td><td>`11`</td><td>`12`</td><td>`13`</td><td>`14`</td><td>`15`</td><td>`16`</td><td>`17`</td><td>`18`</td></tr>
+</table>
+</center>
+
+1. What is the value of `alphabet[3]`? What is `alphabet[0]`?
+
+1. How could you get the last character in alphabet?
+
+1. What error message do you get if you ask for `alphabet[26]`?
+
+1. What happens if you ask for the character at a non-integer index, like `fruit[1.5]`? 
+
+You can also access characters in a string using **negative index** values.  These count from the end of the string backwards.
+
+<center>
+<table class="bordered">
+<tr><th>string</th><td>`b`</td><td>`a`</td><td>`n`</td><td>`a`</td><td>`n`</td><td>`a`</td></tr>
+<tr><th>negative index</th><td>`-6`</td><td>`-5`</td><td>`-4`</td><td>`-3`</td><td>`-2`</td><td>`-1`</td></tr>
+</table>
+</center>
+
+1. What is `alphabet[-2]`?
+
+
+#### The length function
+
+To get the length of a string, use the Python function `len`. 
+
+1. What is `len(alphabet)`?
+
+2. What is `len("6")`?
+
+3. What is `len("")`?
+
+#### Slicing strings
+
+You can get a substring by **slicing** the string using this pattern: `string[start:stop]`. 
+
+1. How would you select the word `"brown"` from the string `string = "The quick brown fox"`?  
+
+You can use positive or negative index values when you slice a string.  If you want to slice all the way to the end, you can leave the end blank:
+
+2. What is `alphabet[-3:]`?
+
+
+#### Looping through strings
+
+You can loop through the characters of a string using a for-loop:
+
+```python
+string = "hello"
+for char in string:
+    print(char)
+```
+
+1. Write a function called `count_char`.  It should input a string and a character, and return the number of times that character appears in the string.  For example 
+
+    ```python
+    count_char("banana", "a") # should return 3.  
+    ```
+
+#### Additional Practice
+
+1. Write a loop to print all consecutive substrings of a given length. For example, 
+    
+    ```python
+    print_substrings("banana", 4) # should print "bana", "anan", and "nana"  
+    ```
+
+    **Hint:** Unlike the `count_char` function, it is not a good idea to loop through the characters in the string.  Instead, loop through the index numbers for the starting positions of substrings you want to print. 
+
+2. Write a function called `count_substrings` that inputs a string and substring, and counts how often that substring appears in the string.  For example 
+
+    ```python
+    count_substring("banana", "an") # should return 2. 
+    ```
+
 
 - - - 
 
@@ -993,10 +1112,10 @@ Here is the algorithm:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 21 | [TP6][TP6] | Recursion with return values
+Mon, Sep 21 | [TP9][TP9] | Lists
 Wed, Sep 23 | docs | Sequence types
-Thu, Sep 24 | [TP9][TP9] | Lists
-Fri, Sep 25 | [TP9][TP9] | Lists con’d
+Thu, Sep 24 |      | Mutability and immutability
+Fri, Sep 25 | [TP9][TP9] | Lists - con’d
 
 <!--
 
@@ -1098,8 +1217,8 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 28 | [TP8][TP8] | Strings
-Wed, Sep 30 | [TP8][TP8] | Strings con'd
+Mon, Sep 28 | [TP6][TP6] | Recursion
+Wed, Sep 30 | [TP6][TP6] | Recursion with return values
 Thu, Oct 1  |  | Review 
 Fri, Oct 2  |  | **Midterm 1**
 
@@ -1203,7 +1322,7 @@ print(example_string[1])
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 5  |                | Mutability and immutability
+Mon, Oct 5  | 
 Wed, Oct 7  | [TP14.2][TP14.2] | Reading files
 Thu, Oct 8  | [TP14.2][TP14.2] | Reading files
 Fri, Oct 9  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce)

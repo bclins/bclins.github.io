@@ -1106,14 +1106,14 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 <tr>
 <td style="text-align: center;">Thu, Sep 17</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
-<td style="text-align: left;"></td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
+<td style="text-align: left;">Strings indices &amp; slicing</td>
 </tr>
 <tr>
 <td style="text-align: center;">Fri, Sep 18</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5">TP5</a></td>
-<td style="text-align: left;">Recursion</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
+<td style="text-align: left;">String methods</td>
 </tr>
 </tbody>
 </table>
@@ -1243,9 +1243,288 @@ Here is the algorithm:
 </pre>
 
 5. Write a program to do [fizz buzz](https://en.wikipedia.org/wiki/Fizz_buzz).
-
-### Thu, Sep 17
 -->
+<h3 id="thu-sep-17">Thu, Sep 17</h3>
+<p>We started by talking about <strong>Boolean valued
+functions</strong>. We did the example of determining whether a year is
+a leap year from the additional practice problems yesterday. We ended up
+writing two versions of the <code>is_leap_year</code> function, one
+using if-then statements (including the <strong>else-if</strong> keyword
+<code>elif</code>):</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_leap_year(year):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns True if year is a leap year, otherwise returns False.&quot;&quot;&quot;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span></code></pre></div>
+<p>Since the conditions we are checking are already Boolean expressions,
+we can skip if-then statements entirely and just return the value of a
+single Boolean expression:</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_leap_year(year):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns True if year is a leap year, otherwise returns False.&quot;&quot;&quot;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> year <span class="op">%</span> <span class="dv">100</span> <span class="op">!=</span> <span class="dv">0</span>) <span class="kw">or</span> (year <span class="op">%</span> <span class="dv">400</span> <span class="op">==</span> <span class="dv">0</span>):</span></code></pre></div>
+<p>You can decide for yourself which version of the
+<code>is_leap_year</code> function you prefer. We finished our
+discussion of Boolean valued functions with the following exercise.</p>
+<ol type="1">
+<li>Use the <code>is_leap_year</code> function in a loop to print the
+next 20 years, with an asterisk to mark leap years.</li>
+</ol>
+<p>After that, we talked about Python strings.
+<!-- We already know how to create strings using quotation, combine strings using the `+` operator, and repeat strings using the `*` operator.  --></p>
+<h4 id="selecting-characters-from-a-string">Selecting characters from a
+string</h4>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some example strings</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> <span class="st">&quot;banana&quot;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>alphabet <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">&quot;The quick brown fox&quot;</span></span></code></pre></div>
+<p>Each character in a string has an <strong>index</strong>. For
+example, the indices of <code>string</code> are shown below.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+string
+</th>
+<td>
+<code>T</code>
+</td>
+<td>
+<code>h</code>
+</td>
+<td>
+<code>e</code>
+</td>
+<td>
+</td>
+<td>
+<code>q</code>
+</td>
+<td>
+<code>u</code>
+</td>
+<td>
+<code>i</code>
+</td>
+<td>
+<code>c</code>
+</td>
+<td>
+<code>k</code>
+</td>
+<td>
+</td>
+<td>
+<code>b</code>
+</td>
+<td>
+<code>r</code>
+</td>
+<td>
+<code>o</code>
+</td>
+<td>
+<code>w</code>
+</td>
+<td>
+<code>n</code>
+</td>
+<td>
+</td>
+<td>
+<code>f</code>
+</td>
+<td>
+<code>o</code>
+</td>
+<td>
+<code>x</code>
+</td>
+</tr>
+<tr>
+<th>
+index
+</th>
+<td>
+<code>0</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>2</code>
+</td>
+<td>
+<code>3</code>
+</td>
+<td>
+<code>4</code>
+</td>
+<td>
+<code>5</code>
+</td>
+<td>
+<code>6</code>
+</td>
+<td>
+<code>7</code>
+</td>
+<td>
+<code>8</code>
+</td>
+<td>
+<code>9</code>
+</td>
+<td>
+<code>10</code>
+</td>
+<td>
+<code>11</code>
+</td>
+<td>
+<code>12</code>
+</td>
+<td>
+<code>13</code>
+</td>
+<td>
+<code>14</code>
+</td>
+<td>
+<code>15</code>
+</td>
+<td>
+<code>16</code>
+</td>
+<td>
+<code>17</code>
+</td>
+<td>
+<code>18</code>
+</td>
+</tr>
+</table>
+</center>
+<ol type="1">
+<li><p>What is the value of <code>alphabet[3]</code>? What is
+<code>alphabet[0]</code>?</p></li>
+<li><p>How could you get the last character in alphabet?</p></li>
+<li><p>What error message do you get if you ask for
+<code>alphabet[26]</code>?</p></li>
+<li><p>What happens if you ask for the character at a non-integer index,
+like <code>fruit[1.5]</code>?</p></li>
+</ol>
+<p>You can also access characters in a string using <strong>negative
+index</strong> values. These count from the end of the string
+backwards.</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+string
+</th>
+<td>
+<code>b</code>
+</td>
+<td>
+<code>a</code>
+</td>
+<td>
+<code>n</code>
+</td>
+<td>
+<code>a</code>
+</td>
+<td>
+<code>n</code>
+</td>
+<td>
+<code>a</code>
+</td>
+</tr>
+<tr>
+<th>
+negative index
+</th>
+<td>
+<code>-6</code>
+</td>
+<td>
+<code>-5</code>
+</td>
+<td>
+<code>-4</code>
+</td>
+<td>
+<code>-3</code>
+</td>
+<td>
+<code>-2</code>
+</td>
+<td>
+<code>-1</code>
+</td>
+</tr>
+</table>
+</center>
+<ol type="1">
+<li>What is <code>alphabet[-2]</code>?</li>
+</ol>
+<h4 id="the-length-function">The length function</h4>
+<p>To get the length of a string, use the Python function
+<code>len</code>.</p>
+<ol type="1">
+<li><p>What is <code>len(alphabet)</code>?</p></li>
+<li><p>What is <code>len("6")</code>?</p></li>
+<li><p>What is <code>len("")</code>?</p></li>
+</ol>
+<h4 id="slicing-strings">Slicing strings</h4>
+<p>You can get a substring by <strong>slicing</strong> the string using
+this pattern: <code>string[start:stop]</code>.</p>
+<ol type="1">
+<li>How would you select the word <code>"brown"</code> from the string
+<code>string = "The quick brown fox"</code>?</li>
+</ol>
+<p>You can use positive or negative index values when you slice a
+string. If you want to slice all the way to the end, you can leave the
+end blank:</p>
+<ol start="2" type="1">
+<li>What is <code>alphabet[-3:]</code>?</li>
+</ol>
+<h4 id="looping-through-strings">Looping through strings</h4>
+<p>You can loop through the characters of a string using a for-loop:</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">&quot;hello&quot;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> string:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(char)</span></code></pre></div>
+<ol type="1">
+<li><p>Write a function called <code>count_char</code>. It should input
+a string and a character, and return the number of times that character
+appears in the string. For example</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>count_char(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;a&quot;</span>) <span class="co"># should return 3.  </span></span></code></pre></div></li>
+</ol>
+<h4 id="additional-practice-10">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a loop to print all consecutive substrings of a given
+length. For example,</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>print_substrings(<span class="st">&quot;banana&quot;</span>, <span class="dv">4</span>) <span class="co"># should print &quot;bana&quot;, &quot;anan&quot;, and &quot;nana&quot;  </span></span></code></pre></div>
+<p><strong>Hint:</strong> Unlike the <code>count_char</code> function,
+it is not a good idea to loop through the characters in the string.
+Instead, loop through the index numbers for the starting positions of
+substrings you want to print.</p></li>
+<li><p>Write a function called <code>count_substrings</code> that inputs
+a string and substring, and counts how often that substring appears in
+the string. For example</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>count_substring(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;an&quot;</span>) <span class="co"># should return 2. </span></span></code></pre></div></li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
@@ -1260,8 +1539,8 @@ Here is the algorithm:
 <tr>
 <td style="text-align: center;">Mon, Sep 21</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6">TP6</a></td>
-<td style="text-align: left;">Recursion with return values</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
+<td style="text-align: left;">Lists</td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Sep 23</td>
@@ -1270,15 +1549,14 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </tr>
 <tr>
 <td style="text-align: center;">Thu, Sep 24</td>
-<td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
-<td style="text-align: left;">Lists</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Mutability and immutability</td>
 </tr>
 <tr>
 <td style="text-align: center;">Fri, Sep 25</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
-<td style="text-align: left;">Lists con’d</td>
+<td style="text-align: left;">Lists - con’d</td>
 </tr>
 </tbody>
 </table>
@@ -1387,14 +1665,14 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 <tr>
 <td style="text-align: center;">Mon, Sep 28</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
-<td style="text-align: left;">Strings</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6">TP6</a></td>
+<td style="text-align: left;">Recursion</td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Sep 30</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8">TP8</a></td>
-<td style="text-align: left;">Strings con’d</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6">TP6</a></td>
+<td style="text-align: left;">Recursion with return values</td>
 </tr>
 <tr>
 <td style="text-align: center;">Thu, Oct 1</td>
@@ -1516,7 +1794,7 @@ print(example_string[1])
 <tr>
 <td style="text-align: center;">Mon, Oct 5</td>
 <td style="text-align: center;"></td>
-<td style="text-align: left;">Mutability and immutability</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Oct 7</td>
