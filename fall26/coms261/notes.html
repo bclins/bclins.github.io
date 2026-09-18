@@ -1525,9 +1525,78 @@ the string. For example</p>
 <div class="sourceCode" id="cb37"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>count_substring(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;an&quot;</span>) <span class="co"># should return 2. </span></span></code></pre></div></li>
 </ol>
+<h3 id="fri-sep-18">Fri, Sep 18</h3>
+<p>Today we talked about <strong>string methods</strong>. A
+<strong>method</strong> is a special kind of function that belongs to
+the object you are using it on. To call a string method, you use the
+following syntax.</p>
+<center>
+<span style="color:blue"><strong>string_name</strong></span>.<span
+style="color:red"><strong>method_name</strong></span>(<em>any additional
+arguments</em>)
+</center>
+<p>Python has lots of string methods, but today we talked about some of
+the most important examples.</p>
+<ol type="1">
+<li><p><strong>The count method.</strong> Try the command
+<code>"banana".count("a")</code>. What does the <code>count</code>
+method do? Does it work if the additional argument is a substring like
+<code>"an"</code> instead of a single character?</p></li>
+<li><p><strong>The find method.</strong> Returns the index where the
+first example of a substring can be found in a larger string. If the
+larger string does not contain the substring, then it returns
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.</p>
+<ul>
+<li>What is <code>"banana".find("na")</code>?</li>
+<li>What about <code>"banana".find("x")</code>?</li>
+<li>What happens if a substring or character occurs more than once, like
+<code>"banana".find("a")</code>?</li>
+</ul></li>
+<li><p><strong>The upper and lower methods.</strong> Try these commands:
+<code>"Banana".upper()</code> and
+<code>"Banana".lower()</code>.</p></li>
+<li><p><strong>The replace method.</strong> What does the replace method
+do? Try these examples to see:
+<code>"banana".replace("a", "b")</code></p></li>
+</ol>
+<p>We did these practice problems:</p>
+<ol type="1">
+<li>Write a function called <code>count_vowels</code> that returns how
+many vowels (a, e, i, o, u) there are in a string. It helps to use the
+<code>.lower()</code> method to avoid having to check for upper case
+vowels too.</li>
+</ol>
+<p>This example let us talk about <strong>method chaining</strong> when
+you call methods like this: <code>x.method1().method2()</code>.</p>
+<ol start="2" type="1">
+<li>Use method chaining to remove punctuation and standardize
+capitalization for this string: <code>"hELLo, WOrlD!"</code>.</li>
+</ol>
+<p>We finished with this surprisingly difficult exercise:</p>
+<ol start="3" type="1">
+<li>Write a function that changes the 5th character in any string to an
+<code>"x"</code>.</li>
+</ol>
+<h4 id="additional-practice-11">Additional Practice</h4>
+<ol type="1">
+<li><p>Use method chaining to write an expression that converts a string
+to lower case and replaces spaces with dashes. So it should convert
+<code>"Week 4 Notes"</code> to <code>"week-4-notes"</code>.</p></li>
+<li><p>Write a function that returns the first word in a string
+(everything from the beginning of the string until the first space
+character).</p></li>
+<li><p>Write a function that returns the second word in a string
+(everything from the first space character until the next space
+character).</p></li>
+</ol>
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
 <thead>
 <tr>
 <th style="text-align: center;">Day</th>
@@ -1539,12 +1608,13 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a h
 <tr>
 <td style="text-align: center;">Mon, Sep 21</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
 <td style="text-align: left;">Lists</td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Sep 23</td>
-<td style="text-align: center;">docs</td>
+<td style="text-align: center;"><a
+href="https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
 <td style="text-align: left;">Sequence types</td>
 </tr>
 <tr>
@@ -1555,7 +1625,7 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 <tr>
 <td style="text-align: center;">Fri, Sep 25</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9">TP9</a></td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
 <td style="text-align: left;">Lists - con’d</td>
 </tr>
 </tbody>

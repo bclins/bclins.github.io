@@ -340,6 +340,12 @@ We finished with this practice problem:
     d. The statistic
     e. The parameter
 
+### Fri, Sep 18
+
+We did this workshop. 
+
+* **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
+
 
 - - - 
 
@@ -353,10 +359,6 @@ Fri, Sep 25 |            | **Midterm 1**
 
 <!--
 ### Mon, Feb 9
-
-We did this workshop. 
-
-* **Workshop**: [Random error versus bias](http://people.hsc.edu/faculty-staff/blins/StatsExamples/BiasRandomError.pdf)
 
 <!--
 ### Wed, Sep 24

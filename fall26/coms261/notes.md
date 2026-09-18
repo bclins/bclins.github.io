@@ -1103,6 +1103,48 @@ for char in string:
     count_substring("banana", "an") # should return 2. 
     ```
 
+### Fri, Sep 18
+
+Today we talked about **string methods**.  A **method** is a special kind of function that belongs to the object you are using it on.  To call a string method, you use the following syntax.
+
+<center>
+<span style="color:blue">**string_name**</span>.<span style="color:red">**method_name**</span>(*any additional arguments*)
+</center>
+
+Python has lots of string methods, but today we talked about some of the most important examples.  
+
+1. **The count method.** Try the command `"banana".count("a")`.  What does the `count` method do?  Does it work if the additional argument is a substring like `"an"` instead of a single character? 
+
+2. **The find method.** Returns the index where the first example of a substring can be found in a larger string. If the larger string does not contain the substring, then it returns $-1$.  
+    - What is `"banana".find("na")`? 
+    - What about `"banana".find("x")`? 
+    - What happens if a substring or character occurs more than once, like `"banana".find("a")`? 
+
+3. **The upper and lower methods.** Try these commands: `"Banana".upper()` and `"Banana".lower()`.  
+
+4. **The replace method.** What does the replace method do?  Try these examples to see:
+    `"banana".replace("a", "b")`
+
+We did these practice problems:
+
+1. Write a function called `count_vowels` that returns how many vowels (a, e, i, o, u) there are in a string. It helps to use the `.lower()` method to avoid having to check for upper case vowels too. 
+
+This example let us talk about **method chaining** when you call methods like this: `x.method1().method2()`. 
+
+2. Use method chaining to remove punctuation and standardize capitalization for this string: `"hELLo, WOrlD!"`. 
+
+We finished with this surprisingly difficult exercise:
+
+3. Write a function that changes the 5th character in any string to an `"x"`. 
+
+#### Additional Practice
+
+1. Use method chaining to write an expression that converts a string to lower case and replaces spaces with dashes.  So it should convert `"Week 4 Notes"` to `"week-4-notes"`. 
+
+2. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+
+3. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
+
 
 - - - 
 
@@ -1112,10 +1154,10 @@ for char in string:
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Sep 21 | [TP9][TP9] | Lists
-Wed, Sep 23 | docs | Sequence types
+Mon, Sep 21 | [TP10][TP10] | Lists
+Wed, Sep 23 | [docs](https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 24 |      | Mutability and immutability
-Fri, Sep 25 | [TP9][TP9] | Lists - con’d
+Fri, Sep 25 | [TP10][TP10] | Lists - con’d
 
 <!--
 

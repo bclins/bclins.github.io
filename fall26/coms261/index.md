@@ -42,15 +42,15 @@ Week | Topic                      | Notes | Projects
 :---:|:---------------------------|:-----:|:--------:
 1  | Variables, expressions, & statements | [Week 01](notes.html#week-1-notes)  | 
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 1](project1.pdf)
-3  | Conditionals                         | [Week 03](notes.html#week-3-notes)  | 
-4  | Recursion                            | [Week 04](notes.html#week-4-notes)  | 
-5  | More on functions                    | [Week 05](notes.html#week-5-notes)  | 
-6  | Iteration, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | 
-7  | Strings                              | [Week 07](notes.html#week-7-notes)  | 
-8  | Lists                                | [Week 08](notes.html#week-8-notes)  | 
-9  | Dictionaries                         | [Week 09](notes.html#week-9-notes)  | 
-10 | Tuples                               | [Week 10](notes.html#week-10-notes) | 
-11 | File                                 | [Week 11](notes.html#week-11-notes) | 
+3  | Loops                                | [Week 03](notes.html#week-3-notes)  | 
+4  | Strings                              | [Week 04](notes.html#week-4-notes)  | 
+5  | Lists                                | [Week 05](notes.html#week-5-notes)  | 
+6  | Recursion, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | 
+7  | Files                                | [Week 07](notes.html#week-7-notes)  | 
+8  | Dictionaries                         | [Week 08](notes.html#week-8-notes)  | 
+9  | Tuples                               | [Week 09](notes.html#week-9-notes)  | 
+10 | Searching and sorting                | [Week 10](notes.html#week-10-notes) | 
+11 | Program structure                    | [Week 11](notes.html#week-11-notes) | 
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
 13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 
 14 | Classes and methods                  | [Week 14](notes.html#week-14-notes) | 

@@ -30,6 +30,7 @@ header-includes: |
 
 ### Announcements
 
+* Midterm 1 materials: [review problems](https://bclins.github.io/fall25/math121/midterm1review.pdf)
 * Student tutors are available Monday, Tuesday, & Thursday nights 8-10pm in Pauley 105.
 
 ### Tentative Schedule
