@@ -1131,19 +1131,25 @@ We did these practice problems:
 
 This example let us talk about **method chaining** when you call methods like this: `x.method1().method2()`. 
 
-2. Use method chaining to remove punctuation and standardize capitalization for this string: `"hELLo, WOrlD!"`. 
+<!--
 
 We finished with this surprisingly difficult exercise:
 
 3. Write a function that changes the 5th character in any string to an `"x"`. 
+-->
 
 #### Additional Practice
 
-1. Use method chaining to write an expression that converts a string to lower case and replaces spaces with dashes.  So it should convert `"Week 4 Notes"` to `"week-4-notes"`. 
 
-2. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+1. Use method chaining to remove punctuation and standardize capitalization for this string: `"hELLo, WOrlD!"`. 
 
-3. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
+2. Use method chaining to write an expression that converts a string to lower case and replaces spaces with dashes.  So it should convert `"Week 4 Notes"` to `"week-4-notes"`. 
+
+<!--
+3. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+
+4. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
+-->
 
 
 - - - 
