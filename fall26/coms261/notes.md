@@ -1135,21 +1135,14 @@ This example let us talk about **method chaining** when you call methods like th
 
 We finished with this surprisingly difficult exercise:
 
-3. Write a function that changes the 5th character in any string to an `"x"`. 
 -->
 
 #### Additional Practice
 
 
-1. Use method chaining to remove punctuation and standardize capitalization for this string: `"hELLo, WOrlD!"`. 
+1. Use method chaining to remove punctuation and make every letter lower case for this string: `"hELLo, WOrlD!"`. 
 
 2. Use method chaining to write an expression that converts a string to lower case and replaces spaces with dashes.  So it should convert `"Week 4 Notes"` to `"week-4-notes"`. 
-
-<!--
-3. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
-
-4. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
--->
 
 
 - - - 
@@ -1164,6 +1157,88 @@ Mon, Sep 21 | [TP10][TP10] | Lists
 Wed, Sep 23 | [docs](https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
 Thu, Sep 24 |      | Mutability and immutability
 Fri, Sep 25 | [TP10][TP10] | Lists - con’d
+
+### Mon, Sep 21
+
+Today we introduced **lists** in Python.  Lists are a type the can store more than one value.  We introduced how to define a list using square brackets (including an empty list) and how to create a new list by adding two lists together. Many of the same techniques that work for strings also work for lists, including selecting elements, slicing, looping through elements in a list, and the length function.  
+
+```python
+# Example lists
+fruit = ["apple", "banana", "cherry"]
+squares = [1, 4, 9, 16, 25, 36]
+mixed = [4, True, "ten", 3.14] # Unlike Java arrays, lists can contain more than one type. 
+```
+
+There are two different ways to loop through the elements in a list.
+
+<table>
+<tr style="background-color: transparent">
+<td>
+```python
+# Looping through each element in a list
+fruit = ["apple", "berry", "cherry"]
+for word in fruit:
+    print("I like " + word + " pie")
+```
+</td><td>
+```python
+# Looping through each index in a list
+fruit = ["apple", "berry", "cherry"]
+for i in range(len(fruit)):
+    print("I like " + fruit[i] + " pie")
+```
+</td>
+</table>
+
+1. Write a function called `multiply` that multiplies all of the numbers in a list together and returns the result. 
+
+2. Write a function that inputs a list of words, and then prints out the length of each word. 
+
+3. Write a function that returns the index of the first even number in a list, or $-1$ if there are no even numbers in the list. Hint: to get the index, you won't be able to loop directly through the elements in the list like you did in the other exercises.  Instead, you'll need to loop through the index values from 0 up to, but not including the length of the list. 
+
+We finished with this example, which requires us to use an empty list as an accumulator variable, and then add new elements to the list as we go.  To add an element to a list, use the `.append` method.  
+
+4. Write a function that inputs a list of words, and then returns a new list that contains the length of each word.  
+
+<!--
+THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY
+
+1. Write a function that changes the 5th character in any string to an `"x"`. 
+
+2. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+
+3. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
+-->
+
+
+
+<!-- Save this for later:
+We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
+
+3. Write a program that generates a list of all prime numbers less than n.  
+
+### Thu, Sep 26
+
+<!--
+We started with this exercise from yesterday:
+
+1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
+
+We talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
+
+1. Write a function that prints every other character in a string. 
+
+2. Write a function called `is_integer_string(s)` that returns true if `s` is a string with only the digits 0 through 9 as characters.  
+
+
+3. Write a function called `even_elements(numbers)` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
+
+```python
+def even_elements(numbers):
+    # You'll need two accumulator variables for this function. 
+    # One to count the even elements, and
+    # another to save the index of the first even element when you find it.
+
 
 <!--
 

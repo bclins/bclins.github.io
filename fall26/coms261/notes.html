@@ -1572,21 +1572,15 @@ you call methods like this: <code>x.method1().method2()</code>.</p>
 
 We finished with this surprisingly difficult exercise:
 
-3. Write a function that changes the 5th character in any string to an `"x"`. 
 -->
 <h4 id="additional-practice-11">Additional Practice</h4>
 <ol type="1">
-<li><p>Use method chaining to remove punctuation and standardize
-capitalization for this string: <code>"hELLo, WOrlD!"</code>.</p></li>
+<li><p>Use method chaining to remove punctuation and make every letter
+lower case for this string: <code>"hELLo, WOrlD!"</code>.</p></li>
 <li><p>Use method chaining to write an expression that converts a string
 to lower case and replaces spaces with dashes. So it should convert
 <code>"Week 4 Notes"</code> to <code>"week-4-notes"</code>.</p></li>
 </ol>
-<!--
-3. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
-
-4. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
--->
 <hr />
 <h3 id="week-5-notes">Week 5 Notes</h3>
 <table>
@@ -1628,6 +1622,97 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </tr>
 </tbody>
 </table>
+<h3 id="mon-sep-21">Mon, Sep 21</h3>
+<p>Today we introduced <strong>lists</strong> in Python. Lists are a
+type the can store more than one value. We introduced how to define a
+list using square brackets (including an empty list) and how to create a
+new list by adding two lists together. Many of the same techniques that
+work for strings also work for lists, including selecting elements,
+slicing, looping through elements in a list, and the length
+function.</p>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example lists</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>, <span class="dv">36</span>]</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>mixed <span class="op">=</span> [<span class="dv">4</span>, <span class="va">True</span>, <span class="st">&quot;ten&quot;</span>, <span class="fl">3.14</span>] <span class="co"># Unlike Java arrays, lists can contain more than one type. </span></span></code></pre></div>
+<p>There are two different ways to loop through the elements in a
+list.</p>
+<table>
+<tr style="background-color: transparent">
+<td>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each element in a list</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> fruit:</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> word <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
+</td>
+<td>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each index in a list</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruit)):</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruit[i] <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
+</td>
+</table>
+<ol type="1">
+<li><p>Write a function called <code>multiply</code> that multiplies all
+of the numbers in a list together and returns the result.</p></li>
+<li><p>Write a function that inputs a list of words, and then prints out
+the length of each word.</p></li>
+<li><p>Write a function that returns the index of the first even number
+in a list, or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+if there are no even numbers in the list. Hint: to get the index, you
+won’t be able to loop directly through the elements in the list like you
+did in the other exercises. Instead, you’ll need to loop through the
+index values from 0 up to, but not including the length of the
+list.</p></li>
+</ol>
+<p>We finished with this example, which requires us to use an empty list
+as an accumulator variable, and then add new elements to the list as we
+go. To add an element to a list, use the <code>.append</code>
+method.</p>
+<ol start="4" type="1">
+<li>Write a function that inputs a list of words, and then returns a new
+list that contains the length of each word.</li>
+</ol>
+<!--
+THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY
+
+1. Write a function that changes the 5th character in any string to an `"x"`. 
+
+2. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+
+3. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
+-->
+<!-- Save this for later:
+We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
+
+3. Write a program that generates a list of all prime numbers less than n.  
+
+### Thu, Sep 26
+
+<!--
+We started with this exercise from yesterday:
+
+1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
+
+We talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
+
+1. Write a function that prints every other character in a string. 
+
+2. Write a function called `is_integer_string(s)` that returns true if `s` is a string with only the digits 0 through 9 as characters.  
+
+
+3. Write a function called `even_elements(numbers)` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
+
+```python
+def even_elements(numbers):
+    # You'll need two accumulator variables for this function. 
+    # One to count the even elements, and
+    # another to save the index of the first even element when you find it.
+
+
 <!--
 
 ### Mon, Sep 23
