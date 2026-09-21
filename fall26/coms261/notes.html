@@ -1624,17 +1624,31 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </table>
 <h3 id="mon-sep-21">Mon, Sep 21</h3>
 <p>Today we introduced <strong>lists</strong> in Python. Lists are a
-type the can store more than one value. We introduced how to define a
-list using square brackets (including an empty list) and how to create a
-new list by adding two lists together. Many of the same techniques that
-work for strings also work for lists, including selecting elements,
-slicing, looping through elements in a list, and the length
-function.</p>
+type of object the can store more than one value. We introduced how to
+define a list using square brackets (including an empty list).</p>
 <div class="sourceCode" id="cb38"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example lists</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>, <span class="dv">25</span>, <span class="dv">36</span>]</span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>mixed <span class="op">=</span> [<span class="dv">4</span>, <span class="va">True</span>, <span class="st">&quot;ten&quot;</span>, <span class="fl">3.14</span>] <span class="co"># Unlike Java arrays, lists can contain more than one type. </span></span></code></pre></div>
+<h4 id="basic-list-operations">Basic list operations</h4>
+Many of the same techniques that work for strings also work for lists,
+including the following.
+<ul style = "column-count: 2;">
+<li>
+Selecting elements
+<li>
+Slicing
+<li>
+Length function (<code>len</code>)
+<li>
+Adding lists
+<li>
+Multiplying by an integer
+<li>
+Looping through elements
+</ul>
+<h4 id="looping-through-lists">Looping through lists</h4>
 <p>There are two different ways to loop through the elements in a
 list.</p>
 <table>
@@ -1642,39 +1656,48 @@ list.</p>
 <td>
 <div class="sourceCode" id="cb39"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each element in a list</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> fruit:</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> word <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruit <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
 </td>
 <td>
 <div class="sourceCode" id="cb40"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each index in a list</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruit)):</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruit[i] <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruits)):</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruits[i] <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
 </td>
 </table>
+<h4 id="practice">Practice</h4>
 <ol type="1">
 <li><p>Write a function called <code>multiply</code> that multiplies all
-of the numbers in a list together and returns the result.</p></li>
-<li><p>Write a function that inputs a list of words, and then prints out
-the length of each word.</p></li>
-<li><p>Write a function that returns the index of the first even number
-in a list, or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
-if there are no even numbers in the list. Hint: to get the index, you
-won’t be able to loop directly through the elements in the list like you
-did in the other exercises. Instead, you’ll need to loop through the
-index values from 0 up to, but not including the length of the
-list.</p></li>
+of the numbers in a list together and returns the result. Use a loop
+with an accumulator variable to accumulate the product as you
+go.</p></li>
+<li><p>Write a function called <code>print_lengths</code> that inputs a
+list of strings, and then prints out the length of each string.</p></li>
 </ol>
 <p>We finished with this example, which requires us to use an empty list
 as an accumulator variable, and then add new elements to the list as we
 go. To add an element to a list, use the <code>.append</code>
 method.</p>
-<ol start="4" type="1">
-<li>Write a function that inputs a list of words, and then returns a new
-list that contains the length of each word.</li>
+<ol start="3" type="1">
+<li><p>Write a function called <code>return_lengths</code> that inputs a
+list of strings, and then returns a new list that contains the length of
+each string in the original list. For example:</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>return_lengths([<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]) <span class="co"># Should return [5, 5, 6]</span></span></code></pre></div></li>
+</ol>
+<h4 id="additional-practice-12">Additional Practice</h4>
+<ol type="1">
+<li>Write a function that returns the index of the first even number in
+a list, or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+if there are no even numbers in the list. Hint: to get the index, you
+won’t be able to loop directly through the elements in the list like you
+did in the other exercises. Instead, you’ll need to loop through the
+index values from 0 up to, but not including the length of the
+list.</li>
 </ol>
 <!--
 THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY

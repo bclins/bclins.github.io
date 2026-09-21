@@ -1160,14 +1160,30 @@ Fri, Sep 25 | [TP10][TP10] | Lists - con’d
 
 ### Mon, Sep 21
 
-Today we introduced **lists** in Python.  Lists are a type the can store more than one value.  We introduced how to define a list using square brackets (including an empty list) and how to create a new list by adding two lists together. Many of the same techniques that work for strings also work for lists, including selecting elements, slicing, looping through elements in a list, and the length function.  
+Today we introduced **lists** in Python.  Lists are a type of object the can store more than one value.  We introduced how to define a list using square brackets (including an empty list). 
 
 ```python
 # Example lists
-fruit = ["apple", "banana", "cherry"]
+fruits = ["apple", "banana", "cherry"]
 squares = [1, 4, 9, 16, 25, 36]
 mixed = [4, True, "ten", 3.14] # Unlike Java arrays, lists can contain more than one type. 
 ```
+
+
+#### Basic list operations
+
+Many of the same techniques that work for strings also work for lists, including the following.
+<ul style = "column-count: 2;">
+<li>Selecting elements
+<li>Slicing
+<li>Length function (`len`)
+<li>Adding lists
+<li>Multiplying by an integer
+<li>Looping through elements
+</ul>
+
+
+#### Looping through lists 
 
 There are two different ways to loop through the elements in a list.
 
@@ -1176,29 +1192,38 @@ There are two different ways to loop through the elements in a list.
 <td>
 ```python
 # Looping through each element in a list
-fruit = ["apple", "berry", "cherry"]
-for word in fruit:
-    print("I like " + word + " pie")
+fruits = ["apple", "berry", "cherry"]
+for fruit in fruits:
+    print("I like " + fruit + " pie")
 ```
 </td><td>
 ```python
 # Looping through each index in a list
-fruit = ["apple", "berry", "cherry"]
-for i in range(len(fruit)):
-    print("I like " + fruit[i] + " pie")
+fruits = ["apple", "berry", "cherry"]
+for i in range(len(fruits)):
+    print("I like " + fruits[i] + " pie")
 ```
 </td>
 </table>
 
-1. Write a function called `multiply` that multiplies all of the numbers in a list together and returns the result. 
+#### Practice 
 
-2. Write a function that inputs a list of words, and then prints out the length of each word. 
+1. Write a function called `multiply` that multiplies all of the numbers in a list together and returns the result. Use a loop with an accumulator variable to accumulate the product as you go.
 
-3. Write a function that returns the index of the first even number in a list, or $-1$ if there are no even numbers in the list. Hint: to get the index, you won't be able to loop directly through the elements in the list like you did in the other exercises.  Instead, you'll need to loop through the index values from 0 up to, but not including the length of the list. 
+2. Write a function called `print_lengths` that inputs a list of strings, and then prints out the length of each string. 
 
 We finished with this example, which requires us to use an empty list as an accumulator variable, and then add new elements to the list as we go.  To add an element to a list, use the `.append` method.  
 
-4. Write a function that inputs a list of words, and then returns a new list that contains the length of each word.  
+3. Write a function called `return_lengths` that inputs a list of strings, and then returns a new list that contains the length of each string in the original list.  For example:
+
+    ```python
+    return_lengths(["apple", "berry", "cherry"]) # Should return [5, 5, 6]
+    ```
+
+#### Additional Practice 
+
+1. Write a function that returns the index of the first even number in a list, or $-1$ if there are no even numbers in the list. Hint: to get the index, you won't be able to loop directly through the elements in the list like you did in the other exercises.  Instead, you'll need to loop through the index values from 0 up to, but not including the length of the list. 
+
 
 <!--
 THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY
