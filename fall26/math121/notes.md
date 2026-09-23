@@ -357,7 +357,7 @@ Mon, Sep 21 | [1.4][1.4] | Randomized controlled experiments
 Wed, Sep 23 |            | Review
 Fri, Sep 25 |            | **Midterm 1**
 
-### Mon, Feb 9
+### Mon, Sep 21
 
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
@@ -419,12 +419,10 @@ We talked about why the polio vaccine trials were **double blind** and what that
 We finished by talking about **anecdotal evidence**. 
 
 
-<!--
-### Wed, Sep 24
+### Wed, Sep 23
 
 We talked about the [midterm 1 review problems](midterm1review.pdf).
 
--->
 
 - - - 
  

@@ -2,20 +2,21 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{soul}
+\usepackage{hyperref}
 \usepackage[empty]{fullpage}
 
 \begin{document}
 \section*{Project 2 \hfill CS 261}
 
-\textit{Save your program for this project as} \verb|<emailID>_project2.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by noon on Friday, October 2. }
+\textit{Save your program for this project as} \verb|<emailID>_project2.py| \textit{where} \verb|<emailID>| \textit{is the part of your Hampden-Sydney e-mail address before the @ symbol. When you are finished, e-mail your program to} \verb|blins@hsc.edu|. \textit{Your solution is due by 3:00pm on Friday, October 2. }
 
 \subsection*{Caesar Cipher}
 
 The Caesar cipher is one of the oldest and simplest methods for encrypting text. You pick a shift amount and then you shift every letter in the message by that amount.  For example, if the shift is 2, then a's become c's, b's become d's and so on, until y and z wrap around to become a and b, respectively.  A message like:
-$$\text{about to get hazy}$$
-would become:
-$$\text{cdqwv vq igv jcba}.$$
-For this project, you will write three functions related to the Caesar cipher.  You may also include any additional functions that are helpful to construct the three functions described below.  You should not import any libraries for this project. 
+$$\verb|it's about to rain|$$
+would become
+$$\verb|kv'u cdqwv vq tckp|$$
+For this project, you will write four functions related to the Caesar cipher.  You may also include any additional functions that are helpful to construct the functions described below.  You should not import any libraries for this project. 
 
 \begin{enumerate}
 \item Write a function \verb|letter2number| that converts lower case letters (a, b, c, $\ldots$, z) to the numbers ($0, 1, 2, \ldots, 25$).  For example \verb|letter2number("c")| should return 2.
@@ -39,10 +40,22 @@ For this project, you will write three functions related to the Caesar cipher.  
 %$$\verb|"z"| \rightarrow 25$$
 
 
-\item Write a function called \verb|caesar_shift(message, shift)| that applies a Caesar shift to any string.  You can assume that the message will not have any upper case letters, and you only need to shift letters, not any other symbols. 
+\item Write a function \verb|caesar_shift(message, shift)| that applies a Caesar shift to any string.  You can assume that the message will not have any upper case letters, and you only need to shift letters, not any other symbols. 
 
-\item The Caesar cipher is not a good way to encrypt a message because it is very easy to decrypt.  In fact, you can often figure out the shift by finding the most common letter in the encrypted text.  Since \verb|"e"| is the most common letter in most English texts, there is a good chance that the shift is just the amount needed for \verb|"e"| to become the most common letter in your encrypted message.  Write a function called \verb|letter_frequency(message)| that returns a list.  The value of the output list at index number $i$ should be the number of times the $i$-th letter of the alphabet occurs in the message.  So the first entry of the output is the number of a's, then b's, and so on. 
+\item The Caesar cipher is not a good way to encrypt a message because it is very easy to decrypt.  Write a function called \verb|try_all_shifts(message)| that will apply every Caesar shift from 1 to 25 to a string and print out the results.  Use your function to decrypt the following multiline string (which you can copy into your program).
 
+\begin{verbatim}
+mystery = """gurer ner fgenatr guvatf qbar va gur zvqavtug fha
+      ol gur zra jub zbvy sbe tbyq;
+gur nepgvp genvyf unir gurve frperg gnyrf
+      gung jbhyq znxr lbhe oybbq eha pbyq;
+gur abegurea yvtugf unir frra dhrre fvtugf,
+      ohg gur dhrrerfg gurl rire qvq frr
+jnf gung avtug ba gur znetr bs ynxr yronetr
+      v perzngrq fnz zptrr."""
+\end{verbatim}
+
+%\item The Caesar cipher is not a good way to encrypt a message because it is very easy to decrypt.  In fact, you can often figure out the shift by finding the most common letter in the encrypted text.  Since \verb|"e"| is the most common letter in most English texts, there is a good chance that the shift is just the amount needed for \verb|"e"| to become the most common letter in your encrypted message.  Write a function called \verb|letter_frequency(message)| that returns a list.  The value of the output list at index number $i$ should be the number of times the $i$-th letter of the alphabet occurs in the message.  So the first entry of the output is the number of a's, then b's, and so on. 
 
 %\item In order to find the letter that occurs the most in the message, we need a way to search through the output of the letter frequency list and find the index with the largest entry.  Write a function called \verb|argmax(list)| that will search a list of numbers and return the \emph{index} of the largest entry in the list.  If multiple entries in the list are tied for the largest value, then return the index of the first one that is equal to the maximum.  
 \end{enumerate}

@@ -30,6 +30,7 @@ header-includes: |
 
 ### Announcements
 
+* Midterm 1 materials: [review problems](midterm1review.pdf)
 * Student tutors are available Monday & Thursday nights from 8 - 10pm in Pauley 100.
 
 ### Course Description 
@@ -44,7 +45,7 @@ Week | Topic                      | Notes | Projects
 2  | Functions                            | [Week 02](notes.html#week-2-notes)  | [Project 1](project1.pdf)
 3  | Loops                                | [Week 03](notes.html#week-3-notes)  | 
 4  | Strings                              | [Week 04](notes.html#week-4-notes)  | 
-5  | Lists                                | [Week 05](notes.html#week-5-notes)  | 
+5  | Lists                                | [Week 05](notes.html#week-5-notes)  | [Project 2](project2.pdf)
 6  | Recursion, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | 
 7  | Files                                | [Week 07](notes.html#week-7-notes)  | 
 8  | Dictionaries                         | [Week 08](notes.html#week-8-notes)  | 

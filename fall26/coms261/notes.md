@@ -1225,6 +1225,24 @@ We finished with this example, which requires us to use an empty list as an accu
 1. Write a function that returns the index of the first even number in a list, or $-1$ if there are no even numbers in the list. Hint: to get the index, you won't be able to loop directly through the elements in the list like you did in the other exercises.  Instead, you'll need to loop through the index values from 0 up to, but not including the length of the list. 
 
 
+### Wed, Sep 23
+
+We started talking about the **in** operator in Python.  We did this exercise in class:
+
+1. Write a function `print_common_elements(list1, list2)` which prints any elements that appear in both `list1` and `list2`. Hint: You only need to use a single loop combined with a single if-then statement involving the `in` operator. 
+
+After that we talked about reasons why you would want to loop through the indices of a string or list instead of the elements themselves.  We talked about how to solve these two problems:
+
+2. Write a function to print all continuous length 3 substrings of a string. 
+
+3. Write a function to return the index of the first even element in a list of numbers (or -1 if there are no even elements).  
+
+#### Practice 
+
+1. Write a function called `repeat_pair` that returns True if a string has two consecutive characters that are the same (otherwise return False).  
+
+2. What happens if you use your function on a list instead of a string.  Does it still work?
+
 <!--
 THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY
 
