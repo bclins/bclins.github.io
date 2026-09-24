@@ -1244,7 +1244,13 @@ We did a workshop in class.
 
 * **Workshop:** [Sequence types](SequenceTypes.pdf)
 
+#### Additional Practice
 
+1. What is `"Test this"[-1]`?
+
+2. Can you slice from a range?  Try it out: what is `range(10)[2:5]`?  
+
+3. Can you add two ranges together?  What is `range(4) + range(5)`?
 
 <!-- Save this for later:
 We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
