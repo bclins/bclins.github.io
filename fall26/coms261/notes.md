@@ -1131,14 +1131,8 @@ We did these practice problems:
 
 This example let us talk about **method chaining** when you call methods like this: `x.method1().method2()`. 
 
-<!--
-
-We finished with this surprisingly difficult exercise:
-
--->
 
 #### Additional Practice
-
 
 1. Use method chaining to remove punctuation and make every letter lower case for this string: `"hELLo, WOrlD!"`. 
 
@@ -1243,15 +1237,12 @@ After that we talked about reasons why you would want to loop through the indice
 
 2. What happens if you use your function on a list instead of a string.  Does it still work?
 
-<!--
-THESE EXERCISES BELONG WHEN YOU TEACH MUTABILITY VERSUS IMMUTABILITY
 
-1. Write a function that changes the 5th character in any string to an `"x"`. 
+### Thu, Sep 24
 
-2. Write a function that returns the first word in a string (everything from the beginning of the string until the first space character).  
+We did a workshop in class. 
 
-3. Write a function that returns the second word in a string (everything from the first space character until the next space character).  
--->
+* **Workshop:** [Sequence types](SequenceTypes.pdf)
 
 
 
