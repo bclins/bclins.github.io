@@ -1601,19 +1601,20 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 <tr>
 <td style="text-align: center;">Wed, Sep 23</td>
 <td style="text-align: center;"><a
-href="https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
-<td style="text-align: left;">Sequence types</td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
+<td style="text-align: left;">The <code>in</code> operator</td>
 </tr>
 <tr>
 <td style="text-align: center;">Thu, Sep 24</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Mutability and immutability</td>
+<td style="text-align: center;"><a
+href="https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
+<td style="text-align: left;">Sequence types</td>
 </tr>
 <tr>
 <td style="text-align: center;">Fri, Sep 25</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10">TP10</a></td>
-<td style="text-align: left;">Lists - con’d</td>
+<td style="text-align: left;">2-dimensional lists</td>
 </tr>
 </tbody>
 </table>
@@ -1735,34 +1736,178 @@ types</a></li>
 <li><p>Can you add two ranges together? What is
 <code>range(4) + range(5)</code>?</p></li>
 </ol>
-<!-- Save this for later:
-We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
-
-3. Write a program that generates a list of all prime numbers less than n.  
-
-### Thu, Sep 26
-
-<!--
-We started with this exercise from yesterday:
-
-1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
-
-We talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
-
-1. Write a function that prints every other character in a string. 
-
-2. Write a function called `is_integer_string(s)` that returns true if `s` is a string with only the digits 0 through 9 as characters.  
-
-
-3. Write a function called `even_elements(numbers)` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
-
-```python
-def even_elements(numbers):
-    # You'll need two accumulator variables for this function. 
-    # One to count the even elements, and
-    # another to save the index of the first even element when you find it.
-
-
+<h3 id="fri-sep-25">Fri, Sep 25</h3>
+<p>Today we introduced <strong>2-dimensional lists</strong>. We started
+with this example. Suppose I have a grid with data like the
+following:</p>
+<center>
+<table class="bordered">
+<tr>
+<th>
+Student
+</th>
+<th>
+Homework
+</th>
+<th>
+Midterm Exam
+</th>
+<th>
+Final Exam
+</th>
+</tr>
+<tr>
+<td>
+Alice Adams
+</td>
+<td>
+90
+</td>
+<td>
+85
+</td>
+<td>
+80
+</td>
+</tr>
+<tr>
+<td>
+Bob Brown
+</td>
+<td>
+80
+</td>
+<td>
+90
+</td>
+<td>
+87
+</td>
+</tr>
+<tr>
+<td>
+Charlie Clark
+</td>
+<td>
+60
+</td>
+<td>
+75
+</td>
+<td>
+72
+</td>
+</tr>
+<tr>
+<td>
+Daisy Davis
+</td>
+<td>
+78
+</td>
+<td>
+69
+</td>
+<td>
+75
+</td>
+</tr>
+<tr>
+<td>
+Edward Evans
+</td>
+<td>
+81
+</td>
+<td>
+90
+</td>
+<td>
+97
+</td>
+</tr>
+</table>
+</center>
+<p>I could store each student’s data in a Python list.</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>student_data <span class="op">=</span> [</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;Alice Adams&quot;</span>, <span class="dv">90</span>, <span class="dv">85</span>, <span class="dv">80</span>]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;Bob Brown&quot;</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">87</span>]</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;Charlie Clark&quot;</span>, <span class="dv">60</span>, <span class="dv">75</span>, <span class="dv">72</span>]</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;Daisy Davis&quot;</span>, <span class="dv">78</span>, <span class="dv">69</span>, <span class="dv">75</span>]</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    [<span class="st">&quot;Edward Evans&quot;</span>, <span class="dv">81</span>, <span class="dv">90</span>, <span class="dv">97</span>]</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<ol type="1">
+<li><p>What is the value of <code>student_data[1]</code>?</p></li>
+<li><p>What is the value of <code>student_data[-1][3]</code>?</p></li>
+<li><p>How would you select the midterm grade for the 4th
+student?</p></li>
+<li><p>Write a for-loop to print every entry in the last
+column.</p></li>
+<li><p>Suppose that the final grade for the course above is 20%
+homework, 30% midterm exam, and 50% final exam. Write a loop that prints
+each student’s name and their final grade.</p></li>
+</ol>
+<p>Two-dimensional lists are convenient for storing the data in many
+board games.</p>
+<ol start="6" type="1">
+<li>Create a 2-dimensional list called <code>board</code> that stores
+the data from this tic-tac-toe board.</li>
+</ol>
+<center>
+<table class="bordered">
+<tr>
+<td>
+</td>
+<td>
+X
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+O
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+O
+</td>
+<td>
+</td>
+<td>
+X
+</td>
+</tr>
+</table>
+</center>
+<ol start="7" type="1">
+<li>How would you add an <code>"X"</code> to the top right corner of the
+tic-tac-toe <code>board</code>?</li>
+</ol>
+<h4 id="additional-practice-14">Additional Practice</h4>
+<ol type="1">
+<li><p>Suppose we have a list:</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="st">&quot;How&quot;</span>, <span class="st">&quot;are&quot;</span>, <span class="st">&quot;you&quot;</span>, <span class="st">&quot;today?&quot;</span>]</span></code></pre></div>
+<p>What is <code>lst[3][2]</code>?</p></li>
+<li><p>Write a function called <code>row_sums</code> that inputs a
+2-dimensional list of numbers, and returns a list with the sum of the
+numbers in each row. For example:</p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>row_sum([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]]) <span class="co"># should return [3, 7, 11]</span></span></code></pre></div></li>
+<li><p>Write a function called <code>column_sums</code> that inputs a
+2-dimensional list of numbers, and returns a list with the sum of the
+numbers in each column. You can assume that every row has the same
+number of elements. For example:</p>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>column_sum([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]]) <span class="co"># should return [9, 12]</span></span></code></pre></div></li>
+</ol>
 <!--
 
 ### Mon, Sep 23

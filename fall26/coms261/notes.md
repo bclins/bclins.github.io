@@ -1148,9 +1148,9 @@ This example let us talk about **method chaining** when you call methods like th
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 21 | [TP10][TP10] | Lists
-Wed, Sep 23 | [docs](https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
-Thu, Sep 24 |      | Mutability and immutability
-Fri, Sep 25 | [TP10][TP10] | Lists - con’d
+Wed, Sep 23 | [TP10][TP10] | The `in` operator
+Thu, Sep 24 | [docs](https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range) | Sequence types
+Fri, Sep 25 | [TP10][TP10] | 2-dimensional lists
 
 ### Mon, Sep 21
 
@@ -1252,32 +1252,83 @@ We did a workshop in class.
 
 3. Can you add two ranges together?  What is `range(4) + range(5)`?
 
-<!-- Save this for later:
-We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
 
-3. Write a program that generates a list of all prime numbers less than n.  
+### Fri, Sep 25
 
-### Thu, Sep 26
+Today we introduced **2-dimensional lists**.  We started with this example. Suppose I have a grid with data like the following:
 
-<!--
-We started with this exercise from yesterday:
+<center>
+<table class="bordered">
+<tr><th>Student</th><th>Homework</th><th>Midterm Exam</th><th>Final Exam</th></tr>
+<tr><td>Alice Adams</td><td>90</td><td>85</td><td>80</td></tr>
+<tr><td>Bob Brown</td><td>80</td><td>90</td><td>87</td></tr>
+<tr><td>Charlie Clark</td><td>60</td><td>75</td><td>72</td></tr>
+<tr><td>Daisy Davis</td><td>78</td><td>69</td><td>75</td></tr>
+<tr><td>Edward Evans</td><td>81</td><td>90</td><td>97</td></tr>
+</table>
+</center>
 
-1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
-
-We talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
-
-1. Write a function that prints every other character in a string. 
-
-2. Write a function called `is_integer_string(s)` that returns true if `s` is a string with only the digits 0 through 9 as characters.  
-
-
-3. Write a function called `even_elements(numbers)` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
+I could store each student's data in a Python list.
 
 ```python
-def even_elements(numbers):
-    # You'll need two accumulator variables for this function. 
-    # One to count the even elements, and
-    # another to save the index of the first even element when you find it.
+student_data = [
+    ["Alice Adams", 90, 85, 80]
+    ["Bob Brown", 80, 90, 87]
+    ["Charlie Clark", 60, 75, 72]
+    ["Daisy Davis", 78, 69, 75]
+    ["Edward Evans", 81, 90, 97]
+]
+```
+
+1. What is the value of `student_data[1]`? 
+
+1. What is the value of `student_data[-1][3]`?
+
+1. How would you select the midterm grade for the 4th student?  
+
+1. Write a for-loop to print every entry in the last column. 
+
+1. Suppose that the final grade for the course above is 20% homework, 30% midterm exam, and 50% final exam.  Write a loop that prints each student's name and their final grade.  
+
+Two-dimensional lists are convenient for storing the data in many board games.  
+
+6. Create a 2-dimensional list called `board` that stores the data from this tic-tac-toe board.
+
+<center>
+<table class="bordered">
+<tr><td></td><td> X  </td><td></td></tr>
+<tr><td></td><td> O  </td><td></td></tr>
+<tr><td> O  </td><td></td><td> X  </td></tr>
+</table>
+</center>
+
+7. How would you add an `"X"` to the top right corner of the tic-tac-toe `board`?  
+
+
+#### Additional Practice 
+
+1. Suppose we have a list:
+
+    ```python
+    lst = ["How", "are", "you", "today?"]
+    ```
+
+    What is `lst[3][2]`?
+
+1. Write a function called `row_sums` that inputs a 2-dimensional list of numbers, and returns a list with the sum of the numbers in each row.  For example:
+
+    ```python
+    row_sum([[1, 2], [3, 4], [5, 6]]) # should return [3, 7, 11]
+    ```
+
+2. Write a function called `column_sums` that inputs a 2-dimensional list of numbers, and returns a list with the sum of the numbers in each column. You can assume that every row has the same number of elements. For example:
+
+    ```python
+    column_sum([[1, 2], [3, 4], [5, 6]]) # should return [9, 12]
+    ```
+
+
+
 
 
 <!--
