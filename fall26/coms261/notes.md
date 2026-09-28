@@ -1272,10 +1272,10 @@ I could store each student's data in a Python list.
 
 ```python
 student_data = [
-    ["Alice Adams", 90, 85, 80]
-    ["Bob Brown", 80, 90, 87]
-    ["Charlie Clark", 60, 75, 72]
-    ["Daisy Davis", 78, 69, 75]
+    ["Alice Adams", 90, 85, 80],
+    ["Bob Brown", 80, 90, 87],
+    ["Charlie Clark", 60, 75, 72],
+    ["Daisy Davis", 78, 69, 75],
     ["Edward Evans", 81, 90, 97]
 ]
 ```
@@ -1304,16 +1304,31 @@ Two-dimensional lists are convenient for storing the data in many board games.
 
 7. How would you add an `"X"` to the top right corner of the tic-tac-toe `board`?  
 
+You can also use double indexing for other data structures, like lists of strings:
 
-#### Additional Practice 
-
-1. Suppose we have a list:
+8. Suppose we have a list:
 
     ```python
     lst = ["How", "are", "you", "today?"]
     ```
 
     What is `lst[3][2]`?
+
+9. Here is an example with triple indexing:
+
+    ```python
+    triple = [
+        ["One", "list"],
+        ["Two", "lists"],
+        ["One", "more", "list"]
+    ]
+    ```
+    
+    What is the value of `triple[-1][1][0]`?
+
+
+#### Additional Practice 
+
 
 1. Write a function called `row_sums` that inputs a 2-dimensional list of numbers, and returns a list with the sum of the numbers in each row.  For example:
 
@@ -1427,14 +1442,45 @@ Use this new style of for-loop to (re)write some of the functions we talked abou
 
 ### Week 6 Notes
 
-
-
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Sep 28 | [TP6][TP6] | Recursion
 Wed, Sep 30 | [TP6][TP6] | Recursion with return values
 Thu, Oct 1  |  | Review 
 Fri, Oct 2  |  | **Midterm 1**
+
+
+### Mon, Sep 28
+
+Today we talked about how to trace a recursive function.  We started with this example:
+
+```python
+def fib(n):
+    """Computes the n-th Fibonacci number"""
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)  
+
+print(fib(5))
+```
+
+We made a table showing how the variable `n` and the return value change as the function recursively evaluates `fib(5)`. 
+
+<center>
+<table class="bordered">
+<tr><th>&nbsp; n &nbsp;</th><th>returns</th></tr>
+<tr><td> 5 </td><td> `fib(4) + fib(3)`  </td></tr>
+<tr><td> 4 </td><td> `fib(3) + fib(2)`  </td></tr>
+<tr><td> 3 </td><td> `fib(2) + fib(1)`  </td></tr>
+<tr><td> 2 </td><td> `fib(1) + fib(0)`  </td></tr>
+<tr><td> 1 </td><td> 1 </td></tr>
+<tr><td> 0 </td><td> 0 </td></tr>
+</table>
+</center>
+
+After that example, we did this:
+
+* **Workshop:** [Tracing recursive functions](TracingRecursion.pdf)
 
 <!--
 ### Mon, Sep 30
