@@ -1482,6 +1482,12 @@ After that example, we did this:
 
 * **Workshop:** [Tracing recursive functions](TracingRecursion.pdf)
 
+#### Additional Practice
+
+1. Write a recursive function `is_palindrome` to check if a string is a palindrome (a word that is spelled the same forward and backward like "racecar").  Hint: Use `string[0]` and `string[-1]` to check if the first and last letters are the same.  Then use `string[1:-1]` to get the middle part of the string. A string of length one or zero is automatically a palindrome.  
+
+2. Write a recursive function to add up all of the numbers in a list.  
+
 <!--
 ### Mon, Sep 30
 
