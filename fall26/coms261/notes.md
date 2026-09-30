@@ -1490,7 +1490,8 @@ After that example, we did this:
 
 ### Wed, Sep 30
 
-Today we started with another recursive function example.
+
+We started by going over example 2 on the [workshop from last time](TracingRecursion.pdf). Then we traced another recursive function example.
 
 ```python
 def split_string(string):
@@ -1515,8 +1516,10 @@ We made a table to keep track of the variables in the loop, and what gets return
 </table>
 </center>
 
+In Python it is usually recommended to use loops rather than recursion, when possible. 
 
-After that, we went over the [workshop from last time](TracingRecursion.pdf). 
+1. Re-write the `split_string` function above without using recursion.  Use a while-loop instead.  
+
 
 #### Additional Practice
 
@@ -1524,7 +1527,6 @@ After that, we went over the [workshop from last time](TracingRecursion.pdf).
 
 2. Write a recursive function `mod(m, n)` that computes `m % n` for any integers (assuming that `n` is not zero) without using the modulo operator (`%`) or division. 
 
-3. Re-write the `split_string` function above without using recursion.  Use a while-loop instead.  
 
 
 <!--
