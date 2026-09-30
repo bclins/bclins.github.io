@@ -460,15 +460,12 @@ A subset of the sample space is called an **event**.  We already intuitively kno
 
 * **Workshop**: [Probability models](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ProbabilityDistributions.pdf)
 
-<!--
 
-### Fri, Feb 20
+### Wed, Sep 30
 
 Today we talked about the **multiplication** and **addition rules** for probability.  We also talked about **independent events** and **conditional probability**.  We started with these examples. 
 
 1. If you roll two six-sided dice, the results are independent.  What is the probability that both dice land on a six?
-
-<!-- NOTE TO FUTURE SELF: THIS WORKSHOP WAS A BIT AMBITIOUS (BACK HALF), AND YOU NEED TO CAREFULLY CONSIDER HOW TO PRESENT CONDITIONAL PROBABILITY. 
 
 2. Suppose you shuffle a deck of 52 playing cards and then draw two cards from the top. Find
     a. $P(\text{First card is an ace})$
@@ -479,7 +476,6 @@ Then we did this workshop:
 
 * **Workshop:** [Basic probability rules](https://people.hsc.edu/faculty-staff/blins/StatsExamples/ConditionalProbability.pdf)
 
--->
 
 
 

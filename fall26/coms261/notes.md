@@ -1468,13 +1468,13 @@ We made a table showing how the variable `n` and the return value change as the 
 
 <center>
 <table class="bordered">
-<tr><th>&nbsp; n &nbsp;</th><th>returns</th></tr>
-<tr><td> 5 </td><td> `fib(4) + fib(3)`  </td></tr>
-<tr><td> 4 </td><td> `fib(3) + fib(2)`  </td></tr>
-<tr><td> 3 </td><td> `fib(2) + fib(1)`  </td></tr>
-<tr><td> 2 </td><td> `fib(1) + fib(0)`  </td></tr>
-<tr><td> 1 </td><td> 1 </td></tr>
-<tr><td> 0 </td><td> 0 </td></tr>
+<tr><th>&nbsp; n &nbsp;</th><th>return expression</th><th>final value</th></tr>
+<tr><td> 5 </td><td> `fib(4) + fib(3)`  </td><td>5</td></tr>
+<tr><td> 4 </td><td> `fib(3) + fib(2)`  </td><td>3</td></tr>
+<tr><td> 3 </td><td> `fib(2) + fib(1)`  </td><td>2</td></tr>
+<tr><td> 2 </td><td> `fib(1) + fib(0)`  </td><td>1</td></tr>
+<tr><td> 1 </td><td> 1 </td><td>1</td></tr>
+<tr><td> 0 </td><td> 0 </td><td>0</td></tr>
 </table>
 </center>
 
@@ -1487,6 +1487,45 @@ After that example, we did this:
 1. Write a recursive function `is_palindrome` to check if a string is a palindrome (a word that is spelled the same forward and backward like "racecar").  Hint: Use `string[0]` and `string[-1]` to check if the first and last letters are the same.  Then use `string[1:-1]` to get the middle part of the string. A string of length one or zero is automatically a palindrome.  
 
 2. Write a recursive function to add up all of the numbers in a list.  
+
+### Wed, Sep 30
+
+Today we started with another recursive function example.
+
+```python
+def split_string(string):
+    """Returns a list of substrings separated by commas."""
+    if "," in string:
+        location = string.find(",")
+        return [string[:location]] + split_string(string[location+1:])
+    return [string]
+
+print(split_string("1,cat,2,dog"))
+```
+
+We made a table to keep track of the variables in the loop, and what gets returned (both the expression and its eventual value). 
+
+<center>
+<table class="bordered">
+<tr><th>`string`</th><th>`location`</th><th>Return expression</th><th>Final return value</th></tr>
+<tr><td>`"1,cat,2,dog"`</td><td>1</td><td>`["1"] + split_string("cat,2,dog")`</td><td>`["1", "cat", "2", "dog"]`</td></tr>
+<tr><td>`"cat,2,dog"`</td><td>3</td><td>`["cat"] + split_string("2,dog")`</td><td>`["cat", "2", "dog"]`</td></tr>
+<tr><td>`"2,dog"`</td><td>1</td><td>`["2"] + split_string("dog")`</td><td>`["2", "dog"]`</td></tr>
+<tr><td>`"dog"`</td><td>undefined</td><td>`["dog"]`</td><td>`["dog"]`</td></tr>
+</table>
+</center>
+
+
+After that, we went over the [workshop from last time](TracingRecursion.pdf). 
+
+#### Additional Practice
+
+1. One way to calculate the remainder of a (positive) number modulo 7 is to subtract 7 repeatedly until you get something smaller than 7.  For example, 30 → 23 → 16 → 9 → 2.  Write a recursive function called `mod7` that implements this strategy.   
+
+2. Write a recursive function `mod(m, n)` that computes `m % n` for any integers (assuming that `n` is not zero) without using the modulo operator (`%`) or division. 
+
+3. Re-write the `split_string` function above without using recursion.  Use a while-loop instead.  
+
 
 <!--
 ### Mon, Sep 30
