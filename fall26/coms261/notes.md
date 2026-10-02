@@ -1545,7 +1545,6 @@ Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce)
 Wed, Oct 7  | [TP19.2][TP19.2] | List comprehensions and other shortcuts
 Thu, Oct 8  | [TP19.2][TP19.2] | List comprehensions
 Fri, Oct 9  | [TP10][TP10]     | Dictionaries
-
 <!--
 ### Mon, Oct 5
 
@@ -1572,7 +1571,7 @@ We did the following examples.
 
 <!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
 
-1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list reducing the list one pair at a time.  
+1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.  
 
 2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
 
@@ -1616,7 +1615,9 @@ We did the following examples.
 1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
 
 2. Write a function that converts a list of full names to just a list of last names.  
+-->
 
+<!--
 ### Wed, Oct 7
 
 Today we talked about some shortcuts you can use in Python code.  

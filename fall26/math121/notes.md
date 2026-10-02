@@ -491,14 +491,23 @@ We did this workshop.
 
 Before that, we did some examples. 
 
-1. Calculate the final grade of a student who gets an 80 quiz average, 72 midterm average, 95 project average, and an 89 on the final exam. 
+1. Calculate the final grade of a student who gets an 89 quiz average, 73 midterm average, 90 project average, and an 81 on the final exam. 
 
 2. Eleven nursing students graduated from a nursing program.  Four students completed the program in 3 years, four took 4 years, two took 5 years, and one student took 6 years to graduate.  Express the average time to complete the program as a weighted average. 
 
 
 The **expected value** (also known as the **theoretical average**) is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
 
-3. In roulette there is a wheel with 38 slots. There are 18 red slot, 18 black slots and 2 green slots.  When you spin the wheel, you can bet that the ball will land on a black slot.  If you bet $1, and the ball lands on black, then you win $2, otherwise you win nothing.  What is the expected value for this bet? 
+3. Here is a probability model for how many hurricanes hit Virginia each year.  What is the expected number of hurricanes per year?
+
+<center>
+<table class="bordered">
+<tr><th># of Hurricanes</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><th>Probability</th><td>0.65</td><td>0.28</td><td>0.06</td><td>0.01</td></tr>
+</table>
+</center>
+
+4. What is the expected value if you roll a six-sided die?
 
 <div class="Theorem">
 **The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
@@ -515,37 +524,11 @@ Wed, Oct 7 | [7.1][7.1] | Sampling distributions
 Fri, Oct 9 | [5.1][5.1] | Sampling distributions for proportions 
 
 <!--
+### Mon, Oct 5
 
-### Mon, Feb 23
+We started with these warm-up problem. 
 
-Today we talked about **weighted averages**. To find a weighted average:
-
-1. Multiply each number by its weight.
-2. Add the results.
-
-We did this workshop.
-
-* **Workshop:** [Expected value & weighted averages](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf)
-
-Before that, we did some examples. 
-
-1. Calculate the final grade of a student who gets an 80 quiz average, 72 midterm average, 95 project average, and an 89 on the final exam. 
-
-2. Eleven nursing students graduated from a nursing program.  Four students completed the program in 3 years, four took 4 years, two took 5 years, and one student took 6 years to graduate.  Express the average time to complete the program as a weighted average. 
-
-
-The **expected value** (also known as the **theoretical average**) is the weighted average of the outcomes in a probability model, using the probabilities as the weights. 
-
-3. In roulette there is a wheel with 38 slots. There are 18 red slot, 18 black slots and 2 green slots.  When you spin the wheel, you can bet that the ball will land on a black slot.  If you bet $1, and the ball lands on black, then you win $2, otherwise you win nothing.  What is the expected value for this bet? 
-
-<div class="Theorem">
-**The Law of Large Numbers.** When you repeat a random experiment many times, the sample mean $\bar{x}$ tends to get closer to the theoretical average $\mu$.
-</div>
-
-
-### Wed, Feb 25
-
-We started with this warm-up problem. 
+1. What is the expected value from the [raffle tickets example in the workshop from Friday](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf#page=2)?
 
 1. Last time we calculated the expected value if you play roulette and bet $1 on a color like black. If you bet $1 on a number, like 7, then you only have a 1/38 chance of winning, but you get $36 if you win. Find the expected value for this bet. 
 
@@ -576,13 +559,13 @@ We usually won't calculate the theoretical standard deviation of a probability m
 If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible outcomes above and below $\mu$), then the binomial distribution is approximately normal. 
 </div>
 
-<!--
 * **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
 
 
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
+-->
 
-
+<!--
 ### Fri, Feb 27
  
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
