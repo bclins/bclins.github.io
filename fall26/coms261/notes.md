@@ -1528,97 +1528,9 @@ In Python it is usually recommended to use loops rather than recursion, when pos
 2. Write a recursive function `mod(m, n)` that computes `m % n` for any integers (assuming that `n` is not zero) without using the modulo operator (`%`) or division. 
 
 
+### Thu, Oct 1
 
-<!--
-### Mon, Sep 30
-
-We started talking about **slices** of strings and lists. We also talked about **methods** and in particular the `.index()` method and the `.count()` method. Every sequence type has these two methods.  
-
-1. How would you slice the string `s = "The quick brown fox"` to get the word `"quick"`?
-
-2. Write a function that counts how often each vowel (a, e, i, o, u) occurs in a string and prints the results.  It helps to use the `.lower()` method for strings which returns a new string that is all lower case.  This let us talk about **method chaining** when you call methods like this: `x.method1().method2()`. 
-
-3. Write a function called `split_at(s, char)` that splits a string into a list with two strings.  The part before the first occurrence of `char` and the part after the first occurrence.  Then re-write this function to split the string at every occurrence of `char` and return a list of all sub-strings. 
-
-    ```python
-    def split_at(s, char):
-        """Returns a list of the substrings of s that are separated by char."""
-        output = []
-        while char in s:
-            location = s.index(char)
-            front = s[0:location]
-            output += [front]
-            s = s[location+1:] 
-        return output + [s] # Notice that the last substring in s 
-                            # will have to be added at the end.
-    ``` 
-
-### Wed, Oct 2
-
-Today we talked about how to **trace** a program with paper and pencil including a **stack diagram** for recursive functions.  We started with the recursive function from [problem 11 on the practice midterm](practicemidterm1.pdf).  Then we did these other examples. 
-
-1. Make a table to trace the values of the variables in this loop. 
-
-    ```python
-    n = 1
-    for i in range(5):
-        a = n * i
-        n = n + a
-    ```
-
-2. Make a stack diagram to trace this recursive function.
-
-    ```python
-    def result(n):
-        if n == 1:
-            return 2
-        else:
-            return 2 * result(n - 1)
-    ```
-
-3. Make a stack diagram to trace this recursive function.
-
-    ```python
-    def f(k, n):
-        if k == n:
-            return k
-        elif k < n:
-            return f(k, n - k)
-        else:
-            return f(k - n, n)
-    ```
-
-We also talked about how to work with nested lists, including this example:
-
-```python
-students = [
-    ["Charlie", 8], 
-    ["Lucy", 9], 
-    ["Linus", 7], 
-    ["Sally": 6]
-]
-
-total = 0
-count = len(students)
-for i in range(count):
-    total += students[i][1]
-print("The average age of the students is ", total / count)
-```
-
-<!--
-Today we talked about things that all sequence types have in common and things that are different between lists in strings.  
-
-```python
-example_list = [1,'b',True]
-example_string = "Hi!"
-
-# You can access elements in a list or a string by using index notation:
-print(example_list[1])
-print(example_string[1])
-
-
--->
-
+Today we talked about the [midterm 1 review problems](midterm1review.pdf). 
 
 
 - - - 
@@ -1629,10 +1541,266 @@ print(example_string[1])
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 5  | 
-Wed, Oct 7  | [TP14.2][TP14.2] | Reading files
-Thu, Oct 8  | [TP14.2][TP14.2] | Reading files
-Fri, Oct 9  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce)
+Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce) 
+Wed, Oct 7  | [TP19.2][TP19.2] | List comprehensions and other shortcuts
+Thu, Oct 8  | [TP19.2][TP19.2] | List comprehensions
+Fri, Oct 9  | [TP10][TP10]     | Dictionaries
+
+<!--
+### Mon, Oct 5
+
+We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
+
+1. **Reducing** the sequence to a single number or value like a sum or maximum.
+
+2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
+
+3. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
+
+The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
+ 
+<center>
+<table class="bordered">
+<tr><th>Pattern </th><th>Accumulator Variable </th><th>Helper Function/Expression</th></tr>
+<tr><td>Map </td><td>New list or sequence </td><td>How you want to transform each element</td></tr>
+<tr><td>Filter </td><td>New list or sequence </td><td>Boolean function or expression to decide which elements to include</td></tr>
+<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>
+</table>
+</center>
+
+We did the following examples. 
+
+<!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
+
+1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list reducing the list one pair at a time.  
+
+2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
+
+3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
+
+    ```python
+    fullnames = [
+        "Alice Adams",
+        "Bob Brown",
+        "Charlie Clark",
+        "Daisy Davis",
+        "Edward Evans",
+        "Fiona Foster",
+        "George Green",
+        "Hannah Hill",
+        "Isaac Ives",
+        "Jessica Johnson",
+        "Kevin King",
+        "Lily Lewis",
+        "Michael Miller",
+        "Nora Nelson",
+        "Oliver Owens",
+        "Patricia Parker",
+        "Quinn Quinn",
+        "Rachel Roberts",
+        "Samuel Smith",
+        "Tina Taylor",
+        "Ulysses Underwood",
+        "Vanessa Vincent",
+        "William Wilson",
+        "Xavier Xander",
+        "Yolanda Young",
+        "Zachary Zimmerman"
+    ]
+    ```
+
+4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  
+
+#### Additional Practice
+
+1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
+
+2. Write a function that converts a list of full names to just a list of last names.  
+
+### Wed, Oct 7
+
+Today we talked about some shortcuts you can use in Python code.  
+
+#### Multiple assignments (tuple unpacking)
+
+You can define more than one variable in one line:
+
+```python
+a, b, c = 4, "five", 6.0
+```
+
+#### Assignment operators
+
+```python
+# Instead of updating a variable like this:
+value = value + 1
+
+# you can do this:
+value += 1
+```
+
+There are also variations for subtraction, multiplication, division, and even exponents and modulus. 
+
+#### f-strings
+
+To incorporate variables into a string, you can make an **f-string** like so:
+
+```python
+name = "Alice"
+age = 25
+string = f"{name} is {age} years old."
+```
+
+1. What does the following code do? 
+
+    ```python
+    x, y = 17, 13
+    x %= 10
+    y /= 10
+    print(f"x = {x}, y = {y}")
+    ```
+
+#### List comprehensions
+
+A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
+
+<center>
+[*expression* **for** *variable* **in** *sequence*]
+</center>
+
+As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
+
+<center>
+[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
+</center>
+
+Here are some examples:
+
+```python
+# Generate a list of the first 100 perfect squares.
+perfect_squares = [n ** 2 for n in range(100)]
+
+# Generate a list of odd perfect squares.
+odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
+
+```
+
+#### Practice
+
+1. Write a list comprehension to create a list of the first 20 positive odd numbers. 
+
+2. What is the value of the following Python expression? 
+
+    ```python
+    [len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
+    ``` 
+
+3. How could you use a `get_firstname` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
+
+4. How could you use a list comprehension to filter out all names that start with a vowel in a list of names?
+
+5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
+
+
+### Thu, Oct 8
+
+Today we did some more practice with filtering and mapping using list comprehensions.
+
+3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
+
+
+
+
+### Fri, Oct 9
+
+A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
+
+```python
+# Example dictionary:
+days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
+```
+
+In the dictionary above, the keys are the months (which are strings).  The values are the numbers of days (which are integers).  To access the value in a dictionary, you use the key like you would use an index for a list.   
+
+```python
+print("April has", days_by_month['Apr'], "days.")
+```
+
+Why are they called dictionaries?  The idea is that you can look things up, just like in a real dictionary.  In fact, you could use a Python dictionary to store words and their definitions:
+
+```python
+# Using a Python dictionary to store an English dictionary.
+word_to_definition = {
+    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites.",
+    "Abacus": "a device for making arithmetic calculations by moving beads.",  
+    "Abandon": "to leave completely and finally",
+}
+```
+
+Things to know about dictionaries. 
+
+1. **The keyword <u>in</u> checks keys not values.** You can use the keyword `in` to test if a key is in a dictionary, but not a value. 
+
+    ```python
+    'Feb' in days_by_month # True
+    30 in days_by_month # False
+    ```
+
+2. **You can loop through keys in a dictionary.** Use a loop of the form
+<center>
+**for** *key* **in** *dictionary*:
+</center>
+Use this to loop through the months in `days_by_month` and print out a sentence for each month saying how many days it has. 
+
+3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  Be careful with this!  The following example creates an empty dictionary, and then fills it with key/value pairs.  Try changing the value for `Feb` from 28 to 29 in `days_by_month`. 
+
+<!--
+```python
+alphabet = [chr(i + ord('a')) for i in range(26)]
+file = open("poem.txt")
+text = file.read()
+
+letter_frequency = {}
+for letter in alphabet:
+    letter_frequency[letter] = text.count(letter) 
+
+print(letter_frequency)
+```
+
+#### Practice
+
+1. Write a program to convert the data for each student in the file [grades.txt](https://bclins.github.io/fall24/cs261/grades.txt) into a dictionary like this:
+<center>
+`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
+</center>
+
+2. The keys in a dictionary must be unique.  What happens if you try to create a dictionary like this:
+<center>
+`{'test': 1, 'test': 2}`?
+</center>
+
+3. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
+
+4. You can make nested dictionaries:
+
+    ```python
+    contacts = {
+        "Alice": {
+            "phone": "555-0123",
+            "email": "alice@email.com"
+        },
+        "Bob": {
+            "phone": "555-4567",
+            "email": "bob@email.com"
+        }
+    }
+    ```
+
+    How would you get Alice's phone number from the dictionary above? 
+
+
+
 
 <!--
 ### Mon, Oct 7
@@ -1651,7 +1819,7 @@ There are several methods that work for mutable sequence types like lists, but n
 # Strings are immutable
 s = "You can't touch this!"
 
-"""When you create the string "You can't touch this!", it is frozen in computer mememory.  
+"""When you create the string "You can't touch this!", it is frozen in computer memory.  
 You can reassign the variable s, but that doesn't change the string, it just makes s
 point to a different object in memory. 
 """
@@ -1777,242 +1945,34 @@ print_final_grades(lines)
 <!--
 4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
 
-### Fri, Oct 11
-
-We've spent the last two weeks talking about sequence types, and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
-
-1. **Reducing** the sequence to a single number or value like a sum or maximum.
-
-<!--2. **Searching** the sequence to find out if an element is present (and possibly return its index).
-
-2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
-
-3. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
-
-The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
- 
-<center>
-
-| Pattern | Accumulator Variable | Helper Function/Expression |
-|:---:|:--------:|:-------------:|
-| Map | New list or sequence | How you want to transform each element | 
-| Filter | New list or sequence | Boolean function or expression to decide which elements to include |
-| Reduce | Usually a bool, int, or float | How you want to combine each element with the accumulator variable |
-
-</center>
-
-We did the following examples. 
-
-1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
-
-2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
-
-3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
-```python
-fullnames = [
-    "Alice Adams",
-    "Bob Brown",
-    "Charlie Clark",
-    "Daisy Davis",
-    "Edward Evans",
-    "Fiona Foster",
-    "George Green",
-    "Hannah Hill",
-    "Isaac Ives",
-    "Jessica Johnson",
-    "Kevin King",
-    "Lily Lewis",
-    "Michael Miller",
-    "Nora Nelson",
-    "Oliver Owens",
-    "Patricia Parker",
-    "Quinn Quinn",
-    "Rachel Roberts",
-    "Samuel Smith",
-    "Tina Taylor",
-    "Ulysses Underwood",
-    "Vanessa Vincent",
-    "William Wilson",
-    "Xavier Xander",
-    "Yolanda Young",
-    "Zachary Zimmerman"
-]
-```
-
-4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  
-
-<!--
-1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
-
-```python
-  even_strings = [string for string in string_list if len(string) % 2 == 0]
-```
-
-2. Write a function that converts a list of full names to just a list of first names.  
-  ```python
-  first_names = [get_first_name(name) for name in name_list]
-  ```
 -->
-
-<!-- 
-
-3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
-
-Neither book covers list comprehensions... but I think they are actually easier than the sieve! -->
 
 
 - - - 
 
 ### Week 8 Notes
 
-
-
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 12 |  | Fall break, no class
-Wed, Oct 14 |  | More map, filter, & reduce examples
-Thu, Oct 15 | [TP19.2][TP19.2] | List comprehensions
-Fri, Oct 16 | [TP10][TP10] | Dictionaries
+Wed, Oct 14 | [TP10][TP10] | Dictionaries - con'd 
+Thu, Oct 15 |     | Dictionary comprehensions       
+Fri, Oct 16 |  [TP19.5][TP19.5] | Sets
 
 <!--
-### Wed, Oct 16
+### Wed, Oct 14
 
-Today we practiced some more examples of mapping, filtering, and reducing lists and other sequence types using loops.  
+We did some more practice with dictionaries. 
 
-1. Write a function `reverse(s)` that reverses a string.  For example, `"Hello!"` becomes `"!olleH"`.  
+#### Practice 
 
-2. Write a function `is_palindrome(s)` to check if a string is a palindrome (i.e., spelled the same forward and backwards, like `"yay"`). Then use that function to find all of the palindromes in the file [words.txt](words.txt).  Hint, you will need to remove the `\n` newline character after you read the lines of the file.  You can do this with the `.strip()` method which removes any whitespace characters (spaces, tabs, newlines) from the beginning and end of strings. 
+1. [Exercise 01 in Cafiero 16.7](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
 
-### Thu, Oct 17
+2. [Exercise 02 in Cafiero 16.7](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
 
-A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
+3. Write a function called `counter` that inputs a list of words, and then returns a dictionary with the words as the keys and the number of times each word appears as the value.  
 
-<center>
-[*expression* **for** *variable* **in** *sequence*]
-</center>
-
-As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
-
-<center>
-[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
-</center>
-
-Here are some examples:
-
-```python
-# Generate a list of the first 100 perfect squares.
-perfect_squares = [n ** 2 for n in range(100)]
-
-# Generate a list of odd perfect squares.
-odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
-
-```
-
-Exercises:
-
-1. Write a list comprehension to create a list of the first 20 positive odd numbers. 
-
-2. What is the value of the following Python expression? 
-
-```python
-[len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
-``` 
-
-3. How could you use the `is_palindrome(s)` function we wrote yesterday to get a list of all palindromes in a long `word_list` using a list comprehension?  
-
-4. How could you use a `get_firstname(s)` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
-
-5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
-
-### Fri, Oct 18
-
-A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
-
-```python
-# Example dictionary:
-days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
-                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
-```
-
-In the dictionary above, the keys are the months (which are strings).  The values are the numbers of days (which are integers).  To access the value in a dictionary, you use the key like you would use an index for a list.   
-
-```python
-print("April has", days_by_month['Apr'], "days.")
-```
-
-Why are they called dictionaries?  The idea is that you can look things up, just like in a real dictionary.  In fact, you could use a Python dictionary to store words and their definitions:
-
-```python
-# Using a Python dictionary to store an English dictionary.
-word_to_definition = {
-    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites.",
-    "Abacus": "a device for making arithmetic calculations by moving beads.",  
-    "Abandon": "to leave completely and finally",
-}
-```
-
-Things to know about dictionaries. 
-
-1. **The keyword <u>in</u> checks keys not values.** You can use the keyword `in` to test if a key is in a dictionary, but not a value. 
-```python
-'Feb' in days_by_month # True
-30 in days_by_month # False
-```
-
-2. **You can loop through keys in a dictionary.** Use a loop of the form
-<center>
-**for** *key* **in** *dictionary*:
-</center>
-Use this to loop through the months in `days_by_month` and print out a sentence for each month saying how many days it has. 
-
-3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  Be careful with this!  The following example creates an empty dictionary, and then fills it with key/value pairs.  Try changing the value for `Feb` from 28 to 29 in `days_by_month`. 
-
-<!--
-```python
-alphabet = [chr(i + ord('a')) for i in range(26)]
-file = open("poem.txt")
-text = file.read()
-
-letter_frequency = {}
-for letter in alphabet:
-    letter_frequency[letter] = text.count(letter) 
-
-print(letter_frequency)
-```
-
-Exercises.
-
-1. Write a program to convert the data for each student in the file [grades.txt](grades.txt) into a dictionary like this:
-<center>
-`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
-</center>
-
-2. The keys in a dictionary must be unique.  What happens if you try to create a dictionary like this:
-<center>
-`{'test': 1, 'test': 2}`?
-</center>
-
-3. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
-
-
--->
-
-
-- - - 
-
-### Week 9 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 19 | [TP10][TP10] | Dictionary Comprehensions
-Wed, Oct 21 | [C16][C16] | Iterable types
-Thu, Oct 22 | [TP11][TP11] | Tuples
-Fri, Oct 23 | [TP11][TP11] | Tuples
-
-<!--
-### Mon, Oct 21
+### Thu, Oct 15
 
 Last time we introduced dictionaries and we finished with this exercise:
 
@@ -2043,7 +2003,7 @@ b. There is no guarantee that the keys aren't repeated.
 c. For large data sets, checking if an element is in a list is much slower than checking if a key is in a dictionary.   
 
 
-As an example of the last advantage, we looked at the following problem from the book.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](words.txt) to count how many words are also valid words when they've been reversed.  
+As an example of the last advantage, we looked at the following problem from the book.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) to count how many words are also valid words when they've been reversed.  
 
 ```python
 file = open("words.txt")
@@ -2098,7 +2058,8 @@ We finished by doing the following exercise.
 
 4. Write a function `combine_to_dict(key_list, value_list)` that returns a dictionary with keys from `key_list` and values from `value_list`.  
 
-### Wed, Oct 23
+
+### Fri, Oct 16
 
 Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
 
@@ -2139,11 +2100,86 @@ def fib2(n):
 
 This dramatically improves the performance of this algorithm.  Without memoization, calling `fib1(40)` took about 20 seconds on my computer.  But calling `fib2(40)` returns the answer almost instantaneously. 
 
-Some good exercises to get extra practice with dictionaries can be found here:
+-->
 
-* [Cafiero Dictionary Exercises](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
 
-We did Exercise 01 and the first part of Exercise 02 together as a class. 
+
+- - - 
+
+### Week 9 Notes
+
+
+ 
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 19 | [TP19.5][TP19.5] | Sets
+Wed, Oct 21 | [TP19.5][TP19.5] | Set comprehensions
+Thu, Oct 22 | [TP11][TP11] | Tuples
+Fri, Oct 23 | [TP11][TP11] | Tuples
+
+<!--
+### Mon, Oct 19
+
+The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
+
+* **Option 1.** Loop through the student preferences and create a new list by only adding electives if they aren't already in the list.  
+
+We implemented option1 in the following exercise:
+
+1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
+
+Unfortunately, the function we came up with was very slow to find the unique words in the file [words.txt](words.txt). There are other faster options to create a list of all elements without repeats. 
+
+* **Option 2.** Loop through the student preferences and create a dictionary with the electives as keys.  Since keys are unique, it won't do anything when you try to add a key that is already there so it should work.  Actually, you already did this!  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
+
+* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
+
+<!--
+I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
+
+```python
+def unique(lst): return list(set(lst)) 
+# Notice that you can define a function all on one line if it is really simple!
+```
+
+You can also use curly braces to create a set like this:
+
+```python
+example_set = {"a", "b", 1, 2}
+```
+
+You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
+
+```python
+powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
+print(powers_of_2_mod_7)
+```
+
+1. What is the difference between 
+<center>
+`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
+</center>
+
+
+### Wed, Oct 21
+
+Last time we introduced the **set** type in Python. Like other types in Python, sets have a **constructor function** called `set()`.  We reviewed some of the constructor functions we've seen like:
+
+```python
+int()         list()
+float()       tuple()
+str()         set()
+```
+
+We can use these constructors to write a very simple version of the `unique()` function from last time!
+
+```python
+def unique(lst): return list(set(lst)) 
+# Notice that you can define a function all on one line if it is really simple!
+```
+
+Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  
+
 
 ### Thu, Oct 24
 
@@ -2281,73 +2317,15 @@ We didn't have time to include those in our program in class today, but they are
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 26 | TP18.1 | Sets and set comprehensions
-Wed, Oct 28 |  | Search algorithms
-Thu, Oct 29 |  | Sorting
-Fri, Oct 30 |  | Nested loops
+Mon, Oct 26 |  | Search algorithms
+Wed, Oct 28 |  | Sorting
+Thu, Oct 29 |  | Nested loops
+Fri, Oct 30 |  | 
 
 <!--
-### Mon, Oct 28
+### Mon, Oct 26
 
-The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
-
-* **Option 1.** Loop through the student preferences and create a new list by only adding electives if they aren't already in the list.  
-
-We implemented option1 in the following exercise:
-
-1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
-
-Unfortunately, the function we came up with was very slow to find the unique words in the file [words.txt](words.txt). There are other faster options to create a list of all elements without repeats. 
-
-* **Option 2.** Loop through the student preferences and create a dictionary with the electives as keys.  Since keys are unique, it won't do anything when you try to add a key that is already there so it should work.  Actually, you already did this!  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
-
-* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
-
-<!--
-I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
-
-```python
-def unique(lst): return list(set(lst)) 
-# Notice that you can define a function all on one line if it is really simple!
-```
-
-You can also use curly braces to create a set like this:
-
-```python
-example_set = {"a", "b", 1, 2}
-```
-
-You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
-
-```python
-powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
-print(powers_of_2_mod_7)
-```
-
-1. What is the difference between 
-<center>
-`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
-</center>
-
-
-### Wed, Oct 30
-
-Last time we introduced the **set** type in Python. Like other types in Python, sets have a **constructor function** called `set()`.  We reviewed some of the constructor functions we've seen like:
-
-```python
-int()         list()
-float()       tuple()
-str()         set()
-```
-
-We can use these constructors to write a very simple version of the `unique()` function from last time!
-
-```python
-def unique(lst): return list(set(lst)) 
-# Notice that you can define a function all on one line if it is really simple!
-```
-
-Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  For lists however, order matters a lot, and sometimes it is helpful if the elements are sorted in increasing or decreasing order.  
+Sometimes it is helpful if the elements in a list are sorted in increasing or decreasing order.  
 
 One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
 
@@ -2487,8 +2465,8 @@ Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Nov 2  | C9.2 | Program structure
 Wed, Nov 4  | C9.3 | Function structure & incremental development
-Thu, Nov 5  | C13.3 | Writing to a file
-Fri, Nov 6  | C13.3 | Writing to a file - con’d
+Thu, Nov 5  | [TP14.2][TP14.2] | Reading & writing files
+Fri, Nov 6  | [TP14.2][TP14.2] | Reading & writing files - con'd 
 
 <!--
 ### Mon, Nov 4
@@ -3464,6 +3442,7 @@ print(median(a))
 [TP18]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.18>
 [TP19]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.19>
 [TP19.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.2>
+[TP19.5]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.5>
 
 
 [C2]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.2>
