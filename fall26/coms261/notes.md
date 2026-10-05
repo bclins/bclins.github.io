@@ -1529,7 +1529,7 @@ Today we talked about the [midterm 1 review problems](midterm1review.pdf).
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map and filter) 
+Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce) 
 Wed, Oct 7  | [TP19.2][TP19.2] | List comprehensions and other shortcuts
 Thu, Oct 8  | [TP19.2][TP19.2] | List comprehensions
 Fri, Oct 9  | [TP10][TP10]     | Dictionaries
@@ -1555,41 +1555,34 @@ The main differences between these patterns are the type of the accumulator vari
 </table>
 </center>
 
-We did the following examples. 
+Here are examples where we have seen these patterns before. 
+
+1. Write a `prod` function that calculates the product of all of the numbers in a list.
+
+1. Write an `under10` function that creates a new list with exactly the numbers less than 10 from a list of numbers.  
+
+1. Which pattern (map, filter, or reduce) did you use in [Project 2](project2.pdf) to apply a Caesar shift to a string? 
+
+#### Practice
 
 <!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
 
 --> 
 
-1. Write a function `decimal2percent` that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then use your function to map the following list of floats to a list of percentage strings: 
+1. Write a function `decimal2percent` that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  
 
-    ```python
-    data = [0.4, 0.7, 1.1, 0.01, 0.97]
-    ```
+2. Write a function `decimals2percents` that **maps** a list of floating point numbers into a list of percentage strings. Use the `decimal2percent` function as a helper function.
 
-2. Write a function `between0and1` that filters a list, keeping only the elements that are between 0 and 1 (inclusive). 
-
-3. Write a `prod` function that returns the product of the numbers in a list. 
-
-4. Write a `remove_vowels` function that removes all vowels from a string.  
-
-5. In a math formula, like $(x+(y + 3))$, the parentheses have to balance, which means
-
-    * You have equal numbers of opening parentheses `(` as closing parentheses `)`. 
-    * As you read left to right, you never have more closing parentheses than opening. 
-
-    Write a function that inputs a formula string, and returns `True` if the parentheses balance.  
+3. Write a function `between0and1` that **filters** a list, keeping only the elements that are between 0 and 1 (inclusive). 
 
 
 #### Additional Practice
 
-1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
+1. Write a `remove_vowels` function that removes all vowels from a string.  
 
-2. Write a function that converts a list of full names to just a list of last names.  
+2. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
 
-3. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.
-
-4. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
+3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
 
     ```python
     fullnames = [
@@ -1621,6 +1614,17 @@ We did the following examples.
         "Zachary Zimmerman"
     ]
     ```
+
+4. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.
+
+
+5. In a math formula, like $(x+(y + 3))$, the parentheses have to balance, which means
+
+    * You have equal numbers of opening parentheses `(` as closing parentheses `)`. 
+    * As you read left to right, you never have more closing parentheses than opening. 
+
+    Write a function that inputs a formula string, and returns `True` if the parentheses balance.  
+
 
 
 

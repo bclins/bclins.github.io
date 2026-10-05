@@ -1,6 +1,6 @@
 ---
 title: Statistics
-css: ../../Coms261/Website/clean.css
+css: https://bclins.github.io/clean.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />

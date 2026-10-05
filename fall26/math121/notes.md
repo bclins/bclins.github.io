@@ -535,9 +535,7 @@ After that we introduced the **binomial distribution** which is the distribution
 
 * **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
 
-2. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
-
-3. What about playing 100 games and betting on black every time?  Which is a better strategy? 
+<!-- Note to self, add dollar amounts to the x-axis when you graph this! -->
 
 The binomial distribution is an example of a **discrete distribution** which means that there are only finitely many possible outcomes between any two values.  The normal distribution is an example of a **continuous distribution** which can have an infinite range of possible outcomes between two values. 
 
@@ -547,8 +545,16 @@ Every probability distribution can be described by three things:
 * **Center** - the theoretical average $\mu$ (i.e., the expected value)
 * **Spread** - the theoretical standard deviation $\sigma$
 
-We usually won't calculate the theoretical standard deviation of a probability model by hand. But, there are nice formulas for the theoretical mean and standard deviation of a binomial distribution.
 
+2. If you play 100 games of roulette and bet on black every time, then the distribution for the amount of money you might get is approximately normal with $\mu = \$94.7$ and $\sigma \approx \$10$. Use the [normal distribution](https://mabognar.github.io/apps/normal.html) to approximate the probability that you win more money than you lose (i.e., win more than $100)  
+
+
+3. Suppose you play 100 games of roulette and bet on 7 every time. In this case $\mu = \$94.7$, $\sigma = \$57.6$, but the distribution is definitely not normal! Use the [binomial distribution app](https://mabognar.github.io/apps/bin.html) to find the probability that you win more money than you lose.  Which is a better strategy, betting on one number or one color? 
+
+
+
+
+<!--
 <div class="Theorem">
 **Binomial distribution.** The total number of successes in $N$ independent trials with a fixed probability $p$ of a success on each trial has a binomial distribution with 
 
@@ -557,6 +563,9 @@ We usually won't calculate the theoretical standard deviation of a probability m
 
 If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible outcomes above and below $\mu$), then the binomial distribution is approximately normal. 
 </div>
+-->
+
+Another example of a discrete probability distribution is the total when you roll one or more dice.
 
 * **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
 
