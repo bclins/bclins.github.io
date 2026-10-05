@@ -86,7 +86,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
+  <link rel="stylesheet" href="https://bclins.github.io/clean.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -203,7 +203,7 @@ shell to find out.</p>
 <code>gals</code> and prints out the miles per gallon for a car on a
 tank of gas. Your output should look something like</p>
 <blockquote>
-<p><code>You got 37.5 miles per gallon.</code></p>
+<p><samp>You got 37.5 miles per gallon.</samp></p>
 </blockquote>
 <p>(depending on the values of your variables).</p></li>
 </ol>
@@ -591,24 +591,17 @@ input.</li>
 <p>Today we talked some more about functions. We introduced
 <strong>local variables</strong> and <strong>global variables</strong>.
 Compare these two programs.</p>
-<center>
-<table>
-<tr style="background-color: transparent">
-<td>
+<div style="display: flex; gap: 20px; justify-content: center">
 <div class="sourceCode" id="cb12"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circle_area(radius):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    PI <span class="op">=</span> <span class="fl">3.14</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> area</span></code></pre></div>
-</td>
-<td>
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>PI <span class="op">=</span> <span class="fl">3.14</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>    </span></code></pre></div>
-</td>
-</table>
-</center>
+</div>
 <p>Any variable created in a function body is <strong>local</strong>,
 which means it can only be used inside the function. You won’t have
 access to local variables outside the function. Variables defined in a
@@ -1647,23 +1640,18 @@ Looping through elements
 <h4 id="looping-through-lists">Looping through lists</h4>
 <p>There are two different ways to loop through the elements in a
 list.</p>
-<table>
-<tr style="background-color: transparent">
-<td>
+<div style="display: flex; gap: 20px; justify-content: center">
 <div class="sourceCode" id="cb39"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each element in a list</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruit <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
-</td>
-<td>
 <div class="sourceCode" id="cb40"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping through each index in a list</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;berry&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruits)):</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I like &quot;</span> <span class="op">+</span> fruits[i] <span class="op">+</span> <span class="st">&quot; pie&quot;</span>)</span></code></pre></div>
-</td>
-</table>
+</div>
 <h4 id="practice">Practice</h4>
 <ol type="1">
 <li><p>Write a function called <code>multiply</code> that multiplies all
@@ -2287,8 +2275,8 @@ review problems</a>.</p>
 <td style="text-align: center;">Mon, Oct 5</td>
 <td style="text-align: center;"><a
 href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.7">TP10.7</a></td>
-<td style="text-align: left;">Common patterns in loops (map, filter,
-reduce)</td>
+<td style="text-align: left;">Common patterns in loops (map and
+filter)</td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Oct 7</td>
@@ -2311,77 +2299,112 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Oct 5
-
-We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
-
-1. **Reducing** the sequence to a single number or value like a sum or maximum.
-
-2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
-
-3. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
-
-The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
- 
+<h3 id="mon-oct-5">Mon, Oct 5</h3>
+<p>We’ve spent the last two weeks talking about strings and lists
+(sequence types), and we’ve seen a lot of examples where we needed to
+loop through the elements of the sequence with an accumulator variable
+to accomplish a goal. These goals often fall into one of two
+patterns:</p>
+<ol type="1">
+<li><p><strong>Mapping</strong> the sequence to create a new sequence
+where every element is replaced using some function.</p></li>
+<li><p><strong>Filtering</strong> which is when we create a new sequence
+that only contains elements that meet a certain criterion.</p></li>
+</ol>
+<p>The main differences between these patterns are the type of the
+accumulator variable and what function or expression you use to help
+perform the accumulation.</p>
 <center>
 <table class="bordered">
-<tr><th>Pattern </th><th>Accumulator Variable </th><th>Helper Function/Expression</th></tr>
-<tr><td>Map </td><td>New list or sequence </td><td>How you want to transform each element</td></tr>
-<tr><td>Filter </td><td>New list or sequence </td><td>Boolean function or expression to decide which elements to include</td></tr>
-<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>
+<tr>
+<th>
+Pattern
+</th>
+<th>
+Accumulator Variable
+</th>
+<th>
+Helper Function/Expression
+</th>
+</tr>
+<tr>
+<td>
+Map
+</td>
+<td>
+New list or sequence
+</td>
+<td>
+How you want to transform each element
+</td>
+</tr>
+<tr>
+<td>
+Filter
+</td>
+<td>
+New list or sequence
+</td>
+<td>
+Boolean function or expression to decide which elements to include
+</td>
+</tr>
+<!--<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>-->
 </table>
 </center>
+<p>We did the following examples.</p>
+<!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
 
-We did the following examples. 
-
-<!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
-
-1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.  
-
-2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
-
-3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
-
-    ```python
-    fullnames = [
-        "Alice Adams",
-        "Bob Brown",
-        "Charlie Clark",
-        "Daisy Davis",
-        "Edward Evans",
-        "Fiona Foster",
-        "George Green",
-        "Hannah Hill",
-        "Isaac Ives",
-        "Jessica Johnson",
-        "Kevin King",
-        "Lily Lewis",
-        "Michael Miller",
-        "Nora Nelson",
-        "Oliver Owens",
-        "Patricia Parker",
-        "Quinn Quinn",
-        "Rachel Roberts",
-        "Samuel Smith",
-        "Tina Taylor",
-        "Ulysses Underwood",
-        "Vanessa Vincent",
-        "William Wilson",
-        "Xavier Xander",
-        "Yolanda Young",
-        "Zachary Zimmerman"
-    ]
-    ```
-
-4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  
-
-#### Additional Practice
-
-1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
-
-2. Write a function that converts a list of full names to just a list of last names.  
--->
+1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.   -->
+<ol start="2" type="1">
+<li><p>Write a function that converts floating point numbers to strings
+in percent form. For example <code>0.5</code> should become
+<code>"50%"</code>. Then map the following list of floats to a list of
+percentage strings.
+<code>data = [0.4, 0.7, 1.1, 0.01, 0.97]</code></p></li>
+<li><p>Write a function called <code>get_firstname</code> that returns
+the first name of any one full name. Then use that function to map this
+list to a list of first names.</p>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fullnames <span class="op">=</span> [</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice Adams&quot;</span>,</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob Brown&quot;</span>,</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie Clark&quot;</span>,</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy Davis&quot;</span>,</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward Evans&quot;</span>,</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Fiona Foster&quot;</span>,</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;George Green&quot;</span>,</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hannah Hill&quot;</span>,</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Isaac Ives&quot;</span>,</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jessica Johnson&quot;</span>,</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Kevin King&quot;</span>,</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Lily Lewis&quot;</span>,</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Michael Miller&quot;</span>,</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Nora Nelson&quot;</span>,</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oliver Owens&quot;</span>,</span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Patricia Parker&quot;</span>,</span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Quinn Quinn&quot;</span>,</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Rachel Roberts&quot;</span>,</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Samuel Smith&quot;</span>,</span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tina Taylor&quot;</span>,</span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Ulysses Underwood&quot;</span>,</span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Vanessa Vincent&quot;</span>,</span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;William Wilson&quot;</span>,</span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Xavier Xander&quot;</span>,</span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Yolanda Young&quot;</span>,</span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Zachary Zimmerman&quot;</span></span>
+<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div></li>
+<li><p>Filter the list of names above to get a new list
+<code>long_names</code> that are longer than 10 letters.</p></li>
+</ol>
+<h4 id="additional-practice-17">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function that inputs a list of strings and returns a new
+list of strings that only contains the strings that have an even
+length.</p></li>
+<li><p>Write a function that converts a list of full names to just a
+list of last names.</p></li>
+</ol>
 <!--
 ### Wed, Oct 7
 

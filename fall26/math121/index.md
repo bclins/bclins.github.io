@@ -1,6 +1,6 @@
 ---
 title: Statistics
-css: https://bclins.github.io/mockup.css
+css: ../../Coms261/Website/clean.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -15,11 +15,11 @@ header-includes: |
 
 ## Math 121 - Fall 2026
 
-<ul class="nav">
-  <li>[Class Notes](notes.html)</li>
-  <li>[Schedule & Syllabus](index.html)</li>
-  <li>[Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
-</ul>
+<nav class="navbar">
+* [Class Notes](notes.html)
+* [Schedule & Syllabus](index.html)
+* [Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)
+</nav>
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
 * **Office Hours:** See my [weekly schedule](https://bclins.github.io/index.html#weekly-schedule), and by appointment

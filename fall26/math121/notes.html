@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="https://bclins.github.io/mockup.css" />
+  <link rel="stylesheet" href="https://bclins.github.io/clean.css" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -37,18 +37,15 @@
 <h1 class="title">Statistics Notes</h1>
 </header>
 <h2 id="math-121---fall-2026">Math 121 - Fall 2026</h2>
-<ul class="nav">
-<li>
-<a href="notes.html">Class Notes</a>
-</li>
-<li>
-<a href="index.html">Schedule &amp; Syllabus</a>
-</li>
-<li>
-<a href="http://people.hsc.edu/faculty-staff/blins/StatsTools/">Software
-&amp; Tables</a>
-</li>
+<nav class="navbar">
+<ul>
+<li><a href="notes.html">Class Notes</a></li>
+<li><a href="index.html">Schedule &amp; Syllabus</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsTools/">Software
+&amp; Tables</a></li>
 </ul>
+</nav>
 <center>
 Jump to: <a href="index.html">Math 121 homepage</a>, <a
 href="#week-1-notes">Week 1</a>, <a href="#week-2-notes">Week 2</a>, <a
@@ -123,12 +120,12 @@ are categorical?</p></li>
 <li><p>If we want to compare states to see which are safer, why is it
 better to compare the rates instead of the total fatalities?</p></li>
 <li><p>What is wrong with this student’s answer to the previous
-question?</p></li>
-</ol>
+question?</p>
 <blockquote>
 <p>Rates are better because they are more precise and easier to
 understand.</p>
-</blockquote>
+</blockquote></li>
+</ol>
 <p>I like this incorrect answer because it is a perfect example of <a
 href="https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt&#39;s_concept">bullshit</a>.
 This student doesn’t know the answer so they are trying to write
@@ -927,47 +924,84 @@ proportions</td>
 </tr>
 </tbody>
 </table>
-<!--
-### Mon, Oct 5
-
-We started with these warm-up problem. 
-
-1. What is the expected value from the [raffle tickets example in the workshop from Friday](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf#page=2)?
-
-1. Last time we calculated the expected value if you play roulette and bet $1 on a color like black. If you bet $1 on a number, like 7, then you only have a 1/38 chance of winning, but you get $36 if you win. Find the expected value for this bet. 
-
-After that we introduced the **binomial distribution** which is the distribution of the possible number of successes if you do N independent random trials that each have a probability p of a success.  
-
-* **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
-
-2. Suppose you play 100 games of roulette and bet on 7 every time.  Use the [binomial distribution app](https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html) to find the probability that you win more money than you lose.  
-
-3. What about playing 100 games and betting on black every time?  Which is a better strategy? 
-
-The binomial distribution is an example of a **discrete distribution** which means that there are only finitely many possible outcomes between any two values.  The normal distribution is an example of a **continuous distribution** which can have an infinite range of possible outcomes between two values. 
-
-Every probability distribution can be described by three things:
-
-* **Shape** - is it shaped like a bell, or skewed, or something even more complicated?
-* **Center** - the theoretical average $\mu$ (i.e., the expected value)
-* **Spread** - the theoretical standard deviation $\sigma$
-
-We usually won't calculate the theoretical standard deviation of a probability model by hand. But, there are nice formulas for the theoretical mean and standard deviation of a binomial distribution.
-
+<h3 id="mon-oct-5">Mon, Oct 5</h3>
+<p>We started with these warm-up problems.</p>
+<ol type="1">
+<li><p>What is the expected value from the <a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf#page=2">raffle
+tickets example in the workshop from Friday</a>?</p></li>
+<li><p>Last time we calculated the expected value if you play roulette
+and bet $1 on a color like black. If you bet $1 on a number, like 7,
+then you only have a 1/38 chance of winning, but you get $36 if you win.
+Find the expected value for this bet.</p></li>
+</ol>
+<p>After that we introduced the <strong>binomial distribution</strong>
+which is the distribution of the possible number of successes if you do
+N independent random trials that each have a probability p of a
+success.</p>
+<ul>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html">Binomial
+distribution</a></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Suppose you play 100 games of roulette and bet on 7 every time.
+Use the <a
+href="https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html">binomial
+distribution app</a> to find the probability that you win more money
+than you lose.</p></li>
+<li><p>What about playing 100 games and betting on black every time?
+Which is a better strategy?</p></li>
+</ol>
+<p>The binomial distribution is an example of a <strong>discrete
+distribution</strong> which means that there are only finitely many
+possible outcomes between any two values. The normal distribution is an
+example of a <strong>continuous distribution</strong> which can have an
+infinite range of possible outcomes between two values.</p>
+<p>Every probability distribution can be described by three things:</p>
+<ul>
+<li><strong>Shape</strong> - is it shaped like a bell, or skewed, or
+something even more complicated?</li>
+<li><strong>Center</strong> - the theoretical average
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+(i.e., the expected value)</li>
+<li><strong>Spread</strong> - the theoretical standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></li>
+</ul>
+<p>We usually won’t calculate the theoretical standard deviation of a
+probability model by hand. But, there are nice formulas for the
+theoretical mean and standard deviation of a binomial distribution.</p>
 <div class="Theorem">
-**Binomial distribution.** The total number of successes in $N$ independent trials with a fixed probability $p$ of a success on each trial has a binomial distribution with 
-
-1. **Theoretical mean.** $\mu = N p$
-2. **Theoretical standard deviation.** $\sigma = \sqrt{N p (1-p)}$
-
-If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible outcomes above and below $\mu$), then the binomial distribution is approximately normal. 
+<p><strong>Binomial distribution.</strong> The total number of successes
+in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+independent trials with a fixed probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+of a success on each trial has a binomial distribution with</p>
+<ol type="1">
+<li><strong>Theoretical mean.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mi>N</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\mu = N p</annotation></semantics></math></li>
+<li><strong>Theoretical standard deviation.</strong>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><msqrt><mrow><mi>N</mi><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sigma = \sqrt{N p (1-p)}</annotation></semantics></math></li>
+</ol>
+<p>If both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>p</mi><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">Np \ge 10</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">N(1-p) \ge 10</annotation></semantics></math>
+(i.e., there are at least 10 possible outcomes above and below
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>),
+then the binomial distribution is approximately normal.</p>
 </div>
-
-* **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
-
-
-We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
--->
+<ul>
+<li><strong>Example:</strong> <a
+href="https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html">Dice
+probabilities</a></li>
+</ul>
+<p>We finished by talking about the trade-off between risk
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>)
+versus expected returns
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>)
+when investing.</p>
 <!--
 ### Fri, Feb 27
  

@@ -1,6 +1,6 @@
 ---
 title: Statistics Notes
-css: https://bclins.github.io/mockup.css
+css: https://bclins.github.io/clean.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -17,11 +17,11 @@ header-includes: |
 
 ## Math 121 - Fall 2026
 
-<ul class="nav">
-  <li>[Class Notes](notes.html)</li>
-  <li>[Schedule & Syllabus](index.html)</li>
-  <li>[Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)</li>
-</ul>
+<nav class="navbar">
+* [Class Notes](notes.html)
+* [Schedule & Syllabus](index.html)
+* [Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)
+</nav>
 
 
 <center>
@@ -54,7 +54,7 @@ Today we covered **data tables**, **individuals**, and **variables**. We also ta
 
 4. What is wrong with this student's answer to the previous question?
 
-> Rates are better because they are more precise and easier to understand.
+    > Rates are better because they are more precise and easier to understand.
 
 I like this incorrect answer because it is a perfect example of [bullshit](https://en.wikipedia.org/wiki/Bullshit#Harry_Frankfurt's_concept).  This student doesn't know the answer so they are trying to write something that sounds good and earns partial credit.  Try to avoid writing bullshit.  If you catch yourself writing B.S. on one of my quizzes or tests, then you can be sure that you a missing a really simple idea and you should see if you can figure out what it is.  
 
@@ -523,10 +523,9 @@ Mon, Oct 5 | [3.4][3.4] | Random variables
 Wed, Oct 7 | [7.1][7.1] | Sampling distributions
 Fri, Oct 9 | [5.1][5.1] | Sampling distributions for proportions 
 
-<!--
 ### Mon, Oct 5
 
-We started with these warm-up problem. 
+We started with these warm-up problems. 
 
 1. What is the expected value from the [raffle tickets example in the workshop from Friday](http://people.hsc.edu/faculty-staff/blins/StatsExamples/ExpectedValue.pdf#page=2)?
 
@@ -561,9 +560,7 @@ If both $Np \ge 10$ and $N(1-p) \ge 10$ (i.e., there are at least 10 possible ou
 
 * **Example:** [Dice probabilities](https://people.hsc.edu/faculty-staff/blins/StatsTools/dice.html)
 
-
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
--->
 
 <!--
 ### Fri, Feb 27

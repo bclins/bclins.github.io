@@ -1,6 +1,6 @@
 ---
 title: Computer Science Notes
-css: https://bclins.github.io/mockup.css
+css: https://bclins.github.io/clean.css
 header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -12,7 +12,6 @@ header-includes: |
   }
   </style>
 ---
-
 
 ## COMS 261 - Fall 2026
 
@@ -73,10 +72,10 @@ We talked about how operators follow an **order of operations**, and if operator
     * `n = 4`
     * `4 = n`
     * `x = y = 1`
-
+ 
 2. Write a program which uses two variables `miles` and `gals` and prints out the miles per gallon for a car on a tank of gas.  Your output should look something like 
 
-    > `You got 37.5 miles per gallon.` 
+    > <samp>You got 37.5 miles per gallon.</samp>
 
     (depending on the values of your variables).  
 
@@ -401,27 +400,19 @@ To create a function that returns a value, use the return keyword.
 
 Today we talked some more about functions. We introduced  **local variables** and **global variables**. Compare these two programs. 
 
-<center>
-
-<table>
-<tr style="background-color: transparent">
-<td>
+<div style="display: flex; gap: 20px; justify-content: center">
 ```python
 def circle_area(radius):
     PI = 3.14
     area = PI * radius ** 2
     return area
 ```
-</td><td>
 ```python
 radius = 5
 PI = 3.14 
 area = PI * radius ** 2    
 ```
-</td>
-</table>
-
-</center>
+</div>
 
 Any variable created in a function body is **local**, which means it can only be used inside the function.  You won't have access to local variables outside the function.  Variables defined in a program that aren't parameters or defined in the body of a function are **global** and can be accessed anywhere in a program.  But if you try to change the value of a global variable inside of a function, it creates a new local variable inside the function instead!  
 
@@ -1181,24 +1172,21 @@ Many of the same techniques that work for strings also work for lists, including
 
 There are two different ways to loop through the elements in a list.
 
-<table>
-<tr style="background-color: transparent">
-<td>
+<div style="display: flex; gap: 20px; justify-content: center">
 ```python
 # Looping through each element in a list
 fruits = ["apple", "berry", "cherry"]
 for fruit in fruits:
     print("I like " + fruit + " pie")
 ```
-</td><td>
 ```python
 # Looping through each index in a list
 fruits = ["apple", "berry", "cherry"]
 for i in range(len(fruits)):
     print("I like " + fruits[i] + " pie")
 ```
-</td>
-</table>
+</div>
+
 
 #### Practice 
 
@@ -1541,20 +1529,18 @@ Today we talked about the [midterm 1 review problems](midterm1review.pdf).
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce) 
+Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map and filter) 
 Wed, Oct 7  | [TP19.2][TP19.2] | List comprehensions and other shortcuts
 Thu, Oct 8  | [TP19.2][TP19.2] | List comprehensions
 Fri, Oct 9  | [TP10][TP10]     | Dictionaries
-<!--
+
 ### Mon, Oct 5
 
-We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
+We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of two patterns:
 
-1. **Reducing** the sequence to a single number or value like a sum or maximum.
+1. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
 
-2. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
-
-3. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
+2. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
 
 The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
  
@@ -1563,15 +1549,15 @@ The main differences between these patterns are the type of the accumulator vari
 <tr><th>Pattern </th><th>Accumulator Variable </th><th>Helper Function/Expression</th></tr>
 <tr><td>Map </td><td>New list or sequence </td><td>How you want to transform each element</td></tr>
 <tr><td>Filter </td><td>New list or sequence </td><td>Boolean function or expression to decide which elements to include</td></tr>
-<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>
+<!--<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>-->
 </table>
 </center>
 
 We did the following examples. 
 
-<!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.  
+<!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
 
-1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.  
+1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.   --> 
 
 2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
 
@@ -1615,7 +1601,6 @@ We did the following examples.
 1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
 
 2. Write a function that converts a list of full names to just a list of last names.  
--->
 
 <!--
 ### Wed, Oct 7
