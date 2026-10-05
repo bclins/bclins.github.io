@@ -2303,13 +2303,15 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.
 <p>We’ve spent the last two weeks talking about strings and lists
 (sequence types), and we’ve seen a lot of examples where we needed to
 loop through the elements of the sequence with an accumulator variable
-to accomplish a goal. These goals often fall into one of two
+to accomplish a goal. These goals often fall into one of three
 patterns:</p>
 <ol type="1">
 <li><p><strong>Mapping</strong> the sequence to create a new sequence
 where every element is replaced using some function.</p></li>
 <li><p><strong>Filtering</strong> which is when we create a new sequence
 that only contains elements that meet a certain criterion.</p></li>
+<li><p><strong>Reducing</strong> the sequence to a single number or
+value like a sum or maximum.</p></li>
 </ol>
 <p>The main differences between these patterns are the type of the
 accumulator variable and what function or expression you use to help
@@ -2349,53 +2351,48 @@ New list or sequence
 Boolean function or expression to decide which elements to include
 </td>
 </tr>
-<!--<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>-->
+<tr>
+<td>
+Reduce
+</td>
+<td>
+Usually a bool, int, or float
+</td>
+<td>
+How you want to combine each element with the accumulator variable
+</td>
+</tr>
 </table>
 </center>
 <p>We did the following examples.</p>
 <!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
 
-1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.   -->
-<ol start="2" type="1">
-<li><p>Write a function that converts floating point numbers to strings
-in percent form. For example <code>0.5</code> should become
-<code>"50%"</code>. Then map the following list of floats to a list of
-percentage strings.
-<code>data = [0.4, 0.7, 1.1, 0.01, 0.97]</code></p></li>
-<li><p>Write a function called <code>get_firstname</code> that returns
-the first name of any one full name. Then use that function to map this
-list to a list of first names.</p>
+-->
+<ol type="1">
+<li><p>Write a function <code>decimal2percent</code> that converts
+floating point numbers to strings in percent form. For example
+<code>0.5</code> should become <code>"50%"</code>. Then use your
+function to map the following list of floats to a list of percentage
+strings:</p>
 <div class="sourceCode" id="cb49"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>fullnames <span class="op">=</span> [</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice Adams&quot;</span>,</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob Brown&quot;</span>,</span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie Clark&quot;</span>,</span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy Davis&quot;</span>,</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward Evans&quot;</span>,</span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Fiona Foster&quot;</span>,</span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;George Green&quot;</span>,</span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hannah Hill&quot;</span>,</span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Isaac Ives&quot;</span>,</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jessica Johnson&quot;</span>,</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Kevin King&quot;</span>,</span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Lily Lewis&quot;</span>,</span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Michael Miller&quot;</span>,</span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Nora Nelson&quot;</span>,</span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oliver Owens&quot;</span>,</span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Patricia Parker&quot;</span>,</span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Quinn Quinn&quot;</span>,</span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Rachel Roberts&quot;</span>,</span>
-<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Samuel Smith&quot;</span>,</span>
-<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tina Taylor&quot;</span>,</span>
-<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Ulysses Underwood&quot;</span>,</span>
-<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Vanessa Vincent&quot;</span>,</span>
-<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;William Wilson&quot;</span>,</span>
-<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Xavier Xander&quot;</span>,</span>
-<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Yolanda Young&quot;</span>,</span>
-<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Zachary Zimmerman&quot;</span></span>
-<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div></li>
-<li><p>Filter the list of names above to get a new list
-<code>long_names</code> that are longer than 10 letters.</p></li>
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="fl">0.4</span>, <span class="fl">0.7</span>, <span class="fl">1.1</span>, <span class="fl">0.01</span>, <span class="fl">0.97</span>]</span></code></pre></div></li>
+<li><p>Write a function <code>between0and1</code> that filters a list,
+keeping only the elements that are between 0 and 1 (inclusive).</p></li>
+<li><p>Write a <code>prod</code> function that returns the product of
+the numbers in a list.</p></li>
+<li><p>Write a <code>remove_vowels</code> function that removes all
+vowels from a string.</p></li>
+<li><p>In a math formula, like
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>+</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x+(y + 3))</annotation></semantics></math>,
+the parentheses have to balance, which means</p>
+<ul>
+<li>You have equal numbers of opening parentheses <code>(</code> as
+closing parentheses <code>)</code>.</li>
+<li>As you read left to right, you never have more closing parentheses
+than opening.</li>
+</ul>
+<p>Write a function that inputs a formula string, and returns
+<code>True</code> if the parentheses balance.</p></li>
 </ol>
 <h4 id="additional-practice-17">Additional Practice</h4>
 <ol type="1">
@@ -2404,6 +2401,42 @@ list of strings that only contains the strings that have an even
 length.</p></li>
 <li><p>Write a function that converts a list of full names to just a
 list of last names.</p></li>
+<li><p>Last week we saw a recursive function to find the greatest common
+divisor (gcd) of two numbers. Use that <code>gcd</code> function to
+write a function that finds the greatest common divisor of all of the
+numbers in a list by reducing the list one pair at a time.</p></li>
+<li><p>Write a function called <code>get_firstname</code> that returns
+the first name of any one full name. Then use that function to map this
+list to a list of first names.</p>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>fullnames <span class="op">=</span> [</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice Adams&quot;</span>,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob Brown&quot;</span>,</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie Clark&quot;</span>,</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy Davis&quot;</span>,</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward Evans&quot;</span>,</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Fiona Foster&quot;</span>,</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;George Green&quot;</span>,</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Hannah Hill&quot;</span>,</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Isaac Ives&quot;</span>,</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Jessica Johnson&quot;</span>,</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Kevin King&quot;</span>,</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Lily Lewis&quot;</span>,</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Michael Miller&quot;</span>,</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Nora Nelson&quot;</span>,</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Oliver Owens&quot;</span>,</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Patricia Parker&quot;</span>,</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Quinn Quinn&quot;</span>,</span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Rachel Roberts&quot;</span>,</span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Samuel Smith&quot;</span>,</span>
+<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Tina Taylor&quot;</span>,</span>
+<span id="cb50-22"><a href="#cb50-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Ulysses Underwood&quot;</span>,</span>
+<span id="cb50-23"><a href="#cb50-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Vanessa Vincent&quot;</span>,</span>
+<span id="cb50-24"><a href="#cb50-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;William Wilson&quot;</span>,</span>
+<span id="cb50-25"><a href="#cb50-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Xavier Xander&quot;</span>,</span>
+<span id="cb50-26"><a href="#cb50-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Yolanda Young&quot;</span>,</span>
+<span id="cb50-27"><a href="#cb50-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Zachary Zimmerman&quot;</span></span>
+<span id="cb50-28"><a href="#cb50-28" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div></li>
 </ol>
 <!--
 ### Wed, Oct 7

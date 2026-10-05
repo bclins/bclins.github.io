@@ -1536,11 +1536,13 @@ Fri, Oct 9  | [TP10][TP10]     | Dictionaries
 
 ### Mon, Oct 5
 
-We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of two patterns:
+We've spent the last two weeks talking about strings and lists (sequence types), and we've seen a lot of examples where we needed to loop through the elements of the sequence with an accumulator variable to accomplish a goal.  These goals often fall into one of three patterns:
 
 1. **Mapping** the sequence to create a new sequence where every element is replaced using some function.
 
 2. **Filtering** which is when we create a new sequence that only contains elements that meet a certain criterion.
+
+3. **Reducing** the sequence to a single number or value like a sum or maximum.
 
 The main differences between these patterns are the type of the accumulator variable and what function or expression you use to help perform the accumulation.  
  
@@ -1549,7 +1551,7 @@ The main differences between these patterns are the type of the accumulator vari
 <tr><th>Pattern </th><th>Accumulator Variable </th><th>Helper Function/Expression</th></tr>
 <tr><td>Map </td><td>New list or sequence </td><td>How you want to transform each element</td></tr>
 <tr><td>Filter </td><td>New list or sequence </td><td>Boolean function or expression to decide which elements to include</td></tr>
-<!--<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>-->
+<tr><td>Reduce </td><td>Usually a bool, int, or float </td><td>How you want to combine each element with the accumulator variable</td></tr>
 </table>
 </center>
 
@@ -1557,11 +1559,37 @@ We did the following examples.
 
 <!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
 
-1. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.   --> 
+--> 
 
-2. Write a function that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then map the following list of floats to a list of percentage strings. `data = [0.4, 0.7, 1.1, 0.01, 0.97]`
+1. Write a function `decimal2percent` that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  Then use your function to map the following list of floats to a list of percentage strings: 
 
-3. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
+    ```python
+    data = [0.4, 0.7, 1.1, 0.01, 0.97]
+    ```
+
+2. Write a function `between0and1` that filters a list, keeping only the elements that are between 0 and 1 (inclusive). 
+
+3. Write a `prod` function that returns the product of the numbers in a list. 
+
+4. Write a `remove_vowels` function that removes all vowels from a string.  
+
+5. In a math formula, like $(x+(y + 3))$, the parentheses have to balance, which means
+
+    * You have equal numbers of opening parentheses `(` as closing parentheses `)`. 
+    * As you read left to right, you never have more closing parentheses than opening. 
+
+    Write a function that inputs a formula string, and returns `True` if the parentheses balance.  
+
+
+#### Additional Practice
+
+1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
+
+2. Write a function that converts a list of full names to just a list of last names.  
+
+3. Last week we saw a recursive function to find the greatest common divisor (gcd) of two numbers.  Use that `gcd` function to write a function that finds the greatest common divisor of all of the numbers in a list by reducing the list one pair at a time.
+
+4. Write a function called `get_firstname` that returns the first name of any one full name.  Then use that function to map this list to a list of first names.  
 
     ```python
     fullnames = [
@@ -1594,13 +1622,7 @@ We did the following examples.
     ]
     ```
 
-4. Filter the list of names above to get a new list `long_names` that are longer than 10 letters.  
 
-#### Additional Practice
-
-1. Write a function that inputs a list of strings and returns a new list of strings that only contains the strings that have an even length.
-
-2. Write a function that converts a list of full names to just a list of last names.  
 
 <!--
 ### Wed, Oct 7
