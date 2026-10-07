@@ -1691,24 +1691,48 @@ perfect_squares = [n ** 2 for n in range(100)]
 
 # Generate a list of odd perfect squares.
 odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
-
 ```
 
 #### Practice
 
-1. Write a list comprehension to create a list of the first 20 positive odd numbers. 
+1. Use a list comprehension to make this list:
 
-2. What is the value of the following Python expression? 
+    ```python
+    ['', 'a', 'aa', 'aaa', 'aaaa', 'aaaaa', 'aaaaaa', 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 'aaaaaaaaaa']
+    ```
+    
+    where the last item is a string with 10 characters.
+
+1. Use a list comprehension to create a list with the first initial for each of the names from 
+
+    ```python
+    fullnames = ["Alice Adams", "Bob Brown", "Charlie Clark", "Daisy Davis", "Edward Evans", "Fiona Foster", "George Green", "Hannah Hill", "Isaac Ives", "Jessica Johnson", "Kevin King", "Lily Lewis", "Michael Miller", "Nora Nelson", "Oliver Owens", "Patricia Parker", "Quinn Quinn", "Rachel Roberts", "Samuel Smith", "Tina Taylor", "Ulysses Underwood", "Vanessa Vincent", "William Wilson", "Xavier Xander", "Yolanda Young", "Zachary Zimmerman"]
+    ```
+
+1. Use the `find` method in a list comprehension to create a list with just the first names from the `fullnames` list.
+
+#### Additional Practice
+
+1. Use a list comprehension to filter out all names that start with a vowel in a list of names?
+
+1. What is the value of the following Python expression? 
 
     ```python
     [len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
     ``` 
 
-3. How could you use a `get_firstname` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
+1. Use a list comprehension to make the list 
 
-4. How could you use a list comprehension to filter out all names that start with a vowel in a list of names?
+    ```python
+    ["a", "ab", "abc", "abcd", ..., "abcdefghijklmnopqrstuvwxyz"]
+    ```
 
-5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
+    using the string
+
+    ```python
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    ```
+
 
 <!--
 
