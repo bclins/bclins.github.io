@@ -1285,58 +1285,58 @@ example, the indices of <code>string</code> are shown below.</p>
 string
 </th>
 <td>
-<code>T</code>
+T
 </td>
 <td>
-<code>h</code>
+h
 </td>
 <td>
-<code>e</code>
-</td>
-<td>
-</td>
-<td>
-<code>q</code>
-</td>
-<td>
-<code>u</code>
-</td>
-<td>
-<code>i</code>
-</td>
-<td>
-<code>c</code>
-</td>
-<td>
-<code>k</code>
+e
 </td>
 <td>
 </td>
 <td>
-<code>b</code>
+q
 </td>
 <td>
-<code>r</code>
+u
 </td>
 <td>
-<code>o</code>
+i
 </td>
 <td>
-<code>w</code>
+c
 </td>
 <td>
-<code>n</code>
+k
 </td>
 <td>
 </td>
 <td>
-<code>f</code>
+b
 </td>
 <td>
-<code>o</code>
+r
 </td>
 <td>
-<code>x</code>
+o
+</td>
+<td>
+w
+</td>
+<td>
+n
+</td>
+<td>
+</td>
+<td>
+f
+</td>
+<td>
+o
+</td>
+<td>
+x
 </td>
 </tr>
 <tr>
@@ -1344,61 +1344,61 @@ string
 index
 </th>
 <td>
-<code>0</code>
+0
 </td>
 <td>
-<code>1</code>
+1
 </td>
 <td>
-<code>2</code>
+2
 </td>
 <td>
-<code>3</code>
+3
 </td>
 <td>
-<code>4</code>
+4
 </td>
 <td>
-<code>5</code>
+5
 </td>
 <td>
-<code>6</code>
+6
 </td>
 <td>
-<code>7</code>
+7
 </td>
 <td>
-<code>8</code>
+8
 </td>
 <td>
-<code>9</code>
+9
 </td>
 <td>
-<code>10</code>
+10
 </td>
 <td>
-<code>11</code>
+11
 </td>
 <td>
-<code>12</code>
+12
 </td>
 <td>
-<code>13</code>
+13
 </td>
 <td>
-<code>14</code>
+14
 </td>
 <td>
-<code>15</code>
+15
 </td>
 <td>
-<code>16</code>
+16
 </td>
 <td>
-<code>17</code>
+17
 </td>
 <td>
-<code>18</code>
+18
 </td>
 </tr>
 </table>
@@ -1422,22 +1422,22 @@ backwards.</p>
 string
 </th>
 <td>
-<code>b</code>
+b
 </td>
 <td>
-<code>a</code>
+a
 </td>
 <td>
-<code>n</code>
+n
 </td>
 <td>
-<code>a</code>
+a
 </td>
 <td>
-<code>n</code>
+n
 </td>
 <td>
-<code>a</code>
+a
 </td>
 </tr>
 <tr>
@@ -1445,22 +1445,22 @@ string
 negative index
 </th>
 <td>
-<code>-6</code>
+-6
 </td>
 <td>
-<code>-5</code>
+-5
 </td>
 <td>
-<code>-4</code>
+-4
 </td>
 <td>
-<code>-3</code>
+-3
 </td>
 <td>
-<code>-2</code>
+-2
 </td>
 <td>
-<code>-1</code>
+-1
 </td>
 </tr>
 </table>
@@ -2445,91 +2445,81 @@ than opening.</li>
 <p>Write a function that inputs a formula string, and returns
 <code>True</code> if the parentheses balance.</p></li>
 </ol>
+<h3 id="wed-oct-7">Wed, Oct 7</h3>
+<p>Today we talked about some shortcuts you can use in Python code.</p>
+<h4 id="multiple-assignments-tuple-unpacking">Multiple assignments
+(tuple unpacking)</h4>
+<p>You can define more than one variable in one line:</p>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">4</span>, <span class="st">&quot;five&quot;</span>, <span class="fl">6.0</span></span></code></pre></div>
+<h4 id="assignment-operators">Assignment operators</h4>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of updating a variable like this:</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> value <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># you can do this:</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>value <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+<p>There are also variations for subtraction, multiplication, division,
+and even exponents and modulus.</p>
+<h4 id="f-strings">f-strings</h4>
+<p>To incorporate variables into a string, you can make an
+<strong>f-string</strong> like so:</p>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old.&quot;</span></span></code></pre></div>
+<ol type="1">
+<li><p>What does the following code do?</p>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> <span class="dv">17</span>, <span class="dv">13</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">%=</span> <span class="dv">10</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">/=</span> <span class="dv">10</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y = </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div></li>
+</ol>
+<h4 id="list-comprehensions">List comprehensions</h4>
+<p>A <strong>list comprehension</strong> is a fast way to create a new
+list by applying a map and/or filter pattern to a sequence, all in one
+line. A list comprehension has the form:</p>
+<center>
+[<em>expression</em> <strong>for</strong> <em>variable</em>
+<strong>in</strong> <em>sequence</em>]
+</center>
+<p>As an option, you can also include a boolean condition that must be
+satisfied in order for the expressions to be included in the list.</p>
+<center>
+[<em>expression</em> <strong>for</strong> <em>variable</em>
+<strong>in</strong> <em>sequence</em> <strong>if</strong> <em>boolean
+expression</em>]
+</center>
+<p>Here are some examples:</p>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of the first 100 perfect squares.</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a list of odd perfect squares.</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>odd_perfect_squares <span class="op">=</span> [n <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>) <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>]</span></code></pre></div>
+<h4 id="practice-3">Practice</h4>
+<ol type="1">
+<li><p>Write a list comprehension to create a list of the first 20
+positive odd numbers.</p></li>
+<li><p>What is the value of the following Python expression?</p>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(x) <span class="cf">for</span> x <span class="kw">in</span> [<span class="st">&#39;ab&#39;</span>, <span class="st">&#39;xyz&#39;</span>, <span class="dv">5</span>, <span class="op">-</span><span class="fl">1.0</span>, <span class="st">&#39;1.23&#39;</span>] <span class="cf">if</span> <span class="bu">type</span>(x) <span class="op">==</span> <span class="bu">str</span>]</span></code></pre></div></li>
+<li><p>How could you use a <code>get_firstname</code> function that
+extracts just the first name from a fullname string to get a list of
+first names from a <code>fullname_list</code>?</p></li>
+<li><p>How could you use a list comprehension to filter out all names
+that start with a vowel in a list of names?</p></li>
+<li><p>A partial sum of a list of numbers is a sum of the first
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+numbers in the list. Write a list comprehension to find all the partial
+sums of any list <code>numbers</code> from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math>
+until
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>
+is the length of <code>numbers</code>.</p></li>
+</ol>
 <!--
-### Wed, Oct 7
-
-Today we talked about some shortcuts you can use in Python code.  
-
-#### Multiple assignments (tuple unpacking)
-
-You can define more than one variable in one line:
-
-```python
-a, b, c = 4, "five", 6.0
-```
-
-#### Assignment operators
-
-```python
-# Instead of updating a variable like this:
-value = value + 1
-
-# you can do this:
-value += 1
-```
-
-There are also variations for subtraction, multiplication, division, and even exponents and modulus. 
-
-#### f-strings
-
-To incorporate variables into a string, you can make an **f-string** like so:
-
-```python
-name = "Alice"
-age = 25
-string = f"{name} is {age} years old."
-```
-
-1. What does the following code do? 
-
-    ```python
-    x, y = 17, 13
-    x %= 10
-    y /= 10
-    print(f"x = {x}, y = {y}")
-    ```
-
-#### List comprehensions
-
-A **list comprehension** is a fast way to create a new list by applying a map and/or filter pattern to a sequence, all in one line. A list comprehension has the form:
-
-<center>
-[*expression* **for** *variable* **in** *sequence*]
-</center>
-
-As an option, you can also include a boolean condition that must be satisfied in order for the expressions to be included in the list. 
-
-<center>
-[*expression* **for** *variable* **in** *sequence* **if** *boolean expression*]
-</center>
-
-Here are some examples:
-
-```python
-# Generate a list of the first 100 perfect squares.
-perfect_squares = [n ** 2 for n in range(100)]
-
-# Generate a list of odd perfect squares.
-odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
-
-```
-
-#### Practice
-
-1. Write a list comprehension to create a list of the first 20 positive odd numbers. 
-
-2. What is the value of the following Python expression? 
-
-    ```python
-    [len(x) for x in ['ab', 'xyz', 5, -1.0, '1.23'] if type(x) == str]
-    ``` 
-
-3. How could you use a `get_firstname` function that extracts just the first name from a fullname string to get a list of first names from a `fullname_list`? 
-
-4. How could you use a list comprehension to filter out all names that start with a vowel in a list of names?
-
-5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
-
 
 ### Thu, Oct 8
 

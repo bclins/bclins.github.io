@@ -628,7 +628,7 @@ href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#secti
 <p>One of the hardest problems in statistics is to prove causation. Here
 is a diagram that illustrates the problem.</p>
 <center>
-<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:60%"></img>
+<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:400px"></img>
 </center>
 <p>The explanatory variable <em>might</em> be the cause of a change in
 the response variable. But we have to watch out for other variables that
@@ -907,7 +907,8 @@ tends to get closer to the theoretical average
 <td style="text-align: center;">Mon, Oct 5</td>
 <td style="text-align: center;"><a
 href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.4">3.4</a></td>
-<td style="text-align: left;">Random variables</td>
+<td style="text-align: left;">Discrete versus continuous
+distributions</td>
 </tr>
 <tr>
 <td style="text-align: center;">Wed, Oct 7</td>
@@ -1001,32 +1002,65 @@ probabilities</a></li>
 versus expected returns
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>)
 when investing.</p>
-<!--
-### Fri, Feb 27
- 
-Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
-
-<div class="Theorem">
-**Sampling Distribution of $\bar{x}$.**
-
-1. **Shape**: gets more normal as the sample size $N$ gets larger.
-2. **Center**: the theoretical average of $\bar{x}$ is the true population mean $\mu$. 
-3. **Spread**: the theoretical standard deviation of $\bar{x}$ gets smaller as $N$ gets bigger. In fact: 
-$$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.$$
-</div>
-
-Examples of sampling distributions.
-
-* [Gettysburg Address words](https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html)
-* [Weights of adults](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html)
-* [NFL kickoffs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html)
-
-
-1. Every week in the Fall there are about 15 NFL games.  In each game, there are about 13 kickoffs, on average.  So we can estimate that there might be about 200 kickoffs in one week of NFL games.  Those 200 kickoffs would be a reasonably random sample of all NFL kickoffs.  Describe the sampling distribution of the average kickoff distance.  
-
-1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If an airplane is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than 4,000 lbs?  Hint: This is the same as finding $P(\bar{x} > 181.8)$
-
--->
+<h3 id="wed-oct-7">Wed, Oct 7</h3>
+<p>Suppose we are trying to study a large population with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>
+and standard deviation
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>.
+If we take a random sample, the sample mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is a random variable and its probability distribution is called the
+<strong>sampling distribution</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>.
+Assuming that the population is large and our sample is a simple random
+sample, the sampling distribution always has the following features:</p>
+<section id="sampling-distribution-of-barx" class="Theorem">
+<h4>Sampling Distribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math></h4>
+<ol type="1">
+<li><strong>Shape</strong>: gets more normal as the sample size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets larger.</li>
+<li><strong>Center</strong>: the theoretical average of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is the true population mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math>.</li>
+<li><strong>Spread</strong>: the theoretical standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+gets smaller as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets bigger. In fact:
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mover><mi>x</mi><mo accent="true">‾</mo></mover></msub><mo>=</mo><mfrac><mi>σ</mi><msqrt><mi>N</mi></msqrt></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{N}}.</annotation></semantics></math></li>
+</ol>
+</section>
+<p>Examples of sampling distributions.</p>
+<ul>
+<li><a
+href="https://people.hsc.edu/faculty-staff/blins/StatsExamples/GettysburgSamplingDistribution.html">Gettysburg
+Address words</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution.html">Weights
+of adults</a></li>
+<li><a
+href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/InteractiveSamplingDistribution2.html">NFL
+kickoffs</a></li>
+</ul>
+<ol type="1">
+<li><p>Every week in the Fall there are about 15 NFL games. In each
+game, there are about 13 kickoffs, on average. So we can estimate that
+there might be about 200 kickoffs in one week of NFL games. Those 200
+kickoffs would be a reasonably random sample of all NFL kickoffs.
+Describe the sampling distribution of the average kickoff
+distance.</p></li>
+<li><p>The average American weighs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>170</mn></mrow><annotation encoding="application/x-tex">\mu = 170</annotation></semantics></math>
+lbs. with a standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>=</mo><mn>40</mn></mrow><annotation encoding="application/x-tex">\sigma = 40</annotation></semantics></math>
+lbs. If an airplane is designed to seat 22 passengers, what is the
+probability that the combined weight of the passengers would be greater
+than 4,000 lbs? Hint: This is the same as finding
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>181.8</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">P(\bar{x} &gt; 181.8).</annotation></semantics></math></p></li>
+</ol>
 <hr />
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>

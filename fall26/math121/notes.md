@@ -362,7 +362,7 @@ Fri, Sep 25 |            | **Midterm 1**
 One of the hardest problems in statistics is to prove causation. Here is a diagram that illustrates the problem.
 
 <center>
-<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:60%"></img>
+<img src="https://bclins.github.io/spring25/math121/correlation_not_causation.png" style="max-width:400px"></img>
 </center>
 
 The explanatory variable *might* be the cause of a change in the response variable. But we have to watch out for other variables that aren't part of the study called **lurking variables**. When researchers take a variable into account in a study, we say it is **controlled**.   
@@ -519,7 +519,7 @@ The **expected value** (also known as the **theoretical average**) is the weight
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 5 | [3.4][3.4] | Random variables
+Mon, Oct 5 | [3.4][3.4] | Discrete versus continuous distributions
 Wed, Oct 7 | [7.1][7.1] | Sampling distributions
 Fri, Oct 9 | [5.1][5.1] | Sampling distributions for proportions 
 
@@ -571,13 +571,13 @@ Another example of a discrete probability distribution is the total when you rol
 
 We finished by talking about the trade-off between risk ($\sigma$) versus expected returns ($\mu$) when investing. 
 
-<!--
-### Fri, Feb 27
+
+### Wed, Oct 7
  
 Suppose we are trying to study a large population with mean $\mu$ and standard deviation $\sigma$. If we take a random sample, the sample mean $\bar{x}$ is a random variable and its probability distribution is called the **sampling distribution** of $\bar{x}$.  Assuming that the population is large and our sample is a simple random sample, the sampling distribution always has the following features:
 
 <div class="Theorem">
-**Sampling Distribution of $\bar{x}$.**
+#### Sampling Distribution of $\bar{x}$
 
 1. **Shape**: gets more normal as the sample size $N$ gets larger.
 2. **Center**: the theoretical average of $\bar{x}$ is the true population mean $\mu$. 
@@ -594,9 +594,8 @@ Examples of sampling distributions.
 
 1. Every week in the Fall there are about 15 NFL games.  In each game, there are about 13 kickoffs, on average.  So we can estimate that there might be about 200 kickoffs in one week of NFL games.  Those 200 kickoffs would be a reasonably random sample of all NFL kickoffs.  Describe the sampling distribution of the average kickoff distance.  
 
-1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If an airplane is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than 4,000 lbs?  Hint: This is the same as finding $P(\bar{x} > 181.8)$
+1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If an airplane is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than 4,000 lbs?  Hint: This is the same as finding $P(\bar{x} > 181.8).$
 
--->
 
 - - - 
 

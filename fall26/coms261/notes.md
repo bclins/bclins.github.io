@@ -1016,8 +1016,8 @@ Each character in a string has an **index**. For example, the indices of `string
 
 <center>
 <table class="bordered">
-<tr><th>string</th><td>`T`</td><td>`h`</td><td>`e`</td><td></td><td>`q`</td><td>`u`</td><td>`i`</td><td>`c`</td><td>`k`</td><td></td><td>`b`</td><td>`r`</td><td>`o`</td><td>`w`</td><td>`n`</td><td></td><td>`f`</td><td>`o`</td><td>`x`</td></tr>
-<tr><th>index</th><td>`0`</td><td>`1`</td><td>`2`</td><td>`3`</td><td>`4`</td><td>`5`</td><td>`6`</td><td>`7`</td><td>`8`</td><td>`9`</td><td>`10`</td><td>`11`</td><td>`12`</td><td>`13`</td><td>`14`</td><td>`15`</td><td>`16`</td><td>`17`</td><td>`18`</td></tr>
+<tr><th>string</th><td>T</td><td>h</td><td>e</td><td></td><td>q</td><td>u</td><td>i</td><td>c</td><td>k</td><td></td><td>b</td><td>r</td><td>o</td><td>w</td><td>n</td><td></td><td>f</td><td>o</td><td>x</td></tr>
+<tr><th>index</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
 </table>
 </center>
 
@@ -1033,8 +1033,8 @@ You can also access characters in a string using **negative index** values.  The
 
 <center>
 <table class="bordered">
-<tr><th>string</th><td>`b`</td><td>`a`</td><td>`n`</td><td>`a`</td><td>`n`</td><td>`a`</td></tr>
-<tr><th>negative index</th><td>`-6`</td><td>`-5`</td><td>`-4`</td><td>`-3`</td><td>`-2`</td><td>`-1`</td></tr>
+<tr><th>string</th><td>b</td><td>a</td><td>n</td><td>a</td><td>n</td><td>a</td></tr>
+<tr><th>negative index</th><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td></tr>
 </table>
 </center>
 
@@ -1626,9 +1626,6 @@ Here are examples where we have seen these patterns before.
     Write a function that inputs a formula string, and returns `True` if the parentheses balance.  
 
 
-
-
-<!--
 ### Wed, Oct 7
 
 Today we talked about some shortcuts you can use in Python code.  
@@ -1713,6 +1710,7 @@ odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
 
 5. A partial sum of a list of numbers is a sum of the first $k$ numbers in the list.  Write a list comprehension to find all the partial sums of any list `numbers` from $k = 1$ until $k$ is the length of `numbers`. 
 
+<!--
 
 ### Thu, Oct 8
 

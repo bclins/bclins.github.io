@@ -9,9 +9,9 @@ header-includes:
 
 <!--- - --->
 
-<div style="display: flex; gap: 20px; background-color:#ccc; border-radius: 12px; min-width: 450px;">
-<img src="Brian4.jpg" width=160 style="margin-left: 20px;"></img>
-<div>
+<div style="display: flex; flex-wrap: wrap; background-color:#ccc; border-radius: 10px;">
+<img src="Brian4.jpg" style="width: 160px; flex-basis: 160px; margin-left: 20px;"></img>
+<div style="margin-left: 20px; flex-basis: 300px;">
 
 Elliott Professor of Mathematics \
 [Math & CS Department](http://www.hsc.edu/academics/mathematics-and-computer-science) \

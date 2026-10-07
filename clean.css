@@ -40,10 +40,12 @@ h1 {
     font-size: 2.2em;
     color: var(--header-color); 
 }
+
 h2 {
     font-size: 1.7em;
     color: var(--header-color);
 }
+
 h3 {
     font-size: 1.4em;
     color: var(--header-color);
@@ -66,14 +68,17 @@ table {
     border-collapse: collapse;
     margin-left: 20px;
 }
+
 th {
     border: 1px solid var(--light-black);
     background-color: var(--light-gray);
     padding: 0.5em;
 }
+
 td {
     border: 1px solid var(--light-black);
     padding: 0.5em;
+    text-align: center;
 }
 
 blockquote{
@@ -92,6 +97,7 @@ pre{
     white-space: pre-wrap; 
     word-wrap: break-word; 
 }
+
 pre code {
     padding: none;
     border: none;
@@ -112,7 +118,7 @@ div.sourceCode {
     background-color: #eeffcc;
     border-radius: 3px;
     border: 1px solid rgb(170, 204, 153);
-    line-height: 1.25em;   
+    line-height: 1.1em;   
     font-size: 1.2em;   
 }
 
