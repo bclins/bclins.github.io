@@ -1733,19 +1733,19 @@ odd_perfect_squares = [n ** 2 for n in range(100) if n % 2 == 1]
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     ```
 
+### Thu, Oct 8
+
+Today we practiced working with list comprehensions.
+
+* **Workshop:** [List comprehensions](ListComprehensions.pdf)
+
+#### Additional Practice
+
+1. The [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(lst, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
+
 
 
 <!--
-
-### Thu, Oct 8
-
-Today we did some more practice with filtering and mapping using list comprehensions.
-
-3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
-
-
-
-
 ### Fri, Oct 9
 
 A **dictionary** is a special type in Python that holds **key**/**value** pairs.  

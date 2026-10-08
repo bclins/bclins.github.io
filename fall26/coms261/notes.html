@@ -2526,17 +2526,34 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a h
 <div class="sourceCode" id="cb59"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>alphabet <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span></code></pre></div></li>
 </ol>
+<h3 id="thu-oct-8">Thu, Oct 8</h3>
+<p>Today we practiced working with list comprehensions.</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="ListComprehensions.pdf">List
+comprehensions</a></li>
+</ul>
+<h4 id="additional-practice-19">Additional Practice</h4>
+<ol type="1">
+<li>The <a
+href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of
+Eratosthenes</a> is a classic way to create a list of prime numbers. You
+start with a list of integers from 2 to any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Then you cross out all multiples of 2 after 2 itself. Then you move to
+the next element in the list which is 3 and cross out all multiples of 3
+(other than 3 itself). Then you move the next element which is 5 (since
+4 was already removed) and repeat until you reach a number that is
+greater than the square root of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Every number that is left in the list must be a prime number. Try to
+write a function <code>remove_multiples(lst, n)</code> that removes any
+multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+greater than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+itself from a list.</li>
+</ol>
 <!--
-
-### Thu, Oct 8
-
-Today we did some more practice with filtering and mapping using list comprehensions.
-
-3. The Sieve of Eratosthenes is a classic way to create a list of prime numbers.  You start with a list of integers from 2 to any $n$.  Then you cross out all multiples of 2 after 2 itself.  Then you move to the next element in the list which is 3 and cross out all multiples of 3 (other than 3 itself).  Then you move the next element which is 5 (since 4 was already removed) and repeat until you reach a number that is greater than the square root of $n$.  Every number that is left in the list must be a prime number.  Try to write a function `remove_multiples(list, n)` that removes any multiple of $n$ greater than $n$ itself from a list.  
-
-
-
-
 ### Fri, Oct 9
 
 A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
