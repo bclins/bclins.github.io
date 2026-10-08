@@ -76,7 +76,7 @@ th {
 }
 
 td {
-    border: 1px solid var(--light-black);
+    border: 1px solid var(--text-color);
     padding: 0.5em;
     text-align: center;
 }
