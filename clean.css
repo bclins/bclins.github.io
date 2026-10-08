@@ -1,7 +1,7 @@
 :root {
     --header-color:	#000; /* better green: #264; gray: #333; brown: #522200; green: #163; red: #622; /* original blue: #046; */  
     --link-color: #00e; /* better green: #486; gray: #555; brown: #8b4513; green: #195; red: #A32; /* original blue: #069; */
-    --text-color: #111;
+    --text-color: black; /* was #111 */
     --light-black: #999;
     --light-gray: #eee;
     --highlight-yellow: #ff3;
@@ -16,7 +16,7 @@ body {
     margin-left: auto;
     margin-right: auto; 
     color: var(--text-color);
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
     line-height: 1.5; 
     font-size: 1em;
     font-family: var(--font-body);
@@ -64,13 +64,13 @@ del {
 }
 
 table {
-    border: 1px solid var(--light-black);
+    border: 1px solid var(--text-color);
     border-collapse: collapse;
     margin-left: 20px;
 }
 
 th {
-    border: 1px solid var(--light-black);
+    border: 1px solid var(--text-color);
     background-color: var(--light-gray);
     padding: 0.5em;
 }
