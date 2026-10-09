@@ -21,9 +21,9 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="front.css" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><br />
-  <meta http-equiv="Pragma" content="no-cache" /><br />
+  <link rel="stylesheet" href="clean.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 </head>
 <body>
@@ -31,26 +31,20 @@
 <h1 class="title">Brian Lins</h1>
 </header>
 <div
-style="background-color:#ccc; border: 0px solid black; border-radius: 12px">
-<table>
-<tr>
-<td>
-<img src="MeFeb2019_3.jpg" width=150 style="display:block; margin:-3px; border: 0px solid black;"></img>
-</td>
-<td>
-<p>Professor of Mathematics<br />
+style="display: flex; flex-wrap: wrap; background-color:#ccc; border-radius: 10px;">
+<img src="MeFeb2019_3.jpg" style="height: 208px; flex-basis: 160px; margin-left: 20px;"></img>
+<div style="margin-left: 20px; flex-basis: 300px;">
+<p>Elliott Professor of Mathematics<br />
 <a
 href="http://www.hsc.edu/academics/mathematics-and-computer-science">Math
 &amp; CS Department</a><br />
-<a href="www.hsc.edu">Hampden-Sydney College</a></p>
+<a href="https://www.hsc.edu">Hampden-Sydney College</a></p>
 <p>Office: Pauley 301<br />
-E-mail:
-<a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a></p>
+E-mail: <a href="mailto:%62lins%40hsc%2Eedu">blins@hsc.edu</a>
+<!--<img src="address.png"  style="vertical-align:bottom"/>--></p>
 <p><a href="about.html">About</a> | <a href="research.html">Research</a>
 | <a href="index.html">Teaching</a></p>
-</td>
-</tr>
-</table>
+</div>
 </div>
 <h3 id="publications-and-cv">Publications and CV</h3>
 <p>All of my recent papers are on the ArXiv. My CV includes a complete
@@ -66,11 +60,12 @@ preprints</a></li>
 analysis with a particular focus on nonlinear Perron-Frobenius theory
 and nonexpansive maps. There are many applications of nonlinear
 functions that are order-preserving and homogeneous on the interior of a
-cone such as the positive orthant in ℝ<sup>n</sup> or the positive
-definite matrices. Such functions are nonexpansive with respect to
-Hilbert’s projective metric on the interior of the cone. I’m interested
-in conditions for establishing the existence and uniqueness of
-eigenvectors of such functions. These conditions generalize the
+cone such as the positive orthant in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^n</annotation></semantics></math>
+or the positive definite matrices. Such functions are nonexpansive with
+respect to Hilbert’s projective metric on the interior of the cone. I’m
+interested in conditions for establishing the existence and uniqueness
+of eigenvectors of such functions. These conditions generalize the
 classical Perron-Frobenius theorem for nonnegative matrices. I’m also
 interested in the dynamical behavior of these functions under iteration.
 The tools for studying these problems come from many different parts of

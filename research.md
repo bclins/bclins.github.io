@@ -1,32 +1,28 @@
 ---
 title: Brian Lins
-css: front.css
-header-includes:
+css: clean.css
+header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 ---
 
-<div style="background-color:#ccc; border: 0px solid black; border-radius: 12px">
-<table>
-<tr>
-<td>
-<img src="MeFeb2019_3.jpg" width=150 style="display:block; margin:-3px; border: 0px solid black;"></img>
-</td>
-<td>
-Professor of Mathematics \
+<div style="display: flex; flex-wrap: wrap; background-color:#ccc; border-radius: 10px;">
+<img src="MeFeb2019_3.jpg" style="height: 208px; flex-basis: 160px; margin-left: 20px;"></img>
+<div style="margin-left: 20px; flex-basis: 300px;">
+
+Elliott Professor of Mathematics \
 [Math & CS Department](http://www.hsc.edu/academics/mathematics-and-computer-science) \
-[Hampden-Sydney College](www.hsc.edu)
+[Hampden-Sydney College](https://www.hsc.edu)
 
 Office: Pauley 301 \
-E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a>
+E-mail: <a href="mailto:%62lins%40hsc%2Eedu">&#98;lins&#64;hsc&#46;edu</a> <!--<img src="address.png"  style="vertical-align:bottom"/>-->
 
 [About](about.html) | [Research](research.html) | [Teaching](index.html) 
 
-</td>
-</tr>
-</table>
 </div>
+</div>
+
 
 ### Publications and CV
 
@@ -37,7 +33,7 @@ All of my recent papers are on the ArXiv. My CV includes a complete list of publ
 
 ### Research Interests
 
-I have two main research interests. One is nonlinear functional analysis with a particular focus on nonlinear Perron-Frobenius theory and nonexpansive maps. There are many applications of nonlinear functions that are order-preserving and homogeneous on the interior of a cone such as the positive orthant in ℝ<sup>n</sup> or the positive definite matrices. Such functions are nonexpansive with respect to Hilbert's projective metric on the interior of the cone. I'm interested in conditions for establishing the existence and uniqueness of eigenvectors of such functions. These conditions generalize the classical Perron-Frobenius theorem for nonnegative matrices. I'm also interested in the dynamical behavior of these functions under iteration. The tools for studying these problems come from many different parts of mathematics, including topology, metric geometry, linear algebra, and graph theory.   
+I have two main research interests. One is nonlinear functional analysis with a particular focus on nonlinear Perron-Frobenius theory and nonexpansive maps. There are many applications of nonlinear functions that are order-preserving and homogeneous on the interior of a cone such as the positive orthant in $\mathbb{R}^n$ or the positive definite matrices. Such functions are nonexpansive with respect to Hilbert's projective metric on the interior of the cone. I'm interested in conditions for establishing the existence and uniqueness of eigenvectors of such functions. These conditions generalize the classical Perron-Frobenius theorem for nonnegative matrices. I'm also interested in the dynamical behavior of these functions under iteration. The tools for studying these problems come from many different parts of mathematics, including topology, metric geometry, linear algebra, and graph theory.   
 
 <center>
 <img src="LorentzConePic.png" title="Funk and reverse-Funk horospheres for the Lorentz cone" width=380/> 
@@ -56,6 +52,7 @@ If you are a student and are interested in research opportunities in mathematics
 
 * [Google scholar](https://scholar.google.com/citations?user=Hg5BZBoAAAAJ)
 * [ResearchGate](https://www.researchgate.net/profile/Brian-Lins)
+
 
 <br>
 <br>

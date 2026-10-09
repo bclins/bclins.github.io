@@ -92,7 +92,7 @@
   <meta http-equiv="Expires" content="0" />
   <style>
   :root {
-    --header-color: #333; 
+    /* --header-color:  #333; */ 
     --link-color:  #528; /* #0a7d91; */
   }
   </style>
@@ -2553,98 +2553,90 @@ greater than
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 itself from a list.</li>
 </ol>
-<!--
-### Fri, Oct 9
-
-A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
-
-```python
-# Example dictionary:
-days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
-                 'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
-```
-
-In the dictionary above, the keys are the months (which are strings).  The values are the numbers of days (which are integers).  To access the value in a dictionary, you use the key like you would use an index for a list.   
-
-```python
-print("April has", days_by_month['Apr'], "days.")
-```
-
-Why are they called dictionaries?  The idea is that you can look things up, just like in a real dictionary.  In fact, you could use a Python dictionary to store words and their definitions:
-
-```python
-# Using a Python dictionary to store an English dictionary.
-word_to_definition = {
-    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites.",
-    "Abacus": "a device for making arithmetic calculations by moving beads.",  
-    "Abandon": "to leave completely and finally",
-}
-```
-
-Things to know about dictionaries. 
-
-1. **The keyword <u>in</u> checks keys not values.** You can use the keyword `in` to test if a key is in a dictionary, but not a value. 
-
-    ```python
-    'Feb' in days_by_month # True
-    30 in days_by_month # False
-    ```
-
-2. **You can loop through keys in a dictionary.** Use a loop of the form
+<h3 id="fri-oct-9">Fri, Oct 9</h3>
+<p>A <strong>dictionary</strong> is a special type in Python that holds
+<strong>key</strong>/<strong>value</strong> pairs.</p>
+<div class="sourceCode" id="cb60"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example dictionary:</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>month_lengths <span class="op">=</span> {<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>, <span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;May&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>, </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>}</span></code></pre></div>
+<p>In the dictionary above, the keys are the months (which are strings).
+The values are the numbers of days (which are integers). To access the
+value in a dictionary, you use the key like you would use an index for a
+list.</p>
+<div class="sourceCode" id="cb61"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> month_lengths[<span class="st">&#39;Apr&#39;</span>]</span></code></pre></div>
+<p>Why are they called dictionaries? The idea is that you can look
+things up, just like in a real dictionary. In fact, you could use a
+Python dictionary to store words and their definitions:</p>
+<div class="sourceCode" id="cb62"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a Python dictionary to store an English dictionary.</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>definitions <span class="op">=</span> {</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Aardvark&quot;</span>: <span class="st">&quot;a nocturnal burrowing mammal that eats ants and termites&quot;</span>,</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Abacus&quot;</span>: <span class="st">&quot;a device for making arithmetic calculations by moving beads&quot;</span>,  </span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Abandon&quot;</span>: <span class="st">&quot;to leave completely and finally&quot;</span>,</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Things to know about dictionaries.</p>
+<ol type="1">
+<li><p><strong>The keyword <u>in</u> checks keys not values.</strong>
+You can use the keyword <code>in</code> to test if a key is in a
+dictionary, but not a value.</p>
+<div class="sourceCode" id="cb63"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;Feb&#39;</span> <span class="kw">in</span> month_lengths <span class="co"># True</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="kw">in</span> month_lengths <span class="co"># False</span></span></code></pre></div></li>
+<li><p><strong>You can loop through keys in a dictionary.</strong> Use a
+loop of the form</p>
 <center>
-**for** *key* **in** *dictionary*:
-</center>
-Use this to loop through the months in `days_by_month` and print out a sentence for each month saying how many days it has. 
-
-3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  Be careful with this!  The following example creates an empty dictionary, and then fills it with key/value pairs.  Try changing the value for `Feb` from 28 to 29 in `days_by_month`. 
-
-<!--
-```python
-alphabet = [chr(i + ord('a')) for i in range(26)]
-file = open("poem.txt")
-text = file.read()
-
-letter_frequency = {}
-for letter in alphabet:
-    letter_frequency[letter] = text.count(letter) 
-
-print(letter_frequency)
-```
-
-#### Practice
-
-1. Write a program to convert the data for each student in the file [grades.txt](https://bclins.github.io/fall24/cs261/grades.txt) into a dictionary like this:
+<p><strong>for</strong> <em>key</em> <strong>in</strong>
+<em>dictionary</em>:</p>
+</center></li>
+<li><p><strong>Dictionaries are mutable.</strong> You can add key/value
+pairs, change the values for keys, and remove key/value pairs without
+creating a completely new dictionary.</p>
+<div class="sourceCode" id="cb64"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is how to change a value in a dictionary.</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>month_lengths[<span class="st">&quot;Feb&quot;</span>] <span class="op">=</span> <span class="dv">29</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Here is how you add a new key-value pair to a dictionary.</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>definitions[<span class="st">&quot;Embiggen&quot;</span>] <span class="op">=</span> <span class="st">&quot;to make bigger or more expansive&quot;</span></span></code></pre></div></li>
+</ol>
+<h4 id="practice-4">Practice</h4>
+<ol type="1">
+<li><p>Create a dictionary called <code>me</code> that contains three
+keys <code>name</code>, <code>age</code>, and <code>hometown</code> to
+describe yourself.</p></li>
+<li><p>Write a for-loop through the keys in <code>month_lengths</code>
+that prints a sentence for each month saying how many days it
+has.</p></li>
+<li><p>The keys in a dictionary must be unique. What happens in Python
+if you try to create a dictionary like this:</p>
 <center>
-`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
-</center>
-
-2. The keys in a dictionary must be unique.  What happens if you try to create a dictionary like this:
+<p><code>{'test': 1, 'test': 2}</code>?</p>
+</center></li>
+<li><p>You can make nested dictionaries:</p>
+<div class="sourceCode" id="cb65"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>contacts <span class="op">=</span> {</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice&quot;</span>: {</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;phone&quot;</span>: <span class="st">&quot;555-0123&quot;</span>,</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;email&quot;</span>: <span class="st">&quot;alice@email.com&quot;</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob&quot;</span>: {</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;phone&quot;</span>: <span class="st">&quot;555-4567&quot;</span>,</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;email&quot;</span>: <span class="st">&quot;bob@email.com&quot;</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>How would you get Alice’s phone number from the dictionary
+above?</p></li>
+</ol>
+<h4 id="additional-practice-20">Additional Practice</h4>
+<ol type="1">
+<li>Write a program to convert the data for each student in the file <a
+href="https://bclins.github.io/fall24/cs261/grades.txt">grades.txt</a>
+into a dictionary like this:
 <center>
-`{'test': 1, 'test': 2}`?
-</center>
-
-3. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
-
-4. You can make nested dictionaries:
-
-    ```python
-    contacts = {
-        "Alice": {
-            "phone": "555-0123",
-            "email": "alice@email.com"
-        },
-        "Bob": {
-            "phone": "555-4567",
-            "email": "bob@email.com"
-        }
-    }
-    ```
-
-    How would you get Alice's phone number from the dictionary above? 
-
-
-
-
+<code>{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}</code>
+</center></li>
+</ol>
 <!--
 ### Mon, Oct 7
 

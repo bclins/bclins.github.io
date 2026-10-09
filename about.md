@@ -1,35 +1,33 @@
 ---
 title: Brian Lins
-css: front.css
-header-includes:
+css: clean.css
+header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 ---
 
-<div style="background-color:#ccc; border: 0px solid black; border-radius: 12px">
-<table>
-<tr>
-<td>
-<img src="MeFall2017c.jpg" width=163 style="display:block; margin:-3px; border: 0px solid black;"></img>
-</td>
-<td>
+<!--- - --->
 
-Professor of Mathematics \
+<div style="display: flex; flex-wrap: wrap; background-color:#ccc; border-radius: 10px;">
+<img src="MeFall2017c.jpg" style="height: 208px; flex-basis: 160px; margin-left: 20px;"></img>
+<div style="margin-left: 20px; flex-basis: 300px;">
+
+Elliott Professor of Mathematics \
 [Math & CS Department](http://www.hsc.edu/academics/mathematics-and-computer-science) \
 [Hampden-Sydney College](https://www.hsc.edu)
 
 Office: Pauley 301 \
-E-mail: <a href='mailto:'><img src="address.png"  style="vertical-align:bottom"/></a>
+E-mail: <a href="mailto:%62lins%40hsc%2Eedu">&#98;lins&#64;hsc&#46;edu</a> <!--<img src="address.png"  style="vertical-align:bottom"/>-->
 
 [About](about.html) | [Research](research.html) | [Teaching](index.html) 
 
-</td>
-</tr>
-</table>
+</div>
 </div>
 
-I've been a professor of mathematics at Hampden-Sydney College since 2008. I live in the Richmond area with my wife and two children.
+<!--- - --->
+
+I've been a professor of mathematics at Hampden-Sydney College since 2008. I live in the Richmond area with my family.
 
 ### Running
 
@@ -42,7 +40,6 @@ I love classic card games like hearts, cribbage, and 500. I also like programmin
 <center>
 <a href="http://bclins.github.io/Sixty-six/"><img src="Sixtysix.png" width=520 /></a>
 </center>
-
 
 <br>
 <br>

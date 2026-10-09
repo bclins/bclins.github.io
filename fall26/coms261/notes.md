@@ -7,7 +7,7 @@ header-includes: |
   <meta http-equiv="Expires" content="0" />
   <style>
   :root {
-    --header-color:	#333; 
+    /* --header-color:	#333; */ 
     --link-color:  #528; /* #0a7d91; */
   }
   </style>
@@ -1745,79 +1745,70 @@ Today we practiced working with list comprehensions.
 
 
 
-<!--
 ### Fri, Oct 9
 
 A **dictionary** is a special type in Python that holds **key**/**value** pairs.  
 
 ```python
 # Example dictionary:
-days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+month_lengths = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
                  'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
 ```
 
 In the dictionary above, the keys are the months (which are strings).  The values are the numbers of days (which are integers).  To access the value in a dictionary, you use the key like you would use an index for a list.   
 
 ```python
-print("April has", days_by_month['Apr'], "days.")
+>>> month_lengths['Apr']
 ```
 
 Why are they called dictionaries?  The idea is that you can look things up, just like in a real dictionary.  In fact, you could use a Python dictionary to store words and their definitions:
 
 ```python
 # Using a Python dictionary to store an English dictionary.
-word_to_definition = {
-    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites.",
-    "Abacus": "a device for making arithmetic calculations by moving beads.",  
+definitions = {
+    "Aardvark": "a nocturnal burrowing mammal that eats ants and termites",
+    "Abacus": "a device for making arithmetic calculations by moving beads",  
     "Abandon": "to leave completely and finally",
 }
 ```
+
 
 Things to know about dictionaries. 
 
 1. **The keyword <u>in</u> checks keys not values.** You can use the keyword `in` to test if a key is in a dictionary, but not a value. 
 
     ```python
-    'Feb' in days_by_month # True
-    30 in days_by_month # False
+    'Feb' in month_lengths # True
+    30 in month_lengths # False
     ```
 
 2. **You can loop through keys in a dictionary.** Use a loop of the form
 <center>
 **for** *key* **in** *dictionary*:
 </center>
-Use this to loop through the months in `days_by_month` and print out a sentence for each month saying how many days it has. 
 
-3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  Be careful with this!  The following example creates an empty dictionary, and then fills it with key/value pairs.  Try changing the value for `Feb` from 28 to 29 in `days_by_month`. 
+3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  
 
-<!--
-```python
-alphabet = [chr(i + ord('a')) for i in range(26)]
-file = open("poem.txt")
-text = file.read()
+    ```python
+    # Here is how to change a value in a dictionary.
+    month_lengths["Feb"] = 29
 
-letter_frequency = {}
-for letter in alphabet:
-    letter_frequency[letter] = text.count(letter) 
-
-print(letter_frequency)
-```
+    # Here is how you add a new key-value pair to a dictionary.
+    definitions["Embiggen"] = "to make bigger or more expansive"
+    ```
 
 #### Practice
 
-1. Write a program to convert the data for each student in the file [grades.txt](https://bclins.github.io/fall24/cs261/grades.txt) into a dictionary like this:
-<center>
-`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
-</center>
+1. Create a dictionary called `me` that contains three keys `name`, `age`, and `hometown` to describe yourself. 
 
-2. The keys in a dictionary must be unique.  What happens if you try to create a dictionary like this:
+1. Write a for-loop through the keys in `month_lengths` that prints a sentence for each month saying how many days it has. 
+
+1. The keys in a dictionary must be unique.  What happens in Python if you try to create a dictionary like this:
 <center>
 `{'test': 1, 'test': 2}`?
 </center>
 
-3. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
-
-4. You can make nested dictionaries:
+1. You can make nested dictionaries:
 
     ```python
     contacts = {
@@ -1833,6 +1824,13 @@ print(letter_frequency)
     ```
 
     How would you get Alice's phone number from the dictionary above? 
+
+#### Additional Practice
+
+1. Write a program to convert the data for each student in the file [grades.txt](https://bclins.github.io/fall24/cs261/grades.txt) into a dictionary like this:
+<center>
+`{'name': 'Alice', 'homework': '72, 'midterm': 89, 'final': 66}`
+</center>
 
 
 

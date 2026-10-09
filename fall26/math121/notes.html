@@ -1061,45 +1061,8 @@ probability that the combined weight of the passengers would be greater
 than 4,000 lbs? Hint: This is the same as finding
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>181.8</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">P(\bar{x} &gt; 181.8).</annotation></semantics></math></p></li>
 </ol>
-<hr />
-<h3 id="week-8-notes">Week 8 Notes</h3>
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Day</th>
-<th style="text-align: center;">Section</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Mon, Oct 12</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">No class (Fall break)</td>
-</tr>
-<tr>
-<td style="text-align: center;">Wed, Oct 14</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.2">5.2</a></td>
-<td style="text-align: left;">Confidence intervals for a proportion</td>
-</tr>
-<tr>
-<td style="text-align: center;">Fri, Oct 16</td>
-<td style="text-align: center;"><a
-href="http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.2">5.2</a></td>
-<td style="text-align: left;">Confidence intervals for a proportion -
-con’d</td>
-</tr>
-</tbody>
-</table>
+<h3 id="fri-oct-9">Fri, Oct 9</h3>
 <!--
-### Mon, Mar 2
-
 We started with this warm-up problem which is a review of the things we talked about last week. 
 
 1. Annual rainfall totals in Farmville are approximately normal with mean 44 inches and standard deviation 7 inches.  
@@ -1107,37 +1070,73 @@ We started with this warm-up problem which is a review of the things we talked a
     a. How likely is a year with more than 50 inches of rain? 
 
     b. How likely is a whole decade with average annual rainfall over 50 inches?
-
-Then we talked about **sample proportions** which are denoted $\hat{p}$ and can be found using the formula
-$$\hat{p} = \frac{\text{ number of "successes" }}{\text{ sample size }}.$$ 
-In a SRS from a large population, $\hat{p}$ is random with a **sampling distribution** that has the following features. 
-
-
+-->
+<p>We talked about <strong>sample proportions</strong> which are denoted
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+and can be found using the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> number of &quot;successes&quot; </mtext><mspace width="0.333em"></mspace></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> sample size </mtext><mspace width="0.333em"></mspace></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} = \frac{\text{ number of &quot;successes&quot; }}{\text{ sample size }}.</annotation></semantics></math>
+In a SRS from a large population,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is random with a <strong>sampling distribution</strong> that has the
+following features.</p>
 <div class="Theorem">
-**Sampling Distribution of $\hat{p}$.**
-
-1. **Shape**: gets more normal as the sample size $N$ gets larger.
-2. **Center**: the theoretical average of $\hat{p}$ is the true population proportion $p$.
-3. **Spread**: the theoretical standard deviation of $\hat{p}$ gets smaller as $N$ gets bigger. 
-$$\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.$$
+<p><strong>Sampling Distribution of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>.</strong></p>
+<ol type="1">
+<li><strong>Shape</strong>: gets more normal as the sample size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets larger.</li>
+<li><strong>Center</strong>: the theoretical average of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+is the true population proportion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</li>
+<li><strong>Spread</strong>: the theoretical standard deviation of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
+gets smaller as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>
+gets bigger.
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mover><mi>p</mi><mo accent="true">̂</mo></mover></msub><mo>=</mo><msqrt><mfrac><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><mi>N</mi></mfrac></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.</annotation></semantics></math></li>
+</ol>
 </div>
-
-We did the following exercises in class. 
-
-1. This semester, 7 out of 25 students in my statistics class were born in VA.  Is $\frac{7}{25}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
-
-2. In the United States about 7.2% of people have type O-negative blood, so they are universal donors.  Is 7.2% a parameter ($p$) or a statistic ($\hat{p}$)? 
-
-3. If a hospital has $N = 900$ patients, describe the sampling distribution for the proportion of patients who are universal donors. 
-
-4. Find the probability that $P(\hat{p}_{\text{universal donor}} > 8\%)$. 
-
+<p>We did the following exercises in class.</p>
+<ol type="1">
+<li><p>This semester, 28 out of 54 students in my statistics class were
+born in VA. Is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mn>28</mn><mn>54</mn></mfrac><annotation encoding="application/x-tex">\frac{28}{54}</annotation></semantics></math>
+a statistic or a parameter? Should you denote it as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>?</p></li>
+<li><p>In the United States about 7.2% of people have type O-negative
+blood, so they are universal donors. Is 7.2% a parameter
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>)
+or a statistic
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>)?</p></li>
+<li><p>If a hospital has
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>900</mn></mrow><annotation encoding="application/x-tex">N = 900</annotation></semantics></math>
+patients, describe the sampling distribution for the proportion of
+patients who are universal donors.</p></li>
+<li><p>Find the probability that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mtext mathvariant="normal">universal donor</mtext></msub><mo>&gt;</mo><mn>8</mn><mi>%</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P(\hat{p}_{\text{universal donor}} &gt; 8\%)</annotation></semantics></math>.</p></li>
+</ol>
 <!--
 2. Assuming that the true proportion of all HSC students that were born in VA is 50%, describe the sampling distribution for $\hat{p}_\text{VA}$ in a random sample of $N = 25$ students. 
 
 5. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
 6. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+
+- - - 
+
+### Week 8 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 12 |            | No class (Fall break) 
+Wed, Oct 14 | [5.2][5.2] | Confidence intervals for a proportion
+Fri, Oct 16 | [5.2][5.2] | Confidence intervals for a proportion - con'd 
+
+<!--
 
 ### Wed, Mar 4
 

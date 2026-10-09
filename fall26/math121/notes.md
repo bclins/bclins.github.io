@@ -596,20 +596,9 @@ Examples of sampling distributions.
 
 1. The average American weighs $\mu = 170$ lbs. with a standard deviation of $\sigma = 40$ lbs.  If an airplane is designed to seat 22 passengers, what is the probability that the combined weight of the passengers would be greater than 4,000 lbs?  Hint: This is the same as finding $P(\bar{x} > 181.8).$
 
-
-- - - 
-
-### Week 8 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 12 |            | No class (Fall break) 
-Wed, Oct 14 | [5.2][5.2] | Confidence intervals for a proportion
-Fri, Oct 16 | [5.2][5.2] | Confidence intervals for a proportion - con'd 
+### Fri, Oct 9
 
 <!--
-### Mon, Mar 2
-
 We started with this warm-up problem which is a review of the things we talked about last week. 
 
 1. Annual rainfall totals in Farmville are approximately normal with mean 44 inches and standard deviation 7 inches.  
@@ -617,11 +606,11 @@ We started with this warm-up problem which is a review of the things we talked a
     a. How likely is a year with more than 50 inches of rain? 
 
     b. How likely is a whole decade with average annual rainfall over 50 inches?
+-->
 
-Then we talked about **sample proportions** which are denoted $\hat{p}$ and can be found using the formula
+We talked about **sample proportions** which are denoted $\hat{p}$ and can be found using the formula
 $$\hat{p} = \frac{\text{ number of "successes" }}{\text{ sample size }}.$$ 
 In a SRS from a large population, $\hat{p}$ is random with a **sampling distribution** that has the following features. 
-
 
 <div class="Theorem">
 **Sampling Distribution of $\hat{p}$.**
@@ -634,7 +623,7 @@ $$\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{N}}.$$
 
 We did the following exercises in class. 
 
-1. This semester, 7 out of 25 students in my statistics class were born in VA.  Is $\frac{7}{25}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
+1. This semester, 28 out of 54 students in my statistics class were born in VA.  Is $\frac{28}{54}$ a statistic or a parameter?  Should you denote it as $p$ or $\hat{p}$?  
 
 2. In the United States about 7.2% of people have type O-negative blood, so they are universal donors.  Is 7.2% a parameter ($p$) or a statistic ($\hat{p}$)? 
 
@@ -648,6 +637,18 @@ We did the following exercises in class.
 5. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
 6. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+
+- - - 
+
+### Week 8 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 12 |            | No class (Fall break) 
+Wed, Oct 14 | [5.2][5.2] | Confidence intervals for a proportion
+Fri, Oct 16 | [5.2][5.2] | Confidence intervals for a proportion - con'd 
+
+<!--
 
 ### Wed, Mar 4
 

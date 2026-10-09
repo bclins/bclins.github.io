@@ -7,7 +7,7 @@ header-includes: |
   <meta http-equiv="Expires" content="0" />
   <style>
   :root {
-    --header-color:	#333; 
+    /* --header-color:	#333; */
     --link-color:  #528; 
   }
   </style>
@@ -48,7 +48,7 @@ Week | Topic                      | Notes | Projects
 5  | Lists                                | [Week 05](notes.html#week-5-notes)  | [Project 2](project2.pdf)
 6  | Recursion, **Midterm 1**             | [Week 06](notes.html#week-6-notes)  | 
 7  | Files                                | [Week 07](notes.html#week-7-notes)  | 
-8  | Dictionaries                         | [Week 08](notes.html#week-8-notes)  | 
+8  | Dictionaries                         | [Week 08](notes.html#week-8-notes)  | [Project 3](project3.pdf)
 9  | Tuples                               | [Week 09](notes.html#week-9-notes)  | 
 10 | Searching and sorting                | [Week 10](notes.html#week-10-notes) | 
 11 | Program structure                    | [Week 11](notes.html#week-11-notes) | 

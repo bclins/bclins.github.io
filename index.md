@@ -1,7 +1,7 @@
 ---
 title: Brian Lins
-css: front.css
-header-includes:
+css: clean.css
+header-includes: |
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -9,15 +9,11 @@ header-includes:
 
 <!--- - --->
 
-<div style="background-color:#ccc; border-top: 0px solid black; border-bottom: 0px solid black; border-radius: 12px">
-<table>
-<tr>
-<td>
-<img src="Brian4.jpg" width=143 style="display:block; margin:-3px; 0px solid black;"></img>
-</td>
-<td>
+<div style="display: flex; flex-wrap: wrap; background-color:#ccc; border-radius: 10px;">
+<img src="Brian4.jpg" style="width: 160px; flex-basis: 160px; margin-left: 20px;"></img>
+<div style="margin-left: 20px; flex-basis: 300px;">
 
-Professor of Mathematics \
+Elliott Professor of Mathematics \
 [Math & CS Department](http://www.hsc.edu/academics/mathematics-and-computer-science) \
 [Hampden-Sydney College](https://www.hsc.edu)
 
@@ -26,9 +22,7 @@ E-mail: <a href="mailto:%62lins%40hsc%2Eedu">&#98;lins&#64;hsc&#46;edu</a> <!--<
 
 [About](about.html) | [Research](research.html) | [Teaching](index.html) 
 
-</td>
-</tr>
-</table>
+</div>
 </div>
 
 <!--- - --->
