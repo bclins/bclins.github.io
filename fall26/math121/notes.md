@@ -675,15 +675,15 @@ The variable $z^*$ is called the **critical z-value** is determined by the desir
 <thead>
 <tr>
 <th style="text-align: left;">Confidence Level</th>
-<th style="text-align: center;">90%</th>
-<th style="text-align: center;">95%</th>
-<th style="text-align: center;">99%</th>
-<th style="text-align: center;">99.9%</th>
+<td style="text-align: center;">90%</td>
+<td style="text-align: center;">95%</td>
+<td style="text-align: center;">99%</td>
+<td style="text-align: center;">99.9%</td>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Critical z-value ($z^*$)</td>
+<th style="text-align: left;">Critical z-value ($z^*$)</th>
 <td style="text-align: center;">1.645</td>
 <td style="text-align: center;">1.96</td>
 <td style="text-align: center;">2.576</td>

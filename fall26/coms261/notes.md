@@ -1789,6 +1789,8 @@ c. For large data sets, checking if an element is in a list is much slower than 
 
 3. How could you use your dictionary to see Bob Brown's classes? 
 
+<!--
+TOO HARD:
 4. How would you get a list of all of the students who are taking Math 101?
 
     <details>
@@ -1796,13 +1798,10 @@ c. For large data sets, checking if an element is in a list is much slower than 
     [reg_data[i]["Name"] for i in reg_data if "Math 101" in reg_data[i]["Courses"]]
     ```
     </details>
+-->
  
 
 #### Practice 
-
-1. [Exercise 16.7.01 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
-
-1. [Exercise 16.7.02 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#page=333)
 
 1. Write a function called `letter_frequency` that inputs a string, and then returns a dictionary with letters as keys, and the number of times a letter occurs in the string as the value.  For example
 
@@ -1816,7 +1815,11 @@ c. For large data sets, checking if an element is in a list is much slower than 
 
 1. Write a function called `get_keys` that inputs a dictionary and returns a list of its keys. 
 
-2. Write a function called `get_values` that inputs a dictionary and returns a list of its values. 
+1. Write a function called `get_values` that inputs a dictionary and returns a list of its values. 
+
+1. [Exercise 16.7.01 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
+
+1. [Exercise 16.7.02 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#page=333)
 
 
 <!--
