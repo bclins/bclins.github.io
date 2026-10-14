@@ -1330,102 +1330,6 @@ You can also use double indexing for other data structures, like lists of string
     column_sum([[1, 2], [3, 4], [5, 6]]) # should return [9, 12]
     ```
 
-
-
-
-
-<!--
-
-### Mon, Sep 23
-
-We looked at some more examples of recursive functions. 
-
-1. Write a function to recursively find the n-th Fibonacci number. 
-
-2. Write a function to recursively print all Fibonacci numbers less than $m$.  
-
-3. Write a `factorial(n)` function. 
-
-<!--
-3. Make a flow chart for the algorithm to find the prime factors of a positive integer. 
-
-4. Implement the algorithm above using a recursive function. The function should print each prime factor as they are found.  
-
-We also talked about **input validation** and we introduced the `isinstance(obj, type)` function. 
-
-```python
-# We used this conditional in class
-if not isinstance(n, int):
-    print("n is not an integer.")
-
-# Here is an alternative that also works
-if type(n) != int:
-    print("n is not an integer.")
-```
-
-### Wed, Sep 25
-
-Today we did more practice with loops and recursion.  We reviewed how to find the prime factorization of any integer greater than 1.  We spent the class on these exercises.
-
-1. What are the prime factors of 836? 
-
-2. Write a program to print the prime factors of any integer greater than 1. 
-
-After that, we talked about **lists** in Python.  Lists are a type the can store more than one value.  We introduced how to define a list using square brackets (including an empty list) and how to create a new list by adding two lists together.  We finished with these exercises.
-
-3. Re-write your prime factors program so that it returns a list of prime factors instead of printing them. 
-
-4. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
-
-<!-- Save this for later:
-We also talked about how to loop through all of the values in a list.  The same technique also works for strings. 
-
-3. Write a program that generates a list of all prime numbers less than n.  
-
-### Thu, Sep 26
-
-<!--
-We started with this exercise from yesterday:
-
-1. Write a function that prompts a user to enter a list of integers.  After each integer the user enters, ask them if they are done or not.  Have them enter an upper or lowercase letter Y if the answer is yes.  Once the user is done, the function should return the list. 
-
-We talked about some of the similarities between lists and strings.  They are both **sequence types**.  So they both have a length which you can find using the `len` function.  You can access individual elements in any sequence type by using their **index** which is their position in the sequence.  The first element has index 0 and the last has index equal to the length minus one.  
-
-1. Write a function that prints every other character in a string. 
-
-2. Write a function called `is_integer_string(s)` that returns true if `s` is a string with only the digits 0 through 9 as characters.  
-
-
-3. Write a function called `even_elements(numbers)` that (i) counts the number of even integers in a list and (ii) finds the index of the first even integer.  Have the function print a sentence with both results.  
-
-```python
-def even_elements(numbers):
-    # You'll need two accumulator variables for this function. 
-    # One to count the even elements, and
-    # another to save the index of the first even element when you find it.
-```
-
-
-### Fri, Sep 27 
-
-If you don't care about the indices, then there is an even easier way to loop through every element of the sequence.  You can use the following syntax:
-
-```python
-example_list = [2,4,6,7,11,14,20]
-for n in example_list:
-    print(n)
-```
-
-Use this new style of for-loop to (re)write some of the functions we talked about last time. 
-
-1. Write an `even_elements(numbers)` function like the one from yesterday using this style of loop. It would be a good idea to use $-1$ as the index of the first even number if there aren't any.    
-
-2. Re-write the `is_integer_string(s)` function using this style of list.  To make this one more interesting, we first created a function called `is_digit_char(c)` that returns `True` if and only if `c` is a length 1 string that consists of one of the ten digits 0 though 9. 
-
-3. Write a function `any_divisors(n, divs)` that accepts an integer `n` and a list of nonzero integers `divs`, and returns true if any of the elements of `divs` are a divisor of `n`. 
-
--->
-
 - - - 
 
 ### Week 6 Notes
@@ -1566,7 +1470,6 @@ Here are examples where we have seen these patterns before.
 #### Practice
 
 <!-- 1. In Python, there are built in functions `len`, `max`, `min`, and `sum` to perform many common reduce patterns.  One that is not built in is the `prod` function which multiplies elements in a sequence of numbers.  Write a `prod(numbers)` function.
-
 --> 
 
 1. Write a function `decimal2percent` that converts floating point numbers to strings in percent form.  For example `0.5` should become `"50%"`.  
@@ -1790,16 +1693,25 @@ Things to know about dictionaries.
 3. **Dictionaries are mutable.**  You can add key/value pairs, change the values for keys, and remove key/value pairs without creating a completely new dictionary.  
 
     ```python
-    # Here is how to change a value in a dictionary.
+    # You can change a value in a dictionary.
     month_lengths["Feb"] = 29
 
-    # Here is how you add a new key-value pair to a dictionary.
+    # You can add new key-value pairs to a dictionary by doing this:
     definitions["Embiggen"] = "to make bigger or more expansive"
+    ```
+
+    Dekari asked if you can do use the `+=` to change a value in a dictionary. The answer is yes:
+
+    ```python
+    # This also works:
+    month_lengths["Feb"] += 1
     ```
 
 #### Practice
 
-1. Create a dictionary called `me` that contains three keys `name`, `age`, and `hometown` to describe yourself. 
+1. Create a dictionary called `me` that contains three keys: `name`, `age`, and `hometown` to describe yourself. 
+
+1. Write a loop through `me` to print three sentences that say your name, your age, and your hometown. 
 
 1. Write a for-loop through the keys in `month_lengths` that prints a sentence for each month saying how many days it has. 
 
@@ -1833,154 +1745,6 @@ Things to know about dictionaries.
 </center>
 
 
-
-
-<!--
-### Mon, Oct 7
-
-Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
-
-```python
-# You can change an element in a list but not in a string:
-example_list[1] = 'B' # now example_list is [1,'B',True]
-example_string[1] = 'I' # this is an error.  Strings a are immutable.  
-```
-
-There are several methods that work for mutable sequence types like lists, but not for immutable sequences like strings.  These include the `.append()` method which adds an element to the end of a list, the `.pop()` method which removes and element from the end of a list (and returns its value), and the `.sort()` method which changes a list by putting its elements in sorted order.  
-
-```python
-# Strings are immutable
-s = "You can't touch this!"
-
-"""When you create the string "You can't touch this!", it is frozen in computer memory.  
-You can reassign the variable s, but that doesn't change the string, it just makes s
-point to a different object in memory. 
-"""
-
-# Lists are mutable.  Changes made to a list will be remembered by the computer.  
-a = [1,2,3]
-
-"""Because of the way lists are stored in memory, two variables can refer to the same list
-object.  If you make changes to one variable, that will affect the other variable too!  
-This only happens with mutable types, so watch out for it.  
-"""
-b = a
-b.append(4)
-print(a) # Weird!!!
-```
-
-Try these experiments to get a feeling for how this works.
-
-1. Let `a = [1,2,3]` and `b = a + [4]`.  Does that change `a`?  
-
-2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
-
-3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
-
-Note that adding two lists creates a new list, but the `+=` operator does not!
-We finished with a cautionary example about the need to avoid unintended side-effects when working with mutable types:
-
-```python
-def average(numbers): 
-    n = len(numbers)
-    total = 0
-    for i in range(n):
-        total += numbers.pop()
-    return total / n
-
-data = [4, 5, 6]
-
-mean = average(data)
-print("The average of", data, "is", mean)
-```
-
-Observe that the way we got the numbers to add to the total had the side effect of erasing the data which isn't what we wanted at all!  
-
-### Wed, Oct 9
-
-Today we talked about how to read the contents of a text file.  We talked about Python **file objects** which are what you get when you use the `open()` function to access the contents of text file.  File objects come with several useful methods for getting the contents of a file, including:
-
-* `.read()` which returns the contents of a text file as a string. 
-* `.readlines()` which returns a list containing each line of the file as a separate string.
-
-We did the following exercises using a word list contained in this text file: [words.txt](words.txt).  
-
-1. Write a function to find the longest word in the word list.  
-  ```python
-  file = open("words.txt")
-  word_list = file.readlines()
-
-  def longest_word(word_list):
-    biggest_so_far = ""
-    for word in word_list:
-        if len(word) > len(biggest_so_far):
-            biggest_so_far = word
-    return biggest_so_far
-  ```
-
-2. Write a function `count_words(word_list, start_letter)` to count how many words begin with a given letter.  
-
-3. Write a function `get_words(word_list, start_letter)` to return a list of all words that begin with a given letter. 
-
-It turns out if you write the function `get_words` first, then you can use it to easily write the `count_words` function without repeating any code by combining `get_words` with the `len` function. 
-
-We also looked at the text file [grades.txt](grades.txt) which contains comma separated values. 
-
-
-### Thu, Oct 10
-
-<!-- NOTE TO SELF:
-
-This set of exercises was a little too advanced for most of the students.  They still need more time to get used to basic patterns of looping and accumulator variables.  See the activity we did on Friday, Oct 11 for a more appropriate lesson.  
-
-
-The grades for 26 students are stored in a text file [grades.txt](grades.txt). Suppose that the final grade in the class is 20% homework, 30% midterms, and 50% final exam.  We worked on a program to find the final grade for each student in the class.  
-
-We broke the program into three functions:
-
-1. A function `weighted_average(numbers, weights)` that can calculate the weighted average of any list of numbers using any list of weights. 
-
-2. A function `get_student_data(line)` that converts a line from the text file into a list with a students name followed by their three grades. You can use the string method `.split(",")` to separate a string into a list of the substrings that were separated by commas. 
-
-3. A function `final_grades(lines)` that computes and prints the final grades for all of the students.  
-
-Here is a version of the final program. 
-
-```python
-file = open("grades.txt")
-lines = file.readlines()
-
-def weighted_average(numbers, weights):
-    total = 0
-    for i in range(len(numbers)):
-        total += numbers[i] * weights[i]
-    return total
-
-def get_student_data(line):
-    data = line.split(",")
-    for i in range(1, len(data)):
-        data[i] = int(data[i]) # Convert each grade from a str to an int.
-        """This is different than what we did in class. Here we are mutating the
-        entries of the data in place, but that is okay because we don't care about
-        the local data variable after the function returns."""
-    return data
-
-def print_final_grades(lines):
-    for line in lines[1:]:
-        data = get_student_data(line)
-        grades = data[1:]
-        final_grade = weighted_average(grades, [0.2, 0.3, 0.5])
-        print(f"{data[0]} got a final grade of {final_grade}")
-    
-print_final_grades(lines)
-```
-
-<!--
-4. Suppose that final grades for the students in the grades.txt file are a weighted average where homework counts 20%, the midterm exam counts 30% and the final exam counts 50%. How would you write a program to read the grades for each student and then calculate their average grade?
-
--->
-
-
 - - - 
 
 ### Week 8 Notes
@@ -1992,55 +1756,92 @@ Wed, Oct 14 | [TP10][TP10] | Dictionaries - con'd
 Thu, Oct 15 |     | Dictionary comprehensions       
 Fri, Oct 16 |  [TP19.5][TP19.5] | Sets
 
-<!--
+
 ### Wed, Oct 14
 
-We did some more practice with dictionaries. 
+Last time we introduced dictionaries. Instead of using a dictionary, you could store the information for a dictionary in a list of 2 element lists like so:
 
-#### Practice 
-
-1. [Exercise 01 in Cafiero 16.7](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
-
-2. [Exercise 02 in Cafiero 16.7](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
-
-3. Write a function called `counter` that inputs a list of words, and then returns a dictionary with the words as the keys and the number of times each word appears as the value.  
-
-### Thu, Oct 15
-
-Last time we introduced dictionaries and we finished with this exercise:
-
-1. Write functions `get_keys(d)` and `get_values(d)` that input any dictionary `d` and returns lists of the keys and values of `d` respectively. 
-
-We ran out of time before we could discuss the functions, so we started today by talking about how to write those functions using list comprehensions.  
+#### Why Dictionaries?
 
 ```python
-get_keys(d):
-    return [key for key in d]
-
-get_values(d):
-    return [d[key] for key in d]
-```
-
-Instead of using a dictionary, you could store the information for a dictionary in a list of 2 element lists:
-
-```python
-days_by_month_list = [['Jan': 31], ['Feb': 28], ['Mar': 31], ['Apr': 30], ['May': 31], ['Jun': 30]], 
+month_lengths_list = [['Jan': 31], ['Feb': 28], ['Mar': 31], ['Apr': 30], ['May': 31], ['Jun': 30]], 
                  ['Jul': 31], ['Aug': 31], ['Sep': 30], ['Oct': 31], ['Nov': 30], ['Dec': 31]]
 ```
-
-2. What are some reasons why this is less convenient than a dictionary?  
+1. What are some reasons why this is less convenient than a dictionary?  
 
 We came up with the following answers to this question:
+
 a. It is harder to access the values for each key.
 b. There is no guarantee that the keys aren't repeated.  
 c. For large data sets, checking if an element is in a list is much slower than checking if a key is in a dictionary.   
 
+#### Working with Structured Data
 
-As an example of the last advantage, we looked at the following problem from the book.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) to count how many words are also valid words when they've been reversed.  
+2. How could you store the following data in a Python dictionary?  Which column would be the best choice for a key?  Should the values be a dictionary?  A list?  
+
+    Name | StudentID | Email | Courses 
+    :---:|:---:|:---:|:--------:
+    Alice Adams | 123456 | adams@college.edu | Bio 200, Eng 300, Fren 201, Math 101 
+    Bob Brown | 234567 | brown@college.edu | Bio 150, Chem 380, Econ 101, Eng 301
+    Charlie Clark | 345678 | clark@college.edu | Art 330, Math 101, Phys 210, Soc 275
+    Daisy Davis | 456789 | davis@college.edu | Bio 410, Hist 220, Math 310, Span 202
+    Edward Evans | 567890 | evans@college.edu | CS 201, Hist 105, Math 101, Psych 220
+
+3. How could you use your dictionary to see Bob Brown's classes? 
+
+4. How would you get a list of all of the students who are taking Math 101?
+
+    <details>
+    ```python
+    [reg_data[i]["Name"] for i in reg_data if "Math 101" in reg_data[i]["Courses"]]
+    ```
+    </details>
+ 
+
+#### Practice 
+
+1. [Exercise 16.7.01 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.16.7)
+
+1. [Exercise 16.7.02 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#page=333)
+
+1. Write a function called `letter_frequency` that inputs a string, and then returns a dictionary with letters as keys, and the number of times a letter occurs in the string as the value.  For example
+
+    ```python
+    letter_frequency("banana") # Should return {'b': 1, 'a': 3, 'n': 2}
+    ```
+
+    **Hint:** To add a new letter to a dictionary, you want a command like `d[new_letter] = 1`.  But to increase the value of a letter that you have already seen, you need a different command: `d[letter] += 1`.  Use the `in` operator to check if a letter is already in the dictionary and then use the correct command accordingly. 
+
+#### Additional Practice
+
+1. Write a function called `get_keys` that inputs a dictionary and returns a list of its keys. 
+
+2. Write a function called `get_values` that inputs a dictionary and returns a list of its values. 
+
+
+<!--
+### Thu, Oct 15
+
+Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
+
+<center>
+<table>
+<tr><th></th><th>Lists</th><th>Dictionaries</th></tr>
+<tr><th>Accessing Elements</th><td>`a[i]`</td><td>`d[key]`</td></tr>
+<tr><th>Adding New Elements</th><td>`a.append(new_element)`</td><td>`d[new_key] = new_value`</td></tr>
+<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr>
+<tr><th>Looping</th><td>`for elem in a:`</td><td>`for key in d:`</td></tr>
+<tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
+</table>
+</center>
+
+
+<!--
+ThinkPython includes the following example that shows how much faster dictionaries can be.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) to count how many words are also valid words when they've been reversed.  
 
 ```python
-file = open("words.txt")
-word_list = [line.strip() for line in file.readlines()]
+with open("words.txt") as file:
+    word_list = [line.strip() for line in file.readlines()]
 word_dict = {word: 0 for word in word_list}
 
 def reverse(s):
@@ -2093,22 +1894,6 @@ We finished by doing the following exercise.
 
 
 ### Fri, Oct 16
-
-Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
-
-<center>
-<table class="bordered">
-<tr><th></th><th>Lists</th><th>Dictionaries</th></tr>
-<tr><th>Accessing Elements</th><td>`a[i]`</td><td>`d[key]`</td></tr>
-<tr><th>Adding New Elements</th><td>`a.append(new_element)`</td><td>`d[new_key] = new_value`</td></tr>
-<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr>
-<tr><th>Looping</th><td>`for elem in a:`</td><td>`for key in d:`</td></tr>
-<tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
-</table>
-</center>
-
-
-1. In [Project 5](project5.pdf), you had to write a function `letter_frequency(message)` that returns a list showing the frequencies of each letter in a message string.  It would be better for that function to return a dictionary with keys for each letter. See if you can re-write `letter_frequency(message)` to return a dictionary with a key for each letter and integer values that correspond to how many copies of each letter appear in the message.  Can you write the function in one line using a dictionary comprehension? 
 
 We also talked about using a dictionary as a **memo** in order to **memoize** a recursive function. We used this example. 
 
@@ -2381,6 +2166,8 @@ $\log n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6
 We say that binary search has a time complexity of $O(\log n)$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
 
 
+
+
 ### Thu, Oct 31
 
 Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
@@ -2421,6 +2208,66 @@ Brandon asked if there is a way to sort the pairs in reverse order so that the l
 sorted_pairs = sorted(pairs_list, reverse = True)
 print(sorted_pairs)
 ```
+
+Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
+
+```python
+# You can change an element in a list but not in a string:
+example_list[1] = 'B' # now example_list is [1,'B',True]
+example_string[1] = 'I' # this is an error.  Strings a are immutable.  
+```
+
+There are several methods that work for mutable sequence types like lists, but not for immutable sequences like strings.  These include the `.append()` method which adds an element to the end of a list, the `.pop()` method which removes and element from the end of a list (and returns its value), and the `.sort()` method which changes a list by putting its elements in sorted order.  
+
+```python
+# Strings are immutable
+s = "You can't touch this!"
+
+"""When you create the string "You can't touch this!", it is frozen in computer memory.  
+You can reassign the variable s, but that doesn't change the string, it just makes s
+point to a different object in memory. 
+"""
+
+# Lists are mutable.  Changes made to a list will be remembered by the computer.  
+a = [1,2,3]
+
+"""Because of the way lists are stored in memory, two variables can refer to the same list
+object.  If you make changes to one variable, that will affect the other variable too!  
+This only happens with mutable types, so watch out for it.  
+"""
+b = a
+b.append(4)
+print(a) # Weird!!!
+```
+
+Try these experiments to get a feeling for how this works.
+
+1. Let `a = [1,2,3]` and `b = a + [4]`.  Does that change `a`?  
+
+2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
+
+3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
+
+Note that adding two lists creates a new list, but the `+=` operator does not!
+We finished with a cautionary example about the need to avoid unintended side-effects when working with mutable types:
+
+```python
+def average(numbers): 
+    n = len(numbers)
+    total = 0
+    for i in range(n):
+        total += numbers.pop()
+    return total / n
+
+data = [4, 5, 6]
+
+mean = average(data)
+print("The average of", data, "is", mean)
+```
+
+Observe that the way we got the numbers to add to the total had the side effect of erasing the data which isn't what we wanted at all!  
+
+
 
 <!-- 
 Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):

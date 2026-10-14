@@ -637,6 +637,7 @@ We did the following exercises in class.
 5. About one third of American households have a pet cat.  If you randomly select $N = 50$ households, describe the sampling distribution for the proportion that have a pet cat.  
 
 6. According to a 2006 study of 80,000 households, 31.6% have a pet cat.  Is 31.6% a statistic or a parameter?  Would it be better to use the symbol $\hat{p}$ or $p$ to represent it?  
+-->
 
 - - - 
 
@@ -648,19 +649,19 @@ Mon, Oct 12 |            | No class (Fall break)
 Wed, Oct 14 | [5.2][5.2] | Confidence intervals for a proportion
 Fri, Oct 16 | [5.2][5.2] | Confidence intervals for a proportion - con'd 
 
-<!--
 
-### Wed, Mar 4
+### Wed, Oct 14
 
 <!--
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
 * [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
+-->
 
-Today we talked about confidence intervals for proportions. These are based on a simple idea: there is a 95% chance that the sample proportion $\hat{p}$ is no more than 2 standard deviations away from the true population proportion $p$.
+Today we introduced confidence intervals for proportions. These are based on a simple idea: there is a 95% chance that the sample proportion $\hat{p}$ is no more than 2 standard deviations away from the true population proportion $p$.
 
 <div class = "Theorem"> 
-**Confidence Interval for a Proportion.** To estimate a population proportion, use 
+#### Confidence Interval for a Proportion. 
 
 $$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
 
@@ -700,7 +701,7 @@ In order to trust a confidence interval, you need these two assumptions to hold:
 
 We did the following examples in class.
 
-1. In our class 7 out of 25 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
+1. In my statistics classes 28 out of 54 students were born in VA. Use the 95% confidence interval formula to estimate the percent of all HSC students that were born in VA.
 
 2. In 2004 the General Social Survey found 304 out 977 Americans always felt rushed.  Find the 90% confidence interval for the proportion of Americans who always feel rushed. 
 
@@ -710,8 +711,11 @@ We did the following examples in class.
     c. 90% sure that the population proportion is in the interval.
     d. 90% sure that the sample proportion is in the interval. 
 
-A confidence interval has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  <!--The formula for the margin of error is a critical z-value times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$. 
+A confidence interval has two parts: a **best guess estimate** (or **point estimate**) before the plus/minus symbol, and a **margin of error** after the $\pm$ symbol.  <!--The formula for the margin of error is a critical z-value times the **standard error** which is an approximation of $\sigma_{\hat{p}}$ using $\hat{p}$ instead of $p$. -->
 
+4. About one third of American households have a pet cat.  How large of a sample would be need if you wanted to make a 95% confidence interval with a margin of error less than 1% for the percent of households with a pet cat?
+
+<!--
 4. ([Subsection 5.2.4 from OpenIntro Stats](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.2.4)) In 2014 an American Doctor who had been working in Africa was diagnosed with Ebola.  He was flown back to New York city to be treated.  This was controversial at the time because Ebola is a very contagious and dangerous disease.  A Marist poll of 1042 NY adults found that 82% would support a mandatory 3-week quarantine for anyone who has had contact with an Ebola patient.  What is the margin of error for this poll?
 
 ### Fri, Mar 6
