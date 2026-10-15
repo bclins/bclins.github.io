@@ -2593,8 +2593,8 @@ you could store the information for a dictionary in a list of 2 element
 lists like so:</p>
 <h4 id="why-dictionaries">Why Dictionaries?</h4>
 <div class="sourceCode" id="cb67"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>month_lengths_list <span class="op">=</span> [[<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>], [<span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;May&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>]], </span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>                 [<span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>], [<span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>], [<span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>]]</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>month_lengths_list <span class="op">=</span> [[<span class="st">&#39;Jan&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Feb&#39;</span>, <span class="dv">28</span>], [<span class="st">&#39;Mar&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Apr&#39;</span>, <span class="dv">30</span>], [<span class="st">&#39;May&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Jun&#39;</span>, <span class="dv">30</span>], </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>                 [<span class="st">&#39;Jul&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Aug&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Sep&#39;</span>, <span class="dv">30</span>], [<span class="st">&#39;Oct&#39;</span>, <span class="dv">31</span>], [<span class="st">&#39;Nov&#39;</span>, <span class="dv">30</span>], [<span class="st">&#39;Dec&#39;</span>, <span class="dv">31</span>]]</span></code></pre></div>
 <ol type="1">
 <li>What are some reasons why this is less convenient than a
 dictionary?</li>
@@ -2706,23 +2706,142 @@ href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section
 href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#page=333">Exercise
 16.7.02 in Cafiero</a></p></li>
 </ol>
-<!--
-### Thu, Oct 15
-
-Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
-
+<h3 id="thu-oct-15">Thu, Oct 15</h3>
+<p>Both lists and dictionaries are examples of <strong>iterable</strong>
+types in Python. An iterable is an object that you can loop through
+using a for-in loop. All sequential types are iterable, but dictionaries
+are also iterable even though they aren’t sequential. We made the
+following table to compare lists vs. dictionaries.</p>
 <center>
 <table>
-<tr><th></th><th>Lists</th><th>Dictionaries</th></tr>
-<tr><th>Accessing Elements</th><td>`a[i]`</td><td>`d[key]`</td></tr>
-<tr><th>Adding New Elements</th><td>`a.append(new_element)`</td><td>`d[new_key] = new_value`</td></tr>
-<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr>
-<tr><th>Looping</th><td>`for elem in a:`</td><td>`for key in d:`</td></tr>
-<tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
+<tr>
+<th>
+</th>
+<th>
+Lists
+</th>
+<th>
+Dictionaries
+</th>
+</tr>
+<tr>
+<th>
+Accessing Elements
+</th>
+<td>
+<code>a[i]</code>
+</td>
+<td>
+<code>d[key]</code>
+</td>
+</tr>
+<tr>
+<th>
+Adding New Elements
+</th>
+<td>
+<code>a.append(new_element)</code>
+</td>
+<td>
+<code>d[new_key] = new_value</code>
+</td>
+</tr>
+<tr>
+<th>
+Removing Elements
+</th>
+<td>
+<code>a.remove(element)</code> or <code>a.pop(i)</code>
+</td>
+<td>
+<code>d.pop(key)</code>
+</td>
+</tr>
+<tr>
+<th>
+Looping
+</th>
+<td>
+<code>for elem in a:</code>
+</td>
+<td>
+<code>for key in d:</code>
+</td>
+</tr>
+<tr>
+<th>
+Comprehensions
+</th>
+<td>
+<code>[exp for var in iterable]</code>
+</td>
+<td>
+<code>{exp1: exp2 for var in iterable}</code>
+</td>
+</tr>
 </table>
 </center>
-
-
+<h4 id="practice-6">Practice</h4>
+<ol type="1">
+<li><p>Complete the following Python function.</p>
+<div class="sourceCode" id="cb69"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> max_key(d):</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input: A dictionary d with values that are numbers.</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Output: The key in d with the maximum value.</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Example: max_key({&quot;a&quot;: 2, &quot;b&quot;: 3, &quot;c&quot;: 1}) should return &quot;b&quot;.</span></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span></code></pre></div>
+<p><strong>Hint:</strong> Write a loop with an accumulator variable that
+represents the top key you’ve seen so far.</p></li>
+<li><p>Complete the following Python function.</p>
+<div class="sourceCode" id="cb70"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> combine_to_dict(list1, list2):</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input: Two lists of the same length.</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Output: A dictionary with the items in list1 as keys and the items in list2 as values.</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Example: combine_to_dict([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;], [1, 2, 3]) should return {&quot;a&quot;: 1, &quot;b&quot;: 2, &quot;c&quot;: 3}.</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span></code></pre></div></li>
+<li><p>Complete the following Python function.</p>
+<div class="sourceCode" id="cb71"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_keys(d, item):</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input: A dictionary d and a item. </span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Output: A list of keys that have values containing the item.</span></span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Example: find_keys({1: &quot;cat&quot;, 2: &quot;dog&quot;, 3: &quot;frog&quot;}, &quot;o&quot;) should return [2, 3].</span></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span></code></pre></div></li>
+<li><p>If you wrote the last function using a loop with an accumulator
+variable, try to re-write it with a list comprehension instead.</p></li>
+</ol>
+<p>Try testing your functions on the following examples.</p>
+<div class="sourceCode" id="cb72"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which of the following students has the highest grade?</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> {</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice&quot;</span>: <span class="dv">85</span>,</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob&quot;</span>: <span class="dv">92</span>,</span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie&quot;</span>: <span class="dv">78</span>,</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy&quot;</span>: <span class="dv">96</span>,</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward&quot;</span>: <span class="dv">89</span></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Which of the following students are taking Math 101?</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [</span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Alice&quot;</span>: [<span class="st">&quot;Bio 200&quot;</span>, <span class="st">&quot;Eng 300&quot;</span>, <span class="st">&quot;Fren 201&quot;</span>, <span class="st">&quot;Math 101&quot;</span>],</span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Bob&quot;</span>: [<span class="st">&quot;Bio 150&quot;</span>, <span class="st">&quot;Chem 380&quot;</span>, <span class="st">&quot;Econ 101&quot;</span>, <span class="st">&quot;Eng 301&quot;</span>],</span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Charlie&quot;</span>: [<span class="st">&quot;Art 330&quot;</span>, <span class="st">&quot;Math 101&quot;</span>, <span class="st">&quot;Phys 210&quot;</span>, <span class="st">&quot;Soc 275&quot;</span>],</span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Daisy&quot;</span>: [<span class="st">&quot;Bio 410&quot;</span>, <span class="st">&quot;Hist 220&quot;</span>, <span class="st">&quot;Math 310&quot;</span>, <span class="st">&quot;Span 202&quot;</span>],</span>
+<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Edward&quot;</span>: [<span class="st">&quot;CS 201&quot;</span>, <span class="st">&quot;Hist 105&quot;</span>, <span class="st">&quot;Math 101&quot;</span>, <span class="st">&quot;Psych 220&quot;</span>]</span>
+<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h4 id="additional-practice-22">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function called <code>get_duplicates</code> that inputs a
+list of numbers and then returns a list containing only the numbers that
+appear more than once. For example:</p>
+<div class="sourceCode" id="cb73"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>get_duplicates([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>]) <span class="co"># should return [2, 5, 6]</span></span></code></pre></div>
+<p><strong>Hint:</strong> Start by creating a dictionary that shows the
+frequency for each number. This step is a lot like the
+<code>letter_frequency</code> function we wrote yesterday.</p></li>
+</ol>
 <!--
 ThinkPython includes the following example that shows how much faster dictionaries can be.  A word is reversible, if it is still a valid word when you reverse its letters, e.g., "part" and "trap". Compare the following two functions that both search through the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) to count how many words are also valid words when they've been reversed.  
 
@@ -2777,7 +2896,6 @@ Dictionary comprehensions work just like list comprehensions.  You can also add 
 
 We finished by doing the following exercise. 
 
-4. Write a function `combine_to_dict(key_list, value_list)` that returns a dictionary with keys from `key_list` and values from `value_list`.  
 
 
 ### Fri, Oct 16

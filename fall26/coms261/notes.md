@@ -1764,8 +1764,8 @@ Last time we introduced dictionaries. Instead of using a dictionary, you could s
 #### Why Dictionaries?
 
 ```python
-month_lengths_list = [['Jan': 31], ['Feb': 28], ['Mar': 31], ['Apr': 30], ['May': 31], ['Jun': 30]], 
-                 ['Jul': 31], ['Aug': 31], ['Sep': 30], ['Oct': 31], ['Nov': 30], ['Dec': 31]]
+month_lengths_list = [['Jan', 31], ['Feb', 28], ['Mar', 31], ['Apr', 30], ['May', 31], ['Jun', 30], 
+                 ['Jul', 31], ['Aug', 31], ['Sep', 30], ['Oct', 31], ['Nov', 30], ['Dec', 31]]
 ```
 1. What are some reasons why this is less convenient than a dictionary?  
 
@@ -1822,7 +1822,6 @@ TOO HARD:
 1. [Exercise 16.7.02 in Cafiero](https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#page=333)
 
 
-<!--
 ### Thu, Oct 15
 
 Both lists and dictionaries are examples of **iterable** types in Python. An iterable is an object that you can loop through using a for-in loop.  All sequential types are iterable, but dictionaries are also iterable even though they aren't sequential. We made the following table to compare lists vs. dictionaries.  
@@ -1837,6 +1836,81 @@ Both lists and dictionaries are examples of **iterable** types in Python. An ite
 <tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
 </table>
 </center>
+
+#### Practice
+
+1. Complete the following Python function. 
+
+    ```python
+    def max_key(d):
+        """
+        Input: A dictionary d with values that are numbers.
+        Output: The key in d with the maximum value.
+        Example: max_key({"a": 2, "b": 3, "c": 1}) should return "b".
+        """
+    ```
+
+    **Hint:** Write a loop with an accumulator variable that represents the top key you've seen so far. 
+    
+2. Complete the following Python function.
+
+    ```python
+    def combine_to_dict(list1, list2):
+        """
+        Input: Two lists of the same length.
+        Output: A dictionary with the items in list1 as keys and the items in list2 as values.
+        Example: combine_to_dict(["a", "b", "c"], [1, 2, 3]) should return {"a": 1, "b": 2, "c": 3}.
+        """
+    ```
+
+3. Complete the following Python function.
+
+    ```python
+    def find_keys(d, item):
+        """
+        Input: A dictionary d and a item. 
+        Output: A list of keys that have values containing the item.
+        Example: find_keys({1: "cat", 2: "dog", 3: "frog"}, "o") should return [2, 3].
+        """
+    ```
+
+4. If you wrote the last function using a loop with an accumulator variable, try to re-write it with a list comprehension instead. 
+
+
+Try testing your functions on the following examples.
+
+```python
+# Which of the following students has the highest grade?
+grades = {
+    "Alice": 85,
+    "Bob": 92,
+    "Charlie": 78,
+    "Daisy": 96,
+    "Edward": 89
+}
+
+# Which of the following students are taking Math 101?
+classes = [
+    "Alice": ["Bio 200", "Eng 300", "Fren 201", "Math 101"],
+    "Bob": ["Bio 150", "Chem 380", "Econ 101", "Eng 301"],
+    "Charlie": ["Art 330", "Math 101", "Phys 210", "Soc 275"],
+    "Daisy": ["Bio 410", "Hist 220", "Math 310", "Span 202"],
+    "Edward": ["CS 201", "Hist 105", "Math 101", "Psych 220"]
+}
+```
+
+#### Additional Practice 
+
+
+1. Write a function called `get_duplicates` that inputs a list of numbers and then returns a list containing only the numbers that appear more than once. For example:
+
+    ```python
+    get_duplicates([1, 2, 2, 3, 4, 5, 5, 6, 6, 6]) # should return [2, 5, 6]
+    ```
+
+    **Hint:** Start by creating a dictionary that shows the frequency for each number. This step is a lot like the `letter_frequency` function we wrote yesterday. 
+
+
 
 
 <!--
@@ -1893,7 +1967,6 @@ Dictionary comprehensions work just like list comprehensions.  You can also add 
 
 We finished by doing the following exercise. 
 
-4. Write a function `combine_to_dict(key_list, value_list)` that returns a dictionary with keys from `key_list` and values from `value_list`.  
 
 
 ### Fri, Oct 16

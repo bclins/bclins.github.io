@@ -715,26 +715,21 @@ A confidence interval has two parts: a **best guess estimate** (or **point estim
 
 4. About one third of American households have a pet cat.  How large of a sample would be need if you wanted to make a 95% confidence interval with a margin of error less than 1% for the percent of households with a pet cat?
 
-<!--
-4. ([Subsection 5.2.4 from OpenIntro Stats](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.2.4)) In 2014 an American Doctor who had been working in Africa was diagnosed with Ebola.  He was flown back to New York city to be treated.  This was controversial at the time because Ebola is a very contagious and dangerous disease.  A Marist poll of 1042 NY adults found that 82% would support a mandatory 3-week quarantine for anyone who has had contact with an Ebola patient.  What is the margin of error for this poll?
 
-### Fri, Mar 6
+<!--
+### Fri, Oct 16
 
 Last time we introduced confidence intervals for proportions. Today we did some more examples related to confidence intervals. 
 
 
 1. A 2017 Gallop survey of 1,011 American adults found that 38% believe that God created man in his present form.  Find a 95% confidence interval to estimate the percent of all Americans who share this belief. 
 
-
-2. About one third of American households have a pet cat.  How large of a sample would be need if you wanted to make a 95% confidence interval with a margin of error less than 1% for the percent of households with a pet cat?
+2. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 
 3. One of our first examples of sampling was the [Literary Digest magazine poll](https://people.hsc.edu/faculty-staff/blins/StatsExamples/samplingPresentation.pdf) from the 1936 presidential election.  They had a huge sample with 2.4 million responses.  In that sample, 62% supported Alfred Landon (R) over FDR (D).  What is the margin of error for a 99% confidence interval with this data?  
 
 4. How is it possible that the margin of error could be so small if the poll was so wrong?  
 
-
-<!--
-3. A university newspaper is conducting a survey to determine what fraction of students support a \$200 a year increase in fees to pay for a new football stadium.  How big of a sample is required to ensure the margin of error is smaller than 0.04 using a 95% confidence level? 
 -->
 
 - - - 
