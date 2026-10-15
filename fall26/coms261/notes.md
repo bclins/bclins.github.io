@@ -1837,9 +1837,16 @@ Both lists and dictionaries are examples of **iterable** types in Python. An ite
 </table>
 </center>
 
+We used a dictionary comprehension to re-write the `letter_frequency` function from yesterday:
+
+```python
+def letter_frequency(string):
+    return {letter: string.count(letter) for letter in string}
+```
+
 #### Practice
 
-1. Complete the following Python function. 
+1. Complete the following Python function. <mark>This first problem turned out to be the hardest of the three. We ended up solving it together in class.</mark>
 
     ```python
     def max_key(d):
