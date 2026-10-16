@@ -1831,7 +1831,7 @@ Both lists and dictionaries are examples of **iterable** types in Python. An ite
 <tr><th></th><th>Lists</th><th>Dictionaries</th></tr>
 <tr><th>Accessing Elements</th><td>`a[i]`</td><td>`d[key]`</td></tr>
 <tr><th>Adding New Elements</th><td>`a.append(new_element)`</td><td>`d[new_key] = new_value`</td></tr>
-<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr>
+<tr><th>Removing Elements</th><td>`a.remove(element)` or `a.pop(i)`</td><td>`d.pop(key)`</td></tr> 
 <tr><th>Looping</th><td>`for elem in a:`</td><td>`for key in d:`</td></tr>
 <tr><th>Comprehensions</th><td>`[exp for var in iterable]`</td><td>`{exp1: exp2 for var in iterable}`</td></tr>
 </table>
@@ -1858,6 +1858,29 @@ def letter_frequency(string):
     ```
 
     **Hint:** Write a loop with an accumulator variable that represents the top key you've seen so far. 
+
+    <!--
+    <details>
+    Here is the simplest solution I've been able to come up with (without using any new ideas). 
+
+    ```python
+    def max_key(d):
+        """
+        Input: A dictionary d with values that are numbers.
+        Output: The key in d with the maximum value.
+        Example: max_key({"a": 2, "b": 3, "c": 1}) should return "b".
+        """
+        first_key = True
+        for key in d:
+            if first_key or d[key] > d[best_key]:
+                first_key = False
+                best_key = key            
+        return best_key
+    ```
+
+    A shorter (but not really better solution might be to use max(d.values()) to find the largest value, and then loop through the keys until you find the key that has that value.  That would let you ask why max(d) doesn't return what you want.
+    </details>
+    -->
     
 2. Complete the following Python function.
 
@@ -1875,7 +1898,7 @@ def letter_frequency(string):
     ```python
     def find_keys(d, item):
         """
-        Input: A dictionary d and a item. 
+        Input: A dictionary d and an item. 
         Output: A list of keys that have values containing the item.
         Example: find_keys({1: "cat", 2: "dog", 3: "frog"}, "o") should return [2, 3].
         """
@@ -1918,6 +1941,54 @@ classes = [
     **Hint:** Start by creating a dictionary that shows the frequency for each number. This step is a lot like the `letter_frequency` function we wrote yesterday. 
 
 
+### Fri, Oct 16
+
+The text file [repeat_words.txt](repeat_words.txt) contains 50,000 words, but a lot of those words are repeats.  It would be nice to get rid of any repeat words.  How could we do that? 
+
+```python
+# Assuming you have repeat_words.txt saved in the same folder as your Python program,
+# then this will store the contents of the file in a list called words.
+with open("repeat_words.txt") as file:
+    words = [line.strip() for line in file]
+```
+
+* **Option 1.** Loop through the list of words and create a new list by only a new word if it isn't already in the list.  
+
+We implemented option 1 in the following exercise:
+
+1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
+
+Unfortunately, the function we came up with was slow to find the unique words and it totally chokes on a file like this one: [words.txt](https://bclins.github.io/fall24/cs261/words.txt). There are other faster options to create a list of all elements without repeats. 
+
+* **Option 2.** Re-write the `unique` function.  This time use a dictionary as your accumulator variable instead of a list. Since keys are unique, it won't do anything when you try to add a key that is already there.  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
+
+* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
+
+<!--
+I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
+ 
+```python
+def unique(lst): return list(set(lst)) 
+# Notice that you can define a function all on one line if it is really simple!
+```
+
+You can also use curly braces to create a set like this:
+
+```python
+example_set = {"a", "b", 1, 2}
+```
+
+You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
+
+```python
+powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
+print(powers_of_2_mod_7)
+```
+
+1. What is the difference between 
+<center>
+`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
+</center>
 
 
 <!--
@@ -2021,45 +2092,6 @@ Fri, Oct 23 | [TP11][TP11] | Tuples
 <!--
 ### Mon, Oct 19
 
-The text file [electives.txt](electives.txt) from [Project 7](project7.pdf) contains the elective preferences for 1,000 students.  It would be nice to filter this list of words to just the names of each elective, without any repeats.  How could we do that?  
-
-* **Option 1.** Loop through the student preferences and create a new list by only adding electives if they aren't already in the list.  
-
-We implemented option1 in the following exercise:
-
-1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
-
-Unfortunately, the function we came up with was very slow to find the unique words in the file [words.txt](words.txt). There are other faster options to create a list of all elements without repeats. 
-
-* **Option 2.** Loop through the student preferences and create a dictionary with the electives as keys.  Since keys are unique, it won't do anything when you try to add a key that is already there so it should work.  Actually, you already did this!  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
-
-* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
-
-<!--
-I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
-
-```python
-def unique(lst): return list(set(lst)) 
-# Notice that you can define a function all on one line if it is really simple!
-```
-
-You can also use curly braces to create a set like this:
-
-```python
-example_set = {"a", "b", 1, 2}
-```
-
-You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
-
-```python
-powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
-print(powers_of_2_mod_7)
-```
-
-1. What is the difference between 
-<center>
-`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
-</center>
 
 
 ### Wed, Oct 21

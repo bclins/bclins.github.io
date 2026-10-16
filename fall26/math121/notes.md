@@ -716,7 +716,6 @@ A confidence interval has two parts: a **best guess estimate** (or **point estim
 4. About one third of American households have a pet cat.  How large of a sample would be need if you wanted to make a 95% confidence interval with a margin of error less than 1% for the percent of households with a pet cat?
 
 
-<!--
 ### Fri, Oct 16
 
 Last time we introduced confidence intervals for proportions. Today we did some more examples related to confidence intervals. 
@@ -730,7 +729,6 @@ Last time we introduced confidence intervals for proportions. Today we did some 
 
 4. How is it possible that the margin of error could be so small if the poll was so wrong?  
 
--->
 
 - - - 
 
