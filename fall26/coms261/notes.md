@@ -1943,26 +1943,45 @@ classes = [
 
 ### Fri, Oct 16
 
-The text file [repeat_words.txt](repeat_words.txt) contains 50,000 words, but a lot of those words are repeats.  It would be nice to get rid of any repeat words.  How could we do that? 
+We started with this problem:
+
+1. Write a Python function called `unique` that inputs a list and outputs a new list with all of the elements from the original list, but not repeats.  For example:
+
+    ```python
+    unique([1,1,2,3,3,4]) # should return [1, 2, 3, 4]
+    ```
+
+    Hint: Use a loop with a list as an accumulator variable.
+
+After that, we tested our function on a list with the words from the file [repeat_words.txt](repeat_words.txt). Our `unique` function was really slow.  
+
+#### Searching in a List versus a Dictionary
+
+Checking if an item is in a list is slow because you have to check elements one at a time. If the list has length $n$, then it might take as many as $n$ steps before you find the item.
+
+* Worst case: $n$ steps
+* Average case: $n/2$ steps
+
+Checking if a key is in a dictionary is much faster because Python uses [hash tables](https://en.wikipedia.org/wiki/Hash_table) to look-up the keys in a dictionary.  Hash tables are a little complicated, but the important thing to know if that it only takes a very small number of steps to check if a key is in a dictionary, even if there are lots and lots of keys. 
+
+2. Re-write the `unique` function by using a dictionary as the accumulator variable.  Store the items from the original list as the keys of the dictionary, and use what ever values you want (the values won't matter).  At the end, convert the dictionary to a list of keys using the `list` function. 
+
+#### Sets in Python
+
+A **set** is a type in Python that stores a set of items with no repeats.  You can think of it as something like a dictionary with keys but no values.  
 
 ```python
-# Assuming you have repeat_words.txt saved in the same folder as your Python program,
-# then this will store the contents of the file in a list called words.
-with open("repeat_words.txt") as file:
-    words = [line.strip() for line in file]
+example_set = {"a", "b", 1, 2}
 ```
 
-* **Option 1.** Loop through the list of words and create a new list by only a new word if it isn't already in the list.  
+You can also create a set by using the built in `set` function which converts any iterable type to a set.  
 
-We implemented option 1 in the following exercise:
+```python
+print(set([1,2,3,4]))
+```
 
-1. Write a function called `unique()` that reads a list and outputs a list of its elements without any repeats. 
+3. Re-write the `unique` function so that it uses `set` to convert a list to a set and then use `list` to convert back to a list. 
 
-Unfortunately, the function we came up with was slow to find the unique words and it totally chokes on a file like this one: [words.txt](https://bclins.github.io/fall24/cs261/words.txt). There are other faster options to create a list of all elements without repeats. 
-
-* **Option 2.** Re-write the `unique` function.  This time use a dictionary as your accumulator variable instead of a list. Since keys are unique, it won't do anything when you try to add a key that is already there.  Once you have a dictionary, just use the `list()` constructor function to convert it to a list. You'll get a list of keys (the values won't be included). 
-
-* **Option 3.** A dictionary is not the only type to store values using a hash table to quickly look up elements.   Another Python type is called a **set**.  Sets are like dictionaries, except sets only have keys, no values.  You can convert a list (or any other iterable type) to a set using the `set()` constructor function.
 
 <!--
 I ran out of time before I could do this: We used option3 to re-write the `unique()` function. 
