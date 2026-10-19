@@ -3054,13 +3054,13 @@ href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.
 <tr>
 <td style="text-align: center;">Wed, Oct 21</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11">TP11</a></td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.12">TP12</a></td>
 <td style="text-align: left;">Tuples</td>
 </tr>
 <tr>
 <td style="text-align: center;">Thu, Oct 22</td>
 <td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11">TP11</a></td>
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.12">TP12</a></td>
 <td style="text-align: left;">Tuples</td>
 </tr>
 <tr>
@@ -3080,16 +3080,20 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a h
 <ol type="1">
 <li><p>What is the difference between</p>
 <div class="sourceCode" id="cb79"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> {<span class="dv">2</span> <span class="op">**</span> k <span class="op">%</span> <span class="dv">7</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)}</span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> {n<span class="op">**</span><span class="dv">2</span> <span class="op">%</span> <span class="dv">5</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)}</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="dv">2</span> <span class="op">**</span> k <span class="op">%</span> <span class="dv">7</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code></pre></div></li>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [n<span class="op">**</span><span class="dv">2</span> <span class="op">%</span> <span class="dv">5</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code></pre></div></li>
+<li><p>Why can’t you use <code>{}</code> to create an empty
+set?</p></li>
 </ol>
+<p>If you want to create an empty set, use the function
+<code>set()</code> with nothing between the parentheses.</p>
 <h4 id="set-methods">Set Methods</h4>
 <p>Sets have different methods than dictionaries or lists, although
 there is some overlap. Here are some important set methods.</p>
 <ul>
 <li><p><strong>The add method.</strong> To add items to a set, use the
-<code>.add(item)</code> method. Note that this is called add not
+<code>.add(item)</code> method. Note that this is called add, not
 append!</p></li>
 <li><p><strong>The remove and discard methods.</strong> To remove items
 from a set, use the <code>.discard(item)</code> method. You can also use
@@ -3206,7 +3210,8 @@ modulo
 for any
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</p></li>
 <li><p>Write a Python function called <code>union</code> that returns
-the union of two sets.</p></li>
+the union of two sets without using the union operator <code>|</code> or
+the built in <code>.union</code> method.</p></li>
 </ol>
 <!--
 3. <mark>Maybe save this for when we talk about aliasing and mutability?</mark>Here is one way to define the union function for two sets that causes an annoying side-effect when you use it.  

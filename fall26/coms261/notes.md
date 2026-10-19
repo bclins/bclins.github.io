@@ -2097,8 +2097,8 @@ This dramatically improves the performance of this algorithm.  Without memoizati
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 19 | [TP19.5][TP19.5] | Set operations & comprehensions
-Wed, Oct 21 | [TP11][TP11] | Tuples 
-Thu, Oct 22 | [TP11][TP11] | Tuples 
+Wed, Oct 21 | [TP12][TP12] | Tuples 
+Thu, Oct 22 | [TP12][TP12] | Tuples 
 Fri, Oct 23 |   | Search algorithms 
 
 ### Mon, Oct 19
@@ -2115,16 +2115,20 @@ print(letters)
 1. What is the difference between 
 
     ```python
-    xs = {2 ** k % 7 for k in range(100)}
+    xs = {n**2 % 5 for k in range(100)}
 
-    ys = [2 ** k % 7 for k in range(100)]
+    ys = [n**2 % 5 for k in range(100)]
     ```
+
+2. Why can't you use `{}` to create an empty set? 
+
+If you want to create an empty set, use the function `set()` with nothing between the parentheses.  
 
 #### Set Methods 
 
 Sets have different methods than dictionaries or lists, although there is some overlap.  Here are some important set methods.  
 
-* **The add method.** To add items to a set, use the `.add(item)` method. Note that this is called add not append!
+* **The add method.** To add items to a set, use the `.add(item)` method. Note that this is called add, not append!
 
 * **The remove and discard methods.** To remove items from a set, use the `.discard(item)` method. You can also use the `.remove(item)` method, but be careful with that one since it raises an error if the item is not in the set.   
 
@@ -2174,7 +2178,7 @@ Superset     | `s >= t`
 
 2. Write a Python function that finds the set of quadratic residues modulo $n$ for any $n$. 
 
-3. Write a Python function called `union` that returns the union of two sets. 
+3. Write a Python function called `union` that returns the union of two sets without using the union operator `|` or the built in `.union` method.
 
 <!--
 3. <mark>Maybe save this for when we talk about aliasing and mutability?</mark>Here is one way to define the union function for two sets that causes an annoying side-effect when you use it.  
