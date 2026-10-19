@@ -1436,7 +1436,7 @@ Day  | Section  | Topic
 Mon, Oct 5  | [TP10.7][TP10.7] | Common patterns in loops (map, filter, reduce) 
 Wed, Oct 7  | [TP19.2][TP19.2] | List comprehensions and other shortcuts
 Thu, Oct 8  | [TP19.2][TP19.2] | List comprehensions
-Fri, Oct 9  | [TP10][TP10]     | Dictionaries
+Fri, Oct 9  | [TP11][TP11]     | Dictionaries
 
 ### Mon, Oct 5
 
@@ -1752,9 +1752,9 @@ Things to know about dictionaries.
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
 Mon, Oct 12 |  | Fall break, no class
-Wed, Oct 14 | [TP10][TP10] | Dictionaries - con'd 
+Wed, Oct 14 | [TP11][TP11] | Dictionaries - con'd 
 Thu, Oct 15 |     | Dictionary comprehensions       
-Fri, Oct 16 |  [TP19.5][TP19.5] | Sets
+Fri, Oct 16 | [TP19.5][TP19.5] | Sets
 
 
 ### Wed, Oct 14
@@ -1948,7 +1948,7 @@ We started with this problem:
 1. Write a Python function called `unique` that inputs a list and outputs a new list with all of the elements from the original list, but not repeats.  For example:
 
     ```python
-    unique([1,1,2,3,3,4]) # should return [1, 2, 3, 4]
+    unique([1, 1, 2, 3, 3, 4]) # should return [1, 2, 3, 4]
     ```
 
     Hint: Use a loop with a list as an accumulator variable.
@@ -1974,13 +1974,17 @@ A **set** is a type in Python that stores a set of items with no repeats.  You c
 example_set = {"a", "b", 1, 2}
 ```
 
+You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. 
+
 You can also create a set by using the built in `set` function which converts any iterable type to a set.  
 
 ```python
-print(set([1,2,3,4]))
+print(set([1, 2, 3, 4]))
 ```
 
 3. Re-write the `unique` function so that it uses `set` to convert a list to a set and then use `list` to convert back to a list. 
+
+Remember that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  But sets are **iterable** so you can loop through the elements in a set. 
 
 
 <!--
@@ -1997,17 +2001,6 @@ You can also use curly braces to create a set like this:
 example_set = {"a", "b", 1, 2}
 ```
 
-You can tell that this is a set and not a dictionary because it does not colons to separate keys from values. Finally, you can also create **set comprehensions** in Python, just like list and dictionary comprehensions. 
-
-```python
-powers_of_2_mod_7 = {2 ** k % 7 for k in range(100)}
-print(powers_of_2_mod_7)
-```
-
-1. What is the difference between 
-<center>
-`{2 ** k % 7 for k in range(100)}` and `[2 ** k % 7 for k in range(100)]`?
-</center>
 
 
 <!--
@@ -2103,37 +2096,103 @@ This dramatically improves the performance of this algorithm.  Without memoizati
  
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Oct 19 | [TP19.5][TP19.5] | Sets
-Wed, Oct 21 | [TP19.5][TP19.5] | Set comprehensions
-Thu, Oct 22 | [TP11][TP11] | Tuples
-Fri, Oct 23 | [TP11][TP11] | Tuples
+Mon, Oct 19 | [TP19.5][TP19.5] | Set operations & comprehensions
+Wed, Oct 21 | [TP11][TP11] | Tuples 
+Thu, Oct 22 | [TP11][TP11] | Tuples 
+Fri, Oct 23 |   | Search algorithms 
 
-<!--
 ### Mon, Oct 19
 
+#### Set Comprehensions
+
+You can create **set comprehensions** in Python, just like list and dictionary comprehensions. 
+
+```python
+letters = {c for c in "hello world!" if c.isalpha()}
+print(letters)
+```
+
+1. What is the difference between 
+
+    ```python
+    xs = {2 ** k % 7 for k in range(100)}
+
+    ys = [2 ** k % 7 for k in range(100)]
+    ```
+
+#### Set Methods 
+
+Sets have different methods than dictionaries or lists, although there is some overlap.  Here are some important set methods.  
+
+* **The add method.** To add items to a set, use the `.add(item)` method. Note that this is called add not append!
+
+* **The remove and discard methods.** To remove items from a set, use the `.discard(item)` method. You can also use the `.remove(item)` method, but be careful with that one since it raises an error if the item is not in the set.   
+
+#### Set Operations
+
+Suppose that $A$ and $B$ are sets.  Then 
+
+* The **intersection** of $A$ and $B$ is the set of all elements that are contained in both $A$ and $B$.  
+* The **union** of $A$ and $B$ is the set of all elements that are contained in $A$ or in $B$.  
+* The **difference** of $A$ minus $B$ is the set of elements in $A$ that are not in $B$. 
+
+1. Suppose we have two sets: 
+
+    ```python
+    mammals = {"dogs", "cats", "elephants", "humans"}
+    pets = {"dogs", "cats", "goldfish", "turtles"}
+    ```
+    
+    What are the intersection, union, and differences of these two sets? 
+
+2. Write a function called `intersection` that inputs two sets `s` and `t` and returns their intersection.
+
+3. Write a function called `difference` that inputs two sets `s` and `t` and returns the set difference `s` minus `t`. 
+
+4. If you didn't use set comprehensions, try re-writing your functions to use set comprehensions. 
 
 
+
+
+Now that we've gone to the trouble to make Python functions to perform these set operations, I should tell you that Python has special built in operators for sets.  It also uses the comparison operators `==, <, >, <=, >=` to see if two sets are equal or if one contains another. 
+
+<center>
+Operation | Python operator 
+:---:|:---:
+Intersection | `s & t`
+Union        | `s | t`
+Difference   | `s - t`
+Subset       | `s <= t`
+Superset     | `s >= t`
+</center>
+
+5. What happens if you try to add two sets with the `+` operator?  What if you try to multiply sets with `*`?
+
+#### Additional Practice
+
+1. A [quadratic residue](https://en.wikipedia.org/wiki/Quadratic_residue) modulo $n$ is the remainder of a perfect square when you divide by $n$.  For example, 16 is a perfect square and 16 divided by 7 has a remainder of 2, so 2 is a quadratic residue modulo 7.  Write a set comprehension to find all of the quadratic residues modulo 7. Hint: You only need to use the first 7 perfect squares, because after that the remainders repeat. 
+
+2. Write a Python function that finds the set of quadratic residues modulo $n$ for any $n$. 
+
+3. Write a Python function called `union` that returns the union of two sets. 
+
+<!--
+3. <mark>Maybe save this for when we talk about aliasing and mutability?</mark>Here is one way to define the union function for two sets that causes an annoying side-effect when you use it.  
+
+    ```python
+    def union(s, t):
+        output = s
+        for item in t:
+            output.add(item)
+        return output
+    ```
+
+    What happens if you have two sets `small = {1, 2, 3}` and `big = {4, 5, 6}` and you call `union(small, big)`.  What is the value of the variable `small` after you call this function? Why? 
+-->
+
+
+<!--
 ### Wed, Oct 21
-
-Last time we introduced the **set** type in Python. Like other types in Python, sets have a **constructor function** called `set()`.  We reviewed some of the constructor functions we've seen like:
-
-```python
-int()         list()
-float()       tuple()
-str()         set()
-```
-
-We can use these constructors to write a very simple version of the `unique()` function from last time!
-
-```python
-def unique(lst): return list(set(lst)) 
-# Notice that you can define a function all on one line if it is really simple!
-```
-
-Recall that sets are not **subscriptable** which means you can't access elements of a set `s` using `s[i]` or `s[key]` like you can for sequence types or dictionaries.  That is because the order in which elements appear in a set does not matter.  
-
-
-### Thu, Oct 24
 
 Today we introduced **tuples**.
 
@@ -2145,13 +2204,34 @@ When entering a tuple, you can wrap the comma separated expressions in parenthes
 
 ```python
 x = (1, 2, 3)
-x = 1, 2, 3   # These two lines do the exact same thing!
-
-y = [(1, 2), (3, 4)]
-y = [1, 2, 3, 4] # These do not, since the meaning changes without the parentheses.
+x = 1, 2, 3          # These are the same
 ```
 
-We talked about the following applications of tuples.
+```python
+y = [(1, 2), (3, 4)]
+y = [1, 2, 3, 4]     # Not the same
+```
+
+```python
+z = (1,)             
+z = 1,               # These are the same (both are a tuple with one element)
+```
+
+2. Why can't you create a tuple with one element like this?
+
+    ```python
+    z = (1)
+    ```
+
+3. Why can't you create a set with no elements like this? 
+
+    ```python
+    z = {}
+    ```
+
+4. How do you create an empty set? How do you create an empty tuple?
+
+#### Applications of Tuples
 
 1. **Tuple Assignment.**  You can assign a tuple of values (on right of the assignment operator `=`) to a tuple of variables (on the left side). 
 
@@ -2173,6 +2253,8 @@ We talked about the following applications of tuples.
         return q, r
     ```
 
+<mark>I'm worried these next two are too confusing for beginners and it would be better to skip them.  Then you could introduce using tuples as keys like the tic-tac-toe example, and then spend Thursday doing a workshop.  </mark>
+
 3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
 
     ```python
@@ -2188,14 +2270,14 @@ We talked about the following applications of tuples.
 4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
 
     ```python
-    days_by_month = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
+    month_lengths = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
                      'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
 
-    for month, days in days_by_month.items():
+    for month, days in month_lengths.items():
         print(month, "has", days, "days.")
     ```
 
-### Fri, Oct 25
+
 
 Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
 
@@ -2258,24 +2340,9 @@ There are a lot of other features we might want our tic-tac-toe game to have:
 We didn't have time to include those in our program in class today, but they are things we could add in the future. 
 
 
+### Thu, Oct 22
 
--->
-
-- - - 
-
-### Week 10 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 26 |  | Search algorithms
-Wed, Oct 28 |  | Sorting
-Thu, Oct 29 |  | Nested loops
-Fri, Oct 30 |  | 
-
-<!--
-### Mon, Oct 26
+<mark>Make a worksheet about Python data structures (lists, dictionaries, sets, and tuples)</mark>
 
 Sometimes it is helpful if the elements in a list are sorted in increasing or decreasing order.  
 
@@ -2302,7 +2369,7 @@ We say that binary search has a time complexity of $O(\log n)$.  That means if w
 
 
 
-### Thu, Oct 31
+### Fri, Oct 23
 
 Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
 
@@ -2409,81 +2476,25 @@ Exercise we didn't have time for (not sure if it is good since it is a little tr
 5. Sort the words base on how many vowels they have
 
 (This would be a good exercise to introduce the key optional argument)
-
-
-
-
-### Fri, Nov 1
-
-Today we did several examples of **nested loops.**
-
-1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
-
-    ```python
-    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-    ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
-    'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
-    ```
-
-Consider the following registration data for 26 students at one school. 
-```python
-registration_data = [
-    {'name': 'Alice Adams', 'classes': ['Engl 490', 'Span 330', 'Phys 260', 'Engl 450', 'Math 260']}, 
-    {'name': 'Bob Brown', 'classes': ['Biol 450', 'Govt 330', 'Fren 301', 'Germ 101', 'Phys 450']}, 
-    {'name': 'Charlie Clark', 'classes': ['Span 490', 'Span 201', 'Germ 260', 'Hist 301', 'Govt 301']}, 
-    {'name': 'Daisy Davis', 'classes': ['Govt 201', 'Span 201', 'Hist 260', 'Math 201', 'Chem 101']}, 
-    {'name': 'Edward Evans', 'classes': ['Biol 450', 'Fren 450', 'Econ 102', 'Fren 260', 'Fren 330']},
-    {'name': 'Fiona Foster', 'classes': ['Hist 330', 'Hist 490', 'Chem 101', 'Germ 490', 'Econ 102']},
-    {'name': 'George Green', 'classes': ['Span 330', 'Hist 260', 'Chem 301', 'Govt 490', 'Govt 102']},
-    {'name': 'Hannah Hill', 'classes': ['Biol 490', 'Fren 301', 'Engl 260', 'Engl 301', 'Germ 450']},
-    {'name': 'Isaac Ives', 'classes': ['Span 330', 'Econ 201', 'Fren 330', 'Biol 450', 'Math 260']},
-    {'name': 'Jessica Johnson', 'classes': ['Engl 201', 'Econ 102', 'Span 101', 'Govt 330', 'Chem 490']},
-    {'name': 'Kevin King', 'classes': ['Biol 330', 'Span 260', 'Biol 260', 'Germ 301', 'Math 102']},
-    {'name': 'Lily Lewis', 'classes': ['Span 301', 'Biol 102', 'Math 330', 'Fren 450', 'Engl 101']},
-    {'name': 'Michael Miller', 'classes': ['Biol 450', 'Fren 102', 'Fren 201', 'Phys 102', 'Math 102']},
-    {'name': 'Nora Nelson', 'classes': ['Math 260', 'Fren 101', 'Biol 101', 'Engl 301', 'Germ 260']},
-    {'name': 'Oliver Owens', 'classes': ['Econ 260', 'Fren 450', 'Biol 260', 'Engl 490', 'Germ 330']},
-    {'name': 'Patricia Parker', 'classes': ['Phys 101', 'Fren 201', 'Hist 201', 'Germ 330', 'Germ 102']},
-    {'name': 'Quinn Quinn', 'classes': ['Biol 301', 'Econ 260', 'Biol 101', 'Biol 201', 'Span 101']},
-    {'name': 'Rachel Roberts', 'classes': ['Biol 450', 'Econ 301', 'Chem 330', 'Germ 260', 'Span 490']},
-    {'name': 'Samuel Smith', 'classes': ['Hist 260', 'Econ 101', 'Germ 301', 'Govt 301', 'Math 450']},
-    {'name': 'Tina Taylor', 'classes': ['Govt 450', 'Hist 101', 'Span 201', 'Fren 330', 'Hist 201']},
-    {'name': 'Ulysses Underwood', 'classes': ['Engl 201', 'Phys 101', 'Engl 101', 'Econ 260', 'Chem 260']},
-    {'name': 'Vanessa Vincent', 'classes': ['Econ 201', 'Span 101', 'Engl 201', 'Math 260', 'Phys 301']},
-    {'name': 'William Wilson', 'classes': ['Math 490', 'Math 201', 'Biol 102', 'Germ 260', 'Germ 102']},
-    {'name': 'Xavier Xander', 'classes': ['Germ 301', 'Govt 101', 'Govt 102', 'Chem 490', 'Hist 102']}, 
-    {'name': 'Yolanda Young', 'classes': ['Hist 301', 'Chem 102', 'Govt 330', 'Chem 101', 'Econ 330']},
-    {'name': 'Zachary Zimmerman', 'classes': ['Biol 330', 'Chem 330', 'Hist 201', 'Phys 490', 'Chem 260']}
-]   
-```
-
-
-2. Create a set object with all of the courses these students have registered for. 
-
-3. Create a dictionary object that counts how many students have signed up for each course.  
-
-4. Which students signed up for Span 201? 
-
-5. Which courses have the most students signed up?  
-
 -->
 
 
 - - - 
 
-### Week 11 Notes
+### Week 10 Notes
 
 
 
 Day  | Section  | Topic
 :-----:|:---:|:-----------------------
-Mon, Nov 2  | C9.2 | Program structure
-Wed, Nov 4  | C9.3 | Function structure & incremental development
-Thu, Nov 5  | [TP14.2][TP14.2] | Reading & writing files
-Fri, Nov 6  | [TP14.2][TP14.2] | Reading & writing files - con'd 
+Mon, Oct 26 |  | Sorting
+Wed, Oct 28 | [TP10.11][TP10.11] | Aliasing and mutability
+Thu, Oct 29 | [C9.2][C9.2] | Program structure
+Fri, Oct 30 | [C9.3][C9.3] | Function structure & incremental development 
+
 
 <!--
-### Mon, Nov 4
+### Mon, Oct 26
 
 Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
 
@@ -2535,8 +2546,9 @@ if __name__ == "__main__":
 ```
 
 <!--NOTE TO SELF: I ran into a little trouble today in class when I tried to write this program because
-I couldn't think of a good way to get the first key, value pair. My solution in class was clunky involving booleans and an if-else statement. This is a better that I came up with later.
+I couldn't think of a good way to get the first key, value pair. My solution in class was clunky involving booleans and an if-else statement. This is a better that I came up with later.-->
 
+<!--
 Notice the last two lines in the program. In Python there is weird recommended way to call the `main()` function: 
 
 ```python
@@ -2577,7 +2589,7 @@ Another example of a dunder variable is `__doc__`.  Every function has a `__doc_
     What is the value of `example_function.__doc__`?
 
 
-### Wed, Nov 6
+### Fri, Oct 25
 
 Last time we talked about the structure of programs.  Today we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.  
 
@@ -2650,6 +2662,79 @@ def find_root(f, a, b):
 ``` 
 
 As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
+
+
+
+### Fri, Nov 1
+
+Today we did several examples of **nested loops.**
+
+1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
+
+    ```python
+    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven',
+    'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
+    ```
+
+Consider the following registration data for 26 students at one school. 
+```python
+registration_data = [
+    {'name': 'Alice Adams', 'classes': ['Engl 490', 'Span 330', 'Phys 260', 'Engl 450', 'Math 260']}, 
+    {'name': 'Bob Brown', 'classes': ['Biol 450', 'Govt 330', 'Fren 301', 'Germ 101', 'Phys 450']}, 
+    {'name': 'Charlie Clark', 'classes': ['Span 490', 'Span 201', 'Germ 260', 'Hist 301', 'Govt 301']}, 
+    {'name': 'Daisy Davis', 'classes': ['Govt 201', 'Span 201', 'Hist 260', 'Math 201', 'Chem 101']}, 
+    {'name': 'Edward Evans', 'classes': ['Biol 450', 'Fren 450', 'Econ 102', 'Fren 260', 'Fren 330']},
+    {'name': 'Fiona Foster', 'classes': ['Hist 330', 'Hist 490', 'Chem 101', 'Germ 490', 'Econ 102']},
+    {'name': 'George Green', 'classes': ['Span 330', 'Hist 260', 'Chem 301', 'Govt 490', 'Govt 102']},
+    {'name': 'Hannah Hill', 'classes': ['Biol 490', 'Fren 301', 'Engl 260', 'Engl 301', 'Germ 450']},
+    {'name': 'Isaac Ives', 'classes': ['Span 330', 'Econ 201', 'Fren 330', 'Biol 450', 'Math 260']},
+    {'name': 'Jessica Johnson', 'classes': ['Engl 201', 'Econ 102', 'Span 101', 'Govt 330', 'Chem 490']},
+    {'name': 'Kevin King', 'classes': ['Biol 330', 'Span 260', 'Biol 260', 'Germ 301', 'Math 102']},
+    {'name': 'Lily Lewis', 'classes': ['Span 301', 'Biol 102', 'Math 330', 'Fren 450', 'Engl 101']},
+    {'name': 'Michael Miller', 'classes': ['Biol 450', 'Fren 102', 'Fren 201', 'Phys 102', 'Math 102']},
+    {'name': 'Nora Nelson', 'classes': ['Math 260', 'Fren 101', 'Biol 101', 'Engl 301', 'Germ 260']},
+    {'name': 'Oliver Owens', 'classes': ['Econ 260', 'Fren 450', 'Biol 260', 'Engl 490', 'Germ 330']},
+    {'name': 'Patricia Parker', 'classes': ['Phys 101', 'Fren 201', 'Hist 201', 'Germ 330', 'Germ 102']},
+    {'name': 'Quinn Quinn', 'classes': ['Biol 301', 'Econ 260', 'Biol 101', 'Biol 201', 'Span 101']},
+    {'name': 'Rachel Roberts', 'classes': ['Biol 450', 'Econ 301', 'Chem 330', 'Germ 260', 'Span 490']},
+    {'name': 'Samuel Smith', 'classes': ['Hist 260', 'Econ 101', 'Germ 301', 'Govt 301', 'Math 450']},
+    {'name': 'Tina Taylor', 'classes': ['Govt 450', 'Hist 101', 'Span 201', 'Fren 330', 'Hist 201']},
+    {'name': 'Ulysses Underwood', 'classes': ['Engl 201', 'Phys 101', 'Engl 101', 'Econ 260', 'Chem 260']},
+    {'name': 'Vanessa Vincent', 'classes': ['Econ 201', 'Span 101', 'Engl 201', 'Math 260', 'Phys 301']},
+    {'name': 'William Wilson', 'classes': ['Math 490', 'Math 201', 'Biol 102', 'Germ 260', 'Germ 102']},
+    {'name': 'Xavier Xander', 'classes': ['Germ 301', 'Govt 101', 'Govt 102', 'Chem 490', 'Hist 102']}, 
+    {'name': 'Yolanda Young', 'classes': ['Hist 301', 'Chem 102', 'Govt 330', 'Chem 101', 'Econ 330']},
+    {'name': 'Zachary Zimmerman', 'classes': ['Biol 330', 'Chem 330', 'Hist 201', 'Phys 490', 'Chem 260']}
+]   
+```
+
+
+2. Create a set object with all of the courses these students have registered for. 
+
+3. Create a dictionary object that counts how many students have signed up for each course.  
+
+4. Which students signed up for Span 201? 
+
+5. Which courses have the most students signed up?  
+
+-->
+
+
+- - - 
+
+### Week 11 Notes
+
+
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 2  | | Nested loops                                             
+Wed, Nov 4  | [TP14.2][TP14.2] | Reading & writing files
+Thu, Nov 5  | [TP14.2][TP14.2] | Reading & writing files - con'd 
+Fri, Nov 6  |
+
+<!--
 
 ### Thu, Nov 7
 
@@ -3445,6 +3530,7 @@ print(median(a))
 [TP9]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9>
 [TP10]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10>
 [TP10.7]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.7>
+[TP10.11]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.11>
 [TP11]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11>
 [TP12]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.12>
 [TP13]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.13>
@@ -3477,6 +3563,8 @@ print(median(a))
 [C17]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.17>
 
 [C2.6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6>
+[C9.2]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2>
+[C9.3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3>
 [C10.1]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.1>
 [C10.3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.3>
 
