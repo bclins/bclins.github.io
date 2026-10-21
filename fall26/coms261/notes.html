@@ -3226,104 +3226,95 @@ the built in <code>.union</code> method.</p></li>
 
     What happens if you have two sets `small = {1, 2, 3}` and `big = {4, 5, 6}` and you call `union(small, big)`.  What is the value of the variable `small` after you call this function? Why? 
 -->
+<h3 id="wed-oct-21">Wed, Oct 21</h3>
+<p>Today we introduced <strong>tuples</strong>.</p>
+<ol type="1">
+<li>Try entering <code>x = 1, 2, 3</code> into the Python shell. What is
+<code>type(x)</code>?</li>
+</ol>
+<p>A tuple is a sequence type like a list, except tuples are immutable.
+You can add tuples, access values at an index, slice, and even multiply
+tuples by positive integers, just like lists. But you cannot add new
+elements (there’s no <code>.append()</code> method), remove elements (no
+<code>.remove()</code> or <code>.pop()</code> methods) or change the
+value of an element at an index.</p>
+<p>When entering a tuple, you can wrap the comma separated expressions
+in parentheses.</p>
+<div class="sourceCode" id="cb81"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>          <span class="co"># These are the same</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">4</span>)]</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]     <span class="co"># Not the same</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (<span class="dv">1</span>,)             </span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">1</span>,               <span class="co"># These are the same (both are a tuple with one element)</span></span></code></pre></div>
+<ol start="2" type="1">
+<li><p>Why can’t you create a tuple with one element like this?</p>
+<div class="sourceCode" id="cb84"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (<span class="dv">1</span>)</span></code></pre></div></li>
+<li><p>Why can’t you create a set with no elements like this?</p>
+<div class="sourceCode" id="cb85"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> {}</span></code></pre></div></li>
+<li><p>How do you create an empty set? How do you create an empty
+tuple?</p></li>
+</ol>
+<h4 id="applications-of-tuples">Applications of Tuples</h4>
+<ol type="1">
+<li><p><strong>Tuple Assignment.</strong> You can assign a tuple of
+values (on right of the assignment operator <code>=</code>) to a tuple
+of variables (on the left side).</p>
+<ol type="a">
+<li>Try entering <code>a, b = 1, 2</code>. What are the values of
+<code>a</code> and <code>b</code>?</li>
+<li>What happens if you try <code>a, b, c = 1, 2</code>?</li>
+<li>What if you try <code>a, b = 1, 2, 3</code>?</li>
+</ol></li>
+<li><p><strong>Tuple Return Values.</strong> Some algorithms find more
+than one value and it would be nice if a function implementing an
+algorithm could return both. You can use a tuple as a return value to do
+this.</p>
+<div class="sourceCode" id="cb86"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the quotient and the remainder for a divided by b.&quot;&quot;&quot;</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">//</span> b, a <span class="op">%</span> b</span></code></pre></div></li>
+<li><p><strong>Looping Through Index/Value Pairs in a List</strong>.
+Sometimes when you loop through a list, you want both the index and
+value for each element. There is a function called
+<code>enumerate()</code> to get these for any sequence type. We used it
+to re-write the <code>argmax</code> function that we have seen
+before.</p>
+<div class="sourceCode" id="cb87"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_list(items):</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(items):</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Item </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>item<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div></li>
+<li><p><strong>Looping Through Key/Value Pairs in a Dictionary</strong>.
+You can do something similar to simultaneously loops through both the
+keys and values of dictionary using the <code>.items()</code>
+method.</p>
+<div class="sourceCode" id="cb88"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>month_lengths <span class="op">=</span> {<span class="st">&#39;Jan&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Feb&#39;</span>: <span class="dv">28</span>, <span class="st">&#39;Mar&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Apr&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;May&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Jun&#39;</span>: <span class="dv">30</span>, </span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&#39;Jul&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Aug&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Sep&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Oct&#39;</span>: <span class="dv">31</span>, <span class="st">&#39;Nov&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;Dec&#39;</span>: <span class="dv">31</span>}</span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> month, days <span class="kw">in</span> month_lengths.items():</span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(month, <span class="st">&quot;has&quot;</span>, days, <span class="st">&quot;days.&quot;</span>)</span></code></pre></div></li>
+<li><p><strong>Using Tuples as Keys in a Dictionary</strong> Unlike
+lists, tuples are hashable, which means that they can be used as keys
+for dictionaries. This is useful, for example, if you have data on a
+grid. We used class today to implement a simple 2-player tic-tac-toe
+game. We used a dictionary to store the tic-tac-toe board data:</p>
+<div class="sourceCode" id="cb89"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>board <span class="op">=</span> {(<span class="dv">1</span>,<span class="dv">1</span>): <span class="st">&quot;X&quot;</span>, (<span class="dv">2</span>,<span class="dv">0</span>): <span class="st">&quot;0&quot;</span>, (<span class="dv">0</span>,<span class="dv">1</span>): <span class="st">&quot;X&quot;</span>}</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (row, col) <span class="kw">in</span> board:</span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(board[row, col], end<span class="op">=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;.&quot;</span>, end<span class="op">=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div></li>
+</ol>
 <!--
-### Wed, Oct 21
-
-Today we introduced **tuples**.
-
-1. Try entering `x = 1, 2, 3` into the Python shell.  What is `type(x)`?
-
-A tuple is a sequence type like a list, except tuples are immutable.  You can add tuples, access values at an index, slice, and even multiply tuples by positive integers, just like lists.  But you cannot add new elements (there's no `.append()` method), remove elements (no `.remove()` or `.pop()` methods) or change the value of an element at an index. 
-
-When entering a tuple, you can wrap the comma separated expressions in parentheses.  
-
-```python
-x = (1, 2, 3)
-x = 1, 2, 3          # These are the same
-```
-
-```python
-y = [(1, 2), (3, 4)]
-y = [1, 2, 3, 4]     # Not the same
-```
-
-```python
-z = (1,)             
-z = 1,               # These are the same (both are a tuple with one element)
-```
-
-2. Why can't you create a tuple with one element like this?
-
-    ```python
-    z = (1)
-    ```
-
-3. Why can't you create a set with no elements like this? 
-
-    ```python
-    z = {}
-    ```
-
-4. How do you create an empty set? How do you create an empty tuple?
-
-#### Applications of Tuples
-
-1. **Tuple Assignment.**  You can assign a tuple of values (on right of the assignment operator `=`) to a tuple of variables (on the left side). 
-
-    a. Try entering `a, b = 1, 2`.  What are the values of `a` and `b`?
-    b. What happens if you try `a, b, c = 1, 2`?
-    c. What if you try `a, b = 1, 2, 3`?
-
-2. **Tuple Return Values.** Some algorithms find more than one value and it would be nice if a function implementing an algorithm could return both. You can use a tuple as a return value to do this.
-
-    ```python
-    def division_algorithm(n, d):
-        """Divides positive integer n by d using repeated subtraction. 
-        Returns the quotient q and the remainder r.
-        """
-        q, r = 0, n # initialize the quotient and remainder
-        while r >= d:
-            r -= d
-            q += 1
-        return q, r
-    ```
-
-<mark>I'm worried these next two are too confusing for beginners and it would be better to skip them.  Then you could introduce using tuples as keys like the tic-tac-toe example, and then spend Thursday doing a workshop.  </mark>
-
-3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
-
-    ```python
-    def argmax(number):
-        """Return the argument (i.e., index) of the largest element in a list of numbers."""
-        arg = 0
-        for i, x in enumerate(numbers):
-            if x > numbers[arg]:
-                arg = i
-        return arg
-    ```
-
-4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
-
-    ```python
-    month_lengths = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
-                     'Jul': 31, 'Aug': 31, 'Sep': 30, 'Oct': 31, 'Nov': 30, 'Dec': 31}
-
-    for month, days in month_lengths.items():
-        print(month, "has", days, "days.")
-    ```
-
-
-
-Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
-
-```python
-board = {
-  (0,0): " ", (0,1): " ", (0,2): " ",
-  (1,0): " ", (1,1): " ", (1,2): " ",
-  (2,0): " ", (2,1): " ", (2,2): " "
-}
-```  
-
 1. Manually typing in the keys and values in the dictionary above is a bit tedious (and it would be very tedious if the board was bigger!). Write a double loop to fill an empty dictionary with the data above.  
 
 2. Once we have the board data entered, we need a function `print_board()` that can print the current state of the board.  It should produce output that looks like: 
@@ -3373,8 +3364,8 @@ There are a lot of other features we might want our tic-tac-toe game to have:
 3. We could also try to create a computer that the human player could play against. 
 
 We didn't have time to include those in our program in class today, but they are things we could add in the future. 
-
-
+-->
+<!--
 ### Thu, Oct 22
 
 <mark>Make a worksheet about Python data structures (lists, dictionaries, sets, and tuples)</mark>

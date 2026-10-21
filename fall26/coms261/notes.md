@@ -2195,7 +2195,6 @@ Superset     | `s >= t`
 -->
 
 
-<!--
 ### Wed, Oct 21
 
 Today we introduced **tuples**.
@@ -2246,29 +2245,17 @@ z = 1,               # These are the same (both are a tuple with one element)
 2. **Tuple Return Values.** Some algorithms find more than one value and it would be nice if a function implementing an algorithm could return both. You can use a tuple as a return value to do this.
 
     ```python
-    def division_algorithm(n, d):
-        """Divides positive integer n by d using repeated subtraction. 
-        Returns the quotient q and the remainder r.
-        """
-        q, r = 0, n # initialize the quotient and remainder
-        while r >= d:
-            r -= d
-            q += 1
-        return q, r
+    def divide(a, b):
+        """Returns the quotient and the remainder for a divided by b."""
+        return a // b, a % b
     ```
-
-<mark>I'm worried these next two are too confusing for beginners and it would be better to skip them.  Then you could introduce using tuples as keys like the tic-tac-toe example, and then spend Thursday doing a workshop.  </mark>
 
 3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
 
     ```python
-    def argmax(number):
-        """Return the argument (i.e., index) of the largest element in a list of numbers."""
-        arg = 0
-        for i, x in enumerate(numbers):
-            if x > numbers[arg]:
-                arg = i
-        return arg
+    def print_list(items):
+        for i, item in enumerate(items):
+            print(f"Item {i}: {item}")
     ```
 
 4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
@@ -2281,18 +2268,21 @@ z = 1,               # These are the same (both are a tuple with one element)
         print(month, "has", days, "days.")
     ```
 
+5. **Using Tuples as Keys in a Dictionary** Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
 
+    ```python
+    board = {(1,1): "X", (2,0): "0", (0,1): "X"}
 
-Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
+    for row in range(3):
+        for col in range(3):
+            if (row, col) in board:
+                print(board[row, col], end="")
+            else:
+                print(".", end="")
+        print()
+    ```  
 
-```python
-board = {
-  (0,0): " ", (0,1): " ", (0,2): " ",
-  (1,0): " ", (1,1): " ", (1,2): " ",
-  (2,0): " ", (2,1): " ", (2,2): " "
-}
-```  
-
+<!--
 1. Manually typing in the keys and values in the dictionary above is a bit tedious (and it would be very tedious if the board was bigger!). Write a double loop to fill an empty dictionary with the data above.  
 
 2. Once we have the board data entered, we need a function `print_board()` that can print the current state of the board.  It should produce output that looks like: 
@@ -2342,8 +2332,9 @@ There are a lot of other features we might want our tic-tac-toe game to have:
 3. We could also try to create a computer that the human player could play against. 
 
 We didn't have time to include those in our program in class today, but they are things we could add in the future. 
+-->
 
-
+<!--
 ### Thu, Oct 22
 
 <mark>Make a worksheet about Python data structures (lists, dictionaries, sets, and tuples)</mark>
