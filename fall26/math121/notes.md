@@ -804,12 +804,11 @@ $$z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{N}}}.$$
 2. This year 7 out of 25 (28%) of the students in our statistics class were born in VA.  Is this strong evidence that less than half of all HSC students were born in VA? State the hypotheses, find the z-value, find the p-value, and explain what it means. 
 
 
+### Wed, Oct 21
+
+We talked about the [midterm 2 review](https://bclins.github.io/fall25/math121/midterm2review.pdf) in class today.  The [solutions](https://bclins.github.io/fall25/math121/midterm2reviewSolutions.pdf) are online now too. 
 
 <!--
-### Wed, Mar 18
-
-We talked about the [midterm 2 review](midterm2review.pdf) in class today.  The [solutions](midterm2reviewSolutions.pdf) are online now too. We also talked about the sampling distributions question from the last quiz. 
-
 We also did the following extra problem about conditional probability. 
 
 1. Suppose that half of the voters in one county are women.  There are two candidates running, a Democrat and a Republican.  60% of the women support the Democrat, but only 35% of the men in the county do.  Assume that every voter supports one of the two candidates. Find the following probabilities.
@@ -819,7 +818,7 @@ We also did the following extra problem about conditional probability.
     c. P(Support Republican and voter is male)
     d. P(Support Republican and voter is female)
     e. P(Support Republican)
-
+-->
 
 
 <!--

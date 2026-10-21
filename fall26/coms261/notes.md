@@ -2211,11 +2211,6 @@ x = 1, 2, 3          # These are the same
 ```
 
 ```python
-y = [(1, 2), (3, 4)]
-y = [1, 2, 3, 4]     # Not the same
-```
-
-```python
 z = (1,)             
 z = 1,               # These are the same (both are a tuple with one element)
 ```
@@ -2226,13 +2221,13 @@ z = 1,               # These are the same (both are a tuple with one element)
     z = (1)
     ```
 
-3. Why can't you create a set with no elements like this? 
+3. How many elements does the following list have.  What types are the elements?
 
     ```python
-    z = {}
+    y = [1, 2, (3, 4)]
     ```
 
-4. How do you create an empty set? How do you create an empty tuple?
+4. How do you create an empty tuple? Try `z = ()`. Does that work?
 
 #### Applications of Tuples
 
@@ -2248,17 +2243,26 @@ z = 1,               # These are the same (both are a tuple with one element)
     def divide(a, b):
         """Returns the quotient and the remainder for a divided by b."""
         return a // b, a % b
+
+    # Both of these work:
+    quotient, remainder = divide(17, 5)
+
+    pair = divide(17, 5)
     ```
 
-3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  We used it to re-write the `argmax` function that we have seen before.
+3. **Looping Through Index/Value Pairs in a List**. Sometimes when you loop through a list, you want both the index and value for each element.  There is a function called `enumerate()` to get these for any sequence type.  
 
     ```python
-    def print_list(items):
-        for i, item in enumerate(items):
-            print(f"Item {i}: {item}")
+    colors = ["red", "green", "blue"]
+
+    for i, item in enumerate(colors):
+        print(f"Item {i} is {item}")
+
+    # To get a better idea what the enumerate function does, try this command:
+    print(list(enumerate(colors)))
     ```
 
-4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loops through both the keys and values of dictionary using the `.items()` method.  
+4. **Looping Through Key/Value Pairs in a Dictionary**. You can do something similar to simultaneously loop through both the keys and values of dictionary using the `.items()` method.  
 
     ```python
     month_lengths = {'Jan': 31, 'Feb': 28, 'Mar': 31, 'Apr': 30, 'May': 31, 'Jun': 30, 
@@ -2266,9 +2270,14 @@ z = 1,               # These are the same (both are a tuple with one element)
 
     for month, days in month_lengths.items():
         print(month, "has", days, "days.")
+
+    # Try these commands to compare these three dictionary methods.
+    print(list(month_lengths.items()))
+    print(list(month_lengths.keys()))
+    print(list(month_lengths.values()))
     ```
 
-5. **Using Tuples as Keys in a Dictionary** Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used class today to implement a simple 2-player tic-tac-toe game. We used a dictionary to store the tic-tac-toe board data:
+5. **Using Tuples as Keys in a Dictionary** Unlike lists, tuples are hashable, which means that they can be used as keys for dictionaries.  This is useful, for example, if you have data on a grid.  We used a dictionary to store moves on a tic-tac-toe board:
 
     ```python
     board = {(1,1): "X", (2,0): "0", (0,1): "X"}
