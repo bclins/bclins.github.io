@@ -2291,63 +2291,14 @@ z = 1,               # These are the same (both are a tuple with one element)
         print()
     ```  
 
-<!--
-1. Manually typing in the keys and values in the dictionary above is a bit tedious (and it would be very tedious if the board was bigger!). Write a double loop to fill an empty dictionary with the data above.  
 
-2. Once we have the board data entered, we need a function `print_board()` that can print the current state of the board.  It should produce output that looks like: 
-
-<center>
-<pre>
-   |   | X 
----+---+---
-   | O |   
----+---+---
-   |   |   
-</pre>
-</center>
-  
-
-3. We need a way to prompt the users to pick a row and a column to make their moves.  Write a function called `get_player_move(board, player)` that prompts the user with a sentence like:
-<center>
-`X's turn. Enter the position where you want to place an X.`
-</center>
-The two players are `"X"` and `"O"`. Once the player enters the result, the function should update `board`.  Since dictionaries are mutable, you can update `board` without needing to return anything. 
-
-4. We also talked about how it would be better if the users could enter position numbers on the board instead of typing coordinates:
-<center>
-<pre>
- 1 | 2 | 3 
----+---+---
- 4 | 5 | 6 
----+---+---
- 7 | 8 | 9 
-</pre>
-</center>
-To do this we need a function `convert_input_to_pair(s)` that converts the player's input string to an integer and then to a tuple showing the row & column number.  
-
-    ```python
-    def convert_input_to_pair(s):
-        """Returns the (row, column) tuple corresponding to a user's input.""" 
-        n = int(s) - 1
-        return n // 3, n % 3
-    ```
-
-5. Use a `while True:` infinite loop to let two human players play tic-tac-toe against each other. 
-
-There are a lot of other features we might want our tic-tac-toe game to have:
-
-1. We should detect invalid moves and warn players if they try to make one. 
-2. We could detect when the game is over and announce the winner if someone wins.  
-3. We could also try to create a computer that the human player could play against. 
-
-We didn't have time to include those in our program in class today, but they are things we could add in the future. 
--->
-
-<!--
 ### Thu, Oct 22
 
-<mark>Make a worksheet about Python data structures (lists, dictionaries, sets, and tuples)</mark>
+Today we summarized what we've learned about Python data structures (lists, dictionaries, sets, and tuples).  
 
+* **Workshop**: [Data structures](DataStructures.pdf)
+
+<!--
 Sometimes it is helpful if the elements in a list are sorted in increasing or decreasing order.  
 
 One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
