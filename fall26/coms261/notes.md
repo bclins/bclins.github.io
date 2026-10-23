@@ -2312,7 +2312,7 @@ One advantage of having a sorted list is that it is much faster to check whether
 
 Binary search can be much faster than linear search. Suppose that a list has length $n$.  The **time complexity** of linear search is $O(n)$ which means that the number of steps to run the algorithm is roughly proportional to $n$.  That means that if a list is twice as long, the linear search will typically also take twice as long.  
 
-Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n$. In computer science we use $\log(n)$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
+Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n.$ In computer science we use $\log(n)$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
 
 <center>
 <table>
@@ -2323,10 +2323,14 @@ Each step in a binary search cuts the length of the list by half. So the total n
 
 We say that binary search has a time complexity of $O(\log(n))$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
 
-We finished by talking about how to implement the binary search algorithm.  
+We finished by talking about how to implement the binary search algorithm.  We use a recursive approach, but you could also use a while-loop (see the [Wikipedia article on binary search](https://en.wikipedia.org/wiki/Binary_search)).
  
 ```python
 def binary_search(seq, target):
+    """
+    Input: A sequence in increasing order and a target item to search for.
+    Output: Returns True if the sequence contains the target, otherwise False.
+    """
     n = len(seq)
     if n < 1:
         return target in seq
@@ -2369,11 +2373,9 @@ with open("misspelled.txt") as file:
     words = [line.strip() for line in file]
 
 count = 0
-i = 0
-for word in words:
+for i, word in enumerate(words):
     if word not in dictionary:
         count += 1
-    i += 1
     if i % 1000 == 0:
         print(i)
 print(f"There are {count} misspelled words.")
