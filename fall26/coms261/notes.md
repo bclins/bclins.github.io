@@ -2298,7 +2298,8 @@ Today we summarized what we've learned about Python data structures (lists, dict
 
 * **Workshop**: [Data structures](DataStructures.pdf)
 
-<!--
+### Fri, Oct 23
+
 Sometimes it is helpful if the elements in a list are sorted in increasing or decreasing order.  
 
 One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
@@ -2311,19 +2312,78 @@ One advantage of having a sorted list is that it is much faster to check whether
 
 Binary search can be much faster than linear search. Suppose that a list has length $n$.  The **time complexity** of linear search is $O(n)$ which means that the number of steps to run the algorithm is roughly proportional to $n$.  That means that if a list is twice as long, the linear search will typically also take twice as long.  
 
-Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n$. In computer science we use $\log n$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
+Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n$. In computer science we use $\log(n)$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
 
 <center>
-$n$ | 1 | 2 | 4 | 8 | 16 | 32 | 64 
-:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-$\log n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6
+<table>
+<tr><th>$n$</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td></tr>
+<tr><th>$\log(n)$</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+</table>
 </center>
 
-We say that binary search has a time complexity of $O(\log n)$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
+We say that binary search has a time complexity of $O(\log(n))$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
+
+We finished by talking about how to implement the binary search algorithm.  
+ 
+```python
+def binary_search(seq, target):
+    n = len(seq)
+    if n < 1:
+        return target in seq
+    else:
+        m = (n-1) // 2
+        val = seq[m]
+        if val == target:
+            return True
+        elif val <  target:
+            return binary_search(seq[m+1:], target)
+        else:
+            return binary_search(seq[:m], target)
+```
+
+<!-- 
+Non-recursive version.  I decided this one would be a little harder to explain.
+```python
+def binary_search(sorted_list, target):
+    lo = 0
+    hi = len(sorted_list) 
+    while (lo < hi):
+        m = (lo + hi) // 2
+        if sorted_list[m] == target:
+            return True
+        elif sorted_list[m] < target:
+            lo = m + 1
+        else:
+            hi = m
+    return False
+```
+-->
+
+Then we tested our function on a text file [misspelled.txt](misspelled.txt) that contains some misspelled words.  We started with a naive search using the **in** operator to check if words are misspelled by looking them up in the [words.txt](https://bclins.github.io/fall24/cs261/words.txt) file.  This was very slow.  Then we sped things up by using the `binary_search` function above. 
+
+```python
+with open("words.txt") as file:
+    dictionary = [line.strip() for line in file]
+
+with open("misspelled.txt") as file:
+    words = [line.strip() for line in file]
+
+count = 0
+i = 0
+for word in words:
+    if word not in dictionary:
+        count += 1
+    i += 1
+    if i % 1000 == 0:
+        print(i)
+print(f"There are {count} misspelled words.")
+```
 
 
 
 
+
+<!--
 ### Fri, Oct 23
 
 Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  

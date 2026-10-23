@@ -3330,32 +3330,167 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a h
 <li><strong>Workshop</strong>: <a href="DataStructures.pdf">Data
 structures</a></li>
 </ul>
-<!--
-Sometimes it is helpful if the elements in a list are sorted in increasing or decreasing order.  
-
-One advantage of having a sorted list is that it is much faster to check whether an element is in a sorted list.  We compared the following two **search algorithms**:
-
-* **Linear Search**: Given a list and a target element, loop through the elements of the list until you find one that matches the target element. 
-* **Binary Search**: Given a sorted list and a target element, recursively check the middle element of the list.  There are three possibilities:
-    - If it is the target element, you are done.
-    - If the middle element is bigger than the target element, then recursively search the bottom half of the list. 
-    - If the middle element is smaller than the target element, then recursively search the top half of the list. 
-
-Binary search can be much faster than linear search. Suppose that a list has length $n$.  The **time complexity** of linear search is $O(n)$ which means that the number of steps to run the algorithm is roughly proportional to $n$.  That means that if a list is twice as long, the linear search will typically also take twice as long.  
-
-Each step in a binary search cuts the length of the list by half. So the total number of steps is proportional to the **logarithm** of $n$. In computer science we use $\log n$ to mean the base-2 logarithm of $n$.  Recall that a base-2 logarithm outputs the power of 2 needed to equal $n$.  So for example:
-
+<h3 id="fri-oct-23">Fri, Oct 23</h3>
+<p>Sometimes it is helpful if the elements in a list are sorted in
+increasing or decreasing order.</p>
+<p>One advantage of having a sorted list is that it is much faster to
+check whether an element is in a sorted list. We compared the following
+two <strong>search algorithms</strong>:</p>
+<ul>
+<li><strong>Linear Search</strong>: Given a list and a target element,
+loop through the elements of the list until you find one that matches
+the target element.</li>
+<li><strong>Binary Search</strong>: Given a sorted list and a target
+element, recursively check the middle element of the list. There are
+three possibilities:
+<ul>
+<li>If it is the target element, you are done.</li>
+<li>If the middle element is bigger than the target element, then
+recursively search the bottom half of the list.</li>
+<li>If the middle element is smaller than the target element, then
+recursively search the top half of the list.</li>
+</ul></li>
+</ul>
+<p>Binary search can be much faster than linear search. Suppose that a
+list has length
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+The <strong>time complexity</strong> of linear search is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
+which means that the number of steps to run the algorithm is roughly
+proportional to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+That means that if a list is twice as long, the linear search will
+typically also take twice as long.</p>
+<p>Each step in a binary search cuts the length of the list by half. So
+the total number of steps is proportional to the
+<strong>logarithm</strong> of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+In computer science we use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
+to mean the base-2 logarithm of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+Recall that a base-2 logarithm outputs the power of 2 needed to equal
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
+So for example:</p>
 <center>
-$n$ | 1 | 2 | 4 | 8 | 16 | 32 | 64 
-:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
-$\log n$ | 0 | 1 | 2 | 3 | 4 | 5 | 6
+<table>
+<tr>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
+</th>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+4
+</td>
+<td>
+8
+</td>
+<td>
+16
+</td>
+<td>
+32
+</td>
+<td>
+64
+</td>
+</tr>
+<tr>
+<th>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+</tr>
+</table>
 </center>
-
-We say that binary search has a time complexity of $O(\log n)$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
-
-
-
-
+<p>We say that binary search has a time complexity of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\log(n))</annotation></semantics></math>.
+That means if we double the length of the list, it only takes one extra
+step to search for a target element. That is much faster! The
+disadvantage is that binary search only works if the list is already
+sorted.</p>
+<p>We finished by talking about how to implement the binary search
+algorithm.</p>
+<div class="sourceCode" id="cb89"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(seq, target):</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(seq)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">1</span>:</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> target <span class="kw">in</span> seq</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>        m <span class="op">=</span> (n<span class="op">-</span><span class="dv">1</span>) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> seq[m]</span>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">==</span> target:</span>
+<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> val <span class="op">&lt;</span>  target:</span>
+<span id="cb89-11"><a href="#cb89-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> binary_search(seq[m<span class="op">+</span><span class="dv">1</span>:], target)</span>
+<span id="cb89-12"><a href="#cb89-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb89-13"><a href="#cb89-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> binary_search(seq[:m], target)</span></code></pre></div>
+<!-- 
+Non-recursive version.  I decided this one would be a little harder to explain.
+```python
+def binary_search(sorted_list, target):
+    lo = 0
+    hi = len(sorted_list) 
+    while (lo < hi):
+        m = (lo + hi) // 2
+        if sorted_list[m] == target:
+            return True
+        elif sorted_list[m] < target:
+            lo = m + 1
+        else:
+            hi = m
+    return False
+```
+-->
+<p>Then we tested our function on a text file <a
+href="misspelled.txt">misspelled.txt</a> that contains some misspelled
+words. We started with a naive search using the <strong>in</strong>
+operator to check if words are misspelled by looking them up in the <a
+href="https://bclins.github.io/fall24/cs261/words.txt">words.txt</a>
+file. This was very slow. Then we sped things up by using the
+<code>binary_search</code> function above.</p>
+<div class="sourceCode" id="cb90"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>    dictionary <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;misspelled.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> dictionary:</span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>        count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">1000</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;There are </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss"> misspelled words.&quot;</span>)</span></code></pre></div>
+<!--
 ### Fri, Oct 23
 
 Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
