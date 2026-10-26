@@ -3438,7 +3438,11 @@ sorted.</p>
 algorithm. We use a recursive approach, but you could also use a
 while-loop (see the <a
 href="https://en.wikipedia.org/wiki/Binary_search">Wikipedia article on
-binary search</a>).</p>
+binary search</a>). <mark>Note: The recursive version that I wrote is
+slower than the non-recursive version because each time you slice a
+Python list you create a new list in memory and that takes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
+time.</mark></p>
 <div class="sourceCode" id="cb89"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(seq, target):</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
@@ -3458,13 +3462,13 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a h
 <span id="cb89-16"><a href="#cb89-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb89-17"><a href="#cb89-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> binary_search(seq[:m], target)</span></code></pre></div>
 <!-- 
-Non-recursive version.  I decided this one would be a little harder to explain.
+Non-recursive version.  I decided this one would be a little harder to explain. But it is much faster!
 ```python
 def binary_search(sorted_list, target):
     lo = 0
     hi = len(sorted_list) 
     while (lo < hi):
-        m = (lo + hi) // 2
+       m = (lo + hi) // 2
         if sorted_list[m] == target:
             return True
         elif sorted_list[m] < target:
@@ -3495,21 +3499,90 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a h
 <span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">1000</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span>
 <span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;There are </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss"> misspelled words.&quot;</span>)</span></code></pre></div>
-<!--
-### Fri, Oct 23
-
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
-
-
+<hr />
+<h3 id="week-10-notes">Week 10 Notes</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Mon, Oct 26</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Sorting</td>
+</tr>
+<tr>
+<td style="text-align: center;">Wed, Oct 28</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.11">TP10.11</a></td>
+<td style="text-align: left;">Aliasing and mutability</td>
+</tr>
+<tr>
+<td style="text-align: center;">Thu, Oct 29</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2">C9.2</a></td>
+<td style="text-align: left;">Program structure</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fri, Oct 30</td>
+<td style="text-align: center;"><a
+href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3">C9.3</a></td>
+<td style="text-align: left;">Function structure &amp; incremental
+development</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mon-oct-26">Mon, Oct 26</h3>
+<p>Python has built in functions for sorting lists. There are actually
+two. One is a function called <code>sorted()</code> that will sort any
+iterable type. The other is a <code>.sort()</code> method that sorts
+lists in place.</p>
 <center>
 <table class="bordered">
-<tr><th>`sorted()` function</th><th>`.sort()` method</th></tr>
-<tr><td>Works for any iterable type </td><td>Only works for lists</td></tr>
-<tr><td>Returns a new list</td><td>Returns nothing (sorts in place)</td></tr>
-<tr><td>Slightly slower</td><td>Slightly faster</td></tr>
+<tr>
+<th>
+<code>sorted()</code> function
+</th>
+<th>
+<code>.sort()</code> method
+</th>
+</tr>
+<tr>
+<td>
+Works for any iterable type
+</td>
+<td>
+Only works for lists
+</td>
+</tr>
+<tr>
+<td>
+Returns a new list
+</td>
+<td>
+Returns nothing (sorts in place)
+</td>
+</tr>
+<tr>
+<td>
+Slightly slower
+</td>
+<td>
+Slightly faster
+</td>
+</tr>
 </table>
 </center>
-
+<!--
 1. Consider the list `a` below which contains 20 random numbers.  Use the `sorted` function to create a new sorted list with the same numbers.
 
     ```python
@@ -3521,21 +3594,59 @@ Python has built in functions for sorting lists.  There are actually two.  One i
 
 2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
 
-3. Try `sorted("Hello?")` and `"Hello?".sort()`.  
+3. Try `sorted("Hello")` and `sorted("Goodbye")`.  Why aren't they in alphabetical order?  
 
-4. Consider the list of words in [words.txt](words.txt) (see below). Use the function `sorted()` to sort the words based on how long they are.  Hint: you can do this if you create a list of pairs with the length of the word followed by the word, e.g., `(3, "cat")`. 
+4. What happens if you try `"Hello".sort()`?  Why? 
 
-    ```python 
-    file = open("words.txt")
-    word_list = [line.strip() for line in file]
-    ```
-
-Brandon asked if there is a way to sort the pairs in reverse order so that the longest words come first.  Gyabaah pointed out that you can use the optional argument `reverse = True` in the function sorted:
-
-```python
-sorted_pairs = sorted(pairs_list, reverse = True)
-print(sorted_pairs)
-```
+5. Enter the command `help(sorted)` into the shell.  What are the two optional arguments for the `sorted` function? 
+-->
+<h4 id="lexicographical-ordering">Lexicographical Ordering</h4>
+<p>Python lets you use the comparison operators (<code>==</code>,
+<code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code>, and
+<code>&lt;=</code>) with lists. It compares lists
+<strong>lexicographically</strong>, which means it starts by comparing
+the first elements, then the second elements, and so on until the first
+difference is found. Python also compares other sequence types (tuples
+and strings) lexicographically. Both <code>sorted</code> and
+<code>.sort()</code> use this lexicographical ordering when you sort a
+list of sequences.</p>
+<ol type="1">
+<li><p>What are the values of each comparison below?</p>
+<ol type="a">
+<li><p><code>(1, 2) &lt; (3,1)</code></p></li>
+<li><p><code>(1, 2, 3) &gt; (1, 2)</code></p></li>
+<li><p><code>(1, 2, 3) &lt; [2, 3, 4]</code></p></li>
+</ol></li>
+</ol>
+<p>After that, we did this workshop:</p>
+<ul>
+<li><strong>Workshop:</strong> <a href="Sorting.pdf">Sorting</a></li>
+</ul>
+<h4 id="additional-practice-24">Additional Practice</h4>
+<ol type="1">
+<li><p>Use the <code>sorted</code> function to write a
+<code>median</code> function that inputs a list of numbers and returns
+the median number in the list. Recall that if a list has an even length,
+then the median number is the average of the two middle values.</p></li>
+<li><p>Consider the list of words in <a
+href="https://bclins.github.io/fall24/cs261/words.txt">words.txt</a>
+(see below).</p>
+<div class="sourceCode" id="cb91"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span></code></pre></div>
+<ol type="a">
+<li><p>Write a list comprehension to get a list of tuples. Each tuple in
+the list should be a pair with the length of a word, followed by that
+word, e.g., <code>(3, "cat")</code>.</p></li>
+<li><p>Use the function <code>sorted</code> on your list of
+tuples.</p></li>
+<li><p>After you have sorted your list of tuples, how could you extract
+a list with just the words, but still in the same order (short words
+first, long words last)?</p></li>
+</ol></li>
+</ol>
+<!-- 
+### Wed, Oct 28
 
 Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
 
@@ -3603,51 +3714,9 @@ Exercise we didn't have time for (not sure if it is good since it is a little tr
 5. Sort the words base on how many vowels they have
 
 (This would be a good exercise to introduce the key optional argument)
--->
-<hr />
-<h3 id="week-10-notes">Week 10 Notes</h3>
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Day</th>
-<th style="text-align: center;">Section</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Mon, Oct 26</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Sorting</td>
-</tr>
-<tr>
-<td style="text-align: center;">Wed, Oct 28</td>
-<td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.11">TP10.11</a></td>
-<td style="text-align: left;">Aliasing and mutability</td>
-</tr>
-<tr>
-<td style="text-align: center;">Thu, Oct 29</td>
-<td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2">C9.2</a></td>
-<td style="text-align: left;">Program structure</td>
-</tr>
-<tr>
-<td style="text-align: center;">Fri, Oct 30</td>
-<td style="text-align: center;"><a
-href="https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3">C9.3</a></td>
-<td style="text-align: left;">Function structure &amp; incremental
-development</td>
-</tr>
-</tbody>
-</table>
+
 <!--
-### Mon, Oct 26
+### Thu, Oct 29
 
 Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
 

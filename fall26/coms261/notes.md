@@ -2323,7 +2323,7 @@ Each step in a binary search cuts the length of the list by half. So the total n
 
 We say that binary search has a time complexity of $O(\log(n))$.  That means if we double the length of the list, it only takes one extra step to search for a target element.  That is much faster!  The disadvantage is that binary search only works if the list is already sorted. 
 
-We finished by talking about how to implement the binary search algorithm.  We use a recursive approach, but you could also use a while-loop (see the [Wikipedia article on binary search](https://en.wikipedia.org/wiki/Binary_search)).
+We finished by talking about how to implement the binary search algorithm.  We use a recursive approach, but you could also use a while-loop (see the [Wikipedia article on binary search](https://en.wikipedia.org/wiki/Binary_search)). <mark>Note: The recursive version that I wrote is slower than the non-recursive version because each time you slice a Python list you create a new list in memory and that takes $O(n)$ time.</mark>
  
 ```python
 def binary_search(seq, target):
@@ -2346,13 +2346,13 @@ def binary_search(seq, target):
 ```
 
 <!-- 
-Non-recursive version.  I decided this one would be a little harder to explain.
+Non-recursive version.  I decided this one would be a little harder to explain. But it is much faster!
 ```python
 def binary_search(sorted_list, target):
     lo = 0
     hi = len(sorted_list) 
     while (lo < hi):
-        m = (lo + hi) // 2
+       m = (lo + hi) // 2
         if sorted_list[m] == target:
             return True
         elif sorted_list[m] < target:
@@ -2382,13 +2382,23 @@ print(f"There are {count} misspelled words.")
 ```
 
 
+- - - 
+
+### Week 10 Notes
 
 
 
-<!--
-### Fri, Oct 23
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Oct 26 |  | Sorting
+Wed, Oct 28 | [TP10.11][TP10.11] | Aliasing and mutability
+Thu, Oct 29 | [C9.2][C9.2] | Program structure
+Fri, Oct 30 | [C9.3][C9.3] | Function structure & incremental development 
 
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  That only works with lists because they are mutable.  
+
+### Mon, Oct 26
+
+Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  
 
 
 <center>
@@ -2400,6 +2410,7 @@ Python has built in functions for sorting lists.  There are actually two.  One i
 </table>
 </center>
 
+<!--
 1. Consider the list `a` below which contains 20 random numbers.  Use the `sorted` function to create a new sorted list with the same numbers.
 
     ```python
@@ -2411,21 +2422,50 @@ Python has built in functions for sorting lists.  There are actually two.  One i
 
 2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
 
-3. Try `sorted("Hello?")` and `"Hello?".sort()`.  
+3. Try `sorted("Hello")` and `sorted("Goodbye")`.  Why aren't they in alphabetical order?  
 
-4. Consider the list of words in [words.txt](words.txt) (see below). Use the function `sorted()` to sort the words based on how long they are.  Hint: you can do this if you create a list of pairs with the length of the word followed by the word, e.g., `(3, "cat")`. 
+4. What happens if you try `"Hello".sort()`?  Why? 
+
+5. Enter the command `help(sorted)` into the shell.  What are the two optional arguments for the `sorted` function? 
+-->
+
+#### Lexicographical Ordering
+
+Python lets you use the comparison operators (`==`, `<`, `>`, `>=`, and `<=`) with lists.  It compares lists **lexicographically**, which means it starts by comparing the first elements, then the second elements, and so on until the first difference is found.   Python also compares other sequence types (tuples and strings) lexicographically.  Both `sorted` and `.sort()` use this lexicographical ordering when you sort a list of sequences.   
+
+1. What are the values of each comparison below?
+
+    a. `(1, 2) < (3,1)`
+
+    b. `(1, 2, 3) > (1, 2)`
+
+    c. `(1, 2, 3) < [2, 3, 4]`
+
+    
+After that, we did this workshop:
+
+* **Workshop:** [Sorting](Sorting.pdf)
+
+#### Additional Practice 
+
+1. Use the `sorted` function to write a `median` function that inputs a list of numbers and returns the median number in the list.  Recall that if a list has an even length, then the median number is the average of the two middle values. 
+
+2. Consider the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) (see below). 
 
     ```python 
-    file = open("words.txt")
-    word_list = [line.strip() for line in file]
+    with open("words.txt") as file:
+        words = [line.strip() for line in file]
     ```
 
-Brandon asked if there is a way to sort the pairs in reverse order so that the longest words come first.  Gyabaah pointed out that you can use the optional argument `reverse = True` in the function sorted:
+    a. Write a list comprehension to get a list of tuples.  Each tuple in the list should be a pair with the length of a word, followed by that word, e.g., `(3, "cat")`.  
 
-```python
-sorted_pairs = sorted(pairs_list, reverse = True)
-print(sorted_pairs)
-```
+    b. Use the function `sorted` on your list of tuples.  
+
+    c. After you have sorted your list of tuples, how could you extract a list with just the words, but still in the same order (short words first, long words last)?  
+
+
+<!-- 
+### Wed, Oct 28
 
 Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
 
@@ -2493,25 +2533,9 @@ Exercise we didn't have time for (not sure if it is good since it is a little tr
 5. Sort the words base on how many vowels they have
 
 (This would be a good exercise to introduce the key optional argument)
--->
-
-
-- - - 
-
-### Week 10 Notes
-
-
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Oct 26 |  | Sorting
-Wed, Oct 28 | [TP10.11][TP10.11] | Aliasing and mutability
-Thu, Oct 29 | [C9.2][C9.2] | Program structure
-Fri, Oct 30 | [C9.3][C9.3] | Function structure & incremental development 
-
 
 <!--
-### Mon, Oct 26
+### Thu, Oct 29
 
 Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
 
