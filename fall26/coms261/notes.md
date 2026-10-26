@@ -2398,40 +2398,8 @@ Fri, Oct 30 | [C9.3][C9.3] | Function structure & incremental development
 
 ### Mon, Oct 26
 
-Python has built in functions for sorting lists.  There are actually two.  One is a function called `sorted()` that will sort any iterable type.  The other is a `.sort()` method that sorts lists in place.  
+We started by talking about **lexicographical ordering** for sequence types. 
 
-
-<center>
-<table class="bordered">
-<tr><th>`sorted()` function</th><th>`.sort()` method</th></tr>
-<tr><td>Works for any iterable type </td><td>Only works for lists</td></tr>
-<tr><td>Returns a new list</td><td>Returns nothing (sorts in place)</td></tr>
-<tr><td>Slightly slower</td><td>Slightly faster</td></tr>
-</table>
-</center>
-
-<!--
-1. Consider the list `a` below which contains 20 random numbers.  Use the `sorted` function to create a new sorted list with the same numbers.
-
-    ```python
-    import random
-
-    # Create a random list of 20 numbers from 0 to 999. 
-    a = [random.randint(0,999) for k in range(20)]
-    ```
-
-2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
-
-3. Try `sorted("Hello")` and `sorted("Goodbye")`.  Why aren't they in alphabetical order?  
-
-4. What happens if you try `"Hello".sort()`?  Why? 
-
-5. Enter the command `help(sorted)` into the shell.  What are the two optional arguments for the `sorted` function? 
--->
-
-#### Lexicographical Ordering
-
-Python lets you use the comparison operators (`==`, `<`, `>`, `>=`, and `<=`) with lists.  It compares lists **lexicographically**, which means it starts by comparing the first elements, then the second elements, and so on until the first difference is found.   Python also compares other sequence types (tuples and strings) lexicographically.  Both `sorted` and `.sort()` use this lexicographical ordering when you sort a list of sequences.   
 
 1. What are the values of each comparison below?
 
@@ -2442,22 +2410,28 @@ Python lets you use the comparison operators (`==`, `<`, `>`, `>=`, and `<=`) wi
     c. `(1, 2, 3) < [2, 3, 4]`
 
     
-After that, we did this workshop:
+After that, we did this workshop about the `sort` method and the `sorted` function.
 
 * **Workshop:** [Sorting](Sorting.pdf)
 
+<!--
+<center>
+<table class="bordered">
+<tr><th>`sorted()` function</th><th>`.sort()` method</th></tr>
+<tr><td>Works for any iterable type </td><td>Only works for lists</td></tr>
+<tr><td>Returns a new list</td><td>Returns nothing (sorts in place)</td></tr>
+<tr><td>Slightly slower</td><td>Slightly faster</td></tr>
+</table>
+</center>
+-->
+
 #### Additional Practice 
 
-1. Use the `sorted` function to write a `median` function that inputs a list of numbers and returns the median number in the list.  Recall that if a list has an even length, then the median number is the average of the two middle values. 
+1. Use the `sorted` function to create a new function called `median`. The `median` function should input a list of numbers and return the median number in the list.  Recall that if a list has an even length, then the median number is the average of the two middle values. 
 
-2. Consider the list of words in [words.txt](https://bclins.github.io/fall24/cs261/words.txt) (see below). 
+2. Let `words = ["this", "is", "a", "cat"]. 
 
-    ```python 
-    with open("words.txt") as file:
-        words = [line.strip() for line in file]
-    ```
-
-    a. Write a list comprehension to get a list of tuples.  Each tuple in the list should be a pair with the length of a word, followed by that word, e.g., `(3, "cat")`.  
+    a. Write a list comprehension to convert `words` into a list of tuples.  Each tuple in the list should be a pair with the length of a word, followed by that word, e.g., `(3, "cat")`.  
 
     b. Use the function `sorted` on your list of tuples.  
 

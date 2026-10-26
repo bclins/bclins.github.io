@@ -863,17 +863,16 @@ Fri, Oct 30 |  [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 
 ### Mon, Oct 26
 
-Last week we introduced hypothesis testing:
+Today we talked about hypothesis testing again.
 
 <div class="Theorem">
 **One-Sample Hypothesis Test for a Proportion**
+
+<div  style="display: flex; justify-content: center;" > 
+
+<div>$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>$z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$</div>
  
-<center>
-<table>
-<tr>
-<td>$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$</td></tr>
-</table>
-</center>
+</div>
 
 This works best if you have at least 10 expected "successes" and 10 expected "failures".
 </div>

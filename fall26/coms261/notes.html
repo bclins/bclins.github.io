@@ -3542,74 +3542,8 @@ development</td>
 </tbody>
 </table>
 <h3 id="mon-oct-26">Mon, Oct 26</h3>
-<p>Python has built in functions for sorting lists. There are actually
-two. One is a function called <code>sorted()</code> that will sort any
-iterable type. The other is a <code>.sort()</code> method that sorts
-lists in place.</p>
-<center>
-<table class="bordered">
-<tr>
-<th>
-<code>sorted()</code> function
-</th>
-<th>
-<code>.sort()</code> method
-</th>
-</tr>
-<tr>
-<td>
-Works for any iterable type
-</td>
-<td>
-Only works for lists
-</td>
-</tr>
-<tr>
-<td>
-Returns a new list
-</td>
-<td>
-Returns nothing (sorts in place)
-</td>
-</tr>
-<tr>
-<td>
-Slightly slower
-</td>
-<td>
-Slightly faster
-</td>
-</tr>
-</table>
-</center>
-<!--
-1. Consider the list `a` below which contains 20 random numbers.  Use the `sorted` function to create a new sorted list with the same numbers.
-
-    ```python
-    import random
-
-    # Create a random list of 20 numbers from 0 to 999. 
-    a = [random.randint(0,999) for k in range(20)]
-    ```
-
-2. Try to use the `.sort()` method to sort `a` above.  What happens when you enter `print(a.sort())`?  
-
-3. Try `sorted("Hello")` and `sorted("Goodbye")`.  Why aren't they in alphabetical order?  
-
-4. What happens if you try `"Hello".sort()`?  Why? 
-
-5. Enter the command `help(sorted)` into the shell.  What are the two optional arguments for the `sorted` function? 
--->
-<h4 id="lexicographical-ordering">Lexicographical Ordering</h4>
-<p>Python lets you use the comparison operators (<code>==</code>,
-<code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code>, and
-<code>&lt;=</code>) with lists. It compares lists
-<strong>lexicographically</strong>, which means it starts by comparing
-the first elements, then the second elements, and so on until the first
-difference is found. Python also compares other sequence types (tuples
-and strings) lexicographically. Both <code>sorted</code> and
-<code>.sort()</code> use this lexicographical ordering when you sort a
-list of sequences.</p>
+<p>We started by talking about <strong>lexicographical ordering</strong>
+for sequence types.</p>
 <ol type="1">
 <li><p>What are the values of each comparison below?</p>
 <ol type="a">
@@ -3618,26 +3552,34 @@ list of sequences.</p>
 <li><p><code>(1, 2, 3) &lt; [2, 3, 4]</code></p></li>
 </ol></li>
 </ol>
-<p>After that, we did this workshop:</p>
+<p>After that, we did this workshop about the <code>sort</code> method
+and the <code>sorted</code> function.</p>
 <ul>
 <li><strong>Workshop:</strong> <a href="Sorting.pdf">Sorting</a></li>
 </ul>
+<!--
+<center>
+<table class="bordered">
+<tr><th>`sorted()` function</th><th>`.sort()` method</th></tr>
+<tr><td>Works for any iterable type </td><td>Only works for lists</td></tr>
+<tr><td>Returns a new list</td><td>Returns nothing (sorts in place)</td></tr>
+<tr><td>Slightly slower</td><td>Slightly faster</td></tr>
+</table>
+</center>
+-->
 <h4 id="additional-practice-24">Additional Practice</h4>
 <ol type="1">
-<li><p>Use the <code>sorted</code> function to write a
-<code>median</code> function that inputs a list of numbers and returns
-the median number in the list. Recall that if a list has an even length,
-then the median number is the average of the two middle values.</p></li>
-<li><p>Consider the list of words in <a
-href="https://bclins.github.io/fall24/cs261/words.txt">words.txt</a>
-(see below).</p>
-<div class="sourceCode" id="cb91"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;words.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> [line.strip() <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>]</span></code></pre></div>
+<li><p>Use the <code>sorted</code> function to create a new function
+called <code>median</code>. The <code>median</code> function should
+input a list of numbers and return the median number in the list. Recall
+that if a list has an even length, then the median number is the average
+of the two middle values.</p></li>
+<li><p>Let `words = [“this”, “is”, “a”, “cat”].</p>
 <ol type="a">
-<li><p>Write a list comprehension to get a list of tuples. Each tuple in
-the list should be a pair with the length of a word, followed by that
-word, e.g., <code>(3, "cat")</code>.</p></li>
+<li><p>Write a list comprehension to convert <code>words</code> into a
+list of tuples. Each tuple in the list should be a pair with the length
+of a word, followed by that word, e.g.,
+<code>(3, "cat")</code>.</p></li>
 <li><p>Use the function <code>sorted</code> on your list of
 tuples.</p></li>
 <li><p>After you have sorted your list of tuples, how could you extract

@@ -26,6 +26,7 @@ header-includes: |
 * **Office Location:** Pauley 301
 * **Free Textbook:** [OpenIntro Statistics, 4th edition](https://www.openintro.org/book/os/)
 * **Course Syllabus:** [syllabus.pdf](syllabus.pdf)
+* **Recommended Calculator:** Any scientific or graphing calculator.  I recommend the [TI-30xiis](https://www.amazon.com/Texas-Instruments-Scientific-Calculator-Accents/dp/B00000JBNX/ref=sr_1_3?adgrpid=128242025010&dib=eyJ2IjoiMSJ9.StGZcfFzSCqvzZBOTG52SFhhA-agFqxvJwO3SrbRiLCgJiAiJwjWsEeSPYL2fw79JsDUxLp96S9eV1T6gnH4b8Sft6FGHCD967sUEYR_KAp1eYxsUQTr16BqrXXZYr0YtQIbJG9kOvaRtHzpX5TndIB5mBy5noOQmttM71plG9ujfp509lTOyrYvSqGKV-bQcr-ISRiTnEGL6NGRXW6H9cdYU1iyt5u-mg5EwfMmb2A.f6w2MISCT1D0lny_JYWrF9SxGdhnsWxTYcqBok6WLes&dib_tag=se&hvadid=669669386769&hvdev=c&hvexpln=0&hvlocphy=1027155&hvnetw=g&hvocijid=9874049520381056846--&hvqmt=e&hvrand=9874049520381056846&hvtargid=kwd-333686305674&hydadcr=4702_13354365&keywords=ti-30xiis+scientific+calculator&mcid=41693872d31e365fad80acaf51f92582&qid=1793032038&sr=8-3) 
 
 
 ### Announcements
