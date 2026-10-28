@@ -2429,7 +2429,7 @@ After that, we did this workshop about the `sort` method and the `sorted` functi
 
 1. Use the `sorted` function to create a new function called `median`. The `median` function should input a list of numbers and return the median number in the list.  Recall that if a list has an even length, then the median number is the average of the two middle values. 
 
-2. Let `words = ["this", "is", "a", "cat"]. 
+2. Let `words = ["this", "is", "a", "cat"]`. 
 
     a. Write a list comprehension to convert `words` into a list of tuples.  Each tuple in the list should be a pair with the length of a word, followed by that word, e.g., `(3, "cat")`.  
 
@@ -2438,66 +2438,90 @@ After that, we did this workshop about the `sort` method and the `sorted` functi
     c. After you have sorted your list of tuples, how could you extract a list with just the words, but still in the same order (short words first, long words last)?  
 
 
-<!-- 
 ### Wed, Oct 28
 
-Today we talked about a major difference between lists and strings.  Lists are mutable but strings are immutable.  A type in Python is **immutable** if you can change anything about the value without completely creating a new instance. A type is **mutable** if you can modify parts of it without completely replacing it. This is one of the trickier things to understand.  
+We started by talking about the `bottom_two` function from the workshop last time.  Here is a bad way to implement the function:
 
-```python
-# You can change an element in a list but not in a string:
-example_list[1] = 'B' # now example_list is [1,'B',True]
-example_string[1] = 'I' # this is an error.  Strings a are immutable.  
+```python 
+def bottom_two(lst):
+    """Bad implementation (mutates the list).""" 
+    lst.sort()
+    return tuple(lst[:2])
+
+xs = [3, 5, 4, 1, 2]
+print(bottom_two(xs))
+print(xs)
 ```
 
-There are several methods that work for mutable sequence types like lists, but not for immutable sequences like strings.  These include the `.append()` method which adds an element to the end of a list, the `.pop()` method which removes and element from the end of a list (and returns its value), and the `.sort()` method which changes a list by putting its elements in sorted order.  
+That's a little weird, this function has a **side effect** which means that it affects the program in a way other than just the value it returns. In this case the function has the side effect of sorting the list in addition to returning its two lowest values. A **pure function** only affects the program by the value it returns.  You should usually try to write pure functions when possible.  Here is another example of a function that has a side effect. 
 
 ```python
-# Strings are immutable
-s = "You can't touch this!"
+def union(list1, list2):
+    result = list1
+    for item in list2:
+        if item not in result:
+            result.append(item)
+    return result
 
-"""When you create the string "You can't touch this!", it is frozen in computer memory.  
-You can reassign the variable s, but that doesn't change the string, it just makes s
-point to a different object in memory. 
-"""
-
-# Lists are mutable.  Changes made to a list will be remembered by the computer.  
-a = [1,2,3]
-
-"""Because of the way lists are stored in memory, two variables can refer to the same list
-object.  If you make changes to one variable, that will affect the other variable too!  
-This only happens with mutable types, so watch out for it.  
-"""
-b = a
-b.append(4)
-print(a) # Weird!!!
+# This function has a very weird side effect:
+xs = [1, 2, 3]
+ys = [3, 4, 5]
+print(union(xs, ys))
+print(xs)
+print(ys)
 ```
+
+To understand the second example, you have to understand **aliasing**. 
+
+1. Try this code.  What happens:
+
+    ```python
+    a = [3, 2, 1]
+    b = a
+    b.append(4)
+    print(a)
+    print(b)
+    ```
+
+2. Dictionaries & sets are also mutable, so you have to watch out for aliasing. What does the following code do?
+
+    ```python 
+    old_prices = {"apples": 3, "bananas": 2, "eggs": 2}
+    new_prices = old_prices
+    new_prices["eggs"] = 100
+    print(old_prices)
+    print(new_prices)
+    ```
+
+3. Consider the following code and try to predict what it will do. 
+
+    ```python
+    def add_item(lst, item):
+        lst.append(item)
+
+    def reassign(lst):
+        lst = [5]
+
+    lst = [1, 2, 3]
+    add_item(lst, 4)
+    print(lst)
+    reassign(lst)
+    print(lst)
+    ```
+
+Why doesn't `reassign` change `xs`? The `append` method mutates an existing object and all variables referencing that object will be affected.  But the command `lst = [5]` reassigns the local variable `lst` to reference a new object in memory, but that only affects the local variable, not the old object.  
+
 
 Try these experiments to get a feeling for how this works.
 
-1. Let `a = [1,2,3]` and `b = a + [4]`.  Does that change `a`?  
+4. Let `a = [1, 2, 3]` and `b = a + [4]`.  Does that change `a`?  
 
-2. What about `a = [1,2,3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
+5. What about `a = [1, 2, 3]` and `b = a` followed by `b += [4]`?  Does that change `a`?
 
-3. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`?
+Note that adding two lists creates a new list, but the `+=` operator does not! 
 
-Note that adding two lists creates a new list, but the `+=` operator does not!
-We finished with a cautionary example about the need to avoid unintended side-effects when working with mutable types:
+6. Let `x = "test"` and `y = x` followed by `y += "s"`. Does that change `x`? Why not?
 
-```python
-def average(numbers): 
-    n = len(numbers)
-    total = 0
-    for i in range(n):
-        total += numbers.pop()
-    return total / n
-
-data = [4, 5, 6]
-
-mean = average(data)
-print("The average of", data, "is", mean)
-```
-
-Observe that the way we got the numbers to add to the total had the side effect of erasing the data which isn't what we wanted at all!  
 
 
 
@@ -2505,8 +2529,7 @@ Observe that the way we got the numbers to add to the total had the side effect 
 Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):
 
 5. Sort the words base on how many vowels they have
-
-(This would be a good exercise to introduce the key optional argument)
+-->
 
 <!--
 ### Thu, Oct 29
@@ -3532,56 +3555,56 @@ print(median(a))
 
 - - - 
 
-[TP1]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.1>
-[TP2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.2>
-[TP3]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.3>
-[TP4]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.4>
-[TP5]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.5>
-[TP6]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.6>
-[TP7]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.7>
-[TP7.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.2>
-[TP7.3]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.7.3>
-[TP8]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.8>
-[TP9]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.9>
-[TP10]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.10>
-[TP10.7]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.7>
-[TP10.11]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.10.11>
-[TP11]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.11>
-[TP12]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.12>
-[TP13]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.13>
-[TP14]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.14>
-[TP14.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.14.2>
-[TP15]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.15>
-[TP16]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.16>
-[TP17]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.17>
-[TP18]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.18>
-[TP19]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#chapter.19>
-[TP19.2]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.2>
-[TP19.5]: <https://people.hsc.edu/faculty-staff/blins/books/thinkpython2.pdf#section.19.5>
+[TP1]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.1>
+[TP2]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.2>
+[TP3]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.3>
+[TP4]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.4>
+[TP5]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.5>
+[TP6]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.6>
+[TP7]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.7>
+[TP7.2]:  <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.7.2>
+[TP7.3]:  <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.7.3>
+[TP8]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.8>
+[TP9]:    <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.9>
+[TP10]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.10>
+[TP10.7]: <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.10.7>
+[TP10.11]:<https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.10.11>
+[TP11]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.11>
+[TP12]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.12>
+[TP13]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.13>
+[TP14]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.14>
+[TP14.2]: <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2>
+[TP15]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.15>
+[TP16]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.16>
+[TP17]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.17>
+[TP18]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.18>
+[TP19]:   <https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.19>
+[TP19.2]: <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.2>
+[TP19.5]: <https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.5>
 
 
-[C2]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.2>
-[C3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.3>
-[C4]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.4>
-[C5]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.5>
-[C6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.6>
-[C7]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.7>
-[C8]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.8>
-[C9]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.9>
-[C10]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.10>
-[C11]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.11>
-[C12]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.12>
-[C13]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.13>
-[C14]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.14>
-[C15]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.15>
-[C16]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.16>
-[C17]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#chapter.17>
+[C2]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.2>
+[C3]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.3>
+[C4]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.4>
+[C5]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.5>
+[C6]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.6>
+[C7]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.7>
+[C8]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.8>
+[C9]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.9>
+[C10]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.10>
+[C11]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.11>
+[C12]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.12>
+[C13]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.13>
+[C14]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.14>
+[C15]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.15>
+[C16]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.16>
+[C17]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#chapter.17>
 
-[C2.6]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.2.6>
-[C9.2]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.2>
-[C9.3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.9.3>
-[C10.1]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.1>
-[C10.3]: <https://people.hsc.edu/faculty-staff/blins/books/CafieroPython.pdf#section.10.3>
+[C2.6]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.2.6>
+[C9.2]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.9.2>
+[C9.3]:  <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.9.3>
+[C10.1]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.10.1>
+[C10.3]: <https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.10.3>
 
 <br>
 <br>

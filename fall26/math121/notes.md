@@ -655,7 +655,7 @@ Fri, Oct 16 | [5.2][5.2] | Confidence intervals for a proportion - con'd
 <!--
 Last time we saw that $\hat{p}$ is a random variable with a sampling distribution.  We started today with this exercise from the book:
 
-* [Exercise 5.4](http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#eoce.5.4)
+* [Exercise 5.4](https://www.biostat.jhsph.edu/iruczins/teaching/books/2019.openintro.statistics.pdf#eoce.5.4)
 -->
 
 Today we introduced confidence intervals for proportions. These are based on a simple idea: there is a 95% chance that the sample proportion $\hat{p}$ is no more than 2 standard deviations away from the true population proportion $p$.
@@ -870,18 +870,13 @@ Today we talked about hypothesis testing again.
 
 <div  style="display: flex; justify-content: center;" > 
 
-<div>$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>$z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$</div>
+<div>$\begin{array}{lr} H_0: & p = p_0 \\ H_A: & p \ne p_0 \end{array}$</div><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>$z = \dfrac{\hat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{N}}}.$</div>
  
 </div>
 
 This works best if you have at least 10 expected "successes" and 10 expected "failures".
 </div>
 
-When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
-
-1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
-2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
-$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 
 We started with this example:
 
@@ -915,10 +910,16 @@ The only difference is when you calculate the p-value, you use two tails of the 
 3. [Exercise 5.17](https://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#page=202)
 
 
-<!--
-### Fri, Mar 27
+### Wed, Oct 28
 
-One thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
+
+When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
+
+1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
+2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
+$$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
+
+Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
 
 In the back of your mind, remember there are four possible things that might happen in a null hypothesis. 
 <center>
@@ -932,19 +933,20 @@ If $H_0$ is true, then the significance level $\alpha$ that you choose is the pr
 
 In a criminal trial the prosecution tries to prove that the defendant is "guilty beyond a reasonable doubt".  Think of a type I error as when the jury convicts an innocent defendant.  A type II error would be if the jury does not convict someone who is actually guilty. 
 
+1. If I'm not psychic, but I make enough lucky guesses with Zener cards, it might look like strong evidence that I am pyschic. What type of error is this? 
+
+2. This semester, 28 out of 54 students in my statistics classes were born in Virginia.  This turns out to be inconclusive evidence if we want to reject the null hypothesis that exactly half of HSC students are from Virginia.  What type of error might we be making if we don't reject the null?
+
+
 After that, we introduced:
 
 <div class="Theorem">
 **Two-Sample Hypothesis Test for Proportions.** 
 
-<center>
 
-<table>
-<tr>
-<td>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</td><td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td><td>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</td>
-</tr>
-</table>
-</center>
+<div  style="display: flex; justify-content: center;" > 
+<div>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</div><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</div>
+</div>
 
 where $\hat{p}$ is the **pooled proportion**:
 $$\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}.$$
@@ -963,7 +965,6 @@ We didn't have time to talk about the theory behind the two sample test for prop
 * **Spread:** The standard deviation is 
 $$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
 
--->
 
 - - - 
 
@@ -1386,44 +1387,44 @@ Today we went over answers to the [review questions for the final exam](https://
 
 
 
-[1.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.2>
-[1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.3>
-[1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.1.4>
-[2.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.1>
-[2.1.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.1>
-[2.1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.3>
-[2.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.4>
-[2.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.2.1.5>
-[2.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.2>
-[2.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.2.3>
-[3.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.1>
-[3.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.2>
-[3.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.4>
-[3.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.3.5>
-[4.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.4.1>
-[4.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.4.1.4>
-[4.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.4.1.5>
-[4.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.4.3>
-[5.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.1>
-[5.1.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.1.3>
-[5.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.2>
-[5.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.5.3>
-[5.3.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.5.3.3>
-[6.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.1>
-[6.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.2>
-[6.2.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.6.2.3>
-[6.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.3>
-[6.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.6.4>
-[7.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.1>
-[7.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.1.4>
-[7.1.5]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.7.1.5>
-[7.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.2>
-[7.3]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.3>
-[7.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.7.4>
-[8.1]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.1>
-[8.1.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#subsection.8.1.4>
-[8.2]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.2>
-[8.4]: <http://people.hsc.edu/faculty-staff/blins/books/OpenIntroStats4e.pdf#section.8.4>
+[1.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.1.2>
+[1.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.1.3>
+[1.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.1.4>
+[2.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.2.1>
+[2.1.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.2.1.1>
+[2.1.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.2.1.3>
+[2.1.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.2.1.4>
+[2.1.5]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.2.1.5>
+[2.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.2.2>
+[2.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.2.3>
+[3.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.3.1>
+[3.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.3.2>
+[3.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.3.4>
+[3.5]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.3.5>
+[4.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.4.1>
+[4.1.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.4.1.4>
+[4.1.5]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.4.1.5>
+[4.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.4.3>
+[5.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.5.1>
+[5.1.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.5.1.3>
+[5.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.5.2>
+[5.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.5.3>
+[5.3.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.5.3.3>
+[6.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.6.1>
+[6.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.6.2>
+[6.2.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.6.2.3>
+[6.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.6.3>
+[6.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.6.4>
+[7.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.7.1>
+[7.1.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.7.1.4>
+[7.1.5]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.7.1.5>
+[7.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.7.2>
+[7.3]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.7.3>
+[7.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.7.4>
+[8.1]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.8.1>
+[8.1.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#subsection.8.1.4>
+[8.2]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.8.2>
+[8.4]: <https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.statistics.pdf#section.8.4>
 [Wk01]: <>
 
 <br>
