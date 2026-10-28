@@ -52,7 +52,7 @@ Week | Topic                      | Notes | Projects
 7  | Files                                | [Week 07](notes.html#week-7-notes)  | 
 8  | Dictionaries                         | [Week 08](notes.html#week-8-notes)  | [Project 3](project3.pdf)
 9  | Tuples                               | [Week 09](notes.html#week-9-notes)  | 
-10 | Searching and sorting                | [Week 10](notes.html#week-10-notes) | 
+10 | Searching and sorting                | [Week 10](notes.html#week-10-notes) | [Project 4](project4.pdf)
 11 | Program structure                    | [Week 11](notes.html#week-11-notes) | 
 12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
 13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 

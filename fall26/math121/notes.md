@@ -912,14 +912,17 @@ The only difference is when you calculate the p-value, you use two tails of the 
 
 ### Wed, Oct 28
 
-
 When we do a hypothesis test, we need to make sure that the **assumptions of a hypothesis test** are satisfied.  There are two that we need to check:
 
 1. **No Bias**. Data should come from a simple random sample (SRS) from the population.
 2. **Normality**. Sample size should be large enough to trust that $\hat{p}$ will be normally distributed.  Based on the $p_0$ from the null hypothesis, you should expect at least 10 success and 10 failures. So you need both
 $$n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.$$
 
+#### Significance Levels
+
 Another thing you have to decide when you do a hypothesis test is how strong the evidence needs to be in order to convince you to reject the null hypothesis.  Historically people aimed for a **significance level** of $\alpha = 5\%$.  A p-value smaller than that was usually considered strong enough evidence to reject $H_0$.  Now people often want stronger evidence than that, so you might want to aim for a significance level of $\alpha = 1\%$.  In some subjects like physics where things need to be super rigorous they use even lower values for $\alpha$.  Unlike the p-value, you pick the significance level $\alpha$ before you look at the data.  
+
+#### Types of Errors
 
 In the back of your mind, remember there are four possible things that might happen in a null hypothesis. 
 <center>
@@ -937,8 +940,23 @@ In a criminal trial the prosecution tries to prove that the defendant is "guilty
 
 2. This semester, 28 out of 54 students in my statistics classes were born in Virginia.  This turns out to be inconclusive evidence if we want to reject the null hypothesis that exactly half of HSC students are from Virginia.  What type of error might we be making if we don't reject the null?
 
+#### Comparing Two Proportions
 
-After that, we introduced:
+After that, we rushed a bit at the end to squeeze in this example.  
+
+1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
+ 
+We introduced a little theory that we needed to answer this question.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
+
+* **Shape:** Approximately normal.
+* **Center:** Equal to the true population gap $p_A - p_B$.
+* **Spread:** The standard deviation is 
+$$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
+
+Based on this, we estimated a standard deviation of about 2.7% so our sample gap of 2.2% is not very strong evidence that men and women have significantly different opinions about how exciting their lives are.
+
+<!--
+### Fri, Oct 30
 
 <div class="Theorem">
 **Two-Sample Hypothesis Test for Proportions.** 
@@ -953,34 +971,6 @@ $$\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}
 
 This test requires at least 5 successes and 5 failures in each group to be trustworthy.
 </div>
-
-We rushed a bit at the end to squeeze in this example.  
-
-1. In the 2008 General Social Survey, people were asked to rate their lives as exciting, routine, or dull. 300 out of 610 men in the study said their lives were exciting versus 347 out of 739. Is that strong evidence that there is a difference between the proportions of men and women who find their lives exciting?
-
-We didn't have time to talk about the theory behind the two sample test for proportions but here is a little about that if you are interested.  In a *large enough* random sample from two populations A and B, the gap between the sample proportions $\hat{p}_A - \hat{p}_B$ has a sampling distribution with:
-
-* **Shape:** Approximately normal.
-* **Center:** Equal to the true population gap $p_A - p_B$.
-* **Spread:** The standard deviation is 
-$$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
-
-
-- - - 
-
-### Week 11 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 2 | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
-Wed, Nov 4 | [7.1][7.1]     | Introducing the t-distribution
-Fri, Nov 6 | [7.1.4][7.1.4] | One sample t-confidence intervals
-
-<!--
-### Mon, Mar 20
-
-
-We started with another 2-sample hypothesis test. 
 
 1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
 
@@ -1003,6 +993,25 @@ Because the formulas for two-sample confidence intervals and hypothesis tests ar
 
 
 2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
+
+
+-->
+
+
+- - - 
+
+### Week 11 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 2 | [6.2.3][6.2.3] | Difference of two proportions (confidence intervals)
+Wed, Nov 4 | [7.1][7.1]     | Introducing the t-distribution
+Fri, Nov 6 | [7.1.4][7.1.4] | One sample t-confidence intervals
+
+<!--
+### Mon, Mar 20
+
+
 
 
 ### Wed, Nov 5

@@ -1594,6 +1594,7 @@ from the null hypothesis, you should expect at least 10 success and 10
 failures. So you need both
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><msub><mi>p</mi><mn>0</mn></msub><mo>≥</mo><mn>10</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>n</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>10</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">n p_0 \ge 10 \text{ and } n (1-p_0) \ge 10.</annotation></semantics></math></li>
 </ol>
+<h4 id="significance-levels">Significance Levels</h4>
 <p>Another thing you have to decide when you do a hypothesis test is how
 strong the evidence needs to be in order to convince you to reject the
 null hypothesis. Historically people aimed for a <strong>significance
@@ -1611,6 +1612,7 @@ they use even lower values for
 Unlike the p-value, you pick the significance level
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>
 before you look at the data.</p>
+<h4 id="types-of-errors">Types of Errors</h4>
 In the back of your mind, remember there are four possible things that
 might happen in a null hypothesis.
 <center>
@@ -1682,28 +1684,9 @@ want to reject the null hypothesis that exactly half of HSC students are
 from Virginia. What type of error might we be making if we don’t reject
 the null?</p></li>
 </ol>
-<p>After that, we introduced:</p>
-<div class="Theorem">
-<p><strong>Two-Sample Hypothesis Test for Proportions.</strong></p>
-<div style="display: flex; justify-content: center;">
-<div>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>=</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>H</mi><mi>A</mi></msub><mo>:</mo></mtd><mtd columnalign="right" style="text-align: right"><msub><mi>p</mi><mi>A</mi></msub><mo>≠</mo><msub><mi>p</mi><mi>B</mi></msub></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{array}{lr} H_0: &amp; p_A = p_B \\ H_A: &amp; p_A \ne p_B \end{array}</annotation></semantics></math>
-</div>
-<div>
-           
-</div>
-<div>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub></mrow><msqrt><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mn>1</mn><msub><mi>n</mi><mi>B</mi></msub></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt></mfrac></mstyle><mi>.</mi></mrow><annotation encoding="application/x-tex">z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.</annotation></semantics></math>
-</div>
-</div>
-<p>where
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>p</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat{p}</annotation></semantics></math>
-is the <strong>pooled proportion</strong>:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>p</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> Total number of successes in both samples </mtext><mspace width="0.333em"></mspace></mrow><mrow><msub><mi>n</mi><mi>A</mi></msub><mo>+</mo><msub><mi>n</mi><mi>B</mi></msub></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}.</annotation></semantics></math></p>
-<p>This test requires at least 5 successes and 5 failures in each group
-to be trustworthy.</p>
-</div>
-<p>We rushed a bit at the end to squeeze in this example.</p>
+<h4 id="comparing-two-proportions">Comparing Two Proportions</h4>
+<p>After that, we rushed a bit at the end to squeeze in this
+example.</p>
 <ol type="1">
 <li>In the 2008 General Social Survey, people were asked to rate their
 lives as exciting, routine, or dull. 300 out of 610 men in the study
@@ -1711,10 +1694,9 @@ said their lives were exciting versus 347 out of 739. Is that strong
 evidence that there is a difference between the proportions of men and
 women who find their lives exciting?</li>
 </ol>
-<p>We didn’t have time to talk about the theory behind the two sample
-test for proportions but here is a little about that if you are
-interested. In a <em>large enough</em> random sample from two
-populations A and B, the gap between the sample proportions
+<p>We introduced a little theory that we needed to answer this question.
+In a <em>large enough</em> random sample from two populations A and B,
+the gap between the sample proportions
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>A</mi></msub><mo>−</mo><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">\hat{p}_A - \hat{p}_B</annotation></semantics></math>
 has a sampling distribution with:</p>
 <ul>
@@ -1724,6 +1706,50 @@ has a sampling distribution with:</p>
 <li><strong>Spread:</strong> The standard deviation is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mrow><mfrac><mrow><msub><mi>p</mi><mi>A</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>A</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><msub><mi>N</mi><mi>A</mi></msub></mfrac><mo>+</mo><mfrac><mrow><msub><mi>p</mi><mi>B</mi></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mi>B</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><msub><mi>N</mi><mi>B</mi></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.</annotation></semantics></math></li>
 </ul>
+<p>Based on this, we estimated a standard deviation of about 2.7% so our
+sample gap of 2.2% is not very strong evidence that men and women have
+significantly different opinions about how exciting their lives are.</p>
+<!--
+### Fri, Oct 30
+
+<div class="Theorem">
+**Two-Sample Hypothesis Test for Proportions.** 
+
+
+<div  style="display: flex; justify-content: center;" > 
+<div>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</div><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</div>
+</div>
+
+where $\hat{p}$ is the **pooled proportion**:
+$$\hat{p} = \frac{\text{ Total number of successes in both samples }}{n_A + n_B}.$$
+
+This test requires at least 5 successes and 5 failures in each group to be trustworthy.
+</div>
+
+1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
+
+As with any statistical inference method, the 2-sample test for proportions is based on two key assumptions:
+
+* **No Bias**: Data should come from a simple random sample.
+* **Normality:** Should have at least 5 successes and failures for each group.  
+
+If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
+
+<div class="Theorem">
+**Two-sample confidence interval for proportions.**
+
+$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
+
+Works best if both samples contain at least 10 successes and 10 failures.
+</div>
+
+Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
+
+
+2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
+
+
+-->
 <hr />
 <h3 id="week-11-notes">Week 11 Notes</h3>
 <table>
@@ -1765,29 +1791,6 @@ href="https://www.biostat.jhsph.edu/~iruczins/teaching/books/2019.openintro.stat
 ### Mon, Mar 20
 
 
-We started with another 2-sample hypothesis test. 
-
-1. In 2012, the Atheist Shoe Company noticed that packages they sent to customers in the USA were getting lost in the mail. So they did an experiment. They mailed 89 packages that were clearly labeled with the Atheist brand logo, and they also sent 89 unmarked packages in plain boxes. 9 out of the 89 labeled packages did not arrive on time compared with only 1 out of 89 unlabeled packages. Is that a statistically significant difference? (See this website for more details: [Atheist shoes experiment](https://atheist.shoes/pages/usps-study))
-
-As with any statistical inference method, the 2-sample test for proportions is based on two key assumptions:
-
-* **No Bias**: Data should come from a simple random sample.
-* **Normality:** Should have at least 5 successes and failures for each group.  
-
-If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
-
-<div class="Theorem">
-**Two-sample confidence interval for proportions.**
-
-$$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
-
-Works best if both samples contain at least 10 successes and 10 failures.
-</div>
-
-Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
-
-
-2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
 ### Wed, Nov 5
