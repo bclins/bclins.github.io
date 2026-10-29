@@ -2438,7 +2438,15 @@ After that, we did this workshop about the `sort` method and the `sorted` functi
     c. After you have sorted your list of tuples, how could you extract a list with just the words, but still in the same order (short words first, long words last)?  
 
 
+<!-- 
+Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):
+
+5. Sort the words base on how many vowels they have
+-->
+
 ### Wed, Oct 28
+
+<!-- NOTE TO SELF: This seemed like it would be a lot of material, but we actually finished 10 minutes early.  So add some extra practice problems at the end next time! -->
 
 We started by talking about the `bottom_two` function from the workshop last time.  Here is a bad way to implement the function:
 
@@ -2525,13 +2533,6 @@ Note that adding two lists creates a new list, but the `+=` operator does not!
 
 
 
-<!-- 
-Exercise we didn't have time for (not sure if it is good since it is a little tricky to count the vowels):
-
-5. Sort the words base on how many vowels they have
--->
-
-<!--
 ### Thu, Oct 29
 
 Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
@@ -2548,45 +2549,59 @@ Up to now, we haven't worried much about how we structure our programs.  A simpl
 5. **Main Function**.  Any code that you want to execute automatically when you run your program should be put into a function called `main()`.  It is your choice whether to put the `main()` function at the top or bottom of your program, but you always call the `main()` function at the very end of the program.  
 </div>
 
-We constructed an example Python program called `dictionary_tools.py` in class. 
+We constructed two example Python programs in class. One called `vowels.py` and one called `stat_tools.py`. 
 
 ```python
 """
-Dictionary tools.  
+Program: Vowels
 Author: Brian Lins
 
-This program contains some useful functions for working with dictionaries. 
+This program has tools for working with vowels in strings.
+"""
+
+VOWELS = "aeiouAEIOU"
+
+def count_vowels(string):
+    """Returns the numbers of vowels in a string."""
+
+def remove_vowels(string):
+    """Removes all of the vowels from a string."""
+
+def main():
+    example_string = "The quick brown fox jumped over the lazy dog."
+    print(count_vowels(example_string))
+    print(remove_vowels(example_string))
+    
+if __name__ == "__main__":
+    main() 
+
+```
+
+```python
+"""
+Statistics tools.  
+Author: Brian Lins
+
+This program contains some useful statistics functions for working with lists of numbers. 
 """
 
 import math
 
-def map_values(d, f):
-    """Applies a function f to every value in d and returns a new dictionary."""
-    return {key: f(value) for key, value in d.items()} 
+def average(nums):
+    """Returns the average of a list of numbers."""
 
-def key_with_max_value(d):
-    """Returns the key with the largest value in d."""
-    best_key, best_value = None, None
-    # I got a little confused in class trying to figure out the best way to proceed here. 
-    # You need an initial value for the best_key and best_value.  Here is one approach.
-    for key, value in d.items():
-        if best_key == None or best_value < value:
-            best_key, best_value = key, value
-    return best_key
+def median(nums):
+    """Returns the median of a list of numbers."""
 
 def main():
-    example_dict = {"A": 1, "B": 2, "C": 3}
-    print(map_values(example_dict, math.exp))
-    print(key_with_max_value(example_dict))
+    example_nums = [1, 2, 3, 4, 10]
+    print("Average:", average(example_nums)
+    print("Median:", median(example_nums)
     
 if __name__ == "__main__":
     main() 
 ```
 
-<!--NOTE TO SELF: I ran into a little trouble today in class when I tried to write this program because
-I couldn't think of a good way to get the first key, value pair. My solution in class was clunky involving booleans and an if-else statement. This is a better that I came up with later.-->
-
-<!--
 Notice the last two lines in the program. In Python there is weird recommended way to call the `main()` function: 
 
 ```python
@@ -2626,7 +2641,17 @@ Another example of a dunder variable is `__doc__`.  Every function has a `__doc_
     
     What is the value of `example_function.__doc__`?
 
+#### Additional Practice
 
+1. Given a list of $n$ numbers $x_0, x_1, \ldots, x_{n-1}$, the q-th quartile should be located at index $i$ where 
+$$i = \frac{(n-1)q}{4}.$$
+Therefore, if $i$ is an integer, then the $q$-th quartile is $x_i$.  However, if $i$ is not an integer, then you need to interpolate between the two points closest to that location.
+In that case, the formula for the quartile is 
+$$(i - k) x_k + (m - i) x_{m}$$
+where 
+$$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
+
+<!--
 ### Fri, Oct 25
 
 Last time we talked about the structure of programs.  Today we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.  
