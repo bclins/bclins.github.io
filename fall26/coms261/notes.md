@@ -2535,21 +2535,21 @@ Note that adding two lists creates a new list, but the `+=` operator does not!
 
 ### Thu, Oct 29
 
-Up to now, we haven't worried much about how we structure our programs.  A simple recommended layout for a Python program is the following:
+Up to now, we haven't worried much about how we structure our programs. Here is the recommended layout for a Python program.
 
 <div class="Theorem">
 1. **Docstring**. Start with a docstring that includes your name (as the author of the program) along with a brief description of what the program does. 
 
-2. **Imports** (if any). If you need to import any modules, the import statements go right after the docstring, near the top of the file. 
+2. **Imports** (if any). If you need any modules, the import statements go right after the docstring, near the top of the file. 
 
-3. **Constants** (if any). Put any constants next.  Note: try to use as few constants as possible, and avoid using any non-constant global variables if you can.  
+3. **Constants** (if any). Put any global constants next. Try to use as few constants as possible, and avoid using any non-constant global variables if you can.  
 
 4. **Function Definitions**.  These will usually be the biggest part of any program.  
 
 5. **Main Function**.  Any code that you want to execute automatically when you run your program should be put into a function called `main()`.  It is your choice whether to put the `main()` function at the top or bottom of your program, but you always call the `main()` function at the very end of the program.  
 </div>
 
-We constructed two example Python programs in class. One called `vowels.py` and one called `stat_tools.py`. 
+We constructed an example Python program called `vowels.py`. 
 
 ```python
 """
@@ -2563,9 +2563,19 @@ VOWELS = "aeiouAEIOU"
 
 def count_vowels(string):
     """Returns the numbers of vowels in a string."""
+    total = 0
+    for c in string:
+        if c in VOWELS:
+            total += 1
+    return total
 
 def remove_vowels(string):
     """Removes all of the vowels from a string."""
+    new_string = ""
+    for c in string:
+        if c not in VOWELS:
+            new_string += c
+    return new_string
 
 def main():
     example_string = "The quick brown fox jumped over the lazy dog."
@@ -2575,31 +2585,6 @@ def main():
 if __name__ == "__main__":
     main() 
 
-```
-
-```python
-"""
-Statistics tools.  
-Author: Brian Lins
-
-This program contains some useful statistics functions for working with lists of numbers. 
-"""
-
-import math
-
-def average(nums):
-    """Returns the average of a list of numbers."""
-
-def median(nums):
-    """Returns the median of a list of numbers."""
-
-def main():
-    example_nums = [1, 2, 3, 4, 10]
-    print("Average:", average(example_nums)
-    print("Median:", median(example_nums)
-    
-if __name__ == "__main__":
-    main() 
 ```
 
 Notice the last two lines in the program. In Python there is weird recommended way to call the `main()` function: 
@@ -2641,8 +2626,25 @@ Another example of a dunder variable is `__doc__`.  Every function has a `__doc_
     
     What is the value of `example_function.__doc__`?
 
+#### Practice
+
+1. Create a Python module called `stat_tools.py`.  Your module should include a docstring with your name and a description of the program.  You should also include the following functions:
+
+    - An `average` function that inputs a list of numbers and returns the average.
+    - A `median` function that inputs a list of numbers and returns the median.  
+    - A `main` function that includes some examples of how to use the other functions.  
+
+2. Import your `stat_tools.py` module into another Python script.  Test it out and see if it works! 
+
 #### Additional Practice
 
+1. Add a `mode` function to your `stat_tools.py` module.  Recall that the mode is the number that occurs the most often.
+
+1. The **standard deviation** of a list of $n$ numbers $x_0, x_1, x_2, \ldots, x_{n-1}$ is defined by the formula
+$$\sqrt{\sum_{i = 0}^{n-1} \frac{(x_i -\bar{x})^2}{n-1}}$$
+where $\bar{x}$ is the average.  Write a Python function called `stdev` to calculate the standard deviation of a list of numbers, and add it to your `stat_tools.py` module. 
+
+<!--
 1. Given a list of $n$ numbers $x_0, x_1, \ldots, x_{n-1}$, the q-th quartile should be located at index $i$ where 
 $$i = \frac{(n-1)q}{4}.$$
 Therefore, if $i$ is an integer, then the $q$-th quartile is $x_i$.  However, if $i$ is not an integer, then you need to interpolate between the two points closest to that location.
@@ -2650,6 +2652,7 @@ In that case, the formula for the quartile is
 $$(i - k) x_k + (m - i) x_{m}$$
 where 
 $$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
+-->
 
 <!--
 ### Fri, Oct 25

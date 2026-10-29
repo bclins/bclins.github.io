@@ -3682,18 +3682,17 @@ followed by <code>b += [4]</code>? Does that change
 </ol>
 <h3 id="thu-oct-29">Thu, Oct 29</h3>
 <p>Up to now, we haven’t worried much about how we structure our
-programs. A simple recommended layout for a Python program is the
-following:</p>
+programs. Here is the recommended layout for a Python program.</p>
 <div class="Theorem">
 <ol type="1">
 <li><p><strong>Docstring</strong>. Start with a docstring that includes
 your name (as the author of the program) along with a brief description
 of what the program does.</p></li>
-<li><p><strong>Imports</strong> (if any). If you need to import any
-modules, the import statements go right after the docstring, near the
-top of the file.</p></li>
-<li><p><strong>Constants</strong> (if any). Put any constants next.
-Note: try to use as few constants as possible, and avoid using any
+<li><p><strong>Imports</strong> (if any). If you need any modules, the
+import statements go right after the docstring, near the top of the
+file.</p></li>
+<li><p><strong>Constants</strong> (if any). Put any global constants
+next. Try to use as few constants as possible, and avoid using any
 non-constant global variables if you can.</p></li>
 <li><p><strong>Function Definitions</strong>. These will usually be the
 biggest part of any program.</p></li>
@@ -3706,8 +3705,8 @@ program.<br />
 </p></li>
 </ol>
 </div>
-<p>We constructed two example Python programs in class. One called
-<code>vowels.py</code> and one called <code>stat_tools.py</code>.</p>
+<p>We constructed an example Python program called
+<code>vowels.py</code>.</p>
 <div class="sourceCode" id="cb96"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="co">Program: Vowels</span></span>
@@ -3720,49 +3719,36 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a h
 <span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(string):</span>
 <span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the numbers of vowels in a string.&quot;&quot;&quot;</span></span>
-<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_vowels(string):</span>
-<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Removes all of the vowels from a string.&quot;&quot;&quot;</span></span>
-<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb96-17"><a href="#cb96-17" aria-hidden="true" tabindex="-1"></a>    example_string <span class="op">=</span> <span class="st">&quot;The quick brown fox jumped over the lazy dog.&quot;</span></span>
-<span id="cb96-18"><a href="#cb96-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count_vowels(example_string))</span>
-<span id="cb96-19"><a href="#cb96-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(remove_vowels(example_string))</span>
-<span id="cb96-20"><a href="#cb96-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb96-21"><a href="#cb96-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb96-22"><a href="#cb96-22" aria-hidden="true" tabindex="-1"></a>    main() </span></code></pre></div>
-<div class="sourceCode" id="cb97"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="co">Statistics tools.  </span></span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="co">Author: Brian Lins</span></span>
-<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a><span class="co">This program contains some useful statistics functions for working with lists of numbers. </span></span>
-<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> average(nums):</span>
-<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the average of a list of numbers.&quot;&quot;&quot;</span></span>
-<span id="cb97-12"><a href="#cb97-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-13"><a href="#cb97-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> median(nums):</span>
-<span id="cb97-14"><a href="#cb97-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Returns the median of a list of numbers.&quot;&quot;&quot;</span></span>
-<span id="cb97-15"><a href="#cb97-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-16"><a href="#cb97-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb97-17"><a href="#cb97-17" aria-hidden="true" tabindex="-1"></a>    example_nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">10</span>]</span>
-<span id="cb97-18"><a href="#cb97-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Average:&quot;</span>, average(example_nums)</span>
-<span id="cb97-19"><a href="#cb97-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Median:&quot;</span>, median(example_nums)</span>
-<span id="cb97-20"><a href="#cb97-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb97-21"><a href="#cb97-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb97-22"><a href="#cb97-22" aria-hidden="true" tabindex="-1"></a>    main() </span></code></pre></div>
+<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> string:</span>
+<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c <span class="kw">in</span> VOWELS:</span>
+<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a>            total <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total</span>
+<span id="cb96-17"><a href="#cb96-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-18"><a href="#cb96-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_vowels(string):</span>
+<span id="cb96-19"><a href="#cb96-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Removes all of the vowels from a string.&quot;&quot;&quot;</span></span>
+<span id="cb96-20"><a href="#cb96-20" aria-hidden="true" tabindex="-1"></a>    new_string <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb96-21"><a href="#cb96-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> string:</span>
+<span id="cb96-22"><a href="#cb96-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c <span class="kw">not</span> <span class="kw">in</span> VOWELS:</span>
+<span id="cb96-23"><a href="#cb96-23" aria-hidden="true" tabindex="-1"></a>            new_string <span class="op">+=</span> c</span>
+<span id="cb96-24"><a href="#cb96-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_string</span>
+<span id="cb96-25"><a href="#cb96-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-26"><a href="#cb96-26" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb96-27"><a href="#cb96-27" aria-hidden="true" tabindex="-1"></a>    example_string <span class="op">=</span> <span class="st">&quot;The quick brown fox jumped over the lazy dog.&quot;</span></span>
+<span id="cb96-28"><a href="#cb96-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count_vowels(example_string))</span>
+<span id="cb96-29"><a href="#cb96-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(remove_vowels(example_string))</span>
+<span id="cb96-30"><a href="#cb96-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb96-31"><a href="#cb96-31" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb96-32"><a href="#cb96-32" aria-hidden="true" tabindex="-1"></a>    main() </span></code></pre></div>
 <p>Notice the last two lines in the program. In Python there is weird
 recommended way to call the <code>main()</code> function:</p>
-<div class="sourceCode" id="cb98"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can call the main function this way:</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>main()</span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co"># But this is the recommended way to call main:</span></span>
-<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
-<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You can call the main function this way:</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>main()</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="co"># But this is the recommended way to call main:</span></span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
 <p>This recommendation has to do with the structure of more complicated
 Python programs. Python programs can import other Python programs as
 modules to build more complex programs. When you import a module, you
@@ -3779,8 +3765,8 @@ of the module.</p>
 <li><p>Create two <code>.py</code> files. Call one
 <code>test_module.py</code> and the other <code>test_script.py</code>.
 In each file, include the following line:</p>
-<div class="sourceCode" id="cb99"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">__name__</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">__name__</span>)</span></code></pre></div>
 <p>In the <code>test_script.py</code> file also add a line to
 <code>import test_module</code>. Now run
 <code>test_script.py</code>.</p></li>
@@ -3799,36 +3785,55 @@ of writing a clear docstring to explain what each function does.</p>
 <ol start="3" type="1">
 <li><p>What happens if you use an inline comment like the example below
 instead of a docstring?</p>
-<div class="sourceCode" id="cb100"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an example function. </span></span>
-<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Hi!&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example_function():</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is an example function. </span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&quot;Hi!&quot;</span></span></code></pre></div>
 <p>What is the value of <code>example_function.__doc__</code>?</p></li>
+</ol>
+<h4 id="practice-7">Practice</h4>
+<ol type="1">
+<li><p>Create a Python module called <code>stat_tools.py</code>. Your
+module should include a docstring with your name and a description of
+the program. You should also include the following functions:</p>
+<ul>
+<li>An <code>average</code> function that inputs a list of numbers and
+returns the average.</li>
+<li>A <code>median</code> function that inputs a list of numbers and
+returns the median.<br />
+</li>
+<li>A <code>main</code> function that includes some examples of how to
+use the other functions.</li>
+</ul></li>
+<li><p>Import your <code>stat_tools.py</code> module into another Python
+script. Test it out and see if it works!</p></li>
 </ol>
 <h4 id="additional-practice-25">Additional Practice</h4>
 <ol type="1">
-<li>Given a list of
+<li><p>Add a <code>mode</code> function to your
+<code>stat_tools.py</code> module. Recall that the mode is the number
+that occurs the most often.</p></li>
+<li><p>The <strong>standard deviation</strong> of a list of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 numbers
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_0, x_1, \ldots, x_{n-1}</annotation></semantics></math>,
-the q-th quartile should be located at index
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_0, x_1, x_2, \ldots, x_{n-1}</annotation></semantics></math>
+is defined by the formula
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{\sum_{i = 0}^{n-1} \frac{(x_i -\bar{x})^2}{n-1}}</annotation></semantics></math>
 where
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>q</mi></mrow><mn>4</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">i = \frac{(n-1)q}{4}.</annotation></semantics></math>
-Therefore, if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
-is an integer, then the
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>-th
-quartile is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>.
-However, if
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
-is not an integer, then you need to interpolate between the two points
-closest to that location. In that case, the formula for the quartile is
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo>−</mo><mi>k</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>x</mi><mi>k</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>m</mi><mo>−</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>x</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">(i - k) x_k + (m - i) x_{m}</annotation></semantics></math>
-where
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mrow><mi>floor</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> and </mtext><mspace width="0.333em"></mspace></mrow><mi>m</mi><mo>=</mo><mrow><mi>ceil</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).</annotation></semantics></math></li>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
+is the average. Write a Python function called <code>stdev</code> to
+calculate the standard deviation of a list of numbers, and add it to
+your <code>stat_tools.py</code> module.</p></li>
 </ol>
+<!--
+1. Given a list of $n$ numbers $x_0, x_1, \ldots, x_{n-1}$, the q-th quartile should be located at index $i$ where 
+$$i = \frac{(n-1)q}{4}.$$
+Therefore, if $i$ is an integer, then the $q$-th quartile is $x_i$.  However, if $i$ is not an integer, then you need to interpolate between the two points closest to that location.
+In that case, the formula for the quartile is 
+$$(i - k) x_k + (m - i) x_{m}$$
+where 
+$$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
+-->
 <!--
 ### Fri, Oct 25
 
