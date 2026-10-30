@@ -2638,7 +2638,7 @@ Another example of a dunder variable is `__doc__`.  Every function has a `__doc_
 
 #### Additional Practice
 
-1. Add a `mode` function to your `stat_tools.py` module.  Recall that the mode is the number that occurs the most often.
+1. Add a `mode` function to your `stat_tools.py` module.  Recall that the mode is the number that occurs the most often. Hint: This one is pretty challenging, since you need to count how often each number occurs (you can use the `.count()` method).  
 
 1. The **standard deviation** of a list of $n$ numbers $x_0, x_1, x_2, \ldots, x_{n-1}$ is defined by the formula
 $$\sqrt{\sum_{i = 0}^{n-1} \frac{(x_i -\bar{x})^2}{n-1}}$$
@@ -2654,10 +2654,32 @@ where
 $$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
 -->
 
-<!--
-### Fri, Oct 25
+### Fri, Oct 29
 
-Last time we talked about the structure of programs.  Today we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.  
+We started with some questions about importing modules.  
+
+1. Suppose I create a Python module called `circles.py` that contains the following code.
+
+    ```python
+    """
+    Program: circles.py
+    """
+
+    from math import pi as PI 
+
+    def area(radius):
+        return PI * radius ** 2
+
+    def circumference(radius):
+        return 2 * PI * radius
+    ```
+
+    - If I import this module into another Python program, how will I get the value of `PI`?
+    
+    - Is it possible to just import the `area` function without importing `PI`?
+
+
+After that, we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.      
 
 A function should do exactly what it says it will do in its docstring.  You should be able to use a function and trust that it will produced the correct output every time, without looking at how it works.  In programming, we think of a function as a **black box**, which means we can use it reliably without knowing what is inside.  
 
@@ -2672,49 +2694,42 @@ Here are some examples.
 1. What is wrong with the `caesar_shift` function below? How could it be improved?  
 
     ```python
+    ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+
     text = "the quick brown fox jumped over the lazy dog."
 
     def caesar_shift(n):
         """Shift all the letters in text by n places, wrapping back around after z."""
         output = ""
-        for char in text:
-            if "a" <= char <= "z":
-                old_position = ord(char) - ord("a")
-                new_position = (old_position + n) % 26
-                new_letter = chr(new_position + ord("a"))
-                output += new_letter
+        for c in text:
+            if c in ALPHABET:
+                position = ALPHABET.find(c)
+                new_c = ALPHABET[(position + n) % 26]
+                output += new_c
             else:
-                output += char
+                output += c
         return output
+
+    print(caesar_shift(5))
     ```
 
-2. Last time we wrote a program called `dictionary_tools.py` which had a function `key_with_max_value`. We could use that function to write a `top_keys(d, n)` function that returns the `n` keys in a dictionary `d`.  
+2. Last time we wrote a program called `stat_tools` that included a `median` function.  Another useful function you might want is a function to find the first quartile (the 25th percentile) which is defined as the median of the numbers in the bottom half of the list.  
 
-    ```python
-    def top_keys(d, n):
-        """
-        Returns a list with the n keys of a dictionary d that have the largest values.
-        """
-        output = []
-        for _ in range(n):
-            # Repeat the following step n times: 
-            # remove the key with the largest value from d and add that key to output
-            best_key = key_with_max_value(d)
-            d.pop(best_key)
-            output.append(best_key)
-        return output 
-    ```
+    a. If the length of a list is an odd number $n$, then what is the index of the middle element in the list? 
 
-    a. Check that this function works. Try it on a dictionary like 
+    b. If the length is even, then which two indices are closest to the middle?  
 
-        ```python
-        example_dict = {"A": 1, "B": 9, "C": 2, "D": 8, "E": 3, "F": 7}
-        ```
+    c. Write a function called `bottom_half` that returns the numbers in the bottom half of a list. Hint: How could you sort the list and slice the result so that you stop at the right point?  
 
-    b. What is wrong with this `top_keys` function?
+    d. How would you use the median function to make a `bottom_quartile` function? 
 
-We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  We used incremental design to start implementing the following function:
 
+We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  
+
+3. Modify the `bottom_quartile` function to make a `quartile(k, nums)` function.  If the parameter `k` is 1, then it will return the 1st quartile (25th percentile), if `k` is 2, it returns the median (i.e., the 2nd quartile), and if `k` is 3, then it will return the 3rd quartile (75th percentile).
+
+As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
+<!--
 ```python
 def find_root(f, a, b):
     """Find the root of an increasing or decreasing function f on an interval between a and b."""
@@ -2727,9 +2742,9 @@ def find_root(f, a, b):
     return m
 ``` 
 
-As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
+-->
 
-
+<!-- 
 
 ### Fri, Nov 1
 

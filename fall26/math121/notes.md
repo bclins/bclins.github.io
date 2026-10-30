@@ -533,7 +533,7 @@ We started with these warm-up problems.
 
 After that we introduced the **binomial distribution** which is the distribution of the possible number of successes if you do N independent random trials that each have a probability p of a success.  
 
-* **Example:** [Binomial distribution](https://people.hsc.edu/faculty-staff/blins/StatsTools/binomialPlotter2.html) 
+* **Example:** [Binomial distribution](binomialPlotter2.html) 
 
 <!-- Note to self, add dollar amounts to the x-axis when you graph this! -->
 
@@ -955,12 +955,10 @@ $$\sqrt{\frac{p_A(1-p_A)}{N_A} + \frac{p_B(1-p_B)}{N_B}}.$$
 
 Based on this, we estimated a standard deviation of about 2.7% so our sample gap of 2.2% is not very strong evidence that men and women have significantly different opinions about how exciting their lives are.
 
-<!--
 ### Fri, Oct 30
 
 <div class="Theorem">
 **Two-Sample Hypothesis Test for Proportions.** 
-
 
 <div  style="display: flex; justify-content: center;" > 
 <div>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</div><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</div>
@@ -989,13 +987,12 @@ $$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \f
 Works best if both samples contain at least 10 successes and 10 failures.
 </div>
 
-Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](https://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
+Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
 
 
 2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
--->
 
 
 - - - 

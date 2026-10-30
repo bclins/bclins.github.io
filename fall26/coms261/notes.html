@@ -21,9 +21,8 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -116,32 +115,32 @@ href="#week-14-notes">Week 14</a>, <a href="#week-15-notes">Week 15</a>
 <h3 id="week-1-notes">Week 1 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Date</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Aug 24</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.1">TP1</a></td>
 <td style="text-align: left;">Introduction to Python &amp; Thonny</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Aug 26</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.2">TP2</a></td>
 <td style="text-align: left;">Variables &amp; functions</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Aug 27</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.2">TP2</a></td>
 <td style="text-align: left;">Statements versus expressions</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Aug 28</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Binary &amp; floating-point numbers</td>
@@ -381,16 +380,16 @@ print(largest)
 write whole numbers in <strong>base-2</strong>.</p>
 <ol type="1">
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>110</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>110</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(110)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>10101</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10101</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10101)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0.1</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(0.1)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0.1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(0.1)_2</annotation></semantics></math>
 to base-10.</p></li>
 <li><p>Convert
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>10.11</mn><msub><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>10.11</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msub><annotation encoding="application/x-tex">(10.11)_2</annotation></semantics></math>
 to base-10.</p></li>
 </ol>
 <p>After that we talked about how to convert base-10 integers to base-2.
@@ -457,32 +456,32 @@ numbers</a></li>
 <h3 id="week-2-notes">Week 2 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Aug 31</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.3">TP3</a></td>
 <td style="text-align: left;">Functions</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Sep 2</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.3">TP3</a></td>
 <td style="text-align: left;">Local vs. global variables</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Sep 3</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.4">TP4</a></td>
 <td style="text-align: left;">For loops</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 4</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.4">TP4</a></td>
@@ -776,31 +775,31 @@ move.</p></li>
 <h3 id="week-3-notes">Week 3 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Sep 7</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Labor day, no class</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Sep 9</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.7.3">TP7.3</a></td>
 <td style="text-align: left;">While-loops</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Sep 10</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.7.3">TP7.3</a></td>
 <td style="text-align: left;">While-loops con’d</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 11</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.5">TP5</a></td>
@@ -928,13 +927,13 @@ the factorial function inputs a positive integer
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 and returns the product of <code>1 * 2 * 3 * ... * n</code>.</p></li>
 <li><p>Write a program to add the fractions
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mi>n</mi></mfrac><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
 for
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mi>…</mi></mrow><annotation encoding="application/x-tex">n = 1, 2, 3, \ldots</annotation></semantics></math>
 up to 100. Would it be better to use a while-loop or a
 for-loop?</p></li>
 <li><p>Write a program to add the fractions
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>n</mi></mfrac></mstyle><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac displaystyle="true"><mn>1</mn><mi>n</mi></mfrac><annotation encoding="application/x-tex">\dfrac{1}{n}</annotation></semantics></math>
 until the total is greater than 100. Would it be better to use a
 while-loop or a for-loop?</p></li>
 </ol>
@@ -1077,32 +1076,32 @@ I sent out some tips and questions to think about when working on project 2:
 <h3 id="week-4-notes">Week 4 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Sep 14</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.5">TP5</a></td>
 <td style="text-align: left;">Integer division and modulus</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Sep 16</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.5">TP5</a></td>
 <td style="text-align: left;">Integer division and modulus</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Sep 17</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.8">TP8</a></td>
 <td style="text-align: left;">Strings indices &amp; slicing</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 18</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.8">TP8</a></td>
@@ -1578,32 +1577,32 @@ to lower case and replaces spaces with dashes. So it should convert
 <col style="width: 66%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Sep 21</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.10">TP10</a></td>
 <td style="text-align: left;">Lists</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Sep 23</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.10">TP10</a></td>
 <td style="text-align: left;">The <code>in</code> operator</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Sep 24</td>
 <td style="text-align: center;"><a
 href="https://docs.python.org/3/builtins/stdtypes.html#sequence-types-list-tuple-range">docs</a></td>
 <td style="text-align: left;">Sequence types</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Sep 25</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.10">TP10</a></td>
@@ -1912,31 +1911,31 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a h
 <h3 id="week-6-notes">Week 6 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Sep 28</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.6">TP6</a></td>
 <td style="text-align: left;">Recursion</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Sep 30</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.6">TP6</a></td>
 <td style="text-align: left;">Recursion with return values</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Oct 1</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><strong>Midterm 1</strong></td>
@@ -2173,34 +2172,34 @@ review problems</a>.</p>
 <col style="width: 66%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Oct 5</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.10.7">TP10.7</a></td>
 <td style="text-align: left;">Common patterns in loops (map, filter,
 reduce)</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Oct 7</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.2">TP19.2</a></td>
 <td style="text-align: left;">List comprehensions and other
 shortcuts</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Oct 8</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.2">TP19.2</a></td>
 <td style="text-align: left;">List comprehensions</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 9</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.11">TP11</a></td>
@@ -2342,7 +2341,7 @@ divisor (gcd) of two numbers. Use that <code>gcd</code> function to
 write a function that finds the greatest common divisor of all of the
 numbers in a list by reducing the list one pair at a time.</p></li>
 <li><p>In a math formula, like
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>y</mi><mo>+</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x+(y + 3))</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>+</mo><mn>3</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(x+(y + 3))</annotation></semantics></math>,
 the parentheses have to balance, which means</p>
 <ul>
 <li>You have equal numbers of opening parentheses <code>(</code> as
@@ -2556,30 +2555,30 @@ into a dictionary like this:
 <h3 id="week-8-notes">Week 8 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Oct 12</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Fall break, no class</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Oct 14</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.11">TP11</a></td>
 <td style="text-align: left;">Dictionaries - con’d</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Oct 15</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Dictionary comprehensions</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 16</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.5">TP19.5</a></td>
@@ -2620,7 +2619,7 @@ dictionary? A list?</p>
 <col style="width: 40%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Name</th>
 <th style="text-align: center;">StudentID</th>
 <th style="text-align: center;">Email</th>
@@ -2628,35 +2627,35 @@ dictionary? A list?</p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Alice Adams</td>
 <td style="text-align: center;">123456</td>
 <td style="text-align: center;">adams@college.edu</td>
 <td style="text-align: center;">Bio 200, Eng 300, Fren 201, Math
 101</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Bob Brown</td>
 <td style="text-align: center;">234567</td>
 <td style="text-align: center;">brown@college.edu</td>
 <td style="text-align: center;">Bio 150, Chem 380, Econ 101, Eng
 301</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Charlie Clark</td>
 <td style="text-align: center;">345678</td>
 <td style="text-align: center;">clark@college.edu</td>
 <td style="text-align: center;">Art 330, Math 101, Phys 210, Soc
 275</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Daisy Davis</td>
 <td style="text-align: center;">456789</td>
 <td style="text-align: center;">davis@college.edu</td>
 <td style="text-align: center;">Bio 410, Hist 220, Math 310, Span
 202</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Edward Evans</td>
 <td style="text-align: center;">567890</td>
 <td style="text-align: center;">evans@college.edu</td>
@@ -3038,32 +3037,32 @@ This dramatically improves the performance of this algorithm.  Without memoizati
 <h3 id="week-9-notes">Week 9 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Oct 19</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.19.5">TP19.5</a></td>
 <td style="text-align: left;">Set operations &amp; comprehensions</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Oct 21</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.12">TP12</a></td>
 <td style="text-align: left;">Tuples</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Oct 22</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.12">TP12</a></td>
 <td style="text-align: left;">Tuples</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 23</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Search algorithms</td>
@@ -3158,29 +3157,29 @@ or if one contains another.</p>
 <center>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Operation</th>
 <th style="text-align: center;">Python operator</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Intersection</td>
 <td style="text-align: center;"><code>s &amp; t</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Union</td>
 <td style="text-align: center;"><code>s | t</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Difference</td>
 <td style="text-align: center;"><code>s - t</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Subset</td>
 <td style="text-align: center;"><code>s &lt;= t</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Superset</td>
 <td style="text-align: center;"><code>s &gt;= t</code></td>
 </tr>
@@ -3355,7 +3354,7 @@ recursively search the top half of the list.</li>
 list has length
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
 The <strong>time complexity</strong> of linear search is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
 which means that the number of steps to run the algorithm is roughly
 proportional to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
@@ -3366,7 +3365,7 @@ the total number of steps is proportional to the
 <strong>logarithm</strong> of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">n.</annotation></semantics></math>
 In computer science we use
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
 to mean the base-2 logarithm of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.
 Recall that a base-2 logarithm outputs the power of 2 needed to equal
@@ -3402,7 +3401,7 @@ So for example:</p>
 </tr>
 <tr>
 <th>
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\log(n)</annotation></semantics></math>
 </th>
 <td>
 0
@@ -3429,7 +3428,7 @@ So for example:</p>
 </table>
 </center>
 <p>We say that binary search has a time complexity of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi>log</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(\log(n))</annotation></semantics></math>.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mo>log</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(\log(n))</annotation></semantics></math>.
 That means if we double the length of the list, it only takes one extra
 step to search for a target element. That is much faster! The
 disadvantage is that binary search only works if the list is already
@@ -3441,7 +3440,7 @@ href="https://en.wikipedia.org/wiki/Binary_search">Wikipedia article on
 binary search</a>). <mark>Note: The recursive version that I wrote is
 slower than the non-recursive version because each time you slice a
 Python list you create a new list in memory and that takes
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math>
 time.</mark></p>
 <div class="sourceCode" id="cb89"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_search(seq, target):</span>
@@ -3508,31 +3507,31 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a h
 <col style="width: 66%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Oct 26</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Sorting</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Oct 28</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.10.11">TP10.11</a></td>
 <td style="text-align: left;">Aliasing and mutability</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Oct 29</td>
 <td style="text-align: center;"><a
 href="https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.9.2">C9.2</a></td>
 <td style="text-align: left;">Program structure</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Oct 30</td>
 <td style="text-align: center;"><a
 href="https://www.uvm.edu/~cbcafier/itpacs/itpacs_cafiero.pdf#section.9.3">C9.3</a></td>
@@ -3812,13 +3811,15 @@ script. Test it out and see if it works!</p></li>
 <ol type="1">
 <li><p>Add a <code>mode</code> function to your
 <code>stat_tools.py</code> module. Recall that the mode is the number
-that occurs the most often.</p></li>
+that occurs the most often. Hint: This one is pretty challenging, since
+you need to count how often each number occurs (you can use the
+<code>.count()</code> method).</p></li>
 <li><p>The <strong>standard deviation</strong> of a list of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>
 numbers
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_0, x_1, x_2, \ldots, x_{n-1}</annotation></semantics></math>
 is defined by the formula
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{\sum_{i = 0}^{n-1} \frac{(x_i -\bar{x})^2}{n-1}}</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></msqrt><annotation encoding="application/x-tex">\sqrt{\sum_{i = 0}^{n-1} \frac{(x_i -\bar{x})^2}{n-1}}</annotation></semantics></math>
 where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math>
 is the average. Write a Python function called <code>stdev</code> to
@@ -3834,67 +3835,118 @@ $$(i - k) x_k + (m - i) x_{m}$$
 where 
 $$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
 -->
+<h3 id="fri-oct-29">Fri, Oct 29</h3>
+<p>We started with some questions about importing modules.</p>
+<ol type="1">
+<li><p>Suppose I create a Python module called <code>circles.py</code>
+that contains the following code.</p>
+<div class="sourceCode" id="cb100"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="co">Program: circles.py</span></span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> pi <span class="im">as</span> PI </span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> area(radius):</span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> circumference(radius):</span>
+<span id="cb100-11"><a href="#cb100-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> PI <span class="op">*</span> radius</span></code></pre></div>
+<ul>
+<li><p>If I import this module into another Python program, how will I
+get the value of <code>PI</code>?</p></li>
+<li><p>Is it possible to just import the <code>area</code> function
+without importing <code>PI</code>?</p></li>
+</ul></li>
+</ol>
+<p>After that, we talked about the structure of functions. We reviewed
+some terminology that we’ve talked about before like <strong>local
+variables</strong>, <strong>parameters</strong>,
+<strong>calling</strong>, and <strong>arguments</strong>. Then we talked
+about the philosophy of functions.</p>
+<p>A function should do exactly what it says it will do in its
+docstring. You should be able to use a function and trust that it will
+produced the correct output every time, without looking at how it works.
+In programming, we think of a function as a <strong>black box</strong>,
+which means we can use it reliably without knowing what is inside.</p>
+<p>Here are somethings to keep in mind when writing functions.</p>
+<ol type="1">
+<li><p><strong>Use Parameters Not Global Variables.</strong> Don’t pass
+information into functions using global variables, especially if those
+global variables might change. All of the information a function needs
+should be included in the list of parameters. The one exception is if
+you have global constants.</p></li>
+<li><p><strong>Avoid Unintentional Side Effects.</strong> A <strong>side
+effect</strong> is when a function does more than just finding its
+return value. A <strong>pure function</strong> is one with no side
+effects, it just returns a value at the end. An <strong>impure
+function</strong> might change the values of a mutable parameter (like a
+list or dictionary) in addition to calculating a return value. It can be
+hard to debug impure functions. One nice thing about Python is that it
+won’t let you change the values of immutable global variables from
+inside a function, unless you use a special keyword. Keep in mind that a
+print statement inside a function is impure, since printing output on
+the computer screen is a side effect! That doesn’t mean you shouldn’t do
+it, but be sure to explicitly describe any intentional side effects of a
+function when you write the docstring.</p></li>
+</ol>
+<p>Here are some examples.</p>
+<ol type="1">
+<li><p>What is wrong with the <code>caesar_shift</code> function below?
+How could it be improved?</p>
+<div class="sourceCode" id="cb101"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>ALPHABET <span class="op">=</span> <span class="st">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;the quick brown fox jumped over the lazy dog.&quot;</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> caesar_shift(n):</span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Shift all the letters in text by n places, wrapping back around after z.&quot;&quot;&quot;</span></span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>    output <span class="op">=</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> text:</span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> c <span class="kw">in</span> ALPHABET:</span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>            position <span class="op">=</span> ALPHABET.find(c)</span>
+<span id="cb101-11"><a href="#cb101-11" aria-hidden="true" tabindex="-1"></a>            new_c <span class="op">=</span> ALPHABET[(position <span class="op">+</span> n) <span class="op">%</span> <span class="dv">26</span>]</span>
+<span id="cb101-12"><a href="#cb101-12" aria-hidden="true" tabindex="-1"></a>            output <span class="op">+=</span> new_c</span>
+<span id="cb101-13"><a href="#cb101-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb101-14"><a href="#cb101-14" aria-hidden="true" tabindex="-1"></a>            output <span class="op">+=</span> c</span>
+<span id="cb101-15"><a href="#cb101-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output</span>
+<span id="cb101-16"><a href="#cb101-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-17"><a href="#cb101-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(caesar_shift(<span class="dv">5</span>))</span></code></pre></div></li>
+<li><p>Last time we wrote a program called <code>stat_tools</code> that
+included a <code>median</code> function. Another useful function you
+might want is a function to find the first quartile (the 25th
+percentile) which is defined as the median of the numbers in the bottom
+half of the list.</p>
+<ol type="a">
+<li><p>If the length of a list is an odd number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>,
+then what is the index of the middle element in the list?</p></li>
+<li><p>If the length is even, then which two indices are closest to the
+middle?</p></li>
+<li><p>Write a function called <code>bottom_half</code> that returns the
+numbers in the bottom half of a list. Hint: How could you sort the list
+and slice the result so that you stop at the right point?</p></li>
+<li><p>How would you use the median function to make a
+<code>bottom_quartile</code> function?</p></li>
+</ol></li>
+</ol>
+<p>We finished by talking about <strong>incremental design</strong>
+where a programming task is broken into small manageable steps that can
+be tackled one at a time.</p>
+<ol start="3" type="1">
+<li>Modify the <code>bottom_quartile</code> function to make a
+<code>quartile(k, nums)</code> function. If the parameter <code>k</code>
+is 1, then it will return the 1st quartile (25th percentile), if
+<code>k</code> is 2, it returns the median (i.e., the 2nd quartile), and
+if <code>k</code> is 3, then it will return the 3rd quartile (75th
+percentile).</li>
+</ol>
+<p>As you fill in more steps, you can pause and check if the function
+still runs and produces the output you expect. You can debug as you go.
+Don’t hesitate to add print statements in the code if things aren’t
+working the way you expect. You can also use pencil &amp; paper to try
+to figure out good ways to do each step.<br />
 <!--
-### Fri, Oct 25
-
-Last time we talked about the structure of programs.  Today we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.  
-
-A function should do exactly what it says it will do in its docstring.  You should be able to use a function and trust that it will produced the correct output every time, without looking at how it works.  In programming, we think of a function as a **black box**, which means we can use it reliably without knowing what is inside.  
-
-Here are somethings to keep in mind when writing functions. 
-
-1. **Use Parameters Not Global Variables.** Don't pass information into functions using global variables, especially if those global variables might change.  All of the information a function needs should be included in the list of parameters. The one exception is if you have global constants. 
-
-2. **Avoid Unintentional Side Effects.** A **side effect** is when a function does more than just finding its return value. A **pure function** is one with no side effects, it just returns a value at the end.  An **impure function** might change the values of a mutable parameter (like a list or dictionary) in addition to calculating a return value.  It can be hard to debug impure functions.  One nice thing about Python is that it won't let you change the values of immutable global variables from inside a function, unless you use a special keyword.  Keep in mind that a print statement inside a function is impure, since printing output on the computer screen is a side effect!  That doesn't mean you shouldn't do it, but be sure to explicitly describe any intentional side effects of a function when you write the docstring. 
-
-Here are some examples.
-
-1. What is wrong with the `caesar_shift` function below? How could it be improved?  
-
-    ```python
-    text = "the quick brown fox jumped over the lazy dog."
-
-    def caesar_shift(n):
-        """Shift all the letters in text by n places, wrapping back around after z."""
-        output = ""
-        for char in text:
-            if "a" <= char <= "z":
-                old_position = ord(char) - ord("a")
-                new_position = (old_position + n) % 26
-                new_letter = chr(new_position + ord("a"))
-                output += new_letter
-            else:
-                output += char
-        return output
-    ```
-
-2. Last time we wrote a program called `dictionary_tools.py` which had a function `key_with_max_value`. We could use that function to write a `top_keys(d, n)` function that returns the `n` keys in a dictionary `d`.  
-
-    ```python
-    def top_keys(d, n):
-        """
-        Returns a list with the n keys of a dictionary d that have the largest values.
-        """
-        output = []
-        for _ in range(n):
-            # Repeat the following step n times: 
-            # remove the key with the largest value from d and add that key to output
-            best_key = key_with_max_value(d)
-            d.pop(best_key)
-            output.append(best_key)
-        return output 
-    ```
-
-    a. Check that this function works. Try it on a dictionary like 
-
-        ```python
-        example_dict = {"A": 1, "B": 9, "C": 2, "D": 8, "E": 3, "F": 7}
-        ```
-
-    b. What is wrong with this `top_keys` function?
-
-We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  We used incremental design to start implementing the following function:
-
 ```python
 def find_root(f, a, b):
     """Find the root of an increasing or decreasing function f on an interval between a and b."""
@@ -3907,9 +3959,8 @@ def find_root(f, a, b):
     return m
 ``` 
 
-As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
-
-
+--></p>
+<!-- 
 
 ### Fri, Nov 1
 
@@ -3974,31 +4025,31 @@ registration_data = [
 <col style="width: 66%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Nov 2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Nested loops</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Nov 4</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
 <td style="text-align: left;">Reading &amp; writing files</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Nov 5</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
 <td style="text-align: left;">Reading &amp; writing files - con’d</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 6</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"></td>
@@ -4054,32 +4105,32 @@ $$C = \tfrac{5}{9}(F - 32).$$
 <h3 id="week-12-notes">Week 12 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Nov 9</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.14">TP14</a></td>
 <td style="text-align: left;">Introduction to classes</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Nov 11</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.15">TP15</a></td>
 <td style="text-align: left;">Magic methods</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Nov 12</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.15">TP15</a></td>
 <td style="text-align: left;">Static versus instance methods</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 13</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.15">TP15</a></td>
@@ -4348,30 +4399,30 @@ We finished with the following in-class exercise.
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Nov 16</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.16">TP16</a></td>
 <td style="text-align: left;">Type conversion and casting</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Nov 18</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Sequence and iterator types</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Nov 19</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 20</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;"><strong>Midterm 2</strong></td>
@@ -4486,30 +4537,30 @@ Today we went over the [midterm 2 review problems](practicemidterm2.pdf) (see [h
 <h3 id="week-14-notes">Week 14 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Nov 23</td>
 <td style="text-align: center;"><a
 href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.17">TP17</a></td>
 <td style="text-align: left;">Inheritance</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Nov 25</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Nov 26</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Nov 27</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Thanksgiving break, no class</td>
@@ -4594,34 +4645,34 @@ if __name__ == "__main__":
 <h3 id="week-15-notes">Week 15 Notes</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: center;">Day</th>
 <th style="text-align: center;">Section</th>
 <th style="text-align: left;">Topic</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Nov 30</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Inheritance</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Wed, Dec 2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Thu, Dec 3</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: center;">Fri, Dec 4</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Practical exams</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: center;">Mon, Dec 7</td>
 <td style="text-align: center;"></td>
 <td style="text-align: left;">Review</td>
