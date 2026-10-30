@@ -2656,7 +2656,7 @@ $$k = \operatorname{floor}(i) \text{ and } m = \operatorname{ceil}(i).$$
 
 ### Fri, Oct 29
 
-We started with some questions about importing modules.  
+We started by talking about the `from` and `as` keywords when you import modules.  
 
 1. Suppose I create a Python module called `circles.py` that contains the following code.
 
@@ -2679,17 +2679,30 @@ We started with some questions about importing modules.
     - Is it possible to just import the `area` function without importing `PI`?
 
 
-After that, we talked about the structure of functions.  We reviewed some terminology that we've talked about before like **local variables**, **parameters**, **calling**, and **arguments**.  Then we talked about the philosophy of functions.      
-
+After that, we talked about the structure of functions. 
 A function should do exactly what it says it will do in its docstring.  You should be able to use a function and trust that it will produced the correct output every time, without looking at how it works.  In programming, we think of a function as a **black box**, which means we can use it reliably without knowing what is inside.  
 
 Here are somethings to keep in mind when writing functions. 
 
-1. **Use Parameters Not Global Variables.** Don't pass information into functions using global variables, especially if those global variables might change.  All of the information a function needs should be included in the list of parameters. The one exception is if you have global constants. 
+* **Use Parameters Not Global Variables.** Don't pass information into functions using global variables, especially if those global variables might change.  All of the information a function needs should be included in the list of parameters. The one exception is if you have global constants. 
 
-2. **Avoid Unintentional Side Effects.** A **side effect** is when a function does more than just finding its return value. A **pure function** is one with no side effects, it just returns a value at the end.  An **impure function** might change the values of a mutable parameter (like a list or dictionary) in addition to calculating a return value.  It can be hard to debug impure functions.  One nice thing about Python is that it won't let you change the values of immutable global variables from inside a function, unless you use a special keyword.  Keep in mind that a print statement inside a function is impure, since printing output on the computer screen is a side effect!  That doesn't mean you shouldn't do it, but be sure to explicitly describe any intentional side effects of a function when you write the docstring. 
+* **Avoid Unintended Side Effects.** A **side effect** is when a function does more than just finding its return value. A **pure function** is one with no side effects, it just returns a value at the end.  An **impure function** might change the values of a mutable parameter (like a list or dictionary) in addition to calculating a return value.  It can be hard to debug impure functions.  One nice thing about Python is that it won't let you change the values of immutable global variables from inside a function, unless you use a special keyword.  Keep in mind that a print statement inside a function is impure, since printing output on the computer screen is a side effect!  That doesn't mean you shouldn't do it, but be sure to explicitly describe any intentional side effects of a function when you write the docstring. 
 
-Here are some examples.
+We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  
+
+1. Last time we wrote a program called `stat_tools` that included a `median` function.  Another useful function you might want is a function to find the first quartile (the 25th percentile) which is defined as the median of the numbers in the bottom half of the list.  
+
+    a. If the length of a list is an odd number $n$, then what is the index of the middle element in the list? 
+
+    b. If the length is even, then which two indices are closest to the middle?  
+
+    c. Write a function called `bottom_half` that returns the numbers in the bottom half of a list. Hint: How could you sort the list and slice the result so that you stop at the right point?  
+
+    d. How would you use the median function to make a `bottom_quartile` function? 
+
+
+
+#### Additional Practice
 
 1. What is wrong with the `caesar_shift` function below? How could it be improved?  
 
@@ -2713,23 +2726,11 @@ Here are some examples.
     print(caesar_shift(5))
     ```
 
-2. Last time we wrote a program called `stat_tools` that included a `median` function.  Another useful function you might want is a function to find the first quartile (the 25th percentile) which is defined as the median of the numbers in the bottom half of the list.  
+2. Modify the `bottom_quartile` function to make a `quartile(k, nums)` function.  If the parameter `k` is 1, then it will return the 1st quartile (25th percentile), if `k` is 2, it returns the median (i.e., the 2nd quartile), and if `k` is 3, then it will return the 3rd quartile (75th percentile).
 
-    a. If the length of a list is an odd number $n$, then what is the index of the middle element in the list? 
-
-    b. If the length is even, then which two indices are closest to the middle?  
-
-    c. Write a function called `bottom_half` that returns the numbers in the bottom half of a list. Hint: How could you sort the list and slice the result so that you stop at the right point?  
-
-    d. How would you use the median function to make a `bottom_quartile` function? 
-
-
-We finished by talking about **incremental design** where a programming task is broken into small manageable steps that can be tackled one at a time.  
-
-3. Modify the `bottom_quartile` function to make a `quartile(k, nums)` function.  If the parameter `k` is 1, then it will return the 1st quartile (25th percentile), if `k` is 2, it returns the median (i.e., the 2nd quartile), and if `k` is 3, then it will return the 3rd quartile (75th percentile).
-
-As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
 <!--
+As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
+
 ```python
 def find_root(f, a, b):
     """Find the root of an increasing or decreasing function f on an interval between a and b."""

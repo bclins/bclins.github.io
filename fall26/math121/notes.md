@@ -987,7 +987,7 @@ $$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \f
 Works best if both samples contain at least 10 successes and 10 failures.
 </div>
 
-Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I posted an [interactive formula sheet](statsFormulas.html) under the software tab of the website.  Feel free to use it on the projects when you need to calculate these formulas.  
+Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I recommend using the [Desmos calculator](https://www.desmos.com/scientific), especially on the projects to make sure everything is entered correctly.  
 
 
 2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
