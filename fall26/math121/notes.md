@@ -990,7 +990,6 @@ Works best if both samples contain at least 10 successes and 10 failures.
 Because the formulas for two-sample confidence intervals and hypothesis tests are so convoluted, I recommend using the [Desmos calculator](https://www.desmos.com/scientific), especially on the projects to make sure everything is entered correctly.  
 
 
-2. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
 
 
 
@@ -1005,15 +1004,19 @@ Mon, Nov 2 | [6.2.3][6.2.3] | Difference of two proportions (confidence interval
 Wed, Nov 4 | [7.1][7.1]     | Introducing the t-distribution
 Fri, Nov 6 | [7.1.4][7.1.4] | One sample t-confidence intervals
 
+### Mon, Nov 2
+
+We started with this example of a two-sample hypothesis test. 
+
+1. A study in the early 1990s looked at whether the anti-retroviral drug AZT is effective at preventing HIV-positive pregnant women from passing the HIV virus on to their children.  In the study, 13 out of 180 babies whose mothers were given AZT while pregnant tested postive for HIV, compared with 40 out of 183 babies whose mothers got a placebo.  Is this strong evidence that AZT is effective?  How much of a difference does it make?   
+
+Then we did this workshop.
+
+* **Workshop:** [High school drug testing](DrugTesting.pdf)
+
 <!--
-### Mon, Mar 20
-
-
-
-
 ### Wed, Nov 5
 
-* **Workshop:** [High school drug testing](https://people.hsc.edu/faculty-staff/blins/StatsExamples/DrugTesting.pdf)
 
 
 ### Fri, Nov 7

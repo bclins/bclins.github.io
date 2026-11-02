@@ -3939,26 +3939,106 @@ is 1, then it will return the 1st quartile (25th percentile), if
 if <code>k</code> is 3, then it will return the 3rd quartile (75th
 percentile).</p></li>
 </ol>
+<hr />
+<h3 id="week-11-notes">Week 11 Notes</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th style="text-align: center;">Section</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Mon, Nov 2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">More string methods</td>
+</tr>
+<tr>
+<td style="text-align: center;">Wed, Nov 4</td>
+<td style="text-align: center;"><a
+href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
+<td style="text-align: left;">Reading &amp; writing files</td>
+</tr>
+<tr>
+<td style="text-align: center;">Thu, Nov 5</td>
+<td style="text-align: center;"><a
+href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
+<td style="text-align: left;">Reading &amp; writing files - con’d</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fri, Nov 6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;">Testing &amp; debugging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mon-nov-2">Mon, Nov 2</h3>
+<p>Today we did this workshop about the <code>join</code>,
+<code>replace</code>, <code>split</code>, and <code>strip</code> string
+methods.</p>
+<ul>
+<li><strong>Workshop</strong>: <a href="StringMethods.pdf">String
+methods</a></li>
+</ul>
+<h4 id="additional-practice-27">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function that will find any anagrams in a sentence. An
+anagram is a word that can be rearranged to form another word using
+every original letter exactly once. For example, “rescue” and “secure”
+are anagrams for each other. Your program should use a nested loop to
+check every pair of words to see if they are anagrams. It should return
+a list of tuples that contain anagram pairs. For example,</p>
+<div class="sourceCode" id="cb102"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;Listen to the silent student who can study when the room is dusty&quot;</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>anagrams(s)  <span class="co"># [(&quot;Listen&quot;, &quot;silent&quot;), (&quot;study&quot;, &quot;dusty&quot;)]</span></span></code></pre></div></li>
+</ol>
 <!--
-As you fill in more steps, you can pause and check if the function still runs and produces the output you expect.  You can debug as you go.  Don't hesitate to add print statements in the code if things aren't working the way you expect.  You can also use pencil & paper to try to figure out good ways to do each step.  
+
+### Wed, Nov 4
+
+We talked about how to write to files from Python.  When you open a Python file, the default option is to open the file **read-only** which means you cannot change the file's contents.  It is possible to re-write the contents of a file if you open it with the optional `"w"` argument.  
+
+1. Try the following short Python program:
+
+    ```python
+    file = open("example.txt", "w")
+    file.write("Hello!")
+    file.close()
+    ```
+
+    What is contained in the file `example.txt`?  Notice that when we open files with the optional argument `"w"`, it allows us to write the file.  Any contents that were previously in the file will get overwritten.  
+
+2. Notice that if you use the `.write()` method multiple times, it does not add the contents on separate lines in the file. You have to add a newline character `\n` at the end of the string you are writing to get a line break.  Write a program to print the contents of this list: `fruits = ["Apple", "Banana", "Orange", "Lemon"]` each on a separate line of the file. 
+
+3. If you would like to keep the old contents of a file and just add on to them, use `"a"` as the optional argument when you open.  Try closing the file after adding the fruit from the `fruits`.  Then open the file again and this time add `"Grapes"` without overwriting the other fruit in the file.
+
+You can run into trouble if you forget to close a file object in Python because of the way the computer operating system handles files that are not closed.  It is recommended to use a special `with` keyword whenever you open a file in Python:
 
 ```python
-def find_root(f, a, b):
-    """Find the root of an increasing or decreasing function f on an interval between a and b."""
-    # Step 1 - Find the midpoint of a and b.
-    m = (a + b) / 2
-    # Step 2 - Check if the root is left or right of the midpoint. 
-    # Step 3 - Update the endpoints and midpoint of the interval.  
-    # Step 4 - Repeat.
-    # Step 5 - Figure out a good stopping point if you never find the exact root. 
-    return m
-``` 
+with open("example.txt", "w") as file:
+    file.write("Hello!")
+```
 
--->
-<!-- 
+This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
 
-### Fri, Nov 1
 
+The file [average_temps.txt](https://bclins.github.io/fall24/cs261/average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
+
+```python
+with open("average_temps.txt") as file:
+    data = [line.strip().split(";") for line in file.readlines()]
+```
+
+1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius_temps.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+$$C = \tfrac{5}{9}(F - 32).$$
+
+2. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
+
+
+
+<!--
 Today we did several examples of **nested loops.**
 
 1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
@@ -4009,91 +4089,6 @@ registration_data = [
 4. Which students signed up for Span 201? 
 
 5. Which courses have the most students signed up?  
-
--->
-<hr />
-<h3 id="week-11-notes">Week 11 Notes</h3>
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 66%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Day</th>
-<th style="text-align: center;">Section</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Mon, Nov 2</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">Nested loops</td>
-</tr>
-<tr>
-<td style="text-align: center;">Wed, Nov 4</td>
-<td style="text-align: center;"><a
-href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
-<td style="text-align: left;">Reading &amp; writing files</td>
-</tr>
-<tr>
-<td style="text-align: center;">Thu, Nov 5</td>
-<td style="text-align: center;"><a
-href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#section.14.2">TP14.2</a></td>
-<td style="text-align: left;">Reading &amp; writing files - con’d</td>
-</tr>
-<tr>
-<td style="text-align: center;">Fri, Nov 6</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-<!--
-
-### Thu, Nov 7
-
-We started by finishing the root finding function from last time.  Then we talked about how to write to files from Python.  When you open a Python file, the default option is the open the file **read-only** which means you cannot change the file's contents.  It is possible to re-write the contents of a file if you open it with the optional `"w"` argument.  
-
-1. Try the following short Python program:
-
-    ```python
-    file = open("example.txt", "w")
-    file.write("Hello!")
-    file.close()
-    ```
-
-    What is contained in the file `example.txt`?  Notice that when we open files with the optional argument `"w"`, it allows us to write the file.  Any contents that were previously in the file will get overwritten.  
-
-2. Notice that if you use the `.write()` method multiple times, it does not add the contents on separate lines in the file. You have to add a newline character `\n` at the end of the string you are writing to get a line break.  Write a program to print the contents of this list: `fruit_list = ["Apple", "Banana", "Orange", "Lemon"] each on a separate line of the file. 
-
-3. If you would like to keep the old contents of a file and just add on to them, use `"a"` as the optional argument when you open.  Try closing the file after adding the fruit from the `fruit_list`.  Then open the file again and this time add `"Grapes"` without overwriting the other fruit in the file.
-
-You can run into trouble if you forget to close a file object in Python because of the way the computer operating system handles files that are not closed.  It is recommended to use a special `with` keyword whenever you open a file in Python:
-
-```python
-with open("example.txt", "w") as file:
-    file.write("Hello!")
-```
-
-This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
-
-
-### Fri, Nov 8
-
-The file [average_temps.txt](average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
-
-```python
-with open("average_temps.txt") as file:
-    data = [line.strip().split(";") for line in file.readlines()]
-```
-
-1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius_temps.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
-$$C = \tfrac{5}{9}(F - 32).$$
-
-2. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
 
 -->
 <hr />
