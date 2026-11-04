@@ -613,7 +613,7 @@ $$\hat{p} = \frac{\text{ number of "successes" }}{\text{ sample size }}.$$
 In a SRS from a large population, $\hat{p}$ is random with a **sampling distribution** that has the following features. 
 
 <div class="Theorem">
-**Sampling Distribution of $\hat{p}$.**
+#### Sampling Distribution of $\hat{p}$
 
 1. **Shape**: gets more normal as the sample size $N$ gets larger.
 2. **Center**: the theoretical average of $\hat{p}$ is the true population proportion $p$.
@@ -661,7 +661,7 @@ Last time we saw that $\hat{p}$ is a random variable with a sampling distributio
 Today we introduced confidence intervals for proportions. These are based on a simple idea: there is a 95% chance that the sample proportion $\hat{p}$ is no more than 2 standard deviations away from the true population proportion $p$.
 
 <div class = "Theorem"> 
-#### Confidence Interval for a Proportion. 
+#### Confidence Interval for a Proportion
 
 $$\hat{p} \pm z^* \sqrt{\dfrac{\hat{p} ( 1 - \hat{p} )}{N} }.$$
 
@@ -866,7 +866,7 @@ Fri, Oct 30 |  [6.2][6.2]     | Difference of two proportions (hypothesis tests)
 Today we talked about hypothesis testing again.
 
 <div class="Theorem">
-**One-Sample Hypothesis Test for a Proportion**
+#### One-Sample Hypothesis Test for a Proportion
 
 <div  style="display: flex; justify-content: center;" > 
 
@@ -958,7 +958,7 @@ Based on this, we estimated a standard deviation of about 2.7% so our sample gap
 ### Fri, Oct 30
 
 <div class="Theorem">
-**Two-Sample Hypothesis Test for Proportions.** 
+#### Two-Sample Hypothesis Test for Proportions
 
 <div  style="display: flex; justify-content: center;" > 
 <div>$\begin{array}{lr} H_0: & p_A = p_B \\ H_A: & p_A \ne p_B \end{array}$</div><div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div><div>$z = \dfrac{\hat{p}_A - \hat{p}_B}{\sqrt{\hat{p} (1 - \hat{p})\left( \frac{1}{n_A} + \frac{1}{n_B} \right)}}.$</div>
@@ -980,7 +980,7 @@ As with any statistical inference method, the 2-sample test for proportions is b
 If you want to estimate how big the gap between the population proportions $p_A$ and $p_B$ is, then use: 
 
 <div class="Theorem">
-**Two-sample confidence interval for proportions.**
+#### Two-Sample Confidence Interval for Proportions
 
 $$(\hat{p}_A - \hat{p}_B) \pm z^* \sqrt{\frac{\hat{p}_A (1-\hat{p}_A)}{N_A} + \frac{\hat{p}_B (1- \hat{p}_B)}{N_B}}.$$
 
@@ -1014,15 +1014,9 @@ Then we did this workshop.
 
 * **Workshop:** [High school drug testing](DrugTesting.pdf)
 
-<!--
-### Wed, Nov 5
+### Wed, Nov 4
 
-
-
-### Fri, Nov 7
-
-
-Today we started talking about how to do inference about a quantitative variable like height. This semester, our section of statistics has an average height of 71.92 inches with a standard deviation of 3.12 inches.  This is data from 25 students. This suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
+Today we started talking about how to do inference about a quantitative variable like height. This semester, my statistics students have an average height of 71.5 inches with a standard deviation of 2.8 inches.  This is data from 54 students. This suggests that maybe Hampden-Sydney students are taller than average for men in the United States.  So we made these hypotheses:
 
 * $H_0: \mu_{HS} = 70$
 * $H_A: \mu_{HS} \ne 70$
@@ -1031,19 +1025,15 @@ To test these, we reviewed what we know about the sampling distribution for $\ba
 $$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.$$
 Unfortunately, we don't know the population standard deviation $\sigma$ for all HSC students.  We only know the sample standard deviation.  If we use that instead of $\sigma$, then we get a **t-value**:
 $$t =  \frac{\bar{x} - \mu_0}{s / \sqrt{n}}.$$
-which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://mabognar.github.io/apps/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). <!--When you do a hypothesis test for one mean or a confidence interval for one mean, 
+which follows a **t-distribution**. We talked about how to use the [t-distribution app](https://mabognar.github.io/apps/t.html) to calculate probabilities on a t-distribution.  One weird thing about t-distributions is that they have **degrees of freedom** (denoted by either *df* or $\nu$). When you do a hypothesis test for one mean or a confidence interval for one mean, 
 $$\text{degrees of freedom} = n - 1.$$
 
 <div class="Theorem">
-**One-Sample Hypothesis Test for Means.** 
+#### One-Sample Hypothesis Test for Means
 
-<center>
-<table>
-<tr>
-<td>$\begin{array}{lr} H_0: & \mu = \mu_0 \\ H_A: & \mu \ne \mu_0 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td>$t = \dfrac{\bar{x} - \mu_0}{s / \sqrt{n}}.$</td>
-</tr>
-</table>
-</center>
+<div  style="display: flex; justify-content: center; align-items: center" > 
+<div>$\begin{array}{lr} H_0: & \mu = \mu_0 \\ H_A: & \mu \ne \mu_0 \end{array}$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>$t = \dfrac{\bar{x} - \mu_0}{s / \sqrt{n}}.$</div>
+</div>
 
 The $t$-value has $n-1$ **degrees of freedom**. 
 
@@ -1058,7 +1048,17 @@ We finished with this example:
     $$n = 10, ~~~~~ s = \$76{,}550, ~~~~~ \bar{x} = \$161{,}900.$$
     Carry out a hypothesis test with this data  to answer the question. 
 
--->
+We finished by introducing confidence intervals for means.
+
+<div class="Theorem">
+#### One-Sample Confidence Interval for a Mean
+
+$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}$$
+
+where $t^*$ is the **critical t-value** which has $n-1$ **degrees of freedom**. 
+
+This works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample.
+</div>
 
 - - - 
 

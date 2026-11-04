@@ -65,7 +65,7 @@ We talked about how operators follow an **order of operations**, and if operator
     ```
     </details>
 
-#### Additional practice
+#### Additional Practice
 
 1. Which of the following Python commands work? Try them in the shell to find out. 
 
@@ -112,7 +112,7 @@ We finished by talking about how to **import** functions from **modules**.  We i
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.$$
 
 
-#### Additional practice
+#### Additional Practice
 
 1. Write a program to calculate miles per gallon and print the output rounded to 1 decimal place. 
 
@@ -2760,7 +2760,6 @@ Today we did this workshop about the `join`, `replace`, `split`, and `strip` str
     ```
 
 
-<!--
 
 ### Wed, Nov 4
 
