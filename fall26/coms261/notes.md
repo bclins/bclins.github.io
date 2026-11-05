@@ -2788,6 +2788,7 @@ with open("example.txt", "w") as file:
 
 This code does the exact same thing as the code in exercise 1, but this way you won't have to remember to close the file at the end.  The `with` keyword takes care of that automatically.  We will always use this approach to open files from now on. 
 
+<!-- NOTE TO SELF: THIS NEXT EXERCISE IS REALLY TOO HARD.  I ENDED UP SPENDING A WHOLE CLASS PERIOD ON JUST THE CONVERSION FROM CELSIUS TO FAHRENHEIT AND LIST COMPREHENSIONS WITHOUT EVER GETTING TO WRITING FILES.  PICK SOMETHING THAT CAN BE DIRECTLY WRITTEN TO A FILE WITHOUT SO MUCH PRE-PROCESSING NEXT TIME. --> 
 
 The file [average_temps.txt](https://bclins.github.io/fall24/cs261/average_temps.txt) contains data on the average high temperature in Farmville, VA for each day of the year.  Save the file on your computer and open the data:
 
@@ -2796,15 +2797,38 @@ with open("average_temps.txt") as file:
     data = [line.strip().split(";") for line in file.readlines()]
 ```
 
+<!-- NEXT TIME SKIP THE readlines METHOD.  JUST USE read AND split TO SPLIT AT NEWLINES. IT'S NOT BEST PRACTICE, BUT IT IS WORTH AVOIDING THE COGNITIVE OVERLOAD. 
+
+It is also okay if the data is a list of strings instead of a list of lists.  That might be worth the extra practice. 
+-->
+
 1. Now that you have the data, write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius_temps.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
 $$C = \tfrac{5}{9}(F - 32).$$
+
+
+#### Additional Practice 
+
+1. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
+
+### Thu, Nov 5
+
+Last time we looked at the file [average_temps.txt](https://bclins.github.io/fall24/cs261/average_temps.txt) and started a program to convert the Fahrenheit temperatures into Celsius. That was challenging, so today we did a workshop to think about how to write that program. 
+
+* **Workshop**: [Average temperatures](AverageTemps.pdf)
+
+After you finish the problems on the worksheet, try to write the two programs from yesterday:
+
+1. Write a program that converts the data from Fahrenheit to Celsius and then saves the data in new file called `celsius_temps.txt`.  Recall that the formula to convert Fahrenheit to Celsius is 
+$$C = \tfrac{5}{9}(F - 32).$$
+
 
 2. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
 
 
-
 <!--
 Today we did several examples of **nested loops.**
+
+1. <mark> Write a program to look for anagrams in a string. </mark>
 
 1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
 
@@ -2854,7 +2878,6 @@ registration_data = [
 4. Which students signed up for Span 201? 
 
 5. Which courses have the most students signed up?  
-
 -->
 
 - - - 

@@ -4035,6 +4035,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a 
 this way you won’t have to remember to close the file at the end. The
 <code>with</code> keyword takes care of that automatically. We will
 always use this approach to open files from now on.</p>
+<!-- NOTE TO SELF: THIS NEXT EXERCISE IS REALLY TOO HARD.  I ENDED UP SPENDING A WHOLE CLASS PERIOD ON JUST THE CONVERSION FROM CELSIUS TO FAHRENHEIT AND LIST COMPREHENSIONS WITHOUT EVER GETTING TO WRITING FILES.  PICK SOMETHING THAT CAN BE DIRECTLY WRITTEN TO A FILE WITHOUT SO MUCH PRE-PROCESSING NEXT TIME. -->
 <p>The file <a
 href="https://bclins.github.io/fall24/cs261/average_temps.txt">average_temps.txt</a>
 contains data on the average high temperature in Farmville, VA for each
@@ -4042,11 +4043,40 @@ day of the year. Save the file on your computer and open the data:</p>
 <div class="sourceCode" id="cb105"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;average_temps.txt&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> [line.strip().split(<span class="st">&quot;;&quot;</span>) <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">file</span>.readlines()]</span></code></pre></div>
+<!-- NEXT TIME SKIP THE readlines METHOD.  JUST USE read AND split TO SPLIT AT NEWLINES. IT'S NOT BEST PRACTICE, BUT IT IS WORTH AVOIDING THE COGNITIVE OVERLOAD. 
+
+It is also okay if the data is a list of strings instead of a list of lists.  That might be worth the extra practice. 
+-->
 <ol type="1">
-<li><p>Now that you have the data, write a program that converts the
-data from Fahrenheit to Celsius and then saves the data in new file
-called <code>celsius_temps.txt</code>. Recall that the formula to
-convert Fahrenheit to Celsius is
+<li>Now that you have the data, write a program that converts the data
+from Fahrenheit to Celsius and then saves the data in new file called
+<code>celsius_temps.txt</code>. Recall that the formula to convert
+Fahrenheit to Celsius is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>5</mn><mn>9</mn></mfrac></mstyle><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></li>
+</ol>
+<h4 id="additional-practice-28">Additional Practice</h4>
+<ol type="1">
+<li>Write a program that uses the same data to find the average high
+temperature (in Fahrenheit) for each of the twelve months and then
+writes that information into a file <code>monthly_temps.txt</code>.</li>
+</ol>
+<h3 id="thu-nov-5">Thu, Nov 5</h3>
+<p>Last time we looked at the file <a
+href="https://bclins.github.io/fall24/cs261/average_temps.txt">average_temps.txt</a>
+and started a program to convert the Fahrenheit temperatures into
+Celsius. That was challenging, so today we did a workshop to think about
+how to write that program.</p>
+<ul>
+<li><strong>Workshop</strong>: <a href="AverageTemps.pdf">Average
+temperatures</a></li>
+</ul>
+<p>After you finish the problems on the worksheet, try to write the two
+programs from yesterday:</p>
+<ol type="1">
+<li><p>Write a program that converts the data from Fahrenheit to Celsius
+and then saves the data in new file called
+<code>celsius_temps.txt</code>. Recall that the formula to convert
+Fahrenheit to Celsius is
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>5</mn><mn>9</mn></mfrac></mstyle><mo stretchy="false" form="prefix">(</mo><mi>F</mi><mo>−</mo><mn>32</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">C = \tfrac{5}{9}(F - 32).</annotation></semantics></math></p></li>
 <li><p>Write a program that uses the same data to find the average high
 temperature (in Fahrenheit) for each of the twelve months and then
@@ -4055,6 +4085,8 @@ writes that information into a file
 </ol>
 <!--
 Today we did several examples of **nested loops.**
+
+1. <mark> Write a program to look for anagrams in a string. </mark>
 
 1. Create a list of all 52 playing cards in the form *rank of suit*.  For example, your list should include the `"Jack of Hearts"` and the `"Two of Clubs"` as well as all the other valid combinations.
 
@@ -4104,7 +4136,6 @@ registration_data = [
 4. Which students signed up for Span 201? 
 
 5. Which courses have the most students signed up?  
-
 -->
 <hr />
 <h3 id="week-12-notes">Week 12 Notes</h3>
