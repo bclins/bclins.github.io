@@ -536,15 +536,6 @@ def add_odd_numbers(n):
 
 
 <!--
-There are three categories of errors in Python.
-
-#### Types of Errors
-
-* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
-* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
-
-Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
 -->
 
 <!-- Soon: Talk about machine code, vs. assembly vs. C++ vs. python  --> 
@@ -2824,6 +2815,123 @@ $$C = \tfrac{5}{9}(F - 32).$$
 
 2. Write a program that uses the same data to find the average high temperature (in Fahrenheit) for each of the twelve months and then writes that information into a file `monthly_temps.txt`.
 
+
+### Fri, Nov 6
+
+We started by talking about how to write the file `celsius_temps.txt` that we've been working on since Wednesday.  
+
+
+Then we talked about debugging & testing programs.  
+
+#### Types of Errors
+
+* **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
+* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
+
+Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
+
+1. Download and save the program [gradebook.py](gradebook.py). Try to run the program.  What happens?  Can you fix the bugs? What types of bugs are there? 
+
+    ```python
+    """
+    Grade Book Program - Debugging Exercise
+     
+    This program tracks student grades, calculates averages, assigns letter
+    grades, and finds the top student. It contains 3 bugs. Run it, read the
+    output carefully, and figure out what's wrong.
+     
+    Expected output (when fixed):
+     
+        Grade Report
+        ------------
+        Alice: average 91.3 -> A
+        Bob: average 71.0 -> C
+        Charlie: no grades yet
+        Daisy: average 72.3 -> C
+     
+        Top student: Alice (91.3)
+    """
+     
+    def calculate_average(grades):
+        return sum(grades) / len(grades)
+     
+     
+    def get_letter_grade(average):
+        if average >= 90:
+            return "A"
+        elif average >= 80:
+            return "B"
+        elif average > 70:
+            return "C"
+        elif average >= 60
+            return "D"
+        else:
+            return "F"
+     
+     
+    def find_top_student(gradebook):
+        best_name = None
+        best_average = 0
+     
+        for name, grades in gradebook.items():
+            average = calculate_average(grades)
+            if average < best_average: 
+                best_name = name
+                best_average = average
+     
+        return best_name, best_average
+     
+     
+    def print_report(gradebook):
+        print("Grade Report")
+        print("------------")
+        for name, grades in gradebook.items():
+            if len(grades) == 0:
+                print(f"{name}: no grades yet")
+            else:
+                average = calculate_average(grades)
+                letter = get_letter_grade(average)
+                print(f"{name}: average {round(average, 1)} -> {letter}")
+     
+     
+    def main():
+        gradebook = {
+            "Alice": [95, 88, 91],
+            "Bob": [70, 71, 72], 
+            "Charlie": [],
+            "Daisy": [64, 73, 80],
+        }
+     
+        print_report(gradebook)
+     
+        top_name, top_average = find_top_student(gradebook)
+        print()
+        print(f"Top student: {top_name} ({top_average:.1f})")
+     
+     
+    if __name__ == "__main__":
+        main()
+    ```
+
+#### Additional Practice
+
+1. <!-- This is probably too hard!--> The following Python function does a binary search through a sorted list.  It should return the index of the target item it is searching for, or $-1$ if the target item is not in the list.  But the code has some bugs.  See if you can find all of the bugs and get the function to work on any sorted list (a list with elements in increasing order like `[3, 5, 8, 10]`.) Hint: Test the function on some simple lists like `[3, 5, 8, 10]` and `[1, 2, 3]`. Be sure to try to find targets that are in the list and targets that are not. Try using pencil and paper to see what the function does.  
+
+    ```python
+    def binary_search(sorted_list, target):
+        """A binary search function with some bugs."""
+        left, right = 0, len(sorted_list)
+        while left < right:
+            mid = (left + right) / 2
+            if sorted_list[mid] == target:
+                return mid
+            elif sorted_list[mid] < target:
+                left = mid
+            else:
+                right = mid - 1
+        return -1
+    ```
 
 <!--
 Today we did several examples of **nested loops.**

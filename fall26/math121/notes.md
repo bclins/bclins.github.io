@@ -1060,6 +1060,33 @@ where $t^*$ is the **critical t-value** which has $n-1$ **degrees of freedom**.
 This works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample.
 </div>
 
+### Fri, Nov 6
+
+The easiest way to find the critical t-value for a confidence interval is to use a table:
+
+* **Table:** [t-distribution table](TableC.pdf)
+
+We talked about how to use the table to find $t$-values.  Then we did the following examples. 
+
+1. Use the [class data](ClassData.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
+
+2. Use the class data [class data](ClassData.xlsx) to make a 90\% confidence interval for the average weight of all HSC students.  Are the conditions for making a confidence interval satisfied?
+
+We also did this workshop.
+
+* **Workshop:** [Quarters](Quarters.pdf)
+
+t-distribution methods (both confidence intervals & hypothesis tests) require the following assumptions:
+
+1. **No Bias.** Data should be a simple random sample from the population.
+
+2. **Normality.** The sampling distribution for $\bar{x}$ should be normal. This tends to be true if the sample size is big.  Here is a quick rule of thumb:
+
+    * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
+    * **Small samples** If $N < 30$, then skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
+
+
+
 - - - 
 
 ### Week 12 Notes
