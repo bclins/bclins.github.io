@@ -2826,7 +2826,7 @@ Then we talked about debugging & testing programs.
 #### Types of Errors
 
 * **Syntax errors** are errors in the structure of the program that the computer can detect before running the code. Examples include mismatched parentheses, or incomplete lines of code. 
-* **Runtime errors** are errors that occur while the program is running. This category include **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
+* **Runtime errors** are errors that occur while the program is running. This category includes **type errors** where the computer tries to use a function or operator with a variable or expression of the wrong type. 
 * **Semantic errors** happen when the program runs without an error message, but the output is incorrect.
 
 Keep in mind that syntax refers to the structure and grammar of a program, while semantics refers to its meaning.  Computers are very picky about syntax, but they are completely oblivious to semantics. 
@@ -2907,7 +2907,7 @@ Keep in mind that syntax refers to the structure and grammar of a program, while
      
         top_name, top_average = find_top_student(gradebook)
         print()
-        print(f"Top student: {top_name} ({top_average:.1f})")
+        print(f"Top student: {top_name} ({round(top_average, 1)})")
      
      
     if __name__ == "__main__":
@@ -3001,23 +3001,23 @@ Wed, Nov 11 | [TP15][TP15] | Magic methods
 Thu, Nov 12 | [TP15][TP15] | Static versus instance methods
 Fri, Nov 13 | [TP15][TP15] | Calling magic methods
 
-<!--
-### Mon, Nov 11
+### Mon, Nov 9
 
 Up to now, when we need a data type to represent complicated data, we've either used a list or a dictionary (or maybe a string, tuple, or set).  But sometimes it would be nice if we could create our own custom data types.  **Object-oriented programming** is a programming paradigm that allows users to create new data types that include both data and functions for working with that data.  Python uses **class objects** to implement object oriented programming.  
 
-Before we construct our first Python class, let's look at some data.  The files [sunrise.tsv](sunrise.tsv) and [sunset.tsv](sunset.tsv) contain tables stored in tab separated value format with the times of sunrise and sunset for every day of the year (2024) here at Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). Here is a link if you want to [preview the sunset data](sunset.html).
+<!--Before we construct our first Python class, let's look at some data.  The files [sunrise.tsv](https://bclins.github.io/fall24/cs261/sunrise.tsv) and [sunset.tsv](https://bclins.github.io/fall24/cs261/sunset.tsv) contain tables stored in tab separated value format with the times of sunrise and sunset for every day of the year (2024) here at Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). Here is a link if you want to [preview the sunset data](https://bclins.github.io/fall24/cs261/sunset.html).-->
 
-If we want to write a program to work with sunset and sunrise times, we could convert all of this data to integers (minutes).  That would work, but then we would also need to write some helper functions.  For example, we would need:
+Here is data about the [time of sunset](https://bclins.github.io/fall24/cs261/sunset.html) every day in Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). If we want to write a program to work with sunset times, we could convert all of this data to integers (minutes).  That would work, but then we would also need to write some helper functions.  For example, we would need:
 
-1. A function to convert a string like `"1:30"` to an integer number of minutes. 
-1. A function to convert a number of minutes like 90 to a string like `"1:30"`. 
+* A function to convert a string like `"1:30"` to an integer number of minutes. 
+
+* A function to convert a number of minutes like 90 to a string like `"1:30"`. 
 
 We might also want functions to find the difference and sum of two different times:
 
-1. We could create a function called `time_difference()` that would find the difference between two time strings like `"1:30"` and `"2:45"` and return `"1:15"`.  
+* We could create a function called `time_difference()` that would find the difference between two time strings like `"1:30"` and `"2:45"` and return `"1:15"`.  
 
-1. We could create a function called `add_times()` that would add times together.  
+* We could create a function called `add_times()` that would add times together.  
 
 There are other functions we could probably think of too.  Since all of these functions are only for working with one special type of data, a better approach would be to create a Python class.  A **class** is a custom data type that you can define in Python.  Usually we use a capitalized word as the name of a class, and then define the class using code like the following:
 
@@ -3031,7 +3031,7 @@ class Time:
 This is a very basic class.  The special function called `__init__` inside the class is the **constructor function** which tells Python how to construct an **instance** of the `Time` class.  To call this special function, all we need to do is this:
 
 ```python
-x = Time(5,40)
+x = Time(5, 40)
 ```
 
 Now the variable `x` is an instance of the `Time` class.  We also say that `x` is a `Time` **object**.  When we initialized this `Time` object, we passed two arguments, hours and minutes.  Then we told Python to set the values of `self.hours` and `self.minutes` to those two numbers.  Now the object `x` has two **attributes**, `.hours` and `.minutes`.  We can access the values of these attributes using dot-notation:
@@ -3062,14 +3062,38 @@ Now when we initialize a `Time` object, it will have a `.to_minutes()` method th
 
 3. Classes are a way to organize new data types and the functions that are commonly used on them.  
 
-Here are some exercises. 
+#### Practice
 
 1. What happens when you try to print a `Time` object? Could you write a function called `print_time(time_object)` that would do a better job?  
 
 2. Re-write the `print_time()` function as a method of the `Time` class. 
 
-3. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
+3. Add a method called `add_minutes` to the `Time` class.  It should work like this:
 
+    ```python
+    y = Time(12, 30)
+    y.add_minutes(45)
+    y.print_time() # Should print 1:15. 
+    ```
+
+4. Write a method called `add_time`.  It should allow you to add one `Time` object to another, returning a new `Time` object like so:
+
+    ```python
+    x = Time(5, 40)
+    y = Time(1, 30)
+    z = x.add_time(y)
+    z.print_time() # Should print 7:10
+    ```
+
+#### Additional Practice 
+
+1. Create a Python class called `Book`.  Each `Book` object should have a title, author, version, publisher, and year.  It should have a method called create reference that prints a reference string for the book.  For example, here is an example reference for a book:
+
+    Downey, Allen. Think Python. Second Edition, Green Tree Press, 2015.
+
+
+
+<!--
 ### Wed, Nov 13
 
 We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.

@@ -4085,7 +4085,7 @@ Wednesday.</p>
 program that the computer can detect before running the code. Examples
 include mismatched parentheses, or incomplete lines of code.</li>
 <li><strong>Runtime errors</strong> are errors that occur while the
-program is running. This category include <strong>type errors</strong>
+program is running. This category includes <strong>type errors</strong>
 where the computer tries to use a function or operator with a variable
 or expression of the wrong type.</li>
 <li><strong>Semantic errors</strong> happen when the program runs
@@ -4172,7 +4172,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a 
 <span id="cb106-71"><a href="#cb106-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-72"><a href="#cb106-72" aria-hidden="true" tabindex="-1"></a>    top_name, top_average <span class="op">=</span> find_top_student(gradebook)</span>
 <span id="cb106-73"><a href="#cb106-73" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span>
-<span id="cb106-74"><a href="#cb106-74" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Top student: </span><span class="sc">{</span>top_name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>top_average<span class="sc">:.1f}</span><span class="ss">)&quot;</span>)</span>
+<span id="cb106-74"><a href="#cb106-74" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Top student: </span><span class="sc">{</span>top_name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span><span class="bu">round</span>(top_average, <span class="dv">1</span>)<span class="sc">}</span><span class="ss">)&quot;</span>)</span>
 <span id="cb106-75"><a href="#cb106-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-76"><a href="#cb106-76" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-77"><a href="#cb106-77" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
@@ -4297,75 +4297,124 @@ href="https://greenteapress.com/thinkpython2/thinkpython2.pdf#chapter.15">TP15</
 </tr>
 </tbody>
 </table>
+<h3 id="mon-nov-9">Mon, Nov 9</h3>
+<p>Up to now, when we need a data type to represent complicated data,
+we’ve either used a list or a dictionary (or maybe a string, tuple, or
+set). But sometimes it would be nice if we could create our own custom
+data types. <strong>Object-oriented programming</strong> is a
+programming paradigm that allows users to create new data types that
+include both data and functions for working with that data. Python uses
+<strong>class objects</strong> to implement object oriented
+programming.</p>
+<!--Before we construct our first Python class, let's look at some data.  The files [sunrise.tsv](https://bclins.github.io/fall24/cs261/sunrise.tsv) and [sunset.tsv](https://bclins.github.io/fall24/cs261/sunset.tsv) contain tables stored in tab separated value format with the times of sunrise and sunset for every day of the year (2024) here at Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). Here is a link if you want to [preview the sunset data](https://bclins.github.io/fall24/cs261/sunset.html).-->
+<p>Here is data about the <a
+href="https://bclins.github.io/fall24/cs261/sunset.html">time of
+sunset</a> every day in Hampden-Sydney (source: <a
+href="https://gml.noaa.gov/grad/solcalc/"
+class="uri">https://gml.noaa.gov/grad/solcalc/</a>). If we want to write
+a program to work with sunset times, we could convert all of this data
+to integers (minutes). That would work, but then we would also need to
+write some helper functions. For example, we would need:</p>
+<ul>
+<li><p>A function to convert a string like <code>"1:30"</code> to an
+integer number of minutes.</p></li>
+<li><p>A function to convert a number of minutes like 90 to a string
+like <code>"1:30"</code>.</p></li>
+</ul>
+<p>We might also want functions to find the difference and sum of two
+different times:</p>
+<ul>
+<li><p>We could create a function called <code>time_difference()</code>
+that would find the difference between two time strings like
+<code>"1:30"</code> and <code>"2:45"</code> and return
+<code>"1:15"</code>.</p></li>
+<li><p>We could create a function called <code>add_times()</code> that
+would add times together.</p></li>
+</ul>
+<p>There are other functions we could probably think of too. Since all
+of these functions are only for working with one special type of data, a
+better approach would be to create a Python class. A
+<strong>class</strong> is a custom data type that you can define in
+Python. Usually we use a capitalized word as the name of a class, and
+then define the class using code like the following:</p>
+<div class="sourceCode" id="cb108"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Time:</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hours, minutes):</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hours <span class="op">=</span> hours</span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.minutes <span class="op">=</span> minutes</span></code></pre></div>
+<p>This is a very basic class. The special function called
+<code>__init__</code> inside the class is the <strong>constructor
+function</strong> which tells Python how to construct an
+<strong>instance</strong> of the <code>Time</code> class. To call this
+special function, all we need to do is this:</p>
+<div class="sourceCode" id="cb109"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Time(<span class="dv">5</span>, <span class="dv">40</span>)</span></code></pre></div>
+<p>Now the variable <code>x</code> is an instance of the
+<code>Time</code> class. We also say that <code>x</code> is a
+<code>Time</code> <strong>object</strong>. When we initialized this
+<code>Time</code> object, we passed two arguments, hours and minutes.
+Then we told Python to set the values of <code>self.hours</code> and
+<code>self.minutes</code> to those two numbers. Now the object
+<code>x</code> has two <strong>attributes</strong>, <code>.hours</code>
+and <code>.minutes</code>. We can access the values of these attributes
+using dot-notation:</p>
+<div class="sourceCode" id="cb110"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.hours)</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.minutes)</span></code></pre></div>
+<p>So far this class is very basic. Let’s add some functionality by
+adding a <strong>method</strong> to convert a <code>Time</code> object
+to minutes.</p>
+<div class="sourceCode" id="cb111"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Time:</span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hours, minutes):</span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hours <span class="op">=</span> hours</span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.minutes <span class="op">=</span> minutes</span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> to_minutes(<span class="va">self</span>):</span>
+<span id="cb111-6"><a href="#cb111-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">60</span> <span class="op">*</span> <span class="va">self</span>.hours <span class="op">+</span> <span class="va">self</span>.minutes</span></code></pre></div>
+<p>Now when we initialize a <code>Time</code> object, it will have a
+<code>.to_minutes()</code> method that we can use to convert it to an
+integer. Things to know about objects:</p>
+<ol type="1">
+<li><p>Objects are mutable. Try changing the value of the hours or
+minutes of x.</p></li>
+<li><p>Classes are a way to create new types. What happens when you try
+to find <code>type(x)</code>?</p></li>
+<li><p>Classes are a way to organize new data types and the functions
+that are commonly used on them.</p></li>
+</ol>
+<h4 id="practice-8">Practice</h4>
+<ol type="1">
+<li><p>What happens when you try to print a <code>Time</code> object?
+Could you write a function called <code>print_time(time_object)</code>
+that would do a better job?</p></li>
+<li><p>Re-write the <code>print_time()</code> function as a method of
+the <code>Time</code> class.</p></li>
+<li><p>Add a method called <code>add_minutes</code> to the
+<code>Time</code> class. It should work like this:</p>
+<div class="sourceCode" id="cb112"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> Time(<span class="dv">12</span>, <span class="dv">30</span>)</span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>y.add_minutes(<span class="dv">45</span>)</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>y.print_time() <span class="co"># Should print 1:15. </span></span></code></pre></div></li>
+<li><p>Write a method called <code>add_time</code>. It should allow you
+to add one <code>Time</code> object to another, returning a new
+<code>Time</code> object like so:</p>
+<div class="sourceCode" id="cb113"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Time(<span class="dv">5</span>, <span class="dv">40</span>)</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> Time(<span class="dv">1</span>, <span class="dv">30</span>)</span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x.add_time(y)</span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a>z.print_time() <span class="co"># Should print 7:10</span></span></code></pre></div></li>
+</ol>
+<h4 id="additional-practice-30">Additional Practice</h4>
+<ol type="1">
+<li><p>Create a Python class called <code>Book</code>. Each
+<code>Book</code> object should have a title, author, version,
+publisher, and year. It should have a method called create reference
+that prints a reference string for the book. For example, here is an
+example reference for a book:</p>
+<p>Downey, Allen. Think Python. Second Edition, Green Tree Press,
+2015.</p></li>
+</ol>
 <!--
-### Mon, Nov 11
-
-Up to now, when we need a data type to represent complicated data, we've either used a list or a dictionary (or maybe a string, tuple, or set).  But sometimes it would be nice if we could create our own custom data types.  **Object-oriented programming** is a programming paradigm that allows users to create new data types that include both data and functions for working with that data.  Python uses **class objects** to implement object oriented programming.  
-
-Before we construct our first Python class, let's look at some data.  The files [sunrise.tsv](sunrise.tsv) and [sunset.tsv](sunset.tsv) contain tables stored in tab separated value format with the times of sunrise and sunset for every day of the year (2024) here at Hampden-Sydney (source: <https://gml.noaa.gov/grad/solcalc/>). Here is a link if you want to [preview the sunset data](sunset.html).
-
-If we want to write a program to work with sunset and sunrise times, we could convert all of this data to integers (minutes).  That would work, but then we would also need to write some helper functions.  For example, we would need:
-
-1. A function to convert a string like `"1:30"` to an integer number of minutes. 
-1. A function to convert a number of minutes like 90 to a string like `"1:30"`. 
-
-We might also want functions to find the difference and sum of two different times:
-
-1. We could create a function called `time_difference()` that would find the difference between two time strings like `"1:30"` and `"2:45"` and return `"1:15"`.  
-
-1. We could create a function called `add_times()` that would add times together.  
-
-There are other functions we could probably think of too.  Since all of these functions are only for working with one special type of data, a better approach would be to create a Python class.  A **class** is a custom data type that you can define in Python.  Usually we use a capitalized word as the name of a class, and then define the class using code like the following:
-
-```python
-class Time:
-    def __init__(self, hours, minutes):
-        self.hours = hours
-        self.minutes = minutes
-```
-
-This is a very basic class.  The special function called `__init__` inside the class is the **constructor function** which tells Python how to construct an **instance** of the `Time` class.  To call this special function, all we need to do is this:
-
-```python
-x = Time(5,40)
-```
-
-Now the variable `x` is an instance of the `Time` class.  We also say that `x` is a `Time` **object**.  When we initialized this `Time` object, we passed two arguments, hours and minutes.  Then we told Python to set the values of `self.hours` and `self.minutes` to those two numbers.  Now the object `x` has two **attributes**, `.hours` and `.minutes`.  We can access the values of these attributes using dot-notation:
-
-```python
-print(x.hours)
-print(x.minutes)
-```
-
-So far this class is very basic.  Let's add some functionality by adding a **method** to convert a `Time` object to minutes.  
-
-
-```python
-class Time:
-    def __init__(self, hours, minutes):
-        self.hours = hours
-        self.minutes = minutes
-    def to_minutes(self):
-        return 60 * self.hours + self.minutes
-
-```
-
-Now when we initialize a `Time` object, it will have a `.to_minutes()` method that we can use to convert it to an integer.  Things to know about objects:
-
-1. Objects are mutable.  Try changing the value of the hours or minutes of x. 
-
-2. Classes are a way to create new types.  What happens when you try to find `type(x)`?  
-
-3. Classes are a way to organize new data types and the functions that are commonly used on them.  
-
-Here are some exercises. 
-
-1. What happens when you try to print a `Time` object? Could you write a function called `print_time(time_object)` that would do a better job?  
-
-2. Re-write the `print_time()` function as a method of the `Time` class. 
-
-3. Write a function called `time_from_minutes(mins)` that converts a number of minutes to a `Time` object.  
-
 ### Wed, Nov 13
 
 We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.

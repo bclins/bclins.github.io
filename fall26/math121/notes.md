@@ -1097,45 +1097,7 @@ Mon, Nov 9  | [7.2][7.2] | Paired data
 Wed, Nov 11 | [7.3][7.3] | Difference of two means  
 Fri, Nov 13 | [7.3][7.3] | Difference of two means - con'd
 
-<!--
-### Mon, Apr 6
-
-<div class="Theorem">
-**t-Distribution Confidence Interval.** To estimate a population mean $\mu$ use
-
-$$\bar{x} \pm t^* \frac{s}{\sqrt{n}}$$
-
-where $t^*$ is the **critical t-value** which has $n-1$ **degrees of freedom**. 
-
-This works best if the sample size is large (at least 30) or there is very little skew and no outliers in the sample.
-</div>
-
-The easiest way to find the critical t-value is to use a table:
-
-* **Table:** [t-distribution table](https://people.hsc.edu/faculty-staff/blins/StatsExamples/Tables/TableC.pdf)
-
-We talked about how to use the table to find $t$-values.  Then we did the following examples. 
-
-1. Use the [class data](ClassData.xlsx) to make a 95\% confidence interval for the average height of all HSC students. 
-
-2. Use the class data [class data](ClassData.xlsx) to make a 90\% confidence interval for the average weight of all HSC students.  Are the conditions for making a confidence interval satisfied?
-
-We also did this workshop.
-
-* **Workshop:** [Quarters](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Quarters.pdf)
-
-t-distribution methods (both confidence intervals & hypothesis tests) require the following assumptions:
-
-1. **No Bias.** Data should be a simple random sample from the population.
-
-2. **Normality.** The sampling distribution for $\bar{x}$ should be normal. This tends to be true if the sample size is big.  Here is a quick rule of thumb:
-
-    * **Large samples** If $N \ge 30$, then the normality assumption is probably reasonable as long as the data isn't extremely skewed or has large outliers.  
-    * **Small samples** If $N < 30$, then skew or outliers could mess up the p-values or confidence levels you get from the t-distribution formulas.  
-
-
-### Wed, Apr 8
-
+### Mon, Nov 9
 
 We talked about comparing the averages of two correlated variables.  You can use one sample t-distribution methods to do this as long as you focus on the **matched pairs differences**.  The key is to focus on the difference or gap between the variables.  For a **matched pairs t-test**, we always use the following:
 
@@ -1146,17 +1108,17 @@ We talked about comparing the averages of two correlated variables.  You can use
 </table>
 </center>
 
-1. Does the data in this [sample of couples getting married](http://people.hsc.edu/faculty-staff/blins/StatsExamples/marriageAges.xls) provide significant evidence that husbands are older than their wives on average?  What is the average age gap?  Use a one-sample hypothesis test and confidence interval for the average difference. 
+1. Does the data in this [sample of couples getting married](marriageAges.xls) provide significant evidence that husbands are older than their wives on average?  What is the average age gap?  Use a one-sample hypothesis test and confidence interval for the average difference. 
 
 2. Are the necessary assumptions for a t-test and a t-confidence interval satisfied in the previous example? 
 
 3. Make a confidence interval for the average age gap between husbands and wives.  It turns out that the 95% confidence interval tells us that husbands are from $-0.125$ to $3.975$ years older on average.  Since this interval extends farther on one side than the other, we might be tempted to argument that men really are older on average, but you can't make this argument based on the confidence interval.  
 
-4. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](http://people.hsc.edu/faculty-staff/blins/StatsExamples/football.xlsx).
+4. Do helium filled footballs go farther when you kick them?  An article in the *Columbus Dispatch* from 1993 described the following experiment.  One football was filled with helium and another identical football with regular air.  Each football was kicked 39 times and the two footballs alternated with each kick. The distances traveled by the balls on each kick is recorded in this spreadsheet: [Helium filled footballs](football.xlsx).
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
-
+<!--
 ### Fri, Apr 10
 
 Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
