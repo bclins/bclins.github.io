@@ -50,7 +50,7 @@ css:
 <div class="fixed">
 ### Binomial Distribution
 <center>
-<a href="binomialPlotter2.html"><img src="binom.png" width=280></a>
+<a href="binomialPlotter3.html"><img src="binom.png" width=280></a>
 </center>
 </div>
 
