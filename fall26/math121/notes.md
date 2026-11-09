@@ -20,7 +20,7 @@ header-includes: |
 <nav class="navbar">
 * [Class Notes](notes.html)
 * [Schedule & Syllabus](index.html)
-* [Software & Tables](http://people.hsc.edu/faculty-staff/blins/StatsTools/)
+* [Software & Tables](StatTools/index.html)
 </nav>
 
 
