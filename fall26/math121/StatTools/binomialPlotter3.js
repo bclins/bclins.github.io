@@ -1,5 +1,6 @@
 // Written by Brian Lins
 // This software is available under the MIT license.
+// Upgraded to Plotly.js version 4.2.0
 
 function range(first,last) {
 // returns an array with the values first through last.
@@ -60,9 +61,11 @@ function plotBinomialDist(N,p) {
     {
       x: x,
       y: importanty,
-      text: importantCDF,
+      customdata: importantCDF,
+      // text: importantCDF,
       type: 'bar',
-      hoverinfo: 'x+y',
+      //hoverinfo: 'x+y',
+      hovertemplate: '(%{x}, %{y})<extra></extra>',
       marker: {
         color: x.map(()=>"#1f77b4"),
       },
@@ -72,7 +75,8 @@ function plotBinomialDist(N,p) {
     title: "Binomial Distribution",
     xaxis: {title: "# of Successes"},
     yaxis: {title: "Probability", hoverformat: '.5f'},
-    width: 800
+    width: 800,
+    height: 450
   };
   try {
     Plotly.newPlot('histDiv', data, layout);
@@ -88,7 +92,8 @@ function plotBinomialDist(N,p) {
     };
     if (document.getElementById("myCheck").checked) {
       update.marker.color = data.points[0].fullData.x.map((x) => (x <= data.points[0].x) ? "#ff7f0e" : "#1f77b4");
-      update.hoverinfo = 'x+text';
+      //update.hoverinfo = 'x+importantCDF';
+      update.hovertemplate = '(%{x}, %{customdata})<extra></extra>';
     } else {
       update.marker.color = data.points[0].fullData.x.map((x) => (x === data.points[0].x) ? "#ff7f0e" : "#1f77b4");
       update.hoverinfo = 'x+y';
