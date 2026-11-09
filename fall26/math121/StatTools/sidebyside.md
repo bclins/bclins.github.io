@@ -2,7 +2,7 @@
 title: Side by Side Boxplots
 css: 
 header-includes:
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-4.2.0.min.js"></script>
 ---
 
 
