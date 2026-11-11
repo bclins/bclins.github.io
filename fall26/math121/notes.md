@@ -20,7 +20,8 @@ header-includes: |
 <nav class="navbar">
 * [Class Notes](notes.html)
 * [Schedule & Syllabus](index.html)
-* [Software & Tables](StatTools/index.html)
+* [Software & Tables](../../StatTools/index.html)
+
 </nav>
 
 
@@ -1118,10 +1119,9 @@ We talked about comparing the averages of two correlated variables.  You can use
 
     Does this data provide statistically significant evidence that helium filled footballs go farther when kicked? 
 
-<!--
-### Fri, Apr 10
+### Wed, Nov 11
 
-Today we introduced the last two inference formulas from the [interactive formula sheet](http://people.hsc.edu/faculty-staff/blins/StatsTools/statsFormulas.html): **two sample inference for means**. We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
+Today we introduced **two sample inference for means**.  These are the last two inference formulas on the [final exam formula sheet](https://bclins.github.io/fall25/math121/finalformulas.pdf). We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
 
 * [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
 
@@ -1134,13 +1134,11 @@ Here are side-by-side box and whisker plots for the data:
 This picture suggests that there might be a difference between men & women, but is it really significant? Or could this just be a random fluke?  To find out, we can do a **two sample t-test**.  
 
 <div class="Theorem">
-**Two-Sample Hypothesis Test for Means**
+#### Two-Sample Hypothesis Test for Means
 
-<center>
-<table>
-<tr><td>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</td><td>&nbsp; &nbsp; &nbsp; &nbsp;</td><td>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </td></tr>
-</table>
-</center>
+<div  style="display: flex; justify-content: center; align-items: center" > 
+<div>$\begin{array}{l} H_0: \mu_1 = \mu_2 \\ H_A: \mu_1 \ne \mu_2 \end{array}$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div><div>$t = \dfrac{~ \bar{x}_1 - \bar{x}_2 ~}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$ </div>
+</div>
 
 You can use the smaller sample size minus one as the degrees of freedom. 
 
@@ -1155,7 +1153,7 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><th>&nbsp;</th><th>$n$</th><th>$\bar{x}$</th><th>$s$</th></tr>
 <tr><td>Women</td><td>27</td><td>16,496.1</td><td>7,914.3</td></tr>
 <tr><td>Men</td><td>20</td><td>12,866.7</td><td>8,342.5</td></tr>
 </table>
@@ -1168,7 +1166,7 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 <center>
 <table class="bordered">
-<tr><td>&nbsp;</td><td>$n$</td><td>$\bar{x}$</td><td>$s$</td></tr>
+<tr><th>&nbsp;</th><th>$n$</th><th>$\bar{x}$</th><th>$s$</th></tr>
 <tr><td>Seeded</td><td>26</td><td>442.0</td><td>650.8</td></tr>
 <tr><td>Control</td><td>26</td><td>164.6</td><td>278.4</td></tr>
 </table>
@@ -1176,7 +1174,7 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 
 2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
 
--->
+
 
 - - - 
 

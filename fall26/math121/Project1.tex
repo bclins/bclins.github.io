@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{exam}
 \usepackage[empty]{fullpage}
 \usepackage{amsmath}
 \usepackage{tikz}
@@ -6,7 +6,6 @@
 
 \newcommand{\blank}[1]{\underline{\hspace*{#1}}}
 \newcommand{\ds}{\displaystyle}
-\newcommand{\mymod}{\, \mathrm{mod}\,}
 
 \begin{document}
 
@@ -26,7 +25,7 @@ Total & 38 & 38
 \end{tabular}
 \end{center}
 
-\begin{enumerate}
+\begin{questions}
 
 
 \item Write a short introductory paragraph about this study. In your paragraph, make sure to explain the following:
@@ -36,15 +35,35 @@ Total & 38 & 38
 \item Was this an experiment or an observational study?  Explain how you can tell.
 \end{itemize}
 
+\begin{solution}
+\textbf{Explanatory variable:} Diet, \textbf{Response variable:} Survival past 33. The survival rates are $\hat{p}_\text{Diet} = \tfrac{12}{38} = 31.6\%$ and $\hat{p}_\text{Control} = \tfrac{6}{38} = 15.8\%$, so the difference was 15.8\% higher survival in the treatment group.  This was an \textbf{experiment} since the monkeys were randomly placed into the two treatment groups. 
+\end{solution}
+
 %\item What is the relative risk here? That is, how many times more likely are monkeys to survive if they placed on a restricted calorie diet? 
 
 \item From the data, it looks like restricted calorie diets help monkeys live longer, but is this result statistically significant? Carry out an appropriate hypothesis test to find out.  Be sure to include (i) the hypotheses, (ii) the test statistic ($z$-value) including the formula you used, (iii) the p-value, and (iv) a complete explanation of your conclusion.  
 
+\begin{solution}
+$$z = \frac{\frac{12}{38} - \frac{6}{38}}{\sqrt{\frac{18}{76}\left(1 - \tfrac{18}{76}\right)\left(\frac{1}{38} + \frac{1}{38}\right)}} = 1.6189; \text{(2-sided) p-value} = 10.5\%.$$ 
+\end{solution}
+
 \item Find a 95\% confidence interval for the difference in survival rates for the two groups of monkeys. Explain in words what you are 95\% confident is in the interval. 
 
+\begin{solution}
+\textbf{Confidence interval:} $0.1579 \pm 0.1878$ goes from $-2.99\%$ to $34.57\%$ higher survival rates with the restricted diet. 
+\end{solution}
+
+
 \item Are the samples sizes big enough to trust the results of the two sample inference techniques used here?  Explain how you can tell.  
+\begin{solution}
+\textbf{Yes} for the hypothesis test (at least 5 successes/failures in each group), but \textbf{no} for the confidence interval, only 6 survivors in the control group. 
+\end{solution}
 
 
 \item Write a concluding paragraph to summarize your results. Should we conclude that low calorie diets cause monkeys to live longer? Be sure to address possible issues like lurking variables and the type of study used by the researchers when you explain your conclusion.
-\end{enumerate}
+
+\begin{solution}
+\textbf{No lurking variables} because of random experiment, but the evidence is weak.   
+\end{solution}
+\end{questions}
 \end{document}

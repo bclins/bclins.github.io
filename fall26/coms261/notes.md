@@ -3093,8 +3093,7 @@ Now when we initialize a `Time` object, it will have a `.to_minutes()` method th
 
 
 
-<!--
-### Wed, Nov 13
+### Wed, Nov 11
 
 We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.
 
@@ -3107,14 +3106,27 @@ We introduced **magic methods** in Python which are special methods with double 
 </table>
 </center>
 
-We implemented each of these methods for our `Time` class.  Then we tried to import the file `time.py` into another program.  This didn't work and I was a stumped.  Luckily Gyabaah pointed out that Python has a built in `time` library that overrode my custom `time.py` module.  So I renamed `time.py` to `my_time.py` and we were good to go.  
+We implemented each of these methods for our `Time` class.  Then we saved the file as `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
 
-We finished by reading a tab-separated file with the [sunset data](sunset.html) and converting each sunset to a time object.   
+
+#### Additional Practice 
+
+1. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
+
+2. Python has a magic method for subtraction called `__sub__` which defines how the minus operator `-` works.  Define this method for the objects in our `Time` class. Your method should work like this to create a new time object:
+
+    ```python
+    x = Time(2, 45)
+    y = Time(1, 30)
+    z = x - y
+    print(z) # Should get 1:15
+    ```
 
 <!--
-3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 
 ### Thu, Nov 14
+
+
 
 Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
 
@@ -3196,6 +3208,11 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 </table>
 </center>
 
+#### Additional Practice
+
+1. Write a static method for the `Time` class called `from_string` that inputs a string like `"5:40"` and creates a new Time object. 
+
+2. How could we read the tab-separated values in this table: [sunset data](https://bclins.github.io/fall24/cs261/sunset.html) and converting each sunset to a time object?  
 
 
 ### Fri, Nov 15 

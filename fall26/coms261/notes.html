@@ -4414,28 +4414,74 @@ example reference for a book:</p>
 <p>Downey, Allen. Think Python. Second Edition, Green Tree Press,
 2015.</p></li>
 </ol>
-<!--
-### Wed, Nov 13
-
-We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.
-
+<h3 id="wed-nov-11">Wed, Nov 11</h3>
+<p>We introduced <strong>magic methods</strong> in Python which are
+special methods with double underscore names that tell Python how to do
+common things you might want to do with objects like how to convert them
+to strings or add them together. We looked at these three example magic
+methods.</p>
 <center>
 <table class="bordered">
-<tr><th>Magic Method</th><th>Purpose</th></tr>
-<tr><td>`__str__`</td><td>Tells Python how to convert the objects into strings.</td></tr>
-<tr><td>`__add__`</td><td>Tells Python how to add objects with the `+` operator.</td></tr>
-<tr><td>`__lt__`</td><td>Tells Python how to decide if `object1 < object2`.</td></tr>
+<tr>
+<th>
+Magic Method
+</th>
+<th>
+Purpose
+</th>
+</tr>
+<tr>
+<td>
+<code>__str__</code>
+</td>
+<td>
+Tells Python how to convert the objects into strings.
+</td>
+</tr>
+<tr>
+<td>
+<code>__add__</code>
+</td>
+<td>
+Tells Python how to add objects with the <code>+</code> operator.
+</td>
+</tr>
+<tr>
+<td>
+<code>__lt__</code>
+</td>
+<td>
+Tells Python how to decide if <code>object1 &lt; object2</code>.
+</td>
+</tr>
 </table>
 </center>
-
-We implemented each of these methods for our `Time` class.  Then we tried to import the file `time.py` into another program.  This didn't work and I was a stumped.  Luckily Gyabaah pointed out that Python has a built in `time` library that overrode my custom `time.py` module.  So I renamed `time.py` to `my_time.py` and we were good to go.  
-
-We finished by reading a tab-separated file with the [sunset data](sunset.html) and converting each sunset to a time object.   
-
+<p>We implemented each of these methods for our <code>Time</code> class.
+Then we saved the file as <code>time_module.py</code> (note that you
+can’t use <code>time.py</code> because Python has a built in
+<code>time</code> library) and imported it into another program.</p>
+<h4 id="additional-practice-31">Additional Practice</h4>
+<ol type="1">
+<li><p>Write a function called
+<code>time_difference(time1, time2)</code> that calculates the
+difference between two time objects and returns the result as a time
+object.</p></li>
+<li><p>Python has a magic method for subtraction called
+<code>__sub__</code> which defines how the minus operator <code>-</code>
+works. Define this method for the objects in our <code>Time</code>
+class. Your method should work like this to create a new time
+object:</p>
+<div class="sourceCode" id="cb114"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Time(<span class="dv">2</span>, <span class="dv">45</span>)</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> Time(<span class="dv">1</span>, <span class="dv">30</span>)</span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">-</span> y</span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z) <span class="co"># Should get 1:15</span></span></code></pre></div></li>
+</ol>
 <!--
-3. Write a function called `time_difference(time1, time2)` that calculates the difference between two time objects and returns the result as a time object.  
 
 ### Thu, Nov 14
+
+
 
 Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
 
@@ -4517,6 +4563,11 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 </table>
 </center>
 
+#### Additional Practice
+
+1. Write a static method for the `Time` class called `from_string` that inputs a string like `"5:40"` and creates a new Time object. 
+
+2. How could we read the tab-separated values in this table: [sunset data](https://bclins.github.io/fall24/cs261/sunset.html) and converting each sunset to a time object?  
 
 
 ### Fri, Nov 15 

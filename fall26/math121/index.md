@@ -18,7 +18,7 @@ header-includes: |
 <nav class="navbar">
 * [Class Notes](notes.html)
 * [Schedule & Syllabus](index.html)
-* [Software & Tables](StatTools/index.html)
+* [Software & Tables](../../StatTools/index.html)
 </nav>
 
 * **Instructor:** [Brian Lins](https://bclins.github.io) 
