@@ -4418,7 +4418,7 @@ example reference for a book:</p>
 <p>We introduced <strong>magic methods</strong> in Python which are
 special methods with double underscore names that tell Python how to do
 common things you might want to do with objects like how to convert them
-to strings or add them together. We looked at these three example magic
+to strings or add them together. We looked at these example magic
 methods.</p>
 <center>
 <table class="bordered">
@@ -4448,6 +4448,14 @@ Tells Python how to add objects with the <code>+</code> operator.
 </tr>
 <tr>
 <td>
+<code>__eq__</code>
+</td>
+<td>
+Tells Python when objects are equal (for the <code>==</code> operator).
+</td>
+</tr>
+<tr>
+<td>
 <code>__lt__</code>
 </td>
 <td>
@@ -4456,10 +4464,33 @@ Tells Python how to decide if <code>object1 &lt; object2</code>.
 </tr>
 </table>
 </center>
-<p>We implemented each of these methods for our <code>Time</code> class.
-Then we saved the file as <code>time_module.py</code> (note that you
-can’t use <code>time.py</code> because Python has a built in
-<code>time</code> library) and imported it into another program.</p>
+<p>We wrote the <code>__str__</code> and <code>__add__</code> methods in
+class:</p>
+<div class="sourceCode" id="cb114"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Time:</span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hours, minutes):</span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hours <span class="op">=</span> hours</span>
+<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.minutes <span class="op">=</span> minutes</span>
+<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-7"><a href="#cb114-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hours<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>minutes<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb114-9"><a href="#cb114-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-10"><a href="#cb114-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
+<span id="cb114-11"><a href="#cb114-11" aria-hidden="true" tabindex="-1"></a>        hours <span class="op">=</span> <span class="va">self</span>.hours <span class="op">+</span> other.hours <span class="op">+</span> (<span class="va">self</span>.minutes <span class="op">+</span> other.minutes) <span class="op">//</span> <span class="dv">60</span></span>
+<span id="cb114-12"><a href="#cb114-12" aria-hidden="true" tabindex="-1"></a>        minutes <span class="op">=</span> (<span class="va">self</span>.minutes <span class="op">+</span> other.minutes) <span class="op">%</span> <span class="dv">60</span></span>
+<span id="cb114-13"><a href="#cb114-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Time(hours, minutes)</span>
+<span id="cb114-14"><a href="#cb114-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-15"><a href="#cb114-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> to_minutes(<span class="va">self</span>):</span>
+<span id="cb114-16"><a href="#cb114-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">60</span> <span class="op">*</span> <span class="va">self</span>.hours <span class="op">+</span> <span class="va">self</span>.minutes</span></code></pre></div>
+<h4 id="practice-9">Practice</h4>
+<ol type="1">
+<li><p>Write a <code>__eq__</code> method for our <code>Time</code>
+class.</p></li>
+<li><p>Write a <code>__lt__</code> method for our <code>Time</code>
+class. Hint: Use the <code>to_minutes</code> method to help make the
+comparisons.</p></li>
+</ol>
 <h4 id="additional-practice-31">Additional Practice</h4>
 <ol type="1">
 <li><p>Write a function called
@@ -4471,16 +4502,17 @@ object.</p></li>
 works. Define this method for the objects in our <code>Time</code>
 class. Your method should work like this to create a new time
 object:</p>
-<div class="sourceCode" id="cb114"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Time(<span class="dv">2</span>, <span class="dv">45</span>)</span>
-<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> Time(<span class="dv">1</span>, <span class="dv">30</span>)</span>
-<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">-</span> y</span>
-<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z) <span class="co"># Should get 1:15</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb115"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Time(<span class="dv">2</span>, <span class="dv">45</span>)</span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> Time(<span class="dv">1</span>, <span class="dv">30</span>)</span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">-</span> y</span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z) <span class="co"># Should get 1:15</span></span></code></pre></div></li>
 </ol>
 <!--
 
 ### Thu, Nov 14
 
+<!--We implemented each of these methods for our `Time` class.  Then we saved the file as `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
 
 
 Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  

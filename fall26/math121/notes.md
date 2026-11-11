@@ -1123,7 +1123,7 @@ We talked about comparing the averages of two correlated variables.  You can use
 
 Today we introduced **two sample inference for means**.  These are the last two inference formulas on the [final exam formula sheet](https://bclins.github.io/fall25/math121/finalformulas.pdf). We looked at this example which is from a study where college student volunteers wore a voice recorder that let the researchers estimate how many words each student spoke per day.  
 
-* [Men vs. women words per day](http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx)
+* [Men vs. women words per day](talking.xlsx)
 
 Here are side-by-side box and whisker plots for the data:
 
@@ -1175,21 +1175,7 @@ Here is a quick summary of the numbers we need to calculate the t-value for the 
 2. Is there statistically significant evidence that cloud seeding works to produce more rain?  
 
 
-
-- - - 
-
-### Week 13 Notes
-
-Day  | Section  | Topic
-:-----:|:---:|:-----------------------
-Mon, Nov 16 |            | Choosing the right technique
-Wed, Nov 18 |            | Review
-Fri, Nov 20 |            | **Midterm 3**
-
-<!-- 
-### Mon, Apr 13
-
-Today we introduced the 2-sample confidence interval for means. 
+3. Use a two sample t-confidence interval to estimate how much more rain cloud seeding would produce on average.  
 
 <div class="Theorem">
 **Two Sample Confidence Interval for Means**
@@ -1211,7 +1197,22 @@ These formulas (both the two-sample t-test and t-confidence interval) are based 
     * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
     * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
 
-1. Last time we looked at evidence that cloud seeding causes more rain to fall. Use a two sample t-confidence interval to estimate how much more rain cloud seeding would produce on average.  
+
+- - - 
+
+### Week 13 Notes
+
+Day  | Section  | Topic
+:-----:|:---:|:-----------------------
+Mon, Nov 16 |            | Choosing the right technique
+Wed, Nov 18 |            | Review
+Fri, Nov 20 |            | **Midterm 3**
+
+<!-- 
+### Mon, Apr 13
+
+Today we introduced the 2-sample confidence interval for means. 
+
 
 After that, we did this workshop in class. 
 

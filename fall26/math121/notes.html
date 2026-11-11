@@ -2036,9 +2036,7 @@ exam formula sheet</a>. We looked at this example which is from a study
 where college student volunteers wore a voice recorder that let the
 researchers estimate how many words each student spoke per day.</p>
 <ul>
-<li><a
-href="http://people.hsc.edu/faculty-staff/blins/StatsExamples/Talking.xlsx">Men
-vs. women words per day</a></li>
+<li><a href="talking.xlsx">Men vs. women words per day</a></li>
 </ul>
 <p>Here are side-by-side box and whisker plots for the data:</p>
 <center>
@@ -2183,9 +2181,43 @@ Control
 </table>
 </center>
 <ol start="2" type="1">
-<li>Is there statistically significant evidence that cloud seeding works
-to produce more rain?</li>
+<li><p>Is there statistically significant evidence that cloud seeding
+works to produce more rain?</p></li>
+<li><p>Use a two sample t-confidence interval to estimate how much more
+rain cloud seeding would produce on average.</p></li>
 </ol>
+<div class="Theorem">
+<p><strong>Two Sample Confidence Interval for Means</strong></p>
+<p>Use this to estimate the gap between two population means.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>±</mo><msup><mi>t</mi><mo>*</mo></msup><msqrt><mrow><mfrac><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt><mi>.</mi></mrow><annotation encoding="application/x-tex">(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.</annotation></semantics></math></p>
+<p>You can use the smaller sample size minus one as the degrees of
+freedom to find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>t</mi><mo>*</mo></msup><annotation encoding="application/x-tex">t^*</annotation></semantics></math>.</p>
+<p>Works best if the combined sample size is large
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n_1 + n_2 \ge 30</annotation></semantics></math>)
+or there is very little skew and no outliers in either sample.</p>
+</div>
+<p>These formulas (both the two-sample t-test and t-confidence interval)
+are based on the same key assumptions.</p>
+<ul>
+<li><p><strong>No Bias</strong>. As always, we need good simple random
+samples to avoid bias.</p></li>
+<li><p><strong>Normality</strong>. The t-distribution methods are based
+on the normal distribution. If the sample sizes are big enough, then you
+don’t need to worry to much about normality. Two-sample t-distribution
+methods are very robust, which means they tend to work well even with
+data that isn’t quite normal.</p>
+<ul>
+<li><strong>Large samples</strong>. As long as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>≥</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n_1 + n_2 \ge 30</annotation></semantics></math>,
+then you are probably safe unless your data is extremely skewed or has
+huge outliers.</li>
+<li><strong>Small samples</strong>. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>&lt;</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">n_1 + n_2 &lt; 30</annotation></semantics></math>,
+then be careful relying on the results unless the data has no outliers
+and very little skew.</li>
+</ul></li>
+</ul>
 <hr />
 <h3 id="week-13-notes">Week 13 Notes</h3>
 <table>
@@ -2219,27 +2251,6 @@ to produce more rain?</li>
 
 Today we introduced the 2-sample confidence interval for means. 
 
-<div class="Theorem">
-**Two Sample Confidence Interval for Means**
-
-Use this to estimate the gap between two population means.  
-
-$$(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}.$$
-
-You can use the smaller sample size minus one as the degrees of freedom to find $t^*$. 
-
-Works best if the combined sample size is large ($n_1 + n_2 \ge 30$) or there is very little skew and no outliers in either sample.
-</div>
-
-These formulas (both the two-sample t-test and t-confidence interval) are based on the same key assumptions. 
-
-* **No Bias**. As always, we need good simple random samples to avoid bias.  
-
-* **Normality**.  The t-distribution methods are based on the normal distribution.  If the sample sizes are big enough, then you don't need to worry to much about normality.  Two-sample t-distribution methods are very robust, which means they tend to work well even with data that isn't quite normal.  
-    * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
-    * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
-
-1. Last time we looked at evidence that cloud seeding causes more rain to fall. Use a two sample t-confidence interval to estimate how much more rain cloud seeding would produce on average.  
 
 After that, we did this workshop in class. 
 

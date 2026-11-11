@@ -3095,18 +3095,45 @@ Now when we initialize a `Time` object, it will have a `.to_minutes()` method th
 
 ### Wed, Nov 11
 
-We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these three example magic methods.
+We introduced **magic methods** in Python which are special methods with double underscore names that tell Python how to do common things you might want to do with objects like how to convert them to strings or add them together.  We looked at these example magic methods.
 
 <center>
 <table class="bordered">
 <tr><th>Magic Method</th><th>Purpose</th></tr>
 <tr><td>`__str__`</td><td>Tells Python how to convert the objects into strings.</td></tr>
 <tr><td>`__add__`</td><td>Tells Python how to add objects with the `+` operator.</td></tr>
+<tr><td>`__eq__`</td><td>Tells Python when objects are equal (for  the `==` operator).</td></tr>
 <tr><td>`__lt__`</td><td>Tells Python how to decide if `object1 < object2`.</td></tr>
 </table>
 </center>
 
-We implemented each of these methods for our `Time` class.  Then we saved the file as `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
+
+We wrote the `__str__` and `__add__` methods in class:
+
+```python
+
+class Time:
+    def __init__(self, hours, minutes):
+        self.hours = hours
+        self.minutes = minutes
+
+    def __str__(self):
+        return f"{self.hours}:{self.minutes}"
+
+    def __add__(self, other):
+        hours = self.hours + other.hours + (self.minutes + other.minutes) // 60
+        minutes = (self.minutes + other.minutes) % 60
+        return Time(hours, minutes)
+
+    def to_minutes(self):
+        return 60 * self.hours + self.minutes
+```
+
+#### Practice 
+
+1. Write a `__eq__` method for our `Time` class. 
+
+2. Write a `__lt__` method for our `Time` class. Hint: Use the `to_minutes` method to help make the comparisons. 
 
 
 #### Additional Practice 
@@ -3126,6 +3153,7 @@ We implemented each of these methods for our `Time` class.  Then we saved the fi
 
 ### Thu, Nov 14
 
+<!--We implemented each of these methods for our `Time` class.  Then we saved the file as `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
 
 
 Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
