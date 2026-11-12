@@ -1197,6 +1197,12 @@ These formulas (both the two-sample t-test and t-confidence interval) are based 
     * **Large samples**. As long as $n_1 + n_2 \ge 30$, then you are probably safe unless your data is extremely skewed or has huge outliers. 
     * **Small samples**. If $n_1 + n_2 < 30$, then be careful relying on the results unless the data has no outliers and very little skew. 
 
+### Fri, Nov 13
+
+We reviewed the two-sample t-distribution methods that we introduced last time.  Then we did this workshop:
+
+* **Workshop**: [Garcinia cambogia](GCambogia.pdf)
+
 
 - - - 
 
@@ -1214,9 +1220,6 @@ Fri, Nov 20 |            | **Midterm 3**
 Today we introduced the 2-sample confidence interval for means. 
 
 
-After that, we did this workshop in class. 
-
-* **Workshop**: [Garcinia cambogia](http://people.hsc.edu/faculty-staff/blins/StatsExamples/GCambogia.pdf)
 
 ### Wed, Apr 15
 

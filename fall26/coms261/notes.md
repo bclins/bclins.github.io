@@ -3149,56 +3149,14 @@ class Time:
     print(z) # Should get 1:15
     ```
 
-<!--
 
-### Thu, Nov 14
+### Thu, Nov 12
 
-<!--We implemented each of these methods for our `Time` class.  Then we saved the file as `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
+We've been working on a `Time` class for Python.  Today we saved our code in a program called `time_module.py` (note that you can't use `time.py` because Python has a built in `time` library) and imported it into another program. 
 
+#### Static Methods
 
-Suppose we create a class called Length that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
-
-1. Suppose we want to create a method for this class called `convert_to()` as shown below.
-
-    ```python
-    class Length:
-        def __init__(self, value, units):
-            self.value = value
-            self.units = units
-        def convert_to(self, new_units):
-            conversion_factor = {("inches", "feet"): 1/12, ("feet", "inches"): 12}
-            self.value *= conversion_factor[self.units, new_units]
-            self.units = new_units
-    ```
-
-    How would we call this method for a class object `x = Length(9, "inches")`? 
-        
-    <details>
-
-    a. `convert_to(x, "feet")`
-    a. `"feet".convert_to(x)`
-    a. **`x.convert_to("feet")`** <-- This is the best way to call the method.
-    a. `Length.convert_to("feet")`
-    a. **`Length.convert_to(x, "feet")`** <-- But this also works!
-
-    </details>
-
-Any method that has the special variable `self` as its first parameter is called an **instance method** and you should call these method with the following syntax:
-
-<center>
-<span style="color:blue">**object_name**</span>.<span style="color:red">**method_name**</span>(*any additional arguments*)
-</center>
-
-The object called <span style="color:blue">**object_name**</span> gets passed into the function called <span style="color:red">**method_name**</span> as `self`.  But this also works (and is equivalent):
-
-
-<center>
-**Class_name**.<span style="color:red">**method_name**</span>(<span style="color:blue">**object_name**</span>, *any additional arguments*)
-</center>
-
-2. What happens if you call `x.convert_to()`?  Why do you get an error message saying it is missing a positional argument?  Why does `x.convert_to(x, "feet")` say it takes 2 positional arguments but 3 were given?  
-
-It is also possible to write methods that don't input the special `self` variable.  A method that doesn't input `self` is called a **static method**.  Static methods are very common in some languages, but seem to be less common in Python.  But sometimes it is helpful to avoid name collisions if a function that goes with a class is included as a static method instead of being a standalone function.  
+It is possible to write methods that don't input the special `self` variable.  A method that doesn't input `self` is called a **static method**.  Static methods are very common in some languages, but seem to be less common in Python.  But sometimes it is helpful to avoid name collisions if a function that goes with a class is included as a static method instead of being a standalone function.  
 
 ```python
 class Time:
@@ -3222,11 +3180,58 @@ To call a static method like `from_minutes()`, you use the name of the class fol
 **Class_name**.<span style="color:red">**method_name**</span>(*any arguments*)
 </center>
 
-3. How would you call the static method `from_minutes()` above to convert 75 minutes to a Time object?  
+1. How would you call the static method `from_minutes()` above to convert 75 minutes to a Time object?  
+
+2. Write a static method for the `Time` class called `from_string` that inputs a string like `"5:40"` and creates a new Time object. 
+
+
+#### Instance Methods
+
+Any method that has the special variable `self` as its first parameter is called an **instance method** and you should call these method with the following syntax:
+
+<center>
+<span style="color:blue">**object_name**</span>.<span style="color:red">**method_name**</span>(*any additional arguments*)
+</center>
+
+The object called <span style="color:blue">**object_name**</span> gets passed into the function called <span style="color:red">**method_name**</span> as `self`.  But this also works (and is equivalent):
+
+<center>
+**Class_name**.<span style="color:red">**method_name**</span>(<span style="color:blue">**object_name**</span>, *any additional arguments*)
+</center>
+
+Consider the following class called `Length` that constructs Length objects with two attributes: a value that is a number and units that are strings like `"inches"`, `"feet"`, `"yards"`, `"miles"`, `"meters"`, etc.  
+
+```python
+class Length:
+    def __init__(self, value, units):
+        self.value = value
+        self.units = units
+    def convert_to(self, new_units):
+        conversion_factor = {("inches", "feet"): 1/12, ("feet", "inches"): 12}
+        self.value *= conversion_factor[self.units, new_units]
+        self.units = new_units
+```
+
+
+3. How would we call the `convert_to` method to convert `x = Length(9, "inches")` into feet?
+        
+    <details>
+
+    a. `convert_to(x, "feet")`
+    a. `"feet".convert_to(x)`
+    a. **`x.convert_to("feet")`** <-- This is the best way to call the method.
+    a. `Length.convert_to("feet")`
+    a. **`Length.convert_to(x, "feet")`** <-- But this also works!
+
+    </details>
+
+4. What happens if you call `x.convert_to()`?  Why do you get an error message saying it is missing a positional argument?  Why does `x.convert_to(x, "feet")` say it takes 2 positional arguments but 3 were given?  
+
+#### Pure vs. Impure Methods
 
 Just like any other functions in Python, methods can be [pure](#:~:text=pure function) or [impure](#:~:text=impure function).  It is very common for instance methods to not return any value, but instead mutate the object in place. 
 
-4. Which of the following four categories describes the method `convert_to` from the Length class?  Try rewriting the method the other three ways.  
+3. Which of the following four categories describes the method `convert_to` from the Length class?  
 
 <center>
 <table class="bordered">
@@ -3238,27 +3243,29 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 
 #### Additional Practice
 
-1. Write a static method for the `Time` class called `from_string` that inputs a string like `"5:40"` and creates a new Time object. 
+1. Modify the `Length` class to allow lengths in yards and miles in addition to feet and inches.
 
-2. How could we read the tab-separated values in this table: [sunset data](https://bclins.github.io/fall24/cs261/sunset.html) and converting each sunset to a time object?  
+1. Try rewriting the `convert_to` method for the `Length` class so that it is a pure instance method, that is, it returns a new `Length` object. Then try re-writing it to be a static method that is pure and then a static method that modifies a Length object in place. Test each version to make sure they all work.  
+
+<!--2. How could we read the tab-separated values in this table: [sunset data](https://bclins.github.io/fall24/cs261/sunset.html) and converting each sunset to a time object?  -->
 
 
-### Fri, Nov 15 
+<!--
+### Fri, Nov 13 
 
 We started today by reviewing how to call methods.  Suppose that we use our Length class from yesterday and define a length object as follows:
-
+ 
 ```python
 x = Length(9, "inches")
 ```
 
-1. What happens if you call `x.convert_to()`?  Why do you get an error message saying it is missing a positional argument?  Why does `x.convert_to(x, "feet")` say it takes 2 positional arguments but 3 were given?  
 
-We talked about the error messages you get, and how you need to understand that the the object that owns the instance method is what gets passed as the `self` variable.  
+We talked about the error messages you get, and how you need to understand that the object that owns the instance method is what gets passed as the `self` variable.  
 
 Then we talked about how magic methods often break the pattern for calling methods.  For example, to call the `__init__` method you could try:
 
 <center>
-**Class_name**.`__init__`(<span style="color:blue">**object_name**</span>, *other arguments*)
+**Class_name**.__init__(<span style="color:blue">**object_name**</span>, *other arguments*)
 </center>
 
 but that typically won't work since the object you are trying to construction doesn't exist yet so it doesn't make sense to try to use 
@@ -3268,7 +3275,7 @@ but that typically won't work since the object you are trying to construction do
 <span style="color:blue">**object_name**</span> = **Class_name**(*other arguments*)
 </center>
 
-We talked about how other magic methods like `__str__` and `__add__` also have special ways called them.  For example you can call the `__str__` method using the special builtin `str()` function and you call the `__add__` method using the `+` operator.  The object on the left side of `+` gets passed to `__add__(self, other)` as `self` and the object on the right side becomes `other`.  
+We talked about how other magic methods like `__str__` and `__add__` also have special ways to call them.  For example you can call the `__str__` method using the special builtin `str()` function and you call the `__add__` method using the `+` operator.  The object on the left side of `+` gets passed to `__add__(self, other)` as `self` and the object on the right side becomes `other`.  
 
 <!--
 Another common issue with Python classes is that Python will let you do thing like this:
