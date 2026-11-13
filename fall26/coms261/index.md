@@ -32,6 +32,7 @@ header-includes: |
 
 ### Announcements
 
+* Midterm 2 materials: [review problems](midterm2review.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 * Student tutors are available Monday & Thursday nights from 8 - 10pm in Pauley 100.
 
@@ -54,8 +55,8 @@ Week | Topic                      | Notes | Projects
 9  | Tuples & sets                        | [Week 09](notes.html#week-9-notes)  | 
 10 | Program structure                    | [Week 10](notes.html#week-10-notes) | [Project 4](project4.pdf)
 11 | Files                                | [Week 11](notes.html#week-11-notes) | 
-12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) |
-13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | 
+12 | Classes and objects                  | [Week 12](notes.html#week-12-notes) | 
+13 | Classes and functions, **Midterm 2** | [Week 13](notes.html#week-13-notes) | [Project 5](project5.pdf)
 14 | Classes and methods                  | [Week 14](notes.html#week-14-notes) | 
 15 | Inheritance                          | [Week 15](notes.html#week-15-notes) | 
 

@@ -3249,9 +3249,13 @@ Just like any other functions in Python, methods can be [pure](#:~:text=pure fun
 
 <!--2. How could we read the tab-separated values in this table: [sunset data](https://bclins.github.io/fall24/cs261/sunset.html) and converting each sunset to a time object?  -->
 
+### Fri, Nov 13 
+
+Today we did a workshop.
+
+* **Workshop:** [Classes and methods](ClassMethods.pdf)
 
 <!--
-### Fri, Nov 13 
 
 We started today by reviewing how to call methods.  Suppose that we use our Length class from yesterday and define a length object as follows:
  

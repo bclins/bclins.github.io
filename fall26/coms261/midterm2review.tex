@@ -1,0 +1,293 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{soul}
+
+\newcommand{\blank}[1]{\underline{\hspace*{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\on}{\operatorname}
+
+\addpoints
+
+
+\begin{document}
+\pagestyle{empty}
+\graphicspath{{/home/brian/Dropbox/HSC/Spring16/Math111/}}
+
+\subsection*{Midterm 2 Practice Exam   \hfill CS 261}
+
+\begin{questions}
+
+\question[12] Suppose that \verb|s = "banana"|. What are the values of the following Python expressions?
+\begin{parts}
+\part \verb|set(s)| 
+\begin{solution}
+
+\end{solution}
+\vfill
+\part \verb|{c: s.count(c) for c in s}|
+\begin{solution}
+
+\end{solution}
+\vfill
+\part \verb|sorted(s) # Hint: sorted() always returns a list|
+\begin{solution}
+\end{solution}
+\vfill
+\part \verb|s[1:4]|
+\begin{solution}
+\verb|None|
+\end{solution}
+\vfill
+\end{parts}
+
+\question[8] Consider the following list:
+\begin{verbatim}
+students = [
+    {"name: "Alice Zimmer", "gpa": 3.5, "credits": 36}, 
+    {"name: "Brian Young", "gpa": 3.8, "credits": 111}, 
+    {"name: "Carolyn Xiang", "gpa": 2.7, "credits": 55},
+    {"name: "Declan West", "gpa": 1.9, "credits": 24}
+]
+\end{verbatim}
+
+\begin{parts}
+\item What Python expression would return the GPA of the last student in the list?  
+\vfill
+
+\item Suppose that at the end of the semester, Alice Zimmer completes 15 more credits and her GPA increases to 3.6.  Write one or two lines of Python code to update the information in \verb|students|. 
+\vfill
+\vfill
+
+\end{parts}
+
+\question[12] Looking at the same list of students as the previous question, what are the values of the following expressions?
+\begin{parts}
+\part \verb|"Alice Zimmer" in students|
+\vfill
+
+\part \verb|"credits" in students[0]|
+\vfill
+
+\part \verb|len(students)|
+\vfill
+
+\part \verb|len(students[0])|
+\vfill
+\end{parts}
+
+\newpage
+
+\question[10] Consider the following function.
+\begin{verbatim}
+------------------------------------------------------------
+def mystery(number_list):
+    output = []
+    for i in range(1, len(number_list)):
+        current, previous = number_list[i], number_list[i-1]
+        output.append(current - previous)
+    return output
+------------------------------------------------------------
+\end{verbatim}
+
+\begin{parts}
+\part What does \verb|mystery([1, 5, 0, 8])| return?
+\vfill
+
+\part Which of the following best describes this function?
+\begin{choices}
+\choice It is a pure function because it has no side effects. 
+\choice It is not a  pure function because the input is a mutable list.
+\choice It is a pure function because it returns a list.
+\choice It is not a pure function because it returns a list.
+\end{choices}
+\bigskip
+\end{parts}
+
+
+\question[6] Consider the following code and answer the questions below.  
+
+
+\begin{verbatim}
+---------------------------------------------------------
+meal_requests = {"breakfast": 0, "lunch": 0, "dinner": 0}
+
+def process_requests(guest_order):
+    output = []
+    for meal in ["breakfast", "lunch", "dinner"]:
+        if meal in guest_order:
+            meal_requests[meal] += 1
+            output.append(meal) 
+    return output
+
+s = "I would like breakfast and dinner, but not lunch."
+result = process_requests(s)
+---------------------------------------------------------
+\end{verbatim}
+
+\begin{parts}
+\part What is the value of \verb|result| after this code runs?
+\vfill
+\part What is the value of \verb|meal_requests| after this code runs?
+\vfill
+\end{parts}
+
+
+
+\newpage
+
+\question[10] Consider the following program. 
+\begin{verbatim}
+--------------------------------------------------------------------------------
+class Family:
+    def __init__(self, members):
+        self.members = members
+    def add_years(self, years):
+        for person in self.members:
+            person.age += years
+
+class Person:
+    def __init__(self, name, age):
+        self.name, self.age = name, age
+    def __str__(self):
+        return f"{self.name} is {self.age} years old."
+
+my_family = Family([Person("Dad", 42), Person("Mom", 39), Person("Junior", 12)])
+--------------------------------------------------------------------------------
+\end{verbatim}
+
+\begin{parts}
+\part How would you call the \verb|add_years| method to make everyone in \verb|my_family| 3 years older?
+\vfill
+
+\part Define a method called \verb|print_family| for the \verb|Family| class that would print out the information about all of the members of a family.  For example, when you apply the \verb|print_family| method to \verb|my_family|, you should get the following result:
+
+
+\begin{verbatim}
+Dad is 42 years old.
+Mom is 39 years old.
+Junior is 12 years old.
+\end{verbatim}
+\vfill
+\end{parts}
+
+\question[10] Write a class named \verb|Book| that represents books in a library. Each book has the following
+attributes:
+\begin{itemize}
+\item \verb|title| - the title of the book.
+\item \verb|author| - the author of the book.
+\end{itemize}
+The \verb|Book| class should have an initializer that accepts the book’s title and author.
+The class should also have a \verb|__str__| method that returns a string describing both the title and author of the book (e.g. ``Adventures of Huckleberry Finn by Mark Twain").
+\vfill
+\vfill
+\vfill
+\vfill
+
+
+\newpage
+\question[8] Suppose that the following program is saved in a file called \verb|reverse.py|. %The line numbers are included for reference but are not part of the code. 
+\begin{verbatim}
+-- reverse.py ------------------------
+def reverse_string(word):
+    new_string = ""
+    for char in word:
+        new_string = char + new_string
+    return new_string
+
+if __name__ == "__main__":
+    place = "Hampden-Sydney"
+    print(reverse_string(place))
+--------------------------------------
+\end{verbatim}
+Another program called \verb|test.py| is in the same folder as \verb|reverse.py| and contains these lines of code.
+\begin{verbatim}
+-- test.py --------------------------
+import reverse
+
+print(reverse.reverse_string("test"))
+-------------------------------------
+\end{verbatim}
+
+\begin{parts}
+\part What will happen if you run \verb|reverse.py|?
+\begin{choices}
+\choice It will print \verb|yendyS-nedpmaH| and \verb|tset|. 
+\choice It will not print anything. 
+\choice It will just print \verb|yendyS-nedpmaH|. 
+\choice It will just print \verb|tset|. 
+\end{choices}
+\vfill
+
+\part What will happen if you run \verb|test.py|?
+\begin{choices}
+\choice It will print \verb|yendyS-nedpmaH| and \verb|tset|. 
+\choice It will not print anything. 
+\choice It will just print \verb|yendyS-nedpmaH|. 
+\choice It will just print \verb|tset|. 
+\end{choices}
+\vfill
+\end{parts}
+
+\question[4] Why should we use the keyword \verb|with| when we open a file (like in the following example)?
+\begin{verbatim}
+---------------------------------
+with open("example.txt") as file:
+    file_text = file.read()
+---------------------------------
+\end{verbatim}
+
+\begin{choices}
+\choice The \verb|with| keyword lets us open the file. 
+\choice The \verb|with| keyword lets us read the contents of the file as a string.
+\choice The \verb|with| keyword will close the file when we are done.
+\choice The \verb|with| keyword lets us both read from and write to the file. 
+\end{choices}
+\vfill
+
+
+\newpage
+
+\question[20] Consider the following string with words separated by spaces (no capitalization or punctuation).  
+\begin{center}
+\verb|"we dont need no education we dont need no thought control no we dont"|
+\end{center}
+A lot of the words in the string appear in more than one location.  For example, \verb|"we"| appears at position 0, 5, and 12.  
+\begin{parts}
+\part Write a function called \verb|get_positions(word, string)| that returns a list of all the positions where a word appears in a string.  You can assume that the string contains only lower case words separated by single spaces and no punctuation.  Hint: don't forget that you can use the \verb|.split()| method to separate a string into a list of substrings. 
+
+\bigskip
+
+\begin{verbatim}
+def get_positions(word, string):
+    # Insert your code below.
+
+\end{verbatim}
+\vfill
+
+
+\part Write a function called \verb|all_positions(string)| that inputs a string of lower case words separated by spaces, and returns a dictionary with keys corresponding to the words in the string, and values that are lists of the positions where those words appear.  For example, if you input the string above, then your function should return:
+\begin{center}
+\verb|{"we": [0, 5, 12], "dont": [1, 6, 13], "need": [2, 7], "no": [3, 8, 11],|
+\verb|"education": [4], "thought": [9], "control": [10]}|
+\end{center}
+If it helps, your \verb|all_positions| function can call \verb|get_positions|. 
+
+\bigskip
+
+\begin{verbatim}
+def all_positions(string):
+    # Insert your code below.
+
+\end{verbatim}
+\vfill
+\end{parts}
+\newpage
+
+
+\end{questions}
+
+\end{document}
+
+\end{document} 
