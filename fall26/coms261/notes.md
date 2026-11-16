@@ -3362,6 +3362,9 @@ This class has some limitations.
 
 Converting an object of one type to another type is called **casting**.  In Python, we typically cast objects to a new type by using the constructor function for that type.   
 
+2. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method. Define a `__float__` method for the Fraction type that will convert a Fraction object to a float. 
+
+
 In class, we wrote the following code to extend the `__add__` method to allow adding integers and floats to fractions. 
 
 ```python
@@ -3374,16 +3377,30 @@ In class, we wrote the following code to extend the `__add__` method to allow ad
             return self.n / self.d + other
 ```
 
-#### Practice
 
-1. Modify the `__mul__` method for the Fraction class to allow multiplication by integers and floats. 
+3. Modify the `__mul__` method for the Fraction class to allow multiplication by integers and floats. 
 
-2. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method. Define a `__float__` method for the Fraction type that will convert a Fraction object to a float. 
+#### Default Parameter Values
+
+You can let functions work with variable numbers of arguments by using [default parameter values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values). For example, if you could assume that the denominator is 1, then when the user tries to cast an int to a Fraction by entering `Fraction(4)`, it will work. We implemented this by modifying the constructor function:
+
+```python
+class Fraction:
+    def __init__(self, num, denom = 1):
+        """Creates a fraction with given numerator and denominator."""
+        self.n = num
+        self.d = denom
+        # check if the fractions are reduced
+        gcd = math.gcd(num, denom)
+        if gcd != 1:
+            self.n //= gcd
+            self.d //= gcd
+```
+
 
 #### Additional Practice 
 
-1. Add functionality to the Fraction type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Fraction.  Hint: You can let functions work with variable numbers of arguments by using [default parameter values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values). For example, if you could assume that the denominator is 1, then when the user tries to cast an int to a Fraction by entering `Fraction(4)`, it will work. 
-
+1. Add functionality to the Fraction type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Fraction.  
 2. If your Fraction class allows you to add `Fraction(1, 2) + 1`, then try to compute `1 + Fraction(1, 2)`.  What error do you get? 
 
 3. In order to fix the error, you need to define reverse addition using the `__radd__` method which will tell python how to handle `other + self` situations.  You can do this by just adding a single line of code into the body of the class:
