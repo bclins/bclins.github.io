@@ -1214,13 +1214,17 @@ Mon, Nov 16 |            | Choosing the right technique
 Wed, Nov 18 |            | Review
 Fri, Nov 20 |            | **Midterm 3**
 
-<!-- 
-### Mon, Apr 13
+### Mon, Nov 16
 
-Today we introduced the 2-sample confidence interval for means. 
+Today we talked some more about how to choose the right inference technique.  
+
+* **Workshop:** [Choosing the right technique](ChoosingRightTechnique.pdf)
 
 
+* **Example:** [Flow chart: How to choose the right method](choosingRightMethod.pdf)
 
+
+<!--/
 ### Wed, Apr 15
 
 Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](https://bclins.github.io/fall25/math121/choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:

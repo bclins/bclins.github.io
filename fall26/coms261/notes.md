@@ -3302,41 +3302,6 @@ x.test = 4
 print(x.test)
 ```
 
-
-We finished with the following in-class exercise.  
-
-2. Consider the rational numbers class below.  Define functions to add and multiply rational numbers. Also define a `__str__` method and a method called `reduce(self)` that mutates a Rational object by dividing its numerator and denominator by their greatest common divisor (you can use the `math.gcd` function from the `math` library).  
-
-
-    ```python
-    import math 
-
-    class Rational:
-        def __init__(self, num, denom):
-            self.num = num
-            self.denom = denom
-
-        # Add your own code to define these functions
-        def __str__(self):
-
-        def __add__(self, other):
-
-        def __mul__(self, other):
-
-        def reduce(self):
-            """This should mutate a Rational object in place so that 
-            its numerator and denominator are in simplest form.
-            """
-    ```
-
-3. One feature that it would be nice to have is if you could add a Rational object to an integer object:
-
-    ```python
-    >>> Rational(1, 2) + 5
-    ```
-
-    How could you adjust your `__add__` method to allow this?  
-
 -->
 
 - - - 
@@ -3352,34 +3317,89 @@ Wed, Nov 18 |  | Sequence and iterator types
 Thu, Nov 19 |  | Review
 Fri, Nov 20 |  | **Midterm 2**
 
-<!--
-### Mon, Nov 18
 
-Last time we created a rational numbers class, but it had some limitations.  
+### Mon, Nov 16
 
-* You could only add two rationals or a rational plus an integer, but not an integer plus a rational.  
+We started with this warm-up problem.
 
-* What about adding floats?
+1. Consider the Fraction class below.  Define functions to add and multiply fractions. Also define a `__str__` method. Recall that to add two fractions, they need a common denominator:
+$$\frac{a}{b} + \frac{c}{d} = \frac{ad}{bd} + \frac{bc}{bd} = \frac{ad + bc}{bd}.$$
 
-* It would be nice if we could input rational numbers other ways: (i) integers are rational, (ii) what about strings like "4/5"?  
+    ```python
+    import math 
+
+    class Fraction:
+        def __init__(self, num, denom):
+            """Creates a fraction with given numerator and denominator."""
+            self.n = num
+            self.d = denom
+            # check if the fractions are reduced
+            gcd = math.gcd(num, denom)
+            if gcd != 1:
+                self.n //= gcd
+                self.d //= gcd
+
+        # Add your own code to define these functions
+        def __str__(self):
+
+        def __add__(self, other):
+
+        def __mul__(self, other):
+
+    ```
+
+This class has some limitations.
+
+* You can only add two Fraction objects, not fractions plus integers or fractions plus floats.
+
+* It would be nice if we could input Fractions other ways: (i) integers are fractions (with denominators equal to 1), (ii) what about strings like "4/5"?  
 
 * What about multiplying by integers or floats?
 
-* What if you want to convert a Rational class object to a float? 
+* What if you want to convert a Fraction class object to a float? 
 
-As we discussed solutions to these problems, we saw some cool things you can do in Python.  
+#### Casting 
 
-1. You can define the `__radd__` method by just setting it equal to `__add__`.  This is because a function name is a variable like any other.  You can define a function using the assignment operator `=`, as long as it is the same as another function.  
+Converting an object of one type to another type is called **casting**.  In Python, we typically cast objects to a new type by using the constructor function for that type.   
 
-2. You can make a function work with different types of input using if-then statements to handle different input types.  
+In class, we wrote the following code to extend the `__add__` method to allow adding integers and floats to fractions. 
 
-3. You can let functions work with variable numbers of arguments by using **default parameter values**. 
+```python
+    def __add__(self, other):
+        if isinstance(other, Fraction):
+            return Fraction(self.n * other.d + self.d + other.n, self.d * other.d)
+        elif isinstance(other, int):
+            return Fraction(self.n + self.d * other, self.d)
+        elif isinstance(other, float):
+            return self.n / self.d + other
+```
 
-4. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method.  
+#### Practice
 
-The converting an object of one type to another type is called **casting**.  In Python, we typically cast objects to a new type by using the constructor function for that type.  
+1. Modify the `__mul__` method for the Fraction class to allow multiplication by integers and floats. 
 
-5. Add functionality to the Rational type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Rational.  
+2. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method. Define a `__float__` method for the Fraction type that will convert a Fraction object to a float. 
+
+#### Additional Practice 
+
+1. Add functionality to the Fraction type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Fraction.  Hint: You can let functions work with variable numbers of arguments by using [default parameter values](https://docs.python.org/3/tutorial/controlflow.html#default-argument-values). For example, if you could assume that the denominator is 1, then when the user tries to cast an int to a Fraction by entering `Fraction(4)`, it will work. 
+
+2. If your Fraction class allows you to add `Fraction(1, 2) + 1`, then try to compute `1 + Fraction(1, 2)`.  What error do you get? 
+
+3. In order to fix the error, you need to define reverse addition using the `__radd__` method which will tell python how to handle `other + self` situations.  You can do this by just adding a single line of code into the body of the class:
+
+    ```python
+    __radd__ = __add__
+    ```
+
+    This tells python that `other + self` is the same as `self + other`. Make sure you put this line inside the class definition, but not as part of any other method definition. Try this and make sure you can get it to work by testing some examples like `1 + Fraction(1, 2)`. 
+
+
+
+
+
+
+<!-- 
 
 
 ### Wed, Nov 20 
