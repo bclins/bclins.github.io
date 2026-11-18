@@ -3361,7 +3361,7 @@ This class has some limitations.
 #### Casting 
 
 Converting an object of one type to another type is called **casting**.  In Python, we typically cast objects to a new type by using the constructor function for that type.   
-
+ 
 2. Each of the standard types has a constructor function (e.g., `int` for integers, `str` for strings, `float` for floating point numbers, `list` for lists, etc.).  When you construct a new class, you can define how each of these functions works with your class by using the corresponding magic method. Define a `__float__` method for the Fraction type that will convert a Fraction object to a float. 
 
 
@@ -3415,9 +3415,19 @@ class Fraction:
 
 ### Wed, Nov 18
 
-Today we looked at sequence & iterator types.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting with indices, slicing, using the `+` operator for concatenation, and methods like `.find()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
+Today we talked about the cheat sheet and study guide for midterm 2.
+
+* **Example**: [Python cheat sheet](CheatSheet.pdf) 
+* **Example**: [Midterm 2 study guide](CheatSheet.pdf#page=2)
+
+There will be a copy of the cheat sheet included with the midterm.  
+
+<!--We also talked about [sequence types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) and [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types).  -->
+
+<!--A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting with indices, slicing, using the `+` operator for concatenation, and methods like `.find()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
 
 Here is a table of features implemented by (most) sequence types:  
+
 
 <center>
 <table class="bordered">
@@ -3428,7 +3438,6 @@ Here is a table of features implemented by (most) sequence types:
 <tr><td>`s[i]` or `s[i:j]` or `s[i:j:k]`</td><td></td><td></td></tr>
 </table>
 </center>
-
 
 Every sequence type is also an [iterator types](https://docs.python.org/3/library/stdtypes.html#iterator-types). But not all iterator types are sequences.  For example, sets and dictionaries are iterators but not sequences. There are lots of other iterator types that don't implement all of the features of sequence types. For example, we you have a dictionary `d`, both `d.values()` and `d.items()` are iterator types.
 
@@ -3458,6 +3467,17 @@ In addition to common features shared by many classes, most classes in Python al
 </center>
 
 Another special thing to know about file objects is that we usually open them using the `with` keyword so that we don't have to remember to close them.  
+-->
+
+We finished with some additional practice problems about classes and objects. We started by reviewing [Exercise 6 from the Classes & Methods workshop](https://bclins.github.io/fall26/coms261/ClassMethods.pdf#page=2).
+
+#### Practice
+
+1. Add a method to the Playlist class called `by_artist(self, artist)`.  It should return a new playlist object containing all songs from the original playlist by a given artist. 
+
+2. Look at the Family and Person classes from the [Exercise 6 in the midterm 2 review problems](https://bclins.github.io/fall26/coms261/midterm2review.pdf#page=3).  Add a new method called `add_member(self, name, age)` to the Family class.  It should add a new family member to any Family object. 
+
+3. Write a list comprehension that creates a list of the names of every member in a Family. 
 
 <!--
 We finished with these practice problems.  
