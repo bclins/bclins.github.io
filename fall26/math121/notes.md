@@ -1224,16 +1224,10 @@ Today we talked some more about how to choose the right inference technique.
 * **Example:** [Flow chart: How to choose the right method](choosingRightMethod.pdf)
 
 
-<!--/
-### Wed, Apr 15
+### Wed, Nov 18
 
-Today we talked about the [midterm 3 review problems](midterm3review.pdf).  We also talked about how to [choose the right inference method](https://bclins.github.io/fall25/math121/choosingRightMethod.pdf). Ask these three questions to decide which interference formula to use:
+Today we talked about the [midterm 3 review problems](midterm3review.pdf). 
 
-* Do you have one or two samples?
-* Are you trying to *estimate how big* a parameter is (confidence interval) or *answer a yes/no question* about whether the results are significant (hypothesis test)?  
-* Are you interested in averages of a quantitative variable (means) or percentages of a categorical variable (proportions)?   
-
-The answer to these three questions will guide you to the [right formula](https://bclins.github.io/fall25/math121/finalformulas.pdf) to use. 
 
 <!--
 ### Mon, Nov 24

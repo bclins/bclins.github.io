@@ -3400,7 +3400,8 @@ class Fraction:
 
 #### Additional Practice 
 
-1. Add functionality to the Fraction type initialization function to allow casting from from integer and string types (such as `"4/5"`) to Fraction.  
+1. Add functionality to the Fraction constructor function to allow casting from a string (such as `"4/5"`) to Fraction.  
+
 2. If your Fraction class allows you to add `Fraction(1, 2) + 1`, then try to compute `1 + Fraction(1, 2)`.  What error do you get? 
 
 3. In order to fix the error, you need to define reverse addition using the `__radd__` method which will tell python how to handle `other + self` situations.  You can do this by just adding a single line of code into the body of the class:
@@ -3412,26 +3413,18 @@ class Fraction:
     This tells python that `other + self` is the same as `self + other`. Make sure you put this line inside the class definition, but not as part of any other method definition. Try this and make sure you can get it to work by testing some examples like `1 + Fraction(1, 2)`. 
 
 
+### Wed, Nov 18
 
+Today we looked at sequence & iterator types.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting with indices, slicing, using the `+` operator for concatenation, and methods like `.find()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
 
-
-
-<!-- 
-
-
-### Wed, Nov 20 
-
-Today we looked sequence & iterator types.  A [sequence type](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) are types like lists, tuples, and ranges that implement a common set of features including the `len` function, subscripting, slicing, using the `+` operator for concatenation, and methods like `.index()` and `.count()`.   It is possible to add these features to a custom class by using magic methods like `__len__()`, `__getitem__()`, and so on. 
-
-Here is a table of features implemented by sequence types:  
+Here is a table of features implemented by (most) sequence types:  
 
 <center>
 <table class="bordered">
 <tr><th>Operators</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Methods&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
-<tr><td>`x in s`</td><td>`len(s)`</td><td>`s.index(x)`</td></tr>
-<tr><td>`x not in s`</td><td>`max(s)`</td><td>`s.count(x)`</td></tr>
-<tr><td>`s + t`</td><td>`min(s)`</td><td></td></tr>
-<tr><td>`s * n` or `n * s`</td><td></td><td></td></tr>
+<tr><td>`x in s` or `x not in s` </td><td>`len(s)`</td><td>`s.find(x)`</td></tr>
+<tr><td>`s + t`</td><td>`max(s)`</td><td>`s.count(x)`</td></tr>
+<tr><td>`s * n` or `n * s`</td><td>`min(s)`</td><td></td></tr>
 <tr><td>`s[i]` or `s[i:j]` or `s[i:j:k]`</td><td></td><td></td></tr>
 </table>
 </center>
@@ -3453,15 +3446,14 @@ Iterator types don't have many common features, but most implement the following
 
 Iterator types implement two magic methods `__iter()__` and `__next()__` that let you loop through any iterator type using a for-in loop.  Iterators also let you use the `enumerate(iterator)` function to loop pairs of indices and values in an iterator. 
 
-In addition to common features share by many classes, most classes in Python also have special methods that are only available for that class.  Here is a list of methods you should know:  
+In addition to common features shared by many classes, most classes in Python also have special methods that are only available for that class.  Here is a list of methods you should know:  
 
 <center>
 <table class="bordered">
 <tr><th>List</th><th>Strings</th><th>Dictionaries</th><th>Sets</th><th>File Objects</th></tr>
-<tr><td>`a.append(item)`</td><td>`s.join(string_list)`</td><td>`d.items()`</td><td>`a.union(b)`</td><td>`f.read()`</td></tr>
-<tr><td>`a.insert(i, item)`</td><td>`s.split()`</td><td>`d.values()`</td><td>`a.intersection(b)`</td><td>`f.readlines()`</td></tr>
-<tr><td>`a.pop()`</td><td>`s.strip()`</td><td>`d.pop(key)`</td><td>`a.add(elem)`</td><td>`f.write(s)`</td></tr>
-<tr><td>`a.sort()`</td><td></td><td></td><td></td><td>`f.close()`</td></tr>
+<tr><td>`a.append(item)`</td><td>`s.join(str_list)`</td><td>`d.items()`</td><td>`a.add(elem)`</td><td>`f.read()`</td></tr>
+<tr><td>`a.sort()`</td><td>`s.split()`</td><td>`d.values()`</td><td></td><td>`f.write()`</td></tr>
+<tr><td></td><td>`s.strip()`</td><td>`d.keys()`</td><td></td><td></td></tr>
 </table>
 </center>
 

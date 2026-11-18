@@ -32,7 +32,7 @@ header-includes: |
 
 ### Announcements
 
-* Midterm 2 materials: [review problems](midterm2review.pdf)
+* Midterm 2 materials: [review problems](midterm2review.pdf), [cheat sheet & study guide](CheatSheet.pdf)
 * Midterm 1 materials: [review problems](midterm1review.pdf)
 * Student tutors are available Monday & Thursday nights from 8 - 10pm in Pauley 100.
 
