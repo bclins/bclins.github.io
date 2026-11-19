@@ -3491,18 +3491,12 @@ We finished with these practice problems.
 
 3. How could you combine all of the movie preferences to get a list of the favorite movies with no repeats?  
 
-### Thu, Nov 21
+-->
 
-Today we went over the [midterm 2 review problems](practicemidterm2.pdf) (see [here](practicemidterm2solutions.pdf) for the solutions).  We also talked about this example:
+### Thu, Nov 19
 
-1. What is the value of variable `a` after the following code runs?
+Today we went over the [midterm 2 review problems](midterm2review.pdf). We also talked about some of the [review problems from two years ago](https://bclins.github.io/fall24/cs261/practicemidterm2.pdf). 
 
-    ```python
-    a = []
-    for i in range(4):
-        for j in range(3):
-            a.append(10 * j + i)
-    ```
 
 <!-- NOTE TO SELF: Come up with better examples for tracing next time! -->
 
